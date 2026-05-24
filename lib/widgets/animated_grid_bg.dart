@@ -1,58 +1,23 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
-/// Rotating panoramic background with fisheye-like distortion overlay.
+/// Static panoramic background with fisheye-like distortion overlay.
 /// Replaces the old animated grid lines with the EO PNP school image.
-class AnimatedGridBackground extends StatefulWidget {
+class AnimatedGridBackground extends StatelessWidget {
   final Widget child;
+  
   const AnimatedGridBackground({super.key, required this.child});
-
-  @override
-  State<AnimatedGridBackground> createState() => _AnimatedGridBackgroundState();
-}
-
-class _AnimatedGridBackgroundState extends State<AnimatedGridBackground>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 30),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       fit: StackFit.expand,
       children: [
-        // Background image that scrolls horizontally
-        AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            // Pan the image horizontally — a gentle left-right sweep
-            final sweep = math.sin(_controller.value * 2 * math.pi);
-            // Slight scale pulse for dynamism
-            final scale = 1.15 + 0.05 * math.sin(_controller.value * 4 * math.pi);
-
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.identity()
-                ..setEntry(3, 2, 0.001) // perspective
-                ..scale(scale)
-                ..translate(sweep * 40, 0.0),
-              child: child,
-            );
-          },
+        // Background image (Static for performance optimization)
+        Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001) // perspective
+            ..scale(1.15), // Slight zoom to emulate depth
           child: Image.asset(
             'assets/images/bg_escuela.jpg',
             fit: BoxFit.cover,
@@ -95,7 +60,7 @@ class _AnimatedGridBackgroundState extends State<AnimatedGridBackground>
         ),
 
         // Child content on top
-        widget.child,
+        child,
       ],
     );
   }

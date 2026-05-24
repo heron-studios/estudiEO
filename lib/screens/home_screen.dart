@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text('Cadete',
+                  const Text('Futuro Cadete',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Bienvenido, cadete',
+                            'Bienvenido, postulante',
                             style: TextStyle(
                               color: Colors.white.withValues(alpha: 0.6),
                               fontSize: 14,
