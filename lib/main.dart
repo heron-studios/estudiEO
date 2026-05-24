@@ -15,6 +15,8 @@ import 'package:learn/screens/quiz_results_screen.dart';
 import 'package:learn/screens/dashboard_screen.dart';
 import 'package:learn/screens/srs_review_screen.dart';
 import 'package:learn/screens/settings_screen.dart';
+import 'package:learn/screens/premium_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -82,6 +84,7 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => const DashboardScreen(),
         '/srs-review': (context) => const SrsReviewScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/premium': (context) => const PremiumScreen(),
       },
     );
   }

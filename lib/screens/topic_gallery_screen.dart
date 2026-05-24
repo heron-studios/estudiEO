@@ -4,6 +4,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/topic.dart';
 import 'package:learn/data/subjects_repository.dart';
 import 'package:learn/providers/quiz_provider.dart';
+import 'package:learn/config/app_config.dart';
 
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
@@ -60,11 +61,24 @@ class _TopicTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // En modo demo, solo el primer tema (index 0) está desbloqueado
+    final bool isLocked = AppConfig.isDemoMode && index > 0;
+    
+    // Usar la cantidad real de preguntas en demo mode
+    final int dynamicQuestionCount = AppConfig.isDemoMode 
+        ? SubjectsRepository.getQuestionsByTopic(topic.id).length 
+        : topic.questionCount;
+
     return Material(
       color: const Color(0xFF1E293B),
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         onTap: () {
+          if (isLocked) {
+            Navigator.pushNamed(context, '/premium');
+            return;
+          }
+
           context.read<SubjectProvider>().selectTopic(topic.id);
           
           final allQuestions = SubjectsRepository.getAllQuestionsByTopicShuffled(topic.id);
@@ -94,14 +108,16 @@ class _TopicTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Center(
-                  child: Text(
-                    '${index + 1}',
-                    style: const TextStyle(
-                      color: Color(0xFF3B82F6),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
+                  child: isLocked 
+                    ? const Icon(Icons.lock, color: Color(0xFF64748B), size: 18)
+                    : Text(
+                        '${index + 1}',
+                        style: const TextStyle(
+                          color: Color(0xFF3B82F6),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
                 ),
               ),
               const SizedBox(width: 14),
@@ -113,8 +129,8 @@ class _TopicTile extends StatelessWidget {
                   children: [
                     Text(
                       topic.name,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: isLocked ? Colors.white54 : Colors.white,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
@@ -135,27 +151,40 @@ class _TopicTile extends StatelessWidget {
                 ),
               ),
 
-              // Question count
+              // Question count or lock
               const SizedBox(width: 12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    '${topic.questionCount}',
-                    style: const TextStyle(
-                      color: Color(0xFF3B82F6),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+              if (isLocked)
+                 const Column(
+                   crossAxisAlignment: CrossAxisAlignment.end,
+                   children: [
+                     Icon(Icons.lock_person_rounded, color: Color(0xFFFBBF24), size: 24),
+                     Text(
+                       'Premium',
+                       style: TextStyle(color: Color(0xFFFBBF24), fontSize: 10, fontWeight: FontWeight.bold),
+                     ),
+                   ],
+                 )
+              else
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      '$dynamicQuestionCount',
+                      style: const TextStyle(
+                        color: Color(0xFF3B82F6),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  const Text(
-                    'preguntas',
-                    style: TextStyle(color: Color(0xFF64748B), fontSize: 10),
-                  ),
-                ],
-              ),
+                    const Text(
+                      'preguntas',
+                      style: TextStyle(color: Color(0xFF64748B), fontSize: 10),
+                    ),
+                  ],
+                ),
+              
               const SizedBox(width: 8),
-              const Icon(Icons.chevron_right, color: Color(0xFF334155), size: 22),
+              Icon(Icons.chevron_right, color: isLocked ? Colors.transparent : const Color(0xFF334155), size: 22),
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:learn/config/app_config.dart';
 import 'package:learn/data/subject_data_matematicas.dart';
 import 'package:learn/data/subject_data_comunicacion.dart';
 import 'package:learn/data/subject_data_sociales.dart';
@@ -57,20 +58,50 @@ class SubjectsRepository {
 
   /// Obtiene preguntas de un tópico específico
   static List<Question> getQuestionsByTopic(String topicId) {
+    List<Question> filtered = [];
     for (final questions in _questionsBySubject.values) {
-      final filtered = questions.where((q) => q.topicId == topicId).toList();
+      filtered = questions.where((q) => q.topicId == topicId).toList();
       if (filtered.isNotEmpty) {
-        return filtered;
+        break;
       }
     }
-    return [];
+
+    if (AppConfig.isDemoMode) {
+      // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
+      final Map<String, int> demoLimits = {
+        'mat_1': 2,
+        'com_1': 2,
+        'cs_1': 2,
+        'cta_1': 1,
+        'pfrh_1': 1,
+        'rv_1': 1,
+        'rm_1': 1,
+      };
+
+      if (demoLimits.containsKey(topicId)) {
+        return filtered.take(demoLimits[topicId]!).toList();
+      } else {
+        return []; // Tópico bloqueado/vacío en demo
+      }
+    }
+
+    return filtered;
   }
 
   /// Obtiene una pregunta específica
   static Question? getQuestion(String questionId) {
     for (final questions in _questionsBySubject.values) {
       try {
-        return questions.firstWhere((q) => q.id == questionId);
+        final q = questions.firstWhere((q) => q.id == questionId);
+        // Si estamos en demo, asegurarnos que pertenece a las 10 preguntas
+        if (AppConfig.isDemoMode) {
+           final topicQuestions = getQuestionsByTopic(q.topicId);
+           if (topicQuestions.any((tq) => tq.id == questionId)) {
+             return q;
+           }
+           return null;
+        }
+        return q;
       } catch (e) {
         // Continue searching in other subjects
       }
@@ -114,12 +145,25 @@ class SubjectsRepository {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
-      'questions': getQuestionsBySubject(subjectId),
+      'questions': AppConfig.isDemoMode 
+          ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id)).toList()
+          : getQuestionsBySubject(subjectId),
     };
   }
 
-  /// Genera un examen simulacro de 100 preguntas exactas
+  /// Genera un examen simulacro de 100 preguntas exactas (o 10 en demo)
   static List<Question> generateExamQuestions() {
+    if (AppConfig.isDemoMode) {
+      // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
+      final List<String> demoTopics = ['mat_1', 'com_1', 'cs_1', 'cta_1', 'pfrh_1', 'rv_1', 'rm_1'];
+      final List<Question> demoExam = [];
+      for (final topicId in demoTopics) {
+        demoExam.addAll(getQuestionsByTopic(topicId));
+      }
+      demoExam.shuffle();
+      return demoExam;
+    }
+
     final Map<String, int> quotas = {
       'matematicas': 15,
       'comunicacion': 15,
