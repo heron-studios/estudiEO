@@ -12,6 +12,7 @@ import 'package:learn/data/library/cta/cta_subject.dart';
 import 'package:learn/data/library/cta/cta_questions.dart';
 import 'package:learn/data/library/cta/cta_topics.dart';
 import 'package:learn/data/library/cta/materia_energia_theory.dart';
+import 'package:learn/data/library/cta/sistema_solar_theory.dart';
 import 'package:learn/data/library/pfrh/pfrh_subject.dart';
 import 'package:learn/data/library/pfrh/pfrh_questions.dart';
 import 'package:learn/data/library/pfrh/pfrh_topics.dart';
@@ -218,6 +219,9 @@ class SubjectsRepository {
   static String? getTheoryByTopicAndLevel(String topicId, Dificultad nivel) {
     if (topicId == 'cta_materia_energia') {
       return materiaEnergiaTheory[nivel];
+    }
+    if (topicId == 'cta_sistema_solar') {
+      return sistemaSolarTheory[nivel];
     }
     // Para otros tópicos aún no implementados
     return null;

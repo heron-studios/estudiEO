@@ -99,7 +99,7 @@ class _TopicTile extends StatelessWidget {
             return;
           }
           if (mode == 'guided') {
-            if (topic.id == 'cta_materia_energia') {
+            if (topic.id == 'cta_materia_energia' || topic.id == 'cta_sistema_solar') {
               _startGuidedLearning(context, topic);
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -158,7 +158,7 @@ class _TopicTile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        if (topic.id == 'cta_materia_energia') ...[
+                        if (topic.id == 'cta_materia_energia' || topic.id == 'cta_sistema_solar') ...[
                           const SizedBox(width: 8),
                           Container(
                             padding: const EdgeInsets.symmetric(

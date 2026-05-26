@@ -36,4 +36,11 @@ final Map<String, Topic> ctaTopics = {
     description: "Propiedades de la materia, estados de agregación y transformaciones energéticas.",
     questionCount: 80,
   ),
+  'cta_sistema_solar': Topic(
+    id: 'cta_sistema_solar',
+    subjectId: 'cta',
+    name: "6. El sistema solar. Planeta Tierra.",
+    description: "El sistema solar, astros y planetas. Dinámicas, movimientos y características de la Tierra.",
+    questionCount: 40,
+  ),
 };

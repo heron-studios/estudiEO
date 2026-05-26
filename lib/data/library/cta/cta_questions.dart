@@ -1,5 +1,6 @@
 import 'package:learn/models/question.dart';
 import 'package:learn/data/library/cta/materia_energia_questions.dart';
+import 'package:learn/data/library/cta/sistema_solar_questions.dart';
 
 final List<Question> ctaQuestions = [
   Question(
@@ -5973,4 +5974,5 @@ final List<Question> ctaQuestions = [
     explanation: r"""El cambio climático contemporáneo altera la biosfera a un ritmo sin precedentes debido a actividades humanas emisoras de gases de invernadero.""",
   ),
   ...materiaEnergiaQuestions,
+  ...sistemaSolarQuestions,
 ];
