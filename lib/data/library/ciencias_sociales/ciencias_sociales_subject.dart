@@ -5,5 +5,8 @@ final Subject cienciasSocialesSubject = Subject(
   name: "Ciencias Sociales",
   color: '#95E1D3',
   icon: '🌍',
-  topicIds: ['cs_t1', 'cs_t2', 'cs_t3', 'cs_t4', 'cs_t5'],
+  topicIds: [
+    // Solo topics con teoría para modo aprendizaje guiado
+    'cs_t1', // Proceso de Hominización (tiene teoría)
+  ],
 );

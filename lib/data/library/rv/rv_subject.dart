@@ -5,5 +5,5 @@ final Subject razonamientoVerbalSubject = Subject(
   name: 'Razonamiento Verbal',
   color: '#FFDAB9',
   icon: '📝',
-  topicIds: ['rv_sinonimos', 'rv_antonimos', 'rv_conectores', 'rv_plan', 'rv_lectura'],
+  topicIds: [], // Sin topics con teoría aún - oculto del modo aprendizaje guiado
 );

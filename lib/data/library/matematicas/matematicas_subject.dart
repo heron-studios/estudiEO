@@ -5,5 +5,5 @@ final Subject matematicasSubject = Subject(
   name: "Matemáticas",
   color: '#FF6B6B',
   icon: '📐',
-  topicIds: ['mat_algebra', 'mat_angulos', 'mat_pitagoras', 'mat_trigo'],
+  topicIds: [], // Sin topics con teoría aún - oculto del modo aprendizaje guiado
 );

@@ -6,10 +6,7 @@ final Subject ctaSubject = Subject(
   color: '#A8E6CF',
   icon: '🔬',
   topicIds: [
-    'cta_t1',
-    'cta_t2',
-    'cta_t3',
-    'cta_t4',
+    // Solo topics con teoría para modo aprendizaje guiado
     'cta_materia_energia',
     'cta_sistema_solar',
     'cta_tabla_periodica',
