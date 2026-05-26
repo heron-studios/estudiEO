@@ -50,4 +50,11 @@ final Map<String, Topic> ctaTopics = {
     description: "Estructura, símbolos, organización en grupos/periodos y tendencias periódicas.",
     questionCount: 40,
   ),
+  'cta_vegetales_fotosintesis': Topic(
+    id: 'cta_vegetales_fotosintesis',
+    subjectId: 'cta',
+    name: "8. Los vegetales y la fotosíntesis",
+    description: "Procesos de fotosíntesis, fases luminosa y oscura, cloroplastos y ciclos bioquímicos.",
+    questionCount: 40,
+  ),
 };
