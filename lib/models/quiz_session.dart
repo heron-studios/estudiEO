@@ -1,4 +1,4 @@
-class QuizSession {
+﻿class QuizSession {
   final String id;
   final String topicId;
   final List<String> questionIds;

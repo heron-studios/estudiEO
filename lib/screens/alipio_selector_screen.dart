@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:learn/data/subjects_repository.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
 import 'package:learn/screens/alipio_screen.dart';
-import 'package:learn/services/local_storage_service.dart';
-import 'package:learn/screens/alipio_screen.dart';
+import 'package:learn/providers/subject_provider.dart';
+
 
 /// Pantalla de selección de tema para entrar a Alipio (tarjetas + IA).
 /// Muestra primero materias en chips horizontales y luego los temas en lista.
@@ -21,6 +20,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   late List<Subject> _subjects;
   late Subject _selected;
   late List<Topic> _topics;
+  bool _isSelectionInitialized = false;
 
   static const _bg = Color(0xFF0F172A);
   static const _card = Color(0xFF1E293B);
@@ -39,13 +39,18 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final hiddenSubjects = context.read<LocalStorageService>().loadHiddenSubjects();
-    _subjects = SubjectsRepository.getAllSubjects()
-        .where((s) => !hiddenSubjects.contains(s.id))
-        .toList();
+    final provider = context.watch<SubjectProvider>();
+    _subjects = provider.subjects;
     if (_subjects.isNotEmpty) {
-      _selected = _subjects.first;
-      _topics = SubjectsRepository.getTopicsBySubject(_selected.id);
+      if (!_isSelectionInitialized) {
+        _selected = _subjects.first;
+        _isSelectionInitialized = true;
+      } else {
+        if (!_subjects.any((s) => s.id == _selected.id)) {
+          _selected = _subjects.first;
+        }
+      }
+      _topics = provider.getTopicsBySubject(_selected.id);
     } else {
       _topics = [];
     }
@@ -54,7 +59,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   void _selectSubject(Subject s) {
     setState(() {
       _selected = s;
-      _topics = SubjectsRepository.getTopicsBySubject(s.id);
+      _topics = context.read<SubjectProvider>().getTopicsBySubject(s.id);
     });
   }
 
@@ -99,9 +104,12 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
-          child: Column(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 650),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+              child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ── SUBTITLE ──
@@ -273,6 +281,8 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
           ),
         ),
       ),
-    );
-  }
+    ),
+    ),
+  );
+}
 }

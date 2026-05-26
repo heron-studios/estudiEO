@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
-import 'package:learn/data/subjects_repository.dart';
-import 'package:learn/models/question.dart';
+import 'package:learn/providers/subject_provider.dart';
 
 class SrsReviewScreen extends StatefulWidget {
   const SrsReviewScreen({super.key});
@@ -14,8 +13,6 @@ class SrsReviewScreen extends StatefulWidget {
 class _SrsReviewScreenState extends State<SrsReviewScreen> {
   late List<String> _reviewQueue = [];
   int _currentIndex = 0;
-  bool _answered = false;
-  int? _selectedIndex;
 
   static const _bg = Color(0xFF0F172A);
   static const _cardBg = Color(0xFF1E293B);
@@ -23,7 +20,9 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
   static const _text = Color(0xFFF1F5F9);
   static const _muted = Color(0xFF94A3B8);
   static const _green = Color(0xFF4ADE80);
-  static const _red = Color(0xFFF87171);
+  static const _blue = Color(0xFF3B82F6);
+
+  bool _showAnswer = false;
 
   @override
   void didChangeDependencies() {
@@ -42,42 +41,119 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     });
   }
 
-  void _onOptionSelected(int index, Question question) async {
-    if (_answered) return;
+  // Mini-Quiz tracking
+  int _cardsReviewedInBatch = 0;
+  final List<String> _batchQuestionIds = [];
 
-    setState(() {
-      _answered = true;
-      _selectedIndex = index;
-    });
-
-    final isCorrect = index == question.correctAnswer;
-    
-    // Process answer in background
-    context.read<SrsProvider>().processAnswer(
-      question.id,
-      question.topicId,
-      isCorrect,
-    );
-
-    // Wait a moment so the user sees the correct/incorrect color
-    await Future.delayed(const Duration(milliseconds: 1000));
-
+  void _nextCard() async {
     if (!mounted) return;
 
-    if (_currentIndex < _reviewQueue.length - 1) {
+    final questionId = _reviewQueue[_currentIndex];
+    _batchQuestionIds.add(questionId);
+    _cardsReviewedInBatch++;
+
+    if (_cardsReviewedInBatch >= 20) {
+      _showMiniQuizPrompt();
+    } else if (_currentIndex < _reviewQueue.length - 1) {
       setState(() {
         _currentIndex++;
-        _answered = false;
-        _selectedIndex = null;
+        _showAnswer = false;
       });
     } else {
-      _showCompletion();
+      // If we finished the queue but haven't reached 20
+      if (_cardsReviewedInBatch > 0) {
+        _showMiniQuizPrompt();
+      } else {
+        _showCompletion();
+      }
     }
   }
 
+  void _showMiniQuizPrompt() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: _cardBg,
+          title: const Text('¡Has revisado 20 tarjetas!', style: TextStyle(color: _text)),
+          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: _muted)),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Close dialog
+                final batch = List<String>.from(_batchQuestionIds);
+                _cardsReviewedInBatch = 0;
+                _batchQuestionIds.clear();
+                
+                Navigator.pushNamed(
+                  context, 
+                  '/srs-mini-quiz',
+                  arguments: batch,
+                ).then((didPass) {
+                  if (!mounted) return;
+                  // After returning from mini quiz, didPass indicates if they passed
+                  final passed = (didPass == true);
+                  if (passed) {
+                    if (_currentIndex < _reviewQueue.length - 1) {
+                      setState(() {
+                        _currentIndex++;
+                        _showAnswer = false;
+                      });
+                    } else {
+                      _showCompletion();
+                    }
+                  } else {
+                    final batchSize = batch.length;
+                    setState(() {
+                      _currentIndex = _currentIndex - batchSize + 1;
+                      _showAnswer = false;
+                    });
+                    
+                    // Show explanation dialog
+                    if (context.mounted) {
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          backgroundColor: _cardBg,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          title: const Row(
+                            children: [
+                              Icon(Icons.warning_amber_rounded, color: Colors.amber),
+                              SizedBox(width: 8),
+                              Text('Repetir Repaso', style: TextStyle(color: _text)),
+                            ],
+                          ),
+                          content: Text(
+                            'Debido a que el Modo Estricto está activo y no obtuviste una nota mayor a 11, debes repasar nuevamente este grupo de $batchSize tarjetas.',
+                            style: const TextStyle(color: _muted),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(ctx),
+                              child: const Text('Entendido', style: TextStyle(color: _blue)),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  }
+                });
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: _green, foregroundColor: _bg),
+              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+          ],
+        );
+      }
+    );
+  }
+
   void _showCompletion() {
+    if (!mounted) return;
+    final messenger = ScaffoldMessenger.of(context);
     Navigator.pop(context); // Go back to Home
-    ScaffoldMessenger.of(context).showSnackBar(
+    messenger.showSnackBar(
       SnackBar(
         content: const Text('¡Revisión completada! Has repasado tus tarjetas.',
             style: TextStyle(fontWeight: FontWeight.bold)),
@@ -119,7 +195,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     }
 
     final questionId = _reviewQueue[_currentIndex];
-    final question = SubjectsRepository.getQuestion(questionId);
+    final question = context.read<SubjectProvider>().getQuestion(questionId);
 
     if (question == null) {
       return Scaffold(
@@ -158,11 +234,14 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 650),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
               // Progress Bar
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
@@ -177,7 +256,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
 
               // Question Text
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Center(
                   child: SingleChildScrollView(
                     child: Text(
@@ -185,7 +264,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: _text,
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.w600,
                         height: 1.4,
                       ),
@@ -196,108 +275,80 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
 
               const SizedBox(height: 24),
 
-              // Options
+              // Answer Area
               Expanded(
-                flex: 6,
-                child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: question.options.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
-                  itemBuilder: (context, index) {
-                    final isCorrect = index == question.correctAnswer;
-                    final isSelected = index == _selectedIndex;
-
-                    Color tileColor = _cardBg;
-                    Color borderColor = _border;
-                    Color textColor = _text;
-
-                    if (_answered) {
-                      if (isCorrect) {
-                        tileColor = _green.withValues(alpha: 0.15);
-                        borderColor = _green;
-                        textColor = _green;
-                      } else if (isSelected && !isCorrect) {
-                        tileColor = _red.withValues(alpha: 0.15);
-                        borderColor = _red;
-                        textColor = _red;
-                      }
-                    }
-
-                    return Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => _onOptionSelected(index, question),
-                        borderRadius: BorderRadius.circular(16),
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          padding: const EdgeInsets.all(18),
-                          decoration: BoxDecoration(
-                            color: tileColor,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: borderColor, width: 1.5),
+                flex: 5,
+                child: _showAnswer
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(24),
+                              decoration: BoxDecoration(
+                                color: _green.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(color: _green, width: 2),
+                              ),
+                              child: Center(
+                                child: SingleChildScrollView(
+                                  child: Text(
+                                    question.options[question.correctAnswer],
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      color: _green,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 28,
-                                height: 28,
-                                decoration: BoxDecoration(
-                                  color: _answered
-                                      ? (isCorrect
-                                          ? _green
-                                          : (isSelected ? _red : _cardBg))
-                                      : _cardBg,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: _answered
-                                        ? (isCorrect
-                                            ? _green
-                                            : (isSelected ? _red : _border))
-                                        : _border,
-                                  ),
-                                ),
-                                child: Center(
-                                  child: _answered && (isCorrect || isSelected)
-                                      ? Icon(
-                                          isCorrect
-                                              ? Icons.check
-                                              : Icons.close,
-                                          size: 16,
-                                          color: _bg,
-                                        )
-                                      : Text(
-                                          String.fromCharCode(65 + index), // A, B, C...
-                                          style: TextStyle(
-                                            color: _muted,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                ),
-                              ),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                child: Text(
-                                  question.options[index],
-                                  style: TextStyle(
-                                    color: textColor,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: _nextCard,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: _blue,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                            ),
+                            child: const Text('Siguiente', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          )
+                        ],
+                      )
+                    : GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _showAnswer = true;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: _cardBg,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: _border, width: 1.5),
+                          ),
+                          child: const Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.touch_app, color: _muted, size: 48),
+                                SizedBox(height: 16),
+                                Text('Toca para ver la respuesta', style: TextStyle(color: _muted, fontSize: 18)),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    );
-                  },
-                ),
               ),
             ],
           ),
         ),
       ),
-    );
-  }
+    ),
+    ),
+  );
+}
 }

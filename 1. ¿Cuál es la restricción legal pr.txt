@@ -1,0 +1,656 @@
+**1. ¿Cuál es la restricción legal primordial que diferencia y caracteriza a las Áreas de Uso Indirecto dentro del SINANPE?**
+A) Permiten la extracción forestal únicamente a comunidades nativas.
+B) Son zonas de protección intangible donde no se permite la extracción de recursos naturales ni modificaciones del ambiente.
+C) Autorizan el aprovechamiento comercial exclusivo de recursos no maderables.
+D) Permiten asentamientos humanos temporales para minería artesanal formalizada.
+**Respuesta correcta:** B
+**Contexto:** Las áreas de uso indirecto (intangibles) prohíben la extracción y alteración del ecosistema, admitiendo solo investigación, educación y turismo estrictamente regulado.
+
+**2. A diferencia del uso intangible, las Áreas de Uso Directo permiten el aprovechamiento. ¿Bajo qué condición técnico-legal se debe realizar esta extracción de recursos naturales?**
+A) Mediante un permiso verbal emitido por el curaca o alcalde provincial.
+B) A través de concesiones a perpetuidad otorgadas por municipalidades.
+C) Prioritariamente por poblaciones locales, bajo los lineamientos de un Plan de Manejo aprobado y supervisado por la autoridad competente.
+D) Sin ninguna restricción, siempre que la actividad se realice fuera de la zona arqueológica.
+**Respuesta correcta:** C
+**Contexto:** En estas áreas tangibles, el uso de recursos debe garantizar la sostenibilidad y basarse en Planes de Manejo aprobados por el Estado para beneficiar a las poblaciones locales.
+
+**3. Identifique la alternativa que agrupa EXCLUSIVAMENTE a todas las categorías establecidas como Áreas de Uso Indirecto en la legislación peruana:**
+A) Reservas Nacionales, Bosques de Protección y Zonas Reservadas.
+B) Parques Nacionales, Reservas Comunales y Santuarios Nacionales.
+C) Reservas Paisajísticas, Refugios de Vida Silvestre y Cotos de Caza.
+D) Parques Nacionales, Santuarios Nacionales y Santuarios Históricos.
+**Respuesta correcta:** D
+**Contexto:** Según la zonificación del SINANPE, solo existen tres categorías de protección intangible y uso indirecto: Parques Nacionales, Santuarios Nacionales y Santuarios Históricos.
+
+**4. Dentro de las Áreas de Uso Directo, ¿qué categoría tiene como objetivo específico la conservación de la flora y fauna en beneficio directo de las poblaciones rurales o nativas vecinas, bajo un modelo de cogestión?**
+A) Reserva Nacional.
+B) Reserva Comunal.
+C) Bosque de Protección.
+D) Refugio de Vida Silvestre.
+**Respuesta correcta:** B
+**Contexto:** Las Reservas Comunales (ej. Amarakaeri o El Sira) se establecen para proteger territorios tradicionales y beneficiar a las poblaciones indígenas y rurales aledañas.
+
+**5. ¿Cuál de las siguientes premisas define correctamente a un Parque Nacional?**
+A) Área de uso directo donde se prioriza la extracción maderable controlada.
+B) Muestra representativa de la diversidad natural, que protege con carácter intangible la integridad ecológica de uno o más ecosistemas y procesos evolutivos.
+C) Territorio exclusivo para el desarrollo de centrales hidroeléctricas.
+D) Área transitoria que espera estudios biológicos para definir su categorización final.
+**Respuesta correcta:** B
+**Contexto:** Los Parques Nacionales son áreas de uso indirecto y gran extensión que salvaguardan la diversidad biológica, paisajística y evolutiva en su estado natural primitivo.
+
+**6. ¿Qué criterio fundamental diferencia a un Santuario Histórico de un Santuario Nacional?**
+A) El Santuario Histórico es de uso directo, mientras que el Nacional es indirecto.
+B) El Santuario Histórico protege ecosistemas acuáticos, y el Nacional, ecosistemas terrestres.
+C) El Santuario Histórico protege espacios que constituyen el entorno de sitios arqueológicos o escenarios donde ocurrieron hechos gloriosos de la historia nacional.
+D) El Santuario Nacional permite asentamientos poblacionales y el Histórico no.
+**Respuesta correcta:** C
+**Contexto:** Mientras un Santuario Nacional protege una especie o formación geológica, el Santuario Histórico protege la naturaleza que rodea monumentos o lugares de eventos históricos.
+
+**7. Dentro de la clasificación del SINANPE, ¿qué estatus jurídico y técnico posee una "Zona Reservada"?**
+A) Área exclusiva para el Ministerio de Defensa y maniobras militares.
+B) Área que reúne condiciones para ser ANP, pero que tiene un estatus transitorio mientras se realizan estudios para definir su categoría definitiva.
+C) Territorio destinado a la reubicación de pueblos indígenas afectados por el clima.
+D) Área de uso indirecto perpetuo equivalente a un Parque Nacional.
+**Respuesta correcta:** B
+**Contexto:** Las Zonas Reservadas poseen un reconocimiento legal temporal mientras se ejecutan investigaciones que determinen si serán áreas de uso directo o indirecto.
+
+**8. ¿Qué institución pública ejerce la rectoría como autoridad técnico-normativa del Sistema Nacional de Áreas Naturales Protegidas por el Estado (SINANPE)?**
+A) SENACE.
+B) OEFA (Organismo de Evaluación y Fiscalización Ambiental).
+C) INRENA (Instituto Nacional de Recursos Naturales).
+D) SERNANP (Servicio Nacional de Áreas Naturales Protegidas por el Estado).
+**Respuesta correcta:** D
+**Contexto:** Adscrito al Ministerio del Ambiente, el SERNANP es el ente rector responsable de dirigir, administrar y normar todo el sistema de áreas protegidas.
+
+**9. Creado en 1961 para proteger la colonia de guácharos y flora andina, es reconocido históricamente como el primer Parque Nacional establecido en el Perú. ¿A cuál nos referimos?**
+A) Parque Nacional de Cutervo.
+B) Parque Nacional Huascarán.
+C) Parque Nacional del Manu.
+D) Parque Nacional Cerros de Amotape.
+**Respuesta correcta:** A
+**Contexto:** Ubicado en la región Cajamarca, Cutervo ostenta el título de ser el área natural protegida más antigua (el primer parque nacional) del país.
+
+**10. El Santuario Histórico de Machu Picchu es el ANP más visitado del país. ¿Qué tipo de valoración ostenta por parte de la UNESCO y el SINANPE?**
+A) Únicamente como Patrimonio Cultural Inmaterial.
+B) Exclusivamente como santuario de orquídeas andinas.
+C) Como un Patrimonio Mundial Mixto (Cultural y Natural), pues resguarda la arquitectura inca y la vasta biodiversidad de la ceja de selva.
+D) Como una Reserva de la Biósfera marina.
+**Respuesta correcta:** C
+**Contexto:** Machu Picchu posee la máxima categoría mixta al proteger tanto los monumentos arqueológicos como su espectacular e intacto ecosistema de bosques nubosos.
+
+**11. El Parque Nacional Huascarán, en la región Áncash, protege un ecosistema a gran escala. ¿Cuál es su principal valor ecológico a nivel mundial?**
+A) Albergar el desierto más árido del mundo.
+B) Proteger la Cordillera Blanca, que es el sistema de nevados y glaciares tropicales más alto y extenso del planeta.
+C) Resguardar la cueva calcárea más profunda de América.
+D) Constituir la mayor reserva de bosques de manglar del Pacífico Sur.
+**Respuesta correcta:** B
+**Contexto:** Este parque (área de uso indirecto) es mundialmente vital por proteger glaciares, lagunas altoandinas y ecosistemas en la cordillera tropical más elevada.
+
+**12. ¿Qué formación geológica y atractivo natural son los más representativos del Parque Nacional Tingo María en Huánuco?**
+A) Las pirámides truncas de arcilla y los bosques de algarrobo.
+B) La "Bella Durmiente" (cadena montañosa) y el complejo sistema kárstico subterráneo de la "Cueva de las Lechuzas".
+C) El cañón fluvial más profundo de la selva central.
+D) Montes submarinos y arrecifes de coral.
+**Respuesta correcta:** B
+**Contexto:** Tingo María protege el paisaje de selva alta dominado por la figura de la Bella Durmiente y la cueva habitada por murciélagos y guácharos.
+
+**13. En Ayacucho existe un Área de Uso Directo clave para la conservación y aprovechamiento sostenible de un camélido silvestre mediante los tradicionales "chacos". ¿A qué ANP nos referimos?**
+A) Reserva Nacional del Titicaca.
+B) Reserva Nacional Pampa Galeras Bárbara D'Achille.
+C) Reserva Nacional Salinas y Aguada Blanca.
+D) Santuario Nacional Megantoni.
+**Respuesta correcta:** B
+**Contexto:** Pampa Galeras es la reserva nacional más emblemática dedicada a la protección de la vicuña andina y el manejo sostenible de su fibra.
+
+**14. Considerada la reserva nacional de mayor extensión en el Perú (Loreto), conocida como "el bosque de los espejos". ¿Qué ecosistema primordial protege?**
+A) Bosques de neblina interandinos.
+B) Páramos arbustivos ecuatoriales.
+C) Humedales y extensos bosques inundables (várzeas) en la cuenca de los ríos Marañón y Ucayali.
+D) Lomas costeras y vegetación de laderas.
+**Respuesta correcta:** C
+**Contexto:** La Reserva Nacional Pacaya Samiria resguarda selva baja inundable, con especies amenazadas como el delfín rosado y el paiche.
+
+**15. ¿Por qué la Reserva Nacional de Paracas es crítica tanto para la ecología marina como para la economía del país?**
+A) Es un área intangible donde se prohíbe el turismo y la investigación científica.
+B) Resguarda solo formaciones rocosas y geoglifos de culturas antiguas.
+C) Protege ecosistemas pelágicos profundos de la dorsal oceánica continental.
+D) Conserva ecosistemas desértico-costeros y una altísima diversidad biológica marina indispensable para los ciclos pesqueros y especies guaneras.
+**Respuesta correcta:** D
+**Contexto:** Paracas es un área de uso directo que protege flora y fauna de la Corriente de Humboldt, asegurando zonas de cría para la pesca artesanal e industrial.
+
+**16. Recientemente creada como área protegida pelágica, marca un hito en la geopolítica de conservación marina del Perú. ¿De qué Reserva Nacional se trata?**
+A) Reserva Nacional Illescas.
+B) Reserva Nacional San Fernando.
+C) Reserva Nacional Sistema de Islas, Islotes y Puntas Guaneras.
+D) Reserva Nacional Dorsal de Nasca.
+**Respuesta correcta:** D
+**Contexto:** La Dorsal de Nasca es la primera ANP netamente oceánica, protegiendo una cadena de montes submarinos que albergan especies de aguas profundas y migratorias.
+
+**17. Ubicado en el departamento de Tumbes, existe un Área de Uso Indirecto fundamental para el ecosistema marino-costero del norte. ¿Cuál es su principal valor ecológico?**
+A) Es el refugio más grande de lobos marinos chuscos en aguas cálidas.
+B) Constituye la única muestra representativa del ecosistema de manglar en Perú, siendo sitio de reproducción de moluscos, crustáceos y refugio de aves.
+C) Alberga bosques de coníferas adaptados al desierto de Sechura.
+D) Es la última reserva silvestre de vicuñas de la costa norte.
+**Respuesta correcta:** B
+**Contexto:** El Santuario Nacional Los Manglares de Tumbes protege especies como el mangle rojo, blanco y salado, esenciales para la cría de la fauna hidrobiológica.
+
+**18. ¿Qué formación natural es el principal atractivo geológico y motivo de conservación del Santuario Nacional de Huayllay en la región Pasco?**
+A) Un gigantesco "bosque de piedras", esculpido durante milenios por procesos glaciares, hídricos y eólicos en la meseta de Bombón.
+B) Un volcán extinto con lagos de azufre.
+C) Dunas de arena blanca que superan los mil metros de altura.
+D) El cañón de mayor profundidad en América del Sur.
+**Respuesta correcta:** A
+**Contexto:** Huayllay destaca por poseer impresionantes farallones y rocas esculpidas naturalmente que forman figuras escultóricas de animales y hombres.
+
+**19. El Santuario Histórico Bosque de Pómac (Lambayeque) no solo protege el endémico bosque seco ecuatorial. ¿Qué valioso componente arqueológico alberga en su interior?**
+A) Las Líneas y geoglifos de Nasca y Palpa.
+B) El Templo de las Manos Cruzadas de Kotosh.
+C) Decenas de pirámides (huacas) pertenecientes a la cultura preinca Sicán, inmersas entre algarrobos milenarios.
+D) El complejo monumental de Kuélap.
+**Respuesta correcta:** C
+**Contexto:** Pómac resguarda el epicentro histórico de la cultura Lambayeque o Sicán (famosa por el Señor de Sicán y la orfebrería de oro) dentro de un extenso bosque de algarrobos.
+
+**20. La Reserva Nacional de Lachay (Lima) protege un ecosistema costero altamente estacional y frágil. ¿A qué ecosistema en específico se refiere?**
+A) Lomas costeras, dependientes de las densas neblinas invernales del Pacífico.
+B) Esteros intermareales de agua salobre.
+C) Bosque tropical del Pacífico peruano.
+D) Sabana de palmeras.
+**Respuesta correcta:** A
+**Contexto:** Lachay funciona como un oasis de vida o "lomas" en medio del desierto, reverdeciendo exclusivamente durante el invierno gracias a la humedad de la niebla oceánica.
+
+**21. Según el Plan Director de las ANP y su supervisión, ¿qué herramienta de gestión permite medir anualmente el grado de organización, inclusión y funcionamiento participativo del Comité de Gestión?**
+A) Matriz SMART.
+B) Indimapa.
+C) Radar de la Participación.
+D) Alerta Temprana de Deforestación (ATD).
+**Respuesta correcta:** C
+**Contexto:** El "Radar de la Participación" es el instrumento de análisis del SERNANP para evaluar cómo interactúan las comunidades y los actores estratégicos en cada ANP.
+
+**22. Para monitorear las amenazas antrópicas contra la Amazonía (como pérdida de bosque), el SERNANP utiliza reportes de teledetección denominados ATD. ¿Qué significan estas siglas?**
+A) Áreas Tangibles de Desarrollo.
+B) Alertas Tempranas de Deforestación.
+C) Análisis de Tectónica y Desastres.
+D) Asociación de Turismo Dirigido.
+**Respuesta correcta:** B
+**Contexto:** Las Alertas Tempranas de Deforestación (ATD) permiten vigilar los índices de deforestación por tala e invasiones, siendo herramientas críticas de tecnología satelital.
+
+**23. El Perú cuenta con Santuarios Históricos que protegen escenarios de batallas decisivas. ¿En qué región se encuentra el S.H. de Chacamarca y qué hecho glorioso conmemora?**
+A) Ayacucho - La Batalla de Ayacucho y firma de capitulación.
+B) La Libertad - La Batalla de Huamachuco.
+C) Junín - La Batalla de Junín (conocida como la batalla de sables o "sin humo").
+D) Arequipa - El combate de La Encañada.
+**Respuesta correcta:** C
+**Contexto:** El S.H. de Chacamarca, en la meseta de Bombón (Junín), preserva los pampas de la histórica batalla a arma blanca librada por los Húsares de Junín en 1824.
+
+**24. Dentro de las Áreas de Uso Directo, ¿qué función específica tienen los "Cotos de Caza" (por ejemplo, El Angolo en Piura)?**
+A) Zonas intangibles para evitar cualquier alteración humana y cacería.
+B) Conservación de cuencas hidrográficas y cabeceras de ríos.
+C) Áreas destinadas al manejo sostenible de fauna silvestre mediante la práctica controlada de la caza deportiva.
+D) Granjas estatales para la domesticación de felinos andinos.
+**Respuesta correcta:** C
+**Contexto:** Los Cotos de Caza regulan la extracción cinegética (caza deportiva de especies como el venado de cola blanca) bajo estrictos estudios de capacidad y manejo.
+
+**25. El "Indimapa" es una métrica empleada en los procesos de auditoría del SERNANP. ¿Qué evalúa concretamente este indicador respecto al SINANPE?**
+A) Evalúa la calidad de la pavimentación de los caminos de penetración del MTC.
+B) Evalúa la pureza del recurso hídrico en cuencas de uso minero.
+C) Mide la fluctuación poblacional de mamíferos marinos anualmente.
+D) Evalúa el Índice de Implementación y Gestión de las ANP (recursos, personal, legalidad, planes maestros).
+**Respuesta correcta:** D
+**Contexto:** El Indimapa determina si el grado de implementación de una ANP es "bajo, medio o alto" evaluando infraestructura, presupuesto, personal y ordenamiento territorial.
+
+**26. En la región La Libertad existen dos áreas protegidas adyacentes denominadas Calipuy. ¿Qué protegen específicamente el Santuario Nacional y la Reserva Nacional de Calipuy, de manera respectiva?**
+A) El Santuario protege formaciones de bosque seco ecuatorial y la Reserva protege lobos marinos.
+B) El Santuario protege los imponentes rodales de la Puya Raimondi y la Reserva resguarda el último gran relicto de guanacos silvestres de la región.
+C) El Santuario protege cañones kársticos y la Reserva protege al oso de anteojos.
+D) Ambas protegen exclusivamente ecosistemas glaciares andinos.
+**Respuesta correcta:** B
+**Contexto:** Mientras el Santuario Nacional (uso indirecto) protege una enorme inflorescencia vegetal andina (Puya Raimondi), la Reserva Nacional (uso directo) cuida la fauna, destacando el guanaco.
+
+**27. ¿Qué documento técnico de planificación a largo plazo es indispensable (e instituido por el SERNANP) para establecer la zonificación de un ANP y las estrategias generales de su gestión?**
+A) Reglamento de Uso Turístico.
+B) Plan de Cierre Ambiental.
+C) El Plan Maestro.
+D) El Estudio de Impacto Vial y Logístico.
+**Respuesta correcta:** C
+**Contexto:** El Plan Maestro es el instrumento conceptual y estratégico de nivel máximo para un ANP, el cual es revisado periódicamente y define la zonificación.
+
+**28. ¿Qué objetivo técnico primario define la creación de un "Bosque de Protección" (ej. San Matías - San Carlos)?**
+A) Asegurar de forma perpetua los terrenos para comunidades amazónicas desplazadas.
+B) Establecer zoológicos de investigación biomédica y botánica.
+C) Fomentar la industria maderera mecanizada y la agricultura intensiva.
+D) Garantizar la protección de cuencas altas o colectoras, conservación de riberas y mitigar la erosión en suelos frágiles.
+**Respuesta correcta:** D
+**Contexto:** Esta categoría de uso directo tiene el fin supremo de resguardar el ciclo hidrológico y la estabilidad topográfica mediante el mantenimiento de la cobertura vegetal intacta.
+
+**29. En Puno, una Reserva Nacional de uso directo y reconocida internacionalmente como sitio RAMSAR, protege ecosistemas lacustres, humedales altiplánicos y totorales. ¿Qué ANP es?**
+A) Reserva Nacional de Junín.
+B) Santuario Nacional Lagunas de Mejía.
+C) Reserva Nacional del Titicaca.
+D) Santuario Nacional de Ampay.
+**Respuesta correcta:** C
+**Contexto:** La Reserva Nacional del Titicaca es fundamental por sus humedales, totorales y enorme biodiversidad de aves acuáticas, siendo vital también para poblaciones locales.
+
+**30. La Meta 11 de Aichi (del Convenio de Diversidad Biológica) exige no solo que los países delimiten áreas protegidas terrestres, sino que estas garanticen procesos evolutivos conformando "Sistemas de áreas protegidas...":**
+A) "...ecológicamente representativos y bien conectados".
+B) "...financiados 100% por hidrocarburos privados".
+C) "...con estricto aislamiento humano en sus zonas de amortiguamiento".
+D) "...destinados exclusivamente al turismo internacional".
+**Respuesta correcta:** A
+**Contexto:** La Meta 11 de Aichi prioriza que las áreas no funcionen como islas, sino que mantengan conectividad ecológica (corredores de conservación) y eficacia biológica integral.
+### SECCIÓN I: PROCESO DE HOMINIZACIÓN
+
+**1. ¿Qué factor ecológico fue decisivo para impulsar la marcha bípeda en los primeros homínidos africanos?**
+A) El descenso de las temperaturas y la aparición de glaciares.
+B) La aridificación que redujo los bosques y expandió la sabana abierta.
+C) Las inundaciones masivas en los grandes valles fluviales.
+D) La extinción total de los grandes felinos.
+**Respuesta correcta:** B
+**Contexto:** La reducción de los bosques obligó a los antecesores a desplazarse por terrenos abiertos, lo que favoreció la marcha bípeda para su supervivencia.
+
+**2. ¿Qué homínido es reconocido como el primero en fabricar sistemáticamente herramientas líticas gracias al perfeccionamiento de la pinza del pulgar?**
+A) *Australopithecus afarensis*
+B) *Homo neanderthalensis*
+C) *Homo habilis*
+D) *Homo antecessor*
+**Respuesta correcta:** C
+**Contexto:** La versatilidad manual y el desarrollo de la pinza del pulgar permitieron al *Homo habilis* crear herramientas líticas para procesar alimentos.
+
+**3. El control del fuego por el *Homo erectus* tuvo un profundo impacto biológico en el proceso evolutivo. ¿Cuál fue su consecuencia anatómica más importante?**
+A) El oscurecimiento inmediato de la pigmentación de la piel.
+B) El aumento del prognatismo maxilar.
+C) La facilitación de la digestión que permitió destinar mayor energía al desarrollo cerebral.
+D) La pérdida total del vello corporal en menos de mil años.
+**Respuesta correcta:** C
+**Contexto:** El paso a una dieta cocinada con fuego facilitó la digestión y aumentó los nutrientes, liberando energía metabólica indispensable para la encefalización.
+
+**4. ¿Qué concepto explica la retención de características juveniles en los humanos adultos y su impacto en el aprendizaje?**
+A) Prognatismo
+B) Bipedismo
+C) Neotenia
+D) Encefalización
+**Respuesta correcta:** C
+**Contexto:** La neotenia permite un desarrollo postnatal prolongado, extendiendo la dependencia infantil y favoreciendo la plasticidad cerebral y el aprendizaje social.
+
+**5. ¿Qué especie fue la primera en salir del continente africano y colonizar territorios en Asia y Europa?**
+A) *Homo sapiens*
+B) *Homo erectus*
+C) *Australopithecus africanus*
+D) *Homo habilis*
+**Respuesta correcta:** B
+**Contexto:** El *Homo erectus* fue el primer homínido documentado en migrar fuera de África para ocupar y adaptarse a otros continentes.
+
+**6. De acuerdo con las investigaciones en Aquitania, ¿qué ventaja determinó la supremacía del *Homo sapiens* sobre el *Neanderthalensis*?**
+A) El aislamiento geográfico que los protegió de virus europeos.
+B) Una mayor fortaleza física y resistencia al hielo.
+C) El uso exclusivo de herramientas de hierro fundido.
+D) Una mayor capacidad asociativa y comunicativa que permitió un aprovechamiento más eficiente de los recursos.
+**Respuesta correcta:** D
+**Contexto:** Las mayores capacidades sociales y tecnológicas del *Homo sapiens* le permitieron sobrevivir en poblaciones hasta diez veces más grandes que los neandertales.
+
+**7. ¿Qué hito paleontológico se logró en 1974 bajo el liderazgo de Donald Johanson?**
+A) El descubrimiento de los restos de "Lucy", un *Australopithecus afarensis* hembra.
+B) El hallazgo de las primeras cerámicas cocidas en Atapuerca.
+C) La decodificación del genoma neandertal.
+D) El descubrimiento de herramientas olduvayenses intactas.
+**Respuesta correcta:** A
+**Contexto:** Este descubrimiento en Etiopía fue fundamental para comprender la anatomía y el origen temprano de la evolución y locomoción bípeda.
+
+**8. Las modificaciones en la posición de la laringe y el desarrollo del área de Broca fueron indispensables evolutivamente para:**
+A) Desarrollar el sentido de la vista estereoscópica.
+B) Adaptarse a dietas basadas exclusivamente en carne.
+C) El desarrollo de la fonación y el lenguaje articulado.
+D) La alineación de la columna vertebral.
+**Respuesta correcta:** C
+**Contexto:** Estos cambios neuroanatómicos y morfológicos sentaron las bases orgánicas que hicieron posible el lenguaje simbólico complejo en los humanos.
+
+**9. ¿Qué factor explica evolutivamente la baja estatura del *Homo floresiensis* hallado en Indonesia?**
+A) El cruce genético con poblaciones de grandes simios.
+B) Una adaptación termorreguladora a glaciaciones extremas.
+C) Su evolución en un entorno insular con acceso drásticamente limitado a recursos alimenticios.
+D) La ausencia del control del fuego en su cultura.
+**Respuesta correcta:** C
+**Contexto:** Las condiciones de aislamiento geográfico y escasez de alimentos en la isla de Flores forzaron una reducción de su tamaño anatómico a lo largo de las generaciones.
+
+**10. ¿En qué principio fundamental se sustenta la teoría de la evolución biológica propuesta por Charles Darwin en el siglo XIX?**
+A) La generación espontánea de los rasgos.
+B) La selección natural, donde los individuos con características ventajosas tienen más probabilidades de sobrevivir y reproducirse.
+C) La inmutabilidad de las especies a través del tiempo.
+D) El uso y desuso de los órganos por voluntad del individuo.
+**Respuesta correcta:** B
+**Contexto:** La selección natural es el mecanismo gradual propuesto por Darwin que adapta a las especies a las presiones del ambiente a través de los milenios.
+
+---
+
+### SECCIÓN II: TAHUANTINSUYO: EVOLUCIÓN Y ORGANIZACIÓN
+
+**11. El Tahuantinsuyo basó su integración territorial en cuatro regiones. ¿Cuál de los suyos abarcaba la costa norte y la sierra central del actual Perú?**
+A) Collasuyo
+B) Contisuyo
+C) Antisuyo
+D) Chinchaysuyo
+**Respuesta correcta:** D
+**Contexto:** El Chinchaysuyo se extendía por el noroeste desde el Cusco hasta el río Ancasmayo en Colombia, siendo una región vital para el imperio.
+
+**12. Históricamente, ¿qué suceso militar marcó el fin de la confederación cusqueña y el inicio del periodo imperial expansivo en 1438?**
+A) La invasión del señorío Chimú.
+B) La victoria definitiva del inca Pachacútec sobre los chancas.
+C) La alianza pacífica con los reinos Aymaras.
+D) La guerra civil dinástica.
+**Respuesta correcta:** B
+**Contexto:** La victoria de Pachacútec sobre las fuerzas chancas inauguró la fase estatal de máxima expansión y reorganización del Tahuantinsuyo.
+
+**13. En la geografía del altiplano, ¿qué avanzada tecnología agrícola incaica sirvió para regular la temperatura de los cultivos y evitar daños por las heladas?**
+A) Andenes
+B) Acueductos subterráneos
+C) Camellones o Waru Waru
+D) Cochas
+**Respuesta correcta:** C
+**Contexto:** Los camellones eran montículos de tierra rodeados de agua que creaban un microclima estable contra el crudo frío nocturno del Titicaca.
+
+**14. Dentro de la economía y la sociedad inca, ¿qué nombre recibía el trabajo comunal y solidario destinado a obras de beneficio común como puentes y canales?**
+A) Mita
+B) Minca (o minga)
+C) Ayni
+D) Chunca
+**Respuesta correcta:** B
+**Contexto:** La minca era el trabajo colectivo que congregaba a las familias del ayllu para ejecutar obras a favor de la comunidad y del Sol.
+
+**15. ¿Qué grupos poblacionales eran desarraigados de sus etnias originales y enviados por el Estado a colonizar nuevas regiones o asegurar zonas de conflicto?**
+A) Yanaconas
+B) Piñas
+C) Mitimaes (mitmakuna)
+D) Hatun Runa
+**Respuesta correcta:** C
+**Contexto:** Los mitimaes eran trasladados bajo el mando de sus jefes para cumplir tareas productivas y de asimilación cultural en tierras conquistadas.
+
+**16. ¿Qué función desempeñaba el funcionario conocido como "Willaq Umu" dentro del Tahuantinsuyo?**
+A) Jefe militar del Chinchaysuyo.
+B) Gobernador provincial (Apunchic).
+C) Visitador imperial que supervisaba leyes (Tucuy Ricuy).
+D) Sumo sacerdote y máximo responsable de la organización religiosa.
+**Respuesta correcta:** D
+**Contexto:** El Willaq Umu oficiaba las ceremonias más sagradas, decidía los sacrificios y asesoraba directamente al Sapa Inca en el Consejo Imperial.
+
+**17. La administración del imperio dependía de una contabilidad demográfica y estatal de base decimal. ¿Qué funcionario controlaba a un conjunto de 10,000 familias?**
+A) Chunca camayoc
+B) Pachaca camayoc
+C) Huaranga camayoc
+D) Huno camayoc
+**Respuesta correcta:** D
+**Contexto:** El huno camayoc estaba al mando de una vasta jurisdicción de 10,000 familias, supervisando a los huaranga camayocs y los registros censales.
+
+**18. La dinámica del Estado Inca prescindía del dinero, sosteniéndose estructuralmente en dos principios básicos de gestión. ¿Cuáles eran?**
+A) Mercantilismo y Propiedad Privada.
+B) Trueque internacional y Centralismo.
+C) Reciprocidad y Redistribución.
+D) Feudalismo y Esclavitud.
+**Respuesta correcta:** C
+**Contexto:** La reciprocidad operaba como ayuda mutua entre miembros del ayllu, mientras la redistribución era el reparto estatal de los bienes almacenados.
+
+**19. ¿Cuál era el estatus social y la labor impuesta a los denominados "Piñas" institucionalizados durante el imperio tardío?**
+A) Eran la élite sacerdotal del Coricancha.
+B) Eran prisioneros de guerra rebeldes sometidos a trabajos forzados en los cocales de la selva.
+C) Constituían la guardia personal del Inca proveniente de los Cañaris.
+D) Eran mensajeros jóvenes especializados en recorrer el Qhapaq Ñan.
+**Respuesta correcta:** B
+**Contexto:** Los prisioneros que no admitían la derrota pasaban a propiedad del Estado, siendo enviados como castigo a zonas hostiles para la extracción de coca.
+
+**20. ¿Qué acontecimiento debilitó irreversiblemente al Tahuantinsuyo justo en la víspera de la invasión española liderada por Pizarro?**
+A) El terremoto del Cusco que destruyó Sacsayhuamán.
+B) La guerra civil de sucesión entre los hermanos Huáscar y Atahualpa.
+C) La sequía generalizada de cinco años.
+D) La rebelión simultánea de los pueblos amazónicos.
+**Respuesta correcta:** B
+**Contexto:** La muerte de Huayna Cápac desató un conflicto sucesorio entre Huáscar y Atahualpa, fraccionando la cohesión del imperio y facilitando la conquista.
+
+---
+
+### SECCIÓN III: PARQUES, SANTUARIOS Y RESERVAS NACIONALES
+
+**21. Jurídicamente, ¿cuál es la diferencia central entre un Área de Uso Directo y un Área de Uso Indirecto dentro del SINANPE?**
+A) El uso directo es administrado por empresas privadas; el indirecto por ONG internacionales.
+B) El uso indirecto posee carácter intangible y prohíbe la extracción de recursos naturales; el uso directo permite su aprovechamiento sostenible regulado.
+C) Las áreas de uso directo no admiten planes maestros.
+D) Las áreas de uso indirecto solo protegen monumentos de la cultura inca.
+**Respuesta correcta:** B
+**Contexto:** Las áreas de uso indirecto (como Parques Nacionales) prohíben alteraciones del entorno, admitiendo exclusivamente investigación y turismo no consuntivo.
+
+**22. Según las métricas globales aplicadas en Perú, ¿qué herramienta de tecnología satelital provee el MINAM al Sernanp para monitorear la pérdida de hábitat amazónico?**
+A) Radares de la Participación (RP).
+B) Alertas Tempranas de Deforestación (ATD).
+C) Índice de Gestión (Indimapa).
+D) Drones de inspección urbana.
+**Respuesta correcta:** B
+**Contexto:** Las Alertas Tempranas de Deforestación permiten verificar los polígonos de pérdida de cobertura forestal y actualizar el módulo de efectos antrópicos.
+
+**23. Creado en 1974, fue el primer Santuario Histórico del Perú destinado a conservar el escenario natural de un acontecimiento militar glorioso en la región Junín. ¿A cuál nos referimos?**
+A) Santuario Histórico de la Pampa de Ayacucho.
+B) Santuario Histórico Bosque de Pómac.
+C) Santuario Histórico de Chacamarca.
+D) Santuario Histórico de Machu Picchu.
+**Respuesta correcta:** C
+**Contexto:** Chacamarca protege el campo en la meseta de Bombón donde se libró la Batalla de Junín, siendo la primera área de su categoría en el país.
+
+**24. El Perú es un país megadiverso. Identifique qué Parque Nacional protege la cordillera tropical más elevada y extensa del mundo en la sierra central.**
+A) Parque Nacional del Manu.
+B) Parque Nacional Cerros de Amotape.
+C) Parque Nacional Huascarán.
+D) Parque Nacional Cordillera Azul.
+**Respuesta correcta:** C
+**Contexto:** Ubicado en Áncash, este parque salvaguarda los ecosistemas altoandinos y glaciares de la Cordillera Blanca, además de formaciones florísticas clave.
+
+**25. Para medir integralmente el desempeño y la eficacia del Sistema de Áreas Protegidas, la Contraloría empleó en 2019 una herramienta de análisis que evalúa desde presupuesto hasta investigación. ¿Cómo se denomina?**
+A) Matriz SMART.
+B) Módulo de Efectos Antrópicos.
+C) Índice de Implementación y de Gestión de Áreas Protegidas (Indimapa).
+D) Radar de la Participación.
+**Respuesta correcta:** C
+**Contexto:** El Indimapa clasifica a las ANP en grados de implementación (alto, medio o bajo) en base a la agregación de trece indicadores estratégicos de gestión.
+
+**26. Es el área natural de Uso Directo terrestre más grande del Perú (ubicada en Loreto) y resguarda extensos ecosistemas de bosques inundables, paiches y delfines rosados:**
+A) Reserva Nacional Tambopata.
+B) Reserva Nacional Pacaya Samiria.
+C) Reserva Nacional de Salinas y Aguada Blanca.
+D) Parque Nacional Alto Purús.
+**Respuesta correcta:** B
+**Contexto:** Conocida como el "bosque de los espejos", es la reserva nacional de mayor extensión, albergando una megadiversidad acuática y biológica invaluable.
+
+**27. ¿Qué función de medición de inclusión comunitaria cumple la herramienta "Radar de la Participación" en la gestión de una ANP?**
+A) Mide el nivel de deforestación en áreas reservadas.
+B) Cuantifica exclusivamente el presupuesto asignado por canon.
+C) Mide semestralmente la organización, estructura y desempeño de los actores estratégicos y del Comité de Gestión.
+D) Supervisa la cantidad de turistas extranjeros anuales.
+**Respuesta correcta:** C
+**Contexto:** El Radar evalúa la dinámica de participación social bajo el principio de inclusión, identificando oportunidades de mejora en la cogestión del área.
+
+**28. La geografía norteña del Perú cuenta con un ecosistema único costero, vital para peces y crustáceos, categorizado como Santuario Nacional. ¿Cuál es?**
+A) Santuario Nacional Manglares de Tumbes.
+B) Santuario Nacional de Huayllay.
+C) Santuario Nacional Tabaconas Namballe.
+D) Reserva Nacional Illescas.
+**Respuesta correcta:** A
+**Contexto:** Este santuario protege la única muestra de bosques de mangle en el país, un entorno crucial para aves y especies hidrobiológicas costeras.
+
+**29. En el marco del cumplimiento de la Meta 11 de Aichi en las ANP, ¿qué deficiencia estratégica reportó el Sernanp sobre la gestión del territorio?**
+A) La prohibición total del turismo en el país.
+B) La ausencia de un marco legal, metodológico y de indicadores para desarrollar y medir de manera oficial "Sistemas de Áreas Protegidas Bien Conectadas" (conectividad).
+C) La venta de todas las áreas marinas al sector privado.
+D) El abandono de las áreas arqueológicas.
+**Respuesta correcta:** B
+**Contexto:** Aunque el Plan Director menciona la conectividad, no existen herramientas ni indicadores definidos nacionalmente para medir corredores y redes ecológicas.
+
+**30. Identifique la Reserva Nacional clave para el ODS 14, que protege el hábitat pelágico oceánico profundo del Perú, siendo la primera netamente marítima.**
+A) Reserva Nacional Sistema de Islas, Islotes y Puntas Guaneras.
+B) Reserva Nacional San Fernando.
+C) Reserva Nacional de Paracas.
+D) Reserva Nacional Dorsal de Nasca.
+**Respuesta correcta:** D
+**Contexto:** Esta área fue creada para proteger cadenas de montes submarinos y especies oceánicas migratorias, marcando un hito en la conservación marítima nacional.
+
+---
+
+### SECCIÓN IV: ECOSISTEMAS, TECNOLOGÍA Y DESARROLLO SOSTENIBLE
+
+**31. La aplicación de las Tecnologías de la Información (TIC) en la agricultura peruana ha logrado mitigar el desperdicio de recursos hídricos. ¿En qué porcentaje incrementó la eficiencia agrícola mediante el uso del IoT y sensores?**
+A) 5%
+B) 15%
+C) 50%
+D) 80%
+**Respuesta correcta:** B
+**Contexto:** El empleo de sistemas de monitoreo remoto y tecnología de precisión en la agricultura peruana elevó la eficiencia en el uso del agua en un 15% durante cinco años.
+
+**32. Dentro de la economía nacional, ¿qué tipo de organizaciones peruanas recibieron financiamiento destacado en 2023 por impulsar la economía circular y la sostenibilidad?**
+A) Las empresas extractivas de hidrocarburos tradicionales.
+B) Más de 50 start-ups enfocadas en tecnología climática y sostenibilidad.
+C) Únicamente las entidades financieras del Estado.
+D) Las importadoras de vehículos de combustión.
+**Respuesta correcta:** B
+**Contexto:** Las start-ups juegan un rol crucial en la transición ambiental, recibiendo apoyo financiero en Perú para desarrollar soluciones amigables con el medio ambiente.
+
+**33. La adopción de movilidad limpia es un pilar del desarrollo sostenible urbano. Según la Asociación Automotriz del Perú, ¿cuánto creció el registro de vehículos eléctricos (VE) en el país durante 2023?**
+A) Disminuyó un 10%
+B) Creció un 25%
+C) Creció un 75%
+D) Se mantuvo sin cambios
+**Respuesta correcta:** B
+**Contexto:** Como respuesta a la mitigación de gases de efecto invernadero y la modernización tecnológica, la demanda peruana de vehículos eléctricos se incrementó un 25%.
+
+**34. A nivel mundial y local, la transición energética es una necesidad para alcanzar los ODS. ¿Cuánto invirtió el Perú específicamente en proyectos de energías limpias durante el 2022?**
+A) USD 100 millones.
+B) USD 500 millones.
+C) USD 1200 millones.
+D) USD 32 000 millones.
+**Respuesta correcta:** C
+**Contexto:** La urgencia de alinearse a los Objetivos de Desarrollo Sostenible llevó al Estado y empresas a invertir USD 1200 millones en energías renovables en territorio peruano.
+
+**35. La "Economía Circular" se perfila como un modelo esencial en la tecnología ambiental del futuro. ¿A qué se contrapone conceptualmente este enfoque?**
+A) Al uso de recursos renovables como el viento y el sol.
+B) A las Soluciones Basadas en la Naturaleza (SBN).
+C) Al modelo de producción lineal consistente en "extraer, producir y desechar".
+D) A la aplicación de inteligencia artificial en industrias verdes.
+**Respuesta correcta:** C
+**Contexto:** Frente a la sobreexplotación del modelo lineal, la economía circular asegura la recuperación y reintegración cíclica de los residuos como materias primas.
+
+**36. Dentro de las disciplinas de innovación sostenible, ¿cómo se denomina a la tecnología ambiental que diseña soluciones eficientes imitando las formas y procesos biológicos de la naturaleza?**
+A) Fotocatálisis.
+B) Biomimética.
+C) Ecodiseño.
+D) Agrotecnia de precisión.
+**Respuesta correcta:** B
+**Contexto:** La biomimética permite la creación de bienes y servicios sostenibles reproduciendo las ingeniosas adaptaciones evolutivas halladas en los ecosistemas naturales.
+
+**37. ¿De qué manera la Inteligencia Artificial (IA) y el Aprendizaje Automático benefician directamente al medio ambiente y la gestión de Smart Cities?**
+A) Desalinizando océanos mediante calentamiento láser.
+B) Prediciendo y mitigando desastres naturales, además de optimizar rutas y recursos energéticos urbanos.
+C) Sustituyendo el oxígeno por biometano artificial.
+D) Destruyendo archivos físicos de papel.
+**Respuesta correcta:** B
+**Contexto:** La IA aporta modelos predictivos esenciales para diseñar infraestructuras resilientes y reducir las emisiones a través del manejo inteligente de la logística urbana.
+
+**38. La prevención de la contaminación desde la concepción de un producto es clave hoy en día. ¿Qué concepto tecnológico busca diseñar bienes desde su origen para facilitar la reciclabilidad de sus materiales al final de su vida útil?**
+A) Bioeconomía.
+B) Ecodiseño.
+C) Transición fotovoltaica.
+D) Digitalización extractiva.
+**Respuesta correcta:** B
+**Contexto:** El ecodiseño asegura que, una vez que el producto se vuelve obsoleto, la recuperación y aprovechamiento circular de sus componentes sea máxima.
+
+**39. En relación con las políticas de conservación, ¿cuáles son los dos Objetivos de Desarrollo Sostenible (ODS) de la ONU vinculados directamente y de forma central a las competencias del Sernanp en el Perú?**
+A) ODS 1 (Fin de la pobreza) y ODS 2 (Hambre cero).
+B) ODS 7 (Energía asequible) y ODS 11 (Ciudades sostenibles).
+C) ODS 14 (Vida submarina) y ODS 15 (Vida de ecosistemas terrestres).
+D) ODS 4 (Educación de calidad) y ODS 16 (Paz y justicia).
+**Respuesta correcta:** C
+**Contexto:** Las metas 14.5 (conservación de ecosistemas marino-costeros) y 15.1 (ecosistemas de agua dulce y terrestres) guían las políticas del Sistema de Áreas Protegidas.
+
+**40. A pesar de que la digitalización aporta beneficios verdes, el recambio acelerado de dispositivos plantea un grave impacto global. ¿Cuántas toneladas de desechos electrónicos ("e-waste") se producen mundialmente cada año?**
+A) Cerca de 10 millones de toneladas.
+B) Alrededor de 50 millones de toneladas.
+C) Menos de 1 millón de toneladas.
+D) Más de 500 millones de toneladas.
+**Respuesta correcta:** B
+**Contexto:** La proliferación de equipos tecnológicos sin una correcta disposición final incrementa radicalmente la huella de contaminación por chatarra tecnológica.
+
+---
+
+### SECCIÓN V: REDES VIALES
+
+**41. ¿Qué autoridad asume la rectoría nacional y la competencia exclusiva para dictar normas de jerarquización vial y administrar la Red Vial Nacional?**
+A) La Secretaría de Descentralización de la PCM.
+B) Los Gobiernos Regionales en coordinación mutua.
+C) El Ministerio de Transportes y Comunicaciones (MTC) a través de sus direcciones especializadas.
+D) La Contraloría General de la República.
+**Respuesta correcta:** C
+**Contexto:** El MTC es la única autoridad rectora en materia de transporte. Además, dicta las normas de jerarquización vial a nivel nacional para el SINAC.
+
+**42. Los Ejes Longitudinales peruanos unen las fronteras norte y sur. ¿En qué ubicación geográfica exacta está fijado el Kilómetro "0" de la Longitudinal de la Selva (PE-5)?**
+A) En La Oroya, Junín.
+B) En el Intercambio Vial Santa Anita, Lima.
+C) En el Puente Reither, Chanchamayo, región Junín.
+D) En Iquitos, Loreto.
+**Respuesta correcta:** C
+**Contexto:** La medición longitudinal del país inicia en puntos centrales; para el eje amazónico, el MTC determinó el origen oficial en el Puente Reither.
+
+**43. Al conducir por una carretera observa carteles de color azul, un emblema departamental y códigos como "HV-133" o "AM-102". ¿Qué jerarquía posee esta vía?**
+A) Red Vial Vecinal o Rural.
+B) Red Vial Nacional Transversal.
+C) Ruta Concesionada Panamericana.
+D) Red Vial Departamental o Regional.
+**Respuesta correcta:** D
+**Contexto:** Las vías a cargo de los gobiernos regionales integran las provincias, se mapean en color azul y su numeración obligatoria varía del 100 al 499.
+
+**44. De acuerdo al Reglamento de Jerarquización Vial, ¿qué diseño geométrico es obligatorio en la infraestructura cuando una Ruta Nacional se interseca con una Ruta Departamental?**
+A) Un intercambio vial a desnivel de tres pisos.
+B) Un óvalo.
+C) Una vía de evitamiento confinada.
+D) Un cruce semaforizado simple.
+**Respuesta correcta:** B
+**Contexto:** Por razones de diseño y fluidez logística, la norma del SINAC exige específicamente la construcción de un óvalo para articular ambas jerarquías de red.
+
+**45. Dentro de la codificación oficial "PE" de la Red Vial Nacional del Perú, ¿cómo se diferencia numéricamente a los Ejes Transversales o de penetración frente a los Longitudinales?**
+A) Llevan siempre numeración impar de tres dígitos.
+B) Llevan numeración par y se inician en un punto notable de la longitudinal de la costa.
+C) Contienen letras referentes a la región que cruzan.
+D) Su medición se hace estrictamente de Este a Oeste en todos los casos.
+**Respuesta correcta:** B
+**Contexto:** Los ejes transversales unen costa, sierra y selva, identificándose matemáticamente mediante números pares que parten del eje costero.
+
+**46. Existe una figura técnico-legal denominada "Reclasificación Vial Temporal". ¿Bajo qué supuesto caduca esta medida si la autoridad solicitante no actúa?**
+A) Caduca a los 30 días calendario de publicada.
+B) Pierde vigencia si transcurre más de un (1) año sin que la autoridad haya iniciado o contratado las intervenciones proyectadas.
+C) No caduca nunca, asumiendo la transferencia definitiva automáticamente.
+D) Expiran al cambio del Gobernador Regional respectivo.
+**Respuesta correcta:** B
+**Contexto:** La medida provisional exige que la autoridad cuente con los recursos presupuestales y actúe pronto; de no iniciar la obra en un año, la vía retorna a su dueño original.
+
+**47. El DS 015-2024-MTC redefine infraestructuras clave para la competitividad del país. ¿Qué es un "Corredor Logístico"?**
+A) Una autopista exclusiva para transporte de material peligroso y minero.
+B) Una franja de terreno reservada exclusivamente para ensanches de red férrea.
+C) Una articulación integral (terrestre, multimodal, telecomunicaciones) desde origen a destino para facilitar el traslado eficiente de carga, información y personas.
+D) Las vías de acceso restringido para camiones de alto tonelaje en zonas urbanas.
+**Respuesta correcta:** C
+**Contexto:** El corredor asegura un flujo óptimo, integrando modos de transporte y plataformas de conectividad bajo condiciones competitivas de tiempo y costo.
+
+**48. En la delimitación de una carretera nacional, ¿qué concepto jurídico define a la faja de terreno destinada a la vía actual, sus futuras ampliaciones y áreas de seguridad, cuyo ancho lo establece el MTC?**
+A) Prisma Vial.
+B) Zona de Amortiguamiento.
+C) Plataforma Logística.
+D) Derecho de Vía.
+**Respuesta correcta:** D
+**Contexto:** El Derecho de Vía garantiza el dominio público del terreno, salvaguardando legalmente el espacio contra invasiones e inversiones futuras de infraestructura.
+
+**49. Ante problemas de geodinámica externa o alta contaminación, ¿qué autoridad está facultada para declarar una restricción de tránsito que afecte a la Red Vial Nacional que atraviese el casco urbano de una ciudad?**
+A) La Municipalidad Provincial a través de una Ordenanza.
+B) Exclusivamente el Ministerio de Transportes y Comunicaciones (MTC).
+C) El Gobierno Regional, si tiene plan de desvío.
+D) El SERNANP en coordinación con la Policía Nacional.
+**Respuesta correcta:** B
+**Contexto:** Según la normativa, ninguna autoridad subnacional tiene potestad para limitar el flujo en la Red Nacional, siendo competencia técnica indelegable del MTC.
+
+**50. ¿Con qué frecuencia se aprueba la actualización oficial del Clasificador de Rutas del SINAC, mediante Decreto Supremo propuesto por la DGPPT?**
+A) Cada año, coincidiendo con el presupuesto nacional.
+B) Cada tres (3) años desde su última aprobación.
+C) De forma mensual, mediante Resoluciones Directorales.
+D) Cada cinco (5) años, tras el cambio de gobierno.
+**Respuesta correcta:** B
+**Contexto:** Para mantener la coherencia y el ordenamiento territorial del Sistema Nacional de Carreteras, su instrumento matriz exige esta actualización trienal.

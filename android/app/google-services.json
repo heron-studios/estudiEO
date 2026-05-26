@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "921397124091",
+    "project_id": "estudieo-3405c",
+    "storage_bucket": "estudieo-3405c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921397124091:android:95368d3a49251e1125c95e",
+        "android_client_info": {
+          "package_name": "com.example.learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921397124091-lbefme56tc4u9n3e79hs9fdvjs11fobp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.learn",
+            "certificate_hash": "c4d444e950efc7e06a8ac11c3d292c7b8b081922"
+          }
+        },
+        {
+          "client_id": "921397124091-kr9b9smn52r45643qte4am6269gv07l9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhNMOp0jMbpHUHnQjLa1yqt6UvSPLP-7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921397124091-kr9b9smn52r45643qte4am6269gv07l9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

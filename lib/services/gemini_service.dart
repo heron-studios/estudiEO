@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:learn/config/app_config.dart';
 
 class GeminiService {
-  static const String _apiKey = 'AIzaSyBdUQyyhOBTHDc2Qyk7pqv5iyqn8KcwKUw';
+  static const String _apiKey = AppConfig.geminiApiKey;
   static const String _baseUrl =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 

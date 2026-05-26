@@ -28,11 +28,14 @@ class PremiumScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
               const Icon(
                 Icons.lock_person_rounded,
                 size: 80,
@@ -111,8 +114,10 @@ class PremiumScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
+    ),
+    ),
+  );
+}
 
   Widget _buildBenefitRow(IconData icon, String text) {
     return Row(

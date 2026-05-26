@@ -1,4 +1,4 @@
-class Question {
+﻿class Question {
   final String id;
   final String topicId;
   final String text;

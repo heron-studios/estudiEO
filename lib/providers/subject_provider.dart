@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:learn/data/subjects_repository.dart';
+import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
+import 'package:learn/models/question.dart';
+import 'package:learn/models/learning_level.dart';
+import 'package:learn/services/local_storage_service.dart';
 
 class SubjectProvider extends ChangeNotifier {
+  final LocalStorageService _storage;
   late Subject? _currentSubject;
   late Topic? _currentTopic;
   late List<Subject> _allSubjects;
   List<Subject> _visibleSubjects = [];
 
-  SubjectProvider() {
+  SubjectProvider(this._storage) {
     _allSubjects = SubjectsRepository.getAllSubjects();
-    _visibleSubjects = _allSubjects;
     _currentSubject = null;
     _currentTopic = null;
+    updateVisibleSubjects();
   }
 
   List<Subject> get subjects => _visibleSubjects; // Retorna solo los visibles
+  List<Subject> get allSubjects => _allSubjects;
   Subject? get currentSubject => _currentSubject;
   Topic? get currentTopic => _currentTopic;
 
-  void loadVisibleSubjects(List<String> hiddenSubjectIds) {
+  void updateVisibleSubjects() {
+    final hiddenSubjectIds = _storage.loadHiddenSubjects();
     _visibleSubjects = _allSubjects.where((s) => !hiddenSubjectIds.contains(s.id)).toList();
     notifyListeners();
   }
@@ -49,7 +55,27 @@ class SubjectProvider extends ChangeNotifier {
 
   void reload() {
     _allSubjects = SubjectsRepository.getAllSubjects();
-    _visibleSubjects = _allSubjects;
-    notifyListeners();
+    updateVisibleSubjects();
   }
+
+  // Repository Wrappers to completely decouple UI from static repository
+  Subject? getSubject(String id) => SubjectsRepository.getSubject(id);
+  
+  List<Topic> getTopicsBySubject(String subjectId) => SubjectsRepository.getTopicsBySubject(subjectId);
+  
+  Topic? getTopic(String id) => SubjectsRepository.getTopic(id);
+  
+  List<Question> getQuestionsByTopic(String id) => SubjectsRepository.getQuestionsByTopic(id);
+  
+  List<Question> generateExamQuestions() => SubjectsRepository.generateExamQuestions();
+  
+  List<Question> getAllQuestionsByTopicShuffled(String id) => SubjectsRepository.getAllQuestionsByTopicShuffled(id);
+  
+  Question? getQuestion(String id) => SubjectsRepository.getQuestion(id);
+
+  List<Question> getQuestionsByTopicAndLevel(String id, Dificultad nivel, {int count = 10}) =>
+      SubjectsRepository.getQuestionsByTopicAndLevel(id, nivel, count: count);
+
+  String? getTheoryByTopicAndLevel(String id, Dificultad nivel) =>
+      SubjectsRepository.getTheoryByTopicAndLevel(id, nivel);
 }

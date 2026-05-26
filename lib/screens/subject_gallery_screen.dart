@@ -24,31 +24,47 @@ class SubjectGalleryScreen extends StatelessWidget {
       body: Consumer<SubjectProvider>(
         builder: (context, provider, _) {
           final hiddenSubjects = context.read<LocalStorageService>().loadHiddenSubjects();
-          // We call it after frame or just do it right here if it didn't trigger rebuild
-          // But to avoid "setState or markNeedsBuild during build", we can just do the .where here safely.
-          // Since the user asked to fix the audit: The audit mentioned filtering inside build could scale poorly.
-          // Let's use the provider! We'll just call the provider getter, but how do we initialize it?
-          // We'll just stick to the simplest: reading from the provider that caches it.
-          // Actually, doing the .where in the Provider's getter or doing it here is exactly the same performance.
-          // Let's revert subject_gallery_screen.dart to just get the list that we already filter if we initialize the provider.
-          // Actually, let's keep it simple and just do it in the build method. Filtering 7 items is O(1) in practice.
           final subjects = provider.subjects.where((s) => !hiddenSubjects.contains(s.id)).toList();
+          
+          final screenWidth = MediaQuery.of(context).size.width;
+          
+          int crossAxisCount = 2;
+          double maxContainerWidth = double.infinity;
+          double childAspectRatio = 1.15;
+          
+          if (screenWidth > 1200) {
+            crossAxisCount = 4;
+            maxContainerWidth = 1000;
+          } else if (screenWidth > 850) {
+            crossAxisCount = 3;
+            maxContainerWidth = 800;
+            childAspectRatio = 1.25;
+          } else if (screenWidth > 600) {
+            crossAxisCount = 3;
+            childAspectRatio = 1.15;
+          }
+
           return SafeArea(
             top: false,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-              child: GridView.builder(
-                physics: const AlwaysScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 12,
-                  crossAxisSpacing: 12,
-                  childAspectRatio: 1.0,
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: maxContainerWidth),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                  child: GridView.builder(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                      childAspectRatio: childAspectRatio,
+                    ),
+                    itemCount: subjects.length,
+                    itemBuilder: (context, index) {
+                      return _SubjectCard(subject: subjects[index]);
+                    },
+                  ),
                 ),
-                itemCount: subjects.length,
-                itemBuilder: (context, index) {
-                  return _SubjectCard(subject: subjects[index]);
-                },
               ),
             ),
           );

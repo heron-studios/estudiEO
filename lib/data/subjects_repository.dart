@@ -9,6 +9,7 @@ import 'package:learn/data/subject_data_rm.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
+import 'package:learn/models/learning_level.dart';
 
 class SubjectsRepository {
   static final Map<String, Subject> _subjects = {
@@ -138,6 +139,63 @@ class SubjectsRepository {
     final questions = getQuestionsByTopic(topicId);
     questions.shuffle();
     return questions;
+  }
+
+  /// Obtiene [count] preguntas para el nivel de dificultad dado.
+  ///
+  /// Estrategia Opción A: el pool total del topic se divide en 4 cuartos iguales
+  /// según el nivel (facil=0, medio=1, dificil=2, extremo=3).
+  /// Si hay menos de [count] en ese cuarto, se reciclan las del mismo cuarto
+  /// para completar exactamente [count] preguntas sin repetición inmediata.
+  static List<Question> getQuestionsByTopicAndLevel(
+    String topicId,
+    Dificultad nivel, {
+    int count = 10,
+  }) {
+    // En demo solo se exponen las preguntas ya filtradas
+    final allQuestions = AppConfig.isDemoMode
+        ? getQuestionsByTopic(topicId)
+        : _getRawQuestionsByTopic(topicId);
+
+    if (allQuestions.isEmpty) return [];
+
+    final total = allQuestions.length;
+    final levelIndex = nivel.index2;
+    final chunkSize = (total / 4).ceil();
+
+    final start = (levelIndex * chunkSize).clamp(0, total - 1);
+    final end = ((levelIndex + 1) * chunkSize).clamp(0, total);
+
+    List<Question> chunk = allQuestions.sublist(start, end);
+
+    if (chunk.isEmpty) chunk = List.from(allQuestions);
+
+    // Reciclar para alcanzar exactamente [count] preguntas
+    if (chunk.length >= count) {
+      chunk.shuffle();
+      return chunk.take(count).toList();
+    }
+
+    // Completar con reciclo sin repetición inmediata
+    final result = <Question>[];
+    final source = List<Question>.from(chunk);
+    while (result.length < count) {
+      source.shuffle();
+      for (final q in source) {
+        if (result.length >= count) break;
+        result.add(q);
+      }
+    }
+    return result;
+  }
+
+  /// Obtiene preguntas crudas sin filtro de demo (uso interno para el modo guiado).
+  static List<Question> _getRawQuestionsByTopic(String topicId) {
+    for (final questions in _questionsBySubject.values) {
+      final filtered = questions.where((q) => q.topicId == topicId).toList();
+      if (filtered.isNotEmpty) return filtered;
+    }
+    return [];
   }
 
   /// Obtiene datos de una asignatura completa

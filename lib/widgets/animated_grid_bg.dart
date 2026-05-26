@@ -15,9 +15,8 @@ class AnimatedGridBackground extends StatelessWidget {
         // Background image (Static for performance optimization)
         Transform(
           alignment: Alignment.center,
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001) // perspective
-            ..scale(1.15), // Slight zoom to emulate depth
+          transform: Matrix4.diagonal3Values(1.15, 1.15, 1.0)
+            ..setEntry(3, 2, 0.001), // perspective
           child: Image.asset(
             'assets/images/bg_escuela.jpg',
             fit: BoxFit.cover,

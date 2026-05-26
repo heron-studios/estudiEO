@@ -63,7 +63,21 @@ class SrsEngine {
   /// Obtiene todas las tarjetas que necesitan revisión
   List<SrsCard> getReviewQueue() {
     final cards = _storage.loadSrsCards();
-    final queue = cards.values.where((card) => card.isOverdue).toList();
+    final queue = cards.values.where((card) {
+      if (!card.isOverdue) return false;
+      
+      // Excluir materias/temas específicos de las tarjetas de memoria
+      final isMatematicas = card.topicId.startsWith('mat_'); 
+      final isRM = card.topicId.startsWith('rm_');
+      final isExcludedRV = card.topicId == 'rv_plan'; // Solo excluir Plan de Redacción
+      final isReglasOrtograficas = card.topicId == 'com_t1'; // Excluir Reglas Ortográficas
+      
+      if (isMatematicas || isRM || isExcludedRV || isReglasOrtograficas) {
+        return false;
+      }
+      
+      return true;
+    }).toList();
 
     // Ordenar por urgencia: primero las vencidas, luego por fecha
     queue.sort((a, b) {

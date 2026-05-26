@@ -1,4 +1,4 @@
-enum SrsStatus { newCard, learning, mature, mastered }
+﻿enum SrsStatus { newCard, learning, mature, mastered }
 
 class SrsCard {
   final String questionId;

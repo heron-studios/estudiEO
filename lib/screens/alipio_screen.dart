@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learn/data/subjects_repository.dart';
+import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
+import 'package:learn/providers/subject_provider.dart';
 
 class AlipioScreen extends StatefulWidget {
   final String topicId;
@@ -27,14 +28,13 @@ class _AlipioScreenState extends State<AlipioScreen>
 
   static const _bg = Color(0xFF0F172A);
   static const _card = Color(0xFF1E293B);
-  static const _border = Color(0xFF334155);
   static const _blue = Color(0xFF3B82F6);
   static const _muted = Color(0xFF94A3B8);
 
   @override
   void initState() {
     super.initState();
-    _cards = SubjectsRepository.getQuestionsByTopic(widget.topicId)..shuffle();
+    _cards = context.read<SubjectProvider>().getQuestionsByTopic(widget.topicId)..shuffle();
 
     _flipController = AnimationController(
       vsync: this,
@@ -99,16 +99,19 @@ class _AlipioScreenState extends State<AlipioScreen>
       backgroundColor: _bg,
       appBar: _buildAppBar(),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 650),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
               // Progress bar + counter
               _buildProgress(),
               const SizedBox(height: 12),
 
-              // ── FLASHCARD ──
+              // â”€â”€ FLASHCARD â”€â”€
               Expanded(
                 flex: 8,
                 child: GestureDetector(
@@ -138,14 +141,16 @@ class _AlipioScreenState extends State<AlipioScreen>
 
               const SizedBox(height: 12),
 
-              // ── NAV ROW ──
+              // â”€â”€ NAV ROW â”€â”€
               _buildNavRow(),
             ],
           ),
         ),
       ),
-    );
-  }
+    ),
+    ),
+  );
+}
 
   AppBar _buildAppBar() {
     return AppBar(
@@ -234,12 +239,12 @@ class _AlipioScreenState extends State<AlipioScreen>
             ),
           ),
           const SizedBox(height: 16),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.touch_app, color: _muted, size: 14),
-              const SizedBox(width: 4),
-              const Text('Toca para ver respuesta',
+              Icon(Icons.touch_app, color: _muted, size: 14),
+              SizedBox(width: 4),
+              Text('Toca para ver respuesta',
                   style: TextStyle(color: _muted, fontSize: 11)),
             ],
           ),
@@ -291,12 +296,12 @@ class _AlipioScreenState extends State<AlipioScreen>
             ),
           ),
           const SizedBox(height: 16),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.touch_app, color: Color(0xFF4ADE80), size: 14),
-              const SizedBox(width: 4),
-              const Text('Toca para voltear',
+              Icon(Icons.touch_app, color: Color(0xFF4ADE80), size: 14),
+              SizedBox(width: 4),
+              Text('Toca para voltear',
                   style: TextStyle(color: Color(0xFF4ADE80), fontSize: 11)),
             ],
           ),

@@ -1,4 +1,4 @@
-class Subject {
+﻿class Subject {
   final String id;
   final String name;
   final String color;
@@ -25,7 +25,7 @@ class Subject {
     id: json['id'] as String,
     name: json['name'] as String,
     color: json['color'] as String? ?? '#FF6B6B',
-    icon: json['icon'] as String? ?? '📚',
+    icon: json['icon'] as String? ?? 'ðŸ“š',
     topicIds: List<String>.from(json['topicIds'] as List? ?? []),
   );
 }

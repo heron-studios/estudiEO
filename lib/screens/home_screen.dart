@@ -1,15 +1,28 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:learn/services/local_storage_service.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/screens/alipio_selector_screen.dart';
 import 'package:learn/widgets/animated_grid_bg.dart';
+import 'package:learn/services/auth_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  String _getPaternalSurname(String? fullName) {
+    if (fullName == null || fullName.trim().isEmpty) return 'POSTULANTE';
+    final parts = fullName.trim().split(RegExp(r'\s+'));
+    if (parts.length <= 1) return parts[0].toUpperCase();
+    if (parts.length == 2) return parts[1].toUpperCase();
+    return parts[parts.length - 2].toUpperCase();
+  }
+
   void _showProfileSheet(BuildContext context) {
+    final authService = context.read<AuthService>();
+    final user = authService.currentUser;
+    final userName = user?.displayName ?? 'Futuro Cadete';
+    final userEmail = user?.email ?? 'EstudiEO PNP';
+
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -38,13 +51,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text('Futuro Cadete',
-                      style: TextStyle(
+                  Text(userName,
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('EstudiEO PNP',
+                  Text(userEmail,
                       style: TextStyle(
                           color: Colors.white.withValues(alpha: 0.5),
                           fontSize: 14)),
@@ -67,6 +80,15 @@ class HomeScreen extends StatelessWidget {
                       Navigator.pushNamed(context, '/settings');
                     },
                   ),
+                  _SheetItem(
+                    icon: Icons.logout_rounded,
+                    color: Colors.redAccent,
+                    label: 'Cerrar Sesión',
+                    onTap: () async {
+                      Navigator.pop(ctx);
+                      await authService.signOut();
+                    },
+                  ),
                   const SizedBox(height: 16),
                 ],
               ),
@@ -79,6 +101,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authService = context.watch<AuthService>();
+    final user = authService.currentUser;
+    final userName = user?.displayName ?? '';
+
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       body: AnimatedGridBackground(
@@ -105,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            'Bienvenido, postulante',
+                            'Bienvenido postulante ${_getPaternalSurname(userName)}'.trim(),
                             style: TextStyle(
                               color: Colors.white.withValues(alpha: 0.6),
                               fontSize: 14,
@@ -141,13 +167,13 @@ class HomeScreen extends StatelessWidget {
                           // Simulacro de Examen
                           _GlassCard(
                             onTap: () => Navigator.pushNamed(context, '/exam'),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
                               child: Row(
                                 children: [
                                   _IconBubble(icon: Icons.timer_rounded, color: Colors.redAccent),
-                                  const SizedBox(width: 14),
-                                  const Expanded(
+                                  SizedBox(width: 14),
+                                  Expanded(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
@@ -162,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  const Icon(Icons.chevron_right, color: Colors.white30, size: 20),
+                                  Icon(Icons.chevron_right, color: Colors.white30, size: 20),
                                 ],
                               ),
                             ),
@@ -204,7 +230,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
 
-                          // Tarjetas
+                          // Tarjetas y Aprendizaje Guiado
                           SizedBox(
                             height: 120,
                             child: Row(
@@ -220,6 +246,17 @@ class HomeScreen extends StatelessWidget {
                                       MaterialPageRoute(
                                           builder: (_) => const AlipioSelectorScreen()),
                                     ),
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: _GlassTile(
+                                    icon: Icons.school_rounded,
+                                    color: Colors.orangeAccent,
+                                    title: 'Aprendizaje',
+                                    subtitle: 'Modo Guiado',
+                                    badge: 'NUEVO',
+                                    onTap: () => Navigator.pushNamed(context, '/gallery'),
                                   ),
                                 ),
                               ],

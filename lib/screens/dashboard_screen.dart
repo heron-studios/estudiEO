@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
-import 'package:learn/data/subjects_repository.dart';
-import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/providers/subject_provider.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   static const _bg = Color(0xFF0F172A);
-  static const _cardBg = Color(0xFF1E293B);
-  static const _border = Color(0xFF334155);
-  static const _text = Color(0xFFF1F5F9);
   static const _muted = Color(0xFF94A3B8);
 
   @override
@@ -35,37 +30,44 @@ class DashboardScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Resumen SRS
-            const Text(
-              'REPASO ESPACIADO',
-              style: TextStyle(
-                color: _muted,
-                fontSize: 12,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 1.2,
-              ),
-            ),
-            const SizedBox(height: 12),
-            _GeneralStats(),
-            const SizedBox(height: 28),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Resumen SRS
+                  const Text(
+                    'REPASO ESPACIADO',
+                    style: TextStyle(
+                      color: _muted,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _GeneralStats(),
+                  const SizedBox(height: 28),
 
-            // Por asignatura
-            const Text(
-              'POR ASIGNATURA',
-              style: TextStyle(
-                color: _muted,
-                fontSize: 12,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 1.2,
+                  // Por asignatura
+                  const Text(
+                    'POR ASIGNATURA',
+                    style: TextStyle(
+                      color: _muted,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _SubjectStats(),
+                ],
               ),
             ),
-            const SizedBox(height: 12),
-            _SubjectStats(),
-          ],
+          ),
         ),
       ),
     );
@@ -187,11 +189,7 @@ class _SubjectStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<QuizProvider>(
       builder: (context, quiz, _) {
-        final storage = context.read<LocalStorageService>();
-        final hiddenSubjects = storage.loadHiddenSubjects();
-        final subjects = SubjectsRepository.getAllSubjects()
-            .where((s) => !hiddenSubjects.contains(s.id))
-            .toList();
+        final subjects = context.watch<SubjectProvider>().subjects;
 
         if (subjects.isEmpty) {
           return const Center(
@@ -208,7 +206,7 @@ class _SubjectStats extends StatelessWidget {
 
         return Column(
           children: subjects.map((subject) {
-            final stats = quiz.getTopicStats(subject.id);
+            final stats = quiz.getSubjectStats(subject.topicIds);
             final avg = stats['averagePercentage'] as double? ?? 0;
             final total = stats['totalSessions'] as int? ?? 0;
 

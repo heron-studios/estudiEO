@@ -1,4 +1,4 @@
-class Topic {
+﻿class Topic {
   final String id;
   final String subjectId;
   final String name;
