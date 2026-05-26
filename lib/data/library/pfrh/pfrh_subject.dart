@@ -14,6 +14,7 @@ final Subject pfrhSubject = Subject(
     'pfrh_t6',
     'pfrh_persona_familia',
     'pfrh_derechos_humanos',
-    'pfrh_identidad_normas'
+    'pfrh_identidad_normas',
+    'pfrh_autoestima_autocuidado'
   ],
 );

@@ -2,11 +2,13 @@ import 'package:learn/models/question.dart';
 import 'package:learn/data/library/pfrh/persona_familia_questions.dart';
 import 'package:learn/data/library/pfrh/derechos_humanos_questions.dart';
 import 'package:learn/data/library/pfrh/identidad_normas_questions.dart';
+import 'package:learn/data/library/pfrh/autoestima_autocuidado_questions.dart';
 
 final List<Question> pfrhQuestions = [
   ...personaFamiliaQuestions,
   ...derechosHumanosQuestions,
   ...identidadNormasQuestions,
+  ...autoestimaAutocuidadoQuestions,
   Question(
     id: "pfrh_q1",
     topicId: "pfrh_t1",

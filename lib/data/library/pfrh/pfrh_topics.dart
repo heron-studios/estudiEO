@@ -64,4 +64,11 @@ final Map<String, Topic> pfrhTopics = {
     description: "Identidad personal, identidad nacional, normas morales, sociales y jurídicas, diversidad cultural e interculturalidad.",
     questionCount: 40,
   ),
+  'pfrh_autoestima_autocuidado': Topic(
+    id: 'pfrh_autoestima_autocuidado',
+    subjectId: 'pfrh',
+    name: "10. Autoestima y Autocuidado",
+    description: "Autoestima, autocuidado físico/emocional/mental/social, autorregulación, mindfulness, pilares de la autoestima y perspectiva de género.",
+    questionCount: 40,
+  ),
 };

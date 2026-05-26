@@ -22,6 +22,7 @@ import 'package:learn/data/library/pfrh/pfrh_topics.dart';
 import 'package:learn/data/library/pfrh/persona_familia_theory.dart';
 import 'package:learn/data/library/pfrh/derechos_humanos_theory.dart';
 import 'package:learn/data/library/pfrh/identidad_normas_theory.dart';
+import 'package:learn/data/library/pfrh/autoestima_autocuidado_theory.dart';
 import 'package:learn/data/library/rv/rv_subject.dart';
 import 'package:learn/data/library/rv/rv_questions.dart';
 import 'package:learn/data/library/rv/rv_topics.dart';
@@ -246,6 +247,9 @@ class SubjectsRepository {
     }
     if (topicId == 'pfrh_identidad_normas') {
       return identidadNormasTheory[nivel];
+    }
+    if (topicId == 'pfrh_autoestima_autocuidado') {
+      return autoestimaAutocuidadoTheory[nivel];
     }
     // Para otros tópicos aún no implementados
     return null;
