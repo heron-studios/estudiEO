@@ -9,8 +9,13 @@ import 'package:learn/config/app_config.dart';
 
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
+  final String mode;
 
-  const TopicGalleryScreen({super.key, required this.subjectId});
+  const TopicGalleryScreen({
+    super.key,
+    required this.subjectId,
+    this.mode = 'quiz',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +51,7 @@ class TopicGalleryScreen extends StatelessWidget {
                       topic: topics[index],
                       subjectId: subjectId,
                       index: index,
+                      mode: mode,
                     );
                   },
                 ),
@@ -59,11 +65,13 @@ class _TopicTile extends StatelessWidget {
   final Topic topic;
   final String subjectId;
   final int index;
+  final String mode;
 
   const _TopicTile({
     required this.topic,
     required this.subjectId,
     required this.index,
+    required this.mode,
   });
 
   @override
@@ -90,7 +98,20 @@ class _TopicTile extends StatelessWidget {
             Navigator.pushNamed(context, '/premium');
             return;
           }
-          _showModeSelectionSheet(context, topic, dynamicQuestionCount);
+          if (mode == 'guided') {
+            if (topic.id == 'cta_materia_energia') {
+              _startGuidedLearning(context, topic);
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
+                  duration: Duration(seconds: 2),
+                ),
+              );
+            }
+          } else {
+            _startQuickQuiz(context, topic);
+          }
         },
         borderRadius: BorderRadius.circular(14),
         child: Padding(
@@ -226,26 +247,6 @@ class _TopicTile extends StatelessWidget {
     );
   }
 
-  /// Muestra el BottomSheet de selección de modo de estudio.
-  void _showModeSelectionSheet(
-      BuildContext context, Topic topic, int questionCount) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (ctx) => _ModeSelectionSheet(
-        topic: topic,
-        questionCount: questionCount,
-        onGuidedLearning: () {
-          Navigator.pop(ctx);
-          _startGuidedLearning(context, topic);
-        },
-        onQuickQuiz: () {
-          Navigator.pop(ctx);
-          _startQuickQuiz(context, topic);
-        },
-      ),
-    );
-  }
 
   void _startGuidedLearning(BuildContext context, Topic topic) {
     context.read<SubjectProvider>().selectTopic(topic.id);
@@ -373,201 +374,3 @@ class _LevelProgressIndicator extends StatelessWidget {
   }
 }
 
-/// BottomSheet de selección de modo: Aprendizaje Guiado vs Quiz Rápido.
-class _ModeSelectionSheet extends StatelessWidget {
-  final Topic topic;
-  final int questionCount;
-  final VoidCallback onGuidedLearning;
-  final VoidCallback onQuickQuiz;
-
-  const _ModeSelectionSheet({
-    required this.topic,
-    required this.questionCount,
-    required this.onGuidedLearning,
-    required this.onQuickQuiz,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xFF111827),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Handle
-          Container(
-            width: 40,
-            height: 4,
-            decoration: BoxDecoration(
-              color: Colors.white24,
-              borderRadius: BorderRadius.circular(2),
-            ),
-          ),
-          const SizedBox(height: 20),
-
-          // Título
-          Text(
-            topic.name,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          const SizedBox(height: 6),
-          const Text(
-            '¿Cómo quieres estudiar este tema?',
-            style: TextStyle(color: Colors.white38, fontSize: 13),
-          ),
-
-          const SizedBox(height: 24),
-
-          // Opción 1: Aprendizaje Guiado
-          _ModeCard(
-            icon: '🎯',
-            title: 'Aprendizaje Guiado',
-            description: topic.id == 'cta_materia_energia'
-                ? 'Lee la teoría, responde 10 preguntas por nivel y avanza de Fácil a Extremo.'
-                : 'Próximamente más áreas y temas en este modo.',
-            badgeText: topic.id == 'cta_materia_energia' ? 'NUEVO / EXPERIMENTAL' : 'PRÓXIMAMENTE',
-            badgeColor: topic.id == 'cta_materia_energia' ? const Color(0xFF3B82F6) : const Color(0xFF64748B),
-            borderColor: topic.id == 'cta_materia_energia' ? const Color(0xFF3B82F6) : const Color(0xFF1F2937),
-            bgColor: topic.id == 'cta_materia_energia'
-                ? const Color(0xFF1E3A8A).withValues(alpha: 0.3)
-                : const Color(0xFF1F2937).withValues(alpha: 0.15),
-            onTap: topic.id == 'cta_materia_energia'
-                ? onGuidedLearning
-                : () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
-                        duration: Duration(seconds: 2),
-                      ),
-                    );
-                  },
-          ),
-
-          const SizedBox(height: 12),
-
-          // Opción 2: Quiz Rápido
-          _ModeCard(
-            icon: '⚡',
-            title: 'Quiz Rápido',
-            description:
-                '$questionCount preguntas aleatorias sin restricciones de nivel.',
-            badgeText: null,
-            badgeColor: Colors.transparent,
-            borderColor: const Color(0xFF1F2937),
-            bgColor: const Color(0xFF0F172A),
-            onTap: onQuickQuiz,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ModeCard extends StatelessWidget {
-  final String icon;
-  final String title;
-  final String description;
-  final String? badgeText;
-  final Color badgeColor;
-  final Color borderColor;
-  final Color bgColor;
-  final VoidCallback onTap;
-
-  const _ModeCard({
-    required this.icon,
-    required this.title,
-    required this.description,
-    required this.badgeText,
-    required this.badgeColor,
-    required this.borderColor,
-    required this.bgColor,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: bgColor,
-      borderRadius: BorderRadius.circular(16),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            border: Border.all(color: borderColor, width: 1.5),
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Row(
-            children: [
-              Text(icon, style: const TextStyle(fontSize: 32)),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          title,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        if (badgeText != null) ...[
-                          const SizedBox(width: 8),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 7, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: badgeColor.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: Text(
-                              badgeText!,
-                              style: TextStyle(
-                                color: badgeColor,
-                                fontSize: 9,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      description,
-                      style: const TextStyle(
-                        color: Color(0xFF94A3B8),
-                        fontSize: 13,
-                        height: 1.4,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 8),
-              const Icon(Icons.arrow_forward_ios,
-                  color: Colors.white24, size: 16),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

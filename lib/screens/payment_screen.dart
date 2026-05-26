@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'dart:ui';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -57,8 +58,10 @@ class _PaymentScreenState extends State<PaymentScreen>
       ..repeat(reverse: true);
     _entranceCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 800))
       ..forward();
-    _bgCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 8))
-      ..repeat();
+    _bgCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 8));
+    if (kIsWeb) {
+      _bgCtrl.repeat();
+    }
 
     _pulseAnim = Tween<double>(begin: 0.97, end: 1.03).animate(
       CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
@@ -455,6 +458,91 @@ class _PaymentScreenState extends State<PaymentScreen>
   }
 
   Widget _buildUnifiedCheckoutCard() {
+    final checkoutContent = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Cabecera del Plan
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)]),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: const Icon(Icons.workspace_premium_rounded, color: Colors.white, size: 22),
+              ),
+              const SizedBox(width: 12),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('PLAN COMPLETO', style: TextStyle(color: Color(0xFF93C5FD), fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.5)),
+                  Text('Acceso Permanente', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                ],
+              ),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF22C55E).withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: const Color(0xFF22C55E).withValues(alpha: 0.5)),
+                ),
+                child: const Text('ÚNICO PAGO', style: TextStyle(color: Color(0xFF4ADE80), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 0.8)),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 24),
+          const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
+          const SizedBox(height: 20),
+
+          // Precio
+          _buildPriceSection(),
+
+          const SizedBox(height: 30),
+
+          // Botón de WhatsApp
+          _buildBuyButton(),
+
+          const SizedBox(height: 16),
+
+          _buildSecondaryButton(
+            icon: Icons.groups_rounded,
+            label: 'Comunidad de WhatsApp',
+            subtitle: 'Únete para recibir novedades gratis',
+            gradient: const [Color(0xFF25D366), Color(0xFF075E54)],
+            onTap: () => _launchUrl('https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05'),
+          ),
+
+          const SizedBox(height: 12),
+
+          _buildSecondaryButton(
+            icon: Icons.download_for_offline_rounded,
+            label: 'Descargar App (Android / PC)',
+            subtitle: 'Consigue la versión para celular y computadora',
+            gradient: const [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
+            onTap: () => _launchUrl('https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing'),
+          ),
+
+          const SizedBox(height: 24),
+          const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
+          const SizedBox(height: 20),
+
+          // Badges de Confianza (Seguro, Activación rápida, Yape/Plin)
+          _buildTrustBadges(),
+
+          const SizedBox(height: 24),
+
+          // Textos de Seguridad y Garantía
+          _buildSecurityText(),
+        ],
+      ),
+    );
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
@@ -471,93 +559,12 @@ class _PaymentScreenState extends State<PaymentScreen>
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(28),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 30),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Cabecera del Plan
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)]),
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: const Icon(Icons.workspace_premium_rounded, color: Colors.white, size: 22),
-                    ),
-                    const SizedBox(width: 12),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('PLAN COMPLETO', style: TextStyle(color: Color(0xFF93C5FD), fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.5)),
-                        Text('Acceso Permanente', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                    const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF22C55E).withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: const Color(0xFF22C55E).withValues(alpha: 0.5)),
-                      ),
-                      child: const Text('ÚNICO PAGO', style: TextStyle(color: Color(0xFF4ADE80), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 0.8)),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 24),
-                const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
-                const SizedBox(height: 20),
-
-                // Precio
-                _buildPriceSection(),
-
-                const SizedBox(height: 30),
-
-                // Botón de WhatsApp
-                _buildBuyButton(),
-
-                const SizedBox(height: 16),
-
-                _buildSecondaryButton(
-                  icon: Icons.groups_rounded,
-                  label: 'Comunidad de WhatsApp',
-                  subtitle: 'Únete para recibir novedades gratis',
-                  gradient: const [Color(0xFF25D366), Color(0xFF075E54)],
-                  onTap: () => _launchUrl('https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05'),
-                ),
-
-                const SizedBox(height: 12),
-
-                _buildSecondaryButton(
-                  icon: Icons.download_for_offline_rounded,
-                  label: 'Descargar App (Android / PC)',
-                  subtitle: 'Consigue la versión para celular y computadora',
-                  gradient: const [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
-                  onTap: () => _launchUrl('https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing'),
-                ),
-
-                const SizedBox(height: 24),
-                const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
-                const SizedBox(height: 20),
-
-                // Badges de Confianza (Seguro, Activación rápida, Yape/Plin)
-                _buildTrustBadges(),
-
-                const SizedBox(height: 24),
-
-                // Textos de Seguridad y Garantía
-                _buildSecurityText(),
-              ],
-            ),
-          ),
-        ),
+        child: kIsWeb
+            ? BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: checkoutContent,
+              )
+            : checkoutContent,
       ),
     );
   }
@@ -832,8 +839,11 @@ class _BgPainter extends CustomPainter {
     final paint = Paint()
       ..shader = RadialGradient(
         colors: [color.withValues(alpha: opacity), color.withValues(alpha: 0)],
-      ).createShader(Rect.fromCircle(center: Offset(nx * size.width, ny * size.height), radius: radius))
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
+      ).createShader(Rect.fromCircle(center: Offset(nx * size.width, ny * size.height), radius: radius));
+    
+    if (kIsWeb) {
+      paint.maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
+    }
 
     canvas.drawCircle(Offset(nx * size.width, ny * size.height), radius, paint);
   }

@@ -9,6 +9,9 @@ class SubjectGalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)?.settings.arguments;
+    final String mode = (args is Map && args.containsKey('mode')) ? args['mode'] as String : 'quiz';
+
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       appBar: AppBar(
@@ -61,7 +64,7 @@ class SubjectGalleryScreen extends StatelessWidget {
                     ),
                     itemCount: subjects.length,
                     itemBuilder: (context, index) {
-                      return _SubjectCard(subject: subjects[index]);
+                      return _SubjectCard(subject: subjects[index], mode: mode);
                     },
                   ),
                 ),
@@ -76,8 +79,9 @@ class SubjectGalleryScreen extends StatelessWidget {
 
 class _SubjectCard extends StatelessWidget {
   final Subject subject;
+  final String mode;
 
-  const _SubjectCard({required this.subject});
+  const _SubjectCard({required this.subject, required this.mode});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +93,14 @@ class _SubjectCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           context.read<SubjectProvider>().selectSubject(subject.id);
-          Navigator.pushNamed(context, '/topics', arguments: subject.id);
+          Navigator.pushNamed(
+            context,
+            '/topics',
+            arguments: {
+              'subjectId': subject.id,
+              'mode': mode,
+            },
+          );
         },
         borderRadius: BorderRadius.circular(16),
         child: Container(

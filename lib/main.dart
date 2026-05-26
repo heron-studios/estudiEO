@@ -99,8 +99,14 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/gallery': (context) => const SubjectGalleryScreen(),
         '/topics': (context) {
-          final subjectId = ModalRoute.of(context)!.settings.arguments as String;
-          return TopicGalleryScreen(subjectId: subjectId);
+          final args = ModalRoute.of(context)!.settings.arguments;
+          if (args is Map<String, dynamic>) {
+            return TopicGalleryScreen(
+              subjectId: args['subjectId'] as String,
+              mode: args['mode'] as String? ?? 'quiz',
+            );
+          }
+          return TopicGalleryScreen(subjectId: args as String);
         },
         '/quiz': (context) => const QuizScreen(),
         '/quiz-results': (context) => const QuizResultsScreen(),
