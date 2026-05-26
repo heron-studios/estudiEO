@@ -57,4 +57,11 @@ final Map<String, Topic> pfrhTopics = {
     description: "Garantías fundamentales, Declaración Universal de los Derechos Humanos, debido proceso, EDH, paz positiva y perspectivas críticas.",
     questionCount: 40,
   ),
+  'pfrh_identidad_normas': Topic(
+    id: 'pfrh_identidad_normas',
+    subjectId: 'pfrh',
+    name: "9. Identidad Personal y Nacional. Normas Sociales.",
+    description: "Identidad personal, identidad nacional, normas morales, sociales y jurídicas, diversidad cultural e interculturalidad.",
+    questionCount: 40,
+  ),
 };

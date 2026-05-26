@@ -21,6 +21,7 @@ import 'package:learn/data/library/pfrh/pfrh_questions.dart';
 import 'package:learn/data/library/pfrh/pfrh_topics.dart';
 import 'package:learn/data/library/pfrh/persona_familia_theory.dart';
 import 'package:learn/data/library/pfrh/derechos_humanos_theory.dart';
+import 'package:learn/data/library/pfrh/identidad_normas_theory.dart';
 import 'package:learn/data/library/rv/rv_subject.dart';
 import 'package:learn/data/library/rv/rv_questions.dart';
 import 'package:learn/data/library/rv/rv_topics.dart';
@@ -242,6 +243,9 @@ class SubjectsRepository {
     }
     if (topicId == 'pfrh_derechos_humanos') {
       return derechosHumanosTheory[nivel];
+    }
+    if (topicId == 'pfrh_identidad_normas') {
+      return identidadNormasTheory[nivel];
     }
     // Para otros tópicos aún no implementados
     return null;
