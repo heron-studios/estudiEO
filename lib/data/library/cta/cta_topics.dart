@@ -34,6 +34,6 @@ final Map<String, Topic> ctaTopics = {
     subjectId: 'cta',
     name: "5. Materia y Energía",
     description: "Propiedades de la materia, estados de agregación y transformaciones energéticas.",
-    questionCount: 40,
+    questionCount: 80,
   ),
 };
