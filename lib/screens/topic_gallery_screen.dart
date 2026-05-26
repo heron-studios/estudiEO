@@ -103,7 +103,8 @@ class _TopicTile extends StatelessWidget {
                 topic.id == 'cta_sistema_solar' ||
                 topic.id == 'cta_tabla_periodica' ||
                 topic.id == 'cta_vegetales_fotosintesis' ||
-                topic.id == 'cta_fenomenos_cambioclimatico') {
+                topic.id == 'cta_fenomenos_cambioclimatico' ||
+                topic.id == 'pfrh_persona_familia') {
               _startGuidedLearning(context, topic);
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -166,7 +167,8 @@ class _TopicTile extends StatelessWidget {
                             topic.id == 'cta_sistema_solar' ||
                             topic.id == 'cta_tabla_periodica' ||
                             topic.id == 'cta_vegetales_fotosintesis' ||
-                            topic.id == 'cta_fenomenos_cambioclimatico') ...[
+                            topic.id == 'cta_fenomenos_cambioclimatico' ||
+                            topic.id == 'pfrh_persona_familia') ...[
                           const SizedBox(width: 8),
                           Container(
                             padding: const EdgeInsets.symmetric(

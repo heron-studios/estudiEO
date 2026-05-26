@@ -1,4 +1,4 @@
-﻿import 'package:learn/models/topic.dart';
+import 'package:learn/models/topic.dart';
 
 final Map<String, Topic> pfrhTopics = {
   'pfrh_t1': Topic(
@@ -42,5 +42,12 @@ final Map<String, Topic> pfrhTopics = {
     name: "6. Violencia Familiar",
     description: "Violencia fisica, psicologica, sexual, economica, patrimonial y medidas de proteccion.",
     questionCount: 150,
+  ),
+  'pfrh_persona_familia': Topic(
+    id: 'pfrh_persona_familia',
+    subjectId: 'pfrh',
+    name: "7. Persona, Familia, Identidad y Convivencia Escolar",
+    description: "Desarrollo humano, identidad personal y nacional, convivencia positiva, funciones familiares, mediación de conflictos y autocuidado.",
+    questionCount: 40,
   ),
 };
