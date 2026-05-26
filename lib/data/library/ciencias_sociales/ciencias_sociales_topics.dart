@@ -1,6 +1,9 @@
 ﻿import 'package:learn/models/topic.dart';
 import 'hominizacion_theory.dart';
 import 'tahuantinsuyo_theory.dart';
+import 'areas_naturales_theory.dart';
+import 'ecosistemas_tecnologia_theory.dart';
+import 'redes_viales_theory.dart';
 
 final Map<String, Topic> cienciasSocialesTopics = {
   // Topics con teoría (modo aprendizaje guiado)
@@ -30,27 +33,43 @@ final Map<String, Topic> cienciasSocialesTopics = {
       'extreme': tahuantinsuyoTheoryExtreme,
     },
   ),
-  
-  // Topics sin teoría (solo quiz) - comentados para ocultar del modo aprendizaje guiado
-  // 'cs_t3': Topic(
-  //   id: 'cs_t3',
-  //   subjectId: 'ciencias-sociales',
-  //   name: "3. Areas Naturales Protegidas",
-  //   description: "Parques, santuarios, reservas nacionales, SINANPE, SERNANP y uso directo o indirecto.",
-  //   questionCount: 220,
-  // ),
-  // 'cs_t4': Topic(
-  //   id: 'cs_t4',
-  //   subjectId: 'ciencias-sociales',
-  //   name: "4. Ecosistemas y Desarrollo Sostenible",
-  //   description: "Cambio climatico, energia renovable, economia circular, huella hidrica y problematica ambiental peruana.",
-  //   questionCount: 190,
-  // ),
-  // 'cs_t5': Topic(
-  //   id: 'cs_t5',
-  //   subjectId: 'ciencias-sociales',
-  //   name: "5. Redes Viales e Infraestructura",
-  //   description: "Jerarquizacion vial, rutas del SINAC, vias nacionales, departamentales, vecinales y autoridades competentes.",
-  //   questionCount: 190,
-  // ),
+  'cs_t3': Topic(
+    id: 'cs_t3',
+    subjectId: 'ciencias-sociales',
+    name: "3. Areas Naturales Protegidas",
+    description: "Parques, santuarios, reservas nacionales, SINANPE, SERNANP y uso directo o indirecto.",
+    questionCount: 220,
+    theoryByLevel: {
+      'easy': areasNaturalesTheoryEasy,
+      'medium': areasNaturalesTheoryMedium,
+      'hard': areasNaturalesTheoryHard,
+      'extreme': areasNaturalesTheoryExtreme,
+    },
+  ),
+  'cs_t4': Topic(
+    id: 'cs_t4',
+    subjectId: 'ciencias-sociales',
+    name: "4. Ecosistemas, Tecnologia y Desarrollo Sostenible",
+    description: "Cambio climatico, energia renovable, economia circular, huella hidrica y problematica ambiental peruana.",
+    questionCount: 190,
+    theoryByLevel: {
+      'easy': ecosistemasTecnologiaTheoryEasy,
+      'medium': ecosistemasTecnologiaTheoryMedium,
+      'hard': ecosistemasTecnologiaTheoryHard,
+      'extreme': ecosistemasTecnologiaTheoryExtreme,
+    },
+  ),
+  'cs_t5': Topic(
+    id: 'cs_t5',
+    subjectId: 'ciencias-sociales',
+    name: "5. Redes Viales: Caracteristicas, Tipos e Importancia",
+    description: "Jerarquizacion vial, rutas del SINAC, vias nacionales, departamentales, vecinales y autoridades competentes.",
+    questionCount: 190,
+    theoryByLevel: {
+      'easy': redesVialesTheoryEasy,
+      'medium': redesVialesTheoryMedium,
+      'hard': redesVialesTheoryHard,
+      'extreme': redesVialesTheoryExtreme,
+    },
+  ),
 };

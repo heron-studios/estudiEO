@@ -1,10 +1,16 @@
 import 'package:learn/models/question.dart';
 import 'hominizacion_questions.dart';
 import 'tahuantinsuyo_questions.dart';
+import 'areas_naturales_questions.dart';
+import 'ecosistemas_tecnologia_questions.dart';
+import 'redes_viales_questions.dart';
 
 final List<Question> cienciasSocialesQuestions = [
   ...hominizacionQuestions,
   ...tahuantinsuyoQuestions,
+  ...areasNaturalesQuestions,
+  ...ecosistemasTecnologiaQuestions,
+  ...redesVialesQuestions,
   Question(
     id: "cs_q1",
     topicId: "cs_t1",
