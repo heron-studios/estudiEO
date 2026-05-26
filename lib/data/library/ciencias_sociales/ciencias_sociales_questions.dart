@@ -1,8 +1,10 @@
 import 'package:learn/models/question.dart';
 import 'hominizacion_questions.dart';
+import 'tahuantinsuyo_questions.dart';
 
 final List<Question> cienciasSocialesQuestions = [
   ...hominizacionQuestions,
+  ...tahuantinsuyoQuestions,
   Question(
     id: "cs_q1",
     topicId: "cs_t1",

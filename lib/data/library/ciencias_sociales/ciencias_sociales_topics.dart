@@ -1,8 +1,9 @@
 ﻿import 'package:learn/models/topic.dart';
 import 'hominizacion_theory.dart';
+import 'tahuantinsuyo_theory.dart';
 
 final Map<String, Topic> cienciasSocialesTopics = {
-  // Topic con teoría (modo aprendizaje guiado)
+  // Topics con teoría (modo aprendizaje guiado)
   'cs_t1': Topic(
     id: 'cs_t1',
     subjectId: 'ciencias-sociales',
@@ -16,15 +17,21 @@ final Map<String, Topic> cienciasSocialesTopics = {
       'extreme': hominizacionTheoryExtreme,
     },
   ),
+  'cs_t2': Topic(
+    id: 'cs_t2',
+    subjectId: 'ciencias-sociales',
+    name: "2. Tahuantinsuyo: Evolucion y Organizacion",
+    description: "Expansion, organizacion politica, reciprocidad, redistribucion, mita, colcas y autoridades incas.",
+    questionCount: 190,
+    theoryByLevel: {
+      'easy': tahuantinsuyoTheoryEasy,
+      'medium': tahuantinsuyoTheoryMedium,
+      'hard': tahuantinsuyoTheoryHard,
+      'extreme': tahuantinsuyoTheoryExtreme,
+    },
+  ),
   
   // Topics sin teoría (solo quiz) - comentados para ocultar del modo aprendizaje guiado
-  // 'cs_t2': Topic(
-  //   id: 'cs_t2',
-  //   subjectId: 'ciencias-sociales',
-  //   name: "2. Tahuantinsuyo",
-  //   description: "Expansion, organizacion politica, reciprocidad, redistribucion, mita, colcas y autoridades incas.",
-  //   questionCount: 190,
-  // ),
   // 'cs_t3': Topic(
   //   id: 'cs_t3',
   //   subjectId: 'ciencias-sociales',

@@ -7,6 +7,7 @@ final Subject cienciasSocialesSubject = Subject(
   icon: '🌍',
   topicIds: [
     // Solo topics con teoría para modo aprendizaje guiado
-    'cs_t1', // Proceso de Hominización (tiene teoría)
+    'cs_t1', // Proceso de Hominización
+    'cs_t2', // Tahuantinsuyo: Evolución y Organización
   ],
 );
