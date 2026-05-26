@@ -1,6 +1,7 @@
 import 'package:learn/models/question.dart';
 import 'package:learn/data/library/cta/materia_energia_questions.dart';
 import 'package:learn/data/library/cta/sistema_solar_questions.dart';
+import 'package:learn/data/library/cta/tabla_periodica_questions.dart';
 
 final List<Question> ctaQuestions = [
   Question(
@@ -5975,4 +5976,5 @@ final List<Question> ctaQuestions = [
   ),
   ...materiaEnergiaQuestions,
   ...sistemaSolarQuestions,
+  ...tablaPeriodicaQuestions,
 ];

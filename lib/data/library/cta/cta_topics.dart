@@ -43,4 +43,11 @@ final Map<String, Topic> ctaTopics = {
     description: "El sistema solar, astros y planetas. Dinámicas, movimientos y características de la Tierra.",
     questionCount: 40,
   ),
+  'cta_tabla_periodica': Topic(
+    id: 'cta_tabla_periodica',
+    subjectId: 'cta',
+    name: "7. Tabla periódica de los elementos (símbolos y organización)",
+    description: "Estructura, símbolos, organización en grupos/periodos y tendencias periódicas.",
+    questionCount: 40,
+  ),
 };

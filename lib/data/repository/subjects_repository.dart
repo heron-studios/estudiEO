@@ -13,6 +13,7 @@ import 'package:learn/data/library/cta/cta_questions.dart';
 import 'package:learn/data/library/cta/cta_topics.dart';
 import 'package:learn/data/library/cta/materia_energia_theory.dart';
 import 'package:learn/data/library/cta/sistema_solar_theory.dart';
+import 'package:learn/data/library/cta/tabla_periodica_theory.dart';
 import 'package:learn/data/library/pfrh/pfrh_subject.dart';
 import 'package:learn/data/library/pfrh/pfrh_questions.dart';
 import 'package:learn/data/library/pfrh/pfrh_topics.dart';
@@ -222,6 +223,9 @@ class SubjectsRepository {
     }
     if (topicId == 'cta_sistema_solar') {
       return sistemaSolarTheory[nivel];
+    }
+    if (topicId == 'cta_tabla_periodica') {
+      return tablaPeriodicaTheory[nivel];
     }
     // Para otros tópicos aún no implementados
     return null;
