@@ -12,6 +12,7 @@ final Subject pfrhSubject = Subject(
     'pfrh_t4',
     'pfrh_t5',
     'pfrh_t6',
-    'pfrh_persona_familia'
+    'pfrh_persona_familia',
+    'pfrh_derechos_humanos'
   ],
 );

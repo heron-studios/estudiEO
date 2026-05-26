@@ -50,4 +50,11 @@ final Map<String, Topic> pfrhTopics = {
     description: "Desarrollo humano, identidad personal y nacional, convivencia positiva, funciones familiares, mediación de conflictos y autocuidado.",
     questionCount: 40,
   ),
+  'pfrh_derechos_humanos': Topic(
+    id: 'pfrh_derechos_humanos',
+    subjectId: 'pfrh',
+    name: "8. Derechos Humanos",
+    description: "Garantías fundamentales, Declaración Universal de los Derechos Humanos, debido proceso, EDH, paz positiva y perspectivas críticas.",
+    questionCount: 40,
+  ),
 };

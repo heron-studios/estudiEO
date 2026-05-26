@@ -1,5 +1,6 @@
 import 'package:learn/models/question.dart';
 import 'package:learn/data/library/pfrh/persona_familia_questions.dart';
+import 'package:learn/data/library/pfrh/derechos_humanos_questions.dart';
 
 final List<Question> pfrhQuestions = [
   Question(
@@ -8853,4 +8854,5 @@ final List<Question> pfrhQuestions = [
     explanation: r"""El feminicidio es la expresión extrema del ciclo de violencia de género, tipificado como un delito autónomo con penas privativas de libertad muy severas.""",
   ),
   ...personaFamiliaQuestions,
+  ...derechosHumanosQuestions,
 ];
