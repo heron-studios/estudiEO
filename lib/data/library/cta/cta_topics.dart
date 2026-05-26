@@ -57,4 +57,11 @@ final Map<String, Topic> ctaTopics = {
     description: "Procesos de fotosíntesis, fases luminosa y oscura, cloroplastos y ciclos bioquímicos.",
     questionCount: 40,
   ),
+  'cta_fenomenos_cambioclimatico': Topic(
+    id: 'cta_fenomenos_cambioclimatico',
+    subjectId: 'cta',
+    name: "9. Los fenómenos naturales y el cambio climático",
+    description: "Fenómenos naturales, efecto invernadero, calentamiento global y sus consecuencias socio-ambientales.",
+    questionCount: 40,
+  ),
 };

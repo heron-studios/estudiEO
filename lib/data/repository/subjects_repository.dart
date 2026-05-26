@@ -15,6 +15,7 @@ import 'package:learn/data/library/cta/materia_energia_theory.dart';
 import 'package:learn/data/library/cta/sistema_solar_theory.dart';
 import 'package:learn/data/library/cta/tabla_periodica_theory.dart';
 import 'package:learn/data/library/cta/vegetales_fotosintesis_theory.dart';
+import 'package:learn/data/library/cta/fenomenos_cambioclimatico_theory.dart';
 import 'package:learn/data/library/pfrh/pfrh_subject.dart';
 import 'package:learn/data/library/pfrh/pfrh_questions.dart';
 import 'package:learn/data/library/pfrh/pfrh_topics.dart';
@@ -230,6 +231,9 @@ class SubjectsRepository {
     }
     if (topicId == 'cta_vegetales_fotosintesis') {
       return vegetalesFotosintesisTheory[nivel];
+    }
+    if (topicId == 'cta_fenomenos_cambioclimatico') {
+      return fenomenosCambioclimaticoTheory[nivel];
     }
     // Para otros tópicos aún no implementados
     return null;
