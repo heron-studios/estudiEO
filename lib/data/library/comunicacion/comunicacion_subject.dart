@@ -5,5 +5,7 @@ final Subject comunicacionSubject = Subject(
   name: "Comunicación",
   color: '#4ECDC4',
   icon: '📖',
-  topicIds: [], // Sin topics con teoría aún - oculto del modo aprendizaje guiado
+  topicIds: [
+    'eo_pnp_reglas_ortograficas_01', // Reglas Ortográficas y Normativa RAE
+  ],
 );

@@ -1,15 +1,23 @@
 ﻿import 'package:learn/models/topic.dart';
+import 'reglas_ortograficas_theory.dart';
 
-// Todos los topics de Comunicación están sin teoría (solo quiz)
-// Se ocultan del modo aprendizaje guiado hasta que se agregue contenido teórico
 final Map<String, Topic> comunicacionTopics = {
-  // 'com_t1': Topic(
-  //   id: 'com_t1',
-  //   subjectId: 'comunicacion',
-  //   name: "1. Reglas Ortograficas",
-  //   description: "Grafias, acentuacion, mayusculas, signos de puntuacion y concurrencia vocalica.",
-  //   questionCount: 192,
-  // ),
+  // Topics con teoría (modo aprendizaje guiado)
+  'eo_pnp_reglas_ortograficas_01': Topic(
+    id: 'eo_pnp_reglas_ortograficas_01',
+    subjectId: 'comunicacion',
+    name: "1. Reglas Ortográficas y Normativa RAE",
+    description: "Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.",
+    questionCount: 8,
+    theoryByLevel: {
+      'easy': reglasOrtograficasTheoryEasy,
+      'medium': reglasOrtograficasTheoryMedium,
+      'hard': reglasOrtograficasTheoryHard,
+      'extreme': reglasOrtograficasTheoryExtreme,
+    },
+  ),
+
+  // Topics sin teoría (solo quiz) - comentados hasta agregar contenido teórico
   // 'com_t2': Topic(
   //   id: 'com_t2',
   //   subjectId: 'comunicacion',
