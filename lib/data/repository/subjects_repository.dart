@@ -232,68 +232,41 @@ class SubjectsRepository {
 
   /// Obtiene la teoría para un tópico y nivel de dificultad dado.
   static String? getTheoryByTopicAndLevel(String topicId, Dificultad nivel) {
-    // Primero, intentar buscar en los temas cargados
     final topic = getTopic(topicId);
     if (topic != null && topic.theoryByLevel != null) {
-      // 1. Intentar con la clave de tipo Dificultad directamente (como en cta y pfrh)
-      if (topic.theoryByLevel!.containsKey(nivel)) {
-        return topic.theoryByLevel![nivel];
-      }
+      final map = topic.theoryByLevel!;
 
-      // 2. Intentar con claves en inglés 'easy', 'medium', 'hard', 'extreme' (como en reglas ortográficas y oración gramatical)
+      // Clave en inglés (CS, Comunicación): 'easy','medium','hard','extreme'
       final String englishKey;
       switch (nivel) {
-        case Dificultad.facil:
-          englishKey = 'easy';
-          break;
-        case Dificultad.medio:
-          englishKey = 'medium';
-          break;
-        case Dificultad.dificil:
-          englishKey = 'hard';
-          break;
-        case Dificultad.extremo:
-          englishKey = 'extreme';
-          break;
+        case Dificultad.facil:   englishKey = 'easy';    break;
+        case Dificultad.medio:   englishKey = 'medium';  break;
+        case Dificultad.dificil: englishKey = 'hard';    break;
+        case Dificultad.extremo: englishKey = 'extreme'; break;
       }
-      if (topic.theoryByLevel!.containsKey(englishKey)) {
-        return topic.theoryByLevel![englishKey];
-      }
+      if (map.containsKey(englishKey)) return map[englishKey];
 
-      // 3. Intentar con el nombre del enum ('facil', 'medio', 'dificil', 'extremo')
-      if (topic.theoryByLevel!.containsKey(nivel.name)) {
-        return topic.theoryByLevel![nivel.name];
-      }
+      // Clave enum directo (CTA, PFRH)
+      if (map.containsKey(nivel)) return map[nivel];
+
+      // Clave nombre del enum: 'facil','medio','dificil','extremo'
+      if (map.containsKey(nivel.name)) return map[nivel.name];
+
+      // Último recurso: primer valor disponible
+      if (map.isNotEmpty) return map.values.first;
     }
 
-    if (topicId == 'cta_materia_energia') {
-      return materiaEnergiaTheory[nivel];
-    }
-    if (topicId == 'cta_sistema_solar') {
-      return sistemaSolarTheory[nivel];
-    }
-    if (topicId == 'cta_tabla_periodica') {
-      return tablaPeriodicaTheory[nivel];
-    }
-    if (topicId == 'cta_vegetales_fotosintesis') {
-      return vegetalesFotosintesisTheory[nivel];
-    }
-    if (topicId == 'cta_fenomenos_cambioclimatico') {
-      return fenomenosCambioclimaticoTheory[nivel];
-    }
-    if (topicId == 'pfrh_persona_familia') {
-      return personaFamiliaTheory[nivel];
-    }
-    if (topicId == 'pfrh_derechos_humanos') {
-      return derechosHumanosTheory[nivel];
-    }
-    if (topicId == 'pfrh_identidad_normas') {
-      return identidadNormasTheory[nivel];
-    }
-    if (topicId == 'pfrh_autoestima_autocuidado') {
-      return autoestimaAutocuidadoTheory[nivel];
-    }
-    // Para otros tópicos aún no implementados
+    // Fallbacks hardcodeados para CTA y PFRH (por compatibilidad)
+    if (topicId == 'cta_materia_energia')         return materiaEnergiaTheory[nivel];
+    if (topicId == 'cta_sistema_solar')           return sistemaSolarTheory[nivel];
+    if (topicId == 'cta_tabla_periodica')         return tablaPeriodicaTheory[nivel];
+    if (topicId == 'cta_vegetales_fotosintesis')  return vegetalesFotosintesisTheory[nivel];
+    if (topicId == 'cta_fenomenos_cambioclimatico') return fenomenosCambioclimaticoTheory[nivel];
+    if (topicId == 'pfrh_persona_familia')        return personaFamiliaTheory[nivel];
+    if (topicId == 'pfrh_derechos_humanos')       return derechosHumanosTheory[nivel];
+    if (topicId == 'pfrh_identidad_normas')       return identidadNormasTheory[nivel];
+    if (topicId == 'pfrh_autoestima_autocuidado') return autoestimaAutocuidadoTheory[nivel];
+
     return null;
   }
 
