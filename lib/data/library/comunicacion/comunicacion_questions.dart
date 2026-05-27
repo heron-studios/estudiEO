@@ -2,8 +2,11 @@ import 'package:learn/models/question.dart';
 import 'reglas_ortograficas_questions.dart';
 import 'oracion_gramatical_questions.dart';
 import 'reglas_ortograficas_ext_10q_questions.dart';
+import 'oracion_gramatical_ext_10q_questions.dart';
+
 
 final List<Question> comunicacionQuestions = [
+  ...oracionGramaticalExt10qQuestions,
   ...reglasOrtograficasExt10qQuestions,
   ...reglasOrtograficasQuestions,
   ...oracionGramaticalQuestions,

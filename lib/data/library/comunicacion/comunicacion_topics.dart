@@ -2,6 +2,7 @@ import 'package:learn/models/topic.dart';
 import 'reglas_ortograficas_theory.dart';
 import 'oracion_gramatical_theory.dart';
 import 'reglas_ortograficas_ext_10q_theory.dart';
+import 'oracion_gramatical_ext_10q_theory.dart';
 
 final Map<String, Topic> comunicacionTopics = {
   // Topics con teoría (modo aprendizaje guiado)
@@ -16,6 +17,19 @@ final Map<String, Topic> comunicacionTopics = {
       'medium': reglasOrtograficasExt10qTheoryMedium,
       'hard': reglasOrtograficasExt10qTheoryHard,
       'extreme': reglasOrtograficasExt10qTheoryExtreme,
+    },
+  ),
+  'eo_pnp_oracion_gramatical_ext_10q': Topic(
+    id: 'eo_pnp_oracion_gramatical_ext_10q',
+    subjectId: 'comunicacion',
+    name: 'La Oración Gramatical (Teoría Completa 10Q)',
+    description: 'Estudio de la oración gramatical, unimembres, bimembres y estructura del sintagma nominal y verbal.',
+    questionCount: 40,
+    theoryByLevel: {
+      'easy': oracionGramaticalExt10qTheoryEasy,
+      'medium': oracionGramaticalExt10qTheoryMedium,
+      'hard': oracionGramaticalExt10qTheoryHard,
+      'extreme': oracionGramaticalExt10qTheoryExtreme,
     },
   ),
   'eo_pnp_reglas_ortograficas_01': Topic(

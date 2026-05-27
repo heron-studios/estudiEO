@@ -1,406 +1,413 @@
 import re
-text = r'''
+
+text = r"""
 ====== NIVEL FÁCIL ======
-Pregunta 1: Según las normas de uso de la letra B, todos los verbos terminados en "-bir" se escriben con dicha consonante, salvo tres excepciones absolutas. ¿Cuáles son?
-A) Percibir, concebir, recibir.
-B) Prohibir, sucumbir, cohibir.
-C) Hervir, servir, vivir.
-D) Sobrevivir, exhibir, convivir.
-E) Escribir, transcribir, revivir.
-
-C) Correcta
-EXP: La regla ortográfica estipula que los verbos con la terminación "-bir" se escriben con "b", siendo las únicas tres excepciones "hervir", "servir" y "vivir" (y sus derivados).
-
-Pregunta 2: ¿Cómo se escribe correctamente el plural del sustantivo "lápiz" según las reglas de la Z y la C?
-A) Lápizes
-B) Lapizes
-C) Lápices
-D) Lápises
-E) Lapices
-
-C) Correcta
-EXP: Los plurales de las palabras que terminan en Z se escriben cambiando la Z por la C, manteniendo la tilde si la regla general de acentuación lo exige (lápiz -> lápices).
-
-Pregunta 3: De acuerdo a la actualización de la RAE de 2010, ¿cuántas letras conforman oficialmente el abecedario español y qué signos fueron excluidos?
-A) 29 letras, se incluyeron la "ch" y la "ll".
-B) 28 letras, se excluyó solo la "ch".
-C) 27 letras, se excluyeron los dígrafos "ch" y "ll".
-D) 26 letras, se excluyó la "ñ".
-E) 27 letras, se excluyeron la "v" y la "w".
-
-C) Correcta
-EXP: El alfabeto quedó reducido a 27 letras oficiales en 2010 tras la exclusión definitiva de la "ch" y la "ll", ya que son dígrafos y no letras individuales.
-
-Pregunta 4: Identifique la serie de palabras escritas correctamente según la regla de la terminación "-bilidad".
-A) Havilidad, sensibilidad, movilidad.
-B) Habilidad, sensivilidad, debilidad.
-C) Habilidad, sensibilidad, debilidad.
-D) Habilidad, sencibilidad, devilidad.
-E) Avilidad, sensibilidad, debilidad.
-
-C) Correcta
-EXP: La terminación "-bilidad" siempre se escribe con B, salvo en derivados de palabras que llevan V en su raíz (como civilidad o movilidad, que no son el caso aquí). Habilidad, sensibilidad y debilidad son correctas.
-
-Pregunta 5: ¿Cuál de las siguientes palabras está escrita correctamente aplicando la regla de la "M" antes de "P" y "B"?
-A) Inperio
-B) Anbiente
-C) Embase
-D) Ambiente
-E) Conbatir
+Pregunta 1: Según su estructura sintáctica, ¿qué alternativa presenta un claro ejemplo de oración unimembre?
+A) Juan viene a almorzar.
+B) Si estudias, triunfarás.
+C) El clima nublado es mi favorito.
+D) ¡Villarreal! ¡Villarreal!
+E) Yo admiro y respeto a mis profesores.
 
 D) Correcta
-EXP: La regla ortográfica indica que antes de P y B se escribe siempre M (ambiente, imperio, combatir). Antes de V se escribe N (envase).
+EXP: Las oraciones unimembres son las que cuentan con un solo miembro y carecen de la división en sujeto y predicado, como es el caso de interjecciones u onomatopeyas del tipo "¡Villarreal! ¡Villarreal!".
 
-Pregunta 6: Según las reglas de la letra S, ¿cómo deben escribirse los adjetivos terminados en el sonido "oso" u "osa"?
-A) Con Z (hermozo).
-B) Con C (hermoco).
-C) Con S (hermoso).
-D) Con X (hermoxo).
-E) Depende de la raíz de la palabra.
-
-C) Correcta
-EXP: Los adjetivos terminados en "-oso" y "-osa" se escriben siempre con S, como por ejemplo amorosa, cenagoso, escandaloso.
-
-Pregunta 7: Elija la palabra que utiliza correctamente la "H" delante de diptongos.
-A) Yelo
-B) Ueco
-C) Hielo
-D) Hia
-E) Uérfano
+Pregunta 2: ¿Qué categoría gramatical tiene la función privativa y principal de desempeñarse como el núcleo del sintagma nominal o sujeto?
+A) El verbo
+B) El adjetivo
+C) El sustantivo
+D) El adverbio
+E) La preposición
 
 C) Correcta
-EXP: Delante de las secuencias "ia" o "ie" (y también "ua", "ue", "ui") al comienzo de la palabra o sílaba, siempre se escribe H, como en hielo, huevo o hueco.
+EXP: El núcleo del sujeto forma parte de un sintagma nominal y suele ser, por excelencia, un sustantivo (común o propio) o un pronombre.
 
-Pregunta 8: Señale la oración que emplea correctamente las grafías V y B.
-A) Tuvo mucha enbidia de su éxito.
-B) El equipo se preparó para el adverso clima.
-C) Ellos an andado por la calle.
-D) Es obvio que no biene.
-E) Le entregó el embase vacío.
+Pregunta 3: En la oración "Al fin llegó el Damián arreando las ovejas", ¿cuál es la estructura que cumple la función de sujeto?
+A) Al fin llegó
+B) arreando las ovejas
+C) el Damián arreando las ovejas
+D) llegó el Damián
+E) el Damián
+
+C) Correcta
+EXP: Para reconocer el sujeto se pregunta al verbo "¿quién llegó?", a lo que la respuesta completa es "el Damián arreando las ovejas".
+
+Pregunta 4: En la oración "María volvió a casa después de un año", identifique cuál es la palabra exacta que funciona como núcleo del predicado.
+A) María
+B) a casa
+C) volvió
+D) después
+E) año
+
+C) Correcta
+EXP: El núcleo del predicado es el verbo principal conjugado que indica la acción realizada y concuerda con el sujeto. En este caso, el verbo conjugado es "volvió".
+
+Pregunta 5: De las siguientes opciones, identifique la oración que se caracteriza por poseer un sujeto tácito o elíptico.
+A) El verde del césped resplandecía.
+B) Ellos tenían razón en lo que dijeron.
+C) Sonó toda la noche la misma canción.
+D) Estuvimos una semana en la costa.
+E) Mi hermano es muy valiente.
+
+D) Correcta
+EXP: El sujeto tácito es aquel que no está mencionado explícitamente en la oración, pero se deduce por la desinencia verbal. En "Estuvimos", el sujeto tácito es "Nosotros".
+
+Pregunta 6: ¿Cuál es el núcleo del sujeto en la oración "La mayor virtud de mi madre es la paciencia"?
+A) Mayor
+B) Madre
+C) Paciencia
+D) Virtud
+E) La
+
+D) Correcta
+EXP: El sujeto es "La mayor virtud de mi madre". El sustantivo principal o centro de este sintagma nominal, de quien se habla, es "virtud".
+
+Pregunta 7: Reconozca la oración que presenta un sujeto compuesto (es decir, que tiene dos o más núcleos).
+A) El clima nublado y lluvioso es mi favorito.
+B) Mi madre y yo nos llevamos muy bien.
+C) El joven llegó tarde y no pudo entrar.
+D) Iremos a cenar y después al cine.
+E) El hombre escapó a toda velocidad.
 
 B) Correcta
-EXP: Detrás de N, D y B siempre se escribe V. Por lo tanto, "adverso", "envidia" y "obvio" son correctas con V. Las opciones A y E fallan en esto.
+EXP: Si un sujeto tiene dos núcleos (en este caso "madre" y "yo"), se denomina sujeto compuesto.
 
-Pregunta 9: ¿En qué caso el uso de las letras mayúsculas exime de colocar la tilde ortográfica?
-A) Cuando se escribe todo el texto en mayúsculas.
-B) Cuando se trata de títulos o subtítulos.
-C) Cuando se trata de un documento oficial de la PNP.
-D) En los nombres propios y siglas únicamente.
-E) En ningún caso; las mayúsculas siempre deben tildarse si la regla lo exige.
+Pregunta 8: Para encontrar el sujeto en la oración "Me gustan las asignaturas de matemáticas", ¿cuál es el procedimiento correcto y el sujeto hallado?
+A) Preguntar "¿a quién?", el sujeto es "Me".
+B) Preguntar "¿qué me gustan?", el sujeto es "las asignaturas de matemáticas".
+C) El sujeto es tácito (Yo).
+D) Preguntar "¿de qué?", el sujeto es "de matemáticas".
+E) El sujeto es "matemáticas".
+
+B) Correcta
+EXP: Para reconocer el sujeto se le pregunta al verbo "¿qué o quién realiza la acción?". Al preguntar "¿qué me gustan?", la respuesta concordante en número plural es "las asignaturas de matemáticas".
+
+Pregunta 9: En la oración "Bailamos y reímos toda la noche", indique la característica sintáctica principal de su estructura.
+A) Es una oración unimembre.
+B) Es una oración con sujeto expreso.
+C) Es una oración con predicado compuesto.
+D) Posee un predicado nominal.
+E) El sujeto es compuesto.
+
+C) Correcta
+EXP: La oración tiene un sujeto tácito (Nosotros) y cuenta con dos verbos principales ("bailamos" y "reímos"), por lo que posee un predicado compuesto.
+
+Pregunta 10: ¿Qué oración corresponde a un claro ejemplo de verbo impersonal, lo que la convierte en una oración unimembre?
+A) Felipe fue siempre buen estudiante.
+B) La asamblea redacta la nueva Constitución.
+C) Ellos comieron una pizza.
+D) Ayer llovió torrencialmente.
+E) Nosotros saldremos hacia la costa.
+
+D) Correcta
+EXP: Los verbos meteorológicos (como llover, relampaguear o nevar) son impersonales, solo se conjugan en tercera persona del singular y forman oraciones unimembres al no poder dividirse lógicamente en sujeto y predicado.
+
+
+====== NIVEL MEDIO ======
+Pregunta 11: ¿A qué clase, según la actitud del hablante, pertenece la oración "Ojalá mañana no llueva"?
+A) Dubitativa
+B) Enunciativa afirmativa
+C) Imperativa
+D) Desiderativa
+E) Exclamativa
+
+D) Correcta
+EXP: Las oraciones desiderativas son aquellas mediante las cuales el emisor expresa explícitamente un deseo, utilizando frecuentemente la palabra "ojalá".
+
+Pregunta 12: Según la clasificación por la intención del emisor, la oración "Tal vez sea mejor que vengas a las siete" pertenece al grupo de oraciones:
+A) Imperativas
+B) Dubitativas
+C) Interrogativas indirectas
+D) Enunciativas
+E) Exclamativas
+
+B) Correcta
+EXP: El hablante expresa una duda o probabilidad empleando fórmulas introductorias como adverbios y locuciones adverbiales (quizás, tal vez), por lo que es una oración dubitativa.
+
+Pregunta 13: Identifique el tipo de oración, según la actitud del hablante, en el siguiente enunciado: "Cierra la puerta, por favor."
+A) Desiderativa
+B) Enunciativa
+C) Dubitativa
+D) Imperativa
+E) Interrogativa
+
+D) Correcta
+EXP: Las oraciones imperativas (o exhortativas) dan una orden, mandato, ruego o consejo al receptor ("Cierra la puerta, por favor").
+
+Pregunta 14: ¿Cuál de los siguientes enunciados representa claramente una oración interrogativa indirecta?
+A) ¿Quién tiene el pelo ardiendo?
+B) ¡Tienes el pelo ardiendo!
+C) Me pregunto si me dejarás elegir a mí.
+D) ¿Te parece bien?
+E) Debes de estar loco.
+
+C) Correcta
+EXP: Las interrogativas indirectas expresan una pregunta pero no emplean signos de interrogación gráficos, sino que se introducen por medio de verbos de lengua como decir, preguntar o indagar ("Me pregunto si...").
+
+Pregunta 15: La oración "Eso costará unos doscientos soles" se clasifica según la intención del hablante como una oración:
+A) Imperativa
+B) Desiderativa
+C) Exclamativa
+D) Enunciativa
+E) Dubitativa
+
+D) Correcta
+EXP: El emisor está expresando un hecho o una idea afirmándola como una realidad objetiva ("Eso costará unos doscientos soles"), lo que la define como una oración enunciativa.
+
+Pregunta 16: Lea el siguiente enunciado: "Debes de tener el pelo ardiendo". ¿Qué actitud del hablante se refleja en la oración?
+A) Exclamativa
+B) Desiderativa
+C) Imperativa
+D) Dubitativa
+E) Enunciativa
+
+D) Correcta
+EXP: Aunque se usa el verbo deber, la estructura "deber de + infinitivo" (a diferencia de "deber + infinitivo") expresa una duda, posibilidad o suposición del hablante, por lo que es dubitativa.
+
+Pregunta 17: Señale la opción que contiene una oración de tipo imperativa expresada a través de una fórmula de obligación.
+A) Ojalá tengas el pelo ardiendo.
+B) Tienes que quemarte el pelo.
+C) Puede que tengas el pelo ardiendo.
+D) No tienes el pelo ardiendo.
+E) ¿Cuándo empieza la película?
+
+B) Correcta
+EXP: Las oraciones imperativas pueden usar verbos en modo imperativo o fórmulas de obligación como "Tener que + infinitivo" ("Tienes que quemarte el pelo") para transmitir una orden o mandato.
+
+Pregunta 18: Identifique la alternativa que presenta una oración interrogativa parcial.
+A) ¿Tienes el pelo ardiendo?
+B) Me pregunto si tienes hambre.
+C) ¿Te gusta el helado?
+D) ¿Por qué tienes el pelo ardiendo?
+E) Ojalá haya palomitas de colores.
+
+D) Correcta
+EXP: Las interrogativas parciales preguntan por una parte del contenido buscando una información en particular (causa, sujeto, tiempo) y utilizan partículas interrogativas como por qué, quién, cuándo. Las totales buscan como respuesta un sí o un no.
+
+Pregunta 19: Si el hablante enuncia: "Nadie tiene el pelo ardiendo", estamos frente a una oración:
+A) Dubitativa
+B) Enunciativa negativa
+C) Exhortativa
+D) Enunciativa afirmativa
+E) Desiderativa
+
+B) Correcta
+EXP: Las oraciones enunciativas expresan un hecho. Son negativas cuando niegan una idea usando adverbios (no, nunca) o pronombres indefinidos negativos como "nadie" o "nada".
+
+Pregunta 20: ¿En cuál de las siguientes opciones se utiliza una oración para expresar una emoción de sorpresa o alegría, dándole fuerte énfasis al mensaje?
+A) ¡Qué bonito es ese dibujo!
+B) Salga de aquí.
+C) ¿Dónde estudias?
+D) El clima nublado es mi favorito.
+E) Quizás tengas razón.
+
+A) Correcta
+EXP: Las oraciones exclamativas transmiten sentimientos y emociones profundas (alegría, sorpresa) y suelen utilizar signos de exclamación para dar énfasis ("¡Qué bonito es ese dibujo!").
+
+
+====== NIVEL DIFÍCIL ======
+Pregunta 21: En la oración "El computador de Marcos tiene muchos programas", ¿qué función sintáctica exacta cumple la estructura subrayada "de Marcos"?
+A) Núcleo del Sujeto
+B) Modificador Directo
+C) Aposición
+D) Modificador Indirecto
+E) Objeto Directo
+
+D) Correcta
+EXP: El Modificador Indirecto aporta información extra y siempre está unido al núcleo del sintagma nominal a través de una preposición, en este caso la preposición "de".
+
+Pregunta 22: En la oración "Julio, mi amigo, se mudó a la casa de la esquina", ¿cómo se denomina sintácticamente al segmento que va entre comas ("mi amigo")?
+A) Modificador indirecto
+B) Núcleo del predicado
+C) Sujeto expreso
+D) Complemento agente
+E) Aposición
 
 E) Correcta
-EXP: No existe ninguna norma ortográfica de la RAE que exima a las letras mayúsculas de llevar tilde; estas deben acentuarse siempre que lo exijan las reglas generales.
+EXP: Lo que va entre comas dentro del sujeto explicando, aclarando o repitiendo quién es el núcleo se llama aposición, y funciona como un modificador del sujeto.
 
-Pregunta 10: Señale la palabra que incumple la regla del uso de la H inicial.
-A) Huérfano
-B) Hueso
-C) Hiena
-D) Uevo
-E) Hielo
+Pregunta 23: En el sintagma nominal, ¿qué categorías gramaticales funcionan exclusivamente como modificadores directos (MD) del núcleo?
+A) Verbos y adverbios
+B) Preposiciones y conjunciones
+C) El artículo y el adjetivo
+D) Sustantivos y pronombres
+E) Interjecciones y aposiciones
 
-D) Correcta
-EXP: La palabra "huevo" debe escribirse con H inicial porque comienza con el diptongo "ue", siguiendo la regla estricta de la RAE.
+C) Correcta
+EXP: Los modificadores directos acompañan directamente al núcleo sin preposiciones. Los artículos, determinantes y adjetivos cumplen esta función sintáctica.
 
-Pregunta 11: Identifique la serie de palabras agudas que llevan tilde correctamente aplicada.
-A) Amor, reloj, pared.
-B) Canción, compás, manatí.
-C) Cántaro, joven, árbol.
-D) Bistec, robot, zigzag.
-E) Examen, imagen, origen.
+Pregunta 24: Lea atentamente: "La carta fue recibida por el recepcionista". Según la voz de la oración, ¿qué tipo de sujeto presenta?
+A) Sujeto Agente
+B) Sujeto Paciente
+C) Sujeto Tácito
+D) Sujeto Compuesto
+E) Sujeto Múltiple
 
 B) Correcta
-EXP: Las palabras agudas llevan tilde si terminan en vocal, N o S. "Canción" (termina en N), "compás" (termina en S) y "manatí" (termina en vocal) son correctas.
+EXP: El sujeto es "La carta". Al estar la oración en voz pasiva ("fue recibida"), el sujeto no realiza la acción, sino que la recibe pasivamente, por lo cual se clasifica como Sujeto Paciente.
 
-Pregunta 12: Según las reglas de acentuación de las palabras graves, ¿cuál de las siguientes opciones DEBE llevar tilde?
-A) Joven
-B) Examen
-C) Zapato
-D) Mártir
-E) Sillas
-
-D) Correcta
-EXP: "Mártir" es grave y termina en R (que no es N, S ni vocal), por lo tanto lleva tilde obligatoriamente. "Joven", "examen", "zapato" y "sillas" terminan en N, S o vocal y por ello no se tildan.
-
-Pregunta 13: Las palabras "matemáticas", "párroco" y "música" se tildan obligatoriamente porque pertenecen al grupo de las palabras:
-A) Agudas
-B) Graves
-C) Esdrújulas
-D) Sobresdrújulas
-E) Monosílabas
+Pregunta 25: Identifique los modificadores directos (MD) presentes en el sujeto de la siguiente oración: "Mi carro nuevo es muy rápido".
+A) muy, rápido
+B) carro, es
+C) Mi, nuevo
+D) Mi, rápido
+E) nuevo, rápido
 
 C) Correcta
-EXP: Todas son palabras esdrújulas, ya que tienen la sílaba tónica en la antepenúltima posición, y por regla general todas las esdrújulas se tildan sin excepción.
+EXP: El sujeto es "Mi carro nuevo", donde el núcleo es "carro". Las palabras que lo modifican directamente sin nexos son el determinante posesivo "Mi" y el adjetivo "nuevo".
 
-Pregunta 14: Elija la oración donde el monosílabo "el" / "él" esté correctamente tildado.
-A) El me dijo que el perro escapó.
-B) Él oficial ordenó el alto.
-C) Él me dijo que el perro escapó.
-D) El soldado se llevó él arma.
-E) Ese libro es de el.
-
-C) Correcta
-EXP: "Él" se tilda cuando cumple la función de pronombre personal ("Él me dijo"), mientras que "el" no se tilda cuando funciona como artículo ("el perro").
-
-Pregunta 15: Seleccione el enunciado con el uso correcto del tilde diacrítica en "tu" / "tú".
-A) Tú debes traer tu uniforme.
-B) Tu debes traer tú uniforme.
-C) Tu debes traer tu uniforme.
-D) Tú debes traer tú uniforme.
-E) Tu informe es mejor que el de tú.
-
-A) Correcta
-EXP: "Tú" lleva tilde cuando es pronombre personal ("Tú debes..."), y va sin tilde cuando es adjetivo posesivo ("tu uniforme").
-
-Pregunta 16: Señale la oración que presenta correcta tildación diacrítica de los monosílabos.
-A) El té te lo sirvió a tí.
-B) A mi me gusta mi nuevo trabajo.
-C) Esto es para mí, y mi familia lo sabe.
-D) El soldado dió fe de lo ocurrido.
-E) El dió un paso al frente por tí.
+Pregunta 26: Analice la oración "Los libros fueron devueltos por los estudiantes". Determine qué clase de sujeto y voz posee.
+A) Sujeto Agente - Voz activa
+B) Sujeto Tácito - Voz pasiva
+C) Sujeto Paciente - Voz pasiva
+D) Sujeto Simple - Voz activa
+E) Sujeto Compuesto - Voz pasiva
 
 C) Correcta
-EXP: "Mí" (pronombre) lleva tilde, y "mi" (posesivo) no la lleva. Además, "ti", "dio" y "fe" son monosílabos que JAMÁS llevan tilde, lo que invalida las otras opciones.
+EXP: En las oraciones en voz pasiva, el sujeto ("Los libros") no realiza la acción del verbo, sino que la sufre o recibe de un agente ("los estudiantes"), clasificándose como Sujeto Paciente.
 
-Pregunta 17: Marque la opción que usa correctamente la tilde en "se" / "sé".
-A) Se muy bien que el se fue.
-B) Sé muy bien que él sé fue.
-C) Sé muy bien que él se fue.
-D) Se bueno y dáselo a el.
-E) Ya se que no vienes.
-
-C) Correcta
-EXP: "Sé" se tilda cuando deriva de los verbos ser o saber ("Sé muy bien"). "Se" no se tilda cuando es pronombre reflexivo o átono ("se fue").
-
-Pregunta 18: Identifique la oración correcta de acuerdo con la norma de la conjunción "o" entre números.
-A) Se necesitan 20 ó 30 efectivos para el operativo.
-B) Había 5 ó 6 sospechosos en la sala.
-C) Asistieron 1 o 2 cadetes a la formación.
-D) Compraremos 10 ó 15 carpetas.
-E) Fueron 100 ó 200 personas a la marcha.
-
-C) Correcta
-EXP: La RAE suprimió de manera absoluta la tilde en la conjunción disyuntiva "o" cuando se escribe entre cifras, ya que la confusión con el cero es inexistente en la actualidad.
-
-Pregunta 19: Seleccione la oración que emplea adecuadamente la tilde diacrítica en "mas" / "más".
-A) Quiero mas tiempo para estudiar.
-B) Intentó escapar, más la policía lo detuvo.
-C) Tiene más fuerza, mas carece de técnica.
-D) Habló mas fuerte de lo normal.
-E) Dijo que quería mas, más no le dieron.
-
-C) Correcta
-EXP: "Más" lleva tilde cuando es adverbio de cantidad ("Tiene más fuerza"), y se escribe sin tilde "mas" cuando es conjunción equivalente a 'pero' ("mas carece de técnica").
-
-Pregunta 20: Señale el uso correcto del monosílabo "de" / "dé".
-A) Quiero que me de un poco de agua.
-B) Dile que te dé el informe de guardia.
-C) La medalla dé oro es tuya.
-D) Espero que no de problemas.
-E) Viene dé la Escuela de Oficiales.
-
-B) Correcta
-EXP: "Dé" lleva tilde cuando es la conjugación del verbo dar ("te dé el informe"), mientras que "de" va sin tilde cuando funciona como preposición ("informe de guardia").
-
-Pregunta 21: Basándose en la normativa vigente de la RAE de 2010, ¿cuál de las siguientes oraciones es la única correcta?
-A) Sólo tú sabes el verdadero motivo del delito.
-B) Él llegó solo al puesto de control.
-C) Ése oficial tiene un legajo intachable.
-D) Aquél día llovió torrencialmente.
-E) Resolvió los ejercicios él sólo.
-
-B) Correcta
-EXP: La RAE eliminó definitivamente la tilde diacrítica en la palabra "solo" (sea adjetivo o adverbio) y en los demostrativos (este, ese, aquel).
-
-Pregunta 22: Identifique la oración que presenta correcta escritura del prefijo "ex" según las actualizaciones de la RAE.
-A) El ex-ministro del Interior fue citado a declarar.
-B) El ex General dio una entrevista en televisión.
-C) El ex primer ministro aseguró que la ley será aprobada.
-D) La ex-novia del sospechoso colaboró con la policía.
-E) Habló el exComandante de la base naval.
-
-C) Correcta
-EXP: El prefijo "ex" se escribe separado de la base léxica únicamente cuando esta es pluriverbal (compuesta por varias palabras), como en "ex primer ministro". Si es una sola palabra, va unido sin guion (exministro, exnovio).
-
-Pregunta 23: De acuerdo con el uso de mayúsculas y minúsculas dictado por la RAE, señale la oración correcta.
-A) El Presidente de la República dará un mensaje hoy.
-B) El Papa viajará a Brasil el próximo mes.
-C) El Alcalde supervisó las obras del puente.
-D) El ministro de economía anunció nuevas medidas.
-E) El Ministro y el Presidente debatieron la propuesta.
-
-D) Correcta
-EXP: Los nombres que designan títulos, cargos o empleos de cualquier rango (presidente, papa, alcalde, ministro) se deben escribir siempre con minúscula inicial.
-
-Pregunta 24: Elija la oración que emplea correctamente la tildación en adverbios terminados en "-mente".
-A) Se acercó sigilosamente y lo detuvo rapidamente.
-B) El operativo se resolvió fácilménte gracias a la información.
-C) Sutilménte ingresó al edificio abandonado.
-D) Resolvió el enigma hábilmente y escapó rápidamente.
-E) Actuó docilmente ante las autoridades.
-
-D) Correcta
-EXP: Los adverbios en "-mente" conservan la tilde del adjetivo base. "Hábilmente" (de hábil) y "rápidamente" (de rápida) llevan tilde; "sutilmente" (de sutil) no la lleva.
-
-Pregunta 25: Respecto a los extranjerismos y su adaptación al español, ¿qué opción representa la norma oficial de la RAE?
-A) Se escribe "a grosso modo" siempre en minúsculas.
-B) Todos los extranjerismos deben llevar tilde.
-C) La palabra "carné" es un extranjerismo adaptado que se somete a las reglas de acentuación del español.
-D) Se debe escribir "Iraq" con 'q' al final en español.
-E) Se escribe "status quo" sin ninguna marca gráfica o cursiva.
-
-C) Correcta
-EXP: Los extranjerismos adaptados al español (como carné, del francés carnet) se someten a las reglas generales de acentuación. Los extranjerismos no adaptados o locuciones latinas deben ir en cursiva.
-
-Pregunta 26: ¿Cuál de las siguientes afirmaciones sobre las actualizaciones de la RAE (2010) es verdadera?
-A) Los pronombres demostrativos deben tildarse en caso de ambigüedad.
-B) La palabra "solo" lleva tilde si equivale a "solamente".
-C) La conjunción "o" lleva tilde si va entre números.
-D) La letra "y" debe denominarse oficialmente "ye".
-E) El abecedario español cuenta con 29 letras.
-
-D) Correcta
-EXP: La RAE recomendó una denominación única para ciertas letras, estableciendo que la "y" debe llamarse "ye" (no "i griega"), la "v" como "uve" y la "w" como "uve doble". Las opciones A, B y C son reglas derogadas.
-
-Pregunta 27: Señale la oración con escritura correcta de prefijos y acentuación.
-A) El ex-director de la academia llegó sólo a la ceremonia.
-B) Asistirán 20 ó 30 personas a la reunión del ex presidente.
-C) Este excomandante general afirmó que el documento es falso.
-D) El ex primer ministro leyó el informe rápidamente.
-E) Ése ex jefe policial actuó fuera de la ley.
-
-D) Correcta
-EXP: "Ex primer ministro" se escribe separado (base pluriverbal). "Rápidamente" lleva tilde (deriva de rápida). Las otras fallan al usar guiones (ex-director), tildar "ó", separar bases univerbales (ex presidente) o tildar demostrativos (Ése).
-
-Pregunta 28: Teniendo en cuenta las reglas para los días, meses y cargos, marque la alternativa correcta.
-A) El Lunes 15 de Enero el Alcalde visitó el colegio.
-B) El próximo Martes, el Presidente dará un discurso.
-C) El lunes 15 de enero el alcalde visitó el colegio.
-D) El próximo martes, el presidente dará un discurso.
-E) El ministro llegará a la ciudad el lunes de diciembre.
+Pregunta 27: En la oración "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine cuál es el sujeto.
+A) por la opinión pública
+B) que dejó grandes pérdidas
+C) fue condenado
+D) grandes pérdidas
+E) El cobarde atentado
 
 E) Correcta
-EXP: Los cargos (ministro), días de la semana (lunes) y meses del año (diciembre) se escriben en minúscula según las normas ortográficas de la RAE, salvo que inicien oración.
+EXP: Preguntamos al verbo en voz pasiva "¿qué fue condenado por la opinión pública?". La respuesta y sujeto paciente de la oración es "El cobarde atentado".
 
-Pregunta 29: ¿En qué caso la palabra "aun" debe escribirse SIN tilde?
-A) Aun no llega el comandante.
-B) Aun los cadetes lesionados terminaron la marcha.
-C) No he recibido el informe aun.
-D) Espero que aun tengas el valor de decirlo.
-E) Dime si aun llueve en la ciudad.
-
-B) Correcta
-EXP: La palabra "aun" se escribe sin tilde cuando equivale a "incluso", "hasta" o "también" ("Incluso los cadetes lesionados..."). Se tilda ("aún") cuando puede ser reemplazada por "todavía".
-
-Pregunta 30: Elija la oración que contiene una locución latina escrita correctamente según la RAE.
-A) El juez actuó de motu propio.
-B) Fue atrapado in fraganti por la patrulla.
-C) Su currículum vite es impecable.
-D) El acuerdo se firmó *de facto* sin consenso previo.
-E) El problema fue resuelto a groso modo.
+Pregunta 28: En la oración "El señor Fernández, el arquitecto, revisó los planos", la estructura "el arquitecto" cumple la función de:
+A) Modificador indirecto
+B) Núcleo del sujeto
+C) Objeto directo
+D) Aposición
+E) Circunstancial
 
 D) Correcta
-EXP: Las locuciones latinas deben escribirse en cursiva para marcar su carácter foráneo (*de facto*). Además, expresiones como "a grosso modo" o "de motu propio" son errores comunes (lo correcto es "grosso modo" y "motu proprio").
+EXP: La expression encerrada entre comas que detalla o repite la identidad del núcleo del sujeto ("El señor Fernández") funciona como aposición.
 
-Pregunta 31: Analice las reglas ortográficas excepcionales sobre terminaciones consonánticas y monosílabos. Identifique la oración correcta.
-A) El jóven cadete desarrolló gran fuerza en el bícep.
-B) El truhán elaboró un guión espectacular para la obra.
-C) Hubo una explosión porque un ión generó interferencia.
-D) Los robots avanzaban haciendo zigzags por el campo.
-E) El médico utilizó los fórceps y él vió el resultado.
-
-D) Correcta
-EXP: "Robots" y "zigzags" NO llevan tilde porque son agudas terminadas en "s" precedida de consonante. "Truhán", "guión", "ión" y "vió" son monosílabos ortográficos y nunca se tildan. "Jóven" es grave terminada en n, no se tilda.
-
-Pregunta 32: De acuerdo con la normativa sobre palabras terminadas en "S" precedida de consonante, señale la serie de palabras correctamente escrita.
-A) Bíceps, fórceps, cómics.
-B) Robóts, zigzágs, mamúts.
-C) Biceps, forceps, comics.
-D) Bíceps, robóts, fórceps.
-E) Cómics, zigzágs, bíceps.
-
-A) Correcta
-EXP: Las palabras graves que terminan en "s" precedida de consonante sí llevan tilde obligatoriamente (bíceps, fórceps, cómics). Las agudas (robots, zigzags) no la llevan.
-
-Pregunta 33: Señale la oración que presenta correcta escritura en verbos con pronombres enclíticos.
-A) Entregaselo al superior inmediatamente.
-B) Cómetelo todo y actúa rápidamente.
-C) Llevatelo antes de que llegue el oficial.
-D) Daselo a él, felizmente no hubo heridos.
-E) Resuelvelo agilmente antes del amanecer.
-
-B) Correcta
-EXP: "Cómetelo" es una palabra sobresdrújula y, como tal, siempre se tilda. "Rápidamente" conserva la tilde de rápida. "Entrégaselo", "llévatelo", "dáselo" y "resuélvelo" fallan por carecer de sus tildes esdrújulas/sobresdrújulas obligatorias.
-
-Pregunta 34: ¿Cuál de las siguientes palabras es un monosílabo ortográfico que la RAE estipula que NUNCA debe llevar tilde?
-A) Qué
-B) Él
-C) Tú
-D) Guion
-E) Más
-
-D) Correcta
-EXP: "Guion" contiene un diptongo ortográfico y es considerado un monosílabo; a diferencia de los diacríticos (qué, él, tú, más), "guion" no requiere distinción y jamás se tilda.
-
-Pregunta 35: Tomando en cuenta las reglas de prefijos, enclíticos y acentuación, marque la opción correcta.
-A) El ex-ministro dijo que se lo dieramos a aquél.
-B) El ex primer ministro ordenó: "¡Entrégaselo ahora mismo!".
-C) Sólo el excomandante leyó el guión completo.
-D) El jóven oficial guardó los cómics y los robóts.
-E) El truhán robó el ión del laboratorio.
-
-B) Correcta
-EXP: "Ex primer ministro" va separado por ser pluriverbal, y "entrégaselo" se tilda por ser sobresdrújula. Las otras opciones fallan en "ex-ministro" (guion), "dieramos" (sin tilde), "aquél/sólo" (sin tilde), "guión/ión/truhán" (monosílabos sin tilde) y "jóven/robóts" (tildes incorrectas).
-
-Pregunta 36: Analice morfológica y ortográficamente el siguiente verbo: "Cántaselo". ¿Por qué lleva tilde?
-A) Porque es una palabra grave terminada en vocal.
-B) Porque es aguda y termina en vocal.
-C) Porque es una palabra esdrújula.
-D) Porque es una palabra sobresdrújula y estas siempre se tildan.
-E) Por tildación diacrítica para diferenciarla de "cantaselo".
-
-D) Correcta
-EXP: La unión del verbo imperativo "canta" con los pronombres átonos enclíticos "se" y "lo" forma "cán-ta-se-lo", cuya sílaba tónica recae antes de la antepenúltima sílaba, siendo sobresdrújula y tildándose siempre.
-
-Pregunta 37: Identifique la oración que comete un error de tildación en un monosílabo ortográfico con diptongo.
-A) El delincuente huyó por la ventana.
-B) Juan rio mucho con la broma.
-C) El truhán fue capturado ayer.
-D) Siempre me guio por el instinto.
-E) No me lio con esos problemas.
+Pregunta 29: Determine la veracidad de la siguiente afirmación respecto a los tipos de sujeto por su presencia: "El sujeto elíptico u omitido es aquel que no aparece escrito en la oración, pero se deduce por la forma verbal".
+A) Falso, se trata del sujeto léxico.
+B) Falso, se trata del sujeto expreso.
+C) Verdadero.
+D) Falso, se trata de la aposición.
+E) Falso, se trata del sujeto paciente.
 
 C) Correcta
-EXP: "Truhán" tiene tilde, lo cual es un error ortográfico sancionado por la RAE, ya que es un monosílabo con diptongo ortográfico (truhan) y no debe llevar acento gráfico.
+EXP: El sujeto tácito, también llamado elíptico u omitido, es aquel que no se nombra explícitamente en el enunciado pero se colige a partir de la conjugación y desinencia del verbo principal.
 
-Pregunta 38: Indique la alternativa en la que encontramos un adverbio terminado en "-mente" correctamente tildado de acuerdo con la norma vigente.
-A) Tristemente, el rehén falleció.
-B) Felizmente, el exministro se salvó.
-C) Exitosaménte, culminaron la marcha.
-D) Tímidamente, se acercó al estrado.
-E) Astutaménte, evadió la seguridad.
+Pregunta 30: En la oración "La inmensa llanura de las viñas sube un frescor grato y fragante" (variación sintáctica poética), si buscamos una estructura similar a "Los trabajadores de la empresa telefónica hicieron una huelga", el modificador indirecto del sujeto en este último ejemplo es:
+A) Los trabajadores
+B) de la empresa telefónica
+C) hicieron una huelga
+D) una huelga
+E) ayer
+
+B) Correcta
+EXP: El modificador indirecto se reconoce por estar unido al núcleo del sintagma nominal mediante una preposición (en este caso "de"). Por tanto, "de la empresa telefónica" es el MI de "trabajadores".
+
+
+====== NIVEL EXTREMO ======
+Pregunta 31: En la oración "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine la función sintáctica de la estructura subrayada "por la opinión pública".
+A) Objeto directo
+B) Objeto indirecto
+C) Complemento agente
+D) Atributo
+E) Circunstancial de lugar
+
+C) Correcta
+EXP: El complemento agente es exclusivo de las oraciones en voz pasiva ("fue condenado"), va encabezado por la preposición "por" y señala a la entidad que materialmente ejecuta la acción verbal.
+
+Pregunta 32: Analice la oración "Inés compró chocolates para su enamorado el día sábado". ¿Qué función sintáctica cumple la frase "para su enamorado"?
+A) Objeto directo
+B) Circunstancial de causa
+C) Aposición
+D) Objeto indirecto
+E) Atributo
 
 D) Correcta
-EXP: El adverbio "tímidamente" lleva tilde porque el adjetivo original "tímida" (esdrújula) lleva tilde. "Feliz" y "triste" no llevan tilde, por lo que "felizmente" y "tristemente" tampoco. Las opciones C y E tildan "mente", lo cual es un error sintáctico.
+EXP: El objeto indirecto designa a quien recibe el beneficio o daño de la acción. Responde a la pregunta "¿para quién compró?" y puede sustituirse por el pronombre átono "le" (Inés le compró).
 
-Pregunta 39: En la oración "Aquel día, el ex primer ministro leyó el guion de su discurso y dio un paso al frente", si un postulante coloca tildes en "aquel", "guion" y "dio", estaría cometiendo:
-A) Tres errores ortográficos.
-B) Dos errores ortográficos.
-C) Ningún error, ambas formas son válidas.
-D) Un error de tildación diacrítica.
-E) Un error de prefijación.
+Pregunta 33: Identifique el tipo de predicado en la siguiente oración: "El hombre es arquitecto".
+A) Predicado verbal
+B) Predicado nominal (o copulativo)
+C) Predicado no verbal
+D) Predicado compuesto
+E) Predicado elíptico
 
-A) Correcta
-EXP: Cometería tres errores ortográficos precisos según la RAE 2010: los pronombres demostrativos ("aquel") perdieron la tilde, los monosílabos con diptongo ortográfico ("guion") no se tildan, y "dio" es un monosílabo general que nunca lleva tilde.
+B) Correcta
+EXP: El predicado nominal o copulativo está formado obligatoriamente por un verbo copulativo (ser, estar, parecer) que funciona como enlace hacia un atributo (arquitecto).
 
-Pregunta 40: Seleccione la afirmación FALSA respecto a la normativa de tildación de casos especiales (nivel extremo).
-A) "Fórceps" lleva tilde porque es una palabra grave terminada en 's' precedida de consonante.
-B) "Robots" no lleva tilde porque es una palabra aguda terminada en 's' precedida de consonante.
-C) "Atiéndemelo" lleva tilde porque se convirtió en una palabra sobresdrújula al añadirle enclíticos.
-D) "Ión" lleva tilde porque se produce un hiato acentual al pronunciarse en dos sílabas.
-E) La palabra "solo" no se tilda ni cuando funciona como adverbio equivalente a "solamente".
+Pregunta 34: Determine el Objeto Directo (OD) en la siguiente oración: "Hemos comprado pasteles para tu cumpleaños".
+A) Hemos comprado
+B) tu cumpleaños
+C) pasteles
+D) para
+E) nosotros (tácito)
+
+C) Correcta
+EXP: El objeto directo se reconoce preguntando "¿qué?" al verbo ("¿qué hemos comprado?"). La respuesta es "pasteles", y se puede sustituir por el pronombre "los" (Los hemos comprado).
+
+Pregunta 35: Señale la oración que presenta un verbo transitivo que exija obligatoriamente la presencia de un Objeto Directo.
+A) Ayer llovió torrencialmente.
+B) Yo como manzanas.
+C) Marcos se parece mucho a su padre.
+D) El avión aterrizó sin inconvenientes.
+E) José y Hugo caminaron.
+
+B) Correcta
+EXP: Un verbo transitivo transfiere la acción hacia un objeto directo ("manzanas"). Al retirarlo ("Yo como"), la frase necesita el contexto del objeto para estar semánticamente completa.
+
+Pregunta 36: En la oración "La empresa publicó una nota explicando el acuerdo", ¿cuál es el núcleo del predicado?
+A) empresa
+B) publicó
+C) nota
+D) explicando
+E) acuerdo
+
+B) Correcta
+EXP: El núcleo del predicado, también llamado núcleo verbal, es el verbo principal conjugado que concuerda con el sujeto. En este caso es "publicó".
+
+Pregunta 37: En el enunciado "No llegó por la enfermedad de su mamá", identifique la función sintáctica que cumple el sintagma preposicional "por la enfermedad de su mamá".
+A) Objeto directo
+B) Complemento circunstancial de causa
+C) Complemento agente
+D) Objeto indirecto
+E) Atributo
+
+B) Correcta
+EXP: Este complemento responde a la pregunta "¿por qué (no llegó)?" e indica el motivo de la acción, constituyéndose como un complemento circunstancial de causa.
+
+Pregunta 38: En la oración "Luisa preparó un postre apetitoso para los invitados", si se reemplaza el objeto directo por su pronombre correspondiente, ¿cómo quedaría estructurada la frase?
+A) Luisa se los preparó para los invitados.
+B) Luisa le preparó un postre apetitoso.
+C) Luisa lo preparó para los invitados.
+D) Luisa las preparó apetitoso.
+E) Luisa les preparó un postre.
+
+C) Correcta
+EXP: El objeto directo es "un postre apetitoso" (masculino, singular). El pronombre átono que lo reemplaza de forma exacta es "lo", resultando en "Luisa lo preparó para los invitados".
+
+Pregunta 39: Teniendo en cuenta la estructura "CC (Circunstancial) + OI (Objeto Indirecto) + OD (Objeto Directo) + NP (Núcleo del Predicado)", identifique la oración que se adapta perfectamente a este orden.
+A) A mí sí me interesa.
+B) Con alegría, entregó el regalo.
+C) Yo no sé la respuesta.
+D) Mañana se lo devolveré.
+E) Su padre se lo advirtió ayer.
 
 D) Correcta
-EXP: La afirmación falsa es la D. A efectos de acentuación gráfica, la palabra "ion" se considera monosílaba por contener un diptongo ortográfico y, como todo monosílabo sin diacrítico, NUNCA debe llevar tilde.
-'''
+EXP: Analizando "Mañana se lo devolveré": Mañana (CC de tiempo) + se (OI, pronombre) + lo (OD, pronombre) + devolveré (NP, verbo).
+
+Pregunta 40: En una oración de voz pasiva como "El balón fue atrapado por el perro", si transformamos la oración a voz activa ("El perro atrapó el balón"), ¿qué función sintáctica pasa a cumplir "el balón"?
+A) Sujeto agente
+B) Objeto indirecto
+C) Complemento agente
+D) Modificador indirecto
+E) Objeto directo
+
+E) Correcta
+EXP: En la conversión de voz pasiva a voz activa, el sujeto paciente ("El balón") asume la función de Objeto Directo de la nueva oración ("El perro atrapó el balón", donde "el balón" recibe la acción de atrapar).
+"""
 
 questions = []
 current_q = {}
@@ -441,23 +448,23 @@ for block in blocks[1:]:
 
 dart_code = """import 'package:learn/models/question.dart';
 
-final List<Question> reglasOrtograficasExt10qQuestions = [
+final List<Question> oracionGramaticalExt10qQuestions = [
 """
 for i, q in enumerate(questions):
-    opts_str = ',\n'.join(f'      r"""{opt}"""' for opt in q['options'])
+    opts_str = ',\n'.join(f"      r'''{opt}'''" for opt in q['options'])
     dart_code += f"""  Question(
-    id: "ort_rae_10q_q{i+1}",
-    topicId: "eo_pnp_reglas_ortograficas_ext_10q",
-    text: r\"\"\"{q['text']}\"\"\",
+    id: "ora_gram_10q_q{i+1}",
+    topicId: "eo_pnp_oracion_gramatical_ext_10q",
+    text: r'''{q['text']}''',
     options: [
 {opts_str}
     ],
     correctAnswer: {q['correct']},
-    explanation: r\"\"\"{q['exp']}\"\"\",
+    explanation: r'''{q['exp']}''',
   ),
 """
 
 dart_code += "];\n"
 
-with open(r'c:\Users\PC\Downloads\EstudiEO-flutter\lib\data\library\comunicacion\reglas_ortograficas_ext_10q_questions.dart', 'w', encoding='utf-8') as f:
+with open(r'c:\Users\PC\Downloads\EstudiEO-flutter\lib\data\library\comunicacion\oracion_gramatical_ext_10q_questions.dart', 'w', encoding='utf-8') as f:
     f.write(dart_code)

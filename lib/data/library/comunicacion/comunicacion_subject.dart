@@ -7,6 +7,7 @@ final Subject comunicacionSubject = Subject(
   icon: '📖',
   topicIds: [
     'eo_pnp_reglas_ortograficas_ext_10q', // Reglas Ortográficas y Normativas RAE (Teoría Completa 10Q)
+    'eo_pnp_oracion_gramatical_ext_10q', // La Oración Gramatical (Teoría Completa 10Q)
     'eo_pnp_reglas_ortograficas_01', // Reglas Ortográficas y Normativa RAE
     'eo_pnp_oracion_gramatical_01', // La Oración Gramatical
   ],
