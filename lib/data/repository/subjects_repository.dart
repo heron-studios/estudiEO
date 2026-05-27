@@ -144,8 +144,16 @@ class SubjectsRepository {
   }
 
   /// Obtiene todos los tópicos de una asignatura
+  /// Solo devuelve los topics cuyo ID está en el topicIds del subject
   static List<Topic> getTopicsBySubject(String subjectId) {
-    return _topicsBySubject[subjectId]?.values.toList() ?? [];
+    final subject = _subjects[subjectId];
+    final topicsMap = _topicsBySubject[subjectId];
+    if (subject == null || topicsMap == null) return [];
+    // Filtrar por topicIds del subject para ocultar topics sin contenido
+    return subject.topicIds
+        .where((id) => topicsMap.containsKey(id))
+        .map((id) => topicsMap[id]!)
+        .toList();
   }
 
   /// Obtiene un tópico específico
