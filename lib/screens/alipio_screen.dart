@@ -53,9 +53,25 @@ class _AlipioScreenState extends State<AlipioScreen>
 
   Question get _current => _cards[_index];
 
+  final Set<String> _allTimeFlipped = {};
+  final List<String> _batchQuestionIds = [];
+
   void _flip() {
     if (_isFront) {
       _flipController.forward();
+      
+      if (!_allTimeFlipped.contains(_current.id)) {
+        _allTimeFlipped.add(_current.id);
+        _batchQuestionIds.add(_current.id);
+        
+        if (_batchQuestionIds.length == 20 || _allTimeFlipped.length == _cards.length) {
+          if (_batchQuestionIds.isNotEmpty) {
+            Future.delayed(const Duration(milliseconds: 500), () {
+              if (mounted) _showMiniQuizPrompt();
+            });
+          }
+        }
+      }
     } else {
       _flipController.reverse();
     }
@@ -63,6 +79,44 @@ class _AlipioScreenState extends State<AlipioScreen>
       _isFront = !_isFront;
       _showAnswer = !_showAnswer;
     });
+  }
+
+  void _showMiniQuizPrompt() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: _card,
+          title: const Text('¡Tarjetas completadas!', style: TextStyle(color: Colors.white)),
+          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: Colors.white70)),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Close dialog
+                final batch = List<String>.from(_batchQuestionIds);
+                _batchQuestionIds.clear();
+                
+                Navigator.pushNamed(
+                  context, 
+                  '/srs-mini-quiz',
+                  arguments: batch,
+                );
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF4ADE80), foregroundColor: _bg),
+              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _batchQuestionIds.clear();
+              },
+              child: const Text('Ahora no', style: TextStyle(color: Colors.white54)),
+            ),
+          ],
+        );
+      }
+    );
   }
 
   void _goTo(int newIndex) {

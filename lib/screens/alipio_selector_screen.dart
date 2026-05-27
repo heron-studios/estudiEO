@@ -40,7 +40,11 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final provider = context.watch<SubjectProvider>();
-    _subjects = provider.subjects;
+    _subjects = provider.subjects.where((s) => 
+      s.name != 'Matemáticas' && 
+      s.name != 'Matemática' && 
+      s.name != 'Razonamiento Matemático'
+    ).toList();
     if (_subjects.isNotEmpty) {
       if (!_isSelectionInitialized) {
         _selected = _subjects.first;
