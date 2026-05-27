@@ -1,0 +1,454 @@
+====== NIVEL FÁCIL ======
+--- TEORÍA ---
+La oración gramatical es la estructura sintáctica básica de la comunicación, caracterizada por tener un sentido completo, entonación propia e independencia sintáctica. En el análisis sintáctico elemental, lo primero es distinguir entre dos tipos fundamentales: las oraciones unimembres y las oraciones bimembres. 
+
+Las oraciones unimembres son aquellas que transmiten un mensaje completo pero que no pueden dividirse lógicamente en sujeto y predicado. Son ejemplos clásicos de oraciones unimembres las interjecciones como "¡Huy!", "¡Villarreal! ¡Villarreal!" o los verbos impersonales referidos a fenómenos atmosféricos como "Ayer llovió torrencialmente" o "Relampaguea". 
+
+Por otro lado, una oración bimembre está compuesta ineludiblemente por dos elementos sintácticos: el sujeto y el predicado. El sujeto es el elemento de la oración que realiza la acción o sobre el cual se dice algo, y puede ser una persona, un animal, un objeto o un concepto. La palabra central de esta estructura es el Núcleo del Sujeto (NS), el cual suele ser fundamentalmente un sustantivo (común o propio) o un pronombre. El sujeto puede presentarse de dos formas: Sujeto expreso (o léxico), si está escrito explícitamente en la oración, o Sujeto tácito (elíptico u omitido), si no se nombra pero se deduce por la desinencia del verbo. Según la cantidad de núcleos, un sujeto es simple si tiene un solo núcleo, o compuesto si posee dos o más.
+
+El predicado es la estructura que detalla la acción que realiza el sujeto o lo que se dice de él. La palabra más importante de este bloque es el Núcleo del Predicado (NP), el cual es obligatoriamente un verbo principal conjugado. Es una regla invariable que el núcleo del sujeto debe concordar siempre en número (singular o plural) y persona con el núcleo del predicado. Al igual que el sujeto, el predicado puede ser simple o compuesto si tiene más de un verbo principal. Para reconocer el sujeto de una oración, el método más infalible es preguntar al verbo "¿qué o quién realiza la acción?" y verificar la concordancia.
+
+--- PREGUNTAS ---
+
+Pregunta 1: Según su estructura sintáctica, ¿qué alternativa presenta un claro ejemplo de oración unimembre?
+A) Juan viene a almorzar.
+B) Si estudias, triunfarás.
+C) El clima nublado es mi favorito.
+D) ¡Villarreal! ¡Villarreal!
+E) Yo admiro y respeto a mis profesores.
+
+D) Correcta
+EXP: Las oraciones unimembres son las que cuentan con un solo miembro ya que no es posible dividirlas lógicamente en sujeto y predicado, como es el caso de interjecciones u onomatopeyas del tipo "¡Villarreal! ¡Villarreal!".
+
+Pregunta 2: ¿Qué categoría gramatical tiene la función privativa y principal de desempeñarse como el núcleo del sintagma nominal o sujeto?
+A) El verbo
+B) El adjetivo
+C) El sustantivo
+D) El adverbio
+E) La preposición
+
+C) Correcta
+EXP: El núcleo del sujeto forma parte de un sintagma nominal y suele ser, por excelencia, un sustantivo (común o propio) o un pronombre.
+
+Pregunta 3: En la oración "Al fin llegó el Damián arreando las ovejas", ¿cuál es la estructura que cumple la función de sujeto?
+A) Al fin llegó
+B) arreando las ovejas
+C) el Damián arreando las ovejas
+D) llegó el Damián
+E) el Damián
+
+C) Correcta
+EXP: Para reconocer el sujeto se pregunta al verbo "¿quién llegó?", a lo que la respuesta completa en la oración es "el Damián arreando las ovejas".
+
+Pregunta 4: En la oración "María volvió a casa después de un año", identifique cuál es la palabra exacta que funciona como núcleo del predicado.
+A) María
+B) a casa
+C) volvió
+D) después
+E) año
+
+C) Correcta
+EXP: El núcleo del predicado es el verbo principal conjugado que indica la acción realizada y concuerda con el sujeto. En este caso, el verbo conjugado es "volvió".
+
+Pregunta 5: De las siguientes opciones, identifique la oración que se caracteriza por poseer un sujeto tácito o elíptico.
+A) El verde del césped resplandecía.
+B) Ellos tenían razón en lo que dijeron.
+C) Sonó toda la noche la misma canción.
+D) Estuvimos una semana en la costa.
+E) Mi hermano es muy valiente.
+
+D) Correcta
+EXP: El sujeto tácito o elíptico es aquel que no está mencionado explícitamente en la oración, pero se deduce por la desinencia verbal. En "Estuvimos", el sujeto tácito inferido es "Nosotros".
+
+Pregunta 6: ¿Cuál es el núcleo del sujeto en la oración "La mayor virtud de mi madre es la paciencia"?
+A) Mayor
+B) Madre
+C) Paciencia
+D) Virtud
+E) La
+
+D) Correcta
+EXP: El sujeto de la oración es "La mayor virtud de mi madre". El sustantivo principal o centro de este sintagma nominal, de quien se habla directamente, es "virtud".
+
+Pregunta 7: Reconozca la oración que presenta un sujeto compuesto (es decir, que tiene dos o más núcleos).
+A) El clima nublado y lluvioso es mi favorito.
+B) Mi madre y yo nos llevamos muy bien.
+C) El joven llegó tarde y no pudo entrar.
+D) Iremos a cenar y después al cine.
+E) El hombre escapó a toda velocidad.
+
+B) Correcta
+EXP: Si un sujeto tiene dos núcleos (en este caso los sustantivos/pronombres "madre" y "yo"), se denomina formalmente sujeto compuesto.
+
+Pregunta 8: Para encontrar el sujeto en la oración "Me gustan las asignaturas de matemáticas", ¿cuál es el procedimiento correcto y el sujeto hallado?
+A) Preguntar "¿a quién?", el sujeto es "Me".
+B) Preguntar "¿qué me gustan?", el sujeto es "las asignaturas de matemáticas".
+C) El sujeto es tácito (Yo).
+D) Preguntar "¿de qué?", el sujeto es "de matemáticas".
+E) El sujeto es "matemáticas".
+
+B) Correcta
+EXP: Para reconocer el sujeto se le pregunta al verbo "¿qué o quién realiza la acción?". Al preguntar "¿qué me gustan?", la respuesta concordante en número plural es "las asignaturas de matemáticas".
+
+Pregunta 9: En la oración "Bailamos y reímos toda la noche", indique la característica sintáctica principal de su estructura.
+A) Es una oración unimembre.
+B) Es una oración con sujeto expreso.
+C) Es una oración con predicado compuesto.
+D) Posee un predicado nominal.
+E) El sujeto es compuesto.
+
+C) Correcta
+EXP: La oración tiene un sujeto tácito (Nosotros) y cuenta con dos verbos principales ("bailamos" y "reímos"). Cuando un predicado tiene dos o más núcleos verbales, posee un predicado compuesto.
+
+Pregunta 10: ¿Qué oración corresponde a un claro ejemplo de verbo impersonal, lo que la convierte en una oración unimembre?
+A) Felipe fue siempre buen estudiante.
+B) La asamblea redacta la nueva Constitución.
+C) Ellos comieron una pizza.
+D) Ayer llovió torrencialmente.
+E) Nosotros saldremos hacia la costa.
+
+D) Correcta
+EXP: Los verbos meteorológicos o referidos a fenómenos naturales (como llover, relampaguear o nevar) son verbos impersonales que carecen de sujeto, formando oraciones unimembres de un solo bloque.
+
+
+====== NIVEL MEDIO ======
+--- TEORÍA ---
+El estudio de las oraciones según la actitud del emisor (o modalidad oracional) es clave para comprender la intención pragmática comunicativa. Al hablar, el emisor no solo transmite información neutra, sino que adopta una posición que le da un tono e intención específicos al mensaje. Existen seis clases principales:
+
+1. **Enunciativas (o representativas):** El hablante expresa un hecho o idea afirmándolo o negándolo, dando a entender que su mensaje es una realidad objetiva. El verbo suele estar en modo indicativo. Se dividen en afirmativas ("Tienes el pelo ardiendo") y negativas, las cuales usan adverbios (no, nunca) o pronombres como "nadie" o "nada".
+2. **Interrogativas:** Expresan una pregunta. Pueden ser *directas* (emplean signos de interrogación gráficos, ej. "¿Tienes el pelo ardiendo?") o *indirectas* (se presentan a través de verbos de lengua y carecen de signos gráficos, ej. "Me pregunto si tienes el pelo ardiendo"). Además, si buscan una respuesta categórica de sí o no, son *interrogativas totales*; si buscan información específica con partículas como qué, quién, cuándo, son *interrogativas parciales*.
+3. **Exclamativas:** Transmiten sentimientos y emociones agudas (alegría, sorpresa, temor) logrando dar un fuerte énfasis al mensaje, comúnmente usando signos de exclamación.
+4. **Imperativas (o exhortativas):** Transmiten una orden, un mandato, un ruego o un consejo. Suelen usar el verbo en modo imperativo ("Salga de aquí"), aunque también emplean fórmulas de obligación como "Tener que + infinitivo" o "Deber + infinitivo" (ej. "Tienes que quemarte el pelo").
+5. **Desiderativas:** El hablante manifiesta un profundo deseo. Emplean fórmulas clásicas como "Ojalá + subjuntivo", verbos en condicional ("quisiera"), o expresiones como "Me gustaría que...".
+6. **Dubitativas:** El hablante expresa una duda, suposición o probabilidad sobre lo que dice. Sus fórmulas clásicas incluyen locuciones adverbiales como "quizá", "tal vez", "puede que" más el verbo en subjuntivo, o la perífrasis "deber de + infinitivo" (ej. "Debes de tener el pelo ardiendo", que implica suposición, a diferencia de obligación).
+
+--- PREGUNTAS ---
+
+Pregunta 11: ¿A qué clase, según la actitud del hablante, pertenece la oración "Ojalá mañana no llueva"?
+A) Dubitativa
+B) Enunciativa afirmativa
+C) Imperativa
+D) Desiderativa
+E) Exclamativa
+
+D) Correcta
+EXP: Las oraciones desiderativas son aquellas mediante las cuales el emisor expresa explícitamente un deseo. Utilizar la palabra "ojalá" es la fórmula más común para este tipo de oraciones.
+
+Pregunta 12: Según la clasificación por la intención del emisor, la oración "Tal vez sea mejor que vengas a las siete" pertenece al grupo de oraciones:
+A) Imperativas
+B) Dubitativas
+C) Interrogativas indirectas
+D) Enunciativas
+E) Exclamativas
+
+B) Correcta
+EXP: El hablante expresa una duda o probabilidad empleando fórmulas introductorias como adverbios y locuciones adverbiales (quizás, tal vez), por lo que se clasifica estrictamente como una oración dubitativa.
+
+Pregunta 13: Identifique el tipo de oración, según la actitud del hablante, en el siguiente enunciado: "Cierra la puerta, por favor."
+A) Desiderativa
+B) Enunciativa
+C) Dubitativa
+D) Imperativa
+E) Interrogativa
+
+D) Correcta
+EXP: Las oraciones imperativas (o exhortativas) transmiten directamente una orden, un mandato, ruego o consejo al receptor, como en el caso de "Cierra la puerta, por favor".
+
+Pregunta 14: ¿Cuál de los siguientes enunciados representa claramente una oración interrogativa indirecta?
+A) ¿Quién tiene el pelo ardiendo?
+B) ¡Tienes el pelo ardiendo!
+C) Me pregunto si me dejarás elegir a mí.
+D) ¿Te parece bien?
+E) Debes de estar loco.
+
+C) Correcta
+EXP: Las interrogativas indirectas expresan una pregunta pero no emplean signos de interrogación gráficos directos, sino que se introducen por medio de verbos de lengua o pensamiento como preguntar, indagar o decir ("Me pregunto si...").
+
+Pregunta 15: La oración "Eso costará unos doscientos soles" se clasifica según la intención del hablante como una oración:
+A) Imperativa
+B) Desiderativa
+C) Exclamativa
+D) Enunciativa
+E) Dubitativa
+
+D) Correcta
+EXP: El emisor está expresando un hecho o una idea afirmándola como una realidad objetiva ("Eso costará unos doscientos soles"), lo que la define indudablemente como una oración enunciativa afirmativa.
+
+Pregunta 16: Lea el siguiente enunciado: "Debes de tener el pelo ardiendo". ¿Qué actitud del hablante se refleja en la oración?
+A) Exclamativa
+B) Desiderativa
+C) Imperativa
+D) Dubitativa
+E) Enunciativa
+
+D) Correcta
+EXP: Aunque emplea el verbo deber, la estructura específica "deber de + infinitivo" (a diferencia de "deber + infinitivo" que es obligación) expresa gramaticalmente una duda, posibilidad o suposición por parte del hablante, por lo que es una oración dubitativa.
+
+Pregunta 17: Señale la opción que contiene una oración de tipo imperativa expresada a través de una fórmula de obligación.
+A) Ojalá tengas el pelo ardiendo.
+B) Tienes que quemarte el pelo.
+C) Puede que tengas el pelo ardiendo.
+D) No tienes el pelo ardiendo.
+E) ¿Cuándo empieza la película?
+
+B) Correcta
+EXP: Las oraciones imperativas transmiten órdenes. Aunque suelen usar el modo imperativo, también emplean frecuentemente fórmulas de obligación como "Tener que + infinitivo" ("Tienes que quemarte el pelo") o "Hay que + infinitivo".
+
+Pregunta 18: Identifique la alternativa que presenta una oración interrogativa parcial.
+A) ¿Tienes el pelo ardiendo?
+B) Me pregunto si tienes hambre.
+C) ¿Te gusta el helado?
+D) ¿Por qué tienes el pelo ardiendo?
+E) Ojalá haya palomitas de colores.
+
+D) Correcta
+EXP: Las oraciones interrogativas parciales preguntan por una parte específica del contenido buscando información en particular (causa, sujeto, tiempo) y utilizan partículas interrogativas (qué, quién, cuándo, por qué). Las totales solo buscan como respuesta un sí o un no.
+
+Pregunta 19: Si el hablante enuncia: "Nadie tiene el pelo ardiendo", estamos frente a una oración:
+A) Dubitativa
+B) Enunciativa negativa
+C) Exhortativa
+D) Enunciativa afirmativa
+E) Desiderativa
+
+B) Correcta
+EXP: Las oraciones enunciativas expresan un hecho objetivo. Son negativas cuando niegan una idea usando adverbios como "no", "nunca" o pronombres indefinidos de negación extrema como "nadie" o "nada".
+
+Pregunta 20: ¿En cuál de las siguientes opciones se utiliza una oración para expresar una emoción de sorpresa o alegría, dándole fuerte énfasis al mensaje?
+A) ¡Qué bonito es ese dibujo!
+B) Salga de aquí.
+C) ¿Dónde estudias?
+D) El clima nublado es mi favorito.
+E) Quizás tengas razón.
+
+A) Correcta
+EXP: Las oraciones exclamativas transmiten sentimientos y emociones profundas (alegría, sorpresa, tristeza) y suelen utilizar los signos de exclamación ortográficos para denotar el énfasis en la pronunciación ("¡Qué bonito es ese dibujo!").
+
+
+====== NIVEL DIFÍCIL ======
+--- TEORÍA ---
+El análisis interno del Sintagma Nominal (Sujeto) es crucial en la sintaxis avanzada. El sustantivo núcleo rara vez aparece solo, sino que se rodea de modificadores que complementan o alteran su significado de formas específicas:
+1. **Modificador Directo (MD):** Son palabras que se unen directamente al núcleo para indicar género, número u principal cualidades, sin emplear nexos ni enlaces de por medio. Son, invariablemente, los **artículos** (el, la, los), los **determinantes** y los **adjetivos** (bueno, rojo, veloz). 
+2. **Modificador Indirecto (MI):** Son construcciones que acompañan al núcleo indicando pertenencia, origen o compañía, y se reconocen infaliblemente porque siempre están unidos al núcleo a través de una **preposición subordinante** (de, hacia, sobre, para, con, sin). Ejemplo: "Los trabajadores **de la empresa**".
+3. **Aposición (Ap):** Es una frase o estructura nominal que funciona como aclaración o especificación del núcleo. La aposición explicativa, la más recurrente en los exámenes, va **encerrada entre comas** y repite o aclara detalladamente la identidad del núcleo. Ejemplo: "Julio, **mi amigo**, se mudó" o "El señor Fernández, **el arquitecto**".
+
+Además, el sujeto puede clasificarse mediante dos criterios fundamentales en oraciones complejas:
+* **Sujeto Expreso vs. Tácito:** Es expreso (o léxico) si aparece escrito explícitamente en la oración (Ej. "Las cajas están aquí"). Es tácito (elíptico) cuando no aparece, pero se deduce (Ej. "Vienen a buscarte" -> Ellos).
+* **Sujeto Agente vs. Paciente (La voz del verbo):** El Sujeto Agente ocurre en la *voz activa*; el sujeto es quien ejecuta materialmente la acción (ej. "El perro atrapó el balón"). El Sujeto Paciente ocurre en oraciones de *voz pasiva*; en ellas, el sujeto no actúa, sino que recibe pasivamente la acción que otro ejecuta (ej. "El balón fue atrapado por el perro"). En este último caso, quien ejecuta realmente la acción es el complemento agente.
+
+--- PREGUNTAS ---
+
+Pregunta 21: En la oración "El computador de Marcos tiene muchos programas", ¿qué función sintáctica exacta cumple la estructura subrayada "de Marcos"?
+A) Núcleo del Sujeto
+B) Modificador Directo
+C) Aposición
+D) Modificador Indirecto
+E) Objeto Directo
+
+D) Correcta
+EXP: El Modificador Indirecto aporta información extra y se reconoce invariablemente porque siempre está unido al núcleo del sintagma nominal a través de una preposición, en este caso la preposición "de".
+
+Pregunta 22: En la oración "Julio, mi amigo, se mudó a la casa de la esquina", ¿cómo se denomina sintácticamente al segmento que va entre comas ("mi amigo")?
+A) Modificador indirecto
+B) Núcleo del predicado
+C) Sujeto expreso
+D) Complemento agente
+E) Aposición
+
+E) Correcta
+EXP: Lo que va entre comas dentro del sujeto explicando, aclarando o repitiendo quién es exactamente el núcleo ("Julio") se llama aposición explicativa, y funciona como un modificador más del sujeto.
+
+Pregunta 23: En el interior del sintagma nominal, ¿qué categorías gramaticales funcionan de forma exclusiva y natural como modificadores directos (MD) del núcleo?
+A) Verbos y adverbios
+B) Preposiciones y conjunciones
+C) Los artículos, determinantes y adjetivos
+D) Sustantivos y pronombres
+E) Interjecciones y aposiciones
+
+C) Correcta
+EXP: Los modificadores directos acompañan y se unen directamente al núcleo sin ningún tipo de nexo o preposición de por medio. Los artículos, determinantes posesivos/demostrativos y adjetivos cumplen rígidamente esta función sintáctica.
+
+Pregunta 24: Lea atentamente la oración: "La carta fue recibida por el recepcionista". Según la voz en que se encuentra la oración, ¿qué tipo exacto de sujeto presenta?
+A) Sujeto Agente
+B) Sujeto Paciente
+C) Sujeto Tácito
+D) Sujeto Compuesto
+E) Sujeto Múltiple
+
+B) Correcta
+EXP: El sujeto es "La carta". Al estar la oración construida en voz pasiva ("fue recibida"), el sujeto no realiza activamente la acción, sino que la recibe de forma pasiva, por lo cual se clasifica sintácticamente como Sujeto Paciente.
+
+Pregunta 25: Identifique y seleccione los modificadores directos (MD) presentes en el sujeto de la siguiente oración: "Mi carro nuevo es muy rápido".
+A) muy, rápido
+B) carro, es
+C) Mi, nuevo
+D) Mi, rápido
+E) nuevo, rápido
+
+C) Correcta
+EXP: El sujeto de la oración es "Mi carro nuevo", donde el núcleo central es el sustantivo "carro". Las palabras que lo modifican directamente sin nexos preposicionales son el determinante posesivo "Mi" y el adjetivo calificativo "nuevo".
+
+Pregunta 26: Analice detenidamente la oración "Los libros fueron devueltos por los estudiantes". Determine qué clase de sujeto posee y en qué voz se encuentra la construcción.
+A) Sujeto Agente - Voz activa
+B) Sujeto Tácito - Voz pasiva
+C) Sujeto Paciente - Voz pasiva
+D) Sujeto Simple - Voz activa
+E) Sujeto Compuesto - Voz pasiva
+
+C) Correcta
+EXP: En las oraciones en voz pasiva, el sujeto léxico ("Los libros") no realiza la acción del verbo, sino que la sufre o la recibe a manos de un agente explícito ("por los estudiantes"). Por tanto, es una voz pasiva con un Sujeto Paciente.
+
+Pregunta 27: En la oración "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine cuál es el sujeto completo.
+A) por la opinión pública
+B) que dejó grandes pérdidas
+C) fue condenado
+D) grandes pérdidas
+E) El cobarde atentado
+
+E) Correcta
+EXP: Para hallar el sujeto en una oración pasiva, preguntamos al verbo "¿qué fue condenado por la opinión pública?". La respuesta correcta, y por ende el sujeto paciente de la oración, es "El cobarde atentado".
+
+Pregunta 28: En la oración "El señor Fernández, el arquitecto, revisó los planos con suma rapidez", la estructura resaltada "el arquitecto" cumple la función sintáctica de:
+A) Modificador indirecto
+B) Núcleo del sujeto
+C) Objeto directo
+D) Aposición
+E) Circunstancial de modo
+
+D) Correcta
+EXP: La expresión encerrada entre comas que detalla, explica o repite la identidad de quién es el núcleo del sujeto ("El señor Fernández") cumple la función de aposición.
+
+Pregunta 29: Determine la veracidad de la siguiente afirmación respecto a los tipos de sujeto por su presencia: "El sujeto elíptico u omitido es aquel que no aparece escrito en la oración porque ya se ha mencionado o porque se deduce fácilmente por la forma verbal conjugada".
+A) Falso, se trata del sujeto léxico.
+B) Falso, se trata del sujeto expreso.
+C) Verdadero, es la definición exacta.
+D) Falso, se trata de la aposición.
+E) Falso, se trata del sujeto paciente.
+
+C) Correcta
+EXP: El sujeto tácito, también llamado elíptico u omitido, es exactamente aquel que no se nombra explícitamente en el texto u oración, pero que el receptor colige a partir de la conjugación y desinencia del verbo principal.
+
+Pregunta 30: Analice la estructura "Los trabajadores de la empresa telefónica". Si esta frase funcionara como sujeto de una oración, ¿cuál sería su Modificador Indirecto (MI)?
+A) Los trabajadores
+B) de la empresa telefónica
+C) empresa telefónica
+D) Los
+E) trabajadores
+
+B) Correcta
+EXP: El modificador indirecto se reconoce inconfundiblemente por estar siempre unido al núcleo del sintagma nominal mediante un nexo o preposición (en este caso la preposición "de"). Por tanto, "de la empresa telefónica" es el MI del núcleo "trabajadores".
+
+
+====== NIVEL EXTREMO ======
+--- TEORÍA ---
+Para el nivel supremo del análisis sintáctico en la EO PNP, se exige desmembrar la anatomía del Sintagma Verbal (Predicado). El núcleo del predicado (NP) es siempre un verbo conjugado. Dependiendo estricta y únicamente de la naturaleza semántica de este verbo, el predicado se bifurca en dos clasificaciones maestras:
+1. **Predicado Nominal (o Copulativo):** Formado obligatoriamente por un verbo copulativo (*ser, estar, parecer*). Estos verbos están semánticamente vacíos de acción; actúan meramente como un enlace entre el sujeto y el **Atributo**. El Atributo es una estructura obligatoria que califica o describe una cualidad fundamental del sujeto. Ej. "El hombre **es arquitecto**" o "El mar **está tranquilo**".
+2. **Predicado Verbal:** Formado por verbos predicativos o plenos (verbos transitivos o intransitivos) que expresan acciones, estados o procesos completos (ej. correr, comer, dormir).
+
+Dentro de la complejidad del Predicado Verbal se incrustan múltiples complementos que el postulante debe saber reconocer mediante fórmulas sintácticas:
+*   **Objeto Directo (OD) o Complemento Directo:** Es la persona, animal o cosa sobre la que recae la acción de forma pasiva e inmediata. Es exigido por los verbos transitivos. *Fórmula de examen:* Se halla preguntando *¿qué?* o *¿a quién?* al verbo y, como prueba absoluta, se puede sustituir siempre por los pronombres átonos **lo, la, los, las**. Ej. *Ellos comieron una pizza* -> *Ellos **la** comieron*.
+*   **Objeto Indirecto (OI):** Es el destinatario o quien se beneficia/perjudica secundariamente con la acción del verbo. Siempre inicia con las preposiciones "a" o "para". *Fórmula:* Responde a *¿a quién?* o *¿para quién?* y se sustituye inconfundiblemente por los pronombres **le** o **les**. Ej. *Inés compró chocolates **para su enamorado*** -> *Inés **le** compró chocolates*.
+*   **Complemento Agente:** Este elemento sintáctico es **exclusivo** de las oraciones escritas en **voz pasiva**. Representa a quien realmente ejecuta y materializa la acción verbal que sufre el sujeto paciente. *Fórmula:* Siempre va encabezado rígidamente por la preposición **"por"** (ocasionalmente "de"). Ej. *La carta fue recibida **por el recepcionista***.
+*   **Complementos Circunstanciales (CC):** Añaden información contextual y suplementaria a la acción del verbo (tiempo, lugar, modo, causa, cantidad, compañía, finalidad). Ej. *No llegó **por la enfermedad de su mamá** (CC Causa)*.
+
+--- PREGUNTAS ---
+
+Pregunta 31: Identifique el tipo de predicado y su estructura principal en la siguiente oración: "El hombre de la calle es arquitecto".
+A) Predicado verbal con objeto directo
+B) Predicado nominal (o copulativo) con atributo
+C) Predicado compuesto con dos verbos
+D) Predicado verbal con circunstancial de modo
+E) Predicado no verbal elíptico
+
+B) Correcta
+EXP: El predicado nominal o copulativo está conformado obligatoriamente por un verbo copulativo (en este caso el verbo ser: "es") que funciona exclusivamente como puente o enlace hacia un atributo ("arquitecto") que expresa una cualidad del sujeto.
+
+Pregunta 32: Determine con exactitud cuál es el Objeto Directo (OD) en la siguiente oración: "Nosotros hemos comprado deliciosos pasteles para tu cumpleaños".
+A) Hemos comprado
+B) tu cumpleaños
+C) pasteles (o deliciosos pasteles)
+D) para tu cumpleaños
+E) nosotros (tácito)
+
+C) Correcta
+EXP: El objeto directo se reconoce preguntando "¿qué?" al verbo transitivo ("¿qué hemos comprado?"). La respuesta sintáctica es "deliciosos pasteles", estructura que además permite la sustitución infalible por el pronombre átono "los" (Nosotros los hemos comprado).
+
+Pregunta 33: Analice exhaustivamente la oración "Inés compró finos chocolates para su enamorado el día sábado". ¿Qué función sintáctica rigurosa cumple la frase "para su enamorado"?
+A) Objeto directo
+B) Circunstancial de finalidad
+C) Aposición
+D) Objeto indirecto
+E) Atributo
+
+D) Correcta
+EXP: El objeto indirecto designa invariablemente a quien recibe el beneficio o el daño de la acción verbal principal. Responde a la pregunta "¿para quién compró (los chocolates)?" y su comprobación absoluta es la sustitución por el pronombre átono "le" (Inés le compró).
+
+Pregunta 34: En la oración de estructura pasiva "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine la función sintáctica del segmento subrayado "por la opinión pública".
+A) Objeto directo
+B) Objeto indirecto
+C) Complemento agente
+D) Atributo
+E) Circunstancial de causa
+
+C) Correcta
+EXP: El complemento agente es un modificador exclusivo de las oraciones en voz pasiva (como "fue condenado"). Va encabezado siempre por la preposición "por" y señala concretamente a la entidad que ejecuta en la realidad la acción verbal sufrida por el sujeto paciente.
+
+Pregunta 35: En la oración "Luisa preparó un postre apetitoso para los invitados especiales", si el autor decide reemplazar el objeto directo por su pronombre átono correspondiente para evitar redundancias, ¿cómo quedaría gramaticalmente estructurada la frase?
+A) Luisa se los preparó para los invitados.
+B) Luisa le preparó un postre apetitoso.
+C) Luisa lo preparó para los invitados especiales.
+D) Luisa las preparó apetitoso.
+E) Luisa les preparó un postre.
+
+C) Correcta
+EXP: El objeto directo pleno en la oración es "un postre apetitoso" (género masculino, número singular). El pronombre átono que lo reemplaza de forma unívoca y exacta en el español es "lo", resultando en la oración: "Luisa lo preparó para los invitados especiales".
+
+Pregunta 36: En el enunciado bimembre "La empresa publicó una extensa nota explicando el acuerdo con el sindicato", ¿cuál es la palabra que asume la jerarquía de núcleo del predicado?
+A) empresa
+B) publicó
+C) nota
+D) explicando
+E) acuerdo
+
+B) Correcta
+EXP: El núcleo del predicado, también llamado núcleo verbal, es inexcusablemente el verbo principal conjugado de la oración que concuerda en número y persona con el núcleo del sujeto. En este enunciado, la acción matriz recae en el verbo "publicó".
+
+Pregunta 37: En el enunciado "El delegado no llegó a la reunión por la enfermedad intempestiva de su mamá", identifique la función sintáctica precisa que cumple el sintagma preposicional "por la enfermedad intempestiva de su mamá".
+A) Objeto directo
+B) Complemento circunstancial de causa
+C) Complemento agente
+D) Objeto indirecto
+E) Atributo
+
+B) Correcta
+EXP: Este complemento añade información del contexto situacional del verbo, específicamente respondiendo a la interrogante "¿por qué (no llegó)?". Al indicar el motivo o razón de la acción, se clasifica rigurosamente como un complemento circunstancial de causa.
+
+Pregunta 38: De acuerdo con la tipología semántica de los verbos, señale la oración que presenta un verbo transitivo puro, el cual exige obligatoriamente la presencia de un Objeto Directo para tener sentido completo.
+A) Ayer llovió torrencialmente en la capital.
+B) Yo como manzanas frescas.
+C) Marcos se parece muchísimo a su padre.
+D) El avión comercial aterrizó sin inconvenientes.
+E) José y Hugo caminaron por la pradera.
+
+B) Correcta
+EXP: Un verbo transitivo, por su naturaleza, transfiere su acción hacia un objeto directo ("manzanas"). Al retirarlo y dejar solo "Yo como", la frase exige el contexto del objeto ("¿qué comes?") para no quedar semánticamente amputada, a diferencia de verbos intransitivos plenos como "caminar" o "aterrizar".
+
+Pregunta 39: Teniendo en cuenta la estructura rígida de análisis "CC (Circunstancial) + OI (Objeto Indirecto) + OD (Objeto Directo) + NP (Núcleo del Predicado)", identifique la oración que se adapta con perfección sintáctica a este orden exacto.
+A) A mí sí me interesa bastante.
+B) Con gran alegría, entregó el hermoso regalo.
+C) Yo no sé la respuesta de memoria.
+D) Mañana se lo devolveré.
+E) Su padre se lo advirtió con firmeza ayer.
+
+D) Correcta
+EXP: Analizando morfosintácticamente la alternativa D ("Mañana se lo devolveré"): "Mañana" funciona como CC de tiempo + "se" asume la función de OI en forma pronominal + "lo" asume la función de OD pronominal + "devolveré" es el NP o verbo principal conjugado.
+
+Pregunta 40: En una oración de voz pasiva estructurada como "El balón rojo fue atrapado velozmente por el perro guardián", si operamos una transformación sintáctica hacia la voz activa ("El perro guardián atrapó velozmente el balón rojo"), ¿qué función sintáctica pasa a cumplir obligatoriamente la frase "el balón rojo"?
+A) Sujeto agente
+B) Objeto indirecto
+C) Complemento agente
+D) Modificador indirecto
+E) Objeto directo
+
+E) Correcta
+EXP: En el clásico mecanismo de conversión sintáctica de voz pasiva a voz activa, el sujeto paciente pasivo ("El balón rojo") desciende jerárquicamente para asumir la función natural de Objeto Directo (OD) en la nueva oración, puesto que ahora "el balón" vuelve a ser la cosa que recibe directamente la acción de atrapar ejercida por el sujeto.
