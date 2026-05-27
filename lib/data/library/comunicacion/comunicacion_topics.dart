@@ -1,9 +1,23 @@
 import 'package:learn/models/topic.dart';
 import 'reglas_ortograficas_theory.dart';
 import 'oracion_gramatical_theory.dart';
+import 'reglas_ortograficas_ext_10q_theory.dart';
 
 final Map<String, Topic> comunicacionTopics = {
   // Topics con teoría (modo aprendizaje guiado)
+  'eo_pnp_reglas_ortograficas_ext_10q': Topic(
+    id: 'eo_pnp_reglas_ortograficas_ext_10q',
+    subjectId: 'comunicacion',
+    name: "Reglas Ortográficas y Normativas RAE (Teoría Completa 10Q)",
+    description: "Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.",
+    questionCount: 40,
+    theoryByLevel: {
+      'easy': reglasOrtograficasExt10qTheoryEasy,
+      'medium': reglasOrtograficasExt10qTheoryMedium,
+      'hard': reglasOrtograficasExt10qTheoryHard,
+      'extreme': reglasOrtograficasExt10qTheoryExtreme,
+    },
+  ),
   'eo_pnp_reglas_ortograficas_01': Topic(
     id: 'eo_pnp_reglas_ortograficas_01',
     subjectId: 'comunicacion',
