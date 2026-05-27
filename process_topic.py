@@ -1,7 +1,7 @@
 import os
 import sys
 
-def create_files_from_prompt(prompt_file_path, base_topic_id, prefix):
+def create_files_from_prompt(prompt_file_path, base_topic_id, prefix, subject_folder):
     with open(prompt_file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -9,7 +9,7 @@ def create_files_from_prompt(prompt_file_path, base_topic_id, prefix):
     levels_raw = content.split('====== NIVEL ')
     levels = []
     for level_str in levels_raw:
-        if not level_str.strip():
+        if not level_str.strip() or ' ======' not in level_str:
             continue
         level_name = level_str.split(' ======')[0].strip()
         rest = level_str.split(' ======')[1]
@@ -119,8 +119,8 @@ def create_files_from_prompt(prompt_file_path, base_topic_id, prefix):
     questions_dart += "];\n"
 
     # Write files
-    theory_file = os.path.join(os.path.dirname(prompt_file_path), f"lib/data/library/comunicacion/{base_name}_theory.dart")
-    questions_file = os.path.join(os.path.dirname(prompt_file_path), f"lib/data/library/comunicacion/{base_name}_questions.dart")
+    theory_file = os.path.join(os.path.dirname(prompt_file_path), f"lib/data/library/{subject_folder}/{base_name}_theory.dart")
+    questions_file = os.path.join(os.path.dirname(prompt_file_path), f"lib/data/library/{subject_folder}/{base_name}_questions.dart")
 
     os.makedirs(os.path.dirname(theory_file), exist_ok=True)
     with open(theory_file, 'w', encoding='utf-8') as f:
@@ -133,6 +133,7 @@ def create_files_from_prompt(prompt_file_path, base_topic_id, prefix):
 
 if __name__ == "__main__":
     prompt_file_path = r"c:\Users\PC\Downloads\EstudiEO-flutter\prompt_text.txt"
-    base_topic_id = "eo_pnp_oracion_gramatical_ext_10q"
-    prefix = "ora_gram_10q"
-    create_files_from_prompt(prompt_file_path, base_topic_id, prefix)
+    base_topic_id = "eo_pnp_sinonimos_ext_10q"
+    prefix = "sin_corto_10q"
+    subject_folder = "rv"
+    create_files_from_prompt(prompt_file_path, base_topic_id, prefix, subject_folder)

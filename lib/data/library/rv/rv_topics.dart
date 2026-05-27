@@ -1,8 +1,21 @@
-﻿import 'package:learn/models/topic.dart';
+import 'package:learn/models/topic.dart';
+import 'sinonimos_ext_10q_theory.dart';
 
-// Todos los topics de Razonamiento Verbal están sin teoría (solo quiz)
-// Se ocultan del modo aprendizaje guiado hasta que se agregue contenido teórico
 final Map<String, Topic> razonamientoVerbalTopics = {
+  'eo_pnp_sinonimos_ext_10q': Topic(
+    id: 'eo_pnp_sinonimos_ext_10q',
+    subjectId: 'rv',
+    name: "Sinónimos (Teoría Completa 10Q)",
+    description: "Sinónimos directos, contextuales y precisión léxica.",
+    questionCount: 40,
+    theoryByLevel: {
+      'easy': sinonimosExt10qTheoryEasy,
+      'medium': sinonimosExt10qTheoryMedium,
+      'hard': sinonimosExt10qTheoryHard,
+      'extreme': sinonimosExt10qTheoryExtreme,
+    },
+  ),
+  // Topics sin teoría (solo quiz) - comentados hasta agregar contenido teórico
   // 'rv_sinonimos': Topic(
   //   id: 'rv_sinonimos',
   //   subjectId: 'rv',
