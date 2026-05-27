@@ -224,6 +224,40 @@ class SubjectsRepository {
 
   /// Obtiene la teoría para un tópico y nivel de dificultad dado.
   static String? getTheoryByTopicAndLevel(String topicId, Dificultad nivel) {
+    // Primero, intentar buscar en los temas cargados
+    final topic = getTopic(topicId);
+    if (topic != null && topic.theoryByLevel != null) {
+      // 1. Intentar con la clave de tipo Dificultad directamente (como en cta y pfrh)
+      if (topic.theoryByLevel!.containsKey(nivel)) {
+        return topic.theoryByLevel![nivel];
+      }
+
+      // 2. Intentar con claves en inglés 'easy', 'medium', 'hard', 'extreme' (como en reglas ortográficas y oración gramatical)
+      final String englishKey;
+      switch (nivel) {
+        case Dificultad.facil:
+          englishKey = 'easy';
+          break;
+        case Dificultad.medio:
+          englishKey = 'medium';
+          break;
+        case Dificultad.dificil:
+          englishKey = 'hard';
+          break;
+        case Dificultad.extremo:
+          englishKey = 'extreme';
+          break;
+      }
+      if (topic.theoryByLevel!.containsKey(englishKey)) {
+        return topic.theoryByLevel![englishKey];
+      }
+
+      // 3. Intentar con el nombre del enum ('facil', 'medio', 'dificil', 'extremo')
+      if (topic.theoryByLevel!.containsKey(nivel.name)) {
+        return topic.theoryByLevel![nivel.name];
+      }
+    }
+
     if (topicId == 'cta_materia_energia') {
       return materiaEnergiaTheory[nivel];
     }

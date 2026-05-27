@@ -1,4 +1,4 @@
-﻿import 'package:learn/models/subject.dart';
+import 'package:learn/models/subject.dart';
 
 final Subject comunicacionSubject = Subject(
   id: 'comunicacion',
@@ -7,5 +7,6 @@ final Subject comunicacionSubject = Subject(
   icon: '📖',
   topicIds: [
     'eo_pnp_reglas_ortograficas_01', // Reglas Ortográficas y Normativa RAE
+    'eo_pnp_oracion_gramatical_01', // La Oración Gramatical
   ],
 );

@@ -1,8 +1,10 @@
 import 'package:learn/models/question.dart';
 import 'reglas_ortograficas_questions.dart';
+import 'oracion_gramatical_questions.dart';
 
 final List<Question> comunicacionQuestions = [
   ...reglasOrtograficasQuestions,
+  ...oracionGramaticalQuestions,
   Question(
     id: "com_q3",
     topicId: "com_t1",

@@ -1,5 +1,6 @@
-﻿import 'package:learn/models/topic.dart';
+import 'package:learn/models/topic.dart';
 import 'reglas_ortograficas_theory.dart';
+import 'oracion_gramatical_theory.dart';
 
 final Map<String, Topic> comunicacionTopics = {
   // Topics con teoría (modo aprendizaje guiado)
@@ -14,6 +15,19 @@ final Map<String, Topic> comunicacionTopics = {
       'medium': reglasOrtograficasTheoryMedium,
       'hard': reglasOrtograficasTheoryHard,
       'extreme': reglasOrtograficasTheoryExtreme,
+    },
+  ),
+  'eo_pnp_oracion_gramatical_01': Topic(
+    id: 'eo_pnp_oracion_gramatical_01',
+    subjectId: 'comunicacion',
+    name: "2. La Oración Gramatical",
+    description: "Sujeto, predicado, modificadores del sujeto, y complementos del predicado.",
+    questionCount: 8,
+    theoryByLevel: {
+      'easy': oracionGramaticalTheoryEasy,
+      'medium': oracionGramaticalTheoryMedium,
+      'hard': oracionGramaticalTheoryHard,
+      'extreme': oracionGramaticalTheoryExtreme,
     },
   ),
 
