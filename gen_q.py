@@ -1,470 +1,460 @@
 import re
 
-text = r"""
-====== NIVEL FÁCIL ======
-Pregunta 1: Según su estructura sintáctica, ¿qué alternativa presenta un claro ejemplo de oración unimembre?
-A) Juan viene a almorzar.
-B) Si estudias, triunfarás.
-C) El clima nublado es mi favorito.
-D) ¡Villarreal! ¡Villarreal!
-E) Yo admiro y respeto a mis profesores.
+def parse_questions(text):
+    questions = []
+    # Regular expression to match each question block
+    pattern = re.compile(
+        r'Pregunta\s+\d+:\s*(.*?)\nA\)\s*(.*?)\nB\)\s*(.*?)\nC\)\s*(.*?)\nD\)\s*(.*?)\nE\)\s*(.*?)\n\n([A-E])\)\s*Correcta\nEXP:\s*(.*?)(?=\nPregunta\s+\d+:|\Z)',
+        re.DOTALL
+    )
+    
+    matches = pattern.findall(text)
+    
+    for match in matches:
+        question_text = match[0].strip()
+        options = [match[1].strip(), match[2].strip(), match[3].strip(), match[4].strip(), match[5].strip()]
+        correct_letter = match[6].strip()
+        explanation = match[7].strip()
+        
+        # Map letter to index (A=0, B=1, C=2, D=3, E=4)
+        correct_index = ord(correct_letter) - ord('A')
+        
+        questions.append({
+            'text': question_text,
+            'options': options,
+            'correct_index': correct_index,
+            'explanation': explanation
+        })
+        
+    return questions
 
-D) Correcta
-EXP: Las oraciones unimembres son las que cuentan con un solo miembro y carecen de la división en sujeto y predicado, como es el caso de interjecciones u onomatopeyas del tipo "¡Villarreal! ¡Villarreal!".
+def generate_dart_code(questions_data, var_name):
+    dart_code = "import 'package:learn/models/question.dart';\n\n"
+    dart_code += f"final List<Question> {var_name} = [\n"
+    
+    for i, q in enumerate(questions_data):
+        dart_code += "  Question(\n"
+        dart_code += f"    id: 'narr_est_10q_q{i+1}',\n"
+        dart_code += f"    topicId: 'eo_pnp_narracion_ext_10q',\n"
+        dart_code += f"    text: r'''{q['text']}''',\n"
+        dart_code += "    options: [\n"
+        for opt in q['options']:
+            dart_code += f"      r'''{opt}''',\n"
+        dart_code += "    ],\n"
+        dart_code += f"    correctAnswer: {q['correct_index']},\n"
+        dart_code += f"    explanation: r'''{q['explanation']}''',\n"
+        dart_code += "  ),\n"
+        
+    dart_code += "];\n"
+    return dart_code
 
-Pregunta 2: ¿Qué categoría gramatical tiene la función privativa y principal de desempeñarse como el núcleo del sintagma nominal o sujeto?
-A) El verbo
-B) El adjetivo
-C) El sustantivo
-D) El adverbio
-E) La preposición
-
-C) Correcta
-EXP: El núcleo del sujeto forma parte de un sintagma nominal y suele ser, por excelencia, un sustantivo (común o propio) o un pronombre.
-
-Pregunta 3: En la oración "Al fin llegó el Damián arreando las ovejas", ¿cuál es la estructura que cumple la función de sujeto?
-A) Al fin llegó
-B) arreando las ovejas
-C) el Damián arreando las ovejas
-D) llegó el Damián
-E) el Damián
-
-C) Correcta
-EXP: Para reconocer el sujeto se pregunta al verbo "¿quién llegó?", a lo que la respuesta completa es "el Damián arreando las ovejas".
-
-Pregunta 4: En la oración "María volvió a casa después de un año", identifique cuál es la palabra exacta que funciona como núcleo del predicado.
-A) María
-B) a casa
-C) volvió
-D) después
-E) año
-
-C) Correcta
-EXP: El núcleo del predicado es el verbo principal conjugado que indica la acción realizada y concuerda con el sujeto. En este caso, el verbo conjugado es "volvió".
-
-Pregunta 5: De las siguientes opciones, identifique la oración que se caracteriza por poseer un sujeto tácito o elíptico.
-A) El verde del césped resplandecía.
-B) Ellos tenían razón en lo que dijeron.
-C) Sonó toda la noche la misma canción.
-D) Estuvimos una semana en la costa.
-E) Mi hermano es muy valiente.
-
-D) Correcta
-EXP: El sujeto tácito es aquel que no está mencionado explícitamente en la oración, pero se deduce por la desinencia verbal. En "Estuvimos", el sujeto tácito es "Nosotros".
-
-Pregunta 6: ¿Cuál es el núcleo del sujeto en la oración "La mayor virtud de mi madre es la paciencia"?
-A) Mayor
-B) Madre
-C) Paciencia
-D) Virtud
-E) La
-
-D) Correcta
-EXP: El sujeto es "La mayor virtud de mi madre". El sustantivo principal o centro de este sintagma nominal, de quien se habla, es "virtud".
-
-Pregunta 7: Reconozca la oración que presenta un sujeto compuesto (es decir, que tiene dos o más núcleos).
-A) El clima nublado y lluvioso es mi favorito.
-B) Mi madre y yo nos llevamos muy bien.
-C) El joven llegó tarde y no pudo entrar.
-D) Iremos a cenar y después al cine.
-E) El hombre escapó a toda velocidad.
-
-B) Correcta
-EXP: Si un sujeto tiene dos núcleos (en este caso "madre" y "yo"), se denomina sujeto compuesto.
-
-Pregunta 8: Para encontrar el sujeto en la oración "Me gustan las asignaturas de matemáticas", ¿cuál es el procedimiento correcto y el sujeto hallado?
-A) Preguntar "¿a quién?", el sujeto es "Me".
-B) Preguntar "¿qué me gustan?", el sujeto es "las asignaturas de matemáticas".
-C) El sujeto es tácito (Yo).
-D) Preguntar "¿de qué?", el sujeto es "de matemáticas".
-E) El sujeto es "matemáticas".
-
-B) Correcta
-EXP: Para reconocer el sujeto se le pregunta al verbo "¿qué o quién realiza la acción?". Al preguntar "¿qué me gustan?", la respuesta concordante en número plural es "las asignaturas de matemáticas".
-
-Pregunta 9: En la oración "Bailamos y reímos toda la noche", indique la característica sintáctica principal de su estructura.
-A) Es una oración unimembre.
-B) Es una oración con sujeto expreso.
-C) Es una oración con predicado compuesto.
-D) Posee un predicado nominal.
-E) El sujeto es compuesto.
+raw_text = """
+Pregunta 1: Según la teoría narrativa general, ¿cuáles son los elementos fundamentales e indispensables que conforman toda narración?
+A) Inicio, nudo, desenlace, moraleja y epílogo.
+B) Prolepsis, analepsis, escena, pausa y sumario.
+C) El narrador, los personajes, la trama (acciones), el tiempo y el espacio.
+D) Protagonista, antagonista, testigo, lugar y época.
+E) El autor, el lector, el mensaje, el canal y el código.
 
 C) Correcta
-EXP: La oración tiene un sujeto tácito (Nosotros) y cuenta con dos verbos principales ("bailamos" y "reímos"), por lo que posee un predicado compuesto.
+EXP: Para que un texto sea considerado como una narración debe incluir una serie de elementos básicos: los personajes, el narrador, la trama o acciones, el tiempo y el espacio.
 
-Pregunta 10: ¿Qué oración corresponde a un claro ejemplo de verbo impersonal, lo que la convierte en una oración unimembre?
-A) Felipe fue siempre buen estudiante.
-B) La asamblea redacta la nueva Constitución.
-C) Ellos comieron una pizza.
-D) Ayer llovió torrencialmente.
-E) Nosotros saldremos hacia la costa.
-
-D) Correcta
-EXP: Los verbos meteorológicos (como llover, relampaguear o nevar) son impersonales, solo se conjugan en tercera persona del singular y forman oraciones unimembres al no poder dividirse lógicamente en sujeto y predicado.
-
-
-====== NIVEL MEDIO ======
-Pregunta 11: ¿A qué clase, según la actitud del hablante, pertenece la oración "Ojalá mañana no llueva"?
-A) Dubitativa
-B) Enunciativa afirmativa
-C) Imperativa
-D) Desiderativa
-E) Exclamativa
+Pregunta 2: Dentro de la estructura general de la acción narrativa, ¿cómo se denomina a la parte inicial del relato donde se da a conocer a los personajes, sus objetivos y el escenario en el que se desenvuelve la historia?
+A) Situación nuclear
+B) Desenlace
+C) Nudo
+D) Introducción (o situación inicial)
+E) Clímax
 
 D) Correcta
-EXP: Las oraciones desiderativas son aquellas mediante las cuales el emisor expresa explícitamente un deseo, utilizando frecuentemente la palabra "ojalá".
+EXP: La introducción, situación inicial o planteamiento es la parte donde se expone el contexto que antecede a la acción central y se presenta a los personajes y su entorno.
 
-Pregunta 12: Según la clasificación por la intención del emisor, la oración "Tal vez sea mejor que vengas a las siete" pertenece al grupo de oraciones:
-A) Imperativas
-B) Dubitativas
-C) Interrogativas indirectas
-D) Enunciativas
-E) Exclamativas
+Pregunta 3: ¿Qué parte de la estructura de la trama suele ser la más extensa en los relatos largos y relata todas las acciones que realizan los protagonistas para intentar resolver el problema principal?
+A) El epílogo
+B) El planteamiento
+C) La introducción
+D) El desenlace
+E) El nudo (situación nuclear)
 
-B) Correcta
-EXP: El hablante expresa una duda o probabilidad empleando fórmulas introductorias como adverbios y locuciones adverbiales (quizás, tal vez), por lo que es una oración dubitativa.
+E) Correcta
+EXP: El nudo o situación nuclear es donde se desarrolla el problema que afecta a los personajes, y en relatos largos suele ser la parte más extensa formada por múltiples capítulos.
 
-Pregunta 13: Identifique el tipo de oración, según la actitud del hablante, en el siguiente enunciado: "Cierra la puerta, por favor."
-A) Desiderativa
-B) Enunciativa
-C) Dubitativa
-D) Imperativa
-E) Interrogativa
-
-D) Correcta
-EXP: Las oraciones imperativas (o exhortativas) dan una orden, mandato, ruego o consejo al receptor ("Cierra la puerta, por favor").
-
-Pregunta 14: ¿Cuál de los siguientes enunciados representa claramente una oración interrogativa indirecta?
-A) ¿Quién tiene el pelo ardiendo?
-B) ¡Tienes el pelo ardiendo!
-C) Me pregunto si me dejarás elegir a mí.
-D) ¿Te parece bien?
-E) Debes de estar loco.
+Pregunta 4: Dentro de la tipología del espacio narrativo, ¿cómo se clasifica a la atmósfera subjetiva (como la angustia, la alegría o la tristeza) en la que se ubica la acción y que se expresa en el interior de los personajes?
+A) Espacio físico abierto
+B) Espacio físico cerrado
+C) Espacio psicológico
+D) Espacio social
+E) Entorno cultural
 
 C) Correcta
-EXP: Las interrogativas indirectas expresan una pregunta pero no emplean signos de interrogación gráficos, sino que se introducen por medio de verbos de lengua como decir, preguntar o indagar ("Me pregunto si...").
+EXP: El espacio psicológico es la atmósfera subjetiva en la que se ubican la acción y los personajes, expresando su interioridad, como angustia, alegría, incertidumbre o tristeza.
 
-Pregunta 15: La oración "Eso costará unos doscientos soles" se clasifica según la intención del hablante como una oración:
-A) Imperativa
-B) Desiderativa
-C) Exclamativa
-D) Enunciativa
-E) Dubitativa
+Pregunta 5: ¿Cuál es la función principal del personaje conocido como "antagonista" dentro de una narración?
+A) Narrar la historia desde una perspectiva omnisciente.
+B) Ayudar pasivamente al protagonista a alcanzar sus objetivos.
+C) Oponerse directamente al protagonista y dificultarle alcanzar su meta.
+D) Representar las características culturales y religiosas del espacio social.
+E) Intervenir en la historia únicamente en el desenlace.
+
+C) Correcta
+EXP: De acuerdo a su rol, el antagonista es el personaje que se opone al protagonista y le dificulta alcanzar su meta dentro de la historia.
+
+Pregunta 6: ¿Qué característica define esencialmente al "espacio físico cerrado" dentro de una narración?
+A) Es un espacio exterior amplio y sin límites.
+B) Determina la concepción del mundo mediante la religión y economía.
+C) Refleja únicamente los pensamientos tristes de los personajes secundarios.
+D) Es un lugar limitado que condiciona la acción de los personajes, como una prisión o habitación.
+E) Es el momento histórico en que se ubica la obra.
 
 D) Correcta
-EXP: El emisor está expresando un hecho o una idea afirmándola como una realidad objetiva ("Eso costará unos doscientos soles"), lo que la define como una oración enunciativa.
+EXP: El espacio físico cerrado se define como aquel que es limitado y condiciona el accionar de los personajes, poniendo como ejemplos una prisión, habitación u hotel.
 
-Pregunta 16: Lea el siguiente enunciado: "Debes de tener el pelo ardiendo". ¿Qué actitud del hablante se refleja en la oración?
-A) Exclamativa
-B) Desiderativa
-C) Imperativa
-D) Dubitativa
-E) Enunciativa
+Pregunta 7: En el género narrativo predomina una función específica del lenguaje porque relata una historia sobre un tema en particular. ¿Qué función es esta?
+A) Poética
+B) Fática
+C) Apelativa
+D) Referencial
+E) Metalingüística
 
 D) Correcta
-EXP: Aunque se usa el verbo deber, la estructura "deber de + infinitivo" (a diferencia de "deber + infinitivo") expresa una duda, posibilidad o suposición del hablante, por lo que es dubitativa.
+EXP: En el género narrativo predomina la función referencial del lenguaje, precisamente porque el objetivo principal es relatar una historia sobre un tema o referente en particular.
 
-Pregunta 17: Señale la opción que contiene una oración de tipo imperativa expresada a través de una fórmula de obligación.
-A) Ojalá tengas el pelo ardiendo.
-B) Tienes que quemarte el pelo.
-C) Puede que tengas el pelo ardiendo.
-D) No tienes el pelo ardiendo.
-E) ¿Cuándo empieza la película?
+Pregunta 8: Dentro de las categorías de personajes de acuerdo a su nivel de importancia, ¿cómo se les llama a aquellos que son de acompañamiento o accidentales, y sin los cuales el núcleo del relato podría seguir existiendo?
+A) Personajes principales
+B) Personajes protagonistas
+C) Personajes antagonistas
+D) Personajes secundarios
+E) Personajes narradores
+
+D) Correcta
+EXP: Según el nivel de importancia, los personajes secundarios son aquellos que fungen roles de acompañamiento o accidentales, a diferencia de los principales, sin los cuales no habría relato.
+
+Pregunta 9: ¿Cómo se define el término "trama" en la estructura de los elementos narrativos?
+A) La época histórica de la narración.
+B) El lugar físico en el que suceden los hechos.
+C) La voz en primera persona que cuenta sus vivencias.
+D) El contenido del relato o el orden cronológico de las anécdotas y acciones que hacen avanzar la historia hasta su desenlace.
+E) La opinión del autor respecto a la obra.
+
+D) Correcta
+EXP: La trama es el contenido del relato o el orden cronológico de todas las anécdotas y acciones que suceden y hacen avanzar la historia hacia su desenlace.
+
+Pregunta 10: En la estructura de la acción narrativa, ¿qué evento marca el inicio formal del "desenlace" o situación final?
+A) La presentación de los personajes y sus metas.
+B) Cuando el narrador omnisciente describe el escenario.
+C) Cuando se quiebra por primera vez la normalidad planteada.
+D) Cuando se produce un hecho que reordena los elementos tras el punto de máxima tensión, volviendo a cierta "normalidad".
+E) Cuando el protagonista conoce a su acompañante.
+
+D) Correcta
+EXP: El desenlace se inicia tras arribar al punto de máxima tensión del relato, cuando se produce un hecho que reordena los elementos y los personajes vuelven a una "normalidad".
+
+Pregunta 11: Identifique el tipo de narrador que actúa como si fuera una divinidad: conoce todo lo que ocurre, los detalles más íntimos de los personajes, sus pensamientos, sentimientos, pasados y sus intenciones más secretas.
+A) Narrador Testigo
+B) Narrador Observador
+C) Narrador Protagonista
+D) Narrador Omnisciente
+E) Monólogo interior
+
+D) Correcta
+EXP: El narrador omnisciente en tercera persona es aquel que sabe todo lo que sienten y piensan los personajes, comparándose con una divinidad que todo lo conoce en tiempo y lugar.
+
+Pregunta 12: Dentro de las tipologías de personajes por su complejidad, ¿cómo se denomina a aquellos que son creados a partir de una única cualidad o defecto, son simples, predecibles y no evolucionan ni cambian en absoluto a lo largo de la narración?
+A) Personajes principales
+B) Personajes redondos
+C) Personajes protagonistas
+D) Personajes antagonistas
+E) Personajes planos
+
+E) Correcta
+EXP: Los personajes planos son construidos a partir de una sola idea o defecto, son seres simples y típicos que no evolucionan ni cambian a lo largo de toda la historia.
+
+Pregunta 13: En un relato, la historia es narrada por un personaje que participa de las acciones, pero él no es el centro del argumento, sino que se limita a contar, según su propia percepción y desde su óptica, todo lo que le ocurre al personaje principal. ¿A qué tipo de narrador corresponde esta definición?
+A) Narrador en primera persona Protagonista
+B) Narrador en primera persona Testigo
+C) Narrador Omnisciente
+D) Narrador Observador externo
+E) Monólogo interior
 
 B) Correcta
-EXP: Las oraciones imperativas pueden usar verbos en modo imperativo o fórmulas de obligación como "Tener que + infinitivo" ("Tienes que quemarte el pelo") para transmitir una orden o mandato.
+EXP: El narrador testigo relata en primera persona pero es un personaje secundario en la historia. Narra lo que le ocurre al protagonista actuando estrictamente como un observador.
 
-Pregunta 18: Identifique la alternativa que presenta una oración interrogativa parcial.
-A) ¿Tienes el pelo ardiendo?
-B) Me pregunto si tienes hambre.
-C) ¿Te gusta el helado?
-D) ¿Por qué tienes el pelo ardiendo?
-E) Ojalá haya palomitas de colores.
-
-D) Correcta
-EXP: Las interrogativas parciales preguntan por una parte del contenido buscando una información en particular (causa, sujeto, tiempo) y utilizan partículas interrogativas como por qué, quién, cuándo. Las totales buscan como respuesta un sí o un no.
-
-Pregunta 19: Si el hablante enuncia: "Nadie tiene el pelo ardiendo", estamos frente a una oración:
-A) Dubitativa
-B) Enunciativa negativa
-C) Exhortativa
-D) Enunciativa afirmativa
-E) Desiderativa
+Pregunta 14: ¿Cuál es el rasgo definitorio principal que diferencia a los personajes "redondos" de los personajes "planos" dentro de un relato?
+A) Los redondos solo pueden ser protagonistas o antagonistas.
+B) Los redondos no encarnan una sola cualidad, poseen profundidad psicológica y evolucionan o cambian a lo largo de la trama, sorprendiendo al lector.
+C) Los redondos están basados obligatoriamente en personas reales e históricas.
+D) Los redondos carecen de defectos humanos.
+E) Los redondos son estáticos y siempre reaccionan de manera predecible y típica.
 
 B) Correcta
-EXP: Las oraciones enunciativas expresan un hecho. Son negativas cuando niegan una idea usando adverbios (no, nunca) o pronombres indefinidos negativos como "nadie" o "nada".
+EXP: Los personajes redondos se caracterizan por su profundidad psicológica; no encarnan un solo defecto o virtud, sino que evolucionan, muestran múltiples caras y sorprenden al lector.
 
-Pregunta 20: ¿En cuál de las siguientes opciones se utiliza una oración para expresar una emoción de sorpresa o alegría, dándole fuerte énfasis al mensaje?
-A) ¡Qué bonito es ese dibujo!
-B) Salga de aquí.
-C) ¿Dónde estudias?
-D) El clima nublado es mi favorito.
-E) Quizás tengas razón.
+Pregunta 15: Un relato está narrado en tercera persona, pero la voz narrativa no puede acceder a la mente, pensamientos ni emociones de los protagonistas. Solo se dedica a describir de forma neutra y externa las acciones físicas y los diálogos que observa, como si fuera una cámara de cine. Este es un ejemplo de:
+A) Narrador omnisciente
+B) Monólogo interior
+C) Narrador observador (objetivista)
+D) Narrador protagonista
+E) Narrador testigo
+
+C) Correcta
+EXP: El narrador observador (u objetivista) narra en tercera persona externa, y solo conoce y descifra lo que los personajes dicen y hacen a simple vista, ignorando sus pensamientos íntimos.
+
+Pregunta 16: Es el tipo de narrador en primera persona que busca plasmar los pensamientos del personaje en tiempo real, sin que su narración esté destinada a ningún oyente o lector más que a sí mismo:
+A) Monólogo interior
+B) Narrador omnisciente
+C) Narrador testigo
+D) Narrador observador
+E) Narrador externo de segunda persona
 
 A) Correcta
-EXP: Las oraciones exclamativas transmiten sentimientos y emociones profundas (alegría, sorpresa) y suelen utilizar signos de exclamación para dar énfasis ("¡Qué bonito es ese dibujo!").
+EXP: El monólogo interior es un narrador en primera persona cuya narración no está destinada a nadie más que a sí mismo, y que busca plasmar el pensamiento del personaje en tiempo real.
 
+Pregunta 17: Señale la proposición correcta acerca de la diferencia teórica fundamental entre "Autor" y "Narrador":
+A) Son exactamente la misma persona en cualquier novela autobiográfica.
+B) El narrador es la persona real de carne y hueso que firma el libro y el autor es quien relata dentro del mismo.
+C) El autor es la persona que crea la obra y decide quién va a ser el narrador (el ente ficticio o voz que cuenta la historia desde un punto de vista).
+D) El narrador no es un elemento estructural del cuento, mientras que el autor sí lo es.
+E) El autor y el narrador se diferencian únicamente en textos poéticos, pero no en narrativos.
 
-====== NIVEL DIFÍCIL ======
-Pregunta 21: En la oración "El computador de Marcos tiene muchos programas", ¿qué función sintáctica exacta cumple la estructura subrayada "de Marcos"?
-A) Núcleo del Sujeto
-B) Modificador Directo
-C) Aposición
-D) Modificador Indirecto
-E) Objeto Directo
+C) Correcta
+EXP: Autor y narrador no es lo mismo. El narrador es el elemento estructural o voz ficticia que cuenta los hechos, mientras que el autor es la persona real que decide quién y con qué características será dicho narrador.
+
+Pregunta 18: Según la actitud valorativa y la opinión que emite sobre la historia, cuando el narrador interviene de manera constante en el relato juzgando los hechos que realizan los personajes (si son buenas o malas acciones) para dirigir la interpretación del lector, se le denomina:
+A) Narrador omnisciente temporal
+B) Narrador objetivo
+C) Narrador de ritmo lento
+D) Narrador subjetivo
+E) Narrador indirecto libre
 
 D) Correcta
-EXP: El Modificador Indirecto aporta información extra y siempre está unido al núcleo del sintagma nominal a través de una preposición, en este caso la preposición "de".
+EXP: Cuando el narrador interviene en el relato, valora los hechos dando su opinión e inclinando la balanza interpretativa, se dice que es un narrador "subjetivo".
 
-Pregunta 22: En la oración "Julio, mi amigo, se mudó a la casa de la esquina", ¿cómo se denomina sintácticamente al segmento que va entre comas ("mi amigo")?
-A) Modificador indirecto
-B) Núcleo del predicado
-C) Sujeto expreso
-D) Complemento agente
-E) Aposición
+Pregunta 19: Si en un relato histórico, un autor utiliza pronombres como "tú" para mantener un vínculo con el lector mientras cuenta los sucesos de forma externa o interna, nos encontramos frente a un narrador en:
+A) Tercera persona omnisciente.
+B) Primera persona monologal.
+C) Primera persona testigo.
+D) Segunda persona.
+E) Tercera persona objetivista.
+
+D) Correcta
+EXP: El narrador en segunda persona utiliza el "tú" (y sus derivados) ya sea como observador externo omnisciente o interno, estableciendo de este modo un vínculo comunicativo directo.
+
+Pregunta 20: Todo personaje es una entidad que interviene en el argumento de la narración, realizando acciones o sufriéndolas. Según la teoría narrativa, ¿qué entidades pueden ser legítimamente consideradas como personajes?
+A) Exclusivamente personas reales o ficticias.
+B) Personas y animales, descartando tajantemente a los objetos.
+C) Personas, animales u objetos (siempre que ejecuten o sufran acciones en la historia).
+D) Únicamente seres míticos o legendarios.
+E) Solo las abstracciones psicológicas del narrador.
+
+C) Correcta
+EXP: Según la teoría narrativa, un personaje es cualquier entidad que lleva a cabo acciones en el argumento; por ende, pueden ser tanto personas como animales u objetos que adquieren características específicas.
+
+Pregunta 21: ¿Cómo se denomina al tipo de disposición de los acontecimientos o narración que toma como punto de partida estricto el final o el desenlace definitivo de la historia cronológica?
+A) Narración Ab Ovo
+B) Narración In Media Res
+C) Narración In Extrema Res
+D) Final abierto
+E) Estilo indirecto libre
+
+C) Correcta
+EXP: La narración "In extrema res" es aquella cuyo punto de partida del relato es el final de la historia o su desenlace, por lo que no corresponde a una disposición cronológica natural.
+
+Pregunta 22: En una novela, el narrador resume con sus propias palabras, y en tercera persona, lo que los personajes han estado debatiendo en una asamblea, omitiendo los matices expresivos literales de estos y seleccionando solo la información importante. ¿Qué estilo de reproducción de voz se ha empleado?
+A) Estilo directo
+B) Estilo indirecto
+C) Estilo indirecto libre
+D) Monólogo interior
+E) Corriente de la conciencia
+
+B) Correcta
+EXP: El estilo indirecto lo utiliza el narrador cuando resume, usando sus propias palabras en tercera persona, lo que dijeron o pensaron los personajes, perdiéndose así matices emocionales directos.
+
+Pregunta 23: Identifique la afirmación correcta que delimita exactamente la diferencia teórica entre los conceptos de "historia" y "relato" dentro de la narratología.
+A) La historia narra el espacio social, mientras que el relato narra el espacio físico.
+B) La historia se refiere exclusivamente a eventos reales verídicos, y el relato a la ficción pura.
+C) La historia es la secuencia de los hechos organizados lógicamente desde el principio al fin (el qué), mientras que el relato es el orden estético y artificial con que el autor decide presentarlos al lector (el cómo).
+D) La historia siempre utiliza narradores en primera persona y el relato utiliza narradores omniscientes.
+E) La historia se cuenta siempre In extrema res, mientras el relato es siempre Ab Ovo.
+
+C) Correcta
+EXP: La "historia" es la serie cronológica de hechos relacionados (diégesis), mientras que el "relato" es la estructura y el orden temporal que el autor define artísticamente para presentar esos hechos al lector.
+
+Pregunta 24: Lea la siguiente definición: "El punto de partida del relato se ubica en una instancia intermedia y avanzada del argumento central, quebrando el orden natural para entrar de lleno al conflicto sin introducciones preliminares". ¿A qué tipo de disposición narrativa corresponde?
+A) Narración "Ad Ovo"
+B) Narración "In Extrema Res"
+C) Narración lineal
+D) Narración "In Media Res"
+E) Estilo directo
+
+D) Correcta
+EXP: La narración "In Media Res" es aquella que no posee la clásica situación inicial, sino que comienza abruptamente en un punto intermedio, justo en la mitad de la trama argumental.
+
+Pregunta 25: El narrador escribe: *"Caminaba deprisa bajo la lluvia. ¡Qué frío le calaba los huesos! ¿Acaso no llegaría nunca a casa?"*. Se advierte la voz del narrador relatando en tercera persona, pero se han introducido fluidamente, y sin guiones, exclamaciones e interrogaciones propias del sentir íntimo del personaje. Esto es un ejemplo característico del:
+A) Estilo indirecto tradicional
+B) Estilo directo
+C) Monólogo interior
+D) Diálogo literal
+E) Estilo indirecto libre
 
 E) Correcta
-EXP: Lo que va entre comas dentro del sujeto explicando, aclarando o repitiendo quién es el núcleo se llama aposición, y funciona como un modificador del sujeto.
+EXP: El estilo indirecto libre es una fusión donde el narrador relata en tercera persona, pero introduce exclamaciones, interrogaciones o expresiones que reproducen de cerca el pensamiento emocional del personaje.
 
-Pregunta 23: En el sintagma nominal, ¿qué categorías gramaticales funcionan exclusivamente como modificadores directos (MD) del núcleo?
-A) Verbos y adverbios
-B) Preposiciones y conjunciones
-C) El artículo y el adjetivo
-D) Sustantivos y pronombres
-E) Interjecciones y aposiciones
+Pregunta 26: ¿Qué término define la estructura narrativa en la que el autor relata todo cronológicamente, respetando inalterablemente la secuencia de los acontecimientos desde su origen natural y regido estrictamente por el principio causa-efecto?
+A) Disposición In Media Res
+B) Alteración temporal por Racconto
+C) Disposición Ad Ovo (o Ab-Ovo)
+D) Disposición In Extrema Res
+E) Anacronía de Elipsis
 
 C) Correcta
-EXP: Los modificadores directos acompañan directamente al núcleo sin preposiciones. Los artículos, determinantes y adjetivos cumplen esta función sintáctica.
+EXP: La narración "Ab-Ovo" o "Ad Ovo" sitúa como punto de partida el inicio lógico y natural de la historia, respondiendo siempre a un desenvolvimiento cronológico inalterado de causa-efecto.
 
-Pregunta 24: Lea atentamente: "La carta fue recibida por el recepcionista". Según la voz de la oración, ¿qué tipo de sujeto presenta?
-A) Sujeto Agente
-B) Sujeto Paciente
-C) Sujeto Tácito
-D) Sujeto Compuesto
-E) Sujeto Múltiple
+Pregunta 27: Además del tiempo de la historia (TH) y el tiempo del discurso (TR), la teoría literaria contempla un "Tiempo referencial histórico". ¿Qué define exactamente a este concepto?
+A) Es el tiempo psicológico que ocurre dentro del monólogo de un personaje.
+B) Es el marco sociopolítico y el momento histórico real y cultural en el que se ubica la obra, y que condiciona a los personajes (ej. la Segunda Guerra Mundial).
+C) Es la manipulación estructural que convierte el relato en in media res.
+D) Es la cantidad de horas o días cronológicos exactos que dura la trama.
+E) Es el año exacto en el que el autor publica el texto impreso.
 
 B) Correcta
-EXP: El sujeto es "La carta". Al estar la oración en voz pasiva ("fue recibida"), el sujeto no realiza la acción, sino que la recibe pasivamente, por lo cual se clasifica como Sujeto Paciente.
+EXP: El tiempo referencial histórico es el momento histórico (con sus cualidades socioculturales) en el en el que se enmarca la historia y que determina la visión del mundo de los personajes y sus acciones.
 
-Pregunta 25: Identifique los modificadores directos (MD) presentes en el sujeto de la siguiente oración: "Mi carro nuevo es muy rápido".
-A) muy, rápido
-B) carro, es
-C) Mi, nuevo
-D) Mi, rápido
-E) nuevo, rápido
+Pregunta 28: En las técnicas de manipulación estructural, ¿cómo se le llama a la forma de desenlace de la narración en la cual el autor decide deliberadamente no revelar al lector cómo concluye el problema o el destino de los personajes?
+A) Racconto
+B) Nudo narrativo
+C) Elipsis argumental
+D) Final abierto
+E) In media res
 
-C) Correcta
-EXP: El sujeto es "Mi carro nuevo", donde el núcleo es "carro". Las palabras que lo modifican directamente sin nexos son el determinante posesivo "Mi" y el adjetivo "nuevo".
+D) Correcta
+EXP: El final abierto se produce cuando el autor decide deliberadamente no narrar o no contar el desenlace explícito de la trama argumental, induciendo a la imaginación del lector.
 
-Pregunta 26: Analice la oración "Los libros fueron devueltos por los estudiantes". Determine qué clase de sujeto y voz posee.
-A) Sujeto Agente - Voz activa
-B) Sujeto Tácito - Voz pasiva
-C) Sujeto Paciente - Voz pasiva
-D) Sujeto Simple - Voz activa
-E) Sujeto Compuesto - Voz pasiva
-
-C) Correcta
-EXP: En las oraciones en voz pasiva, el sujeto ("Los libros") no realiza la acción del verbo, sino que la sufre o recibe de un agente ("los estudiantes"), clasificándose como Sujeto Paciente.
-
-Pregunta 27: En la oración "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine cuál es el sujeto.
-A) por la opinión pública
-B) que dejó grandes pérdidas
-C) fue condenado
-D) grandes pérdidas
-E) El cobarde atentado
+Pregunta 29: Cuando la voz de un personaje aparece reproducida de manera fidedigna, totalmente literal y tal cual fue dicha, sin modificación del narrador y precedida visualmente por el uso de guiones o comillas, estamos ante un:
+A) Estilo indirecto libre
+B) Estilo indirecto
+C) Estilo retrospectivo
+D) Fluir de la conciencia
+E) Estilo directo
 
 E) Correcta
-EXP: Preguntamos al verbo en voz pasiva "¿qué fue condenado por la opinión pública?". La respuesta y sujeto paciente de la oración es "El cobarde atentado".
+EXP: El estilo directo se manifiesta cuando la voz, palabras o pensamientos de los personajes se reproduce de manera literal y exacta, figurando gráficamente mediante el uso de guiones o comillas.
 
-Pregunta 28: En la oración "El señor Fernández, el arquitecto, revisó los planos", la estructura "el arquitecto" cumple la función de:
-A) Modificador indirecto
-B) Núcleo del sujeto
-C) Objeto directo
-D) Aposición
-E) Circunstancial
+Pregunta 30: ¿Qué estructura elemental de la narración agrupa formalmente al inicio (quiénes son los personajes, el problema, el tiempo y espacio), al nudo (narrando cómo se intenta resolver el problema) y el desenlace (el resultado final de las acciones)?
+A) La estructura de la elipsis temporal.
+B) El esquema del monólogo interior.
+C) La estructura de la acción narrativa (o trama).
+D) La velocidad del relato.
+E) El espacio narrativo social.
+
+C) Correcta
+EXP: La estructura de la acción narrativa (o trama) se organiza tradicionalmente respondiendo al esquema de planteamiento (inicio o introducción), desarrollo (nudo o situación nuclear) y resolución (desenlace).
+
+Pregunta 31: De acuerdo a la teoría del ritmo y las velocidades narrativas (relación TH y TR), ¿cómo se llama a la técnica empleada cuando el narrador suspende o detiene totalmente el avance de la acción o historia (TH=0) para dedicar el texto narrativo a realizar descripciones exhaustivas de un lugar o insertar reflexiones?
+A) Escena
+B) Sumario
+C) Elipsis
+D) Pausa
+E) Analepsis
 
 D) Correcta
-EXP: La expression encerrada entre comas que detalla o repite la identidad del núcleo del sujeto ("El señor Fernández") funciona como aposición.
+EXP: La Pausa (donde el tiempo de la historia es 0 y el del relato es "x") se caracteriza por detener el tiempo de las acciones para ofrecer descripciones o comentarios, haciendo un ritmo lento.
 
-Pregunta 29: Determine la veracidad de la siguiente afirmación respecto a los tipos de sujeto por su presencia: "El sujeto elíptico u omitido es aquel que no aparece escrito en la oración, pero se deduce por la forma verbal".
-A) Falso, se trata del sujeto léxico.
-B) Falso, se trata del sujeto expreso.
-C) Verdadero.
-D) Falso, se trata de la aposición.
-E) Falso, se trata del sujeto paciente.
+Pregunta 32: Todo salto en el flujo del tiempo narrativo que rompa el orden natural cronológico de los acontecimientos recibe el nombre categórico de:
+A) Anacronía
+B) Prosopopeya
+C) Diégesis
+D) Sumario
+E) Epíteto temporal
 
-C) Correcta
-EXP: El sujeto tácito, también llamado elíptico u omitido, es aquel que no se nombra explícitamente en el enunciado pero se colige a partir de la conjugación y desinencia del verbo principal.
+A) Correcta
+EXP: La ruptura del orden lógico y lineal de la historia por parte del narrador, introduciendo temporalidades distintas, recibe el nombre general de Anacronía.
 
-Pregunta 30: En la oración "La inmensa llanura de las viñas sube un frescor grato y fragante" (variación sintáctica poética), si buscamos una estructura similar a "Los trabajadores de la empresa telefónica hicieron una huelga", el modificador indirecto del sujeto en este último ejemplo es:
-A) Los trabajadores
-B) de la empresa telefónica
-C) hicieron una huelga
-D) una huelga
-E) ayer
-
-B) Correcta
-EXP: El modificador indirecto se reconoce por estar unido al núcleo del sintagma nominal mediante una preposición (en este caso "de"). Por tanto, "de la empresa telefónica" es el MI de "trabajadores".
-
-
-====== NIVEL EXTREMO ======
-Pregunta 31: En la oración "El cobarde atentado, que dejó grandes pérdidas, fue condenado por la opinión pública", determine la función sintáctica de la estructura subrayada "por la opinión pública".
-A) Objeto directo
-B) Objeto indirecto
-C) Complemento agente
-D) Atributo
-E) Circunstancial de lugar
-
-C) Correcta
-EXP: El complemento agente es exclusivo de las oraciones en voz pasiva ("fue condenado"), va encabezado por la preposición "por" y señala a la entidad que materialmente ejecuta la acción verbal.
-
-Pregunta 32: Analice la oración "Inés compró chocolates para su enamorado el día sábado". ¿Qué función sintáctica cumple la frase "para su enamorado"?
-A) Objeto directo
-B) Circunstancial de causa
-C) Aposición
-D) Objeto indirecto
-E) Atributo
+Pregunta 33: Si en un relato el narrador se anticipa y cuenta un hecho que aún no ha sucedido y pertenece a un momento futuro, y este salto o proyección es breve e instantáneo retornando rápidamente al presente, la figura exacta recibe el nombre de:
+A) Analepsis - Racconto
+B) Analepsis - Flash-back
+C) Prolepsis - Premonición
+D) Prolepsis - Flash-forward
+E) Anacronía - Pausa
 
 D) Correcta
-EXP: El objeto indirecto designa a quien recibe el beneficio o daño de la acción. Responde a la pregunta "¿para quién compró?" y puede sustituirse por el pronombre átono "le" (Inés le compró).
+EXP: La Prolepsis es una mirada al futuro; cuando dicha proyección hacia adelante en la línea de tiempo es breve e instantánea, se le denomina específicamente flash-forward.
 
-Pregunta 33: Identifique el tipo de predicado en la siguiente oración: "El hombre es arquitecto".
-A) Predicado verbal
-B) Predicado nominal (o copulativo)
-C) Predicado no verbal
-D) Predicado compuesto
-E) Predicado elíptico
-
-B) Correcta
-EXP: El predicado nominal o copulativo está formado obligatoriamente por un verbo copulativo (ser, estar, parecer) que funciona como enlace hacia un atributo (arquitecto).
-
-Pregunta 34: Determine el Objeto Directo (OD) en la siguiente oración: "Hemos comprado pasteles para tu cumpleaños".
-A) Hemos comprado
-B) tu cumpleaños
-C) pasteles
-D) para
-E) nosotros (tácito)
-
-C) Correcta
-EXP: El objeto directo se reconoce preguntando "¿qué?" al verbo ("¿qué hemos comprado?"). La respuesta es "pasteles", y se puede sustituir por el pronombre "los" (Los hemos comprado).
-
-Pregunta 35: Señale la oración que presenta un verbo transitivo que exija obligatoriamente la presencia de un Objeto Directo.
-A) Ayer llovió torrencialmente.
-B) Yo como manzanas.
-C) Marcos se parece mucho a su padre.
-D) El avión aterrizó sin inconvenientes.
-E) José y Hugo caminaron.
-
-B) Correcta
-EXP: Un verbo transitivo transfiere la acción hacia un objeto directo ("manzanas"). Al retirarlo ("Yo como"), la frase necesita el contexto del objeto para estar semánticamente completa.
-
-Pregunta 36: En la oración "La empresa publicó una nota explicando el acuerdo", ¿cuál es el núcleo del predicado?
-A) empresa
-B) publicó
-C) nota
-D) explicando
-E) acuerdo
-
-B) Correcta
-EXP: El núcleo del predicado, también llamado núcleo verbal, es el verbo principal conjugado que concuerda con el sujeto. En este caso es "publicó".
-
-Pregunta 37: En el enunciado "No llegó por la enfermedad de su mamá", identifique la función sintáctica que cumple el sintagma preposicional "por la enfermedad de su mamá".
-A) Objeto directo
-B) Complemento circunstancial de causa
-C) Complemento agente
-D) Objeto indirecto
-E) Atributo
-
-B) Correcta
-EXP: Este complemento responde a la pregunta "¿por qué (no llegó)?" e indica el motivo de la acción, constituyéndose como un complemento circunstancial de causa.
-
-Pregunta 38: En la oración "Luisa preparó un postre apetitoso para los invitados", si se reemplaza el objeto directo por su pronombre correspondiente, ¿cómo quedaría estructurada la frase?
-A) Luisa se los preparó para los invitados.
-B) Luisa le preparó un postre apetitoso.
-C) Luisa lo preparó para los invitados.
-D) Luisa las preparó apetitoso.
-E) Luisa les preparó un postre.
-
-C) Correcta
-EXP: El objeto directo es "un postre apetitoso" (masculino, singular). El pronombre átono que lo reemplaza de forma exacta es "lo", resultando en "Luisa lo preparó para los invitados".
-
-Pregunta 39: Teniendo en cuenta la estructura "CC (Circunstancial) + OI (Objeto Indirecto) + OD (Objeto Directo) + NP (Núcleo del Predicado)", identifique la oración que se adapta perfectamente a este orden.
-A) A mí sí me interesa.
-B) Con alegría, entregó el regalo.
-C) Yo no sé la respuesta.
-D) Mañana se lo devolveré.
-E) Su padre se lo advirtió ayer.
-
-D) Correcta
-EXP: Analizando "Mañana se lo devolveré": Mañana (CC de tiempo) + se (OI, pronombre) + lo (OD, pronombre) + devolveré (NP, verbo).
-
-Pregunta 40: En una oración de voz pasiva como "El balón fue atrapado por el perro", si transformamos la oración a voz activa ("El perro atrapó el balón"), ¿qué función sintáctica pasa a cumplir "el balón"?
-A) Sujeto agente
-B) Objeto indirecto
-C) Complemento agente
-D) Modificador indirecto
-E) Objeto directo
+Pregunta 34: *"El día en que lo iban a matar, Santiago Nasar se levantó a las 5:30 de la mañana para esperar el buque"*. Teniendo en cuenta que el protagonista en ese momento inicial sigue vivo realizando acciones matutinas cotidianas, revelar al lector desde el principio que en el futuro va a morir es un ejemplo estricto de:
+A) Racconto
+B) Analepsis
+C) Monólogo interior
+D) Disposición ad ovo
+E) Prolepsis
 
 E) Correcta
-EXP: En la conversión de voz pasiva a voz activa, el sujeto paciente ("El balón") asume la función de Objeto Directo de la nueva oración ("El perro atrapó el balón", donde "el balón" recibe la acción de atrapar).
+EXP: Mencionar un suceso (la muerte del personaje) anticipándose dramáticamente a hechos posteriores del presente temporal y narrativo constituye una prolepsis narrativa.
+
+Pregunta 35: Dentro de las variaciones del tiempo narrativo según Genette, identifique el caso donde existe una compresión veloz del tiempo. El autor omite detalles no significativos para abarcar en unas cuantas oraciones acontecimientos que requirieron meses o años en la historia (TR < TH).
+A) Escena
+B) Sumario (o Resumen)
+C) Elipsis
+D) Racconto
+E) Pausa
+
+B) Correcta
+EXP: El sumario o resumen representa una aceleración narrativa, comprimiendo o resumiendo acontecimientos largos en una duración corta y rápida del relato, siendo el tiempo del relato menor al de la historia (TR < TH).
+
+Pregunta 36: Se utiliza un recurso temporal en el cual la narración da un salto abrupto hacia atrás hacia recuerdos de la infancia del personaje; sin embargo, no es veloz, sino que la evocación del recuerdo abarca varias páginas, ocupando un extenso e intrincado pasaje del relato antes de retornar a la línea argumental presente. A este subtipo preciso de salto retrospectivo se le denomina:
+A) Flash-forward
+B) Elipsis
+C) Flash-back
+D) Prolepsis
+E) Racconto
+
+E) Correcta
+EXP: El "Racconto" es un tipo de analepsis (retroceso al pasado) que se caracteriza por ser muy extenso en el tiempo y recordar los acontecimientos con gran detalle antes del retorno narrativo al presente.
+
+Pregunta 37: En el estudio de la temporalidad narrativa y el ritmo del relato, ¿en qué caso ocurre una relación de sincronía perfecta entre ambos tiempos, donde el "Tiempo de la Historia" es exactamente igual al "Tiempo del Relato" (TH = TR)?
+A) Cuando se relata usando elipsis puras sin transición.
+B) Cuando el narrador altera la estructura hacia la modalidad in extrema res.
+C) Cuando se presentan escenas dialogadas en tiempo real entre personajes.
+D) Cuando se comprimen tres años de guerra en un párrafo descriptivo.
+E) Cuando el narrador entra en un prolongado monólogo descriptivo paralizando la acción.
+
+C) Correcta
+EXP: La Escena ocurre en relación de igualdad perfecta (coloquialmente "tiempo real"), donde existe sincronía; es decir, el tiempo del discurso se ajusta a lo que dura la conversación o la acción, tal como sucede en el diálogo.
+
+Pregunta 38: Analice el siguiente fragmento: *"No creía confundirse, pero cuando señaló que hacía treinta años que no pisaba ese lugar, no mintió [...] Casi sintió el olor de los cardenales; y se vio de nuevo ahí, avergonzada de escuchar los gritos aborrecidos de su padre..."*. La alteración de la temporalidad aquí presente retrocede hacia lo acontecido en su niñez, correspondiendo formalmente a una:
+A) Analepsis
+B) Prolepsis
+C) Anticipación
+D) Disposición ad ovo
+E) Disposición in extrema res
+
+A) Correcta
+EXP: La analepsis alude directamente a la retrospección (retroceso); se recuerdan y relatan sucesos acaecidos en un tiempo anterior al acontecimiento principal que fluye en el presente (como sus tiempos de infancia).
+
+Pregunta 39: Existen fragmentos del relato donde el narrador silencia completamente el texto y opta por omitir por completo meses o años de acciones de los personajes porque no se consideran fundamentales ("cinco años más tarde, volvió..."). Este recurso del ritmo temporal, donde matemáticamente el tiempo del relato es nulo ante un tiempo histórico transcurrido, recibe el nombre de:
+A) Flash-back
+B) Racconto
+C) Escena objetivista
+D) Elipsis
+E) Sumario referencial
+
+D) Correcta
+EXP: La Elipsis ocurre cuando una parte del tiempo de la historia cronológica no se cuenta en el texto literario en absoluto, por lo cual el "Tiempo del relato" es 0 respecto a esa porción omitida del "Tiempo de la historia".
+
+Pregunta 40: Tanto el "flash-forward" como el "flash-back" son técnicas modernas, impulsadas notoriamente por la técnica cinematográfica, que logran desorganizar la disposición natural del relato. Sintetizando los conceptos literarios puros, el primero corresponde respectivamente a una ____________ y el segundo a una ____________.
+A) Analepsis breve / Prolepsis extensa
+B) Prolepsis instantánea / Analepsis veloz
+C) Premonición / Racconto
+D) Anacronía ad ovo / Anacronía in media res
+E) Analepsis / Anticipación
+
+B) Correcta
+EXP: El "Flash-forward" es la proyección, avance o anticipación breve e instantánea al futuro, catalogada como Prolepsis. El "Flash-back" es un retroceso veloz al pasado, catalogado como Analepsis.
 """
 
-questions = []
-current_q = {}
+questions_data = parse_questions(raw_text)
 
-blocks = re.split(r'Pregunta \d+:', text)
-for block in blocks[1:]:
-    block = block.strip()
-    
-    lines = block.split('\n')
-    text_lines = []
-    options = []
-    correct_ans = -1
-    explanation = ""
-    
-    idx = 0
-    while idx < len(lines):
-        line = lines[idx].strip()
-        if line.startswith('A)') or line.startswith('B)') or line.startswith('C)') or line.startswith('D)') or line.startswith('E)'):
-            options.append(line[2:].strip())
-        elif 'Correcta' in line:
-            ans_char = line[0]
-            correct_ans = ord(ans_char) - ord('A')
-        elif line.startswith('EXP:'):
-            explanation = line[4:].strip()
-        elif line == '':
-            pass
-        else:
-            if not options:
-                text_lines.append(line)
-        idx += 1
-        
-    current_q['text'] = ' '.join(text_lines)
-    current_q['options'] = options
-    current_q['correct'] = correct_ans
-    current_q['exp'] = explanation
-    questions.append(current_q)
-    current_q = {}
+dart_code = generate_dart_code(questions_data, "narracionExt10qQuestions")
 
-dart_code = """import 'package:learn/models/question.dart';
-
-final List<Question> oracionGramaticalExt10qQuestions = [
-"""
-for i, q in enumerate(questions):
-    opts_str = ',\n'.join(f"      r'''{opt}'''" for opt in q['options'])
-    dart_code += f"""  Question(
-    id: "ora_gram_10q_q{i+1}",
-    topicId: "eo_pnp_oracion_gramatical_ext_10q",
-    text: r'''{q['text']}''',
-    options: [
-{opts_str}
-    ],
-    correctAnswer: {q['correct']},
-    explanation: r'''{q['exp']}''',
-  ),
-"""
-
-dart_code += "];\n"
-
-with open(r'c:\Users\PC\Downloads\EstudiEO-flutter\lib\data\library\comunicacion\oracion_gramatical_ext_10q_questions.dart', 'w', encoding='utf-8') as f:
+with open('lib/data/library/comunicacion/narracion_ext_10q_questions.dart', 'w', encoding='utf-8') as f:
     f.write(dart_code)
+
+print(f"Generated {len(questions_data)} questions.")
