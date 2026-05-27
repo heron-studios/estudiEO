@@ -1,9 +1,14 @@
-﻿import 'package:learn/models/subject.dart';
+import 'package:learn/models/subject.dart';
 
 final Subject matematicasSubject = Subject(
   id: 'matematicas',
   name: "Matemáticas",
   color: '#FF6B6B',
   icon: '📐',
-  topicIds: [], // Sin topics con teoría aún - oculto del modo aprendizaje guiado
+  topicIds: [
+    'mat_algebra',
+    'mat_angulos',
+    'mat_pitagoras',
+    'mat_trigo',
+  ],
 );

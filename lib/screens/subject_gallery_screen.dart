@@ -27,10 +27,16 @@ class SubjectGalleryScreen extends StatelessWidget {
       body: Consumer<SubjectProvider>(
         builder: (context, provider, _) {
           final hiddenSubjects = context.read<LocalStorageService>().loadHiddenSubjects();
-          // En modo guiado, ocultar subjects sin topics con teoría (topicIds vacío)
+          // En modo guiado, ocultar subjects que no tengan ningún tema con teoría
           final subjects = provider.subjects.where((s) {
             if (hiddenSubjects.contains(s.id)) return false;
-            if (mode == 'guided' && s.topicIds.isEmpty) return false;
+            
+            if (mode == 'guided') {
+              final subjectTopics = provider.getTopicsBySubject(s.id);
+              final hasTheory = subjectTopics.any((t) => t.theoryByLevel != null);
+              if (!hasTheory) return false;
+            }
+            
             return true;
           }).toList();
           
