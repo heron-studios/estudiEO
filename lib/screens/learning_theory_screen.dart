@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 /// Pantalla 1 del Modo Aprendizaje Guiado — Fase Absorción (Teoría).
 ///
@@ -300,32 +301,80 @@ class _TheorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: const Color(0xFF111827),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFF1F2937), width: 1),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: const Color(0xFF1F2937), width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 0.3,
-            ),
+          Row(
+            children: [
+              const Icon(Icons.menu_book_rounded, color: Color(0xFF4ECDC4), size: 22),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 12),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Color(0xFFCBD5E1),
-              fontSize: 15,
-              height: 1.75,
-              letterSpacing: 0.1,
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Divider(color: Color(0xFF1F2937), height: 1, thickness: 1.5),
+          ),
+          MarkdownBody(
+            data: content,
+            selectable: true,
+            styleSheet: MarkdownStyleSheet(
+              p: const TextStyle(
+                color: Color(0xFFE2E8F0),
+                fontSize: 16,
+                height: 1.7,
+                letterSpacing: 0.3,
+              ),
+              strong: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+              em: const TextStyle(
+                color: Color(0xFF94A3B8),
+                fontStyle: FontStyle.italic,
+              ),
+              listBullet: const TextStyle(
+                color: Color(0xFF4ECDC4),
+                fontSize: 18,
+              ),
+              h1: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold, height: 1.4),
+              h2: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold, height: 1.4),
+              h3: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, height: 1.4),
+              blockquoteDecoration: BoxDecoration(
+                color: const Color(0xFF1E293B),
+                borderRadius: BorderRadius.circular(8),
+                border: const Border(left: BorderSide(color: Color(0xFF4ECDC4), width: 4)),
+              ),
+              blockquotePadding: const EdgeInsets.all(16),
+              blockquote: const TextStyle(
+                color: Color(0xFFCBD5E1),
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+                height: 1.6,
+              ),
             ),
           ),
         ],

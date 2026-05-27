@@ -4,6 +4,7 @@ import 'oracion_gramatical_theory.dart';
 import 'reglas_ortograficas_ext_10q_theory.dart';
 import 'oracion_gramatical_ext_10q_theory.dart';
 import 'narracion_ext_10q_theory.dart';
+import 'literatura_peruana_ext_10q_theory.dart';
 
 final Map<String, Topic> comunicacionTopics = {
   // Topics con teoría (modo aprendizaje guiado)
@@ -44,6 +45,19 @@ final Map<String, Topic> comunicacionTopics = {
       'medium': oracionGramaticalExt10qTheoryMedium,
       'hard': oracionGramaticalExt10qTheoryHard,
       'extreme': oracionGramaticalExt10qTheoryExtreme,
+    },
+  ),
+  'eo_pnp_literatura_peruana_ext_10q': Topic(
+    id: 'eo_pnp_literatura_peruana_ext_10q',
+    subjectId: 'comunicacion',
+    name: 'Literatura Peruana (Teoría Completa 10Q)',
+    description: 'Estudio de la literatura peruana desde la época prehispánica hasta la Generación del 70.',
+    questionCount: 40,
+    theoryByLevel: {
+      'easy': literaturaPeruanaExt10qTheoryEasy,
+      'medium': literaturaPeruanaExt10qTheoryMedium,
+      'hard': literaturaPeruanaExt10qTheoryHard,
+      'extreme': literaturaPeruanaExt10qTheoryExtreme,
     },
   ),
   'eo_pnp_reglas_ortograficas_01': Topic(
