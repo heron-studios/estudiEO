@@ -6,7 +6,7 @@ import 'package:learn/models/topic.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/models/learning_level.dart';
-import 'package:learn/config/app_config.dart';
+import 'package:learn/services/auth_service.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
 import 'package:learn/config/neural_design_system.dart';
 
@@ -85,11 +85,14 @@ class _TopicTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // En modo demo, solo el primer tema (index 0) está desbloqueado
-    final bool isLocked = AppConfig.isDemoMode && index > 0;
+    final authService = context.watch<AuthService>();
+    final bool isPremium = authService.currentUser != null && authService.isAuthorized;
+
+    // Solo se bloquea si el usuario NO es premium y además el index > 0 (modo demo/invitado)
+    final bool isLocked = !isPremium && index > 0;
     
-    // Usar la cantidad real de preguntas en demo mode
-    final int dynamicQuestionCount = AppConfig.isDemoMode 
+    // Usar la cantidad real de preguntas según si es premium o no
+    final int dynamicQuestionCount = !isPremium 
         ? context.read<SubjectProvider>().getQuestionsByTopic(topic.id).length 
         : topic.questionCount;
 

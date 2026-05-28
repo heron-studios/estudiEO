@@ -35,6 +35,8 @@ import 'package:learn/models/topic.dart';
 import 'package:learn/models/learning_level.dart';
 
 class SubjectsRepository {
+  static bool isPremium = false;
+
   static final Map<String, Subject> _subjects = {
     'matematicas': matematicasSubject,
     'comunicacion': comunicacionSubject,
@@ -105,7 +107,7 @@ class SubjectsRepository {
     final cached = _questionsByTopicCache![topicId] ?? [];
     List<Question> filtered = List<Question>.from(cached);
 
-    if (AppConfig.isDemoMode) {
+    if (AppConfig.isDemoMode && !isPremium) {
       // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
       final Map<String, int> demoLimits = {
         'mat_algebra': 2,
@@ -133,7 +135,7 @@ class SubjectsRepository {
     final q = _questionByIdCache![questionId];
     if (q == null) return null;
 
-    if (AppConfig.isDemoMode) {
+    if (AppConfig.isDemoMode && !isPremium) {
        final topicQuestions = getQuestionsByTopic(q.topicId);
        if (topicQuestions.any((tq) => tq.id == questionId)) {
          return q;
@@ -194,7 +196,7 @@ class SubjectsRepository {
   }) {
     _initIndexes();
     // Usar pool completo sin filtro demo para el modo guiado
-    final allQuestions = AppConfig.isDemoMode
+    final allQuestions = (AppConfig.isDemoMode && !isPremium)
         ? getQuestionsByTopic(topicId)
         : List<Question>.from(
             _questionsByTopicCache![topicId] ?? [],
@@ -275,7 +277,7 @@ class SubjectsRepository {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
-      'questions': AppConfig.isDemoMode 
+      'questions': (AppConfig.isDemoMode && !isPremium) 
           ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id)).toList()
           : getQuestionsBySubject(subjectId),
     };
@@ -283,7 +285,7 @@ class SubjectsRepository {
 
   /// Genera un examen simulacro de 100 preguntas exactas (o 10 en demo)
   static List<Question> generateExamQuestions() {
-    if (AppConfig.isDemoMode) {
+    if (AppConfig.isDemoMode && !isPremium) {
       // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
       final List<String> demoTopics = ['mat_1', 'com_1', 'cs_1', 'cta_1', 'pfrh_1', 'rv_1', 'rm_1'];
       final List<Question> demoExam = [];

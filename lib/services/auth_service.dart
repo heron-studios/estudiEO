@@ -3,6 +3,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:learn/config/app_config.dart';
+import 'package:learn/data/repository/subjects_repository.dart';
 
 class AuthService extends ChangeNotifier {
   FirebaseAuth get _auth => FirebaseAuth.instance;
@@ -69,6 +70,7 @@ class AuthService extends ChangeNotifier {
       _isAuthorized = false;
     } finally {
       _isInitializing = false;
+      SubjectsRepository.isPremium = _isAuthorized;
       notifyListeners();
     }
   }
@@ -85,6 +87,7 @@ class AuthService extends ChangeNotifier {
 
   void setAuthorized(bool value) {
     _isAuthorized = value;
+    SubjectsRepository.isPremium = value;
     notifyListeners();
   }
 
@@ -129,6 +132,7 @@ class AuthService extends ChangeNotifier {
   /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
+    SubjectsRepository.isPremium = false;
     await _googleSignIn.signOut();
     await _auth.signOut();
     notifyListeners();
@@ -207,6 +211,7 @@ class AuthService extends ChangeNotifier {
   Future<bool> checkAndSetAuthorization() async {
     final authorized = await _verifyAuthorization();
     _isAuthorized = authorized;
+    SubjectsRepository.isPremium = authorized;
     _setLoading(false); // finish the sign-in loading state
     return authorized;
   }
