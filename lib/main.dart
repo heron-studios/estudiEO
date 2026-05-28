@@ -32,44 +32,85 @@ import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
 import 'package:learn/widgets/professional_splash.dart';
 
-void main() async {
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:learn/firebase_options.dart';
+
+import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/services/auth_service.dart';
+import 'package:learn/providers/srs_provider.dart';
+import 'package:learn/providers/gamification_provider.dart';
+import 'package:learn/providers/quiz_provider.dart';
+import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/providers/learning_provider.dart';
+import 'package:learn/models/learning_level.dart';
+
+import 'package:learn/screens/home_screen.dart';
+import 'package:learn/screens/login_screen.dart';
+import 'package:learn/screens/subject_gallery_screen.dart';
+import 'package:learn/screens/topic_gallery_screen.dart';
+import 'package:learn/screens/exam_screen.dart';
+import 'package:learn/screens/exam_results_screen.dart';
+import 'package:learn/screens/quiz_screen.dart';
+import 'package:learn/screens/quiz_results_screen.dart';
+import 'package:learn/screens/dashboard_screen.dart';
+import 'package:learn/screens/srs_review_screen.dart';
+import 'package:learn/screens/srs_mini_quiz_screen.dart';
+import 'package:learn/screens/settings_screen.dart';
+import 'package:learn/screens/premium_screen.dart';
+import 'package:learn/screens/payment_screen.dart';
+import 'package:learn/screens/learning_theory_screen.dart';
+import 'package:learn/screens/learning_quiz_screen.dart';
+import 'package:learn/screens/learning_levelup_screen.dart';
+import 'package:learn/widgets/professional_splash.dart';
+
+late LocalStorageService _storageService;
+
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize GetStorage first (faster)
-  try {
-    await GetStorage.init().timeout(const Duration(seconds: 3));
-  } catch (e) {
-    debugPrint('GetStorage init timeout: $e');
-  }
+  // Initialize storage service immediately (synchronously if possible)
+  _storageService = LocalStorageService();
 
-  // Initialize Firebase with timeout
-  try {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    ).timeout(const Duration(seconds: 5));
-  } catch (e) {
-    debugPrint('Firebase init error/timeout: $e - continuing offline');
-  }
+  // Launch all initialization tasks in background - DON'T WAIT
+  Future.microtask(() async {
+    try {
+      await GetStorage.init().timeout(const Duration(seconds: 3));
+    } catch (e) {
+      debugPrint('GetStorage init: $e');
+    }
 
-  final storageService = LocalStorageService();
-  try {
-    await storageService.init().timeout(const Duration(seconds: 2));
-  } catch (e) {
-    debugPrint('LocalStorageService init timeout: $e');
-  }
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      ).timeout(const Duration(seconds: 5));
+    } catch (e) {
+      debugPrint('Firebase init: $e');
+    }
+
+    try {
+      await _storageService.init().timeout(const Duration(seconds: 2));
+    } catch (e) {
+      debugPrint('LocalStorageService init: $e');
+    }
+  });
 
   runApp(
     MultiProvider(
       providers: [
-        Provider<LocalStorageService>.value(value: storageService),
+        Provider<LocalStorageService>.value(value: _storageService),
         ChangeNotifierProvider(create: (_) => AuthService()),
-        ChangeNotifierProvider(create: (_) => SrsProvider(storageService)),
+        ChangeNotifierProvider(create: (_) => SrsProvider(_storageService)),
         ChangeNotifierProvider(
-          create: (_) => GamificationProvider(storageService),
+          create: (_) => GamificationProvider(_storageService),
         ),
-        ChangeNotifierProvider(create: (_) => QuizProvider(storageService)),
-        ChangeNotifierProvider(create: (_) => SubjectProvider(storageService)),
-        ChangeNotifierProvider(create: (_) => LearningProvider(storageService)),
+        ChangeNotifierProvider(create: (_) => QuizProvider(_storageService)),
+        ChangeNotifierProvider(create: (_) => SubjectProvider(_storageService)),
+        ChangeNotifierProvider(
+          create: (_) => LearningProvider(_storageService),
+        ),
       ],
       child: const MyApp(),
     ),

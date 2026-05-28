@@ -30,9 +30,13 @@ class AuthService extends ChangeNotifier {
   bool _initStarted = false;
 
   AuthService() {
-    // Initialize immediately but don't await - happens in background
+    // Don't block - initialize in background
     if (!_initStarted) {
       _initStarted = true;
+      // Set to not initializing immediately to unblock UI
+      _isInitializing = false;
+      notifyListeners();
+      // Then do the actual check in background
       Future.microtask(_checkInitialAuth);
     }
   }
