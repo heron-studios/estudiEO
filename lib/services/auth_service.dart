@@ -36,8 +36,7 @@ class AuthService extends ChangeNotifier {
   bool _initStarted = false;
 
   AuthService() {
-    // Mark as not initializing immediately - never block
-    _isInitializing = false;
+    _isInitializing = true;
     if (!_initStarted) {
       _initStarted = true;
       // Check auth in background, don't wait
@@ -56,18 +55,22 @@ class AuthService extends ChangeNotifier {
       if (currentUser != null) {
         // Short timeout for verification
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 2),
+          const Duration(seconds: 3),
           onTimeout: () {
             debugPrint('Auth check timeout');
             return false;
           },
         );
+      } else {
+        _isAuthorized = false;
       }
     } catch (e) {
       debugPrint('Auth check error: $e');
       _isAuthorized = false;
+    } finally {
+      _isInitializing = false;
+      notifyListeners();
     }
-    // Don't call notifyListeners - AuthWrapper doesn't wait for this anyway
   }
 
   void _setLoading(bool value) {
