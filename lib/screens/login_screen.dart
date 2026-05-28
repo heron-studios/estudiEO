@@ -20,33 +20,64 @@ class _NeuralMeshPainter extends CustomPainter {
     final h = size.height;
 
     // Blob 1 â€“ Blue
-    _drawBlob(canvas, w * (0.1 + 0.08 * math.sin(t * math.pi * 2)),
-        h * (0.15 + 0.06 * math.cos(t * math.pi * 2 * 0.8)),
-        w * 0.55, const Color(0xFF4285F4), 0.16);
+    _drawBlob(
+      canvas,
+      w * (0.1 + 0.08 * math.sin(t * math.pi * 2)),
+      h * (0.15 + 0.06 * math.cos(t * math.pi * 2 * 0.8)),
+      w * 0.55,
+      const Color(0xFF4285F4),
+      0.16,
+    );
 
     // Blob 2 â€“ Purple
-    _drawBlob(canvas, w * (0.85 - 0.07 * math.cos(t * math.pi * 2 * 1.1)),
-        h * (0.2 + 0.08 * math.sin(t * math.pi * 2 * 0.7)),
-        w * 0.50, const Color(0xFF9B72CB), 0.15);
+    _drawBlob(
+      canvas,
+      w * (0.85 - 0.07 * math.cos(t * math.pi * 2 * 1.1)),
+      h * (0.2 + 0.08 * math.sin(t * math.pi * 2 * 0.7)),
+      w * 0.50,
+      const Color(0xFF9B72CB),
+      0.15,
+    );
 
     // Blob 3 â€“ Pink
-    _drawBlob(canvas, w * (0.5 + 0.1 * math.sin(t * math.pi * 2 * 0.6)),
-        h * (0.55 + 0.07 * math.cos(t * math.pi * 2 * 0.9)),
-        w * 0.45, const Color(0xFFD96570), 0.13);
+    _drawBlob(
+      canvas,
+      w * (0.5 + 0.1 * math.sin(t * math.pi * 2 * 0.6)),
+      h * (0.55 + 0.07 * math.cos(t * math.pi * 2 * 0.9)),
+      w * 0.45,
+      const Color(0xFFD96570),
+      0.13,
+    );
 
     // Blob 4 â€“ Cyan
-    _drawBlob(canvas, w * (0.75 + 0.06 * math.sin(t * math.pi * 2 * 1.3)),
-        h * (0.75 + 0.05 * math.cos(t * math.pi * 2 * 0.5)),
-        w * 0.38, const Color(0xFF22D3EE), 0.12);
+    _drawBlob(
+      canvas,
+      w * (0.75 + 0.06 * math.sin(t * math.pi * 2 * 1.3)),
+      h * (0.75 + 0.05 * math.cos(t * math.pi * 2 * 0.5)),
+      w * 0.38,
+      const Color(0xFF22D3EE),
+      0.12,
+    );
 
     // Blob 5 â€“ Blue accent (small, bottom-left)
-    _drawBlob(canvas, w * (0.15 - 0.05 * math.cos(t * math.pi * 2 * 0.75)),
-        h * (0.82 + 0.06 * math.sin(t * math.pi * 2 * 1.1)),
-        w * 0.35, const Color(0xFF4285F4), 0.10);
+    _drawBlob(
+      canvas,
+      w * (0.15 - 0.05 * math.cos(t * math.pi * 2 * 0.75)),
+      h * (0.82 + 0.06 * math.sin(t * math.pi * 2 * 1.1)),
+      w * 0.35,
+      const Color(0xFF4285F4),
+      0.10,
+    );
   }
 
-  void _drawBlob(Canvas canvas, double cx, double cy, double radius,
-      Color color, double opacity) {
+  void _drawBlob(
+    Canvas canvas,
+    double cx,
+    double cy,
+    double radius,
+    Color color,
+    double opacity,
+  ) {
     final paint = Paint()
       ..shader = RadialGradient(
         colors: [
@@ -84,11 +115,6 @@ class _LoginScreenState extends State<LoginScreen>
   // Card entrance
   late AnimationController _entranceCtrl;
   late Animation<double> _entranceAnim;
-  // Hover state for buttons
-  bool _hovStudieoGgl = false;
-  bool _hovStudieoBuy = false;
-  bool _hovPsicoGo = false;
-  bool _hovPsicoBuy = false;
 
   @override
   void initState() {
@@ -102,15 +128,19 @@ class _LoginScreenState extends State<LoginScreen>
       vsync: this,
       duration: const Duration(milliseconds: 2800),
     )..repeat(reverse: true);
-    _pulseAnim = Tween<double>(begin: 0.95, end: 1.05).animate(
-      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
-    );
+    _pulseAnim = Tween<double>(
+      begin: 0.95,
+      end: 1.05,
+    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
 
     _entranceCtrl = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 900),
     )..forward();
-    _entranceAnim = CurvedAnimation(parent: _entranceCtrl, curve: Curves.easeOutBack);
+    _entranceAnim = CurvedAnimation(
+      parent: _entranceCtrl,
+      curve: Curves.easeOutBack,
+    );
   }
 
   @override
@@ -140,8 +170,10 @@ class _LoginScreenState extends State<LoginScreen>
     }
   }
 
-  Future<void> _launchUrl(String urlStr,
-      {LaunchMode mode = LaunchMode.externalApplication}) async {
+  Future<void> _launchUrl(
+    String urlStr, {
+    LaunchMode mode = LaunchMode.externalApplication,
+  }) async {
     final uri = Uri.parse(urlStr);
     try {
       await launchUrl(uri, mode: mode);
@@ -150,7 +182,8 @@ class _LoginScreenState extends State<LoginScreen>
 
   Future<void> _launchWhatsApp(String text) async {
     await _launchUrl(
-        'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}');
+      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
+    );
   }
 
   Future<void> _launchPsicoLearn() async =>
@@ -171,9 +204,8 @@ class _LoginScreenState extends State<LoginScreen>
           Positioned.fill(
             child: AnimatedBuilder(
               animation: _meshCtrl,
-              builder: (_, __) => CustomPaint(
-                painter: _NeuralMeshPainter(_meshCtrl.value),
-              ),
+              builder: (_, __) =>
+                  CustomPaint(painter: _NeuralMeshPainter(_meshCtrl.value)),
             ),
           ),
 
@@ -283,10 +315,7 @@ class _LoginScreenState extends State<LoginScreen>
       child: Column(
         children: [
           // Volumetric Sparkle Icon
-          ScaleTransition(
-            scale: _pulseAnim,
-            child: _buildVolumetricIcon(),
-          ),
+          ScaleTransition(scale: _pulseAnim, child: _buildVolumetricIcon()),
           const SizedBox(height: 40),
 
           // Hero Title
@@ -358,8 +387,7 @@ class _LoginScreenState extends State<LoginScreen>
                     const Color(0xFF4285F4),
                     const Color(0xFF9B72CB),
                     const Color(0xFFD96570),
-                  ][i]
-                      .withValues(alpha: 0.18 - i * 0.04),
+                  ][i].withValues(alpha: 0.18 - i * 0.04),
                   width: 1,
                 ),
               ),
@@ -381,13 +409,15 @@ class _LoginScreenState extends State<LoginScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                    color: const Color(0xFF4285F4).withValues(alpha: 0.30),
-                    blurRadius: 40,
-                    spreadRadius: 6),
+                  color: const Color(0xFF4285F4).withValues(alpha: 0.30),
+                  blurRadius: 40,
+                  spreadRadius: 6,
+                ),
                 BoxShadow(
-                    color: const Color(0xFF9B72CB).withValues(alpha: 0.25),
-                    blurRadius: 30,
-                    spreadRadius: 2),
+                  color: const Color(0xFF9B72CB).withValues(alpha: 0.25),
+                  blurRadius: 30,
+                  spreadRadius: 2,
+                ),
               ],
             ),
             child: ClipOval(
@@ -395,10 +425,8 @@ class _LoginScreenState extends State<LoginScreen>
                 filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                 child: Center(
                   child: ShaderMask(
-                    shaderCallback: (b) =>
-                        NeuralDesignSystem.neuralGradient.createShader(
-                          Rect.fromLTWH(0, 0, b.width, b.height),
-                        ),
+                    shaderCallback: (b) => NeuralDesignSystem.neuralGradient
+                        .createShader(Rect.fromLTWH(0, 0, b.width, b.height)),
                     child: const Icon(
                       Icons.auto_awesome,
                       size: 38,
@@ -426,19 +454,25 @@ class _LoginScreenState extends State<LoginScreen>
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Expanded(child: _EstudieoCard(
-                        authService: authService,
-                        isCheckingAuth: _isCheckingAuth,
-                        onGoogleSignIn: _handleGoogleSignIn,
-                        onBuyWhatsapp: () => _launchWhatsApp(
-                            'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)'),
-                      )),
+                      Expanded(
+                        child: _EstudieoCard(
+                          authService: authService,
+                          isCheckingAuth: _isCheckingAuth,
+                          onGoogleSignIn: _handleGoogleSignIn,
+                          onBuyWhatsapp: () => _launchWhatsApp(
+                            'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)',
+                          ),
+                        ),
+                      ),
                       const SizedBox(width: 24),
-                      Expanded(child: _PsicoLearnCard(
-                        onGoToPsico: _launchPsicoLearn,
-                        onBuyWhatsapp: () => _launchWhatsApp(
-                            'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)'),
-                      )),
+                      Expanded(
+                        child: _PsicoLearnCard(
+                          onGoToPsico: _launchPsicoLearn,
+                          onBuyWhatsapp: () => _launchWhatsApp(
+                            'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)',
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 )
@@ -449,13 +483,15 @@ class _LoginScreenState extends State<LoginScreen>
                       isCheckingAuth: _isCheckingAuth,
                       onGoogleSignIn: _handleGoogleSignIn,
                       onBuyWhatsapp: () => _launchWhatsApp(
-                          'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)'),
+                        'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)',
+                      ),
                     ),
                     const SizedBox(height: 24),
                     _PsicoLearnCard(
                       onGoToPsico: _launchPsicoLearn,
                       onBuyWhatsapp: () => _launchWhatsApp(
-                          'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)'),
+                        'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)',
+                      ),
                     ),
                   ],
                 ),
@@ -488,28 +524,38 @@ class _LoginScreenState extends State<LoginScreen>
                   ShaderMask(
                     shaderCallback: (b) =>
                         NeuralDesignSystem.neuralGradient.createShader(b),
-                    child: const Text('pnp-edu',
-                        style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white)),
+                    child: const Text(
+                      'pnp-edu',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 6),
-                  Text('Â© 2026 Â· Todos los derechos reservados',
-                      style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 12,
-                          color: Colors.white.withValues(alpha: 0.35))),
+                  Text(
+                    'Â© 2026 Â· Todos los derechos reservados',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 12,
+                      color: Colors.white.withValues(alpha: 0.35),
+                    ),
+                  ),
                 ],
               ),
               Wrap(
                 spacing: 20,
                 children: [
-                  _footerIcon(Icons.mail_outline_rounded,
-                      'mailto:soporte@estudieo.pe'),
-                  _footerIcon(Icons.chat_rounded,
-                      'https://wa.me/${AppConfig.whatsappNumber}'),
+                  _footerIcon(
+                    Icons.mail_outline_rounded,
+                    'mailto:soporte@estudieo.pe',
+                  ),
+                  _footerIcon(
+                    Icons.chat_rounded,
+                    'https://wa.me/${AppConfig.whatsappNumber}',
+                  ),
                 ],
               ),
             ],
@@ -529,7 +575,11 @@ class _LoginScreenState extends State<LoginScreen>
           shape: BoxShape.circle,
           border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
         ),
-        child: Icon(icon, color: Colors.white.withValues(alpha: 0.55), size: 18),
+        child: Icon(
+          icon,
+          color: Colors.white.withValues(alpha: 0.55),
+          size: 18,
+        ),
       ),
     );
   }
@@ -560,11 +610,26 @@ class _EstudieoCardState extends State<_EstudieoCard> {
   bool _hoverBuy = false;
 
   static const _features = [
-    ('Banco de preguntas oficiales PNP', 'Miles de preguntas reales actualizadas del prospecto vigente.'),
-    ('Repaso guiado por Alipio IA', 'NemotÃ©cnias y explicaciones generadas por inteligencia artificial.'),
-    ('Simulacros cronometrados', 'Practica con el formato exacto: 100 preguntas, 3 horas.'),
-    ('Algoritmo SRS inteligente', 'Estudia eficientemente: el sistema decide quÃ© revisar primero.'),
-    ('EstadÃ­sticas de progreso real', 'Dashboard detallado para medir tu avance hacia la vacante.'),
+    (
+      'Banco de preguntas oficiales PNP',
+      'Miles de preguntas reales actualizadas del prospecto vigente.',
+    ),
+    (
+      'Repaso guiado por Alipio IA',
+      'NemotÃ©cnias y explicaciones generadas por inteligencia artificial.',
+    ),
+    (
+      'Simulacros cronometrados',
+      'Practica con el formato exacto: 100 preguntas, 3 horas.',
+    ),
+    (
+      'Algoritmo SRS inteligente',
+      'Estudia eficientemente: el sistema decide quÃ© revisar primero.',
+    ),
+    (
+      'EstadÃ­sticas de progreso real',
+      'Dashboard detallado para medir tu avance hacia la vacante.',
+    ),
   ];
 
   @override
@@ -587,9 +652,10 @@ class _EstudieoCardState extends State<_EstudieoCard> {
         ),
         boxShadow: [
           BoxShadow(
-              color: const Color(0xFF4285F4).withValues(alpha: 0.10),
-              blurRadius: 40,
-              offset: const Offset(0, 12)),
+            color: const Color(0xFF4285F4).withValues(alpha: 0.10),
+            blurRadius: 40,
+            offset: const Offset(0, 12),
+          ),
         ],
       ),
       child: ClipRRect(
@@ -621,8 +687,9 @@ class _EstudieoCardState extends State<_EstudieoCard> {
                 const SizedBox(height: 24),
                 const Divider(color: Colors.white10, height: 1),
                 const SizedBox(height: 22),
-                ...(_features.map((f) => _featurePod(
-                    f.$1, f.$2, const Color(0xFF4285F4)))),
+                ...(_features.map(
+                  (f) => _featurePod(f.$1, f.$2, const Color(0xFF4285F4)),
+                )),
                 const SizedBox(height: 28),
                 if (widget.authService.isLoading || widget.isCheckingAuth)
                   const Center(
@@ -683,11 +750,26 @@ class _PsicoLearnCardState extends State<_PsicoLearnCard> {
   bool _hoverBuy = false;
 
   static const _features = [
-    ('Test de personalidad calificados', 'Evaluaciones psicomÃ©tricas reales con puntuaciÃ³n y feedback detallado.'),
-    ('Aptitud cognitiva y lÃ³gica', 'Simulacros de razonamiento abstracto y verbal de precisiÃ³n clÃ­nica.'),
-    ('Simulador de Entrevista Personal', 'GuÃ­as y preguntas tipo para superar la fase oral sin nervios.'),
-    ('EvaluaciÃ³n de conducta adaptativa', 'Comprende y practica los criterios de selecciÃ³n psicolÃ³gica PNP.'),
-    ('Acceso permanente de por vida', 'Un solo pago. Sin mensualidades. Actualizaciones incluidas.'),
+    (
+      'Test de personalidad calificados',
+      'Evaluaciones psicomÃ©tricas reales con puntuaciÃ³n y feedback detallado.',
+    ),
+    (
+      'Aptitud cognitiva y lÃ³gica',
+      'Simulacros de razonamiento abstracto y verbal de precisiÃ³n clÃ­nica.',
+    ),
+    (
+      'Simulador de Entrevista Personal',
+      'GuÃ­as y preguntas tipo para superar la fase oral sin nervios.',
+    ),
+    (
+      'EvaluaciÃ³n de conducta adaptativa',
+      'Comprende y practica los criterios de selecciÃ³n psicolÃ³gica PNP.',
+    ),
+    (
+      'Acceso permanente de por vida',
+      'Un solo pago. Sin mensualidades. Actualizaciones incluidas.',
+    ),
   ];
 
   @override
@@ -710,9 +792,10 @@ class _PsicoLearnCardState extends State<_PsicoLearnCard> {
         ),
         boxShadow: [
           BoxShadow(
-              color: const Color(0xFF9B72CB).withValues(alpha: 0.10),
-              blurRadius: 40,
-              offset: const Offset(0, 12)),
+            color: const Color(0xFF9B72CB).withValues(alpha: 0.10),
+            blurRadius: 40,
+            offset: const Offset(0, 12),
+          ),
         ],
       ),
       child: ClipRRect(
@@ -744,8 +827,9 @@ class _PsicoLearnCardState extends State<_PsicoLearnCard> {
                 const SizedBox(height: 24),
                 const Divider(color: Colors.white10, height: 1),
                 const SizedBox(height: 22),
-                ...(_features.map((f) => _featurePod(
-                    f.$1, f.$2, const Color(0xFF9B72CB)))),
+                ...(_features.map(
+                  (f) => _featurePod(f.$1, f.$2, const Color(0xFF9B72CB)),
+                )),
                 const SizedBox(height: 28),
                 _portalButton(
                   label: 'Ir a PsicoLearn',
@@ -841,11 +925,7 @@ Widget _featurePod(String title, String description, Color accentColor) {
               color: accentColor.withValues(alpha: 0.12),
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              Icons.check_rounded,
-              color: accentColor,
-              size: 12,
-            ),
+            child: Icon(Icons.check_rounded, color: accentColor, size: 12),
           ),
         ),
         const SizedBox(width: 12),
@@ -995,7 +1075,7 @@ Widget _buyLink({
                         color: Color(0xFF4ADE80),
                         blurRadius: 6,
                         spreadRadius: 0,
-                      )
+                      ),
                   ],
                 ),
               ),
@@ -1006,4 +1086,3 @@ Widget _buyLink({
     ),
   );
 }
-

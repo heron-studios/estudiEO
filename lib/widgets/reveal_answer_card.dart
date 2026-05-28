@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:learn/config/neural_design_system.dart';
 
@@ -86,7 +87,7 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
                 )!,
                 blurRadius: 16 + _glowAnimation.value * 14,
                 spreadRadius: _glowAnimation.value * 2,
-              )
+              ),
             ],
           ),
           child: ClipRRect(
@@ -107,7 +108,8 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
                     if (!_isRevealed)
                       GestureDetector(
                         onLongPress: _reveal,
-                        onTap: _reveal, // También permitimos tap simple para accesibilidad
+                        onTap:
+                            _reveal, // También permitimos tap simple para accesibilidad
                         child: AnimatedContainer(
                           duration: const Duration(milliseconds: 200),
                           width: double.infinity,
@@ -147,21 +149,24 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Divider(
-                              color: Colors.white10,
-                              height: 24,
-                            ),
+                            const Divider(color: Colors.white10, height: 24),
                             Container(
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [
-                                    NeuralDesignSystem.blueGoogle.withValues(alpha: 0.05),
-                                    NeuralDesignSystem.purple.withValues(alpha: 0.05),
+                                    NeuralDesignSystem.blueGoogle.withValues(
+                                      alpha: 0.05,
+                                    ),
+                                    NeuralDesignSystem.purple.withValues(
+                                      alpha: 0.05,
+                                    ),
                                   ],
                                 ),
                                 border: Border.all(
-                                  color: NeuralDesignSystem.purple.withValues(alpha: 0.25),
+                                  color: NeuralDesignSystem.purple.withValues(
+                                    alpha: 0.25,
+                                  ),
                                 ),
                                 borderRadius: BorderRadius.circular(16),
                               ),
@@ -180,6 +185,3 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
     );
   }
 }
-
-// Necesitamos importar el ImageFilter de dart:ui
-import 'dart:ui';
