@@ -1,12 +1,70 @@
+﻿import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/services/auth_service.dart';
-import 'package:learn/widgets/neural_background_wrapper.dart';
 import 'package:learn/config/neural_design_system.dart';
 import 'package:learn/config/app_config.dart';
 
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  Painter: Neural Mesh Background (animated blobs)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+class _NeuralMeshPainter extends CustomPainter {
+  final double t;
+  _NeuralMeshPainter(this.t);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+
+    // Blob 1 â€“ Blue
+    _drawBlob(canvas, w * (0.1 + 0.08 * math.sin(t * math.pi * 2)),
+        h * (0.15 + 0.06 * math.cos(t * math.pi * 2 * 0.8)),
+        w * 0.55, const Color(0xFF4285F4), 0.16);
+
+    // Blob 2 â€“ Purple
+    _drawBlob(canvas, w * (0.85 - 0.07 * math.cos(t * math.pi * 2 * 1.1)),
+        h * (0.2 + 0.08 * math.sin(t * math.pi * 2 * 0.7)),
+        w * 0.50, const Color(0xFF9B72CB), 0.15);
+
+    // Blob 3 â€“ Pink
+    _drawBlob(canvas, w * (0.5 + 0.1 * math.sin(t * math.pi * 2 * 0.6)),
+        h * (0.55 + 0.07 * math.cos(t * math.pi * 2 * 0.9)),
+        w * 0.45, const Color(0xFFD96570), 0.13);
+
+    // Blob 4 â€“ Cyan
+    _drawBlob(canvas, w * (0.75 + 0.06 * math.sin(t * math.pi * 2 * 1.3)),
+        h * (0.75 + 0.05 * math.cos(t * math.pi * 2 * 0.5)),
+        w * 0.38, const Color(0xFF22D3EE), 0.12);
+
+    // Blob 5 â€“ Blue accent (small, bottom-left)
+    _drawBlob(canvas, w * (0.15 - 0.05 * math.cos(t * math.pi * 2 * 0.75)),
+        h * (0.82 + 0.06 * math.sin(t * math.pi * 2 * 1.1)),
+        w * 0.35, const Color(0xFF4285F4), 0.10);
+  }
+
+  void _drawBlob(Canvas canvas, double cx, double cy, double radius,
+      Color color, double opacity) {
+    final paint = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          color.withValues(alpha: opacity),
+          color.withValues(alpha: 0),
+        ],
+      ).createShader(Rect.fromCircle(center: Offset(cx, cy), radius: radius))
+      ..blendMode = BlendMode.screen;
+    canvas.drawCircle(Offset(cx, cy), radius, paint);
+  }
+
+  @override
+  bool shouldRepaint(_NeuralMeshPainter old) => old.t != t;
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  Main LoginScreen Widget
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -14,359 +72,190 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen>
+    with TickerProviderStateMixin {
   bool _isCheckingAuth = false;
-  late AnimationController _pulseController;
-  late Animation<double> _pulseAnimation;
+
+  // Neural mesh animation
+  late AnimationController _meshCtrl;
+  // Hero sparkle pulse
+  late AnimationController _pulseCtrl;
+  late Animation<double> _pulseAnim;
+  // Card entrance
+  late AnimationController _entranceCtrl;
+  late Animation<double> _entranceAnim;
+  // Hover state for buttons
+  bool _hovStudieoGgl = false;
+  bool _hovStudieoBuy = false;
+  bool _hovPsicoGo = false;
+  bool _hovPsicoBuy = false;
 
   @override
   void initState() {
     super.initState();
-    _pulseController = AnimationController(
+    _meshCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500),
+      duration: const Duration(seconds: 12),
+    )..repeat();
+
+    _pulseCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2800),
     )..repeat(reverse: true);
-    
-    _pulseAnimation = Tween<double>(begin: 0.98, end: 1.02).animate(
-      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+    _pulseAnim = Tween<double>(begin: 0.95, end: 1.05).animate(
+      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
     );
+
+    _entranceCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    )..forward();
+    _entranceAnim = CurvedAnimation(parent: _entranceCtrl, curve: Curves.easeOutBack);
   }
 
   @override
   void dispose() {
-    _pulseController.dispose();
+    _meshCtrl.dispose();
+    _pulseCtrl.dispose();
+    _entranceCtrl.dispose();
     super.dispose();
   }
 
+  // â”€â”€ Auth â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   void _handleGoogleSignIn() async {
     final authService = context.read<AuthService>();
     final userCred = await authService.signInWithGoogle();
-
     if (userCred != null) {
       setState(() => _isCheckingAuth = true);
       await authService.checkAndSetAuthorization();
-      if (mounted) {
-        setState(() => _isCheckingAuth = false);
-      }
-    } else {
-      if (authService.error != null && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(authService.error!),
-            backgroundColor: NeuralDesignSystem.pink,
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      }
+      if (mounted) setState(() => _isCheckingAuth = false);
+    } else if (authService.error != null && mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(authService.error!),
+          backgroundColor: NeuralDesignSystem.pink,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     }
+  }
+
+  Future<void> _launchUrl(String urlStr,
+      {LaunchMode mode = LaunchMode.externalApplication}) async {
+    final uri = Uri.parse(urlStr);
+    try {
+      await launchUrl(uri, mode: mode);
+    } catch (_) {}
   }
 
   Future<void> _launchWhatsApp(String text) async {
-    final uri = Uri.parse(
-      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
-    );
-    try {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('No se pudo abrir WhatsApp: $e'),
-            backgroundColor: NeuralDesignSystem.pink,
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      }
-    }
+    await _launchUrl(
+        'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}');
   }
 
-  Future<void> _launchPsicoLearn() async {
-    final Uri url = Uri.parse('https://pnp-edu.github.io/PsicoLearn/');
-    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
-      debugPrint('No se pudo abrir $url');
-    }
-  }
+  Future<void> _launchPsicoLearn() async =>
+      _launchUrl('https://pnp-edu.github.io/PsicoLearn/');
 
+  // â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   @override
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWide = screenWidth > 800;
+    final sw = MediaQuery.of(context).size.width;
+    final isWide = sw > 820;
 
     return Scaffold(
       backgroundColor: NeuralDesignSystem.background,
-      body: NeuralBackgroundWrapper(
-        child: SafeArea(
-          child: Center(
+      body: Stack(
+        children: [
+          // â‘  Animated Neural Mesh Background
+          Positioned.fill(
+            child: AnimatedBuilder(
+              animation: _meshCtrl,
+              builder: (_, __) => CustomPaint(
+                painter: _NeuralMeshPainter(_meshCtrl.value),
+              ),
+            ),
+          ),
+
+          // â‘¡ Global glass tint layer
+          Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+              child: Container(color: Colors.transparent),
+            ),
+          ),
+
+          // â‘¢ Main scrollable content
+          SafeArea(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 36.0),
+              physics: const BouncingScrollPhysics(),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Sparkle interactivo estilo Gemini
-                  ScaleTransition(
-                    scale: _pulseAnimation,
-                    child: Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: NeuralDesignSystem.surfaceCard.withOpacity(0.5),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: NeuralDesignSystem.blueGoogle.withOpacity(0.25),
-                            blurRadius: 40,
-                            spreadRadius: 8,
-                            offset: const Offset(-8, -8),
-                          ),
-                          BoxShadow(
-                            color: NeuralDesignSystem.purple.withOpacity(0.25),
-                            blurRadius: 40,
-                            spreadRadius: 8,
-                            offset: const Offset(8, 8),
-                          ),
-                        ],
-                        border: Border.all(
-                          color: Colors.white.withOpacity(0.15),
-                          width: 1.5,
-                        ),
-                      ),
-                      child: ClipOval(
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Center(
-                            child: ShaderMask(
-                              shaderCallback: (bounds) => NeuralDesignSystem.neuralGradient.createShader(
-                                Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                              ),
-                              child: const Icon(
-                                Icons.auto_awesome,
-                                size: 50,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-
-                  // Título Principal
-                  ShaderMask(
-                    shaderCallback: (bounds) => NeuralDesignSystem.neuralGradient.createShader(bounds),
-                    child: const Text(
-                      'estudiEO & psicoLearn',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 42,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: -1.0,
-                        height: 1.1,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  
-                  // Subtítulo
-                  Text(
-                    'Tu preparación integral para ingresar a la Escuela PNP.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: NeuralDesignSystem.textPrimaryAlt.withOpacity(0.8),
-                    ),
-                  ),
+                  _buildNavbar(),
+                  _buildHero(isWide),
                   const SizedBox(height: 48),
-
-                  // Cards Layout (Side by side on Desktop, stacked on Mobile)
-                  isWide
-                      ? Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(child: _buildEstudieoCard(authService)),
-                            const SizedBox(width: 24),
-                            Expanded(child: _buildPsicolearnCard()),
-                          ],
-                        )
-                      : Column(
-                          children: [
-                            _buildEstudieoCard(authService),
-                            const SizedBox(height: 24),
-                            _buildPsicolearnCard(),
-                          ],
-                        ),
+                  _buildCards(isWide, authService),
+                  const SizedBox(height: 72),
+                  _buildFooter(),
                 ],
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
 
-  Widget _buildEstudieoCard(AuthService authService) {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: 420),
-      decoration: BoxDecoration(
-        color: NeuralDesignSystem.surfaceCard.withOpacity(0.45),
-        borderRadius: BorderRadius.circular(28),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.12),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: NeuralDesignSystem.blueGoogle.withOpacity(0.1),
-            blurRadius: 30,
-            offset: const Offset(0, 8),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(28),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-          child: Padding(
-            padding: const EdgeInsets.all(28.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: NeuralDesignSystem.blueGoogle.withOpacity(0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.school_rounded,
-                        color: NeuralDesignSystem.blueGoogle,
-                        size: 28,
-                      ),
-                    ),
-                    const SizedBox(width: 14),
-                    const Text(
+  // â”€â”€â”€ Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Widget _buildNavbar() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 20, 24, 0),
+      child: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(60),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            child: Container(
+              constraints: const BoxConstraints(maxWidth: 900),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(60),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.10),
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Logo pill
+                  ShaderMask(
+                    shaderCallback: (b) =>
+                        NeuralDesignSystem.neuralGradient.createShader(b),
+                    child: const Text(
                       'estudiEO',
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
                         color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Módulo de Conocimientos',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: NeuralDesignSystem.blueGoogle.withOpacity(0.8),
-                    letterSpacing: 0.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Domina todo el prospecto académico con Inteligencia Activa, repasos espaciados (SRS) y simulacros oficiales de 100 preguntas.',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 13.5,
-                    color: NeuralDesignSystem.textSecondary,
-                    height: 1.45,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Divider(color: Colors.white10),
-                const SizedBox(height: 16),
-                _buildBenefitItem('Banco de preguntas oficiales de la PNP'),
-                _buildBenefitItem('Repaso nemotécnico guiado por Alipio IA'),
-                _buildBenefitItem('Simulacros de examen real con temporizador'),
-                _buildBenefitItem('Acceso permanente por pago único de S/30'),
-                const SizedBox(height: 28),
-
-                // Botones
-                if (authService.isLoading || _isCheckingAuth)
-                  const Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: CircularProgressIndicator(color: NeuralDesignSystem.blueGoogle),
-                    ),
-                  )
-                else ...[
-                  Container(
-                    width: double.infinity,
-                    height: 52,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF2563EB), Color(0xFF7C3AED)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: _handleGoogleSignIn,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Icon(
-                              Icons.g_mobiledata_rounded,
-                              color: Colors.black87,
-                              size: 20,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Text(
-                            'Ingresar con Google',
-                            style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 14.5,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
+                        letterSpacing: -0.5,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: OutlinedButton.icon(
-                      onPressed: () => _launchWhatsApp('Hola! Quiero comprar la versión completa de EstudiEO conocimientos'),
-                      icon: const Icon(Icons.message_rounded, size: 18),
-                      label: const Text('Comprar Acceso Premium'),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFF25D366),
-                        side: BorderSide(color: const Color(0xFF25D366).withOpacity(0.5)),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                      ),
-                    ),
+                  // Nav links
+                  Row(
+                    children: [
+                      _navLink('Inicio'),
+                      const SizedBox(width: 24),
+                      _navLink('Planes'),
+                      const SizedBox(width: 24),
+                      _navLink('Contacto'),
+                    ],
                   ),
                 ],
-              ],
+              ),
             ),
           ),
         ),
@@ -374,174 +263,747 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
     );
   }
 
-  Widget _buildPsicolearnCard() {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: 420),
-      decoration: BoxDecoration(
-        color: NeuralDesignSystem.surfaceCard.withOpacity(0.45),
-        borderRadius: BorderRadius.circular(28),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.12),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: NeuralDesignSystem.purple.withOpacity(0.1),
-            blurRadius: 30,
-            offset: const Offset(0, 8),
+  Widget _navLink(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 13,
+        color: Colors.white.withValues(alpha: 0.65),
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.2,
+      ),
+    );
+  }
+
+  // â”€â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Widget _buildHero(bool isWide) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 56, 24, 0),
+      child: Column(
+        children: [
+          // Volumetric Sparkle Icon
+          ScaleTransition(
+            scale: _pulseAnim,
+            child: _buildVolumetricIcon(),
+          ),
+          const SizedBox(height: 40),
+
+          // Hero Title
+          ScaleTransition(
+            scale: _entranceAnim,
+            child: ShaderMask(
+              shaderCallback: (b) =>
+                  NeuralDesignSystem.neuralGradient.createShader(b),
+              child: Text(
+                'estudiEO & psicoLearn',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: isWide ? 64 : 40,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: -2.0,
+                  height: 1.05,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // Hero Subtitle
+          Text(
+            'Tu preparaciÃ³n integral para ingresar a la Escuela PNP.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: isWide ? 19 : 16,
+              fontWeight: FontWeight.w400,
+              color: Colors.white.withValues(alpha: 0.70),
+              height: 1.55,
+              letterSpacing: -0.2,
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            'Domina el conocimiento. Supera los tests psicomÃ©tricos. Asegura tu vacante.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: isWide ? 15 : 13,
+              color: Colors.white.withValues(alpha: 0.45),
+            ),
           ),
         ],
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(28),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-          child: Padding(
-            padding: const EdgeInsets.all(28.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: NeuralDesignSystem.purple.withOpacity(0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.psychology_rounded,
-                        color: NeuralDesignSystem.purple,
-                        size: 28,
-                      ),
-                    ),
-                    const SizedBox(width: 14),
-                    const Text(
-                      'psicoLearn',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Módulo Psicométrico y Médico',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: NeuralDesignSystem.purple.withOpacity(0.8),
-                    letterSpacing: 0.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Supera las pruebas psicométricas, los test de personalidad y prepárate de forma profesional para tu entrevista personal.',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 13.5,
-                    color: NeuralDesignSystem.textSecondary,
-                    height: 1.45,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Divider(color: Colors.white10),
-                const SizedBox(height: 16),
-                _buildBenefitItem('Test de personalidad reales calificados'),
-                _buildBenefitItem('Simulacros de aptitud y razonamiento cognitivo'),
-                _buildBenefitItem('Guías y simulador de Entrevista Personal'),
-                _buildBenefitItem('Acceso permanente por pago único de S/30'),
-                const SizedBox(height: 28),
-
-                // Botones
-                Container(
-                  width: double.infinity,
-                  height: 52,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFF7C3AED), Color(0xFFC084FC)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                  ),
-                  child: ElevatedButton(
-                    onPressed: _launchPsicoLearn,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.open_in_new_rounded, color: Colors.white, size: 18),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Ir a PsicoLearn',
-                          style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 14.5,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  height: 48,
-                  child: OutlinedButton.icon(
-                    onPressed: () => _launchWhatsApp('Hola! Quiero comprar la versión completa de PsicoLearn psicométrico/médico'),
-                    icon: const Icon(Icons.message_rounded, size: 18),
-                    label: const Text('Comprar Acceso Premium'),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: const Color(0xFF25D366),
-                      side: BorderSide(color: const Color(0xFF25D366).withOpacity(0.5)),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 
-  Widget _buildBenefitItem(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+  Widget _buildVolumetricIcon() {
+    return SizedBox(
+      width: 120,
+      height: 120,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          const Icon(
-            Icons.check_circle_outline_rounded,
-            color: Color(0xFF10B981),
-            size: 16,
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 13,
-                color: NeuralDesignSystem.textPrimary.withOpacity(0.85),
+          // Outer glow rings
+          for (int i = 0; i < 3; i++)
+            Container(
+              width: 120.0 - i * 18,
+              height: 120.0 - i * 18,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: [
+                    const Color(0xFF4285F4),
+                    const Color(0xFF9B72CB),
+                    const Color(0xFFD96570),
+                  ][i]
+                      .withValues(alpha: 0.18 - i * 0.04),
+                  width: 1,
+                ),
+              ),
+            ),
+          // Inner glass orb
+          Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [
+                  const Color(0xFF9B72CB).withValues(alpha: 0.35),
+                  const Color(0xFF4285F4).withValues(alpha: 0.20),
+                  Colors.transparent,
+                ],
+                stops: const [0, 0.6, 1],
+                center: const Alignment(-0.3, -0.3),
+              ),
+              boxShadow: [
+                BoxShadow(
+                    color: const Color(0xFF4285F4).withValues(alpha: 0.30),
+                    blurRadius: 40,
+                    spreadRadius: 6),
+                BoxShadow(
+                    color: const Color(0xFF9B72CB).withValues(alpha: 0.25),
+                    blurRadius: 30,
+                    spreadRadius: 2),
+              ],
+            ),
+            child: ClipOval(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                child: Center(
+                  child: ShaderMask(
+                    shaderCallback: (b) =>
+                        NeuralDesignSystem.neuralGradient.createShader(
+                          Rect.fromLTWH(0, 0, b.width, b.height),
+                        ),
+                    child: const Icon(
+                      Icons.auto_awesome,
+                      size: 38,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  // â”€â”€â”€ Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Widget _buildCards(bool isWide, AuthService authService) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: isWide ? 48 : 20),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1000),
+          child: isWide
+              ? IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(child: _EstudieoCard(
+                        authService: authService,
+                        isCheckingAuth: _isCheckingAuth,
+                        onGoogleSignIn: _handleGoogleSignIn,
+                        onBuyWhatsapp: () => _launchWhatsApp(
+                            'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)'),
+                      )),
+                      const SizedBox(width: 24),
+                      Expanded(child: _PsicoLearnCard(
+                        onGoToPsico: _launchPsicoLearn,
+                        onBuyWhatsapp: () => _launchWhatsApp(
+                            'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)'),
+                      )),
+                    ],
+                  ),
+                )
+              : Column(
+                  children: [
+                    _EstudieoCard(
+                      authService: authService,
+                      isCheckingAuth: _isCheckingAuth,
+                      onGoogleSignIn: _handleGoogleSignIn,
+                      onBuyWhatsapp: () => _launchWhatsApp(
+                          'Hola! Quiero comprar el acceso completo a EstudiEO (conocimientos)'),
+                    ),
+                    const SizedBox(height: 24),
+                    _PsicoLearnCard(
+                      onGoToPsico: _launchPsicoLearn,
+                      onBuyWhatsapp: () => _launchWhatsApp(
+                          'Hola! Quiero comprar el acceso completo a PsicoLearn (psicomÃ©trico)'),
+                    ),
+                  ],
+                ),
+        ),
+      ),
+    );
+  }
+
+  // â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  Widget _buildFooter() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 0, 24, 48),
+      child: Column(
+        children: [
+          // Separator line with gradient
+          Container(
+            height: 1,
+            decoration: const BoxDecoration(
+              gradient: NeuralDesignSystem.neuralGradient,
+            ),
+          ),
+          const SizedBox(height: 32),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ShaderMask(
+                    shaderCallback: (b) =>
+                        NeuralDesignSystem.neuralGradient.createShader(b),
+                    child: const Text('pnp-edu',
+                        style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white)),
+                  ),
+                  const SizedBox(height: 6),
+                  Text('Â© 2026 Â· Todos los derechos reservados',
+                      style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 12,
+                          color: Colors.white.withValues(alpha: 0.35))),
+                ],
+              ),
+              Wrap(
+                spacing: 20,
+                children: [
+                  _footerIcon(Icons.mail_outline_rounded,
+                      'mailto:soporte@estudieo.pe'),
+                  _footerIcon(Icons.chat_rounded,
+                      'https://wa.me/${AppConfig.whatsappNumber}'),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _footerIcon(IconData icon, String url) {
+    return GestureDetector(
+      onTap: () => _launchUrl(url),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.04),
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
+        ),
+        child: Icon(icon, color: Colors.white.withValues(alpha: 0.55), size: 18),
       ),
     );
   }
 }
+
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//  EstudieoCard â€“ "Vaina de Vidrio" Azul
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+class _EstudieoCard extends StatefulWidget {
+  final AuthService authService;
+  final bool isCheckingAuth;
+  final VoidCallback onGoogleSignIn;
+  final VoidCallback onBuyWhatsapp;
+
+  const _EstudieoCard({
+    required this.authService,
+    required this.isCheckingAuth,
+    required this.onGoogleSignIn,
+    required this.onBuyWhatsapp,
+  });
+
+  @override
+  State<_EstudieoCard> createState() => _EstudieoCardState();
+}
+
+class _EstudieoCardState extends State<_EstudieoCard> {
+  bool _hoverGoogle = false;
+  bool _hoverBuy = false;
+
+  static const _features = [
+    ('Banco de preguntas oficiales PNP', 'Miles de preguntas reales actualizadas del prospecto vigente.'),
+    ('Repaso guiado por Alipio IA', 'NemotÃ©cnias y explicaciones generadas por inteligencia artificial.'),
+    ('Simulacros cronometrados', 'Practica con el formato exacto: 100 preguntas, 3 horas.'),
+    ('Algoritmo SRS inteligente', 'Estudia eficientemente: el sistema decide quÃ© revisar primero.'),
+    ('EstadÃ­sticas de progreso real', 'Dashboard detallado para medir tu avance hacia la vacante.'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF4285F4).withValues(alpha: 0.08),
+            const Color(0xFF9B72CB).withValues(alpha: 0.06),
+            Colors.white.withValues(alpha: 0.03),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        border: Border.all(
+          color: const Color(0xFF4285F4).withValues(alpha: 0.25),
+          width: 1.2,
+        ),
+        boxShadow: [
+          BoxShadow(
+              color: const Color(0xFF4285F4).withValues(alpha: 0.10),
+              blurRadius: 40,
+              offset: const Offset(0, 12)),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(28),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _cardHeader(
+                  icon: Icons.school_rounded,
+                  iconColor: const Color(0xFF4285F4),
+                  title: 'estudiEO',
+                  subtitle: 'MÃ³dulo de Conocimientos Â· S/30',
+                  subtitleColor: const Color(0xFF93C5FD),
+                ),
+                const SizedBox(height: 22),
+                Text(
+                  'Domina todo el prospecto acadÃ©mico con Inteligencia Activa, repasos espaciados y simulacros oficiales de 100 preguntas.',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 14,
+                    color: Colors.white.withValues(alpha: 0.65),
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                const Divider(color: Colors.white10, height: 1),
+                const SizedBox(height: 22),
+                ...(_features.map((f) => _featurePod(
+                    f.$1, f.$2, const Color(0xFF4285F4)))),
+                const SizedBox(height: 28),
+                if (widget.authService.isLoading || widget.isCheckingAuth)
+                  const Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      child: CircularProgressIndicator(
+                        color: Color(0xFF4285F4),
+                        strokeWidth: 2,
+                      ),
+                    ),
+                  )
+                else ...[
+                  _portalButton(
+                    label: 'Ingresar con Google',
+                    icon: Icons.g_mobiledata_rounded,
+                    colors: [const Color(0xFF2563EB), const Color(0xFF7C3AED)],
+                    glowColor: const Color(0xFF4285F4),
+                    isHovered: _hoverGoogle,
+                    onHover: (v) => setState(() => _hoverGoogle = v),
+                    onTap: widget.onGoogleSignIn,
+                    iconBgWhite: true,
+                  ),
+                  const SizedBox(height: 14),
+                  _buyLink(
+                    label: 'Comprar Acceso Premium',
+                    isHovered: _hoverBuy,
+                    onHover: (v) => setState(() => _hoverBuy = v),
+                    onTap: widget.onBuyWhatsapp,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//  PsicoLearnCard â€“ "Vaina de Vidrio" Morada
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+class _PsicoLearnCard extends StatefulWidget {
+  final VoidCallback onGoToPsico;
+  final VoidCallback onBuyWhatsapp;
+
+  const _PsicoLearnCard({
+    required this.onGoToPsico,
+    required this.onBuyWhatsapp,
+  });
+
+  @override
+  State<_PsicoLearnCard> createState() => _PsicoLearnCardState();
+}
+
+class _PsicoLearnCardState extends State<_PsicoLearnCard> {
+  bool _hoverGo = false;
+  bool _hoverBuy = false;
+
+  static const _features = [
+    ('Test de personalidad calificados', 'Evaluaciones psicomÃ©tricas reales con puntuaciÃ³n y feedback detallado.'),
+    ('Aptitud cognitiva y lÃ³gica', 'Simulacros de razonamiento abstracto y verbal de precisiÃ³n clÃ­nica.'),
+    ('Simulador de Entrevista Personal', 'GuÃ­as y preguntas tipo para superar la fase oral sin nervios.'),
+    ('EvaluaciÃ³n de conducta adaptativa', 'Comprende y practica los criterios de selecciÃ³n psicolÃ³gica PNP.'),
+    ('Acceso permanente de por vida', 'Un solo pago. Sin mensualidades. Actualizaciones incluidas.'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF9B72CB).withValues(alpha: 0.08),
+            const Color(0xFFD96570).withValues(alpha: 0.05),
+            Colors.white.withValues(alpha: 0.03),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        border: Border.all(
+          color: const Color(0xFF9B72CB).withValues(alpha: 0.25),
+          width: 1.2,
+        ),
+        boxShadow: [
+          BoxShadow(
+              color: const Color(0xFF9B72CB).withValues(alpha: 0.10),
+              blurRadius: 40,
+              offset: const Offset(0, 12)),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(28),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _cardHeader(
+                  icon: Icons.psychology_rounded,
+                  iconColor: const Color(0xFF9B72CB),
+                  title: 'psicoLearn',
+                  subtitle: 'MÃ³dulo PsicomÃ©trico y MÃ©dico Â· S/30',
+                  subtitleColor: const Color(0xFFC084FC),
+                ),
+                const SizedBox(height: 22),
+                Text(
+                  'Supera las pruebas psicomÃ©tricas, los test de personalidad y prepÃ¡rate de forma profesional para tu entrevista personal.',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 14,
+                    color: Colors.white.withValues(alpha: 0.65),
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                const Divider(color: Colors.white10, height: 1),
+                const SizedBox(height: 22),
+                ...(_features.map((f) => _featurePod(
+                    f.$1, f.$2, const Color(0xFF9B72CB)))),
+                const SizedBox(height: 28),
+                _portalButton(
+                  label: 'Ir a PsicoLearn',
+                  icon: Icons.open_in_new_rounded,
+                  colors: [const Color(0xFF7C3AED), const Color(0xFFC084FC)],
+                  glowColor: const Color(0xFF9B72CB),
+                  isHovered: _hoverGo,
+                  onHover: (v) => setState(() => _hoverGo = v),
+                  onTap: widget.onGoToPsico,
+                  iconBgWhite: false,
+                ),
+                const SizedBox(height: 14),
+                _buyLink(
+                  label: 'Comprar Acceso Premium',
+                  isHovered: _hoverBuy,
+                  onHover: (v) => setState(() => _hoverBuy = v),
+                  onTap: widget.onBuyWhatsapp,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//  Shared helper widgets
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+Widget _cardHeader({
+  required IconData icon,
+  required Color iconColor,
+  required String title,
+  required String subtitle,
+  required Color subtitleColor,
+}) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: iconColor.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: iconColor.withValues(alpha: 0.20)),
+        ),
+        child: Icon(icon, color: iconColor, size: 28),
+      ),
+      const SizedBox(width: 16),
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 26,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                letterSpacing: -0.5,
+              ),
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: subtitleColor,
+                letterSpacing: 0.4,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+Widget _featurePod(String title, String description, Color accentColor) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 14),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 2),
+          child: Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: accentColor.withValues(alpha: 0.12),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              Icons.check_rounded,
+              color: accentColor,
+              size: 12,
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  height: 1.3,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                description,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 12,
+                  color: Colors.white.withValues(alpha: 0.50),
+                  height: 1.4,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget _portalButton({
+  required String label,
+  required IconData icon,
+  required List<Color> colors,
+  required Color glowColor,
+  required bool isHovered,
+  required ValueChanged<bool> onHover,
+  required VoidCallback onTap,
+  bool iconBgWhite = false,
+}) {
+  return MouseRegion(
+    onEnter: (_) => onHover(true),
+    onExit: (_) => onHover(false),
+    cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        height: 54,
+        transform: isHovered
+            ? ((Matrix4.identity()..scale(1.025, 1.025, 1.0)))
+            : Matrix4.identity(),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          gradient: LinearGradient(
+            colors: colors,
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: glowColor.withValues(alpha: isHovered ? 0.55 : 0.30),
+              blurRadius: isHovered ? 28 : 16,
+              spreadRadius: isHovered ? 2 : 0,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (iconBgWhite)
+              Container(
+                padding: const EdgeInsets.all(5),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: Colors.black87, size: 18),
+              )
+            else
+              Icon(icon, color: Colors.white, size: 20),
+            const SizedBox(width: 10),
+            Text(
+              label,
+              style: const TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                letterSpacing: 0.1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget _buyLink({
+  required String label,
+  required bool isHovered,
+  required ValueChanged<bool> onHover,
+  required VoidCallback onTap,
+}) {
+  return MouseRegion(
+    onEnter: (_) => onHover(true),
+    onExit: (_) => onHover(false),
+    cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+      onTap: onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(Icons.message_rounded, color: Color(0xFF4ADE80), size: 16),
+          const SizedBox(width: 8),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF4ADE80),
+                  letterSpacing: 0.2,
+                ),
+              ),
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                height: 1.5,
+                width: isHovered ? 180 : 60,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF4ADE80),
+                  borderRadius: BorderRadius.circular(2),
+                  boxShadow: [
+                    if (isHovered)
+                      const BoxShadow(
+                        color: Color(0xFF4ADE80),
+                        blurRadius: 6,
+                        spreadRadius: 0,
+                      )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
