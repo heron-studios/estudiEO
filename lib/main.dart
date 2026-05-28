@@ -35,13 +35,28 @@ import 'package:learn/widgets/professional_splash.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // Initialize GetStorage first (faster)
+  try {
+    await GetStorage.init().timeout(const Duration(seconds: 3));
+  } catch (e) {
+    debugPrint('GetStorage init timeout: $e');
+  }
 
-  await GetStorage.init();
+  // Initialize Firebase with timeout
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ).timeout(const Duration(seconds: 5));
+  } catch (e) {
+    debugPrint('Firebase init error/timeout: $e - continuing offline');
+  }
+
   final storageService = LocalStorageService();
-  await storageService.init();
+  try {
+    await storageService.init().timeout(const Duration(seconds: 2));
+  } catch (e) {
+    debugPrint('LocalStorageService init timeout: $e');
+  }
 
   runApp(
     MultiProvider(
@@ -115,31 +130,29 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => const DashboardScreen(),
         '/srs-review': (context) => const SrsReviewScreen(),
         '/srs-mini-quiz': (context) {
-          final questionIds = ModalRoute.of(context)!.settings.arguments as List<String>;
+          final questionIds =
+              ModalRoute.of(context)!.settings.arguments as List<String>;
           return SrsMiniQuizScreen(questionIds: questionIds);
         },
         '/settings': (context) => const SettingsScreen(),
         '/premium': (context) => const PremiumScreen(),
         '/payment': (context) => const PaymentScreen(),
         '/learning-theory': (context) {
-          final args =
-              ModalRoute.of(context)!.settings.arguments as Map;
+          final args = ModalRoute.of(context)!.settings.arguments as Map;
           return LearningTheoryScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,
           );
         },
         '/learning-quiz': (context) {
-          final args =
-              ModalRoute.of(context)!.settings.arguments as Map;
+          final args = ModalRoute.of(context)!.settings.arguments as Map;
           return LearningQuizScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,
           );
         },
         '/learning-levelup': (context) {
-          final args =
-              ModalRoute.of(context)!.settings.arguments as Map;
+          final args = ModalRoute.of(context)!.settings.arguments as Map;
           return LearningLevelUpScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,
@@ -157,20 +170,20 @@ class AuthWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
-    
+
     if (authService.isInitializing) {
       return const ProfessionalSplash();
     }
-    
+
     if (authService.currentUser != null && authService.isAuthorized) {
       return const HomeScreen();
     }
-    
+
     // Logged in but not authorized → show payment screen
     if (authService.currentUser != null && !authService.isAuthorized) {
       return const PaymentScreen();
     }
-    
+
     return const LoginScreen();
   }
 }

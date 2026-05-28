@@ -23,7 +23,14 @@ class LocalStorageService {
   Map<String, dynamic>? _srsJsonCache;
 
   Future<void> init() async {
-    await GetStorage.init();
+    // GetStorage already initialized in main.dart
+    // This is now a no-op but kept for backward compatibility
+    try {
+      _srsCache = null; // Clear cache on init
+      _srsJsonCache = null;
+    } catch (e) {
+      debugPrint('LocalStorageService init: $e');
+    }
   }
 
   // ─── SRS Data ───────────────────────────────────────
@@ -33,7 +40,7 @@ class LocalStorageService {
     try {
       final rawData = _storage.read(srsKey) as Map? ?? {};
       _srsJsonCache = Map<String, dynamic>.from(rawData);
-      
+
       _srsCache = _srsJsonCache!.map(
         (key, value) => MapEntry(
           key.toString(),
@@ -68,10 +75,10 @@ class LocalStorageService {
   void saveSrsCard(SrsCard card) {
     final cards = loadSrsCards();
     cards[card.questionId] = card;
-    
+
     _srsJsonCache ??= {};
     _srsJsonCache![card.questionId] = card.toJson();
-    
+
     _storage.write(srsKey, _srsJsonCache);
     _touchSyncMeta();
   }
@@ -191,11 +198,13 @@ class LocalStorageService {
     try {
       final data = _storage.read(learnedQuestionsKey) as Map?;
       if (data == null) return {};
-      
-      return data.map((key, value) => MapEntry(
-            key.toString(),
-            (value as List).map((e) => e.toString()).toList(),
-          ));
+
+      return data.map(
+        (key, value) => MapEntry(
+          key.toString(),
+          (value as List).map((e) => e.toString()).toList(),
+        ),
+      );
     } catch (e) {
       debugPrint('Error loading learned questions: $e');
       return {};
@@ -224,7 +233,6 @@ class LocalStorageService {
   }
 
   // ─── Learning Sessions ────────────────────────────────────────────────────
-
 
   LearningSession? loadLearningSession(String topicId, Dificultad nivel) {
     try {

@@ -27,21 +27,38 @@ class AuthService extends ChangeNotifier {
   String? _error;
   String? get error => _error;
 
+  bool _initStarted = false;
+
   AuthService() {
-    _checkInitialAuth();
+    // Initialize immediately but don't await - happens in background
+    if (!_initStarted) {
+      _initStarted = true;
+      Future.microtask(_checkInitialAuth);
+    }
   }
 
   Future<void> _checkInitialAuth() async {
     try {
+      // In web with demo mode, skip expensive checks
+      if (AppConfig.isDemoMode) {
+        _isInitializing = false;
+        _isAuthorized = true;
+        notifyListeners();
+        return;
+      }
+
       if (currentUser != null) {
-        // Agregar timeout de 5 segundos para la verificación de autorización
+        // Agregar timeout de 3 segundos para la verificación de autorización
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 5),
+          const Duration(seconds: 3),
           onTimeout: () {
-            debugPrint('Authorization check timeout - continuing without auth');
+            debugPrint('Authorization check timeout - allowing demo access');
             return false;
           },
         );
+      } else {
+        // No user, go to login screen
+        _isAuthorized = false;
       }
     } catch (e) {
       debugPrint('Error in initial auth check: $e');
