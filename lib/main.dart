@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:learn/firebase_options.dart';
-
 import 'package:learn/services/local_storage_service.dart';
 import 'package:learn/services/auth_service.dart';
 import 'package:learn/providers/srs_provider.dart';
@@ -12,7 +11,6 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/models/learning_level.dart';
-
 import 'package:learn/screens/home_screen.dart';
 import 'package:learn/screens/login_screen.dart';
 import 'package:learn/screens/subject_gallery_screen.dart';
@@ -30,72 +28,15 @@ import 'package:learn/screens/payment_screen.dart';
 import 'package:learn/screens/learning_theory_screen.dart';
 import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
-import 'package:learn/widgets/professional_splash.dart';
-
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:learn/firebase_options.dart';
-
-import 'package:learn/services/local_storage_service.dart';
-import 'package:learn/services/auth_service.dart';
-import 'package:learn/providers/srs_provider.dart';
-import 'package:learn/providers/gamification_provider.dart';
-import 'package:learn/providers/quiz_provider.dart';
-import 'package:learn/providers/subject_provider.dart';
-import 'package:learn/providers/learning_provider.dart';
-import 'package:learn/models/learning_level.dart';
-
-import 'package:learn/screens/home_screen.dart';
-import 'package:learn/screens/login_screen.dart';
-import 'package:learn/screens/subject_gallery_screen.dart';
-import 'package:learn/screens/topic_gallery_screen.dart';
-import 'package:learn/screens/exam_screen.dart';
-import 'package:learn/screens/exam_results_screen.dart';
-import 'package:learn/screens/quiz_screen.dart';
-import 'package:learn/screens/quiz_results_screen.dart';
-import 'package:learn/screens/dashboard_screen.dart';
-import 'package:learn/screens/srs_review_screen.dart';
-import 'package:learn/screens/srs_mini_quiz_screen.dart';
-import 'package:learn/screens/settings_screen.dart';
-import 'package:learn/screens/premium_screen.dart';
-import 'package:learn/screens/payment_screen.dart';
-import 'package:learn/screens/learning_theory_screen.dart';
-import 'package:learn/screens/learning_quiz_screen.dart';
-import 'package:learn/screens/learning_levelup_screen.dart';
-import 'package:learn/widgets/professional_splash.dart';
 
 late LocalStorageService _storageService;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize storage service immediately (synchronously if possible)
   _storageService = LocalStorageService();
 
-  // Launch all initialization tasks in background - DON'T WAIT
-  Future.microtask(() async {
-    try {
-      await GetStorage.init().timeout(const Duration(seconds: 3));
-    } catch (e) {
-      debugPrint('GetStorage init: $e');
-    }
-
-    try {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      ).timeout(const Duration(seconds: 5));
-    } catch (e) {
-      debugPrint('Firebase init: $e');
-    }
-
-    try {
-      await _storageService.init().timeout(const Duration(seconds: 2));
-    } catch (e) {
-      debugPrint('LocalStorageService init: $e');
-    }
-  });
+  // Initialize everything in background - completely non-blocking
+  _initializeAsync();
 
   runApp(
     MultiProvider(
@@ -115,6 +56,31 @@ void main() {
       child: const MyApp(),
     ),
   );
+}
+
+void _initializeAsync() {
+  // Fire and forget - don't await
+  Future.microtask(() async {
+    try {
+      await GetStorage.init();
+    } catch (e) {
+      debugPrint('GetStorage: $e');
+    }
+
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    } catch (e) {
+      debugPrint('Firebase: $e');
+    }
+
+    try {
+      await _storageService.init();
+    } catch (e) {
+      debugPrint('Storage: $e');
+    }
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -212,15 +178,15 @@ class AuthWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
 
+    // Always show login screen - no waiting
     if (authService.isInitializing) {
-      return const ProfessionalSplash();
+      return const LoginScreen();
     }
 
     if (authService.currentUser != null && authService.isAuthorized) {
       return const HomeScreen();
     }
 
-    // Logged in but not authorized → show payment screen
     if (authService.currentUser != null && !authService.isAuthorized) {
       return const PaymentScreen();
     }

@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -981,7 +981,7 @@ Widget _portalButton({
         duration: const Duration(milliseconds: 200),
         height: 54,
         transform: isHovered
-            ? ((Matrix4.identity()..scale(1.025, 1.025, 1.0)))
+            ? Matrix4.diagonal3Values(1.025, 1.025, 1.0)
             : Matrix4.identity(),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),

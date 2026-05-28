@@ -17,15 +17,24 @@ class QuizResultsScreen extends StatelessWidget {
       return Scaffold(
         backgroundColor: NeuralDesignSystem.background,
         appBar: AppBar(
-          title: const Text('Resultados',
-              style: TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.bold)),
+          title: const Text(
+            'Resultados',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           backgroundColor: Colors.transparent,
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.white),
         ),
-        body: NeuralBackgroundWrapper(
-          child: const Center(
-            child: Text('No hay resultados', style: TextStyle(color: Colors.white60)),
+        body: const NeuralBackgroundWrapper(
+          child: Center(
+            child: Text(
+              'No hay resultados',
+              style: TextStyle(color: Colors.white60),
+            ),
           ),
         ),
       );
@@ -57,8 +66,9 @@ class QuizResultsScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         ShaderMask(
-                          shaderCallback: (bounds) =>
-                              NeuralDesignSystem.neuralGradient.createShader(bounds),
+                          shaderCallback: (bounds) => NeuralDesignSystem
+                              .neuralGradient
+                              .createShader(bounds),
                           child: Text(
                             '${pct.toStringAsFixed(0)}%',
                             style: const TextStyle(
@@ -91,11 +101,23 @@ class QuizResultsScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       children: [
-                        _StatBox(label: 'Correctas', value: '$correct', color: const Color(0xFF4ADE80)),
+                        _StatBox(
+                          label: 'Correctas',
+                          value: '$correct',
+                          color: const Color(0xFF4ADE80),
+                        ),
                         const SizedBox(width: 12),
-                        _StatBox(label: 'Incorrectas', value: '$wrong', color: NeuralDesignSystem.pink),
+                        _StatBox(
+                          label: 'Incorrectas',
+                          value: '$wrong',
+                          color: NeuralDesignSystem.pink,
+                        ),
                         const SizedBox(width: 12),
-                        _StatBox(label: 'Total', value: '$total', color: NeuralDesignSystem.blueGoogle),
+                        _StatBox(
+                          label: 'Total',
+                          value: '$total',
+                          color: NeuralDesignSystem.blueGoogle,
+                        ),
                       ],
                     ),
                   ),
@@ -112,29 +134,37 @@ class QuizResultsScreen extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.5),
+                            color: NeuralDesignSystem.surfaceCard.withValues(
+                              alpha: 0.5,
+                            ),
                             borderRadius: BorderRadius.circular(16),
-                            border:
-                                Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.08),
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text('Precisión',
-                                      style: TextStyle(
-                                          color: NeuralDesignSystem.textSecondary
-                                              .withValues(alpha: 0.7),
-                                          fontSize: 13)),
+                                  Text(
+                                    'Precisión',
+                                    style: TextStyle(
+                                      color: NeuralDesignSystem.textSecondary
+                                          .withValues(alpha: 0.7),
+                                      fontSize: 13,
+                                    ),
+                                  ),
                                   Text(
                                     '$correct/$total',
                                     style: const TextStyle(
-                                        color: NeuralDesignSystem.textPrimary,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                        fontFamily: 'Outfit'),
+                                      color: NeuralDesignSystem.textPrimary,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13,
+                                      fontFamily: 'Outfit',
+                                    ),
                                   ),
                                 ],
                               ),
@@ -143,8 +173,8 @@ class QuizResultsScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                                 child: LinearProgressIndicator(
                                   value: pct / 100,
-                                  backgroundColor:
-                                      NeuralDesignSystem.background.withValues(alpha: 0.6),
+                                  backgroundColor: NeuralDesignSystem.background
+                                      .withValues(alpha: 0.6),
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                     isGood
                                         ? const Color(0xFF4ADE80)
@@ -176,27 +206,39 @@ class QuizResultsScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(14),
                               boxShadow: [
                                 BoxShadow(
-                                  color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.3),
+                                  color: NeuralDesignSystem.blueGoogle
+                                      .withValues(alpha: 0.3),
                                   blurRadius: 12,
                                   offset: const Offset(0, 4),
                                 ),
                               ],
                             ),
                             child: ElevatedButton.icon(
-                              onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                                  context, '/gallery', (_) => false),
-                              icon: const Icon(Icons.refresh_rounded, color: Colors.white),
-                              label: const Text('Estudiar otro tema',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                      fontFamily: 'Outfit')),
+                              onPressed: () =>
+                                  Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    '/gallery',
+                                    (_) => false,
+                                  ),
+                              icon: const Icon(
+                                Icons.refresh_rounded,
+                                color: Colors.white,
+                              ),
+                              label: const Text(
+                                'Estudiar otro tema',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Outfit',
+                                ),
+                              ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
                                 shadowColor: Colors.transparent,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14)),
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
                                 elevation: 0,
                               ),
                             ),
@@ -208,19 +250,28 @@ class QuizResultsScreen extends StatelessWidget {
                           height: 52,
                           child: OutlinedButton.icon(
                             onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                                context, '/home', (_) => false),
+                              context,
+                              '/home',
+                              (_) => false,
+                            ),
                             icon: const Icon(Icons.home_rounded),
-                            label: const Text('Inicio',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Outfit')),
+                            label: const Text(
+                              'Inicio',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Outfit',
+                              ),
+                            ),
                             style: OutlinedButton.styleFrom(
                               foregroundColor: NeuralDesignSystem.textSecondary,
                               side: BorderSide(
-                                  color: Colors.white.withValues(alpha: 0.15), width: 1.5),
+                                color: Colors.white.withValues(alpha: 0.15),
+                                width: 1.5,
+                              ),
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(14)),
+                                borderRadius: BorderRadius.circular(14),
+                              ),
                             ),
                           ),
                         ),
@@ -242,7 +293,11 @@ class _StatBox extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatBox({required this.label, required this.value, required this.color});
+  const _StatBox({
+    required this.label,
+    required this.value,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -263,17 +318,23 @@ class _StatBox extends StatelessWidget {
                 Text(
                   value,
                   style: TextStyle(
-                      color: color,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w900,
-                      fontFamily: 'Outfit'),
+                    color: color,
+                    fontSize: 28,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Outfit',
+                  ),
                 ),
                 const SizedBox(height: 4),
-                Text(label,
-                    style: TextStyle(
-                        color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.7),
-                        fontSize: 12,
-                        fontFamily: 'Inter')),
+                Text(
+                  label,
+                  style: TextStyle(
+                    color: NeuralDesignSystem.textSecondary.withValues(
+                      alpha: 0.7,
+                    ),
+                    fontSize: 12,
+                    fontFamily: 'Inter',
+                  ),
+                ),
               ],
             ),
           ),

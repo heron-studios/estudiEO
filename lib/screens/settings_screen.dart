@@ -59,15 +59,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (ctx) => AlertDialog(
         backgroundColor: NeuralDesignSystem.surfaceCard,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text('Exportar Progreso',
-            style: TextStyle(color: _text, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Exportar Progreso',
+          style: TextStyle(
+            color: _text,
+            fontFamily: 'Outfit',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Copia este código de seguridad y guárdalo en un lugar seguro. Podrás usarlo para restaurar tu progreso más tarde.',
-              style: TextStyle(color: _muted.withValues(alpha: 0.8), fontSize: 13),
+              style: TextStyle(
+                color: _muted.withValues(alpha: 0.8),
+                fontSize: 13,
+              ),
             ),
             const SizedBox(height: 16),
             Container(
@@ -99,21 +108,30 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: _blue,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
             onPressed: () {
               Clipboard.setData(ClipboardData(text: jsonString));
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: const Text('Código de progreso copiado al portapapeles.'),
+                  content: const Text(
+                    'Código de progreso copiado al portapapeles.',
+                  ),
                   backgroundColor: _blue,
                   behavior: SnackBarBehavior.floating,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               );
             },
-            child: const Text('Copiar Código', style: TextStyle(color: Colors.white)),
+            child: const Text(
+              'Copiar Código',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
@@ -128,21 +146,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (ctx) => AlertDialog(
         backgroundColor: NeuralDesignSystem.surfaceCard,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text('Importar Progreso',
-            style: TextStyle(color: _text, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Importar Progreso',
+          style: TextStyle(
+            color: _text,
+            fontFamily: 'Outfit',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Pega el código de progreso que exportaste anteriormente para restaurar tus datos.',
-              style: TextStyle(color: _muted.withValues(alpha: 0.8), fontSize: 13),
+              style: TextStyle(
+                color: _muted.withValues(alpha: 0.8),
+                fontSize: 13,
+              ),
             ),
             const SizedBox(height: 16),
             TextField(
               controller: textController,
               maxLines: 4,
-              style: const TextStyle(color: Colors.white, fontSize: 12, fontFamily: 'monospace'),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontFamily: 'monospace',
+              ),
               decoration: InputDecoration(
                 hintText: 'Pega tu código aquí...',
                 hintStyle: const TextStyle(color: Colors.white30),
@@ -150,7 +181,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
+                  borderSide: BorderSide(
+                    color: Colors.white.withValues(alpha: 0.1),
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -168,7 +201,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF16A34A),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
             onPressed: () {
               final jsonString = textController.text.trim();
@@ -189,7 +224,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     content: const Text('Progreso restaurado correctamente.'),
                     backgroundColor: const Color(0xFF16A34A),
                     behavior: SnackBarBehavior.floating,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 );
               } catch (e) {
@@ -198,12 +235,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     content: const Text('Error al importar. Código inválido.'),
                     backgroundColor: NeuralDesignSystem.pink,
                     behavior: SnackBarBehavior.floating,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 );
               }
             },
-            child: const Text('Importar', style: TextStyle(color: Colors.white)),
+            child: const Text(
+              'Importar',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
@@ -258,31 +300,39 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       decoration: BoxDecoration(
                         color: _cardBg.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.08),
+                        ),
                       ),
                       child: Column(
                         children: allSubjects.map((subject) {
-                          final isVisible = !_hiddenSubjects.contains(subject.id);
+                          final isVisible = !_hiddenSubjects.contains(
+                            subject.id,
+                          );
                           return SwitchListTile(
                             title: Row(
                               children: [
-                                Text(subject.icon, style: const TextStyle(fontSize: 20)),
+                                Text(
+                                  subject.icon,
+                                  style: const TextStyle(fontSize: 20),
+                                ),
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Text(
                                     subject.name,
                                     style: const TextStyle(
-                                        color: _text,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 15,
-                                        fontFamily: 'Inter'),
+                                      color: _text,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                      fontFamily: 'Inter',
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                             value: isVisible,
                             onChanged: (val) => _toggleSubject(subject.id, val),
-                            activeColor: _blue,
+                            activeThumbColor: _blue,
                             activeTrackColor: _blue.withValues(alpha: 0.3),
                             inactiveThumbColor: _muted,
                             inactiveTrackColor: NeuralDesignSystem.background,
@@ -314,136 +364,227 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       decoration: BoxDecoration(
                         color: _cardBg.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.08),
+                        ),
                       ),
                       child: Column(
                         children: [
                           ListTile(
                             onTap: _exportProgress,
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 8,
+                            ),
                             leading: Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 color: _blue.withValues(alpha: 0.12),
                                 borderRadius: BorderRadius.circular(12),
-                                border: Border.all(color: _blue.withValues(alpha: 0.25)),
+                                border: Border.all(
+                                  color: _blue.withValues(alpha: 0.25),
+                                ),
                               ),
-                              child: const Icon(Icons.download_rounded, color: _blue, size: 22),
+                              child: const Icon(
+                                Icons.download_rounded,
+                                color: _blue,
+                                size: 22,
+                              ),
                             ),
-                            title: const Text('Exportar progreso',
-                                style: TextStyle(
-                                    color: _text,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter')),
-                            subtitle: Text('Copia de seguridad del progreso',
-                                style: TextStyle(
-                                    color: _muted.withValues(alpha: 0.7), fontSize: 13)),
-                            trailing:
-                                Icon(Icons.chevron_right, color: _muted.withValues(alpha: 0.5)),
+                            title: const Text(
+                              'Exportar progreso',
+                              style: TextStyle(
+                                color: _text,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontFamily: 'Inter',
+                              ),
+                            ),
+                            subtitle: Text(
+                              'Copia de seguridad del progreso',
+                              style: TextStyle(
+                                color: _muted.withValues(alpha: 0.7),
+                                fontSize: 13,
+                              ),
+                            ),
+                            trailing: Icon(
+                              Icons.chevron_right,
+                              color: _muted.withValues(alpha: 0.5),
+                            ),
                           ),
-                          Divider(color: Colors.white.withValues(alpha: 0.06), height: 1),
+                          Divider(
+                            color: Colors.white.withValues(alpha: 0.06),
+                            height: 1,
+                          ),
                           ListTile(
                             onTap: _importProgress,
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 8,
+                            ),
                             leading: Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF16A34A).withValues(alpha: 0.12),
+                                color: const Color(
+                                  0xFF16A34A,
+                                ).withValues(alpha: 0.12),
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                    color: const Color(0xFF16A34A).withValues(alpha: 0.25)),
+                                  color: const Color(
+                                    0xFF16A34A,
+                                  ).withValues(alpha: 0.25),
+                                ),
                               ),
-                              child: const Icon(Icons.upload_rounded,
-                                  color: Color(0xFF4ADE80), size: 22),
+                              child: const Icon(
+                                Icons.upload_rounded,
+                                color: Color(0xFF4ADE80),
+                                size: 22,
+                              ),
                             ),
-                            title: const Text('Importar progreso',
-                                style: TextStyle(
-                                    color: _text,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter')),
-                            subtitle: Text('Restaurar copia de seguridad',
-                                style: TextStyle(
-                                    color: _muted.withValues(alpha: 0.7), fontSize: 13)),
-                            trailing:
-                                Icon(Icons.chevron_right, color: _muted.withValues(alpha: 0.5)),
+                            title: const Text(
+                              'Importar progreso',
+                              style: TextStyle(
+                                color: _text,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontFamily: 'Inter',
+                              ),
+                            ),
+                            subtitle: Text(
+                              'Restaurar copia de seguridad',
+                              style: TextStyle(
+                                color: _muted.withValues(alpha: 0.7),
+                                fontSize: 13,
+                              ),
+                            ),
+                            trailing: Icon(
+                              Icons.chevron_right,
+                              color: _muted.withValues(alpha: 0.5),
+                            ),
                           ),
-                          Divider(color: Colors.white.withValues(alpha: 0.06), height: 1),
+                          Divider(
+                            color: Colors.white.withValues(alpha: 0.06),
+                            height: 1,
+                          ),
                           ListTile(
                             onTap: () {
                               showDialog(
                                 context: context,
                                 builder: (ctx) => AlertDialog(
-                                  backgroundColor: NeuralDesignSystem.surfaceCard,
+                                  backgroundColor:
+                                      NeuralDesignSystem.surfaceCard,
                                   shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  title: const Text('Borrar todo el progreso',
-                                      style: TextStyle(
-                                          color: _text,
-                                          fontFamily: 'Outfit',
-                                          fontWeight: FontWeight.bold)),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  title: const Text(
+                                    'Borrar todo el progreso',
+                                    style: TextStyle(
+                                      color: _text,
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                   content: Text(
-                                      'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
-                                      style: TextStyle(
-                                          color: _muted.withValues(alpha: 0.8))),
+                                    'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
+                                    style: TextStyle(
+                                      color: _muted.withValues(alpha: 0.8),
+                                    ),
+                                  ),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(ctx),
-                                      child: const Text('Cancelar',
-                                          style: TextStyle(color: _muted)),
+                                      child: const Text(
+                                        'Cancelar',
+                                        style: TextStyle(color: _muted),
+                                      ),
                                     ),
                                     TextButton(
                                       onPressed: () {
-                                        context.read<LocalStorageService>().clearAll();
+                                        context
+                                            .read<LocalStorageService>()
+                                            .clearAll();
                                         context.read<SrsProvider>().resetAll();
-                                        context.read<GamificationProvider>().reset();
-                                        context.read<QuizProvider>().clearSessions();
-                                        context.read<SubjectProvider>().reload();
+                                        context
+                                            .read<GamificationProvider>()
+                                            .reset();
+                                        context
+                                            .read<QuizProvider>()
+                                            .clearSessions();
+                                        context
+                                            .read<SubjectProvider>()
+                                            .reload();
                                         Navigator.pop(ctx);
-                                        ScaffoldMessenger.of(context).showSnackBar(
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
                                           SnackBar(
-                                            content: const Text('Progreso borrado.'),
-                                            backgroundColor: NeuralDesignSystem.pink,
+                                            content: const Text(
+                                              'Progreso borrado.',
+                                            ),
+                                            backgroundColor:
+                                                NeuralDesignSystem.pink,
                                             behavior: SnackBarBehavior.floating,
                                             shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(12)),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
                                           ),
                                         );
                                       },
-                                      child: const Text('Borrar',
-                                          style: TextStyle(color: NeuralDesignSystem.pink)),
+                                      child: const Text(
+                                        'Borrar',
+                                        style: TextStyle(
+                                          color: NeuralDesignSystem.pink,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
                               );
                             },
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 8,
+                            ),
                             leading: Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: NeuralDesignSystem.pink.withValues(alpha: 0.12),
+                                color: NeuralDesignSystem.pink.withValues(
+                                  alpha: 0.12,
+                                ),
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                    color: NeuralDesignSystem.pink.withValues(alpha: 0.25)),
+                                  color: NeuralDesignSystem.pink.withValues(
+                                    alpha: 0.25,
+                                  ),
+                                ),
                               ),
-                              child: const Icon(Icons.delete_forever_rounded,
-                                  color: NeuralDesignSystem.pink, size: 22),
+                              child: const Icon(
+                                Icons.delete_forever_rounded,
+                                color: NeuralDesignSystem.pink,
+                                size: 22,
+                              ),
                             ),
-                            title: const Text('Borrar progreso',
-                                style: TextStyle(
-                                    color: _text,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter')),
-                            subtitle: Text('Rachas, niveles y tarjetas',
-                                style: TextStyle(
-                                    color: _muted.withValues(alpha: 0.7), fontSize: 13)),
-                            trailing:
-                                Icon(Icons.chevron_right, color: _muted.withValues(alpha: 0.5)),
+                            title: const Text(
+                              'Borrar progreso',
+                              style: TextStyle(
+                                color: _text,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontFamily: 'Inter',
+                              ),
+                            ),
+                            subtitle: Text(
+                              'Rachas, niveles y tarjetas',
+                              style: TextStyle(
+                                color: _muted.withValues(alpha: 0.7),
+                                fontSize: 13,
+                              ),
+                            ),
+                            trailing: Icon(
+                              Icons.chevron_right,
+                              color: _muted.withValues(alpha: 0.5),
+                            ),
                           ),
                         ],
                       ),
@@ -472,38 +613,61 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       decoration: BoxDecoration(
                         color: _cardBg.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.08),
+                        ),
                       ),
                       child: ListTile(
                         onTap: () async {
                           final authService = context.read<AuthService>();
-                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          Navigator.of(
+                            context,
+                          ).popUntil((route) => route.isFirst);
                           await authService.signOut();
                         },
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
                         leading: Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: NeuralDesignSystem.pink.withValues(alpha: 0.12),
+                            color: NeuralDesignSystem.pink.withValues(
+                              alpha: 0.12,
+                            ),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                                color: NeuralDesignSystem.pink.withValues(alpha: 0.25)),
+                              color: NeuralDesignSystem.pink.withValues(
+                                alpha: 0.25,
+                              ),
+                            ),
                           ),
-                          child: const Icon(Icons.logout_rounded,
-                              color: NeuralDesignSystem.pink, size: 22),
+                          child: const Icon(
+                            Icons.logout_rounded,
+                            color: NeuralDesignSystem.pink,
+                            size: 22,
+                          ),
                         ),
-                        title: const Text('Cerrar sesión',
-                            style: TextStyle(
-                                color: _text,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontFamily: 'Inter')),
-                        subtitle: Text('Salir de tu cuenta de Google',
-                            style:
-                                TextStyle(color: _muted.withValues(alpha: 0.7), fontSize: 13)),
-                        trailing:
-                            Icon(Icons.chevron_right, color: _muted.withValues(alpha: 0.5)),
+                        title: const Text(
+                          'Cerrar sesión',
+                          style: TextStyle(
+                            color: _text,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            fontFamily: 'Inter',
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Salir de tu cuenta de Google',
+                          style: TextStyle(
+                            color: _muted.withValues(alpha: 0.7),
+                            fontSize: 13,
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.chevron_right,
+                          color: _muted.withValues(alpha: 0.5),
+                        ),
                       ),
                     ),
                   ),

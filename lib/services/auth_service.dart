@@ -30,47 +30,38 @@ class AuthService extends ChangeNotifier {
   bool _initStarted = false;
 
   AuthService() {
-    // Don't block - initialize in background
+    // Mark as not initializing immediately - never block
+    _isInitializing = false;
     if (!_initStarted) {
       _initStarted = true;
-      // Set to not initializing immediately to unblock UI
-      _isInitializing = false;
-      notifyListeners();
-      // Then do the actual check in background
+      // Check auth in background, don't wait
       Future.microtask(_checkInitialAuth);
     }
   }
 
   Future<void> _checkInitialAuth() async {
     try {
-      // In web with demo mode, skip expensive checks
+      // In web with demo mode, skip checks entirely
       if (AppConfig.isDemoMode) {
-        _isInitializing = false;
         _isAuthorized = true;
-        notifyListeners();
         return;
       }
 
       if (currentUser != null) {
-        // Agregar timeout de 3 segundos para la verificación de autorización
+        // Short timeout for verification
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 3),
+          const Duration(seconds: 2),
           onTimeout: () {
-            debugPrint('Authorization check timeout - allowing demo access');
+            debugPrint('Auth check timeout');
             return false;
           },
         );
-      } else {
-        // No user, go to login screen
-        _isAuthorized = false;
       }
     } catch (e) {
-      debugPrint('Error in initial auth check: $e');
+      debugPrint('Auth check error: $e');
       _isAuthorized = false;
-    } finally {
-      _isInitializing = false;
-      notifyListeners();
     }
+    // Don't call notifyListeners - AuthWrapper doesn't wait for this anyway
   }
 
   void _setLoading(bool value) {
