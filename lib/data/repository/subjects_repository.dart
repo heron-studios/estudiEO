@@ -108,13 +108,13 @@ class SubjectsRepository {
     if (AppConfig.isDemoMode) {
       // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
       final Map<String, int> demoLimits = {
-        'mat_1': 2,
-        'com_1': 2,
-        'cs_1': 2,
-        'cta_1': 1,
-        'pfrh_1': 1,
-        'rv_1': 1,
-        'rm_1': 1,
+        'mat_algebra': 2,
+        'eo_pnp_reglas_ortograficas_ext_10q': 2,
+        'cs_t1': 2,
+        'cta_materia_energia': 1,
+        'pfrh_persona_familia': 1,
+        'eo_pnp_sinonimos_ext_10q': 1,
+        'rm_sucesiones': 1,
       };
 
       if (demoLimits.containsKey(topicId)) {

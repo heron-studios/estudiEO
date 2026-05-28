@@ -1,0 +1,366 @@
+TOPIC_ID: eo_pnp_literatura_peruana_rebuscada_ext_10q
+TOPIC_NAME: Literatura Peruana Rebuscada (Teoría Completa 10Q)
+PREFIX: lit_per_reb_10q
+
+====== NIVEL FÁCIL ======
+--- TEORÍA ---
+La **Literatura Peruana** inicia su recorrido con la **tradición andina prehispánica**, una etapa estrictamente oral, anónima, colectiva, panteísta (adoración a la naturaleza) y agrarista (vinculada al trabajo del campo). Para comprenderla, es vital conocer la cosmovisión andina, que dividía el mundo en tres planos: el **Hanan Pacha** (mundo de arriba, morada de dioses como el Sol o Wiracocha), el **Kay Pacha** (mundo terrenal de los hombres y los apus) y el **Uku Pacha** (mundo de adentro o de los muertos). Sus dos géneros líricos fundamentales fueron el **Haylli** (canto épico, guerrero o agrario de triunfo) y el **Harawi** (canto de tono intimista, amoroso y melancólico). En el teatro destaca el drama *Ollantay*, de autor anónimo, donde resalta el personaje gracioso o bufón llamado **Piqui Chaqui**.
+
+Con la invasión española (1532) surge la **Literatura del Descubrimiento y la Conquista**, donde la "Crónica" es el género rey. Destacan el **Inca Garcilaso de la Vega** ("primer mestizo biológico y espiritual de América") con sus *Comentarios Reales de los Incas*, y el cronista indígena **Felipe Guamán Poma de Ayala**, autor de la *Nueva Corónica y Buen Gobierno*, una extensa carta ilustrada al rey de España denunciando los abusos coloniales.
+
+Durante la **Emancipación**, el arequipeño **Mariano Melgar** ("El poeta mártir") se convierte en el precursor del Romanticismo al crear el **Yaraví**, una fusión de la métrica española con el melancólico *harawi* quechua. En la **República**, el primer movimiento es el **Costumbrismo**, dividido en el anticriollismo aristocrático de **Felipe Pardo y Aliaga** (autor de *Un viaje* o "El niño Goyito") y el criollismo popular de **Manuel Ascencio Segura** ("Padre del teatro nacional" y autor de *Ña Catita*). Le sigue el **Romanticismo**, liderado por **Carlos Augusto Salaverry** (autor del poema *Acuérdate de mí* en su obra *Cartas a un ángel*) y **Ricardo Palma** ("El Bibliotecario Mendigo"), creador de las célebres *Tradiciones peruanas*. Finalmente, tras la Guerra del Pacífico, surge el **Realismo**, encabezado por **Manuel González Prada**, autor de *Pájinas libres* y del *Discurso en el Politeama* con su célebre frase: "¡Los viejos a la tumba, los jóvenes a la obra!".
+
+--- PREGUNTAS ---
+Pregunta 1: Dentro de la cosmovisión andina que sustentaba la literatura quechua, ¿cómo se denominaba al "mundo de arriba", considerado la morada de los dioses máximos como Wiracocha y el dios Sol (Inti)?
+A) Uku Pacha
+B) Kay Pacha
+C) Hanan Pacha Correcta
+D) Pachacámac
+E) Pariacaca
+EXP: La mitología incaica dividía el universo en tres planos: Hanan Pacha (mundo de arriba, de los dioses), Kay Pacha (mundo terrenal, de los hombres) y Uku Pacha (mundo de adentro, de los muertos).
+
+Pregunta 2: ¿Cuál de las siguientes especies de la lírica quechua prehispánica era un himno de triunfo que se entonaba colectivamente para celebrar victorias militares, fiestas religiosas o éxitos agrícolas?
+A) Ayataqui
+B) Harawi
+C) Aymoray
+D) Haylli Correcta
+E) Huanca
+EXP: El Haylli era el canto épico, de triunfo y alegría (guerrero, agrario o religioso), a diferencia del Harawi que era íntimo y nostálgico.
+
+Pregunta 3: En el célebre drama quechua de la época incaica titulado "Ollantay", ¿cuál es el nombre del personaje que cumple la función literaria de gracioso o bufón, acompañando al protagonista?
+A) Rumi Ñahui
+B) Piqui Chaqui Correcta
+C) Willac Umu
+D) Orcco Huaranca
+E) Ima Sumac
+EXP: Piqui Chaqui es el sirviente y acompañante de Ollantay, quien a través de sus intervenciones aporta el toque de humor o comicidad a la obra dramática.
+
+Pregunta 4: ¿Qué cronista indígena es el autor de una extensa carta dirigida al rey de España provista de casi 400 dibujos, donde denuncia los crudos abusos de los encomenderos sobre los indios?
+A) Juan de Santa Cruz Pachacuti
+B) Titu Cusi Yupanqui
+C) Inca Garcilaso de la Vega
+D) Felipe Guamán Poma de Ayala Correcta
+E) Blas Valera
+EXP: Felipe Guamán Poma de Ayala escribió "El primer Nueva Crónica y buen gobierno", una monumental obra ilustrada que expone la destrucción del mundo andino y exige un mejor trato para los indígenas.
+
+Pregunta 5: ¿A qué ilustre escritor peruano de la etapa de la Conquista se le considera con justicia como el "primer mestizo biológico y espiritual de América"?
+A) Pedro Cieza de León
+B) Juan de Betanzos
+C) Inca Garcilaso de la Vega Correcta
+D) Felipe Pardo y Aliaga
+E) Alonso Borregán
+EXP: El Inca Garcilaso de la Vega, hijo de un capitán español y una noble incaica, recibe este apelativo por haber sabido asumir, conciliar y expresar magistralmente sus dos herencias culturales.
+
+Pregunta 6: El poeta arequipeño Mariano Melgar es considerado el gran precursor del Romanticismo peruano y creador de una especie lírica mestiza. ¿Cuál fue el aporte literario en el que fusionó la métrica española con el "harawi" quechua?
+A) El epigrama
+B) La elegía andina
+C) El huayno
+D) El yaraví Correcta
+E) La oda
+EXP: Melgar adaptó el antiguo canto quechua de dolor (harawi) a los moldes y métricas occidentales traídas de España, instaurando la especie poética del yaraví.
+
+Pregunta 7: En el Costumbrismo peruano existieron dos vertientes. ¿Qué autor es el máximo representante del anticriollismo, poseedor de una actitud aristocrática y autor del artículo de costumbres "Un viaje" (El niño Goyito)?
+A) Manuel Ascencio Segura
+B) Felipe Pardo y Aliaga Correcta
+C) Ricardo Palma
+D) Mariano Melgar
+E) Manuel González Prada
+EXP: Felipe Pardo y Aliaga lideró la vertiente anticriollista y conservadora, desdeñando las costumbres populares limeñas a través de agudas sátiras.
+
+Pregunta 8: ¿Quién es reconocido históricamente como el "Padre del teatro nacional" peruano por retratar magistralmente la idiosincrasia del pueblo en comedias de estilo criollista como "Ña Catita"?
+A) Carlos Augusto Salaverry
+B) Felipe Pardo y Aliaga
+C) Manuel Ascencio Segura Correcta
+D) Ricardo Palma
+E) Leonidas Yerovi
+EXP: Manuel Ascencio Segura lideró la vertiente del criollismo utilizando un lenguaje popular y festivo en comedias teatrales que criticaban a la clase media limeña.
+
+Pregunta 9: Es el poeta cumbre del romanticismo sentimental en el Perú, célebre por su nostálgico poema "Acuérdate de mí", el cual se encuentra inserto en su libro "Cartas a un ángel":
+A) Clemente Althaus
+B) Carlos Augusto Salaverry Correcta
+C) Luis Benjamín Cisneros
+D) Ricardo Palma
+E) Manuel Nicolás Corpancho
+EXP: Carlos Augusto Salaverry es considerado el mejor poeta lírico peruano del siglo XIX, destacando por su melancolía y pesimismo en su poemario "Cartas a un ángel".
+
+Pregunta 10: Tras la Guerra del Pacífico surgió el Realismo peruano. ¿Qué figura central pronunció la célebre arenga patriótica "¡Los viejos a la tumba, los jóvenes a la obra!" en su "Discurso en el Politeama"?
+A) Clorinda Matto de Turner
+B) José Carlos Mariátegui
+C) Manuel González Prada Correcta
+D) Abraham Valdelomar
+E) Mercedes Cabello de Carbonera
+EXP: En 1888, Manuel González Prada, máximo exponente del Realismo, criticó duramente la descomposición moral de las autoridades e hizo un llamado a las nuevas juventudes.
+
+
+====== NIVEL MEDIO ======
+--- TEORÍA ---
+En este nivel profundizamos en figuras y detalles específicos del desarrollo literario peruano. Durante la etapa colonial y virreinal (siglos XVI y XVII), la poesía estuvo influenciada fuertemente por el clasicismo y el barroquismo español. Destacan figuras enigmáticas bajo seudónimos como **Clarinda** (autora del *Discurso en loor de poesía*) y **Amarilis** (autora de la *Epístola a Belardo*, dedicada a Lope de Vega). La cúspide del barroquismo peruano (estilo culterano) está representada por el clérigo mestizo **Juan de Espinoza Medrano**, apodado **"El Lunarejo"**, quien enalteció a Góngora en su obra *Apologético en favor de D. Luis de Góngora*. Por la vertiente de la sátira colonial resplandece **Juan del Valle y Caviedes**, autor de *Diente del Parnaso*, un fiero ataque crítico a los médicos de su tiempo. 
+
+En los albores de la República, además del costumbrismo, es notable la obra de **Flora Tristán**, escritora peruano-francesa autora de *Peregrinaciones de una paria* (1838), diario fundamental para entender los conflictos de la incipiente república. En 1848 irrumpe **Narciso Aréstegui** con *El padre Horán*, considerada la primera novela de la literatura peruana. Durante la etapa del Realismo literario (fines del siglo XIX), cobró un rol protagónico la narrativa de mujeres valientes. **Mercedes Cabello de Carbonera** fue la iniciadora de la novela realista peruana con su obra *Blanca Sol* (1888). Contemporánea a ella es la cuzqueña **Clorinda Matto de Turner**, considerada fundadora del indigenismo literario por su polémica novela *Aves sin nido* (1889), que denuncia los abusos de curas y gobernadores contra los indios, exponiendo el trágico amor de Manuel y Margarita. También resalta **María Nieves y Bustamante** con su novela histórica épica *Jorge, el hijo del pueblo*.
+
+A inicios del siglo XX, el **Modernismo** alcanza su plenitud con **José Santos Chocano**, conocido mundialmente como **"El Cantor de América"**. Su grandilocuente poesía exalta la geografía, el trópico y el orgullo del mestizaje en su libro principal *Alma América*, abriendo el poema "Blasón" con la inmortal frase: *"Soy el cantor de América autóctono y salvaje..."*.
+
+--- PREGUNTAS ---
+Pregunta 1: En la literatura peruana del siglo XIX, ¿qué autor cuzqueño escribió "El padre Horán" (1848), obra catalogada históricamente como la primera novela de la literatura peruana?
+A) Luis Benjamín Cisneros
+B) Pedro Paz Soldán y Unanue
+C) Narciso Aréstegui Correcta
+D) Clemente Althaus
+E) José Arnaldo Márquez
+EXP: Narciso Aréstegui es el autor de "El padre Horán", considerada la primera novela peruana y una de las grandes precursoras de la narrativa indigenista en Sudamérica.
+
+Pregunta 2: ¿Qué escritora de la etapa del Realismo fue la iniciadora de la novela realista peruana y autora de la exitosa novela de crítica social "Blanca Sol" (1888)?
+A) María Nieves y Bustamante
+B) Flora Tristán
+C) Mercedes Cabello de Carbonera Correcta
+D) Clorinda Matto de Turner
+E) Juana Manuela Gorriti
+EXP: Mercedes Cabello de Carbonera escribió seis novelas de intención crítica y social, destacando "Blanca Sol", siendo incomprendida por la sociedad limeña de su tiempo por sus posturas feministas.
+
+Pregunta 3: El costumbrismo y la sátira del siglo XIX tuvieron diversas plumas. ¿Bajo qué seudónimo es mundialmente conocido el escritor, filólogo y traductor limeño Pedro Paz Soldán y Unanue, autor del "Diccionario de peruanismos"?
+A) Sansón Carrasco
+B) El Ciego de La Merced
+C) Juan de Arona Correcta
+D) El Murciélago
+E) El Tunante
+EXP: Pedro Paz Soldán y Unanue utilizó el reconocido seudónimo "Juan de Arona". Fue un destacado intelectual del siglo XIX, famoso por sus comedias y su obra filológica.
+
+Pregunta 4: Es una obra fundamental de la incipiente etapa republicana; se trata de un diario de viaje escrito por Flora Tristán donde analiza las bárbaras costumbres y la inestabilidad de la nueva nación:
+A) Aletazos del murciélago
+B) Peregrinaciones de una paria Correcta
+C) Tradiciones cuzqueñas
+D) Jorge, el hijo del pueblo
+E) Mephis
+EXP: Flora Tristán relata su viaje al Perú (1833-1834) en "Peregrinaciones de una paria", exponiendo con agudeza las deficiencias e injusticias de la sociedad criolla de la época.
+
+Pregunta 5: ¿Qué importante novela realista de Clorinda Matto de Turner la consagró como la precursora del indigenismo al denunciar abiertamente los abusos del clero y las autoridades en Kíllac?
+A) Matalaché
+B) Herencia
+C) Índole
+D) Aves sin nido Correcta
+E) Tradiciones cuzqueñas
+EXP: En "Aves sin nido" (1889), Clorinda Matto de Turner narra el trágico destino de los indígenas y de los jóvenes Manuel y Margarita, sentando las bases del indigenismo latinoamericano.
+
+Pregunta 6: Durante el apogeo de la literatura colonial en el Perú, una enigmática autora escribió un poema en forma de silva dirigido como una declaración de admiración y amor al gran poeta español Lope de Vega. ¿Cuál fue su seudónimo?
+A) Clarinda
+B) Amarilis Correcta
+C) Micaela
+D) Ismena
+E) Silvia
+EXP: "Amarilis" es el seudónimo de la autora de la "Epístola a Belardo", poema que el propio Lope de Vega reprodujo luego en su obra "La Filomena" en 1621.
+
+Pregunta 7: Figura cumbre del barroquismo peruano (siglo XVII), brillante humanista mestizo conocido como "El Lunarejo", que escribió una colosal defensa de la poesía culterana española:
+A) Juan del Valle y Caviedes
+B) Diego de Hojeda
+C) Juan de Espinoza Medrano Correcta
+D) Pedro Peralta y Barnuevo
+E) Lorenzo de las Llamosas
+EXP: Juan de Espinoza Medrano, "El Lunarejo", nacido en Apurímac, fue un intelectual formidable que escribió el "Apologético en favor de D. Luis de Góngora".
+
+Pregunta 8: ¿Cuál es la obra fundamental de Juan del Valle y Caviedes, considerado el mayor poeta satírico de la colonia, donde lanza hirientes sátiras contra los médicos y la sociedad limeña de fines del siglo XVII?
+A) La Cristiada
+B) Lima Fundada
+C) Diente del Parnaso Correcta
+D) Telémaco en la isla de Calipso
+E) La novena maravilla
+EXP: "Diente del Parnaso" reúne de manera póstuma la obra poética festiva y mordaz de Juan del Valle y Caviedes, fustigador del gremio médico colonial.
+
+Pregunta 9: En la literatura de la Emancipación, destaca un poeta de corte neoclásico nacido en Guayaquil (cuando pertenecía al Perú) que escribió versos épicos celebrando el triunfo militar de Simón Bolívar:
+A) José Faustino Sánchez Carrión
+B) Mariano Melgar
+C) José Joaquín Olmedo Correcta
+D) José Joaquín de Larriva
+E) Hipólito Unanue
+EXP: José Joaquín Olmedo es el autor de la célebre "Oda a la victoria de Junín", un canto épico al estilo grecolatino que exalta el triunfo independentista.
+
+Pregunta 10: ¿Con qué histórico apelativo es internacionalmente reconocido el poeta modernista José Santos Chocano, famoso por su poesía épica y retórica que exalta los Andes, la selva y el mestizaje?
+A) El Conde de Lemos
+B) El Cantor de América Correcta
+C) El Poeta Mártir
+D) El Bibliotecario Mendigo
+E) El Poeta Universal
+EXP: José Santos Chocano, líder del modernismo peruano, fue bautizado como "El Cantor de América" por su grandilocuente exaltación poética del continente en su obra "Alma América".
+
+
+====== NIVEL DIFÍCIL ======
+--- TEORÍA ---
+El paso hacia la modernidad literaria inicia con el **Posmodernismo** (transición). Aquí surge la revista *Colónida* (1916) dirigida por **Abraham Valdelomar**, el "Conde de Lemos", quien impuso una estética aldeana y nostálgica que retrató la provincia, brillando en su cuento *El Caballero Carmelo*. Paralelamente, la poesía peruana da un salto a la originalidad pura con **José María Eguren**, poeta que rehuyó a la retórica ruidosa para crear una poética simbolista, cromática y de personajes de ensueño en sus obras *Simbólicas* y *La canción de las figuras* (donde está *La niña de la lámpara azul*). 
+
+La vanguardia explota en los años 20. El máximo profeta es **César Vallejo**. En 1922, tras una injusta carcelería y la muerte de su madre, publica ***Trilce***, libro que pulveriza la sintaxis, crea neologismos y subvierte la ortografía, siendo la obra cumbre del **Vanguardismo**. Otros notables vanguardistas fueron **Martín Adán** (seudónimo de Rafael de la Fuente Benavides), autor de la novela de corte poético y ruptura *La casa de cartón* (1928), además de Carlos Oquendo de Amat (autor del rupturista *5 metros de poemas*), Emilio Adolfo Westphalen y César Moro.
+
+A la par surge el **Indigenismo**, fundado formalmente por **Enrique López Albújar** (seudónimo "Sansón Carrasco") con sus *Cuentos andinos* (1920) y la novela negrista *Matalaché*. Este movimiento fue elevado a la cima universal por Ciro Alegría y, fundamentalmente, por **José María Arguedas**. Arguedas, autor de *Los ríos profundos* y *Todas las sangres*, escribió una obra póstuma inconclusa que retrata el caótico proceso de modernización por el *boom* pesquero en Chimbote: *El zorro de arriba y el zorro de abajo* (1971). Por otro lado, la vertiente neoindigenista o regionalista de los 70 la coronó **Manuel Scorza** con *Redoble por Rancas*, exponiendo los abusos transnacionales en la minería de Cerro de Pasco. 
+
+La **Generación del 50** relató el monstruoso crecimiento urbano de Lima por la migración andina. El realismo urbano consagró a **Julio Ramón Ribeyro** como el maestro absoluto del cuento hispanoamericano con su antología *La palabra del mudo*, dándole voz a los marginados. En poesía femenina despuntó la brillante y existencial **Blanca Varela**, amadrinada por Octavio Paz, con su magistral poemario *Ese puerto existe*.
+
+--- PREGUNTAS ---
+Pregunta 1: El movimiento Vanguardista en el Perú tuvo brillantes exponentes de ruptura literaria. ¿Cuál es el seudónimo literario del autor de la innovadora novela "La casa de cartón" (1928), cuyo nombre real fue Rafael de la Fuente Benavides?
+A) César Moro
+B) Martín Adán Correcta
+C) Emilio Adolfo Westphalen
+D) Carlos Oquendo de Amat
+E) Abraham Valdelomar
+EXP: Rafael de la Fuente Benavides empleó el seudónimo de Martín Adán para publicar "La casa de cartón", una obra fundamental que introduce el vanguardismo en la narrativa urbana peruana.
+
+Pregunta 2: ¿Quién fue el brillante escritor posmodernista, creador de la estética aldeana, que utilizó el seudónimo de "El Conde de Lemos" y dirigió la efímera pero influyente revista "Colónida" (1916)?
+A) José Carlos Mariátegui
+B) José Santos Chocano
+C) Abraham Valdelomar Correcta
+D) Manuel González Prada
+E) José María Eguren
+EXP: Abraham Valdelomar lideró el grupo Colónida y escribió obras maestras como el cuento "El Caballero Carmelo", rescatando la ternura del hogar provinciano en la costa.
+
+Pregunta 3: Poeta insular de principios del siglo XX, próximo al simbolismo europeo, que impregnó la lírica peruana de personajes infantiles, ensueño y puro cromatismo en sus obras "Simbólicas" y "La canción de las figuras":
+A) José Santos Chocano
+B) César Vallejo
+C) Carlos Augusto Salaverry
+D) José María Eguren Correcta
+E) Martín Adán
+EXP: José María Eguren reaccionó contra la ruidosa retórica modernista elaborando una poesía pura, musical y llena de sugerencias, alejándose del compromiso político de su época.
+
+Pregunta 4: Obra cumbre de la poesía peruana e hispanoamericana publicada en 1922 que violenta radicalmente el lenguaje, rompe los esquemas sintácticos y ortográficos, e instaura el Vanguardismo absoluto:
+A) Los heraldos negros
+B) Poemas humanos
+C) Trilce Correcta
+D) 5 metros de poemas
+E) La casa de cartón
+EXP: Escrita por César Vallejo, "Trilce" es considerada la obra de poesía más vanguardista e innovadora en lengua española por su violento hermetismo y ruptura lógica.
+
+Pregunta 5: De las siguientes opciones, ¿qué destacado poeta vanguardista peruano compuso el libro fuertemente visual y experimental titulado "5 metros de poemas"?
+A) César Moro
+B) Martín Adán
+C) Alberto Hidalgo
+D) Carlos Oquendo de Amat Correcta
+E) Xavier Abril
+EXP: Carlos Oquendo de Amat es el autor de "5 metros de poemas", un libro-objeto que se desdobla como un acordeón, siendo un hito del vanguardismo peruano.
+
+Pregunta 6: Es considerado el iniciador formal del indigenismo literario al retratar la cruda psicología de los andes desde su rol de juez. Publicó "Cuentos andinos" y utilizó el seudónimo de "Sansón Carrasco":
+A) José María Arguedas
+B) Ciro Alegría
+C) Enrique López Albújar Correcta
+D) Manuel Scorza
+E) Abelardo Gamarra
+EXP: Enrique López Albújar inauguró la visión indigenista en los años 20 alejándose de la idealización romántica, mostrando la dura realidad criminal andina en "Cuentos andinos".
+
+Pregunta 7: ¿Qué compleja novela póstuma de José María Arguedas, de profunda interpretación antropológica, aborda el caótico proceso de modernización y pérdida de identidad generado por el boom pesquero en Chimbote?
+A) Yawar Fiesta
+B) Los ríos profundos
+C) Todas las sangres
+D) El Sexto
+E) El zorro de arriba y el zorro de abajo Correcta
+EXP: "El zorro de arriba y el zorro de abajo" (1971) es la última novela, inconclusa, de Arguedas, donde se intercalan sus diarios suicidas con la desgarradora historia de Chimbote.
+
+Pregunta 8: Narrador cumbre de la Generación del 50, que en su magistral antología "La palabra del mudo" se propuso brindarle voz literaria a los sujetos marginales, desplazados y perdedores de la urbe limeña:
+A) Oswaldo Reynoso
+B) Enrique Congrains
+C) Julio Ramón Ribeyro Correcta
+D) Alfredo Bryce Echenique
+E) Mario Vargas Llosa
+EXP: Julio Ramón Ribeyro es el máximo exponente del realismo urbano; en sus cuentos (como "Los gallinazos sin plumas") la frustración y el silencio son los protagonistas absolutos.
+
+Pregunta 9: Obra adscrita a la Generación del 70 (y al neoindigenismo) que denuncia la masacre de campesinos andinos enfrentados a la corporación minera transnacional en Cerro de Pasco:
+A) Redoble por Rancas Correcta
+B) El mundo es ancho y ajeno
+C) La violencia del tiempo
+D) Raza de bronce
+E) Todas las sangres
+EXP: Escrita por Manuel Scorza, "Redoble por Rancas" (1970) inicia una saga andina de denuncia épica sobre el imperialismo minero en las alturas peruanas.
+
+Pregunta 10: Insigne poetisa peruana de la Generación del 50 que inauguró su producción literaria con un prólogo de Octavio Paz en su magistral y desgarrador poemario "Ese puerto existe":
+A) Magda Portal
+B) Blanca Varela Correcta
+C) Carmen Ollé
+D) María Emilia Cornejo
+E) Rosa Natalia Carbonell
+EXP: Blanca Varela es la figura cumbre de la lírica femenina de la Generación del 50, caracterizada por un estilo muy contenido, existencial y de alta densidad filosófica.
+
+
+====== NIVEL EXTREMO ======
+--- TEORÍA ---
+El nivel extremo requiere conocimientos específicos sobre los cronistas "menores", investigadores pioneros, movimientos literarios rupturistas de las últimas décadas (60s, 70s y 80s) y las técnicas de la narrativa peruana.
+
+En la Colonia, destacó el dramaturgo **Fray Francisco del Castillo Andraca**, conocido como **"El ciego de La Merced"**, el mejor autor teatral de la colonia, autor de *La conquista del Perú*. En el Neoclasicismo brilló **Pedro Peralta y Barnuevo**, erudito polímata limeño apodado **"Doctor Océano"**, autor de *Lima Fundada* (poema épico de 1183 octavas reales). Además, **Alonso Carrió de la Vandera** utilizó el seudónimo de **Concolorcorvo** para publicar el *Lazarillo de ciegos caminantes*, obra erróneamente atribuida a Calixto Bustamante Carlos Inca. En cuanto al rescate del quechua a inicios del siglo XX, es vital la figura de **Adolfo Vienrich**, quien recopiló fábulas y cantos en *Tarmap pacha huaray* (**Azucenas quechuas**, 1905). Como dato adicional de la crónica andina, **Juan de Santa Cruz Pachacuti Yamqui Salcamaygua** redactó su *Relación de antigüedades...* (1620) en un rudimentario español fuertemente quechuizado.
+
+Avanzando a las décadas recientes: El **Movimiento Hora Zero** (1970) revolucionó la poesía con el "poema integral", exigiendo una revolución social frente al academicismo burgués limeño. Sus fundadores y autores del manifiesto *Palabras Urgentes* fueron **Juan Ramírez Ruiz** y **Jorge Pimentel** (con Enrique Verástegui destacando luego). A fines de los 60, irrumpe el **Grupo Narración** de corte maoísta, donde brilla **Miguel Gutiérrez** con su monumental novela de más de mil páginas *La violencia del tiempo*, y **Oswaldo Reynoso** con *Los inocentes* y *Los eunucos inmortales*. En la durísima década del 80 (violencia política), el pesimismo y la rebeldía extrema se condensaron en el movimiento poético **Kloaka** (1982-1984), liderado por **Roger Santiváñez** y **Domingo de Ramos**, quienes editaron la antología *La última cena*. 
+
+A nivel técnico, Mario Vargas Llosa llevó la novela a cotas magistrales usando la técnica de **"vasos comunicantes"**: la fusión sorpresiva y simultánea de múltiples diálogos que pertenecen a tiempos y lugares distintos dentro de un mismo párrafo, otorgando atemporalidad y densidad al relato (como en *Conversación en La Catedral*).
+
+--- PREGUNTAS ---
+Pregunta 1: En las primeras décadas del siglo XX se dio una verdadera apertura al rescate de la tradición oral quechua. ¿Qué investigador y recopilador publicó las valiosas obras "Azucenas quechuas" (1905) y "Fábulas quechuas" (1906)?
+A) Martín Lienhard
+B) Gerard Taylor
+C) Antonio Cornejo Polar
+D) Edmundo Bendezú
+E) Adolfo Vienrich Correcta
+EXP: Adolfo Vienrich fue un folclorista y estudioso pionero que rescató la tradición oral andina bajo los títulos bilingües "Tarmap pacha huaray" (Azucenas quechuas) y "Tarmapap pachahuarainin".
+
+Pregunta 2: ¿Qué cronista indígena de los siglos XVI-XVII es el autor de la "Relación de antigüedades de este reino del Piru", destacando lingüísticamente por expresarse en un rudimentario español fuertemente quechuizado?
+A) Titu Cusi Yupanqui
+B) Felipe Guamán Poma de Ayala
+C) Juan de Santa Cruz Pachacuti Yamqui Salcamaygua Correcta
+D) Blas Valera
+E) Cristóbal de Molina "el cuzqueño"
+EXP: Perteneciente al linaje de los collaguas, Juan de Santa Cruz Pachacuti legó un documento clave para entender la cosmovisión andina, caracterizado por su sintaxis y vocabulario híbridos.
+
+Pregunta 3: Es indudablemente el mejor autor teatral de la época colonial. Fraile perteneciente a la Orden de la Merced, conocido históricamente como "El ciego de La Merced" y autor del drama "La conquista del Perú":
+A) Luis Antonio de Oviedo y Herrera
+B) Fray Francisco del Castillo Andraca Correcta
+C) José Bermúdez de la Torre
+D) Juan de Espinoza Medrano
+E) Pablo de Olavide
+EXP: Fray Francisco del Castillo Andraca es un destacado poeta y dramaturgo colonial, famoso por introducir una incipiente perspectiva crítica de la conquista en el teatro.
+
+Pregunta 4: Notable erudito limeño de la primera mitad del siglo XVIII que, debido a su inconmensurable conocimiento en múltiples áreas del saber, mereció el apelativo de "Doctor Océano" y compuso el épico poema neoclásico "Lima Fundada":
+A) Alonso Carrió de la Vandera
+B) Pedro Peralta y Barnuevo Correcta
+C) Lorenzo de las Llamosas
+D) Esteban Terralla y Landa
+E) José de Acosta
+EXP: Pedro Peralta y Barnuevo fue una de las luminarias de la Academia de Palacio; su vastísima cultura científica, literaria y jurídica le valió el apodo de Doctor Océano.
+
+Pregunta 5: Durante la etapa colonial en el Perú circuló un célebre libro de viaje satírico titulado "Lazarillo de ciegos caminantes", erróneamente atribuido al inicio a Calixto Bustamante Carlos Inca. ¿Quién fue su verdadero autor bajo el seudónimo de "Concolorcorvo"?
+A) Alonso Carrió de la Vandera Correcta
+B) Esteban Terralla y Landa
+C) Pablo de Olavide
+D) Juan del Valle y Caviedes
+E) Fray Reginaldo de Lizárraga
+EXP: Alonso Carrió de la Vandera utilizó el seudónimo de Concolorcorvo para relatar con ironía picaresca su viaje burocrático desde Buenos Aires hasta Lima.
+
+Pregunta 6: En 1970 irrumpe de manera agresiva un movimiento vanguardista de ruptura que proclama la búsqueda del "poema integral" y la superación del arte burgués limeño. Redactores del manifiesto "Palabras Urgentes", los fundadores de Hora Zero fueron:
+A) Miguel Gutiérrez y Oswaldo Reynoso
+B) Roger Santiváñez y Domingo de Ramos
+C) Enrique Verástegui y Carmen Ollé
+D) Juan Ramírez Ruiz y Jorge Pimentel Correcta
+E) José Watanabe y Antonio Cillóniz
+EXP: Juan Ramírez Ruiz y Jorge Pimentel fundaron Hora Zero en las aulas de la Universidad Federico Villarreal, marcando el pulso radical y urbano de la Generación del 70.
+
+Pregunta 7: Pertenece al "Grupo Narración" de finales de los años 60; autor de una torva y colosal novela histórica y de crítica social de más de mil páginas titulada "La violencia del tiempo", comparada con el cronicón de Balzac:
+A) Alfredo Bryce Echenique
+B) Oswaldo Reynoso
+C) Miguel Gutiérrez Correcta
+D) Edgardo Rivera Martínez
+E) Fernando Ampuero
+EXP: Miguel Gutiérrez, desencantado de su aventura política en China junto al Grupo Narración, maduró su genio narrativo escribiendo la portentosa saga de la familia Villar, "La violencia del tiempo".
+
+Pregunta 8: Movimiento poético underground de la década de 1980 en Lima que expresó a fondo la marginalidad, la desesperanza, y la violencia extrema de la época ("guerra sucia"), liderado por Roger Santiváñez y Domingo de Ramos:
+A) Grupo Gleba Literaria
+B) Movimiento Hora Zero
+C) Grupo Narración
+D) Grupo Kloaka Correcta
+E) Poetas del Pueblo
+EXP: El Movimiento Kloaka (1982-1984) es el paradigma de la poesía rebelde y marginal de los dolorosos años 80, y sus integrantes publicaron la antología generacional "La última cena".
+
+Pregunta 9: Hito fundacional en la cultura peruana hispánica: Fue impreso en 1584 por el turinés Antonio Ricardo (primera imprenta de Sudamérica) en castellano, quechua y aimara, inaugurando la literatura colonial impresa:
+A) Nueva Corónica y Buen Gobierno
+B) Comentarios reales de los incas
+C) Doctrina Christiana y Cathecismo Correcta
+D) Peregrinación de Bartolomé Lorenzo
+E) Apologético en favor de D. Luis de Góngora
+EXP: La "Doctrina Christiana y Cathecismo para la Instrucción de los Indios" es históricamente el primer libro impreso en la ciudad de Lima (1584), en los idiomas principales del incanato y el español.
+
+Pregunta 10: Dentro del "Boom Latinoamericano", Mario Vargas Llosa patenta técnicas vanguardistas magistrales. ¿Cómo se denomina al recurso literario que fusiona simultáneamente en un solo párrafo múltiples diálogos ocurridos en distintos tiempos o lugares, obligando al lector a unificar el sentido?
+A) El dato escondido
+B) Las cajas chinas
+C) Estilo indirecto libre
+D) Vasos comunicantes Correcta
+E) Flashforward intercalado
+EXP: La técnica de "vasos comunicantes" (o diálogos telescópicos) permite a Vargas Llosa otorgar una sensación totalizante, entrelazando conversaciones distantes en una sola masa verbal sin transiciones explícitas.

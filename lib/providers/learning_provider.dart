@@ -166,7 +166,15 @@ class LearningProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Reinicia el progreso de un topic (para pruebas o reset del usuario).
+  double getScrollPosition(String topicId, Dificultad nivel) {
+    return _storage.getScrollPosition(topicId, nivel.key);
+  }
+
+  void saveScrollPosition(String topicId, Dificultad nivel, double position) {
+    _storage.saveScrollPosition(topicId, nivel.key, position);
+  }
+
+  // Reinicia el progreso de un topic (para pruebas o reset del usuario)
   void resetTopicProgress(String topicId) {
     _completedLevels.remove(topicId);
     _storage.saveLearningProgress(_completedLevels);

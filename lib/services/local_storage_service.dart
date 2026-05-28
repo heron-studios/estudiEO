@@ -206,7 +206,25 @@ class LocalStorageService {
     _storage.write(learnedQuestionsKey, learned);
   }
 
+  // ─── Scroll Position Persist ─────────────────────────
+  double getScrollPosition(String topicId, String levelKey) {
+    try {
+      final key = 'scroll_${topicId}_$levelKey';
+      return _storage.read(key) as double? ?? 0.0;
+    } catch (_) {
+      return 0.0;
+    }
+  }
+
+  void saveScrollPosition(String topicId, String levelKey, double position) {
+    try {
+      final key = 'scroll_${topicId}_$levelKey';
+      _storage.write(key, position);
+    } catch (_) {}
+  }
+
   // ─── Learning Sessions ────────────────────────────────────────────────────
+
 
   LearningSession? loadLearningSession(String topicId, Dificultad nivel) {
     try {

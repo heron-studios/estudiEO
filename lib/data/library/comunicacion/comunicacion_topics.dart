@@ -5,6 +5,7 @@ import 'reglas_ortograficas_ext_10q_theory.dart';
 import 'oracion_gramatical_ext_10q_theory.dart';
 import 'narracion_ext_10q_theory.dart';
 import 'literatura_peruana_ext_10q_theory.dart';
+import 'literatura_peruana_rebuscada_ext_10q_theory.dart';
 
 final Map<String, Topic> comunicacionTopics = {
   // Topics con teoría (modo aprendizaje guiado)
@@ -58,6 +59,19 @@ final Map<String, Topic> comunicacionTopics = {
       'medium': literaturaPeruanaExt10qTheoryMedium,
       'hard': literaturaPeruanaExt10qTheoryHard,
       'extreme': literaturaPeruanaExt10qTheoryExtreme,
+    },
+  ),
+  'eo_pnp_literatura_peruana_rebuscada_ext_10q': Topic(
+    id: 'eo_pnp_literatura_peruana_rebuscada_ext_10q',
+    subjectId: 'comunicacion',
+    name: 'Literatura Peruana Rebuscada (Teoría Completa 10Q)',
+    description: 'Estudio detallado de la literatura peruana, crónicas, movimientos rupturistas y narrativa.',
+    questionCount: 40,
+    theoryByLevel: {
+      'easy': literaturaPeruanaRebuscadaExt10qTheoryEasy,
+      'medium': literaturaPeruanaRebuscadaExt10qTheoryMedium,
+      'hard': literaturaPeruanaRebuscadaExt10qTheoryHard,
+      'extreme': literaturaPeruanaRebuscadaExt10qTheoryExtreme,
     },
   ),
   'eo_pnp_reglas_ortograficas_01': Topic(

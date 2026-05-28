@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/screens/alipio_selector_screen.dart';
-import 'package:learn/widgets/animated_grid_bg.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:learn/config/neural_design_system.dart';
 import 'package:learn/services/auth_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
           child: Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF1E293B).withValues(alpha: 0.9),
+              color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.8),
               borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
               border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
             ),
@@ -53,6 +55,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   Text(userName,
                       style: const TextStyle(
+                          fontFamily: 'Outfit',
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
@@ -82,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   _SheetItem(
                     icon: Icons.logout_rounded,
-                    color: Colors.redAccent,
+                    color: NeuralDesignSystem.pink,
                     label: 'Cerrar Sesión',
                     onTap: () async {
                       Navigator.pop(ctx);
@@ -106,8 +109,8 @@ class HomeScreen extends StatelessWidget {
     final userName = user?.displayName ?? '';
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
-      body: AnimatedGridBackground(
+      backgroundColor: NeuralDesignSystem.background,
+      body: NeuralBackgroundWrapper(
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -193,6 +196,10 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          const SizedBox(height: 10),
+
+                          // Anuncio psicoLearn
+                          const _PsicoLearnBanner(),
                           const SizedBox(height: 10),
 
                           // Row: Estudiar + Repasar
@@ -350,7 +357,7 @@ class _GlassTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF1E293B).withValues(alpha: 0.7),
+      color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.6),
       borderRadius: BorderRadius.circular(22),
       child: InkWell(
         onTap: onTap,
@@ -419,7 +426,7 @@ class _GlassCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF1E293B).withValues(alpha: 0.7),
+      color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.6),
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
         onTap: onTap,
@@ -456,6 +463,104 @@ class _IconBubble extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Icon(icon, color: color, size: 20),
+    );
+  }
+}
+
+// ─────────────────────────────────────
+//  Ad Banner: psicoLearn
+// ─────────────────────────────────────
+class _PsicoLearnBanner extends StatelessWidget {
+  const _PsicoLearnBanner();
+
+  Future<void> _launchPsicoLearn() async {
+    final Uri url = Uri.parse('https://pnp-edu.github.io/PsicoLearn/');
+    if (!await launchUrl(url, webOnlyWindowName: '_self')) {
+      debugPrint('No se pudo abrir $url');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        gradient: NeuralDesignSystem.neuralGradient,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: _launchPsicoLearn,
+          borderRadius: BorderRadius.circular(16),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.psychology_rounded, color: Colors.white, size: 28),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          'psicoLearn',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: const Text(
+                            'PRO',
+                            style: TextStyle(
+                              color: Color(0xFF3B82F6),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Prepárate para tus exámenes psicométricos y médicos.',
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white70, size: 16),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

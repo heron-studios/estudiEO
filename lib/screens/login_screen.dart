@@ -2,7 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/services/auth_service.dart';
-import 'package:learn/widgets/animated_grid_bg.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:learn/config/neural_design_system.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,8 +12,29 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
   bool _isCheckingAuth = false;
+  late AnimationController _pulseController;
+  late Animation<double> _pulseAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2500),
+    )..repeat(reverse: true);
+    
+    _pulseAnimation = Tween<double>(begin: 0.98, end: 1.02).animate(
+      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
 
   void _handleGoogleSignIn() async {
     final authService = context.read<AuthService>();
@@ -29,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(authService.error!),
-            backgroundColor: Colors.redAccent,
+            backgroundColor: NeuralDesignSystem.pink,
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -37,183 +59,219 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
-      body: AnimatedGridBackground(
+      backgroundColor: NeuralDesignSystem.background,
+      body: NeuralBackgroundWrapper(
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Efecto de brillo y Logo
-                    Container(
-                      width: 140,
-                      height: 140,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Logo interactivo y flotante
+                  ScaleTransition(
+                    scale: _pulseAnimation,
+                    child: Container(
+                      width: 130,
+                      height: 130,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1E293B),
-                        borderRadius: BorderRadius.circular(36),
+                        color: NeuralDesignSystem.surfaceCard.withOpacity(0.8),
+                        shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
+                            color: NeuralDesignSystem.blueGoogle.withOpacity(0.4),
                             blurRadius: 40,
-                            spreadRadius: 10,
-                            offset: const Offset(0, 10),
+                            spreadRadius: 5,
+                            offset: const Offset(0, 8),
                           ),
                           BoxShadow(
-                            color: const Color(0xFF7C3AED).withValues(alpha: 0.2),
-                            blurRadius: 20,
-                            offset: const Offset(0, -5),
+                            color: NeuralDesignSystem.purple.withOpacity(0.3),
+                            blurRadius: 30,
+                            offset: const Offset(0, -8),
                           ),
                         ],
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.1),
+                          color: Colors.white.withOpacity(0.2),
                           width: 1.5,
                         ),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(34),
-                        child: Image.asset(
-                          'assets/icon.png',
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) => const Icon(
-                            Icons.school_rounded,
-                            size: 60,
-                            color: Colors.blueAccent,
+                      child: ClipOval(
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: Image.asset(
+                              'assets/icon.png',
+                              fit: BoxFit.contain,
+                              errorBuilder: (context, error, stackTrace) => const Icon(
+                                Icons.school_rounded,
+                                size: 60,
+                                color: NeuralDesignSystem.blueGoogle,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 48),
+                  ),
+                  const SizedBox(height: 48),
 
-                    // Tarjeta Glassmorphism
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(28),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                        child: Container(
-                          width: double.infinity,
-                          constraints: const BoxConstraints(maxWidth: 400),
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B).withValues(alpha: 0.6),
-                            borderRadius: BorderRadius.circular(28),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              width: 1,
-                            ),
+                  // TÃ­tulo Principal con estilo Neural (Mesh Gradient en Texto)
+                  ShaderMask(
+                    shaderCallback: (bounds) => NeuralDesignSystem.neuralGradient.createShader(bounds),
+                    child: const Text(
+                      'estudiEO',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 56,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white, // Requerido para ShaderMask
+                        letterSpacing: -1.5,
+                        height: 1.1,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  
+                  // SubtÃ­tulo persuasivo
+                  Text(
+                    'Domina el temario PNP con Inteligencia Activa.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: NeuralDesignSystem.textPrimaryAlt.withOpacity(0.9),
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'PreparaciÃ³n estratÃ©gica, micro-learning y simulacros diseÃ±ados especÃ­ficamente para asegurar tu ingreso a la Escuela de Oficiales.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 15,
+                        color: NeuralDesignSystem.textSecondary,
+                        height: 1.5,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 56),
+
+                  // Tarjeta Glassmorphism para el Login
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(32),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                      child: Container(
+                        width: double.infinity,
+                        constraints: const BoxConstraints(maxWidth: 380),
+                        padding: const EdgeInsets.all(32),
+                        decoration: BoxDecoration(
+                          color: NeuralDesignSystem.surfaceCard.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(32),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.12),
+                            width: 1,
                           ),
-                          child: Column(
-                            children: [
-                              // Título con Gradiente
-                              ShaderMask(
-                                shaderCallback: (bounds) => const LinearGradient(
-                                  colors: [Color(0xFF60A5FA), Color(0xFFC084FC)],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ).createShader(bounds),
-                                child: const Text(
-                                  'estudiEO',
-                                  style: TextStyle(
-                                    fontSize: 38,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
-                                  ),
-                                ),
+                        ),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'Inicia tu preparaciÃ³n',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: NeuralDesignSystem.textPrimary,
                               ),
-                              const SizedBox(height: 12),
-                              Text(
-                                'Bienvenido a la mejor herramienta de preparación académica',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white.withValues(alpha: 0.7),
-                                  height: 1.5,
-                                ),
-                              ),
-                              const SizedBox(height: 40),
+                            ),
+                            const SizedBox(height: 24),
 
-                              // Botón de Inicio de Sesión
-                              if (authService.isLoading || _isCheckingAuth)
-                                const Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                                  child: CircularProgressIndicator(
-                                    color: Color(0xFF60A5FA),
+                            // BotÃ³n de Google Moderno
+                            if (authService.isLoading || _isCheckingAuth)
+                              const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 8.0),
+                                child: CircularProgressIndicator(
+                                  color: NeuralDesignSystem.blueGoogle,
+                                ),
+                              )
+                            else
+                              Container(
+                                width: double.infinity,
+                                height: 56,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF2563EB), // Azul fuerte
+                                      Color(0xFF7C3AED), // Morado fuerte
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
                                   ),
-                                )
-                              else
-                                Container(
-                                  width: double.infinity,
-                                  height: 56,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    gradient: const LinearGradient(
-                                      colors: [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0xFF2563EB).withOpacity(0.3),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 6),
                                     ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
-                                        blurRadius: 16,
-                                        offset: const Offset(0, 6),
+                                  ],
+                                ),
+                                child: ElevatedButton(
+                                  onPressed: _handleGoogleSignIn,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.transparent,
+                                    shadowColor: Colors.transparent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(6),
+                                        decoration: const BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: const Icon(
+                                          Icons.g_mobiledata_rounded,
+                                          color: Colors.black87,
+                                          size: 24,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      const Text(
+                                        'Continuar con Google',
+                                        style: TextStyle(
+                                          fontFamily: 'Inter',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white,
+                                          letterSpacing: 0.3,
+                                        ),
                                       ),
                                     ],
                                   ),
-                                  child: ElevatedButton(
-                                    onPressed: _handleGoogleSignIn,
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(6),
-                                          decoration: const BoxDecoration(
-                                            color: Colors.white,
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: const Icon(
-                                            Icons.g_mobiledata_rounded,
-                                            color: Colors.black87,
-                                            size: 24,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 14),
-                                        const Text(
-                                          'Continuar con Google',
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            letterSpacing: 0.5,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
                                 ),
-                            ],
-                          ),
+                              ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

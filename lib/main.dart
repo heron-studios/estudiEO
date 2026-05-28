@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
         '/gallery': (context) => const SubjectGalleryScreen(),
         '/topics': (context) {
           final args = ModalRoute.of(context)!.settings.arguments;
-          if (args is Map<String, dynamic>) {
+          if (args is Map) {
             return TopicGalleryScreen(
               subjectId: args['subjectId'] as String,
               mode: args['mode'] as String? ?? 'quiz',
@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
         '/payment': (context) => const PaymentScreen(),
         '/learning-theory': (context) {
           final args =
-              ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+              ModalRoute.of(context)!.settings.arguments as Map;
           return LearningTheoryScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,
@@ -131,7 +131,7 @@ class MyApp extends StatelessWidget {
         },
         '/learning-quiz': (context) {
           final args =
-              ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+              ModalRoute.of(context)!.settings.arguments as Map;
           return LearningQuizScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,
@@ -139,7 +139,7 @@ class MyApp extends StatelessWidget {
         },
         '/learning-levelup': (context) {
           final args =
-              ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+              ModalRoute.of(context)!.settings.arguments as Map;
           return LearningLevelUpScreen(
             topicId: args['topicId'] as String,
             nivel: args['nivel'] as Dificultad,

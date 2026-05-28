@@ -4,6 +4,7 @@ import 'package:learn/models/learning_level.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
 
 /// Pantalla 1 del Modo Aprendizaje Guiado — Fase Absorción (Teoría).
 ///
@@ -29,9 +30,27 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   late AnimationController _buttonController;
   late Animation<double> _buttonScale;
 
+  late ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+    
+    // Recuperar posición de scroll guardada
+    final initialOffset = context.read<LearningProvider>().getScrollPosition(widget.topicId, widget.nivel);
+    _scrollController = ScrollController(initialScrollOffset: initialOffset);
+
+    // Guardar posición de scroll al desplazarse
+    _scrollController.addListener(() {
+      if (_scrollController.hasClients) {
+        context.read<LearningProvider>().saveScrollPosition(
+              widget.topicId,
+              widget.nivel,
+              _scrollController.offset,
+            );
+      }
+    });
+
     _buttonController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1800),
@@ -44,6 +63,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   @override
   void dispose() {
     _buttonController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -77,60 +97,63 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
     final topicName = topic?.name ?? 'Tema';
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0F1E),
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          // ─── SliverAppBar premium ──────────────────────────────────────
-          SliverAppBar(
-            expandedHeight: 200,
-            pinned: true,
-            backgroundColor: const Color(0xFF0A0F1E),
-            elevation: 0,
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new,
-                  color: Colors.white, size: 20),
-              onPressed: () => Navigator.pop(context),
-            ),
-            flexibleSpace: FlexibleSpaceBar(
-              background: _TheoryHeader(
-                topicName: topicName,
-                nivel: widget.nivel,
+      backgroundColor: Colors.transparent,
+      body: NeuralBackgroundWrapper(
+        child: CustomScrollView(
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            // ─── SliverAppBar premium ──────────────────────────────────────
+            SliverAppBar(
+              expandedHeight: 200,
+              pinned: true,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new,
+                    color: Colors.white, size: 20),
+                onPressed: () => Navigator.pop(context),
+              ),
+              flexibleSpace: FlexibleSpaceBar(
+                background: _TheoryHeader(
+                  topicName: topicName,
+                  nivel: widget.nivel,
+                ),
               ),
             ),
-          ),
-
-          // ─── Contenido teórico ─────────────────────────────────────────
-          SliverToBoxAdapter(
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 720),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 8, 20, 140),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Indicador de nivel en la ruta
-                      _LevelBreadcrumb(nivel: widget.nivel),
-                      const SizedBox(height: 24),
-
-                      // Sección principal de teoría
-                      _TheorySection(
-                        title: '📖 Contenido de Nivel ${widget.nivel.displayName}',
-                        content: subjectProvider.getTheoryByTopicAndLevel(widget.topicId, widget.nivel) ?? 
-                            'Aún no hay contenido teórico registrado para este nivel. Por favor, contacta al administrador.',
-                      ),
-                      const SizedBox(height: 20),
-
-                      // Recuerda / Tip
-                      _TipCard(nivel: widget.nivel),
-                    ],
+  
+            // ─── Contenido teórico ─────────────────────────────────────────
+            SliverToBoxAdapter(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 720),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 8, 20, 140),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Indicador de nivel en la ruta
+                        _LevelBreadcrumb(nivel: widget.nivel),
+                        const SizedBox(height: 24),
+  
+                        // Sección principal de teoría
+                        _TheorySection(
+                          title: '📖 Contenido de Nivel ${widget.nivel.displayName}',
+                          content: subjectProvider.getTheoryByTopicAndLevel(widget.topicId, widget.nivel) ?? 
+                              'Aún no hay contenido teórico registrado para este nivel. Por favor, contacta al administrador.',
+                        ),
+                        const SizedBox(height: 20),
+  
+                        // Recuerda / Tip
+                        _TipCard(nivel: widget.nivel),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
 
       // ─── Botón flotante de CTA ─────────────────────────────────────────
@@ -299,27 +322,22 @@ class _TheorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isPlaceholder = content.trim().isEmpty || content.contains('Aún no hay contenido');
+    
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF111827),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0xFF1F2937), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 15,
-            offset: const Offset(0, 8),
-          ),
-        ],
+        color: const Color(0xFF1E1F20).withValues(alpha: 0.5), // Glassmorphism surface
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(Icons.menu_book_rounded, color: Color(0xFF4ECDC4), size: 22),
+              const Icon(Icons.menu_book_rounded, color: Color(0xFF4285F4), size: 22),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
@@ -336,9 +354,39 @@ class _TheorySection extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 16),
-            child: Divider(color: Color(0xFF1F2937), height: 1, thickness: 1.5),
+            child: Divider(color: Colors.white10, height: 1),
           ),
-          MarkdownBody(
+          if (isPlaceholder) ...[
+            // Componente de esqueleto elegante
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '[contenido de tema: ${title.replaceAll('📖 Contenido de Nivel ', '')}, llenar]',
+                    style: const TextStyle(
+                      fontFamily: 'monospace',
+                      color: Color(0xFFFBBF24),
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _buildSkeletonLine(widthFactor: 0.95),
+                  _buildSkeletonLine(widthFactor: 0.85),
+                  _buildSkeletonLine(widthFactor: 0.90),
+                  _buildSkeletonLine(widthFactor: 0.60),
+                ],
+              ),
+            )
+          ] else
+            MarkdownBody(
             data: content,
             selectable: true,
             styleSheet: MarkdownStyleSheet(
@@ -378,6 +426,22 @@ class _TheorySection extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSkeletonLine({required double widthFactor}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: FractionallySizedBox(
+        widthFactor: widthFactor,
+        child: Container(
+          height: 12,
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.04),
+            borderRadius: BorderRadius.circular(6),
+          ),
+        ),
       ),
     );
   }

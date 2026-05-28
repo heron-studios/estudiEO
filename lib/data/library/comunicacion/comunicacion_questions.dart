@@ -5,10 +5,12 @@ import 'reglas_ortograficas_ext_10q_questions.dart';
 import 'oracion_gramatical_ext_10q_questions.dart';
 import 'narracion_ext_10q_questions.dart';
 import 'literatura_peruana_ext_10q_questions.dart';
+import 'literatura_peruana_rebuscada_ext_10q_questions.dart';
 
 
 final List<Question> comunicacionQuestions = [
   ...literaturaPeruanaExt10qQuestions,
+  ...literaturaPeruanaRebuscadaExt10qQuestions,
   ...narracionExt10qQuestions,
   ...oracionGramaticalExt10qQuestions,
   ...reglasOrtograficasExt10qQuestions,

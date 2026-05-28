@@ -1,357 +1,350 @@
-TOPIC_ID: eo_pnp_sinonimos_ext_10q
-TOPIC_NAME: Sinónimos (Teoría Completa 10Q)
-PREFIX: sin_corto_10q
+TOPIC_ID: eo_pnp_antonimos_ext_10q
+TOPIC_NAME: Antónimos (Teoría Completa 10Q)
+PREFIX: ant_corto_10q
 ====== NIVEL FÁCIL ======
 --- TEORÍA ---
-Los **sinónimos** son palabras que tienen un significado igual o semejante entre sí. Por ejemplo, se puede decir: *El paisaje es lindo* o *El paisaje es bello*. 
+Los **antónimos** son aquellas palabras o expresiones que tienen un significado opuesto o contrario entre sí. Para que dos palabras sean consideradas antónimas, es un requisito fundamental que pertenezcan al **mismo campo semántico** y a la **misma categoría gramatical** (el antónimo de un sustantivo debe ser otro sustantivo; el de un adjetivo, otro adjetivo, etc.).
 
-Para que dos o más palabras sean consideradas sinónimas, deben cumplir con ciertos requisitos fundamentales:
-*   Deben estar comprendidas dentro del **mismo campo semántico**.
-*   Deben pertenecer a la **misma categoría gramatical** (un sustantivo es sinónimo de otro sustantivo, un verbo de un verbo, etc.).
-*   Primordialmente, expresan **significados parecidos**.
-
-Los sinónimos son recursos muy útiles al momento de redactar un texto, ya que permiten evitar la repetición de una misma palabra sin faltar al sentido de lo que se quiere transmitir. Al utilizarlos, se evitan reiteraciones y redundancias, otorgando mayor claridad y fluidez al mensaje escrito.
+Los antónimos se dividen principalmente por su criterio morfológico en:
+*   **Gramaticales**: Se forman agregando un prefijo de negación u oposición a la misma raíz o lexema (por ejemplo: *legal / ilegal*, *hacer / deshacer*).
+*   **Lexicales**: Son palabras con raíces totalmente diferentes que expresan significados opuestos por su propia naturaleza (por ejemplo: *bueno / malo*, *alto / bajo*).
 --- PREGUNTAS ---
-Pregunta 1: Identifique el sinónimo de la palabra "abundante".
-A) Escaso
-B) Vacío
-C) Mucho Correcta
-D) Poco
-E) Mínimo
-EXP: De acuerdo con los ejemplos de sinónimos, la palabra "abundante" tiene como sinónimo directo a la palabra "mucho" y como antónimo a "escaso".
+Pregunta 1: Identifique el antónimo de la palabra "abundante".
+A) Lleno
+B) Mucho
+C) Escaso Correcta
+D) Copioso
+E) Rico
+EXP: La palabra "abundante" significa que hay gran cantidad de algo; por lo tanto, su antónimo o significado contrario directo es "escaso".
 
-Pregunta 2: Identifique el sinónimo de la palabra "barato".
-A) Costoso
-B) Caro
-C) Económico Correcta
-D) Elevado
-E) Inalcanzable
-EXP: Según el índice de palabras sinónimas, el término "barato" tiene un significado semejante a "económico".
+Pregunta 2: ¿Cuál de las siguientes palabras es el antónimo de "acabar"?
+A) Terminar
+B) Iniciar Correcta
+C) Finalizar
+D) Concluir
+E) Pausar
+EXP: El verbo "acabar" indica la finalización de una acción, por lo que su significado opuesto es "iniciar" o empezar.
 
-Pregunta 3: ¿Cuál de las siguientes palabras es sinónimo de "claro"?
-A) Oscuro
-B) Luminoso Correcta
-C) Sombrío
-D) Opaco
-E) Turbio
-EXP: El término "claro" comparte su campo semántico y es sinónimo de la palabra "luminoso".
+Pregunta 3: Seleccione el antónimo de la palabra "bonito".
+A) Hermoso
+B) Lindo
+C) Agraciado
+D) Feo Correcta
+E) Bello
+EXP: "Bonito" es un adjetivo que califica algo positivamente por su apariencia; su antónimo lexical absoluto es "feo".
 
-Pregunta 4: Seleccione el sinónimo de la palabra "flaco".
-A) Gordo
-B) Obeso
-C) Ancho
-D) Delgado Correcta
-E) Robusto
-EXP: Las palabras "flaco" y "delgado" son sinónimos, ya que expresan un significado equivalente para describir la complexión física.
+Pregunta 4: Identifique el antónimo del verbo "comprar".
+A) Vender Correcta
+B) Adquirir
+C) Regalar
+D) Obtener
+E) Pagar
+EXP: "Comprar" y "vender" son antónimos recíprocos; la existencia de una acción implica necesariamente la opuesta en el mismo proceso comercial.
 
-Pregunta 5: ¿Cuál de las siguientes palabras es sinónimo de "triunfo"?
-A) Derrota
-B) Fracaso
-C) Caída
-D) Victoria Correcta
-E) Pérdida
-EXP: "Triunfo" y "victoria" son palabras que comparten el mismo campo semántico y significan el éxito en un empeño o competencia.
+Pregunta 5: ¿Cuál es el antónimo de la palabra "demente"?
+A) Loco
+B) Cuerdo Correcta
+C) Insano
+D) Orate
+E) Tonto
+EXP: Una persona "demente" es alguien que ha perdido el juicio o la razón, por lo cual su antónimo adecuado es "cuerdo".
 
-Pregunta 6: Identifique el sinónimo de la palabra "acabar".
-A) Iniciar
-B) Empezar
-C) Comenzar
-D) Abrir
-E) Terminar Correcta
-EXP: El sinónimo de la palabra "acabar" es "terminar", refiriéndose a la finalización de un proceso o evento.
-
-Pregunta 7: Identifica el sinónimo de "famoso".
-A) Anónimo
-B) Desconocido
-C) Ignoto
-D) Célebre Correcta
-E) Olvidado
-EXP: La palabra "famoso" tiene un significado similar a "célebre", denotando a alguien ampliamente conocido.
-
-Pregunta 8: ¿Cuál es el sinónimo de la palabra "cómodo"?
-A) Confortable Correcta
-B) Incómodo
-C) Duro
-D) Rígido
-E) Molesto
-EXP: Según la tabla de sinónimos, el término equivalente para "cómodo" es "confortable".
-
-Pregunta 9: ¿Cuál de las siguientes palabras es sinónimo de "sumar"?
-A) Restar
-B) Dividir
-C) Quitar
-D) Agregar Correcta
-E) Partir
-EXP: El verbo "sumar" tiene como sinónimo a la palabra "agregar", que significa añadir una cosa a otra.
-
-Pregunta 10: Seleccione el sinónimo del verbo "decir".
-A) Callar
-B) Silenciar
-C) Ocultar
-D) Pronunciar Correcta
-E) Guardar
-EXP: El verbo "decir" tiene un significado semejante a "pronunciar" dentro del contexto de la comunicación oral.
-====== NIVEL MEDIO ======
---- TEORÍA ---
-Existen distintos **tipos de sinónimos** debido a que las palabras suelen presentar muchos matices de sentido y ninguna es el equivalente perfecto de otra en absolutamente todos los contextos.
-
-La sinonimia se suele dividir principalmente en:
-*   **Sinónimos totales:** Las palabras son intercambiables en cualquier contexto sin alterar el sentido de la oración. Por ejemplo: *automóvil / carro*.
-*   **Sinónimos parciales:** Las palabras son sinónimas en uno solo de los sentidos que tienen. Por ejemplo: *cálido / caliente*.
-
-Cabe destacar que muchos lingüistas afirman que la sinonimia total y perfecta no existe, ya que las palabras se adaptan a situaciones específicas de uso.
---- PREGUNTAS ---
-Pregunta 1: Identifique el sinónimo de la palabra "complejo".
-A) Simple
-B) Sencillo
-C) Complicado Correcta
+Pregunta 6: Seleccione el antónimo del adjetivo "fácil".
+A) Sencillo
+B) Breve
+C) Difícil Correcta
 D) Claro
-E) Fácil
-EXP: La palabra "complejo" significa algo que es "complicado, difícil, confuso, enrevesado o engorroso".
+E) Directo
+EXP: Lo "fácil" es aquello que no requiere gran esfuerzo; su opuesto lexical directo y absoluto es "difícil".
 
-Pregunta 2: ¿Cuál es el sinónimo de la palabra "dadivoso"?
-A) Tacaño
-B) Avaro
-C) Agarrado
-D) Egoísta
-E) Generoso Correcta
-EXP: "Dadivoso" se refiere a alguien desprendido, desinteresado o "generoso". Las otras opciones son sus antónimos.
-
-Pregunta 3: Seleccione el sinónimo de la palabra "embuste".
-A) Verdad
-B) Certeza
-C) Mentira Correcta
-D) Lealtad
-E) Honestidad
-EXP: Un "embuste" es una farsa, cuento o engaño; por lo tanto, su sinónimo directo es "mentira".
-
-Pregunta 4: Identifique el sinónimo de "veloz".
-A) Lento
-B) Rápido Correcta
-C) Pausado
-D) Detenido
-E) Quieto
-EXP: La palabra "veloz" tiene como sinónimos a los términos "rápido", "raudo", "pronto" o "ligero".
-
-Pregunta 5: ¿Cuál de las siguientes palabras es sinónimo de "miedo"?
-A) Valentía
-B) Coraje
-C) Osadía
-D) Pánico Correcta
-E) Valor
-EXP: Según el cuadro de sinónimos y antónimos, "miedo" tiene como sinónimo a la palabra "pánico".
-
-Pregunta 6: Seleccione el sinónimo de la palabra "sabio".
-A) Inculto
-B) Erudito Correcta
-C) Ignorante
-D) Insensato
-E) Necio
-EXP: El término "sabio" describe a alguien experto, culto o "erudito".
-
-Pregunta 7: ¿Cuál es el sinónimo de la palabra "advertir"?
-A) Ignorar
-B) Omitir
-C) Descuidar
-D) Notar Correcta
-E) Olvidar
-EXP: El verbo "advertir" es sinónimo de "notar", en el sentido de fijar la atención en algo.
-
-Pregunta 8: ¿Cuál de las siguientes palabras es sinónimo de "divertida"?
-A) Larga
-B) Entretenida Correcta
-C) Aburrida
-D) Sorprendente
-E) Tediosa
-EXP: En la oración "La película fue muy divertida", su sinónimo más adecuado es "entretenida",.
-
-Pregunta 9: Identifique el sinónimo de "sano".
-A) Saludable Correcta
-B) Enfermo
-C) Nocivo
-D) Dañado
-E) Insalubre
-EXP: "Sano" tiene como sinónimos a términos como "saludable", "vital", "curado" o "ileso".
-
-Pregunta 10: ¿Cuál es el sinónimo de "bonito"?
-A) Feo
-B) Desagradable
-C) Hermoso Correcta
-D) Horrible
-E) Espantoso
-EXP: "Bonito" es un adjetivo que califica positivamente la apariencia y su sinónimo directo es "hermoso".
-====== NIVEL DIFÍCIL ======
---- TEORÍA ---
-Según el significado de las palabras y el tipo de semejanza que se establece entre ellas, existen niveles más profundos de clasificación semántica:
-
-*   **Sinónimos conceptuales:** Las palabras aluden a un mismo concepto o referente y podrían ser intercambiables, pero distintos hablantes preferirán usar una sobre la otra (ej. *escuela / colegio*).
-*   **Sinónimos contextuales:** Las palabras pueden intercambiarse solo en determinados contextos donde sus significados coinciden (ej. *comida / alimento*).
-*   **Sinónimos referenciales:** Remiten al mismo referente, pero no significan exactamente lo mismo, como ocurre con los hipónimos e hiperónimos (ej. *limonada / bebida*).
-*   **Sinónimos de connotación:** Las palabras no significan lo mismo de forma objetiva, pero connotan o sugieren lo mismo en alguno de sus sentidos figurados (ej. *Eres el Maradona de los negocios*, donde "Maradona" es sinónimo de genio).
-
-Para resolver este tipo de analogías y sinonimias, el método requiere definir con precisión el significado de la premisa, identificar la categoría gramatical y luego el campo semántico exacto.
---- PREGUNTAS ---
-Pregunta 1: Identifique el sinónimo de "lacónico".
-A) Extenso
-B) Locuaz
-C) Conciso Correcta
-D) Hablador
-E) Charlatán
-EXP: El vocablo "lacónico" pertenece al campo semántico de la comunicación breve y su sinónimo es "conciso".
-
-Pregunta 2: ¿Cuál es el sinónimo del adjetivo "incólume"?
-A) Herido
-B) Vulnerado
-C) Dañado
-D) Indemne Correcta
-E) Lesionado
-EXP: "Incólume" significa sano, sin lesión ni menoscabo, por lo que su sinónimo directo es "indemne" o ileso,.
-
-Pregunta 3: Seleccione el sinónimo de la palabra "sucinto".
-A) Expresivo
-B) Difuso
-C) Sumario Correcta
-D) Analítico
-E) Extendido
-EXP: "Sucinto" hace referencia a algo breve, resumido o compendioso, siendo "sumario" un sinónimo apropiado.
-
-Pregunta 4: Identifique el sinónimo del sustantivo "boato".
-A) Humildad
-B) Pequeñez
-C) Modestia
-D) Ostentación Correcta
-E) Sencillez
-EXP: La palabra "boato" significa lujo o pompa, por lo cual su sinónimo adecuado es "ostentación" (o el adjetivo pomposo).
-
-Pregunta 5: ¿Cuál es el sinónimo del adjetivo "híbrido"?
-A) Puro
-B) Indefinido
-C) Simple
-D) Mestizo Correcta
-E) Claro
-EXP: "Híbrido" alude a algo originado del cruce de dos naturalezas distintas, siendo "mestizo" su sinónimo más certero.
-
-Pregunta 6: Identifique el sinónimo del verbo "denostar".
-A) Alabar
-B) Encomiar
-C) Injuriar Correcta
-D) Elogiar
-E) Halagar
-EXP: El término "denostar" significa insultar u ofender gravemente; su sinónimo correspondiente es "injuriar".
-
-Pregunta 7: ¿Cuál es el sinónimo del verbo "paliar"?
-A) Exacerbar
-B) Agravar
-C) Atenuar Correcta
-D) Aumentar
-E) Intensificar
-EXP: "Paliar" se refiere a mitigar, suavizar o calmar; por ende, su sinónimo es "atenuar".
-
-Pregunta 8: Seleccione el sinónimo de la palabra "fútil".
-A) Trascendente
-B) Importante
-C) Baladí Correcta
-D) Vital
-E) Esencial
-EXP: "Fútil" hace referencia a algo de poca importancia, superficial o trivial, siendo "baladí" su sinónimo exacto.
-
-Pregunta 9: Identifique el sinónimo de la palabra "oprobio".
-A) Honra
-B) Afrenta Correcta
-C) Alabanza
-D) Respeto
-E) Orgullo
-EXP: "Oprobio" es una vergüenza o deshonor público; se relaciona semánticamente como sinónimo de "afrenta" o ignominia,.
-
-Pregunta 10: ¿Cuál es el sinónimo de la palabra "indigencia"?
-A) Riqueza
-B) Inopia Correcta
-C) Opulencia
-D) Fortuna
-E) Abundancia
-EXP: "Indigencia" significa pobreza extrema, por lo cual "inopia" y "mendicidad" son sus sinónimos contextuales,.
-====== NIVEL EXTREMO ======
---- TEORÍA ---
-Al alcanzar un nivel léxico extremo, la evaluación se centra en la **precisión léxica**. La investigación académica sugiere que el dominio de los sinónimos refleja no solo la amplitud del vocabulario, sino la capacidad de percibir matices, intensidades y connotaciones que son vitales para la interpretación de textos científicos y filosóficos.
-
-Es esencial recordar el principio de la **misma categoría gramatical**: el sinónimo de un adjetivo tendrá que ser otro adjetivo, y el de un sustantivo, otro sustantivo. Además, la **mayor especificidad** del término determina la mejor sinonimia. Por ejemplo, aunque "lento" pueda parecer opuesto a ciertas acciones, la opción correcta siempre derivará de equiparar fielmente la etimología y los "semas" (unidades mínimas de significado) que comparten las palabras en la premisa y la respuesta,.
---- PREGUNTAS ---
-Pregunta 1: Identifique el sinónimo del verbo "abominar".
-A) Bendecir
-B) Amar
-C) Execrar Correcta
-D) Alabar
-E) Loar
-EXP: "Abominar" significa condenar a personas o cosas por perjudiciales (maldecir, aborrecer); su sinónimo léxico exacto es "execrar".
-
-Pregunta 2: ¿Cuál es el sinónimo del adjetivo "caliginoso"?
-A) Despejado
-B) Claro
-C) Luminoso
-D) Nebuloso Correcta
-E) Brillante
-EXP: "Caliginoso" califica a algo denso, oscuro o brumoso; por consiguiente, "nebuloso" es su sinónimo directo.
-
-Pregunta 3: Seleccione el sinónimo del adjetivo "decrépito".
-A) Joven
-B) Mancebo
-C) Senecto Correcta
-D) Lozano
-E) Nuevo
-EXP: "Decrépito" alude a un estado sumamente viejo o a la decrepitud. Entre sus sinónimos se hallan "anciano", "longevo" y "senecto",.
-
-Pregunta 4: Identifique el sinónimo del sustantivo "ignominia".
-A) Honor
-B) Orgullo
-C) Baldón Correcta
-D) Dignidad
-E) Respeto
-EXP: "Ignominia" se define como una afrenta pública o deshonor; su sinónimo preciso en el ámbito léxico-semántico es "baldón".
-
-Pregunta 5: ¿Cuál es el sinónimo de la palabra "ignoto"?
-A) Conocido
-B) Sabido
-C) Ilustre
-D) Famoso
-E) Desconocido Correcta
-EXP: "Ignoto" es un adjetivo que describe aquello no conocido ni descubierto; su sinónimo correspondiente es "desconocido" o ignorado.
-
-Pregunta 6: Identifique el sinónimo del adjetivo "lóbrego".
-A) Luminoso
-B) Oscuro Correcta
-C) Brillante
-D) Iluminado
-E) Radiante
-EXP: "Lóbrego" significa oscuro o sombrío (por ejemplo, "noche lóbrega"). Su sinónimo exacto es "oscuro" u "opaco".
-
-Pregunta 7: ¿Cuál es el sinónimo del adjetivo "níveo"?
+Pregunta 7: ¿Cuál de las siguientes palabras es antónimo de "oscuro"?
 A) Negro
 B) Bruno
-C) Oscuro
-D) Albo Correcta
-E) Opaco
-EXP: "Níveo" (poéticamente de nieve o semejante a ella) tiene como sinónimos a "blanco", "ampo" y "albo".
+C) Claro Correcta
+D) Opaco
+E) Sombrío
+EXP: En el campo semántico de la luminosidad o el color, el término que se opone directamente a "oscuro" es "claro".
 
-Pregunta 8: Seleccione el sinónimo del adjetivo "oneroso".
-A) Barato
-B) Económico
-C) Regalado
-D) Asequible
-E) Gravoso Correcta
-EXP: "Oneroso" indica algo pesado, molesto o que ocasiona gasto; por lo tanto, sus sinónimos son "dispendioso", "costoso" o "gravoso".
+Pregunta 8: Identifique el antónimo de la palabra "paz".
+A) Tranquilidad
+B) Guerra Correcta
+C) Armonía
+D) Calma
+E) Silencio
+EXP: "Paz" significa una situación de armonía o ausencia de conflictos violentos, siendo "guerra" su antónimo más contundente.
 
-Pregunta 9: Identifique el sinónimo del adjetivo "indómito".
-A) Dócil
-B) Sumiso
-C) Indomeñable Correcta
-D) Obediente
-E) Manejable
-EXP: "Indómito" califica a quien no se puede dominar; sus sinónimos directos son "indomable", "indoblegable" o "indomeñable".
+Pregunta 9: Seleccione el antónimo de "valiente".
+A) Audaz
+B) Cobarde Correcta
+C) Fuerte
+D) Osado
+E) Heroico
+EXP: "Valiente" describe a quien actúa con valor y coraje frente al peligro; su antónimo es "cobarde", que denota miedo o falta de valor.
 
-Pregunta 10: ¿Cuál es el sinónimo del adjetivo "falaz"?
-A) Franco
-B) Sincero
-C) Engañoso Correcta
-D) Veraz
-E) Honesto
-EXP: La palabra "falaz" hace referencia a un argumento o persona mentirosa, embustera; su sinónimo es "engañoso" o farsante.
+Pregunta 10: ¿Cuál es el antónimo del verbo "entrar"?
+A) Salir Correcta
+B) Ingresar
+C) Acceder
+D) Pasar
+E) Llegar
+EXP: "Entrar" y "salir" representan acciones direccionales opuestas respecto a un mismo espacio, siendo antónimos directos.
+====== NIVEL MEDIO ======
+--- TEORÍA ---
+Según el grado de oposición semántica, los antónimos lexicales pueden clasificarse en:
+*   **Antónimos absolutos o totales**: Expresan ideas totalmente contrarias y excluyentes. Su significado se opone por completo a la naturaleza del otro término (ej. *vivo / muerto*).
+*   **Antónimos relativos o parciales**: Expresan ideas parcialmente opuestas. Aunque tienen un significado distinto, admiten matices o puntos intermedios (ej. *cálido / frío*, donde existe un término medio como *tibio*).
+
+También es fundamental asegurar que, a la hora de buscar la oposición, la mayor especificidad o generalidad del término determine la mejor antonimia (a mayor cantidad de características opuestas, mejor será la respuesta).
+--- PREGUNTAS ---
+Pregunta 1: Identifique el antónimo de la palabra "complejo".
+A) Complicado
+B) Difícil
+C) Simple Correcta
+D) Enrevesado
+E) Arduo
+EXP: "Complejo" hace referencia a algo que está compuesto de múltiples elementos o es difícil de entender; su opuesto es "simple".
+
+Pregunta 2: ¿Cuál es el antónimo de la palabra "dadivoso"?
+A) Generoso
+B) Caritativo
+C) Desprendido
+D) Tacaño Correcta
+E) Amable
+EXP: "Dadivoso" describe a una persona generosa o desinteresada, por lo que su antónimo correspondiente es "tacaño" (avaro o mezquino).
+
+Pregunta 3: Seleccione el antónimo del verbo "destruir".
+A) Arruinar
+B) Demoler
+C) Construir Correcta
+D) Devastar
+E) Arrasar
+EXP: "Destruir" significa deshacer o arruinar algo creado; su acción diametralmente opuesta es "construir" o edificar.
+
+Pregunta 4: Identifique el antónimo del sustantivo "dicha".
+A) Alegría
+B) Felicidad
+C) Ventura
+D) Desventura Correcta
+E) Bienestar
+EXP: "Dicha" equivale a un estado de felicidad o suerte favorable; el antónimo que mantiene la misma categoría gramatical es "desventura" o infelicidad.
+
+Pregunta 5: ¿Cuál es el antónimo del adjetivo "efímero"?
+A) Fugaz
+B) Duradero Correcta
+C) Breve
+D) Pasajero
+E) Rápido
+EXP: "Efímero" describe algo que dura muy poco tiempo o un solo día; su antónimo lexical y lógico es "duradero" (o perenne).
+
+Pregunta 6: Seleccione el antónimo de la palabra "hostil".
+A) Enemigo
+B) Agresivo
+C) Amable Correcta
+D) Contrario
+E) Violento
+EXP: "Hostil" se refiere a una actitud adversa, enemiga o agresiva; la oposición precisa recae en el adjetivo "amable" o cordial.
+
+Pregunta 7: ¿Cuál de las siguientes palabras es antónimo de "opaco"?
+A) Oscuro
+B) Transparente Correcta
+C) Sombrío
+D) Turbio
+E) Negro
+EXP: Un cuerpo "opaco" es aquel que no permite el paso de la luz; su antónimo absoluto en propiedades físicas es "transparente" (o diáfano).
+
+Pregunta 8: Identifique el antónimo de la palabra "caótico".
+A) Desordenado
+B) Confuso
+C) Ordenado Correcta
+D) Revuelto
+E) Alborotado
+EXP: Lo "caótico" pertenece al caos, desorden o confusión absoluta. El término opuesto por excelencia es "ordenado".
+
+Pregunta 9: ¿Cuál es el antónimo del adjetivo "parco"?
+A) Sobrio
+B) Moderado
+C) Locuaz Correcta
+D) Escaso
+E) Resumido
+EXP: "Parco" califica a alguien de pocas palabras o muy moderado al hablar o actuar; su antónimo semántico es "locuaz" (hablador).
+
+Pregunta 10: Seleccione el antónimo de "sano".
+A) Saludable
+B) Vital
+C) Vigoroso
+D) Enfermo Correcta
+E) Fuerte
+EXP: El adjetivo "sano" indica que un ser goza de perfecta salud o no tiene lesiones. Su antónimo directo y complementario es "enfermo".
+====== NIVEL DIFÍCIL ======
+--- TEORÍA ---
+En este nivel, se debe tener especial cuidado con la **antonimia contextual**. Una palabra en una oración puede asumir una acepción particular que modifique la elección de su antónimo.
+
+Además, los distractores suelen presentar términos que son antónimos de otra acepción de la premisa o palabras con categorías gramaticales diferentes (ej. un sustantivo para oponerse a un verbo).
+*   **Regla de oro:** Determinar la categoría gramatical exacta y afinar el significado. Si la premisa es un adjetivo (ej. *inédito*), el antónimo debe ser un adjetivo (ej. *publicado* o *conocido*, no "publicación").
+*   La comprensión de matices como los antónimos complementarios (donde la existencia de uno anula la del otro, ej. *castidad / lujuria*) y recíprocos es vital.
+--- PREGUNTAS ---
+Pregunta 1: Identifique el antónimo de "tácito".
+A) Oculto
+B) Implícito
+C) Secreto
+D) Expreso Correcta
+E) Callado
+EXP: Algo "tácito" es aquello que no se dice formalmente, sino que se supone o infiere. Su antónimo es "expreso" (o explícito), que significa manifestado claramente.
+
+Pregunta 2: ¿Cuál es el antónimo de la palabra "desidia"?
+A) Negligencia
+B) Pereza
+C) Cuidado Correcta
+D) Apatía
+E) Abandono
+EXP: "Desidia" es un sustantivo que denota negligencia o falta de interés en hacer las cosas; el término opuesto en actitud es el "cuidado" o diligencia.
+
+Pregunta 3: Seleccione el antónimo del sustantivo "beneficio".
+A) Favor
+B) Ganancia
+C) Utilidad
+D) Detrimento Correcta
+E) Ayuda
+EXP: "Beneficio" se define como el bien que se hace o se recibe. Su antónimo absoluto es "detrimento", que implica destrucción, daño o menoscabo.
+
+Pregunta 4: Identifique el antónimo del adjetivo "misántropo".
+A) Huraño
+B) Sociable Correcta
+C) Solitario
+D) Uraño
+E) Arisco
+EXP: El "misántropo" es aquel que siente aversión al trato con otras personas; su opuesto lógico y de actitud es el individuo "sociable".
+
+Pregunta 5: ¿Cuál es el antónimo de la palabra "ileso"?
+A) Indemne
+B) Incólume
+C) Intacto
+D) Herido Correcta
+E) Salvo
+EXP: "Ileso" significa que no ha recibido lesión ni daño en un accidente o ataque. Su antónimo complementario es "herido" o vulnerado.
+
+Pregunta 6: Identifique el antónimo de "gélido".
+A) Helado
+B) Glacial
+C) Tórrido Correcta
+D) Congelado
+E) Frío
+EXP: "Gélido" expresa una intensidad térmica extrema (muy frío). Su antónimo, en el extremo opuesto de la misma escala de temperatura, es "tórrido" (muy caliente o ardiente).
+
+Pregunta 7: ¿Cuál de las siguientes palabras es antónimo de "proficuo"?
+A) Ventajoso
+B) Provechoso
+C) Útil
+D) Improductivo Correcta
+E) Favorable
+EXP: "Proficuo" es un adjetivo que significa provechoso o ventajoso. En consecuencia, su antonimia lexical recae en "improductivo" o inútil.
+
+Pregunta 8: Seleccione el antónimo de la palabra "subrepticio".
+A) Oculto
+B) Patente Correcta
+C) Escondido
+D) Solapado
+E) Furtivo
+EXP: Lo "subrepticio" es aquello que se hace o sucede de manera oculta o a escondidas. Su antónimo exacto es "patente" (evidente o manifiesto).
+
+Pregunta 9: Identifique el antónimo del adjetivo "lacónico".
+A) Breve
+B) Conciso
+C) Locuaz Correcta
+D) Sucinto
+E) Resumido
+EXP: "Lacónico" califica a alguien que habla de manera muy concisa o con pocas palabras. Su antónimo es "locuaz" (hablador o facundo).
+
+Pregunta 10: ¿Cuál es el antónimo del adjetivo "lenitivo"?
+A) Calmante
+B) Atenuante
+C) Paliativo
+D) Severo Correcta
+E) Sedante
+EXP: Un "lenitivo" (o la cualidad de lenidad) alude a aquello que suaviza, mitiga un castigo o dolor. Su antónimo implica actuar con dureza y todo el rigor, es decir, ser "severo" o drástico.
+====== NIVEL EXTREMO ======
+--- TEORÍA ---
+En el nivel extremo, las analogías por antonimia exigen el dominio etimológico, la exactitud en la categoría gramatical, y sobre todo, la aplicación del método de la contradicción dialéctica pura para discernir diferencias mínimas entre los distractores.
+
+Ejemplo crítico: si buscamos el antónimo de *pródigo* (derrochador), podríamos pensar en *ahorrativo*, pero "ahorrar" proyecta un gasto futuro (sustantivo/acción distinta), por lo que *tacaño* (adjetivo que niega completamente el gasto) es la opción gramatical y dialécticamente superior. 
+Los **semas** (unidades mínimas de significado) dictaminan que no puede confundirse la falta de voluntad (*abulia*) con la falta de disposición al trabajo físico (*poltronería*). La precisión lo es todo.
+--- PREGUNTAS ---
+Pregunta 1: Identifique el antónimo del adjetivo "pródigo".
+A) Derrochador
+B) Dilapidador
+C) Tacaño Correcta
+D) Generoso
+E) Gastador
+EXP: "Pródigo" describe a quien derrocha o gasta en exceso sus bienes. Su antónimo absoluto, manteniendo la condición adjetiva y negando el gasto, es "tacaño" (no ahorrativo, pues el tacaño atesora sin intención de gastar).
+
+Pregunta 2: ¿Cuál es el antónimo del sustantivo "poltronería"?
+A) Pereza
+B) Ociosidad
+C) Abulia
+D) Laboriosidad Correcta
+E) Apatía
+EXP: "Poltronería" es la falta de disposición para el trabajo (holgazanería o pereza); su antónimo directo es la aplicación al trabajo, es decir, "laboriosidad" (o diligencia).
+
+Pregunta 3: Seleccione el antónimo del adjetivo "atrabiliario".
+A) Iracundo
+B) Sosegado Correcta
+C) Colérico
+D) Irritable
+E) Bilioso
+EXP: "Atrabiliario" proviene de "atrabilis", designando a la persona de mal genio crónico, renegona o colérica. Su opuesto de carácter es "sosegado", apacible o sereno.
+
+Pregunta 4: Identifique el antónimo del sustantivo "entelequia".
+A) Fantasía
+B) Quimera
+C) Realidad Correcta
+D) Utopía
+E) Ficción
+EXP: "Entelequia" hace referencia a algo irreal, quimérico o fantástico que solo existe en la mente. El antónimo categórico que se contrapone a esta ilusión es "realidad".
+
+Pregunta 5: ¿Cuál es el antónimo de la palabra "egregio"?
+A) Célebre
+B) Ilustre
+C) Ínclito
+D) Mediocre Correcta
+E) Insigne
+EXP: El adjetivo "egregio" califica a una persona de suma importancia, célebre o ilustre. El antónimo preciso para contrastar esa condición de excelencia es "mediocre" (o desconocido).
+
+Pregunta 6: Identifique el antónimo de "inane".
+A) Banal
+B) Fútil
+C) Trivial
+D) Baladí
+E) Capital Correcta
+EXP: "Inane" significa vano, fútil o que carece de importancia. El antónimo exacto, que denota máxima relevancia o peso, es el adjetivo "capital" (o importante).
+
+Pregunta 7: ¿Cuál es el antónimo del sustantivo "baldón"?
+A) Afrenta
+B) Oprobio
+C) Injuria
+D) Encomio Correcta
+E) Agravio
+EXP: "Baldón" es un oprobio, una mancha a la honra o una afrenta pública. Su opuesto, siendo también sustantivo, es una alabanza o discurso en favor, es decir, un "encomio" o panegírico.
+
+Pregunta 8: Seleccione el antónimo del adjetivo "epicúreo".
+A) Hedonista
+B) Sensual
+C) Asceta Correcta
+D) Licencioso
+E) Disoluto
+EXP: "Epicúreo" alude a la persona entregada a los placeres de la vida, el gozo y la sensualidad. En filosofía y semántica, se contrapone directamente a "asceta" (quien renuncia a los placeres materiales).
+
+Pregunta 9: Identifique el antónimo de "pusilánime".
+A) Medroso
+B) Cobarde
+C) Timorato
+D) Miedoso
+E) Valiente Correcta
+EXP: Un "pusilánime" carece de ánimo y valor para enfrentar peligros o desgracias. El adjetivo opuesto y correcto por antonomasia es "valiente" (o bizarro, arrojado).
+
+Pregunta 10: ¿Cuál es el antónimo del sustantivo "iniquidad"?
+A) Maldad
+B) Vileza
+C) Perversidad
+D) Bondad Correcta
+E) Bajeza
+EXP: "Iniquidad" significa injusticia grande o maldad (pravedad). Al ser un sustantivo abstracto y negativo, su antónimo absoluto recae en la rectitud y la "bondad" o equidad.

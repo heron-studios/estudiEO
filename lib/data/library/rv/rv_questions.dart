@@ -1,8 +1,10 @@
 import 'package:learn/models/question.dart';
 import 'sinonimos_ext_10q_questions.dart';
+import 'antonimos_ext_10q_questions.dart';
 
 final List<Question> razonamientoVerbalQuestions = [
   ...sinonimosExt10qQuestions,
+  ...antonimosExt10qQuestions,
   Question(
     id: "rv_q1",
     topicId: "rv_sinonimos",

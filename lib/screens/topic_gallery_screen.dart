@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/subject_provider.dart';
@@ -6,6 +7,8 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/config/app_config.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:learn/config/neural_design_system.dart';
 
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
@@ -24,39 +27,45 @@ class TopicGalleryScreen extends StatelessWidget {
     final topics = subjectProvider.getTopicsBySubject(subjectId);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
+      backgroundColor: NeuralDesignSystem.background,
       appBar: AppBar(
         title: Text(
           subject?.name ?? 'Temas',
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontFamily: 'Outfit',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      body: topics.isEmpty
-          ? const Center(
-              child: Text('No hay temas disponibles', style: TextStyle(color: Colors.white60)),
-            )
-          : Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 800),
-                child: ListView.separated(
-                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-                  itemCount: topics.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 8),
-                  itemBuilder: (context, index) {
-                    return _TopicTile(
-                      topic: topics[index],
-                      subjectId: subjectId,
-                      index: index,
-                      mode: mode,
-                    );
-                  },
+      body: NeuralBackgroundWrapper(
+        child: topics.isEmpty
+            ? const Center(
+                child: Text('No hay temas disponibles', style: TextStyle(color: Colors.white60)),
+              )
+            : Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 800),
+                  child: ListView.separated(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                    itemCount: topics.length,
+                    separatorBuilder: (_, __) => const SizedBox(height: 10),
+                    itemBuilder: (context, index) {
+                      return _TopicTile(
+                        topic: topics[index],
+                        subjectId: subjectId,
+                        index: index,
+                        mode: mode,
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
+      ),
     );
   }
 }
@@ -89,158 +98,185 @@ class _TopicTile extends StatelessWidget {
     final allCompleted = Dificultad.values
         .every((d) => learningProvider.isLevelCompleted(topic.id, d));
 
-    return Material(
-      color: const Color(0xFF1E293B),
-      borderRadius: BorderRadius.circular(14),
-      child: InkWell(
-        onTap: () {
-          if (isLocked) {
-            Navigator.pushNamed(context, '/premium');
-            return;
-          }
-          if (mode == 'guided') {
-            if (topic.theoryByLevel != null) {
-              _startGuidedLearning(context, topic);
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
-                  duration: Duration(seconds: 2),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Material(
+          color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.55),
+          borderRadius: BorderRadius.circular(16),
+          child: InkWell(
+            onTap: () {
+              if (isLocked) {
+                Navigator.pushNamed(context, '/premium');
+                return;
+              }
+              if (mode == 'guided') {
+                if (topic.theoryByLevel != null) {
+                  _startGuidedLearning(context, topic);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                }
+              } else {
+                _startQuickQuiz(context, topic);
+              }
+            },
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: isLocked
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : NeuralDesignSystem.blueGoogle.withValues(alpha: 0.2),
+                  width: 1,
                 ),
-              );
-            }
-          } else {
-            _startQuickQuiz(context, topic);
-          }
-        },
-        borderRadius: BorderRadius.circular(14),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          child: Row(
-            children: [
-              // Index badge
-              Container(
-                width: 36,
-                height: 36,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF0F172A),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: isLocked 
-                    ? const Icon(Icons.lock, color: Color(0xFF64748B), size: 18)
-                    : Text(
-                        '${index + 1}',
-                        style: const TextStyle(
-                          color: Color(0xFF3B82F6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
-                ),
+                borderRadius: BorderRadius.circular(16),
               ),
-              const SizedBox(width: 14),
-
-              // Name + description
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            topic.name,
-                            style: TextStyle(
-                              color: isLocked ? Colors.white54 : Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        if (topic.theoryByLevel != null) ...[
-                          const SizedBox(width: 8),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 6, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFEF4444).withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(6),
-                              border: Border.all(
-                                  color: const Color(0xFFEF4444), width: 0.8),
-                            ),
-                            child: const Text(
-                              'NUEVO',
-                              style: TextStyle(
-                                color: Color(0xFFEF4444),
-                                fontSize: 9,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(
+                children: [
+                  // Index badge
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: NeuralDesignSystem.background.withValues(alpha: 0.8),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                    ),
+                    child: Center(
+                      child: isLocked
+                          ? Icon(Icons.lock, color: Colors.white.withValues(alpha: 0.3), size: 16)
+                          : Text(
+                              '${index + 1}',
+                              style: const TextStyle(
+                                color: NeuralDesignSystem.blueGoogle,
                                 fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                fontFamily: 'Outfit',
                               ),
                             ),
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+
+                  // Name + description
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                topic.name,
+                                style: TextStyle(
+                                  color: isLocked
+                                      ? Colors.white.withValues(alpha: 0.35)
+                                      : NeuralDesignSystem.textPrimary,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Inter',
+                                ),
+                              ),
+                            ),
+                            if (topic.theoryByLevel != null) ...[
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: BoxDecoration(
+                                  color: NeuralDesignSystem.pink.withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(6),
+                                  border: Border.all(color: NeuralDesignSystem.pink.withValues(alpha: 0.6), width: 0.8),
+                                ),
+                                child: const Text(
+                                  'NUEVO',
+                                  style: TextStyle(
+                                    color: NeuralDesignSystem.pink,
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                        if (topic.description.isNotEmpty) ...[
+                          const SizedBox(height: 3),
+                          Text(
+                            topic.description,
+                            style: TextStyle(
+                              color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.7),
+                              fontSize: 12,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                        if (!isLocked && mode == 'guided') ...[
+                          const SizedBox(height: 5),
+                          _LevelProgressIndicator(
+                            topicId: topic.id,
+                            allCompleted: allCompleted,
+                            currentLevel: currentLevel,
                           ),
                         ],
                       ],
                     ),
-                    if (topic.description.isNotEmpty) ...[
-                      const SizedBox(height: 3),
-                      Text(
-                        topic.description,
-                        style: const TextStyle(
-                          color: Color(0xFF64748B),
-                          fontSize: 12,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                    // Indicador de progreso del modo guiado
-                    if (!isLocked) ...[
-                      const SizedBox(height: 5),
-                      _LevelProgressIndicator(
-                        topicId: topic.id,
-                        allCompleted: allCompleted,
-                        currentLevel: currentLevel,
-                      ),
-                    ],
-                  ],
-                ),
-              ),
+                  ),
 
-              // Question count or lock
-              const SizedBox(width: 12),
-              if (isLocked)
-                 const Column(
-                   crossAxisAlignment: CrossAxisAlignment.end,
-                   children: [
-                     Icon(Icons.lock_person_rounded, color: Color(0xFFFBBF24), size: 24),
-                     Text(
-                       'Premium',
-                       style: TextStyle(color: Color(0xFFFBBF24), fontSize: 10, fontWeight: FontWeight.bold),
-                     ),
-                   ],
-                 )
-              else
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      '$dynamicQuestionCount',
-                      style: const TextStyle(
-                        color: Color(0xFF3B82F6),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                  const SizedBox(width: 12),
+                  if (isLocked)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Icon(Icons.lock_person_rounded,
+                            color: const Color(0xFFFBBF24).withValues(alpha: 0.8), size: 22),
+                        const Text(
+                          'Premium',
+                          style: TextStyle(
+                              color: Color(0xFFFBBF24), fontSize: 10, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )
+                  else
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '$dynamicQuestionCount',
+                          style: const TextStyle(
+                            color: NeuralDesignSystem.blueGoogle,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            fontFamily: 'Outfit',
+                          ),
+                        ),
+                        Text(
+                          'preguntas',
+                          style: TextStyle(
+                              color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.6),
+                              fontSize: 10),
+                        ),
+                      ],
                     ),
-                    const Text(
-                      'preguntas',
-                      style: TextStyle(color: Color(0xFF64748B), fontSize: 10),
-                    ),
-                  ],
-                ),
-              
-              const SizedBox(width: 8),
-              Icon(Icons.chevron_right, color: isLocked ? Colors.transparent : const Color(0xFF334155), size: 22),
-            ],
+                  const SizedBox(width: 8),
+                  Icon(
+                    Icons.chevron_right,
+                    color: isLocked
+                        ? Colors.transparent
+                        : Colors.white.withValues(alpha: 0.2),
+                    size: 22,
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),

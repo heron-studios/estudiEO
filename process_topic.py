@@ -132,8 +132,18 @@ def create_files_from_prompt(prompt_file_path, base_topic_id, prefix, subject_fo
     print(f"Generated {theory_file} and {questions_file}")
 
 if __name__ == "__main__":
-    prompt_file_path = r"c:\Users\PC\Downloads\EstudiEO-flutter\prompt_text.txt"
-    base_topic_id = "eo_pnp_sinonimos_ext_10q"
-    prefix = "sin_corto_10q"
-    subject_folder = "rv"
+    prompt_file_path = sys.argv[1]
+    subject_folder = sys.argv[2]
+    
+    with open(prompt_file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    base_topic_id = ""
+    prefix = ""
+    for line in content.split('\n'):
+        if line.startswith('TOPIC_ID:'):
+            base_topic_id = line.split('TOPIC_ID:')[1].strip()
+        elif line.startswith('PREFIX:'):
+            prefix = line.split('PREFIX:')[1].strip()
+            
     create_files_from_prompt(prompt_file_path, base_topic_id, prefix, subject_folder)
