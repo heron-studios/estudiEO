@@ -14,7 +14,9 @@ class SubjectProvider extends ChangeNotifier {
   List<Subject> _visibleSubjects = [];
 
   SubjectProvider(this._storage) {
-    _allSubjects = SubjectsRepository.getAllSubjects();
+    _allSubjects = SubjectsRepository.getAllSubjects()
+        .where((s) => s.id != 'matematicas')
+        .toList();
     _currentSubject = null;
     _currentTopic = null;
     updateVisibleSubjects();
@@ -54,7 +56,9 @@ class SubjectProvider extends ChangeNotifier {
   }
 
   void reload() {
-    _allSubjects = SubjectsRepository.getAllSubjects();
+    _allSubjects = SubjectsRepository.getAllSubjects()
+        .where((s) => s.id != 'matematicas')
+        .toList();
     updateVisibleSubjects();
   }
 
