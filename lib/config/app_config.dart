@@ -1,11 +1,9 @@
-import 'package:flutter/foundation.dart';
 
 class AppConfig {
   /// Establece si la aplicación está en modo demostración.
   /// En modo demo, solo se permite acceso a 20 preguntas y el simulacro de examen es reducido.
-  /// En web, demo mode está habilitado por defecto para permitir funcionamiento sin autenticación.
   static bool get isDemoMode =>
-      kIsWeb || const bool.fromEnvironment('DEMO_MODE', defaultValue: false);
+      const bool.fromEnvironment('DEMO_MODE', defaultValue: false);
 
   /// Número de WhatsApp para ventas de Premium
   static const String whatsappNumber = '51955285763';
