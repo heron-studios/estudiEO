@@ -5,15 +5,21 @@ import 'package:flutter/foundation.dart';
 import 'package:learn/config/app_config.dart';
 
 class AuthService extends ChangeNotifier {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth get _auth => FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     clientId: kIsWeb
         ? '921397124091-kr9b9smn52r45643qte4am6269gv07l9.apps.googleusercontent.com'
         : null,
   );
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
-  User? get currentUser => _auth.currentUser;
+  User? get currentUser {
+    try {
+      return _auth.currentUser;
+    } catch (_) {
+      return null;
+    }
+  }
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;

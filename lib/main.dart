@@ -29,58 +29,50 @@ import 'package:learn/screens/learning_theory_screen.dart';
 import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
 
-late LocalStorageService _storageService;
-
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  _storageService = LocalStorageService();
 
-  // Initialize everything in background - completely non-blocking
-  _initializeAsync();
+  // Initialize GetStorage first (essential for offline storage)
+  try {
+    await GetStorage.init();
+  } catch (e) {
+    debugPrint('GetStorage init error: $e');
+  }
+
+  // Initialize Firebase (essential for Auth/Firestore)
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    debugPrint('Firebase init error: $e');
+  }
+
+  final storageService = LocalStorageService();
+  try {
+    await storageService.init();
+  } catch (e) {
+    debugPrint('LocalStorageService init error: $e');
+  }
 
   runApp(
     MultiProvider(
       providers: [
-        Provider<LocalStorageService>.value(value: _storageService),
+        Provider<LocalStorageService>.value(value: storageService),
         ChangeNotifierProvider(create: (_) => AuthService()),
-        ChangeNotifierProvider(create: (_) => SrsProvider(_storageService)),
+        ChangeNotifierProvider(create: (_) => SrsProvider(storageService)),
         ChangeNotifierProvider(
-          create: (_) => GamificationProvider(_storageService),
+          create: (_) => GamificationProvider(storageService),
         ),
-        ChangeNotifierProvider(create: (_) => QuizProvider(_storageService)),
-        ChangeNotifierProvider(create: (_) => SubjectProvider(_storageService)),
+        ChangeNotifierProvider(create: (_) => QuizProvider(storageService)),
+        ChangeNotifierProvider(create: (_) => SubjectProvider(storageService)),
         ChangeNotifierProvider(
-          create: (_) => LearningProvider(_storageService),
+          create: (_) => LearningProvider(storageService),
         ),
       ],
       child: const MyApp(),
     ),
   );
-}
-
-void _initializeAsync() {
-  // Fire and forget - don't await
-  Future.microtask(() async {
-    try {
-      await GetStorage.init();
-    } catch (e) {
-      debugPrint('GetStorage: $e');
-    }
-
-    try {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-    } catch (e) {
-      debugPrint('Firebase: $e');
-    }
-
-    try {
-      await _storageService.init();
-    } catch (e) {
-      debugPrint('Storage: $e');
-    }
-  });
 }
 
 class MyApp extends StatelessWidget {
