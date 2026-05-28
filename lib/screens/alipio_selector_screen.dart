@@ -4,6 +4,7 @@ import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
 import 'package:learn/screens/alipio_screen.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
 
 
 /// Pantalla de selección de tema para entrar a Alipio (tarjetas + IA).
@@ -85,7 +86,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _bg,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -107,7 +108,8 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: NeuralBackgroundWrapper(
+        child: SafeArea(
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
@@ -285,7 +287,8 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
           ),
         ),
       ),
-    ),
+        ),
+      ),
     ),
   );
 }

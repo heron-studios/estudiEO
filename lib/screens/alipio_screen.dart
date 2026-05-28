@@ -1,7 +1,9 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
 
 class AlipioScreen extends StatefulWidget {
   final String topicId;
@@ -140,71 +142,63 @@ class _AlipioScreenState extends State<AlipioScreen>
   Widget build(BuildContext context) {
     if (_cards.isEmpty) {
       return Scaffold(
-        backgroundColor: _bg,
+        backgroundColor: Colors.transparent,
         appBar: _buildAppBar(),
-        body: const Center(
-          child: Text('No hay tarjetas disponibles',
-              style: TextStyle(color: Colors.white60)),
+        body: const NeuralBackgroundWrapper(
+          child: Center(
+            child: Text('No hay tarjetas disponibles',
+                style: TextStyle(color: Colors.white60)),
+          ),
         ),
       );
     }
-
+   
     return Scaffold(
-      backgroundColor: _bg,
+      backgroundColor: Colors.transparent,
       appBar: _buildAppBar(),
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 650),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-              // Progress bar + counter
-              _buildProgress(),
-              const SizedBox(height: 12),
-
-              // â”€â”€ FLASHCARD â”€â”€
-              Expanded(
-                flex: 8,
-                child: GestureDetector(
-                  onTap: _flip,
-                  child: AnimatedBuilder(
-                    animation: _flipAnim,
-                    builder: (context, child) {
-                      final angle = _flipAnim.value * 3.14159;
-                      final isFrontVisible = _flipAnim.value < 0.5;
-                      return Transform(
-                        alignment: Alignment.center,
-                        transform: Matrix4.identity()
-                          ..setEntry(3, 2, 0.001)
-                          ..rotateY(angle),
-                        child: isFrontVisible
-                            ? _buildFront()
-                            : Transform(
-                                alignment: Alignment.center,
-                                transform: Matrix4.identity()..rotateY(3.14159),
-                                child: _buildBack(),
-                              ),
-                      );
-                    },
-                  ),
+      body: NeuralBackgroundWrapper(
+        child: SafeArea(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 650),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    _buildProgress(),
+                    const SizedBox(height: 12),
+                    Expanded(
+                      flex: 8,
+                      child: GestureDetector(
+                        onTap: _flip,
+                        child: AnimatedBuilder(
+                          animation: _flipAnim,
+                          builder: (context, child) {
+                            final angle = _flipAnim.value * math.pi;
+                            final isFrontVisible = _flipAnim.value < 0.5;
+                            return Transform(
+                              alignment: Alignment.center,
+                              transform: Matrix4.identity()
+                                ..setEntry(3, 2, 0.001)
+                                ..rotateY(isFrontVisible ? angle : angle - math.pi),
+                              child: isFrontVisible ? _buildFront() : _buildBack(),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    _buildNavRow(),
+                  ],
                 ),
               ),
-
-              const SizedBox(height: 12),
-
-              // â”€â”€ NAV ROW â”€â”€
-              _buildNavRow(),
-            ],
+            ),
           ),
         ),
       ),
-    ),
-    ),
-  );
-}
+    );
+  }
 
   AppBar _buildAppBar() {
     return AppBar(
@@ -308,7 +302,13 @@ class _AlipioScreenState extends State<AlipioScreen>
   }
 
   Widget _buildBack() {
-    final answer = _current.options[_current.correctAnswer];
+    String answer = "Error: Respuesta no encontrada.";
+    if (_current.options.isNotEmpty && _current.correctAnswer >= 0 && _current.correctAnswer < _current.options.length) {
+      answer = _current.options[_current.correctAnswer];
+    } else {
+      // Si entra aquí, es porque la app sigue usando los datos antiguos en memoria.
+      answer = "Por favor, reinicia la app por completo (Hot Restart) para cargar los nuevos datos.";
+    }
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF052E16),

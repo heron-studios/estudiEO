@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/widgets/neural_background_wrapper.dart';
 
 class ExamScreen extends StatefulWidget {
   const ExamScreen({super.key});
@@ -165,10 +166,16 @@ class _ExamScreenState extends State<ExamScreen> {
   @override
   Widget build(BuildContext context) {
     if (_questions.isEmpty) {
-      return Scaffold(
-        backgroundColor: const Color(0xFF0F172A),
-        appBar: AppBar(title: const Text('Simulacro')),
-        body: const Center(child: Text('No se pudieron cargar las preguntas.', style: TextStyle(color: Colors.white))),
+      return const Scaffold(
+        backgroundColor: Colors.transparent,
+        body: NeuralBackgroundWrapper(
+          child: Center(
+            child: Text(
+              'No se pudieron cargar las preguntas.',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
       );
     }
 
@@ -214,8 +221,9 @@ class _ExamScreenState extends State<ExamScreen> {
           }
         },
         child: Scaffold(
-          backgroundColor: const Color(0xFF0F172A),
-          body: SafeArea(
+          backgroundColor: Colors.transparent,
+          body: NeuralBackgroundWrapper(
+            child: SafeArea(
             child: Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 650),
@@ -388,6 +396,7 @@ class _ExamScreenState extends State<ExamScreen> {
             ),
           ),
         ),
+      ),
       ),
     ),
     );

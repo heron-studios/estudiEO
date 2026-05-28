@@ -1,0 +1,299 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .gem-root {
+    font-family: 'Google Sans', sans-serif;
+    background: #0a0a0f;
+    min-height: 560px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  canvas#particles {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+  }
+  .gem-nav {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10,10,15,0.7);
+    backdrop-filter: blur(12px);
+  }
+  .gem-logo { display: flex; align-items: center; gap: 10px; }
+  .gem-logo-icon {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, #4285f4, #9c27b0, #e91e63);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: #fff; font-weight: 600;
+  }
+  .gem-logo-text { font-size: 15px; font-weight: 500; color: #e8eaed; letter-spacing: 0.3px; }
+  .gem-support {
+    font-size: 13px; color: #9aa0a6;
+    display: flex; align-items: center; gap: 6px;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .gem-support:hover { color: #e8eaed; }
+  .gem-body {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 52px 48px 52px 48px;
+    flex: 1;
+    gap: 32px;
+  }
+  .gem-hero { flex: 0 0 360px; }
+  .gem-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 10px; font-weight: 500; letter-spacing: 1.4px;
+    color: #8ab4f8; text-transform: uppercase;
+    border: 1px solid rgba(138,180,248,0.25);
+    border-radius: 20px; padding: 5px 13px;
+    background: rgba(138,180,248,0.07);
+    margin-bottom: 22px;
+  }
+  .gem-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: linear-gradient(135deg, #4285f4, #9c27b0);
+    flex-shrink: 0;
+  }
+  .gem-title {
+    font-size: 36px; font-weight: 400; line-height: 1.22;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #8ab4f8 0%, #c084fc 45%, #f472b6 85%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gem-desc {
+    font-size: 14px; color: #9aa0a6; line-height: 1.65;
+    margin-bottom: 28px; max-width: 320px;
+  }
+  .gem-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 11px 22px; border-radius: 24px;
+    background: #fff; color: #202124;
+    font-size: 14px; font-weight: 500; font-family: inherit;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+  }
+  .gem-btn:hover { background: #f1f3f4; transform: translateY(-1px); box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+  .gem-btn:active { transform: scale(0.98); }
+  .gem-btn svg { flex-shrink: 0; }
+  .gem-cards {
+    flex: 0 0 440px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .gem-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 22px 20px;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .gem-card::before {
+    content: ''; position: absolute; inset: 0; border-radius: 16px; opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gem-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+  .gem-card:hover::before { opacity: 1; }
+  .c1::before { background: radial-gradient(circle at 20% 30%, rgba(66,133,244,0.12) 0%, transparent 70%); }
+  .c2::before { background: radial-gradient(circle at 20% 30%, rgba(156,39,176,0.12) 0%, transparent 70%); }
+  .c3::before { background: radial-gradient(circle at 20% 30%, rgba(0,168,132,0.12) 0%, transparent 70%); }
+  .c4::before { background: radial-gradient(circle at 20% 30%, rgba(244,114,182,0.12) 0%, transparent 70%); }
+  .gem-card-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; font-size: 18px;
+  }
+  .ic1 { background: rgba(66,133,244,0.18); color: #8ab4f8; }
+  .ic2 { background: rgba(156,39,176,0.18); color: #c084fc; }
+  .ic3 { background: rgba(0,168,132,0.18); color: #34d399; }
+  .ic4 { background: rgba(244,114,182,0.18); color: #f9a8d4; }
+  .gem-card-title { font-size: 13px; font-weight: 500; color: #e8eaed; margin-bottom: 7px; }
+  .gem-card-desc { font-size: 12px; color: #9aa0a6; line-height: 1.55; }
+  .gem-card-tag {
+    display: inline-block; margin-top: 12px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.5px;
+    padding: 3px 8px; border-radius: 6px;
+    background: rgba(255,255,255,0.07); color: #9aa0a6;
+  }
+  .gem-divider {
+    position: absolute; left: 48px; right: 48px; bottom: 0;
+    height: 1px; background: rgba(255,255,255,0.05);
+  }
+  .gem-shimmer {
+    position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+    animation: shimmer 4s ease-in-out infinite;
+  }
+  @keyframes shimmer { 0%,100% { left: -100%; } 50% { left: 120%; } }
+  .gem-orb {
+    position: absolute; border-radius: 50%; pointer-events: none; z-index: 1;
+    filter: blur(60px);
+  }
+  .orb1 { width: 280px; height: 280px; background: rgba(66,133,244,0.07); top: -80px; left: -60px; animation: orbFloat 8s ease-in-out infinite; }
+  .orb2 { width: 200px; height: 200px; background: rgba(156,39,176,0.08); bottom: 20px; right: 80px; animation: orbFloat 11s ease-in-out infinite reverse; }
+  .orb3 { width: 160px; height: 160px; background: rgba(244,114,182,0.06); top: 40%; left: 45%; animation: orbFloat 9s ease-in-out infinite 2s; }
+  @keyframes orbFloat {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(12px,-18px) scale(1.05); }
+    66% { transform: translate(-8px,12px) scale(0.97); }
+  }
+  .section-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 1.6px;
+    color: #5f6368; text-transform: uppercase;
+    margin-bottom: 14px; grid-column: 1/-1;
+  }
+  .cards-wrapper { display: contents; }
+</style>
+
+<div class="gem-root" id="gemRoot">
+  <canvas id="particles"></canvas>
+  <div class="gem-orb orb1"></div>
+  <div class="gem-orb orb2"></div>
+  <div class="gem-orb orb3"></div>
+
+  <nav class="gem-nav">
+    <div class="gem-logo">
+      <div class="gem-logo-icon">E</div>
+      <span class="gem-logo-text">EstudiEO</span>
+    </div>
+    <div class="gem-support">
+      <i class="ti ti-headset" aria-hidden="true"></i>
+      Soporte
+    </div>
+  </nav>
+
+  <div class="gem-body">
+    <div class="gem-hero">
+      <div class="gem-badge">
+        <div class="gem-badge-dot"></div>
+        Sistema de preparación PNP
+      </div>
+      <h1 class="gem-title">Entrenamiento<br>Académico<br>Inteligente</h1>
+      <p class="gem-desc">Domina todo el temario con inteligencia activa, repasos espaciados (SRS) y simulacros tipo examen de admisión PNP.</p>
+      <button class="gem-btn" onclick="this.style.transform='scale(0.97)';setTimeout(()=>this.style.transform='',150)">
+        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Iniciar con Google
+      </button>
+    </div>
+
+    <div class="gem-cards">
+      <div class="section-label">Características del sistema</div>
+
+      <div class="gem-card c1">
+        <div class="gem-shimmer"></div>
+        <div class="gem-card-icon ic1"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+        <div class="gem-card-title">Misión Diaria</div>
+        <div class="gem-card-desc">Resuelve preguntas personalizadas cada día para mantener tu racha.</div>
+        <div class="gem-card-tag">Activo</div>
+      </div>
+
+      <div class="gem-card c2">
+        <div class="gem-shimmer" style="animation-delay:1s"></div>
+        <div class="gem-card-icon ic2"><i class="ti ti-books" aria-hidden="true"></i></div>
+        <div class="gem-card-title">Temario PNP</div>
+        <div class="gem-card-desc">Miles de preguntas oficiales del prospecto PNP vigente.</div>
+        <div class="gem-card-tag">Oficial</div>
+      </div>
+
+      <div class="gem-card c3">
+        <div class="gem-shimmer" style="animation-delay:2s"></div>
+        <div class="gem-card-icon ic3"><i class="ti ti-clock-play" aria-hidden="true"></i></div>
+        <div class="gem-card-title">Simulacros Reales</div>
+        <div class="gem-card-desc">Exámenes completos contrarreloj con el formato exacto de admisión.</div>
+        <div class="gem-card-tag">Cronometrado</div>
+      </div>
+
+      <div class="gem-card c4">
+        <div class="gem-shimmer" style="animation-delay:0.5s"></div>
+        <div class="gem-card-icon ic4"><i class="ti ti-route" aria-hidden="true"></i></div>
+        <div class="gem-card-title">Aprendizaje Guiado</div>
+        <div class="gem-card-desc">Rutas de estudio adaptativas con seguimiento de progreso.</div>
+        <div class="gem-card-tag">Adaptativo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  const root = document.getElementById('gemRoot');
+  let W, H, pts = [], mouse = {x: -999, y: -999};
+
+  function resize(){
+    W = canvas.width = root.offsetWidth;
+    H = canvas.height = root.offsetHeight;
+  }
+
+  function mkPt(){
+    return {
+      x: Math.random()*W, y: Math.random()*H,
+      vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25,
+      r: Math.random()*1.4+0.3,
+      a: Math.random(),
+      c: ['rgba(138,180,248,','rgba(192,132,252,','rgba(249,168,212,'][Math.floor(Math.random()*3)]
+    };
+  }
+
+  function init(){
+    resize();
+    pts = Array.from({length:90}, mkPt);
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+
+      const dx=p.x-mouse.x, dy=p.y-mouse.y, dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<80){ p.x += dx/dist*0.6; p.y += dy/dist*0.6; }
+
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = p.c + (p.a*0.7)+')';
+      ctx.fill();
+    });
+
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<90){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle='rgba(138,180,248,'+(0.12*(1-d/90))+')';
+          ctx.lineWidth=0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  root.addEventListener('mousemove',e=>{
+    const rect=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-rect.left; mouse.y=e.clientY-rect.top;
+  });
+  root.addEventListener('mouseleave',()=>{mouse.x=-999;mouse.y=-999;});
+  window.addEventListener('resize', ()=>{ resize(); });
+
+  init(); draw();
+})();
+</script>

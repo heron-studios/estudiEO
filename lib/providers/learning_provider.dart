@@ -85,6 +85,7 @@ class LearningProvider extends ChangeNotifier {
 
     _currentSession = session;
     _storage.saveLearningSession(session);
+    _storage.saveLastActiveLearningSession(topicId, nivel.key);
     notifyListeners();
   }
 
@@ -94,6 +95,7 @@ class LearningProvider extends ChangeNotifier {
     final saved = _storage.loadLearningSession(topicId, nivel);
     if (saved == null || saved.isLevelCompleted) return false;
     _currentSession = saved;
+    _storage.saveLastActiveLearningSession(topicId, nivel.key);
     notifyListeners();
     return true;
   }
@@ -139,6 +141,12 @@ class LearningProvider extends ChangeNotifier {
 
     // Persistir tras cada respuesta
     _storage.saveLearningSession(_currentSession!);
+    if (!_currentSession!.isLevelCompleted) {
+      _storage.saveLastActiveLearningSession(
+        _currentSession!.topicId,
+        _currentSession!.nivel.key,
+      );
+    }
     notifyListeners();
   }
 
@@ -158,6 +166,7 @@ class LearningProvider extends ChangeNotifier {
 
     _storage.saveLearningProgress(_completedLevels);
     _storage.saveLearningSession(_currentSession!);
+    _storage.deleteLastActiveLearningSession();
   }
 
   /// Limpia la sesión activa de memoria (no borra del storage).
@@ -181,8 +190,49 @@ class LearningProvider extends ChangeNotifier {
     for (final nivel in Dificultad.values) {
       _storage.deleteLearningSession(topicId, nivel);
     }
+    final lastActive = _storage.loadLastActiveLearningSession();
+    if (lastActive != null && lastActive['topicId'] == topicId) {
+      _storage.deleteLastActiveLearningSession();
+    }
     _currentSession = null;
     notifyListeners();
+  }
+
+  /// Retorna el nivel de la sesión pendiente para un tema dado, si existe.
+  Dificultad? getPendingSessionLevel(String topicId) {
+    for (final nivel in Dificultad.values) {
+      if (hasPendingSession(topicId, nivel)) {
+        return nivel;
+      }
+    }
+    return null;
+  }
+
+  /// Retorna una sesión de aprendizaje guardada.
+  LearningSession? getPendingSession(String topicId, Dificultad nivel) {
+    return _storage.loadLearningSession(topicId, nivel);
+  }
+
+  /// Retorna los detalles de la última sesión activa pendiente de aprendizaje guiado.
+  Map<String, dynamic>? getLastActiveSessionInfo() {
+    final info = _storage.loadLastActiveLearningSession();
+    if (info == null) return null;
+
+    final topicId = info['topicId']!;
+    final nivelKey = info['nivel']!;
+    final nivel = Dificultad.fromString(nivelKey);
+
+    final session = _storage.loadLearningSession(topicId, nivel);
+    if (session == null || session.isLevelCompleted) {
+      _storage.deleteLastActiveLearningSession();
+      return null;
+    }
+
+    return {
+      'topicId': topicId,
+      'nivel': nivel,
+      'session': session,
+    };
   }
 
   // ─── Helpers ─────────────────────────────────────────────────────────────

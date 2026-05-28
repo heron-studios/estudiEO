@@ -1,23 +1,31 @@
-import 'dart:ui';
+import 'dart:ui' as ui;
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:learn/config/neural_design_system.dart';
+import 'package:learn/config/neural_theme.dart';
 
-/// Wrapper de Fondo Neural animado e inmersivo.
-/// Renderiza manchas de luz difuminadas con un blur extremo y un movimiento lento
-/// de respiración y cambio de opacidad.
+// ─────────────────────────────────────────────────────────────────────────────
+//  NeuralBackgroundWrapper v3 — Fondo Neural con partículas y redes flotantes
+//
+//  Mejoras vs v2:
+//  • Agrega la capa interactiva de partículas y conexiones (redes neuronales flotantes)
+//    del login, integrada dinámicamente con las variables del NeuralTheme.
+//  • Aísla las partículas en un RepaintBoundary y mantiene el child desacoplado.
+// ─────────────────────────────────────────────────────────────────────────────
 class NeuralBackgroundWrapper extends StatefulWidget {
   final Widget child;
 
   const NeuralBackgroundWrapper({super.key, required this.child});
 
   @override
-  State<NeuralBackgroundWrapper> createState() => _NeuralBackgroundWrapperState();
+  State<NeuralBackgroundWrapper> createState() =>
+      _NeuralBackgroundWrapperState();
 }
 
 class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+  late final AnimationController _controller;
+  late final Animation<double> _breathe;
+  late final ValueNotifier<Offset> _mouseNotifier;
 
   @override
   void initState() {
@@ -26,10 +34,199 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
       vsync: this,
       duration: const Duration(seconds: 15),
     )..repeat(reverse: true);
-    
-    _animation = Tween<double>(begin: 0.85, end: 1.15).animate(
+
+    _breathe = Tween<double>(begin: 0.88, end: 1.12).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
+
+    _mouseNotifier = ValueNotifier<Offset>(const Offset(-999, -999));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _mouseNotifier.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final nt = NeuralTheme.of(context);
+
+    return MouseRegion(
+      onHover: (e) => _mouseNotifier.value = e.localPosition,
+      onExit: (_) => _mouseNotifier.value = const Offset(-999, -999),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          // 1. Fondo base sólido — nunca se reconstruye
+          ColoredBox(color: nt.background),
+
+          // 2. Capa de blobs animados aislada en su propio layer
+          RepaintBoundary(
+            child: AnimatedBuilder(
+              animation: _breathe,
+              builder: (_, __) {
+                final s = _breathe.value;
+                return _BlobLayer(scale: s, nt: nt);
+              },
+            ),
+          ),
+
+          // 3. Desenfoque masivo sobre los blobs ÚNICAMENTE
+          Positioned.fill(
+            child: IgnorePointer(
+              child: BackdropFilter(
+                filter: ui.ImageFilter.blur(sigmaX: 80, sigmaY: 80),
+                child: const SizedBox.expand(),
+              ),
+            ),
+          ),
+
+          // 4. Capa de redes neuronales flotantes (partículas y conexiones crisp, por encima del blur)
+          Positioned.fill(
+            child: RepaintBoundary(
+              child: _ParticleCanvas(
+                mouseNotifier: _mouseNotifier,
+                blueGoogle: nt.blueGoogle,
+                purple: nt.purple,
+                pink: nt.pink,
+              ),
+            ),
+          ),
+
+          // 5. Capa de velo sutil — estática, sin rebuild
+          const ColoredBox(color: Color(0x0D000000)), // 5% black
+
+          // 6. Contenido de la pantalla — completamente desacoplado de la animación
+          widget.child,
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  _BlobLayer — CustomPainter puro (sin BoxDecoration ni Container)
+// ─────────────────────────────────────────────────────────────────────────────
+class _BlobLayer extends StatelessWidget {
+  final double scale;
+  final NeuralThemeData nt;
+
+  const _BlobLayer({required this.scale, required this.nt});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _BlobPainter(scale: scale, nt: nt),
+      child: const SizedBox.expand(),
+    );
+  }
+}
+
+class _BlobPainter extends CustomPainter {
+  final double scale;
+  final NeuralThemeData nt;
+
+  const _BlobPainter({required this.scale, required this.nt});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    final s = scale;
+
+    // Blob azul — esquina superior izquierda
+    _drawBlob(
+      canvas,
+      center: Offset(-50 * s + w * 0.05, -80 * s + h * 0.05),
+      radius: 175 * s,
+      color: nt.blueGoogle.withValues(alpha: nt.blobBlueOpacity),
+    );
+
+    // Blob morado — centro derecha
+    _drawBlob(
+      canvas,
+      center: Offset(w + 100 * s - w * 0.15, 250 * s + h * 0.2),
+      radius: 200 * s,
+      color: nt.purple.withValues(alpha: nt.blobPurpleOpacity),
+    );
+
+    // Blob rosa — esquina inferior izquierda
+    _drawBlob(
+      canvas,
+      center: Offset(100 * s + w * 0.1, h + 100 * s - h * 0.1),
+      radius: 190 * s,
+      color: nt.pink.withValues(alpha: nt.blobPinkOpacity),
+    );
+  }
+
+  void _drawBlob(
+    Canvas canvas, {
+    required Offset center,
+    required double radius,
+    required Color color,
+  }) {
+    canvas.drawCircle(center, radius, Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(_BlobPainter old) =>
+      old.scale != scale || old.nt != nt;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  _ParticleCanvas — Canvas de partículas interactivas flotantes
+// ─────────────────────────────────────────────────────────────────────────────
+class _Particle {
+  double x;
+  double y;
+  double vx;
+  double vy;
+  final double r;
+  final double a;
+  final Color color;
+
+  _Particle({
+    required this.x,
+    required this.y,
+    required this.vx,
+    required this.vy,
+    required this.r,
+    required this.a,
+    required this.color,
+  });
+}
+
+class _ParticleCanvas extends StatefulWidget {
+  final ValueNotifier<Offset> mouseNotifier;
+  final Color blueGoogle;
+  final Color purple;
+  final Color pink;
+
+  const _ParticleCanvas({
+    required this.mouseNotifier,
+    required this.blueGoogle,
+    required this.purple,
+    required this.pink,
+  });
+
+  @override
+  State<_ParticleCanvas> createState() => _ParticleCanvasState();
+}
+
+class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  final List<_Particle> _particles = [];
+  Size _lastSize = Size.zero;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 16),
+    )..repeat();
   }
 
   @override
@@ -38,84 +235,105 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
     super.dispose();
   }
 
+  void _updateParticles(Size size, Offset mousePos) {
+    if (_particles.isEmpty || _lastSize != size) {
+      _lastSize = size;
+      final random = math.Random();
+      _particles.clear();
+      final colors = [
+        widget.blueGoogle,
+        widget.purple,
+        widget.pink,
+      ];
+      for (int i = 0; i < 60; i++) { // 60 partículas es ideal para balancear estética y rendimiento en el Home
+        _particles.add(_Particle(
+          x: random.nextDouble() * size.width,
+          y: random.nextDouble() * size.height,
+          vx: (random.nextDouble() - 0.5) * 0.25,
+          vy: (random.nextDouble() - 0.5) * 0.25,
+          r: random.nextDouble() * 1.4 + 0.3,
+          a: random.nextDouble(),
+          color: colors[random.nextInt(3)],
+        ));
+      }
+      return;
+    }
+
+    for (var p in _particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = size.width;
+      if (p.x > size.width) p.x = 0;
+      if (p.y < 0) p.y = size.height;
+      if (p.y > size.height) p.y = 0;
+
+      if (mousePos.dx != -999 && mousePos.dy != -999) {
+        final dx = p.x - mousePos.dx;
+        final dy = p.y - mousePos.dy;
+        final dist = math.sqrt(dx * dx + dy * dy);
+        if (dist < 80) {
+          p.x += (dx / dist) * 0.6;
+          p.y += (dy / dist) * 0.6;
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        // Fondo base de color místico oscuro
-        Container(color: NeuralDesignSystem.background),
-
-        // Blobs de luz neural con desenfoque extremo
-        AnimatedBuilder(
-          animation: _animation,
-          builder: (context, child) {
-            final scale = _animation.value;
-            return Stack(
-              fit: StackFit.expand,
-              children: [
-                // Blob Azul
-                Positioned(
-                  top: -80 * scale,
-                  left: -50 * scale,
-                  child: Container(
-                    width: 350 * scale,
-                    height: 350 * scale,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.18),
-                    ),
-                  ),
-                ),
-                // Blob Morado
-                Positioned(
-                  top: 250 * scale,
-                  right: -100 * scale,
-                  child: Container(
-                    width: 400 * scale,
-                    height: 400 * scale,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: NeuralDesignSystem.purple.withValues(alpha: 0.15),
-                    ),
-                  ),
-                ),
-                // Blob Rosa
-                Positioned(
-                  bottom: -100 * scale,
-                  left: 100 * scale,
-                  child: Container(
-                    width: 380 * scale,
-                    height: 380 * scale,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: NeuralDesignSystem.pink.withValues(alpha: 0.12),
-                    ),
-                  ),
-                ),
-              ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final size = Size(constraints.maxWidth, constraints.maxHeight);
+        return AnimatedBuilder(
+          animation: _controller,
+          builder: (context, _) {
+            _updateParticles(size, widget.mouseNotifier.value);
+            return CustomPaint(
+              size: size,
+              painter: _ParticlePainter(particles: _particles, lineColor: widget.blueGoogle),
             );
           },
-        ),
-
-        // Capa de desenfoque de fondo masivo para fusionar los blobs de luz
-        Positioned.fill(
-          child: IgnorePointer(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 110, sigmaY: 110),
-              child: const SizedBox.shrink(),
-            ),
-          ),
-        ),
-
-        // Capa sutil de ruido visual u opacidad para unificar
-        Container(
-          color: Colors.black.withValues(alpha: 0.05),
-        ),
-
-        // Contenido encima
-        widget.child,
-      ],
+        );
+      },
     );
   }
+}
+
+class _ParticlePainter extends CustomPainter {
+  final List<_Particle> particles;
+  final Color lineColor;
+  const _ParticlePainter({required this.particles, required this.lineColor});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    // 1. Connections
+    final linePaint = Paint()..strokeWidth = 0.5;
+    for (int i = 0; i < particles.length; i++) {
+      for (int j = i + 1; j < particles.length; j++) {
+        final dx = particles[i].x - particles[j].x;
+        final dy = particles[i].y - particles[j].y;
+        final d = math.sqrt(dx * dx + dy * dy);
+        if (d < 95) {
+          final opacity = 0.12 * (1.0 - d / 95.0);
+          linePaint.color = lineColor.withValues(alpha: opacity);
+          canvas.drawLine(
+            Offset(particles[i].x, particles[i].y),
+            Offset(particles[j].x, particles[j].y),
+            linePaint,
+          );
+        }
+      }
+    }
+
+    // 2. Dots
+    final particlePaint = Paint()..style = PaintingStyle.fill;
+    for (var p in particles) {
+      particlePaint.color = p.color.withValues(alpha: p.a * 0.7);
+      canvas.drawCircle(Offset(p.x, p.y), p.r, particlePaint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/learning_level.dart';
+import 'package:learn/models/question.dart';
+import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -32,6 +34,16 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
 
   late ScrollController _scrollController;
 
+  // Variables de Puntos de Control
+  List<Question> _checkpoints = [];
+  final Map<String, int> _selectedAnswers = {}; // questionId -> selectedIndex
+  final Map<String, bool> _checkpointFeedback = {}; // questionId -> isCorrect
+
+  bool get _allCheckpointsPassed {
+    if (_checkpoints.isEmpty) return true;
+    return _checkpoints.every((q) => _checkpointFeedback[q.id] == true);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -50,6 +62,16 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
             );
       }
     });
+
+    // Cargar preguntas para Puntos de Control (las 2 primeras del pool del nivel actual)
+    final allQuestions = SubjectsRepository.getQuestionsByTopicAndLevel(
+      widget.topicId,
+      widget.nivel,
+      count: 10,
+    );
+    if (allQuestions.isNotEmpty) {
+      _checkpoints = allQuestions.take(2).toList();
+    }
 
     _buttonController = AnimationController(
       vsync: this,
@@ -88,6 +110,23 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
         'nivel': widget.nivel,
       },
     );
+  }
+
+  void _onCheckpointAnswered(String questionId, int selectedOptionIndex, bool isCorrect) {
+    setState(() {
+      _selectedAnswers[questionId] = selectedOptionIndex;
+      _checkpointFeedback[questionId] = isCorrect;
+    });
+
+    if (isCorrect) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('🎉 ¡Punto de control superado!'),
+          duration: Duration(seconds: 1),
+          backgroundColor: Color(0xFF15803D),
+        ),
+      );
+    }
   }
 
   @override
@@ -143,6 +182,18 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
                               'Aún no hay contenido teórico registrado para este nivel. Por favor, contacta al administrador.',
                         ),
                         const SizedBox(height: 20),
+
+                        // Puntos de control interactivos
+                        if (_checkpoints.isNotEmpty) ...[
+                          _CheckpointsSection(
+                            checkpoints: _checkpoints,
+                            nivel: widget.nivel,
+                            selectedAnswers: _selectedAnswers,
+                            checkpointFeedback: _checkpointFeedback,
+                            onAnswerSelected: _onCheckpointAnswered,
+                          ),
+                          const SizedBox(height: 20),
+                        ],
   
                         // Recuerda / Tip
                         _TipCard(nivel: widget.nivel),
@@ -162,6 +213,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
         buttonScale: _buttonScale,
         nivel: widget.nivel,
         onTap: () => _startPractice(context),
+        isEnabled: _allCheckpointsPassed,
       ),
     );
   }
@@ -507,11 +559,13 @@ class _StartPracticeButton extends StatelessWidget {
   final Animation<double> buttonScale;
   final Dificultad nivel;
   final VoidCallback onTap;
+  final bool isEnabled;
 
   const _StartPracticeButton({
     required this.buttonScale,
     required this.nivel,
     required this.onTap,
+    required this.isEnabled,
   });
 
   @override
@@ -532,48 +586,70 @@ class _StartPracticeButton extends StatelessWidget {
         ],
       ),
       child: ScaleTransition(
-        scale: buttonScale,
+        scale: isEnabled ? buttonScale : const AlwaysStoppedAnimation(1.0),
         child: SizedBox(
           width: double.infinity,
           height: 56,
           child: DecoratedBox(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  nivel.color,
-                  nivel.color.withValues(alpha: 0.75),
-                ],
+                colors: isEnabled
+                    ? [
+                        nivel.color,
+                        nivel.color.withValues(alpha: 0.75),
+                      ]
+                    : [
+                        const Color(0xFF1E293B),
+                        const Color(0xFF334155),
+                      ],
               ),
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  color: nivel.color.withValues(alpha: 0.4),
-                  blurRadius: 20,
-                  offset: const Offset(0, 6),
-                ),
-              ],
+              boxShadow: isEnabled
+                  ? [
+                      BoxShadow(
+                        color: nivel.color.withValues(alpha: 0.4),
+                        blurRadius: 20,
+                        offset: const Offset(0, 6),
+                      ),
+                    ]
+                  : [],
             ),
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: onTap,
+                onTap: isEnabled
+                    ? onTap
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              '⚠️ Responde correctamente todos los puntos de control para habilitar la práctica.',
+                            ),
+                            duration: Duration(seconds: 2),
+                            backgroundColor: Color(0xFFB91C1C),
+                          ),
+                        );
+                      },
                 borderRadius: BorderRadius.circular(16),
-                child: const Center(
+                child: Center(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        '¡Entendido, a practicar!',
+                        isEnabled ? '¡Entendido, a practicar!' : 'Puntos de Control Pendientes',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: isEnabled ? Colors.white : Colors.white38,
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 0.3,
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Icon(Icons.arrow_forward_rounded,
-                          color: Colors.white, size: 22),
+                      const SizedBox(width: 8),
+                      Icon(
+                        isEnabled ? Icons.arrow_forward_rounded : Icons.lock_outline_rounded,
+                        color: isEnabled ? Colors.white : Colors.white38,
+                        size: 22,
+                      ),
                     ],
                   ),
                 ),
@@ -581,6 +657,194 @@ class _StartPracticeButton extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _CheckpointsSection extends StatefulWidget {
+  final List<Question> checkpoints;
+  final Dificultad nivel;
+  final Map<String, int> selectedAnswers;
+  final Map<String, bool> checkpointFeedback;
+  final Function(String questionId, int selectedOptionIndex, bool isCorrect) onAnswerSelected;
+
+  const _CheckpointsSection({
+    required this.checkpoints,
+    required this.nivel,
+    required this.selectedAnswers,
+    required this.checkpointFeedback,
+    required this.onAnswerSelected,
+  });
+
+  @override
+  State<_CheckpointsSection> createState() => _CheckpointsSectionState();
+}
+
+class _CheckpointsSectionState extends State<_CheckpointsSection> {
+  @override
+  Widget build(BuildContext context) {
+    if (widget.checkpoints.isEmpty) return const SizedBox.shrink();
+
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E293B).withValues(alpha: 0.4),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: widget.nivel.color.withValues(alpha: 0.3), width: 1),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Text('⚡', style: TextStyle(fontSize: 22)),
+              const SizedBox(width: 8),
+              const Expanded(
+                child: Text(
+                  'Puntos de Control',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  'Completado: ${widget.checkpoints.where((q) => widget.checkpointFeedback[q.id] == true).length}/${widget.checkpoints.length}',
+                  style: const TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'Responde correctamente las siguientes preguntas de control para desbloquear la práctica.',
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12),
+            child: Divider(color: Colors.white10),
+          ),
+          ...List.generate(widget.checkpoints.length, (index) {
+            final q = widget.checkpoints[index];
+            final selected = widget.selectedAnswers[q.id];
+            final isCorrect = widget.checkpointFeedback[q.id];
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Pregunta ${index + 1}: ${q.text}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      height: 1.45,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ...List.generate(q.options.length, (optIndex) {
+                    final isOptSelected = selected == optIndex;
+                    Color borderCol = Colors.white.withValues(alpha: 0.08);
+                    Color bgCol = Colors.white.withValues(alpha: 0.02);
+                    Widget? trailing;
+
+                    if (isOptSelected) {
+                      if (isCorrect == true) {
+                        borderCol = const Color(0xFF22C55E);
+                        bgCol = const Color(0xFF15803D).withValues(alpha: 0.2);
+                        trailing = const Icon(Icons.check_circle_rounded, color: Color(0xFF22C55E), size: 18);
+                      } else {
+                        borderCol = const Color(0xFFEF4444);
+                        bgCol = const Color(0xFFB91C1C).withValues(alpha: 0.2);
+                        trailing = const Icon(Icons.cancel_rounded, color: Color(0xFFEF4444), size: 18);
+                      }
+                    }
+
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: InkWell(
+                        onTap: (isCorrect == true) ? null : () {
+                          final correct = optIndex == q.correctAnswer;
+                          widget.onAnswerSelected(q.id, optIndex, correct);
+                        },
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                          decoration: BoxDecoration(
+                            color: bgCol,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: borderCol, width: 1.2),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  q.options[optIndex],
+                                  style: TextStyle(
+                                    color: isOptSelected
+                                        ? (isCorrect == true ? const Color(0xFF86EFAC) : const Color(0xFFFCA5A5))
+                                        : Colors.white70,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              if (trailing != null) ...[
+                                const SizedBox(width: 8),
+                                trailing,
+                              ],
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                  if (isCorrect == false) ...[
+                    const SizedBox(height: 6),
+                    Row(
+                      children: [
+                        const Icon(Icons.info_outline, color: Color(0xFFFCA5A5), size: 14),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            'Respuesta incorrecta. Vuelve a leer la teoría e inténtalo de nuevo.',
+                            style: TextStyle(color: const Color(0xFFFCA5A5).withValues(alpha: 0.9), fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ] else if (isCorrect == true) ...[
+                    const SizedBox(height: 6),
+                    Row(
+                      children: [
+                        const Icon(Icons.check_circle_outline, color: Color(0xFF86EFAC), size: 14),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            q.explanation.isNotEmpty ? q.explanation : '¡Correcto!',
+                            style: TextStyle(color: const Color(0xFF86EFAC).withValues(alpha: 0.9), fontSize: 11),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ],
+              ),
+            );
+          }),
+        ],
       ),
     );
   }

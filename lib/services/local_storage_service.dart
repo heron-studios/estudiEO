@@ -17,6 +17,7 @@ class LocalStorageService {
   static const String strictModeKey = 'srs_strict_mode';
   static const String learningSessionsKey = 'learning_sessions';
   static const String learningProgressKey = 'learning_progress';
+  static const String lastActiveLearningSessionKey = 'last_active_learning_session';
 
   final GetStorage _storage = GetStorage();
   Map<String, SrsCard>? _srsCache;
@@ -271,6 +272,42 @@ class LocalStorageService {
       _storage.write(learningSessionsKey, data);
     } catch (e) {
       debugPrint('Error deleting learning session: $e');
+    }
+  }
+
+  // ─── Last Active Learning Session ──────────────────────────────────────────
+
+  void saveLastActiveLearningSession(String topicId, String levelKey) {
+    try {
+      _storage.write(lastActiveLearningSessionKey, {
+        'topicId': topicId,
+        'nivel': levelKey,
+      });
+    } catch (e) {
+      debugPrint('Error saving last active learning session: $e');
+    }
+  }
+
+  Map<String, String>? loadLastActiveLearningSession() {
+    try {
+      final data = _storage.read(lastActiveLearningSessionKey);
+      if (data == null) return null;
+      final map = Map<String, dynamic>.from(data as Map);
+      return {
+        'topicId': map['topicId'] as String,
+        'nivel': map['nivel'] as String,
+      };
+    } catch (e) {
+      debugPrint('Error loading last active learning session: $e');
+      return null;
+    }
+  }
+
+  void deleteLastActiveLearningSession() {
+    try {
+      _storage.remove(lastActiveLearningSessionKey);
+    } catch (e) {
+      debugPrint('Error deleting last active learning session: $e');
     }
   }
 

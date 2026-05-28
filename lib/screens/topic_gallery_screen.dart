@@ -290,13 +290,172 @@ class _TopicTile extends StatelessWidget {
   void _startGuidedLearning(BuildContext context, Topic topic) {
     context.read<SubjectProvider>().selectTopic(topic.id);
     final lp = context.read<LearningProvider>();
-    final currentLevel = lp.getCurrentLevel(topic.id);
+    
+    // Check if there is any pending session on any level for this topic
+    final pendingLevel = lp.getPendingSessionLevel(topic.id);
 
-    Navigator.pushNamed(
-      context,
-      '/learning-theory',
-      arguments: {'topicId': topic.id, 'nivel': currentLevel},
-    );
+    if (pendingLevel != null) {
+      final session = lp.getPendingSession(topic.id, pendingLevel);
+      final currentQuestionNum = (session?.correctCount ?? 0) + 1;
+
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          backgroundColor: const Color(0xFF1E1F20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(color: Colors.white12),
+          ),
+          title: const Row(
+            children: [
+              Icon(Icons.pending_actions_rounded, color: Colors.orangeAccent),
+              SizedBox(width: 10),
+              Text(
+                'Sesión en Progreso',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Tienes una práctica pendiente para este tema:',
+                style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
+              ),
+              const SizedBox(height: 12),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.04),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      topic.name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: pendingLevel.color.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(6),
+                            border: Border.all(color: pendingLevel.color.withValues(alpha: 0.4)),
+                          ),
+                          child: Text(
+                            '${pendingLevel.emoji} Nivel ${pendingLevel.displayName}',
+                            style: TextStyle(
+                              color: pendingLevel.color,
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          'Pregunta $currentQuestionNum de 10',
+                          style: const TextStyle(
+                            color: Colors.white60,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          actionsAlignment: MainAxisAlignment.end,
+          actionsPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          actions: [
+            // Botón de Reiniciar
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                lp.resetTopicProgress(topic.id);
+                // Iniciar nueva sesión
+                Navigator.pushNamed(
+                  context,
+                  '/learning-theory',
+                  arguments: {'topicId': topic.id, 'nivel': pendingLevel},
+                );
+              },
+              child: const Text(
+                'Reiniciar',
+                style: TextStyle(color: Color(0xFFEF4444), fontSize: 13),
+              ),
+            ),
+            // Botón de Ver Teoría
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                Navigator.pushNamed(
+                  context,
+                  '/learning-theory',
+                  arguments: {'topicId': topic.id, 'nivel': pendingLevel},
+                );
+              },
+              child: Text(
+                'Ver Teoría',
+                style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 13),
+              ),
+            ),
+            // Botón de Continuar
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                lp.resumeSession(topic.id, pendingLevel);
+                Navigator.pushNamed(
+                  context,
+                  '/learning-quiz',
+                  arguments: {
+                    'topicId': topic.id,
+                    'nivel': pendingLevel,
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF3B82F6),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                elevation: 0,
+              ),
+              child: const Text(
+                'Continuar',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+              ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      final currentLevel = lp.getCurrentLevel(topic.id);
+      Navigator.pushNamed(
+        context,
+        '/learning-theory',
+        arguments: {'topicId': topic.id, 'nivel': currentLevel},
+      );
+    }
   }
 
   void _startQuickQuiz(BuildContext context, Topic topic) {
