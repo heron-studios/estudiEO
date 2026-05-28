@@ -73,45 +73,46 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Logo interactivo y flotante
+                  // Sparkle interactivo estilo Gemini
                   ScaleTransition(
                     scale: _pulseAnimation,
                     child: Container(
                       width: 130,
                       height: 130,
                       decoration: BoxDecoration(
-                        color: NeuralDesignSystem.surfaceCard.withOpacity(0.8),
+                        color: NeuralDesignSystem.surfaceCard.withOpacity(0.5),
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: NeuralDesignSystem.blueGoogle.withOpacity(0.4),
+                            color: NeuralDesignSystem.blueGoogle.withOpacity(0.25),
                             blurRadius: 40,
-                            spreadRadius: 5,
-                            offset: const Offset(0, 8),
+                            spreadRadius: 8,
+                            offset: const Offset(-8, -8),
                           ),
                           BoxShadow(
-                            color: NeuralDesignSystem.purple.withOpacity(0.3),
-                            blurRadius: 30,
-                            offset: const Offset(0, -8),
+                            color: NeuralDesignSystem.purple.withOpacity(0.25),
+                            blurRadius: 40,
+                            spreadRadius: 8,
+                            offset: const Offset(8, 8),
                           ),
                         ],
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withOpacity(0.15),
                           width: 1.5,
                         ),
                       ),
                       child: ClipOval(
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Padding(
-                            padding: const EdgeInsets.all(24.0),
-                            child: Image.asset(
-                              'assets/icon.png',
-                              fit: BoxFit.contain,
-                              errorBuilder: (context, error, stackTrace) => const Icon(
-                                Icons.school_rounded,
-                                size: 60,
-                                color: NeuralDesignSystem.blueGoogle,
+                          child: Center(
+                            child: ShaderMask(
+                              shaderCallback: (bounds) => NeuralDesignSystem.neuralGradient.createShader(
+                                Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                              ),
+                              child: const Icon(
+                                Icons.auto_awesome,
+                                size: 68,
+                                color: Colors.white,
                               ),
                             ),
                           ),
