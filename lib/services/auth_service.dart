@@ -14,7 +14,7 @@ class AuthService extends ChangeNotifier {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   User? get currentUser => _auth.currentUser;
-  
+
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
@@ -32,11 +32,24 @@ class AuthService extends ChangeNotifier {
   }
 
   Future<void> _checkInitialAuth() async {
-    if (currentUser != null) {
-      _isAuthorized = await _verifyAuthorization();
+    try {
+      if (currentUser != null) {
+        // Agregar timeout de 5 segundos para la verificación de autorización
+        _isAuthorized = await _verifyAuthorization().timeout(
+          const Duration(seconds: 5),
+          onTimeout: () {
+            debugPrint('Authorization check timeout - continuing without auth');
+            return false;
+          },
+        );
+      }
+    } catch (e) {
+      debugPrint('Error in initial auth check: $e');
+      _isAuthorized = false;
+    } finally {
+      _isInitializing = false;
+      notifyListeners();
     }
-    _isInitializing = false;
-    notifyListeners();
   }
 
   void _setLoading(bool value) {
@@ -58,27 +71,29 @@ class AuthService extends ChangeNotifier {
   Future<UserCredential?> signInWithGoogle() async {
     _setLoading(true);
     _setError(null);
-    
+
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      
+
       if (googleUser == null) {
         _setLoading(false);
         return null;
       }
 
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      final UserCredential userCredential = await _auth.signInWithCredential(credential);
-      
+      final UserCredential userCredential = await _auth.signInWithCredential(
+        credential,
+      );
+
       // We do NOT call setLoading(false) here or notifyListeners right away.
       // The caller (LoginScreen) will verify authorization and set it.
       return userCredential;
-      
     } on FirebaseAuthException catch (e) {
       _setError(e.message ?? 'Error desconocido de autenticación');
       _setLoading(false);
@@ -109,28 +124,40 @@ class AuthService extends ChangeNotifier {
 
     try {
       // 1. Try exact email as document ID
-      var doc = await _firestore.collection('authorized_users').doc(email).get();
+      var doc = await _firestore
+          .collection('authorized_users')
+          .doc(email)
+          .get();
       if (doc.exists) {
         final data = doc.data();
         if (data != null && _checkIsPaid(data)) return true;
       }
 
       // 2. Try lowercase email as document ID
-      doc = await _firestore.collection('authorized_users').doc(emailLower).get();
+      doc = await _firestore
+          .collection('authorized_users')
+          .doc(emailLower)
+          .get();
       if (doc.exists) {
         final data = doc.data();
         if (data != null && _checkIsPaid(data)) return true;
       }
 
       // 3. Try query by 'email' field (exact match)
-      var query = await _firestore.collection('authorized_users').where('email', isEqualTo: email).get();
+      var query = await _firestore
+          .collection('authorized_users')
+          .where('email', isEqualTo: email)
+          .get();
       if (query.docs.isNotEmpty) {
         final data = query.docs.first.data();
         if (_checkIsPaid(data)) return true;
       }
 
       // 4. Try query by 'email' field (lowercase match)
-      query = await _firestore.collection('authorized_users').where('email', isEqualTo: emailLower).get();
+      query = await _firestore
+          .collection('authorized_users')
+          .where('email', isEqualTo: emailLower)
+          .get();
       if (query.docs.isNotEmpty) {
         final data = query.docs.first.data();
         if (_checkIsPaid(data)) return true;
