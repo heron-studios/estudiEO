@@ -94,12 +94,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('✨ ALIPIO',
-                style: TextStyle(
-                    color: _purpleLight,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 2)),
+
             Text('Tarjetas de Memoria',
                 style: TextStyle(
                     color: Colors.white,
