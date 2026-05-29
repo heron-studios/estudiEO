@@ -9,3 +9,4 @@ final Subject razonamientoVerbalSubject = Subject(
     'eo_pnp_sinonimos_ext_10q',
     'eo_pnp_antonimos_ext_10q',
   ],
+);
