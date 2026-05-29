@@ -149,9 +149,14 @@ class AuthWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
 
-    // Always show login screen - no waiting
+    // Show loading screen while initializing to prevent flicker
     if (authService.isInitializing) {
-      return const LoginScreen();
+      return const Scaffold(
+        backgroundColor: Color(0xFF0F172A),
+        body: Center(
+          child: CircularProgressIndicator(color: Color(0xFF3B82F6)),
+        ),
+      );
     }
 
     if (authService.currentUser != null && authService.isAuthorized) {

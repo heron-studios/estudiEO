@@ -68,15 +68,16 @@ class SubjectsRepository {
     }
 
     if (AppConfig.isDemoMode) {
-      // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
+      // En modo demo generamos exactamente 10 preguntas
+      final List<String> demoTopics = ['mat_algebra', 'com_t1', 'cs_t1', 'cta_t1', 'pfrh_t1', 'rv_sinonimos', 'rm_sucesiones'];
       final Map<String, int> demoLimits = {
-        'mat_1': 2,
-        'com_1': 2,
-        'cs_1': 2,
-        'cta_1': 1,
-        'pfrh_1': 1,
-        'rv_1': 1,
-        'rm_1': 1,
+        'mat_algebra': 2,
+        'com_t1': 2,
+        'cs_t1': 2,
+        'cta_t1': 1,
+        'pfrh_t1': 1,
+        'rv_sinonimos': 1,
+        'rm_sucesiones': 1,
       };
 
       if (demoLimits.containsKey(topicId)) {
@@ -213,7 +214,7 @@ class SubjectsRepository {
   static List<Question> generateExamQuestions() {
     if (AppConfig.isDemoMode) {
       // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
-      final List<String> demoTopics = ['mat_1', 'com_1', 'cs_1', 'cta_1', 'pfrh_1', 'rv_1', 'rm_1'];
+      final List<String> demoTopics = ['mat_algebra', 'com_t1', 'cs_t1', 'cta_t1', 'pfrh_t1', 'rv_sinonimos', 'rm_sucesiones'];
       final List<Question> demoExam = [];
       for (final topicId in demoTopics) {
         demoExam.addAll(getQuestionsByTopic(topicId));

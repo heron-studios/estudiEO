@@ -74,33 +74,6 @@ final Map<String, Topic> comunicacionTopics = {
       'extreme': literaturaPeruanaRebuscadaExt10qTheoryExtreme,
     },
   ),
-  'eo_pnp_reglas_ortograficas_01': Topic(
-    id: 'eo_pnp_reglas_ortograficas_01',
-    subjectId: 'comunicacion',
-    name: "1. Reglas Ortográficas y Normativa RAE",
-    description: "Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.",
-    questionCount: 8,
-    theoryByLevel: {
-      'easy': reglasOrtograficasTheoryEasy,
-      'medium': reglasOrtograficasTheoryMedium,
-      'hard': reglasOrtograficasTheoryHard,
-      'extreme': reglasOrtograficasTheoryExtreme,
-    },
-  ),
-  'eo_pnp_oracion_gramatical_01': Topic(
-    id: 'eo_pnp_oracion_gramatical_01',
-    subjectId: 'comunicacion',
-    name: "2. La Oración Gramatical",
-    description: "Sujeto, predicado, modificadores del sujeto, y complementos del predicado.",
-    questionCount: 8,
-    theoryByLevel: {
-      'easy': oracionGramaticalTheoryEasy,
-      'medium': oracionGramaticalTheoryMedium,
-      'hard': oracionGramaticalTheoryHard,
-      'extreme': oracionGramaticalTheoryExtreme,
-    },
-  ),
-
   // Topics sin teoría (solo quiz) - comentados hasta agregar contenido teórico
   // 'com_t2': Topic(
   //   id: 'com_t2',
