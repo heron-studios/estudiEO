@@ -1,4 +1,4 @@
-import 'package:get_storage/get_storage.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:learn/models/srs_card.dart';
 import 'package:learn/models/gamification.dart';
 import 'package:learn/models/quiz_session.dart';
@@ -19,7 +19,7 @@ class LocalStorageService {
   static const String learningProgressKey = 'learning_progress';
   static const String lastActiveLearningSessionKey = 'last_active_learning_session';
 
-  final GetStorage _storage = GetStorage();
+  final Box _storage = Hive.box('estudieo_data');
   Map<String, SrsCard>? _srsCache;
   Map<String, dynamic>? _srsJsonCache;
 
@@ -39,7 +39,7 @@ class LocalStorageService {
   Map<String, SrsCard> loadSrsCards() {
     if (_srsCache != null) return _srsCache!;
     try {
-      final rawData = _storage.read(srsKey) as Map? ?? {};
+      final rawData = _storage.get(srsKey) as Map? ?? {};
       _srsJsonCache = Map<String, dynamic>.from(rawData);
 
       _srsCache = _srsJsonCache!.map(
@@ -61,7 +61,7 @@ class LocalStorageService {
     try {
       _srsCache = cards;
       _srsJsonCache = cards.map((key, card) => MapEntry(key, card.toJson()));
-      _storage.write(srsKey, _srsJsonCache);
+      _storage.put(srsKey, _srsJsonCache);
       _touchSyncMeta();
     } catch (e) {
       debugPrint('Error saving SRS cards: $e');
@@ -80,7 +80,7 @@ class LocalStorageService {
     _srsJsonCache ??= {};
     _srsJsonCache![card.questionId] = card.toJson();
 
-    _storage.write(srsKey, _srsJsonCache);
+    _storage.put(srsKey, _srsJsonCache);
     _touchSyncMeta();
   }
 
@@ -88,7 +88,7 @@ class LocalStorageService {
 
   Gamification loadGamification() {
     try {
-      final data = _storage.read(gamificationKey);
+      final data = _storage.get(gamificationKey);
       if (data == null) {
         return Gamification();
       }
@@ -101,7 +101,7 @@ class LocalStorageService {
 
   void saveGamification(Gamification gamification) {
     try {
-      _storage.write(gamificationKey, gamification.toJson());
+      _storage.put(gamificationKey, gamification.toJson());
       _touchSyncMeta();
     } catch (e) {
       debugPrint('Error saving gamification: $e');
@@ -112,7 +112,7 @@ class LocalStorageService {
 
   List<QuizSession> loadQuizSessions() {
     try {
-      final data = _storage.read(quizSessionsKey) as List? ?? [];
+      final data = _storage.get(quizSessionsKey) as List? ?? [];
       return data
           .map(
             (item) =>
@@ -127,7 +127,7 @@ class LocalStorageService {
 
   void saveQuizSessions(List<QuizSession> sessions) {
     try {
-      _storage.write(quizSessionsKey, sessions.map((s) => s.toJson()).toList());
+      _storage.put(quizSessionsKey, sessions.map((s) => s.toJson()).toList());
       _touchSyncMeta();
     } catch (e) {
       debugPrint('Error saving quiz sessions: $e');
@@ -148,14 +148,14 @@ class LocalStorageService {
   // â”€â”€â”€ Sync Meta â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _touchSyncMeta() {
-    _storage.write(syncMetaKey, {
+    _storage.put(syncMetaKey, {
       'updatedAt': DateTime.now().toIso8601String(),
     });
   }
 
   DateTime getLastSyncTime() {
     try {
-      final meta = _storage.read(syncMetaKey) as Map? ?? {};
+      final meta = _storage.get(syncMetaKey) as Map? ?? {};
       final updatedAt = meta['updatedAt'];
       if (updatedAt != null) {
         return DateTime.parse(updatedAt);
@@ -168,36 +168,36 @@ class LocalStorageService {
 
   // â”€â”€â”€ Alipio (Gemini AI) setting â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   bool loadAlipioEnabled() {
-    return _storage.read(alipioEnabledKey) as bool? ?? false;
+    return _storage.get(alipioEnabledKey) as bool? ?? false;
   }
 
   void saveAlipioEnabled(bool value) {
-    _storage.write(alipioEnabledKey, value);
+    _storage.put(alipioEnabledKey, value);
   }
 
   // ─── Strict Mode setting ───────────────────────────
   bool loadStrictMode() {
-    return _storage.read(strictModeKey) as bool? ?? true;
+    return _storage.get(strictModeKey) as bool? ?? true;
   }
 
   void saveStrictMode(bool value) {
-    _storage.write(strictModeKey, value);
+    _storage.put(strictModeKey, value);
   }
 
   // â”€â”€â”€ Hidden Subjects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   List<String> loadHiddenSubjects() {
-    final data = _storage.read(hiddenSubjectsKey) as List?;
+    final data = _storage.get(hiddenSubjectsKey) as List?;
     return data?.map((e) => e.toString()).toList() ?? [];
   }
 
   void saveHiddenSubjects(List<String> hidden) {
-    _storage.write(hiddenSubjectsKey, hidden);
+    _storage.put(hiddenSubjectsKey, hidden);
   }
 
   // ─── Learned Questions ─────────────────────────────
   Map<String, List<String>> loadLearnedQuestions() {
     try {
-      final data = _storage.read(learnedQuestionsKey) as Map?;
+      final data = _storage.get(learnedQuestionsKey) as Map?;
       if (data == null) return {};
 
       return data.map(
@@ -213,14 +213,14 @@ class LocalStorageService {
   }
 
   void saveLearnedQuestions(Map<String, List<String>> learned) {
-    _storage.write(learnedQuestionsKey, learned);
+    _storage.put(learnedQuestionsKey, learned);
   }
 
   // ─── Scroll Position Persist ─────────────────────────
   double getScrollPosition(String topicId, String levelKey) {
     try {
       final key = 'scroll_${topicId}_$levelKey';
-      return _storage.read(key) as double? ?? 0.0;
+      return _storage.get(key) as double? ?? 0.0;
     } catch (_) {
       return 0.0;
     }
@@ -229,7 +229,7 @@ class LocalStorageService {
   void saveScrollPosition(String topicId, String levelKey, double position) {
     try {
       final key = 'scroll_${topicId}_$levelKey';
-      _storage.write(key, position);
+      _storage.put(key, position);
     } catch (_) {}
   }
 
@@ -237,7 +237,7 @@ class LocalStorageService {
 
   LearningSession? loadLearningSession(String topicId, Dificultad nivel) {
     try {
-      final data = _storage.read(learningSessionsKey) as Map? ?? {};
+      final data = _storage.get(learningSessionsKey) as Map? ?? {};
       final key = '${topicId}_${nivel.key}';
       final raw = data[key];
       if (raw == null) return null;
@@ -251,11 +251,11 @@ class LocalStorageService {
   void saveLearningSession(LearningSession session) {
     try {
       final data = Map<String, dynamic>.from(
-        (_storage.read(learningSessionsKey) as Map? ?? {}),
+        (_storage.get(learningSessionsKey) as Map? ?? {}),
       );
       final key = '${session.topicId}_${session.nivel.key}';
       data[key] = session.toJson();
-      _storage.write(learningSessionsKey, data);
+      _storage.put(learningSessionsKey, data);
       _touchSyncMeta();
     } catch (e) {
       debugPrint('Error saving learning session: $e');
@@ -265,11 +265,11 @@ class LocalStorageService {
   void deleteLearningSession(String topicId, Dificultad nivel) {
     try {
       final data = Map<String, dynamic>.from(
-        (_storage.read(learningSessionsKey) as Map? ?? {}),
+        (_storage.get(learningSessionsKey) as Map? ?? {}),
       );
       final key = '${topicId}_${nivel.key}';
       data.remove(key);
-      _storage.write(learningSessionsKey, data);
+      _storage.put(learningSessionsKey, data);
     } catch (e) {
       debugPrint('Error deleting learning session: $e');
     }
@@ -279,7 +279,7 @@ class LocalStorageService {
 
   void saveLastActiveLearningSession(String topicId, String levelKey) {
     try {
-      _storage.write(lastActiveLearningSessionKey, {
+      _storage.put(lastActiveLearningSessionKey, {
         'topicId': topicId,
         'nivel': levelKey,
       });
@@ -290,7 +290,7 @@ class LocalStorageService {
 
   Map<String, String>? loadLastActiveLearningSession() {
     try {
-      final data = _storage.read(lastActiveLearningSessionKey);
+      final data = _storage.get(lastActiveLearningSessionKey);
       if (data == null) return null;
       final map = Map<String, dynamic>.from(data as Map);
       return {
@@ -305,7 +305,7 @@ class LocalStorageService {
 
   void deleteLastActiveLearningSession() {
     try {
-      _storage.remove(lastActiveLearningSessionKey);
+      _storage.delete(lastActiveLearningSessionKey);
     } catch (e) {
       debugPrint('Error deleting last active learning session: $e');
     }
@@ -316,7 +316,7 @@ class LocalStorageService {
   /// Retorna un mapa topicId → lista de niveles completados.
   Map<String, List<String>> loadLearningProgress() {
     try {
-      final data = _storage.read(learningProgressKey) as Map? ?? {};
+      final data = _storage.get(learningProgressKey) as Map? ?? {};
       return data.map(
         (k, v) => MapEntry(
           k.toString(),
@@ -331,7 +331,7 @@ class LocalStorageService {
 
   void saveLearningProgress(Map<String, List<String>> progress) {
     try {
-      _storage.write(learningProgressKey, progress);
+      _storage.put(learningProgressKey, progress);
       _touchSyncMeta();
     } catch (e) {
       debugPrint('Error saving learning progress: $e');
@@ -341,7 +341,7 @@ class LocalStorageService {
   // ─── Utility ───────────────────────────────────────————————————————————————————————————
 
   void clearAll() {
-    _storage.erase();
+    _storage.clear();
     _srsCache = null;
     _srsJsonCache = null;
   }
@@ -351,8 +351,8 @@ class LocalStorageService {
       'srs': loadSrsCards().map((k, v) => MapEntry(k, v.toJson())),
       'gamification': loadGamification().toJson(),
       'quizSessions': loadQuizSessions().map((s) => s.toJson()).toList(),
-      'learningSessions': _storage.read(learningSessionsKey) ?? {},
-      'learningProgress': _storage.read(learningProgressKey) ?? {},
+      'learningSessions': _storage.get(learningSessionsKey) ?? {},
+      'learningProgress': _storage.get(learningProgressKey) ?? {},
       'updatedAt': getLastSyncTime().toIso8601String(),
     };
   }
@@ -388,11 +388,11 @@ class LocalStorageService {
       }
 
       if (bundle['learningSessions'] != null) {
-        _storage.write(learningSessionsKey, bundle['learningSessions']);
+        _storage.put(learningSessionsKey, bundle['learningSessions']);
       }
 
       if (bundle['learningProgress'] != null) {
-        _storage.write(learningProgressKey, bundle['learningProgress']);
+        _storage.put(learningProgressKey, bundle['learningProgress']);
       }
 
       _touchSyncMeta();

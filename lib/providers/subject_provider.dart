@@ -12,6 +12,16 @@ class SubjectProvider extends ChangeNotifier {
   late Topic? _currentTopic;
   late List<Subject> _allSubjects;
   List<Subject> _visibleSubjects = [];
+  bool _isPremium = false;
+  bool get isPremium => _isPremium;
+
+
+  void setPremium(bool value) {
+    if (_isPremium != value) {
+      _isPremium = value;
+      notifyListeners();
+    }
+  }
 
   SubjectProvider(this._storage) {
     _allSubjects = SubjectsRepository.getAllSubjects()
@@ -69,16 +79,16 @@ class SubjectProvider extends ChangeNotifier {
   
   Topic? getTopic(String id) => SubjectsRepository.getTopic(id);
   
-  List<Question> getQuestionsByTopic(String id) => SubjectsRepository.getQuestionsByTopic(id);
+  List<Question> getQuestionsByTopic(String id) => SubjectsRepository.getQuestionsByTopic(id, isPremium: _isPremium);
   
-  List<Question> generateExamQuestions() => SubjectsRepository.generateExamQuestions();
+  List<Question> generateExamQuestions() => SubjectsRepository.generateExamQuestions(isPremium: _isPremium);
   
-  List<Question> getAllQuestionsByTopicShuffled(String id) => SubjectsRepository.getAllQuestionsByTopicShuffled(id);
+  List<Question> getAllQuestionsByTopicShuffled(String id) => SubjectsRepository.getAllQuestionsByTopicShuffled(id, isPremium: _isPremium);
   
-  Question? getQuestion(String id) => SubjectsRepository.getQuestion(id);
+  Question? getQuestion(String id) => SubjectsRepository.getQuestion(id, isPremium: _isPremium);
 
   List<Question> getQuestionsByTopicAndLevel(String id, Dificultad nivel, {int count = 10}) =>
-      SubjectsRepository.getQuestionsByTopicAndLevel(id, nivel, count: count);
+      SubjectsRepository.getQuestionsByTopicAndLevel(id, nivel, count: count, isPremium: _isPremium);
 
   String? getTheoryByTopicAndLevel(String id, Dificultad nivel) =>
       SubjectsRepository.getTheoryByTopicAndLevel(id, nivel);

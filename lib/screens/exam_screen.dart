@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/providers/gamification_provider.dart';
+import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
 
 class ExamScreen extends StatefulWidget {
@@ -82,11 +84,25 @@ class _ExamScreenState extends State<ExamScreen> {
   void _finishExam() {
     _timer?.cancel();
     int correctCount = 0;
+    
+    final srs = context.read<SrsProvider>();
+    final gamification = context.read<GamificationProvider>();
+
     for (var q in _questions) {
-      if (_answers[q.id] == q.correctAnswer) {
+      bool isCorrect = _answers[q.id] == q.correctAnswer;
+      if (isCorrect) {
         correctCount++;
       }
+      // UPDATE SRS
+      srs.processAnswer(q.id, q.topicId, isCorrect);
     }
+    
+    // UPDATE GAMIFICATION
+    if (correctCount > 0) {
+      gamification.addXp(correctCount * 10);
+    }
+    // Bonus for finishing exam
+    gamification.addXp(50);
     
     Navigator.pushReplacementNamed(
       context,

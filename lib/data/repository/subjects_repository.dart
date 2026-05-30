@@ -35,7 +35,6 @@ import 'package:learn/models/topic.dart';
 import 'package:learn/models/learning_level.dart';
 
 class SubjectsRepository {
-  static bool isPremium = false;
 
   static final Map<String, Subject> _subjects = {
     'matematicas': matematicasSubject,
@@ -102,7 +101,7 @@ class SubjectsRepository {
   }
 
   /// Obtiene preguntas de un tópico específico
-  static List<Question> getQuestionsByTopic(String topicId) {
+  static List<Question> getQuestionsByTopic(String topicId, {bool isPremium = false}) {
     _initIndexes();
     final cached = _questionsByTopicCache![topicId] ?? [];
     List<Question> filtered = List<Question>.from(cached);
@@ -130,13 +129,13 @@ class SubjectsRepository {
   }
 
   /// Obtiene una pregunta específica
-  static Question? getQuestion(String questionId) {
+  static Question? getQuestion(String questionId, {bool isPremium = false}) {
     _initIndexes();
     final q = _questionByIdCache![questionId];
     if (q == null) return null;
 
     if (AppConfig.isDemoMode && !isPremium) {
-       final topicQuestions = getQuestionsByTopic(q.topicId);
+       final topicQuestions = getQuestionsByTopic(q.topicId, isPremium: isPremium);
        if (topicQuestions.any((tq) => tq.id == questionId)) {
          return q;
        }
@@ -169,8 +168,8 @@ class SubjectsRepository {
   }
 
   /// Obtiene preguntas aleatorias de un tópico
-  static List<Question> getRandomQuestionsByTopic(String topicId, int count) {
-    final questions = getQuestionsByTopic(topicId);
+  static List<Question> getRandomQuestionsByTopic(String topicId, int count, {bool isPremium = false}) {
+    final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     if (questions.isEmpty) return [];
 
     questions.shuffle();
@@ -178,8 +177,8 @@ class SubjectsRepository {
   }
 
   /// Obtiene todas las preguntas de un tópico barajadas
-  static List<Question> getAllQuestionsByTopicShuffled(String topicId) {
-    final questions = getQuestionsByTopic(topicId);
+  static List<Question> getAllQuestionsByTopicShuffled(String topicId, {bool isPremium = false}) {
+    final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     questions.shuffle();
     return questions;
   }
@@ -193,6 +192,7 @@ class SubjectsRepository {
     String topicId,
     Dificultad nivel, {
     int count = 10,
+    bool isPremium = false,
   }) {
     _initIndexes();
     // Usar pool completo sin filtro demo para el modo guiado
@@ -273,24 +273,24 @@ class SubjectsRepository {
   }
 
   /// Obtiene datos de una asignatura completa
-  static Map<String, dynamic> getSubjectData(String subjectId) {
+  static Map<String, dynamic> getSubjectData(String subjectId, {bool isPremium = false}) {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
       'questions': (AppConfig.isDemoMode && !isPremium) 
-          ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id)).toList()
+          ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id, isPremium: isPremium)).toList()
           : getQuestionsBySubject(subjectId),
     };
   }
 
   /// Genera un examen simulacro de 100 preguntas exactas (o 10 en demo)
-  static List<Question> generateExamQuestions() {
+  static List<Question> generateExamQuestions({bool isPremium = false}) {
     if (AppConfig.isDemoMode && !isPremium) {
       // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
       final List<String> demoTopics = ['mat_1', 'com_1', 'cs_1', 'cta_1', 'pfrh_1', 'rv_1', 'rm_1'];
       final List<Question> demoExam = [];
       for (final topicId in demoTopics) {
-        demoExam.addAll(getQuestionsByTopic(topicId));
+        demoExam.addAll(getQuestionsByTopic(topicId, isPremium: isPremium));
       }
       demoExam.shuffle();
       return demoExam;

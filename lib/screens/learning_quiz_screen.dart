@@ -4,6 +4,7 @@ import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/learning_provider.dart';
+import 'package:learn/providers/srs_provider.dart';
 
 /// Pantalla 2 del Modo Aprendizaje Guiado — Fase Reto (Bucle de 10).
 ///
@@ -61,6 +62,9 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
     });
 
     final isCorrect = index == question.correctAnswer;
+    
+    // Integra la respuesta con el algoritmo de Repaso Espaciado (SRS)
+    context.read<SrsProvider>().processAnswer(question.id, question.topicId, isCorrect);
 
     if (isCorrect) {
       // Mostrar overlay de éxito brevemente

@@ -1,4 +1,4 @@
-﻿class Gamification {
+class Gamification {
   int xp;
   int level;
   List<String> achievements;
@@ -50,8 +50,11 @@
 
   void updateStreak() {
     final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
     if (lastActivityDate != null) {
-      final daysDiff = now.difference(lastActivityDate!).inDays;
+      final lastDate = DateTime(
+          lastActivityDate!.year, lastActivityDate!.month, lastActivityDate!.day);
+      final daysDiff = today.difference(lastDate).inDays;
       if (daysDiff == 0) {
         return;
       } else if (daysDiff == 1) {

@@ -108,7 +108,7 @@ class _SubjectCard extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
         child: Material(
-          color: NeuralDesignSystem.surfaceCard.withOpacity(0.6),
+          color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.6),
           borderRadius: BorderRadius.circular(20),
           child: InkWell(
             onTap: () {
@@ -126,7 +126,7 @@ class _SubjectCard extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: color.withOpacity(0.35), width: 1.5),
+                border: Border.all(color: color.withValues(alpha: 0.35), width: 1.5),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -135,7 +135,7 @@ class _SubjectCard extends StatelessWidget {
                     width: 52,
                     height: 52,
                     decoration: BoxDecoration(
-                      color: color.withOpacity(0.15),
+                      color: color.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -163,7 +163,7 @@ class _SubjectCard extends StatelessWidget {
                     '${subject.topicIds.length} temas',
                     style: TextStyle(
                       fontFamily: 'Inter',
-                      color: color.withOpacity(0.8),
+                      color: color.withValues(alpha: 0.8),
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),

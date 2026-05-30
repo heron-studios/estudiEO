@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn/config/neural_theme.dart';
 import 'package:provider/provider.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:learn/firebase_options.dart';
 import 'package:learn/services/local_storage_service.dart';
@@ -33,11 +33,12 @@ import 'package:learn/screens/learning_levelup_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize GetStorage first (essential for offline storage)
+  // Initialize Hive first (essential for offline storage)
   try {
-    await GetStorage.init();
+    await Hive.initFlutter();
+    await Hive.openBox('estudieo_data');
   } catch (e) {
-    debugPrint('GetStorage init error: $e');
+    debugPrint('Hive init error: $e');
   }
 
   // Initialize Firebase (essential for Auth/Firestore)
@@ -66,9 +67,13 @@ void main() async {
           create: (_) => GamificationProvider(storageService),
         ),
         ChangeNotifierProvider(create: (_) => QuizProvider(storageService)),
-        ChangeNotifierProvider(create: (_) => SubjectProvider(storageService)),
-        ChangeNotifierProvider(
+        ChangeNotifierProxyProvider<AuthService, SubjectProvider>(
+          create: (_) => SubjectProvider(storageService),
+          update: (_, auth, subject) => subject!..setPremium(auth.isAuthorized),
+        ),
+        ChangeNotifierProxyProvider<GamificationProvider, LearningProvider>(
           create: (_) => LearningProvider(storageService),
+          update: (_, gamification, learning) => learning!..updateGamification(gamification),
         ),
       ],
       child: const MyApp(),

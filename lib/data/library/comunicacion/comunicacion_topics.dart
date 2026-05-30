@@ -1,6 +1,6 @@
 import 'package:learn/models/topic.dart';
-import 'reglas_ortograficas_theory.dart';
-import 'oracion_gramatical_theory.dart';
+
+
 import 'reglas_ortograficas_ext_10q_theory.dart';
 import 'oracion_gramatical_ext_10q_theory.dart';
 import 'narracion_ext_10q_theory.dart';

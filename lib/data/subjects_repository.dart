@@ -69,7 +69,6 @@ class SubjectsRepository {
 
     if (AppConfig.isDemoMode) {
       // En modo demo generamos exactamente 10 preguntas
-      final List<String> demoTopics = ['mat_algebra', 'com_t1', 'cs_t1', 'cta_t1', 'pfrh_t1', 'rv_sinonimos', 'rm_sucesiones'];
       final Map<String, int> demoLimits = {
         'mat_algebra': 2,
         'com_t1': 2,

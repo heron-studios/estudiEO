@@ -75,18 +75,15 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
   }
 
   void _finishMiniQuiz() {
-    final srs = context.read<SrsProvider>();
-    
     // For each answer in the mini-quiz, evaluate whether it stays in the queue or not.
     // In our implementation, we already passed 'processAnswer' in the review screen.
     // However, the mini-quiz acts as an extra strict evaluation.
     // If the user answered wrong here, we penalize it again.
     // If they answered right, we only keep it if _repeatCorrect is ON.
     _answers.forEach((qId, isCorrect) {
-      final q = _questions.firstWhere((element) => element.id == qId);
       if (!isCorrect) {
         // Penalize the card if they failed the mini quiz
-        srs.processAnswer(qId, q.topicId, false);
+        // Removed double SRS penalty
       } else {
         if (_repeatCorrect) {
           // If repeat is ON, we want to see them again later (reset interval slightly or keep it)
@@ -94,7 +91,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
         } else {
           // If repeat is OFF, they learned it. We could advance its interval drastically 
           // so it doesn't appear for a long time.
-          srs.processAnswer(qId, q.topicId, true); 
+          // Removed double SRS reward 
         }
       }
     });

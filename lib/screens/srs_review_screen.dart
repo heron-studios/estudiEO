@@ -43,10 +43,17 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
   int _cardsReviewedInBatch = 0;
   final List<String> _batchQuestionIds = [];
 
-  void _nextCard() async {
+  void _handleAnswer(bool isCorrect) async {
     if (!mounted) return;
 
     final questionId = _reviewQueue[_currentIndex];
+    final question = context.read<SubjectProvider>().getQuestion(questionId);
+    final srs = context.read<SrsProvider>();
+    
+    if (question != null) {
+      srs.processAnswer(questionId, question.topicId, isCorrect);
+    }
+
     _batchQuestionIds.add(questionId);
     _cardsReviewedInBatch++;
 
@@ -308,17 +315,40 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 16),
-                                ElevatedButton(
-                                  onPressed: _nextCard,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: _blue,
-                                    foregroundColor: Colors.white,
-                                    padding: const EdgeInsets.symmetric(vertical: 16),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(14)),
-                                  ),
-                                  child: const Text('Siguiente',
-                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: ElevatedButton.icon(
+                                        onPressed: () => _handleAnswer(false),
+                                        icon: const Icon(Icons.close_rounded),
+                                        label: const Text('No lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.redAccent.withValues(alpha: 0.2),
+                                          foregroundColor: Colors.redAccent,
+                                          padding: const EdgeInsets.symmetric(vertical: 16),
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(14),
+                                              side: const BorderSide(color: Colors.redAccent)),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: ElevatedButton.icon(
+                                        onPressed: () => _handleAnswer(true),
+                                        icon: const Icon(Icons.check_rounded),
+                                        label: const Text('Lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: const Color(0xFF4ADE80).withValues(alpha: 0.2),
+                                          foregroundColor: const Color(0xFF4ADE80),
+                                          padding: const EdgeInsets.symmetric(vertical: 16),
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(14),
+                                              side: const BorderSide(color: Color(0xFF4ADE80))),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             )

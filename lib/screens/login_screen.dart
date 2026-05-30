@@ -1,10 +1,13 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/services/auth_service.dart';
 import 'package:learn/config/app_config.dart';
 import 'package:learn/config/neural_design_system.dart';
+import 'package:learn/widgets/particles_canvas.dart';
+import 'package:learn/widgets/floating_orbs.dart';
+import 'package:learn/widgets/bento_card.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -126,13 +129,13 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             // Layer 1: Particles Canvas (z-index: 0)
             Positioned.fill(
               child: RepaintBoundary(
-                child: _ParticleCanvas(mouseNotifier: _mouseNotifier),
+                child: ParticleCanvas(mouseNotifier: _mouseNotifier),
               ),
             ),
 
             // Layer 2: Floating Orbs (z-index: 1)
             Positioned.fill(
-              child: _FloatingOrbs(orbAnimation: _orbAnimation),
+              child: FloatingOrbs(orbAnimation: _orbAnimation),
             ),
 
             // Layer 3: Main Content (z-index: 2)
@@ -388,7 +391,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             childAspectRatio: isDesktop ? 1.05 : 1.7,
           ),
           children: [
-            _BentoCard(
+            BentoCard(
               title: 'Misión Diaria',
               description: 'Resuelve preguntas personalizadas cada día para mantener tu racha.',
               tag: 'Activo',
@@ -399,7 +402,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               shimmerPhase: 0.0,
               shimmerAnimation: _shimmerAnimation,
             ),
-            _BentoCard(
+            BentoCard(
               title: 'Temario PNP',
               description: 'Miles de preguntas oficiales del prospecto PNP vigente.',
               tag: 'Oficial',
@@ -410,7 +413,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               shimmerPhase: 0.25, // 1s delay (1s / 4s = 0.25)
               shimmerAnimation: _shimmerAnimation,
             ),
-            _BentoCard(
+            BentoCard(
               title: 'Simulacros Reales',
               description: 'Exámenes completos contrarreloj con el formato exacto de admisión.',
               tag: 'Cronometrado',
@@ -421,7 +424,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               shimmerPhase: 0.5, // 2s delay (2s / 4s = 0.5)
               shimmerAnimation: _shimmerAnimation,
             ),
-            _BentoCard(
+            BentoCard(
               title: 'Aprendizaje Guiado',
               description: 'Rutas de estudio adaptativas con seguimiento de progreso.',
               tag: 'Adaptativo',
@@ -435,443 +438,6 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           ],
         ),
       ],
-    );
-  }
-}
-
-// ── FLOATING ORBS ──
-class _FloatingOrbs extends StatelessWidget {
-  final Animation<double> orbAnimation;
-  const _FloatingOrbs({required this.orbAnimation});
-
-  @override
-  Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    
-    return AnimatedBuilder(
-      animation: orbAnimation,
-      builder: (context, _) {
-        final double val = orbAnimation.value;
-        final double t = val * 2 * math.pi;
-
-        // Orb 1: Blue, top: -80, left: -60 (period: 8s)
-        final double t1 = t * (60.0 / 8.0);
-        final double dx1 = 12.0 * math.sin(t1);
-        final double dy1 = -18.0 * math.cos(t1);
-        final double scale1 = 1.0 + 0.05 * math.sin(t1);
-
-        // Orb 2: Purple, bottom: 20, right: 80 (period: 11s, reverse)
-        final double t2 = -t * (60.0 / 11.0);
-        final double dx2 = 12.0 * math.sin(t2);
-        final double dy2 = -18.0 * math.cos(t2);
-        final double scale2 = 1.0 + 0.05 * math.sin(t2);
-
-        // Orb 3: Pink, top: 40%, left: 45% (period: 9s, offset 2s phase)
-        final double t3 = (t - (2.0 / 60.0) * 2 * math.pi) * (60.0 / 9.0);
-        final double dx3 = 12.0 * math.sin(t3);
-        final double dy3 = -18.0 * math.cos(t3);
-        final double scale3 = 1.0 + 0.05 * math.sin(t3);
-
-        return Stack(
-          children: [
-            Positioned(
-              top: -80 + dy1,
-              left: -60 + dx1,
-              child: Transform.scale(
-                scale: scale1,
-                child: const _Orb(
-                  size: 280,
-                  color: Color(0xFF4285F4),
-                  opacity: 0.07,
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 20 + dy2,
-              right: 80 + dx2,
-              child: Transform.scale(
-                scale: scale2,
-                child: const _Orb(
-                  size: 200,
-                  color: Color(0xFF9C27B0),
-                  opacity: 0.08,
-                ),
-              ),
-            ),
-            Positioned(
-              top: (screenSize.height * 0.4) + dy3,
-              left: (screenSize.width * 0.45) + dx3,
-              child: Transform.scale(
-                scale: scale3,
-                child: const _Orb(
-                  size: 160,
-                  color: Color(0xFFF472B6),
-                  opacity: 0.06,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _Orb extends StatelessWidget {
-  final double size;
-  final Color color;
-  final double opacity;
-  const _Orb({
-    required this.size,
-    required this.color,
-    required this.opacity,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: RadialGradient(
-          colors: [
-            color.withValues(alpha: opacity),
-            color.withValues(alpha: 0.0),
-          ],
-          stops: const [0.0, 0.7],
-        ),
-      ),
-    );
-  }
-}
-
-// ── PARTICLE CANVAS ──
-class _Particle {
-  double x;
-  double y;
-  double vx;
-  double vy;
-  final double r;
-  final double a;
-  final Color color;
-
-  _Particle({
-    required this.x,
-    required this.y,
-    required this.vx,
-    required this.vy,
-    required this.r,
-    required this.a,
-    required this.color,
-  });
-}
-
-class _ParticleCanvas extends StatefulWidget {
-  final ValueNotifier<Offset> mouseNotifier;
-  const _ParticleCanvas({required this.mouseNotifier});
-
-  @override
-  State<_ParticleCanvas> createState() => _ParticleCanvasState();
-}
-
-class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  final List<_Particle> _particles = [];
-  Size _lastSize = Size.zero;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 16),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  void _updateParticles(Size size, Offset mousePos) {
-    if (_particles.isEmpty || _lastSize != size) {
-      _lastSize = size;
-      final random = math.Random();
-      _particles.clear();
-      final colors = [
-        const Color(0xFF8AB4F8),
-        const Color(0xFFC084FC),
-        const Color(0xFFF9A8D4),
-      ];
-      for (int i = 0; i < 90; i++) {
-        _particles.add(_Particle(
-          x: random.nextDouble() * size.width,
-          y: random.nextDouble() * size.height,
-          vx: (random.nextDouble() - 0.5) * 0.25,
-          vy: (random.nextDouble() - 0.5) * 0.25,
-          r: random.nextDouble() * 1.4 + 0.3,
-          a: random.nextDouble(),
-          color: colors[random.nextInt(3)],
-        ));
-      }
-      return;
-    }
-
-    for (var p in _particles) {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0) p.x = size.width;
-      if (p.x > size.width) p.x = 0;
-      if (p.y < 0) p.y = size.height;
-      if (p.y > size.height) p.y = 0;
-
-      if (mousePos.dx != -999 && mousePos.dy != -999) {
-        final dx = p.x - mousePos.dx;
-        final dy = p.y - mousePos.dy;
-        final dist = math.sqrt(dx * dx + dy * dy);
-        if (dist < 80) {
-          p.x += (dx / dist) * 0.6;
-          p.y += (dy / dist) * 0.6;
-        }
-      }
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final size = Size(constraints.maxWidth, constraints.maxHeight);
-        return AnimatedBuilder(
-          animation: _controller,
-          builder: (context, _) {
-            _updateParticles(size, widget.mouseNotifier.value);
-            return CustomPaint(
-              size: size,
-              painter: _ParticlePainter(particles: _particles),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-class _ParticlePainter extends CustomPainter {
-  final List<_Particle> particles;
-  const _ParticlePainter({required this.particles});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    // 1. Connections
-    final linePaint = Paint()..strokeWidth = 0.5;
-    for (int i = 0; i < particles.length; i++) {
-      for (int j = i + 1; j < particles.length; j++) {
-        final dx = particles[i].x - particles[j].x;
-        final dy = particles[i].y - particles[j].y;
-        final d = math.sqrt(dx * dx + dy * dy);
-        if (d < 90) {
-          final opacity = 0.12 * (1.0 - d / 90.0);
-          linePaint.color = const Color(0xFF8AB4F8).withValues(alpha: opacity);
-          canvas.drawLine(
-            Offset(particles[i].x, particles[i].y),
-            Offset(particles[j].x, particles[j].y),
-            linePaint,
-          );
-        }
-      }
-    }
-
-    // 2. Dots
-    final particlePaint = Paint()..style = PaintingStyle.fill;
-    for (var p in particles) {
-      particlePaint.color = p.color.withValues(alpha: p.a * 0.7);
-      canvas.drawCircle(Offset(p.x, p.y), p.r, particlePaint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-}
-
-// ── BENTO CARD ──
-class _BentoCard extends StatefulWidget {
-  final String title;
-  final String description;
-  final String tag;
-  final IconData icon;
-  final Color glowColor;
-  final Color iconColor;
-  final Color iconBgColor;
-  final double shimmerPhase;
-  final Animation<double> shimmerAnimation;
-
-  const _BentoCard({
-    required this.title,
-    required this.description,
-    required this.tag,
-    required this.icon,
-    required this.glowColor,
-    required this.iconColor,
-    required this.iconBgColor,
-    required this.shimmerPhase,
-    required this.shimmerAnimation,
-  });
-
-  @override
-  State<_BentoCard> createState() => _BentoCardState();
-}
-
-class _BentoCardState extends State<_BentoCard> {
-  bool _isHovered = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeInOut,
-        transform: Matrix4.translationValues(0.0, _isHovered ? -2.0 : 0.0, 0.0),
-        decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: _isHovered ? 0.07 : 0.04),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: Colors.white.withValues(alpha: _isHovered ? 0.15 : 0.08),
-            width: 1.0,
-          ),
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: Stack(
-            children: [
-              // Radial Glow on hover
-              if (_isHovered)
-                Positioned.fill(
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: RadialGradient(
-                        colors: [
-                          widget.glowColor,
-                          Colors.transparent,
-                        ],
-                        center: const Alignment(-0.6, -0.4),
-                        radius: 0.8,
-                      ),
-                    ),
-                  ),
-                ),
-              
-              // Shimmer overlay
-              Positioned.fill(
-                child: AnimatedBuilder(
-                  animation: widget.shimmerAnimation,
-                  builder: (context, _) {
-                    final double t = widget.shimmerAnimation.value;
-                    final double localT = (t - widget.shimmerPhase) % 1.0;
-                    double sweepPos;
-                    if (localT < 0.5) {
-                      sweepPos = -1.0 + (localT / 0.5) * 2.2;
-                    } else {
-                      sweepPos = 1.2 - ((localT - 0.5) / 0.5) * 2.2;
-                    }
-                    
-                    return FractionallySizedBox(
-                      widthFactor: 0.6,
-                      alignment: Alignment(sweepPos, 0.0),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.transparent,
-                              Colors.white10,
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-
-              // Content
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: widget.iconBgColor,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      alignment: Alignment.center,
-                      child: Icon(
-                        widget.icon,
-                        color: widget.iconColor,
-                        size: 20,
-                      ),
-                    ),
-                    const SizedBox(height: 14),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.title,
-                          style: const TextStyle(
-                            color: Color(0xFFE8EAED),
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(height: 7),
-                        Text(
-                          widget.description,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            color: Color(0xFF9AA0A6),
-                            fontSize: 12,
-                            height: 1.55,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.07),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        widget.tag,
-                        style: const TextStyle(
-                          color: Color(0xFF9AA0A6),
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

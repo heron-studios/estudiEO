@@ -106,9 +106,21 @@ class QuizProvider extends ChangeNotifier {
     if (!_sessions.any((s) => s.id == _currentSession!.id)) {
       _sessions.add(_currentSession!);
     }
-    _storage.saveQuizSession(_currentSession!);
+    _enforceSessionLimit();
+    _storage.saveQuizSessions(_sessions);
     _currentSession = null;
     notifyListeners();
+  }
+
+  void _enforceSessionLimit() {
+    // Keep a maximum of 50 completed sessions to prevent memory leaks and JS jank on Web.
+    final completedSessions = _sessions.where((s) => s.isCompleted).toList();
+    if (completedSessions.length > 50) {
+      completedSessions.sort((a, b) => (a.finishedAt ?? DateTime(0)).compareTo(b.finishedAt ?? DateTime(0)));
+      final toRemove = completedSessions.length - 50;
+      final idsToRemove = completedSessions.take(toRemove).map((s) => s.id).toSet();
+      _sessions.removeWhere((s) => idsToRemove.contains(s.id));
+    }
   }
 
   void cancelSession() {

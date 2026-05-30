@@ -5,6 +5,7 @@ import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/services/local_storage_service.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
+import 'package:learn/providers/gamification_provider.dart';
 
 /// Proveedor de estado para el Modo Aprendizaje Guiado.
 ///
@@ -20,8 +21,14 @@ class LearningProvider extends ChangeNotifier {
   /// topicId → lista de claves de niveles completados (ej. ['facil', 'medio'])
   Map<String, List<String>> _completedLevels = {};
 
+  GamificationProvider? _gamification;
+
   LearningProvider(this._storage) {
     _completedLevels = _storage.loadLearningProgress();
+  }
+
+  void updateGamification(GamificationProvider gamification) {
+    _gamification = gamification;
   }
 
   // ─── Getters ──────────────────────────────────────────────────────────────
@@ -163,6 +170,8 @@ class LearningProvider extends ChangeNotifier {
 
     _currentSession!.isLevelCompleted = true;
     _currentSession!.finishedAt = DateTime.now();
+    
+    _gamification?.addXp(50);
 
     _storage.saveLearningProgress(_completedLevels);
     _storage.saveLearningSession(_currentSession!);

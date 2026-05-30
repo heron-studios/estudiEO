@@ -12,6 +12,6 @@ class AppConfig {
   /// Puede ser configurada al compilar con: --dart-define=GEMINI_API_KEY=tu_clave
   static const String geminiApiKey = String.fromEnvironment(
     'GEMINI_API_KEY',
-    defaultValue: 'AIzaSyBdUQyyhOBTHDc2Qyk7pqv5iyqn8KcwKUw',
+    defaultValue: '',
   );
 }
