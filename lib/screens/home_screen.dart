@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
@@ -12,6 +11,7 @@ import 'package:learn/widgets/glass_card_widget.dart';
 import 'package:learn/config/neural_theme.dart';
 import 'package:learn/services/auth_service.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:go_router/go_router.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -35,95 +35,7 @@ class HomeScreen extends StatelessWidget {
     return parts[parts.length - 2].toUpperCase();
   }
 
-  void _showProfileSheet(BuildContext context) {
-    final authService = context.read<AuthService>();
-    final user = authService.currentUser;
-    final userName = user?.displayName ?? 'Futuro Cadete';
-    final userEmail = user?.email ?? 'EstudiEO PNP';
-    final nt = NeuralTheme.of(context);
-
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (ctx) => ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-        child: BackdropFilter(
-          filter: ui.ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-          child: Container(
-            decoration: BoxDecoration(
-              color: nt.surfaceCard.withValues(alpha: 0.85),
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-              border: Border.all(color: nt.borderSubtle),
-            ),
-            child: SafeArea(
-              top: false,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(height: 12),
-                  Container(
-                    width: 40,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: Colors.white24,
-                      borderRadius: BorderRadius.circular(2),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    userName,
-                    style: const TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    userEmail,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
-                      fontSize: 14,
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  _SheetItem(
-                    icon: Icons.analytics_rounded,
-                    color: nt.warningAmber,
-                    label: 'Progreso y Estadísticas',
-                    onTap: () {
-                      Navigator.pop(ctx);
-                      Navigator.pushNamed(context, '/dashboard');
-                    },
-                  ),
-                  _SheetItem(
-                    icon: Icons.settings_rounded,
-                    color: Colors.white54,
-                    label: 'Ajustes',
-                    onTap: () {
-                      Navigator.pop(ctx);
-                      Navigator.pushNamed(context, '/settings');
-                    },
-                  ),
-                  _SheetItem(
-                    icon: Icons.logout_rounded,
-                    color: nt.pink,
-                    label: 'Cerrar Sesión',
-                    onTap: () async {
-                      Navigator.pop(ctx);
-                      await authService.signOut();
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+// Se eliminó _showProfileSheet porque ahora se maneja en el AppShell.
 
   void _startGuidedLearningFlow(BuildContext context) {
     final learningProvider = context.read<LearningProvider>();
@@ -255,10 +167,7 @@ class HomeScreen extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
-                Navigator.pushNamed(
-                  context,
-                  '/gallery',
-                  arguments: {'mode': 'guided'},
+                context.push('/gallery', extra: {'mode': 'guided'},
                 );
               },
               child: Text(
@@ -271,10 +180,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(ctx);
                 subjectProvider.selectTopic(topicId);
                 learningProvider.resumeSession(topicId, nivel);
-                Navigator.pushNamed(
-                  context,
-                  '/learning-quiz',
-                  arguments: {'topicId': topicId, 'nivel': nivel},
+                context.push('/learning-quiz', extra: {'topicId': topicId, 'nivel': nivel},
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -294,8 +200,87 @@ class HomeScreen extends StatelessWidget {
         ),
       );
     } else {
-      Navigator.pushNamed(context, '/gallery', arguments: {'mode': 'guided'});
+      context.push('/gallery', extra: {'mode': 'guided'});
     }
+  }
+
+  Widget _buildSimulacroCard(BuildContext context, dynamic nt) {
+    return HoverGlassCard(
+      borderRadius: BorderRadius.circular(20),
+      onTap: () => context.push('/exam'),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        child: Row(
+          children: [
+            _IconBubble(icon: Icons.timer_rounded, color: nt.pink),
+            const SizedBox(width: 14),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Simulacro de Examen', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                  SizedBox(height: 2),
+                  Text('100 preguntas • 3 horas', style: TextStyle(color: Colors.white60, fontSize: 12)),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: Colors.white30, size: 20),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEstudiarTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.auto_stories_rounded,
+      color: nt.blueGoogle,
+      title: 'Estudiar',
+      subtitle: 'Por asignatura',
+      onTap: () => context.push('/gallery', extra: {'mode': 'quiz'}),
+    );
+  }
+
+  Widget _buildRepasarTile(BuildContext context, dynamic nt) {
+    return Consumer<SrsProvider>(
+      builder: (context, srs, _) {
+        final count = srs.getReviewQueue().length;
+        return _GlassTile(
+          icon: Icons.history_edu_rounded,
+          color: nt.successGreen,
+          title: 'Repasar',
+          subtitle: count > 0 ? '$count pendientes' : 'Al día ✓',
+          badge: count > 0 ? '$count' : null,
+          onTap: () => context.push('/srs-review'),
+        );
+      },
+    );
+  }
+
+  Widget _buildTarjetasTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.style_rounded,
+      color: nt.purple,
+      title: 'Tarjetas',
+      subtitle: 'Memoria',
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const AlipioSelectorScreen(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAprendizajeTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.school_rounded,
+      color: nt.warningAmber,
+      title: 'Aprendizaje',
+      subtitle: 'Modo Guiado',
+      badge: 'NUEVO',
+      onTap: () => _startGuidedLearningFlow(context),
+    );
   }
 
   @override
@@ -341,28 +326,6 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        onTap: () => _showProfileSheet(context),
-                        child: Container(
-                          width: 44,
-                          height: 44,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withValues(alpha: 0.1),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.2),
-                            ),
-                          ),
-                          child: const Icon(
-                            Icons.person,
-                            color: Colors.white70,
-                            size: 22,
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
 
@@ -370,147 +333,82 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // Simulacro de Examen
-                          HoverGlassCard(
-                            borderRadius: BorderRadius.circular(20),
-                            onTap: () =>
-                                Navigator.pushNamed(context, '/exam'),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 18,
-                                vertical: 14,
-                              ),
-                              child: Row(
-                                children: [
-                                  _IconBubble(
-                                    icon: Icons.timer_rounded,
-                                    color: nt.pink,
-                                  ),
-                                  const SizedBox(width: 14),
-                                  const Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Simulacro de Examen',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                        SizedBox(height: 2),
-                                        Text(
-                                          '100 preguntas • 3 horas',
-                                          style: TextStyle(
-                                            color: Colors.white60,
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.chevron_right,
-                                    color: Colors.white30,
-                                    size: 20,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-
-                          // Banner psicoLearn
-                          const _PsicoLearnBanner(),
-                          const SizedBox(height: 10),
-
-                          // Row: Estudiar + Repasar
-                          SizedBox(
-                            height: 120,
-                            child: Row(
+                      constraints: const BoxConstraints(maxWidth: 1000),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          if (constraints.maxWidth > 800) {
+                            return Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
-                                  child: _GlassTile(
-                                    icon: Icons.auto_stories_rounded,
-                                    color: nt.blueGoogle,
-                                    title: 'Estudiar',
-                                    subtitle: 'Por asignatura',
-                                    onTap: () => Navigator.pushNamed(
-                                      context,
-                                      '/gallery',
-                                      arguments: {'mode': 'quiz'},
-                                    ),
+                                  flex: 5,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      _buildSimulacroCard(context, nt),
+                                      const SizedBox(height: 16),
+                                      const _PsicoLearnBanner(),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(width: 10),
+                                const SizedBox(width: 24),
                                 Expanded(
-                                  child: Consumer<SrsProvider>(
-                                    builder: (context, srs, _) {
-                                      final count =
-                                          srs.getReviewQueue().length;
-                                      return _GlassTile(
-                                        icon: Icons.history_edu_rounded,
-                                        color: nt.successGreen,
-                                        title: 'Repasar',
-                                        subtitle: count > 0
-                                            ? '$count pendientes'
-                                            : 'Al día ✓',
-                                        badge: count > 0 ? '$count' : null,
-                                        onTap: () => Navigator.pushNamed(
-                                          context,
-                                          '/srs-review',
-                                        ),
-                                      );
-                                    },
+                                  flex: 6,
+                                  child: GridView.count(
+                                    crossAxisCount: 2,
+                                    mainAxisSpacing: 16,
+                                    crossAxisSpacing: 16,
+                                    childAspectRatio: 1.15,
+                                    shrinkWrap: true,
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    children: [
+                                      _buildEstudiarTile(context, nt),
+                                      _buildRepasarTile(context, nt),
+                                      _buildTarjetasTile(context, nt),
+                                      _buildAprendizajeTile(context, nt),
+                                    ],
                                   ),
                                 ),
                               ],
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-
-                          // Row: Tarjetas + Aprendizaje Guiado
-                          SizedBox(
-                            height: 120,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: _GlassTile(
-                                    icon: Icons.style_rounded,
-                                    color: nt.purple,
-                                    title: 'Tarjetas',
-                                    subtitle: 'Memoria',
-                                    onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            const AlipioSelectorScreen(),
+                            );
+                          } else {
+                            return Center(
+                              child: ConstrainedBox(
+                                constraints: const BoxConstraints(maxWidth: 400),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    _buildSimulacroCard(context, nt),
+                                    const SizedBox(height: 10),
+                                    const _PsicoLearnBanner(),
+                                    const SizedBox(height: 10),
+                                    SizedBox(
+                                      height: 120,
+                                      child: Row(
+                                        children: [
+                                          Expanded(child: _buildEstudiarTile(context, nt)),
+                                          const SizedBox(width: 10),
+                                          Expanded(child: _buildRepasarTile(context, nt)),
+                                        ],
                                       ),
                                     ),
-                                  ),
+                                    const SizedBox(height: 10),
+                                    SizedBox(
+                                      height: 120,
+                                      child: Row(
+                                        children: [
+                                          Expanded(child: _buildTarjetasTile(context, nt)),
+                                          const SizedBox(width: 10),
+                                          Expanded(child: _buildAprendizajeTile(context, nt)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: _GlassTile(
-                                    icon: Icons.school_rounded,
-                                    color: nt.warningAmber,
-                                    title: 'Aprendizaje',
-                                    subtitle: 'Modo Guiado',
-                                    badge: 'NUEVO',
-                                    onTap: () =>
-                                        _startGuidedLearningFlow(context),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                              ),
+                            );
+                          }
+                        },
                       ),
                     ),
                   ),
@@ -524,59 +422,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  _SheetItem — ítem del bottom sheet de perfil
-// ─────────────────────────────────────────────────────────────────────────────
-class _SheetItem extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-  final String label;
-  final VoidCallback onTap;
-
-  const _SheetItem({
-    required this.icon,
-    required this.color,
-    required this.label,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-          child: Row(
-            children: [
-              Container(
-                width: 38,
-                height: 38,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Icon(icon, color: color, size: 20),
-              ),
-              const SizedBox(width: 16),
-              Text(
-                label,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const Spacer(),
-              const Icon(Icons.chevron_right, color: Colors.white24, size: 20),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// _SheetItem eliminado
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  _GlassTile — tile cuadrado del grid (Estudiar / Repasar / Tarjetas / etc.)

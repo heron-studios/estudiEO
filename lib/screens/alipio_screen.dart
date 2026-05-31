@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:go_router/go_router.dart';
 
 class AlipioScreen extends StatefulWidget {
   final String topicId;
@@ -99,10 +100,7 @@ class _AlipioScreenState extends State<AlipioScreen>
                 final batch = List<String>.from(_batchQuestionIds);
                 _batchQuestionIds.clear();
                 
-                Navigator.pushNamed(
-                  context, 
-                  '/srs-mini-quiz',
-                  arguments: batch,
+                context.push('/srs-mini-quiz', extra: batch,
                 );
               },
               style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF4ADE80), foregroundColor: _bg),

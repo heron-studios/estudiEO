@@ -6,6 +6,7 @@ import 'package:learn/models/subject.dart';
 import 'package:learn/services/local_storage_service.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
 import 'package:learn/config/neural_design_system.dart';
+import 'package:go_router/go_router.dart';
 
 class SubjectGalleryScreen extends StatelessWidget {
   const SubjectGalleryScreen({super.key});
@@ -113,10 +114,7 @@ class _SubjectCard extends StatelessWidget {
           child: InkWell(
             onTap: () {
               context.read<SubjectProvider>().selectSubject(subject.id);
-              Navigator.pushNamed(
-                context,
-                '/topics',
-                arguments: {
+              context.push('/topics', extra: {
                   'subjectId': subject.id,
                   'mode': mode,
                 },

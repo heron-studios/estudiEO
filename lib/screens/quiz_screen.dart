@@ -9,6 +9,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
 import 'package:learn/config/neural_design_system.dart';
+import 'package:go_router/go_router.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -96,7 +97,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _finishQuiz() {
     context.read<QuizProvider>().finishSession();
-    Navigator.pushReplacementNamed(context, '/quiz-results');
+    context.replace('/quiz-results');
   }
 
   void _exitQuiz() {

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:go_router/go_router.dart';
 
 class SrsReviewScreen extends StatefulWidget {
   const SrsReviewScreen({super.key});
@@ -90,10 +91,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                 _cardsReviewedInBatch = 0;
                 _batchQuestionIds.clear();
 
-                Navigator.pushNamed(
-                  context,
-                  '/srs-mini-quiz',
-                  arguments: batch,
+                context.push('/srs-mini-quiz', extra: batch,
                 ).then((didPass) {
                   if (!mounted) return;
                   final passed = (didPass == true);

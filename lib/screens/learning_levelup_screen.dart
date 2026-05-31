@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/providers/learning_provider.dart';
+import 'package:go_router/go_router.dart';
 
 /// Pantalla 3 del Modo Aprendizaje Guiado — Fase Victoria (Level Up).
 ///
@@ -97,10 +98,7 @@ class _LearningLevelUpScreenState extends State<LearningLevelUpScreen>
   void _goToNextLevel(BuildContext context) {
     final nextNivel = widget.nivel.next!;
     context.read<LearningProvider>().clearCurrentSession();
-    Navigator.pushReplacementNamed(
-      context,
-      '/learning-theory',
-      arguments: {
+    context.replace('/learning-theory', extra: {
         'topicId': widget.topicId,
         'nivel': nextNivel,
       },

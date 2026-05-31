@@ -1,5 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -89,31 +90,42 @@ class _HoverGlassCardState extends State<HoverGlassCard>
               t,
             )!;
 
-            return Transform.scale(
-              scale: _scale.value,
-              child: ClipRRect(
-                borderRadius: widget.borderRadius,
-                child: BackdropFilter(
-                  filter: ui.ImageFilter.blur(
-                    sigmaX: widget.blur,
-                    sigmaY: widget.blur,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: nt.surfaceCard.withValues(alpha: surfaceOpacity),
-                      borderRadius: widget.borderRadius,
-                      border: Border.all(color: borderColor, width: 1.0),
-                    ),
-                    child: child,
-                  ),
+              final double effectiveBlur = kIsWeb ? (widget.blur > 8.0 ? 8.0 : widget.blur) : widget.blur;
+
+              return Transform.scale(
+                scale: _scale.value,
+                child: ClipRRect(
+                  borderRadius: widget.borderRadius,
+                  child: effectiveBlur > 0 
+                      ? BackdropFilter(
+                          filter: ui.ImageFilter.blur(
+                            sigmaX: effectiveBlur,
+                            sigmaY: effectiveBlur,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: nt.surfaceCard.withValues(alpha: surfaceOpacity),
+                              borderRadius: widget.borderRadius,
+                              border: Border.all(color: borderColor, width: 1.0),
+                            ),
+                            child: child,
+                          ),
+                        )
+                      : Container(
+                          decoration: BoxDecoration(
+                            color: nt.surfaceCard.withValues(alpha: surfaceOpacity),
+                            borderRadius: widget.borderRadius,
+                            border: Border.all(color: borderColor, width: 1.0),
+                          ),
+                          child: child,
+                        ),
                 ),
-              ),
-            );
-          },
-          child: widget.child, // estático — no se reconstruye en la animación
+              );
+            },
+            child: widget.child, // estático — no se reconstruye en la animación
+          ),
         ),
-      ),
-    );
+      );
   }
 }
 
@@ -141,21 +153,26 @@ class StaticGlassContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final effectiveOpacity = opacity ?? nt.cardOpacityMax;
+    final double effectiveBlur = kIsWeb ? (blur > 8.0 ? 8.0 : blur) : blur;
+
+    Widget container = Container(
+      padding: padding,
+      decoration: BoxDecoration(
+        color: nt.surfaceCard.withValues(alpha: effectiveOpacity),
+        borderRadius: borderRadius,
+        border: Border.all(color: nt.borderSubtle, width: 1.0),
+      ),
+      child: child,
+    );
 
     return ClipRRect(
       borderRadius: borderRadius,
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: blur, sigmaY: blur),
-        child: Container(
-          padding: padding,
-          decoration: BoxDecoration(
-            color: nt.surfaceCard.withValues(alpha: effectiveOpacity),
-            borderRadius: borderRadius,
-            border: Border.all(color: nt.borderSubtle, width: 1.0),
-          ),
-          child: child,
-        ),
-      ),
+      child: effectiveBlur > 0
+          ? BackdropFilter(
+              filter: ui.ImageFilter.blur(sigmaX: effectiveBlur, sigmaY: effectiveBlur),
+              child: container,
+            )
+          : container,
     );
   }
 }

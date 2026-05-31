@@ -5,6 +5,7 @@ import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
+import 'package:go_router/go_router.dart';
 
 /// Pantalla 2 del Modo Aprendizaje Guiado — Fase Reto (Bucle de 10).
 ///
@@ -84,10 +85,7 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
       final lp = context.read<LearningProvider>();
       if (lp.isFinished) {
         if (mounted) {
-          Navigator.pushReplacementNamed(
-            context,
-            '/learning-levelup',
-            arguments: {
+          context.replace('/learning-levelup', extra: {
               'topicId': widget.topicId,
               'nivel': widget.nivel,
               'elapsed': lp.currentSession?.elapsed ?? Duration.zero,

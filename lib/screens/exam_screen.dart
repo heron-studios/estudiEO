@@ -7,6 +7,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:go_router/go_router.dart';
 
 class ExamScreen extends StatefulWidget {
   const ExamScreen({super.key});
@@ -104,10 +105,7 @@ class _ExamScreenState extends State<ExamScreen> {
     // Bonus for finishing exam
     gamification.addXp(50);
     
-    Navigator.pushReplacementNamed(
-      context,
-      '/exam-results',
-      arguments: {
+    context.replace('/exam-results', extra: {
         'score': correctCount,
         'total': _questions.length,
         'timeSpent': _examDuration - _secondsLeft,

@@ -12,6 +12,7 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/models/learning_level.dart';
+import 'package:learn/screens/app_shell.dart';
 import 'package:learn/screens/home_screen.dart';
 import 'package:learn/screens/login_screen.dart';
 import 'package:learn/screens/subject_gallery_screen.dart';
@@ -30,8 +31,12 @@ import 'package:learn/screens/learning_theory_screen.dart';
 import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
 
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:go_router/go_router.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
 
   // Initialize Hive first (essential for offline storage)
   try {
@@ -81,68 +86,153 @@ void main() async {
   );
 }
 
+final _router = GoRouter(
+  initialLocation: '/',
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const AuthWrapper(),
+    ),
+    StatefulShellRoute.indexedStack(
+      builder: (context, state, navigationShell) {
+        return AppShell(navigationShell: navigationShell);
+      },
+      branches: [
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/home',
+              builder: (context, state) => const HomeScreen(),
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/dashboard',
+              builder: (context, state) => const DashboardScreen(),
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/settings',
+              builder: (context, state) => const SettingsScreen(),
+            ),
+          ],
+        ),
+      ],
+    ),
+    GoRoute(
+      path: '/gallery',
+      builder: (context, state) {
+        // En home_screen, a veces se enviaba un mapa con mode: 'guided'.
+        // Lo pasaremos a SubjectGalleryScreen para mantener la lógica igual
+        final extra = state.extra;
+        if (extra is Map) {
+          // Extra no es usado realmente por SubjectGalleryScreen en build() original,
+          // pero si lo fuera: (En la vieja modalRoute, sí extraía arg['mode'])
+          // Wait, subject_gallery_screen original sí extrae args['mode']!
+          // Lo vimos en las líneas 15 y 16 de subject_gallery_screen.dart
+        }
+        return const SubjectGalleryScreen();
+      },
+    ),
+    GoRoute(
+      path: '/topics',
+      builder: (context, state) {
+        final extra = state.extra;
+        if (extra is Map) {
+          return TopicGalleryScreen(
+            subjectId: extra['subjectId'] as String,
+            mode: extra['mode'] as String? ?? 'quiz',
+          );
+        }
+        return TopicGalleryScreen(subjectId: extra as String);
+      },
+    ),
+    GoRoute(
+      path: '/quiz',
+      builder: (context, state) => const QuizScreen(),
+    ),
+    GoRoute(
+      path: '/quiz-results',
+      builder: (context, state) => const QuizResultsScreen(),
+    ),
+    GoRoute(
+      path: '/exam',
+      builder: (context, state) => const ExamScreen(),
+    ),
+    GoRoute(
+      path: '/exam-results',
+      builder: (context, state) => const ExamResultsScreen(),
+    ),
+    // Dashboard y Settings ahora están en el ShellRoute.
+    GoRoute(
+      path: '/srs-review',
+      builder: (context, state) => const SrsReviewScreen(),
+    ),
+    GoRoute(
+      path: '/srs-mini-quiz',
+      builder: (context, state) {
+        final questionIds = state.extra as List<String>;
+        return SrsMiniQuizScreen(questionIds: questionIds);
+      },
+    ),
+    // Settings en ShellRoute
+    GoRoute(
+      path: '/premium',
+      builder: (context, state) => const PremiumScreen(),
+    ),
+    GoRoute(
+      path: '/payment',
+      builder: (context, state) => const PaymentScreen(),
+    ),
+    GoRoute(
+      path: '/learning-theory',
+      builder: (context, state) {
+        final extra = state.extra as Map;
+        return LearningTheoryScreen(
+          topicId: extra['topicId'] as String,
+          nivel: extra['nivel'] as Dificultad,
+        );
+      },
+    ),
+    GoRoute(
+      path: '/learning-quiz',
+      builder: (context, state) {
+        final extra = state.extra as Map;
+        return LearningQuizScreen(
+          topicId: extra['topicId'] as String,
+          nivel: extra['nivel'] as Dificultad,
+        );
+      },
+    ),
+    GoRoute(
+      path: '/learning-levelup',
+      builder: (context, state) {
+        final extra = state.extra as Map;
+        return LearningLevelUpScreen(
+          topicId: extra['topicId'] as String,
+          nivel: extra['nivel'] as Dificultad,
+          elapsed: extra['elapsed'] as Duration? ?? Duration.zero,
+        );
+      },
+    ),
+  ],
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'estudiEO',
-      // NeuralTheme inyecta todos los tokens de diseño via ThemeExtension.
-      // Para acceder: NeuralTheme.of(context).blueGoogle, etc.
       theme: NeuralTheme.buildThemeData(),
       debugShowCheckedModeBanner: false,
-      home: const AuthWrapper(),
-      routes: {
-        '/home': (context) => const HomeScreen(),
-        '/gallery': (context) => const SubjectGalleryScreen(),
-        '/topics': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments;
-          if (args is Map) {
-            return TopicGalleryScreen(
-              subjectId: args['subjectId'] as String,
-              mode: args['mode'] as String? ?? 'quiz',
-            );
-          }
-          return TopicGalleryScreen(subjectId: args as String);
-        },
-        '/quiz': (context) => const QuizScreen(),
-        '/quiz-results': (context) => const QuizResultsScreen(),
-        '/exam': (context) => const ExamScreen(),
-        '/exam-results': (context) => const ExamResultsScreen(),
-        '/dashboard': (context) => const DashboardScreen(),
-        '/srs-review': (context) => const SrsReviewScreen(),
-        '/srs-mini-quiz': (context) {
-          final questionIds =
-              ModalRoute.of(context)!.settings.arguments as List<String>;
-          return SrsMiniQuizScreen(questionIds: questionIds);
-        },
-        '/settings': (context) => const SettingsScreen(),
-        '/premium': (context) => const PremiumScreen(),
-        '/payment': (context) => const PaymentScreen(),
-        '/learning-theory': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments as Map;
-          return LearningTheoryScreen(
-            topicId: args['topicId'] as String,
-            nivel: args['nivel'] as Dificultad,
-          );
-        },
-        '/learning-quiz': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments as Map;
-          return LearningQuizScreen(
-            topicId: args['topicId'] as String,
-            nivel: args['nivel'] as Dificultad,
-          );
-        },
-        '/learning-levelup': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments as Map;
-          return LearningLevelUpScreen(
-            topicId: args['topicId'] as String,
-            nivel: args['nivel'] as Dificultad,
-            elapsed: args['elapsed'] as Duration? ?? Duration.zero,
-          );
-        },
-      },
+      routerConfig: _router,
     );
   }
 }
@@ -165,7 +255,10 @@ class AuthWrapper extends StatelessWidget {
     }
 
     if (authService.currentUser != null && authService.isAuthorized) {
-      return const HomeScreen();
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        context.go('/home');
+      });
+      return const Scaffold(backgroundColor: Color(0xFF0F172A));
     }
 
     if (authService.currentUser != null && !authService.isAuthorized) {

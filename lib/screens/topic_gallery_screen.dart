@@ -9,6 +9,7 @@ import 'package:learn/models/learning_level.dart';
 import 'package:learn/services/auth_service.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
 import 'package:learn/config/neural_design_system.dart';
+import 'package:go_router/go_router.dart';
 
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
@@ -111,7 +112,7 @@ class _TopicTile extends StatelessWidget {
           child: InkWell(
             onTap: () {
               if (isLocked) {
-                Navigator.pushNamed(context, '/premium');
+                context.push('/premium');
                 return;
               }
               if (mode == 'guided') {
@@ -392,10 +393,7 @@ class _TopicTile extends StatelessWidget {
                 Navigator.pop(ctx);
                 lp.resetTopicProgress(topic.id);
                 // Iniciar nueva sesión
-                Navigator.pushNamed(
-                  context,
-                  '/learning-theory',
-                  arguments: {'topicId': topic.id, 'nivel': pendingLevel},
+                context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
               child: const Text(
@@ -407,10 +405,7 @@ class _TopicTile extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
-                Navigator.pushNamed(
-                  context,
-                  '/learning-theory',
-                  arguments: {'topicId': topic.id, 'nivel': pendingLevel},
+                context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
               child: Text(
@@ -423,10 +418,7 @@ class _TopicTile extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(ctx);
                 lp.resumeSession(topic.id, pendingLevel);
-                Navigator.pushNamed(
-                  context,
-                  '/learning-quiz',
-                  arguments: {
+                context.push('/learning-quiz', extra: {
                     'topicId': topic.id,
                     'nivel': pendingLevel,
                   },
@@ -450,10 +442,7 @@ class _TopicTile extends StatelessWidget {
       );
     } else {
       final currentLevel = lp.getCurrentLevel(topic.id);
-      Navigator.pushNamed(
-        context,
-        '/learning-theory',
-        arguments: {'topicId': topic.id, 'nivel': currentLevel},
+      context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': currentLevel},
       );
     }
   }
@@ -479,7 +468,7 @@ class _TopicTile extends StatelessWidget {
                   return;
                 }
                 quizProvider.createSession(topic.id, allQuestions.map((q) => q.id).toList());
-                Navigator.pushNamed(context, '/quiz');
+                context.push('/quiz');
               },
               child: const Text('Empezar de nuevo', style: TextStyle(color: Color(0xFFF87171))),
             ),
@@ -487,7 +476,7 @@ class _TopicTile extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(ctx);
                 quizProvider.resumeSession(topic.id);
-                Navigator.pushNamed(context, '/quiz');
+                context.push('/quiz');
               },
               style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF3B82F6)),
               child: const Text('Continuar respondiendo', style: TextStyle(color: Colors.white)),
@@ -506,7 +495,7 @@ class _TopicTile extends StatelessWidget {
       
       final questionIds = allQuestions.map((q) => q.id).toList();
       quizProvider.createSession(topic.id, questionIds);
-      Navigator.pushNamed(context, '/quiz');
+      context.push('/quiz');
     }
   }
 }

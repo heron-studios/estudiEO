@@ -7,6 +7,7 @@ import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:learn/widgets/neural_background_wrapper.dart';
+import 'package:go_router/go_router.dart';
 
 /// Pantalla 1 del Modo Aprendizaje Guiado — Fase Absorción (Teoría).
 ///
@@ -102,10 +103,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
       learningProvider.startSession(widget.topicId, widget.nivel);
     }
 
-    Navigator.pushReplacementNamed(
-      context,
-      '/learning-quiz',
-      arguments: {
+    context.replace('/learning-quiz', extra: {
         'topicId': widget.topicId,
         'nivel': widget.nivel,
       },
