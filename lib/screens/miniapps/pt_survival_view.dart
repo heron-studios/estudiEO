@@ -209,12 +209,18 @@ class _PtSurvivalViewState extends State<PtSurvivalView> {
     final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
     final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.only(bottom: 32),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 500),
-          child: Padding(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          padding: const EdgeInsets.only(bottom: 32),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight > 32 ? constraints.maxHeight - 32 : 0,
+            ),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -336,6 +342,10 @@ class _PtSurvivalViewState extends State<PtSurvivalView> {
           ),
         ),
       ),
+    ),
+  ),
+);
+      },
     );
   }
 }
