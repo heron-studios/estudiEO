@@ -134,26 +134,29 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                 
                 // Main Question Card
                 Expanded(
-                  flex: 2,
                   child: HoverGlassCard(
                     borderRadius: BorderRadius.circular(32),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            promptText,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 80,
-                              fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                promptText,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          margin: const EdgeInsets.only(bottom: 16),
                           decoration: BoxDecoration(
                             color: nt.blueGoogle.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(16),
@@ -168,61 +171,64 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                     ),
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 16),
 
-                // Inline Feedback (Hint)
-                if (_hintMessage != null)
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 24),
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: nt.pink.withValues(alpha: 0.1),
-                      border: Border.all(color: nt.pink.withValues(alpha: 0.5)),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.lightbulb_outline_rounded, color: nt.pink),
-                            const SizedBox(width: 8),
-                            const Text('¡Sigue intentando!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          _hintMessage!,
-                          style: const TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
-                        ),
-                        const SizedBox(height: 12),
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () => setState(() => _generateQuestion()),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: nt.pink,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            ),
-                            child: const Text('ENTENDIDO', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                // Inline Feedback (Hint) - Animated
+                AnimatedSize(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOutBack,
+                  child: _hintMessage != null
+                      ? Container(
+                          margin: const EdgeInsets.only(bottom: 16),
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: nt.pink.withValues(alpha: 0.1),
+                            border: Border.all(color: nt.pink.withValues(alpha: 0.5)),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.lightbulb_outline_rounded, color: nt.pink),
+                                  const SizedBox(width: 8),
+                                  const Text('¡Sigue intentando!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                _hintMessage!,
+                                style: const TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                              ),
+                              const SizedBox(height: 12),
+                              SizedBox(
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  onPressed: () => setState(() => _generateQuestion()),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: nt.pink,
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  ),
+                                  child: const Text('SIGUIENTE PREGUNTA', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                ),
+                              )
+                            ],
                           ),
                         )
-                      ],
-                    ),
-                  ),
+                      : const SizedBox.shrink(),
+                ),
 
-                // Options Grid
-                if (_hintMessage == null) // Hide options if showing hint to save space
-                  Expanded(
-                    flex: 3,
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                      childAspectRatio: 1.6,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
-                    ),
-                  ),
+                // Options Grid - Always visible
+                GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  childAspectRatio: 2.0, // Flatter buttons to save space
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
+                ),
               ],
             ),
           ),
