@@ -68,38 +68,67 @@ class _PtTrainingViewState extends State<PtTrainingView> {
       } else {
         _streak = 0;
         final nt = NeuralTheme.of(context);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(_getHint(_currentElement)),
-            backgroundColor: nt.pink,
-            duration: const Duration(milliseconds: 2500),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-        Future.delayed(const Duration(milliseconds: 2500), () {
-          if (mounted) {
-            setState(() {
-              _generateQuestion();
-            });
-          }
+        
+        Future.delayed(const Duration(milliseconds: 500), () {
+          if (!mounted) return;
+          showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (ctx) => AlertDialog(
+              backgroundColor: nt.surfaceElevated,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+              title: Row(
+                children: [
+                  Icon(Icons.warning_rounded, color: nt.pink, size: 32),
+                  const SizedBox(width: 12),
+                  const Text('¡Casi!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                ],
+              ),
+              content: Text(
+                _getHint(_currentElement, selected),
+                style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(ctx).pop();
+                    if (mounted) {
+                      setState(() {
+                        _generateQuestion();
+                      });
+                    }
+                  },
+                  child: Text('ENTENDIDO', style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold, fontSize: 16)),
+                )
+              ],
+            ),
+          );
         });
       }
     });
   }
 
-  String _getHint(ChemicalElement element) {
-    if (element.symbol == 'Na') return 'Sodio es Na (del latín Natrium).';
-    if (element.symbol == 'K') return 'Potasio es K (del latín Kalium).';
-    if (element.symbol == 'Fe') return 'Hierro es Fe (del latín Ferrum).';
-    if (element.symbol == 'Cu') return 'Cobre es Cu (del latín Cuprum).';
-    if (element.symbol == 'Ag') return 'Plata es Ag (del latín Argentum).';
-    if (element.symbol == 'Sn') return 'Estaño es Sn (del latín Stannum).';
-    if (element.symbol == 'Sb') return 'Antimonio es Sb (del latín Stibium).';
-    if (element.symbol == 'W') return 'Wolframio (Tungsteno) es W (Wolfram).';
-    if (element.symbol == 'Au') return 'Oro es Au (del latín Aurum).';
-    if (element.symbol == 'Hg') return 'Mercurio es Hg (del latín Hydrargyrum).';
-    if (element.symbol == 'Pb') return 'Plomo es Pb (del latín Plumbum).';
-    return 'Recuerda: ${element.name} es ${element.symbol}.';
+  String _getHint(ChemicalElement correct, ChemicalElement wrong) {
+    String msg = _isSymbolToName 
+        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n\n"
+        : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n\n";
+
+    if (correct.symbol == 'Na') msg += "💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!";
+    else if (correct.symbol == 'K') msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
+    else if (correct.symbol == 'Fe') msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
+    else if (correct.symbol == 'Cu') msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
+    else if (correct.symbol == 'Ag') msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
+    else if (correct.symbol == 'Sn') msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
+    else if (correct.symbol == 'Sb') msg += "💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!";
+    else if (correct.symbol == 'W') msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
+    else if (correct.symbol == 'Au') msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
+    else if (correct.symbol == 'Hg') msg += "💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.";
+    else if (correct.symbol == 'Pb') msg += "💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).";
+    else if (correct.symbol == 'P') msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
+    else if (correct.symbol == 'S') msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
+    else msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
+
+    return msg;
   }
 
   @override
