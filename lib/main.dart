@@ -32,8 +32,11 @@ import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
 import 'package:learn/screens/miniapps_screen.dart';
 import 'package:learn/screens/miniapps/periodic_table_screen.dart';
+import 'package:learn/screens/miniapps/anp_master/presentation/anp_master_screen.dart';
+import 'package:learn/screens/miniapps/anp_master/presentation/anp_map_view.dart';
+import 'package:learn/screens/miniapps/anp_master/presentation/anp_flashcards_view.dart';
+import 'package:learn/screens/miniapps/anp_master/presentation/anp_quiz_view.dart';
 
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 
 void main() async {
@@ -222,6 +225,22 @@ final _router = GoRouter(
     GoRoute(
       path: '/miniapps/periodic-table',
       builder: (context, state) => const PeriodicTableScreen(),
+    ),
+    GoRoute(
+      path: '/miniapps/anp-master',
+      builder: (context, state) => const ANPMasterScreen(),
+    ),
+    GoRoute(
+      path: '/miniapps/anp-master/map',
+      builder: (context, state) => const ANPMapView(),
+    ),
+    GoRoute(
+      path: '/miniapps/anp-master/flashcards',
+      builder: (context, state) => const ANPFlashcardsView(),
+    ),
+    GoRoute(
+      path: '/miniapps/anp-master/quiz',
+      builder: (context, state) => const ANPQuizView(),
     ),
   ],
 );
