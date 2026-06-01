@@ -116,8 +116,8 @@ class PtExploratoryView extends StatelessWidget {
     const double cellSize = 56.0;
     const double spacing = 4.0;
     
-    final width = 18 * (cellSize + spacing);
-    final height = 9 * (cellSize + spacing) + 30; // Extra padding
+    final width = 18 * (cellSize + spacing) + 48;
+    final height = 9 * (cellSize + spacing) + 30 + 48; // Extra padding
 
     return Center(
       child: InteractiveViewer(

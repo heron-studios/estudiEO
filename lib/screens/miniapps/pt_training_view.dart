@@ -58,18 +58,48 @@ class _PtTrainingViewState extends State<PtTrainingView> {
       if (selected.atomicNumber == _currentElement.atomicNumber) {
         _score++;
         _streak++;
+        Future.delayed(const Duration(milliseconds: 800), () {
+          if (mounted) {
+            setState(() {
+              _generateQuestion();
+            });
+          }
+        });
       } else {
         _streak = 0;
-      }
-    });
-
-    Future.delayed(const Duration(milliseconds: 800), () {
-      if (mounted) {
-        setState(() {
-          _generateQuestion();
+        final nt = NeuralTheme.of(context);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(_getHint(_currentElement)),
+            backgroundColor: nt.pink,
+            duration: const Duration(milliseconds: 2500),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        Future.delayed(const Duration(milliseconds: 2500), () {
+          if (mounted) {
+            setState(() {
+              _generateQuestion();
+            });
+          }
         });
       }
     });
+  }
+
+  String _getHint(ChemicalElement element) {
+    if (element.symbol == 'Na') return 'Sodio es Na (del latín Natrium).';
+    if (element.symbol == 'K') return 'Potasio es K (del latín Kalium).';
+    if (element.symbol == 'Fe') return 'Hierro es Fe (del latín Ferrum).';
+    if (element.symbol == 'Cu') return 'Cobre es Cu (del latín Cuprum).';
+    if (element.symbol == 'Ag') return 'Plata es Ag (del latín Argentum).';
+    if (element.symbol == 'Sn') return 'Estaño es Sn (del latín Stannum).';
+    if (element.symbol == 'Sb') return 'Antimonio es Sb (del latín Stibium).';
+    if (element.symbol == 'W') return 'Wolframio (Tungsteno) es W (Wolfram).';
+    if (element.symbol == 'Au') return 'Oro es Au (del latín Aurum).';
+    if (element.symbol == 'Hg') return 'Mercurio es Hg (del latín Hydrargyrum).';
+    if (element.symbol == 'Pb') return 'Plomo es Pb (del latín Plumbum).';
+    return 'Recuerda: ${element.name} es ${element.symbol}.';
   }
 
   @override
@@ -79,10 +109,12 @@ class _PtTrainingViewState extends State<PtTrainingView> {
     final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
     final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
 
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 500),
-        child: Padding(
+    return SingleChildScrollView(
+      padding: const EdgeInsets.only(bottom: 32),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

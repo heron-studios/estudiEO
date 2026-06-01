@@ -283,13 +283,30 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMiniAppsTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.extension_rounded,
-      color: nt.pink,
-      title: 'Mini Apps',
-      subtitle: 'Juegos y Herramientas',
+  Widget _buildMiniAppsCard(BuildContext context, dynamic nt) {
+    return HoverGlassCard(
+      borderRadius: BorderRadius.circular(20),
       onTap: () => context.push('/miniapps'),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        child: Row(
+          children: [
+            _IconBubble(icon: Icons.extension_rounded, color: nt.pink),
+            const SizedBox(width: 14),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Mini Apps', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                  SizedBox(height: 2),
+                  Text('Juegos y Herramientas (Tabla Periódica)', style: TextStyle(color: Colors.white60, fontSize: 12)),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: Colors.white30, size: 20),
+          ],
+        ),
+      ),
     );
   }
 
@@ -358,6 +375,8 @@ class HomeScreen extends StatelessWidget {
                                       _buildSimulacroCard(context, nt),
                                       const SizedBox(height: 16),
                                       const _PsicoLearnBanner(),
+                                      const SizedBox(height: 16),
+                                      _buildMiniAppsCard(context, nt),
                                     ],
                                   ),
                                 ),
@@ -376,7 +395,6 @@ class HomeScreen extends StatelessWidget {
                                       _buildRepasarTile(context, nt),
                                       _buildTarjetasTile(context, nt),
                                       _buildAprendizajeTile(context, nt),
-                                      _buildMiniAppsTile(context, nt),
                                     ],
                                   ),
                                 ),
@@ -392,6 +410,8 @@ class HomeScreen extends StatelessWidget {
                                     _buildSimulacroCard(context, nt),
                                     const SizedBox(height: 10),
                                     const _PsicoLearnBanner(),
+                                    const SizedBox(height: 10),
+                                    _buildMiniAppsCard(context, nt),
                                     const SizedBox(height: 10),
                                     SizedBox(
                                       height: 120,
@@ -411,17 +431,6 @@ class HomeScreen extends StatelessWidget {
                                           Expanded(child: _buildTarjetasTile(context, nt)),
                                           const SizedBox(width: 10),
                                           Expanded(child: _buildAprendizajeTile(context, nt)),
-                                        ],
-                                      ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    SizedBox(
-                                      height: 120,
-                                      child: Row(
-                                        children: [
-                                          Expanded(child: _buildMiniAppsTile(context, nt)),
-                                          const SizedBox(width: 10),
-                                          const Spacer(),
                                         ],
                                       ),
                                     ),
