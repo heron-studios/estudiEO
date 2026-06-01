@@ -9,12 +9,12 @@ import 'package:learn/config/neural_design_system.dart';
 import 'package:go_router/go_router.dart';
 
 class SubjectGalleryScreen extends StatelessWidget {
-  const SubjectGalleryScreen({super.key});
+  final String mode;
+
+  const SubjectGalleryScreen({super.key, this.mode = 'quiz'});
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments;
-    final String mode = (args is Map && args.containsKey('mode')) ? args['mode'] as String : 'quiz';
 
     return Scaffold(
       backgroundColor: NeuralDesignSystem.background,

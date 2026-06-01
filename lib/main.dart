@@ -127,16 +127,9 @@ final _router = GoRouter(
     GoRoute(
       path: '/gallery',
       builder: (context, state) {
-        // En home_screen, a veces se enviaba un mapa con mode: 'guided'.
-        // Lo pasaremos a SubjectGalleryScreen para mantener la lógica igual
         final extra = state.extra;
-        if (extra is Map) {
-          // Extra no es usado realmente por SubjectGalleryScreen en build() original,
-          // pero si lo fuera: (En la vieja modalRoute, sí extraía arg['mode'])
-          // Wait, subject_gallery_screen original sí extrae args['mode']!
-          // Lo vimos en las líneas 15 y 16 de subject_gallery_screen.dart
-        }
-        return const SubjectGalleryScreen();
+        final mode = (extra is Map && extra.containsKey('mode')) ? extra['mode'] as String : 'quiz';
+        return SubjectGalleryScreen(mode: mode);
       },
     ),
     GoRoute(
