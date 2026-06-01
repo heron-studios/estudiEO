@@ -12,7 +12,7 @@ class PtTrainingView extends StatefulWidget {
   State<PtTrainingView> createState() => _PtTrainingViewState();
 }
 
-class _PtTrainingViewState extends State<PtTrainingView> {
+class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProviderStateMixin {
   final Random _random = Random();
   late ChemicalElement _currentElement;
   late List<ChemicalElement> _options;
@@ -23,6 +23,7 @@ class _PtTrainingViewState extends State<PtTrainingView> {
   
   ChemicalElement? _selectedAnswer;
   bool _answered = false;
+  String? _hintMessage;
 
   @override
   void initState() {
@@ -33,12 +34,11 @@ class _PtTrainingViewState extends State<PtTrainingView> {
   void _generateQuestion() {
     _answered = false;
     _selectedAnswer = null;
+    _hintMessage = null;
     _isSymbolToName = _random.nextBool();
     
-    // Select a random element
     _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
     
-    // Select 3 other random options
     Set<ChemicalElement> optionsSet = {_currentElement};
     while (optionsSet.length < 4) {
       optionsSet.add(periodicTableElements[_random.nextInt(periodicTableElements.length)]);
@@ -58,75 +58,51 @@ class _PtTrainingViewState extends State<PtTrainingView> {
       if (selected.atomicNumber == _currentElement.atomicNumber) {
         _score++;
         _streak++;
-        Future.delayed(const Duration(milliseconds: 800), () {
-          if (mounted) {
-            setState(() {
-              _generateQuestion();
-            });
-          }
+        // Quick transition on correct answer
+        Future.delayed(const Duration(milliseconds: 600), () {
+          if (mounted) setState(() => _generateQuestion());
         });
       } else {
         _streak = 0;
-        final nt = NeuralTheme.of(context);
-        
-        Future.delayed(const Duration(milliseconds: 500), () {
-          if (!mounted) return;
-          showDialog(
-            context: context,
-            barrierDismissible: false,
-            builder: (ctx) => AlertDialog(
-              backgroundColor: nt.surfaceElevated,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-              title: Row(
-                children: [
-                  Icon(Icons.warning_rounded, color: nt.pink, size: 32),
-                  const SizedBox(width: 12),
-                  const Text('¡Casi!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                ],
-              ),
-              content: Text(
-                _getHint(_currentElement, selected),
-                style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(ctx).pop();
-                    if (mounted) {
-                      setState(() {
-                        _generateQuestion();
-                      });
-                    }
-                  },
-                  child: Text('ENTENDIDO', style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold, fontSize: 16)),
-                )
-              ],
-            ),
-          );
-        });
+        _hintMessage = _getHint(_currentElement, selected);
       }
     });
   }
 
   String _getHint(ChemicalElement correct, ChemicalElement wrong) {
     String msg = _isSymbolToName 
-        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n\n"
-        : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n\n";
+        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n"
+        : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n";
 
-    if (correct.symbol == 'Na') msg += "💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!";
-    else if (correct.symbol == 'K') msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
-    else if (correct.symbol == 'Fe') msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
-    else if (correct.symbol == 'Cu') msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
-    else if (correct.symbol == 'Ag') msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
-    else if (correct.symbol == 'Sn') msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
-    else if (correct.symbol == 'Sb') msg += "💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!";
-    else if (correct.symbol == 'W') msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
-    else if (correct.symbol == 'Au') msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
-    else if (correct.symbol == 'Hg') msg += "💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.";
-    else if (correct.symbol == 'Pb') msg += "💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).";
-    else if (correct.symbol == 'P') msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
-    else if (correct.symbol == 'S') msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
-    else msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
+    if (correct.symbol == 'Na') {
+      msg += "💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!";
+    } else if (correct.symbol == 'K') {
+      msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
+    } else if (correct.symbol == 'Fe') {
+      msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
+    } else if (correct.symbol == 'Cu') {
+      msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
+    } else if (correct.symbol == 'Ag') {
+      msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
+    } else if (correct.symbol == 'Sn') {
+      msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
+    } else if (correct.symbol == 'Sb') {
+      msg += "💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!";
+    } else if (correct.symbol == 'W') {
+      msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
+    } else if (correct.symbol == 'Au') {
+      msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
+    } else if (correct.symbol == 'Hg') {
+      msg += "💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.";
+    } else if (correct.symbol == 'Pb') {
+      msg += "💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).";
+    } else if (correct.symbol == 'P') {
+      msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
+    } else if (correct.symbol == 'S') {
+      msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
+    } else {
+      msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
+    }
 
     return msg;
   }
@@ -134,159 +110,218 @@ class _PtTrainingViewState extends State<PtTrainingView> {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    
     final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
     final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          padding: const EdgeInsets.only(bottom: 32),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: constraints.maxHeight > 32 ? constraints.maxHeight - 32 : 0,
-            ),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 500),
-                child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Main Card
-              HoverGlassCard(
-                borderRadius: BorderRadius.circular(24),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 48),
-                  child: Column(
-                    children: [
-                      Text(
-                        promptText,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 64,
-                          fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Header Stats
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _StatPill(icon: Icons.star_rounded, value: '$_score', color: nt.blueGoogle),
+                    _StatPill(icon: Icons.local_fire_department_rounded, value: '$_streak', color: nt.warningAmber),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                
+                // Main Question Card
+                Expanded(
+                  flex: 2,
+                  child: HoverGlassCard(
+                    borderRadius: BorderRadius.circular(32),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            promptText,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 80,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        hintText,
-                        style: TextStyle(
-                          color: nt.blueGoogle,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                        const SizedBox(height: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: nt.blueGoogle.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                          ),
+                          child: Text(
+                            hintText,
+                            style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              
-              // Options Grid
-              GridView.count(
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                childAspectRatio: 2.5,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                physics: const NeverScrollableScrollPhysics(),
-                children: _options.map((option) {
-                  final optionText = _isSymbolToName ? option.name : option.symbol;
-                  
-                  Color borderColor = nt.borderSubtle;
-                  Color bgColor = Colors.transparent;
-                  Color textColor = Colors.white;
+                const SizedBox(height: 24),
 
-                  if (_answered) {
-                    if (option.atomicNumber == _currentElement.atomicNumber) {
-                      borderColor = nt.successGreen;
-                      bgColor = nt.successGreen.withValues(alpha: 0.2);
-                      textColor = nt.successGreen;
-                    } else if (option == _selectedAnswer) {
-                      borderColor = nt.pink; // Using pink as red/error
-                      bgColor = nt.pink.withValues(alpha: 0.2);
-                      textColor = nt.pink;
-                    }
-                  }
-
-                  return InkWell(
-                    onTap: () => _handleAnswer(option),
-                    borderRadius: BorderRadius.circular(12),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: bgColor,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: borderColor, width: 1.5),
-                      ),
-                      child: Center(
-                        child: Text(
-                          optionText,
-                          style: TextStyle(
-                            color: textColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                // Inline Feedback (Hint)
+                if (_hintMessage != null)
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 24),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: nt.pink.withValues(alpha: 0.1),
+                      border: Border.all(color: nt.pink.withValues(alpha: 0.5)),
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                  );
-                }).toList(),
-              ),
-              
-              const SizedBox(height: 48),
-              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _StatBox(label: 'Puntaje', value: _score.toString(), nt: nt),
-                  _StatBox(label: 'Racha', value: _streak.toString(), nt: nt),
-                ],
-              ),
-            ],
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.lightbulb_outline_rounded, color: nt.pink),
+                            const SizedBox(width: 8),
+                            const Text('¡Sigue intentando!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          _hintMessage!,
+                          style: const TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                        ),
+                        const SizedBox(height: 12),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () => setState(() => _generateQuestion()),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: nt.pink,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            ),
+                            child: const Text('ENTENDIDO', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                // Options Grid
+                if (_hintMessage == null) // Hide options if showing hint to save space
+                  Expanded(
+                    flex: 3,
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                      childAspectRatio: 1.6,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
-    ),
-  ),
-);
-      },
+    );
+  }
+
+  Widget _buildOptionCard(NeuralThemeData nt, ChemicalElement option) {
+    final optionText = _isSymbolToName ? option.name : option.symbol;
+    
+    Color borderColor = Colors.white.withValues(alpha: 0.1);
+    Color bgColor = nt.surfaceElevated;
+    Color textColor = Colors.white;
+
+    if (_answered) {
+      if (option.atomicNumber == _currentElement.atomicNumber) {
+        borderColor = nt.successGreen;
+        bgColor = nt.successGreen.withValues(alpha: 0.15);
+        textColor = nt.successGreen;
+      } else if (option == _selectedAnswer) {
+        borderColor = nt.pink;
+        bgColor = nt.pink.withValues(alpha: 0.15);
+        textColor = nt.pink;
+      }
+    }
+
+    return InkWell(
+      onTap: () => _handleAnswer(option),
+      borderRadius: BorderRadius.circular(20),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: borderColor, width: 2),
+          boxShadow: [
+            if (_answered && option.atomicNumber == _currentElement.atomicNumber)
+              BoxShadow(
+                color: nt.successGreen.withValues(alpha: 0.2),
+                blurRadius: 15,
+                spreadRadius: 1,
+              )
+          ],
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                optionText,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
 
-class _StatBox extends StatelessWidget {
-  final String label;
+class _StatPill extends StatelessWidget {
+  final IconData icon;
   final String value;
-  final NeuralThemeData nt;
+  final Color color;
 
-  const _StatBox({required this.label, required this.value, required this.nt});
+  const _StatPill({required this.icon, required this.value, required this.color});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.white54,
-            fontSize: 14,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: color, size: 20),
+          const SizedBox(width: 8),
+          Text(
+            value,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              shadows: [Shadow(color: color, blurRadius: 8)],
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          value,
-          style: TextStyle(
-            color: nt.blueGoogle,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

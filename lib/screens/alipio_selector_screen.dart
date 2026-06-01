@@ -23,7 +23,6 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
   late List<Topic> _topics;
   bool _isSelectionInitialized = false;
 
-  static const _bg = Color(0xFF0F172A);
   static const _card = Color(0xFF1E293B);
   static const _border = Color(0xFF334155);
   static const _purple = Color(0xFF7C3AED);
