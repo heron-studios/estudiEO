@@ -30,6 +30,8 @@ import 'package:learn/screens/payment_screen.dart';
 import 'package:learn/screens/learning_theory_screen.dart';
 import 'package:learn/screens/learning_quiz_screen.dart';
 import 'package:learn/screens/learning_levelup_screen.dart';
+import 'package:learn/screens/miniapps_screen.dart';
+import 'package:learn/screens/miniapps/periodic_table_screen.dart';
 
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
@@ -212,6 +214,14 @@ final _router = GoRouter(
           elapsed: extra['elapsed'] as Duration? ?? Duration.zero,
         );
       },
+    ),
+    GoRoute(
+      path: '/miniapps',
+      builder: (context, state) => const MiniAppsScreen(),
+    ),
+    GoRoute(
+      path: '/miniapps/periodic-table',
+      builder: (context, state) => const PeriodicTableScreen(),
     ),
   ],
 );

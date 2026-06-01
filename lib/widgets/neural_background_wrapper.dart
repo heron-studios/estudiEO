@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -73,11 +74,13 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             ),
           ),
 
-          // 3. Desenfoque masivo sobre los blobs ÚNICAMENTE
           Positioned.fill(
             child: IgnorePointer(
               child: BackdropFilter(
-                filter: ui.ImageFilter.blur(sigmaX: 80, sigmaY: 80),
+                filter: ui.ImageFilter.blur(
+                  sigmaX: kIsWeb ? 30.0 : 80.0, 
+                  sigmaY: kIsWeb ? 30.0 : 80.0
+                ),
                 child: const SizedBox.expand(),
               ),
             ),

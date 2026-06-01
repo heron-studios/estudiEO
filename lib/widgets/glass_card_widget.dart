@@ -90,7 +90,7 @@ class _HoverGlassCardState extends State<HoverGlassCard>
               t,
             )!;
 
-              final double effectiveBlur = kIsWeb ? (widget.blur > 8.0 ? 8.0 : widget.blur) : widget.blur;
+              final double effectiveBlur = kIsWeb ? (widget.blur > 4.0 ? 4.0 : widget.blur) : widget.blur;
 
               return Transform.scale(
                 scale: _scale.value,
@@ -153,7 +153,7 @@ class StaticGlassContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final effectiveOpacity = opacity ?? nt.cardOpacityMax;
-    final double effectiveBlur = kIsWeb ? (blur > 8.0 ? 8.0 : blur) : blur;
+    final double effectiveBlur = kIsWeb ? (blur > 4.0 ? 4.0 : blur) : blur;
 
     Widget container = Container(
       padding: padding,

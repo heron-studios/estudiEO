@@ -283,6 +283,16 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildMiniAppsTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.extension_rounded,
+      color: nt.pink,
+      title: 'Mini Apps',
+      subtitle: 'Juegos y Herramientas',
+      onTap: () => context.push('/miniapps'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
@@ -366,6 +376,7 @@ class HomeScreen extends StatelessWidget {
                                       _buildRepasarTile(context, nt),
                                       _buildTarjetasTile(context, nt),
                                       _buildAprendizajeTile(context, nt),
+                                      _buildMiniAppsTile(context, nt),
                                     ],
                                   ),
                                 ),
@@ -400,6 +411,17 @@ class HomeScreen extends StatelessWidget {
                                           Expanded(child: _buildTarjetasTile(context, nt)),
                                           const SizedBox(width: 10),
                                           Expanded(child: _buildAprendizajeTile(context, nt)),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 10),
+                                    SizedBox(
+                                      height: 120,
+                                      child: Row(
+                                        children: [
+                                          Expanded(child: _buildMiniAppsTile(context, nt)),
+                                          const SizedBox(width: 10),
+                                          const Spacer(),
                                         ],
                                       ),
                                     ),
