@@ -38,7 +38,7 @@ import 'package:go_router/go_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  usePathUrlStrategy();
+  // usePathUrlStrategy(); // Desactivado para evitar errores 404 en GitHub Pages
 
   // Initialize Hive first (essential for offline storage)
   try {
