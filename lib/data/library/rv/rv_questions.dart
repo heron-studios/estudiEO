@@ -3862,7 +3862,12 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q351",
     topicId: "rv_plan",
     text:
-        r"""Ordena correctamente: "Evolución de la Criminología Aplicada"nI. Gracias a estos estudios pioneros, se lograron establecer sistemas penitenciarios de resocialización.nII. Sus raíces como disciplina moderna se consolidan a finales del siglo XIX.nIII. En la actualidad, el perfilador criminal representa la máxima evolución de la criminología.nIV. La criminología se define unívocamente como el estudio empírico del delito.nV. En sus etapas formativas iniciales, centró su análisis en causas biológicas de la conducta.""",
+        r"""Ordena correctamente: "Evolución de la Criminología Aplicada"
+I. Gracias a estos estudios pioneros, se lograron establecer sistemas penitenciarios de resocialización.
+II. Sus raíces como disciplina moderna se consolidan a finales del siglo XIX.
+III. En la actualidad, el perfilador criminal representa la máxima evolución de la criminología.
+IV. La criminología se define unívocamente como el estudio empírico del delito.
+V. En sus etapas formativas iniciales, centró su análisis en causas biológicas de la conducta.""",
     options: [
       r"""II - IV - V - I - III""",
       r"""IV - II - V - I - III""",
@@ -3877,7 +3882,12 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q352",
     topicId: "rv_plan",
     text:
-        r"""Ordena correctamente: "La Fotosíntesis"nI. Los cloroplastos captan la energía solar mediante la clorofila.nII. Proceso metabólico mediante el cual las plantas elaboran su propio alimento.nIII. El resultado final es la producción de glucosa y liberación de oxígeno.nIV. A nivel celular, requiere la absorción previa de agua y dióxido de carbono.nV. Este oxígeno es vital hoy en día para el mantenimiento de la biosfera terrestre.""",
+        r"""Ordena correctamente: "La Fotosíntesis"
+I. Los cloroplastos captan la energía solar mediante la clorofila.
+II. Proceso metabólico mediante el cual las plantas elaboran su propio alimento.
+III. El resultado final es la producción de glucosa y liberación de oxígeno.
+IV. A nivel celular, requiere la absorción previa de agua y dióxido de carbono.
+V. Este oxígeno es vital hoy en día para el mantenimiento de la biosfera terrestre.""",
     options: [
       r"""I - IV - II - III - V""",
       r"""II - IV - I - III - V""",
@@ -3892,7 +3902,12 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q353",
     topicId: "rv_plan",
     text:
-        r"""Ordena correctamente: "El Método Científico"nI. Análisis de resultados y formulación de conclusiones objetivas.nII. Conjunto de pasos sistemáticos para alcanzar conocimiento válido.nIII. Diseño y ejecución de la experimentación controlada.nIV. Observación de un fenómeno y planteamiento del problema.nV. Planteamiento de hipótesis o posibles explicaciones iniciales.""",
+        r"""Ordena correctamente: "El Método Científico"
+I. Análisis de resultados y formulación de conclusiones objetivas.
+II. Conjunto de pasos sistemáticos para alcanzar conocimiento válido.
+III. Diseño y ejecución de la experimentación controlada.
+IV. Observación de un fenómeno y planteamiento del problema.
+V. Planteamiento de hipótesis o posibles explicaciones iniciales.""",
     options: [
       r"""IV - V - III - I - II""",
       r"""II - IV - V - III - I""",
@@ -3907,7 +3922,12 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q354",
     topicId: "rv_plan",
     text:
-        r"""Ordena correctamente: "El Imperio Romano"nI. La división del imperio por Teodosio entre sus hijos Honorio y Arcadio.nII. Civilización de la Antigüedad clásica surgida en la península itálica.nIII. La caída definitiva de Roma occidental en el año 476 d.C.nIV. Sus orígenes míticos se remontan a Rómulo y Remo.nV. Su máxima expansión territorial ocurrió bajo el gobierno de Trajano.""",
+        r"""Ordena correctamente: "El Imperio Romano"
+I. La división del imperio por Teodosio entre sus hijos Honorio y Arcadio.
+II. Civilización de la Antigüedad clásica surgida en la península itálica.
+III. La caída definitiva de Roma occidental en el año 476 d.C.
+IV. Sus orígenes míticos se remontan a Rómulo y Remo.
+V. Su máxima expansión territorial ocurrió bajo el gobierno de Trajano.""",
     options: [
       r"""II - IV - V - I - III""",
       r"""IV - II - V - I - III""",
@@ -3922,7 +3942,12 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q355",
     topicId: "rv_plan",
     text:
-        r"""Ordena correctamente: "Desarrollo de Software"nI. Etapa de codificación utilizando lenguajes de programación.nII. Recolección exhaustiva y análisis de los requerimientos del cliente.nIII. Concepto de ingeniería informática para crear aplicativos lógicos.nIV. Fase final de despliegue en producción y mantenimiento continuo.nV. Pruebas de calidad (Testing) para detectar errores (bugs).""",
+        r"""Ordena correctamente: "Desarrollo de Software"
+I. Etapa de codificación utilizando lenguajes de programación.
+II. Recolección exhaustiva y análisis de los requerimientos del cliente.
+III. Concepto de ingeniería informática para crear aplicativos lógicos.
+IV. Fase final de despliegue en producción y mantenimiento continuo.
+V. Pruebas de calidad (Testing) para detectar errores (bugs).""",
     options: [
       r"""II - I - V - IV - III""",
       r"""III - II - I - V - IV""",
@@ -3937,7 +3962,11 @@ Seleccione el conector logico adecuado. Caso 3.""",
     id: "rv_q356",
     topicId: "rv_plan",
     text:
-        r"""El proceso de potabilización del aguanI. Captación del agua cruda desde ríos o lagos mediante rejillas protectoras.nII. Distribución del agua potable a los hogares a través de la red de tuberías.nIII. Aplicación de cloro u otros desinfectantes para eliminar microorganismos patógenos.nIV. Adición de sustancias coagulantes para agrupar y sedimentar las impurezas sólidas.
+        r"""El proceso de potabilización del agua
+I. Captación del agua cruda desde ríos o lagos mediante rejillas protectoras.
+II. Distribución del agua potable a los hogares a través de la red de tuberías.
+III. Aplicación de cloro u otros desinfectantes para eliminar microorganismos patógenos.
+IV. Adición de sustancias coagulantes para agrupar y sedimentar las impurezas sólidas.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""I - IV - III - II""",
@@ -3953,7 +3982,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q357",
     topicId: "rv_plan",
     text:
-        r"""La evolución estelarnI. Colapso gravitatorio de una nube interestelar de gas y polvo.nII. Consumo del combustible nuclear en el núcleo de la estrella.nIII. Nacimiento de una protoestrella que comienza a brillar debido al calor.nIV. Expansión y posterior muerte de la estrella como enana blanca o supernova.
+        r"""La evolución estelar
+I. Colapso gravitatorio de una nube interestelar de gas y polvo.
+II. Consumo del combustible nuclear en el núcleo de la estrella.
+III. Nacimiento de una protoestrella que comienza a brillar debido al calor.
+IV. Expansión y posterior muerte de la estrella como enana blanca o supernova.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""I - III - II - IV""",
@@ -3969,7 +4002,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q358",
     topicId: "rv_plan",
     text:
-        r"""La investigación científica de camponI. Formulación de la hipótesis de investigación basada en teorías previas.nII. Análisis de los datos recolectados mediante herramientas estadísticas.nIII. Recolección de muestras biológicas directamente en el ecosistema estudiado.nIV. Publicación de las conclusiones en una revista científica indexada.
+        r"""La investigación científica de campo
+I. Formulación de la hipótesis de investigación basada en teorías previas.
+II. Análisis de los datos recolectados mediante herramientas estadísticas.
+III. Recolección de muestras biológicas directamente en el ecosistema estudiado.
+IV. Publicación de las conclusiones en una revista científica indexada.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""I - III - II - IV""",
@@ -3985,7 +4022,10 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q359",
     topicId: "rv_plan",
     text: r"""El Imperio Incaico y su expansió
-I. Pachacútec asume el poder y defiende el Cusco de la invasión de los chancas.nII. Consolidación de un gran imperio multiétnico a lo largo del territorio andino.nIII. Fase inicial del curacazgo incaico limitado al valle del Cusco.nIV. Llegada de los conquistadores españoles y caída del Tahuantinsuyo.
+I. Pachacútec asume el poder y defiende el Cusco de la invasión de los chancas.
+II. Consolidación de un gran imperio multiétnico a lo largo del territorio andino.
+III. Fase inicial del curacazgo incaico limitado al valle del Cusco.
+IV. Llegada de los conquistadores españoles y caída del Tahuantinsuyo.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""III - I - II - IV""",
@@ -4001,7 +4041,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q360",
     topicId: "rv_plan",
     text:
-        r"""El descubrimiento de la penicilinanI. Fleming observa que las bacterias alrededor del hongo Penicillium habían muerto.nII. Alexander Fleming olvida unas placas de cultivo de bacterias en su laboratorio.nIII. Purificación industrial de la penicilina para su uso en la Segunda Guerra Mundial.nIV. Identificación del hongo y publicación del hallazgo sobre sus propiedades antibacterianas.
+        r"""El descubrimiento de la penicilina
+I. Fleming observa que las bacterias alrededor del hongo Penicillium habían muerto.
+II. Alexander Fleming olvida unas placas de cultivo de bacterias en su laboratorio.
+III. Purificación industrial de la penicilina para su uso en la Segunda Guerra Mundial.
+IV. Identificación del hongo y publicación del hallazgo sobre sus propiedades antibacterianas.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""II - I - IV - III""",
@@ -4017,7 +4061,12 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q361",
     topicId: "rv_plan",
     text:
-        r"""Publicación de un libro de textonI. Redacción de los capítulos por parte del equipo de autores especialistas.nII. Revisión del texto por parte del editor y corrección de estilo.nIII. Impresión y encuadernación de los ejemplares en los talleres gráficos.nIV. Distribución de los libros en las principales librerías del país.nV. Concepción de la idea pedagógica y diseño curricular del libro de texto.
+        r"""Publicación de un libro de texto
+I. Redacción de los capítulos por parte del equipo de autores especialistas.
+II. Revisión del texto por parte del editor y corrección de estilo.
+III. Impresión y encuadernación de los ejemplares en los talleres gráficos.
+IV. Distribución de los libros en las principales librerías del país.
+V. Concepción de la idea pedagógica y diseño curricular del libro de texto.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""V - I - II - III - IV""",
@@ -4033,7 +4082,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q362",
     topicId: "rv_plan",
     text:
-        r"""El ciclo del carbononI. Liberación de dióxido de carbono a la atmósfera mediante la respiración animal.nII. Fijación del carbono por parte de las plantas mediante la fotosíntesis.nIII. Transferencia de carbono al suelo tras la muerte y descomposición de los organismos.nIV. Consumo de materia vegetal por parte de los animales herbívoros.
+        r"""El ciclo del carbono
+I. Liberación de dióxido de carbono a la atmósfera mediante la respiración animal.
+II. Fijación del carbono por parte de las plantas mediante la fotosíntesis.
+III. Transferencia de carbono al suelo tras la muerte y descomposición de los organismos.
+IV. Consumo de materia vegetal por parte de los animales herbívoros.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""II - IV - I - III""",
@@ -4049,7 +4102,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q363",
     topicId: "rv_plan",
     text:
-        r"""La redacción de un ensayo académiconI. Selección del tema delimitado y búsqueda de fuentes bibliográficas confiables.nII. Elaboración de un esquema argumentativo preliminar.nIII. Escritura del borrador inicial desarrollando la tesis central y argumentos.nIV. Revisión minuciosa y redacción de la versión final del ensayo.
+        r"""La redacción de un ensayo académico
+I. Selección del tema delimitado y búsqueda de fuentes bibliográficas confiables.
+II. Elaboración de un esquema argumentativo preliminar.
+III. Escritura del borrador inicial desarrollando la tesis central y argumentos.
+IV. Revisión minuciosa y redacción de la versión final del ensayo.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""I - II - III - IV""",
@@ -4065,7 +4122,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q364",
     topicId: "rv_plan",
     text:
-        r"""El proceso de evolución humananI. Desarrollo del bipedismo como adaptación a la vida en la sabana africana.nII. Migración de los primeros homínidos fuera del continente africano hacia Eurasia.nIII. Incremento significativo del volumen craneal y uso sistemático de herramientas.nIV. Surgimiento del Homo sapiens y desarrollo del lenguaje simbólico complejo.
+        r"""El proceso de evolución humana
+I. Desarrollo del bipedismo como adaptación a la vida en la sabana africana.
+II. Migración de los primeros homínidos fuera del continente africano hacia Eurasia.
+III. Incremento significativo del volumen craneal y uso sistemático de herramientas.
+IV. Surgimiento del Homo sapiens y desarrollo del lenguaje simbólico complejo.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""I - III - II - IV""",
@@ -4081,7 +4142,11 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q365",
     topicId: "rv_plan",
     text:
-        r"""La crisis de la deuda externa en América LatinanI. Declaración de moratoria de pagos por parte de México en 1982.nII. Concesión masiva de préstamos baratos a tasas de interés flotantes por bancos internacionales durante la bonanza petrolera de los años 70.nIII. Implementación de severas políticas de ajuste macroeconómico y reformas estructurales bajo el Consenso de Washington.nIV. Elevación abrupta de las tasas de interés en Estados Unidos para combatir su propia inflación doméstica.
+        r"""La crisis de la deuda externa en América Latina
+I. Declaración de moratoria de pagos por parte de México en 1982.
+II. Concesión masiva de préstamos baratos a tasas de interés flotantes por bancos internacionales durante la bonanza petrolera de los años 70.
+III. Implementación de severas políticas de ajuste macroeconómico y reformas estructurales bajo el Consenso de Washington.
+IV. Elevación abrupta de las tasas de interés en Estados Unidos para combatir su propia inflación doméstica.
 Elija el ordenamiento lógico correcto de las ideas:""",
     options: [
       r"""II - IV - I - III""",
@@ -4097,7 +4162,10 @@ Elija el ordenamiento lógico correcto de las ideas:""",
     id: "rv_q366",
     topicId: "rv_plan",
     text:
-        r"""Preparacion academicanI. Identificacion de temas debilesnII. Diagnostico inicial de conocimientosnIII. Practica diaria con retroalimentacio
+        r"""Preparacion academica
+I. Identificacion de temas debiles
+II. Diagnostico inicial de conocimientos
+III. Practica diaria con retroalimentacio
 IV. Planificacion del horario de estudio
 Elija el ordenamiento logico correcto de las ideas:""",
     options: [
@@ -4114,7 +4182,11 @@ Elija el ordenamiento logico correcto de las ideas:""",
     id: "rv_q367",
     topicId: "rv_plan",
     text:
-        r"""Lectura comprensivanI. Identificacion de ideas secundariasnII. Reconocimiento del tema centralnIII. Sintesis final del textonIV. Inferencia de informacion implicita
+        r"""Lectura comprensiva
+I. Identificacion de ideas secundarias
+II. Reconocimiento del tema central
+III. Sintesis final del texto
+IV. Inferencia de informacion implicita
 Elija el ordenamiento logico correcto de las ideas:""",
     options: [
       r"""II - I - IV - III""",
@@ -4130,7 +4202,11 @@ Elija el ordenamiento logico correcto de las ideas:""",
     id: "rv_q368",
     topicId: "rv_plan",
     text:
-        r"""Investigacion historicanI. Busqueda de fuentes confiablesnII. Planteamiento del problemanIII. Redaccion de conclusionesnIV. Contraste de evidencias
+        r"""Investigacion historica
+I. Busqueda de fuentes confiables
+II. Planteamiento del problema
+III. Redaccion de conclusiones
+IV. Contraste de evidencias
 Elija el ordenamiento logico correcto de las ideas:""",
     options: [
       r"""II - I - IV - III""",
@@ -4146,7 +4222,11 @@ Elija el ordenamiento logico correcto de las ideas:""",
     id: "rv_q369",
     topicId: "rv_plan",
     text:
-        r"""Resolucion de problemasnI. Seleccion de datos relevantesnII. Comprension del enunciadonIII. Verificacion del resultadonIV. Aplicacion del metodo adecuado
+        r"""Resolucion de problemas
+I. Seleccion de datos relevantes
+II. Comprension del enunciado
+III. Verificacion del resultado
+IV. Aplicacion del metodo adecuado
 Elija el ordenamiento logico correcto de las ideas:""",
     options: [
       r"""II - I - IV - III""",
@@ -4161,8 +4241,11 @@ Elija el ordenamiento logico correcto de las ideas:""",
   Question(
     id: "rv_q370",
     topicId: "rv_plan",
-    text: r"""Exposicion oralnI. Organizacion del guio
-II. Eleccion del temanIII. Respuesta a preguntas del publiconIV. Ensayo de la presentacion
+    text: r"""Exposicion oral
+I. Organizacion del guio
+II. Eleccion del tema
+III. Respuesta a preguntas del publico
+IV. Ensayo de la presentacion
 Elija el ordenamiento logico correcto de las ideas:""",
     options: [
       r"""II - I - IV - III""",
