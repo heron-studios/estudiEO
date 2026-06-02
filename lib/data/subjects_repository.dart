@@ -6,6 +6,7 @@ import 'package:learn/data/subject_data_cta.dart';
 import 'package:learn/data/subject_data_pfrh.dart';
 import 'package:learn/data/subject_data_rv.dart';
 import 'package:learn/data/subject_data_rm.dart';
+import 'package:learn/data/subject_data_eopnp.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
@@ -20,6 +21,7 @@ class SubjectsRepository {
     'pfrh': pfrhSubject,
     'rv': razonamientoVerbalSubject,
     'rm': razonamientoMatematicoSubject,
+    'eopnp': eopnpSubject,
   };
 
   static final Map<String, List<Question>> _questionsBySubject = {
@@ -30,6 +32,7 @@ class SubjectsRepository {
     'pfrh': pfrhQuestions,
     'rv': razonamientoVerbalQuestions,
     'rm': razonamientoMatematicoQuestions,
+    'eopnp': eopnpQuestions,
   };
 
   static final Map<String, Map<String, Topic>> _topicsBySubject = {
@@ -40,6 +43,7 @@ class SubjectsRepository {
     'pfrh': pfrhTopics,
     'rv': razonamientoVerbalTopics,
     'rm': razonamientoMatematicoTopics,
+    'eopnp': eopnpTopics,
   };
 
   /// Obtiene todas las asignaturas
