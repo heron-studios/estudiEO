@@ -106,7 +106,72 @@ final List<Question> eopnpQuestions = [
       "D) Potasio"
     ],
     correctAnswer: 3,
-    explanation: "El símbolo 'K' proviene del latín 'Kalium' y corresponde al elemento Potasio. Es vital no confundirlo con Kriptón (Kr) o Fósforo (P).",
+    explanation: "El s\u00edmbolo 'K' proviene del lat\u00edn 'Kalium' y corresponde al elemento Potasio. Es vital no confundirlo con Kript\u00f3n (Kr) o F\u00f3sforo (P).",
+  ),
+  Question(
+    id: "eopnp_q6",
+    topicId: "eopnp_t1",
+    text: "En el an\u00e1lisis de oraciones, \u00bfcu\u00e1l es la funci\u00f3n principal del Objeto Indirecto (OI) dentro del predicado?",
+    options: [
+      "A) Recibir la acci\u00f3n verbal directamente.",
+      "B) Indicar las circunstancias de la acci\u00f3n.",
+      "C) Se\u00f1alar a qui\u00e9n beneficia o perjudica la acci\u00f3n del verbo.",
+      "D) Modificar al n\u00facleo del sujeto de forma adyacente."
+    ],
+    correctAnswer: 2,
+    explanation: "El Objeto Indirecto se\u00f1ala al destinatario o la persona/entidad que se beneficia o perjudica por la acci\u00f3n verbal (reconocible por las preposiciones 'a' o 'para').",
+  ),
+  Question(
+    id: "eopnp_q7",
+    topicId: "eopnp_t1",
+    text: "\u00bfCu\u00e1l de las siguientes oraciones presenta un Sujeto T\u00e1cito?",
+    options: [
+      "A) Los postulantes estudiaron toda la noche.",
+      "B) Caminamos r\u00e1pidamente hacia la academia policial.",
+      "C) El examen de aptitud fue bastante riguroso.",
+      "D) Lima es la capital del Per\u00fa."
+    ],
+    correctAnswer: 1,
+    explanation: "El sujeto t\u00e1cito es aquel que no est\u00e1 presente expl\u00edcitamente en la oraci\u00f3n pero se sobreentiende por la desinencia verbal. En 'Caminamos', el sujeto es 'Nosotros'.",
+  ),
+  Question(
+    id: "eopnp_q8",
+    topicId: "eopnp_t1",
+    text: "En la oraci\u00f3n: 'El cadete diligente entreg\u00f3 su reporte al instructor', la palabra 'diligente' funciona como:",
+    options: [
+      "A) Modificador Indirecto",
+      "B) N\u00facleo del sujeto",
+      "C) Aposici\u00f3n",
+      "D) Modificador Directo"
+    ],
+    correctAnswer: 3,
+    explanation: "Es un Modificador Directo (MD) porque es un adjetivo que se une directamente al n\u00facleo del sujeto ('cadete') sin enlaces ni preposiciones.",
+  ),
+  Question(
+    id: "eopnp_q9",
+    topicId: "eopnp_t1",
+    text: "Identifica el n\u00facleo del predicado en: 'La polic\u00eda captur\u00f3 al delincuente en la avenida principal.'",
+    options: [
+      "A) polic\u00eda",
+      "B) captur\u00f3",
+      "C) delincuente",
+      "D) avenida"
+    ],
+    correctAnswer: 1,
+    explanation: "El n\u00facleo del predicado es siempre el verbo principal conjugado de la oraci\u00f3n, en este caso 'captur\u00f3'.",
+  ),
+  Question(
+    id: "eopnp_q10",
+    topicId: "eopnp_t1",
+    text: "\u00bfQu\u00e9 tipo de circunstancial se presenta en la oraci\u00f3n: 'Realizaremos las pr\u00e1cticas ma\u00f1ana'?",
+    options: [
+      "A) De modo",
+      "B) De lugar",
+      "C) De tiempo",
+      "D) De cantidad"
+    ],
+    correctAnswer: 2,
+    explanation: "La palabra 'ma\u00f1ana' responde a la pregunta '\u00bfCu\u00e1ndo?', por lo que funciona como un Circunstancial de Tiempo.",
   ),
 ];
 

@@ -3276,4 +3276,77 @@ final List<Question> matematicasQuestions = [
     correctAnswer: 3,
     explanation: r"""Sabiendo que tan(45°) = 1, y que cos(53°) = 3/5. Sumamos ambos valores numéricos: 3/5 + 1 = 8/5.""",
   ),
+  Question(
+    id: "mat_q381",
+    topicId: "mat_algebra",
+    text: r"""Resuelva el siguiente sistema de ecuaciones lineales:
+$2x + 3y = 12$
+$x - y = 1$
+Determine el valor de $x + y$.""",
+    options: [
+      r"""3""",
+      r"""5""",
+      r"""2""",
+      r"""4""",
+      r"""6""",
+    ],
+    correctAnswer: 1,
+    explanation: r"""De la segunda ecuacin tenemos $x = y + 1$. Sustituyendo en la primera: $2(y+1) + 3y = 12 \Rightarrow 2y + 2 + 3y = 12 \Rightarrow 5y = 10 \Rightarrow y = 2$. Luego $x = 3$. Por lo tanto $x+y = 5$.""",
+  ),
+  Question(
+    id: "mat_q382",
+    topicId: "mat_algebra",
+    text: r"""Halle el valor de $M$ si: $M = \sqrt{a^2 + b^2 + 2ab}$ donde $a=4$ y $b=3$.""",
+    options: [
+      r"""5""",
+      r"""7""",
+      r"""12""",
+      r"""25""",
+      r"""49""",
+    ],
+    correctAnswer: 1,
+    explanation: r"""Sabemos que $a^2 + b^2 + 2ab = (a+b)^2$. Entonces $M = \sqrt{(a+b)^2} = a+b = 4+3 = 7$.""",
+  ),
+  Question(
+    id: "mat_q383",
+    topicId: "mat_algebra",
+    text: r"""Factorice el siguiente polinomio: $x^2 - 7x + 12$""",
+    options: [
+      r"""(x-3)(x-4)""",
+      r"""(x+3)(x+4)""",
+      r"""(x-2)(x-6)""",
+      r"""(x+2)(x+6)""",
+      r"""(x-1)(x-12)""",
+    ],
+    correctAnswer: 0,
+    explanation: r"""Buscamos dos nmeros que sumados den -7 y multiplicados den 12. Estos son -3 y -4. Por lo tanto, se factoriza como $(x-3)(x-4)$.""",
+  ),
+  Question(
+    id: "mat_q384",
+    topicId: "mat_algebra",
+    text: r"""Si $x^3 = 8$ y $y^2 = 9$, determine el mayor valor posible para la expresin $x+y$.""",
+    options: [
+      r"""-1""",
+      r"""1""",
+      r"""5""",
+      r"""6""",
+      r"""17""",
+    ],
+    correctAnswer: 2,
+    explanation: r"""De $x^3 = 8$ se obtiene nicamente $x = 2$ (en los nmeros reales). De $y^2 = 9$, se tienen dos posibles valores: $y=3$ o $y=-3$. Para obtener el mayor valor de $x+y$, tomamos $y=3$. As $x+y = 2+3 = 5$.""",
+  ),
+  Question(
+    id: "mat_q385",
+    topicId: "mat_algebra",
+    text: r"""Halle la raz de la ecuacin logartmica: $\log_{2}(x) + \log_{2}(2) = 3$""",
+    options: [
+      r"""2""",
+      r"""4""",
+      r"""6""",
+      r"""8""",
+      r"""16""",
+    ],
+    correctAnswer: 1,
+    explanation: r"""Sabemos que $\log_{2}(2) = 1$. Entonces la ecuacin queda $\log_{2}(x) + 1 = 3 \Rightarrow \log_{2}(x) = 2 \Rightarrow x = 2^2 = 4$.""",
+  ),
 ];
