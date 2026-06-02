@@ -29,7 +29,6 @@ import 'package:learn/data/library/rv/rv_topics.dart';
 import 'package:learn/data/library/rm/rm_subject.dart';
 import 'package:learn/data/library/rm/rm_questions.dart';
 import 'package:learn/data/library/rm/rm_topics.dart';
-import 'package:learn/data/subject_data_eopnp.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
@@ -45,7 +44,6 @@ class SubjectsRepository {
     'pfrh': pfrhSubject,
     'rv': razonamientoVerbalSubject,
     'rm': razonamientoMatematicoSubject,
-    'eopnp': eopnpSubject,
   };
 
   static final Map<String, List<Question>> _questionsBySubject = {
@@ -56,7 +54,6 @@ class SubjectsRepository {
     'pfrh': pfrhQuestions,
     'rv': razonamientoVerbalQuestions,
     'rm': razonamientoMatematicoQuestions,
-    'eopnp': eopnpQuestions,
   };
 
   static final Map<String, Map<String, Topic>> _topicsBySubject = {
@@ -67,7 +64,6 @@ class SubjectsRepository {
     'pfrh': pfrhTopics,
     'rv': razonamientoVerbalTopics,
     'rm': razonamientoMatematicoTopics,
-    'eopnp': eopnpTopics,
   };
 
   static Map<String, Question>? _questionByIdCache;
@@ -120,7 +116,6 @@ class SubjectsRepository {
         'pfrh_persona_familia': 1,
         'eo_pnp_sinonimos_ext_10q': 1,
         'rm_sucesiones': 1,
-        'eopnp_t1': 5,
       };
 
       if (demoLimits.containsKey(topicId)) {
