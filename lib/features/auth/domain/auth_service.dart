@@ -88,7 +88,7 @@ class AuthService extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Inicia sesiÃ³n con Google
+  /// Inicia sesión con Google
   Future<UserCredential?> signInWithGoogle() async {
     _setLoading(true);
     _setError(null);
@@ -116,17 +116,17 @@ class AuthService extends ChangeNotifier {
       // The caller (LoginScreen) will verify authorization and set it.
       return userCredential;
     } on FirebaseAuthException catch (e) {
-      _setError(e.message ?? 'Error desconocido de autenticaciÃ³n');
+      _setError(e.message ?? 'Error desconocido de autenticación');
       _setLoading(false);
       return null;
     } catch (e) {
-      _setError('Error al iniciar sesiÃ³n: $e');
+      _setError('Error al iniciar sesión: $e');
       _setLoading(false);
       return null;
     }
   }
 
-  /// Cierra sesiÃ³n
+  /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
     await _googleSignIn.signOut();
@@ -197,7 +197,7 @@ class AuthService extends ChangeNotifier {
     if (isPaid is bool) return isPaid;
     if (isPaid is String) {
       final s = isPaid.toLowerCase().trim();
-      return s == 'true' || s == 'yes' || s == 'si' || s == 'sÃ­' || s == '1';
+      return s == 'true' || s == 'yes' || s == 'si' || s == 'sí' || s == '1';
     }
     if (isPaid is num) return isPaid == 1;
     return false;

@@ -61,7 +61,7 @@ class QuizResultsScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          isGood ? 'ðŸŽ‰' : 'ðŸ“š',
+                          isGood ? '🎉' : '📚',
                           style: const TextStyle(fontSize: 72),
                         ),
                         const SizedBox(height: 16),
@@ -82,7 +82,7 @@ class QuizResultsScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          isGood ? 'Â¡Buen trabajo!' : 'Sigue practicando',
+                          isGood ? '¡Buen trabajo!' : 'Sigue practicando',
                           style: const TextStyle(
                             color: NeuralDesignSystem.textSecondary,
                             fontSize: 17,
@@ -150,7 +150,7 @@ class QuizResultsScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'PrecisiÃ³n',
+                                    'Precisión',
                                     style: TextStyle(
                                       color: NeuralDesignSystem.textSecondary
                                           .withValues(alpha: 0.7),

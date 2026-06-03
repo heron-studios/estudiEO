@@ -63,7 +63,7 @@ class _QuizScreenState extends State<QuizScreen> {
               : _questions.length - 1;
         }
       } else {
-        _errorMessage = 'No hay sesiÃ³n de quiz activa.';
+        _errorMessage = 'No hay sesión de quiz activa.';
       }
     } catch (e) {
       _errorMessage = 'Error al cargar: $e';
@@ -106,8 +106,8 @@ class _QuizScreenState extends State<QuizScreen> {
       context.read<QuizProvider>().cancelSession();
     }
     
-    // Si hay respuestas, simplemente salimos sin cancelar ni finalizar la sesiÃ³n.
-    // Esto permite reanudarla despuÃ©s ("Continuar respondiendo").
+    // Si hay respuestas, simplemente salimos sin cancelar ni finalizar la sesión.
+    // Esto permite reanudarla después ("Continuar respondiendo").
     setState(() => _canPop = true);
     Future.microtask(() {
       if (mounted) Navigator.pop(context);
@@ -186,7 +186,7 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('SesiÃ³n finalizada',
+                const Text('Sesión finalizada',
                     style: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'Outfit')),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -444,7 +444,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text('ðŸ’¡', style: TextStyle(fontSize: 22)),
+                                    const Text('💡', style: TextStyle(fontSize: 22)),
                                     const SizedBox(width: 12),
                                     Expanded(
                                       child: Column(
@@ -525,8 +525,8 @@ class _QuizScreenState extends State<QuizScreen> {
                           ),
                           child: Text(
                             _currentQuestionIndex < _questions.length - 1
-                                ? 'Siguiente  â†’'
-                                : 'Â¡Finalizar Quiz!',
+                                ? 'Siguiente  →'
+                                : '¡Finalizar Quiz!',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,

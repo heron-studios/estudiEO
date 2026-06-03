@@ -6,7 +6,7 @@ class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key});
 
   Future<void> _launchWhatsApp() async {
-    final String message = Uri.encodeComponent('Hola, quiero comprar la versiÃ³n Premium de EstudiEO');
+    final String message = Uri.encodeComponent('Hola, quiero comprar la versión Premium de EstudiEO');
     final String urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=$message';
     final Uri url = Uri.parse(urlStr);
 
@@ -43,7 +43,7 @@ class PremiumScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const Text(
-                'Â¡Desbloquea tu potencial completo, Futuro Cadete!',
+                '¡Desbloquea tu potencial completo, Futuro Cadete!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
@@ -54,7 +54,7 @@ class PremiumScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'EstÃ¡s usando la versiÃ³n Demo. Adquiere Premium para asegurar tu vacante.',
+                'Estás usando la versión Demo. Adquiere Premium para asegurar tu vacante.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.7),
@@ -74,7 +74,7 @@ class PremiumScreen extends StatelessWidget {
               
               const SizedBox(height: 50),
               
-              // BotÃ³n de WhatsApp
+              // Botón de WhatsApp
               ElevatedButton(
                 onPressed: _launchWhatsApp,
                 style: ElevatedButton.styleFrom(
@@ -92,7 +92,7 @@ class PremiumScreen extends StatelessWidget {
                     Icon(Icons.message, size: 28),
                     SizedBox(width: 12),
                     Text(
-                      'Comprar VersiÃ³n Completa',
+                      'Comprar Versión Completa',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

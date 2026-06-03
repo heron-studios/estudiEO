@@ -91,8 +91,8 @@ class _AlipioScreenState extends State<AlipioScreen>
       builder: (context) {
         return AlertDialog(
           backgroundColor: _card,
-          title: const Text('Â¡Tarjetas completadas!', style: TextStyle(color: Colors.white)),
-          content: const Text('Probemos si te las aprendiste. Â¿Listo para un quiz rÃ¡pido?', style: TextStyle(color: Colors.white70)),
+          title: const Text('¡Tarjetas completadas!', style: TextStyle(color: Colors.white)),
+          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: Colors.white70)),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -104,7 +104,7 @@ class _AlipioScreenState extends State<AlipioScreen>
                 );
               },
               style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF4ADE80), foregroundColor: _bg),
-              child: const Text('Realizar quiz rÃ¡pido', style: TextStyle(fontWeight: FontWeight.bold)),
+              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             TextButton(
               onPressed: () {
@@ -304,7 +304,7 @@ class _AlipioScreenState extends State<AlipioScreen>
     if (_current.options.isNotEmpty && _current.correctAnswer >= 0 && _current.correctAnswer < _current.options.length) {
       answer = _current.options[_current.correctAnswer];
     } else {
-      // Si entra aquÃ­, es porque la app sigue usando los datos antiguos en memoria.
+      // Si entra aquí, es porque la app sigue usando los datos antiguos en memoria.
       answer = 'Por favor, reinicia la app por completo (Hot Restart) para cargar los nuevos datos.';
     }
     return Container(

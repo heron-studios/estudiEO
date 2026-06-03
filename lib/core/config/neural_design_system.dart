@@ -1,19 +1,19 @@
-﻿/// neural_design_system.dart â€” Backward-compatibility shim
+﻿/// neural_design_system.dart — Backward-compatibility shim
 ///
-/// Todos los tokens de diseÃ±o han migrado a [NeuralTheme] / [NeuralThemeData]
-/// en neural_theme.dart. Este archivo re-exporta las constantes mÃ¡s usadas
-/// para que pantallas que aÃºn no han migrado no rompan la compilaciÃ³n.
+/// Todos los tokens de diseño han migrado a [NeuralTheme] / [NeuralThemeData]
+/// en neural_theme.dart. Este archivo re-exporta las constantes más usadas
+/// para que pantallas que aún no han migrado no rompan la compilación.
 ///
-/// DEPRECADO: Usa NeuralTheme.of(context).* en cÃ³digo nuevo.
+/// DEPRECADO: Usa NeuralTheme.of(context).* en código nuevo.
 library;
 
 import 'package:flutter/material.dart';
 
 export 'package:learn/core/config/neural_theme.dart';
 
-/// Alias estÃ¡tico con los tokens de color originales.
+/// Alias estático con los tokens de color originales.
 /// Los valores DEBEN coincidir exactamente con [NeuralThemeData.defaults].
-/// En cÃ³digo nuevo, usa [NeuralTheme.of(context)].
+/// En código nuevo, usa [NeuralTheme.of(context)].
 class NeuralDesignSystem {
   NeuralDesignSystem._();
 

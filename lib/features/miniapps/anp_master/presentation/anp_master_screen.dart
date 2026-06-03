@@ -22,7 +22,7 @@ class ANPMasterScreen extends StatelessWidget {
           onPressed: () => context.pop(),
         ),
         title: const Text(
-          'ANP Master PerÃº',
+          'ANP Master Perú',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -44,7 +44,7 @@ class ANPMasterScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'El ecosistema visual para dominar las Ãreas Naturales Protegidas usando Active Recall.',
+                  'El ecosistema visual para dominar las Áreas Naturales Protegidas usando Active Recall.',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.6),
                     fontSize: 14,
@@ -58,7 +58,7 @@ class ANPMasterScreen extends StatelessWidget {
                         context: context,
                         nt: nt,
                         title: 'Mapa Interactivo Vectorial',
-                        subtitle: 'Explora y ubica las ANP en el mapa del PerÃº. Modo ciego disponible.',
+                        subtitle: 'Explora y ubica las ANP en el mapa del Perú. Modo ciego disponible.',
                         icon: Icons.map_rounded,
                         color: Colors.greenAccent,
                         route: '/miniapps/anp-master/map',
@@ -68,7 +68,7 @@ class ANPMasterScreen extends StatelessWidget {
                         context: context,
                         nt: nt,
                         title: 'Flashcards de Alto Impacto',
-                        subtitle: 'Tarjetas minimalistas con asociaciÃ³n visual para repaso rÃ¡pido.',
+                        subtitle: 'Tarjetas minimalistas con asociación visual para repaso rápido.',
                         icon: Icons.style_rounded,
                         color: Colors.orangeAccent,
                         route: '/miniapps/anp-master/flashcards',
@@ -77,8 +77,8 @@ class ANPMasterScreen extends StatelessWidget {
                       _buildModuleCard(
                         context: context,
                         nt: nt,
-                        title: 'DesafÃ­o del Guardaparque',
-                        subtitle: 'Quizzes cronometrados basados en RepeticiÃ³n Espaciada.',
+                        title: 'Desafío del Guardaparque',
+                        subtitle: 'Quizzes cronometrados basados en Repetición Espaciada.',
                         icon: Icons.shield_rounded,
                         color: Colors.purpleAccent,
                         route: '/miniapps/anp-master/quiz',

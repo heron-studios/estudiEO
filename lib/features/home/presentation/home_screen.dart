@@ -13,17 +13,17 @@ import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:go_router/go_router.dart';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  HomeScreen â€” Pantalla principal del dashboard neural
+// ─────────────────────────────────────────────────────────────────────────────
+//  HomeScreen — Pantalla principal del dashboard neural
 //
 //  Cambios vs. v1:
-//  â€¢ Todos los colores hardcodeados â†’ NeuralTheme.of(context).*
-//  â€¢ _GlassCard y _GlassTile â†’ HoverGlassCard con hover animado real
+//  • Todos los colores hardcodeados → NeuralTheme.of(context).*
+//  • _GlassCard y _GlassTile → HoverGlassCard con hover animado real
 //    (escala 1.018, borde rgba(255,255,255,0.22)), cero rebuilds al padre.
-//  â€¢ MouseRegion implÃ­cito en HoverGlassCard con SystemMouseCursors.click.
-//  â€¢ _PsicoLearnBanner sigue usando el gradiente neural del tema.
-//  â€¢ El diÃ¡logo "Â¿Continuar?" usa surfaceElevated del tema.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  • MouseRegion implícito en HoverGlassCard con SystemMouseCursors.click.
+//  • _PsicoLearnBanner sigue usando el gradiente neural del tema.
+//  • El diálogo "¿Continuar?" usa surfaceElevated del tema.
+// ─────────────────────────────────────────────────────────────────────────────
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
     return parts[parts.length - 2].toUpperCase();
   }
 
-// Se eliminÃ³ _showProfileSheet porque ahora se maneja en el AppShell.
+// Se eliminó _showProfileSheet porque ahora se maneja en el AppShell.
 
   void _startGuidedLearningFlow(BuildContext context) {
     final learningProvider = context.read<LearningProvider>();
@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
               Icon(Icons.school_rounded, color: Colors.orangeAccent),
               SizedBox(width: 10),
               Text(
-                'Â¿Continuar Aprendiendo?',
+                '¿Continuar Aprendiendo?',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: Colors.white,
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Tienes una sesiÃ³n activa de aprendizaje guiado en:',
+                'Tienes una sesión activa de aprendizaje guiado en:',
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.6),
                   fontSize: 13,
@@ -220,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text('Simulacro de Examen', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
                   SizedBox(height: 2),
-                  Text('100 preguntas â€¢ 3 horas', style: TextStyle(color: Colors.white60, fontSize: 12)),
+                  Text('100 preguntas • 3 horas', style: TextStyle(color: Colors.white60, fontSize: 12)),
                 ],
               ),
             ),
@@ -249,7 +249,7 @@ class HomeScreen extends StatelessWidget {
           icon: Icons.history_edu_rounded,
           color: nt.successGreen,
           title: 'Repasar',
-          subtitle: count > 0 ? '$count pendientes' : 'Al dÃ­a âœ“',
+          subtitle: count > 0 ? '$count pendientes' : 'Al día ✓',
           badge: count > 0 ? '$count' : null,
           onTap: () => context.push('/srs-review'),
         );
@@ -325,7 +325,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: Column(
               children: [
-                // â”€â”€ HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                // ── HEADER ──────────────────────────────────────────────────
                 Row(
                   children: [
                     Expanded(
@@ -356,7 +356,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
 
-                // â”€â”€ CARDS â€” centradas verticalmente en el espacio restante â”€â”€
+                // ── CARDS — centradas verticalmente en el espacio restante ──
                 Expanded(
                   child: Center(
                     child: ConstrainedBox(
@@ -455,10 +455,10 @@ class HomeScreen extends StatelessWidget {
 
 // _SheetItem eliminado
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _GlassTile â€” tile cuadrado del grid (Estudiar / Repasar / Tarjetas / etc.)
+// ─────────────────────────────────────────────────────────────────────────────
+//  _GlassTile — tile cuadrado del grid (Estudiar / Repasar / Tarjetas / etc.)
 //  Usa HoverGlassCard para el hover animado.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 class _GlassTile extends StatelessWidget {
   final IconData icon;
   final Color color;
@@ -536,9 +536,9 @@ class _GlassTile extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _IconBubble â€” burbuja de icono reusable
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  _IconBubble — burbuja de icono reusable
+// ─────────────────────────────────────────────────────────────────────────────
 class _IconBubble extends StatelessWidget {
   final IconData icon;
   final Color color;
@@ -559,13 +559,13 @@ class _IconBubble extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _PsicoLearnBanner â€” banner de mÃ³dulo psicoLearn
-//  Nota: Este componente actÃºa como punto de entrada al mÃ³dulo psicotÃ©cnico.
-//  El contenido de problemas psicotÃ©cnicos (matrices SVG, rotaciones, etc.)
+// ─────────────────────────────────────────────────────────────────────────────
+//  _PsicoLearnBanner — banner de módulo psicoLearn
+//  Nota: Este componente actúa como punto de entrada al módulo psicotécnico.
+//  El contenido de problemas psicotécnicos (matrices SVG, rotaciones, etc.)
 //  debe enviarse a PsicoLearnSvgContainer (glass_card_widget.dart) dentro de
-//  la vista de detalle que se abra desde aquÃ­.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  la vista de detalle que se abra desde aquí.
+// ─────────────────────────────────────────────────────────────────────────────
 class _PsicoLearnBanner extends StatelessWidget {
   const _PsicoLearnBanner();
 
@@ -602,7 +602,7 @@ class _PsicoLearnBanner extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                // Ãcono del mÃ³dulo psicoLearn
+                // Ícono del módulo psicoLearn
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -654,7 +654,7 @@ class _PsicoLearnBanner extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'PrepÃ¡rate para tus exÃ¡menes psicomÃ©tricos y mÃ©dicos.',
+                        'Prepárate para tus exámenes psicométricos y médicos.',
                         style: TextStyle(
                           color: Colors.white.withValues(alpha: 0.9),
                           fontSize: 13,

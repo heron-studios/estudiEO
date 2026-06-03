@@ -81,8 +81,8 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: _cardBg,
-          title: const Text('Â¡Has revisado 20 tarjetas!', style: TextStyle(color: _text)),
-          content: const Text('Probemos si te las aprendiste. Â¿Listo para un quiz rÃ¡pido?', style: TextStyle(color: _muted)),
+          title: const Text('¡Has revisado 20 tarjetas!', style: TextStyle(color: _text)),
+          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: _muted)),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -125,7 +125,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                             ],
                           ),
                           content: Text(
-                            'Debido a que el Modo Estricto estÃ¡ activo y no obtuviste una nota mayor a 11, debes repasar nuevamente este grupo de $batchSize tarjetas.',
+                            'Debido a que el Modo Estricto está activo y no obtuviste una nota mayor a 11, debes repasar nuevamente este grupo de $batchSize tarjetas.',
                             style: const TextStyle(color: _muted),
                           ),
                           actions: [
@@ -141,7 +141,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                 });
               },
               style: ElevatedButton.styleFrom(backgroundColor: _green, foregroundColor: _cardBg),
-              child: const Text('Realizar quiz rÃ¡pido', style: TextStyle(fontWeight: FontWeight.bold)),
+              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ],
         );
@@ -155,7 +155,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     Navigator.pop(context);
     messenger.showSnackBar(
       SnackBar(
-        content: const Text('Â¡RevisiÃ³n completada! Has repasado tus tarjetas.',
+        content: const Text('¡Revisión completada! Has repasado tus tarjetas.',
             style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: _green.withValues(alpha: 0.9),
         behavior: SnackBarBehavior.floating,
@@ -166,7 +166,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // â”€â”€ Estado vacÃ­o â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Estado vacío ──────────────────────────────────────────────────────────
     if (_reviewQueue.isEmpty) {
       return Scaffold(
         backgroundColor: Colors.transparent,
@@ -180,10 +180,10 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('ðŸŽ‰', style: TextStyle(fontSize: 60)),
+                Text('🎉', style: TextStyle(fontSize: 60)),
                 SizedBox(height: 16),
                 Text(
-                  'Â¡Al dÃ­a!',
+                  '¡Al día!',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: _text),
                 ),
                 SizedBox(height: 8),
@@ -199,7 +199,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     final questionId = _reviewQueue[_currentIndex];
     final question = context.read<SubjectProvider>().getQuestion(questionId);
 
-    // â”€â”€ Error cargando pregunta â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Error cargando pregunta ───────────────────────────────────────────────
     if (question == null) {
       return Scaffold(
         backgroundColor: Colors.transparent,
@@ -216,7 +216,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
       );
     }
 
-    // â”€â”€ Vista principal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // ── Vista principal ───────────────────────────────────────────────────────
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -280,7 +280,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
 
                     const SizedBox(height: 24),
 
-                    // Ãrea de respuesta
+                    // Área de respuesta
                     Expanded(
                       flex: 5,
                       child: _showAnswer
@@ -319,7 +319,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                       child: ElevatedButton.icon(
                                         onPressed: () => _handleAnswer(false),
                                         icon: const Icon(Icons.close_rounded),
-                                        label: const Text('No lo sabÃ­a', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        label: const Text('No lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.redAccent.withValues(alpha: 0.2),
                                           foregroundColor: Colors.redAccent,
@@ -335,7 +335,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                       child: ElevatedButton.icon(
                                         onPressed: () => _handleAnswer(true),
                                         icon: const Icon(Icons.check_rounded),
-                                        label: const Text('Lo sabÃ­a', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        label: const Text('Lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: const Color(0xFF4ADE80).withValues(alpha: 0.2),
                                           foregroundColor: const Color(0xFF4ADE80),

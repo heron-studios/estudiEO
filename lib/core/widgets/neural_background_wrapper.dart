@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/core/config/neural_theme.dart';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  NeuralBackgroundWrapper v3 â€” Fondo Neural con partÃ­culas y redes flotantes
+// ─────────────────────────────────────────────────────────────────────────────
+//  NeuralBackgroundWrapper v3 — Fondo Neural con partículas y redes flotantes
 //
 //  Mejoras vs v2:
-//  â€¢ Agrega la capa interactiva de partÃ­culas y conexiones (redes neuronales flotantes)
-//    del login, integrada dinÃ¡micamente con las variables del NeuralTheme.
-//  â€¢ AÃ­sla las partÃ­culas en un RepaintBoundary y mantiene el child desacoplado.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  • Agrega la capa interactiva de partículas y conexiones (redes neuronales flotantes)
+//    del login, integrada dinámicamente con las variables del NeuralTheme.
+//  • Aísla las partículas en un RepaintBoundary y mantiene el child desacoplado.
+// ─────────────────────────────────────────────────────────────────────────────
 class NeuralBackgroundWrapper extends StatefulWidget {
   final Widget child;
 
@@ -60,7 +60,7 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // 1. Fondo base sÃ³lido â€” nunca se reconstruye
+          // 1. Fondo base sólido — nunca se reconstruye
           ColoredBox(color: nt.background),
 
           // 2. Capa de blobs animados aislada en su propio layer
@@ -86,7 +86,7 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             ),
           ),
 
-          // 4. Capa de redes neuronales flotantes (partÃ­culas y conexiones crisp, por encima del blur)
+          // 4. Capa de redes neuronales flotantes (partículas y conexiones crisp, por encima del blur)
           Positioned.fill(
             child: RepaintBoundary(
               child: _ParticleCanvas(
@@ -98,10 +98,10 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             ),
           ),
 
-          // 5. Capa de velo sutil â€” estÃ¡tica, sin rebuild
+          // 5. Capa de velo sutil — estática, sin rebuild
           const ColoredBox(color: Color(0x0D000000)), // 5% black
 
-          // 6. Contenido de la pantalla â€” completamente desacoplado de la animaciÃ³n
+          // 6. Contenido de la pantalla — completamente desacoplado de la animación
           widget.child,
         ],
       ),
@@ -109,9 +109,9 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _BlobLayer â€” CustomPainter puro (sin BoxDecoration ni Container)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  _BlobLayer — CustomPainter puro (sin BoxDecoration ni Container)
+// ─────────────────────────────────────────────────────────────────────────────
 class _BlobLayer extends StatelessWidget {
   final double scale;
   final NeuralThemeData nt;
@@ -139,7 +139,7 @@ class _BlobPainter extends CustomPainter {
     final h = size.height;
     final s = scale;
 
-    // Blob azul â€” esquina superior izquierda
+    // Blob azul — esquina superior izquierda
     _drawBlob(
       canvas,
       center: Offset(-50 * s + w * 0.05, -80 * s + h * 0.05),
@@ -147,7 +147,7 @@ class _BlobPainter extends CustomPainter {
       color: nt.blueGoogle.withValues(alpha: nt.blobBlueOpacity),
     );
 
-    // Blob morado â€” centro derecha
+    // Blob morado — centro derecha
     _drawBlob(
       canvas,
       center: Offset(w + 100 * s - w * 0.15, 250 * s + h * 0.2),
@@ -155,7 +155,7 @@ class _BlobPainter extends CustomPainter {
       color: nt.purple.withValues(alpha: nt.blobPurpleOpacity),
     );
 
-    // Blob rosa â€” esquina inferior izquierda
+    // Blob rosa — esquina inferior izquierda
     _drawBlob(
       canvas,
       center: Offset(100 * s + w * 0.1, h + 100 * s - h * 0.1),
@@ -178,9 +178,9 @@ class _BlobPainter extends CustomPainter {
       old.scale != scale || old.nt != nt;
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _ParticleCanvas â€” Canvas de partÃ­culas interactivas flotantes
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  _ParticleCanvas — Canvas de partículas interactivas flotantes
+// ─────────────────────────────────────────────────────────────────────────────
 class _Particle {
   double x;
   double y;
@@ -248,7 +248,7 @@ class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProvi
         widget.purple,
         widget.pink,
       ];
-      for (int i = 0; i < 60; i++) { // 60 partÃ­culas es ideal para balancear estÃ©tica y rendimiento en el Home
+      for (int i = 0; i < 60; i++) { // 60 partículas es ideal para balancear estética y rendimiento en el Home
         _particles.add(_Particle(
           x: random.nextDouble() * size.width,
           y: random.nextDouble() * size.height,

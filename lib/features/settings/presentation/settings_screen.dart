@@ -72,7 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Copia este cÃ³digo de seguridad y guÃ¡rdalo en un lugar seguro. PodrÃ¡s usarlo para restaurar tu progreso mÃ¡s tarde.',
+              'Copia este código de seguridad y guárdalo en un lugar seguro. Podrás usarlo para restaurar tu progreso más tarde.',
               style: TextStyle(
                 color: _muted.withValues(alpha: 0.8),
                 fontSize: 13,
@@ -118,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: const Text(
-                    'CÃ³digo de progreso copiado al portapapeles.',
+                    'Código de progreso copiado al portapapeles.',
                   ),
                   backgroundColor: _blue,
                   behavior: SnackBarBehavior.floating,
@@ -129,7 +129,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
             },
             child: const Text(
-              'Copiar CÃ³digo',
+              'Copiar Código',
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -159,7 +159,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Pega el cÃ³digo de progreso que exportaste anteriormente para restaurar tus datos.',
+              'Pega el código de progreso que exportaste anteriormente para restaurar tus datos.',
               style: TextStyle(
                 color: _muted.withValues(alpha: 0.8),
                 fontSize: 13,
@@ -175,7 +175,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 fontFamily: 'monospace',
               ),
               decoration: InputDecoration(
-                hintText: 'Pega tu cÃ³digo aquÃ­...',
+                hintText: 'Pega tu código aquí...',
                 hintStyle: const TextStyle(color: Colors.white30),
                 fillColor: NeuralDesignSystem.background,
                 filled: true,
@@ -232,7 +232,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               } catch (e) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: const Text('Error al importar. CÃ³digo invÃ¡lido.'),
+                    content: const Text('Error al importar. Código inválido.'),
                     backgroundColor: NeuralDesignSystem.pink,
                     behavior: SnackBarBehavior.floating,
                     shape: RoundedRectangleBorder(
@@ -485,7 +485,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     ),
                                   ),
                                   content: Text(
-                                    'Esto eliminarÃ¡ tu racha, historial de tarjetas (SRS) y estadÃ­sticas. Â¿EstÃ¡s seguro?',
+                                    'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
                                     style: TextStyle(
                                       color: _muted.withValues(alpha: 0.8),
                                     ),
@@ -649,7 +649,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           ),
                         ),
                         title: const Text(
-                          'Cerrar sesiÃ³n',
+                          'Cerrar sesión',
                           style: TextStyle(
                             color: _text,
                             fontWeight: FontWeight.bold,

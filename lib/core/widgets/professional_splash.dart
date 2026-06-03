@@ -89,7 +89,7 @@ class ProfessionalSplash extends StatelessWidget {
                 
                 // Subtitle
                 Text(
-                  'Cargando tu preparaciÃ³n acadÃ©mica...',
+                  'Cargando tu preparación académica...',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.5),
                     fontSize: 12,

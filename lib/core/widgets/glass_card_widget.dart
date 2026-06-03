@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/core/config/neural_theme.dart';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  HoverGlassCard â€” tarjeta glassmorphism con hover animado
+// ─────────────────────────────────────────────────────────────────────────────
+//  HoverGlassCard — tarjeta glassmorphism con hover animado
 //
-//  â€¢ Glassmorphism: opacidad de superficie 40%â€“60% (segÃºn NeuralThemeData)
-//  â€¢ Borde: 1px rgba(255,255,255,0.10) â†’ rgba(255,255,255,0.22) en hover
-//  â€¢ Escala: 1.0 â†’ 1.018 en hover (micro-animaciÃ³n anti-rebuild)
-//  â€¢ MouseRegion usa SystemMouseCursors.click
-//  â€¢ Toda la animaciÃ³n vive en este widget; NO propaga rebuilds al padre.
-//  â€¢ blur: parÃ¡metro opcional (por defecto 14). Evitar > 20 en grids densos.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  • Glassmorphism: opacidad de superficie 40%–60% (según NeuralThemeData)
+//  • Borde: 1px rgba(255,255,255,0.10) → rgba(255,255,255,0.22) en hover
+//  • Escala: 1.0 → 1.018 en hover (micro-animación anti-rebuild)
+//  • MouseRegion usa SystemMouseCursors.click
+//  • Toda la animación vive en este widget; NO propaga rebuilds al padre.
+//  • blur: parámetro opcional (por defecto 14). Evitar > 20 en grids densos.
+// ─────────────────────────────────────────────────────────────────────────────
 class HoverGlassCard extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
@@ -52,7 +52,7 @@ class _HoverGlassCardState extends State<HoverGlassCard>
     _scale = Tween<double>(begin: 1.0, end: 1.018).animate(
       CurvedAnimation(parent: _ctrl, curve: Curves.easeOut),
     );
-    _hoverT = _ctrl; // alias semÃ¡ntico
+    _hoverT = _ctrl; // alias semántico
   }
 
   @override
@@ -76,7 +76,7 @@ class _HoverGlassCardState extends State<HoverGlassCard>
         onTap: widget.onTap,
         child: AnimatedBuilder(
           animation: _ctrl,
-          // builder sÃ³lo reconstruye ESTE widget, no el Ã¡rbol padre
+          // builder sólo reconstruye ESTE widget, no el árbol padre
           builder: (_, child) {
             final t = _hoverT.value;
             final borderColor = Color.lerp(
@@ -122,17 +122,17 @@ class _HoverGlassCardState extends State<HoverGlassCard>
                 ),
               );
             },
-            child: widget.child, // estÃ¡tico â€” no se reconstruye en la animaciÃ³n
+            child: widget.child, // estático — no se reconstruye en la animación
           ),
         ),
       );
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  StaticGlassContainer â€” versiÃ³n sin hover para listas de datos (ej. stats)
-//  MÃ¡s barato: sin AnimationController ni MouseRegion.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  StaticGlassContainer — versión sin hover para listas de datos (ej. stats)
+//  Más barato: sin AnimationController ni MouseRegion.
+// ─────────────────────────────────────────────────────────────────────────────
 class StaticGlassContainer extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -177,18 +177,18 @@ class StaticGlassContainer extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  PsicoLearnSvgContainer â€” contenedor estandarizado para grÃ¡ficos SVG
-//  del mÃ³dulo psicotÃ©cnico.
+// ─────────────────────────────────────────────────────────────────────────────
+//  PsicoLearnSvgContainer — contenedor estandarizado para gráficos SVG
+//  del módulo psicotécnico.
 //
 //  Protocolo de acoplamiento SVG:
-//  â€¢ AspectRatio fijo 1:1 (cuadrado) para matrices y rotaciones.
-//  â€¢ ConstrainedBox con maxWidth: 320, maxHeight: 320 (canvas estÃ¡ndar).
-//  â€¢ El color de stroke hereda [NeuralThemeData.textSecondary] (#C4C7C5)
+//  • AspectRatio fijo 1:1 (cuadrado) para matrices y rotaciones.
+//  • ConstrainedBox con maxWidth: 320, maxHeight: 320 (canvas estándar).
+//  • El color de stroke hereda [NeuralThemeData.textSecondary] (#C4C7C5)
 //    o reacciona al borde del contenedor mediante [accentColor].
-//  â€¢ El child recibe el Color del accent para que el SVG pueda pintarlo.
-//  â€¢ Nunca aplica BackdropFilter interno (el SVG ya es vectorial limpio).
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  • El child recibe el Color del accent para que el SVG pueda pintarlo.
+//  • Nunca aplica BackdropFilter interno (el SVG ya es vectorial limpio).
+// ─────────────────────────────────────────────────────────────────────────────
 class PsicoLearnSvgContainer extends StatelessWidget {
   /// Widget SVG (e.g. SvgPicture.asset o un CustomPainter).
   final Widget svgChild;
@@ -196,10 +196,10 @@ class PsicoLearnSvgContainer extends StatelessWidget {
   /// Color del trazo SVG. Si null, usa [NeuralThemeData.textSecondary].
   final Color? strokeColor;
 
-  /// Grosor estÃ¡ndar del trazo SVG del sistema psicoLearn.
+  /// Grosor estándar del trazo SVG del sistema psicoLearn.
   static const double standardStrokeWidth = 1.5;
 
-  /// Canvas estÃ¡ndar en dp (mÃ¡ximo del sistema psicoLearn).
+  /// Canvas estándar en dp (máximo del sistema psicoLearn).
   static const double canvasSize = 320.0;
 
   const PsicoLearnSvgContainer({

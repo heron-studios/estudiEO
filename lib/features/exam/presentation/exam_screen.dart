@@ -120,11 +120,11 @@ class _ExamScreenState extends State<ExamScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E293B),
-        title: const Text('Â¿Entregar Examen?', style: TextStyle(color: Colors.white)),
+        title: const Text('¿Entregar Examen?', style: TextStyle(color: Colors.white)),
         content: Text(
           missing > 0 
-              ? 'AÃºn te faltan $missing preguntas por responder.\n\nÂ¿EstÃ¡s seguro de que deseas entregar el simulacro ahora?'
-              : 'Has respondido todas las preguntas.\n\nÂ¿Deseas entregar el simulacro y ver tus resultados?',
+              ? 'Aún te faltan $missing preguntas por responder.\n\n¿Estás seguro de que deseas entregar el simulacro ahora?'
+              : 'Has respondido todas las preguntas.\n\n¿Deseas entregar el simulacro y ver tus resultados?',
           style: const TextStyle(color: Color(0xFF94A3B8)),
         ),
         actions: [
@@ -135,7 +135,7 @@ class _ExamScreenState extends State<ExamScreen> {
           ElevatedButton(
             onPressed: () => Navigator.pop(ctx, true),
             style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF3B82F6)),
-            child: const Text('SÃ­, Entregar', style: TextStyle(color: Colors.white)),
+            child: const Text('Sí, Entregar', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
@@ -151,9 +151,9 @@ class _ExamScreenState extends State<ExamScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E293B),
-        title: const Text('Â¿Abandonar el examen?', style: TextStyle(color: Colors.white)),
+        title: const Text('¿Abandonar el examen?', style: TextStyle(color: Colors.white)),
         content: const Text(
-          'EstÃ¡s a punto de salir. Si lo haces, perderÃ¡s todo el progreso de este simulacro y tu puntaje serÃ¡ destruido.',
+          'Estás a punto de salir. Si lo haces, perderás todo el progreso de este simulacro y tu puntaje será destruido.',
           style: TextStyle(color: Color(0xFF94A3B8)),
         ),
         actions: [
@@ -243,7 +243,7 @@ class _ExamScreenState extends State<ExamScreen> {
                 constraints: const BoxConstraints(maxWidth: 650),
                 child: Column(
                 children: [
-                  // â”€â”€ HEADER â”€â”€
+                  // ── HEADER ──
                   Padding(
                     padding: const EdgeInsets.all(16),
                     child: Row(
@@ -284,7 +284,7 @@ class _ExamScreenState extends State<ExamScreen> {
                     ),
                   ),
     
-                  // â”€â”€ PREGUNTA â”€â”€
+                  // ── PREGUNTA ──
                   Expanded(
                     child: SingleChildScrollView(
                       padding: const EdgeInsets.symmetric(horizontal: 20),

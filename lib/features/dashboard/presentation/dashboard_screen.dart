@@ -1,4 +1,4 @@
-﻿// dart:ui no requerido directamente â€” StaticGlassContainer y HoverGlassCard lo encapsulan.
+﻿// dart:ui no requerido directamente — StaticGlassContainer y HoverGlassCard lo encapsulan.
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
@@ -8,19 +8,19 @@ import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  DashboardScreen â€” "Mi Progreso"
+// ─────────────────────────────────────────────────────────────────────────────
+//  DashboardScreen — "Mi Progreso"
 //
-//  NavegaciÃ³n / Scroll retention:
-//  â€¢ El SingleChildScrollView usa PageStorageKey('dashboard_scroll') para que
-//    Flutter restaure exactamente la posiciÃ³n al volver de rutas internas.
+//  Navegación / Scroll retention:
+//  • El SingleChildScrollView usa PageStorageKey('dashboard_scroll') para que
+//    Flutter restaure exactamente la posición al volver de rutas internas.
 //
 //  Rendimiento:
-//  â€¢ Las tarjetas de estadÃ­stica usan StaticGlassContainer (sin hover ni
-//    AnimationController). El BackdropFilter sÃ³lo se renderiza una vez.
-//  â€¢ Consumer<SrsProvider> y Consumer<QuizProvider> estÃ¡n al nivel mÃ¡s bajo
-//    posible para minimizar el Ã¡rea de rebuild.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  • Las tarjetas de estadística usan StaticGlassContainer (sin hover ni
+//    AnimationController). El BackdropFilter sólo se renderiza una vez.
+//  • Consumer<SrsProvider> y Consumer<QuizProvider> están al nivel más bajo
+//    posible para minimizar el área de rebuild.
+// ─────────────────────────────────────────────────────────────────────────────
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -35,7 +35,7 @@ class DashboardScreen extends StatelessWidget {
       ),
       body: NeuralBackgroundWrapper(
         child: SingleChildScrollView(
-          // PageStorageKey garantiza que la posiciÃ³n de scroll se conserve
+          // PageStorageKey garantiza que la posición de scroll se conserve
           // cuando el usuario navega a una vista de estudio y regresa.
           key: const PageStorageKey<String>('dashboard_scroll'),
           physics: const BouncingScrollPhysics(),
@@ -66,9 +66,9 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 //  _SectionLabel
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 class _SectionLabel extends StatelessWidget {
   final String text;
   const _SectionLabel(this.text);
@@ -89,9 +89,9 @@ class _SectionLabel extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _GeneralStats â€” estadÃ­sticas globales SRS
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  _GeneralStats — estadísticas globales SRS
+// ─────────────────────────────────────────────────────────────────────────────
 class _GeneralStats extends StatelessWidget {
   const _GeneralStats();
 
@@ -140,9 +140,9 @@ class _GeneralStats extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _StatRow â€” fila de estadÃ­stica con dot de color
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+//  _StatRow — fila de estadística con dot de color
+// ─────────────────────────────────────────────────────────────────────────────
 class _StatRow extends StatelessWidget {
   final String label;
   final String value;
@@ -204,10 +204,10 @@ class _StatRow extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  _SubjectStats â€” progreso por asignatura
+// ─────────────────────────────────────────────────────────────────────────────
+//  _SubjectStats — progreso por asignatura
 //  Usa HoverGlassCard para el efecto hover de escala + borde iluminado.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 class _SubjectStats extends StatelessWidget {
   const _SubjectStats();
 
@@ -247,7 +247,7 @@ class _SubjectStats extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
-                      // Ãcono de asignatura
+                      // Ícono de asignatura
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(

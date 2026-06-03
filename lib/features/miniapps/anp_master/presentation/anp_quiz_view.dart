@@ -121,9 +121,9 @@ class _ANPQuizViewState extends State<ANPQuizView> {
         return AlertDialog(
           backgroundColor: NeuralTheme.of(context).surfaceCard,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-          title: const Text('Â¡DesafÃ­o Completado!', style: TextStyle(color: Colors.white)),
+          title: const Text('¡Desafío Completado!', style: TextStyle(color: Colors.white)),
           content: const Text(
-            'Has completado tu sesiÃ³n de repaso. Vuelve maÃ±ana para reforzar las ANP que fallaste.',
+            'Has completado tu sesión de repaso. Vuelve mañana para reforzar las ANP que fallaste.',
             style: TextStyle(color: Colors.white70),
           ),
           actions: [
@@ -132,7 +132,7 @@ class _ANPQuizViewState extends State<ANPQuizView> {
                 context.pop(); // close dialog
                 context.pop(); // return to menu
               },
-              child: const Text('Volver al MenÃº', style: TextStyle(color: Colors.greenAccent)),
+              child: const Text('Volver al Menú', style: TextStyle(color: Colors.greenAccent)),
             ),
           ],
         );
@@ -175,7 +175,7 @@ class _ANPQuizViewState extends State<ANPQuizView> {
           onPressed: () => context.pop(),
         ),
         title: Text(
-          'DesafÃ­o: ${_currentIndex + 1}/${_dueItems.length}',
+          'Desafío: ${_currentIndex + 1}/${_dueItems.length}',
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -245,11 +245,11 @@ class _ANPQuizViewState extends State<ANPQuizView> {
   String _getQuestionText() {
     switch (_currentQuestionType) {
       case _QuestionType.region:
-        return 'Â¿En quÃ© regiÃ³n se encuentra?';
+        return '¿En qué región se encuentra?';
       case _QuestionType.useType:
-        return 'Â¿CuÃ¡l es su tipo de uso?';
+        return '¿Cuál es su tipo de uso?';
       case _QuestionType.category:
-        return 'Â¿CuÃ¡l es la categorÃ­a de esta ANP?';
+        return '¿Cuál es la categoría de esta ANP?';
     }
   }
 

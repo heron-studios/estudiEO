@@ -1,7 +1,7 @@
 ﻿import 'package:learn/models/srs_card.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 
-/// Motor de RepeticiÃ³n Espaciada Adaptativo basado en SM-2
+/// Motor de Repetición Espaciada Adaptativo basado en SM-2
 /// Algoritmo optimizado para EstudiEO
 class SrsEngine {
   final LocalStorageService _storage;
@@ -22,9 +22,9 @@ class SrsEngine {
 
       // Calcular nuevo intervalo
       if (card.repetitions == 1) {
-        card.interval = 1; // 1 dÃ­a
+        card.interval = 1; // 1 día
       } else if (card.repetitions == 2) {
-        card.interval = 3; // 3 dÃ­as
+        card.interval = 3; // 3 días
       } else {
         card.interval = (card.interval * card.easeFactor).round();
       }
@@ -40,7 +40,7 @@ class SrsEngine {
       card.easeFactor = 2.5;
     }
 
-    // Calcular prÃ³xima fecha de revisiÃ³n
+    // Calcular próxima fecha de revisión
     card.nextReviewDate = DateTime.now().add(Duration(days: card.interval));
 
     // Actualizar estado
@@ -60,17 +60,17 @@ class SrsEngine {
     return SrsStatus.mature;
   }
 
-  /// Obtiene todas las tarjetas que necesitan revisiÃ³n
+  /// Obtiene todas las tarjetas que necesitan revisión
   List<SrsCard> getReviewQueue() {
     final cards = _storage.loadSrsCards();
     final queue = cards.values.where((card) {
       if (!card.isOverdue) return false;
       
-      // Excluir materias/temas especÃ­ficos de las tarjetas de memoria
+      // Excluir materias/temas específicos de las tarjetas de memoria
       final isMatematicas = card.topicId.startsWith('mat_'); 
       final isRM = card.topicId.startsWith('rm_');
-      final isExcludedRV = card.topicId == 'rv_plan'; // Solo excluir Plan de RedacciÃ³n
-      final isReglasOrtograficas = card.topicId == 'com_t1'; // Excluir Reglas OrtogrÃ¡ficas
+      final isExcludedRV = card.topicId == 'rv_plan'; // Solo excluir Plan de Redacción
+      final isReglasOrtograficas = card.topicId == 'com_t1'; // Excluir Reglas Ortográficas
       
       if (isMatematicas || isRM || isExcludedRV || isReglasOrtograficas) {
         return false;
@@ -89,13 +89,13 @@ class SrsEngine {
     return queue;
   }
 
-  /// Obtiene tarjetas de un tÃ³pico especÃ­fico
+  /// Obtiene tarjetas de un tópico específico
   List<SrsCard> getCardsByTopic(String topicId) {
     final cards = _storage.loadSrsCards();
     return cards.values.where((card) => card.topicId == topicId).toList();
   }
 
-  /// Obtiene estadÃ­sticas de un tÃ³pico
+  /// Obtiene estadísticas de un tópico
   Map<String, dynamic> getTopicStats(String topicId) {
     final cards = getCardsByTopic(topicId);
 
@@ -109,7 +109,7 @@ class SrsEngine {
     };
   }
 
-  /// Obtiene estadÃ­sticas globales
+  /// Obtiene estadísticas globales
   Map<String, dynamic> getGlobalStats() {
     final cards = _storage.loadSrsCards();
 
@@ -127,13 +127,13 @@ class SrsEngine {
     };
   }
 
-  /// Calcula dÃ­as desde la Ãºltima revisiÃ³n
+  /// Calcula días desde la última revisión
   int _daysSinceReview(SrsCard card) {
     if (card.lastReviewed == null) return 999;
     return DateTime.now().difference(card.lastReviewed!).inDays;
   }
 
-  /// Resetea todas las tarjetas de un tÃ³pico
+  /// Resetea todas las tarjetas de un tópico
   void resetTopic(String topicId) {
     final cards = _storage.loadSrsCards();
     cards.removeWhere((_, card) => card.topicId == topicId);

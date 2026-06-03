@@ -136,7 +136,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text('Mini Quiz RÃ¡pido', style: TextStyle(color: _text, fontWeight: FontWeight.bold, fontSize: 16)),
+        title: const Text('Mini Quiz Rápido', style: TextStyle(color: _text, fontWeight: FontWeight.bold, fontSize: 16)),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -288,7 +288,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
                         SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            'Modo Estricto: Debes repetir la revisiÃ³n de estas tarjetas.',
+                            'Modo Estricto: Debes repetir la revisión de estas tarjetas.',
                             style: TextStyle(color: _red, fontSize: 12, fontWeight: FontWeight.w500),
                           ),
                         ),
@@ -313,7 +313,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
                         children: [
                           const Expanded(
                             child: Text(
-                              'Volver a repetir las que respondÃ­ bien',
+                              'Volver a repetir las que respondí bien',
                               style: TextStyle(color: _text, fontSize: 14),
                             ),
                           ),
@@ -342,7 +342,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
                                 ),
                                 SizedBox(height: 2),
                                 Text(
-                                  'Debes sacar mÃ¡s de 11 para avanzar',
+                                  'Debes sacar más de 11 para avanzar',
                                   style: TextStyle(color: _muted, fontSize: 11),
                                 ),
                               ],
@@ -390,7 +390,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                         ),
                         child: Text(
-                          passed ? 'CONTINUAR' : 'REPETIR REVISIÃ“N',
+                          passed ? 'CONTINUAR' : 'REPETIR REVISIÓN',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),

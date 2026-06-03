@@ -123,37 +123,37 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
 
   String _getHint(ChemicalElement correct, ChemicalElement wrong) {
     String msg = _isSymbolToName 
-        ? "Elegiste '${wrong.name}' pero el sÃ­mbolo ${correct.symbol} le pertenece a '${correct.name}'.\n"
+        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n"
         : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n";
 
     if (correct.symbol == 'Na') {
-      msg += 'ðŸ’¡ Regla: Na viene de Natrium (latÃ­n). Â¡Na-trium = Na-Sodio!';
+      msg += '💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!';
     } else if (correct.symbol == 'K') {
-      msg += "ðŸ’¡ Regla: K viene de Kalium. Â¡Piensa en el 'Potasio' como una vitamina K gigante!";
+      msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
     } else if (correct.symbol == 'Fe') {
-      msg += "ðŸ’¡ Regla: Fe = Ferrum. AcuÃ©rdate de la palabra 'Ferro-carril' que estÃ¡ hecho de Hierro.";
+      msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
     } else if (correct.symbol == 'Cu') {
-      msg += "ðŸ’¡ Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
+      msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
     } else if (correct.symbol == 'Ag') {
-      msg += "ðŸ’¡ Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
+      msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
     } else if (correct.symbol == 'Sn') {
-      msg += "ðŸ’¡ Regla: Sn = Stannum. 'eStaÃ±Ã³' suena parecido si te fijas en la S y la N.";
+      msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
     } else if (correct.symbol == 'Sb') {
-      msg += 'ðŸ’¡ Regla: Sb = Stibium. Antimonio es Sb... Â¡Suena nada parecido, es el mÃ¡s rebelde de la tabla!';
+      msg += '💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!';
     } else if (correct.symbol == 'W') {
-      msg += "ðŸ’¡ Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
+      msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
     } else if (correct.symbol == 'Au') {
-      msg += "ðŸ’¡ Regla: Au = Aurum. Cuando ves oro robado gritas 'Â¡Au, mi oro!'";
+      msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
     } else if (correct.symbol == 'Hg') {
-      msg += 'ðŸ’¡ Regla: Hg = Hydrargyrum. Piensa en un termÃ³metro antiguo de Mercurio.';
+      msg += '💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.';
     } else if (correct.symbol == 'Pb') {
-      msg += 'ðŸ’¡ Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
+      msg += '💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
     } else if (correct.symbol == 'P') {
-      msg += "ðŸ’¡ Regla: P = FÃ³sforo. En griego es 'Phosphorus', por eso lleva P.";
+      msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
     } else if (correct.symbol == 'S') {
-      msg += "ðŸ’¡ Regla: S = Azufre. En inglÃ©s es 'Sulphur', por eso lleva S.";
+      msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
     } else {
-      msg += "ðŸ’¡ Regla: FÃ­jate en las letras de '${correct.name}', coinciden con su sÃ­mbolo '${correct.symbol}'.";
+      msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
     }
 
     return msg;
@@ -172,7 +172,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
     }
 
     final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
-    final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : 'Â¿SÃ­mbolo?';
+    final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
     final progressColor = _timeLeft > 15 ? nt.successGreen : nt.pink;
 
     return SafeArea(
@@ -281,7 +281,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                           children: [
                             Icon(Icons.timer_off_rounded, color: nt.pink),
                             const SizedBox(width: 8),
-                            const Text('Â¡Error!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            const Text('¡Error!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                           ],
                         ),
                         const SizedBox(height: 8),
@@ -352,7 +352,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
             ),
             const SizedBox(height: 12),
             const Text(
-              'Adivina la mayor cantidad de elementos en 60 segundos. Â¡SÃ© veloz!',
+              'Adivina la mayor cantidad de elementos en 60 segundos. ¡Sé veloz!',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white54, fontSize: 16),
             ),
@@ -385,7 +385,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Â¡Tiempo Agotado!',
+              '¡Tiempo Agotado!',
               style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),

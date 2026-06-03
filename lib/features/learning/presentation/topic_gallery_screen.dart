@@ -89,10 +89,10 @@ class _TopicTile extends StatelessWidget {
     final authService = context.watch<AuthService>();
     final bool isPremium = authService.currentUser != null && authService.isAuthorized;
 
-    // Solo se bloquea si el usuario NO es premium y ademÃ¡s el index > 0 (modo demo/invitado)
+    // Solo se bloquea si el usuario NO es premium y además el index > 0 (modo demo/invitado)
     final bool isLocked = !isPremium && index > 0;
     
-    // Usar la cantidad real de preguntas segÃºn si es premium o no
+    // Usar la cantidad real de preguntas según si es premium o no
     final int dynamicQuestionCount = !isPremium 
         ? context.read<SubjectProvider>().getQuestionsByTopic(topic.id).length 
         : topic.questionCount;
@@ -121,7 +121,7 @@ class _TopicTile extends StatelessWidget {
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Â¡PrÃ³ximamente! Estamos preparando el contenido guiado para este tema.'),
+                      content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
                       duration: Duration(seconds: 2),
                     ),
                   );
@@ -312,7 +312,7 @@ class _TopicTile extends StatelessWidget {
               Icon(Icons.pending_actions_rounded, color: Colors.orangeAccent),
               SizedBox(width: 10),
               Text(
-                'SesiÃ³n en Progreso',
+                'Sesión en Progreso',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: Colors.white,
@@ -327,7 +327,7 @@ class _TopicTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Tienes una prÃ¡ctica pendiente para este tema:',
+                'Tienes una práctica pendiente para este tema:',
                 style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
               ),
               const SizedBox(height: 12),
@@ -387,12 +387,12 @@ class _TopicTile extends StatelessWidget {
           actionsAlignment: MainAxisAlignment.end,
           actionsPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           actions: [
-            // BotÃ³n de Reiniciar
+            // Botón de Reiniciar
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
                 lp.resetTopicProgress(topic.id);
-                // Iniciar nueva sesiÃ³n
+                // Iniciar nueva sesión
                 context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
@@ -401,7 +401,7 @@ class _TopicTile extends StatelessWidget {
                 style: TextStyle(color: Color(0xFFEF4444), fontSize: 13),
               ),
             ),
-            // BotÃ³n de Ver TeorÃ­a
+            // Botón de Ver Teoría
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
@@ -409,11 +409,11 @@ class _TopicTile extends StatelessWidget {
                 );
               },
               child: Text(
-                'Ver TeorÃ­a',
+                'Ver Teoría',
                 style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 13),
               ),
             ),
-            // BotÃ³n de Continuar
+            // Botón de Continuar
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(ctx);
@@ -456,8 +456,8 @@ class _TopicTile extends StatelessWidget {
         context: context,
         builder: (ctx) => AlertDialog(
           backgroundColor: const Color(0xFF1E293B),
-          title: const Text('SesiÃ³n Pendiente', style: TextStyle(color: Colors.white)),
-          content: const Text('Tienes un quiz sin terminar. Â¿QuÃ© deseas hacer?', style: TextStyle(color: Colors.white70)),
+          title: const Text('Sesión Pendiente', style: TextStyle(color: Colors.white)),
+          content: const Text('Tienes un quiz sin terminar. ¿Qué deseas hacer?', style: TextStyle(color: Colors.white70)),
           actions: [
             TextButton(
               onPressed: () {
@@ -500,9 +500,9 @@ class _TopicTile extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // Widgets de soporte
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 /// Indicador compacto de progreso de niveles del Modo Aprendizaje Guiado.
 class _LevelProgressIndicator extends StatelessWidget {
@@ -526,7 +526,7 @@ class _LevelProgressIndicator extends StatelessWidget {
           Icon(Icons.star_rounded, color: Color(0xFFFBBF24), size: 13),
           SizedBox(width: 4),
           Text(
-            'MaestrÃ­a alcanzada',
+            'Maestría alcanzada',
             style: TextStyle(
               color: Color(0xFFFBBF24),
               fontSize: 11,

@@ -35,7 +35,7 @@ class _PeriodicTableScreenState extends State<PeriodicTableScreen> {
           onPressed: () => context.pop(),
         ),
         title: const Text(
-          'Tabla PeriÃ³dica',
+          'Tabla Periódica',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

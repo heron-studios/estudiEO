@@ -7,15 +7,15 @@ class GeminiService {
   static const String _baseUrl =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-  /// Genera un concepto nemotÃ©cnico/explicaciÃ³n corta para reforzar una tarjeta.
-  /// Porta la lÃ³gica de GeminiGenerator.explainConcept() de Memoriza-PNP.
+  /// Genera un concepto nemotécnico/explicación corta para reforzar una tarjeta.
+  /// Porta la lógica de GeminiGenerator.explainConcept() de Memoriza-PNP.
   static Future<String> explicarConcepto(String pregunta, String respuesta) async {
     const systemPrompt =
         'Eres Alipio, un tutor amigable experto para postulantes a la EO PNP. '
-        'Dado un par pregunta-respuesta, genera UN concepto nemotÃ©cnico o truco de memoria '
-        'en mÃ¡ximo 3 lÃ­neas cortas, usando analogÃ­as, acrÃ³nimos o imÃ¡genes mentales divertidas '
+        'Dado un par pregunta-respuesta, genera UN concepto nemotécnico o truco de memoria '
+        'en máximo 3 líneas cortas, usando analogías, acrónimos o imágenes mentales divertidas '
         'para que el estudiante recuerde la respuesta para siempre. '
-        'SÃ© creativo, claro y directo. No repitas la pregunta ni la respuesta textual.';
+        'Sé creativo, claro y directo. No repitas la pregunta ni la respuesta textual.';
 
     final userPrompt = 'Pregunta: $pregunta\nRespuesta: $respuesta';
 
@@ -60,9 +60,9 @@ class GeminiService {
         if (text != null && text.toString().trim().isNotEmpty) {
           return text.toString().trim();
         }
-        return 'Alipio no pudo generar una explicaciÃ³n esta vez.';
+        return 'Alipio no pudo generar una explicación esta vez.';
       } else {
-        return 'Error de conexiÃ³n (${response.statusCode}). Verifica tu internet.';
+        return 'Error de conexión (${response.statusCode}). Verifica tu internet.';
       }
     } catch (e) {
       return 'No se pudo conectar con Alipio: ${e.toString().split(':').first}.';

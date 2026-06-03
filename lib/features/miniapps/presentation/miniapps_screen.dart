@@ -47,7 +47,7 @@ class MiniAppsScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Potencia tu memoria y agilidad mental con estas aplicaciones rÃ¡pidas.',
+                  'Potencia tu memoria y agilidad mental con estas aplicaciones rápidas.',
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.6),
                     fontSize: 14,
@@ -90,7 +90,7 @@ class MiniAppsScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'Tabla PeriÃ³dica',
+                                      'Tabla Periódica',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,

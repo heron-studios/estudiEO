@@ -7,9 +7,9 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
 
-/// Pantalla de selecciÃ³n de tema para entrar a Alipio (tarjetas + IA).
+/// Pantalla de selección de tema para entrar a Alipio (tarjetas + IA).
 /// Muestra primero materias en chips horizontales y luego los temas en lista.
-/// Sin scroll vertical â€” todo cabe en pantalla.
+/// Sin scroll vertical — todo cabe en pantalla.
 class AlipioSelectorScreen extends StatefulWidget {
   const AlipioSelectorScreen({super.key});
 
@@ -41,9 +41,9 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
     super.didChangeDependencies();
     final provider = context.watch<SubjectProvider>();
     _subjects = provider.subjects.where((s) => 
-      s.name != 'MatemÃ¡ticas' && 
-      s.name != 'MatemÃ¡tica' && 
-      s.name != 'Razonamiento MatemÃ¡tico'
+      s.name != 'Matemáticas' && 
+      s.name != 'Matemática' && 
+      s.name != 'Razonamiento Matemático'
     ).toList();
     if (_subjects.isNotEmpty) {
       if (!_isSelectionInitialized) {
@@ -112,14 +112,14 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // â”€â”€ SUBTITLE â”€â”€
+              // ── SUBTITLE ──
               Text(
                 'Elige una materia y un tema para estudiar con tarjetas.',
                 style: TextStyle(color: _muted.withValues(alpha: 0.8), fontSize: 13),
               ),
               const SizedBox(height: 14),
 
-              // â”€â”€ SUBJECT CHIPS (horizontal) â”€â”€
+              // ── SUBJECT CHIPS (horizontal) ──
               if (_subjects.isEmpty)
                 const Center(
                     child: Text('No hay asignaturas visibles',
@@ -178,7 +178,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
 
               const SizedBox(height: 16),
 
-              // â”€â”€ TOPIC LABEL â”€â”€
+              // ── TOPIC LABEL ──
               if (_subjects.isNotEmpty) ...[
                 Row(
                   children: [
@@ -199,7 +199,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
                 const SizedBox(height: 10),
               ],
 
-              // â”€â”€ TOPIC LIST (expanded, no outer scroll) â”€â”€
+              // ── TOPIC LIST (expanded, no outer scroll) ──
               Expanded(
                 child: _topics.isEmpty
                     ? const Center(

@@ -10,15 +10,15 @@ class PtExploratoryView extends StatelessWidget {
   Color _getFamilyColor(String family, NeuralThemeData nt) {
     switch (family) {
       case 'Metal alcalino': return const Color(0xFFF05252);
-      case 'Metal alcalinotÃ©rreo': return const Color(0xFFFF7A00);
-      case 'Metal de transiciÃ³n': return const Color(0xFFFFB020);
+      case 'Metal alcalinotérreo': return const Color(0xFFFF7A00);
+      case 'Metal de transición': return const Color(0xFFFFB020);
       case 'Metal del bloque p': return const Color(0xFF00A2FF);
       case 'Metaloide': return const Color(0xFF00D2B4);
       case 'No metal': return const Color(0xFF4ADE80);
-      case 'HalÃ³geno': return const Color(0xFFA855F7);
+      case 'Halógeno': return const Color(0xFFA855F7);
       case 'Gas noble': return const Color(0xFFEC4899);
-      case 'LantÃ¡nido': return const Color(0xFFE879F9);
-      case 'ActÃ­nido': return const Color(0xFFF472B6);
+      case 'Lantánido': return const Color(0xFFE879F9);
+      case 'Actínido': return const Color(0xFFF472B6);
       default: return Colors.grey;
     }
   }
@@ -120,11 +120,11 @@ class PtExploratoryView extends StatelessWidget {
                   const SizedBox(height: 32),
                   Row(
                     children: [
-                      Expanded(child: _InfoBox(label: 'NÃšMERO ATÃ“MICO', value: element.atomicNumber.toString(), icon: Icons.tag_rounded, color: color, nt: nt)),
+                      Expanded(child: _InfoBox(label: 'NÚMERO ATÓMICO', value: element.atomicNumber.toString(), icon: Icons.tag_rounded, color: color, nt: nt)),
                       const SizedBox(width: 12),
                       Expanded(child: _InfoBox(label: 'GRUPO', value: element.group.toString(), icon: Icons.view_column_rounded, color: color, nt: nt)),
                       const SizedBox(width: 12),
-                      Expanded(child: _InfoBox(label: 'PERÃODO', value: element.period.toString(), icon: Icons.view_headline_rounded, color: color, nt: nt)),
+                      Expanded(child: _InfoBox(label: 'PERÍODO', value: element.period.toString(), icon: Icons.view_headline_rounded, color: color, nt: nt)),
                     ],
                   ),
                   const SizedBox(height: 16),

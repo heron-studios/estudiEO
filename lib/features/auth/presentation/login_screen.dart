@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
   Future<void> _contactSupport() async {
     final Uri url = Uri.parse(
-      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, solicito soporte o informaciÃ³n sobre la suscripciÃ³n de EstudiEO")}',
+      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, solicito soporte o información sobre la suscripción de EstudiEO")}',
     );
     try {
       await launchUrl(url, mode: LaunchMode.externalApplication);
@@ -270,7 +270,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               ),
               const SizedBox(width: 7),
               const Text(
-                'SISTEMA DE PREPARACIÃ“N PNP',
+                'SISTEMA DE PREPARACIÓN PNP',
                 style: TextStyle(
                   color: Color(0xFF8AB4F8),
                   fontSize: 10,
@@ -291,7 +291,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             end: Alignment.bottomRight,
           ).createShader(bounds),
           child: Text(
-            isDesktop ? 'Entrenamiento\nAcadÃ©mico\nInteligente' : 'Entrenamiento AcadÃ©mico Inteligente',
+            isDesktop ? 'Entrenamiento\nAcadémico\nInteligente' : 'Entrenamiento Académico Inteligente',
             textAlign: isDesktop ? TextAlign.left : TextAlign.center,
             style: const TextStyle(
               fontSize: 36,
@@ -304,7 +304,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         const SizedBox(height: 16),
         // Description
         Text(
-          'Domina todo el temario con inteligencia activa, repasos espaciados (SRS) y simulacros tipo examen de admisiÃ³n PNP.',
+          'Domina todo el temario con inteligencia activa, repasos espaciados (SRS) y simulacros tipo examen de admisión PNP.',
           textAlign: isDesktop ? TextAlign.left : TextAlign.center,
           style: const TextStyle(
             color: Color(0xFF9AA0A6),
@@ -370,7 +370,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         const Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'CARACTERÃSTICAS DEL SISTEMA',
+            'CARACTERÍSTICAS DEL SISTEMA',
             style: TextStyle(
               color: Color(0xFF5F6368),
               fontSize: 10,
@@ -392,8 +392,8 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           ),
           children: [
             BentoCard(
-              title: 'MisiÃ³n Diaria',
-              description: 'Resuelve preguntas personalizadas cada dÃ­a para mantener tu racha.',
+              title: 'Misión Diaria',
+              description: 'Resuelve preguntas personalizadas cada día para mantener tu racha.',
               tag: 'Activo',
               icon: Icons.bolt_rounded,
               glowColor: const Color(0xFF4285F4).withValues(alpha: 0.12),
@@ -415,7 +415,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             ),
             BentoCard(
               title: 'Simulacros Reales',
-              description: 'ExÃ¡menes completos contrarreloj con el formato exacto de admisiÃ³n.',
+              description: 'Exámenes completos contrarreloj con el formato exacto de admisión.',
               tag: 'Cronometrado',
               icon: Icons.play_circle_outline_rounded,
               glowColor: const Color(0xFF00A884).withValues(alpha: 0.12),
@@ -442,7 +442,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
   }
 }
 
-// â”€â”€ SUPPORT BUTTON â”€â”€
+// ── SUPPORT BUTTON ──
 class _SupportButton extends StatefulWidget {
   final VoidCallback onTap;
   const _SupportButton({required this.onTap});
@@ -485,7 +485,7 @@ class _SupportButtonState extends State<_SupportButton> {
   }
 }
 
-// â”€â”€ SCALE BUTTON â”€â”€
+// ── SCALE BUTTON ──
 class _ScaleButton extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
@@ -517,7 +517,7 @@ class _ScaleButtonState extends State<_ScaleButton> {
   }
 }
 
-// â”€â”€ GOOGLE LOGO PAINTER â”€â”€
+// ── GOOGLE LOGO PAINTER ──
 class GoogleLogoPainter extends CustomPainter {
   const GoogleLogoPainter();
 

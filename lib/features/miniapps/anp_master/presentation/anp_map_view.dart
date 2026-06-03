@@ -92,7 +92,7 @@ class _ANPMapViewState extends State<ANPMapView> {
                               Icon(Icons.map_rounded, size: 64, color: Colors.white24),
                               SizedBox(height: 16),
                               Text(
-                                'Lienzo del Mapa del PerÃº\n(Requiere SVGs)',
+                                'Lienzo del Mapa del Perú\n(Requiere SVGs)',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(color: Colors.white54),
                               ),
@@ -176,7 +176,7 @@ class _ANPMapViewState extends State<ANPMapView> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'CategorÃ­a: ${_selectedANP!.category}',
+                        'Categoría: ${_selectedANP!.category}',
                         style: const TextStyle(color: Colors.greenAccent),
                       ),
                       const SizedBox(height: 4),

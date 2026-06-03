@@ -9,10 +9,10 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:go_router/go_router.dart';
 
-/// Pantalla 1 del Modo Aprendizaje Guiado â€” Fase AbsorciÃ³n (TeorÃ­a).
+/// Pantalla 1 del Modo Aprendizaje Guiado — Fase Absorción (Teoría).
 ///
-/// Muestra el contenido teÃ³rico del nivel actual con un diseÃ±o de lectura
-/// premium. El contenido real se marcarÃ¡ con un placeholder hasta que sea
+/// Muestra el contenido teórico del nivel actual con un diseño de lectura
+/// premium. El contenido real se marcará con un placeholder hasta que sea
 /// rellenado por el equipo de contenido.
 class LearningTheoryScreen extends StatefulWidget {
   final String topicId;
@@ -49,11 +49,11 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   void initState() {
     super.initState();
     
-    // Recuperar posiciÃ³n de scroll guardada
+    // Recuperar posición de scroll guardada
     final initialOffset = context.read<LearningProvider>().getScrollPosition(widget.topicId, widget.nivel);
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
 
-    // Guardar posiciÃ³n de scroll al desplazarse
+    // Guardar posición de scroll al desplazarse
     _scrollController.addListener(() {
       if (_scrollController.hasClients) {
         context.read<LearningProvider>().saveScrollPosition(
@@ -93,7 +93,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   void _startPractice(BuildContext context) {
     final learningProvider = context.read<LearningProvider>();
 
-    // Si hay sesiÃ³n pendiente guardada, retomar; si no, crear nueva
+    // Si hay sesión pendiente guardada, retomar; si no, crear nueva
     final hasPending =
         learningProvider.hasPendingSession(widget.topicId, widget.nivel);
 
@@ -119,7 +119,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
     if (isCorrect) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('ðŸŽ‰ Â¡Punto de control superado!'),
+          content: Text('🎉 ¡Punto de control superado!'),
           duration: Duration(seconds: 1),
           backgroundColor: Color(0xFF15803D),
         ),
@@ -140,7 +140,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
           controller: _scrollController,
           physics: const BouncingScrollPhysics(),
           slivers: [
-            // â”€â”€â”€ SliverAppBar premium â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // ─── SliverAppBar premium ──────────────────────────────────────
             SliverAppBar(
               expandedHeight: 200,
               pinned: true,
@@ -159,7 +159,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
               ),
             ),
   
-            // â”€â”€â”€ Contenido teÃ³rico â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+            // ─── Contenido teórico ─────────────────────────────────────────
             SliverToBoxAdapter(
               child: Center(
                 child: ConstrainedBox(
@@ -173,11 +173,11 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
                         _LevelBreadcrumb(nivel: widget.nivel),
                         const SizedBox(height: 24),
   
-                        // SecciÃ³n principal de teorÃ­a
+                        // Sección principal de teoría
                         _TheorySection(
-                          title: 'ðŸ“– Contenido de Nivel ${widget.nivel.displayName}',
+                          title: '📖 Contenido de Nivel ${widget.nivel.displayName}',
                           content: subjectProvider.getTheoryByTopicAndLevel(widget.topicId, widget.nivel) ?? 
-                              'AÃºn no hay contenido teÃ³rico registrado para este nivel. Por favor, contacta al administrador.',
+                              'Aún no hay contenido teórico registrado para este nivel. Por favor, contacta al administrador.',
                         ),
                         const SizedBox(height: 20),
 
@@ -205,7 +205,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
         ),
       ),
 
-      // â”€â”€â”€ BotÃ³n flotante de CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      // ─── Botón flotante de CTA ─────────────────────────────────────────
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: _StartPracticeButton(
         buttonScale: _buttonScale,
@@ -217,9 +217,9 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // Widgets internos
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 class _TheoryHeader extends StatelessWidget {
   final String topicName;
@@ -294,7 +294,7 @@ class _TheoryHeader extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Lee con atenciÃ³n antes de practicar',
+                'Lee con atención antes de practicar',
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.5),
                   fontSize: 13,
@@ -372,7 +372,7 @@ class _TheorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPlaceholder = content.trim().isEmpty || content.contains('AÃºn no hay contenido');
+    final isPlaceholder = content.trim().isEmpty || content.contains('Aún no hay contenido');
     
     return Container(
       width: double.infinity,
@@ -419,7 +419,7 @@ class _TheorySection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '[contenido de tema: ${title.replaceAll('ðŸ“– Contenido de Nivel ', '')}, llenar]',
+                    '[contenido de tema: ${title.replaceAll('📖 Contenido de Nivel ', '')}, llenar]',
                     style: const TextStyle(
                       fontFamily: 'monospace',
                       color: Color(0xFFFBBF24),
@@ -520,7 +520,7 @@ class _TipCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('âœ¨', style: TextStyle(fontSize: 22)),
+          const Text('✨', style: TextStyle(fontSize: 22)),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -537,7 +537,7 @@ class _TipCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 const Text(
-                  'Para pasar al siguiente nivel necesitas responder correctamente 10 preguntas. Si fallas, la pregunta regresa al final de la cola para que la practiques de nuevo. Â¡La constancia es la clave!',
+                  'Para pasar al siguiente nivel necesitas responder correctamente 10 preguntas. Si fallas, la pregunta regresa al final de la cola para que la practiques de nuevo. ¡La constancia es la clave!',
                   style: TextStyle(
                     color: Color(0xFFCBD5E1),
                     fontSize: 14,
@@ -621,7 +621,7 @@ class _StartPracticeButton extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
-                              'âš ï¸ Responde correctamente todos los puntos de control para habilitar la prÃ¡ctica.',
+                              '⚠️ Responde correctamente todos los puntos de control para habilitar la práctica.',
                             ),
                             duration: Duration(seconds: 2),
                             backgroundColor: Color(0xFFB91C1C),
@@ -634,7 +634,7 @@ class _StartPracticeButton extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        isEnabled ? 'Â¡Entendido, a practicar!' : 'Puntos de Control Pendientes',
+                        isEnabled ? '¡Entendido, a practicar!' : 'Puntos de Control Pendientes',
                         style: TextStyle(
                           color: isEnabled ? Colors.white : Colors.white38,
                           fontSize: 17,
@@ -698,7 +698,7 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
         children: [
           Row(
             children: [
-              const Text('âš¡', style: TextStyle(fontSize: 22)),
+              const Text('⚡', style: TextStyle(fontSize: 22)),
               const SizedBox(width: 8),
               const Expanded(
                 child: Text(
@@ -726,7 +726,7 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
           ),
           const SizedBox(height: 6),
           Text(
-            'Responde correctamente las siguientes preguntas de control para desbloquear la prÃ¡ctica.',
+            'Responde correctamente las siguientes preguntas de control para desbloquear la práctica.',
             style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
           ),
           const Padding(
@@ -817,7 +817,7 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                         const SizedBox(width: 6),
                         Expanded(
                           child: Text(
-                            'Respuesta incorrecta. Vuelve a leer la teorÃ­a e intÃ©ntalo de nuevo.',
+                            'Respuesta incorrecta. Vuelve a leer la teoría e inténtalo de nuevo.',
                             style: TextStyle(color: const Color(0xFFFCA5A5).withValues(alpha: 0.9), fontSize: 11),
                           ),
                         ),
@@ -831,7 +831,7 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                         const SizedBox(width: 6),
                         Expanded(
                           child: Text(
-                            q.explanation.isNotEmpty ? q.explanation : 'Â¡Correcto!',
+                            q.explanation.isNotEmpty ? q.explanation : '¡Correcto!',
                             style: TextStyle(color: const Color(0xFF86EFAC).withValues(alpha: 0.9), fontSize: 11),
                           ),
                         ),

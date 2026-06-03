@@ -72,7 +72,7 @@ class AppShell extends StatelessWidget {
                 const SizedBox(height: 10),
                 IconButton(
                   icon: Icon(Icons.logout_rounded, color: nt.pink),
-                  tooltip: 'Cerrar SesiÃ³n',
+                  tooltip: 'Cerrar Sesión',
                   onPressed: () async {
                     await context.read<AuthService>().signOut();
                   },

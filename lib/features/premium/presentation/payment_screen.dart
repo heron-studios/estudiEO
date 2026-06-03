@@ -7,14 +7,14 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 
-// â”€â”€â”€ Beneficios del plan â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Beneficios del plan ──────────────────────────────────────────────────────
 const _benefits = [
   _Benefit(Icons.all_inclusive_rounded,     Color(0xFF3B82F6), 'Acceso permanente a la app',         'Una vez, para siempre. Sin renovaciones.'),
-  _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Preguntas reales fijas de la PNP',    'Banco actualizado con exÃ¡menes oficiales anteriores.'),
+  _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Preguntas reales fijas de la PNP',    'Banco actualizado con exámenes oficiales anteriores.'),
   _Benefit(Icons.update_rounded,            Color(0xFF06B6D4), 'Actualizaciones frecuentes',           'Nuevas preguntas y mejoras sin costo adicional.'),
   _Benefit(Icons.support_agent_rounded,     Color(0xFF10B981), 'Soporte y asistencia VIP',             'Grupo exclusivo de WhatsApp para cadetes.'),
-  _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Algoritmo de repaso inteligente',      'Sistema SRS: aprende mÃ¡s en menos tiempo.'),
-  _Benefit(Icons.analytics_rounded,         Color(0xFFEF4444), 'EstadÃ­sticas y seguimiento',           'Mide tu progreso real hacia la vacante.'),
+  _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Algoritmo de repaso inteligente',      'Sistema SRS: aprende más en menos tiempo.'),
+  _Benefit(Icons.analytics_rounded,         Color(0xFFEF4444), 'Estadísticas y seguimiento',           'Mide tu progreso real hacia la vacante.'),
   _Benefit(Icons.emoji_events_rounded,      Color(0xFFFFD700), 'Simulacros de examen oficial',         'Practica con el formato real del examen PNP.'),
 ];
 
@@ -26,7 +26,7 @@ class _Benefit {
   const _Benefit(this.icon, this.color, this.title, this.subtitle);
 }
 
-// â”€â”€â”€ Pantalla principal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Pantalla principal ───────────────────────────────────────────────────────
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -123,7 +123,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 : _buildNarrowLayout(),
           ),
 
-          // Cerrar sesiÃ³n
+          // Cerrar sesión
           Positioned(
             top: 16,
             right: 16,
@@ -135,9 +135,9 @@ class _PaymentScreenState extends State<PaymentScreen>
                     context: context,
                     builder: (ctx) => AlertDialog(
                       backgroundColor: const Color(0xFF1E293B),
-                      title: const Text('Â¿Cerrar SesiÃ³n?', style: TextStyle(color: Colors.white)),
+                      title: const Text('¿Cerrar Sesión?', style: TextStyle(color: Colors.white)),
                       content: const Text(
-                        'Â¿EstÃ¡s seguro de que deseas salir y volver al inicio de sesiÃ³n?',
+                        '¿Estás seguro de que deseas salir y volver al inicio de sesión?',
                         style: TextStyle(color: Color(0xFF94A3B8)),
                       ),
                       actions: [
@@ -159,7 +159,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 },
                 icon: const Icon(Icons.logout_rounded, color: Colors.white70, size: 16),
                 label: const Text(
-                  'Cerrar SesiÃ³n',
+                  'Cerrar Sesión',
                   style: TextStyle(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
                 ),
                 style: TextButton.styleFrom(
@@ -175,7 +175,7 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // â”€â”€ Layout ancho: web / escritorio â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Layout ancho: web / escritorio ──────────────────────────────────────────
   Widget _buildWideLayout() {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -187,7 +187,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Columna izquierda: Badge, TÃ­tulo, DescripciÃ³n y Lista de Beneficios
+                // Columna izquierda: Badge, Título, Descripción y Lista de Beneficios
                 Expanded(
                   flex: 6,
                   child: Column(
@@ -217,7 +217,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   flex: 5,
                   child: Column(
                     children: [
-                      const SizedBox(height: 40), // AlÃ­nea verticalmente con el tÃ­tulo de la izquierda
+                      const SizedBox(height: 40), // Alínea verticalmente con el título de la izquierda
                       ScaleTransition(
                         scale: _entranceAnim,
                         child: _buildUnifiedCheckoutCard(),
@@ -233,7 +233,7 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // â”€â”€ Layout estrecho: mÃ³vil â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Layout estrecho: móvil ──────────────────────────────────────────────────
   Widget _buildNarrowLayout() {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -253,7 +253,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             ),
             const SizedBox(height: 36),
             const Text(
-              'Â¿QuÃ© incluye tu acceso permanente?',
+              '¿Qué incluye tu acceso permanente?',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
@@ -269,7 +269,7 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // â”€â”€ Componentes de la UI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Componentes de la UI ─────────────────────────────────────────────────────
 
   Widget _buildTopBadge() {
     return Container(
@@ -292,7 +292,7 @@ class _PaymentScreenState extends State<PaymentScreen>
           const Icon(Icons.local_fire_department_rounded, color: Color(0xFFFFD700), size: 16),
           const SizedBox(width: 6),
           Text(
-            'OFERTA ESPECIAL Â· ACCESO PERMANENTE',
+            'OFERTA ESPECIAL · ACCESO PERMANENTE',
             style: TextStyle(
               color: const Color(0xFFFFD700).withValues(alpha: 0.9),
               fontSize: 11,
@@ -363,7 +363,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   end: Alignment.bottomRight,
                 ).createShader(b),
                 child: const Text(
-                  'Tu vacante a la PNP\ncomienza aquÃ­',
+                  'Tu vacante a la PNP\ncomienza aquí',
                   style: TextStyle(
                     fontSize: 44,
                     fontWeight: FontWeight.w900,
@@ -375,7 +375,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
               const SizedBox(height: 16),
               Text(
-                'Miles de cadetes ya se preparan y aprueban con EstudiEO. ObtÃ©n acceso de por vida a la plataforma y asegura tu futuro en la policÃ­a.',
+                'Miles de cadetes ya se preparan y aprueban con EstudiEO. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
                 style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.65), height: 1.6),
               ),
             ],
@@ -397,7 +397,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             end: Alignment.bottomRight,
           ).createShader(b),
           child: const Text(
-            'Tu vacante a la PNP\ncomienza aquÃ­',
+            'Tu vacante a la PNP\ncomienza aquí',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 30,
@@ -410,7 +410,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         ),
         const SizedBox(height: 12),
         Text(
-          'Miles de cadetes ya aprobaron con EstudiEO.\nSÃ© el prÃ³ximo.',
+          'Miles de cadetes ya aprobaron con EstudiEO.\nSé el próximo.',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 15, color: Colors.white.withValues(alpha: 0.6), height: 1.6),
         ),
@@ -491,7 +491,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: const Color(0xFF22C55E).withValues(alpha: 0.5)),
                 ),
-                child: const Text('ÃšNICO PAGO', style: TextStyle(color: Color(0xFF4ADE80), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 0.8)),
+                child: const Text('ÚNICO PAGO', style: TextStyle(color: Color(0xFF4ADE80), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 0.8)),
               ),
             ],
           ),
@@ -505,7 +505,7 @@ class _PaymentScreenState extends State<PaymentScreen>
 
           const SizedBox(height: 30),
 
-          // BotÃ³n de WhatsApp
+          // Botón de WhatsApp
           _buildBuyButton(),
 
           const SizedBox(height: 16),
@@ -513,7 +513,7 @@ class _PaymentScreenState extends State<PaymentScreen>
           _buildSecondaryButton(
             icon: Icons.groups_rounded,
             label: 'Comunidad de WhatsApp',
-            subtitle: 'Ãšnete para recibir novedades gratis',
+            subtitle: 'Únete para recibir novedades gratis',
             gradient: const [Color(0xFF25D366), Color(0xFF075E54)],
             onTap: () => _launchUrl('https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05'),
           ),
@@ -523,7 +523,7 @@ class _PaymentScreenState extends State<PaymentScreen>
           _buildSecondaryButton(
             icon: Icons.download_for_offline_rounded,
             label: 'Descargar App (Android / PC)',
-            subtitle: 'Consigue la versiÃ³n para celular y computadora',
+            subtitle: 'Consigue la versión para celular y computadora',
             gradient: const [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
             onTap: () => _launchUrl('https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing'),
           ),
@@ -532,12 +532,12 @@ class _PaymentScreenState extends State<PaymentScreen>
           const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
           const SizedBox(height: 20),
 
-          // Badges de Confianza (Seguro, ActivaciÃ³n rÃ¡pida, Yape/Plin)
+          // Badges de Confianza (Seguro, Activación rápida, Yape/Plin)
           _buildTrustBadges(),
 
           const SizedBox(height: 24),
 
-          // Textos de Seguridad y GarantÃ­a
+          // Textos de Seguridad y Garantía
           _buildSecurityText(),
         ],
       ),
@@ -602,7 +602,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         const SizedBox(height: 8),
         Center(
           child: Text(
-            'Pago Ãºnico Â· Sin mensualidades Â· Sin sorpresas',
+            'Pago único · Sin mensualidades · Sin sorpresas',
             style: TextStyle(color: Colors.white.withValues(alpha: 0.5), fontSize: 12),
           ),
         ),
@@ -616,7 +616,7 @@ class _PaymentScreenState extends State<PaymentScreen>
       children: [
         const _TrustItem(icon: Icons.verified_user_rounded,  label: '100%\nSeguro',             color: Color(0xFF22C55E)),
         Container(height: 40, width: 1, color: Colors.white.withValues(alpha: 0.1)),
-        const _TrustItem(icon: Icons.flash_on_rounded,       label: 'ActivaciÃ³n\nInmediata',     color: Color(0xFF3B82F6)),
+        const _TrustItem(icon: Icons.flash_on_rounded,       label: 'Activación\nInmediata',     color: Color(0xFF3B82F6)),
         Container(height: 40, width: 1, color: Colors.white.withValues(alpha: 0.1)),
         const _TrustItem(icon: Icons.phone_android_rounded,  label: 'Yape /\nPlin',              color: Color(0xFF8B5CF6)),
       ],
@@ -663,7 +663,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('COMPRAR AHORA Â· S/30',
+                  Text('COMPRAR AHORA · S/30',
                       style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
                   Text('Contactar por WhatsApp',
                       style: TextStyle(color: Colors.white70, fontSize: 11)),
@@ -768,7 +768,7 @@ class _PaymentScreenState extends State<PaymentScreen>
   }
 }
 
-// â”€â”€â”€ Badge de confianza â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Badge de confianza ───────────────────────────────────────────────────────
 
 class _TrustItem extends StatelessWidget {
   final IconData icon;
@@ -798,7 +798,7 @@ class _TrustItem extends StatelessWidget {
   }
 }
 
-// â”€â”€â”€ Fondo animado â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Fondo animado ────────────────────────────────────────────────────────────
 
 class _BgPainter extends CustomPainter {
   final double t;

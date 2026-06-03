@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 
-/// Un widget interactivo que oculta la respuesta y requiere una acciÃ³n del
+/// Un widget interactivo que oculta la respuesta y requiere una acción del
 /// usuario (tap, swipe o long-press) para desplegarla de manera fluida y expansiva,
-/// con un sutil brillo del gradiente neural de realimentaciÃ³n.
+/// con un sutil brillo del gradiente neural de realimentación.
 class RevealAnswerCard extends StatefulWidget {
   final Widget question;
   final Widget answer;
@@ -14,7 +14,7 @@ class RevealAnswerCard extends StatefulWidget {
     super.key,
     required this.question,
     required this.answer,
-    this.instruction = 'MantÃ©n presionado para revelar',
+    this.instruction = 'Mantén presionado para revelar',
   });
 
   @override
@@ -104,12 +104,12 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
                     widget.question,
                     const SizedBox(height: 12),
 
-                    // LÃ³gica del gatillo de revelaciÃ³n
+                    // Lógica del gatillo de revelación
                     if (!_isRevealed)
                       GestureDetector(
                         onLongPress: _reveal,
                         onTap:
-                            _reveal, // TambiÃ©n permitimos tap simple para accesibilidad
+                            _reveal, // También permitimos tap simple para accesibilidad
                         child: AnimatedContainer(
                           duration: const Duration(milliseconds: 200),
                           width: double.infinity,
