@@ -1,4 +1,4 @@
-﻿import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -29,6 +29,9 @@ class AuthService extends ChangeNotifier {
 
   bool _isAuthorized = false;
   bool get isAuthorized => _isAuthorized;
+
+  bool _psico = false;
+  bool get psico => _psico;
 
   String? _error;
   String? get error => _error;
@@ -129,6 +132,7 @@ class AuthService extends ChangeNotifier {
   /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
+    _psico = false;
     await _googleSignIn.signOut();
     await _auth.signOut();
     notifyListeners();
@@ -151,7 +155,10 @@ class AuthService extends ChangeNotifier {
           .get();
       if (doc.exists) {
         final data = doc.data();
-        if (data != null && _checkIsPaid(data)) return true;
+        if (data != null && _checkIsPaid(data)) {
+          _psico = _checkPsicoAccess(data);
+          return true;
+        }
       }
 
       // 2. Try lowercase email as document ID
@@ -161,7 +168,10 @@ class AuthService extends ChangeNotifier {
           .get();
       if (doc.exists) {
         final data = doc.data();
-        if (data != null && _checkIsPaid(data)) return true;
+        if (data != null && _checkIsPaid(data)) {
+          _psico = _checkPsicoAccess(data);
+          return true;
+        }
       }
 
       // 3. Try query by 'email' field (exact match)
@@ -171,7 +181,10 @@ class AuthService extends ChangeNotifier {
           .get();
       if (query.docs.isNotEmpty) {
         final data = query.docs.first.data();
-        if (_checkIsPaid(data)) return true;
+        if (_checkIsPaid(data)) {
+          _psico = _checkPsicoAccess(data);
+          return true;
+        }
       }
 
       // 4. Try query by 'email' field (lowercase match)
@@ -181,7 +194,10 @@ class AuthService extends ChangeNotifier {
           .get();
       if (query.docs.isNotEmpty) {
         final data = query.docs.first.data();
-        if (_checkIsPaid(data)) return true;
+        if (_checkIsPaid(data)) {
+          _psico = _checkPsicoAccess(data);
+          return true;
+        }
       }
 
       return false;
@@ -200,6 +216,18 @@ class AuthService extends ChangeNotifier {
       return s == 'true' || s == 'yes' || s == 'si' || s == 'sí' || s == '1';
     }
     if (isPaid is num) return isPaid == 1;
+    return false;
+  }
+
+  bool _checkPsicoAccess(Map<String, dynamic> data) {
+    final hasAccess = data['psico'];
+    if (hasAccess == null) return false;
+    if (hasAccess is bool) return hasAccess;
+    if (hasAccess is String) {
+      final s = hasAccess.toLowerCase().trim();
+      return s == 'true' || s == 'yes' || s == 'si' || s == 'sí' || s == '1';
+    }
+    if (hasAccess is num) return hasAccess == 1;
     return false;
   }
 

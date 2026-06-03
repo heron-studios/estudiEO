@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -163,10 +162,10 @@ class _BlobPainter extends CustomPainter {
   }) {
     // Aplicamos el blur nativamente en el pincel. Esto elimina la necesidad
     // de un BackdropFilter costoso sobre toda la pantalla.
-    final blurSigma = kIsWeb ? 30.0 : 80.0;
+    const blurSigma = kIsWeb ? 30.0 : 80.0;
     final paint = Paint()
       ..color = color
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma);
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, blurSigma);
     canvas.drawCircle(center, radius, paint);
   }
 
@@ -245,7 +244,7 @@ class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProvi
         widget.purple,
         widget.pink,
       ];
-      final particleCount = kIsWeb ? 25 : 60; // Menos partículas en web para evitar lag
+      const particleCount = kIsWeb ? 25 : 60; // Menos partículas en web para evitar lag
       for (int i = 0; i < particleCount; i++) {
         _particles.add(_Particle(
           x: random.nextDouble() * size.width,

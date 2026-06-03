@@ -105,15 +105,24 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
       _questionType = typeRand < 5 ? QuestionType.symbolToName : QuestionType.nameToSymbol;
     } else if (difficultyLevel == 1) {
       // Medium level: add atomic number
-      if (typeRand < 4) _questionType = QuestionType.symbolToName;
-      else if (typeRand < 8) _questionType = QuestionType.nameToSymbol;
-      else _questionType = QuestionType.atomicNumber;
+      if (typeRand < 4) {
+        _questionType = QuestionType.symbolToName;
+      } else if (typeRand < 8) {
+        _questionType = QuestionType.nameToSymbol;
+      } else {
+        _questionType = QuestionType.atomicNumber;
+      }
     } else {
       // Hard level: add families
-      if (typeRand < 3) _questionType = QuestionType.symbolToName;
-      else if (typeRand < 6) _questionType = QuestionType.nameToSymbol;
-      else if (typeRand < 8) _questionType = QuestionType.atomicNumber;
-      else _questionType = QuestionType.family;
+      if (typeRand < 3) {
+        _questionType = QuestionType.symbolToName;
+      } else if (typeRand < 6) {
+        _questionType = QuestionType.nameToSymbol;
+      } else if (typeRand < 8) {
+        _questionType = QuestionType.atomicNumber;
+      } else {
+        _questionType = QuestionType.family;
+      }
     }
     
     // Filter elements based on difficulty? We can just pick randomly for now, 
@@ -251,7 +260,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
   }
 
   String _getHint(ChemicalElement correct, String wrong) {
-    String msg = "";
+    String msg = '';
     switch (_questionType) {
       case QuestionType.symbolToName:
         msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
@@ -312,8 +321,8 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
       return _buildGameOverScreen(nt);
     }
 
-    String promptText = "";
-    String hintText = "";
+    String promptText = '';
+    String hintText = '';
     
     switch (_questionType) {
       case QuestionType.symbolToName:

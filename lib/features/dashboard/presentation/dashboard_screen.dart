@@ -27,8 +27,6 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final nt = NeuralTheme.of(context);
-
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -186,7 +184,7 @@ class _GeneralStats extends StatelessWidget {
 //  _AlipioAdviceSection — Consejo IA dinámico
 // ─────────────────────────────────────────────────────────────────────────────
 class _AlipioAdviceSection extends StatefulWidget {
-  const _AlipioAdviceSection({super.key});
+  const _AlipioAdviceSection();
 
   @override
   State<_AlipioAdviceSection> createState() => _AlipioAdviceSectionState();
@@ -234,7 +232,7 @@ class _AlipioAdviceSectionState extends State<_AlipioAdviceSection> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('🤖', style: const TextStyle(fontSize: 32)),
+            const Text('🤖', style: TextStyle(fontSize: 32)),
             const SizedBox(width: 16),
             Expanded(
               child: _isLoading

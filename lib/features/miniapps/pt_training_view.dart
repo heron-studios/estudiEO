@@ -147,7 +147,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
   }
 
   String _getHint(ChemicalElement correct, String wrong) {
-    String msg = "";
+    String msg = '';
     switch (_questionType) {
       case QuestionType.symbolToName:
         msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
@@ -194,7 +194,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
     }
 
     if (_lives <= 0) {
-      msg += "\n\n💀 ¡Te has quedado sin vidas!";
+      msg += '\n\n💀 ¡Te has quedado sin vidas!';
     }
 
     return msg;
@@ -218,8 +218,8 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
       return _buildGameOverScreen(nt);
     }
 
-    String promptText = "";
-    String hintText = "";
+    String promptText = '';
+    String hintText = '';
     
     switch (_questionType) {
       case QuestionType.symbolToName:

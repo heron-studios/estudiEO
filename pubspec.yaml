@@ -76,6 +76,7 @@ flutter:
     - assets/images/bg_escuela.jpg
     - assets/icon.png
     - assets/audio/
+    - assets/data/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

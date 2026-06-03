@@ -26,31 +26,6 @@ class AppShell extends StatelessWidget {
     if (!isDesktop) {
       return Scaffold(
         backgroundColor: nt.background,
-        appBar: AppBar(
-          toolbarHeight: 48,
-          backgroundColor: nt.surfaceCard,
-          elevation: 0,
-          title: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('🔥', style: TextStyle(fontSize: 20)),
-              const SizedBox(width: 6),
-              Consumer<GamificationProvider>(
-                builder: (context, gamification, _) {
-                  return Text(
-                    '${gamification.streak}',
-                    style: TextStyle(
-                      color: nt.warningAmber,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-          centerTitle: true,
-        ),
         body: NeuralBackgroundWrapper(child: navigationShell),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: nt.surfaceCard,

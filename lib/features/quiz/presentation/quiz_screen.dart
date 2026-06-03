@@ -126,7 +126,7 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Future<void> _askAlipio(Question question, int selected) async {
-    final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : "Ninguna";
+    final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : 'Ninguna';
     final respCorrecta = question.options[question.correctAnswer];
     
     showDialog(
@@ -146,14 +146,14 @@ class _QuizScreenState extends State<QuizScreen> {
         builder: (ctx) => AlertDialog(
           backgroundColor: NeuralDesignSystem.surfaceCard,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: Row(
+          title: const Row(
             children: [
-              const Text('💡', style: TextStyle(fontSize: 24)),
-              const SizedBox(width: 8),
+              Text('💡', style: TextStyle(fontSize: 24)),
+              SizedBox(width: 8),
               Expanded(
                 child: Text(
                   'Alipio dice:',
-                  style: const TextStyle(color: Colors.white, fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Colors.white, fontFamily: 'Outfit', fontWeight: FontWeight.bold),
                 ),
               ),
             ],

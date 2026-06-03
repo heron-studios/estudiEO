@@ -37,7 +37,9 @@ class AudioService extends ChangeNotifier {
     }
   }
 
+  @override
   void dispose() {
     _player.dispose();
+    super.dispose();
   }
 }

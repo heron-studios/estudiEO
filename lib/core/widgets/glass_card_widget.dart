@@ -141,6 +141,7 @@ class StaticGlassContainer extends StatelessWidget {
   final BorderRadius borderRadius;
   final double blur;
   final double? opacity;
+  final Color? borderColor;
 
   const StaticGlassContainer({
     super.key,
@@ -149,6 +150,7 @@ class StaticGlassContainer extends StatelessWidget {
     this.borderRadius = const BorderRadius.all(Radius.circular(20)),
     this.blur = 15.0,
     this.opacity,
+    this.borderColor,
   });
 
   @override
@@ -162,7 +164,7 @@ class StaticGlassContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: nt.surfaceCard.withValues(alpha: effectiveOpacity),
         borderRadius: borderRadius,
-        border: Border.all(color: nt.borderSubtle, width: 1.0),
+        border: Border.all(color: borderColor ?? nt.borderSubtle, width: 1.0),
       ),
       child: child,
     );

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 
@@ -10,12 +11,12 @@ void main() {
       for (var q in questions) {
         final answer = q.options[q.correctAnswer].trim();
         if (answer == 'Correcta' || answer == 'Opción A' || answer == 'Opción B') {
-          print('Dummy answer text: "$answer" for ${q.id} in ${s.id}');
+          debugPrint('Dummy answer text: "$answer" for ${q.id} in ${s.id}');
           dummyCount++;
         }
       }
     }
-    print('Found $dummyCount dummy answers.');
+    debugPrint('Found $dummyCount dummy answers.');
     expect(dummyCount, 0, reason: 'Found dummy answers.');
   });
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
+import 'package:learn/features/dashboard/presentation/dashboard_screen.dart';
+import 'package:learn/features/interview/presentation/interview_screen.dart';
 
 // Screens
 import 'package:learn/features/home/presentation/app_shell.dart';
@@ -15,7 +17,6 @@ import 'package:learn/features/exam/presentation/exam_screen.dart';
 import 'package:learn/features/exam/presentation/exam_results_screen.dart';
 import 'package:learn/features/quiz/presentation/quiz_screen.dart';
 import 'package:learn/features/quiz/presentation/quiz_results_screen.dart';
-import 'package:learn/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:learn/features/srs/presentation/srs_review_screen.dart';
 import 'package:learn/features/srs/presentation/srs_mini_quiz_screen.dart';
 import 'package:learn/features/settings/presentation/settings_screen.dart';
@@ -30,7 +31,11 @@ import 'package:learn/features/miniapps/anp_master/presentation/anp_master_scree
 import 'package:learn/features/miniapps/anp_master/presentation/anp_map_view.dart';
 import 'package:learn/features/miniapps/anp_master/presentation/anp_flashcards_view.dart';
 import 'package:learn/features/miniapps/anp_master/presentation/anp_quiz_view.dart';
-
+import 'package:learn/features/psicolearn/presentation/psicolearn_screen.dart';
+import 'package:learn/features/psicolearn/presentation/simulator_screen.dart';
+import 'package:learn/features/psicolearn/presentation/re_entrenamiento_screen.dart';
+import 'package:learn/features/psicolearn/presentation/silogismos_screen.dart';
+import 'package:learn/features/miniapps/productos_notables/presentation/productos_notables_screen.dart';
 class AppRouter {
   static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
     return GoRouter(
@@ -214,6 +219,10 @@ class AppRouter {
           builder: (context, state) => const PeriodicTableScreen(),
         ),
         GoRoute(
+          path: '/miniapps/silogismos',
+          builder: (context, state) => const SilogismosScreen(),
+        ),
+        GoRoute(
           path: '/miniapps/anp-master',
           builder: (context, state) => const ANPMasterScreen(),
         ),
@@ -228,6 +237,30 @@ class AppRouter {
         GoRoute(
           path: '/miniapps/anp-master/quiz',
           builder: (context, state) => const ANPQuizView(),
+        ),
+        GoRoute(
+          path: '/miniapps/productos-notables',
+          builder: (context, state) => const ProductosNotablesScreen(),
+        ),
+        GoRoute(
+          path: '/psicolearn',
+          builder: (context, state) => const PsicoLearnScreen(),
+        ),
+        GoRoute(
+          path: '/psicolearn/simulator',
+          builder: (context, state) => const SimulatorScreen(),
+        ),
+        GoRoute(
+          path: '/psicolearn/re-entrenamiento',
+          builder: (context, state) => const ReEntrenamientoScreen(),
+        ),
+        GoRoute(
+          path: '/psicolearn/razonamiento',
+          builder: (context, state) => const SilogismosScreen(),
+        ),
+        GoRoute(
+          path: '/psicolearn/entrevista',
+          builder: (context, state) => const InterviewScreen(),
         ),
       ],
     );

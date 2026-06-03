@@ -358,6 +358,162 @@ class LocalStorageService {
     }
   }
 
+  static const String psicolearnLastCompletedDateKey = 'psicolearn_last_completed_date';
+  static const String psicolearnStreakKey = 'psicolearn_streak';
+  static const String psicolearnCurrentIndexKey = 'psicolearn_current_index';
+  static const String psicolearnCurrentIndexDateKey = 'psicolearn_current_index_date';
+  static const String psicolearnDailyMissionIdsKey = 'psicolearn_daily_mission_ids';
+  static const String psicolearnDailyMissionDateKey = 'psicolearn_daily_mission_date';
+
+  // ─── PsicoLearn Progress ─────────────────────────────────────────────
+
+  List<int>? getPsicoDailyMissionIds() {
+    try {
+      final dateRaw = _storage.get(psicolearnDailyMissionDateKey);
+      if (dateRaw != null) {
+        final date = DateTime.parse(dateRaw.toString());
+        final now = DateTime.now();
+        if (now.year == date.year && now.month == date.month && now.day == date.day) {
+          final data = _storage.get(psicolearnDailyMissionIdsKey) as List?;
+          if (data != null) {
+            return data.map((e) => int.tryParse(e.toString()) ?? -1).where((id) => id != -1).toList();
+          }
+        }
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  void savePsicoDailyMissionIds(List<int> ids) {
+    try {
+      _storage.put(psicolearnDailyMissionIdsKey, ids);
+      _storage.put(psicolearnDailyMissionDateKey, DateTime.now().toIso8601String());
+    } catch (_) {}
+  }
+
+  void clearPsicoDailyMissionIds() {
+    try {
+      _storage.delete(psicolearnDailyMissionIdsKey);
+      _storage.delete(psicolearnDailyMissionDateKey);
+    } catch (_) {}
+  }
+
+  int getPsicoMissionCurrentIndex() {
+    try {
+      final dateRaw = _storage.get(psicolearnCurrentIndexDateKey);
+      if (dateRaw != null) {
+        final date = DateTime.parse(dateRaw.toString());
+        final now = DateTime.now();
+        if (now.year == date.year && now.month == date.month && now.day == date.day) {
+          return _storage.get(psicolearnCurrentIndexKey) as int? ?? 0;
+        }
+      }
+      return 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  void savePsicoMissionCurrentIndex(int index) {
+    try {
+      _storage.put(psicolearnCurrentIndexKey, index);
+      _storage.put(psicolearnCurrentIndexDateKey, DateTime.now().toIso8601String());
+    } catch (_) {}
+  }
+
+  void markPsicoMissionCompleted() {
+    try {
+      final now = DateTime.now();
+      final lastCompletedRaw = _storage.get(psicolearnLastCompletedDateKey);
+      int streak = _storage.get(psicolearnStreakKey) as int? ?? 0;
+
+      if (lastCompletedRaw != null) {
+        final lastCompleted = DateTime.parse(lastCompletedRaw.toString());
+        
+        // Use year/month/day to check if it was yesterday
+        final yesterday = DateTime(now.year, now.month, now.day).subtract(const Duration(days: 1));
+        final lastCompletedDate = DateTime(lastCompleted.year, lastCompleted.month, lastCompleted.day);
+        
+        if (lastCompletedDate == yesterday) {
+          // Increment streak
+          streak++;
+        } else if (lastCompletedDate.isBefore(yesterday)) {
+          // Reset streak
+          streak = 1;
+        }
+        // if today, do nothing to streak
+      } else {
+        streak = 1;
+      }
+
+      _storage.put(psicolearnStreakKey, streak);
+      _storage.put(psicolearnLastCompletedDateKey, now.toIso8601String());
+      clearPsicoDailyMissionIds();
+    } catch (e) {
+      debugPrint('Error marking psico mission completed: $e');
+    }
+  }
+
+  Map<String, dynamic> getPsicoProgress() {
+    try {
+      final streak = _storage.get(psicolearnStreakKey) as int? ?? 0;
+      final lastCompletedRaw = _storage.get(psicolearnLastCompletedDateKey);
+      bool todayCompleted = false;
+      
+      if (lastCompletedRaw != null) {
+        final lastCompleted = DateTime.parse(lastCompletedRaw.toString());
+        final now = DateTime.now();
+        if (now.year == lastCompleted.year && now.month == lastCompleted.month && now.day == lastCompleted.day) {
+          todayCompleted = true;
+        }
+      }
+      return {
+        'streak': streak,
+        'todayCompleted': todayCompleted,
+      };
+    } catch (e) {
+      debugPrint('Error getting psico progress: $e');
+      return {
+        'streak': 0,
+        'todayCompleted': false,
+      };
+    }
+  }
+
+  // ─── PsicoLearn Re Entrenamiento ──────────────────────────────────────────
+
+  static const String psicolearnFailedQuestionsKey = 'psicolearn_failed_questions';
+
+  List<int> getFailedPsicoQuestionIds() {
+    try {
+      final data = _storage.get(psicolearnFailedQuestionsKey) as List?;
+      if (data == null) return [];
+      return data.map((e) => int.tryParse(e.toString()) ?? -1).where((id) => id != -1).toList();
+    } catch (_) {
+      return [];
+    }
+  }
+
+  void addFailedPsicoQuestion(int id) {
+    try {
+      final ids = getFailedPsicoQuestionIds();
+      if (!ids.contains(id)) {
+        ids.add(id);
+        _storage.put(psicolearnFailedQuestionsKey, ids);
+      }
+    } catch (_) {}
+  }
+
+  void removeFailedPsicoQuestion(int id) {
+    try {
+      final ids = getFailedPsicoQuestionIds();
+      if (ids.contains(id)) {
+        ids.remove(id);
+        _storage.put(psicolearnFailedQuestionsKey, ids);
+      }
+    } catch (_) {}
+  }
+
   // ─── Utility ───────────────────────────────────────————————————————————————————————————
 
   void clearAll() {
@@ -419,5 +575,18 @@ class LocalStorageService {
     } catch (e) {
       debugPrint('Error applying data bundle: $e');
     }
+  }
+
+  List<String> getInterviewMasteredQuestions() {
+    final data = _storage.get('interview_mastered') as List?;
+    return data?.map((e) => e.toString()).toList() ?? [];
+  }
+
+  void saveInterviewMasteredQuestions(List<String> mastered) {
+    _storage.put('interview_mastered', mastered);
+  }
+
+  bool getInterviewRealismMode() {
+    return _storage.get('interview_realism_mode', defaultValue: false) as bool;
   }
 }
