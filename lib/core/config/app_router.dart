@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
@@ -7,6 +7,8 @@ import 'package:learn/models/learning_level.dart';
 import 'package:learn/features/home/presentation/app_shell.dart';
 import 'package:learn/features/home/presentation/home_screen.dart';
 import 'package:learn/features/auth/presentation/login_screen.dart';
+import 'package:learn/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/features/learning/presentation/subject_gallery_screen.dart';
 import 'package:learn/features/learning/presentation/topic_gallery_screen.dart';
 import 'package:learn/features/exam/presentation/exam_screen.dart';
@@ -30,7 +32,7 @@ import 'package:learn/features/miniapps/anp_master/presentation/anp_flashcards_v
 import 'package:learn/features/miniapps/anp_master/presentation/anp_quiz_view.dart';
 
 class AppRouter {
-  static GoRouter createRouter(AuthService authService) {
+  static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
     return GoRouter(
       initialLocation: '/home',
       refreshListenable: authService,
@@ -38,13 +40,19 @@ class AppRouter {
         final isAuth = authService.currentUser != null;
         final isAuthorized = authService.isAuthorized;
         final isInitializing = authService.isInitializing;
+        final hasSeenOnboarding = storageService.loadHasSeenOnboarding();
         
         final isLoggingIn = state.matchedLocation == '/login';
         final isPayment = state.matchedLocation == '/payment';
         final isLoading = state.matchedLocation == '/loading';
+        final isOnboarding = state.matchedLocation == '/onboarding';
 
         if (isInitializing) {
           return isLoading ? null : '/loading';
+        }
+
+        if (!hasSeenOnboarding) {
+          return isOnboarding ? null : '/onboarding';
         }
 
         if (!isAuth) {
@@ -55,7 +63,7 @@ class AppRouter {
           return isPayment ? null : '/payment';
         }
 
-        if (isAuth && isAuthorized && (isLoggingIn || isPayment || isLoading)) {
+        if (isAuth && isAuthorized && (isLoggingIn || isPayment || isLoading || isOnboarding)) {
           return '/home';
         }
 
@@ -70,6 +78,10 @@ class AppRouter {
               child: CircularProgressIndicator(color: Color(0xFF3B82F6)),
             ),
           ),
+        ),
+        GoRoute(
+          path: '/onboarding',
+          builder: (context, state) => const OnboardingScreen(),
         ),
         GoRoute(
           path: '/login',

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:confetti/confetti.dart';
 
 class SrsMiniQuizScreen extends StatefulWidget {
   final List<String> questionIds;
@@ -25,6 +26,9 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
   bool _repeatCorrect = false; 
   bool _isStrictMode = true;
 
+  late ConfettiController _confettiController;
+  bool _confettiPlayed = false;
+
   static const _bg = Color(0xFF0F172A);
   static const _cardBg = Color(0xFF1E293B);
   static const _border = Color(0xFF334155);
@@ -39,6 +43,13 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
     super.initState();
     _loadQuestions();
     _isStrictMode = context.read<LocalStorageService>().loadStrictMode();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+  }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
   }
 
   void _loadQuestions() {
@@ -117,6 +128,7 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
       _selectedAnswer = -1;
       _answers.clear();
       _isFinished = false;
+      _confettiPlayed = false;
       _questions.shuffle(); // Reshuffle for retry
     });
   }
@@ -245,13 +257,21 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
     final score = (correctCount / total) * 20; // Nota sobre 20
     final passed = !_isStrictMode || score > 11;
 
+    if (passed && !_confettiPlayed) {
+      _confettiPlayed = true;
+      _confettiController.play();
+    }
+
     return Scaffold(
       backgroundColor: _bg,
       body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 500),
-            child: Padding(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -410,7 +430,20 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
           ),
         ),
       ),
-    ),
-  );
+      Align(
+        alignment: Alignment.topCenter,
+        child: ConfettiWidget(
+          confettiController: _confettiController,
+          blastDirectionality: BlastDirectionality.explosive,
+          shouldLoop: false,
+          colors: const [Colors.green, Colors.blue, Colors.pink, Colors.orange, Colors.purple],
+          numberOfParticles: 40,
+          gravity: 0.1,
+        ),
+      ),
+    ],
+  ),
+),
+);
 }
 }

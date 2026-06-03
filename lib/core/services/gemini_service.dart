@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:learn/core/config/app_config.dart';
 
@@ -18,6 +18,22 @@ class GeminiService {
         'Sé creativo, claro y directo. No repitas la pregunta ni la respuesta textual.';
 
     final userPrompt = 'Pregunta: $pregunta\nRespuesta: $respuesta';
+
+    return _callGemini(systemPrompt, userPrompt);
+  }
+
+  /// Genera un consejo breve y motivador basado en el progreso actual del usuario.
+  static Future<String> darConsejoPersonalizado(Map<String, dynamic> stats) async {
+    const systemPrompt =
+        'Eres Alipio, un tutor de Inteligencia Artificial para postulantes a la EO PNP. '
+        'Recibirás estadísticas del estudiante (tarjetas nuevas, aprendiendo, dominadas, por revisar). '
+        'Tu tarea es dar un consejo ultra-corto (máximo 2 líneas) y motivador. '
+        'Si hay muchas tarjetas "por revisar", motívalo a repasarlas. Si hay muchas "dominadas", felicítalo. '
+        'Usa un tono directo, militar, pero amigable.';
+
+    final userPrompt = 
+        'Nuevas: ${stats['new']}, Aprendiendo: ${stats['learning']}, '
+        'Dominadas: ${stats['mastered']}, Por revisar: ${stats['overdue']}';
 
     return _callGemini(systemPrompt, userPrompt);
   }

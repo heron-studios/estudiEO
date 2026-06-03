@@ -109,7 +109,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _router = AppRouter.createRouter(context.read<AuthService>());
+    _router = AppRouter.createRouter(context.read<AuthService>(), context.read<LocalStorageService>());
   }
 
   @override

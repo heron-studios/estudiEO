@@ -14,6 +14,7 @@ class LocalStorageService {
   static const String alipioEnabledKey = 'alipio_enabled';
   static const String hiddenSubjectsKey = 'hidden_subjects';
   static const String learnedQuestionsKey = 'learned_questions';
+  static const String hasSeenOnboardingKey = 'has_seen_onboarding';
   static const String strictModeKey = 'srs_strict_mode';
   static const String learningSessionsKey = 'learning_sessions';
   static const String learningProgressKey = 'learning_progress';
@@ -173,6 +174,15 @@ class LocalStorageService {
 
   void saveAlipioEnabled(bool value) {
     _storage.put(alipioEnabledKey, value);
+  }
+
+  // ─── Onboarding setting ──────────────────────────────
+  bool loadHasSeenOnboarding() {
+    return _storage.get(hasSeenOnboardingKey) as bool? ?? false;
+  }
+
+  void saveHasSeenOnboarding(bool value) {
+    _storage.put(hasSeenOnboardingKey, value);
   }
 
   // ─── Strict Mode setting ───────────────────────────

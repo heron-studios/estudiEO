@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:confetti/confetti.dart';
+import 'package:go_router/go_router.dart';
 
-class ExamResultsScreen extends StatelessWidget {
+class ExamResultsScreen extends StatefulWidget {
   const ExamResultsScreen({super.key});
 
   @override
+  State<ExamResultsScreen> createState() => _ExamResultsScreenState();
+}
+
+class _ExamResultsScreenState extends State<ExamResultsScreen> {
+  late ConfettiController _confettiController;
+  bool _initialized = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
+  }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    final score = args['score'] as int;
-    final total = args['total'] as int;
-    final timeSpent = args['timeSpent'] as int;
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? 
+                 GoRouterState.of(context).extra as Map<String, dynamic>? ?? {};
+    final score = args['score'] as int? ?? 0;
+    final total = args['total'] as int? ?? 1;
+    final timeSpent = args['timeSpent'] as int? ?? 0;
 
     final percentage = (score / total) * 100;
+    
+    if (!_initialized && percentage >= 60) {
+      _initialized = true;
+      _confettiController.play();
+    }
     
     // Format time
     final h = timeSpent ~/ 3600;
@@ -35,12 +63,15 @@ class ExamResultsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 500),
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
@@ -107,7 +138,7 @@ class ExamResultsScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 56,
                     child: ElevatedButton(
-                      onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/home', (_) => false),
+                      onPressed: () => context.go('/home'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF3B82F6),
                         foregroundColor: Colors.white,
@@ -121,7 +152,20 @@ class ExamResultsScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+        Align(
+          alignment: Alignment.topCenter,
+          child: ConfettiWidget(
+            confettiController: _confettiController,
+            blastDirectionality: BlastDirectionality.explosive,
+            shouldLoop: false,
+            colors: const [Colors.green, Colors.blue, Colors.pink, Colors.orange, Colors.purple],
+            numberOfParticles: 50,
+            gravity: 0.1,
+          ),
+        ),
+      ],
+    ),
+  ),
+);
   }
 }

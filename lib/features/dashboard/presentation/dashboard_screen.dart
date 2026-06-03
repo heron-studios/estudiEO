@@ -7,6 +7,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
+import 'package:learn/core/services/gemini_service.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -51,6 +52,10 @@ class DashboardScreen extends StatelessWidget {
                     _SectionLabel('REPASO ESPACIADO'),
                     SizedBox(height: 12),
                     _GeneralStats(),
+                    SizedBox(height: 28),
+                    _SectionLabel('CONSEJO DE ALIPIO'),
+                    SizedBox(height: 12),
+                    _AlipioAdviceSection(),
                     SizedBox(height: 28),
                     _SectionLabel('POR ASIGNATURA'),
                     SizedBox(height: 12),
@@ -176,6 +181,80 @@ class _GeneralStats extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  _AlipioAdviceSection — Consejo IA dinámico
+// ─────────────────────────────────────────────────────────────────────────────
+class _AlipioAdviceSection extends StatefulWidget {
+  const _AlipioAdviceSection({super.key});
+
+  @override
+  State<_AlipioAdviceSection> createState() => _AlipioAdviceSectionState();
+}
+
+class _AlipioAdviceSectionState extends State<_AlipioAdviceSection> {
+  String _advice = 'Cargando consejo...';
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchAdvice();
+  }
+
+  Future<void> _fetchAdvice() async {
+    final srs = context.read<SrsProvider>();
+    final stats = srs.globalStats;
+    try {
+      final advice = await GeminiService.darConsejoPersonalizado(stats);
+      if (mounted) {
+        setState(() {
+          _advice = advice;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _advice = 'Alipio está descansando. ¡Sigue estudiando duro!';
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final nt = NeuralTheme.of(context);
+    
+    return StaticGlassContainer(
+      borderRadius: BorderRadius.circular(20),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('🤖', style: const TextStyle(fontSize: 32)),
+            const SizedBox(width: 16),
+            Expanded(
+              child: _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : Text(
+                      _advice,
+                      style: TextStyle(
+                        color: nt.textPrimary,
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
+                        height: 1.4,
+                      ),
+                    ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
