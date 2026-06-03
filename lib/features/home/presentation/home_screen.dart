@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
@@ -299,7 +299,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text('Mini Apps', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
                   SizedBox(height: 2),
-                  Text('Juegos y Herramientas (Tabla PeriÃ³dica)', style: TextStyle(color: Colors.white60, fontSize: 12)),
+                  Text('Juegos y Herramientas', style: TextStyle(color: Colors.white60, fontSize: 12)),
                 ],
               ),
             ),
