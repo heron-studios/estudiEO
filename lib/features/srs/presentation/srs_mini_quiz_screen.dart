@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/providers/subject_provider.dart';
@@ -53,6 +54,13 @@ class _SrsMiniQuizScreenState extends State<SrsMiniQuizScreen> {
 
   void _answerQuestion(String questionId, int selectedIndex, int correctAnswer) async {
     final isCorrect = selectedIndex == correctAnswer;
+    
+    if (isCorrect) {
+      HapticFeedback.mediumImpact();
+    } else {
+      HapticFeedback.heavyImpact();
+    }
+
     setState(() {
       _selectedAnswer = selectedIndex;
       _answers[questionId] = isCorrect;

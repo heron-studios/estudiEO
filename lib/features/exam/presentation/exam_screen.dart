@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -64,6 +64,7 @@ class _ExamScreenState extends State<ExamScreen> {
   }
 
   void _answerQuestion(String qId, int selected) {
+    HapticFeedback.selectionClick();
     final wasAlreadyAnswered = _answers.containsKey(qId);
     setState(() {
       _answers[qId] = selected;

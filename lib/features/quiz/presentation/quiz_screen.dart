@@ -1,4 +1,4 @@
-﻿import 'dart:ui';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -76,6 +76,13 @@ class _QuizScreenState extends State<QuizScreen> {
     if (session == null || session.correctness.containsKey(questionId)) return;
 
     final isCorrect = selectedIndex == correctAnswer;
+    
+    if (isCorrect) {
+      HapticFeedback.mediumImpact();
+    } else {
+      HapticFeedback.heavyImpact();
+    }
+
     context.read<QuizProvider>().answerQuestion(questionId, selectedIndex, isCorrect);
     if (isCorrect) context.read<GamificationProvider>().addXp(10);
     context.read<SrsProvider>().processAnswer(
