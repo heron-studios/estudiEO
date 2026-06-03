@@ -93,6 +93,7 @@ class FallbackApp extends StatelessWidget {
         ),
       ),
     );
+  }
 }
 
 class MyApp extends StatefulWidget {
