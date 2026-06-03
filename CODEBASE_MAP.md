@@ -39,7 +39,7 @@ EstudiEO utiliza el patrón de diseño **Provider** para la gestión de estado d
 ```mermaid
 graph TD
     UI[Pantallas / UI Screens] -->|Consumen Estado / Notificaciones| Prov[Providers: Subject, Quiz, Srs, Gamification]
-    Prov -->|Acceden y Modifican| Local[LocalStorageService: GetStorage]
+    Prov -->|Acceden y Modifican| Local[LocalStorageService: Hive]
     Prov -->|Consultan Datos Copiados| Repo[SubjectsRepository]
     UI -->|Sign-in / Sign-out / Firestore| Auth[AuthService]
     Auth -->|Guarda e Inicializa| Firebase[Firebase Auth / Firestore]
@@ -53,7 +53,7 @@ graph TD
 
 ### 2. Capa de Servicios
 - **`AuthService`**: Implementa `GoogleSignIn` y `FirebaseAuth`. Consulta en Firestore si el correo del postulante posee el valor `isPaid = true` en `/authorized_users/{correo}`. Si no lo tiene, es bloqueado con el diálogo de WhatsApp en el Login.
-- **`LocalStorageService`**: Gestiona el guardado permanente y lectura en memoria rápida a través de `GetStorage`. Cuenta con una política estricta de vaciado de caché (`_srsCache = null`) en su método `clearAll()` para evitar fugas de memoria.
+- **`LocalStorageService`**: Gestiona el guardado permanente y lectura en memoria rápida a través de `Hive`. Cuenta con una política estricta de vaciado de caché (`_srsCache = null`) en su método `clearAll()` para evitar fugas de memoria.
 - **`GeminiService`**: Invoca el modelo de IA de Gemini (`gemini-2.0-flash`) para que el tutor virtual *Alipio* explique y genere trucos memotécnicos de las tarjetas del postulante.
 
 ---

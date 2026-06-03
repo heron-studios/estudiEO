@@ -7,7 +7,7 @@
 - 📚 7 Asignaturas principales
 - 🎯 Sistema de Repetición Espaciada (SRS)
 - 🎮 Gamificación con niveles, XP y rachas
-- 💾 Persistencia local con GetStorage
+- 💾 Persistencia local con Hive
 - 📊 Dashboard de progreso
 - 📝 Quizzes interactivos
 
@@ -56,7 +56,7 @@ lib/
 
 - **Flutter 3.11+**: Framework
 - **Provider 6.0+**: State Management
-- **GetStorage 2.1+**: Persistencia local
+- **Hive 2.2+**: Persistencia local
 - **UUID 4.0+**: Generación de IDs únicos
 
 ## 📦 Dependencias
@@ -65,7 +65,8 @@ lib/
 dependencies:
   flutter:
     sdk: flutter
-  get_storage: ^2.1.1
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
   provider: ^6.1.0
   intl: ^0.19.0
   uuid: ^4.0.0
@@ -153,7 +154,7 @@ flutter build ios --release
 - Progreso visual por asignatura
 
 ### Persistencia Local
-- Almacenamiento completo en GetStorage
+- Almacenamiento completo en Hive
 - Sincronización de datos automática
 - Backup de progreso
 - Sin requiere conexión a internet
@@ -187,7 +188,7 @@ flutter build ios --release
 ## 🔄 Flujo de Datos
 
 ```
-LocalStorageService (GetStorage)
+LocalStorageService (Hive)
     ↓
 ├─ SrsProvider (SrsEngine)
 ├─ GamificationProvider
@@ -229,7 +230,7 @@ Cada pregunta tiene una tarjeta SRS con:
 ## 🐛 Solución de Problemas
 
 ### La app no guarda datos
-- Verifica que GetStorage esté inicializado en main.dart
+- Verifica que Hive esté inicializado en main.dart
 - Comprueba permisos de almacenamiento
 
 ### Las preguntas no aparecen
@@ -265,7 +266,7 @@ final List<Question> nuevasPreguntas = [
 
 - Todos los datos se guardan localmente
 - No hay envío de datos a servidores externos
-- GetStorage usa almacenamiento encriptado en iOS
+- Hive provee persistencia eficiente
 - En Android, usa SharedPreferences con opciones de seguridad
 
 ## 📄 Licencia
