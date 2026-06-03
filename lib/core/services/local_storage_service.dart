@@ -16,6 +16,7 @@ class LocalStorageService {
   static const String learnedQuestionsKey = 'learned_questions';
   static const String hasSeenOnboardingKey = 'has_seen_onboarding';
   static const String strictModeKey = 'srs_strict_mode';
+  static const String sfxMutedKey = 'sfx_muted';
   static const String learningSessionsKey = 'learning_sessions';
   static const String learningProgressKey = 'learning_progress';
   static const String lastActiveLearningSessionKey = 'last_active_learning_session';
@@ -192,6 +193,15 @@ class LocalStorageService {
 
   void saveStrictMode(bool value) {
     _storage.put(strictModeKey, value);
+  }
+
+  // ─── SFX Muted setting ─────────────────────────────
+  bool loadMuted() {
+    return _storage.get(sfxMutedKey) as bool? ?? false;
+  }
+
+  void saveMuted(bool value) {
+    _storage.put(sfxMutedKey, value);
   }
 
   // â”€â”€â”€ Hidden Subjects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

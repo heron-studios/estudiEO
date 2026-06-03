@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +11,7 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
+import 'package:learn/core/services/audio_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -338,6 +339,64 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             inactiveTrackColor: NeuralDesignSystem.background,
                           );
                         }).toList(),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+
+                // Section: Preferencias
+                Text(
+                  'PREFERENCIAS',
+                  style: TextStyle(
+                    color: _muted.withValues(alpha: 0.7),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1.5,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+                const SizedBox(height: 12),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(18),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: _cardBg.withValues(alpha: 0.6),
+                        borderRadius: BorderRadius.circular(18),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.08),
+                        ),
+                      ),
+                      child: Consumer<AudioService>(
+                        builder: (context, audioService, _) {
+                          return SwitchListTile(
+                            title: const Row(
+                              children: [
+                                Icon(Icons.volume_up_rounded, size: 20, color: _text),
+                                SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    'Efectos de sonido (SFX)',
+                                    style: TextStyle(
+                                      color: _text,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                      fontFamily: 'Inter',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            value: !audioService.isMuted,
+                            onChanged: (_) => audioService.toggleMute(),
+                            activeThumbColor: _blue,
+                            activeTrackColor: _blue.withValues(alpha: 0.3),
+                            inactiveThumbColor: _muted,
+                            inactiveTrackColor: NeuralDesignSystem.background,
+                          );
+                        }
                       ),
                     ),
                   ),

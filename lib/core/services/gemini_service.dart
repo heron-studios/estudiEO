@@ -38,6 +38,22 @@ class GeminiService {
     return _callGemini(systemPrompt, userPrompt);
   }
 
+  /// Explica por qué una respuesta es incorrecta y resalta la correcta.
+  static Future<String> explicarError(String pregunta, String respElegida, String respCorrecta) async {
+    const systemPrompt =
+        'Eres Alipio, tutor experto para postulantes PNP. '
+        'El estudiante falló una pregunta. Recibirás la pregunta, la respuesta que él eligió (incorrecta) y la respuesta correcta. '
+        'Tu tarea es explicar, en máximo 3-4 líneas claras, por qué su opción es incorrecta y por qué la correcta es la verdadera. '
+        'Sé empático, didáctico y fomenta el aprendizaje.';
+
+    final userPrompt = 
+        'Pregunta: $pregunta\n'
+        'El estudiante respondió: $respElegida\n'
+        'Respuesta correcta: $respCorrecta';
+
+    return _callGemini(systemPrompt, userPrompt);
+  }
+
   /// Llama a la API de Gemini con system + user prompt. Retorna el texto generado.
   static Future<String> _callGemini(String system, String user) async {
     final uri = Uri.parse('$_baseUrl?key=$_apiKey');

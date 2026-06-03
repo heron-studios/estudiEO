@@ -9,6 +9,7 @@ import 'package:learn/core/config/app_router.dart';
 import 'package:learn/firebase_options.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
@@ -35,6 +36,7 @@ void main() async {
       MultiProvider(
         providers: [
           Provider<LocalStorageService>.value(value: storageService),
+          ChangeNotifierProvider<AudioService>(create: (_) => AudioService(storageService)),
           ChangeNotifierProvider(create: (_) => AuthService()),
           ChangeNotifierProvider(create: (_) => SrsProvider(storageService)),
           ChangeNotifierProvider(

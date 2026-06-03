@@ -7,8 +7,10 @@ import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/question.dart';
+import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
+import 'package:learn/core/services/gemini_service.dart';
 import 'package:go_router/go_router.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -79,8 +81,10 @@ class _QuizScreenState extends State<QuizScreen> {
     
     if (isCorrect) {
       HapticFeedback.mediumImpact();
+      context.read<AudioService>().playCorrectSound();
     } else {
       HapticFeedback.heavyImpact();
+      context.read<AudioService>().playIncorrectSound();
     }
 
     context.read<QuizProvider>().answerQuestion(questionId, selectedIndex, isCorrect);
@@ -119,6 +123,54 @@ class _QuizScreenState extends State<QuizScreen> {
     Future.microtask(() {
       if (mounted) Navigator.pop(context);
     });
+  }
+
+  Future<void> _askAlipio(Question question, int selected) async {
+    final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : "Ninguna";
+    final respCorrecta = question.options[question.correctAnswer];
+    
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => const Center(
+        child: CircularProgressIndicator(color: NeuralDesignSystem.blueGoogle),
+      ),
+    );
+
+    final explanation = await GeminiService.explicarError(question.text, respElegida, respCorrecta);
+    
+    if (mounted) {
+      Navigator.pop(context); // close loading
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          backgroundColor: NeuralDesignSystem.surfaceCard,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          title: Row(
+            children: [
+              const Text('💡', style: TextStyle(fontSize: 24)),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Alipio dice:',
+                  style: const TextStyle(color: Colors.white, fontFamily: 'Outfit', fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+          content: Text(
+            explanation,
+            style: const TextStyle(color: NeuralDesignSystem.textPrimaryAlt, fontSize: 15, height: 1.5),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Entendido', style: TextStyle(color: NeuralDesignSystem.blueGoogle)),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   @override
@@ -482,6 +534,24 @@ class _QuizScreenState extends State<QuizScreen> {
                                     ),
                                   ],
                                 ),
+                              ),
+                            ),
+                          ),
+                        ],
+                        
+                        // Alipio Button for Wrong Answers
+                        if (isAnswered && _selectedAnswer != question.correctAnswer) ...[
+                          const SizedBox(height: 16),
+                          Center(
+                            child: OutlinedButton.icon(
+                              onPressed: () => _askAlipio(question, _selectedAnswer),
+                              icon: const Text('🤖', style: TextStyle(fontSize: 18)),
+                              label: const Text('Preguntar a Alipio por qué fallé'),
+                              style: OutlinedButton.styleFrom(
+                                foregroundColor: NeuralDesignSystem.blueGoogle,
+                                side: BorderSide(color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.5)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                               ),
                             ),
                           ),

@@ -1,8 +1,9 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/providers/gamification_provider.dart';
 
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -21,10 +22,34 @@ class AppShell extends StatelessWidget {
     final nt = NeuralTheme.of(context);
     final isDesktop = MediaQuery.of(context).size.width >= 800;
     
-    // Si estamos en mobile
     if (!isDesktop) {
       return Scaffold(
         backgroundColor: nt.background,
+        appBar: AppBar(
+          toolbarHeight: 48,
+          backgroundColor: nt.surfaceCard,
+          elevation: 0,
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('🔥', style: TextStyle(fontSize: 20)),
+              const SizedBox(width: 6),
+              Consumer<GamificationProvider>(
+                builder: (context, gamification, _) {
+                  return Text(
+                    '${gamification.streak}',
+                    style: TextStyle(
+                      color: nt.warningAmber,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+          centerTitle: true,
+        ),
         body: navigationShell,
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: nt.surfaceCard,
@@ -58,6 +83,34 @@ class AppShell extends StatelessWidget {
             unselectedLabelTextStyle: const TextStyle(color: Colors.white54),
             leading: Column(
               children: [
+                const SizedBox(height: 20),
+                Consumer<GamificationProvider>(
+                  builder: (context, gamification, _) {
+                    return Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: nt.warningAmber.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: nt.warningAmber.withValues(alpha: 0.3)),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text('🔥', style: TextStyle(fontSize: 16)),
+                          const SizedBox(width: 4),
+                          Text(
+                            '${gamification.streak}',
+                            style: TextStyle(
+                              color: nt.warningAmber,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
                 const SizedBox(height: 20),
                 Container(
                   width: 44,

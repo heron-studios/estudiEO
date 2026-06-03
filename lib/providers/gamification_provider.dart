@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:learn/models/gamification.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 
@@ -8,6 +8,8 @@ class GamificationProvider extends ChangeNotifier {
 
   GamificationProvider(this._storage) {
     _gamification = _storage.loadGamification();
+    _gamification.updateStreak();
+    _storage.saveGamification(_gamification);
   }
 
   Gamification get gamification => _gamification;

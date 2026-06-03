@@ -7,6 +7,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
+import 'package:learn/core/services/audio_service.dart';
 import 'package:go_router/go_router.dart';
 
 class ExamScreen extends StatefulWidget {
@@ -65,6 +66,7 @@ class _ExamScreenState extends State<ExamScreen> {
 
   void _answerQuestion(String qId, int selected) {
     HapticFeedback.selectionClick();
+    context.read<AudioService>().playCorrectSound(); // Un sonido genérico de clic/selección o correct para feedback
     final wasAlreadyAnswered = _answers.containsKey(qId);
     setState(() {
       _answers[qId] = selected;
