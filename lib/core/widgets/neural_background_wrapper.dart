@@ -1,4 +1,4 @@
-﻿import 'dart:ui' as ui;
+import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -74,17 +74,8 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             ),
           ),
 
-          Positioned.fill(
-            child: IgnorePointer(
-              child: BackdropFilter(
-                filter: ui.ImageFilter.blur(
-                  sigmaX: kIsWeb ? 30.0 : 80.0, 
-                  sigmaY: kIsWeb ? 30.0 : 80.0
-                ),
-                child: const SizedBox.expand(),
-              ),
-            ),
-          ),
+          // El BackdropFilter ha sido eliminado para mejorar drásticamente el rendimiento en la web.
+          // En su lugar, el desenfoque se aplica directamente con MaskFilter en el CustomPainter de los Blobs.
 
           // 4. Capa de redes neuronales flotantes (partículas y conexiones crisp, por encima del blur)
           Positioned.fill(
@@ -170,7 +161,13 @@ class _BlobPainter extends CustomPainter {
     required double radius,
     required Color color,
   }) {
-    canvas.drawCircle(center, radius, Paint()..color = color);
+    // Aplicamos el blur nativamente en el pincel. Esto elimina la necesidad
+    // de un BackdropFilter costoso sobre toda la pantalla.
+    final blurSigma = kIsWeb ? 30.0 : 80.0;
+    final paint = Paint()
+      ..color = color
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma);
+    canvas.drawCircle(center, radius, paint);
   }
 
   @override
@@ -248,7 +245,8 @@ class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProvi
         widget.purple,
         widget.pink,
       ];
-      for (int i = 0; i < 60; i++) { // 60 partículas es ideal para balancear estética y rendimiento en el Home
+      final particleCount = kIsWeb ? 25 : 60; // Menos partículas en web para evitar lag
+      for (int i = 0; i < particleCount; i++) {
         _particles.add(_Particle(
           x: random.nextDouble() * size.width,
           y: random.nextDouble() * size.height,

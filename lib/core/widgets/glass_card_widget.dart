@@ -1,4 +1,4 @@
-﻿import 'dart:ui' as ui;
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/core/config/neural_theme.dart';
@@ -90,7 +90,9 @@ class _HoverGlassCardState extends State<HoverGlassCard>
               t,
             )!;
 
-              final double effectiveBlur = kIsWeb ? (widget.blur > 4.0 ? 4.0 : widget.blur) : widget.blur;
+              // Ahora que usamos CanvasKit en web, podemos permitir un poco más de blur sin lag,
+              // aunque lo limitamos a 12.0 para mantener un rendimiento seguro en dispositivos móviles web.
+              final double effectiveBlur = kIsWeb ? (widget.blur > 12.0 ? 12.0 : widget.blur) : widget.blur;
 
               return Transform.scale(
                 scale: _scale.value,
@@ -153,7 +155,7 @@ class StaticGlassContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final effectiveOpacity = opacity ?? nt.cardOpacityMax;
-    final double effectiveBlur = kIsWeb ? (blur > 4.0 ? 4.0 : blur) : blur;
+    final double effectiveBlur = kIsWeb ? (blur > 12.0 ? 12.0 : blur) : blur;
 
     Widget container = Container(
       padding: padding,
