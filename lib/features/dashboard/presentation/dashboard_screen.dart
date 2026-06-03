@@ -1,4 +1,4 @@
-﻿// dart:ui no requerido directamente — StaticGlassContainer y HoverGlassCard lo encapsulan.
+// dart:ui no requerido directamente — StaticGlassContainer y HoverGlassCard lo encapsulan.
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
@@ -7,6 +7,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  DashboardScreen — "Mi Progreso"
@@ -102,37 +103,76 @@ class _GeneralStats extends StatelessWidget {
     return Consumer<SrsProvider>(
       builder: (context, srs, _) {
         final stats = srs.globalStats;
+        final int total = stats['total'] ?? 0;
+        final int nuevos = stats['new'] ?? 0;
+        final int aprendiendo = stats['learning'] ?? 0;
+        final int dominadas = stats['mastered'] ?? 0;
+        final int porRevisar = stats['overdue'] ?? 0;
+
         return StaticGlassContainer(
           borderRadius: BorderRadius.circular(20),
-          child: Column(
-            children: [
-              _StatRow(
-                label: 'Total de tarjetas',
-                value: '${stats['total'] ?? 0}',
-                color: nt.blueGoogle,
-              ),
-              Divider(color: Colors.white.withValues(alpha: 0.07), height: 24),
-              _StatRow(
-                label: 'Nuevas',
-                value: '${stats['new'] ?? 0}',
-                color: nt.cyan,
-              ),
-              _StatRow(
-                label: 'Aprendiendo',
-                value: '${stats['learning'] ?? 0}',
-                color: nt.warningAmber,
-              ),
-              _StatRow(
-                label: 'Dominadas',
-                value: '${stats['mastered'] ?? 0}',
-                color: nt.successGreen,
-              ),
-              _StatRow(
-                label: 'Por revisar',
-                value: '${stats['overdue'] ?? 0}',
-                color: nt.pink,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                _StatRow(
+                  label: 'Total de tarjetas',
+                  value: '$total',
+                  color: nt.blueGoogle,
+                ),
+                Divider(color: Colors.white.withValues(alpha: 0.07), height: 24),
+                if (total > 0) ...[
+                  SizedBox(
+                    height: 200,
+                    child: PieChart(
+                      PieChartData(
+                        sectionsSpace: 2,
+                        centerSpaceRadius: 40,
+                        sections: [
+                          if (nuevos > 0)
+                            PieChartSectionData(
+                              color: nt.cyan,
+                              value: nuevos.toDouble(),
+                              title: '$nuevos',
+                              radius: 40,
+                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                          if (aprendiendo > 0)
+                            PieChartSectionData(
+                              color: nt.warningAmber,
+                              value: aprendiendo.toDouble(),
+                              title: '$aprendiendo',
+                              radius: 40,
+                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                          if (dominadas > 0)
+                            PieChartSectionData(
+                              color: nt.successGreen,
+                              value: dominadas.toDouble(),
+                              title: '$dominadas',
+                              radius: 40,
+                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                          if (porRevisar > 0)
+                            PieChartSectionData(
+                              color: nt.pink,
+                              value: porRevisar.toDouble(),
+                              title: '$porRevisar',
+                              radius: 45,
+                              titleStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                ],
+                _StatRow(label: 'Nuevas', value: '$nuevos', color: nt.cyan),
+                _StatRow(label: 'Aprendiendo', value: '$aprendiendo', color: nt.warningAmber),
+                _StatRow(label: 'Dominadas', value: '$dominadas', color: nt.successGreen),
+                _StatRow(label: 'Por revisar', value: '$porRevisar', color: nt.pink),
+              ],
+            ),
           ),
         );
       },
