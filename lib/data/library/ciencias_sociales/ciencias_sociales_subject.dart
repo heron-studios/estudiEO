@@ -1,8 +1,8 @@
-﻿import 'package:learn/models/subject.dart';
+import 'package:learn/models/subject.dart';
 
 final Subject cienciasSocialesSubject = Subject(
   id: 'ciencias-sociales',
-  name: "Ciencias Sociales",
+  name: 'Ciencias Sociales',
   color: '#95E1D3',
   icon: '🌍',
   topicIds: [

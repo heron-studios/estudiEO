@@ -2,7 +2,7 @@ import 'package:learn/models/subject.dart';
 
 final Subject pfrhSubject = Subject(
   id: 'pfrh',
-  name: "PFRH",
+  name: 'PFRH',
   color: '#FFD3B6',
   icon: '🤝',
   topicIds: [

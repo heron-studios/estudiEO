@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import 'package:learn/config/neural_theme.dart';
-import 'package:learn/config/app_router.dart';
+import 'package:learn/core/config/neural_theme.dart';
+import 'package:learn/core/config/app_router.dart';
 import 'package:learn/firebase_options.dart';
-import 'package:learn/services/local_storage_service.dart';
-import 'package:learn/services/auth_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';

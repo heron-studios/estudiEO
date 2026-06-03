@@ -1,24 +1,24 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/question.dart';
-import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/providers/gamification_provider.dart';
 
 /// Proveedor de estado para el Modo Aprendizaje Guiado.
 ///
 /// Maneja:
-/// - La sesión activa con su cola dinámica de preguntas.
+/// - La sesiÃ³n activa con su cola dinÃ¡mica de preguntas.
 /// - El progreso de niveles completados por topic.
-/// - La persistencia automática en cada respuesta.
+/// - La persistencia automÃ¡tica en cada respuesta.
 class LearningProvider extends ChangeNotifier {
   final LocalStorageService _storage;
 
   LearningSession? _currentSession;
 
-  /// topicId → lista de claves de niveles completados (ej. ['facil', 'medio'])
+  /// topicId â†’ lista de claves de niveles completados (ej. ['facil', 'medio'])
   Map<String, List<String>> _completedLevels = {};
 
   GamificationProvider? _gamification;
@@ -31,7 +31,7 @@ class LearningProvider extends ChangeNotifier {
     _gamification = gamification;
   }
 
-  // ─── Getters ──────────────────────────────────────────────────────────────
+  // â”€â”€â”€ Getters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   LearningSession? get currentSession => _currentSession;
 
@@ -44,7 +44,7 @@ class LearningProvider extends ChangeNotifier {
 
   bool get isFinished => _currentSession?.isFinished ?? false;
 
-  /// Verifica si un nivel está desbloqueado para el topic dado.
+  /// Verifica si un nivel estÃ¡ desbloqueado para el topic dado.
   bool isLevelUnlocked(String topicId, Dificultad nivel) {
     if (nivel == Dificultad.facil) return true;
     final prev = _previousLevel(nivel);
@@ -57,7 +57,7 @@ class LearningProvider extends ChangeNotifier {
     return _completedLevels[topicId]?.contains(nivel.key) ?? false;
   }
 
-  /// Retorna el nivel más alto desbloqueado (pero no necesariamente completado).
+  /// Retorna el nivel mÃ¡s alto desbloqueado (pero no necesariamente completado).
   Dificultad getCurrentLevel(String topicId) {
     for (final nivel in Dificultad.values.reversed) {
       if (isLevelUnlocked(topicId, nivel)) return nivel;
@@ -65,15 +65,15 @@ class LearningProvider extends ChangeNotifier {
     return Dificultad.facil;
   }
 
-  /// Indica si el topic tiene una sesión guardada sin completar para ese nivel.
+  /// Indica si el topic tiene una sesiÃ³n guardada sin completar para ese nivel.
   bool hasPendingSession(String topicId, Dificultad nivel) {
     final saved = _storage.loadLearningSession(topicId, nivel);
     return saved != null && !saved.isLevelCompleted;
   }
 
-  // ─── Acciones ─────────────────────────────────────────────────────────────
+  // â”€â”€â”€ Acciones â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  /// Inicia una nueva sesión guiada. Reemplaza cualquier sesión pendiente del mismo nivel.
+  /// Inicia una nueva sesiÃ³n guiada. Reemplaza cualquier sesiÃ³n pendiente del mismo nivel.
   void startSession(String topicId, Dificultad nivel) {
     final questions = SubjectsRepository.getQuestionsByTopicAndLevel(
       topicId,
@@ -96,8 +96,8 @@ class LearningProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Reanuda una sesión previamente guardada, si existe.
-  /// Retorna true si se reanudó, false si no había sesión guardada.
+  /// Reanuda una sesiÃ³n previamente guardada, si existe.
+  /// Retorna true si se reanudÃ³, false si no habÃ­a sesiÃ³n guardada.
   bool resumeSession(String topicId, Dificultad nivel) {
     final saved = _storage.loadLearningSession(topicId, nivel);
     if (saved == null || saved.isLevelCompleted) return false;
@@ -107,7 +107,7 @@ class LearningProvider extends ChangeNotifier {
     return true;
   }
 
-  /// Carga la sesión actual desde storage (útil al volver de background).
+  /// Carga la sesiÃ³n actual desde storage (Ãºtil al volver de background).
   void loadSession(String topicId, Dificultad nivel) {
     final saved = _storage.loadLearningSession(topicId, nivel);
     if (saved != null && !saved.isLevelCompleted) {
@@ -122,7 +122,7 @@ class LearningProvider extends ChangeNotifier {
   ///   Si llega a 10, marca el nivel como completado.
   /// - **Incorrecto**: reencola la pregunta al final, no suma puntos.
   ///
-  /// Guarda el estado automáticamente tras cada respuesta.
+  /// Guarda el estado automÃ¡ticamente tras cada respuesta.
   void responder(String questionId, int selectedIndex, int correctAnswer) {
     if (_currentSession == null) return;
     if (_currentSession!.questionQueue.isEmpty) return;
@@ -178,7 +178,7 @@ class LearningProvider extends ChangeNotifier {
     _storage.deleteLastActiveLearningSession();
   }
 
-  /// Limpia la sesión activa de memoria (no borra del storage).
+  /// Limpia la sesiÃ³n activa de memoria (no borra del storage).
   void clearCurrentSession() {
     _currentSession = null;
     notifyListeners();
@@ -207,7 +207,7 @@ class LearningProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Retorna el nivel de la sesión pendiente para un tema dado, si existe.
+  /// Retorna el nivel de la sesiÃ³n pendiente para un tema dado, si existe.
   Dificultad? getPendingSessionLevel(String topicId) {
     for (final nivel in Dificultad.values) {
       if (hasPendingSession(topicId, nivel)) {
@@ -217,12 +217,12 @@ class LearningProvider extends ChangeNotifier {
     return null;
   }
 
-  /// Retorna una sesión de aprendizaje guardada.
+  /// Retorna una sesiÃ³n de aprendizaje guardada.
   LearningSession? getPendingSession(String topicId, Dificultad nivel) {
     return _storage.loadLearningSession(topicId, nivel);
   }
 
-  /// Retorna los detalles de la última sesión activa pendiente de aprendizaje guiado.
+  /// Retorna los detalles de la Ãºltima sesiÃ³n activa pendiente de aprendizaje guiado.
   Map<String, dynamic>? getLastActiveSessionInfo() {
     final info = _storage.loadLastActiveLearningSession();
     if (info == null) return null;
@@ -244,7 +244,7 @@ class LearningProvider extends ChangeNotifier {
     };
   }
 
-  // ─── Helpers ─────────────────────────────────────────────────────────────
+  // â”€â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   Dificultad? _previousLevel(Dificultad nivel) {
     switch (nivel) {

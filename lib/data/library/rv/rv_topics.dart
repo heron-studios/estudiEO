@@ -6,8 +6,8 @@ final Map<String, Topic> razonamientoVerbalTopics = {
   'eo_pnp_sinonimos_ext_10q': Topic(
     id: 'eo_pnp_sinonimos_ext_10q',
     subjectId: 'rv',
-    name: "Sinónimos (Teoría Completa 10Q)",
-    description: "Sinónimos directos, contextuales y precisión léxica.",
+    name: 'Sinónimos (Teoría Completa 10Q)',
+    description: 'Sinónimos directos, contextuales y precisión léxica.',
     questionCount: 40,
     theoryByLevel: {
       'easy': sinonimosExt10qTheoryEasy,
@@ -19,8 +19,8 @@ final Map<String, Topic> razonamientoVerbalTopics = {
   'eo_pnp_antonimos_ext_10q': Topic(
     id: 'eo_pnp_antonimos_ext_10q',
     subjectId: 'rv',
-    name: "Antónimos (Teoría Completa 10Q)",
-    description: "Antónimos gramaticales, lexicales y antonimia contextual.",
+    name: 'Antónimos (Teoría Completa 10Q)',
+    description: 'Antónimos gramaticales, lexicales y antonimia contextual.',
     questionCount: 40,
     theoryByLevel: {
       'easy': antonimosExt10qTheoryEasy,

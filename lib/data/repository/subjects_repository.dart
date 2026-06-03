@@ -1,4 +1,4 @@
-import 'package:learn/config/app_config.dart';
+﻿import 'package:learn/core/config/app_config.dart';
 import 'package:learn/data/library/matematicas/matematicas_subject.dart';
 import 'package:learn/data/library/matematicas/matematicas_questions.dart';
 import 'package:learn/data/library/matematicas/matematicas_topics.dart';
@@ -100,14 +100,14 @@ class SubjectsRepository {
     return List<Question>.from(cached);
   }
 
-  /// Obtiene preguntas de un tópico específico
+  /// Obtiene preguntas de un tÃ³pico especÃ­fico
   static List<Question> getQuestionsByTopic(String topicId, {bool isPremium = false}) {
     _initIndexes();
     final cached = _questionsByTopicCache![topicId] ?? [];
     List<Question> filtered = List<Question>.from(cached);
 
     if (AppConfig.isDemoMode && !isPremium) {
-      // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
+      // En modo demo, solo estos temas tienen preguntas, y estÃ¡n limitadas para sumar 10 exactas.
       final Map<String, int> demoLimits = {
         'mat_algebra': 2,
         'eo_pnp_reglas_ortograficas_ext_10q': 2,
@@ -121,14 +121,14 @@ class SubjectsRepository {
       if (demoLimits.containsKey(topicId)) {
         return filtered.take(demoLimits[topicId]!).toList();
       } else {
-        return []; // Tópico bloqueado/vacío en demo
+        return []; // TÃ³pico bloqueado/vacÃ­o en demo
       }
     }
 
     return filtered;
   }
 
-  /// Obtiene una pregunta específica
+  /// Obtiene una pregunta especÃ­fica
   static Question? getQuestion(String questionId, {bool isPremium = false}) {
     _initIndexes();
     final q = _questionByIdCache![questionId];
@@ -144,8 +144,8 @@ class SubjectsRepository {
     return q;
   }
 
-  /// Obtiene todos los tópicos de una asignatura
-  /// Solo devuelve los topics cuyo ID está en el topicIds del subject
+  /// Obtiene todos los tÃ³picos de una asignatura
+  /// Solo devuelve los topics cuyo ID estÃ¡ en el topicIds del subject
   static List<Topic> getTopicsBySubject(String subjectId) {
     final subject = _subjects[subjectId];
     final topicsMap = _topicsBySubject[subjectId];
@@ -157,7 +157,7 @@ class SubjectsRepository {
         .toList();
   }
 
-  /// Obtiene un tópico específico
+  /// Obtiene un tÃ³pico especÃ­fico
   static Topic? getTopic(String topicId) {
     for (final topics in _topicsBySubject.values) {
       if (topics.containsKey(topicId)) {
@@ -167,7 +167,7 @@ class SubjectsRepository {
     return null;
   }
 
-  /// Obtiene preguntas aleatorias de un tópico
+  /// Obtiene preguntas aleatorias de un tÃ³pico
   static List<Question> getRandomQuestionsByTopic(String topicId, int count, {bool isPremium = false}) {
     final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     if (questions.isEmpty) return [];
@@ -176,7 +176,7 @@ class SubjectsRepository {
     return questions.take(count).toList();
   }
 
-  /// Obtiene todas las preguntas de un tópico barajadas
+  /// Obtiene todas las preguntas de un tÃ³pico barajadas
   static List<Question> getAllQuestionsByTopicShuffled(String topicId, {bool isPremium = false}) {
     final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     questions.shuffle();
@@ -185,8 +185,8 @@ class SubjectsRepository {
 
   /// Obtiene [count] preguntas para el nivel de dificultad dado.
   ///
-  /// Estrategia Opción A: el pool total del topic se divide en 4 cuartos iguales
-  /// según el nivel (facil=0, medio=1, dificil=2, extremo=3).
+  /// Estrategia OpciÃ³n A: el pool total del topic se divide en 4 cuartos iguales
+  /// segÃºn el nivel (facil=0, medio=1, dificil=2, extremo=3).
   /// Si hay menos de [count] en ese cuarto, se reciclan para completar exactamente [count].
   static List<Question> getQuestionsByTopicAndLevel(
     String topicId,
@@ -219,7 +219,7 @@ class SubjectsRepository {
       return chunk.take(count).toList();
     }
 
-    // Completar con reciclo sin repetición inmediata
+    // Completar con reciclo sin repeticiÃ³n inmediata
     final result = <Question>[];
     final source = List<Question>.from(chunk);
     while (result.length < count) {
@@ -232,13 +232,13 @@ class SubjectsRepository {
     return result;
   }
 
-  /// Obtiene la teoría para un tópico y nivel de dificultad dado.
+  /// Obtiene la teorÃ­a para un tÃ³pico y nivel de dificultad dado.
   static String? getTheoryByTopicAndLevel(String topicId, Dificultad nivel) {
     final topic = getTopic(topicId);
     if (topic != null && topic.theoryByLevel != null) {
       final map = topic.theoryByLevel!;
 
-      // Clave en inglés (CS, Comunicación): 'easy','medium','hard','extreme'
+      // Clave en inglÃ©s (CS, ComunicaciÃ³n): 'easy','medium','hard','extreme'
       final String englishKey;
       switch (nivel) {
         case Dificultad.facil:   englishKey = 'easy';    break;
@@ -254,7 +254,7 @@ class SubjectsRepository {
       // Clave nombre del enum: 'facil','medio','dificil','extremo'
       if (map.containsKey(nivel.name)) return map[nivel.name];
 
-      // Último recurso: primer valor disponible
+      // Ãšltimo recurso: primer valor disponible
       if (map.isNotEmpty) return map.values.first;
     }
 

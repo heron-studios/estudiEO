@@ -1,4 +1,4 @@
-import 'package:learn/config/app_config.dart';
+﻿import 'package:learn/core/config/app_config.dart';
 import 'package:learn/data/subject_data_matematicas.dart';
 import 'package:learn/data/subject_data_comunicacion.dart';
 import 'package:learn/data/subject_data_sociales.dart';
@@ -57,7 +57,7 @@ class SubjectsRepository {
     return _questionsBySubject[subjectId] ?? [];
   }
 
-  /// Obtiene preguntas de un tópico específico
+  /// Obtiene preguntas de un tÃ³pico especÃ­fico
   static List<Question> getQuestionsByTopic(String topicId) {
     List<Question> filtered = [];
     for (final questions in _questionsBySubject.values) {
@@ -82,14 +82,14 @@ class SubjectsRepository {
       if (demoLimits.containsKey(topicId)) {
         return filtered.take(demoLimits[topicId]!).toList();
       } else {
-        return []; // Tópico bloqueado/vacío en demo
+        return []; // TÃ³pico bloqueado/vacÃ­o en demo
       }
     }
 
     return filtered;
   }
 
-  /// Obtiene una pregunta específica
+  /// Obtiene una pregunta especÃ­fica
   static Question? getQuestion(String questionId) {
     for (final questions in _questionsBySubject.values) {
       try {
@@ -110,12 +110,12 @@ class SubjectsRepository {
     return null;
   }
 
-  /// Obtiene todos los tópicos de una asignatura
+  /// Obtiene todos los tÃ³picos de una asignatura
   static List<Topic> getTopicsBySubject(String subjectId) {
     return _topicsBySubject[subjectId]?.values.toList() ?? [];
   }
 
-  /// Obtiene un tópico específico
+  /// Obtiene un tÃ³pico especÃ­fico
   static Topic? getTopic(String topicId) {
     for (final topics in _topicsBySubject.values) {
       if (topics.containsKey(topicId)) {
@@ -125,7 +125,7 @@ class SubjectsRepository {
     return null;
   }
 
-  /// Obtiene preguntas aleatorias de un tópico
+  /// Obtiene preguntas aleatorias de un tÃ³pico
   static List<Question> getRandomQuestionsByTopic(String topicId, int count) {
     final questions = getQuestionsByTopic(topicId);
     if (questions.isEmpty) return [];
@@ -134,7 +134,7 @@ class SubjectsRepository {
     return questions.take(count).toList();
   }
 
-  /// Obtiene todas las preguntas de un tópico barajadas
+  /// Obtiene todas las preguntas de un tÃ³pico barajadas
   static List<Question> getAllQuestionsByTopicShuffled(String topicId) {
     final questions = getQuestionsByTopic(topicId);
     questions.shuffle();
@@ -143,10 +143,10 @@ class SubjectsRepository {
 
   /// Obtiene [count] preguntas para el nivel de dificultad dado.
   ///
-  /// Estrategia Opción A: el pool total del topic se divide en 4 cuartos iguales
-  /// según el nivel (facil=0, medio=1, dificil=2, extremo=3).
+  /// Estrategia OpciÃ³n A: el pool total del topic se divide en 4 cuartos iguales
+  /// segÃºn el nivel (facil=0, medio=1, dificil=2, extremo=3).
   /// Si hay menos de [count] en ese cuarto, se reciclan las del mismo cuarto
-  /// para completar exactamente [count] preguntas sin repetición inmediata.
+  /// para completar exactamente [count] preguntas sin repeticiÃ³n inmediata.
   static List<Question> getQuestionsByTopicAndLevel(
     String topicId,
     Dificultad nivel, {
@@ -176,7 +176,7 @@ class SubjectsRepository {
       return chunk.take(count).toList();
     }
 
-    // Completar con reciclo sin repetición inmediata
+    // Completar con reciclo sin repeticiÃ³n inmediata
     final result = <Question>[];
     final source = List<Question>.from(chunk);
     while (result.length < count) {

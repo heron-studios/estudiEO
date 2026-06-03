@@ -2,7 +2,7 @@ import 'package:learn/models/subject.dart';
 
 final Subject ctaSubject = Subject(
   id: 'cta',
-  name: "CTA",
+  name: 'CTA',
   color: '#A8E6CF',
   icon: '🔬',
   topicIds: [

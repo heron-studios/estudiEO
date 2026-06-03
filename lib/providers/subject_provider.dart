@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/learning_level.dart';
-import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 
 class SubjectProvider extends ChangeNotifier {
   final LocalStorageService _storage;

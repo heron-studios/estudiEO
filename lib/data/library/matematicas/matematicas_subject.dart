@@ -2,7 +2,7 @@ import 'package:learn/models/subject.dart';
 
 final Subject matematicasSubject = Subject(
   id: 'matematicas',
-  name: "Matemáticas",
+  name: 'Matemáticas',
   color: '#FF6B6B',
   icon: '📐',
   topicIds: [

@@ -2,7 +2,7 @@ import 'package:learn/models/subject.dart';
 
 final Subject comunicacionSubject = Subject(
   id: 'comunicacion',
-  name: "Comunicación",
+  name: 'Comunicación',
   color: '#4ECDC4',
   icon: '📖',
   topicIds: [

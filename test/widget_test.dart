@@ -9,8 +9,8 @@ void main() {
       final questions = SubjectsRepository.getQuestionsBySubject(s.id);
       for (var q in questions) {
         final answer = q.options[q.correctAnswer].trim();
-        if (answer == "Correcta" || answer == "Opción A" || answer == "Opción B") {
-          print('Dummy answer text: "${answer}" for ${q.id} in ${s.id}');
+        if (answer == 'Correcta' || answer == 'Opción A' || answer == 'Opción B') {
+          print('Dummy answer text: "$answer" for ${q.id} in ${s.id}');
           dummyCount++;
         }
       }

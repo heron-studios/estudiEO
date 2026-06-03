@@ -1,7 +1,7 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:learn/models/srs_card.dart';
-import 'package:learn/services/local_storage_service.dart';
-import 'package:learn/services/srs_engine.dart';
+import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/features/srs/domain/srs_engine.dart';
 
 class SrsProvider extends ChangeNotifier {
   final LocalStorageService _storage;

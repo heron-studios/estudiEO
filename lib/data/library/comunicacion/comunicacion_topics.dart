@@ -12,8 +12,8 @@ final Map<String, Topic> comunicacionTopics = {
   'eo_pnp_reglas_ortograficas_ext_10q': Topic(
     id: 'eo_pnp_reglas_ortograficas_ext_10q',
     subjectId: 'comunicacion',
-    name: "Reglas Ortográficas y Normativas RAE (Teoría Completa 10Q)",
-    description: "Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.",
+    name: 'Reglas Ortográficas y Normativas RAE (Teoría Completa 10Q)',
+    description: 'Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.',
     questionCount: 40,
     theoryByLevel: {
       'easy': reglasOrtograficasExt10qTheoryEasy,
@@ -25,8 +25,8 @@ final Map<String, Topic> comunicacionTopics = {
   'eo_pnp_narracion_ext_10q': Topic(
     id: 'eo_pnp_narracion_ext_10q',
     subjectId: 'comunicacion',
-    name: "La Narración: Estructura y Elementos (Teoría Completa 10Q)",
-    description: "Aprende los elementos fundamentales de la narración, tipos de narradores, personajes y alteraciones temporales.",
+    name: 'La Narración: Estructura y Elementos (Teoría Completa 10Q)',
+    description: 'Aprende los elementos fundamentales de la narración, tipos de narradores, personajes y alteraciones temporales.',
     questionCount: 40,
     theoryByLevel: {
       'easy': narracionExt10qTheoryEasy,

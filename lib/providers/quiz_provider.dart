@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:learn/models/quiz_session.dart';
-import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 import 'package:uuid/uuid.dart';
 
 class QuizProvider extends ChangeNotifier {
@@ -25,7 +25,7 @@ class QuizProvider extends ChangeNotifier {
   QuizSession? get currentSession => _currentSession;
   List<QuizSession> get sessions => _sessions;
   
-  // Devuelve la sesión actual si coincide con el topic, útil para "Continuar"
+  // Devuelve la sesiÃ³n actual si coincide con el topic, Ãºtil para "Continuar"
   bool hasPendingSessionForTopic(String topicId) {
     if (_currentSession != null && 
         _currentSession!.topicId == topicId && 
@@ -51,7 +51,7 @@ class QuizProvider extends ChangeNotifier {
   }
 
   void createSession(String topicId, List<String> allQuestionIds) {
-    // Limpiar sesión pendiente anterior de este topic si existe
+    // Limpiar sesiÃ³n pendiente anterior de este topic si existe
     _sessions.removeWhere((s) => s.topicId == topicId && !s.isCompleted);
     _storage.saveQuizSessions(_sessions);
 
@@ -59,7 +59,7 @@ class QuizProvider extends ChangeNotifier {
     final learned = _learnedQuestions[topicId] ?? [];
     List<String> pool = allQuestionIds.where((id) => !learned.contains(id)).toList();
     
-    // Si ya no quedan preguntas (se agotó la bolsa), reiniciar
+    // Si ya no quedan preguntas (se agotÃ³ la bolsa), reiniciar
     if (pool.isEmpty) {
       _learnedQuestions[topicId] = [];
       _storage.saveLearnedQuestions(_learnedQuestions);
@@ -92,7 +92,7 @@ class QuizProvider extends ChangeNotifier {
       }
     }
     
-    // Guardar la sesión pendiente para que se mantenga si el usuario sale
+    // Guardar la sesiÃ³n pendiente para que se mantenga si el usuario sale
     _storage.saveQuizSession(_currentSession!);
 
     notifyListeners();

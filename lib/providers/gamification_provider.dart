@@ -1,6 +1,6 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:learn/models/gamification.dart';
-import 'package:learn/services/local_storage_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 
 class GamificationProvider extends ChangeNotifier {
   final LocalStorageService _storage;
