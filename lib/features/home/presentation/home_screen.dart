@@ -6,7 +6,6 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/features/alipio/presentation/alipio_selector_screen.dart';
-import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -318,9 +317,8 @@ class HomeScreen extends StatelessWidget {
     final nt = NeuralTheme.of(context);
 
     return Scaffold(
-      backgroundColor: nt.background,
-      body: NeuralBackgroundWrapper(
-        child: SafeArea(
+      backgroundColor: Colors.transparent,
+      body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: Column(
@@ -448,7 +446,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }

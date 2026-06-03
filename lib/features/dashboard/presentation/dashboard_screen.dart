@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
-import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/gemini_service.dart';
@@ -31,12 +30,11 @@ class DashboardScreen extends StatelessWidget {
     final nt = NeuralTheme.of(context);
 
     return Scaffold(
-      backgroundColor: nt.background,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: const Text('Mi Progreso'),
       ),
-      body: NeuralBackgroundWrapper(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
           // PageStorageKey garantiza que la posición de scroll se conserve
           // cuando el usuario navega a una vista de estudio y regresa.
           key: const PageStorageKey<String>('dashboard_scroll'),
@@ -65,7 +63,6 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
         ),
       ),
     );

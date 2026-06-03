@@ -4,6 +4,7 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/providers/gamification_provider.dart';
+import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -50,7 +51,7 @@ class AppShell extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: navigationShell,
+        body: NeuralBackgroundWrapper(child: navigationShell),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: nt.surfaceCard,
           selectedItemColor: nt.blueGoogle,
@@ -70,106 +71,116 @@ class AppShell extends StatelessWidget {
     // Si estamos en Desktop / Web
     return Scaffold(
       backgroundColor: nt.background,
-      body: Row(
-        children: [
-          // Espacio a la izquierda
-          const SizedBox(width: 16),
-          // Sidebar flotante
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
-                decoration: BoxDecoration(
-                  color: nt.surfaceCard.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(32),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Gamification streak
-                    Consumer<GamificationProvider>(
-                      builder: (context, gamification, _) {
-                        return Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                          decoration: BoxDecoration(
-                            color: nt.warningAmber.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: nt.warningAmber.withValues(alpha: 0.3)),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const Text('🔥', style: TextStyle(fontSize: 16)),
-                              const SizedBox(width: 4),
-                              Text(
-                                '${gamification.streak}',
-                                style: TextStyle(
-                                  color: nt.warningAmber,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-                    const SizedBox(height: 20),
-                    // Avatar
-                    Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: nt.blueGoogle.withValues(alpha: 0.15),
-                        border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
-                      ),
-                      child: Icon(Icons.person, color: nt.blueGoogle, size: 24),
-                    ),
-                    const SizedBox(height: 10),
-                    // Logout
-                    IconButton(
-                      icon: Icon(Icons.logout_rounded, color: nt.pink),
-                      tooltip: 'Cerrar Sesión',
-                      onPressed: () async {
-                        await context.read<AuthService>().signOut();
-                      },
-                    ),
-                    const SizedBox(height: 24),
-                    // Opciones de navegación
-                    _NavItem(
-                      icon: Icons.home_rounded,
-                      label: 'Inicio',
-                      isSelected: navigationShell.currentIndex == 0,
-                      onTap: () => _goBranch(0),
-                      nt: nt,
-                    ),
-                    const SizedBox(height: 16),
-                    _NavItem(
-                      icon: Icons.analytics_rounded,
-                      label: 'Progreso',
-                      isSelected: navigationShell.currentIndex == 1,
-                      onTap: () => _goBranch(1),
-                      nt: nt,
-                    ),
-                    const SizedBox(height: 16),
-                    _NavItem(
-                      icon: Icons.settings_rounded,
-                      label: 'Ajustes',
-                      isSelected: navigationShell.currentIndex == 2,
-                      onTap: () => _goBranch(2),
-                      nt: nt,
-                    ),
-                  ],
-                ),
+      body: NeuralBackgroundWrapper(
+        child: Stack(
+          children: [
+            // Contenido principal empujado a la derecha para no solapar el sidebar
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 110),
+                child: navigationShell,
               ),
-            ],
-          ),
-          const SizedBox(width: 16),
-          Expanded(child: navigationShell),
-        ],
+            ),
+            // Sidebar flotante
+            Positioned(
+              left: 16,
+              top: 0,
+              bottom: 0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
+                    decoration: BoxDecoration(
+                      color: nt.surfaceCard.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(32),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Gamification streak
+                        Consumer<GamificationProvider>(
+                          builder: (context, gamification, _) {
+                            return Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              decoration: BoxDecoration(
+                                color: nt.warningAmber.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: nt.warningAmber.withValues(alpha: 0.3)),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Text('🔥', style: TextStyle(fontSize: 16)),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    '${gamification.streak}',
+                                    style: TextStyle(
+                                      color: nt.warningAmber,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        // Avatar
+                        Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: nt.blueGoogle.withValues(alpha: 0.15),
+                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                          ),
+                          child: Icon(Icons.person, color: nt.blueGoogle, size: 24),
+                        ),
+                        const SizedBox(height: 10),
+                        // Logout
+                        IconButton(
+                          icon: Icon(Icons.logout_rounded, color: nt.pink),
+                          tooltip: 'Cerrar Sesión',
+                          onPressed: () async {
+                            await context.read<AuthService>().signOut();
+                          },
+                        ),
+                        const SizedBox(height: 24),
+                        // Opciones de navegación
+                        _NavItem(
+                          icon: Icons.home_rounded,
+                          label: 'Inicio',
+                          isSelected: navigationShell.currentIndex == 0,
+                          onTap: () => _goBranch(0),
+                          nt: nt,
+                        ),
+                        const SizedBox(height: 16),
+                        _NavItem(
+                          icon: Icons.analytics_rounded,
+                          label: 'Progreso',
+                          isSelected: navigationShell.currentIndex == 1,
+                          onTap: () => _goBranch(1),
+                          nt: nt,
+                        ),
+                        const SizedBox(height: 16),
+                        _NavItem(
+                          icon: Icons.settings_rounded,
+                          label: 'Ajustes',
+                          isSelected: navigationShell.currentIndex == 2,
+                          onTap: () => _goBranch(2),
+                          nt: nt,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

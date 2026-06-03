@@ -9,7 +9,6 @@ import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
-import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/audio_service.dart';
 
@@ -258,7 +257,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final allSubjects = context.watch<SubjectProvider>().allSubjects;
 
     return Scaffold(
-      backgroundColor: NeuralDesignSystem.background,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -274,8 +273,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         centerTitle: true,
       ),
-      body: NeuralBackgroundWrapper(
-        child: Center(
+      body: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 600),
             child: ListView(
@@ -734,7 +732,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 const SizedBox(height: 32),
               ],
             ),
-          ),
         ),
       ),
     );
