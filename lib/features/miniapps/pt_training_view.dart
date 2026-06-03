@@ -5,6 +5,13 @@ import 'package:learn/data/periodic_table_data.dart';
 import 'package:learn/models/chemical_element.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 
+enum QuestionType {
+  symbolToName,
+  nameToSymbol,
+  atomicNumber,
+  family,
+}
+
 class PtTrainingView extends StatefulWidget {
   const PtTrainingView({super.key});
 
@@ -15,15 +22,17 @@ class PtTrainingView extends StatefulWidget {
 class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProviderStateMixin {
   final Random _random = Random();
   late ChemicalElement _currentElement;
-  late List<ChemicalElement> _options;
-  bool _isSymbolToName = true;
+  late List<String> _options;
+  late QuestionType _questionType;
   
   int _score = 0;
   int _streak = 0;
+  int _lives = 3;
   
-  ChemicalElement? _selectedAnswer;
+  String? _selectedAnswer;
   bool _answered = false;
   String? _hintMessage;
+  bool _isGameOver = false;
 
   @override
   void initState() {
@@ -32,47 +41,127 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
   }
 
   void _generateQuestion() {
+    if (_lives <= 0) {
+      setState(() {
+        _isGameOver = true;
+      });
+      return;
+    }
+
     _answered = false;
     _selectedAnswer = null;
     _hintMessage = null;
-    _isSymbolToName = _random.nextBool();
+    
+    // Select question type based on a bit of randomness, 
+    // maybe family and atomic number are slightly less frequent.
+    int typeRand = _random.nextInt(10);
+    if (typeRand < 3) {
+      _questionType = QuestionType.symbolToName;
+    } else if (typeRand < 6) {
+      _questionType = QuestionType.nameToSymbol;
+    } else if (typeRand < 8) {
+      _questionType = QuestionType.atomicNumber;
+    } else {
+      _questionType = QuestionType.family;
+    }
     
     _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
     
-    Set<ChemicalElement> optionsSet = {_currentElement};
-    while (optionsSet.length < 4) {
-      optionsSet.add(periodicTableElements[_random.nextInt(periodicTableElements.length)]);
+    // Determine the correct answer string based on the question type
+    String correctAnswer;
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        correctAnswer = _currentElement.name;
+        break;
+      case QuestionType.nameToSymbol:
+        correctAnswer = _currentElement.symbol;
+        break;
+      case QuestionType.atomicNumber:
+        correctAnswer = _currentElement.name;
+        break;
+      case QuestionType.family:
+        correctAnswer = _currentElement.family;
+        break;
+    }
+    
+    Set<String> optionsSet = {correctAnswer};
+    
+    // Generate other options
+    while (optionsSet.length < (_streak > 10 ? 6 : 4)) {
+      ChemicalElement randomElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+      switch (_questionType) {
+        case QuestionType.symbolToName:
+          optionsSet.add(randomElement.name);
+          break;
+        case QuestionType.nameToSymbol:
+          optionsSet.add(randomElement.symbol);
+          break;
+        case QuestionType.atomicNumber:
+          optionsSet.add(randomElement.name);
+          break;
+        case QuestionType.family:
+          optionsSet.add(randomElement.family);
+          break;
+      }
     }
     
     _options = optionsSet.toList();
     _options.shuffle();
   }
 
-  void _handleAnswer(ChemicalElement selected) {
-    if (_answered) return;
+  void _handleAnswer(String selected) {
+    if (_answered || _isGameOver) return;
     
     setState(() {
       _answered = true;
       _selectedAnswer = selected;
       
-      if (selected.atomicNumber == _currentElement.atomicNumber) {
-        _score++;
+      bool isCorrect = false;
+      switch (_questionType) {
+        case QuestionType.symbolToName:
+          isCorrect = selected == _currentElement.name;
+          break;
+        case QuestionType.nameToSymbol:
+          isCorrect = selected == _currentElement.symbol;
+          break;
+        case QuestionType.atomicNumber:
+          isCorrect = selected == _currentElement.name;
+          break;
+        case QuestionType.family:
+          isCorrect = selected == _currentElement.family;
+          break;
+      }
+
+      if (isCorrect) {
+        _score += 10 + (_streak * 2);
         _streak++;
-        // Quick transition on correct answer
         Future.delayed(const Duration(milliseconds: 600), () {
           if (mounted) setState(() => _generateQuestion());
         });
       } else {
         _streak = 0;
+        _lives--;
         _hintMessage = _getHint(_currentElement, selected);
       }
     });
   }
 
-  String _getHint(ChemicalElement correct, ChemicalElement wrong) {
-    String msg = _isSymbolToName 
-        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n"
-        : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+  String _getHint(ChemicalElement correct, String wrong) {
+    String msg = "";
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
+        break;
+      case QuestionType.nameToSymbol:
+        msg = "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+        break;
+      case QuestionType.atomicNumber:
+        msg = "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
+        break;
+      case QuestionType.family:
+        msg = "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
+        break;
+    }
 
     if (correct.symbol == 'Na') {
       msg += '💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!';
@@ -104,14 +193,52 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
       msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
     }
 
+    if (_lives <= 0) {
+      msg += "\n\n💀 ¡Te has quedado sin vidas!";
+    }
+
     return msg;
+  }
+
+  void _restartGame() {
+    setState(() {
+      _score = 0;
+      _streak = 0;
+      _lives = 3;
+      _isGameOver = false;
+      _generateQuestion();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
-    final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
+    
+    if (_isGameOver) {
+      return _buildGameOverScreen(nt);
+    }
+
+    String promptText = "";
+    String hintText = "";
+    
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        promptText = _currentElement.symbol;
+        hintText = '¿Cuál es su nombre?';
+        break;
+      case QuestionType.nameToSymbol:
+        promptText = _currentElement.name;
+        hintText = '¿Cuál es su símbolo?';
+        break;
+      case QuestionType.atomicNumber:
+        promptText = 'Z = ${_currentElement.atomicNumber}';
+        hintText = '¿Qué elemento es?';
+        break;
+      case QuestionType.family:
+        promptText = _currentElement.name;
+        hintText = '¿A qué familia pertenece?';
+        break;
+    }
 
     return SafeArea(
       child: Center(
@@ -126,8 +253,25 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _StatPill(icon: Icons.star_rounded, value: '$_score', color: nt.blueGoogle),
-                    _StatPill(icon: Icons.local_fire_department_rounded, value: '$_streak', color: nt.warningAmber),
+                    Row(
+                      children: List.generate(3, (index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 4.0),
+                          child: Icon(
+                            index < _lives ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                            color: nt.pink,
+                            size: 28,
+                          ),
+                        );
+                      }),
+                    ),
+                    Row(
+                      children: [
+                        _StatPill(icon: Icons.star_rounded, value: '$_score', color: nt.blueGoogle),
+                        const SizedBox(width: 8),
+                        _StatPill(icon: Icons.local_fire_department_rounded, value: '$_streak', color: nt.warningAmber),
+                      ],
+                    ),
                   ],
                 ),
                 const SizedBox(height: 24),
@@ -210,7 +354,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                                     backgroundColor: nt.pink,
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                                   ),
-                                  child: const Text('SIGUIENTE PREGUNTA', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                  child: Text(_lives > 0 ? 'SIGUIENTE PREGUNTA' : 'TERMINAR', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                                 ),
                               )
                             ],
@@ -225,7 +369,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                   crossAxisCount: 2,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
-                  childAspectRatio: 2.0, // Flatter buttons to save space
+                  childAspectRatio: _options.length > 4 ? 2.5 : 2.0, // Flatter buttons for more options
                   physics: const NeverScrollableScrollPhysics(),
                   children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
                 ),
@@ -237,15 +381,83 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
     );
   }
 
-  Widget _buildOptionCard(NeuralThemeData nt, ChemicalElement option) {
-    final optionText = _isSymbolToName ? option.name : option.symbol;
-    
+  Widget _buildGameOverScreen(NeuralThemeData nt) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '¡Entrenamiento Finalizado!',
+              style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 40),
+            Container(
+              padding: const EdgeInsets.all(40),
+              decoration: BoxDecoration(
+                color: nt.surfaceElevated,
+                shape: BoxShape.circle,
+                border: Border.all(color: nt.pink.withValues(alpha: 0.5), width: 4),
+                boxShadow: [
+                  BoxShadow(color: nt.pink.withValues(alpha: 0.2), blurRadius: 40, spreadRadius: 10),
+                ]
+              ),
+              child: Column(
+                children: [
+                  Text('PUNTAJE', style: TextStyle(color: nt.pink, fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2)),
+                  const SizedBox(height: 8),
+                  Text(
+                    '$_score',
+                    style: const TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 64),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton.icon(
+                onPressed: _restartGame,
+                icon: const Icon(Icons.refresh_rounded, color: Colors.white),
+                label: const Text('Entrenar de Nuevo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: nt.blueGoogle,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOptionCard(NeuralThemeData nt, String option) {
     Color borderColor = Colors.white.withValues(alpha: 0.1);
     Color bgColor = nt.surfaceElevated;
     Color textColor = Colors.white;
 
+    bool isCorrectOption = false;
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        isCorrectOption = option == _currentElement.name;
+        break;
+      case QuestionType.nameToSymbol:
+        isCorrectOption = option == _currentElement.symbol;
+        break;
+      case QuestionType.atomicNumber:
+        isCorrectOption = option == _currentElement.name;
+        break;
+      case QuestionType.family:
+        isCorrectOption = option == _currentElement.family;
+        break;
+    }
+
     if (_answered) {
-      if (option.atomicNumber == _currentElement.atomicNumber) {
+      if (isCorrectOption) {
         borderColor = nt.successGreen;
         bgColor = nt.successGreen.withValues(alpha: 0.15);
         textColor = nt.successGreen;
@@ -266,7 +478,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: borderColor, width: 2),
           boxShadow: [
-            if (_answered && option.atomicNumber == _currentElement.atomicNumber)
+            if (_answered && isCorrectOption)
               BoxShadow(
                 color: nt.successGreen.withValues(alpha: 0.2),
                 blurRadius: 15,
@@ -280,7 +492,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                optionText,
+                option,
                 style: TextStyle(
                   color: textColor,
                   fontSize: 20,

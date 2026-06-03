@@ -6,6 +6,13 @@ import 'package:learn/data/periodic_table_data.dart';
 import 'package:learn/models/chemical_element.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 
+enum QuestionType {
+  symbolToName,
+  nameToSymbol,
+  atomicNumber,
+  family,
+}
+
 class PtSurvivalView extends StatefulWidget {
   const PtSurvivalView({super.key});
 
@@ -16,11 +23,14 @@ class PtSurvivalView extends StatefulWidget {
 class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProviderStateMixin {
   final Random _random = Random();
   late ChemicalElement _currentElement;
-  late List<ChemicalElement> _options;
-  bool _isSymbolToName = true;
+  late List<String> _options;
+  late QuestionType _questionType;
   
   int _score = 0;
-  ChemicalElement? _selectedAnswer;
+  int _comboMultiplier = 1;
+  int _correctInARow = 0;
+  
+  String? _selectedAnswer;
   bool _answered = false;
 
   int _timeLeft = 60;
@@ -28,6 +38,10 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
   bool _isPlaying = false;
   bool _isGameOver = false;
   String? _hintMessage;
+  
+  // Animation for time changes
+  int _timeChange = 0;
+  bool _showTimeChange = false;
 
   @override
   void initState() {
@@ -46,6 +60,8 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
       _isPlaying = true;
       _isGameOver = false;
       _score = 0;
+      _comboMultiplier = 1;
+      _correctInARow = 0;
       _timeLeft = 60;
       _hintMessage = null;
       _generateQuestion();
@@ -79,52 +95,177 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
     _answered = false;
     _selectedAnswer = null;
     _hintMessage = null;
-    _isSymbolToName = _random.nextBool();
     
-    _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+    // Difficulty progression based on score or time passed
+    int difficultyLevel = _score ~/ 100; // Increase difficulty every 100 points
     
-    Set<ChemicalElement> optionsSet = {_currentElement};
-    while (optionsSet.length < 4) {
-      optionsSet.add(periodicTableElements[_random.nextInt(periodicTableElements.length)]);
+    int typeRand = _random.nextInt(10);
+    if (difficultyLevel == 0) {
+      // Easy level: only symbol/name
+      _questionType = typeRand < 5 ? QuestionType.symbolToName : QuestionType.nameToSymbol;
+    } else if (difficultyLevel == 1) {
+      // Medium level: add atomic number
+      if (typeRand < 4) _questionType = QuestionType.symbolToName;
+      else if (typeRand < 8) _questionType = QuestionType.nameToSymbol;
+      else _questionType = QuestionType.atomicNumber;
+    } else {
+      // Hard level: add families
+      if (typeRand < 3) _questionType = QuestionType.symbolToName;
+      else if (typeRand < 6) _questionType = QuestionType.nameToSymbol;
+      else if (typeRand < 8) _questionType = QuestionType.atomicNumber;
+      else _questionType = QuestionType.family;
+    }
+    
+    // Filter elements based on difficulty? We can just pick randomly for now, 
+    // maybe pick lighter elements more often early on.
+    if (difficultyLevel < 2) {
+      // First 36 elements
+      _currentElement = periodicTableElements[_random.nextInt(min(36, periodicTableElements.length))];
+    } else {
+      _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+    }
+    
+    String correctAnswer;
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        correctAnswer = _currentElement.name;
+        break;
+      case QuestionType.nameToSymbol:
+        correctAnswer = _currentElement.symbol;
+        break;
+      case QuestionType.atomicNumber:
+        correctAnswer = _currentElement.name;
+        break;
+      case QuestionType.family:
+        correctAnswer = _currentElement.family;
+        break;
+    }
+    
+    Set<String> optionsSet = {correctAnswer};
+    
+    int optionsCount = difficultyLevel >= 3 ? 6 : 4;
+    
+    while (optionsSet.length < optionsCount) {
+      ChemicalElement randomElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+      switch (_questionType) {
+        case QuestionType.symbolToName:
+          optionsSet.add(randomElement.name);
+          break;
+        case QuestionType.nameToSymbol:
+          optionsSet.add(randomElement.symbol);
+          break;
+        case QuestionType.atomicNumber:
+          optionsSet.add(randomElement.name);
+          break;
+        case QuestionType.family:
+          optionsSet.add(randomElement.family);
+          break;
+      }
     }
     
     _options = optionsSet.toList();
     _options.shuffle();
   }
 
-  void _handleAnswer(ChemicalElement selected) {
+  void _showTimeChangeAnimation(int change) {
+    setState(() {
+      _timeChange = change;
+      _showTimeChange = true;
+    });
+    Future.delayed(const Duration(milliseconds: 800), () {
+      if (mounted) setState(() => _showTimeChange = false);
+    });
+  }
+
+  void _handleAnswer(String selected) {
     if (_answered || !_isPlaying) return;
     
     setState(() {
       _answered = true;
       _selectedAnswer = selected;
       
-      if (selected.atomicNumber == _currentElement.atomicNumber) {
-        _score += 10;
+      bool isCorrect = false;
+      switch (_questionType) {
+        case QuestionType.symbolToName:
+          isCorrect = selected == _currentElement.name;
+          break;
+        case QuestionType.nameToSymbol:
+          isCorrect = selected == _currentElement.symbol;
+          break;
+        case QuestionType.atomicNumber:
+          isCorrect = selected == _currentElement.name;
+          break;
+        case QuestionType.family:
+          isCorrect = selected == _currentElement.family;
+          break;
+      }
+
+      if (isCorrect) {
+        _correctInARow++;
+        if (_correctInARow % 3 == 0) {
+          _comboMultiplier++; // Increase multiplier every 3 correct answers
+        }
+        
+        _score += 10 * _comboMultiplier;
+        
+        // Add time
+        int addedTime = 2;
+        _timeLeft += addedTime;
+        _showTimeChangeAnimation(addedTime);
+
         Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted && _isPlaying) {
             setState(() => _generateQuestion());
           }
         });
       } else {
-        // Stop timer to read the hint
+        // Reset combo
+        _correctInARow = 0;
+        _comboMultiplier = 1;
+        
+        // Subtract time
+        int subTime = -5;
+        _timeLeft += subTime;
+        if (_timeLeft < 0) _timeLeft = 0;
+        _showTimeChangeAnimation(subTime);
+
         _timer?.cancel();
         _hintMessage = _getHint(_currentElement, selected);
+        
+        if (_timeLeft <= 0) {
+          _endGame();
+        }
       }
     });
   }
 
   void _continueAfterHint() {
+    if (_timeLeft <= 0) {
+      _endGame();
+      return;
+    }
     setState(() {
       _generateQuestion();
       _startTimer();
     });
   }
 
-  String _getHint(ChemicalElement correct, ChemicalElement wrong) {
-    String msg = _isSymbolToName 
-        ? "Elegiste '${wrong.name}' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n"
-        : "Elegiste '${wrong.symbol}' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+  String _getHint(ChemicalElement correct, String wrong) {
+    String msg = "";
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
+        break;
+      case QuestionType.nameToSymbol:
+        msg = "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+        break;
+      case QuestionType.atomicNumber:
+        msg = "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
+        break;
+      case QuestionType.family:
+        msg = "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
+        break;
+    }
 
     if (correct.symbol == 'Na') {
       msg += '💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!';
@@ -171,8 +312,28 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
       return _buildGameOverScreen(nt);
     }
 
-    final promptText = _isSymbolToName ? _currentElement.symbol : _currentElement.name;
-    final hintText = _isSymbolToName ? 'Z: ${_currentElement.atomicNumber}' : '¿Símbolo?';
+    String promptText = "";
+    String hintText = "";
+    
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        promptText = _currentElement.symbol;
+        hintText = '¿Cuál es su nombre?';
+        break;
+      case QuestionType.nameToSymbol:
+        promptText = _currentElement.name;
+        hintText = '¿Cuál es su símbolo?';
+        break;
+      case QuestionType.atomicNumber:
+        promptText = 'Z = ${_currentElement.atomicNumber}';
+        hintText = '¿Qué elemento es?';
+        break;
+      case QuestionType.family:
+        promptText = _currentElement.name;
+        hintText = '¿A qué familia pertenece?';
+        break;
+    }
+
     final progressColor = _timeLeft > 15 ? nt.successGreen : nt.pink;
 
     return SafeArea(
@@ -192,27 +353,81 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                       children: [
                         Icon(Icons.timer_outlined, color: progressColor),
                         const SizedBox(width: 8),
-                        Text(
-                          '00:${_timeLeft.toString().padLeft(2, '0')}',
-                          style: TextStyle(
-                            color: progressColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          alignment: Alignment.center,
+                          children: [
+                            Text(
+                              '00:${_timeLeft.toString().padLeft(2, '0')}',
+                              style: TextStyle(
+                                color: progressColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            if (_showTimeChange)
+                              Positioned(
+                                top: -20,
+                                child: TweenAnimationBuilder<double>(
+                                  tween: Tween(begin: 0.0, end: -10.0),
+                                  duration: const Duration(milliseconds: 800),
+                                  curve: Curves.easeOut,
+                                  builder: (context, value, child) {
+                                    return Transform.translate(
+                                      offset: Offset(0, value),
+                                      child: Opacity(
+                                        opacity: 1.0 - (value.abs() / 10),
+                                        child: Text(
+                                          _timeChange > 0 ? '+$_timeChange' : '$_timeChange',
+                                          style: TextStyle(
+                                            color: _timeChange > 0 ? nt.successGreen : nt.pink,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                          ],
                         ),
                       ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: nt.blueGoogle.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
-                      ),
-                      child: Text(
-                        'Puntos: $_score',
-                        style: TextStyle(color: nt.blueGoogle, fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
+                    Row(
+                      children: [
+                        if (_comboMultiplier > 1)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            margin: const EdgeInsets.only(right: 8),
+                            decoration: BoxDecoration(
+                              color: nt.warningAmber.withValues(alpha: 0.2),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: nt.warningAmber.withValues(alpha: 0.5)),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.bolt, color: nt.warningAmber, size: 16),
+                                Text(
+                                  'x$_comboMultiplier',
+                                  style: TextStyle(color: nt.warningAmber, fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: nt.blueGoogle.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                          ),
+                          child: Text(
+                            '$_score pts',
+                            style: TextStyle(color: nt.blueGoogle, fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -236,20 +451,26 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            promptText,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 80,
-                              fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                promptText,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  // Adjust size slightly if it's family text
+                                  fontSize: _questionType == QuestionType.family ? 40 : 80, 
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 16),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          margin: const EdgeInsets.only(bottom: 16),
                           decoration: BoxDecoration(
                             color: nt.blueGoogle.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(16),
@@ -313,7 +534,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                       crossAxisCount: 2,
                       mainAxisSpacing: 16,
                       crossAxisSpacing: 16,
-                      childAspectRatio: 1.6,
+                      childAspectRatio: _options.length > 4 ? 2.5 : 1.6,
                       physics: const NeverScrollableScrollPhysics(),
                       children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
                     ),
@@ -352,7 +573,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
             ),
             const SizedBox(height: 12),
             const Text(
-              'Adivina la mayor cantidad de elementos en 60 segundos. ¡Sé veloz!',
+              'Adivina elementos rápidamente.\n¡Aciertos suman tiempo, errores restan!',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white54, fontSize: 16),
             ),
@@ -430,15 +651,29 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
     );
   }
 
-  Widget _buildOptionCard(NeuralThemeData nt, ChemicalElement option) {
-    final optionText = _isSymbolToName ? option.name : option.symbol;
-    
+  Widget _buildOptionCard(NeuralThemeData nt, String option) {
     Color borderColor = Colors.white.withValues(alpha: 0.1);
     Color bgColor = nt.surfaceElevated;
     Color textColor = Colors.white;
 
+    bool isCorrectOption = false;
+    switch (_questionType) {
+      case QuestionType.symbolToName:
+        isCorrectOption = option == _currentElement.name;
+        break;
+      case QuestionType.nameToSymbol:
+        isCorrectOption = option == _currentElement.symbol;
+        break;
+      case QuestionType.atomicNumber:
+        isCorrectOption = option == _currentElement.name;
+        break;
+      case QuestionType.family:
+        isCorrectOption = option == _currentElement.family;
+        break;
+    }
+
     if (_answered) {
-      if (option.atomicNumber == _currentElement.atomicNumber) {
+      if (isCorrectOption) {
         borderColor = nt.successGreen;
         bgColor = nt.successGreen.withValues(alpha: 0.15);
         textColor = nt.successGreen;
@@ -465,7 +700,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                optionText,
+                option,
                 style: TextStyle(
                   color: textColor,
                   fontSize: 20,
