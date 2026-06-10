@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learn/core/services/export_service.dart';
+import 'package:learn/models/question.dart';
 
 class ExamResultsScreen extends StatefulWidget {
   const ExamResultsScreen({super.key});
@@ -32,6 +34,8 @@ class _ExamResultsScreenState extends State<ExamResultsScreen> {
     final score = args['score'] as int? ?? 0;
     final total = args['total'] as int? ?? 1;
     final timeSpent = args['timeSpent'] as int? ?? 0;
+    final questions = args['questions'] as List<Question>? ?? [];
+    final answers = args['answers'] as Map<String, int>? ?? {};
 
     final percentage = (score / total) * 100;
     
@@ -132,7 +136,54 @@ class _ExamResultsScreenState extends State<ExamResultsScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 48),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: OutlinedButton.icon(
+                            onPressed: () => ExportService.exportExamToPdf(
+                              context,
+                              score: score,
+                              total: total,
+                              timeSpent: timeSpent,
+                              questions: questions,
+                              answers: answers,
+                            ),
+                            icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+                            label: const Text('PDF', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            style: OutlinedButton.styleFrom(
+                              side: const BorderSide(color: Colors.white24),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: OutlinedButton.icon(
+                            onPressed: () => ExportService.exportExamToWord(
+                              context,
+                              score: score,
+                              total: total,
+                              timeSpent: timeSpent,
+                              questions: questions,
+                              answers: answers,
+                            ),
+                            icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
+                            label: const Text('Word', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            style: OutlinedButton.styleFrom(
+                              side: const BorderSide(color: Colors.white24),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
     
                   SizedBox(
                     width: double.infinity,

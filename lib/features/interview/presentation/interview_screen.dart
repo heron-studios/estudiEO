@@ -8,6 +8,8 @@ import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/features/interview/domain/models/interview_question.dart';
 import 'package:learn/features/interview/domain/services/interview_service.dart';
 import 'package:learn/core/config/neural_theme.dart';
+import 'package:learn/core/services/export_service.dart';
+import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
 // Componente animado: Micrófono palpitante
 class _PulsingMic extends StatefulWidget {
@@ -82,6 +84,7 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
   int _sessionMastered = 0;
   int _sessionTimeouts = 0;
   int _sessionSkipped = 0;
+  final Map<InterviewQuestion, String> _questionOutcomes = {};
 
   @override
   void initState() {
@@ -142,6 +145,9 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
     if (!mounted) return;
     HapticFeedback.vibrate();
     context.read<AudioService>().playIncorrectSound();
+    if (_currentIndex < _questions.length) {
+      _questionOutcomes[_questions[_currentIndex]] = 'timeout';
+    }
     _sessionTimeouts++;
     _sessionQuestionsAnswered++;
     _nextQuestion();
@@ -156,6 +162,7 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
         mastered: _sessionMastered,
         timeouts: _sessionTimeouts,
         skipped: _sessionSkipped,
+        outcomes: _questionOutcomes,
       )),
     );
   }
@@ -163,6 +170,9 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
   Future<void> _markMastered(int id) async {
     _countdownTimer?.cancel();
     context.read<AudioService>().playCorrectSound();
+    if (_currentIndex < _questions.length) {
+      _questionOutcomes[_questions[_currentIndex]] = 'mastered';
+    }
     _sessionMastered++;
     _sessionQuestionsAnswered++;
     await _service.markAsMastered(id);
@@ -170,6 +180,9 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
   }
 
   void _markSkipped() {
+    if (_currentIndex < _questions.length) {
+      _questionOutcomes[_questions[_currentIndex]] = 'skipped';
+    }
     _sessionSkipped++;
     _sessionQuestionsAnswered++;
     _nextQuestion();
@@ -189,55 +202,57 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
     final nt = NeuralTheme.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
+    return NeuralBackgroundWrapper(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_rounded, color: isDark ? Colors.white : Colors.black87),
-          onPressed: () {
-            if (_sessionQuestionsAnswered > 0) {
-              _showFinalResults();
-            } else {
-              Navigator.pop(context);
-            }
-          },
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_rounded, color: isDark ? Colors.white : Colors.black87),
+            onPressed: () {
+              if (_sessionQuestionsAnswered > 0) {
+                _showFinalResults();
+              } else {
+                Navigator.pop(context);
+              }
+            },
+          ),
+          title: const Text('SIMULADOR TÁCTICO', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, letterSpacing: 2.0)),
         ),
-        title: const Text('SIMULADOR TÁCTICO', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, letterSpacing: 2.0)),
-      ),
-      body: Stack(
-        children: [
-          Positioned.fill(child: Container(color: nt.background)),
-          _isLoading 
-            ? Center(child: CircularProgressIndicator(color: nt.blueGoogle))
-            : _questions.isEmpty 
-              ? _buildAllMasteredState(nt, isDark)
-              : SafeArea(
-                  child: Column(
-                    children: [
-                      if (_isRealismMode) _buildRealismTimer(nt),
-                      _buildProgressHeader(nt),
-                      Expanded(
-                        child: PageView.builder(
-                          controller: _pageController,
-                          physics: const NeverScrollableScrollPhysics(),
-                          onPageChanged: (idx) => setState(() {
-                            _currentIndex = idx;
-                            _showAnswer = false;
-                            _startTimer();
-                          }),
-                          itemCount: _questions.length,
-                          itemBuilder: (context, index) => _buildQuestionView(_questions[index], nt, isDark),
+        body: Stack(
+          children: [
+            _isLoading 
+              ? Center(child: CircularProgressIndicator(color: nt.blueGoogle))
+              : _questions.isEmpty 
+                ? _buildAllMasteredState(nt, isDark)
+                : SafeArea(
+                    child: Column(
+                      children: [
+                        if (_isRealismMode) _buildRealismTimer(nt),
+                        _buildProgressHeader(nt),
+                        Expanded(
+                          child: PageView.builder(
+                            controller: _pageController,
+                            physics: const NeverScrollableScrollPhysics(),
+                            onPageChanged: (idx) => setState(() {
+                              _currentIndex = idx;
+                              _showAnswer = false;
+                              _startTimer();
+                            }),
+                            itemCount: _questions.length,
+                            itemBuilder: (context, index) => _buildQuestionView(_questions[index], nt, isDark),
+                          ),
                         ),
-                      ),
-                      _buildTacticalControls(nt, isDark),
-                      const SizedBox(height: 30),
-                    ],
+                        _buildTacticalControls(nt, isDark),
+                        const SizedBox(height: 30),
+                      ],
+                    ),
                   ),
-                ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -481,12 +496,14 @@ class _ResultsSummaryScreen extends StatelessWidget {
   final int mastered;
   final int timeouts;
   final int skipped;
+  final Map<InterviewQuestion, String> outcomes;
 
   const _ResultsSummaryScreen({
     required this.total, 
     required this.mastered, 
     required this.timeouts,
     required this.skipped,
+    required this.outcomes,
   });
 
   @override
@@ -494,40 +511,78 @@ class _ResultsSummaryScreen extends StatelessWidget {
     final nt = NeuralTheme.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
-    return Scaffold(
-      backgroundColor: nt.background,
-      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0, centerTitle: true, title: const Text('RESULTADOS DE SESIÓN', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14))),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40),
-          child: Container(
-            padding: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: isDark ? nt.surfaceCard : Colors.white,
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
-              boxShadow: [
-                BoxShadow(color: nt.blueGoogle.withValues(alpha: 0.1), blurRadius: 20, offset: const Offset(0, 10))
-              ]
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.analytics_rounded, size: 60, color: nt.blueGoogle),
-                const SizedBox(height: 20),
-                _resultRow('Preguntas analizadas', '$total', nt.blueGoogle),
-                const Divider(color: Colors.white24, height: 30),
-                _resultRow('Dominadas (Aprendido)', '$mastered', nt.successGreen),
-                _resultRow('Sin respuesta (Timeout)', '$timeouts', nt.pink),
-                _resultRow('Saltadas para luego', '$skipped', nt.warningAmber),
-                const SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(backgroundColor: nt.blueGoogle, foregroundColor: Colors.white, minimumSize: const Size(double.infinity, 60)),
-                  child: const Text('FINALIZAR ENTRENAMIENTO', style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
-              ],
+    return NeuralBackgroundWrapper(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0, centerTitle: true, title: const Text('RESULTADOS DE SESIÓN', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14))),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(40),
+            child: Container(
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                color: isDark ? nt.surfaceCard : Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                boxShadow: [
+                  BoxShadow(color: nt.blueGoogle.withValues(alpha: 0.1), blurRadius: 20, offset: const Offset(0, 10))
+                ]
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.analytics_rounded, size: 60, color: nt.blueGoogle),
+                  const SizedBox(height: 20),
+                  _resultRow('Preguntas analizadas', '$total', nt.blueGoogle),
+                  const Divider(color: Colors.white24, height: 30),
+                  _resultRow('Dominadas (Aprendido)', '$mastered', nt.successGreen),
+                  _resultRow('Sin respuesta (Timeout)', '$timeouts', nt.pink),
+                  _resultRow('Saltadas para luego', '$skipped', nt.warningAmber),
+                  const SizedBox(height: 30),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: OutlinedButton.icon(
+                            onPressed: () => ExportService.exportInterviewToPdf(context, outcomes),
+                            icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+                            label: const Text('PDF', style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: isDark ? Colors.white : Colors.black87,
+                              side: BorderSide(color: isDark ? Colors.white24 : Colors.black26),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: OutlinedButton.icon(
+                            onPressed: () => ExportService.exportInterviewToWord(context, outcomes),
+                            icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
+                            label: const Text('Word', style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: isDark ? Colors.white : Colors.black87,
+                              side: BorderSide(color: isDark ? Colors.white24 : Colors.black26),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
+                    style: ElevatedButton.styleFrom(backgroundColor: nt.blueGoogle, foregroundColor: Colors.white, minimumSize: const Size(double.infinity, 60)),
+                    child: const Text('FINALIZAR ENTRENAMIENTO', style: TextStyle(fontWeight: FontWeight.bold)),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

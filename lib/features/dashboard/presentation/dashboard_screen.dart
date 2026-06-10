@@ -8,6 +8,7 @@ import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/gemini_service.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:learn/core/services/export_service.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  DashboardScreen — "Mi Progreso"
@@ -25,12 +26,91 @@ import 'package:fl_chart/fl_chart.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
+  static Future<void> _exportProgress(BuildContext context, {required bool asPdf}) async {
+    // Show a loading dialog
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(child: CircularProgressIndicator()),
+    );
+
+    try {
+      final srs = context.read<SrsProvider>();
+      final quiz = context.read<QuizProvider>();
+      final subjectProvider = context.read<SubjectProvider>();
+
+      final stats = srs.globalStats;
+      // Get AI advice
+      String advice = 'Alipio está descansando. ¡Sigue estudiando duro!';
+      try {
+        advice = await GeminiService.darConsejoPersonalizado(stats);
+      } catch (e) {
+        // Fallback
+      }
+
+      // Format subject stats
+      final List<Map<String, dynamic>> subjectStatsList = [];
+      for (final subject in subjectProvider.subjects) {
+        final subStats = quiz.getSubjectStats(subject.topicIds);
+        final avg = subStats['averagePercentage'] as double? ?? 0.0;
+        final total = subStats['totalSessions'] as int? ?? 0;
+        subjectStatsList.add({
+          'name': subject.name,
+          'icon': subject.icon,
+          'totalSessions': total,
+          'averagePercentage': avg,
+        });
+      }
+
+      // Close loading dialog
+      if (context.mounted) {
+        Navigator.pop(context);
+
+        if (asPdf) {
+          await ExportService.exportDashboardToPdf(
+            context,
+            globalStats: stats,
+            alipioAdvice: advice,
+            subjectStats: subjectStatsList,
+          );
+        } else {
+          await ExportService.exportDashboardToWord(
+            context,
+            globalStats: stats,
+            alipioAdvice: advice,
+            subjectStats: subjectStatsList,
+          );
+        }
+      }
+    } catch (e) {
+      if (context.mounted) {
+        Navigator.pop(context); // Close loading dialog if open
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error al exportar: $e')),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: const Text('Mi Progreso'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+            tooltip: 'Exportar PDF',
+            onPressed: () => _exportProgress(context, asPdf: true),
+          ),
+          IconButton(
+            icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
+            tooltip: 'Exportar Word',
+            onPressed: () => _exportProgress(context, asPdf: false),
+          ),
+          const SizedBox(width: 8),
+        ],
       ),
       body: SingleChildScrollView(
           // PageStorageKey garantiza que la posición de scroll se conserve

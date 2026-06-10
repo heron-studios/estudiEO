@@ -112,6 +112,8 @@ class _ExamScreenState extends State<ExamScreen> {
         'score': correctCount,
         'total': _questions.length,
         'timeSpent': _examDuration - _secondsLeft,
+        'questions': _questions,
+        'answers': _answers,
       },
     );
   }

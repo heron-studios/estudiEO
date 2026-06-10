@@ -49,16 +49,21 @@ class AuthService extends ChangeNotifier {
 
   Future<void> _checkInitialAuth() async {
     try {
-      // In web with demo mode, skip checks entirely
       if (AppConfig.isDemoMode) {
         _isAuthorized = true;
         return;
       }
 
-      if (currentUser != null) {
-        // Short timeout for verification
+      // Esperar a que Firebase termine de cargar la sesión persistida (hasta 2 segundos)
+      final user = await _auth.userChanges().first.timeout(
+        const Duration(seconds: 2),
+        onTimeout: () => _auth.currentUser,
+      );
+
+      if (user != null) {
+        // Safe timeout for verification in slow networks
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 3),
+          const Duration(seconds: 10),
           onTimeout: () {
             debugPrint('Auth check timeout');
             return false;
@@ -138,82 +143,161 @@ class AuthService extends ChangeNotifier {
     notifyListeners();
   }
 
+  String? _lastVerificationError;
+  String? get lastVerificationError => _lastVerificationError;
+
   /// Verifica si el usuario actual tiene permisos en Firestore
   Future<bool> _verifyAuthorization() async {
+    _lastVerificationError = null;
     if (AppConfig.isDemoMode) return true; // Bypass check in demo mode
     final user = _auth.currentUser;
-    if (user == null || user.email == null) return false;
+    if (user == null || user.email == null) {
+      _lastVerificationError = 'No hay usuario autenticado de Firebase.';
+      return false;
+    }
 
     final email = user.email!.trim();
     final emailLower = email.toLowerCase();
+    final emailUpper = email.toUpperCase();
+    final emails = {email, emailLower, emailUpper}.toList();
+    final errorMsgs = <String>[];
 
     try {
-      // 1. Try exact email as document ID
-      var doc = await _firestore
-          .collection('authorized_users')
-          .doc(email)
-          .get();
-      if (doc.exists) {
-        final data = doc.data();
-        if (data != null && _checkIsPaid(data)) {
-          _psico = _checkPsicoAccess(data);
-          return true;
+      // Realizar las consultas de validación en paralelo
+      final futures = [
+        // 1. Intentar con el correo exacto como ID del documento
+        _firestore
+            .collection('authorized_users')
+            .doc(email)
+            .get()
+            .then<DocumentSnapshot<Map<String, dynamic>>?>((doc) => doc)
+            .catchError((e) {
+              debugPrint('Error fetching email doc: $e');
+              errorMsgs.add('Doc(correo exacto) error: $e');
+              return null;
+            }),
+        // 2. Intentar con el correo en minúsculas como ID del documento
+        _firestore
+            .collection('authorized_users')
+            .doc(emailLower)
+            .get()
+            .then<DocumentSnapshot<Map<String, dynamic>>?>((doc) => doc)
+            .catchError((e) {
+              debugPrint('Error fetching emailLower doc: $e');
+              errorMsgs.add('Doc(correo minúscula) error: $e');
+              return null;
+            }),
+        // 3. Intentar con el correo en mayúsculas como ID del documento (por si acaso)
+        _firestore
+            .collection('authorized_users')
+            .doc(emailUpper)
+            .get()
+            .then<DocumentSnapshot<Map<String, dynamic>>?>((doc) => doc)
+            .catchError((e) {
+              debugPrint('Error fetching emailUpper doc: $e');
+              errorMsgs.add('Doc(correo mayúscula) error: $e');
+              return null;
+            }),
+        // 4. Intentar con el UID como ID del documento (por si el admin asignó por UID)
+        _firestore
+            .collection('authorized_users')
+            .doc(user.uid)
+            .get()
+            .then<DocumentSnapshot<Map<String, dynamic>>?>((doc) => doc)
+            .catchError((e) {
+              debugPrint('Error fetching uid doc: $e');
+              errorMsgs.add('Doc(UID de Firebase) error: $e');
+              return null;
+            }),
+        // 5. Consultar donde el campo 'email' coincida
+        _firestore
+            .collection('authorized_users')
+            .where('email', whereIn: emails)
+            .get()
+            .then<QuerySnapshot<Map<String, dynamic>>?>((qs) => qs)
+            .catchError((e) {
+              debugPrint('Error querying email field: $e');
+              errorMsgs.add('Filtro por campo email error: $e');
+              return null;
+            }),
+      ];
+
+      final results = await Future.wait(futures);
+
+      // Verificar los primeros 4 resultados (documentos individuales)
+      for (int i = 0; i < 4; i++) {
+        final doc = results[i] as DocumentSnapshot<Map<String, dynamic>>?;
+        if (doc != null && doc.exists) {
+          final data = doc.data();
+          if (data != null && _checkIsPaid(data)) {
+            _psico = _checkPsicoAccess(data);
+            return true;
+          }
         }
       }
 
-      // 2. Try lowercase email as document ID
-      doc = await _firestore
-          .collection('authorized_users')
-          .doc(emailLower)
-          .get();
-      if (doc.exists) {
-        final data = doc.data();
-        if (data != null && _checkIsPaid(data)) {
-          _psico = _checkPsicoAccess(data);
-          return true;
-        }
-      }
-
-      // 3. Try query by 'email' field (exact match)
-      var query = await _firestore
-          .collection('authorized_users')
-          .where('email', isEqualTo: email)
-          .get();
-      if (query.docs.isNotEmpty) {
-        final data = query.docs.first.data();
+      // Verificar el 5to resultado (consulta de documentos por campo)
+      final querySnapshot = results[5 - 1] as QuerySnapshot<Map<String, dynamic>>?;
+      if (querySnapshot != null && querySnapshot.docs.isNotEmpty) {
+        final data = querySnapshot.docs.first.data();
         if (_checkIsPaid(data)) {
           _psico = _checkPsicoAccess(data);
           return true;
         }
       }
 
-      // 4. Try query by 'email' field (lowercase match)
-      query = await _firestore
-          .collection('authorized_users')
-          .where('email', isEqualTo: emailLower)
-          .get();
-      if (query.docs.isNotEmpty) {
-        final data = query.docs.first.data();
-        if (_checkIsPaid(data)) {
-          _psico = _checkPsicoAccess(data);
-          return true;
-        }
+      // Si llegamos aquí, no se encontró ningún documento válido que califique como pagado/autorizado
+      if (errorMsgs.isNotEmpty) {
+        _lastVerificationError = 'Errores de conexión/permisos de Firestore:\n- ${errorMsgs.join('\n- ')}';
+      } else {
+        _lastVerificationError = 'No se encontró tu correo "$email" o tu UID "${user.uid}" en la lista de usuarios autorizados. Confirma con el administrador que se haya registrado exactamente ese correo o UID.';
       }
-
       return false;
     } catch (e) {
       debugPrint('Error checking authorization: $e');
+      _lastVerificationError = 'Excepción general al verificar: $e';
       return false;
     }
   }
 
   bool _checkIsPaid(Map<String, dynamic> data) {
+    // 1. Verificar si existen indicadores negativos explícitos en otros campos comunes
+    final status = data['status'];
+    if (status != null) {
+      final s = status.toString().toLowerCase().trim();
+      if (s == 'inactivo' || s == 'suspendido' || s == 'bloqueado' || s == 'inactive' || s == 'blocked' || s == 'false' || s == '0') {
+        return false;
+      }
+    }
+
+    final acceso = data['acceso'];
+    if (acceso != null) {
+      if (acceso is bool && !acceso) return false;
+      final s = acceso.toString().toLowerCase().trim();
+      if (s == 'false' || s == '0' || s == 'no' || s == 'inactivo' || s == 'bloqueado') {
+        return false;
+      }
+    }
+
     final isPaid = data['isPaid'];
-    if (isPaid == null) return false;
+    // Si el usuario existe en la colección pero no hay campo isPaid ni indicadores negativos,
+    // asumimos acceso concedido (el admin lo agregó a la colección para autorizarlo).
+    if (isPaid == null) return true;
     if (isPaid is bool) return isPaid;
     if (isPaid is String) {
       final s = isPaid.toLowerCase().trim();
-      return s == 'true' || s == 'yes' || s == 'si' || s == 'sí' || s == '1';
+      return s == 'true' ||
+             s == 'yes' ||
+             s == 'si' ||
+             s == 'sí' ||
+             s == '1' ||
+             s == 'active' ||
+             s == 'activo' ||
+             s == 'activa' ||
+             s == 'habilitado' ||
+             s == 'habilitada' ||
+             s == 'autorizado' ||
+             s == 'autorizada';
     }
     if (isPaid is num) return isPaid == 1;
     return false;

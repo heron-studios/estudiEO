@@ -244,6 +244,8 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                           _buildModulesGrid(),
                           const SizedBox(height: 16),
                           _buildTipCard(nt),
+                          const SizedBox(height: 12),
+                          _buildMedicalExamButton(nt),
                         ],
                       ),
                     ),
@@ -275,6 +277,8 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                               ),
                               const SizedBox(height: 16),
                               _buildTipCard(nt),
+                              const SizedBox(height: 12),
+                              _buildMedicalExamButton(nt),
                             ],
                           ),
                         ),
@@ -787,6 +791,72 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMedicalExamButton(NeuralThemeData nt) {
+    return HoverGlassCard(
+      onTap: _showComingSoon,
+      hoverGradientBorder: true,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: nt.pink.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: nt.pink.withValues(alpha: 0.3), width: 1),
+              ),
+              child: Icon(Icons.medical_services_rounded,
+                  color: nt.pink, size: 20),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'NUEVA FUNCIÓN',
+                    style: TextStyle(
+                      color: nt.pink,
+                      fontSize: 9,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  const Text(
+                    'EXAMEN MEDICO PNP',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Outfit',
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.arrow_forward_ios_rounded,
+                  color: Colors.white, size: 14),
+            ),
+          ],
+        ),
       ),
     );
   }

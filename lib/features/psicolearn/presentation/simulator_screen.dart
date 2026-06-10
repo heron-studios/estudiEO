@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
+import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 import 'package:learn/features/psicolearn/domain/services/psico_service.dart';
@@ -519,18 +520,20 @@ class _SimulatorScreenState extends State<SimulatorScreen>
   @override
   Widget build(BuildContext context) {
     if (_questions == null) {
-      return Scaffold(
-        backgroundColor: NeuralTheme.of(context).background,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(
-                  color: NeuralTheme.of(context).blueGoogle),
-              const SizedBox(height: 16),
-              const Text('Preparando simulacro...',
-                  style: TextStyle(color: Colors.white70)),
-            ],
+      return NeuralBackgroundWrapper(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(
+                    color: NeuralTheme.of(context).blueGoogle),
+                const SizedBox(height: 16),
+                const Text('Preparando simulacro...',
+                    style: TextStyle(color: Colors.white70)),
+              ],
+            ),
           ),
         ),
       );
@@ -550,8 +553,9 @@ class _SimulatorScreenState extends State<SimulatorScreen>
           if (context.mounted) context.pop();
         }
       },
-      child: Scaffold(
-        backgroundColor: nt.background,
+      child: NeuralBackgroundWrapper(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -858,6 +862,7 @@ class _SimulatorScreenState extends State<SimulatorScreen>
           ),
         ),
       ),
+    ),
     );
   }
 }

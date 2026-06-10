@@ -12,7 +12,6 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
 import 'package:learn/core/services/local_storage_service.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:go_router/go_router.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -400,11 +399,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
       onTap: () async {
-        final authService = context.read<AuthService>();
-        if (!authService.psico) {
-          _showUpgradeDialog(context);
-          return;
-        }
         await Navigator.push(
           context,
           MaterialPageRoute(
@@ -558,114 +552,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _showUpgradeDialog(BuildContext context) {
-    final nt = NeuralTheme.of(context);
-    showDialog(
-      context: context,
-      builder: (ctx) => Dialog(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        insetPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 480),
-          child: StaticGlassContainer(
-            padding: const EdgeInsets.all(32),
-            borderRadius: BorderRadius.circular(24),
-            blur: 16.0,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.orangeAccent.withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                            color: Colors.orangeAccent.withValues(alpha: 0.3)),
-                      ),
-                      child: const Icon(Icons.lock_rounded,
-                          color: Colors.orangeAccent, size: 28),
-                    ),
-                    const SizedBox(width: 16),
-                    const Expanded(
-                      child: Text(
-                        'Desbloquea PsicoLearn',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          fontFamily: 'Outfit',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 24),
-                Text(
-                  'La misión diaria psicométrica es parte del módulo PsicoLearn PRO.',
-                  style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.8),
-                      fontSize: 15,
-                      height: 1.5),
-                ),
-                const SizedBox(height: 32),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(ctx),
-                      style: TextButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 14),
-                        foregroundColor: Colors.white60,
-                      ),
-                      child: const Text('Cerrar'),
-                    ),
-                    const SizedBox(width: 12),
-                    Container(
-                      decoration: BoxDecoration(
-                        gradient: nt.neuralGradient,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(ctx);
-                          _contactAdmin();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          foregroundColor: Colors.white,
-                          shadowColor: Colors.transparent,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 14),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: const Text('Obtener Acceso PRO',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15)),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 
-  Future<void> _contactAdmin() async {
-    final url = Uri.parse(
-        'https://wa.me/51955285763?text=Hola,%20quiero%20activar%20mi%20acceso%20a%20PsicoLearn');
-    await launchUrl(url);
-  }
 
   @override
   Widget build(BuildContext context) {

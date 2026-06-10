@@ -9,6 +9,8 @@ class ANPModel {
   final List<String> keyFauna;
   final String svgAssetPath;
   final String mnemonicHint;
+  final double relativeX;
+  final double relativeY;
 
   const ANPModel({
     required this.id,
@@ -21,6 +23,8 @@ class ANPModel {
     required this.keyFauna,
     required this.svgAssetPath,
     required this.mnemonicHint,
+    required this.relativeX,
+    required this.relativeY,
   });
 
   factory ANPModel.fromJson(Map<String, dynamic> json) {
@@ -35,6 +39,8 @@ class ANPModel {
       keyFauna: List<String>.from(json['key_fauna'] as List),
       svgAssetPath: json['svg_asset_path'] as String,
       mnemonicHint: json['mnemonic_hint'] as String,
+      relativeX: (json['relative_x'] as num?)?.toDouble() ?? 0.5,
+      relativeY: (json['relative_y'] as num?)?.toDouble() ?? 0.5,
     );
   }
 
@@ -50,6 +56,8 @@ class ANPModel {
       'key_fauna': keyFauna,
       'svg_asset_path': svgAssetPath,
       'mnemonic_hint': mnemonicHint,
+      'relative_x': relativeX,
+      'relative_y': relativeY,
     };
   }
 }

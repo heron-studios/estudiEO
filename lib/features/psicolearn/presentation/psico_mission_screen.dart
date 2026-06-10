@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
+import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 import 'package:learn/features/psicolearn/domain/services/psico_service.dart';
 import 'package:learn/core/services/audio_service.dart';
@@ -130,9 +131,13 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
     });
 
     if (isCorrect) {
-      Future.delayed(const Duration(milliseconds: 1000), () {
-        if (mounted) _nextQuestion();
-      });
+      if (question.contextoCorrecto.isEmpty) {
+        Future.delayed(const Duration(milliseconds: 1000), () {
+          if (mounted && _showingFeedback && _selectedIsCorrect) {
+            _nextQuestion();
+          }
+        });
+      }
     }
   }
 
@@ -160,38 +165,40 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
 
-    return Scaffold(
-      backgroundColor: nt.background,
-      appBar: AppBar(
+    return NeuralBackgroundWrapper(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
-          onPressed: () => context.pop(),
-        ),
-        title: const Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.stars_rounded, color: Colors.amber, size: 18),
-            SizedBox(width: 8),
-            Text(
-              'Misión Diaria',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Outfit',
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => context.pop(),
+          ),
+          title: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.stars_rounded, color: Colors.amber, size: 18),
+              SizedBox(width: 8),
+              Text(
+                'Misión Diaria',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Outfit',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: _buildContent(nt),
+        body: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: _buildContent(nt),
+            ),
           ),
         ),
       ),
@@ -487,8 +494,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
           ),
         ),
 
-        // Feedback panel (si se equivoca)
-        if (_showingFeedback && !_selectedIsCorrect)
+        // Feedback panel (si se equivoca o si acertó y hay un contexto explicativo)
+        if (_showingFeedback && (!_selectedIsCorrect || question.contextoCorrecto.isNotEmpty))
           FadeTransition(
             opacity: _feedbackAnimation,
             child: SlideTransition(
@@ -501,7 +508,10 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                 child: StaticGlassContainer(
                   padding: const EdgeInsets.all(18),
                   borderRadius: BorderRadius.circular(20),
-                  borderColor: const Color(0xFFEF4444).withValues(alpha: 0.4),
+                  borderColor: (_selectedIsCorrect
+                          ? const Color(0xFF4ADE80)
+                          : const Color(0xFFEF4444))
+                      .withValues(alpha: 0.4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -510,20 +520,31 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: Colors.orangeAccent.withValues(alpha: 0.15),
+                              color: (_selectedIsCorrect
+                                      ? const Color(0xFF4ADE80)
+                                      : Colors.orangeAccent)
+                                  .withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(Icons.psychology_alt_rounded,
-                                color: Colors.orangeAccent, size: 22),
+                            child: Icon(
+                                _selectedIsCorrect
+                                    ? Icons.stars_rounded
+                                    : Icons.psychology_alt_rounded,
+                                color: _selectedIsCorrect
+                                    ? const Color(0xFF4ADE80)
+                                    : Colors.orangeAccent,
+                                size: 22),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  'Revisemos esta respuesta',
-                                  style: TextStyle(
+                                Text(
+                                  _selectedIsCorrect
+                                      ? '¡Respuesta Correcta!'
+                                      : 'Revisemos esta respuesta',
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -543,20 +564,30 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                       ),
                       const SizedBox(height: 14),
 
+                      if (!_selectedIsCorrect) ...[
+                        _buildFeedbackBlock(
+                          title: 'Respuesta recomendada',
+                          content: question.options[question.correctAnswer] ??
+                              'N/A',
+                          color: const Color(0xFF4ADE80),
+                          icon: Icons.task_alt_rounded,
+                        ),
+                        const SizedBox(height: 10),
+                      ],
                       _buildFeedbackBlock(
-                        title: 'Respuesta recomendada',
-                        content: question.options[question.correctAnswer] ??
-                            'N/A',
-                        color: const Color(0xFF4ADE80),
-                        icon: Icons.task_alt_rounded,
-                      ),
-                      const SizedBox(height: 10),
-                      _buildFeedbackBlock(
-                        title: 'Orientación psicológica',
-                        content: question.hint.isNotEmpty
-                            ? question.hint
-                            : 'En este tipo de preguntas, suele haber una opción que refleja mayor equilibrio o resiliencia.',
-                        color: Colors.orangeAccent,
+                        title: _selectedIsCorrect
+                            ? 'Explicación del acierto'
+                            : 'Orientación psicológica',
+                        content: _selectedIsCorrect
+                            ? question.contextoCorrecto
+                            : (question.contextoIncorrecto.isNotEmpty
+                                ? question.contextoIncorrecto
+                                : (question.hint.isNotEmpty
+                                    ? question.hint
+                                    : 'En este tipo de preguntas, suele haber una opción que refleja mayor equilibrio o resiliencia.')),
+                        color: _selectedIsCorrect
+                            ? const Color(0xFF4ADE80)
+                            : Colors.orangeAccent,
                         icon: Icons.lightbulb_outline_rounded,
                       ),
 
@@ -575,7 +606,7 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                       ElevatedButton.icon(
                         onPressed: _nextQuestion,
                         icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                        label: const Text('Entendido, continuar',
+                        label: const Text('Continuar',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: nt.blueGoogle,

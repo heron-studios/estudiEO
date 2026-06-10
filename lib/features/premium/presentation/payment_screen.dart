@@ -1,7 +1,8 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
@@ -509,6 +510,69 @@ class _PaymentScreenState extends State<PaymentScreen>
           _buildBuyButton(),
 
           const SizedBox(height: 16),
+
+          _buildSecondaryButton(
+            icon: Icons.refresh_rounded,
+            label: '¿Ya pagaste? Verificar Acceso',
+            subtitle: 'Comprobar si tu cuenta ya fue activada en Firestore',
+            gradient: const [Color(0xFF3B82F6), Color(0xFF1D4ED8)],
+            onTap: () async {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Row(
+                    children: [
+                      SizedBox(
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                      ),
+                      SizedBox(width: 12),
+                      Text('Verificando acceso...'),
+                    ],
+                  ),
+                  duration: Duration(seconds: 1),
+                ),
+              );
+
+              final authService = context.read<AuthService>();
+              final hasAccess = await authService.checkAndSetAuthorization();
+
+              if (mounted) {
+                if (hasAccess) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('¡Acceso verificado con éxito! Redirigiendo...'),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
+                } else {
+                  final lastErr = authService.lastVerificationError;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Acceso aún no activo. Si ya pagaste, por favor escribe a soporte.'
+                        '${lastErr != null ? '\n\nDetalle técnico:\n$lastErr' : ''}'
+                      ),
+                      backgroundColor: Colors.orange,
+                      duration: const Duration(seconds: 10),
+                      action: SnackBarAction(
+                        label: 'Copiar',
+                        textColor: Colors.white,
+                        onPressed: () {
+                          // Copiar al portapapeles si es posible
+                          try {
+                            Clipboard.setData(ClipboardData(text: lastErr ?? 'Sin detalles'));
+                          } catch (_) {}
+                        },
+                      ),
+                    ),
+                  );
+                }
+              }
+            },
+          ),
+
+          const SizedBox(height: 12),
 
           _buildSecondaryButton(
             icon: Icons.groups_rounded,

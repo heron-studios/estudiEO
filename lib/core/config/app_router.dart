@@ -31,6 +31,7 @@ import 'package:learn/features/miniapps/anp_master/presentation/anp_master_scree
 import 'package:learn/features/miniapps/anp_master/presentation/anp_map_view.dart';
 import 'package:learn/features/miniapps/anp_master/presentation/anp_flashcards_view.dart';
 import 'package:learn/features/miniapps/anp_master/presentation/anp_quiz_view.dart';
+import 'package:learn/features/miniapps/anp_master/presentation/anp_library_view.dart';
 import 'package:learn/features/psicolearn/presentation/psicolearn_screen.dart';
 import 'package:learn/features/psicolearn/presentation/simulator_screen.dart';
 import 'package:learn/features/psicolearn/presentation/re_entrenamiento_screen.dart';
@@ -237,6 +238,10 @@ class AppRouter {
         GoRoute(
           path: '/miniapps/anp-master/quiz',
           builder: (context, state) => const ANPQuizView(),
+        ),
+        GoRoute(
+          path: '/miniapps/anp-master/library',
+          builder: (context, state) => const ANPLibraryView(),
         ),
         GoRoute(
           path: '/miniapps/productos-notables',

@@ -2,5075 +2,1429 @@
   "preguntas": [
     {
       "id": 1,
-      "texto": "No me afectan fácilmente los acontecimientos, pues tengo mucha fuerza interior.",
+      "texto": "Durante una intervención de patrullaje, un ciudadano comienza a insultarlo y a cuestionar su capacidad profesional frente a transeúntes, yo...",
       "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
+        "A": "Le respondo con sarcasmo para demostrar que sus insultos no me afectan y mantener mi estatus.",
+        "B": "Mantengo la comunicación asertiva, ignoro las ofensas personales y me enfoco estrictamente en el procedimiento legal.",
+        "C": "Procedo a detenerlo inmediatamente por desacato a la autoridad sin mediar palabra.",
+        "D": "Le pido que se calle de forma agresiva para evitar que la situación se salga de control."
       },
       "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 2
       },
-      "pista": "La estabilidad emocional es clave para el servicio policial.",
+      "contexto_correcto": "¡Excelente! La asertividad y el enfoque en el procedimiento demuestran madurez emocional y respeto por los protocolos institucionales.",
+      "contexto_incorrecto": "Un oficial debe evitar escalar conflictos innecesariamente; el sarcasmo o la agresividad vulneran la imagen institucional y el respeto a los derechos humanos.",
       "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
+      "sub_dimension": "Control de Impulsos",
+      "pista": ""
     },
     {
       "id": 2,
-      "texto": "¿Cómo reaccionas ante una situación de emergencia?",
+      "texto": "Si al finalizar una jornada de servicio agotadora mi superior me asigna una tarea adicional imprevista que retrasará mi salida, yo...",
       "opciones": {
-        "A": "Me paralizo por el miedo.",
-        "B": "Mantengo la calma y controlo mis emociones.",
-        "C": "Actúo impulsivamente sin pensar."
+        "A": "Muestro mi disgusto abiertamente para que sepa que no es justo, pero realizo la tarea.",
+        "B": "Acepto la orden con disposición, organizo mis prioridades and cumplo con el deber asignado.",
+        "C": "Busco a un compañero para que me ayude a terminar rápido y poder irme cuanto antes.",
+        "D": "Realizo la tarea de forma descuidada para terminar pronto, ya que mi turno ya terminó."
       },
       "puntos_opciones": {
-        "A": 0,
+        "A": 3,
         "B": 10,
-        "C": 0
+        "C": 5,
+        "D": 0
       },
-      "pista": "El control emocional permite tomar decisiones lógicas en crisis.",
-      "dimension": "Resiliencia",
-      "sub_dimension": "Manejo de Estrés"
+      "contexto_correcto": "¡Correcto! El sentido del deber y la disciplina son pilares fundamentales en la formación policial, demostrando compromiso con la misión institucional.",
+      "contexto_incorrecto": "La resistencia a las órdenes o el descuido en las funciones reflejan falta de disciplina y compromiso, rasgos esenciales en un futuro oficial.",
+      "dimension": "Actitud Laboral",
+      "sub_dimension": "Disciplina y Sentido del Deber",
+      "pista": ""
     },
     {
       "id": 3,
-      "texto": "Creo que las emociones dirigen nuestras vidas.",
+      "texto": "Cuando observo que un compañero de mi unidad comete una falta ética menor por beneficio propio, yo...",
       "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
+        "A": "Guardo silencio para mantener la lealtad y la unión del grupo.",
+        "B": "Hablo con él en privado para aconsejarle y, si persiste, lo informo por los canales regulares.",
+        "C": "Lo ignoro por completo, ya que cada quien es responsable de sus propios actos.",
+        "D": "Me quejo con otros compañeros sobre su actitud sin reportarlo oficialmente."
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Un líder debe guiarse por la razón y los valores, no solo por impulsos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autocontrol"
-    },
-    {
-      "id": 4,
-      "texto": "Siento la alegría de los demás, aun cuando no son allegados a mí.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La empatía ayuda a conectar con la comunidad.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 5,
-      "texto": "Me cuesta demostrar a la gente que estoy furioso con ellos.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "La asertividad implica expresar emociones de forma adecuada.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Comunicación"
-    },
-    {
-      "id": 6,
-      "texto": "A menudo ignoro a personas que no me suman.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "El respeto hacia todos es fundamental en el servicio público.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Respeto"
-    },
-    {
-      "id": 7,
-      "texto": "No siento compasión por los criminales.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Mantener la humanidad es vital, incluso ante el delito.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ética"
-    },
-    {
-      "id": 8,
-      "texto": "Lloro de emoción cuando algo me sale bien.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Se busca equilibrio emocional y madurez.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 9,
-      "texto": "Le presto mucha atención a mis sentimientos.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Algunas veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 5,
         "B": 10,
-        "C": 0
+        "C": 3,
+        "D": 2
       },
-      "pista": "Es bueno conocerse, pero no ensimismarse.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoconocimiento"
+      "contexto_correcto": "¡Muy bien! La integridad y la rectitud implican no ser cómplice de actos que afecten la ética profesional y la confianza pública.",
+      "contexto_incorrecto": "La malentendida 'lealtad' ante faltas éticas daña la integridad de la institución; la honestidad debe prevalecer sobre el compañerismo mal encaminado.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad",
+      "pista": ""
     },
     {
+      "texto": "Durante una persecución, el sospechoso arroja un fajo de billetes al suelo para distraerlo. Usted nota que nadie más lo ha visto y el sujeto logra escapar. Al regresar al lugar, yo...",
+      "opciones": {
+        "A": "Recojo el dinero y lo entrego a la unidad para fondos de bienestar común, ya que el sospechoso huyó.",
+        "B": "Aseguro el área, procedo al recojo del dinero mediante acta oficial y lo pongo a disposición de la autoridad competente como evidencia.",
+        "C": "Dejo el dinero ahí para evitar problemas legales, ya que no tengo testigos de que el sospechoso lo arrojó.",
+        "D": "Recojo una parte para gastos operativos de la patrulla y reporto el resto como hallazgo."
+      },
+      "puntos_opciones": {
+        "A": 2,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "¡Excelente! La integridad es innegociable. Todo elemento hallado en una intervención debe ser procesado bajo estricta cadena de custodia y legalidad.",
+      "contexto_incorrecto": "La apropiación o el mal manejo de evidencia constituye una falta grave contra la probidad. El oficial debe ser el primer guardián de la ley, no un aprovechador de las circunstancias.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad y Probidad",
+      "id": 4,
+      "pista": ""
+    },
+    {
+      "texto": "Se le ordena ejecutar un desalojo en una zona de extrema pobreza. Al llegar, observa que hay niños y ancianos en situación de vulnerabilidad y la turba comienza a rodearlo de forma hostil. Ante esto, yo...",
+      "opciones": {
+        "A": "Hago uso de la fuerza de forma inmediata para dispersar a la multitud y cumplir la orden sin demoras.",
+        "B": "Evalúo el nivel de riesgo, solicito apoyo especializado y trato de mediar con los líderes del grupo para evitar un costo social alto.",
+        "C": "Cancelo la operación por mi cuenta al considerar que se están vulnerando derechos humanos, asumiendo la responsabilidad.",
+        "D": "Me mantengo estático esperando que la turba se calme por sí sola antes de proceder."
+      },
+      "puntos_opciones": {
+        "A": 4,
+        "B": 10,
+        "C": 2,
+        "D": 3
+      },
+      "contexto_correcto": "¡Muy bien! El oficial debe equilibrar el cumplimiento de la ley con el respeto a los derechos fundamentales y la gestión del orden público mediante la proporcionalidad.",
+      "contexto_incorrecto": "La impulsividad en el uso de la fuerza o el abandono de funciones son extremos peligrosos. Se requiere criterio táctico y capacidad de mediación en crisis.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Toma de Decisiones bajo Presión",
+      "id": 5,
+      "pista": ""
+    },
+    {
+      "texto": "Usted descubre que un oficial de mayor rango está omitiendo información crucial en un atestado para favorecer a un detenido a cambio de una dádiva. Usted...",
+      "opciones": {
+        "A": "Informo de inmediato a Inspectoría o al superior jerárquico del involucrado, adjuntando las pruebas correspondientes.",
+        "B": "Confronto al oficial superior y le exijo que corrija el documento para no tener que denunciarlo.",
+        "C": "Ignoro la situación para no romper la cadena de mando ni ganarme enemigos poderosos dentro de la institución.",
+        "D": "Comento el hecho de forma anónima con mis compañeros para generar presión grupal sobre él."
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 4,
+        "C": 0,
+        "D": 2
+      },
+      "contexto_correcto": "¡Correcto! El valor civil y la lealtad a la Constitución superan cualquier lealtad malentendida hacia un superior corrupto.",
+      "contexto_incorrecto": "El encubrimiento es complicidad. La corrupción dentro de la PNP solo se erradica mediante la denuncia firme y el cumplimiento de los reglamentos éticos.",
+      "dimension": "Actitud Laboral",
+      "sub_dimension": "Lealtad Institucional y Valor Civil",
+      "id": 6,
+      "pista": ""
+    },
+    {
+      "texto": "Usted se encuentra en una fiesta y observa que un grupo de cadetes de años superiores están consumiendo bebidas alcohólicas, lo cual está prohibido por el reglamento. Uno de ellos lo invita a unirse para demostrar su 'lealtad' al grupo. Yo...",
+      "opciones": {
+        "A": "Acepto una copa para no generar conflictos con mis superiores y demostrar que soy parte del equipo.",
+        "B": "Rechazo la invitación cortésmente, me retiro del lugar de inmediato y mantengo mi postura ética.",
+        "C": "Los ignoro y me quedo en la fiesta, pero decido no beber para no meterse en problemas.",
+        "D": "Acepto, pero solo finjo beber para mantener las apariencias y no ser tildado de 'soplón'."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 2
+      },
+      "contexto_correcto": "¡Excelente! La integridad y el respeto irrestricto a los reglamentos institucionales son la base de la carrera de un oficial. La lealtad nunca debe estar por encima de la ley.",
+      "contexto_incorrecto": "Ceder ante la presión de grupo en actos que vulneran la disciplina es una falta grave. Un oficial debe mantener su temple y valores incluso frente a sus superiores jerárquicos.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad y Disciplina",
+      "id": 7,
+      "pista": ""
+    },
+    {
+      "texto": "Durante una intervención de control de identidad, un ciudadano lo insulta verbalmente de forma soez y lo graba con su celular buscando provocar una reacción violenta de su parte. Ante esto, yo...",
+      "opciones": {
+        "A": "Le quito el celular para evitar que siga grabando y lo detengo por desacato.",
+        "B": "Mantengo la calma, ignoro las ofensas y continúo con el procedimiento técnico-policial de forma impecable.",
+        "C": "Le respondo con la misma energía para que entienda que debe respetar a la autoridad.",
+        "D": "Solicito apoyo y me quedo callado mostrando una actitud de desprecio hacia el ciudadano."
+      },
+      "puntos_opciones": {
+        "A": 2,
+        "B": 10,
+        "C": 0,
+        "D": 4
+      },
+      "contexto_correcto": "¡Muy bien! El control de impulsos y la inteligencia emocional son vitales. Un oficial profesional no se deja dominar por la provocación y protege la imagen institucional.",
+      "contexto_incorrecto": "La impulsividad ante la provocación escala el conflicto y puede derivar en denuncias por abuso de autoridad. El temple es la mejor herramienta del policía.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 8,
+      "pista": ""
+    },
+    {
+      "texto": "En un operativo antidrogas, usted encuentra una mochila con una cantidad menor de dinero que no ha sido registrada por el equipo de intervención. Usted se percata de que su compañero intenta guardársela. Yo...",
+      "opciones": {
+        "A": "Le digo que la repartamos a medias para que ambos guardemos el secreto.",
+        "B": "Le exijo que coloque el dinero en la mesa de evidencias de inmediato y lo reporto oficialmente en el acta.",
+        "C": "Me hago el desentendido para no tener problemas con mi compañero de patrulla.",
+        "D": "Le pido que lo deje ahí y nos vayamos, para no ser cómplice pero tampoco delatarlo."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 2,
+        "D": 4
+      },
+      "contexto_correcto": "¡Correcto! El valor civil es fundamental. La omisión ante un acto de corrupción lo convierte en cómplice. La honestidad debe prevalecer sobre el compañerismo malentendido.",
+      "contexto_incorrecto": "La apropiación de bienes o el encubrimiento de delitos dentro de la institución es una conducta que conlleva la expulsión inmediata y responsabilidad penal.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Probidad y Valor Civil",
+      "id": 9,
+      "pista": ""
+    },
+    {
+      "texto": "Se le asigna una misión de patrullaje en una zona de alto riesgo donde recientemente hubo bajas policiales. Siente un miedo intenso antes de salir. Ante esto, yo...",
+      "opciones": {
+        "A": "Pido permiso para quedarme en la comisaría alegando un malestar físico repentino.",
+        "B": "Reconozco mi miedo, reviso minuciosamente mi equipo de seguridad y salgo a cumplir mi deber con máxima alerta.",
+        "C": "Salgo al patrullaje pero trato de mantenerme dentro de la unidad sin bajarme en los puntos críticos.",
+        "D": "Cumplo la orden de forma mecánica, esperando que el turno pase lo más rápido posible sin intervenir mucho."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 4,
+        "D": 5
+      },
+      "contexto_correcto": "¡Excelente! La valentía no es la ausencia de miedo, sino el control del mismo para cumplir con el deber. La preparación y la cautela son signos de un oficial resiliente.",
+      "contexto_incorrecto": "La evitación del peligro o el abandono de funciones por temor son incompatibles con la vocación policial. Se requiere compromiso con la seguridad pública.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resiliencia y Valor",
       "id": 10,
-      "texto": "Raramente analizo mis vivencias antes de actuar.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes culpable, cuando descansas?",
       "opciones": {
-        "A": "Siempre.",
-        "B": "Algunas veces.",
-        "C": "Nunca."
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 5,
-        "C": 10
+        "B": 10,
+        "C": 5,
+        "D": 0
       },
-      "pista": "La reflexión previa evita errores impulsivos.",
+      "contexto_correcto": "Es saludable reconocer la necesidad de descanso sin sentimientos de culpa para mantener el bienestar.",
+      "contexto_incorrecto": "Sentir culpa por descansar puede ser un indicador de altos niveles de estrés o autoexigencia desmedida.",
       "dimension": "Personalidad",
-      "sub_dimension": "Reflexividad"
-    },
-    {
+      "sub_dimension": "Equilibrio Vida-Trabajo",
       "id": 11,
-      "texto": "Comparto con mis amistades y ayudo solo a mis allegados.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Algunas veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "La vocación de servicio debe ser universal.",
-      "dimension": "Ética",
-      "sub_dimension": "Servicio"
+      "pista": ""
     },
     {
-      "id": 12,
-      "texto": "Soy capaz de expresar mi opinión tranquilamente en grupo.",
+      "texto": "¿Intentas siempre programar más y más cosas en menos tiempo para sentirte seguro?",
       "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La seguridad al hablar es necesaria para el mando.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Asertividad"
-    },
-    {
-      "id": 13,
-      "texto": "Me acerco a personas desconocidas para iniciar una conversación.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La sociabilidad facilita el trabajo de campo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Extroversión"
-    },
-    {
-      "id": 14,
-      "texto": "Acepto planes que no me apetecen porque me cuesta decir 'no'.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Saber poner límites es parte del carácter fuerte.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 15,
-      "texto": "En una discusión, trato de encontrar una solución respetando al otro.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El diálogo es la mejor herramienta de resolución de conflictos.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Resolución de Conflictos"
-    },
-    {
-      "id": 16,
-      "texto": "Prefiero escribir correos que tener reuniones personales.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "El contacto directo es vital para la labor policial.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Comunicación Interpersonal"
-    },
-    {
-      "id": 17,
-      "texto": "Me cuesta pedir favores a personas de confianza.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Reconocer que se necesita ayuda es signo de madurez.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Humildad"
-    },
-    {
-      "id": 18,
-      "texto": "Soy capaz de expresar lo que siento a los demás.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La apertura emocional controlada es saludable.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 19,
-      "texto": "Comunico mi insatisfacción con un servicio de forma correcta.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Reclamar con respeto es un derecho y una habilidad asertiva.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Asertividad"
-    },
-    {
-      "id": 20,
-      "texto": "No tengo problema en hacer un halago sincero.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Reconocer lo bueno en otros fortalece el espíritu de cuerpo.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Reconocimiento"
-    },
-    {
-      "id": 21,
-      "texto": "Si alguien se cuela en una fila delante de mí, me callo.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "Algunas veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "Hacer valer las normas con respeto es parte del deber.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Justicia"
-    },
-    {
-      "id": 22,
-      "texto": "Me considero una persona titubeante desde siempre.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "La determinación es vital para un oficial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Decisión"
-    },
-    {
-      "id": 23,
-      "texto": "Tengo una relación de pareja o amistades estables.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La estabilidad social refleja estabilidad emocional.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 24,
-      "texto": "Tengo mucho miedo a quedarme solo.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "La seguridad personal debe ser independiente de otros.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Seguridad"
-    },
-    {
-      "id": 25,
-      "texto": "Soy una persona reflexiva que piensa antes de actuar.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Pensar previene incidentes innecesarios.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Prudencia"
-    },
-    {
-      "id": 26,
-      "texto": "A menudo tomo riesgos innecesarios.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 5,
-        "C": 10
-      },
-      "pista": "El riesgo debe ser calculado y justificado.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 27,
-      "texto": "Poseo suficiente energía para enfrentar mis problemas.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Frecuentemente.",
-        "C": "Raras veces."
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
       },
       "puntos_opciones": {
         "A": 10,
         "B": 7,
-        "C": 0
+        "C": 5,
+        "D": 0
       },
-      "pista": "La vitalidad es necesaria para el rigor de la carrera.",
+      "contexto_correcto": "La gestión realista del tiempo evita la saturación y el agotamiento innecesario.",
+      "contexto_incorrecto": "Sobrecargar la agenda constantemente para buscar seguridad puede reflejar ansiedad o falta de organización.",
       "dimension": "Personalidad",
-      "sub_dimension": "Energía"
+      "sub_dimension": "Gestión del Tiempo",
+      "id": 12,
+      "pista": ""
     },
     {
+      "texto": "Al conversar de algún tema incómodo, ¿das puñetazos o palmadas en la mesa?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Mantener la compostura física durante temas difíciles es clave para una comunicación profesional.",
+      "contexto_incorrecto": "Las reacciones físicas agresivas ante la incomodidad dificultan la resolución de conflictos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 13,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te comprometes a realizar trabajos que son difíciles de cumplir, aun sabiendo que no podrás hacerlo?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "La honestidad sobre las propias capacidades asegura el cumplimiento de las responsabilidades.",
+      "contexto_incorrecto": "Aceptar compromisos imposibles de cumplir afecta la credibilidad y la eficiencia laboral.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Responsabilidad",
+      "id": 14,
+      "pista": ""
+    },
+    {
+      "texto": "¿Una manera muy común de expresar tu malestar es rechinando los dientes?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Identificar y canalizar el malestar de forma saludable es fundamental para el manejo del estrés.",
+      "contexto_incorrecto": "Las manifestaciones físicas de tensión, como el bruxismo, indican una gestión inadecuada de la presión.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Manejo de Estrés",
+      "id": 15,
+      "pista": ""
+    },
+    {
+      "texto": "¿Con mucha frecuencia llevas material relacionado con tu trabajo a tu casa?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Establecer límites claros entre el trabajo y el hogar previene el agotamiento laboral.",
+      "contexto_incorrecto": "Llevar trabajo a casa constantemente puede interferir con el tiempo de recuperación necesario.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Equilibrio Vida-Trabajo",
+      "id": 16,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes insatisfecho con tu vida?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Una visión positiva y satisfecha de la vida contribuye a una mejor disposición laboral.",
+      "contexto_incorrecto": "La insatisfacción constante puede afectar el desempeño y la motivación personal.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Estabilidad Emocional",
+      "id": 17,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta conocer gente nueva?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "La apertura a nuevas relaciones sociales facilita el trabajo comunitario y la adaptabilidad.",
+      "contexto_incorrecto": "La falta de interés en conocer personas nuevas puede limitar las habilidades de interacción social.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad",
+      "id": 18,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta ayudar a la gente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "La vocación de servicio es un pilar fundamental para la labor policial.",
+      "contexto_incorrecto": "Un oficial debe poseer una disposición natural para asistir y proteger a la ciudadanía.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Altruismo",
+      "id": 19,
+      "pista": ""
+    },
+    {
+      "texto": "¿Si te han culpado injustamente, reaccionas violentamente para hacer valer tus derechos?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Resolver injusticias mediante canales apropiados y calmados refleja madurez y control.",
+      "contexto_incorrecto": "La reacción violenta, incluso ante injusticias, es inaceptable y escala los conflictos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 20,
+      "pista": ""
+    },
+    {
+      "texto": "¿Haces que la gente se sientan bienvenida, cuando están enojados?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 0,
+        "C": 3,
+        "D": 0
+      },
+      "contexto_correcto": "La empatía y la capacidad de acogida incluso en momentos de tensión facilitan la resolución pacífica de conflictos.",
+      "contexto_incorrecto": "Ignorar o rechazar a las personas enojadas puede escalar la hostilidad y dificultar la labor de proximidad policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía / Relaciones Interpersonales",
+      "id": 21,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te toma mucho tiempo calmarte cuando has estado enojado?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 7,
+        "D": 0
+      },
+      "contexto_correcto": "Recuperar la calma rápidamente tras un evento estresante permite mantener la operatividad y el buen juicio.",
+      "contexto_incorrecto": "Mantener el enojo por tiempo prolongado afecta la toma de decisiones y el bienestar emocional del oficial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autorregulación Emocional",
+      "id": 22,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te decepcionas fácilmente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "La resiliencia ante las expectativas no cumplidas es fundamental para mantener la motivación en el servicio.",
+      "contexto_incorrecto": "Decepcionarse con facilidad puede llevar al desánimo y a una baja tolerancia a la frustración.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Tolerancia a la Frustración",
+      "id": 23,
+      "pista": ""
+    },
+    {
+      "texto": "¿Ayudas a la gente sólo si sabes que recibirás algo a cambio?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 3,
+        "D": 0
+      },
+      "contexto_correcto": "El servicio desinteresado es la base del compromiso ético de un integrante de la fuerza pública.",
+      "contexto_incorrecto": "Actuar bajo un interés puramente transaccional contradice los valores de entrega y sacrificio de la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Altruismo",
+      "id": 24,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te fijas metas a largo plazo?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "Tener metas a largo plazo demuestra planificación, visión de futuro y estabilidad en el proyecto de vida.",
+      "contexto_incorrecto": "La falta de objetivos a largo plazo puede indicar impulsividad o falta de compromiso con el desarrollo personal.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Planificación y Carrera",
+      "id": 25,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te confundes fácilmente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "La claridad mental y la capacidad de análisis son críticas para actuar correctamente en situaciones complejas.",
+      "contexto_incorrecto": "Confundirse con facilidad bajo presión puede poner en riesgo la seguridad propia y la de terceros.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Claridad Cognitiva",
+      "id": 26,
+      "pista": ""
+    },
+    {
+      "texto": "¿Tu reacción a un problema es engañar para salirte con la tuya?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 7,
+        "D": 0
+      },
+      "contexto_correcto": "La honestidad y la transparencia en la resolución de problemas son valores innegociables para un oficial.",
+      "contexto_incorrecto": "El uso del engaño para evadir responsabilidades es una falta grave a la ética profesional.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Honestidad / Ética",
+      "id": 27,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes abrumado con frecuencia?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "Un buen manejo de la carga emocional y laboral evita que el oficial se sienta sobrepasado.",
+      "contexto_incorrecto": "Sentirse abrumado frecuentemente puede ser un síntoma de estrés crónico o falta de herramientas de afrontamiento.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resistencia al Estrés",
       "id": 28,
-      "texto": "Evito criticar a la gente y sus ideas.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "No estoy seguro.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La tolerancia es clave para la convivencia.",
-      "dimension": "Ética",
-      "sub_dimension": "Tolerancia"
+      "pista": ""
     },
     {
+      "texto": "¿Con mucha frecuencia sales a un ambiente social?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La participación activa en ambientes sociales favorece las habilidades de comunicación y la integración comunitaria.",
+      "contexto_incorrecto": "Un aislamiento social excesivo puede dificultar el desarrollo de competencias interpersonales necesarias para el servicio policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad",
       "id": 29,
-      "texto": "Hago observaciones sarcásticas a la gente si lo merecen.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Eres considerado con los sentimientos de los demás?",
       "opciones": {
-        "A": "Verdadero.",
-        "B": "Término medio.",
-        "C": "Falso."
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 5,
-        "C": 10
+        "B": 3,
+        "C": 6,
+        "D": 8,
+        "E": 10
       },
-      "pista": "El respeto debe prevalecer sobre la burla.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Cordialidad"
-    },
-    {
+      "contexto_correcto": "La consideración hacia los demás es un rasgo clave de la empatía, fundamental para el trato digno al ciudadano.",
+      "contexto_incorrecto": "La falta de consideración hacia los sentimientos ajenos puede derivar en un trato autoritario o poco humano.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía",
       "id": 30,
-      "texto": "Generalmente puedo tolerar a la gente presuntuosa.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "Término medio.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La paciencia es una virtud necesaria.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Paciencia"
+      "pista": ""
     },
     {
+      "texto": "¿Siempre estás ocupado?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 4,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "Mantenerse activo y productivo refleja una buena disposición al trabajo y diligencia.",
+      "contexto_incorrecto": "La inactividad constante puede ser señal de falta de iniciativa o desmotivación laboral.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia",
       "id": 31,
-      "texto": "Siento un vago temor sin razones comprendidas.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta resolver problemas complejos?",
       "opciones": {
-        "A": "Frecuentemente.",
-        "B": "Término medio.",
-        "C": "Nunca."
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 5,
-        "C": 10
+        "B": 3,
+        "C": 6,
+        "D": 9,
+        "E": 10
       },
-      "pista": "Se busca ausencia de ansiedad injustificada.",
-      "dimension": "Salud Mental",
-      "sub_dimension": "Ansiedad"
-    },
-    {
+      "contexto_correcto": "La disposición para enfrentar desafíos intelectuales indica capacidad analítica y resolución de problemas.",
+      "contexto_incorrecto": "Evitar problemas complejos puede limitar la capacidad de respuesta ante situaciones críticas en el servicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resolución de Problemas",
       "id": 32,
-      "texto": "Cuando me critican duramente por algo que no hice, me siento culpable.",
+      "pista": ""
+    },
+    {
+      "texto": "En la mayoría de las ocasiones trabajo lo justo y lo necesario",
       "opciones": {
-        "A": "Falso.",
-        "B": "Término medio.",
-        "C": "Verdadero."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "Debes tener seguridad en tus actos y justicia propia.",
+      "contexto_correcto": "Mostrar disposición para ir más allá de lo básico demuestra compromiso institucional y vocación.",
+      "contexto_incorrecto": "Limitarse estrictamente al mínimo esfuerzo puede afectar la calidad del servicio policial y el espíritu de equipo.",
       "dimension": "Personalidad",
-      "sub_dimension": "Autoestima"
-    },
-    {
+      "sub_dimension": "Compromiso Laboral",
       "id": 33,
-      "texto": "Casi todo se puede comprar con dinero.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No estoy seguro.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 0,
-        "C": 10
-      },
-      "pista": "Los valores morales no tienen precio.",
-      "dimension": "Ética",
-      "sub_dimension": "Valores"
+      "pista": ""
     },
     {
+      "texto": "Bajo presión no mantengo la calma",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Mantener el control bajo presión es una habilidad crítica para garantizar la seguridad en intervenciones policiales.",
+      "contexto_incorrecto": "Perder la calma en situaciones de estrés puede llevar a decisiones precipitadas y riesgosas.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Tolerancia al Estrés",
       "id": 34,
-      "texto": "Una ley anticuada debería cambiarse inmediatamente.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "Término medio.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El sentido de progreso y justicia es importante.",
-      "dimension": "Ética",
-      "sub_dimension": "Justicia"
+      "pista": ""
     },
     {
+      "texto": "Me gusta la acción y el peligro",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "La inclinación hacia la acción es compatible con el perfil operativo, siempre que se maneje con prudencia.",
+      "contexto_incorrecto": "Un oficial que teme excesivamente a la acción podría tener dificultades en el cumplimiento de su deber de protección.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Búsqueda de Sensaciones",
       "id": 35,
-      "texto": "La mayor parte de las personas me consideran agradable.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No estoy seguro.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La percepción externa suele reflejar nuestra conducta social.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Aceptación Social"
+      "pista": ""
     },
     {
+      "texto": "¿Sueles decir las últimas palabras más rápido que las iniciales?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Mantener un ritmo de habla constante y pausado facilita la claridad del mensaje y proyecta serenidad.",
+      "contexto_incorrecto": "Acelerar el habla al final de las frases puede ser un signo de ansiedad, impaciencia o falta de control comunicativo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos / Comunicación",
       "id": 36,
-      "texto": "Me disgusta ver gente desaliñada y sucia.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Encuentras difícil mantener cualquier conversación que no sea de tu interés?",
       "opciones": {
-        "A": "Lo acepto.",
-        "B": "Término medio.",
-        "C": "Me disgusta."
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 5,
-        "C": 10
+        "B": 10,
+        "C": 5,
+        "D": 0
       },
-      "pista": "El orden y la limpieza son pilares institucionales.",
+      "contexto_correcto": "La capacidad de escuchar y dialogar sobre diversos temas es fundamental para la proximidad ciudadana y la recolección de información.",
+      "contexto_incorrecto": "La dificultad para mantener conversaciones ajenas al interés propio limita la empatía y la eficacia en el servicio público.",
       "dimension": "Personalidad",
-      "sub_dimension": "Disciplina"
-    },
-    {
+      "sub_dimension": "Habilidades Sociales",
       "id": 37,
-      "texto": "No me interesan los problemas de los demás.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 10
-      },
-      "pista": "El oficial debe servir a la comunidad con interés genuino.",
-      "dimension": "Ética",
-      "sub_dimension": "Altruismo"
+      "pista": ""
     },
     {
+      "texto": "Raramente resisto las tentaciones",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "Un oficial debe poseer un alto nivel de autodisciplina y resistencia ante situaciones que comprometan su integridad.",
+      "contexto_incorrecto": "Ceder ante las tentaciones compromete la ética profesional y la confianza en la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autocontrol",
       "id": 38,
-      "texto": "Creo que la ley no se debe cumplir estrictamente si puedo evadirla.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 10
-      },
-      "pista": "La integridad es innegociable.",
-      "dimension": "Ética",
-      "sub_dimension": "Legalidad"
+      "pista": ""
     },
     {
+      "texto": "En la mayoría de las ocasiones rompo las reglas por hacer lo que creo correcto",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 3,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "El respeto irrestricto a los reglamentos y la legalidad asegura el actuar justo y uniforme de la fuerza pública.",
+      "contexto_incorrecto": "Actuar por encima de las reglas basándose solo en juicios personales puede derivar en arbitrariedades y faltas disciplinarias.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apego a Normas",
       "id": 39,
-      "texto": "Suelo dejar mis decisiones en manos del grupo.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 10
-      },
-      "pista": "Un líder debe tener criterio propio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
+      "pista": ""
     },
     {
+      "texto": "Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 2,
+        "D": 0,
+        "E": 0
+      },
+      "contexto_correcto": "La integridad de un oficial se manifiesta en el cumplimiento de la ley incluso cuando no hay supervisión.",
+      "contexto_incorrecto": "Intentar evadir la ley es una conducta incompatible con la función de un servidor encargado de hacerla cumplir.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Ética",
       "id": 40,
-      "texto": "Dedico poco tiempo y esfuerzo a mi trabajo.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No."
-      },
-      "puntos_opciones": {
-        "A": 0,
-        "B": 10
-      },
-      "pista": "La diligencia es esencial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Diligencia"
+      "pista": ""
     },
     {
+      "texto": "En many ocasiones suelo precipitarme",
+      "texto_original": "En muchas ocasiones suelo precipitarme",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "La toma de decisiones debe ser ágil pero analizada para evitar errores fatales en el campo.",
+      "contexto_incorrecto": "La precipitación en el actuar policial aumenta el riesgo de incidentes negativos y falta de profesionalismo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
       "id": 41,
-      "texto": "Siempre miro el lado bueno de la vida.",
+      "pista": ""
+    },
+    {
+      "texto": "Espero que los demás tomen el liderazgo",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "El optimismo ayuda en situaciones difíciles.",
+      "contexto_correcto": "Un oficial debe estar preparado para asumir el liderazgo y tomar la iniciativa cuando la situación lo requiera.",
+      "contexto_incorrecto": "Una actitud pasiva de esperar siempre instrucciones limita la capacidad de respuesta ante emergencias.",
       "dimension": "Personalidad",
-      "sub_dimension": "Optimismo"
-    },
-    {
+      "sub_dimension": "Liderazgo",
       "id": 42,
-      "texto": "Me gusta la acción y el peligro.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Acostumbras a evaluar en términos numéricos a los demás?",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "La vocación policial implica gusto por la actividad operativa.",
+      "contexto_correcto": "Evitar reducir a las personas a simples números permite un trato más humano y una comprensión integral del ciudadano.",
+      "contexto_incorrecto": "Evaluar constantemente a los demás solo por métricas frías puede derivar en una falta de empatía y en un trato despersonalizado.",
       "dimension": "Personalidad",
-      "sub_dimension": "Vocación"
-    },
-    {
+      "sub_dimension": "Empatía / Relaciones Interpersonales",
       "id": 43,
-      "texto": "Rompo mis promesas con regularidad.",
+      "pista": ""
+    },
+    {
+      "texto": "Raramente evito a las multitudes",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 10
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
       },
-      "pista": "La palabra de un oficial es su honor.",
-      "dimension": "Ética",
-      "sub_dimension": "Honradez"
-    },
-    {
+      "contexto_correcto": "Sentirse cómodo en entornos concurridos es una característica necesaria para el patrullaje y la gestión de eventos masivos.",
+      "contexto_incorrecto": "Evitar las multitudes puede limitar la capacidad de un oficial para intervenir en situaciones que requieran presencia en áreas de alta densidad poblacional.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad / Ajuste al entorno",
       "id": 44,
-      "texto": "Me importa no hacer cosas ilegales.",
+      "pista": ""
+    },
+    {
+      "texto": "Me cueste empezar las tareas",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
       },
-      "pista": "El respeto a la norma es la base del orden.",
-      "dimension": "Ética",
-      "sub_dimension": "Conciencia Moral"
-    },
-    {
+      "contexto_correcto": "La proactividad y la diligencia al iniciar deberes reflejan un alto compromiso con la función policial.",
+      "contexto_incorrecto": "La procrastinación o dificultad para iniciar tareas afecta la eficiencia operativa y el cumplimiento de los objetivos institucionales.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Proactividad",
       "id": 45,
-      "texto": "Me encanta experimentar sensaciones fuertes frecuentemente.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5
-      },
-      "pista": "Buscamos personal dinámico pero controlado.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Apertura"
+      "pista": ""
     },
     {
+      "texto": "Con mucha frecuencia pienso en los necesitados",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 9,
+        "E": 10
+      },
+      "contexto_correcto": "La sensibilidad social y el altruismo fortalecen el vínculo de confianza entre el policía y los sectores más vulnerables.",
+      "contexto_incorrecto": "La falta de interés por las necesidades ajenas puede distanciar al oficial de su rol protector y de servicio a la comunidad.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Altruismo / Responsabilidad Social",
       "id": 46,
-      "texto": "Es cierto que no rompo las reglas.",
+      "pista": ""
+    },
+    {
+      "texto": "Deberíamos ser implacables con la delincuencia y mostrar nuestro poder",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 5,
+        "D": 3,
+        "E": 0
       },
-      "pista": "La disciplina es fundamental.",
+      "contexto_correcto": "El uso de la fuerza debe ser siempre legal, necesario y proporcional, evitando el despliegue de poder como fin en sí mismo.",
+      "contexto_incorrecto": "Una actitud de rigidez extrema o exhibicionismo de poder puede derivar en abusos de autoridad y pérdida de legitimidad ante la sociedad.",
       "dimension": "Personalidad",
-      "sub_dimension": "Disciplina"
-    },
-    {
+      "sub_dimension": "Apego a Normas / Ética",
       "id": 47,
-      "texto": "¿Se siente a menudo feliz y otras triste sin razón real?",
+      "pista": ""
+    },
+    {
+      "texto": "Siempre miro el lado bueno de la vida",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 10
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
       },
-      "pista": "Se busca equilibrio afectivo.",
-      "dimension": "Salud Mental",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
+      "contexto_correcto": "Mantener una actitud optimista contribuye a la resiliencia y al bienestar emocional en entornos laborales exigentes.",
+      "contexto_incorrecto": "Una visión constantemente negativa puede afectar la motivación y la capacidad para enfrentar desafíos de manera constructiva.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Optimismo / Estabilidad Emocional",
       "id": 48,
-      "texto": "Cuando niño hacía siempre lo que me decían sin renegar.",
+      "pista": ""
+    },
+    {
+      "texto": "Rompo mis promesas con regularidad",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
       },
-      "pista": "La obediencia y respeto a la autoridad desde temprano.",
+      "contexto_correcto": "El cumplimiento de la palabra empeñada es fundamental para construir confianza y credibilidad institucional.",
+      "contexto_incorrecto": "Incumplir promesas de forma regular denota falta de integridad y compromiso ético.",
       "dimension": "Personalidad",
-      "sub_dimension": "Obediencia"
+      "sub_dimension": "Integridad / Responsabilidad",
+      "id": 49,
+      "pista": ""
     },
     {
-      "id": 49,
-      "texto": "¿Le gusta mezclarse con la gente?",
+      "texto": "Siempre desconfío de la gente",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "El policía debe estar cerca de su pueblo.",
-      "dimension": "Habilidades Sociales",
-      "sub_dimension": "Sociabilidad"
+      "contexto_correcto": "Aunque la cautela es necesaria, la capacidad de confiar permite establecer vínculos efectivos con la comunidad.",
+      "contexto_incorrecto": "Una desconfianza paranoica o excesiva dificulta la cooperación y el trabajo en equipo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Relaciones Interpersonales",
+      "id": 50,
+      "pista": ""
     },
     {
-      "id": 50,
-      "texto": "¿Se decide a menudo demasiado tarde?",
+      "texto": "Suelo perder el tiempo",
       "opciones": {
-        "A": "Sí.",
-        "B": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "El aprovechamiento eficiente del tiempo es un indicador de autodisciplina y productividad.",
+      "contexto_incorrecto": "Perder el tiempo con frecuencia afecta el rendimiento operativo y el cumplimiento de metas.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Gestión del Tiempo",
+      "id": 51,
+      "pista": ""
+    },
+    {
+      "texto": "Me importa no hacer cosas ilegales",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 0,
-        "B": 10
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
       },
-      "pista": "La rapidez de decisión puede salvar vidas.",
+      "contexto_correcto": "El respeto absoluto a la legalidad es la base de la ética de cualquier servidor encargado de hacer cumplir la ley.",
+      "contexto_incorrecto": "Cualquier falta de interés por la legalidad es incompatible con la función policial.",
       "dimension": "Personalidad",
-      "sub_dimension": "Proactividad"
-    },
-    {
-      "id": 51,
-      "texto": "¿Mantiene la calma durante situaciones de emergencia o sabe controlar sus emociones?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El control emocional es vital en situaciones críticas policiales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control Emocional"
-    },
-    {
+      "sub_dimension": "Ética / Apego a Normas",
       "id": 52,
-      "texto": "Frente al peligro, yo:",
-      "opciones": {
-        "A": "Actúo con firmeza y serenidad.",
-        "B": "Me tomo un tiempo para pensar.",
-        "C": "Siento mucho temor y me paralizo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La capacidad de respuesta ante el peligro es un rasgo de estabilidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
+      "pista": ""
     },
     {
+      "texto": "Me encanta experimentar de manera frecuente sensaciones fuertes",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "La disposición hacia experiencias dinámicas es útil en unidades operativas, siempre bajo control.",
+      "contexto_incorrecto": "La búsqueda desmedida de sensaciones puede llevar a conductas de riesgo innecesarias.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Búsqueda de Sensaciones",
       "id": 53,
-      "texto": "Suelo ser una persona reflexiva que piensa antes de actuar.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La reflexión previa evita conductas impulsivas riesgosas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
+      "pista": ""
     },
     {
+      "texto": "Completo mis tareas con éxito",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La orientación a resultados y la eficacia son competencias clave para el desarrollo profesional.",
+      "contexto_incorrecto": "No finalizar las tareas iniciadas refleja falta de perseverancia o mala organización.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Responsabilidad / Eficacia",
       "id": 54,
-      "texto": "¿Le gusta la abundancia de excitación y bullicio a su alrededor?",
+      "pista": ""
+    },
+    {
+      "texto": "¿Siempre prefiero limitarme a las cosas que conozco?",
       "opciones": {
-        "A": "Sí.",
-        "B": "Término medio.",
-        "C": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "Mide la tendencia a la extraversión y búsqueda de sensaciones.",
+      "contexto_correcto": "La apertura a nuevas experiencias y el aprendizaje continuo son vitales para adaptarse a un entorno policial cambiante.",
+      "contexto_incorrecto": "Limitarse solo a lo conocido puede dificultar la adaptación y el crecimiento profesional ante nuevos desafíos operativos.",
       "dimension": "Personalidad",
-      "sub_dimension": "Extraversión"
-    },
-    {
+      "sub_dimension": "Apertura a la Experiencia",
       "id": 55,
-      "texto": "¿Tiene casi siempre una contestación lista cuando se le habla?",
+      "pista": ""
+    },
+    {
+      "texto": "¿Siento compasión por los demás, solo si son allegados a mi?",
       "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "Evalúa la rapidez de respuesta y seguridad personal.",
+      "contexto_correcto": "La empatía universal, sin distinciones, es fundamental para garantizar un trato justo y humano a toda la ciudadanía.",
+      "contexto_incorrecto": "Restringir la compasión solo al círculo cercano puede sesgar el juicio y la calidad del servicio público.",
       "dimension": "Personalidad",
-      "sub_dimension": "Seguridad"
-    },
-    {
+      "sub_dimension": "Empatía / Altruismo",
       "id": 56,
-      "texto": "Cuando me critican duramente por algo que no he hecho:",
-      "opciones": {
-        "A": "No me siento culpable.",
-        "B": "Término medio.",
-        "C": "Me siento un poco culpable."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la madurez emocional frente a juicios externos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoconcepto"
+      "pista": ""
     },
     {
+      "texto": "¿Hago más cosas de las que se espera de mí?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La proactividad y el esfuerzo extra demuestran un alto compromiso con los objetivos institucionales.",
+      "contexto_incorrecto": "Hacer solo lo mínimo indispensable puede reflejar una falta de vocación o desinterés en el desarrollo del servicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Proactividad",
       "id": 57,
-      "texto": "¿Se enfada o irrita usted con facilidad?",
+      "pista": ""
+    },
+    {
+      "texto": "¿Tengo miedo que me llamen la atención?",
       "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "Un bajo umbral de frustración es contraproducente para el servicio policial.",
+      "contexto_correcto": "Aceptar la retroalimentación y la corrección con madurez es clave para el aprendizaje y la disciplina militar/policial.",
+      "contexto_incorrecto": "El miedo excesivo a la corrección puede generar ansiedad e impedir que el oficial reconozca y corrija sus errores.",
       "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
+      "sub_dimension": "Estabilidad Emocional / Disciplina",
       "id": 58,
-      "texto": "Creo que la ley se debe cumplir estrictamente y no se debe evadir.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Suelo dejar mis decisiones en manos del grupo?",
       "opciones": {
-        "A": "Sí.",
-        "B": "Indeciso.",
-        "C": "No."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
       },
-      "pista": "El respeto a la norma es un valor fundamental de la PNP.",
-      "dimension": "Valores",
-      "sub_dimension": "Ética"
-    },
-    {
+      "contexto_correcto": "Un oficial debe poseer autonomía y criterio propio para tomar decisiones firmes, incluso bajo presión social.",
+      "contexto_incorrecto": "Delegar siempre la responsabilidad de decidir en otros puede indicar falta de liderazgo y de confianza en el propio juicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autonomía / Liderazgo",
       "id": 59,
-      "texto": "Poseo suficiente energía para enfrentarme a todos mis problemas.",
+      "pista": ""
+    },
+    {
+      "texto": "¿Dedico poco tiempo y esfuerzo a mi trabajo?",
       "opciones": {
-        "A": "Siempre.",
-        "B": "Frecuentemente.",
-        "C": "Raras veces."
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
       },
-      "pista": "La vitalidad y disposición al esfuerzo son claves para la resiliencia.",
+      "contexto_correcto": "La dedicación y el esmero en las funciones asignadas son pilares de la eficiencia y el profesionalismo policial.",
+      "contexto_incorrecto": "La falta de esfuerzo compromete no solo los resultados individuales, sino la seguridad y efectividad de todo el equipo.",
       "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
+      "sub_dimension": "Responsabilidad / Diligencia",
       "id": 60,
-      "texto": "En una discusión, digo lo que pienso respetando al otro para hallar soluciones.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La comunicación asertiva facilita la mediación de conflictos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Asertividad"
+      "pista": ""
     },
     {
+      "texto": "Si observo que un compañero de rango superior comete una falta ética leve para agilizar un procedimiento, yo...",
+      "opciones": {
+        "A": "Lo ignoro, ya que cuestionar a un superior afecta la jerarquía y cohesión del grupo.",
+        "B": "Reporto el hecho de inmediato a mis superiores, sin importar las consecuencias sociales.",
+        "C": "Busco un momento privado para hacérselo notar y, si persiste, sigo los canales regulares.",
+        "D": "Actúo de la misma manera si eso ayuda a que el trabajo se termine más rápido."
+      },
+      "puntos_opciones": {
+        "A": 3,
+        "B": 8,
+        "C": 10,
+        "D": 0
+      },
+      "contexto_correcto": "La integridad policial exige valentía moral para corregir acciones incorrectas, priorizando siempre la legalidad sobre la lealtad mal entendida.",
+      "contexto_incorrecto": "La obediencia ciega o la imitación de conductas poco éticas degrada la confianza ciudadana y la profesionalidad de la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Ética Profesional",
       "id": 61,
-      "texto": "¿Se siente a menudo apático o cansado sin razón aparente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La fatiga sin causa puede indicar inestabilidad emocional o bajo ánimo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
+      "pista": ""
     },
     {
+      "texto": "Cuando me encuentro en una situación de peligro inminente donde debo decidir en segundos, mi tendencia es:",
+      "opciones": {
+        "A": "Actuar por instinto puro, confiando en que mi fuerza física resolverá el problema.",
+        "B": "Paralizarme momentáneamente mientras intento analizar todas las variables posibles.",
+        "C": "Aplicar el protocolo entrenado, manteniendo la conciencia situacional y el uso proporcional de la fuerza.",
+        "D": "Esperar a que alguien con más experiencia tome la iniciativa para no equivocarme."
+      },
+      "puntos_opciones": {
+        "A": 4,
+        "B": 2,
+        "C": 10,
+        "D": 0
+      },
+      "contexto_correcto": "El entrenamiento y el apego al protocolo en situaciones de crisis garantizan la efectividad y minimizan riesgos innecesarios.",
+      "contexto_incorrecto": "La impulsividad o la falta de iniciativa en momentos críticos pueden tener consecuencias fatales en el servicio policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Toma de Decisiones bajo Presión",
       "id": 62,
-      "texto": "Me considero una persona capaz de controlar mis deseos.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El autocontrol es indispensable para evitar abusos de autoridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
+      "pista": ""
     },
     {
+      "texto": "Frente a un ciudadano que utiliza un lenguaje altamente sofisticado para cuestionar mi autoridad de forma sarcástica, yo:",
+      "opciones": {
+        "A": "Me siento inferior y trato de terminar la intervención lo antes posible.",
+        "B": "Respondo con ironía similar para demostrar que no me intimida su intelecto.",
+        "C": "Mantengo el lenguaje profesional, me enfoco en los hechos de la intervención y no me tomo el sarcasmo como algo personal.",
+        "D": "Le advierto que su lenguaje es una falta de respeto y procedo a sancionarlo por ello."
+      },
+      "puntos_opciones": {
+        "A": 3,
+        "B": 0,
+        "C": 10,
+        "D": 4
+      },
+      "contexto_correcto": "La madurez emocional permite separar los ataques al ego de la función pública, manteniendo siempre la objetividad.",
+      "contexto_incorrecto": "Reaccionar ante provocaciones intelectuales o verbales demuestra falta de seguridad personal y poco control de impulsos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos / Autoconfianza",
       "id": 63,
-      "texto": "¿Mantiene sus promesas con regularidad?",
+      "pista": ""
+    },
+    {
+      "texto": "¿Considero que el fin justifica los medios cuando se trata de capturar a un criminal peligroso?",
       "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
+        "A": "Nunca, los procedimientos legales son el límite infranqueable de mi actuación.",
+        "B": "A veces, si es la única forma de evitar que alguien más salga herido.",
+        "C": "Casi siempre, la seguridad de la sociedad es más importante que los derechos de un delincuente.",
+        "D": "Siempre que no existan testigos que puedan denunciar el exceso."
       },
       "puntos_opciones": {
         "A": 10,
         "B": 5,
-        "C": 0
+        "C": 2,
+        "D": 0
       },
-      "pista": "La integridad y el cumplimiento de la palabra generan confianza institucional.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
+      "contexto_correcto": "El respeto a los Derechos Humanos y al Debido Proceso es lo que diferencia a un oficial de policía de un delincuente.",
+      "contexto_incorrecto": "Creer que se puede violar la ley para defender la ley es una contradicción ética que genera arbitrariedad.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apego a Normas / Valores",
       "id": 64,
-      "texto": "¿Es usted una persona que piensa mucho en su pasado?",
+      "pista": ""
+    },
+    {
+      "texto": "¿Qué tan frecuente siente que sus problemas personales nublan su juicio durante el cumplimiento de su deber?",
       "opciones": {
-        "A": "No.",
-        "B": "A veces.",
-        "C": "Sí."
+        "A": "Rara vez o nunca, tengo la capacidad de compartimentar mis emociones.",
+        "B": "Pocas veces, aunque me cuesta concentrarme si el problema es grave.",
+        "C": "Algunas veces, especialmente cuando hay mucha presión en el trabajo.",
+        "D": "Frecuentemente, me es imposible separar mi vida privada de la laboral."
       },
       "puntos_opciones": {
         "A": 10,
-        "B": 5,
-        "C": 0
+        "B": 7,
+        "C": 4,
+        "D": 0
       },
-      "pista": "El enfoque en el presente y futuro favorece la acción operativa.",
+      "contexto_correcto": "La capacidad de separar la esfera personal de la profesional es vital para mantener la operatividad y objetividad policial.",
+      "contexto_incorrecto": "Permitir que las emociones personales influyan en el servicio puede llevar a errores de juicio y falta de profesionalismo.",
       "dimension": "Personalidad",
-      "sub_dimension": "Ajuste a la Realidad"
-    },
-    {
+      "sub_dimension": "Estabilidad Emocional",
       "id": 65,
-      "texto": "Cuando algo me pone furioso, suelo calmarme muy pronto.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "Término medio.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La recuperación rápida tras un conflicto evita el escalamiento de violencia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control Emocional"
-    },
-    {
-      "id": 66,
-      "texto": "Siento que tengo mucha fuerza interior ante los acontecimientos.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La fuerza interior es el pilar de la resiliencia psicológica.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 67,
-      "texto": "Me gusta experimentar sensaciones fuertes y acción frecuentemente.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un perfil policial suele requerir tolerancia a la acción y el peligro controlado.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Búsqueda de Sensaciones"
-    },
-    {
-      "id": 68,
-      "texto": "¿Es usted muy susceptible por algunas cosas?",
-      "opciones": {
-        "A": "No.",
-        "B": "A veces.",
-        "C": "Sí."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La baja susceptibilidad ayuda a recibir órdenes y críticas de forma profesional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 69,
-      "texto": "He sido independiente sobre lo que quiero ser, incluso ante mis padres.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La autonomía muestra madurez y determinación en la vocación.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 70,
-      "texto": "¿Alguna vez ha consumido drogas por diversión con amigos?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El consumo de sustancias es una causal de exclusión inmediata en la PNP.",
-      "dimension": "Valores",
-      "sub_dimension": "Conducta Ética"
-    },
-    {
-      "id": 71,
-      "texto": "Acepto mi apariencia física y me siento a gusto conmigo mismo.",
-      "opciones": {
-        "A": "Cierto.",
-        "7": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Una autoimagen positiva es base de una autoestima sana.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoestima"
-    },
-    {
-      "id": 72,
-      "texto": "¿Se distrae o fantasea a menudo cuando trata de prestar atención?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "A menudo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La concentración es crítica para la vigilancia y seguridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Atención"
-    },
-    {
-      "id": 73,
-      "texto": "Me importa cumplir las reglas y no hacer cosas ilegales.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El apego a la norma es el eje de la disciplina institucional.",
-      "dimension": "Valores",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 74,
-      "texto": "¿Le resulta difícil empezar a hacer cualquier tarea?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La proactividad es necesaria para el cumplimiento de deberes.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Proactividad"
-    },
-    {
-      "id": 75,
-      "texto": "En situaciones sociales difíciles, prefiero tomar la iniciativa.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El liderazgo es una competencia valorada en los oficiales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 76,
-      "texto": "Siento compasión por los demás, no solo si son allegados.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La empatía social es clave para el servicio al ciudadano.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 77,
-      "texto": "¿Se siente usted libre de prejuicios de cualquier tipo?",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La imparcialidad es un requisito para la justicia policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Imparcialidad"
-    },
-    {
-      "id": 78,
-      "texto": "Si me insultan, mantengo la calma y no respondo agresivamente.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El control de impulsos ante agresiones verbales previene incidentes graves.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 79,
-      "texto": "¿Tiene una relación estable y duradera con sus amistades?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La estabilidad en relaciones personales indica equilibrio emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Habilidades Sociales"
-    },
-    {
-      "id": 80,
-      "texto": "Me gusta actuar según mis propias opiniones tras reflexionar.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja seguridad en sí mismo y criterio propio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Seguridad"
-    },
-    {
-      "id": 81,
-      "texto": "¿Se siente a menudo hastiado o aburrido de su entorno?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "A menudo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El hastío frecuente puede ser signo de baja motivación o depresión.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 82,
-      "texto": "Hago más cosas de las que se espera de mí en mis deberes.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La diligencia y el compromiso son rasgos del buen policía.",
-      "dimension": "Valores",
-      "sub_dimension": "Compromiso"
-    },
-    {
-      "id": 83,
-      "texto": "¿Toma riesgos a menudo que traen consecuencias negativas?",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Algunas veces.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La asunción temeraria de riesgos es un indicador de impulsividad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 84,
-      "texto": "Me conozco bien, sé cómo soy y lo que quiero lograr.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El autoconocimiento es el primer paso para la madurez emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoconocimiento"
-    },
-    {
-      "id": 85,
-      "texto": "¿Le molesta pedir dinero o ayuda incluso para una buena causa?",
-      "opciones": {
-        "A": "No.",
-        "B": "A veces.",
-        "C": "Sí."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la seguridad y soltura en interacciones sociales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Habilidades Sociales"
-    },
-    {
-      "id": 86,
-      "texto": "He comprendido bien las instrucciones para este cuestionario.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "No estoy seguro.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Pregunta de control para asegurar la validez de la prueba.",
-      "dimension": "Control",
-      "sub_dimension": "Validez"
-    },
-    {
-      "id": 87,
-      "texto": "¿Cree que la mayoría de las personas tienen buenas intenciones?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa el grado de confianza o suspicacia hacia el entorno.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 88,
-      "texto": "Me cuesta demostrar a la gente cuando estoy furioso con ellos.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "A veces.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La expresión adecuada de emociones previene explosiones agresivas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Asertividad"
-    },
-    {
-      "id": 89,
-      "texto": "¿Es usted impaciente por el ritmo de los acontecimientos?",
-      "opciones": {
-        "A": "No.",
-        "B": "A veces.",
-        "C": "Sí."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La impaciencia excesiva afecta la toma de decisiones serena.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 90,
-      "texto": "Normalmente disfruto de situaciones difíciles o de alta tensión.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Aptitud necesaria para el trabajo operativo bajo presión.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Tolerancia al Estrés"
-    },
-    {
-      "id": 91,
-      "texto": "Suelo dejar mis decisiones importantes en manos del grupo.",
-      "opciones": {
-        "A": "No.",
-        "B": "A veces.",
-        "C": "Sí."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la capacidad de liderazgo y responsabilidad individual.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 92,
-      "texto": "¿Tiene a menudo sentimientos de intranquilidad sin saber por qué?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "A menudo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La ansiedad flotante puede afectar el rendimiento cognitivo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 93,
-      "texto": "Creo que no existe el éxito sin sacrificio previo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja la cultura del esfuerzo y disciplina institucional.",
-      "dimension": "Valores",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 94,
-      "texto": "Si las drogas fueran legales, ¿las consumiría usted?",
-      "opciones": {
-        "A": "No.",
-        "B": "Indeciso.",
-        "C": "Sí."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Pregunta crítica sobre valores y predisposición a sustancias.",
-      "dimension": "Valores",
-      "sub_dimension": "Ética"
-    },
-    {
-      "id": 95,
-      "texto": "Me considero una persona titubeante o indecisa desde siempre.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Algunas veces.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La determinación es vital para el mando y la ejecución policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Determinación"
-    },
-    {
-      "id": 96,
-      "texto": "¿Le gusta más quedarse en casa que ir a una fiesta aburrida?",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Ayuda a definir el rasgo de introversión o extraversión.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Sociabilidad"
-    },
-    {
-      "id": 97,
-      "texto": "Siempre miro el lado bueno de las cosas en la vida.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "A veces.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El optimismo realista es un factor protector de la salud mental.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 98,
-      "texto": "Si veo a niños peleándose, trato de razonar con ellos una solución.",
-      "opciones": {
-        "A": "Sí.",
-        "B": "Indeciso.",
-        "C": "No."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la inclinación hacia la resolución pacífica de conflictos.",
-      "dimension": "Valores",
-      "sub_dimension": "Cultura de Paz"
-    },
-    {
-      "id": 99,
-      "texto": "No me afectan fácilmente los sucesos porque tengo fuerza interior.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Algunas veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refuerza el perfil de estabilidad ante la presión externa.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 100,
-      "texto": "Estoy dispuesto a contestar todas las cuestiones con total sinceridad.",
-      "opciones": {
-        "A": "Verdadero.",
-        "B": "No estoy seguro.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Garantiza el compromiso con la veracidad de la evaluación.",
-      "dimension": "Control",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 201,
-      "texto": "Siento que hago mejor las cosas solo, que con la ayuda de los demás.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El trabajo policial es fundamentalmente en equipo; la autosuficiencia extrema puede ser un riesgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Trabajo en Equipo"
-    },
-    {
-      "id": 202,
-      "texto": "¿Se siente a menudo preocupado por algo, pues tiende a preocuparse por todo?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La ansiedad generalizada afecta la toma de decisiones bajo presión.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 203,
-      "texto": "Algunos de mis amigos han consumido drogas, pero yo no tengo por qué entrometerme en vida de terceros.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un futuro oficial debe mostrar rechazo activo hacia el entorno vinculado al consumo de drogas.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad Ética"
-    },
-    {
-      "id": 204,
-      "texto": "En el pasado he consumido alguna vez droga, pero solo por diversión con mis amigos.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "El consumo previo de drogas es un criterio de descalificación en la PNP.",
-      "dimension": "Valores",
-      "sub_dimension": "Conducta Ética"
-    },
-    {
-      "id": 205,
-      "texto": "Normalmente me han gustado las situaciones difíciles e incluso de alta tensión.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La tolerancia al estrés es esencial para el servicio operativo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 206,
-      "texto": "No puedo dormir de día, pero sí de noche.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la flexibilidad biológica y psicológica para el trabajo en turnos rotativos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Adaptabilidad"
-    },
-    {
-      "id": 207,
-      "texto": "En ocasiones he hecho travesuras por culpa de mis compañeros.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la influencia del grupo y la capacidad de asumir responsabilidad individual.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 208,
-      "texto": "Hago amigos fácilmente, pero los pierdo con la misma rapidez.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La inestabilidad en los vínculos puede reflejar inconstancia emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Sociabilidad"
-    },
-    {
-      "id": 209,
-      "texto": "Si me insultan, mi primera reacción es defenderme físicamente.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "El oficial debe dominar técnicas de desescalamiento antes que la fuerza física.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 210,
-      "texto": "En estos últimos meses me he sentido sin gran ánimo para cumplir mis responsabilidades.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el estado de ánimo actual y la disposición al trabajo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 211,
-      "texto": "He sido bastante independiente y libre sobre lo que quiero ser, incluso en contra de mis padres.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La determinación vocacional es un indicador de madurez.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Determinación"
-    },
-    {
-      "id": 212,
-      "texto": "Es más seguro no confiar en nadie hoy en día.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La suspicacia excesiva puede dificultar el trabajo comunitario.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 213,
-      "texto": "Disfruto de la velocidad extrema cuando conduzco un vehículo.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La búsqueda temeraria de sensaciones es un rasgo de riesgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Riesgos"
-    },
-    {
-      "id": 214,
-      "texto": "Todo vale para conseguir lo que uno desea en la vida.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Refleja una postura maquiavélica contraria a los valores institucionales.",
-      "dimension": "Valores",
-      "sub_dimension": "Ética"
-    },
-    {
-      "id": 215,
-      "texto": "Tengo motivos para sentirme celoso de uno o más miembros de mi familia.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa conflictos familiares que puedan afectar el rendimiento.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Familiar"
-    },
-    {
-      "id": 216,
-      "texto": "A nadie le importa realmente lo que me sucede a mí.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Sentimientos de aislamiento pueden indicar baja autoestima o depresión.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoestima"
-    },
-    {
-      "id": 217,
-      "texto": "Le tengo terror a las tormentas o fenómenos naturales fuertes.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un oficial debe estar preparado para actuar en desastres naturales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Valentía"
-    },
-    {
-      "id": 218,
-      "texto": "No culpo a la persona que se aprovecha de alguien que se expone a que ocurra tal cosa.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Refleja una falta de sentido de justicia y protección al ciudadano.",
-      "dimension": "Valores",
-      "sub_dimension": "Sentido de Justicia"
-    },
-    {
-      "id": 219,
-      "texto": "¿Se siente usted a menudo intranquilo, como si quisiera algo pero sin saber qué?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la ansiedad flotante.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 220,
-      "texto": "Cuando era niño, hacía siempre lo que me decían sin protestar.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la escala de sinceridad (L) o rigidez en la obediencia.",
-      "dimension": "Control",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 221,
-      "texto": "Prefiero 'sacar los trapos al aire' de una vez en una pelea antes que callar.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la tendencia a la confrontación directa.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Agresividad"
-    },
-    {
-      "id": 222,
-      "texto": "Se catalogaría a sí mismo como una persona despreocupada o confiada a su suerte.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La policía requiere planificación, no azar.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 223,
-      "texto": "¿Se ríe a menudo de chistes groseros o fuera de lugar?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el nivel de empatía y respeto social.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Habilidades Sociales"
-    },
-    {
-      "id": 224,
-      "texto": "Tengo la idea de que otra persona puede controlar mis pensamientos.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "Rara vez.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Indicador clínico de posibles rasgos psicóticos.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 225,
-      "texto": "Tengo la impresión de que la mayoría de los problemas son culpa de los demás.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la externalización de la culpa (locus de control externo).",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 226,
-      "texto": "Tengo pensamientos de acabar con mi vida cuando las cosas van mal.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de descarte por riesgo de autolesión.",
-      "dimension": "Clínica",
-      "sub_dimension": "Ideación Suicida"
-    },
-    {
-      "id": 227,
-      "texto": "He golpeado a personas del sexo opuesto sin que sea por defensa propia.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Indicador de violencia de género o impulsividad agresiva.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 228,
-      "texto": "Me siento incapaz de sentir compasión por el sufrimiento ajeno.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La falta de empatía es un rasgo psicopático incompatible con la función policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 229,
-      "texto": "Tengo arrebatos de cólera que no logro controlar.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el umbral de frustración.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 230,
-      "texto": "Despierto en la madrugada agitado, molesto o con pesadillas constantes.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indicador de estrés postraumático o ansiedad severa.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 231,
-      "texto": "Grito o tiro cosas cuando me enojo.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Expresión violenta del enojo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control Emocional"
-    },
-    {
-      "id": 232,
-      "texto": "Si es necesario, estoy dispuesto a manipular a la gente para conseguir lo que quiero.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el nivel de manipulación y honestidad.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 233,
-      "texto": "¿Considera que su vida es aburrida y sin sentido?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la satisfacción vital y el riesgo depresivo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoestima"
-    },
-    {
-      "id": 234,
-      "texto": "Miro a ambos lados antes de cruzar una calle, aunque sea de un solo sentido.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la precaución y el respeto a la seguridad propia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Seguridad"
-    },
-    {
-      "id": 235,
-      "texto": "¿Alguna vez ha sentido que alguien lo persigue sin que esto sea cierto?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Indicador de rasgos de paranoia.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 236,
-      "texto": "Me gusta que los demás me admiren y me presten atención constante.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "A veces.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide rasgos narcisistas o necesidad de aprobación externa.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Egocentrismo"
-    },
-    {
-      "id": 237,
-      "texto": "Cumplo mis tareas a tiempo, aunque nadie me esté supervisando.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa el sentido del deber y la disciplina propia.",
-      "dimension": "Valores",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 238,
-      "texto": "He mentido para evitar un castigo o problema menor.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la tendencia a la deshonestidad defensiva.",
-      "dimension": "Control",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 239,
-      "texto": "¿Siente que es una persona con mucha suerte?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja una actitud positiva frente a la vida.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Optimismo"
-    },
-    {
-      "id": 240,
-      "texto": "Me resulta difícil concentrarme cuando hay mucho ruido a mi alrededor.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la capacidad de enfoque en entornos hostiles.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Atención"
-    },
-    {
-      "id": 241,
-      "texto": "Soy capaz de reconocer mis errores públicamente sin sentirme humillado.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la humildad y la madurez emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autocrítica"
-    },
-    {
-      "id": 242,
-      "texto": "Si veo un objeto de valor en la calle sin dueño, trato de devolverlo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Evalúa la honradez y el civismo.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 243,
-      "texto": "¿Ha sentido alguna vez que su familia no lo quiere lo suficiente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la estabilidad de los vínculos afectivos básicos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Entorno Social"
-    },
-    {
-      "id": 244,
-      "texto": "Me gusta organizar las cosas y que todo esté en su sitio.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el nivel de orden y meticulosidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Organización"
-    },
-    {
-      "id": 245,
-      "texto": "¿Se siente usted superior a la mayoría de las personas que conoce?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la soberbia o rasgos de narcisismo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 246,
-      "texto": "Puedo trabajar bajo presión sin perder los estribos.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Competencia clave para operativos policiales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Tolerancia al Estrés"
-    },
-    {
-      "id": 247,
-      "texto": "¿Alguna vez ha deseado ser otra persona diferente a quien es?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja insatisfacción con la propia identidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoimagen"
-    },
-    {
-      "id": 248,
-      "texto": "Si un compañero de trabajo comete una falta grave, yo:",
-      "opciones": {
-        "A": "Informo a mi superior.",
-        "B": "Trato de aconsejarlo.",
-        "C": "Me quedo callado para no ser traidor."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el compromiso con la transparencia institucional frente a la lealtad mal entendida.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 249,
-      "texto": "Me gusta aprender cosas nuevas todos los días.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica disposición al crecimiento y formación continua.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Apertura a la Experiencia"
-    },
-    {
-      "id": 250,
-      "texto": "¿Siente que es una persona fácil de convencer?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el nivel de asertividad y convicción propia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Seguridad Personal"
-    },
-    {
-      "id": 251,
-      "texto": "En situaciones de riesgo extremo, soy el primero en actuar.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Depende.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la iniciativa y el valor operativo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 252,
-      "texto": "¿Cree que la disciplina es más importante que la libertad individual?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la adaptación a la vida militarizada de la PNP.",
-      "dimension": "Valores",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 253,
-      "texto": "Me molesta profundamente que la gente no sea puntual.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica respeto por el tiempo ajeno y las normas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 254,
-      "texto": "¿Suele perdonar fácilmente a quienes le han hecho daño?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el nivel de rencor o equilibrio emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Habilidades Sociales"
-    },
-    {
-      "id": 255,
-      "texto": "Tengo la capacidad de influir en las decisiones de mi grupo de amigos.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indicador de rasgos de liderazgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Influencia"
-    },
-    {
-      "id": 256,
-      "texto": "¿Alguna vez ha sentido envidia del éxito de sus mejores amigos?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la madurez social y emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 257,
-      "texto": "Me gusta enfrentar mis miedos en lugar de evitarlos.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Rasgo de personalidad resiliente y valiente.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 258,
-      "texto": "¿Considera que las leyes deben romperse si el fin es justo?",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un oficial debe actuar siempre bajo el marco de la ley.",
-      "dimension": "Valores",
-      "sub_dimension": "Legalidad"
-    },
-    {
-      "id": 259,
-      "texto": "Siento que tengo un gran control sobre mi futuro.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el locus de control interno.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 260,
-      "texto": "¿Le cuesta mucho dinero mantenerse al día con sus deudas?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El sobreendeudamiento es un riesgo para la integridad policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Responsabilidad Financiera"
-    },
-    {
-      "id": 261,
-      "texto": "Me siento cómodo hablando frente a una gran audiencia.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la seguridad y desplante personal.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Habilidades de Comunicación"
-    },
-    {
-      "id": 262,
-      "texto": "¿Alguna vez ha participado en actos vandálicos?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de descarte por antecedentes conductuales.",
-      "dimension": "Valores",
-      "sub_dimension": "Conducta Cívica"
-    },
-    {
-      "id": 263,
-      "texto": "Tengo claros mis valores morales y no los cambio por presión de otros.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la integridad y la firmeza de carácter.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 264,
-      "texto": "Me gusta planificar mis gastos con anticipación.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica previsión y control de impulsos financieros.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Previsión"
-    },
-    {
-      "id": 265,
-      "texto": "¿Siente que es una persona incomprendida por la sociedad?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el ajuste social y posibles sentimientos de alienación.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 266,
-      "texto": "Prefiero que otros tomen las decisiones difíciles por mí.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "A veces.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la capacidad de liderazgo y responsabilidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 267,
-      "texto": "Respeto las opiniones de los demás, aunque sean totalmente opuestas a las mías.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Competencia esencial para el diálogo y la cultura de paz.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Tolerancia"
-    },
-    {
-      "id": 268,
-      "texto": "¿Alguna vez ha consumido alcohol hasta perder el conocimiento?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el control de impulsos y el consumo de riesgo.",
-      "dimension": "Valores",
-      "sub_dimension": "Autocuidado"
-    },
-    {
-      "id": 269,
-      "texto": "Me siento orgulloso de los logros de mis familiares.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica salud en los vínculos familiares.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía Familiar"
-    },
-    {
-      "id": 270,
-      "texto": "Tengo facilidad para calmar a las personas que están enojadas.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Habilidad valiosa para la mediación y el diálogo policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Manejo de Conflictos"
-    },
-    {
-      "id": 271,
-      "texto": "¿Cree que la mayoría de los delincuentes pueden rehabilitarse?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la postura humanista frente al sistema penal.",
-      "dimension": "Valores",
-      "sub_dimension": "Sentido de Justicia"
-    },
-    {
-      "id": 272,
-      "texto": "Me gusta trabajar en proyectos que beneficien a mi comunidad.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica vocación de servicio público.",
-      "dimension": "Valores",
-      "sub_dimension": "Servicio"
-    },
-    {
-      "id": 273,
-      "texto": "¿Suele actuar por corazonadas en lugar de usar la lógica?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El oficial debe ser racional y analítico.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Racionalidad"
-    },
-    {
-      "id": 274,
-      "texto": "Respeto las señales de tránsito incluso si no hay policías vigilando.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el respeto intrínseco a la ley.",
-      "dimension": "Valores",
-      "sub_dimension": "Legalidad"
-    },
-    {
-      "id": 275,
-      "texto": "¿Siente que es una persona creativa e innovadora?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Apertura a nuevas soluciones en el servicio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Creatividad"
-    },
-    {
-      "id": 276,
-      "texto": "Me molesta que otros me den órdenes directas.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Incompatibilidad con el sistema jerárquico de la PNP.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Obediencia"
-    },
-    {
-      "id": 277,
-      "texto": "Considero que tengo una salud física excelente para mi edad.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Autoconcepto físico necesario para el servicio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Salud Física"
-    },
-    {
-      "id": 278,
-      "texto": "¿Alguna vez ha sentido que sus amigos se burlan de usted a sus espaldas?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el grado de suspicacia o integración grupal.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 279,
-      "texto": "Tengo la paciencia necesaria para escuchar a una persona en crisis por mucho tiempo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Habilidad clave para la atención al ciudadano.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Paciencia"
-    },
-    {
-      "id": 280,
-      "texto": "¿Cree que la mayoría de los problemas del país se solucionarían con más educación?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Postura social equilibrada.",
-      "dimension": "Valores",
-      "sub_dimension": "Conciencia Social"
-    },
-    {
-      "id": 281,
-      "texto": "Me gusta participar en competencias deportivas o de habilidades.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja competitividad sana y energía física.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Vitalidad"
-    },
-    {
-      "id": 282,
-      "texto": "¿Suele arrepentirse de las cosas que dice cuando está enojado?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la capacidad de reflexión post-impulso.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoconocimiento"
-    },
-    {
-      "id": 283,
-      "texto": "Me considero una persona puntual en todas mis citas.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La puntualidad es la base de la disciplina policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 284,
-      "texto": "¿Le gusta leer libros sobre historia o actualidad política?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica nivel cultural y curiosidad intelectual.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Cultura"
-    },
-    {
-      "id": 285,
-      "texto": "Me siento seguro de mi apariencia física al mirarme al espejo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indicador de autoestima sana.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autoimagen"
-    },
-    {
-      "id": 286,
-      "texto": "¿Considera que los Derechos Humanos a veces protegen demasiado al delincuente?",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la comprensión de la universalidad de los DD.HH.",
-      "dimension": "Valores",
-      "sub_dimension": "Derechos Humanos"
-    },
-    {
-      "id": 287,
-      "texto": "Prefiero terminar una relación antes que discutir por cosas sin importancia.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el estilo de resolución de conflictos personales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 288,
-      "texto": "¿Alguna vez ha sentido que la vida es injusta con usted?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide sentimientos de victimización.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 289,
-      "texto": "Me gusta ayudar a las personas mayores sin que nadie me lo pida.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica empatía y espíritu de servicio.",
-      "dimension": "Valores",
-      "sub_dimension": "Civismo"
-    },
-    {
-      "id": 290,
-      "texto": "¿Suele tener dificultades para dormir antes de un evento importante?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el impacto de la ansiedad ante el desempeño.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 291,
-      "texto": "Me gusta trabajar con personas que son muy diferentes a mí.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la apertura a la diversidad y el trabajo en equipo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Sociabilidad"
-    },
-    {
-      "id": 292,
-      "texto": "¿Considera que la violencia es necesaria en algunos casos para imponer el orden?",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "El oficial usa la fuerza legal, no la violencia arbitraria.",
-      "dimension": "Valores",
-      "sub_dimension": "Uso de la Fuerza"
-    },
-    {
-      "id": 293,
-      "texto": "Soy capaz de mantener mis planes de estudio a pesar de las distracciones.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el autocontrol y la perseverancia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 294,
-      "texto": "¿Ha sentido que su corazón late muy rápido sin estar haciendo ejercicio?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Síntoma físico de ansiedad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 295,
-      "texto": "Considero que tengo una gran resistencia al dolor físico.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el umbral de tolerancia física.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resistencia"
-    },
-    {
-      "id": 296,
-      "texto": "¿Alguna vez ha deseado romper algo solo por el placer de hacerlo?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Indicador de impulsividad destructiva.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 297,
-      "texto": "Me gusta planificar mis viajes con mucho detalle.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica previsión y orden.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Organización"
-    },
-    {
-      "id": 298,
-      "texto": "¿Se siente a gusto cuando tiene que cuidar a niños o personas vulnerables?",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la empatía y capacidad de cuidado social.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 299,
-      "texto": "Creo que cada persona tiene lo que se merece en la vida.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la creencia en un mundo justo frente a la empatía social.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Sentido de Justicia"
-    },
-    {
-      "id": 300,
-      "texto": "Estoy totalmente seguro de querer ser oficial de la PNP por el resto de mi vida.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide la convicción vocacional final.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 301,
-      "texto": "Suelo terminar mis tareas antes de la fecha límite para evitar presiones de último momento.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La planificación y responsabilidad son vitales para la disciplina policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 302,
-      "texto": "Si alguien me falta el respeto en público, mi primera reacción es gritarle para que sepa que no me dejo.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un oficial debe mantener el temple y no reaccionar impulsivamente ante provocaciones.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 303,
-      "texto": "Me siento cómodo siguiendo órdenes estrictas de mis superiores, aunque no esté de acuerdo.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La obediencia jerárquica es la base de las instituciones castrenses y policiales.",
-      "dimension": "Valores",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 304,
-      "texto": "He sentido en varias ocasiones que la gente me mira con envidia por mis capacidades.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el grado de suspicacia y ajuste social del candidato.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 305,
-      "texto": "¿Alguna vez ha tomado algo que no le pertenecía, aunque fuera de valor insignificante?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "La honradez absoluta es un requisito innegociable para un policía.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 306,
-      "texto": "Cuando tengo un problema grave, prefiero guardarlo para mí mismo en lugar de pedir ayuda.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La capacidad de buscar apoyo adecuado indica salud mental y madurez.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 307,
-      "texto": "Me gusta ayudar a las personas, incluso si eso significa sacrificar mi tiempo de descanso.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La vocación de servicio es el núcleo de la labor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 308,
-      "texto": "Siento que la mayoría de las leyes son demasiado estrictas y deberían ser más flexibles.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "El policía debe ser el primer defensor del cumplimiento irrestricto de la ley.",
-      "dimension": "Valores",
-      "sub_dimension": "Legalidad"
-    },
-    {
-      "id": 309,
-      "texto": "¿Ha sentido que su corazón late con fuerza o le tiemblan las manos sin razón aparente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide síntomas físicos relacionados con la ansiedad y el estrés.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 310,
-      "texto": "Si veo que un compañero está robando algo pequeño, prefiero no decir nada para no ser un 'delator'.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "La ética institucional está por encima del falso compañerismo.",
-      "dimension": "Valores",
-      "sub_dimension": "Ética"
-    },
-    {
-      "id": 311,
-      "texto": "Me considero una persona capaz de admitir sus errores sin poner excusas.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La honestidad y la autocrítica son signos de liderazgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Madurez"
-    },
-    {
-      "id": 312,
-      "texto": "Frecuentemente me distraigo con facilidad cuando estoy realizando una tarea importante.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La atención sostenida es vital para la vigilancia y seguridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Atención"
-    },
-    {
-      "id": 313,
-      "texto": "Creo que el éxito solo se logra pisando a los demás para subir.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide rasgos de competitividad tóxica o falta de ética social.",
-      "dimension": "Valores",
-      "sub_dimension": "Ética"
-    },
-    {
-      "id": 314,
-      "texto": "Me gusta planificar mi futuro a largo plazo y trabajar duro para lograr mis metas.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La perseverancia es clave en la carrera de un oficial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 315,
-      "texto": "¿Alguna vez ha sentido ganas de dejarlo todo y desaparecer?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la resistencia psicológica ante la adversidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 316,
-      "texto": "Respeto las creencias religiosas de los demás, aunque sean muy diferentes a las mías.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La tolerancia es necesaria para el trato con una ciudadanía diversa.",
-      "dimension": "Valores",
-      "sub_dimension": "Tolerancia"
-    },
-    {
-      "id": 317,
-      "texto": "¿Se considera usted una persona puntual en todas sus reuniones?",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La puntualidad refleja respeto por la institución y los demás.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 318,
-      "texto": "Suelo actuar según mis impulsos sin pensar mucho en las consecuencias.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un alto nivel de impulsividad es riesgoso en el uso de la fuerza.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 319,
-      "texto": "Me siento seguro de mis capacidades para liderar a un grupo de personas.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El oficial debe proyectar seguridad y mando.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 320,
-      "texto": "¿Ha sentido que sus amigos o familiares lo critican injustamente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la susceptibilidad a la crítica y el equilibrio emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 321,
-      "texto": "Prefiero decir la verdad aunque sepa que eso me traerá un castigo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La integridad es el valor fundamental del honor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 322,
-      "texto": "¿Alguna vez ha consumido bebidas alcohólicas hasta el punto de no recordar qué hizo?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide el control sobre hábitos de consumo de riesgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autocontrol"
-    },
-    {
-      "id": 323,
-      "texto": "Me gusta trabajar en equipo y escuchar las opiniones de mis compañeros.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La cooperación es esencial para el éxito de las misiones policiales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Trabajo en Equipo"
-    },
-    {
-      "id": 324,
-      "texto": "¿Siente que es una persona que se enoja con mucha facilidad?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un umbral bajo de frustración puede llevar a abusos de autoridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control Emocional"
-    },
-    {
-      "id": 325,
-      "texto": "Estoy dispuesto a arriesgar mi integridad física por salvar la vida de un ciudadano.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja el compromiso heroico de la labor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 326,
-      "texto": "Me considero una persona que sabe perdonar los agravios del pasado.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El rencor acumulado afecta el equilibrio psicológico.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 327,
-      "texto": "Suelo pensar en lo que voy a decir antes de hablar para no herir a nadie.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La comunicación asertiva previene conflictos innecesarios.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Asertividad"
-    },
-    {
-      "id": 328,
-      "texto": "¿Ha tenido alguna vez la sensación de ser observado por personas desconocidas?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de descarte para detectar posibles rasgos paranoides.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 329,
-      "texto": "Me gusta seguir las reglas de etiqueta y comportamiento en lugares públicos.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica respeto por las normas sociales y el orden.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 330,
-      "texto": "¿Se considera usted una persona optimista frente a los problemas?",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El optimismo realista favorece la resolución de problemas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 331,
-      "texto": "Si recibo un vuelto de más en una tienda, me quedo con el dinero sin decir nada.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide la honestidad en situaciones cotidianas.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 332,
-      "texto": "Me gusta leer y mantenerme informado sobre lo que pasa en mi país.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un oficial debe tener cultura general y conciencia ciudadana.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Cultura"
-    },
-    {
-      "id": 333,
-      "texto": "¿Alguna vez ha sentido que la vida no vale la pena vivirla?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de control para evaluar estabilidad emocional profunda.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 334,
-      "texto": "Me considero una persona valiente ante situaciones de peligro inminente.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La valentía es una cualidad inherente al oficial de policía.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Valentía"
-    },
-    {
-      "id": 335,
-      "texto": "Suelo pedir disculpas cuando me doy cuenta de que he cometido un error.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La humildad y la responsabilidad fortalecen la confianza grupal.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Madurez"
-    },
-    {
-      "id": 336,
-      "texto": "¿Siente que es una persona que puede mantener un secreto bajo presión?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La discreción es fundamental para el manejo de información sensible.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Lealtad"
-    },
-    {
-      "id": 337,
-      "texto": "Me molesta que las personas no sigan las instrucciones que les doy.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la flexibilidad y tolerancia al ejercer el mando.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 338,
-      "texto": "¿Alguna vez ha participado en peleas callejeras por motivos triviales?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Evalúa el historial de conducta violenta o impulsiva.",
-      "dimension": "Valores",
-      "sub_dimension": "Conducta"
-    },
-    {
-      "id": 339,
-      "texto": "Me gusta cuidar mi salud física haciendo ejercicio regularmente.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El oficial debe estar en óptimas condiciones físicas para el servicio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Salud"
-    },
-    {
-      "id": 340,
-      "texto": "Siento que tengo el control sobre las decisiones que tomo en mi vida.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica un locus de control interno y autonomía.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 341,
-      "texto": "¿Suele tener dificultades para concentrarse cuando está bajo mucho estrés?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la capacidad operativa bajo situaciones críticas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Tolerancia al Estrés"
-    },
-    {
-      "id": 342,
-      "texto": "Respeto a mis padres y figuras de autoridad, aunque no piense igual que ellos.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El respeto a la jerarquía comienza en el núcleo familiar.",
-      "dimension": "Valores",
-      "sub_dimension": "Respeto"
-    },
-    {
-      "id": 343,
-      "texto": "¿Ha sentido alguna vez que las personas conspiran contra usted?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta para detectar rasgos de ideación paranoide.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 344,
-      "texto": "Me considero una persona que sabe escuchar antes de juzgar.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La imparcialidad y la escucha activa son claves para la justicia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 345,
-      "texto": "Estoy dispuesto a seguir formándome y estudiando durante toda mi carrera.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica deseo de superación y actualización constante.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 346,
-      "texto": "¿Alguna vez ha mentido en una entrevista o cuestionario para quedar bien?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Pregunta de control de sinceridad (escala L).",
-      "dimension": "Control",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 347,
-      "texto": "Me gusta participar en actividades de voluntariado o ayuda social.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Muestra proactividad y compromiso con el bienestar social.",
-      "dimension": "Valores",
-      "sub_dimension": "Servicio"
-    },
-    {
-      "id": 348,
-      "texto": "¿Siente que es una persona que se adapta rápido a los cambios inesperados?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La adaptabilidad es crucial en el cambiante entorno policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Flexibilidad"
-    },
-    {
-      "id": 349,
-      "texto": "Me considero una persona capaz de controlar sus impulsos sexuales.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el autocontrol en impulsos biológicos básicos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 350,
-      "texto": "Estoy convencido de que ser oficial de la PNP es mi verdadera vocación.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta final de reafirmación vocacional.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 351,
-      "texto": "Suelo terminar mis tareas antes de la fecha límite para evitar presiones de último momento.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La planificación y responsabilidad son vitales para la disciplina policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 352,
-      "texto": "Si alguien me falta el respeto en público, mi primera reacción es gritarle para que sepa que no me dejo.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un oficial debe mantener el temple y no reaccionar impulsivamente ante provocaciones.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 353,
-      "texto": "Me siento cómodo siguiendo órdenes estrictas de mis superiores, aunque no esté de acuerdo.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La obediencia jerárquica es la base de las instituciones castrenses y policiales.",
-      "dimension": "Valores",
-      "sub_dimension": "Disciplina"
-    },
-    {
-      "id": 354,
-      "texto": "He sentido en varias ocasiones que la gente me mira con envidia por mis capacidades.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el grado de suspicacia y ajuste social del candidato.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 355,
-      "texto": "¿Alguna vez ha tomado algo que no le pertenecía, aunque fuera de valor insignificante?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "La honradez absoluta es un requisito innegociable para un policía.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 356,
-      "texto": "Cuando tengo un problema grave, prefiero guardarlo para mí mismo en lugar de pedir ayuda.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La capacidad de buscar apoyo adecuado indica salud mental y madurez.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad Emocional"
-    },
-    {
-      "id": 357,
-      "texto": "Me gusta ayudar a las personas, incluso si eso significa sacrificar mi tiempo de descanso.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La vocación de servicio es el núcleo de la labor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 358,
-      "texto": "Siento que la mayoría de las leyes son demasiado estrictas y deberían ser más flexibles.",
-      "opciones": {
-        "A": "En desacuerdo.",
-        "B": "Indeciso.",
-        "C": "De acuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "El policía debe ser el primer defensor del cumplimiento irrestricto de la ley.",
-      "dimension": "Valores",
-      "sub_dimension": "Legalidad"
-    },
-    {
-      "id": 359,
-      "texto": "¿Ha sentido que su corazón late con fuerza o le tiemblan las manos sin razón aparente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide síntomas físicos relacionados con la ansiedad y el estrés.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 360,
-      "texto": "Si veo que un compañero está robando algo pequeño, prefiero no decir nada para no ser un 'delator'.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "La ética institucional está por encima del falso compañerismo.",
-      "dimension": "Valores",
-      "sub_dimension": "Ã‰tica"
-    },
-    {
-      "id": 361,
-      "texto": "Me considero una persona capaz de admitir sus errores sin poner excusas.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La honestidad y la autocrítica son signos de liderazgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Madurez"
-    },
-    {
-      "id": 362,
-      "texto": "Frecuentemente me distraigo con facilidad cuando estoy realizando una tarea importante.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La atención sostenida es vital para la vigilancia y seguridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Atención"
-    },
-    {
-      "id": 363,
-      "texto": "Creo que el éxito solo se logra pisando a los demás para subir.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "Indeciso.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide rasgos de competitividad tóxica o falta de ética social.",
-      "dimension": "Valores",
-      "sub_dimension": "Ã‰tica"
-    },
-    {
-      "id": 364,
-      "texto": "Me gusta planificar mi futuro a largo plazo y trabajar duro para lograr mis metas.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La perseverancia es clave en la carrera de un oficial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 365,
-      "texto": "¿Alguna vez ha sentido ganas de dejarlo todo y desaparecer?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Evalúa la resistencia psicológica ante la adversidad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 366,
-      "texto": "Respeto las creencias religiosas de los demás, aunque sean muy diferentes a las mías.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La tolerancia es necesaria para el trato con una ciudadanía diversa.",
-      "dimension": "Valores",
-      "sub_dimension": "Tolerancia"
-    },
-    {
-      "id": 367,
-      "texto": "¿Se considera usted una persona puntual en todas sus reuniones?",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La puntualidad refleja respeto por la institución y los demás.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Responsabilidad"
-    },
-    {
-      "id": 368,
-      "texto": "Suelo actuar según mis impulsos sin pensar mucho en las consecuencias.",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Un alto nivel de impulsividad es riesgoso en el uso de la fuerza.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 369,
-      "texto": "Me siento seguro de mis capacidades para liderar a un grupo de personas.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El oficial debe proyectar seguridad y mando.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 370,
-      "texto": "¿Ha sentido que sus amigos o familiares lo critican injustamente?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la susceptibilidad a la crítica y el equilibrio emocional.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Estabilidad"
-    },
-    {
-      "id": 371,
-      "texto": "Prefiero decir la verdad aunque sepa que eso me traerá un castigo.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La integridad es el valor fundamental del honor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 372,
-      "texto": "¿Alguna vez ha consumido bebidas alcohólicas hasta el punto de no recordar qué hizo?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide el control sobre hábitos de consumo de riesgo.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autocontrol"
-    },
-    {
-      "id": 373,
-      "texto": "Me gusta trabajar en equipo y escuchar las opiniones de mis compañeros.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La cooperación es esencial para el éxito de las misiones policiales.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Trabajo en Equipo"
-    },
-    {
-      "id": 374,
-      "texto": "¿Siente que es una persona que se enoja con mucha facilidad?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un umbral bajo de frustración puede llevar a abusos de autoridad.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control Emocional"
-    },
-    {
-      "id": 375,
-      "texto": "Estoy dispuesto a arriesgar mi integridad física por salvar la vida de un ciudadano.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "Indeciso.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Refleja el compromiso heroico de la labor policial.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
-    },
-    {
-      "id": 376,
-      "texto": "Me considero una persona que sabe perdonar los agravios del pasado.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El rencor acumulado afecta el equilibrio psicológico.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 377,
-      "texto": "Suelo pensar en lo que voy a decir antes de hablar para no herir a nadie.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La comunicación asertiva previene conflictos innecesarios.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Asertividad"
-    },
-    {
-      "id": 378,
-      "texto": "¿Ha tenido alguna vez la sensación de ser observado por personas desconocidas?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de descarte para detectar posibles rasgos paranoides.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 379,
-      "texto": "Me gusta seguir las reglas de etiqueta y comportamiento en lugares públicos.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica respeto por las normas sociales y el orden.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Ajuste Social"
-    },
-    {
-      "id": 380,
-      "texto": "¿Se considera usted una persona optimista frente a los problemas?",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El optimismo realista favorece la resolución de problemas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Resiliencia"
-    },
-    {
-      "id": 381,
-      "texto": "Si recibo un vuelto de más en una tienda, me quedo con el dinero sin decir nada.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Mide la honestidad en situaciones cotidianas.",
-      "dimension": "Valores",
-      "sub_dimension": "Integridad"
-    },
-    {
-      "id": 382,
-      "texto": "Me gusta leer y mantenerme informado sobre lo que pasa en mi país.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Un oficial debe tener cultura general y conciencia ciudadana.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Cultura"
-    },
-    {
-      "id": 383,
-      "texto": "¿Alguna vez ha sentido que la vida no vale la pena vivirla?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta de control para evaluar estabilidad emocional profunda.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 384,
-      "texto": "Me considero una persona valiente ante situaciones de peligro inminente.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "Indeciso.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La valentía es una cualidad inherente al oficial de policía.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Valentía"
-    },
-    {
-      "id": 385,
-      "texto": "Suelo pedir disculpas cuando me doy cuenta de que he cometido un error.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La humildad y la responsabilidad fortalecen la confianza grupal.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Madurez"
-    },
-    {
-      "id": 386,
-      "texto": "¿Siente que es una persona que puede mantener un secreto bajo presión?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La discreción es fundamental para el manejo de información sensible.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Lealtad"
-    },
-    {
-      "id": 387,
-      "texto": "Me molesta que las personas no sigan las instrucciones que les doy.",
-      "opciones": {
-        "A": "Falso.",
-        "B": "A veces.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la flexibilidad y tolerancia al ejercer el mando.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Liderazgo"
-    },
-    {
-      "id": 388,
-      "texto": "¿Alguna vez ha participado en peleas callejeras por motivos triviales?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Evalúa el historial de conducta violenta o impulsiva.",
-      "dimension": "Valores",
-      "sub_dimension": "Conducta"
-    },
-    {
-      "id": 389,
-      "texto": "Me gusta cuidar mi salud física haciendo ejercicio regularmente.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El oficial debe estar en óptimas condiciones físicas para el servicio.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Salud"
-    },
-    {
-      "id": 390,
-      "texto": "Siento que tengo el control sobre las decisiones que tomo en mi vida.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica un locus de control interno y autonomía.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Autonomía"
-    },
-    {
-      "id": 391,
-      "texto": "¿Suele tener dificultades para concentrarse cuando está bajo mucho estrés?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Siempre."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide la capacidad operativa bajo situaciones críticas.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Tolerancia al Estrés"
-    },
-    {
-      "id": 392,
-      "texto": "Respeto a mis padres y figuras de autoridad, aunque no piense igual que ellos.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "El respeto a la jerarquía comienza en el núcleo familiar.",
-      "dimension": "Valores",
-      "sub_dimension": "Respeto"
-    },
-    {
-      "id": 393,
-      "texto": "¿Ha sentido alguna vez que las personas conspiran contra usted?",
-      "opciones": {
-        "A": "Nunca.",
-        "B": "A veces.",
-        "C": "Frecuentemente."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta para detectar rasgos de ideación paranoide.",
-      "dimension": "Clínica",
-      "sub_dimension": "Salud Mental"
-    },
-    {
-      "id": 394,
-      "texto": "Me considero una persona que sabe escuchar antes de juzgar.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La imparcialidad y la escucha activa son claves para la justicia.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Empatía"
-    },
-    {
-      "id": 395,
-      "texto": "Estoy dispuesto a seguir formándome y estudiando durante toda mi carrera.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Indica deseo de superación y actualización constante.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Motivación"
-    },
-    {
-      "id": 396,
-      "texto": "¿Alguna vez ha mentido en una entrevista o cuestionario para quedar bien?",
-      "opciones": {
-        "A": "Falso.",
-        "B": "No estoy seguro.",
-        "C": "Cierto."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Pregunta de control de sinceridad (escala L).",
-      "dimension": "Control",
-      "sub_dimension": "Sinceridad"
-    },
-    {
-      "id": 397,
-      "texto": "Me gusta participar en actividades de voluntariado o ayuda social.",
-      "opciones": {
-        "A": "De acuerdo.",
-        "B": "A veces.",
-        "C": "En desacuerdo."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Muestra proactividad y compromiso con el bienestar social.",
-      "dimension": "Valores",
-      "sub_dimension": "Servicio"
-    },
-    {
-      "id": 398,
-      "texto": "¿Siente que es una persona que se adapta rápido a los cambios inesperados?",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "A veces.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "La adaptabilidad es crucial en el cambiante entorno policial.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Flexibilidad"
-    },
-    {
-      "id": 399,
-      "texto": "Me considero una persona capaz de controlar sus impulsos sexuales.",
-      "opciones": {
-        "A": "Cierto.",
-        "B": "A veces.",
-        "C": "Falso."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 5,
-        "C": 0
-      },
-      "pista": "Mide el autocontrol en impulsos biológicos básicos.",
-      "dimension": "Personalidad",
-      "sub_dimension": "Control de Impulsos"
-    },
-    {
-      "id": 400,
-      "texto": "Estoy convencido de que ser oficial de la PNP es mi verdadera vocación.",
-      "opciones": {
-        "A": "Siempre.",
-        "B": "Indeciso.",
-        "C": "Nunca."
-      },
-      "puntos_opciones": {
-        "A": 10,
-        "B": 0,
-        "C": 0
-      },
-      "pista": "Pregunta final de reafirmación vocacional.",
-      "dimension": "Valores",
-      "sub_dimension": "Vocación"
+      "pista": ""
     }
   ]
 }

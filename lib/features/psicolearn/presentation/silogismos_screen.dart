@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
+import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 import 'package:learn/features/psicolearn/domain/services/psico_service.dart';
 import 'package:learn/core/services/audio_service.dart';
@@ -129,61 +130,63 @@ class _SilogismosScreenState extends State<SilogismosScreen>
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
 
-    return Scaffold(
-      backgroundColor: nt.background,
-      appBar: AppBar(
+    return NeuralBackgroundWrapper(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
-          onPressed: () => context.pop(),
-        ),
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(8),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => context.pop(),
+          ),
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(Icons.account_tree_rounded,
+                    color: Color(0xFF14B8A6), size: 16),
               ),
-              child: const Icon(Icons.account_tree_rounded,
-                  color: Color(0xFF14B8A6), size: 16),
-            ),
-            const SizedBox(width: 8),
-            const Text(
-              'Razonamiento',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Outfit',
-              ),
-            ),
-          ],
-        ),
-        centerTitle: true,
-        actions: [
-          if (_questions != null)
-            Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: Center(
-                child: Text(
-                  '${_currentIndex + 1}/${_questions!.length}',
-                  style: const TextStyle(
-                      color: Colors.white54,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13),
+              const SizedBox(width: 8),
+              const Text(
+                'Razonamiento',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Outfit',
                 ),
               ),
+            ],
+          ),
+          centerTitle: true,
+          actions: [
+            if (_questions != null)
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Center(
+                  child: Text(
+                    '${_currentIndex + 1}/${_questions!.length}',
+                    style: const TextStyle(
+                        color: Colors.white54,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13),
+                  ),
+                ),
+              ),
+          ],
+        ),
+        body: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+              child: _buildContent(nt),
             ),
-        ],
-      ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 800),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-            child: _buildContent(nt),
           ),
         ),
       ),

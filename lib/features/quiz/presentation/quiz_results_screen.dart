@@ -1,9 +1,12 @@
-﻿import 'dart:ui';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
+import 'package:learn/core/services/export_service.dart';
+import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/models/question.dart';
 
 class QuizResultsScreen extends StatelessWidget {
   const QuizResultsScreen({super.key});
@@ -197,6 +200,56 @@ class QuizResultsScreen extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 28),
                     child: Column(
                       children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                height: 50,
+                                child: OutlinedButton.icon(
+                                  onPressed: () async {
+                                    final subjectProvider = context.read<SubjectProvider>();
+                                    final questions = last.questionIds
+                                        .map((id) => subjectProvider.getQuestion(id))
+                                        .whereType<Question>()
+                                        .toList();
+                                    await ExportService.exportQuizToPdf(context, last, questions);
+                                  },
+                                  icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+                                  label: const Text('Exportar PDF', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Outfit')),
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: Colors.white,
+                                    side: const BorderSide(color: Colors.white24),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: SizedBox(
+                                height: 50,
+                                child: OutlinedButton.icon(
+                                  onPressed: () async {
+                                    final subjectProvider = context.read<SubjectProvider>();
+                                    final questions = last.questionIds
+                                        .map((id) => subjectProvider.getQuestion(id))
+                                        .whereType<Question>()
+                                        .toList();
+                                    await ExportService.exportQuizToWord(context, last, questions);
+                                  },
+                                  icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
+                                  label: const Text('Exportar Word', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Outfit')),
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: Colors.white,
+                                    side: const BorderSide(color: Colors.white24),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
                         SizedBox(
                           width: double.infinity,
                           height: 54,

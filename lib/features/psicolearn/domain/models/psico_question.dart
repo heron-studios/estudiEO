@@ -9,6 +9,8 @@ class PsicoQuestion {
   final String dimension;
   final String subDimension;
   final bool esEscalaMentira;
+  final String contextoCorrecto;
+  final String contextoIncorrecto;
 
   PsicoQuestion({
     required this.id,
@@ -19,6 +21,8 @@ class PsicoQuestion {
     this.dimension = 'General',
     this.subDimension = '',
     this.esEscalaMentira = false,
+    this.contextoCorrecto = '',
+    this.contextoIncorrecto = '',
   });
 
   factory PsicoQuestion.fromJson(Map<String, dynamic> json) {
@@ -52,6 +56,8 @@ class PsicoQuestion {
       dimension: _clean(json['dimension'] ?? 'General'),
       subDimension: _clean(json['sub_dimension'] ?? ''),
       esEscalaMentira: json['es_escala_mentira'] ?? false,
+      contextoCorrecto: _clean(json['contexto_correcto'] ?? json['contextoCorrecto'] ?? ''),
+      contextoIncorrecto: _clean(json['contexto_incorrecto'] ?? json['contextoIncorrecto'] ?? ''),
     );
   }
 
