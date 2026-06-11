@@ -36,6 +36,11 @@ import 'package:learn/features/psicolearn/presentation/simulator_screen.dart';
 import 'package:learn/features/psicolearn/presentation/re_entrenamiento_screen.dart';
 import 'package:learn/features/psicolearn/presentation/silogismos_screen.dart';
 import 'package:learn/features/miniapps/productos_notables/presentation/productos_notables_screen.dart';
+import 'package:learn/features/medical/presentation/medical_dashboard_screen.dart';
+import 'package:learn/features/medical/presentation/eysenck_test_screen.dart';
+import 'package:learn/features/medical/presentation/sacks_test_screen.dart';
+import 'package:learn/features/medical/presentation/psicologico_test_screen.dart';
+
 class AppRouter {
   static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
     return GoRouter(
@@ -237,6 +242,22 @@ class AppRouter {
         GoRoute(
           path: '/miniapps/productos-notables',
           builder: (context, state) => const ProductosNotablesScreen(),
+        ),
+        GoRoute(
+          path: '/medical',
+          builder: (context, state) => const MedicalDashboardScreen(),
+        ),
+        GoRoute(
+          path: '/medical/psicologico',
+          builder: (context, state) => const PsicologicoTestScreen(),
+        ),
+        GoRoute(
+          path: '/medical/eysenck',
+          builder: (context, state) => const EysenckTestScreen(),
+        ),
+        GoRoute(
+          path: '/medical/sacks',
+          builder: (context, state) => const SacksTestScreen(),
         ),
         GoRoute(
           path: '/psicolearn',

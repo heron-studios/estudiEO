@@ -906,7 +906,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
 
   Widget _buildMedicalStudyCard(NeuralThemeData nt) {
     return HoverGlassCard(
-      onTap: _showComingSoon,
+      onTap: () => context.push('/medical'),
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.all(16),
