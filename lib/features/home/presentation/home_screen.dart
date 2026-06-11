@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
@@ -34,52 +33,15 @@ class _HomeScreenState extends State<HomeScreen> {
   int _streakDays = 0;
   bool _todayCompleted = false;
   String _diagnosis = 'PENDIENTE';
-  Timer? _tipTimer;
-
-  static const List<String> _psicometricTips = [
-    'Responde con honestidad. Los perfiles extremadamente perfectos suelen ser detectados por las escalas de sinceridad (L) del test.',
-    'Mantén la coherencia. Muchas preguntas se repiten de forma diferente para evaluar la consistencia de tus respuestas.',
-    'Controla el tiempo. En las pruebas de aptitud, no te estanques en una pregunta difícil; avanza y regresa si te sobra tiempo.',
-    'Evita responder siempre en los extremos (nunca o siempre) a menos que estés completamente seguro. Muestra flexibilidad.',
-    'Lee detenidamente las instrucciones. Un error común es responder lo contrario a lo solicitado por no leer bien la consigna.',
-    'La fatiga disminuye tu rendimiento. Duerme bien el día anterior al examen; la mente descansada procesa mejor la lógica visual.',
-    'En las pruebas de personalidad, no intentes adivinar lo que el evaluador quiere escuchar. Sé auténtico.',
-    'Los test psicotécnicos de series numéricas o de figuras miden tu capacidad de abstracción. Busca patrones de suma, resta o rotación.',
-    'Mantén la calma ante preguntas extrañas o incómodas. Están diseñadas para medir tu nivel de tolerancia a la frustración y estabilidad.',
-    'En la entrevista personal, tu postura y contacto visual comunican tanto como tus palabras. Mantén una actitud profesional.',
-    'No dejes demasiadas preguntas en blanco si no restan puntos. Haz una eliminación lógica de las opciones improbables.',
-    'El autoconocimiento es clave. Reflexiona sobre tus fortalezas y debilidades reales antes del test de personalidad.',
-    'Practica la lectura rápida y comprensión lectora. Te ayudará a responder las secciones verbales con mayor agilidad.',
-    'En analogías verbales, identifica primero la relación exacta entre la primera pareja de palabras antes de mirar las opciones.',
-    'Para pruebas de memoria visual, asocia las imágenes con historias sencillas o conceptos familiares para recordarlas mejor.',
-    'En los ejercicios de razonamiento espacial, intenta rotar las figuras mentalmente paso a paso, enfocándose en un solo detalle clave.',
-    'Maneja la ansiedad con respiraciones controladas. La tensión excesiva reduce la memoria de trabajo durante el examen.',
-    'Presta atención a los adverbios absolutos como "jamás", "siempre" o "nunca" en los enunciados; suelen cambiar el sentido de la respuesta.',
-    'Sé directo y claro en tus respuestas escritas o entrevistas. La ambigüedad puede interpretarse como falta de seguridad.',
-    'El perfil psicométrico idóneo equilibra liderazgo, trabajo en equipo y adaptabilidad. Muestra que puedes seguir normas y también proponer soluciones.',
-  ];
-
-  String _getCurrentTip() {
-    final now = DateTime.now().millisecondsSinceEpoch;
-    final index = (now ~/ 300000) % _psicometricTips.length;
-    return _psicometricTips[index];
-  }
 
   @override
   void initState() {
     super.initState();
     _loadPsicoProgress();
-    // Reconstruir periódicamente cada minuto para actualizar el consejo cuando cambie el bloque de 5 min
-    _tipTimer = Timer.periodic(const Duration(minutes: 1), (timer) {
-      if (mounted) {
-        setState(() {});
-      }
-    });
   }
 
   @override
   void dispose() {
-    _tipTimer?.cancel();
     super.dispose();
   }
 
@@ -580,48 +542,104 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /// Consejo psicométrico compacto (debajo de la misión diaria)
-  Widget _buildPsicometricTip(BuildContext context, dynamic nt) {
-    return StaticGlassContainer(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-      borderRadius: BorderRadius.circular(14),
-      borderColor: nt.purple.withValues(alpha: 0.3),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(7),
-            decoration: BoxDecoration(
-              color: nt.purple.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Icon(Icons.tips_and_updates_rounded,
-                color: nt.purple, size: 16),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
+  /// Botón de Examen Médico para el menú principal (reemplaza consejos psicométricos)
+  Widget _buildMedicalStudyCard(BuildContext context, dynamic nt) {
+    return HoverGlassCard(
+      onTap: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Row(
               children: [
-                Text(
-                  'CONSEJO PSICOMÉTRICO',
-                  style: TextStyle(
-                    color: nt.purple,
-                    fontSize: 8,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  _getCurrentTip(),
-                  style: const TextStyle(
-                      color: Colors.white60, fontSize: 11, height: 1.3),
-                ),
+                Icon(Icons.construction_rounded, color: Colors.amber),
+                SizedBox(width: 8),
+                Text('Módulo en construcción. ¡Próximamente!'),
               ],
             ),
+            backgroundColor: const Color(0xFF1E1F20),
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            margin: const EdgeInsets.all(16),
           ),
-        ],
+        );
+      },
+      hoverGradientBorder: true,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: nt.cyan.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                    color: nt.cyan.withValues(alpha: 0.3), width: 1),
+              ),
+              child: Icon(Icons.health_and_safety_rounded,
+                  color: nt.cyan, size: 20),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'ESTUDIAR EXAMEN MÉDICO',
+                        style: TextStyle(
+                          color: nt.cyan,
+                          fontSize: 9,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                        decoration: BoxDecoration(
+                          color: nt.cyan.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'NUEVO',
+                          style: TextStyle(
+                            color: Color(0xFF22D3EE),
+                            fontSize: 7,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Prepárate para la evaluación médica PNP',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Outfit',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.arrow_forward_ios_rounded,
+                  color: Colors.white70, size: 10),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -741,7 +759,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     const SizedBox(height: 12),
                                     _buildMiniAppsCard(context, nt),
                                     const SizedBox(height: 12),
-                                    _buildPsicometricTip(context, nt),
+                                    _buildMedicalStudyCard(context, nt),
                                   ],
                                 ),
                               ),
@@ -780,7 +798,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const SizedBox(height: 10),
                                   _buildMiniAppsCard(context, nt),
                                   const SizedBox(height: 10),
-                                  _buildPsicometricTip(context, nt),
+                                  _buildMedicalStudyCard(context, nt),
                                   const SizedBox(height: 10),
                                   SizedBox(
                                     height: 120,
