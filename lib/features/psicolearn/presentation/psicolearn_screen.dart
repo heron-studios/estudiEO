@@ -259,9 +259,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                           const SizedBox(height: 16),
                           _buildModulesGrid(),
                           const SizedBox(height: 16),
-                          _buildTipCard(nt),
-                          const SizedBox(height: 12),
-                          _buildMedicalExamButton(nt),
+                          _buildMedicalStudyCard(nt),
                         ],
                       ),
                     ),
@@ -292,9 +290,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                                 child: _buildStatsCol(),
                               ),
                               const SizedBox(height: 16),
-                              _buildTipCard(nt),
-                              const SizedBox(height: 12),
-                              _buildMedicalExamButton(nt),
+                              _buildMedicalStudyCard(nt),
                             ],
                           ),
                         ),
@@ -908,112 +904,95 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
     );
   }
 
-  Widget _buildTipCard(NeuralThemeData nt) {
-    return StaticGlassContainer(
-      padding: const EdgeInsets.all(16),
-      borderRadius: BorderRadius.circular(16),
-      borderColor: nt.purple.withValues(alpha: 0.3),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: nt.purple.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                  color: nt.purple.withValues(alpha: 0.3), width: 1),
-            ),
-            child: Icon(Icons.tips_and_updates_rounded,
-                color: nt.purple, size: 20),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'CONSEJO PSICOMÉTRICO',
-                  style: TextStyle(
-                    color: nt.purple,
-                    fontSize: 9,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                const Text(
-                  'Responde con honestidad. Los perfiles con respuestas extremas pueden ser detectados por las escalas de sinceridad.',
-                  style: TextStyle(
-                      color: Colors.white70, fontSize: 11, height: 1.3),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMedicalExamButton(NeuralThemeData nt) {
+  Widget _buildMedicalStudyCard(NeuralThemeData nt) {
     return HoverGlassCard(
       onTap: _showComingSoon,
       hoverGradientBorder: true,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: nt.pink.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(12),
+                color: nt.cyan.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(14),
                 border: Border.all(
-                    color: nt.pink.withValues(alpha: 0.3), width: 1),
+                    color: nt.cyan.withValues(alpha: 0.3), width: 1.5),
               ),
-              child: Icon(Icons.medical_services_rounded,
-                  color: nt.pink, size: 20),
+              child: Icon(Icons.health_and_safety_rounded,
+                  color: nt.cyan, size: 24),
             ),
-            const SizedBox(width: 14),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    'NUEVA FUNCIÓN',
+                  Row(
+                    children: [
+                      Text(
+                        'ESTUDIAR EXAMEN MÉDICO',
+                        style: TextStyle(
+                          color: nt.cyan,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: nt.cyan.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          'NUEVO',
+                          style: TextStyle(
+                            color: nt.cyan,
+                            fontSize: 8,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Prepárate para la evaluación médica PNP',
                     style: TextStyle(
-                      color: nt.pink,
-                      fontSize: 9,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1.2,
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Outfit',
+                      letterSpacing: 0.3,
                     ),
                   ),
                   const SizedBox(height: 2),
-                  const Text(
-                    'EXAMEN MEDICO PNP',
+                  Text(
+                    'Requisitos de talla, peso, vista, odontología y especialidades clínicas.',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Outfit',
-                      letterSpacing: 0.5,
+                      color: Colors.white.withValues(alpha: 0.6),
+                      fontSize: 11,
+                      height: 1.3,
                     ),
                   ),
                 ],
               ),
             ),
+            const SizedBox(width: 8),
             Container(
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.15),
+                color: Colors.white.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white, size: 14),
+                  color: Colors.white70, size: 12),
             ),
           ],
         ),
