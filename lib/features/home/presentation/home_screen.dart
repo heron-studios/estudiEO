@@ -89,15 +89,85 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _streakDays = progress['streak'];
       _todayCompleted = progress['todayCompleted'];
-      // Determinar diagnóstico según la racha y misiones completadas
-      if (_streakDays >= 7) {
-        _diagnosis = 'APTO';
-      } else if (_streakDays >= 1) {
+      
+      final totalMissions = progress['totalMissions'] ?? 0;
+      final lastOverallScore = progress['lastOverallScore'] ?? 0.0;
+      
+      if (totalMissions == 0) {
         _diagnosis = 'PENDIENTE';
+      } else if (lastOverallScore >= 0.70) {
+        _diagnosis = 'APTO';
       } else {
         _diagnosis = 'INAPTO';
       }
     });
+  }
+
+  void _showAlreadyCompletedDialog(BuildContext context, NeuralThemeData nt) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 400),
+            padding: const EdgeInsets.all(28),
+            decoration: BoxDecoration(
+              color: nt.surfaceCard,
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                  color: nt.successGreen.withValues(alpha: 0.4), width: 1.5),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 64,
+                  height: 64,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: nt.successGreen.withValues(alpha: 0.15),
+                  ),
+                  child: Icon(Icons.check_circle_rounded, color: nt.successGreen, size: 32),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  '¡MISIÓN DIARIA COMPLETA!',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 16,
+                    fontFamily: 'Outfit',
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'Ya has completado tu misión psicométrica de hoy. Vuelve mañana para un nuevo desafío y seguir aumentando tu racha.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
+                ),
+                const SizedBox(height: 24),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: nt.blueGoogle,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                    ),
+                    child: const Text('ENTENDIDO', style: TextStyle(fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   String _getPaternalSurname(String? fullName) {
@@ -399,6 +469,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
       onTap: () async {
+        if (_todayCompleted) {
+          _showAlreadyCompletedDialog(context, nt);
+          return;
+        }
         await Navigator.push(
           context,
           MaterialPageRoute(

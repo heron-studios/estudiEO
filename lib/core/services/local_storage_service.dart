@@ -364,6 +364,9 @@ class LocalStorageService {
   static const String psicolearnCurrentIndexDateKey = 'psicolearn_current_index_date';
   static const String psicolearnDailyMissionIdsKey = 'psicolearn_daily_mission_ids';
   static const String psicolearnDailyMissionDateKey = 'psicolearn_daily_mission_date';
+  static const String psicolearnLastScoresKey = 'psicolearn_last_scores';
+  static const String psicolearnLastOverallScoreKey = 'psicolearn_last_overall_score';
+  static const String psicolearnTotalMissionsKey = 'psicolearn_total_missions';
 
   // ─── PsicoLearn Progress ─────────────────────────────────────────────
 
@@ -421,6 +424,62 @@ class LocalStorageService {
     } catch (_) {}
   }
 
+  double getPsicoLastOverallScore() {
+    try {
+      return _storage.get(psicolearnLastOverallScoreKey) as double? ?? 0.0;
+    } catch (_) {
+      return 0.0;
+    }
+  }
+
+  void savePsicoLastOverallScore(double score) {
+    try {
+      _storage.put(psicolearnLastOverallScoreKey, score);
+    } catch (_) {}
+  }
+
+  int getPsicoTotalMissions() {
+    try {
+      return _storage.get(psicolearnTotalMissionsKey) as int? ?? 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  void incrementPsicoTotalMissions() {
+    try {
+      final current = getPsicoTotalMissions();
+      _storage.put(psicolearnTotalMissionsKey, current + 1);
+    } catch (_) {}
+  }
+
+  Map<String, double> getPsicoLastScores() {
+    try {
+      final raw = _storage.get(psicolearnLastScoresKey) as Map?;
+      if (raw != null) {
+        return raw.map((k, v) => MapEntry(k.toString(), (v as num).toDouble()));
+      }
+    } catch (_) {}
+    return {};
+  }
+
+  void savePsicoLastScores(Map<String, double> scores) {
+    try {
+      _storage.put(psicolearnLastScoresKey, scores);
+    } catch (_) {}
+  }
+
+  void savePsicoMissionResult({
+    required double overallScore,
+    required Map<String, double> dimensionScores,
+  }) {
+    try {
+      savePsicoLastOverallScore(overallScore);
+      savePsicoLastScores(dimensionScores);
+      incrementPsicoTotalMissions();
+    } catch (_) {}
+  }
+
   void markPsicoMissionCompleted() {
     try {
       final now = DateTime.now();
@@ -467,15 +526,27 @@ class LocalStorageService {
           todayCompleted = true;
         }
       }
+
+      final totalMissions = getPsicoTotalMissions();
+      // Si completó hoy pero totalMissions es 0, significa que completó la versión antigua.
+      // Permitimos hacerla de nuevo hoy para registrar la puntuación en el nuevo sistema.
+      final bool actualTodayCompleted = todayCompleted && totalMissions > 0;
+
       return {
         'streak': streak,
-        'todayCompleted': todayCompleted,
+        'todayCompleted': actualTodayCompleted,
+        'lastOverallScore': getPsicoLastOverallScore(),
+        'totalMissions': totalMissions,
+        'lastScores': getPsicoLastScores(),
       };
     } catch (e) {
       debugPrint('Error getting psico progress: $e');
       return {
         'streak': 0,
         'todayCompleted': false,
+        'lastOverallScore': 0.0,
+        'totalMissions': 0,
+        'lastScores': <String, double>{},
       };
     }
   }

@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
-import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
 class AppShell extends StatelessWidget {
@@ -36,7 +35,6 @@ class AppShell extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Inicio'),
-            BottomNavigationBarItem(icon: Icon(Icons.analytics_rounded), label: 'Progreso'),
             BottomNavigationBarItem(icon: Icon(Icons.settings_rounded), label: 'Ajustes'),
           ],
         ),
@@ -74,56 +72,6 @@ class AppShell extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Gamification streak
-                        Consumer<GamificationProvider>(
-                          builder: (context, gamification, _) {
-                            return Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              decoration: BoxDecoration(
-                                color: nt.warningAmber.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(20),
-                                border: Border.all(color: nt.warningAmber.withValues(alpha: 0.3)),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  const Text('🔥', style: TextStyle(fontSize: 16)),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    '${gamification.streak}',
-                                    style: TextStyle(
-                                      color: nt.warningAmber,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                        const SizedBox(height: 20),
-                        // Avatar
-                        Container(
-                          width: 44,
-                          height: 44,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: nt.blueGoogle.withValues(alpha: 0.15),
-                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
-                          ),
-                          child: Icon(Icons.person, color: nt.blueGoogle, size: 24),
-                        ),
-                        const SizedBox(height: 10),
-                        // Logout
-                        IconButton(
-                          icon: Icon(Icons.logout_rounded, color: nt.pink),
-                          tooltip: 'Cerrar Sesión',
-                          onPressed: () async {
-                            await context.read<AuthService>().signOut();
-                          },
-                        ),
-                        const SizedBox(height: 24),
                         // Opciones de navegación
                         _NavItem(
                           icon: Icons.home_rounded,
@@ -134,19 +82,20 @@ class AppShell extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         _NavItem(
-                          icon: Icons.analytics_rounded,
-                          label: 'Progreso',
+                          icon: Icons.settings_rounded,
+                          label: 'Ajustes',
                           isSelected: navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
                           nt: nt,
                         ),
-                        const SizedBox(height: 16),
-                        _NavItem(
-                          icon: Icons.settings_rounded,
-                          label: 'Ajustes',
-                          isSelected: navigationShell.currentIndex == 2,
-                          onTap: () => _goBranch(2),
-                          nt: nt,
+                        const SizedBox(height: 24),
+                        // Logout
+                        IconButton(
+                          icon: Icon(Icons.logout_rounded, color: nt.pink),
+                          tooltip: 'Cerrar Sesión',
+                          onPressed: () async {
+                            await context.read<AuthService>().signOut();
+                          },
                         ),
                       ],
                     ),

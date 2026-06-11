@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 
 class PsicoService {
-  Future<List<PsicoQuestion>> loadDailyMission(int count) async {
+  Future<List<PsicoQuestion>> loadDailyMission(int count, {List<int> failedIds = const []}) async {
     try {
       final ByteData byteData = await rootBundle.load('assets/data/preguntas.json');
       final String raw = utf8.decode(byteData.buffer.asUint8List());
@@ -15,9 +15,27 @@ class PsicoService {
           .where((q) => q.id > 0 && q.text.isNotEmpty && q.options.isNotEmpty)
           .toList();
 
-      // Mezclar aleatoriamente y tomar la cantidad solicitada
-      allQuestions.shuffle();
-      return allQuestions.take(count).toList();
+      final List<PsicoQuestion> selectedQuestions = [];
+
+      // Carga adaptativa: priorizar preguntas falladas anteriormente (máximo 6)
+      if (failedIds.isNotEmpty) {
+        final failedQuestions = allQuestions.where((q) => failedIds.contains(q.id)).toList();
+        failedQuestions.shuffle();
+        final failedToTake = failedQuestions.take(6).toList();
+        selectedQuestions.addAll(failedToTake);
+      }
+
+      // Filtrar las ya agregadas
+      final remainingPool = allQuestions.where((q) => !selectedQuestions.any((sq) => sq.id == q.id)).toList();
+      remainingPool.shuffle();
+
+      final countNeeded = count - selectedQuestions.length;
+      if (countNeeded > 0) {
+        selectedQuestions.addAll(remainingPool.take(countNeeded));
+      }
+
+      selectedQuestions.shuffle();
+      return selectedQuestions.take(count).toList();
     } catch (e) {
       // Fallback básico en caso de error
       return [

@@ -21,10 +21,13 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
   late AnimationController _entryController;
   late Animation<double> _entryAnimation;
 
-  final String _diagnosis = 'PENDIENTE';
+  String _diagnosis = 'PENDIENTE';
   int _streakDays = 0;
   bool _todayCompleted = false;
   int _failedCount = 0;
+  int _totalMissions = 0;
+  double _lastOverallScore = 0.0;
+  Map<String, double> _lastScores = {};
 
   @override
   void initState() {
@@ -66,6 +69,18 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
       _streakDays = progress['streak'];
       _todayCompleted = progress['todayCompleted'];
       _failedCount = failedIds.length;
+      
+      _totalMissions = progress['totalMissions'] ?? 0;
+      _lastOverallScore = progress['lastOverallScore'] ?? 0.0;
+      _lastScores = Map<String, double>.from(progress['lastScores'] ?? {});
+      
+      if (_totalMissions == 0) {
+        _diagnosis = 'PENDIENTE';
+      } else if (_lastOverallScore >= 0.70) {
+        _diagnosis = 'APTO';
+      } else {
+        _diagnosis = 'INAPTO';
+      }
     });
   }
 
@@ -240,6 +255,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                           _buildStatsRow(),
                           const SizedBox(height: 16),
                           _buildDailyMission(nt),
+                          _buildProfileCard(nt),
                           const SizedBox(height: 16),
                           _buildModulesGrid(),
                           const SizedBox(height: 16),
@@ -283,13 +299,14 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                           ),
                         ),
                         const SizedBox(width: 20),
-                        // Columna Derecha: Misión Diaria + Módulos
+                        // Columna Derecha: Misión Diaria + Perfil + Módulos
                         Expanded(
                           flex: 6,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               _buildDailyMission(nt),
+                              _buildProfileCard(nt),
                               const SizedBox(height: 16),
                               Expanded(
                                 child: _buildModulesGridDesktop(),
@@ -513,6 +530,149 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildProfileCard(NeuralThemeData nt) {
+    if (_totalMissions == 0 || _lastScores.isEmpty) return const SizedBox.shrink();
+
+    // Encontrar la dimensión más débil para dar una recomendación útil
+    String weakestDim = '';
+    double lowestPct = 1.1;
+    _lastScores.forEach((key, val) {
+      if (val < lowestPct) {
+        lowestPct = val;
+        weakestDim = key;
+      }
+    });
+
+    String recommendation = 'Tu perfil está equilibrado y apto para la PNP. ¡Sigue así!';
+    if (_diagnosis != 'APTO' && weakestDim.isNotEmpty) {
+      recommendation = 'Concéntrate en mejorar en la dimensión: $weakestDim.';
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: StaticGlassContainer(
+        padding: const EdgeInsets.all(18),
+        borderRadius: BorderRadius.circular(20),
+        borderColor: nt.blueGoogle.withValues(alpha: 0.25),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.psychology_alt_rounded, color: nt.blueGoogle, size: 20),
+                const SizedBox(width: 8),
+                const Text(
+                  'PERFIL PSICOMÉTRICO ACTUAL',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 13,
+                    fontFamily: 'Outfit',
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                const Spacer(),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: nt.blueGoogle.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                  ),
+                  child: Text(
+                    '$_totalMissions ${_totalMissions == 1 ? "misión" : "misiones"}',
+                    style: TextStyle(
+                      color: nt.blueGoogle,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 14),
+            ..._lastScores.entries.map((e) {
+              final valP = e.value;
+              final dimColor = valP >= 0.75
+                  ? nt.successGreen
+                  : (valP >= 0.60 ? nt.warningAmber : nt.pink);
+
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          e.key,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          '${(valP * 100).toInt()}%',
+                          style: TextStyle(
+                            color: dimColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: LinearProgressIndicator(
+                        value: valP,
+                        minHeight: 6,
+                        backgroundColor: Colors.white.withValues(alpha: 0.08),
+                        valueColor: AlwaysStoppedAnimation<Color>(dimColor),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
+            const SizedBox(height: 6),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    _diagnosis == 'APTO' ? Icons.check_circle_rounded : Icons.info_outline_rounded,
+                    color: _diagnosis == 'APTO' ? nt.successGreen : nt.warningAmber,
+                    size: 14,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      recommendation,
+                      style: const TextStyle(
+                        color: Colors.white60,
+                        fontSize: 11,
+                        height: 1.3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
-import 'package:learn/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:learn/features/interview/presentation/interview_screen.dart';
 
 // Screens
@@ -103,14 +102,6 @@ class AppRouter {
                 GoRoute(
                   path: '/home',
                   builder: (context, state) => const HomeScreen(),
-                ),
-              ],
-            ),
-            StatefulShellBranch(
-              routes: [
-                GoRoute(
-                  path: '/dashboard',
-                  builder: (context, state) => const DashboardScreen(),
                 ),
               ],
             ),

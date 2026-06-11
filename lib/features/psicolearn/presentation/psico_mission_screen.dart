@@ -70,6 +70,20 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
 
   Future<void> _loadQuestions() async {
     final storage = context.read<LocalStorageService>();
+    final progress = storage.getPsicoProgress();
+    if (progress['todayCompleted'] == true) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Ya has completado la misión de hoy. Vuelve mañana.'),
+            backgroundColor: Colors.orangeAccent,
+          ),
+        );
+        context.pop();
+      }
+      return;
+    }
+
     final savedIds = storage.getPsicoDailyMissionIds();
     final savedIndex = storage.getPsicoMissionCurrentIndex();
 
@@ -77,12 +91,14 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
     if (savedIds != null && savedIds.isNotEmpty) {
       questions = await _service.getQuestionsByIds(savedIds);
       if (questions.isEmpty) {
-        questions = await _service.loadDailyMission(20);
+        final failedIds = storage.getFailedPsicoQuestionIds();
+        questions = await _service.loadDailyMission(20, failedIds: failedIds);
         storage.savePsicoDailyMissionIds(
             questions.map((q) => q.id).toList());
       }
     } else {
-      questions = await _service.loadDailyMission(20);
+      final failedIds = storage.getFailedPsicoQuestionIds();
+      questions = await _service.loadDailyMission(20, failedIds: failedIds);
       storage.savePsicoDailyMissionIds(
           questions.map((q) => q.id).toList());
     }
@@ -153,8 +169,24 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
           .read<LocalStorageService>()
           .savePsicoMissionCurrentIndex(_currentIndex);
     } else {
-      context.read<LocalStorageService>().markPsicoMissionCompleted();
-      context.read<LocalStorageService>().savePsicoMissionCurrentIndex(0);
+      // Calcular rendimiento por dimensiones e integral
+      final Map<String, double> dimensionPcts = {};
+      _dimensionScores.forEach((key, val) {
+        final maxVal = _dimensionMax[key] ?? 1;
+        dimensionPcts[key] = val / (maxVal == 0 ? 1 : maxVal);
+      });
+      int totalScore = _dimensionScores.values.fold(0, (a, b) => a + b);
+      int totalMax = _dimensionMax.values.fold(0, (a, b) => a + b);
+      double overallPct = totalMax > 0 ? totalScore / totalMax : 0.0;
+
+      final storage = context.read<LocalStorageService>();
+      storage.savePsicoMissionResult(
+        overallScore: overallPct,
+        dimensionScores: dimensionPcts,
+      );
+      storage.markPsicoMissionCompleted();
+      storage.savePsicoMissionCurrentIndex(0);
+
       setState(() {
         _isFinished = true;
       });
@@ -773,14 +805,62 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                     ],
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 12),
+                // Diagnóstico obtenido
+                Builder(
+                  builder: (context) {
+                    final String diag;
+                    final Color diagColor;
+                    final IconData diagIcon;
+                    if (overallPct >= 0.75) {
+                      diag = 'APTO';
+                      diagColor = const Color(0xFF10B981);
+                      diagIcon = Icons.check_circle_rounded;
+                    } else if (overallPct < 0.60) {
+                      diag = 'INAPTO';
+                      diagColor = const Color(0xFFEF4444);
+                      diagIcon = Icons.cancel_rounded;
+                    } else {
+                      diag = 'PENDIENTE';
+                      diagColor = const Color(0xFFF59E0B);
+                      diagIcon = Icons.info_outline_rounded;
+                    }
+
+                    return Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: diagColor.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: diagColor.withValues(alpha: 0.4), width: 1.5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(diagIcon, color: diagColor, size: 18),
+                          const SizedBox(width: 8),
+                          Text(
+                            'ESTADO: $diag',
+                            style: TextStyle(
+                              color: diagColor,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 14,
+                              fontFamily: 'Outfit',
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                ),
+                const SizedBox(height: 12),
                 Text(
                   'Dimensión destacada: $topDim',
                   style: const TextStyle(
                       color: Colors.white70, fontSize: 13),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
 
                 // Progreso general
                 ClipRRect(
