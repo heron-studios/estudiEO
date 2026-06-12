@@ -25,18 +25,62 @@ class AppShell extends StatelessWidget {
     if (!isDesktop) {
       return Scaffold(
         backgroundColor: nt.background,
-        body: NeuralBackgroundWrapper(child: navigationShell),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: nt.surfaceCard,
-          selectedItemColor: nt.blueGoogle,
-          unselectedItemColor: Colors.white54,
-          currentIndex: navigationShell.currentIndex,
-          onTap: _goBranch,
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Inicio'),
-            BottomNavigationBarItem(icon: Icon(Icons.settings_rounded), label: 'Ajustes'),
-          ],
+        body: NeuralBackgroundWrapper(
+          child: Stack(
+            children: [
+              // Contenido principal
+              Positioned.fill(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 100),
+                  child: navigationShell,
+                ),
+              ),
+              // Navbar flotante (horizontal)
+              Positioned(
+                left: 16,
+                right: 16,
+                bottom: 16,
+                child: Center(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+                    decoration: BoxDecoration(
+                      color: nt.surfaceCard.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(32),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _NavItem(
+                          icon: Icons.home_rounded,
+                          label: 'Inicio',
+                          isSelected: navigationShell.currentIndex == 0,
+                          onTap: () => _goBranch(0),
+                          nt: nt,
+                        ),
+                        const SizedBox(width: 16),
+                        _NavItem(
+                          icon: Icons.settings_rounded,
+                          label: 'Ajustes',
+                          isSelected: navigationShell.currentIndex == 1,
+                          onTap: () => _goBranch(1),
+                          nt: nt,
+                        ),
+                        const SizedBox(width: 24),
+                        IconButton(
+                          icon: Icon(Icons.logout_rounded, color: nt.pink),
+                          tooltip: 'Cerrar Sesión',
+                          onPressed: () async {
+                            await context.read<AuthService>().signOut();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }
