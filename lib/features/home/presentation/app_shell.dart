@@ -6,16 +6,39 @@ import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:learn/core/services/bible_service.dart';
 
-class AppShell extends StatelessWidget {
+class AppShell extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
 
   const AppShell({super.key, required this.navigationShell});
 
+  @override
+  State<AppShell> createState() => _AppShellState();
+}
+
+class _AppShellState extends State<AppShell> {
+  String? _dailyVerse;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadDailyVerse();
+  }
+
+  Future<void> _loadDailyVerse() async {
+    final verse = await BibleService.getDailyVerse();
+    if (mounted) {
+      setState(() {
+        _dailyVerse = verse;
+      });
+    }
+  }
+
   void _goBranch(int index) {
-    navigationShell.goBranch(
+    widget.navigationShell.goBranch(
       index,
-      initialLocation: index == navigationShell.currentIndex,
+      initialLocation: index == widget.navigationShell.currentIndex,
     );
   }
 
@@ -41,8 +64,10 @@ class AppShell extends StatelessWidget {
               // Contenido principal
               Positioned.fill(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: navigationShell,
+                  padding: EdgeInsets.only(
+                    bottom: (widget.navigationShell.currentIndex == 0 && _dailyVerse != null) ? 155 : 100,
+                  ),
+                  child: widget.navigationShell,
                 ),
               ),
               // Botón de salir flotante (arriba a la derecha)
@@ -63,6 +88,40 @@ class AppShell extends StatelessWidget {
                   ),
                 ),
               ),
+              // Versículo flotante arriba de la barra de navegación (solo en la pantalla de Inicio)
+              if (widget.navigationShell.currentIndex == 0 && _dailyVerse != null)
+                Positioned(
+                  left: 24,
+                  right: 24,
+                  bottom: 96,
+                  child: Center(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.65),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        _dailyVerse!,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.9),
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                          height: 1.3,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               // Navbar flotante (horizontal)
               Positioned(
                 left: 16,
@@ -82,7 +141,7 @@ class AppShell extends StatelessWidget {
                         _NavItem(
                           icon: Icons.home_rounded,
                           label: 'Inicio',
-                          isSelected: navigationShell.currentIndex == 0,
+                          isSelected: widget.navigationShell.currentIndex == 0,
                           onTap: () => _goBranch(0),
                           nt: nt,
                         ),
@@ -90,7 +149,7 @@ class AppShell extends StatelessWidget {
                         _NavItem(
                           icon: Icons.settings_rounded,
                           label: 'Ajustes',
-                          isSelected: navigationShell.currentIndex == 1,
+                          isSelected: widget.navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
                           nt: nt,
                         ),
@@ -123,7 +182,7 @@ class AppShell extends StatelessWidget {
             Positioned.fill(
               child: Padding(
                 padding: const EdgeInsets.only(left: 110),
-                child: navigationShell,
+                child: widget.navigationShell,
               ),
             ),
             // Sidebar flotante
@@ -148,7 +207,7 @@ class AppShell extends StatelessWidget {
                         _NavItem(
                           icon: Icons.home_rounded,
                           label: 'Inicio',
-                          isSelected: navigationShell.currentIndex == 0,
+                          isSelected: widget.navigationShell.currentIndex == 0,
                           onTap: () => _goBranch(0),
                           nt: nt,
                         ),
@@ -156,7 +215,7 @@ class AppShell extends StatelessWidget {
                         _NavItem(
                           icon: Icons.settings_rounded,
                           label: 'Ajustes',
-                          isSelected: navigationShell.currentIndex == 1,
+                          isSelected: widget.navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
                           nt: nt,
                         ),

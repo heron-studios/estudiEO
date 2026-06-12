@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BibleService {
+  static String? _cachedVerse;
+
   static const List<String> _dailyVerses = [
     'salmos/23/1', // 1
     'filipenses/4/13', // 2
@@ -37,6 +39,7 @@ class BibleService {
   ];
 
   static Future<String?> getDailyVerse() async {
+    if (_cachedVerse != null) return _cachedVerse;
     try {
       final dayIndex = (DateTime.now().day - 1).clamp(0, 30);
       final ref = _dailyVerses[dayIndex];
@@ -62,7 +65,8 @@ class BibleService {
           final bookName = parts[0].replaceAll('-', ' ').toUpperCase();
           final chapterVerse = parts.sublist(1).join(':');
           
-          return '"$versesText" ($bookName $chapterVerse)';
+          _cachedVerse = '"$versesText" ($bookName $chapterVerse)';
+          return _cachedVerse;
         }
       }
       return null;
@@ -71,3 +75,4 @@ class BibleService {
     }
   }
 }
+

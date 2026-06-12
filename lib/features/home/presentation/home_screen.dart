@@ -721,13 +721,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          _dailyVerse != null
+                          (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null)
                               ? '${_getPaternalSurname(userName).trim()}: $_dailyVerse'
                               : 'Bienvenido postulante ${_getPaternalSurname(userName)}'.trim(),
                           style: TextStyle(
                             color: Colors.white.withValues(alpha: 0.7),
                             fontSize: 13,
-                            fontStyle: _dailyVerse != null ? FontStyle.italic : FontStyle.normal,
+                            fontStyle: (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null) ? FontStyle.italic : FontStyle.normal,
                           ),
                         ),
                       ],
