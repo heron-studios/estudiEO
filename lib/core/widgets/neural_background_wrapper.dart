@@ -168,8 +168,8 @@ class _PlasmaBackgroundPainter extends CustomPainter {
     final paint1 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.blueGoogle.withValues(alpha: kIsWeb ? 0.55 + 0.15 * pulse1 : 0.18 + 0.07 * pulse1),
-          nt.purple.withValues(alpha: kIsWeb ? 0.25 + 0.08 * pulse1 : 0.08 + 0.04 * pulse1),
+          nt.blueGoogle.withValues(alpha: kIsWeb ? 0.20 + 0.05 * pulse1 : 0.18 + 0.07 * pulse1),
+          nt.purple.withValues(alpha: kIsWeb ? 0.10 + 0.05 * pulse1 : 0.08 + 0.04 * pulse1),
           Colors.transparent,
         ],
         stops: const [0.0, 0.5, 1.0],
@@ -182,8 +182,8 @@ class _PlasmaBackgroundPainter extends CustomPainter {
     final paint2 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.pink.withValues(alpha: kIsWeb ? 0.50 + 0.15 * pulse2 : 0.15 + 0.06 * pulse2),
-          nt.purple.withValues(alpha: kIsWeb ? 0.22 + 0.08 * pulse2 : 0.07 + 0.03 * pulse2),
+          nt.pink.withValues(alpha: kIsWeb ? 0.20 + 0.05 * pulse2 : 0.15 + 0.06 * pulse2),
+          nt.purple.withValues(alpha: kIsWeb ? 0.10 + 0.05 * pulse2 : 0.07 + 0.03 * pulse2),
           Colors.transparent,
         ],
         stops: const [0.0, 0.55, 1.0],
@@ -316,10 +316,10 @@ class _MorphBlobPainter extends CustomPainter {
 
     // Web usa blur más alto + opacidades más fuertes porque el renderer
     // del canvas de Flutter Web tiende a atenuar los efectos de MaskFilter.
-    const blurSigma = kIsWeb ? 80.0 : 90.0;
-    const outerAlpha = kIsWeb ? 0.72 : 0.45;
-    const bodyAlpha  = kIsWeb ? 0.90 : 1.00;
-    const coreAlpha  = kIsWeb ? 1.00 : 1.00;
+    const blurSigma = kIsWeb ? 100.0 : 90.0;
+    const outerAlpha = kIsWeb ? 0.15 : 0.45;
+    const bodyAlpha  = kIsWeb ? 0.25 : 1.00;
+    const coreAlpha  = kIsWeb ? 0.35 : 1.00;
 
     // Capa exterior — muy difusa, máximo glow
     final outerPaint = Paint()
@@ -361,9 +361,8 @@ class _MorphBlobPainter extends CustomPainter {
       cx: w * 0.18 + blueOrbitX,
       cy: h * 0.18 + blueOrbitY,
       baseR: w * (kIsWeb ? 0.28 : 0.22),
-      // En web ignoramos el blobBlueOpacity del tema y usamos valores fuertes fijos
-      // para garantizar visibilidad — el tema puede ajustarse luego si se desea
-      color: nt.blueGoogle.withValues(alpha: kIsWeb ? 0.85 : nt.blobBlueOpacity),
+      // Opacidades reducidas para web para evitar el color plano opaco
+      color: nt.blueGoogle.withValues(alpha: kIsWeb ? 0.35 : nt.blobBlueOpacity),
       seed: 7,
       morphSpeed: 0.6,
     );
@@ -376,7 +375,7 @@ class _MorphBlobPainter extends CustomPainter {
       cx: w * 0.78 + purpleOrbitX,
       cy: h * 0.42 + purpleOrbitY,
       baseR: w * (kIsWeb ? 0.30 : 0.25),
-      color: nt.purple.withValues(alpha: kIsWeb ? 0.80 : nt.blobPurpleOpacity),
+      color: nt.purple.withValues(alpha: kIsWeb ? 0.30 : nt.blobPurpleOpacity),
       seed: 13,
       morphSpeed: 0.75,
     );
@@ -389,7 +388,7 @@ class _MorphBlobPainter extends CustomPainter {
       cx: w * 0.22 + pinkOrbitX,
       cy: h * 0.80 + pinkOrbitY,
       baseR: w * (kIsWeb ? 0.27 : 0.23),
-      color: nt.pink.withValues(alpha: kIsWeb ? 0.78 : nt.blobPinkOpacity),
+      color: nt.pink.withValues(alpha: kIsWeb ? 0.28 : nt.blobPinkOpacity),
       seed: 23,
       morphSpeed: 0.55,
     );
