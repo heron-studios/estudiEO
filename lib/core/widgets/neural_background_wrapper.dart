@@ -4,19 +4,16 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/core/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  NeuralBackgroundWrapper v4 — Plasma Fluido + Morphing Orgánico
+//  NeuralBackgroundWrapper v4.1 — Plasma Fluido + Morphing Orgánico
 //
-//  Mejoras vs v3:
-//  • Blobs con morphing real: forma ameboide con N control-points que oscilan
-//    independientemente, generando un path orgánico suavizado con cúbicas.
-//  • Cada blob "respira" a velocidades distintas — efecto lava lamp hipnótico.
-//  • Plasma de fondo: gradiente radial animado que pulsa entre los tres colores.
-//  • Burbujas de plasma (reemplazan partículas): esferas con glow interno y
-//    reflejo especular, que flotan suavemente y reaccionan al mouse.
-//  • Tentáculos de luz: las conexiones entre burbujas usan curvas de Bézier
-//    con ancho variable — gruesas en el centro, finas en los extremos.
-//  • Optimizado para web Y mobile: paths de renderizado distintos, sin
-//    BackdropFilter, misma API pública (drop-in replacement).
+//  Fix vs v4:
+//  • Web: blurSigma subido de 35 → 80 para que los blobs se vean en el renderer
+//    de Flutter Web (que atenúa MaskFilter con sigma bajo).
+//  • Web: opacidades de blobs desacopladas de NeuralTheme.blobXOpacity y subidas
+//    a valores fuertes fijos (0.78–0.90) — evita doble-multiplicación de alpha
+//    que dejaba todo oscuro.
+//  • Web: plasma de fondo con opacidades x3 y radios más grandes.
+//  • Posiciones de blobs corregidas — ya no se esconden en las esquinas extremas.
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─── Utilidades ───────────────────────────────────────────────────────────────
@@ -167,12 +164,12 @@ class _PlasmaBackgroundPainter extends CustomPainter {
 
     // Glow 1 — azul/morado que pulsa
     final pulse1 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 3);
-    final r1 = w * (0.45 + 0.1 * pulse1);
+    final r1 = w * (0.55 + 0.12 * pulse1);
     final paint1 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.blueGoogle.withValues(alpha: 0.18 + 0.07 * pulse1),
-          nt.purple.withValues(alpha: 0.08 + 0.04 * pulse1),
+          nt.blueGoogle.withValues(alpha: kIsWeb ? 0.55 + 0.15 * pulse1 : 0.18 + 0.07 * pulse1),
+          nt.purple.withValues(alpha: kIsWeb ? 0.25 + 0.08 * pulse1 : 0.08 + 0.04 * pulse1),
           Colors.transparent,
         ],
         stops: const [0.0, 0.5, 1.0],
@@ -181,24 +178,24 @@ class _PlasmaBackgroundPainter extends CustomPainter {
 
     // Glow 2 — rosa/morado que pulsa en fase opuesta
     final pulse2 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 2.3 + math.pi);
-    final r2 = w * (0.40 + 0.12 * pulse2);
+    final r2 = w * (0.50 + 0.14 * pulse2);
     final paint2 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.pink.withValues(alpha: 0.15 + 0.06 * pulse2),
-          nt.purple.withValues(alpha: 0.07 + 0.03 * pulse2),
+          nt.pink.withValues(alpha: kIsWeb ? 0.50 + 0.15 * pulse2 : 0.15 + 0.06 * pulse2),
+          nt.purple.withValues(alpha: kIsWeb ? 0.22 + 0.08 * pulse2 : 0.07 + 0.03 * pulse2),
           Colors.transparent,
         ],
         stops: const [0.0, 0.55, 1.0],
       ).createShader(Rect.fromCircle(center: Offset(cx2, cy2), radius: r2));
     canvas.drawCircle(Offset(cx2, cy2), r2, paint2);
 
-    // Halo difuso global — siempre centrado, muy suave
+    // Halo difuso global — centrado, da profundidad al fondo
     final paintHalo = Paint()
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma)
       ..shader = RadialGradient(
         colors: [
-          nt.purple.withValues(alpha: 0.06),
+          nt.purple.withValues(alpha: kIsWeb ? 0.22 : 0.06),
           Colors.transparent,
         ],
         stops: const [0.0, 1.0],
@@ -317,17 +314,22 @@ class _MorphBlobPainter extends CustomPainter {
     );
     final path = _buildSmoothPath(pts);
 
-    const blurSigma = kIsWeb ? 35.0 : 90.0;
+    // Web usa blur más alto + opacidades más fuertes porque el renderer
+    // del canvas de Flutter Web tiende a atenuar los efectos de MaskFilter.
+    const blurSigma = kIsWeb ? 80.0 : 90.0;
+    const outerAlpha = kIsWeb ? 0.72 : 0.45;
+    const bodyAlpha  = kIsWeb ? 0.90 : 1.00;
+    const coreAlpha  = kIsWeb ? 1.00 : 1.00;
 
     // Capa exterior — muy difusa, máximo glow
     final outerPaint = Paint()
-      ..color = color.withValues(alpha: color.a * 0.45)
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, blurSigma * 1.8);
+      ..color = color.withValues(alpha: outerAlpha)
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma * 1.8);
     canvas.drawPath(path, outerPaint);
 
     // Capa media — el cuerpo del blob
     final bodyPaint = Paint()
-      ..color = color
+      ..color = color.withValues(alpha: bodyAlpha)
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma);
     canvas.drawPath(path, bodyPaint);
 
@@ -341,7 +343,7 @@ class _MorphBlobPainter extends CustomPainter {
     );
     final corePath = _buildSmoothPath(pts2);
     final corePaint = Paint()
-      ..color = color.withValues(alpha: color.a * 1.4 > 1 ? 1.0 : color.a * 1.4)
+      ..color = color.withValues(alpha: coreAlpha)
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma * 0.3);
     canvas.drawPath(corePath, corePaint);
   }
@@ -351,44 +353,45 @@ class _MorphBlobPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    // ── Blob azul — deriva lentamente por la esquina superior izquierda ──
-    // Su centro orbita suavemente en un óvalo pequeño
+    // ── Blob azul — esquina superior izquierda, más hacia el centro ──
     final blueOrbitX = math.sin(t * math.pi * 2 * (60 / 38)) * w * 0.06;
     final blueOrbitY = math.cos(t * math.pi * 2 * (60 / 44)) * h * 0.05;
     _drawMorphBlob(
       canvas,
-      cx: w * 0.08 + blueOrbitX,
-      cy: h * 0.10 + blueOrbitY,
-      baseR: w * 0.22,
-      color: nt.blueGoogle.withValues(alpha: nt.blobBlueOpacity),
+      cx: w * 0.18 + blueOrbitX,
+      cy: h * 0.18 + blueOrbitY,
+      baseR: w * (kIsWeb ? 0.28 : 0.22),
+      // En web ignoramos el blobBlueOpacity del tema y usamos valores fuertes fijos
+      // para garantizar visibilidad — el tema puede ajustarse luego si se desea
+      color: nt.blueGoogle.withValues(alpha: kIsWeb ? 0.85 : nt.blobBlueOpacity),
       seed: 7,
-      morphSpeed: 0.6, // el más lento — ancla visual
+      morphSpeed: 0.6,
     );
 
-    // ── Blob morado — deriva por el centro-derecha ──
+    // ── Blob morado — centro-derecha, más visible ──
     final purpleOrbitX = math.cos(t * math.pi * 2 * (60 / 50)) * w * 0.08;
     final purpleOrbitY = math.sin(t * math.pi * 2 * (60 / 35)) * h * 0.07;
     _drawMorphBlob(
       canvas,
-      cx: w * 0.82 + purpleOrbitX,
-      cy: h * 0.40 + purpleOrbitY,
-      baseR: w * 0.25,
-      color: nt.purple.withValues(alpha: nt.blobPurpleOpacity),
+      cx: w * 0.78 + purpleOrbitX,
+      cy: h * 0.42 + purpleOrbitY,
+      baseR: w * (kIsWeb ? 0.30 : 0.25),
+      color: nt.purple.withValues(alpha: kIsWeb ? 0.80 : nt.blobPurpleOpacity),
       seed: 13,
-      morphSpeed: 0.75, // velocidad media
+      morphSpeed: 0.75,
     );
 
-    // ── Blob rosa — deriva por la esquina inferior izquierda ──
+    // ── Blob rosa — inferior izquierda, más hacia el centro ──
     final pinkOrbitX = math.sin(t * math.pi * 2 * (60 / 42) + 1.0) * w * 0.07;
     final pinkOrbitY = math.cos(t * math.pi * 2 * (60 / 48) + 2.1) * h * 0.06;
     _drawMorphBlob(
       canvas,
-      cx: w * 0.15 + pinkOrbitX,
-      cy: h * 0.85 + pinkOrbitY,
-      baseR: w * 0.23,
-      color: nt.pink.withValues(alpha: nt.blobPinkOpacity),
+      cx: w * 0.22 + pinkOrbitX,
+      cy: h * 0.80 + pinkOrbitY,
+      baseR: w * (kIsWeb ? 0.27 : 0.23),
+      color: nt.pink.withValues(alpha: kIsWeb ? 0.78 : nt.blobPinkOpacity),
       seed: 23,
-      morphSpeed: 0.55, // el más lento — máximo efecto lava lamp
+      morphSpeed: 0.55,
     );
   }
 
