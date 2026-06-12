@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
@@ -160,13 +161,20 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
 
   int _currentIndex = 0;
   bool _answered = false;
-  bool _selectedA = false;
+  bool _selectedTop = false; // true if the top button was selected
+  bool _isAptFirst = true; // Determines if the correct/Apt option is shown first
 
-  void _selectOption(bool isA) {
+  @override
+  void initState() {
+    super.initState();
+    _isAptFirst = Random().nextBool();
+  }
+
+  void _selectOption(bool isTop) {
     if (_answered) return;
     setState(() {
       _answered = true;
-      _selectedA = isA;
+      _selectedTop = isTop;
     });
   }
 
@@ -175,6 +183,7 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
       setState(() {
         _currentIndex++;
         _answered = false;
+        _isAptFirst = Random().nextBool();
       });
     } else {
       _showFinishDialog();
@@ -271,18 +280,18 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                   ),
                   const SizedBox(height: 32),
                   _buildOptionCard(
-                    isA: true,
-                    text: currentQ.optionA,
-                    explanation: currentQ.explanationA,
-                    isApt: currentQ.isAApt,
+                    isTop: true,
+                    text: _isAptFirst ? currentQ.optionA : currentQ.optionB,
+                    explanation: _isAptFirst ? currentQ.explanationA : currentQ.explanationB,
+                    isApt: _isAptFirst ? currentQ.isAApt : currentQ.isBApt,
                     nt: nt,
                   ),
                   const SizedBox(height: 16),
                   _buildOptionCard(
-                    isA: false,
-                    text: currentQ.optionB,
-                    explanation: currentQ.explanationB,
-                    isApt: currentQ.isBApt,
+                    isTop: false,
+                    text: !_isAptFirst ? currentQ.optionA : currentQ.optionB,
+                    explanation: !_isAptFirst ? currentQ.explanationA : currentQ.explanationB,
+                    isApt: !_isAptFirst ? currentQ.isAApt : currentQ.isBApt,
                     nt: nt,
                   ),
                   const SizedBox(height: 40),
@@ -309,13 +318,13 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
   }
 
   Widget _buildOptionCard({
-    required bool isA,
+    required bool isTop,
     required String text,
     required String explanation,
     required bool isApt,
     required NeuralThemeData nt,
   }) {
-    bool isSelected = _answered && (_selectedA == isA);
+    bool isSelected = _answered && (_selectedTop == isTop);
     bool showFeedback = _answered && isSelected;
 
     Color baseColor = Colors.white.withValues(alpha: 0.1);
@@ -331,7 +340,7 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
     }
 
     return InkWell(
-      onTap: () => _selectOption(isA),
+      onTap: () => _selectOption(isTop),
       borderRadius: BorderRadius.circular(16),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
@@ -353,7 +362,7 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                     shape: BoxShape.circle,
                   ),
                   child: Text(
-                    isA ? 'A' : 'B',
+                    isTop ? 'A' : 'B',
                     style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
