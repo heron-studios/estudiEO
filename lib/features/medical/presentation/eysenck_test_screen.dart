@@ -84,7 +84,7 @@ class _EysenckTestScreenState extends State<EysenckTestScreen> {
   int _currentIndex = 0;
   final Map<int, bool> _answers = {}; // true = SI, false = NO
 
-  static const int _totalTimeInSeconds = 10 * 60; // 10 minutes
+  static const int _totalTimeInSeconds = 5 * 60; // 5 minutes
   int _secondsRemaining = _totalTimeInSeconds;
   Timer? _timer;
 
