@@ -35,6 +35,24 @@ class AppShell extends StatelessWidget {
                   child: navigationShell,
                 ),
               ),
+              // Botón de salir flotante (arriba a la derecha)
+              Positioned(
+                top: MediaQuery.of(context).padding.top + 16,
+                right: 16,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: nt.surfaceCard.withValues(alpha: 0.5),
+                    shape: BoxShape.circle,
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.logout_rounded, color: nt.pink),
+                    tooltip: 'Cerrar Sesión',
+                    onPressed: () async {
+                      await context.read<AuthService>().signOut();
+                    },
+                  ),
+                ),
+              ),
               // Navbar flotante (horizontal)
               Positioned(
                 left: 16,
@@ -58,21 +76,13 @@ class AppShell extends StatelessWidget {
                           onTap: () => _goBranch(0),
                           nt: nt,
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 32),
                         _NavItem(
                           icon: Icons.settings_rounded,
                           label: 'Ajustes',
                           isSelected: navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
                           nt: nt,
-                        ),
-                        const SizedBox(width: 24),
-                        IconButton(
-                          icon: Icon(Icons.logout_rounded, color: nt.pink),
-                          tooltip: 'Cerrar Sesión',
-                          onPressed: () async {
-                            await context.read<AuthService>().signOut();
-                          },
                         ),
                       ],
                     ),
