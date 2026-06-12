@@ -1,0 +1,54 @@
+<USER_REQUEST>
+quiero que al entrar al examen medico te aparezca una opcion de test psicologico y cuestionario de personalidad de eysenck , y añade esos cuadros que te paso en imagenes, pero sera interactivo, debera responder SI o NO y dale 10 minutos cronometrado, luego en el mismo menu dentro de medico aparecera frases de sacks y ahi tendra un quiz Área: Autoridad y Figuras Paternas
+(Refleja cómo obedecerás a tus superiores y tu formación en valores)
+1. Me habría gustado que mi padre:
+A) Buena: fuera siempre mi guía y ejemplo de trabajo. (Bien: Refleja respeto a la autoridad y valores heredados).
+B) Mala: hubiera estado más tiempo conmigo. (Mal: Refleja carencia afectiva o resentimiento que puede afectar tu madurez).
+15. La mayoría de los jefes:
+A) Buena: son líderes que orientan el cumplimiento de las metas. (Bien: Refleja subordinación y disposición al trabajo).
+B) Mala: son personas autoritarias que abusan. (Mal: Indica que serás un elemento conflictivo y rebelde).
+18. Si mi padre solamente:
+A) Buena: pudiera ver todos mis logros alcanzados. (Bien: Muestra deseo de superación y gratitud).
+B) Mala: no hubiera sido tan estricto. (Mal: Revela conflictos no superados con la autoridad).
+32. Las personas que tienen autoridad:
+A) Buena: merecen respeto y obediencia según las normas. (Bien: Fundamental para el perfil policial).
+B) Mala: a veces se aprovechan de su cargo. (Mal: Muestra prejuicio y desconfianza hacia la jerarquía).
+35. Pienso que mi padre:
+A) Buena: es un hombre trabajador y un ejemplo de perseverancia. (Bien: Identificación con valores positivos).
+B) Mala: fue muy duro con nosotros. (Mal: Proyecta resentimiento).
+43. Las madres deben:
+A) Buena: ser el pilar de afecto y valores en el hogar. (Bien: Concepto sano de la familia).
+B) Mala: dejar de ser tan controladoras. (Mal: Refleja asfixia emocional o falta de autonomía).
+52. Si por algo me acuerdo de mi padre es porque:
+A) Buena: me enseñó la importancia de la responsabilidad. (Bien: Valores alineados a la inst
+<truncated 6086 bytes>
+cendente).
+B) Mala: comprarse cosas y viajar. (Mal: Visión superficial).
+Área: Vida de Pareja y Sexualidad
+(Refleja madurez y ausencia de desviaciones o conflictos)
+3. Pienso que las relaciones sexuales:
+A) Buena: son parte importante de la vida en pareja con responsabilidad. (Bien: Madurez).
+B) Mala: son solo para satisfacer instintos. (Mal: Impulsividad).
+12. Mi esposa (o) / Novia (o):
+A) Buena: es mi apoyo para mi crecimiento personal. (Bien: Relación estable).
+B) Mala: siempre me está reclamando cosas. (Mal: Conflicto en el entorno íntimo que genera estrés laboral).
+20. Lo que me disgusta de lo sexual:
+A) Buena: es la falta de respeto o valores en la relación. (Bien: Ética personal).
+B) Mala: que sea algo sucio. (Mal: Represión o traumas).
+37. Temo que las relaciones sexuales:
+A) Buena: sin responsabilidad traigan consecuencias negativas. (Bien: Prudencia).
+B) Mala: me causen alguna enfermedad. (Mal: Ansiedad o hipocondría).
+63. La mayoría de las esposas (os):
+A) Buena: son el apoyo fundamental para el desarrollo familiar. (Bien: Visión positiva).
+B) Mala: solo buscan que el marido les dé dinero. (Mal: Prejuicio y cinismo).
+Recomendaciones de Oro:
+Consistencia: El psicólogo comparará estas respuestas con las del Test de Eysenck (SI/NO) y con tus dibujos. Si en uno dices ser valiente y en otro dibujas a alguien escondido, serás descartado.34
+Tiempo: Responde rápido. Si demoras mucho en una frase, el psicólogo asume que estás "fabricando" una respuesta para ocultar algo.5
+Positivismo: Siempre termina la frase con una nota de aprendizaje, esfuerzo o valores
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-11T11:49:22-05:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
