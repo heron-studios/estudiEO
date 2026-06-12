@@ -719,17 +719,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 2),
-                        Text(
-                          (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null)
-                              ? '${_getPaternalSurname(userName).trim()}: $_dailyVerse'
-                              : 'Bienvenido postulante ${_getPaternalSurname(userName)}'.trim(),
-                          style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.7),
-                            fontSize: 13,
-                            fontStyle: (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null) ? FontStyle.italic : FontStyle.normal,
+                        if (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null) ...[
+                          const SizedBox(height: 2),
+                          Text(
+                            '${_getPaternalSurname(userName).trim()}: $_dailyVerse',
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.7),
+                              fontSize: 13,
+                              fontStyle: FontStyle.italic,
+                            ),
                           ),
-                        ),
+                        ],
                       ],
                     ),
                   ),
