@@ -390,7 +390,6 @@ class _HomeScreenState extends State<HomeScreen> {
       color: nt.warningAmber,
       title: 'Aprendizaje',
       subtitle: 'Modo Guiado',
-      badge: 'NUEVO',
       onTap: () => _startGuidedLearningFlow(context),
     );
   }
