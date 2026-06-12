@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
+import 'package:learn/core/config/app_config.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -15,6 +17,14 @@ class AppShell extends StatelessWidget {
       index,
       initialLocation: index == navigationShell.currentIndex,
     );
+  }
+
+  Future<void> _launchWhatsApp() async {
+    final urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, necesito soporte con la plataforma EstudiEO.")}';
+    final uri = Uri.parse(urlStr);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
   }
 
   @override
@@ -76,12 +86,20 @@ class AppShell extends StatelessWidget {
                           onTap: () => _goBranch(0),
                           nt: nt,
                         ),
-                        const SizedBox(width: 32),
+                        const SizedBox(width: 24),
                         _NavItem(
                           icon: Icons.settings_rounded,
                           label: 'Ajustes',
                           isSelected: navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
+                          nt: nt,
+                        ),
+                        const SizedBox(width: 24),
+                        _NavItem(
+                          icon: Icons.support_agent_rounded,
+                          label: 'Soporte',
+                          isSelected: false,
+                          onTap: _launchWhatsApp,
                           nt: nt,
                         ),
                       ],
@@ -140,6 +158,14 @@ class AppShell extends StatelessWidget {
                           label: 'Ajustes',
                           isSelected: navigationShell.currentIndex == 1,
                           onTap: () => _goBranch(1),
+                          nt: nt,
+                        ),
+                        const SizedBox(height: 16),
+                        _NavItem(
+                          icon: Icons.support_agent_rounded,
+                          label: 'Soporte',
+                          isSelected: false,
+                          onTap: _launchWhatsApp,
                           nt: nt,
                         ),
                         const SizedBox(height: 24),
