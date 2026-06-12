@@ -11,6 +11,7 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/core/services/bible_service.dart';
 import 'package:go_router/go_router.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -33,11 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
   int _streakDays = 0;
   bool _todayCompleted = false;
   String _diagnosis = 'PENDIENTE';
+  String? _dailyVerse;
 
   @override
   void initState() {
     super.initState();
     _loadPsicoProgress();
+    _loadDailyVerse();
+  }
+
+  Future<void> _loadDailyVerse() async {
+    final verse = await BibleService.getDailyVerse();
+    if (mounted && verse != null) {
+      setState(() {
+        _dailyVerse = verse;
+      });
+    }
   }
 
   @override
@@ -709,11 +721,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Bienvenido postulante ${_getPaternalSurname(userName)}'
-                              .trim(),
+                          _dailyVerse != null
+                              ? '${_getPaternalSurname(userName).trim()}: $_dailyVerse'
+                              : 'Bienvenido postulante ${_getPaternalSurname(userName)}'.trim(),
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.6),
-                            fontSize: 14,
+                            color: Colors.white.withValues(alpha: 0.7),
+                            fontSize: 13,
+                            fontStyle: _dailyVerse != null ? FontStyle.italic : FontStyle.normal,
                           ),
                         ),
                       ],
