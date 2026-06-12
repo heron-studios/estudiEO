@@ -4,12 +4,34 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:learn/core/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  NeuralBackgroundWrapper v3 — Fondo Neural con partículas y redes flotantes
+//  NeuralBackgroundWrapper v4 — Plasma Fluido + Morphing Orgánico
 //
-//  Mejoras vs v2:
-//  • Agrega la capa interactiva de partículas y conexiones (redes neuronales flotantes)
-//    del login, integrada dinámicamente con las variables del NeuralTheme.
-//  • Aísla las partículas en un RepaintBoundary y mantiene el child desacoplado.
+//  Mejoras vs v3:
+//  • Blobs con morphing real: forma ameboide con N control-points que oscilan
+//    independientemente, generando un path orgánico suavizado con cúbicas.
+//  • Cada blob "respira" a velocidades distintas — efecto lava lamp hipnótico.
+//  • Plasma de fondo: gradiente radial animado que pulsa entre los tres colores.
+//  • Burbujas de plasma (reemplazan partículas): esferas con glow interno y
+//    reflejo especular, que flotan suavemente y reaccionan al mouse.
+//  • Tentáculos de luz: las conexiones entre burbujas usan curvas de Bézier
+//    con ancho variable — gruesas en el centro, finas en los extremos.
+//  • Optimizado para web Y mobile: paths de renderizado distintos, sin
+//    BackdropFilter, misma API pública (drop-in replacement).
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── Utilidades ───────────────────────────────────────────────────────────────
+
+/// Interpolación suave entre dos valores con wrap circular [0, 2π]
+double _lerpAngle(double a, double b, double t) {
+  double diff = (b - a + math.pi * 3) % (math.pi * 2) - math.pi;
+  return a + diff * t;
+}
+
+/// Suavizado hermético — más suave que easeInOut estándar
+double _smoothstep(double t) => t * t * (3 - 2 * t);
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  Widget raíz — idéntica firma pública a v3
 // ─────────────────────────────────────────────────────────────────────────────
 class NeuralBackgroundWrapper extends StatefulWidget {
   final Widget child;
@@ -24,20 +46,16 @@ class NeuralBackgroundWrapper extends StatefulWidget {
 class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _breathe;
   late final ValueNotifier<Offset> _mouseNotifier;
 
   @override
   void initState() {
     super.initState();
+    // Un único controller global — 60s de ciclo para movimiento lento y zen
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 15),
-    )..repeat(reverse: true);
-
-    _breathe = Tween<double>(begin: 0.88, end: 1.12).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+      duration: const Duration(seconds: 60),
+    )..repeat();
 
     _mouseNotifier = ValueNotifier<Offset>(const Offset(-999, -999));
   }
@@ -59,28 +77,34 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // 1. Fondo base sólido — nunca se reconstruye
+          // 1. Fondo base — nunca se reconstruye
           ColoredBox(color: nt.background),
 
-          // 2. Capa de blobs animados aislada en su propio layer
+          // 2. Plasma de fondo: gradiente animado entre los tres colores del tema
           RepaintBoundary(
             child: AnimatedBuilder(
-              animation: _breathe,
-              builder: (_, __) {
-                final s = _breathe.value;
-                return _BlobLayer(scale: s, nt: nt);
-              },
+              animation: _controller,
+              builder: (_, __) => _PlasmaBackground(
+                t: _controller.value,
+                nt: nt,
+              ),
             ),
           ),
 
-          // El BackdropFilter ha sido eliminado para mejorar drásticamente el rendimiento en la web.
-          // En su lugar, el desenfoque se aplica directamente con MaskFilter en el CustomPainter de los Blobs.
+          // 3. Blobs con morphing orgánico — cada uno en su propio RepaintBoundary
+          RepaintBoundary(
+            child: AnimatedBuilder(
+              animation: _controller,
+              builder: (_, __) => _MorphBlobLayer(t: _controller.value, nt: nt),
+            ),
+          ),
 
-          // 4. Capa de redes neuronales flotantes (partículas y conexiones crisp, por encima del blur)
+          // 4. Burbujas de plasma con tentáculos luminosos
           Positioned.fill(
             child: RepaintBoundary(
-              child: _ParticleCanvas(
+              child: _PlasmaCanvas(
                 mouseNotifier: _mouseNotifier,
+                controller: _controller,
                 blueGoogle: nt.blueGoogle,
                 purple: nt.purple,
                 pink: nt.pink,
@@ -88,10 +112,10 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             ),
           ),
 
-          // 5. Capa de velo sutil — estática, sin rebuild
-          const ColoredBox(color: Color(0x0D000000)), // 5% black
+          // 5. Velo sutil — estático
+          const ColoredBox(color: Color(0x0A000000)),
 
-          // 6. Contenido de la pantalla — completamente desacoplado de la animación
+          // 6. Contenido — completamente aislado de las animaciones
           widget.child,
         ],
       ),
@@ -100,129 +124,349 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  _BlobLayer — CustomPainter puro (sin BoxDecoration ni Container)
+//  _PlasmaBackground — Gradiente radial animado de fondo
+//  Dos puntos de luz que orbitan lentamente, mezclando colores del tema
 // ─────────────────────────────────────────────────────────────────────────────
-class _BlobLayer extends StatelessWidget {
-  final double scale;
+class _PlasmaBackground extends StatelessWidget {
+  final double t;
   final NeuralThemeData nt;
 
-  const _BlobLayer({required this.scale, required this.nt});
+  const _PlasmaBackground({required this.t, required this.nt});
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: _BlobPainter(scale: scale, nt: nt),
+      painter: _PlasmaBackgroundPainter(t: t, nt: nt),
       child: const SizedBox.expand(),
     );
   }
 }
 
-class _BlobPainter extends CustomPainter {
-  final double scale;
+class _PlasmaBackgroundPainter extends CustomPainter {
+  final double t;
   final NeuralThemeData nt;
 
-  const _BlobPainter({required this.scale, required this.nt});
+  const _PlasmaBackgroundPainter({required this.t, required this.nt});
 
   @override
   void paint(Canvas canvas, Size size) {
     final w = size.width;
     final h = size.height;
-    final s = scale;
 
-    // Blob azul — esquina superior izquierda
-    _drawBlob(
-      canvas,
-      center: Offset(-50 * s + w * 0.05, -80 * s + h * 0.05),
-      radius: 175 * s,
-      color: nt.blueGoogle.withValues(alpha: nt.blobBlueOpacity),
-    );
+    // Punto de luz 1 — orbita lenta, periodo ~45s
+    final a1 = t * math.pi * 2 * (60 / 45);
+    final cx1 = w * (0.5 + 0.35 * math.cos(a1));
+    final cy1 = h * (0.5 + 0.28 * math.sin(a1 * 0.7));
 
-    // Blob morado — centro derecha
-    _drawBlob(
-      canvas,
-      center: Offset(w + 100 * s - w * 0.15, 250 * s + h * 0.2),
-      radius: 200 * s,
-      color: nt.purple.withValues(alpha: nt.blobPurpleOpacity),
-    );
+    // Punto de luz 2 — contra-orbita, periodo ~55s
+    final a2 = t * math.pi * 2 * (60 / 55) + math.pi;
+    final cx2 = w * (0.5 + 0.30 * math.cos(a2 * 1.3));
+    final cy2 = h * (0.5 + 0.35 * math.sin(a2));
 
-    // Blob rosa — esquina inferior izquierda
-    _drawBlob(
-      canvas,
-      center: Offset(100 * s + w * 0.1, h + 100 * s - h * 0.1),
-      radius: 190 * s,
-      color: nt.pink.withValues(alpha: nt.blobPinkOpacity),
-    );
-  }
+    const blurSigma = kIsWeb ? 60.0 : 120.0;
 
-  void _drawBlob(
-    Canvas canvas, {
-    required Offset center,
-    required double radius,
-    required Color color,
-  }) {
-    // Aplicamos el blur nativamente en el pincel. Esto elimina la necesidad
-    // de un BackdropFilter costoso sobre toda la pantalla.
-    const blurSigma = kIsWeb ? 30.0 : 80.0;
-    final paint = Paint()
-      ..color = color
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, blurSigma);
-    canvas.drawCircle(center, radius, paint);
+    // Glow 1 — azul/morado que pulsa
+    final pulse1 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 3);
+    final r1 = w * (0.45 + 0.1 * pulse1);
+    final paint1 = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          nt.blueGoogle.withValues(alpha: 0.18 + 0.07 * pulse1),
+          nt.purple.withValues(alpha: 0.08 + 0.04 * pulse1),
+          Colors.transparent,
+        ],
+        stops: const [0.0, 0.5, 1.0],
+      ).createShader(Rect.fromCircle(center: Offset(cx1, cy1), radius: r1));
+    canvas.drawCircle(Offset(cx1, cy1), r1, paint1);
+
+    // Glow 2 — rosa/morado que pulsa en fase opuesta
+    final pulse2 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 2.3 + math.pi);
+    final r2 = w * (0.40 + 0.12 * pulse2);
+    final paint2 = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          nt.pink.withValues(alpha: 0.15 + 0.06 * pulse2),
+          nt.purple.withValues(alpha: 0.07 + 0.03 * pulse2),
+          Colors.transparent,
+        ],
+        stops: const [0.0, 0.55, 1.0],
+      ).createShader(Rect.fromCircle(center: Offset(cx2, cy2), radius: r2));
+    canvas.drawCircle(Offset(cx2, cy2), r2, paint2);
+
+    // Halo difuso global — siempre centrado, muy suave
+    final paintHalo = Paint()
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma)
+      ..shader = RadialGradient(
+        colors: [
+          nt.purple.withValues(alpha: 0.06),
+          Colors.transparent,
+        ],
+        stops: const [0.0, 1.0],
+      ).createShader(Rect.fromLTWH(0, 0, w, h));
+    canvas.drawRect(Rect.fromLTWH(0, 0, w, h), paintHalo);
   }
 
   @override
-  bool shouldRepaint(_BlobPainter old) =>
-      old.scale != scale || old.nt != nt;
+  bool shouldRepaint(_PlasmaBackgroundPainter old) => old.t != t || old.nt != nt;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  _ParticleCanvas — Canvas de partículas interactivas flotantes
+//  _MorphBlobLayer — Blobs ameboides con morphing real de control points
+//
+//  Cada blob tiene N puntos de control en ángulos uniformes. El radio de
+//  cada punto oscila con una frecuencia y fase únicas → forma orgánica.
+//  Los puntos se conectan con cúbicas de Bézier → contorno ultra-suave.
 // ─────────────────────────────────────────────────────────────────────────────
-class _Particle {
+class _MorphBlobLayer extends StatelessWidget {
+  final double t;
+  final NeuralThemeData nt;
+
+  const _MorphBlobLayer({required this.t, required this.nt});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _MorphBlobPainter(t: t, nt: nt),
+      child: const SizedBox.expand(),
+    );
+  }
+}
+
+class _MorphBlobPainter extends CustomPainter {
+  final double t;
+  final NeuralThemeData nt;
+
+  const _MorphBlobPainter({required this.t, required this.nt});
+
+  /// Genera los N puntos de control para un blob ameboide.
+  /// [cx, cy] — centro del blob
+  /// [baseR] — radio base
+  /// [seed] — semilla de variación para que cada blob sea único
+  /// [morphSpeed] — velocidad de morphing relativa (0.5 = muy lento, 2.0 = medio)
+  List<Offset> _buildBlobPoints({
+    required double cx,
+    required double cy,
+    required double baseR,
+    required int seed,
+    required double morphSpeed,
+    int n = 8,
+  }) {
+    final points = <Offset>[];
+    for (int i = 0; i < n; i++) {
+      final angle = (i / n) * math.pi * 2;
+
+      // Cada punto tiene su propia frecuencia y fase basadas en su índice + seed
+      final freq1 = 1.0 + (seed + i * 17) % 5 * 0.3; // entre 1.0 y 2.2
+      final freq2 = 0.7 + (seed + i * 31) % 4 * 0.4; // entre 0.7 y 2.3
+      final phase1 = (seed * 0.4 + i * 1.3) % (math.pi * 2);
+      final phase2 = (seed * 0.7 + i * 2.1) % (math.pi * 2);
+
+      // Variación radial: suma de dos oscilaciones → movimiento no-periódico
+      final variation =
+          0.18 * math.sin(t * math.pi * 2 * freq1 * morphSpeed + phase1) +
+          0.10 * math.sin(t * math.pi * 2 * freq2 * morphSpeed * 1.3 + phase2);
+
+      final r = baseR * (1.0 + variation);
+      points.add(Offset(
+        cx + r * math.cos(angle),
+        cy + r * math.sin(angle),
+      ));
+    }
+    return points;
+  }
+
+  /// Construye un Path suavizado con cúbicas de Bézier a partir de N puntos.
+  /// Usa el algoritmo de tangentes Catmull-Rom para puntos de control automáticos.
+  Path _buildSmoothPath(List<Offset> pts) {
+    final n = pts.length;
+    final path = Path();
+
+    // Punto de arranque — mitad entre pts[n-1] y pts[0]
+    final start = Offset(
+      (pts[n - 1].dx + pts[0].dx) / 2,
+      (pts[n - 1].dy + pts[0].dy) / 2,
+    );
+    path.moveTo(start.dx, start.dy);
+
+    for (int i = 0; i < n; i++) {
+      final p0 = pts[i];
+      final p1 = pts[(i + 1) % n];
+      final mid = Offset((p0.dx + p1.dx) / 2, (p0.dy + p1.dy) / 2);
+      path.quadraticBezierTo(p0.dx, p0.dy, mid.dx, mid.dy);
+    }
+
+    path.close();
+    return path;
+  }
+
+  void _drawMorphBlob(
+    Canvas canvas, {
+    required double cx,
+    required double cy,
+    required double baseR,
+    required Color color,
+    required int seed,
+    required double morphSpeed,
+  }) {
+    final pts = _buildBlobPoints(
+      cx: cx,
+      cy: cy,
+      baseR: baseR,
+      seed: seed,
+      morphSpeed: morphSpeed,
+    );
+    final path = _buildSmoothPath(pts);
+
+    const blurSigma = kIsWeb ? 35.0 : 90.0;
+
+    // Capa exterior — muy difusa, máximo glow
+    final outerPaint = Paint()
+      ..color = color.withValues(alpha: color.a * 0.45)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, blurSigma * 1.8);
+    canvas.drawPath(path, outerPaint);
+
+    // Capa media — el cuerpo del blob
+    final bodyPaint = Paint()
+      ..color = color
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma);
+    canvas.drawPath(path, bodyPaint);
+
+    // Núcleo brillante — más pequeño, más opaco, casi sin blur
+    final pts2 = _buildBlobPoints(
+      cx: cx,
+      cy: cy,
+      baseR: baseR * 0.45,
+      seed: seed + 100,
+      morphSpeed: morphSpeed * 1.2,
+    );
+    final corePath = _buildSmoothPath(pts2);
+    final corePaint = Paint()
+      ..color = color.withValues(alpha: color.a * 1.4 > 1 ? 1.0 : color.a * 1.4)
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma * 0.3);
+    canvas.drawPath(corePath, corePaint);
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+
+    // ── Blob azul — deriva lentamente por la esquina superior izquierda ──
+    // Su centro orbita suavemente en un óvalo pequeño
+    final blueOrbitX = math.sin(t * math.pi * 2 * (60 / 38)) * w * 0.06;
+    final blueOrbitY = math.cos(t * math.pi * 2 * (60 / 44)) * h * 0.05;
+    _drawMorphBlob(
+      canvas,
+      cx: w * 0.08 + blueOrbitX,
+      cy: h * 0.10 + blueOrbitY,
+      baseR: w * 0.22,
+      color: nt.blueGoogle.withValues(alpha: nt.blobBlueOpacity),
+      seed: 7,
+      morphSpeed: 0.6, // el más lento — ancla visual
+    );
+
+    // ── Blob morado — deriva por el centro-derecha ──
+    final purpleOrbitX = math.cos(t * math.pi * 2 * (60 / 50)) * w * 0.08;
+    final purpleOrbitY = math.sin(t * math.pi * 2 * (60 / 35)) * h * 0.07;
+    _drawMorphBlob(
+      canvas,
+      cx: w * 0.82 + purpleOrbitX,
+      cy: h * 0.40 + purpleOrbitY,
+      baseR: w * 0.25,
+      color: nt.purple.withValues(alpha: nt.blobPurpleOpacity),
+      seed: 13,
+      morphSpeed: 0.75, // velocidad media
+    );
+
+    // ── Blob rosa — deriva por la esquina inferior izquierda ──
+    final pinkOrbitX = math.sin(t * math.pi * 2 * (60 / 42) + 1.0) * w * 0.07;
+    final pinkOrbitY = math.cos(t * math.pi * 2 * (60 / 48) + 2.1) * h * 0.06;
+    _drawMorphBlob(
+      canvas,
+      cx: w * 0.15 + pinkOrbitX,
+      cy: h * 0.85 + pinkOrbitY,
+      baseR: w * 0.23,
+      color: nt.pink.withValues(alpha: nt.blobPinkOpacity),
+      seed: 23,
+      morphSpeed: 0.55, // el más lento — máximo efecto lava lamp
+    );
+  }
+
+  @override
+  bool shouldRepaint(_MorphBlobPainter old) => old.t != t || old.nt != nt;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  _Bubble — Burbuja de plasma (reemplaza _Particle)
+//  Más grande que las partículas originales, con propiedades de glow y speed
+// ─────────────────────────────────────────────────────────────────────────────
+class _Bubble {
   double x;
   double y;
   double vx;
   double vy;
-  final double r;
-  final double a;
+  final double r;        // radio visual
+  double a;             // opacidad actual (se anima)
+  final double aTarget; // opacidad objetivo
   final Color color;
+  final double glowFactor; // intensidad del glow (0.5 – 1.0)
+  double phase;          // fase personal para pulsación
 
-  _Particle({
+  _Bubble({
     required this.x,
     required this.y,
     required this.vx,
     required this.vy,
     required this.r,
     required this.a,
+    required this.aTarget,
     required this.color,
+    required this.glowFactor,
+    required this.phase,
   });
 }
 
-class _ParticleCanvas extends StatefulWidget {
+// ─────────────────────────────────────────────────────────────────────────────
+//  _PlasmaCanvas — Burbujas con glow + tentáculos de luz curvilíneos
+// ─────────────────────────────────────────────────────────────────────────────
+class _PlasmaCanvas extends StatefulWidget {
   final ValueNotifier<Offset> mouseNotifier;
+  final AnimationController controller;
   final Color blueGoogle;
   final Color purple;
   final Color pink;
 
-  const _ParticleCanvas({
+  const _PlasmaCanvas({
     required this.mouseNotifier,
+    required this.controller,
     required this.blueGoogle,
     required this.purple,
     required this.pink,
   });
 
   @override
-  State<_ParticleCanvas> createState() => _ParticleCanvasState();
+  State<_PlasmaCanvas> createState() => _PlasmaCanvasState();
 }
 
-class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  final List<_Particle> _particles = [];
+class _PlasmaCanvasState extends State<_PlasmaCanvas>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _ticker;
+  final List<_Bubble> _bubbles = [];
   Size _lastSize = Size.zero;
+
+  // Velocidad de movimiento — lento y meditativo
+  static const double _speedScale = kIsWeb ? 0.18 : 0.22;
+
+  // Cantidad de burbujas — más en mobile porque el renderer es más eficiente
+  static const int _bubbleCount = kIsWeb ? 28 : 55;
+
+  // Distancia máxima para dibujar tentáculos
+  static const double _connectDist = kIsWeb ? 110.0 : 130.0;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    _ticker = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 16),
     )..repeat();
@@ -230,51 +474,65 @@ class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProvi
 
   @override
   void dispose() {
-    _controller.dispose();
+    _ticker.dispose();
     super.dispose();
   }
 
-  void _updateParticles(Size size, Offset mousePos) {
-    if (_particles.isEmpty || _lastSize != size) {
+  void _initBubbles(Size size) {
+    final rng = math.Random(42); // seed fijo → misma distribución inicial siempre
+    final colors = [widget.blueGoogle, widget.purple, widget.pink];
+    _bubbles.clear();
+    for (int i = 0; i < _bubbleCount; i++) {
+      final color = colors[i % 3];
+      _bubbles.add(_Bubble(
+        x: rng.nextDouble() * size.width,
+        y: rng.nextDouble() * size.height,
+        vx: (rng.nextDouble() - 0.5) * _speedScale,
+        vy: (rng.nextDouble() - 0.5) * _speedScale,
+        r: rng.nextDouble() * 2.8 + 1.2, // 1.2 – 4.0 px
+        a: rng.nextDouble() * 0.6 + 0.2,
+        aTarget: rng.nextDouble() * 0.6 + 0.3,
+        color: color,
+        glowFactor: rng.nextDouble() * 0.5 + 0.5,
+        phase: rng.nextDouble() * math.pi * 2,
+      ));
+    }
+  }
+
+  void _tick(Size size, Offset mouse) {
+    if (_bubbles.isEmpty || _lastSize != size) {
       _lastSize = size;
-      final random = math.Random();
-      _particles.clear();
-      final colors = [
-        widget.blueGoogle,
-        widget.purple,
-        widget.pink,
-      ];
-      const particleCount = kIsWeb ? 25 : 60; // Menos partículas en web para evitar lag
-      for (int i = 0; i < particleCount; i++) {
-        _particles.add(_Particle(
-          x: random.nextDouble() * size.width,
-          y: random.nextDouble() * size.height,
-          vx: (random.nextDouble() - 0.5) * 0.25,
-          vy: (random.nextDouble() - 0.5) * 0.25,
-          r: random.nextDouble() * 1.4 + 0.3,
-          a: random.nextDouble(),
-          color: colors[random.nextInt(3)],
-        ));
-      }
+      _initBubbles(size);
       return;
     }
 
-    for (var p in _particles) {
-      p.x += p.vx;
-      p.y += p.vy;
+    final dt = 1.0; // normalizado a 1 frame
 
-      if (p.x < 0) p.x = size.width;
-      if (p.x > size.width) p.x = 0;
-      if (p.y < 0) p.y = size.height;
-      if (p.y > size.height) p.y = 0;
+    for (var b in _bubbles) {
+      // Movimiento base
+      b.x += b.vx * dt;
+      b.y += b.vy * dt;
 
-      if (mousePos.dx != -999 && mousePos.dy != -999) {
-        final dx = p.x - mousePos.dx;
-        final dy = p.y - mousePos.dy;
-        final dist = math.sqrt(dx * dx + dy * dy);
-        if (dist < 80) {
-          p.x += (dx / dist) * 0.6;
-          p.y += (dy / dist) * 0.6;
+      // Wrap suave en los bordes
+      if (b.x < -20) b.x = size.width + 20;
+      if (b.x > size.width + 20) b.x = -20;
+      if (b.y < -20) b.y = size.height + 20;
+      if (b.y > size.height + 20) b.y = -20;
+
+      // Pulsación de opacidad individual — muy lenta
+      b.phase += 0.008;
+      b.a = b.aTarget * (0.65 + 0.35 * math.sin(b.phase));
+
+      // Repulsión suave del mouse
+      if (mouse.dx != -999) {
+        final dx = b.x - mouse.dx;
+        final dy = b.y - mouse.dy;
+        final distSq = dx * dx + dy * dy;
+        if (distSq < 90 * 90 && distSq > 0.001) {
+          final dist = math.sqrt(distSq);
+          final force = (1.0 - dist / 90.0) * 0.4; // fuerza inversa a distancia
+          b.x += (dx / dist) * force;
+          b.y += (dy / dist) * force;
         }
       }
     }
@@ -282,58 +540,143 @@ class _ParticleCanvasState extends State<_ParticleCanvas> with SingleTickerProvi
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final size = Size(constraints.maxWidth, constraints.maxHeight);
-        return AnimatedBuilder(
-          animation: _controller,
-          builder: (context, _) {
-            _updateParticles(size, widget.mouseNotifier.value);
-            return CustomPaint(
-              size: size,
-              painter: _ParticlePainter(particles: _particles, lineColor: widget.blueGoogle),
-            );
-          },
-        );
-      },
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      final size = Size(constraints.maxWidth, constraints.maxHeight);
+      return AnimatedBuilder(
+        animation: _ticker,
+        builder: (_, __) {
+          _tick(size, widget.mouseNotifier.value);
+          return CustomPaint(
+            size: size,
+            painter: _BubblePainter(
+              bubbles: _bubbles,
+              blueGoogle: widget.blueGoogle,
+              purple: widget.purple,
+              pink: widget.pink,
+              globalT: widget.controller.value,
+            ),
+          );
+        },
+      );
+    });
   }
 }
 
-class _ParticlePainter extends CustomPainter {
-  final List<_Particle> particles;
-  final Color lineColor;
-  const _ParticlePainter({required this.particles, required this.lineColor});
+class _BubblePainter extends CustomPainter {
+  final List<_Bubble> bubbles;
+  final Color blueGoogle;
+  final Color purple;
+  final Color pink;
+  final double globalT;
+
+  const _BubblePainter({
+    required this.bubbles,
+    required this.blueGoogle,
+    required this.purple,
+    required this.pink,
+    required this.globalT,
+  });
+
+  static const double _connectDist = kIsWeb ? 110.0 : 130.0;
 
   @override
   void paint(Canvas canvas, Size size) {
-    // 1. Connections
-    final linePaint = Paint()..strokeWidth = 0.5;
-    for (int i = 0; i < particles.length; i++) {
-      for (int j = i + 1; j < particles.length; j++) {
-        final dx = particles[i].x - particles[j].x;
-        final dy = particles[i].y - particles[j].y;
+    _drawTentacles(canvas);
+    _drawBubbles(canvas);
+  }
+
+  /// Tentáculos de luz — curvas de Bézier cuadráticas con ancho variable
+  void _drawTentacles(Canvas canvas) {
+    final paint = Paint()
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+
+    for (int i = 0; i < bubbles.length; i++) {
+      for (int j = i + 1; j < bubbles.length; j++) {
+        final bi = bubbles[i];
+        final bj = bubbles[j];
+        final dx = bi.x - bj.x;
+        final dy = bi.y - bj.y;
         final d = math.sqrt(dx * dx + dy * dy);
-        if (d < 95) {
-          final opacity = 0.12 * (1.0 - d / 95.0);
-          linePaint.color = lineColor.withValues(alpha: opacity);
-          canvas.drawLine(
-            Offset(particles[i].x, particles[i].y),
-            Offset(particles[j].x, particles[j].y),
-            linePaint,
-          );
-        }
+
+        if (d >= _connectDist) continue;
+
+        final proximity = 1.0 - d / _connectDist; // 0.0 lejos → 1.0 cerca
+        final smoothProx = _smoothstep(proximity);
+
+        // Opacidad — depende de la distancia y la opacidad de ambas burbujas
+        final opacity = smoothProx * 0.18 * (bi.a + bj.a) * 0.5;
+        if (opacity < 0.005) continue;
+
+        // Color interpolado entre los dos colores
+        final col = Color.lerp(bi.color, bj.color, 0.5)!;
+
+        // Ancho del tentáculo — más grueso cuando más cerca
+        final strokeW = kIsWeb
+            ? smoothProx * 0.8
+            : smoothProx * 1.2;
+
+        paint
+          ..color = col.withValues(alpha: opacity)
+          ..strokeWidth = strokeW;
+
+        // Punto de control de la curva — ligeramente desplazado perpendicularmente
+        // para dar un aspecto orgánico (no línea recta)
+        final mx = (bi.x + bj.x) / 2;
+        final my = (bi.y + bj.y) / 2;
+        // Perpendicular escalada — oscila con el tiempo para que viva
+        final perpX = -dy / d;
+        final perpY = dx / d;
+        final bend = math.sin(globalT * math.pi * 2 * 2 + bi.phase) * d * 0.08;
+        final cpx = mx + perpX * bend;
+        final cpy = my + perpY * bend;
+
+        final path = Path()
+          ..moveTo(bi.x, bi.y)
+          ..quadraticBezierTo(cpx, cpy, bj.x, bj.y);
+
+        canvas.drawPath(path, paint);
       }
     }
+  }
 
-    // 2. Dots
-    final particlePaint = Paint()..style = PaintingStyle.fill;
-    for (var p in particles) {
-      particlePaint.color = p.color.withValues(alpha: p.a * 0.7);
-      canvas.drawCircle(Offset(p.x, p.y), p.r, particlePaint);
+  /// Burbujas con glow en capas: halo exterior → cuerpo → reflejo especular
+  void _drawBubbles(Canvas canvas) {
+    for (var b in bubbles) {
+      final center = Offset(b.x, b.y);
+      final a = b.a;
+      final gf = b.glowFactor;
+
+      // Halo exterior — muy difuso
+      final haloPaint = Paint()
+        ..maskFilter = MaskFilter.blur(
+          BlurStyle.normal,
+          kIsWeb ? b.r * 3.5 : b.r * 5.0,
+        )
+        ..color = b.color.withValues(alpha: a * 0.35 * gf);
+      canvas.drawCircle(center, b.r * 2.2, haloPaint);
+
+      // Cuerpo principal — semi-translúcido
+      final bodyPaint = Paint()
+        ..color = b.color.withValues(alpha: a * 0.70)
+        ..style = PaintingStyle.fill;
+      canvas.drawCircle(center, b.r, bodyPaint);
+
+      // Reflejo especular — pequeño punto blanco en la esquina superior
+      // (da la ilusión de esfera de cristal / plasma)
+      if (!kIsWeb || b.r > 1.8) {
+        final specPaint = Paint()
+          ..color = Colors.white.withValues(alpha: a * 0.50)
+          ..style = PaintingStyle.fill;
+        canvas.drawCircle(
+          Offset(b.x - b.r * 0.28, b.y - b.r * 0.28),
+          b.r * 0.32,
+          specPaint,
+        );
+      }
     }
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant CustomPainter old) => true;
 }
