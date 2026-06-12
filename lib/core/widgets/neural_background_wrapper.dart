@@ -150,57 +150,40 @@ class _PlasmaBackgroundPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    // Punto de luz 1 — orbita lenta, periodo ~45s
     final a1 = t * math.pi * 2 * (60 / 45);
     final cx1 = w * (0.5 + 0.35 * math.cos(a1));
     final cy1 = h * (0.5 + 0.28 * math.sin(a1 * 0.7));
 
-    // Punto de luz 2 — contra-orbita, periodo ~55s
     final a2 = t * math.pi * 2 * (60 / 55) + math.pi;
     final cx2 = w * (0.5 + 0.30 * math.cos(a2 * 1.3));
     final cy2 = h * (0.5 + 0.35 * math.sin(a2));
 
-    const blurSigma = kIsWeb ? 60.0 : 120.0;
-
-    // Glow 1 — azul/morado que pulsa
+    // Web-safe subtle opacities
     final pulse1 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 3);
     final r1 = w * (0.55 + 0.12 * pulse1);
     final paint1 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.blueGoogle.withValues(alpha: kIsWeb ? 0.20 + 0.05 * pulse1 : 0.18 + 0.07 * pulse1),
-          nt.purple.withValues(alpha: kIsWeb ? 0.10 + 0.05 * pulse1 : 0.08 + 0.04 * pulse1),
+          nt.blueGoogle.withValues(alpha: 0.10 + 0.05 * pulse1),
+          nt.purple.withValues(alpha: 0.05 + 0.02 * pulse1),
           Colors.transparent,
         ],
-        stops: const [0.0, 0.5, 1.0],
+        stops: const [0.0, 0.4, 1.0],
       ).createShader(Rect.fromCircle(center: Offset(cx1, cy1), radius: r1));
     canvas.drawCircle(Offset(cx1, cy1), r1, paint1);
 
-    // Glow 2 — rosa/morado que pulsa en fase opuesta
     final pulse2 = 0.5 + 0.5 * math.sin(t * math.pi * 2 * 2.3 + math.pi);
     final r2 = w * (0.50 + 0.14 * pulse2);
     final paint2 = Paint()
       ..shader = RadialGradient(
         colors: [
-          nt.pink.withValues(alpha: kIsWeb ? 0.20 + 0.05 * pulse2 : 0.15 + 0.06 * pulse2),
-          nt.purple.withValues(alpha: kIsWeb ? 0.10 + 0.05 * pulse2 : 0.07 + 0.03 * pulse2),
+          nt.pink.withValues(alpha: 0.08 + 0.04 * pulse2),
+          nt.purple.withValues(alpha: 0.04 + 0.02 * pulse2),
           Colors.transparent,
         ],
-        stops: const [0.0, 0.55, 1.0],
+        stops: const [0.0, 0.4, 1.0],
       ).createShader(Rect.fromCircle(center: Offset(cx2, cy2), radius: r2));
     canvas.drawCircle(Offset(cx2, cy2), r2, paint2);
-
-    // Halo difuso global — centrado, da profundidad al fondo
-    final paintHalo = Paint()
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma)
-      ..shader = RadialGradient(
-        colors: [
-          nt.purple.withValues(alpha: kIsWeb ? 0.22 : 0.06),
-          Colors.transparent,
-        ],
-        stops: const [0.0, 1.0],
-      ).createShader(Rect.fromLTWH(0, 0, w, h));
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, h), paintHalo);
   }
 
   @override
@@ -314,38 +297,18 @@ class _MorphBlobPainter extends CustomPainter {
     );
     final path = _buildSmoothPath(pts);
 
-    // Web usa blur más alto + opacidades más fuertes porque el renderer
-    // del canvas de Flutter Web tiende a atenuar los efectos de MaskFilter.
-    const blurSigma = kIsWeb ? 100.0 : 90.0;
-    const outerAlpha = kIsWeb ? 0.15 : 0.45;
-    const bodyAlpha  = kIsWeb ? 0.25 : 1.00;
-    const coreAlpha  = kIsWeb ? 0.35 : 1.00;
-
-    // Capa exterior — muy difusa, máximo glow
-    final outerPaint = Paint()
-      ..color = color.withValues(alpha: outerAlpha)
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma * 1.8);
-    canvas.drawPath(path, outerPaint);
-
-    // Capa media — el cuerpo del blob
-    final bodyPaint = Paint()
-      ..color = color.withValues(alpha: bodyAlpha)
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma);
-    canvas.drawPath(path, bodyPaint);
-
-    // Núcleo brillante — más pequeño, más opaco, casi sin blur
-    final pts2 = _buildBlobPoints(
-      cx: cx,
-      cy: cy,
-      baseR: baseR * 0.45,
-      seed: seed + 100,
-      morphSpeed: morphSpeed * 1.2,
-    );
-    final corePath = _buildSmoothPath(pts2);
-    final corePaint = Paint()
-      ..color = color.withValues(alpha: coreAlpha)
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, blurSigma * 0.3);
-    canvas.drawPath(corePath, corePaint);
+    // Web-safe single layer with RadialGradient to simulate blur without MaskFilter failure
+    final paint = Paint()
+      ..shader = RadialGradient(
+        colors: [
+          color.withValues(alpha: 0.35), 
+          color.withValues(alpha: 0.15),
+          Colors.transparent,
+        ],
+        stops: const [0.0, 0.5, 1.0],
+      ).createShader(path.getBounds());
+      
+    canvas.drawPath(path, paint);
   }
 
   @override
@@ -353,42 +316,41 @@ class _MorphBlobPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    // ── Blob azul — esquina superior izquierda, más hacia el centro ──
+    // ── Blob azul ──
     final blueOrbitX = math.sin(t * math.pi * 2 * (60 / 38)) * w * 0.06;
     final blueOrbitY = math.cos(t * math.pi * 2 * (60 / 44)) * h * 0.05;
     _drawMorphBlob(
       canvas,
       cx: w * 0.18 + blueOrbitX,
       cy: h * 0.18 + blueOrbitY,
-      baseR: w * (kIsWeb ? 0.28 : 0.22),
-      // Opacidades reducidas para web para evitar el color plano opaco
-      color: nt.blueGoogle.withValues(alpha: kIsWeb ? 0.35 : nt.blobBlueOpacity),
+      baseR: w * 0.30,
+      color: nt.blueGoogle,
       seed: 7,
       morphSpeed: 0.6,
     );
 
-    // ── Blob morado — centro-derecha, más visible ──
+    // ── Blob morado ──
     final purpleOrbitX = math.cos(t * math.pi * 2 * (60 / 50)) * w * 0.08;
     final purpleOrbitY = math.sin(t * math.pi * 2 * (60 / 35)) * h * 0.07;
     _drawMorphBlob(
       canvas,
       cx: w * 0.78 + purpleOrbitX,
       cy: h * 0.42 + purpleOrbitY,
-      baseR: w * (kIsWeb ? 0.30 : 0.25),
-      color: nt.purple.withValues(alpha: kIsWeb ? 0.30 : nt.blobPurpleOpacity),
+      baseR: w * 0.32,
+      color: nt.purple,
       seed: 13,
       morphSpeed: 0.75,
     );
 
-    // ── Blob rosa — inferior izquierda, más hacia el centro ──
+    // ── Blob rosa ──
     final pinkOrbitX = math.sin(t * math.pi * 2 * (60 / 42) + 1.0) * w * 0.07;
     final pinkOrbitY = math.cos(t * math.pi * 2 * (60 / 48) + 2.1) * h * 0.06;
     _drawMorphBlob(
       canvas,
       cx: w * 0.22 + pinkOrbitX,
       cy: h * 0.80 + pinkOrbitY,
-      baseR: w * (kIsWeb ? 0.27 : 0.23),
-      color: nt.pink.withValues(alpha: kIsWeb ? 0.28 : nt.blobPinkOpacity),
+      baseR: w * 0.29,
+      color: nt.pink,
       seed: 23,
       morphSpeed: 0.55,
     );
