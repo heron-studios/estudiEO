@@ -5,6 +5,14 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
+class PsicologicoQuestion {
+  final String text;
+  final bool expectedAnswer;
+  final String explanation;
+
+  PsicologicoQuestion(this.text, this.expectedAnswer, this.explanation);
+}
+
 class PsicologicoTestScreen extends StatefulWidget {
   const PsicologicoTestScreen({super.key});
 
@@ -13,44 +21,44 @@ class PsicologicoTestScreen extends StatefulWidget {
 }
 
 class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
-  final List<String> _questions = [
-    'No me interesan los problemas de los demás',
-    'Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago',
-    'Constantemente siento que no soy capaz de hacer frente a las cosas nuevas',
-    'En muchas ocasiones suelo precipitarme',
-    'Con cierta regularidad le gusta mantener distancia con los demás',
-    'A veces pongo trabas a las opiniones de otras personas',
-    'Raramente evito a las multitudes',
-    'Con poca frecuencia se cómo debo hacer las cosas',
-    'Suelo dejar mis decisiones en manos del grupo',
-    'Por lo general, no me siento a gusto conmigo mismo',
-    'Espero que los demás tomen el liderazgo',
-    'No entiendo a la gente sentimental',
-    'Me afectan las situaciones sociales difíciles',
-    'Dedico poco tiempo y esfuerzo a mi trabajo',
-    'Raramente me tomo mi revancha con los demás',
-    'Soy incapaz de controlar mis deseos',
-    'Siempre suelo hablar de mis cualidades a los demás',
-    'Me gusta la acción y el peligro',
-    'Siempre miro el lado bueno de la vida',
-    'Me considero una persona incapaz de controlar mis deseos',
-    'Rompo mis promesas con regularidad',
-    'Siempre desconfio de la gente',
-    'Me gusta abstraerme',
-    'Me importa no hacer cosas ilegales',
-    'Con mucha frecuencia dejo volar mi imaginación',
-    'Me encanta experimentar de manera frecuente sensaciones fuertes',
-    '¿Es impaciente por el ritmo en el que se desarrollan los acontecimientos?',
-    'Terminas las frases de otras personas',
-    'En el amor y la Guerra todo vale',
-    'Me es difícil consumir drogas',
-    'Si las drogas serían legales las consumiría',
-    'Postulo a la PNP por rechazo de mis padres',
-    'No es cierto que nuca he robado',
-    'No es cierto que nunca he mentido',
-    'Es cierto que no he consumido drogas',
-    'Es cierto que no rompo las reglas',
-    'Me interesa el sexo',
+  final List<PsicologicoQuestion> _questions = [
+    PsicologicoQuestion('No me interesan los problemas de los demás', false, 'La empatía y vocación de servicio son fundamentales en la función policial/militar.'),
+    PsicologicoQuestion('Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago', false, 'Un efectivo debe ser el principal garante y cumplidor de la ley.'),
+    PsicologicoQuestion('Constantemente siento que no soy capaz de hacer frente a las cosas nuevas', false, 'Se busca seguridad en sí mismo y capacidad de adaptación ante nuevos retos.'),
+    PsicologicoQuestion('En muchas ocasiones suelo precipitarme', false, 'La impulsividad es negativa; se debe actuar con serenidad y criterio analítico.'),
+    PsicologicoQuestion('Con cierta regularidad le gusta mantener distancia con los demás', false, 'El trabajo operativo es en equipo y requiere altos niveles de sociabilidad.'),
+    PsicologicoQuestion('A veces pongo trabas a las opiniones de otras personas', false, 'Demuestra falta de tolerancia y genera conflictos para el trabajo en equipo.'),
+    PsicologicoQuestion('Raramente evito a las multitudes', true, 'Se trabaja constantemente en contacto masivo con el público; evitar multitudes es desfavorable.'),
+    PsicologicoQuestion('Con poca frecuencia se cómo debo hacer las cosas', false, 'Refleja inseguridad y falta de iniciativa, rasgos desfavorables para la toma de decisiones.'),
+    PsicologicoQuestion('Suelo dejar mis decisiones en manos del grupo', false, 'Un postulante debe tener autonomía, criterio propio y capacidad de liderazgo.'),
+    PsicologicoQuestion('Por lo general, no me siento a gusto conmigo mismo', false, 'Refleja problemas de autoestima o inestabilidad emocional que afectan el desempeño.'),
+    PsicologicoQuestion('Espero que los demás tomen el liderazgo', false, 'En las fuerzas del orden se valora fuertemente la proactividad y la iniciativa.'),
+    PsicologicoQuestion('No entiendo a la gente sentimental', false, 'Refleja falta de empatía o frialdad emocional hacia los ciudadanos.'),
+    PsicologicoQuestion('Me afectan las situaciones sociales difíciles', false, 'Se requiere gran resiliencia emocional para lidiar con situaciones críticas a diario.'),
+    PsicologicoQuestion('Dedico poco tiempo y esfuerzo a mi trabajo', false, 'Muestra irresponsabilidad y falta de compromiso, actitudes inaceptables.'),
+    PsicologicoQuestion('Raramente me tomo mi revancha con los demás', true, 'El rencor y la venganza son negativos; se debe actuar por justicia y racionalidad.'),
+    PsicologicoQuestion('Soy incapaz de controlar mis deseos', false, 'Refleja falta de autocontrol e impulsividad, un rasgo muy peligroso al portar un arma.'),
+    PsicologicoQuestion('Siempre suelo hablar de mis cualidades a los demás', false, 'Denota egocentrismo o complejo de superioridad; la institución valora la humildad.'),
+    PsicologicoQuestion('Me gusta la acción y el peligro', false, 'Buscar el peligro innecesariamente indica temeridad imprudente, no valentía controlada.'),
+    PsicologicoQuestion('Siempre miro el lado bueno de la vida', true, 'Refleja optimismo, estabilidad emocional y buena resiliencia ante la adversidad.'),
+    PsicologicoQuestion('Me considero una persona incapaz de controlar mis deseos', false, 'La falta de control de impulsos es uno de los principales criterios de exclusión.'),
+    PsicologicoQuestion('Rompo mis promesas con regularidad', false, 'Demuestra falta de integridad, deshonestidad y nula confiabilidad personal.'),
+    PsicologicoQuestion('Siempre desconfio de la gente', false, 'La paranoia o suspicacia extrema dificultan las relaciones y el servicio a la comunidad.'),
+    PsicologicoQuestion('Me gusta abstraerme', false, 'Se debe estar siempre alerta y conectado con su entorno (conciencia situacional).'),
+    PsicologicoQuestion('Me importa no hacer cosas ilegales', true, 'Respetar la legalidad y tener una brújula moral fuerte es el requisito innegociable.'),
+    PsicologicoQuestion('Con mucha frecuencia dejo volar mi imaginación', false, 'Se requiere pensamiento práctico, realista y enfocado; la distracción constante es un riesgo.'),
+    PsicologicoQuestion('Me encanta experimentar de manera frecuente sensaciones fuertes', false, 'Indica búsqueda de riesgo (thrill-seeking), asociado a inestabilidad e imprudencia.'),
+    PsicologicoQuestion('¿Es impaciente por el ritmo en el que se desarrollan los acontecimientos?', false, 'La impaciencia denota poco control emocional y baja tolerancia a la frustración.'),
+    PsicologicoQuestion('Terminas las frases de otras personas', false, 'Demuestra ansiedad, impaciencia y falta de escucha activa hacia el interlocutor.'),
+    PsicologicoQuestion('En el amor y la Guerra todo vale', false, 'El fin no justifica los medios. Siempre se debe actuar respetando los Derechos Humanos.'),
+    PsicologicoQuestion('Me es difícil consumir drogas', true, 'El rechazo firme al consumo de sustancias ilícitas es un perfil obligatorio.'),
+    PsicologicoQuestion('Si las drogas serían legales las consumiría', false, 'Indica propensión a las adicciones frenada únicamente por el miedo al castigo legal.'),
+    PsicologicoQuestion('Postulo a la PNP por rechazo de mis padres', false, 'La motivación debe ser netamente vocacional, no una vía de escape a presiones externas.'),
+    PsicologicoQuestion('No es cierto que nuca he robado', false, 'Admitir un robo es causal de exclusión. El historial de integridad debe ser intachable.'),
+    PsicologicoQuestion('No es cierto que nunca he mentido', true, 'Pregunta de sinceridad. Todos han mentido alguna vez; negarlo rotundamente te marca como alguien que finge perfección (escala de mentira).'),
+    PsicologicoQuestion('Es cierto que no he consumido drogas', true, 'Confirmación directa de un perfil limpio, libre de adicciones.'),
+    PsicologicoQuestion('Es cierto que no rompo las reglas', true, 'Refleja tu disposición a acatar las normas y la disciplina institucional.'),
+    PsicologicoQuestion('Me interesa el sexo', true, 'Es una función fisiológica normal. Negarlo suele interpretarse como falsedad en el test de sinceridad.'),
   ];
 
   int _currentIndex = 0;
@@ -112,15 +120,68 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
   }
 
   void _answerQuestion(bool isYes) {
-    setState(() {
-      _answers[_currentIndex] = isYes;
-      if (_currentIndex < _questions.length - 1) {
-        _currentIndex++;
-      } else {
-        _timer?.cancel();
-        _showFinishDialog();
-      }
-    });
+    bool isCorrect = _questions[_currentIndex].expectedAnswer == isYes;
+    _timer?.cancel(); // Pausamos el timer para que lea la explicación tranquilo
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        final nt = NeuralTheme.of(context);
+        return AlertDialog(
+          backgroundColor: const Color(0xFF1E1F20),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide(color: isCorrect ? nt.successGreen : nt.pink, width: 2)),
+          title: Row(
+            children: [
+              Icon(isCorrect ? Icons.check_circle_outline : Icons.cancel_outlined,
+                  color: isCorrect ? nt.successGreen : nt.pink, size: 28),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  isCorrect ? '¡Respuesta Ideal!' : 'Cuidado con esta respuesta',
+                  style: TextStyle(color: isCorrect ? nt.successGreen : nt.pink, fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Respondiste: ${isYes ? "SÍ" : "NO"}',
+                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                _questions[_currentIndex].explanation,
+                style: const TextStyle(color: Colors.white70, fontSize: 15, height: 1.4),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Cierra el popup
+                setState(() {
+                  _answers[_currentIndex] = isYes;
+                  if (_currentIndex < _questions.length - 1) {
+                    _currentIndex++;
+                    _startTimer(); // Reanuda el timer
+                  } else {
+                    _showFinishDialog();
+                  }
+                });
+              },
+              child: const Text('Entendido -> Continuar',
+                  style: TextStyle(color: Colors.cyan, fontSize: 16)),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void _showFinishDialog() {
@@ -236,7 +297,7 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
                     borderRadius: BorderRadius.circular(24),
                     borderColor: nt.cyan.withValues(alpha: 0.3),
                     child: Text(
-                      _questions[_currentIndex],
+                      _questions[_currentIndex].text,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 22,

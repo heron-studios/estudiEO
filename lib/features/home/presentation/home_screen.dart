@@ -546,21 +546,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildMedicalStudyCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
       onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Row(
-              children: [
-                Icon(Icons.construction_rounded, color: Colors.amber),
-                SizedBox(width: 8),
-                Text('Módulo en construcción. ¡Próximamente!'),
-              ],
-            ),
-            backgroundColor: const Color(0xFF1E1F20),
-            behavior: SnackBarBehavior.floating,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            margin: const EdgeInsets.all(16),
-          ),
-        );
+        context.push('/medical');
       },
       hoverGradientBorder: true,
       child: Container(
