@@ -45,10 +45,18 @@ class BibleService {
       final response = await http.get(url).timeout(const Duration(seconds: 5));
       
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body);
-        if (data.isNotEmpty) {
-          // Si es un rango de versículos, los concatenamos
-          final versesText = data.map((v) => v['verse']).join(' ');
+        final dynamic data = jsonDecode(response.body);
+        String versesText = '';
+        
+        if (data is List) {
+          if (data.isNotEmpty) {
+            versesText = data.map((v) => v['verse']).join(' ');
+          }
+        } else if (data is Map) {
+          versesText = data['verse'] ?? '';
+        }
+
+        if (versesText.isNotEmpty) {
           // Formateamos la referencia para mostrarla bonita
           final parts = ref.split('/');
           final bookName = parts[0].replaceAll('-', ' ').toUpperCase();
