@@ -4,36 +4,36 @@ import 'package:http/http.dart' as http;
 class BibleService {
   static const List<String> _dailyVerses = [
     'salmos/23/1', // 1
-    'juan/3/16',   // 2
-    'filipenses/4/13', // 3
-    'proverbios/3/5', // 4
-    'isaias/41/10', // 5
-    'romanos/8/28', // 6
-    'jeremias/29/11', // 7
-    'salmos/46/1', // 8
-    'mateo/11/28', // 9
-    'josue/1/9', // 10
-    'romanos/12/2', // 11
-    'isaias/40/31', // 12
-    'hebreos/11/1', // 13
-    'salmos/119/105', // 14
-    'proverbios/4/23', // 15
-    '1-corintios/13/4', // 16
-    '2-corintios/5/17', // 17
-    'galatas/5/22', // 18
-    'efesios/2/8', // 19
-    'colosenses/3/23', // 20
-    '1-tesalonicenses/5/16-18', // 21
-    '2-timoteo/1/7', // 22
-    'santiago/1/5', // 23
-    '1-pedro/5/7', // 24
-    '1-juan/4/8', // 25
-    'apocalipsis/3/20', // 26
-    'mateo/6/33', // 27
-    'juan/14/6', // 28
-    'romanos/6/23', // 29
-    'isaias/53/5', // 30
-    'salmos/121/1', // 31
+    'filipenses/4/13', // 2
+    '1-tesalonicenses/5/17', // 3
+    '1-tesalonicenses/5/16', // 4
+    '1-juan/4/8', // 5
+    '1-juan/4/19', // 6
+    'salmos/56/3', // 7
+    'proverbios/3/5', // 8
+    'salmos/119/105', // 9
+    '1-tesalonicenses/5/18', // 10
+    'hebreos/13/8', // 11
+    'efesios/4/32', // 12
+    'colosenses/3/20', // 13
+    'salmos/37/5', // 14
+    'proverbios/10/12', // 15
+    'romanos/12/9', // 16
+    'romanos/12/12', // 17
+    'romanos/12/21', // 18
+    '1-juan/5/3', // 19
+    'salmos/150/6', // 20
+    'santiago/4/7', // 21
+    '1-pedro/5/7', // 22
+    'filipenses/4/4', // 23
+    'juan/10/14', // 24
+    'salmos/46/10', // 25
+    'salmos/27/1', // 26
+    'salmos/118/24', // 27
+    'proverbios/17/22', // 28
+    '1-juan/3/18', // 29
+    'salmos/34/8', // 30
+    'colosenses/3/2', // 31
   ];
 
   static Future<String?> getDailyVerse() async {
@@ -62,7 +62,7 @@ class BibleService {
           final bookName = parts[0].replaceAll('-', ' ').toUpperCase();
           final chapterVerse = parts.sublist(1).join(':');
           
-          return '"$versesText"\n- $bookName $chapterVerse';
+          return '"$versesText" ($bookName $chapterVerse)';
         }
       }
       return null;
