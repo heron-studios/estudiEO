@@ -18,11 +18,7 @@ import 'package:learn/core/config/neural_theme.dart';
 
 // ─── Utilidades ───────────────────────────────────────────────────────────────
 
-/// Interpolación suave entre dos valores con wrap circular [0, 2π]
-double _lerpAngle(double a, double b, double t) {
-  double diff = (b - a + math.pi * 3) % (math.pi * 2) - math.pi;
-  return a + diff * t;
-}
+
 
 /// Suavizado hermético — más suave que easeInOut estándar
 double _smoothstep(double t) => t * t * (3 - 2 * t);
@@ -424,8 +420,7 @@ class _PlasmaCanvasState extends State<_PlasmaCanvas>
   // Cantidad de burbujas — más en mobile porque el renderer es más eficiente
   static const int _bubbleCount = kIsWeb ? 28 : 55;
 
-  // Distancia máxima para dibujar tentáculos
-  static const double _connectDist = kIsWeb ? 110.0 : 130.0;
+
 
   @override
   void initState() {
@@ -470,7 +465,7 @@ class _PlasmaCanvasState extends State<_PlasmaCanvas>
       return;
     }
 
-    final dt = 1.0; // normalizado a 1 frame
+    const dt = 1.0; // normalizado a 1 frame
 
     for (var b in _bubbles) {
       // Movimiento base

@@ -8,10 +8,8 @@ import 'package:learn/models/learning_session.dart';
 import 'package:learn/features/alipio/presentation/alipio_selector_screen.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
-import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
 import 'package:learn/core/services/local_storage_service.dart';
-import 'package:learn/core/services/bible_service.dart';
 import 'package:go_router/go_router.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -34,22 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int _streakDays = 0;
   bool _todayCompleted = false;
   String _diagnosis = 'PENDIENTE';
-  String? _dailyVerse;
 
   @override
   void initState() {
     super.initState();
     _loadPsicoProgress();
-    _loadDailyVerse();
-  }
-
-  Future<void> _loadDailyVerse() async {
-    final verse = await BibleService.getDailyVerse();
-    if (mounted && verse != null) {
-      setState(() {
-        _dailyVerse = verse;
-      });
-    }
   }
 
   @override
@@ -144,13 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  String _getPaternalSurname(String? fullName) {
-    if (fullName == null || fullName.trim().isEmpty) return 'POSTULANTE';
-    final parts = fullName.trim().split(RegExp(r'\s+'));
-    if (parts.length <= 1) return parts[0].toUpperCase();
-    if (parts.length == 2) return parts[1].toUpperCase();
-    return parts[parts.length - 2].toUpperCase();
-  }
+
 
   void _startGuidedLearningFlow(BuildContext context) {
     final learningProvider = context.read<LearningProvider>();
@@ -645,9 +626,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final authService = context.watch<AuthService>();
-    final user = authService.currentUser;
-    final userName = user?.displayName ?? '';
     final nt = NeuralTheme.of(context);
 
     // Colores del estado de diagnóstico

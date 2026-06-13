@@ -18,22 +18,11 @@ class AppShell extends StatefulWidget {
 }
 
 class _AppShellState extends State<AppShell> {
-  String? _dailyVerse;
 
   @override
   void initState() {
     super.initState();
-    _loadDailyVerse();
     _showDailyVerseIfNeeded();
-  }
-
-  Future<void> _loadDailyVerse() async {
-    final verse = await BibleService.getDailyVerse();
-    if (mounted) {
-      setState(() {
-        _dailyVerse = verse;
-      });
-    }
   }
 
   Future<void> _showDailyVerseIfNeeded() async {
