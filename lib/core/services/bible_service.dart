@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 
 class BibleService {
   static String? _cachedVerse;
+  static bool hasShownDailyVerse = false;
 
   static const List<String> _dailyVerses = [
     'salmos/23/1', // 1

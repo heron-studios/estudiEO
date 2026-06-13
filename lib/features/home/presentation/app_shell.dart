@@ -24,6 +24,7 @@ class _AppShellState extends State<AppShell> {
   void initState() {
     super.initState();
     _loadDailyVerse();
+    _showDailyVerseIfNeeded();
   }
 
   Future<void> _loadDailyVerse() async {
@@ -33,6 +34,60 @@ class _AppShellState extends State<AppShell> {
         _dailyVerse = verse;
       });
     }
+  }
+
+  Future<void> _showDailyVerseIfNeeded() async {
+    if (BibleService.hasShownDailyVerse) return;
+    
+    // Esperamos a que el frame esté listo
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final verse = await BibleService.getDailyVerse();
+      if (verse != null && mounted) {
+        BibleService.hasShownDailyVerse = true;
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            backgroundColor: NeuralTheme.of(context).surfaceCard.withValues(alpha: 0.95),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+            title: Row(
+              children: [
+                Icon(Icons.auto_stories_rounded, color: NeuralTheme.of(context).blueGoogle),
+                const SizedBox(width: 8),
+                const Text(
+                  'Versículo del Día',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            content: Text(
+              verse,
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(
+                  'Amén',
+                  style: TextStyle(
+                    color: NeuralTheme.of(context).blueGoogle,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    });
   }
 
   void _goBranch(int index) {
@@ -64,9 +119,7 @@ class _AppShellState extends State<AppShell> {
               // Contenido principal
               Positioned.fill(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                    bottom: (widget.navigationShell.currentIndex == 0 && _dailyVerse != null) ? 135 : 100,
-                  ),
+                  padding: const EdgeInsets.only(bottom: 100),
                   child: widget.navigationShell,
                 ),
               ),
@@ -88,40 +141,6 @@ class _AppShellState extends State<AppShell> {
                   ),
                 ),
               ),
-              // Versículo flotante arriba de la barra de navegación (solo en la pantalla de Inicio)
-              if (widget.navigationShell.currentIndex == 0 && _dailyVerse != null)
-                Positioned(
-                  left: 24,
-                  right: 24,
-                  bottom: 90,
-                  child: Center(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.4),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.2),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        _dailyVerse!,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.85),
-                          fontSize: 11,
-                          fontStyle: FontStyle.italic,
-                          height: 1.25,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               // Navbar flotante (horizontal)
               Positioned(
                 left: 16,

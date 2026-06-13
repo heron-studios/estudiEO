@@ -719,17 +719,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        if (MediaQuery.of(context).size.width >= 800 && _dailyVerse != null) ...[
-                          const SizedBox(height: 2),
-                          Text(
-                            '${_getPaternalSurname(userName).trim()}: $_dailyVerse',
-                            style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.7),
-                              fontSize: 13,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                        ],
+                        // No subtitle anymore, keeping it clean
                       ],
                     ),
                   ),
