@@ -65,7 +65,7 @@ class _AppShellState extends State<AppShell> {
               Positioned.fill(
                 child: Padding(
                   padding: EdgeInsets.only(
-                    bottom: (widget.navigationShell.currentIndex == 0 && _dailyVerse != null) ? 155 : 100,
+                    bottom: (widget.navigationShell.currentIndex == 0 && _dailyVerse != null) ? 135 : 100,
                   ),
                   child: widget.navigationShell,
                 ),
@@ -93,19 +93,19 @@ class _AppShellState extends State<AppShell> {
                 Positioned(
                   left: 24,
                   right: 24,
-                  bottom: 96,
+                  bottom: 90,
                   child: Center(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
                       decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.65),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                        color: Colors.black.withValues(alpha: 0.4),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.3),
-                            blurRadius: 10,
-                            offset: const Offset(0, 4),
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
                           ),
                         ],
                       ),
@@ -113,10 +113,10 @@ class _AppShellState extends State<AppShell> {
                         _dailyVerse!,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.9),
-                          fontSize: 12,
+                          color: Colors.white.withValues(alpha: 0.85),
+                          fontSize: 11,
                           fontStyle: FontStyle.italic,
-                          height: 1.3,
+                          height: 1.25,
                         ),
                       ),
                     ),
