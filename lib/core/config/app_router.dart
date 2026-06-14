@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
+import 'package:learn/models/question.dart';
 import 'package:learn/features/interview/presentation/interview_screen.dart';
+import 'package:learn/features/interview/presentation/interview_trivia_screen.dart';
 
 // Screens
 import 'package:learn/features/home/presentation/app_shell.dart';
@@ -14,12 +16,12 @@ import 'package:learn/features/learning/presentation/subject_gallery_screen.dart
 import 'package:learn/features/learning/presentation/topic_gallery_screen.dart';
 import 'package:learn/features/exam/presentation/exam_screen.dart';
 import 'package:learn/features/exam/presentation/exam_results_screen.dart';
+import 'package:learn/features/exam/presentation/exam_review_screen.dart';
 import 'package:learn/features/quiz/presentation/quiz_screen.dart';
 import 'package:learn/features/quiz/presentation/quiz_results_screen.dart';
 import 'package:learn/features/srs/presentation/srs_review_screen.dart';
 import 'package:learn/features/srs/presentation/srs_mini_quiz_screen.dart';
 import 'package:learn/features/settings/presentation/settings_screen.dart';
-import 'package:learn/features/premium/presentation/premium_screen.dart';
 import 'package:learn/features/premium/presentation/payment_screen.dart';
 import 'package:learn/features/learning/presentation/learning_theory_screen.dart';
 import 'package:learn/features/learning/presentation/learning_quiz_screen.dart';
@@ -47,7 +49,7 @@ class AppRouter {
       initialLocation: '/home',
       refreshListenable: authService,
       redirect: (context, state) {
-        final isAuth = authService.currentUser != null;
+        final isAuth = authService.currentUser != null || authService.isGuest;
         final isAuthorized = authService.isAuthorized;
         final isInitializing = authService.isInitializing;
         final hasSeenOnboarding = storageService.loadHasSeenOnboarding();
@@ -69,12 +71,14 @@ class AppRouter {
           return isLoggingIn ? null : '/login';
         }
 
-        if (isAuth && !isAuthorized) {
-          return isPayment ? null : '/payment';
-        }
-
-        if (isAuth && isAuthorized && (isLoggingIn || isPayment || isLoading || isOnboarding)) {
-          return '/home';
+        if (isAuth && isAuthorized) {
+          if (isLoggingIn || isPayment || isLoading || isOnboarding) {
+            return '/home';
+          }
+        } else {
+          if (isLoggingIn || isLoading || isOnboarding) {
+            return '/home';
+          }
         }
 
         return null;
@@ -151,11 +155,25 @@ class AppRouter {
         ),
         GoRoute(
           path: '/exam',
-          builder: (context, state) => const ExamScreen(),
+          builder: (context, state) {
+            final extra = state.extra as Map<String, dynamic>?;
+            final resume = extra?['resume'] as bool? ?? false;
+            return ExamScreen(resume: resume);
+          },
         ),
         GoRoute(
           path: '/exam-results',
           builder: (context, state) => const ExamResultsScreen(),
+        ),
+        GoRoute(
+          path: '/exam-review',
+          builder: (context, state) {
+            final extra = state.extra as Map<String, dynamic>;
+            return ExamReviewScreen(
+              questions: extra['questions'] as List<Question>,
+              answers: Map<String, int>.from(extra['answers'] as Map),
+            );
+          },
         ),
         GoRoute(
           path: '/srs-review',
@@ -170,7 +188,7 @@ class AppRouter {
         ),
         GoRoute(
           path: '/premium',
-          builder: (context, state) => const PremiumScreen(),
+          builder: (context, state) => const PaymentScreen(),
         ),
         GoRoute(
           path: '/payment',
@@ -278,6 +296,10 @@ class AppRouter {
         GoRoute(
           path: '/psicolearn/entrevista',
           builder: (context, state) => const InterviewScreen(),
+        ),
+        GoRoute(
+          path: '/interview-trivia',
+          builder: (context, state) => const InterviewTriviaScreen(),
         ),
       ],
     );

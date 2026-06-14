@@ -63,3 +63,8 @@ xcuserdata/
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Compiled local binaries
+/EstudiEO.apk
+/EstudiEO-Windows/
+

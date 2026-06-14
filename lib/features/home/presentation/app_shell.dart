@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:learn/core/services/bible_service.dart';
 
 class AppShell extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
@@ -19,65 +18,6 @@ class AppShell extends StatefulWidget {
 
 class _AppShellState extends State<AppShell> {
 
-  @override
-  void initState() {
-    super.initState();
-    _showDailyVerseIfNeeded();
-  }
-
-  Future<void> _showDailyVerseIfNeeded() async {
-    if (BibleService.hasShownDailyVerse) return;
-    
-    // Esperamos a que el frame esté listo
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final verse = await BibleService.getDailyVerse();
-      if (verse != null && mounted) {
-        BibleService.hasShownDailyVerse = true;
-        showDialog(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            backgroundColor: NeuralTheme.of(context).surfaceCard.withValues(alpha: 0.95),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-            title: Row(
-              children: [
-                Icon(Icons.auto_stories_rounded, color: NeuralTheme.of(context).blueGoogle),
-                const SizedBox(width: 8),
-                const Text(
-                  'Versículo del Día',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            content: Text(
-              verse,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-                fontStyle: FontStyle.italic,
-                height: 1.4,
-              ),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(ctx),
-                child: Text(
-                  'Amén',
-                  style: TextStyle(
-                    color: NeuralTheme.of(context).blueGoogle,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-    });
-  }
 
   void _goBranch(int index) {
     widget.navigationShell.goBranch(

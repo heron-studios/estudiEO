@@ -510,7 +510,7 @@ class ExportService {
   static Future<void> exportDashboardToPdf(
     BuildContext context, {
     required Map<String, dynamic> globalStats,
-    required String alipioAdvice,
+    required String tutorAdvice,
     required List<Map<String, dynamic>> subjectStats,
   }) async {
     final pdfTheme = await _getPdfTheme();
@@ -570,7 +570,7 @@ class ExportService {
             pw.SizedBox(height: 20),
 
             // AI advice Section
-            pw.Text('Consejo Personalizado de Alipio', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text('Consejo Personalizado del Tutor IA', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
             pw.SizedBox(height: 8),
             pw.Container(
               padding: const pw.EdgeInsets.all(12),
@@ -580,7 +580,7 @@ class ExportService {
                 borderRadius: const pw.BorderRadius.all(pw.Radius.circular(8)),
               ),
               child: pw.Text(
-                alipioAdvice,
+                tutorAdvice,
                 style: pw.TextStyle(fontSize: 10, fontStyle: pw.FontStyle.italic, color: PdfColors.blue900),
               ),
             ),
@@ -658,7 +658,7 @@ class ExportService {
   static Future<void> exportDashboardToWord(
     BuildContext context, {
     required Map<String, dynamic> globalStats,
-    required String alipioAdvice,
+    required String tutorAdvice,
     required List<Map<String, dynamic>> subjectStats,
   }) async {
     final dateStr = DateFormat('dd/MM/yyyy HH:mm').format(DateTime.now());
@@ -721,9 +721,9 @@ class ExportService {
     </div>
   </div>
 
-  <div class="section-title">Consejo Personalizado de Alipio</div>
+  <div class="section-title">Consejo Personalizado del Tutor IA</div>
   <div class="advice-box">
-    $alipioAdvice
+    $tutorAdvice
   </div>
 
   <div class="section-title">Rendimiento por Asignatura</div>

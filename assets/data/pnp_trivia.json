@@ -1,0 +1,319 @@
+{
+  "preguntas_pnp": [
+    {
+      "question": { "text": "¿Cuál es el lema oficial de la Policía Nacional del Perú?" },
+      "category": "pnp_institutional",
+      "difficulty": "easy",
+      "correctAnswer": "Dios, Patria, Ley",
+      "incorrectAnswers": ["Disciplina, Honor, Lealtad", "Honor y Lealtad", "Siempre Alerta"]
+    },
+    {
+      "question": { "text": "¿Qué día se celebra institucionalmente el Día de la Policía Nacional del Perú?" },
+      "category": "pnp_institutional",
+      "difficulty": "easy",
+      "correctAnswer": "6 de diciembre",
+      "incorrectAnswers": ["30 de agosto", "5 de febrero", "12 de noviembre"]
+    },
+    {
+      "question": { "text": "¿Quién es el patrono y héroe histórico de la Policía Nacional del Perú que destacó por su valentía en la batalla de Tarapacá?" },
+      "category": "pnp_institutional",
+      "difficulty": "easy",
+      "correctAnswer": "Mariano Santos Mateos",
+      "incorrectAnswers": ["Alipio Ponce Vásquez", "Miguel Grau Seminario", "Francisco Bolognesi"]
+    },
+    {
+      "question": { "text": "¿Quién es el héroe institucional de la PNP que se inmoló el 31 de julio de 1941 durante el conflicto con Ecuador?" },
+      "category": "pnp_institutional",
+      "difficulty": "medium",
+      "correctAnswer": "Alipio Ponce Vásquez",
+      "incorrectAnswers": ["Mariano Santos Mateos", "José Abelardo Quiñones", "Leoncio Prado"]
+    },
+    {
+      "question": { "text": "¿Cuál es la ley orgánica de la Policía Nacional del Perú vigente que regula su estructura y funciones?" },
+      "category": "pnp_institutional",
+      "difficulty": "medium",
+      "correctAnswer": "Decreto Legislativo N° 1267",
+      "incorrectAnswers": ["Decreto Legislativo N° 1148", "Ley N° 30714", "Decreto Supremo N° 026"]
+    },
+    {
+      "question": { "text": "¿Quién es la patrona espiritual de la Policía Nacional del Perú, cuya festividad nacional es el 30 de agosto?" },
+      "category": "pnp_institutional",
+      "difficulty": "easy",
+      "correctAnswer": "Santa Rosa de Lima",
+      "incorrectAnswers": ["Virgen de la Merced", "Virgen de Chapi", "San Martín de Porres"]
+    },
+    {
+      "question": { "text": "¿En qué año se unificaron las Fuerzas Policiales (Guardia Civil, Guardia Republicana y Policía de Investigaciones) para crear la actual PNP?" },
+      "category": "pnp_institutional",
+      "difficulty": "hard",
+      "correctAnswer": "1988",
+      "incorrectAnswers": ["1985", "1993", "1990"]
+    },
+    {
+      "question": { "text": "Según la Ley de la PNP, ¿cuál es el órgano de más alto nivel de dirección y decisión de la institución?" },
+      "category": "pnp_institutional",
+      "difficulty": "hard",
+      "correctAnswer": "La Comandancia General",
+      "incorrectAnswers": ["El Estado Mayor General", "La Inspectoría General", "El Ministerio del Interior"]
+    },
+    {
+      "question": { "text": "¿Qué artículo de la Constitución Política del Perú establece la finalidad fundamental de la Policía Nacional?" },
+      "category": "constitution_civics",
+      "difficulty": "easy",
+      "correctAnswer": "Artículo 166",
+      "incorrectAnswers": ["Artículo 137", "Artículo 165", "Artículo 2"]
+    },
+    {
+      "question": { "text": "¿Cuántos poderes del Estado reconoce la Constitución Política del Perú?" },
+      "category": "constitution_civics",
+      "difficulty": "easy",
+      "correctAnswer": "Tres poderes",
+      "incorrectAnswers": ["Dos poderes", "Cuatro poderes", "Cinco poderes"]
+    },
+    {
+      "question": { "text": "¿Quién es el Jefe Supremo de las Fuerzas Armadas y de la Policía Nacional del Perú?" },
+      "category": "constitution_civics",
+      "difficulty": "easy",
+      "correctAnswer": "El Presidente de la República",
+      "incorrectAnswers": ["El Ministro de Defensa", "El Ministro del Interior", "El Presidente del Congreso"]
+    },
+    {
+      "question": { "text": "¿Qué garantía constitucional procede ante un hecho u omisión que vulnera o amenaza la libertad individual de una persona?" },
+      "category": "constitution_civics",
+      "difficulty": "medium",
+      "correctAnswer": "Habeas Corpus",
+      "incorrectAnswers": ["Acción de Amparo", "Habeas Data", "Acción Popular"]
+    },
+    {
+      "question": { "text": "¿Cuál es la norma jurídica de máxima jerarquía en el ordenamiento legal del Perú?" },
+      "category": "constitution_civics",
+      "difficulty": "easy",
+      "correctAnswer": "La Constitución Política del Perú",
+      "incorrectAnswers": ["La Ley Orgánica", "El Decreto Legislativo", "El Código Civil"]
+    },
+    {
+      "question": { "text": "Según la Constitución peruana, ¿en qué caso excepcional puede la policía ingresar al domicilio de un ciudadano sin mandato judicial ni consentimiento?" },
+      "category": "constitution_civics",
+      "difficulty": "medium",
+      "correctAnswer": "Flagrante delito o muy grave peligro de su perpetración",
+      "incorrectAnswers": ["Sospecha de actividad ilícita", "Por orden verbal del superior de patrullaje", "Durante las horas del día"]
+    },
+    {
+      "question": { "text": "¿Cuál de las siguientes es la finalidad primordial de la PNP definida en la Constitución?" },
+      "category": "constitution_civics",
+      "difficulty": "medium",
+      "correctAnswer": "Garantizar, mantener y restablecer el orden interno",
+      "incorrectAnswers": ["Garantizar la soberanía e integridad territorial", "Ejecutar la política económica estatal", "Representar al Perú internacionalmente"]
+    },
+    {
+      "question": { "text": "¿Qué garantía constitucional protege el derecho a acceder a información pública y a la autodeterminación informativa?" },
+      "category": "constitution_civics",
+      "difficulty": "hard",
+      "correctAnswer": "Habeas Data",
+      "incorrectAnswers": ["Habeas Corpus", "Acción de Amparo", "Acción de Cumplimiento"]
+    },
+    {
+      "question": { "text": "¿Quién proclamó la Independencia del Perú el 28 de julio de 1821?" },
+      "category": "peruvian_history",
+      "difficulty": "easy",
+      "correctAnswer": "Don José de San Martín",
+      "incorrectAnswers": ["Simón Bolívar", "Túpac Amaru II", "Ramón Castilla"]
+    },
+    {
+      "question": { "text": "¿Qué héroe peruano es conocido como el «Caballero de los Mares» por su nobleza durante la Guerra del Pacífico?" },
+      "category": "peruvian_history",
+      "difficulty": "easy",
+      "correctAnswer": "Miguel Grau Seminario",
+      "incorrectAnswers": ["Francisco Bolognesi", "Alfonso Ugarte", "Andrés Avelino Cáceres"]
+    },
+    {
+      "question": { "text": "¿Quién pronunció la frase: «Tengo deberes sagrados que cumplir y los cumpliré hasta quemar el último cartucho»?" },
+      "category": "peruvian_history",
+      "difficulty": "easy",
+      "correctAnswer": "Francisco Bolognesi",
+      "incorrectAnswers": ["Miguel Grau", "Andrés Avelino Cáceres", "Alfonso Ugarte"]
+    },
+    {
+      "question": { "text": "¿En qué batalla se consolidó definitivamente la Independencia del Perú y de toda Sudamérica en 1824?" },
+      "category": "peruvian_history",
+      "difficulty": "medium",
+      "correctAnswer": "Batalla de Ayacucho",
+      "incorrectAnswers": ["Batalla de Junín", "Batalla de Angamos", "Batalla de Arica"]
+    },
+    {
+      "question": { "text": "¿Quién fue la precursora de la Independencia del Perú que colaboró activamente con Túpac Amaru II y murió ejecutada con él en el Cusco?" },
+      "category": "peruvian_history",
+      "difficulty": "medium",
+      "correctAnswer": "Micaela Bastidas Puyucahua",
+      "incorrectAnswers": ["María Parado de Bellido", "Clorinda Matto de Turner", "Juana de Alarco"]
+    },
+    {
+      "question": { "text": "¿Qué héroe de la Campaña de la Breña en la Guerra del Pacífico es conocido como el «Brujo de los Andes»?" },
+      "category": "peruvian_history",
+      "difficulty": "medium",
+      "correctAnswer": "Andrés Avelino Cáceres",
+      "incorrectAnswers": ["Francisco Bolognesi", "Leoncio Prado", "Alfonso Ugarte"]
+    },
+    {
+      "question": { "text": "¿Qué cultura preínca del antiguo Perú es mundialmente famosa por sus trepanaciones craneanas y hermosos mantos textiles?" },
+      "category": "peruvian_history",
+      "difficulty": "hard",
+      "correctAnswer": "Cultura Paracas",
+      "incorrectAnswers": ["Cultura Nazca", "Cultura Chavín", "Cultura Mochica"]
+    },
+    {
+      "question": { "text": "¿Quién fue el primer virrey que tuvo el Virreinato del Perú?" },
+      "category": "peruvian_history",
+      "difficulty": "hard",
+      "correctAnswer": "Blasco Núñez de Vela",
+      "incorrectAnswers": ["Francisco de Toledo", "José de la Serna", "Manuel Amat y Junyent"]
+    },
+    {
+      "question": { "text": "¿Cuál es la capital del departamento de Loreto, el territorio más extenso del Perú?" },
+      "category": "peruvian_geography",
+      "difficulty": "easy",
+      "correctAnswer": "Iquitos",
+      "incorrectAnswers": ["Pucallpa", "Tarapoto", "Moyobamba"]
+    },
+    {
+      "question": { "text": "¿Cuál es el río más largo y caudaloso del Perú y del mundo, que tiene sus nacientes en la región de Arequipa?" },
+      "category": "peruvian_geography",
+      "difficulty": "easy",
+      "correctAnswer": "Río Amazonas",
+      "incorrectAnswers": ["Río Ucayali", "Río Marañón", "Río Rímac"]
+    },
+    {
+      "question": { "text": "¿Cuál es el lago navegable más alto del mundo, compartido geográficamente por Perú y Bolivia?" },
+      "category": "peruvian_geography",
+      "difficulty": "easy",
+      "correctAnswer": "Lago Titicaca",
+      "incorrectAnswers": ["Lago Junín", "Laguna de Conococha", "Lago Rimachi"]
+    },
+    {
+      "question": { "text": "¿Con qué país limita el Perú por el noroeste?" },
+      "category": "peruvian_geography",
+      "difficulty": "medium",
+      "correctAnswer": "Ecuador",
+      "incorrectAnswers": ["Colombia", "Brasil", "Bolivia"]
+    },
+    {
+      "question": { "text": "¿Cuál es la montaña o nevado más alto del Perú, con una altitud de 6,768 metros sobre el nivel del mar?" },
+      "category": "peruvian_geography",
+      "difficulty": "medium",
+      "correctAnswer": "Huascarán",
+      "incorrectAnswers": ["Yerupajá", "Alpamayo", "Coropuna"]
+    },
+    {
+      "question": { "text": "¿Cuál es el departamento o región política con la menor superficie territorial del Perú?" },
+      "category": "peruvian_geography",
+      "difficulty": "medium",
+      "correctAnswer": "Tumbes",
+      "incorrectAnswers": ["Pasco", "Tacna", "Moquegua"]
+    },
+    {
+      "question": { "text": "¿En qué departamento del Perú se encuentran ubicados los geoglifos prehispánicos conocidos como las Líneas de Nasca?" },
+      "category": "peruvian_geography",
+      "difficulty": "easy",
+      "correctAnswer": "Ica",
+      "incorrectAnswers": ["Arequipa", "Lima", "Ayacucho"]
+    },
+    {
+      "question": { "text": "¿Cómo se llama la meseta más extensa del territorio peruano, ubicada en la región del altiplano?" },
+      "category": "peruvian_geography",
+      "difficulty": "hard",
+      "correctAnswer": "Meseta del Collao",
+      "incorrectAnswers": ["Meseta de Bombón", "Meseta de Galeras", "Meseta de Marcahuasi"]
+    },
+    {
+      "question": { "text": "¿Cuál es el nombre de la actual Presidenta Constitucional de la República del Perú?" },
+      "category": "current_affairs",
+      "difficulty": "easy",
+      "correctAnswer": "Dina Boluarte Zegarra",
+      "incorrectAnswers": ["Keiko Fujimori Higuchi", "Mercedes Aráoz Fernández", "Ana Jara Velásquez"]
+    },
+    {
+      "question": { "text": "¿Qué organismo constitucional autónomo del Perú tiene la responsabilidad legal de organizar los procesos electorales?" },
+      "category": "current_affairs",
+      "difficulty": "easy",
+      "correctAnswer": "ONPE (Oficina Nacional de Procesos Electorales)",
+      "incorrectAnswers": ["JNE (Jurado Nacional de Elecciones)", "RENIEC", "JNJ"]
+    },
+    {
+      "question": { "text": "¿Qué organismo del Perú tiene la atribución constitucional de nombrar, evaluar, ratificar y sancionar a jueces y fiscales?" },
+      "category": "current_affairs",
+      "difficulty": "medium",
+      "correctAnswer": "Junta Nacional de Justicia (JNJ)",
+      "incorrectAnswers": ["Poder Judicial", "Academia de la Magistratura", "Ministerio Público"]
+    },
+    {
+      "question": { "text": "¿Cuál es el ente técnico del Estado peruano encargado de la administración y recaudación de los tributos internos del Gobierno Nacional?" },
+      "category": "current_affairs",
+      "difficulty": "easy",
+      "correctAnswer": "SUNAT",
+      "incorrectAnswers": ["MEF", "Banco de la Nación", "COFIDE"]
+    },
+    {
+      "question": { "text": "¿Cuál es el órgano supremo encargado de interpretar y garantizar la constitucionalidad de las leyes en el Perú?" },
+      "category": "current_affairs",
+      "difficulty": "medium",
+      "correctAnswer": "El Tribunal Constitucional",
+      "incorrectAnswers": ["La Corte Suprema de Justicia", "El Congreso de la República", "La Junta Nacional de Justicia"]
+    },
+    {
+      "question": { "text": "¿Qué ministerio del Poder Ejecutivo tiene bajo su mando orgánico y político a la Policía Nacional del Perú?" },
+      "category": "current_affairs",
+      "difficulty": "easy",
+      "correctAnswer": "El Ministerio del Interior",
+      "incorrectAnswers": ["El Ministerio de Defensa", "El Ministerio de Justicia y Derechos Humanos", "La Presidencia del Consejo de Ministros"]
+    },
+    {
+      "question": { "text": "Si un colega policial le solicita alterar un parte de intervención para beneficiar a un conocido, ¿cuál debe ser su acción inmediata?" },
+      "category": "ethics_values",
+      "difficulty": "easy",
+      "correctAnswer": "Rechazar la solicitud de forma tajante e informar a la Inspectoría General u órgano competente",
+      "incorrectAnswers": ["Acceder para no generar enemistades", "Pedir un pago a cambio para correr el riesgo", "Ignorar la solicitud y guardar silencio"]
+    },
+    {
+      "question": { "text": "¿Qué valor institucional de la PNP representa la conducta coherente basada en la verdad, honestidad y rectitud?" },
+      "category": "ethics_values",
+      "difficulty": "easy",
+      "correctAnswer": "Integridad",
+      "incorrectAnswers": ["Disciplina", "Camaradería", "Templanza"]
+    },
+    {
+      "question": { "text": "Dentro de la doctrina y valores de la PNP, ¿qué significa la «disciplina»?" },
+      "category": "ethics_values",
+      "difficulty": "easy",
+      "correctAnswer": "El acatamiento consciente y respetuoso de las leyes, normas y órdenes emitidas por la superioridad",
+      "incorrectAnswers": ["La obediencia ciega a cualquier tipo de instrucción de un superior, sin importar la ley", "El cumplimiento de las tareas únicamente bajo supervisión directa", "El castigo físico por la comisión de errores durante el servicio"]
+    },
+    {
+      "question": { "text": "Si durante una intervención de tránsito un ciudadano intenta colocar un billete en sus documentos para evitar una sanción, ¿qué delito comete y qué debe hacer?" },
+      "category": "ethics_values",
+      "difficulty": "medium",
+      "correctAnswer": "Comete Cohecho Activo. Se debe proceder a su detención inmediata bajo los cargos correspondientes",
+      "incorrectAnswers": ["Comete Tráfico de Influencias. Se debe rechazar el dinero y dejarlo ir con una advertencia", "Comete Concusión. Se debe aceptar el dinero como donación institucional", "No comete delito si es una falta leve. Se le debe aplicar la papeleta únicamente"]
+    },
+    {
+      "question": { "text": "Si se enfrenta a una situación límite donde una orden directa verbal de un superior es flagrantemente ilegal o vulnera la Constitución, ¿cuál debe ser su proceder?" },
+      "category": "ethics_values",
+      "difficulty": "medium",
+      "correctAnswer": "Dar prioridad irrestricta a la Constitución y la Ley, negarse a cumplir el acto ilegal y dar cuenta por escrito",
+      "incorrectAnswers": ["Cumplir la orden sin cuestionar debido a la estricta jerarquía policial, asumiendo que el superior responde", "Conversar con el superior para intentar convencerlo de cambiar la orden y, si insiste, obedecer", "Abandonar su puesto de servicio inmediatamente para no verse involucrado"]
+    },
+    {
+      "question": { "text": "¿A qué principio básico sobre el uso de la fuerza corresponde la regla de emplear medios tácticos de manera gradual, diferenciada y de acuerdo al nivel de resistencia del intervenido?" },
+      "category": "ethics_values",
+      "difficulty": "hard",
+      "correctAnswer": "Principio de Proporcionalidad",
+      "incorrectAnswers": ["Principio de Legalidad", "Principio de Necesidad", "Principio de Oportunidad"]
+    },
+    {
+      "question": { "text": "¿Cuál es el órgano de la PNP encargado de investigar administrativamente y sancionar las infracciones disciplinarias del personal policial?" },
+      "category": "ethics_values",
+      "difficulty": "medium",
+      "correctAnswer": "La Inspectoría General",
+      "incorrectAnswers": ["El Fuero Militar Policial", "La Dirección de Recursos Humanos", "La Dirección de Investigación Criminal"]
+    }
+  ]
+}

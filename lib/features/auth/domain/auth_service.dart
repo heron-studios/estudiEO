@@ -134,10 +134,22 @@ class AuthService extends ChangeNotifier {
     }
   }
 
+  bool _isGuest = false;
+  bool get isGuest => _isGuest;
+
+  void enterAsGuest() {
+    _isGuest = true;
+    _isAuthorized = false;
+    _psico = false;
+    _setLoading(false);
+    notifyListeners();
+  }
+
   /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
     _psico = false;
+    _isGuest = false;
     await _googleSignIn.signOut();
     await _auth.signOut();
     notifyListeners();

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -357,6 +357,41 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                       ),
                     ],
                   ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        // Demo Button
+        _ScaleButton(
+          onTap: _isCheckingAuth
+              ? null
+              : () {
+                  context.read<AuthService>().enterAsGuest();
+                },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                color: const Color(0xFF8AB4F8).withValues(alpha: 0.45),
+                width: 1.5,
+              ),
+            ),
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.lock_open_rounded, color: Color(0xFF8AB4F8), size: 18),
+                SizedBox(width: 10),
+                Text(
+                  'Probar Versión Demo',
+                  style: TextStyle(
+                    color: Color(0xFF8AB4F8),
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

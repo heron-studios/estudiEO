@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/app_config.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 
@@ -13,7 +14,7 @@ const _benefits = [
   _Benefit(Icons.all_inclusive_rounded,     Color(0xFF3B82F6), 'Acceso permanente a la app',         'Una vez, para siempre. Sin renovaciones.'),
   _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Preguntas reales fijas de la PNP',    'Banco actualizado con exámenes oficiales anteriores.'),
   _Benefit(Icons.update_rounded,            Color(0xFF06B6D4), 'Actualizaciones frecuentes',           'Nuevas preguntas y mejoras sin costo adicional.'),
-  _Benefit(Icons.support_agent_rounded,     Color(0xFF10B981), 'Soporte y asistencia VIP',             'Grupo exclusivo de WhatsApp para cadetes.'),
+  _Benefit(Icons.support_agent_rounded,     Color(0xFF10B981), 'Soporte y asistencia VIP',             'Grupo exclusivo de WhatsApp para postulantes.'),
   _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Algoritmo de repaso inteligente',      'Sistema SRS: aprende más en menos tiempo.'),
   _Benefit(Icons.analytics_rounded,         Color(0xFFEF4444), 'Estadísticas y seguimiento',           'Mide tu progreso real hacia la vacante.'),
   _Benefit(Icons.emoji_events_rounded,      Color(0xFFFFD700), 'Simulacros de examen oficial',         'Practica con el formato real del examen PNP.'),
@@ -113,6 +114,29 @@ class _PaymentScreenState extends State<PaymentScreen>
               animation: _bgCtrl,
               builder: (_, __) => CustomPaint(
                 painter: _BgPainter(_bgCtrl.value),
+              ),
+            ),
+          ),
+
+          // Volver / Atrás
+          Positioned(
+            top: 16,
+            left: 16,
+            child: SafeArea(
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_rounded, color: Colors.white70),
+                onPressed: () {
+                  if (Navigator.canPop(context)) {
+                    Navigator.pop(context);
+                  } else {
+                    context.go('/home');
+                  }
+                },
+                style: IconButton.styleFrom(
+                  backgroundColor: Colors.white.withValues(alpha: 0.05),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  padding: const EdgeInsets.all(12),
+                ),
               ),
             ),
           ),
@@ -376,7 +400,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
               const SizedBox(height: 16),
               Text(
-                'Miles de cadetes ya se preparan y aprueban con EstudiEO. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
+                'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EstudiEO. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
                 style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.65), height: 1.6),
               ),
             ],
@@ -411,7 +435,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         ),
         const SizedBox(height: 12),
         Text(
-          'Miles de cadetes ya aprobaron con EstudiEO.\nSé el próximo.',
+          'Miles de alumnos y cadetes ya aprobaron con EstudiEO.\nSé el próximo.',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 15, color: Colors.white.withValues(alpha: 0.6), height: 1.6),
         ),

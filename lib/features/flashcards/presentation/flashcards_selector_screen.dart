@@ -1,23 +1,23 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
-import 'package:learn/features/alipio/presentation/alipio_screen.dart';
+import 'package:learn/features/flashcards/presentation/flashcards_screen.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
 
-/// Pantalla de selección de tema para entrar a Alipio (tarjetas + IA).
+/// Pantalla de selección de tema para entrar a Tarjetas de Memoria.
 /// Muestra primero materias en chips horizontales y luego los temas en lista.
 /// Sin scroll vertical — todo cabe en pantalla.
-class AlipioSelectorScreen extends StatefulWidget {
-  const AlipioSelectorScreen({super.key});
+class FlashcardsSelectorScreen extends StatefulWidget {
+  const FlashcardsSelectorScreen({super.key});
 
   @override
-  State<AlipioSelectorScreen> createState() => _AlipioSelectorScreenState();
+  State<FlashcardsSelectorScreen> createState() => _FlashcardsSelectorScreenState();
 }
 
-class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
+class _FlashcardsSelectorScreenState extends State<FlashcardsSelectorScreen> {
   late List<Subject> _subjects;
   late Subject _selected;
   late List<Topic> _topics;
@@ -67,11 +67,11 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
     });
   }
 
-  void _openAlipio(Topic t) {
+  void _openFlashcards(Topic t) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => AlipioScreen(topicId: t.id, topicName: t.name),
+        builder: (_) => FlashcardsScreen(topicId: t.id, topicName: t.name),
       ),
     );
   }
@@ -214,7 +214,7 @@ class _AlipioSelectorScreenState extends State<AlipioSelectorScreen> {
                             color: _card,
                             borderRadius: BorderRadius.circular(14),
                             child: InkWell(
-                              onTap: () => _openAlipio(t),
+                              onTap: () => _openFlashcards(t),
                               borderRadius: BorderRadius.circular(14),
                               child: Container(
                                 decoration: BoxDecoration(

@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
@@ -6,21 +6,21 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:go_router/go_router.dart';
 
-class AlipioScreen extends StatefulWidget {
+class FlashcardsScreen extends StatefulWidget {
   final String topicId;
   final String topicName;
 
-  const AlipioScreen({
+  const FlashcardsScreen({
     super.key,
     required this.topicId,
     required this.topicName,
   });
 
   @override
-  State<AlipioScreen> createState() => _AlipioScreenState();
+  State<FlashcardsScreen> createState() => _FlashcardsScreenState();
 }
 
-class _AlipioScreenState extends State<AlipioScreen>
+class _FlashcardsScreenState extends State<FlashcardsScreen>
     with SingleTickerProviderStateMixin {
   late List<Question> _cards;
   int _index = 0;

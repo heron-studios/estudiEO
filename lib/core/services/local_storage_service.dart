@@ -11,7 +11,7 @@ class LocalStorageService {
   static const String gamificationKey = 'gamification_data';
   static const String quizSessionsKey = 'quiz_sessions';
   static const String syncMetaKey = 'sync_meta';
-  static const String alipioEnabledKey = 'alipio_enabled';
+  static const String tutorAiEnabledKey = 'tutor_ai_enabled';
   static const String hiddenSubjectsKey = 'hidden_subjects';
   static const String learnedQuestionsKey = 'learned_questions';
   static const String hasSeenOnboardingKey = 'has_seen_onboarding';
@@ -20,6 +20,8 @@ class LocalStorageService {
   static const String learningSessionsKey = 'learning_sessions';
   static const String learningProgressKey = 'learning_progress';
   static const String lastActiveLearningSessionKey = 'last_active_learning_session';
+  static const String activeExamStateKey = 'active_exam_state';
+  static const String examHistoryKey = 'exam_history';
 
   final Box _storage = Hive.box('estudieo_data');
   Map<String, SrsCard>? _srsCache;
@@ -168,13 +170,13 @@ class LocalStorageService {
     return DateTime.now();
   }
 
-  // â”€â”€â”€ Alipio (Gemini AI) setting â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  bool loadAlipioEnabled() {
-    return _storage.get(alipioEnabledKey) as bool? ?? false;
+  // ─── Tutor IA setting ──────────────────────────────
+  bool loadTutorEnabled() {
+    return _storage.get(tutorAiEnabledKey) as bool? ?? false;
   }
 
-  void saveAlipioEnabled(bool value) {
-    _storage.put(alipioEnabledKey, value);
+  void saveTutorEnabled(bool value) {
+    _storage.put(tutorAiEnabledKey, value);
   }
 
   // ─── Onboarding setting ──────────────────────────────
@@ -583,6 +585,59 @@ class LocalStorageService {
         _storage.put(psicolearnFailedQuestionsKey, ids);
       }
     } catch (_) {}
+  }
+
+  // ─── Simulacro Examen (Exam Simulation) ───────────────────────────────────
+
+  void saveActiveExamState(Map<String, dynamic> state) {
+    try {
+      _storage.put(activeExamStateKey, state);
+    } catch (e) {
+      debugPrint('Error saving active exam state: $e');
+    }
+  }
+
+  Map<String, dynamic>? getActiveExamState() {
+    try {
+      final data = _storage.get(activeExamStateKey);
+      if (data == null) return null;
+      return Map<String, dynamic>.from(data as Map);
+    } catch (e) {
+      debugPrint('Error getting active exam state: $e');
+      return null;
+    }
+  }
+
+  void clearActiveExamState() {
+    try {
+      _storage.delete(activeExamStateKey);
+    } catch (e) {
+      debugPrint('Error clearing active exam state: $e');
+    }
+  }
+
+  void saveExamHistory(Map<String, dynamic> examRecord) {
+    try {
+      final history = getExamHistory();
+      history.insert(0, examRecord); // Insert at the beginning (newest first)
+      if (history.length > 5) {
+        history.removeLast(); // Keep only last 5 exams
+      }
+      _storage.put(examHistoryKey, history);
+    } catch (e) {
+      debugPrint('Error saving exam history: $e');
+    }
+  }
+
+  List<Map<String, dynamic>> getExamHistory() {
+    try {
+      final data = _storage.get(examHistoryKey) as List?;
+      if (data == null) return [];
+      return data.map((e) => Map<String, dynamic>.from(e as Map)).toList();
+    } catch (e) {
+      debugPrint('Error getting exam history: $e');
+      return [];
+    }
   }
 
   // ─── Utility ───────────────────────────────────────————————————————————————————————————

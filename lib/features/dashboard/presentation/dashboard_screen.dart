@@ -41,7 +41,7 @@ class DashboardScreen extends StatelessWidget {
 
       final stats = srs.globalStats;
       // Get AI advice
-      String advice = 'Alipio está descansando. ¡Sigue estudiando duro!';
+      String advice = 'El Tutor IA está descansando. ¡Sigue estudiando duro!';
       try {
         advice = await GeminiService.darConsejoPersonalizado(stats);
       } catch (e) {
@@ -70,14 +70,14 @@ class DashboardScreen extends StatelessWidget {
           await ExportService.exportDashboardToPdf(
             context,
             globalStats: stats,
-            alipioAdvice: advice,
+            tutorAdvice: advice,
             subjectStats: subjectStatsList,
           );
         } else {
           await ExportService.exportDashboardToWord(
             context,
             globalStats: stats,
-            alipioAdvice: advice,
+            tutorAdvice: advice,
             subjectStats: subjectStatsList,
           );
         }
@@ -129,9 +129,9 @@ class DashboardScreen extends StatelessWidget {
                     SizedBox(height: 12),
                     _GeneralStats(),
                     SizedBox(height: 28),
-                    _SectionLabel('CONSEJO DE ALIPIO'),
+                    _SectionLabel('CONSEJO DEL TUTOR IA'),
                     SizedBox(height: 12),
-                    _AlipioAdviceSection(),
+                    _TutorAdviceSection(),
                     SizedBox(height: 28),
                     _SectionLabel('POR ASIGNATURA'),
                     SizedBox(height: 12),
@@ -261,16 +261,16 @@ class _GeneralStats extends StatelessWidget {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  _AlipioAdviceSection — Consejo IA dinámico
+//  _TutorAdviceSection — Consejo IA dinámico
 // ─────────────────────────────────────────────────────────────────────────────
-class _AlipioAdviceSection extends StatefulWidget {
-  const _AlipioAdviceSection();
+class _TutorAdviceSection extends StatefulWidget {
+  const _TutorAdviceSection();
 
   @override
-  State<_AlipioAdviceSection> createState() => _AlipioAdviceSectionState();
+  State<_TutorAdviceSection> createState() => _TutorAdviceSectionState();
 }
 
-class _AlipioAdviceSectionState extends State<_AlipioAdviceSection> {
+class _TutorAdviceSectionState extends State<_TutorAdviceSection> {
   String _advice = 'Cargando consejo...';
   bool _isLoading = true;
 
@@ -294,7 +294,7 @@ class _AlipioAdviceSectionState extends State<_AlipioAdviceSection> {
     } catch (e) {
       if (mounted) {
         setState(() {
-          _advice = 'Alipio está descansando. ¡Sigue estudiando duro!';
+          _advice = 'El Tutor IA está descansando. ¡Sigue estudiando duro!';
           _isLoading = false;
         });
       }

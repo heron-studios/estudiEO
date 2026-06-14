@@ -54,7 +54,7 @@ graph TD
 ### 2. Capa de Servicios
 - **`AuthService`**: Implementa `GoogleSignIn` y `FirebaseAuth`. Consulta en Firestore si el correo del postulante posee el valor `isPaid = true` en `/authorized_users/{correo}`. Si no lo tiene, es bloqueado con el diálogo de WhatsApp en el Login.
 - **`LocalStorageService`**: Gestiona el guardado permanente y lectura en memoria rápida a través de `Hive`. Cuenta con una política estricta de vaciado de caché (`_srsCache = null`) en su método `clearAll()` para evitar fugas de memoria.
-- **`GeminiService`**: Invoca el modelo de IA de Gemini (`gemini-2.0-flash`) para que el tutor virtual *Alipio* explique y genere trucos memotécnicos de las tarjetas del postulante.
+- **`GeminiService`**: Invoca el modelo de IA de Gemini (`gemini-2.0-flash`) para que el tutor virtual de IA explique y genere trucos memotécnicos de las tarjetas del postulante.
 
 ---
 
@@ -70,8 +70,8 @@ graph TD
 | `QuizResultsScreen` | `/quiz-results` | Muestra el puntaje, XP ganado y corrección de respuestas fallidas. |
 | `SrsReviewScreen` | `/srs-review` | Sesión de tarjetas de memoria (Active Recall) con repetición espaciada. |
 | `SrsMiniQuizScreen` | `/srs-mini-quiz` | Evaluación estricta de 20 preguntas tras la sesión de repaso. |
-| `AlipioSelectorScreen` | *(Direct)* | Selección de tema para estudiar tarjetas flashcards interactivas de Alipio. |
-| `AlipioScreen` | *(Direct)* | Mazo de flashcards interactivas con explicaciones de IA de Alipio. |
+| `FlashcardsSelectorScreen` | *(Direct)* | Selección de tema para estudiar tarjetas flashcards de memoria. |
+| `FlashcardsScreen` | *(Direct)* | Mazo de flashcards interactivas con explicaciones de IA. |
 | `ExamScreen` | `/exam` | Simulacro oficial PNP de 100 preguntas cronometrado (3 horas). |
 | `ExamResultsScreen` | `/exam-results` | Muestra la nota sobre 20 del simulacro de examen. |
 | `SettingsScreen` | `/settings` | Configuración de visibilidad de materias, borrado de progreso y logout. |

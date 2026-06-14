@@ -5,12 +5,14 @@ import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
-import 'package:learn/features/alipio/presentation/alipio_selector_screen.dart';
+import 'package:learn/features/flashcards/presentation/flashcards_selector_screen.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:learn/core/services/bible_service.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -32,11 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
   int _streakDays = 0;
   bool _todayCompleted = false;
   String _diagnosis = 'PENDIENTE';
+  String? _dailyVerse;
 
   @override
   void initState() {
     super.initState();
     _loadPsicoProgress();
+    _loadDailyVerse();
+  }
+
+  Future<void> _loadDailyVerse() async {
+    final verse = await BibleService.getDailyVerse();
+    if (mounted) {
+      setState(() {
+        _dailyVerse = verse;
+      });
+    }
   }
 
   @override
@@ -305,27 +318,92 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildSimulacroCard(BuildContext context, dynamic nt) {
+    final storage = context.read<LocalStorageService>();
+    final history = storage.getExamHistory();
+    String subtitle = '100 preguntas • 3 horas';
+    if (history.isNotEmpty) {
+      final lastExam = history.first;
+      final score = lastExam['score'] as int? ?? 0;
+      final total = lastExam['total'] as int? ?? 100;
+      final percent = (score / total) * 100;
+      subtitle = 'Último: $score/$total (${percent.toInt()}%) • Iniciar Nuevo';
+    }
+
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(20),
-      onTap: () => context.push('/exam'),
+      onTap: () async {
+        final savedState = storage.getActiveExamState();
+        if (savedState != null) {
+          final List<dynamic> qList = savedState['questions'] as List? ?? [];
+          final Map<dynamic, dynamic> ansMap = savedState['answers'] as Map? ?? {};
+          final secondsLeft = savedState['secondsLeft'] as int? ?? 10800;
+          
+          final h = secondsLeft ~/ 3600;
+          final m = (secondsLeft % 3600) ~/ 60;
+          final timeStr = h > 0 ? '${h}h ${m}m' : '${m}m';
+
+          final resume = await showDialog<bool>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              backgroundColor: const Color(0xFF1E293B),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              title: const Text('Simulacro en Progreso', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              content: Text(
+                'Tienes un simulacro guardado:\n'
+                '• Respondidas: ${ansMap.length} de ${qList.length}\n'
+                '• Tiempo restante: $timeStr\n\n'
+                '¿Deseas reanudar tu examen anterior o iniciar uno nuevo?',
+                style: const TextStyle(color: Color(0xFF94A3B8), height: 1.5),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, false),
+                  child: const Text('Iniciar Nuevo', style: TextStyle(color: Colors.redAccent)),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.pop(ctx, true),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3B82F6),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  ),
+                  child: const Text('Reanudar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                ),
+              ],
+            ),
+          );
+
+          if (resume == true) {
+            if (context.mounted) {
+              context.push('/exam', extra: {'resume': true});
+            }
+          } else if (resume == false) {
+            storage.clearActiveExamState();
+            if (context.mounted) {
+              context.push('/exam', extra: {'resume': false});
+            }
+          }
+        } else {
+          context.push('/exam', extra: {'resume': false});
+        }
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
         child: Row(
           children: [
             _IconBubble(icon: Icons.timer_rounded, color: nt.pink),
             const SizedBox(width: 14),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Simulacro de Examen',
+                  const Text('Simulacro de Examen',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 15)),
-                  SizedBox(height: 2),
-                  Text('100 preguntas • 3 horas',
-                      style: TextStyle(color: Colors.white60, fontSize: 12)),
+                  const SizedBox(height: 2),
+                  Text(subtitle,
+                      style: const TextStyle(color: Colors.white60, fontSize: 12)),
                 ],
               ),
             ),
@@ -371,7 +449,7 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => const AlipioSelectorScreen(),
+          builder: (_) => const FlashcardsSelectorScreen(),
         ),
       ),
     );
@@ -622,11 +700,98 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
+  /// Botón de Entrevista de Cultura General para el menú principal
+  Widget _buildInterviewTriviaCard(BuildContext context, dynamic nt) {
+    return HoverGlassCard(
+      onTap: () {
+        context.push('/interview-trivia');
+      },
+      hoverGradientBorder: true,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.purpleAccent.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                    color: Colors.purpleAccent.withValues(alpha: 0.3), width: 1),
+              ),
+              child: const Icon(Icons.record_voice_over_rounded,
+                  color: Colors.purpleAccent, size: 20),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'ENTREVISTA: CULTURA GENERAL',
+                        style: TextStyle(
+                          color: Colors.purpleAccent,
+                          fontSize: 9,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                        decoration: BoxDecoration(
+                          color: Colors.purpleAccent.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'NUEVO',
+                          style: TextStyle(
+                            color: Colors.purpleAccent,
+                            fontSize: 7,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Simula la ronda de preguntas frente al jurado',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Outfit',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.arrow_forward_ios_rounded,
+                  color: Colors.white70, size: 10),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
+    final bool isLargeScreen = MediaQuery.of(context).size.width >= 800;
 
     // Colores del estado de diagnóstico
     final diagnosisColor = _diagnosis == 'APTO'
@@ -639,7 +804,10 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: EdgeInsets.symmetric(
+            horizontal: isLargeScreen ? 24 : 16,
+            vertical: isLargeScreen ? 16 : 8,
+          ),
           child: Column(
             children: [
               // ── HEADER ──────────────────────────────────────────────────
@@ -654,13 +822,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Text(
-                              'EstudiEO',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: -0.5,
+                            GestureDetector(
+                              onTap: () async {
+                                final url = Uri.parse('https://pnp-edu.github.io/POL-HUB/');
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                                }
+                              },
+                              child: const Text(
+                                'EstudiEO',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  letterSpacing: -0.5,
+                                ),
                               ),
                             ),
                             const SizedBox(width: 10),
@@ -695,6 +871,37 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
+                            if (isLargeScreen && _dailyVerse != null) ...[
+                              const SizedBox(width: 16),
+                              Container(
+                                width: 1,
+                                height: 18,
+                                color: Colors.white.withValues(alpha: 0.2),
+                              ),
+                              const SizedBox(width: 16),
+                              Icon(
+                                Icons.auto_stories_rounded,
+                                color: Colors.white.withValues(alpha: 0.5),
+                                size: 16,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Tooltip(
+                                  message: _dailyVerse!,
+                                  child: Text(
+                                    _dailyVerse!,
+                                    style: const TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 13,
+                                      fontStyle: FontStyle.italic,
+                                      fontFamily: 'Inter',
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    maxLines: 1,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ],
                         ),
                         // No subtitle anymore, keeping it clean
@@ -711,7 +918,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     constraints: const BoxConstraints(maxWidth: 1000),
                     child: LayoutBuilder(
                       builder: (context, constraints) {
-                        if (constraints.maxWidth > 800) {
+                        if (isLargeScreen) {
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -727,6 +934,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     _buildMiniAppsCard(context, nt),
                                     const SizedBox(height: 12),
                                     _buildMedicalStudyCard(context, nt),
+                                    const SizedBox(height: 12),
+                                    _buildInterviewTriviaCard(context, nt),
                                   ],
                                 ),
                               ),
@@ -752,51 +961,57 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           );
                         } else {
-                          return Center(
-                            child: ConstrainedBox(
-                              constraints:
-                                  const BoxConstraints(maxWidth: 400),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  _buildDailyMissionCard(context, nt),
-                                  const SizedBox(height: 10),
-                                  _buildSimulacroCard(context, nt),
-                                  const SizedBox(height: 10),
-                                  _buildMiniAppsCard(context, nt),
-                                  const SizedBox(height: 10),
-                                  _buildMedicalStudyCard(context, nt),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 120,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildEstudiarTile(
-                                                context, nt)),
-                                        const SizedBox(width: 10),
-                                        Expanded(
-                                            child: _buildRepasarTile(
-                                                context, nt)),
-                                      ],
+                          return SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Center(
+                              child: ConstrainedBox(
+                                constraints:
+                                    const BoxConstraints(maxWidth: 400),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    _buildDailyMissionCard(context, nt),
+                                    const SizedBox(height: 14),
+                                    _buildSimulacroCard(context, nt),
+                                    const SizedBox(height: 14),
+                                    _buildMiniAppsCard(context, nt),
+                                    const SizedBox(height: 14),
+                                    _buildMedicalStudyCard(context, nt),
+                                    const SizedBox(height: 14),
+                                    _buildInterviewTriviaCard(context, nt),
+                                    const SizedBox(height: 14),
+                                    SizedBox(
+                                      height: 135,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                              child: _buildEstudiarTile(
+                                                  context, nt)),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                              child: _buildRepasarTile(
+                                                  context, nt)),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 120,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildTarjetasTile(
-                                                context, nt)),
-                                        const SizedBox(width: 10),
-                                        Expanded(
-                                            child: _buildAprendizajeTile(
-                                                context, nt)),
-                                      ],
+                                    const SizedBox(height: 14),
+                                    SizedBox(
+                                      height: 135,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                              child: _buildTarjetasTile(
+                                                  context, nt)),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                              child: _buildAprendizajeTile(
+                                                  context, nt)),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    const SizedBox(height: 110), // Bottom padding for floating navigation bar
+                                  ],
+                                ),
                               ),
                             ),
                           );

@@ -125,7 +125,7 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
-  Future<void> _askAlipio(Question question, int selected) async {
+  Future<void> _askTutor(Question question, int selected) async {
     final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : 'Ninguna';
     final respCorrecta = question.options[question.correctAnswer];
     
@@ -152,7 +152,7 @@ class _QuizScreenState extends State<QuizScreen> {
               SizedBox(width: 8),
               Expanded(
                 child: Text(
-                  'Alipio dice:',
+                  'El Tutor IA dice:',
                   style: TextStyle(color: Colors.white, fontFamily: 'Outfit', fontWeight: FontWeight.bold),
                 ),
               ),
@@ -539,14 +539,14 @@ class _QuizScreenState extends State<QuizScreen> {
                           ),
                         ],
                         
-                        // Alipio Button for Wrong Answers
+                        // Button for Wrong Answers
                         if (isAnswered && _selectedAnswer != question.correctAnswer) ...[
                           const SizedBox(height: 16),
                           Center(
                             child: OutlinedButton.icon(
-                              onPressed: () => _askAlipio(question, _selectedAnswer),
+                              onPressed: () => _askTutor(question, _selectedAnswer),
                               icon: const Text('🤖', style: TextStyle(fontSize: 18)),
-                              label: const Text('Preguntar a Alipio por qué fallé'),
+                              label: const Text('Preguntar al Tutor IA por qué fallé'),
                               style: OutlinedButton.styleFrom(
                                 foregroundColor: NeuralDesignSystem.blueGoogle,
                                 side: BorderSide(color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.5)),

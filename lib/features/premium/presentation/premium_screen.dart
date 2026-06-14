@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
 
@@ -43,7 +43,7 @@ class PremiumScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const Text(
-                '¡Desbloquea tu potencial completo, Futuro Cadete!',
+                '¡Desbloquea tu potencial completo, Futuro Oficial o Suboficial!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,

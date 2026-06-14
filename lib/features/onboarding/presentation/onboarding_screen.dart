@@ -19,7 +19,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<Map<String, String>> _slides = [
     {
       'title': 'Bienvenido a EstudiEO',
-      'body': 'Tu academia digital definitiva para ingresar a la Escuela de Oficiales de la PNP. Todo el temario en tu bolsillo.',
+      'body': 'Tu academia digital definitiva para ingresar a las Escuelas de Oficiales y Suboficiales de la PNP. Todo el temario en tu bolsillo.',
       'icon': '👮',
     },
     {
@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       'icon': '🧠',
     },
     {
-      'title': 'Alipio a tu servicio',
+      'title': 'Tutor IA a tu servicio',
       'body': 'Tu tutor de IA personal que analiza tu progreso y te da consejos de estudio basados en tus estadísticas.',
       'icon': '🤖',
     }
