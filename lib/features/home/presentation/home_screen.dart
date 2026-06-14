@@ -978,13 +978,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     _buildDailyMissionCard(context, nt),
-                                    const SizedBox(height: 12),
+                                    const SizedBox(height: 10),
                                     _buildSimulacroCard(context, nt),
-                                    const SizedBox(height: 12),
+                                    const SizedBox(height: 10),
                                     _buildMiniAppsCard(context, nt),
-                                    const SizedBox(height: 12),
+                                    const SizedBox(height: 10),
                                     _buildMedicalStudyCard(context, nt),
-                                    const SizedBox(height: 12),
+                                    const SizedBox(height: 10),
                                     _buildInterviewTriviaCard(context, nt),
                                   ],
                                 ),
@@ -1011,79 +1011,76 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           );
                         } else {
-                          return SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: Center(
-                              child: ConstrainedBox(
-                                constraints:
-                                    const BoxConstraints(maxWidth: 400),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    _buildDailyMissionCard(context, nt),
-                                    const SizedBox(height: 14),
-                                    SizedBox(
-                                      height: 135,
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                              child: _buildSimulacroCard(
-                                                  context, nt, isSquare: true)),
-                                          const SizedBox(width: 12),
-                                          Expanded(
-                                              child: _buildMiniAppsCard(
-                                                  context, nt, isSquare: true)),
-                                        ],
-                                      ),
+                          return Center(
+                            child: ConstrainedBox(
+                              constraints:
+                                  const BoxConstraints(maxWidth: 400),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  _buildDailyMissionCard(context, nt),
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    height: 115,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: _buildSimulacroCard(
+                                                context, nt, isSquare: true)),
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                            child: _buildMiniAppsCard(
+                                                context, nt, isSquare: true)),
+                                      ],
                                     ),
-                                    const SizedBox(height: 12),
-                                    SizedBox(
-                                      height: 135,
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                              child: _buildMedicalStudyCard(
-                                                  context, nt, isSquare: true)),
-                                          const SizedBox(width: 12),
-                                          Expanded(
-                                              child: _buildInterviewTriviaCard(
-                                                  context, nt, isSquare: true)),
-                                        ],
-                                      ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    height: 115,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: _buildMedicalStudyCard(
+                                                context, nt, isSquare: true)),
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                            child: _buildInterviewTriviaCard(
+                                                context, nt, isSquare: true)),
+                                      ],
                                     ),
-                                    const SizedBox(height: 14),
-                                    SizedBox(
-                                      height: 135,
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                              child: _buildEstudiarTile(
-                                                  context, nt)),
-                                          const SizedBox(width: 12),
-                                          Expanded(
-                                              child: _buildRepasarTile(
-                                                  context, nt)),
-                                        ],
-                                      ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    height: 115,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: _buildEstudiarTile(
+                                                context, nt)),
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                            child: _buildRepasarTile(
+                                                context, nt)),
+                                      ],
                                     ),
-                                    const SizedBox(height: 14),
-                                    SizedBox(
-                                      height: 135,
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                              child: _buildTarjetasTile(
-                                                  context, nt)),
-                                          const SizedBox(width: 12),
-                                          Expanded(
-                                              child: _buildAprendizajeTile(
-                                                  context, nt)),
-                                        ],
-                                      ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    height: 115,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: _buildTarjetasTile(
+                                                context, nt)),
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                            child: _buildAprendizajeTile(
+                                                context, nt)),
+                                      ],
                                     ),
-                                    const SizedBox(height: 110), // Bottom padding for floating navigation bar
-                                  ],
-                                ),
+                                  ),
+                                  const SizedBox(height: 10),
+                                ],
                               ),
                             ),
                           );
