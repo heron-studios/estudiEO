@@ -317,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  Widget _buildSimulacroCard(BuildContext context, dynamic nt) {
+  Widget _buildSimulacroCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
     final storage = context.read<LocalStorageService>();
     final history = storage.getExamHistory();
     String subtitle = '100 preguntas • 3 horas';
@@ -326,66 +326,80 @@ class _HomeScreenState extends State<HomeScreen> {
       final score = lastExam['score'] as int? ?? 0;
       final total = lastExam['total'] as int? ?? 100;
       final percent = (score / total) * 100;
-      subtitle = 'Último: $score/$total (${percent.toInt()}%) • Iniciar Nuevo';
+      subtitle = isSquare
+          ? 'Último: $score/$total'
+          : 'Último: $score/$total (${percent.toInt()}%) • Iniciar Nuevo';
+    }
+
+    final VoidCallback onTap = () async {
+      final savedState = storage.getActiveExamState();
+      if (savedState != null) {
+        final List<dynamic> qList = savedState['questions'] as List? ?? [];
+        final Map<dynamic, dynamic> ansMap = savedState['answers'] as Map? ?? {};
+        final secondsLeft = savedState['secondsLeft'] as int? ?? 10800;
+        
+        final h = secondsLeft ~/ 3600;
+        final m = (secondsLeft % 3600) ~/ 60;
+        final timeStr = h > 0 ? '${h}h ${m}m' : '${m}m';
+
+        final resume = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            backgroundColor: const Color(0xFF1E293B),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            title: const Text('Simulacro en Progreso', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            content: Text(
+              'Tienes un simulacro guardado:\n'
+              '• Respondidas: ${ansMap.length} de ${qList.length}\n'
+              '• Tiempo restante: $timeStr\n\n'
+              '¿Deseas reanudar tu examen anterior o iniciar uno nuevo?',
+              style: const TextStyle(color: Color(0xFF94A3B8), height: 1.5),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text('Iniciar Nuevo', style: TextStyle(color: Colors.redAccent)),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF3B82F6),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+                child: const Text('Reanudar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              ),
+            ],
+          ),
+        );
+
+        if (resume == true) {
+          if (context.mounted) {
+            context.push('/exam', extra: {'resume': true});
+          }
+        } else if (resume == false) {
+          storage.clearActiveExamState();
+          if (context.mounted) {
+            context.push('/exam', extra: {'resume': false});
+          }
+        }
+      } else {
+        context.push('/exam', extra: {'resume': false});
+      }
+    };
+
+    if (isSquare) {
+      return _GlassTile(
+        icon: Icons.timer_rounded,
+        color: nt.pink,
+        title: 'Simulacro',
+        subtitle: subtitle,
+        onTap: onTap,
+      );
     }
 
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(20),
-      onTap: () async {
-        final savedState = storage.getActiveExamState();
-        if (savedState != null) {
-          final List<dynamic> qList = savedState['questions'] as List? ?? [];
-          final Map<dynamic, dynamic> ansMap = savedState['answers'] as Map? ?? {};
-          final secondsLeft = savedState['secondsLeft'] as int? ?? 10800;
-          
-          final h = secondsLeft ~/ 3600;
-          final m = (secondsLeft % 3600) ~/ 60;
-          final timeStr = h > 0 ? '${h}h ${m}m' : '${m}m';
-
-          final resume = await showDialog<bool>(
-            context: context,
-            builder: (ctx) => AlertDialog(
-              backgroundColor: const Color(0xFF1E293B),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              title: const Text('Simulacro en Progreso', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-              content: Text(
-                'Tienes un simulacro guardado:\n'
-                '• Respondidas: ${ansMap.length} de ${qList.length}\n'
-                '• Tiempo restante: $timeStr\n\n'
-                '¿Deseas reanudar tu examen anterior o iniciar uno nuevo?',
-                style: const TextStyle(color: Color(0xFF94A3B8), height: 1.5),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(ctx, false),
-                  child: const Text('Iniciar Nuevo', style: TextStyle(color: Colors.redAccent)),
-                ),
-                ElevatedButton(
-                  onPressed: () => Navigator.pop(ctx, true),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF3B82F6),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: const Text('Reanudar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                ),
-              ],
-            ),
-          );
-
-          if (resume == true) {
-            if (context.mounted) {
-              context.push('/exam', extra: {'resume': true});
-            }
-          } else if (resume == false) {
-            storage.clearActiveExamState();
-            if (context.mounted) {
-              context.push('/exam', extra: {'resume': false});
-            }
-          }
-        } else {
-          context.push('/exam', extra: {'resume': false});
-        }
-      },
+      onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
         child: Row(
@@ -465,10 +479,22 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildMiniAppsCard(BuildContext context, dynamic nt) {
+  Widget _buildMiniAppsCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
+    final VoidCallback onTap = () => context.push('/miniapps');
+
+    if (isSquare) {
+      return _GlassTile(
+        icon: Icons.extension_rounded,
+        color: nt.pink,
+        title: 'Mini Apps',
+        subtitle: 'Juegos y más',
+        onTap: onTap,
+      );
+    }
+
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(20),
-      onTap: () => context.push('/miniapps'),
+      onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
         child: Row(
@@ -613,11 +639,23 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   /// Botón de Examen Médico para el menú principal (reemplaza consejos psicométricos)
-  Widget _buildMedicalStudyCard(BuildContext context, dynamic nt) {
+  Widget _buildMedicalStudyCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
+    final VoidCallback onTap = () => context.push('/medical');
+
+    if (isSquare) {
+      return _GlassTile(
+        icon: Icons.health_and_safety_rounded,
+        color: nt.cyan,
+        title: 'Examen Médico',
+        subtitle: 'Ficha y perfil',
+        badge: 'NUEVO',
+        badgeColor: nt.cyan.withValues(alpha: 0.8),
+        onTap: onTap,
+      );
+    }
+
     return HoverGlassCard(
-      onTap: () {
-        context.push('/medical');
-      },
+      onTap: onTap,
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -701,11 +739,23 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   /// Botón de Entrevista de Cultura General para el menú principal
-  Widget _buildInterviewTriviaCard(BuildContext context, dynamic nt) {
+  Widget _buildInterviewTriviaCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
+    final VoidCallback onTap = () => context.push('/interview-trivia');
+
+    if (isSquare) {
+      return _GlassTile(
+        icon: Icons.record_voice_over_rounded,
+        color: Colors.purpleAccent,
+        title: 'Entrevista',
+        subtitle: 'Frente al jurado',
+        badge: 'NUEVO',
+        badgeColor: Colors.purpleAccent.withValues(alpha: 0.8),
+        onTap: onTap,
+      );
+    }
+
     return HoverGlassCard(
-      onTap: () {
-        context.push('/interview-trivia');
-      },
+      onTap: onTap,
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -972,13 +1022,35 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     _buildDailyMissionCard(context, nt),
                                     const SizedBox(height: 14),
-                                    _buildSimulacroCard(context, nt),
-                                    const SizedBox(height: 14),
-                                    _buildMiniAppsCard(context, nt),
-                                    const SizedBox(height: 14),
-                                    _buildMedicalStudyCard(context, nt),
-                                    const SizedBox(height: 14),
-                                    _buildInterviewTriviaCard(context, nt),
+                                    SizedBox(
+                                      height: 135,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                              child: _buildSimulacroCard(
+                                                  context, nt, isSquare: true)),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                              child: _buildMiniAppsCard(
+                                                  context, nt, isSquare: true)),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 12),
+                                    SizedBox(
+                                      height: 135,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                              child: _buildMedicalStudyCard(
+                                                  context, nt, isSquare: true)),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                              child: _buildInterviewTriviaCard(
+                                                  context, nt, isSquare: true)),
+                                        ],
+                                      ),
+                                    ),
                                     const SizedBox(height: 14),
                                     SizedBox(
                                       height: 135,
@@ -1039,6 +1111,7 @@ class _GlassTile extends StatelessWidget {
   final String title;
   final String subtitle;
   final String? badge;
+  final Color? badgeColor;
   final VoidCallback onTap;
 
   const _GlassTile({
@@ -1048,6 +1121,7 @@ class _GlassTile extends StatelessWidget {
     required this.subtitle,
     required this.onTap,
     this.badge,
+    this.badgeColor,
   });
 
   @override
@@ -1091,7 +1165,7 @@ class _GlassTile extends StatelessWidget {
                     vertical: 3,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.redAccent,
+                    color: badgeColor ?? Colors.redAccent,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
