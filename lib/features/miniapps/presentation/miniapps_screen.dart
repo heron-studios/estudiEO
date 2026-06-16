@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
+import 'package:provider/provider.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class MiniAppsScreen extends StatelessWidget {
   const MiniAppsScreen({super.key});
@@ -107,12 +110,17 @@ class MiniAppsScreen extends StatelessWidget {
                         ),
                         itemCount: 4,
                         itemBuilder: (context, index) {
+                          final auth = context.read<AuthService>();
+                          final isPremium = auth.isPremium;
+                          final isLocked = !isPremium && index != 0;
+
                           if (index == 0) {
                             return MiniAppCard(
                               title: 'Tabla Periódica',
                               description: 'Modo exploratorio, entrenamiento dual y supervivencia.',
                               icon: Icons.science_rounded,
                               themeColor: nt.blueGoogle,
+                              isLocked: false,
                               onTap: () => context.push('/miniapps/periodic-table'),
                             );
                           } else if (index == 1) {
@@ -122,7 +130,8 @@ class MiniAppsScreen extends StatelessWidget {
                               icon: Icons.account_tree_rounded,
                               themeColor: const Color(0xFF14B8A6),
                               badgeText: 'MINIJUEGO',
-                              onTap: () => context.push('/miniapps/silogismos'),
+                              isLocked: isLocked,
+                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/silogismos'),
                             );
                           } else if (index == 2) {
                             return MiniAppCard(
@@ -131,7 +140,8 @@ class MiniAppsScreen extends StatelessWidget {
                               icon: Icons.map_rounded,
                               themeColor: const Color(0xFF4ADE80),
                               badgeText: 'BIODIVERSIDAD',
-                              onTap: () => context.push('/miniapps/anp-master'),
+                              isLocked: isLocked,
+                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/anp-master'),
                             );
                           } else {
                             return MiniAppCard(
@@ -140,7 +150,8 @@ class MiniAppsScreen extends StatelessWidget {
                               icon: Icons.calculate_rounded,
                               themeColor: Colors.orangeAccent,
                               badgeText: 'MATEMÁTICA',
-                              onTap: () => context.push('/miniapps/productos-notables'),
+                              isLocked: isLocked,
+                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/productos-notables'),
                             );
                           }
                         },
@@ -164,6 +175,7 @@ class MiniAppCard extends StatefulWidget {
   final Color themeColor;
   final String? badgeText;
   final VoidCallback onTap;
+  final bool isLocked;
 
   const MiniAppCard({
     super.key,
@@ -173,6 +185,7 @@ class MiniAppCard extends StatefulWidget {
     required this.themeColor,
     this.badgeText,
     required this.onTap,
+    this.isLocked = false,
   });
 
   @override
@@ -359,12 +372,14 @@ class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStat
                           Transform.translate(
                             offset: Offset(6 * _glow.value, 0),
                             child: Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              color: Color.lerp(
-                                Colors.white24,
-                                widget.themeColor,
-                                _glow.value,
-                              ),
+                              widget.isLocked ? Icons.lock_rounded : Icons.arrow_forward_ios_rounded,
+                              color: widget.isLocked 
+                                  ? Colors.white54 
+                                  : Color.lerp(
+                                      Colors.white24,
+                                      widget.themeColor,
+                                      _glow.value,
+                                    ),
                               size: 18,
                             ),
                           ),

@@ -8,6 +8,8 @@ import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 import 'package:learn/features/psicolearn/domain/services/psico_service.dart';
 import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class PsicoMissionScreen extends StatefulWidget {
   const PsicoMissionScreen({super.key});
@@ -158,6 +160,22 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
   }
 
   void _nextQuestion() {
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium && _currentIndex >= 7 && _currentIndex < _questions!.length - 1) {
+      _feedbackController.reset();
+      setState(() {
+        _showingFeedback = false;
+        _selectedOptionKey = null;
+      });
+      PremiumUpgradeDialog.show(
+        context,
+        title: 'Límite Gratuito',
+        message: 'Has alcanzado el límite de 8 preguntas. Actualiza a Premium para completar la misión completa de 20 preguntas.',
+      );
+      _finishMission();
+      return;
+    }
+
     if (_currentIndex < _questions!.length - 1) {
       _feedbackController.reset();
       setState(() {
@@ -169,28 +187,32 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
           .read<LocalStorageService>()
           .savePsicoMissionCurrentIndex(_currentIndex);
     } else {
-      // Calcular rendimiento por dimensiones e integral
-      final Map<String, double> dimensionPcts = {};
-      _dimensionScores.forEach((key, val) {
-        final maxVal = _dimensionMax[key] ?? 1;
-        dimensionPcts[key] = val / (maxVal == 0 ? 1 : maxVal);
-      });
-      int totalScore = _dimensionScores.values.fold(0, (a, b) => a + b);
-      int totalMax = _dimensionMax.values.fold(0, (a, b) => a + b);
-      double overallPct = totalMax > 0 ? totalScore / totalMax : 0.0;
-
-      final storage = context.read<LocalStorageService>();
-      storage.savePsicoMissionResult(
-        overallScore: overallPct,
-        dimensionScores: dimensionPcts,
-      );
-      storage.markPsicoMissionCompleted();
-      storage.savePsicoMissionCurrentIndex(0);
-
-      setState(() {
-        _isFinished = true;
-      });
+      _finishMission();
     }
+  }
+
+  void _finishMission() {
+    // Calcular rendimiento por dimensiones e integral
+    final Map<String, double> dimensionPcts = {};
+    _dimensionScores.forEach((key, val) {
+      final maxVal = _dimensionMax[key] ?? 1;
+      dimensionPcts[key] = val / (maxVal == 0 ? 1 : maxVal);
+    });
+    int totalScore = _dimensionScores.values.fold(0, (a, b) => a + b);
+    int totalMax = _dimensionMax.values.fold(0, (a, b) => a + b);
+    double overallPct = totalMax > 0 ? totalScore / totalMax : 0.0;
+
+    final storage = context.read<LocalStorageService>();
+    storage.savePsicoMissionResult(
+      overallScore: overallPct,
+      dimensionScores: dimensionPcts,
+    );
+    storage.markPsicoMissionCompleted();
+    storage.savePsicoMissionCurrentIndex(0);
+
+    setState(() {
+      _isFinished = true;
+    });
   }
 
   @override

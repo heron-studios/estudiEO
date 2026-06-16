@@ -12,6 +12,8 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class ExamScreen extends StatefulWidget {
   final bool resume;
@@ -180,8 +182,17 @@ class _ExamScreenState extends State<ExamScreen> {
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted) {
           if (_currentIndex < _questions.length && _questions[_currentIndex].id == qId) {
-            setState(() => _currentIndex++);
-            _saveExamProgress();
+            final auth = context.read<AuthService>();
+            if (!auth.isPremium && _currentIndex >= 4) {
+              PremiumUpgradeDialog.show(
+                context,
+                title: 'Límite de Simulacro Gratuito',
+                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para realizar simulacros completos de 100 preguntas.',
+              );
+            } else {
+              setState(() => _currentIndex++);
+              _saveExamProgress();
+            }
           }
         }
       });
@@ -410,8 +421,17 @@ class _ExamScreenState extends State<ExamScreen> {
                         return GestureDetector(
                           onTap: () {
                             Navigator.pop(ctx);
-                            setState(() => _currentIndex = index);
-                            _saveExamProgress();
+                            final auth = context.read<AuthService>();
+                            if (!auth.isPremium && index > 4) {
+                              PremiumUpgradeDialog.show(
+                                context,
+                                title: 'Límite de Simulacro Gratuito',
+                                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para acceder a todas las preguntas.',
+                              );
+                            } else {
+                              setState(() => _currentIndex = index);
+                              _saveExamProgress();
+                            }
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -502,8 +522,17 @@ class _ExamScreenState extends State<ExamScreen> {
 
                 return GestureDetector(
                   onTap: () {
-                    setState(() => _currentIndex = index);
-                    _saveExamProgress();
+                    final auth = context.read<AuthService>();
+                    if (!auth.isPremium && index > 4) {
+                      PremiumUpgradeDialog.show(
+                        context,
+                        title: 'Límite de Simulacro Gratuito',
+                        message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para acceder a todas las preguntas.',
+                      );
+                    } else {
+                      setState(() => _currentIndex = index);
+                      _saveExamProgress();
+                    }
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -726,8 +755,17 @@ class _ExamScreenState extends State<ExamScreen> {
                         const Spacer(),
                         IconButton(
                           onPressed: _currentIndex < _questions.length - 1 ? () {
-                            setState(() => _currentIndex++);
-                            _saveExamProgress();
+                            final auth = context.read<AuthService>();
+                            if (!auth.isPremium && _currentIndex >= 4) {
+                              PremiumUpgradeDialog.show(
+                                context,
+                                title: 'Límite de Simulacro Gratuito',
+                                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para realizar simulacros completos de 100 preguntas.',
+                              );
+                            } else {
+                              setState(() => _currentIndex++);
+                              _saveExamProgress();
+                            }
                           } : null,
                           icon: const Icon(Icons.arrow_forward_ios, size: 18),
                           color: Colors.white,

@@ -3,6 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
+import 'package:provider/provider.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class MedicalDashboardScreen extends StatelessWidget {
   const MedicalDashboardScreen({super.key});
@@ -10,6 +13,8 @@ class MedicalDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
+    final auth = context.read<AuthService>();
+    final isPremium = auth.isPremium;
 
     return NeuralBackgroundWrapper(
       child: Scaffold(
@@ -58,6 +63,7 @@ class MedicalDashboardScreen extends StatelessWidget {
                     icon: Icons.psychology_alt_rounded,
                     color: nt.purple,
                     badge: '10 MIN',
+                    isLocked: false,
                     onTap: () => context.push('/medical/psicologico'),
                   ),
                   const SizedBox(height: 16),
@@ -68,7 +74,8 @@ class MedicalDashboardScreen extends StatelessWidget {
                     icon: Icons.timer_rounded,
                     color: nt.cyan,
                     badge: '10 MIN',
-                    onTap: () => context.push('/medical/eysenck'),
+                    isLocked: !isPremium,
+                    onTap: !isPremium ? () => PremiumUpgradeDialog.show(context) : () => context.push('/medical/eysenck'),
                   ),
                   const SizedBox(height: 16),
                   _buildTestCard(
@@ -78,7 +85,8 @@ class MedicalDashboardScreen extends StatelessWidget {
                     icon: Icons.edit_note_rounded,
                     color: nt.blueGoogle,
                     badge: 'INTERACTIVO',
-                    onTap: () => context.push('/medical/sacks'),
+                    isLocked: !isPremium,
+                    onTap: !isPremium ? () => PremiumUpgradeDialog.show(context) : () => context.push('/medical/sacks'),
                   ),
                 ],
               ),
@@ -135,6 +143,7 @@ class MedicalDashboardScreen extends StatelessWidget {
     required Color color,
     required String badge,
     required VoidCallback onTap,
+    bool isLocked = false,
   }) {
     return HoverGlassCard(
       onTap: onTap,
@@ -210,7 +219,7 @@ class MedicalDashboardScreen extends StatelessWidget {
                 color: Colors.white.withValues(alpha: 0.05),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white54, size: 16),
+              child: Icon(isLocked ? Icons.lock_rounded : Icons.arrow_forward_ios_rounded, color: Colors.white54, size: 16),
             ),
           ],
         ),

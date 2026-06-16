@@ -7,8 +7,9 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/services/audio_service.dart';
-import 'package:learn/core/services/gemini_service.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class InterviewTriviaScreen extends StatefulWidget {
   const InterviewTriviaScreen({super.key});
@@ -20,7 +21,6 @@ class InterviewTriviaScreen extends StatefulWidget {
 class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with TickerProviderStateMixin {
   // Configuración del Examen
   String _difficulty = 'all'; // all, easy, medium, hard
-  String _questionSource = 'local'; // local, ai
   final Map<String, bool> _categories = {
     'pnp_institutional': true,
     'constitution_civics': true,
@@ -88,82 +88,47 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
     super.dispose();
   }
 
-  // Carga preguntas locales o las genera con la IA
   Future<void> _startExam() async {
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) {
+      PremiumUpgradeDialog.show(context);
+      return;
+    }
+
     setState(() {
       _setupPhase = false;
       _isLoading = true;
       _errorMessage = null;
-      _loadingMessage = _questionSource == 'local'
-          ? 'Cargando balotario local PNP...'
-          : 'Conectando con el Jurado con IA...';
+      _loadingMessage = 'Cargando balotario local PNP...';
     });
 
     try {
       List<dynamic> loadedQuestions = [];
 
-      if (_questionSource == 'local') {
-        // Carga offline desde assets/data/pnp_trivia.json
-        final String response = await rootBundle.loadString('assets/data/pnp_trivia.json');
-        final Map<String, dynamic> data = jsonDecode(response);
-        final List<dynamic> rawQuestions = data['preguntas_pnp'] ?? [];
+      // Carga offline desde assets/data/pnp_trivia.json
+      final String response = await rootBundle.loadString('assets/data/pnp_trivia.json');
+      final Map<String, dynamic> data = jsonDecode(response);
+      final List<dynamic> rawQuestions = data['preguntas_pnp'] ?? [];
 
-        // Filtrar por categorías seleccionadas y dificultad
-        loadedQuestions = rawQuestions.where((q) {
-          final cat = q['category'] ?? '';
-          final diff = q['difficulty'] ?? '';
-          final isCatSelected = _categories[cat] ?? false;
-          final isDiffSelected = _difficulty == 'all' || diff == _difficulty;
-          return isCatSelected && isDiffSelected;
-        }).toList();
+      // Filtrar por categorías seleccionadas y dificultad
+      loadedQuestions = rawQuestions.where((q) {
+        final cat = q['category'] ?? '';
+        final diff = q['difficulty'] ?? '';
+        final isCatSelected = _categories[cat] ?? false;
+        final isDiffSelected = _difficulty == 'all' || diff == _difficulty;
+        return isCatSelected && isDiffSelected;
+      }).toList();
 
-        // Mezclar y tomar un límite de 10
-        loadedQuestions.shuffle();
-        if (loadedQuestions.length > 10) {
-          loadedQuestions = loadedQuestions.sublist(0, 10);
-        }
+      // Mezclar y tomar un límite de 10
+      loadedQuestions.shuffle();
+      if (loadedQuestions.length > 10) {
+        loadedQuestions = loadedQuestions.sublist(0, 10);
+      }
 
-        // Si por filtros rigurosos de dificultad no hay suficientes preguntas, cargamos cualquier 10 preguntas
-        if (loadedQuestions.isEmpty) {
-          final List<dynamic> fallback = List.from(rawQuestions)..shuffle();
-          loadedQuestions = fallback.take(10).toList();
-        }
-      } else {
-        // Generar preguntas mediante Gemini
-        final activeCategoriesList = _categories.entries
-            .where((e) => e.value)
-            .map((e) => e.key)
-            .toList();
-
-        final rawQuestions = await GeminiService.generarPreguntasTriviaPNP(
-          activeCategoriesList,
-          _difficulty,
-          10,
-        );
-
-        if (rawQuestions.isNotEmpty) {
-          loadedQuestions = rawQuestions;
-        } else {
-          // Fallback a local si falla el API de Gemini (offline / sin API key)
-          debugPrint('Fallo en generación con IA. Activando fallback local...');
-          final String response = await rootBundle.loadString('assets/data/pnp_trivia.json');
-          final Map<String, dynamic> data = jsonDecode(response);
-          final List<dynamic> rawQuestionsLocal = data['preguntas_pnp'] ?? [];
-          
-          loadedQuestions = rawQuestionsLocal.where((q) {
-            final cat = q['category'] ?? '';
-            final isCatSelected = _categories[cat] ?? false;
-            return isCatSelected;
-          }).toList();
-          
-          loadedQuestions.shuffle();
-          if (loadedQuestions.length > 10) {
-            loadedQuestions = loadedQuestions.sublist(0, 10);
-          }
-          if (loadedQuestions.isEmpty) {
-            loadedQuestions = (List.from(rawQuestionsLocal)..shuffle()).take(10).toList();
-          }
-        }
+      // Si por filtros rigurosos de dificultad no hay suficientes preguntas, cargamos cualquier 10 preguntas
+      if (loadedQuestions.isEmpty) {
+        final List<dynamic> fallback = List.from(rawQuestions)..shuffle();
+        loadedQuestions = fallback.take(10).toList();
       }
 
       if (loadedQuestions.isEmpty) {
@@ -297,24 +262,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
 
   Future<void> _finishExam() async {
     setState(() {
-      _isLoading = true;
-      _loadingMessage = 'Generando feedback del jurado...';
+      _aiFeedback = '¡Buen esfuerzo! Continúa practicando tu cultura general para asegurar tu aptitud.';
+      _isLoading = false;
     });
-
-    try {
-      final feedback = await GeminiService.generarFeedbackEntrevistaTrivia(_correctCount, _questions.length);
-      setState(() {
-        _aiFeedback = feedback;
-      });
-    } catch (e) {
-      setState(() {
-        _aiFeedback = '¡Buen esfuerzo! Continúa practicando tu cultura general para asegurar tu aptitud.';
-      });
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
-    }
   }
 
   void _resetToSetup() {
@@ -480,18 +430,6 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
               ),
               const SizedBox(height: 20),
 
-              // Origen de Preguntas
-              const Text('ORIGEN DE LAS PREGUNTAS', style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.w900, letterSpacing: 0.8)),
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  _buildSourceChip('local', 'Balotario Local', Icons.offline_pin_rounded, nt),
-                  const SizedBox(width: 12),
-                  _buildSourceChip('ai', 'Jurado con IA', Icons.psychology_rounded, nt),
-                ],
-              ),
-              const SizedBox(height: 24),
-
               // Dificultad
               const Text('DIFICULTAD DEL EXAMEN', style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.w900, letterSpacing: 0.8)),
               const SizedBox(height: 10),
@@ -600,40 +538,6 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
     );
   }
 
-  Widget _buildSourceChip(String val, String label, IconData icon, NeuralThemeData nt) {
-    final isSelected = _questionSource == val;
-    return Expanded(
-      child: GestureDetector(
-        onTap: () => setState(() => _questionSource = val),
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          decoration: BoxDecoration(
-            color: isSelected ? Colors.purpleAccent.withValues(alpha: 0.2) : Colors.white.withValues(alpha: 0.04),
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: isSelected ? Colors.purpleAccent : Colors.white10,
-              width: 1.5,
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, color: isSelected ? Colors.purpleAccent : Colors.white60, size: 18),
-              const SizedBox(width: 8),
-              Text(
-                label,
-                style: TextStyle(
-                  color: isSelected ? Colors.white : Colors.white60,
-                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  fontSize: 13,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
   void _selectAllCategories() {
     final anyActive = _categories.values.any((v) => v);

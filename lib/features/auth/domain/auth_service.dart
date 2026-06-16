@@ -30,6 +30,9 @@ class AuthService extends ChangeNotifier {
   bool _isAuthorized = false;
   bool get isAuthorized => _isAuthorized;
 
+  bool _isPremium = false;
+  bool get isPremium => _isPremium || AppConfig.isDemoMode;
+
   bool _psico = false;
   bool get psico => _psico;
 
@@ -158,13 +161,16 @@ class AuthService extends ChangeNotifier {
   String? _lastVerificationError;
   String? get lastVerificationError => _lastVerificationError;
 
-  /// Verifica si el usuario actual tiene permisos en Firestore
   Future<bool> _verifyAuthorization() async {
     _lastVerificationError = null;
-    if (AppConfig.isDemoMode) return true; // Bypass check in demo mode
+    if (AppConfig.isDemoMode) {
+      _isPremium = true;
+      return true; // Bypass check in demo mode
+    }
     final user = _auth.currentUser;
     if (user == null || user.email == null) {
       _lastVerificationError = 'No hay usuario autenticado de Firebase.';
+      _isPremium = false;
       return false;
     }
 
@@ -236,6 +242,8 @@ class AuthService extends ChangeNotifier {
 
       final results = await Future.wait(futures);
 
+      bool foundPremium = false;
+
       // Verificar los primeros 4 resultados (documentos individuales)
       for (int i = 0; i < 4; i++) {
         final doc = results[i] as DocumentSnapshot<Map<String, dynamic>>?;
@@ -243,32 +251,40 @@ class AuthService extends ChangeNotifier {
           final data = doc.data();
           if (data != null && _checkIsPaid(data)) {
             _psico = _checkPsicoAccess(data);
-            return true;
+            foundPremium = true;
+            break;
           }
         }
       }
 
-      // Verificar el 5to resultado (consulta de documentos por campo)
-      final querySnapshot = results[5 - 1] as QuerySnapshot<Map<String, dynamic>>?;
-      if (querySnapshot != null && querySnapshot.docs.isNotEmpty) {
-        final data = querySnapshot.docs.first.data();
-        if (_checkIsPaid(data)) {
-          _psico = _checkPsicoAccess(data);
-          return true;
+      if (!foundPremium) {
+        // Verificar el 5to resultado (consulta de documentos por campo)
+        final querySnapshot = results[5 - 1] as QuerySnapshot<Map<String, dynamic>>?;
+        if (querySnapshot != null && querySnapshot.docs.isNotEmpty) {
+          final data = querySnapshot.docs.first.data();
+          if (_checkIsPaid(data)) {
+            _psico = _checkPsicoAccess(data);
+            foundPremium = true;
+          }
         }
       }
 
-      // Si llegamos aquí, no se encontró ningún documento válido que califique como pagado/autorizado
-      if (errorMsgs.isNotEmpty) {
-        _lastVerificationError = 'Errores de conexión/permisos de Firestore:\n- ${errorMsgs.join('\n- ')}';
-      } else {
-        _lastVerificationError = 'No se encontró tu correo "$email" o tu UID "${user.uid}" en la lista de usuarios autorizados. Confirma con el administrador que se haya registrado exactamente ese correo o UID.';
+      _isPremium = foundPremium;
+
+      if (!foundPremium) {
+        if (errorMsgs.isNotEmpty) {
+          _lastVerificationError = 'Errores de conexión/permisos de Firestore:\n- ${errorMsgs.join('\n- ')}';
+        } else {
+          _lastVerificationError = 'Usuario en modo gratuito.';
+        }
       }
-      return false;
+      
+      // Permitimos el acceso (isAuthorized = true) independientemente de si es Premium o no
+      return true;
     } catch (e) {
       debugPrint('Error checking authorization: $e');
       _lastVerificationError = 'Excepción general al verificar: $e';
-      return false;
+      return true; // Aún en caso de error de red con Firestore, si el user está en Firebase, entra como gratuito
     }
   }
 
