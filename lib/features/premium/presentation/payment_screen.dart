@@ -12,12 +12,12 @@ import 'package:learn/features/auth/domain/auth_service.dart';
 // ─── Beneficios del plan ──────────────────────────────────────────────────────
 const _benefits = [
   _Benefit(Icons.all_inclusive_rounded,     Color(0xFF3B82F6), 'Acceso permanente a la app',         'Una vez, para siempre. Sin renovaciones.'),
-  _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Preguntas reales fijas de la PNP',    'Banco actualizado con exámenes oficiales anteriores.'),
-  _Benefit(Icons.update_rounded,            Color(0xFF06B6D4), 'Actualizaciones frecuentes',           'Nuevas preguntas y mejoras sin costo adicional.'),
-  _Benefit(Icons.support_agent_rounded,     Color(0xFF10B981), 'Soporte y asistencia VIP',             'Grupo exclusivo de WhatsApp para postulantes.'),
-  _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Algoritmo de repaso inteligente',      'Sistema SRS: aprende más en menos tiempo.'),
-  _Benefit(Icons.analytics_rounded,         Color(0xFFEF4444), 'Estadísticas y seguimiento',           'Mide tu progreso real hacia la vacante.'),
-  _Benefit(Icons.emoji_events_rounded,      Color(0xFFFFD700), 'Simulacros de examen oficial',         'Practica con el formato real del examen PNP.'),
+  _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Simulacro Tipo Examen de Admisión',  'Con preguntas reales de exámenes de procesos pasados.'),
+  _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Misión Diaria de Aprendizaje',       'Sistema inteligente para repasar temas frecuentes.'),
+  _Benefit(Icons.health_and_safety_rounded, Color(0xFF10B981), 'Examen Médico y Psicológico',        'Pruebas Eysenck, Sacks y test de personalidad.'),
+  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simulador de Entrevista Personal',   'Practica el balotario oral bajo presión.'),
+  _Benefit(Icons.extension_rounded,         Color(0xFF06B6D4), 'Minijuegos de Agilidad Mental',      'ANP Master, Silogismos y Tabla Periódica interactiva.'),
+  _Benefit(Icons.support_agent_rounded,     Color(0xFFFFD700), 'Soporte VIP y Actualizaciones',      'Grupo exclusivo y nuevas preguntas sin costo adicional.'),
 ];
 
 class _Benefit {
@@ -126,11 +126,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               child: IconButton(
                 icon: const Icon(Icons.arrow_back_rounded, color: Colors.white70),
                 onPressed: () {
-                  if (Navigator.canPop(context)) {
-                    Navigator.pop(context);
-                  } else {
-                    context.go('/home');
-                  }
+                  context.go('/home');
                 },
                 style: IconButton.styleFrom(
                   backgroundColor: Colors.white.withValues(alpha: 0.05),
@@ -673,7 +669,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               shaderCallback: (b) => const LinearGradient(
                 colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
               ).createShader(b),
-              child: const Text('30', style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900, height: 1, letterSpacing: -4)),
+              child: const Text('40', style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900, height: 1, letterSpacing: -4)),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 14),
@@ -751,7 +747,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('COMPRAR AHORA · S/30',
+                  Text('COMPRAR AHORA · S/40',
                       style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
                   Text('Contactar por WhatsApp',
                       style: TextStyle(color: Colors.white70, fontSize: 11)),
