@@ -333,7 +333,7 @@ class _HomeScreenState extends State<HomeScreen> {
           : 'Último: $score/$total (${percent.toInt()}%) • Iniciar Nuevo';
     }
 
-    final VoidCallback onTap = () async {
+    Future<void> onTap() async {
       final savedState = storage.getActiveExamState();
       if (savedState != null) {
         final List<dynamic> qList = savedState['questions'] as List? ?? [];
@@ -387,7 +387,7 @@ class _HomeScreenState extends State<HomeScreen> {
       } else {
         context.push('/exam', extra: {'resume': false});
       }
-    };
+    }
 
     if (isSquare) {
       return _GlassTile(
@@ -482,7 +482,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildMiniAppsCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    final VoidCallback onTap = () => context.push('/miniapps');
+    void onTap() => context.push('/miniapps');
 
     if (isSquare) {
       return _GlassTile(
@@ -642,7 +642,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Botón de Examen Médico para el menú principal (reemplaza consejos psicométricos)
   Widget _buildMedicalStudyCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    final VoidCallback onTap = () => context.push('/medical');
+    void onTap() => context.push('/medical');
 
     if (isSquare) {
       return _GlassTile(
@@ -805,14 +805,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: const Icon(Icons.quiz_rounded, color: Colors.purpleAccent, size: 28),
                       ),
                       const SizedBox(width: 16),
-                      Expanded(
+                      const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text('Pon a prueba tus conocimientos', 
+                            Text('Pon a prueba tus conocimientos', 
                                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
-                            const SizedBox(height: 4),
-                            const Text('Simula la ronda de preguntas frente al jurado.', 
+                            SizedBox(height: 4),
+                            Text('Simula la ronda de preguntas frente al jurado.', 
                                 style: TextStyle(color: Colors.white60, fontSize: 12)),
                           ],
                         ),
@@ -875,7 +875,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Botón de Entrevista Personal unificado
   Widget _buildInterviewCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    final VoidCallback onTap = () => _showInterviewSelectionModal(context, nt);
+    void onTap() => _showInterviewSelectionModal(context, nt);
 
     if (isSquare) {
       return _GlassTile(

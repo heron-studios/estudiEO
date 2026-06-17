@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:learn/core/config/neural_theme.dart';
 
 class PremiumUpgradeDialog extends StatefulWidget {
   final String title;

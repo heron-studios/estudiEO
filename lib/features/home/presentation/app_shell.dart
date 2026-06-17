@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/config/app_config.dart';
-import 'package:provider/provider.dart';
-import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
