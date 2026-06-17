@@ -52,24 +52,7 @@ class _AppShellState extends State<AppShell> {
                   child: widget.navigationShell,
                 ),
               ),
-              // Botón de salir flotante (arriba a la derecha)
-              Positioned(
-                top: MediaQuery.of(context).padding.top + 16,
-                right: 16,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: nt.surfaceCard.withValues(alpha: 0.5),
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                    icon: Icon(Icons.logout_rounded, color: nt.pink),
-                    tooltip: 'Cerrar Sesión',
-                    onPressed: () async {
-                      await context.read<AuthService>().signOut();
-                    },
-                  ),
-                ),
-              ),
+
               // Navbar flotante (horizontal)
               Positioned(
                 left: 16,
@@ -175,15 +158,7 @@ class _AppShellState extends State<AppShell> {
                           onTap: _launchWhatsApp,
                           nt: nt,
                         ),
-                        const SizedBox(height: 24),
-                        // Logout
-                        IconButton(
-                          icon: Icon(Icons.logout_rounded, color: nt.pink),
-                          tooltip: 'Cerrar Sesión',
-                          onPressed: () async {
-                            await context.read<AuthService>().signOut();
-                          },
-                        ),
+
                       ],
                     ),
                   ),

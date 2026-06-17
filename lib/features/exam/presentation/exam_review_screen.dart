@@ -4,6 +4,8 @@ import 'package:learn/models/question.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
+import 'package:learn/screens/entrevista_simulator/puter_service.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ExamReviewScreen extends StatefulWidget {
   final List<Question> questions;
@@ -23,11 +25,52 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
   int _currentIndex = 0; // Index in _filteredIndices
   String _filter = 'all'; // all, correct, incorrect, omitted
   final List<int> _filteredIndices = [];
+  
+  late final PuterService _puterService;
+  final Map<String, String> _aiExplanations = {};
+  final Map<String, bool> _isLoadingAi = {};
 
   @override
   void initState() {
     super.initState();
+    _puterService = PuterService();
     _applyFilter();
+  }
+
+  Future<void> _requestAIExplanation(Question q, int selectedOptionIndex, bool isCorrect) async {
+    setState(() {
+      _isLoadingAi[q.id] = true;
+    });
+
+    final String selectedAnswerText = selectedOptionIndex >= 0 && selectedOptionIndex < q.options.length 
+        ? q.options[selectedOptionIndex] 
+        : 'Ninguna (Omitida)';
+    
+    final String correctAnswerText = q.correctAnswer >= 0 && q.correctAnswer < q.options.length 
+        ? q.options[q.correctAnswer] 
+        : 'Desconocida';
+
+    final String systemPrompt = '''
+Actúa como un profesor experto y empático de una academia pre-policial. 
+El alumno está revisando su simulacro de examen y necesita entender una pregunta.
+Pregunta: "${q.text}"
+Opciones:
+${q.options.asMap().entries.map((e) => "${String.fromCharCode(65 + e.key)}) ${e.value}").join('\n')}
+
+El alumno marcó: "$selectedAnswerText"
+La respuesta correcta es: "$correctAnswerText"
+
+Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y por qué la opción del alumno es incorrecta (si se equivocó). Usa un tono motivador y claro. Formatea tu respuesta en Markdown.
+''';
+
+    final response = await _puterService.chat(systemPrompt);
+
+    if (mounted) {
+      setState(() {
+        _aiExplanations[q.id] = response;
+        _isLoadingAi[q.id] = false;
+      });
+    }
   }
 
   void _applyFilter() {
@@ -562,6 +605,71 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 20),
+
+                    // AI Tutor Card
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2D1B69).withValues(alpha: 0.4),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: const Color(0xFF6D28D9)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(Icons.smart_toy_rounded, color: Colors.purpleAccent, size: 20),
+                              const SizedBox(width: 8),
+                              const Text(
+                                'Tutor IA',
+                                style: TextStyle(
+                                  color: Colors.purpleAccent,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const Spacer(),
+                              if (!(_isLoadingAi[question.id] ?? false) && !_aiExplanations.containsKey(question.id))
+                                ElevatedButton.icon(
+                                  onPressed: () => _requestAIExplanation(question, selectedAnswer, isCorrect),
+                                  icon: const Icon(Icons.auto_awesome, size: 16),
+                                  label: const Text('Explicar con IA', style: TextStyle(fontSize: 12)),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.purpleAccent.withValues(alpha: 0.2),
+                                    foregroundColor: Colors.purpleAccent,
+                                    elevation: 0,
+                                    side: const BorderSide(color: Colors.purpleAccent),
+                                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                  ),
+                                ),
+                            ],
+                          ),
+                          if (_isLoadingAi[question.id] ?? false) ...[
+                            const SizedBox(height: 16),
+                            const Center(child: CircularProgressIndicator(color: Colors.purpleAccent)),
+                          ] else if (_aiExplanations.containsKey(question.id)) ...[
+                            const SizedBox(height: 12),
+                            MarkdownBody(
+                              data: _aiExplanations[question.id]!,
+                              styleSheet: MarkdownStyleSheet(
+                                p: const TextStyle(color: Color(0xFFE2E8F0), fontSize: 14, height: 1.5),
+                                strong: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ] else ...[
+                            const SizedBox(height: 8),
+                            Text(
+                              '¿Aún tienes dudas? Pídele a nuestro Profesor IA que te lo explique paso a paso.',
+                              style: TextStyle(color: Colors.purple[200]!.withValues(alpha: 0.7), fontSize: 13),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
                     const SizedBox(height: 40),
                   ],
                 ),
@@ -631,47 +739,59 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
     final subjectColor = Color(colorVal | 0xFF000000);
     final subjectIcon = currentSubject?.icon ?? '📚';
 
+    final bridgeWidget = _puterService.buildBridgeWidget();
+
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: NeuralBackgroundWrapper(
-        child: SafeArea(
-          child: isLargeScreen 
-              ? Center(
-                  child: SizedBox(
-                    width: screenWidth.clamp(0.0, 960.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(
-                          child: _buildMainReviewColumn(
-                            isLargeScreen,
-                            originalIndex,
-                            question,
-                            selectedAnswer,
-                            isCorrect,
-                            isOmitted,
-                            subjectIcon,
-                            subjectColor,
-                            currentSubject,
-                          ),
+      body: Stack(
+        children: [
+          if (bridgeWidget != null)
+            Positioned(
+              top: -100,
+              left: -100,
+              child: bridgeWidget,
+            ),
+          NeuralBackgroundWrapper(
+            child: SafeArea(
+              child: isLargeScreen 
+                  ? Center(
+                      child: SizedBox(
+                        width: screenWidth.clamp(0.0, 960.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              child: _buildMainReviewColumn(
+                                isLargeScreen,
+                                originalIndex,
+                                question,
+                                selectedAnswer,
+                                isCorrect,
+                                isOmitted,
+                                subjectIcon,
+                                subjectColor,
+                                currentSubject,
+                              ),
+                            ),
+                            _buildSidebarGrid(),
+                          ],
                         ),
-                        _buildSidebarGrid(),
-                      ],
+                      ),
+                    )
+                  : _buildMainReviewColumn(
+                      isLargeScreen,
+                      originalIndex,
+                      question,
+                      selectedAnswer,
+                      isCorrect,
+                      isOmitted,
+                      subjectIcon,
+                      subjectColor,
+                      currentSubject,
                     ),
-                  ),
-                )
-              : _buildMainReviewColumn(
-                  isLargeScreen,
-                  originalIndex,
-                  question,
-                  selectedAnswer,
-                  isCorrect,
-                  isOmitted,
-                  subjectIcon,
-                  subjectColor,
-                  currentSubject,
-                ),
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }

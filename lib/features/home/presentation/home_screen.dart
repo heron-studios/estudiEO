@@ -13,6 +13,8 @@ import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/services/bible_service.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:intl/intl.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -738,16 +740,149 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /// Botón de Entrevista de Cultura General para el menú principal
-  Widget _buildInterviewTriviaCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    final VoidCallback onTap = () => context.push('/interview-trivia');
+  void _showInterviewSelectionModal(BuildContext context, dynamic nt) {
+    final box = Hive.box('estudieo_data');
+    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
+    final lastInterviewDate = box.get('last_interview_date');
+    final bool aiLimitReached = lastInterviewDate == today;
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          decoration: BoxDecoration(
+            color: const Color(0xFF1E1E2C),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+            border: Border.all(color: Colors.white12, width: 1),
+          ),
+          padding: const EdgeInsets.only(top: 12, left: 24, right: 24, bottom: 40),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.white24,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+              const SizedBox(height: 24),
+              const Text(
+                'Entrevista Personal',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Selecciona el modo de preparación',
+                style: TextStyle(color: Colors.white60, fontSize: 14),
+              ),
+              const SizedBox(height: 32),
+              
+              // Opción A: Quiz
+              HoverGlassCard(
+                onTap: () {
+                  Navigator.pop(context);
+                  context.push('/interview-trivia');
+                },
+                borderRadius: BorderRadius.circular(16),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.purpleAccent.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(Icons.quiz_rounded, color: Colors.purpleAccent, size: 28),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Pon a prueba tus conocimientos', 
+                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                            const SizedBox(height: 4),
+                            const Text('Simula la ronda de preguntas frente al jurado.', 
+                                style: TextStyle(color: Colors.white60, fontSize: 12)),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.chevron_right, color: Colors.white30),
+                    ],
+                  ),
+                ),
+              ),
+              
+              const SizedBox(height: 16),
+              
+              // Opción B: IA
+              Opacity(
+                opacity: aiLimitReached ? 0.5 : 1.0,
+                child: HoverGlassCard(
+                  onTap: aiLimitReached ? null : () {
+                    Navigator.pop(context);
+                    context.push('/entrevista-simulator');
+                  },
+                  borderRadius: BorderRadius.circular(16),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurpleAccent.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(aiLimitReached ? Icons.lock_clock : Icons.smart_toy_rounded, 
+                              color: Colors.deepPurpleAccent, size: 28),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Entrevistador Virtual (IA)', 
+                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                              const SizedBox(height: 4),
+                              Text(aiLimitReached ? 'Límite diario alcanzado. Vuelve mañana.' : 'Simulador interactivo con reconocimiento de voz.', 
+                                  style: TextStyle(color: aiLimitReached ? Colors.redAccent : Colors.white60, fontSize: 12)),
+                            ],
+                          ),
+                        ),
+                        const Icon(Icons.chevron_right, color: Colors.white30),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    );
+  }
+
+  /// Botón de Entrevista Personal unificado
+  Widget _buildInterviewCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
+    final VoidCallback onTap = () => _showInterviewSelectionModal(context, nt);
 
     if (isSquare) {
       return _GlassTile(
         icon: Icons.record_voice_over_rounded,
         color: Colors.purpleAccent,
         title: 'Entrevista',
-        subtitle: 'Frente al jurado',
+        subtitle: 'Personal',
         badge: 'NUEVO',
         badgeColor: Colors.purpleAccent.withValues(alpha: 0.8),
         onTap: onTap,
@@ -784,7 +919,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     children: [
                       const Text(
-                        'ENTREVISTA: CULTURA GENERAL',
+                        'ENTREVISTA PERSONAL',
                         style: TextStyle(
                           color: Colors.purpleAccent,
                           fontSize: 9,
@@ -863,111 +998,117 @@ class _HomeScreenState extends State<HomeScreen> {
               // ── HEADER ──────────────────────────────────────────────────
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Logo + Verse
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // Logo + Estado al costado
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            GestureDetector(
-                              onTap: () async {
-                                final url = Uri.parse('https://pnp-edu.github.io/POL-HUB/');
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url, mode: LaunchMode.externalApplication);
-                                }
-                              },
-                              child: const Text(
-                                'EstudiEO',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: -0.5,
-                                ),
-                              ),
+                        GestureDetector(
+                          onTap: () async {
+                            final url = Uri.parse('https://pnp-edu.github.io/POL-HUB/');
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(url, mode: LaunchMode.externalApplication);
+                            }
+                          },
+                          child: const Text(
+                            'EstudiEO',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: -0.5,
                             ),
-                            const SizedBox(width: 10),
-                            // Separador visual
-                            Container(
-                              width: 1,
-                              height: 18,
-                              color: Colors.white.withValues(alpha: 0.2),
-                            ),
-                            const SizedBox(width: 10),
-                            // Badge de estado psicométrico
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 4),
-                              decoration: BoxDecoration(
-                                color:
-                                    diagnosisColor.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color:
-                                      diagnosisColor.withValues(alpha: 0.5),
-                                  width: 1,
-                                ),
-                              ),
-                              child: Text(
-                                _diagnosis,
-                                style: TextStyle(
-                                  color: diagnosisColor,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                            if (isLargeScreen && _dailyVerse != null) ...[
-                              const SizedBox(width: 16),
-                              Container(
-                                width: 1,
-                                height: 18,
-                                color: Colors.white.withValues(alpha: 0.2),
-                              ),
-                              const SizedBox(width: 16),
-                              Icon(
-                                Icons.auto_stories_rounded,
-                                color: Colors.white.withValues(alpha: 0.5),
-                                size: 16,
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Tooltip(
-                                  message: _dailyVerse!,
-                                  child: Text(
-                                    _dailyVerse!,
-                                    style: const TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 13,
-                                      fontStyle: FontStyle.italic,
-                                      fontFamily: 'Inter',
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    maxLines: 1,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ],
+                          ),
                         ),
-                        // No subtitle anymore, keeping it clean
+                        if (isLargeScreen && _dailyVerse != null) ...[
+                          const SizedBox(width: 16),
+                          Container(
+                            width: 1,
+                            height: 18,
+                            color: Colors.white.withValues(alpha: 0.2),
+                          ),
+                          const SizedBox(width: 16),
+                          Icon(
+                            Icons.auto_stories_rounded,
+                            color: Colors.white.withValues(alpha: 0.5),
+                            size: 16,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Tooltip(
+                              message: _dailyVerse!,
+                              child: Text(
+                                _dailyVerse!,
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 13,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: 'Inter',
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                maxLines: 1,
+                              ),
+                            ),
+                          ),
+                        ],
                       ],
                     ),
                   ),
+                  if (_diagnosis != 'INAPTO') ...[
+                    const SizedBox(width: 12),
+                    // Badge de estado psicométrico (estilo notificación)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: isLargeScreen ? diagnosisColor.withValues(alpha: 0.15) : nt.surfaceCard,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: isLargeScreen ? null : [
+                          BoxShadow(
+                            color: diagnosisColor.withValues(alpha: 0.1),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          )
+                        ],
+                        border: Border.all(
+                          color: diagnosisColor.withValues(alpha: 0.3),
+                          width: 1,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (!isLargeScreen) ...[
+                            Icon(Icons.notifications_active_rounded, color: diagnosisColor, size: 16),
+                            const SizedBox(width: 6),
+                          ],
+                          Text(
+                            _diagnosis,
+                            style: TextStyle(
+                              color: diagnosisColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ],
               ),
 
               // ── CARDS — centradas verticalmente en el espacio restante ──
               Expanded(
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1000),
-                    child: LayoutBuilder(
-                      builder: (context, constraints) {
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8, bottom: 20),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 1000),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
                         if (isLargeScreen) {
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -985,7 +1126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     const SizedBox(height: 10),
                                     _buildMedicalStudyCard(context, nt),
                                     const SizedBox(height: 10),
-                                    _buildInterviewTriviaCard(context, nt),
+                                    _buildInterviewCard(context, nt),
                                   ],
                                 ),
                               ),
@@ -1011,77 +1152,37 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           );
                         } else {
-                          return Center(
-                            child: ConstrainedBox(
-                              constraints:
-                                  const BoxConstraints(maxWidth: 400),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  _buildDailyMissionCard(context, nt),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 115,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildSimulacroCard(
-                                                context, nt, isSquare: true)),
-                                        const SizedBox(width: 12),
-                                        Expanded(
-                                            child: _buildMiniAppsCard(
-                                                context, nt, isSquare: true)),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 115,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildMedicalStudyCard(
-                                                context, nt, isSquare: true)),
-                                        const SizedBox(width: 12),
-                                        Expanded(
-                                            child: _buildInterviewTriviaCard(
-                                                context, nt, isSquare: true)),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 115,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildEstudiarTile(
-                                                context, nt)),
-                                        const SizedBox(width: 12),
-                                        Expanded(
-                                            child: _buildRepasarTile(
-                                                context, nt)),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  SizedBox(
-                                    height: 115,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: _buildTarjetasTile(
-                                                context, nt)),
-                                        const SizedBox(width: 12),
-                                        Expanded(
-                                            child: _buildAprendizajeTile(
-                                                context, nt)),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                ],
-                              ),
+                          return SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                _buildDailyMissionCard(context, nt),
+                                const SizedBox(height: 16),
+                                Row(
+                                  children: [
+                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildEstudiarTile(context, nt))),
+                                    const SizedBox(width: 12),
+                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildRepasarTile(context, nt))),
+                                    const SizedBox(width: 12),
+                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildTarjetasTile(context, nt))),
+                                  ],
+                                ),
+                                const SizedBox(height: 16),
+                                Row(
+                                  children: [
+                                    Expanded(child: AspectRatio(aspectRatio: 1.5, child: _buildAprendizajeTile(context, nt))),
+                                    const SizedBox(width: 12),
+                                    Expanded(child: AspectRatio(aspectRatio: 1.5, child: _buildSimulacroCard(context, nt, isSquare: true))),
+                                  ],
+                                ),
+                                const SizedBox(height: 16),
+                                _buildMiniAppsCard(context, nt, isSquare: false),
+                                const SizedBox(height: 12),
+                                _buildMedicalStudyCard(context, nt, isSquare: false),
+                                const SizedBox(height: 12),
+                                _buildInterviewCard(context, nt, isSquare: false),
+                              ],
                             ),
                           );
                         }
@@ -1090,8 +1191,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
         ),
       ),
     );

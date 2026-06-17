@@ -5,6 +5,7 @@ import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/features/interview/presentation/interview_screen.dart';
 import 'package:learn/features/interview/presentation/interview_trivia_screen.dart';
+import 'package:learn/screens/entrevista_simulator/entrevista_simulator_screen.dart';
 
 // Screens
 import 'package:learn/features/home/presentation/app_shell.dart';
@@ -42,6 +43,7 @@ import 'package:learn/features/medical/presentation/medical_dashboard_screen.dar
 import 'package:learn/features/medical/presentation/eysenck_test_screen.dart';
 import 'package:learn/features/medical/presentation/sacks_test_screen.dart';
 import 'package:learn/features/medical/presentation/psicologico_test_screen.dart';
+import 'package:learn/features/medical/presentation/trail_making_test_screen.dart';
 
 class AppRouter {
   static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
@@ -278,6 +280,10 @@ class AppRouter {
           builder: (context, state) => const SacksTestScreen(),
         ),
         GoRoute(
+          path: '/medical/trail-making',
+          builder: (context, state) => const TrailMakingTestScreen(),
+        ),
+        GoRoute(
           path: '/psicolearn',
           builder: (context, state) => const PsicoLearnScreen(),
         ),
@@ -300,6 +306,10 @@ class AppRouter {
         GoRoute(
           path: '/interview-trivia',
           builder: (context, state) => const InterviewTriviaScreen(),
+        ),
+        GoRoute(
+          path: '/entrevista-simulator',
+          builder: (context, state) => const EntrevistaSimulatorScreen(),
         ),
       ],
     );

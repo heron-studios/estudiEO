@@ -53,6 +53,8 @@ dependencies:
   printing: ^5.14.3
   share_plus: ^13.1.0
   path_provider: ^2.1.5
+  webview_flutter: ^4.8.0
+  speech_to_text: ^7.4.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
@@ -81,6 +83,8 @@ flutter:
     - assets/icon.png
     - assets/audio/
     - assets/data/
+    - assets/html/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
