@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:learn/core/widgets/animated_grid_bg.dart';
 
 class ProfessionalSplash extends StatelessWidget {
@@ -62,7 +62,7 @@ class ProfessionalSplash extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
                   child: const Text(
-                    'estudiEO',
+                    'EDUPOL',
                     style: TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.w900,

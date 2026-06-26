@@ -108,7 +108,7 @@ class MiniAppsScreen extends StatelessWidget {
                               ? 2.5
                               : (MediaQuery.of(context).size.width > 650 ? 2.0 : 2.2),
                         ),
-                        itemCount: 4,
+                        itemCount: 5,
                         itemBuilder: (context, index) {
                           final auth = context.read<AuthService>();
                           final isPremium = auth.isPremium;
@@ -143,7 +143,7 @@ class MiniAppsScreen extends StatelessWidget {
                               isLocked: isLocked,
                               onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/anp-master'),
                             );
-                          } else {
+                          } else if (index == 3) {
                             return MiniAppCard(
                               title: 'Prod. Notables',
                               description: 'Aprende de forma interactiva las fórmulas matemáticas principales.',
@@ -152,6 +152,16 @@ class MiniAppsScreen extends StatelessWidget {
                               badgeText: 'MATEMÁTICA',
                               isLocked: isLocked,
                               onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/productos-notables'),
+                            );
+                          } else {
+                            return MiniAppCard(
+                              title: 'Auditor de Texto',
+                              description: 'Perfecciona informes, partes policiales u actas con ayuda del Perito IA.',
+                              icon: Icons.fact_check_rounded,
+                              themeColor: nt.purple,
+                              badgeText: 'INTELECTO IA',
+                              isLocked: isLocked,
+                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/redaccion'),
                             );
                           }
                         },

@@ -1,93 +1,50 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/widgets.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:learn/core/config/app_config.dart';
+import 'package:learn/core/services/api_key_storage.dart';
 import 'puter_service.dart';
 
-/// Implementación Móvil de PuterService usando webview_flutter
+/// Implementación Móvil de PuterService usando el SDK nativo de Google Gemini
 class PuterServiceMobile implements PuterService {
-  late final WebViewController _controller;
-  Completer<String>? _currentChatCompleter;
-  bool _isReady = false;
-
-  PuterServiceMobile() {
-    _initWebView();
-  }
-
-  void _initWebView() {
-    _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
-      ..addJavaScriptChannel(
-        'PuterChannel',
-        onMessageReceived: (JavaScriptMessage message) {
-          _handleMessage(message.message);
-        },
-      )
-      ..loadFlutterAsset('assets/html/puter_bridge.html');
-  }
-
-  void _handleMessage(String messageStr) {
-    try {
-      final data = jsonDecode(messageStr);
-      final status = data['status'];
-      
-      if (status == 'ready') {
-        _isReady = true;
-      } else if (data['type'] == 'chat_response') {
-        if (_currentChatCompleter != null && !_currentChatCompleter!.isCompleted) {
-          if (status == 'success') {
-            _currentChatCompleter!.complete(data['response']);
-          } else {
-            _currentChatCompleter!.completeError(data['error'] ?? 'Error desconocido en Puter.js');
-          }
-          _currentChatCompleter = null;
-        }
-      }
-    } catch (e) {
-      debugPrint('Error decodificando mensaje de WebView: $e');
-    }
-  }
+  PuterServiceMobile();
 
   @override
   Widget? buildBridgeWidget() {
-    // Retornamos un WebView oculto de 1x1 pixel.
-    return SizedBox(
-      width: 1,
-      height: 1,
-      child: WebViewWidget(controller: _controller),
-    );
+    // No se necesita WebView en móvil porque usamos la API nativa de Gemini.
+    return null;
   }
 
   @override
   Future<String> chat(String prompt) async {
-    if (!_isReady) {
-      // Esperamos un momento si el WebView no ha terminado de cargar
-      await Future.delayed(const Duration(milliseconds: 500));
-      if (!_isReady) {
-        return 'El sistema aún se está inicializando. Por favor intenta de nuevo.';
-      }
+    // 1. Obtener la clave de API (del usuario o de la configuración por defecto)
+    final userKey = await ApiKeyStorage.getKey();
+    final apiKey = (userKey != null && userKey.trim().isNotEmpty) 
+        ? userKey.trim() 
+        : AppConfig.geminiApiKey.trim();
+
+    if (apiKey.isEmpty) {
+      return 'Error: No se ha configurado ninguna API Key de Gemini. Por favor configure una en Ajustes o en el Auditor de Texto.';
     }
-
-    if (_currentChatCompleter != null && !_currentChatCompleter!.isCompleted) {
-      return 'El jurado está pensando, espera un momento.';
-    }
-
-    _currentChatCompleter = Completer<String>();
-
-    final jsCommand = '''
-      handleFlutterMessage(JSON.stringify({
-        "action": "chat",
-        "prompt": ${jsonEncode(prompt)}
-      }));
-    ''';
 
     try {
-      await _controller.runJavaScript(jsCommand);
-      return await _currentChatCompleter!.future;
+      // Usamos el modelo gemini-2.0-flash para respuestas rápidas y fluidas.
+      final model = GenerativeModel(
+        model: 'gemini-2.0-flash',
+        apiKey: apiKey,
+      );
+
+      final response = await model.generateContent([
+        Content.text(prompt)
+      ]).timeout(const Duration(seconds: 30));
+
+      final responseText = response.text;
+      if (responseText != null && responseText.isNotEmpty) {
+        return responseText;
+      }
+      return 'El jurado no pudo generar una respuesta en este momento.';
     } catch (e) {
-      _currentChatCompleter = null;
-      return 'Hubo un error de comunicación con el jurado (Mobile): $e';
+      return 'Hubo un error de comunicación con el jurado (Gemini Móvil): $e';
     }
   }
 }

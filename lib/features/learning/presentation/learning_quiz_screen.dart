@@ -6,6 +6,8 @@ import 'package:learn/models/question.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/services/limits_service.dart';
 
 /// Pantalla 2 del Modo Aprendizaje Guiado — Fase Reto (Bucle de 10).
 ///
@@ -61,6 +63,11 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
       _isAnswering = true;
       _selectedAnswer = index;
     });
+
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) {
+      LimitsService.incrementQuestionCount();
+    }
 
     final isCorrect = index == question.correctAnswer;
     

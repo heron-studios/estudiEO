@@ -1,4 +1,4 @@
-﻿import 'dart:ui';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/subject_provider.dart';
@@ -10,7 +10,8 @@ import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:learn/core/services/limits_service.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
   final String mode;
@@ -89,13 +90,8 @@ class _TopicTile extends StatelessWidget {
     final authService = context.watch<AuthService>();
     final bool isPremium = authService.currentUser != null && authService.isAuthorized;
 
-    // Solo se bloquea si el usuario NO es premium y además el index > 0 (modo demo/invitado)
-    final bool isLocked = !isPremium && index > 0;
-    
     // Usar la cantidad real de preguntas según si es premium o no
-    final int dynamicQuestionCount = !isPremium 
-        ? context.read<SubjectProvider>().getQuestionsByTopic(topic.id).length 
-        : topic.questionCount;
+    final int dynamicQuestionCount = topic.questionCount;
 
     final learningProvider = context.read<LearningProvider>();
     final currentLevel = learningProvider.getCurrentLevel(topic.id);
@@ -110,33 +106,43 @@ class _TopicTile extends StatelessWidget {
           color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.55),
           borderRadius: BorderRadius.circular(16),
           child: InkWell(
-            onTap: () {
-              if (isLocked) {
-                context.push('/premium');
-                return;
+            onTap: () async {
+              if (!isPremium) {
+                final canAnswer = await LimitsService.canAnswerQuestion();
+                if (!canAnswer) {
+                  if (context.mounted) {
+                    PremiumUpgradeDialog.show(
+                      context,
+                      title: 'Límite Diario Alcanzado',
+                      message: 'Has respondido tus 10 preguntas gratuitas de hoy. ¡Vuelve mañana o hazte Premium para estudiar sin límites!',
+                    );
+                  }
+                  return;
+                }
               }
+
               if (mode == 'guided') {
                 if (topic.theoryByLevel != null) {
-                  _startGuidedLearning(context, topic);
+                  if (context.mounted) _startGuidedLearning(context, topic);
                 } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
-                      duration: Duration(seconds: 2),
-                    ),
-                  );
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 }
               } else {
-                _startQuickQuiz(context, topic);
+                if (context.mounted) _startQuickQuiz(context, topic);
               }
             },
             borderRadius: BorderRadius.circular(16),
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: isLocked
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : NeuralDesignSystem.blueGoogle.withValues(alpha: 0.2),
+                  color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.2),
                   width: 1,
                 ),
                 borderRadius: BorderRadius.circular(16),
@@ -154,17 +160,15 @@ class _TopicTile extends StatelessWidget {
                       border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
                     ),
                     child: Center(
-                      child: isLocked
-                          ? Icon(Icons.lock, color: Colors.white.withValues(alpha: 0.3), size: 16)
-                          : Text(
-                              '${index + 1}',
-                              style: const TextStyle(
-                                color: NeuralDesignSystem.blueGoogle,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                                fontFamily: 'Outfit',
-                              ),
-                            ),
+                      child: Text(
+                        '${index + 1}',
+                        style: const TextStyle(
+                          color: NeuralDesignSystem.blueGoogle,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: 'Outfit',
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 14),
@@ -179,10 +183,8 @@ class _TopicTile extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 topic.name,
-                                style: TextStyle(
-                                  color: isLocked
-                                      ? Colors.white.withValues(alpha: 0.35)
-                                      : NeuralDesignSystem.textPrimary,
+                                style: const TextStyle(
+                                  color: NeuralDesignSystem.textPrimary,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'Inter',
@@ -223,7 +225,7 @@ class _TopicTile extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
-                        if (!isLocked && mode == 'guided') ...[
+                        if (mode == 'guided') ...[
                           const SizedBox(height: 5),
                           _LevelProgressIndicator(
                             topicId: topic.id,
@@ -236,46 +238,30 @@ class _TopicTile extends StatelessWidget {
                   ),
 
                   const SizedBox(width: 12),
-                  if (isLocked)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Icon(Icons.lock_person_rounded,
-                            color: const Color(0xFFFBBF24).withValues(alpha: 0.8), size: 22),
-                        const Text(
-                          'Premium',
-                          style: TextStyle(
-                              color: Color(0xFFFBBF24), fontSize: 10, fontWeight: FontWeight.bold),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        '$dynamicQuestionCount',
+                        style: const TextStyle(
+                          color: NeuralDesignSystem.blueGoogle,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          fontFamily: 'Outfit',
                         ),
-                      ],
-                    )
-                  else
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '$dynamicQuestionCount',
-                          style: const TextStyle(
-                            color: NeuralDesignSystem.blueGoogle,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            fontFamily: 'Outfit',
-                          ),
-                        ),
-                        Text(
-                          'preguntas',
-                          style: TextStyle(
-                              color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.6),
-                              fontSize: 10),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Text(
+                        'preguntas',
+                        style: TextStyle(
+                            color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.6),
+                            fontSize: 10),
+                      ),
+                    ],
+                  ),
                   const SizedBox(width: 8),
                   Icon(
                     Icons.chevron_right,
-                    color: isLocked
-                        ? Colors.transparent
-                        : Colors.white.withValues(alpha: 0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     size: 22,
                   ),
                 ],

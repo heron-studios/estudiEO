@@ -60,7 +60,7 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EstudiEO', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
                       pw.Text('Reporte de Resultados de Quiz', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
                     ],
                   ),
@@ -184,7 +184,7 @@ class ExportService {
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
 <meta charset="utf-8">
-<title>EstudiEO - Resultados de Quiz</title>
+<title>EDUPOL - Resultados de Quiz</title>
 <style>
   body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px; }
   .header { border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 20px; }
@@ -204,7 +204,7 @@ class ExportService {
 </head>
 <body>
   <div class="header">
-    <h1 class="title">EstudiEO</h1>
+    <h1 class="title">EDUPOL</h1>
     <p class="subtitle">Reporte de Resultados de Quiz - Generado el $dateStr</p>
   </div>
 
@@ -316,7 +316,7 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EstudiEO', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
                       pw.Text('Reporte de Simulador Táctico (Entrevista)', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
                     ],
                   ),
@@ -419,7 +419,7 @@ class ExportService {
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
 <meta charset="utf-8">
-<title>EstudiEO - Resultados de Simulador Táctico</title>
+<title>EDUPOL - Resultados de Simulador Táctico</title>
 <style>
   body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px; }
   .header { border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 20px; }
@@ -442,7 +442,7 @@ class ExportService {
 </head>
 <body>
   <div class="header">
-    <h1 class="title">EstudiEO</h1>
+    <h1 class="title">EDUPOL</h1>
     <p class="subtitle">Reporte de Simulador Táctico - Generado el $dateStr</p>
   </div>
 
@@ -538,7 +538,7 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EstudiEO', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
                       pw.Text('Reporte de Progreso de Estudiante', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
                     ],
                   ),
@@ -638,7 +638,7 @@ class ExportService {
 
     await Printing.layoutPdf(
       onLayout: (PdfPageFormat format) async => pdf.save(),
-      name: 'Reporte_Progreso_EstudiEO.pdf',
+      name: 'Reporte_Progreso_EDUPOL.pdf',
     );
   }
 
@@ -674,7 +674,7 @@ class ExportService {
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
 <meta charset="utf-8">
-<title>EstudiEO - Reporte de Progreso</title>
+<title>EDUPOL - Reporte de Progreso</title>
 <style>
   body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px; }
   .header { border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 20px; }
@@ -693,7 +693,7 @@ class ExportService {
 </head>
 <body>
   <div class="header">
-    <h1 class="title">EstudiEO</h1>
+    <h1 class="title">EDUPOL</h1>
     <p class="subtitle">Reporte de Progreso del Estudiante - Generado el $dateStr</p>
   </div>
 
@@ -756,13 +756,13 @@ class ExportService {
 ''');
 
     final tempDir = await getTemporaryDirectory();
-    final file = File('${tempDir.path}/Reporte_Progreso_EstudiEO.doc');
+    final file = File('${tempDir.path}/Reporte_Progreso_EDUPOL.doc');
     await file.writeAsString(buffer.toString(), encoding: utf8);
 
     await SharePlus.instance.share(
       ShareParams(
         files: [XFile(file.path)],
-        text: 'Compartir reporte de progreso de EstudiEO',
+        text: 'Compartir reporte de progreso de EDUPOL',
       ),
     );
   }
@@ -815,7 +815,7 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EstudiEO', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
                       pw.Text('Reporte de Resultados de Simulacro de Examen', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
                     ],
                   ),
@@ -948,7 +948,7 @@ class ExportService {
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
 <meta charset="utf-8">
-<title>EstudiEO - Resultados de Simulacro</title>
+<title>EDUPOL - Resultados de Simulacro</title>
 <style>
   body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333333; padding: 20px; }
   .header { border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 20px; }
@@ -968,7 +968,7 @@ class ExportService {
 </head>
 <body>
   <div class="header">
-    <h1 class="title">EstudiEO</h1>
+    <h1 class="title">EDUPOL</h1>
     <p class="subtitle">Reporte de Simulacro de Examen - Generado el $dateStr</p>
   </div>
 

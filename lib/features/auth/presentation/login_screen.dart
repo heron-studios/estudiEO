@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
   Future<void> _contactSupport() async {
     final Uri url = Uri.parse(
-      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, solicito soporte o información sobre la suscripción de EstudiEO")}',
+      'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, solicito soporte o información sobre la suscripción de EDUPOL")}',
     );
     try {
       await launchUrl(url, mode: LaunchMode.externalApplication);
@@ -225,7 +225,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               ),
               const SizedBox(width: 10),
               const Text(
-                'EstudiEO',
+                'EDUPOL',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
@@ -360,40 +360,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           ),
         ),
         const SizedBox(height: 16),
-        // Demo Button
-        _ScaleButton(
-          onTap: _isCheckingAuth
-              ? null
-              : () {
-                  context.read<AuthService>().enterAsGuest();
-                },
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(
-                color: const Color(0xFF8AB4F8).withValues(alpha: 0.45),
-                width: 1.5,
-              ),
-            ),
-            child: const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.lock_open_rounded, color: Color(0xFF8AB4F8), size: 18),
-                SizedBox(width: 10),
-                Text(
-                  'Probar Versión Demo',
-                  style: TextStyle(
-                    color: Color(0xFF8AB4F8),
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        // Demo Button removed for freemium model.
       ],
     );
   }

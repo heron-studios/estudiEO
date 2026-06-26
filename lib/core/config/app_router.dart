@@ -44,6 +44,7 @@ import 'package:learn/features/medical/presentation/eysenck_test_screen.dart';
 import 'package:learn/features/medical/presentation/sacks_test_screen.dart';
 import 'package:learn/features/medical/presentation/psicologico_test_screen.dart';
 import 'package:learn/features/medical/presentation/trail_making_test_screen.dart';
+import 'package:learn/features/miniapps/presentation/redaccion_page.dart';
 
 class AppRouter {
   static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
@@ -51,7 +52,7 @@ class AppRouter {
       initialLocation: '/home',
       refreshListenable: authService,
       redirect: (context, state) {
-        final isAuth = authService.currentUser != null || authService.isGuest;
+        final isAuth = authService.currentUser != null;
         final isAuthorized = authService.isAuthorized;
         final isInitializing = authService.isInitializing;
         final hasSeenOnboarding = storageService.loadHasSeenOnboarding();
@@ -165,7 +166,10 @@ class AppRouter {
         ),
         GoRoute(
           path: '/exam-results',
-          builder: (context, state) => const ExamResultsScreen(),
+          builder: (context, state) {
+            final extra = state.extra as Map<String, dynamic>? ?? {};
+            return ExamResultsScreen(args: extra);
+          },
         ),
         GoRoute(
           path: '/exam-review',
@@ -262,6 +266,10 @@ class AppRouter {
         GoRoute(
           path: '/miniapps/productos-notables',
           builder: (context, state) => const ProductosNotablesScreen(),
+        ),
+        GoRoute(
+          path: '/miniapps/redaccion',
+          builder: (context, state) => const RedaccionPage(),
         ),
         GoRoute(
           path: '/medical',

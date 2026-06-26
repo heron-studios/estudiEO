@@ -11,6 +11,8 @@ import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/gemini_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/services/limits_service.dart';
 import 'package:go_router/go_router.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -88,6 +90,12 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     context.read<QuizProvider>().answerQuestion(questionId, selectedIndex, isCorrect);
+    
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) {
+      LimitsService.incrementQuestionCount();
+    }
+
     if (isCorrect) context.read<GamificationProvider>().addXp(10);
     context.read<SrsProvider>().processAnswer(
       questionId,

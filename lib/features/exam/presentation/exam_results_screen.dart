@@ -28,7 +28,9 @@ class _TopicStats {
 }
 
 class ExamResultsScreen extends StatefulWidget {
-  const ExamResultsScreen({super.key});
+  final Map<String, dynamic> args;
+
+  const ExamResultsScreen({super.key, this.args = const {}});
 
   @override
   State<ExamResultsScreen> createState() => _ExamResultsScreenState();
@@ -52,8 +54,8 @@ class _ExamResultsScreenState extends State<ExamResultsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? 
-                 GoRouterState.of(context).extra as Map<String, dynamic>? ?? {};
+    final args = widget.args.isNotEmpty ? widget.args : (ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? 
+                 GoRouterState.of(context).extra as Map<String, dynamic>? ?? {});
     final score = args['score'] as int? ?? 0;
     final total = args['total'] as int? ?? 1;
     final timeSpent = args['timeSpent'] as int? ?? 0;

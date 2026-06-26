@@ -25,7 +25,7 @@ class _AppShellState extends State<AppShell> {
   }
 
   Future<void> _launchWhatsApp() async {
-    final urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, necesito soporte con la plataforma EstudiEO.")}';
+    final urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, necesito soporte con la plataforma EDUPOL.")}';
     final uri = Uri.parse(urlStr);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);

@@ -1,31 +1,15 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform, TargetPlatform;
 import 'package:learn/core/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  NeuralBackgroundWrapper v4.1 — Plasma Fluido + Morphing Orgánico
-//
-//  Fix vs v4:
-//  • Web: blurSigma subido de 35 → 80 para que los blobs se vean en el renderer
-//    de Flutter Web (que atenúa MaskFilter con sigma bajo).
-//  • Web: opacidades de blobs desacopladas de NeuralTheme.blobXOpacity y subidas
-//    a valores fuertes fijos (0.78–0.90) — evita doble-multiplicación de alpha
-//    que dejaba todo oscuro.
-//  • Web: plasma de fondo con opacidades x3 y radios más grandes.
-//  • Posiciones de blobs corregidas — ya no se esconden en las esquinas extremas.
 // ─────────────────────────────────────────────────────────────────────────────
-
-// ─── Utilidades ───────────────────────────────────────────────────────────────
-
-
 
 /// Suavizado hermético — más suave que easeInOut estándar
 double _smoothstep(double t) => t * t * (3 - 2 * t);
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  Widget raíz — idéntica firma pública a v3
-// ─────────────────────────────────────────────────────────────────────────────
 class NeuralBackgroundWrapper extends StatefulWidget {
   final Widget child;
 
@@ -40,15 +24,22 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final ValueNotifier<Offset> _mouseNotifier;
+  late final bool _isMobile;
 
   @override
   void initState() {
     super.initState();
-    // Un único controller global — 60s de ciclo para movimiento lento y zen
+    _isMobile = !kIsWeb && (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS);
+    
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 60),
-    )..repeat();
+    );
+    
+    // Solo animar si no es mobile (por performance extremo)
+    if (!_isMobile) {
+      _controller.repeat();
+    }
 
     _mouseNotifier = ValueNotifier<Offset>(const Offset(-999, -999));
   }
@@ -63,6 +54,24 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
+
+    // Si es móvil, mostramos un fondo estático más ligero
+    if (_isMobile) {
+      return Stack(
+        fit: StackFit.expand,
+        children: [
+          ColoredBox(color: nt.background),
+          RepaintBoundary(
+            child: _PlasmaBackground(t: 0.1, nt: nt),
+          ),
+          RepaintBoundary(
+            child: _MorphBlobLayer(t: 0.2, nt: nt),
+          ),
+          const ColoredBox(color: Color(0x0A000000)),
+          widget.child,
+        ],
+      );
+    }
 
     return MouseRegion(
       onHover: (e) => _mouseNotifier.value = e.localPosition,

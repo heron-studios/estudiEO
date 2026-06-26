@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:learn/core/services/local_storage_service.dart';
+import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:learn/core/services/limits_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
 import 'puter_service.dart';
-
 class ChatMessage {
   final String text;
   final bool isUser;
@@ -62,19 +64,19 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
     setState(() {});
   }
 
-  void _checkDailyLimit() {
-    final box = Hive.box('estudieo_data');
-    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    final lastInterviewDate = box.get('last_interview_date', defaultValue: '');
-    
-    if (lastInterviewDate == today) {
-      setState(() {
-        _dailyLimitReached = true;
-        _messages.add(ChatMessage(text: 'Mi Coronel: "Usted ya tuvo su oportunidad el día de hoy. Retírese y vuelva mañana con una mejor preparación."', isUser: false));
-      });
-    } else {
-      _startInterview();
+  void _checkDailyLimit() async {
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) {
+      final canUseAI = await LimitsService.canUseIA();
+      if (!canUseAI) {
+        setState(() {
+          _dailyLimitReached = true;
+          _messages.add(ChatMessage(text: 'Mi Coronel: "Usted ya tuvo su oportunidad el día de hoy. Retírese y vuelva mañana con una mejor preparación."', isUser: false));
+        });
+        return;
+      }
     }
+    _startInterview();
   }
 
   void _startInterview() async {
@@ -122,9 +124,13 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
       _interviewFinished = true;
       
       // Registrar que ya hizo su entrevista del día
-      final box = Hive.box('estudieo_data');
-      final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-      box.put('last_interview_date', today);
+      if (mounted) {
+        final auth = context.read<AuthService>();
+        if (!auth.isPremium) {
+          LimitsService.incrementIACount();
+        }
+        context.read<LocalStorageService>().saveLastInterviewDate(DateTime.now());
+      }
     }
     
     final response = await _puterService.chat(promptConContexto);

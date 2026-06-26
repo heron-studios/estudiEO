@@ -117,7 +117,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'estudiEO',
+      title: 'EDUPOL',
       theme: NeuralTheme.buildThemeData(),
       debugShowCheckedModeBanner: false,
       routerConfig: _router,

@@ -6,6 +6,7 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/features/flashcards/presentation/flashcards_selector_screen.dart';
+import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
@@ -15,6 +16,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:learn/core/services/limits_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -334,6 +337,21 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     Future<void> onTap() async {
+      final auth = context.read<AuthService>();
+      if (!auth.isPremium) {
+        final canTake = await LimitsService.canTakeSimulacro();
+        if (!canTake) {
+          if (context.mounted) {
+            PremiumUpgradeDialog.show(
+              context,
+              title: 'Límite Semanal Alcanzado',
+              message: 'Solo puedes realizar 1 simulacro por semana en la versión gratuita. ¡Pásate a Premium para simulacros ilimitados!',
+            );
+          }
+          return;
+        }
+      }
+
       final savedState = storage.getActiveExamState();
       if (savedState != null) {
         final List<dynamic> qList = savedState['questions'] as List? ?? [];
@@ -380,12 +398,16 @@ class _HomeScreenState extends State<HomeScreen> {
           }
         } else if (resume == false) {
           storage.clearActiveExamState();
+          if (!auth.isPremium) await LimitsService.incrementSimulacroCount();
           if (context.mounted) {
             context.push('/exam', extra: {'resume': false});
           }
         }
       } else {
-        context.push('/exam', extra: {'resume': false});
+        if (!auth.isPremium) await LimitsService.incrementSimulacroCount();
+        if (context.mounted) {
+          context.push('/exam', extra: {'resume': false});
+        }
       }
     }
 
@@ -740,11 +762,12 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _showInterviewSelectionModal(BuildContext context, dynamic nt) {
-    final box = Hive.box('estudieo_data');
-    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    final lastInterviewDate = box.get('last_interview_date');
-    final bool aiLimitReached = lastInterviewDate == today;
+  void _showInterviewSelectionModal(BuildContext context, dynamic nt) async {
+    final auth = context.read<AuthService>();
+    final canUseAI = auth.isPremium || await LimitsService.canUseIA();
+    final bool aiLimitReached = !canUseAI;
+
+    if (!context.mounted) return;
 
     showModalBottomSheet(
       context: context,
@@ -1013,7 +1036,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                           },
                           child: const Text(
-                            'EstudiEO',
+                            'EDUPOL',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 28,

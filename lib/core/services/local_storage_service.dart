@@ -5,6 +5,7 @@ import 'package:learn/models/quiz_session.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:flutter/foundation.dart';
+import 'package:intl/intl.dart';
 
 class LocalStorageService {
   static const String srsKey = 'srs_data';
@@ -714,5 +715,20 @@ class LocalStorageService {
 
   bool getInterviewRealismMode() {
     return _storage.get('interview_realism_mode', defaultValue: false) as bool;
+  }
+
+  // --- Interview Date ---
+  String getLastInterviewDate() {
+    try {
+      return _storage.get('last_interview_date', defaultValue: '') as String;
+    } catch (_) {
+      return '';
+    }
+  }
+
+  void saveLastInterviewDate(DateTime date) {
+    try {
+      _storage.put('last_interview_date', DateFormat('yyyy-MM-dd').format(date));
+    } catch (_) {}
   }
 }

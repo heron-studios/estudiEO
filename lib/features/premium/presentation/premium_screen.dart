@@ -6,7 +6,7 @@ class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key});
 
   Future<void> _launchWhatsApp() async {
-    final String message = Uri.encodeComponent('Hola, quiero comprar la versión Premium de EstudiEO');
+    final String message = Uri.encodeComponent('Hola, quiero comprar la versión Premium de EDUPOL');
     final String urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=$message';
     final Uri url = Uri.parse(urlStr);
 

@@ -18,7 +18,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Map<String, String>> _slides = [
     {
-      'title': 'Bienvenido a EstudiEO',
+      'title': 'Bienvenido a EDUPOL',
       'body': 'Tu academia digital definitiva para ingresar a las Escuelas de Oficiales y Suboficiales de la PNP. Todo el temario en tu bolsillo.',
       'icon': '👮',
     },

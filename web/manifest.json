@@ -1,11 +1,11 @@
 {
-    "name": "EstudiEO",
-    "short_name": "EstudiEO",
+    "name": "EDUPOL",
+    "short_name": "EDUPOL",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#060B18",
     "theme_color": "#3B82F6",
-    "description": "La mejor app de preparación para el examen de ingreso a la Escuela PNP.",
+    "description": "La mejor app de preparación para el examen de ingreso a la EO PNP y Técnica PNP.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

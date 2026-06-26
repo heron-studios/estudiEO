@@ -31,7 +31,7 @@ class AuthService extends ChangeNotifier {
   bool get isAuthorized => _isAuthorized;
 
   bool _isPremium = false;
-  bool get isPremium => _isPremium || AppConfig.isDemoMode;
+  bool get isPremium => _isPremium;
 
   bool _psico = false;
   bool get psico => _psico;
@@ -52,11 +52,6 @@ class AuthService extends ChangeNotifier {
 
   Future<void> _checkInitialAuth() async {
     try {
-      if (AppConfig.isDemoMode) {
-        _isAuthorized = true;
-        return;
-      }
-
       // Esperar a que Firebase termine de cargar la sesión persistida (hasta 2 segundos)
       final user = await _auth.userChanges().first.timeout(
         const Duration(seconds: 2),
@@ -137,22 +132,12 @@ class AuthService extends ChangeNotifier {
     }
   }
 
-  bool _isGuest = false;
-  bool get isGuest => _isGuest;
 
-  void enterAsGuest() {
-    _isGuest = true;
-    _isAuthorized = false;
-    _psico = false;
-    _setLoading(false);
-    notifyListeners();
-  }
 
   /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
     _psico = false;
-    _isGuest = false;
     await _googleSignIn.signOut();
     await _auth.signOut();
     notifyListeners();
@@ -163,10 +148,6 @@ class AuthService extends ChangeNotifier {
 
   Future<bool> _verifyAuthorization() async {
     _lastVerificationError = null;
-    if (AppConfig.isDemoMode) {
-      _isPremium = true;
-      return true; // Bypass check in demo mode
-    }
     final user = _auth.currentUser;
     if (user == null || user.email == null) {
       _lastVerificationError = 'No hay usuario autenticado de Firebase.';

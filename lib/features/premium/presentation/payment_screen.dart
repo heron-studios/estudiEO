@@ -396,7 +396,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
               const SizedBox(height: 16),
               Text(
-                'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EstudiEO. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
+                'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EDUPOL. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
                 style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.65), height: 1.6),
               ),
             ],
@@ -431,7 +431,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         ),
         const SizedBox(height: 12),
         Text(
-          'Miles de alumnos y cadetes ya aprobaron con EstudiEO.\nSé el próximo.',
+          'Miles de alumnos y cadetes ya aprobaron con EDUPOL.\nSé el próximo.',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 15, color: Colors.white.withValues(alpha: 0.6), height: 1.6),
         ),

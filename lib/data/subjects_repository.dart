@@ -1,4 +1,3 @@
-﻿import 'package:learn/core/config/app_config.dart';
 import 'package:learn/data/subject_data_matematicas.dart';
 import 'package:learn/data/subject_data_comunicacion.dart';
 import 'package:learn/data/subject_data_sociales.dart';
@@ -62,30 +61,8 @@ class SubjectsRepository {
     List<Question> filtered = [];
     for (final questions in _questionsBySubject.values) {
       filtered = questions.where((q) => q.topicId == topicId).toList();
-      if (filtered.isNotEmpty) {
-        break;
-      }
+      if (filtered.isNotEmpty) break;
     }
-
-    if (AppConfig.isDemoMode) {
-      // En modo demo generamos exactamente 10 preguntas
-      final Map<String, int> demoLimits = {
-        'mat_algebra': 2,
-        'com_t1': 2,
-        'cs_t1': 2,
-        'cta_t1': 1,
-        'pfrh_t1': 1,
-        'rv_sinonimos': 1,
-        'rm_sucesiones': 1,
-      };
-
-      if (demoLimits.containsKey(topicId)) {
-        return filtered.take(demoLimits[topicId]!).toList();
-      } else {
-        return []; // Tópico bloqueado/vacío en demo
-      }
-    }
-
     return filtered;
   }
 
@@ -93,18 +70,9 @@ class SubjectsRepository {
   static Question? getQuestion(String questionId) {
     for (final questions in _questionsBySubject.values) {
       try {
-        final q = questions.firstWhere((q) => q.id == questionId);
-        // Si estamos en demo, asegurarnos que pertenece a las 10 preguntas
-        if (AppConfig.isDemoMode) {
-           final topicQuestions = getQuestionsByTopic(q.topicId);
-           if (topicQuestions.any((tq) => tq.id == questionId)) {
-             return q;
-           }
-           return null;
-        }
-        return q;
+        return questions.firstWhere((q) => q.id == questionId);
       } catch (e) {
-        // Continue searching in other subjects
+        // Continue searching
       }
     }
     return null;
@@ -152,10 +120,7 @@ class SubjectsRepository {
     Dificultad nivel, {
     int count = 10,
   }) {
-    // En demo solo se exponen las preguntas ya filtradas
-    final allQuestions = AppConfig.isDemoMode
-        ? getQuestionsByTopic(topicId)
-        : _getRawQuestionsByTopic(topicId);
+    final allQuestions = _getRawQuestionsByTopic(topicId);
 
     if (allQuestions.isEmpty) return [];
 
@@ -203,25 +168,11 @@ class SubjectsRepository {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
-      'questions': AppConfig.isDemoMode 
-          ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id)).toList()
-          : getQuestionsBySubject(subjectId),
+      'questions': getQuestionsBySubject(subjectId),
     };
   }
 
-  /// Genera un examen simulacro de 100 preguntas exactas (o 10 en demo)
   static List<Question> generateExamQuestions() {
-    if (AppConfig.isDemoMode) {
-      // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
-      final List<String> demoTopics = ['mat_algebra', 'com_t1', 'cs_t1', 'cta_t1', 'pfrh_t1', 'rv_sinonimos', 'rm_sucesiones'];
-      final List<Question> demoExam = [];
-      for (final topicId in demoTopics) {
-        demoExam.addAll(getQuestionsByTopic(topicId));
-      }
-      demoExam.shuffle();
-      return demoExam;
-    }
-
     final Map<String, int> quotas = {
       'matematicas': 15,
       'comunicacion': 15,

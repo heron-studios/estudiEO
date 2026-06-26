@@ -95,44 +95,12 @@ class SubjectsRepository {
   static List<Question> getQuestionsByTopic(String topicId, {bool isPremium = false}) {
     _initIndexes();
     final cached = _questionsByTopicCache![topicId] ?? [];
-    List<Question> filtered = List<Question>.from(cached);
-
-    if (AppConfig.isDemoMode && !isPremium) {
-      // En modo demo, solo estos temas tienen preguntas, y están limitadas para sumar 10 exactas.
-      final Map<String, int> demoLimits = {
-        'mat_algebra': 2,
-        'eo_pnp_reglas_ortograficas_ext_10q': 2,
-        'cs_t1': 2,
-        'cta_materia_energia': 1,
-        'pfrh_persona_familia': 1,
-        'eo_pnp_sinonimos_ext_10q': 1,
-        'rm_sucesiones': 1,
-      };
-
-      if (demoLimits.containsKey(topicId)) {
-        return filtered.take(demoLimits[topicId]!).toList();
-      } else {
-        return []; // Tópico bloqueado/vacío en demo
-      }
-    }
-
-    return filtered;
+    return List<Question>.from(cached);
   }
 
-  /// Obtiene una pregunta específica
   static Question? getQuestion(String questionId, {bool isPremium = false}) {
     _initIndexes();
-    final q = _questionByIdCache![questionId];
-    if (q == null) return null;
-
-    if (AppConfig.isDemoMode && !isPremium) {
-       final topicQuestions = getQuestionsByTopic(q.topicId, isPremium: isPremium);
-       if (topicQuestions.any((tq) => tq.id == questionId)) {
-         return q;
-       }
-       return null;
-    }
-    return q;
+    return _questionByIdCache![questionId];
   }
 
   /// Obtiene todos los tópicos de una asignatura
@@ -186,12 +154,7 @@ class SubjectsRepository {
     bool isPremium = false,
   }) {
     _initIndexes();
-    // Usar pool completo sin filtro demo para el modo guiado
-    final allQuestions = (AppConfig.isDemoMode && !isPremium)
-        ? getQuestionsByTopic(topicId)
-        : List<Question>.from(
-            _questionsByTopicCache![topicId] ?? [],
-          );
+    final allQuestions = List<Question>.from(_questionsByTopicCache![topicId] ?? []);
 
     if (allQuestions.isEmpty) return [];
 
@@ -257,25 +220,11 @@ class SubjectsRepository {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
-      'questions': (AppConfig.isDemoMode && !isPremium) 
-          ? getTopicsBySubject(subjectId).expand((t) => getQuestionsByTopic(t.id, isPremium: isPremium)).toList()
-          : getQuestionsBySubject(subjectId),
+      'questions': getQuestionsBySubject(subjectId),
     };
   }
 
-  /// Genera un examen simulacro de 100 preguntas exactas (o 10 en demo)
   static List<Question> generateExamQuestions({bool isPremium = false}) {
-    if (AppConfig.isDemoMode && !isPremium) {
-      // En modo demo el simulacro consta exactamente de las 10 preguntas desbloqueadas
-      final List<String> demoTopics = ['mat_1', 'com_1', 'cs_1', 'cta_1', 'pfrh_1', 'rv_1', 'rm_1'];
-      final List<Question> demoExam = [];
-      for (final topicId in demoTopics) {
-        demoExam.addAll(getQuestionsByTopic(topicId, isPremium: isPremium));
-      }
-      demoExam.shuffle();
-      return demoExam;
-    }
-
     final Map<String, int> quotas = {
       'matematicas': 15,
       'comunicacion': 15,

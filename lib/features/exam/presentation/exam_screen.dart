@@ -181,19 +181,8 @@ class _ExamScreenState extends State<ExamScreen> {
     if (!wasAlreadyAnswered && _currentIndex < _questions.length - 1) {
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted) {
-          if (_currentIndex < _questions.length && _questions[_currentIndex].id == qId) {
-            final auth = context.read<AuthService>();
-            if (!auth.isPremium && _currentIndex >= 4) {
-              PremiumUpgradeDialog.show(
-                context,
-                title: 'Límite de Simulacro Gratuito',
-                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para realizar simulacros completos de 100 preguntas.',
-              );
-            } else {
               setState(() => _currentIndex++);
               _saveExamProgress();
-            }
-          }
         }
       });
     }
@@ -421,17 +410,8 @@ class _ExamScreenState extends State<ExamScreen> {
                         return GestureDetector(
                           onTap: () {
                             Navigator.pop(ctx);
-                            final auth = context.read<AuthService>();
-                            if (!auth.isPremium && index > 4) {
-                              PremiumUpgradeDialog.show(
-                                context,
-                                title: 'Límite de Simulacro Gratuito',
-                                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para acceder a todas las preguntas.',
-                              );
-                            } else {
-                              setState(() => _currentIndex = index);
-                              _saveExamProgress();
-                            }
+                            setState(() => _currentIndex = index);
+                            _saveExamProgress();
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -522,17 +502,8 @@ class _ExamScreenState extends State<ExamScreen> {
 
                 return GestureDetector(
                   onTap: () {
-                    final auth = context.read<AuthService>();
-                    if (!auth.isPremium && index > 4) {
-                      PremiumUpgradeDialog.show(
-                        context,
-                        title: 'Límite de Simulacro Gratuito',
-                        message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para acceder a todas las preguntas.',
-                      );
-                    } else {
                       setState(() => _currentIndex = index);
                       _saveExamProgress();
-                    }
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -755,17 +726,8 @@ class _ExamScreenState extends State<ExamScreen> {
                         const Spacer(),
                         IconButton(
                           onPressed: _currentIndex < _questions.length - 1 ? () {
-                            final auth = context.read<AuthService>();
-                            if (!auth.isPremium && _currentIndex >= 4) {
-                              PremiumUpgradeDialog.show(
-                                context,
-                                title: 'Límite de Simulacro Gratuito',
-                                message: 'Has alcanzado el límite de 5 preguntas de prueba. Actualiza a Premium para realizar simulacros completos de 100 preguntas.',
-                              );
-                            } else {
-                              setState(() => _currentIndex++);
-                              _saveExamProgress();
-                            }
+                            setState(() => _currentIndex++);
+                            _saveExamProgress();
                           } : null,
                           icon: const Icon(Icons.arrow_forward_ios, size: 18),
                           color: Colors.white,
