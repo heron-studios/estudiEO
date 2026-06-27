@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
@@ -132,8 +131,6 @@ class QuizResultsScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                         child: Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
@@ -191,7 +188,6 @@ class QuizResultsScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
 
                   const Spacer(),
 
@@ -357,8 +353,6 @@ class _StatBox extends StatelessWidget {
     return Expanded(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 18),
             decoration: BoxDecoration(
@@ -392,7 +386,6 @@ class _StatBox extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
