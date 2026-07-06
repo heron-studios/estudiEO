@@ -84,7 +84,7 @@ class _PaymentScreenState extends State<PaymentScreen>
   }
 
   Future<void> _launchWhatsApp() async {
-    const text = 'Hola! estoy interesado en adquirir la aplicacion, mas informacion por favor';
+    const text = 'Hola! estoy interesado en adquirir la aplicacion con el descuento Cyber Wow de 15 soles, mas informacion por favor';
     final uri = Uri.parse(
       'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
     );
@@ -669,7 +669,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               shaderCallback: (b) => const LinearGradient(
                 colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
               ).createShader(b),
-              child: const Text('40', style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900, height: 1, letterSpacing: -4)),
+              child: const Text('15', style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900, height: 1, letterSpacing: -4)),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 14),
@@ -684,6 +684,22 @@ class _PaymentScreenState extends State<PaymentScreen>
           ],
         ),
         const SizedBox(height: 8),
+        Center(
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: const Color(0xFFEF4444).withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: const Color(0xFFEF4444).withValues(alpha: 0.5)),
+            ),
+            child: const Text(
+              '🔥 Descuento Cyber Wow 50%: de 30 soles a 15 soles todo el mes de julio',
+              style: TextStyle(color: Color(0xFFEF4444), fontSize: 13, fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
         Center(
           child: Text(
             'Pago único · Sin mensualidades · Sin sorpresas',
@@ -747,7 +763,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('COMPRAR AHORA · S/40',
+                  Text('COMPRAR AHORA · S/15',
                       style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
                   Text('Contactar por WhatsApp',
                       style: TextStyle(color: Colors.white70, fontSize: 11)),
