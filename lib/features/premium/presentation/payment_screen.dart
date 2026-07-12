@@ -185,7 +185,7 @@ class _PaymentScreenState extends State<PaymentScreen>
       physics: const BouncingScrollPhysics(),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 30),
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1100),
             child: Row(
@@ -198,9 +198,9 @@ class _PaymentScreenState extends State<PaymentScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildTopBadge(),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 12),
                       _buildTitleLeft(),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 24),
                       const Text(
                         'Beneficios exclusivos incluidos:',
                         style: TextStyle(
@@ -210,18 +210,18 @@ class _PaymentScreenState extends State<PaymentScreen>
                           letterSpacing: 0.5,
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 12),
                       _buildBenefitsList(),
                     ],
                   ),
                 ),
-                const SizedBox(width: 50),
+                const SizedBox(width: 40),
                 // Columna derecha: Tarjeta de compra unificada
                 Expanded(
                   flex: 5,
                   child: Column(
                     children: [
-                      const SizedBox(height: 40), // Alínea verticalmente con el título de la izquierda
+                      const SizedBox(height: 12), // Alínea verticalmente con el título de la izquierda
                       ScaleTransition(
                         scale: _entranceAnim,
                         child: _buildUnifiedCheckoutCard(),
@@ -369,7 +369,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 child: const Text(
                   'Tu vacante a la PNP\ncomienza aquí',
                   style: TextStyle(
-                    fontSize: 44,
+                    fontSize: 38,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
                     height: 1.15,
@@ -377,10 +377,10 @@ class _PaymentScreenState extends State<PaymentScreen>
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Text(
                 'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EDUPOL. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
-                style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.65), height: 1.6),
+                style: TextStyle(fontSize: 14, color: Colors.white.withValues(alpha: 0.65), height: 1.5),
               ),
             ],
           ),
@@ -425,7 +425,7 @@ class _PaymentScreenState extends State<PaymentScreen>
   Widget _buildBenefitsList() {
     return Column(
       children: _benefits.map((b) => Padding(
-        padding: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.only(bottom: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -463,7 +463,7 @@ class _PaymentScreenState extends State<PaymentScreen>
 
   Widget _buildUnifiedCheckoutCard() {
     final checkoutContent = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -500,19 +500,19 @@ class _PaymentScreenState extends State<PaymentScreen>
             ],
           ),
 
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
-          const SizedBox(height: 20),
+          const SizedBox(height: 12),
 
           // Precio
           _buildPriceSection(),
 
-          const SizedBox(height: 30),
+          const SizedBox(height: 16),
 
           // Botón de WhatsApp
           _buildBuyButton(),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 10),
 
           _buildSecondaryButton(
             icon: Icons.home_rounded,
@@ -528,70 +528,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             },
           ),
           
-          const SizedBox(height: 12),
-
-          _buildSecondaryButton(
-            icon: Icons.refresh_rounded,
-            label: '¿Ya pagaste? Verificar Acceso',
-            subtitle: 'Comprobar si tu cuenta ya fue activada en Firestore',
-            gradient: const [Color(0xFF3B82F6), Color(0xFF1D4ED8)],
-            onTap: () async {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Row(
-                    children: [
-                      SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                      ),
-                      SizedBox(width: 12),
-                      Text('Verificando acceso...'),
-                    ],
-                  ),
-                  duration: Duration(seconds: 1),
-                ),
-              );
-
-              final authService = context.read<AuthService>();
-              final hasAccess = await authService.checkAndSetAuthorization();
-
-              if (mounted) {
-                if (hasAccess) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('¡Acceso verificado con éxito! Redirigiendo...'),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
-                } else {
-                  final lastErr = authService.lastVerificationError;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        'Acceso aún no activo. Si ya pagaste, por favor escribe a soporte.'
-                        '${lastErr != null ? '\n\nDetalle técnico:\n$lastErr' : ''}'
-                      ),
-                      backgroundColor: Colors.orange,
-                      duration: const Duration(seconds: 10),
-                      action: SnackBarAction(
-                        label: 'Copiar',
-                        textColor: Colors.white,
-                        onPressed: () {
-                          // Copiar al portapapeles si es posible
-                          try {
-                            Clipboard.setData(ClipboardData(text: lastErr ?? 'Sin detalles'));
-                          } catch (_) {}
-                        },
-                      ),
-                    ),
-                  );
-                }
-              }
-            },
-          ),
-
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
 
           _buildSecondaryButton(
             icon: Icons.groups_rounded,
@@ -601,7 +538,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             onTap: () => _launchUrl('https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05'),
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
 
           _buildSecondaryButton(
             icon: Icons.download_for_offline_rounded,
@@ -611,14 +548,14 @@ class _PaymentScreenState extends State<PaymentScreen>
             onTap: () => _launchUrl('https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing'),
           ),
 
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
-          const SizedBox(height: 20),
+          const SizedBox(height: 12),
 
           // Badges de Confianza (Seguro, Activación rápida, Yape/Plin)
           _buildTrustBadges(),
 
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
 
           // Textos de Seguridad y Garantía
           _buildSecurityText(),
@@ -668,10 +605,10 @@ class _PaymentScreenState extends State<PaymentScreen>
               shaderCallback: (b) => const LinearGradient(
                 colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
               ).createShader(b),
-              child: const Text('15', style: TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900, height: 1, letterSpacing: -4)),
+              child: const Text('15', style: TextStyle(color: Colors.white, fontSize: 72, fontWeight: FontWeight.w900, height: 1, letterSpacing: -3)),
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 14),
+              padding: EdgeInsets.only(top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -685,8 +622,8 @@ class _PaymentScreenState extends State<PaymentScreen>
         const SizedBox(height: 8),
         Center(
           child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            margin: const EdgeInsets.symmetric(vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
               color: const Color(0xFFEF4444).withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(20),
@@ -734,7 +671,7 @@ class _PaymentScreenState extends State<PaymentScreen>
           animation: _pulseAnim,
           builder: (_, child) => Container(
             width: double.infinity,
-            height: 62,
+            height: 56,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: const LinearGradient(
@@ -816,12 +753,12 @@ class _PaymentScreenState extends State<PaymentScreen>
   }) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(12),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(12),
           color: Colors.white.withValues(alpha: 0.03),
           border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
         ),
