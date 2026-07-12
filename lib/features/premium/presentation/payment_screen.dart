@@ -125,32 +125,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                 : _buildNarrowLayout(),
           ),
 
-          // Volver / Atrás
-          Positioned(
-            top: 16,
-            left: 16,
-            child: SafeArea(
-              child: TextButton.icon(
-                onPressed: () {
-                  if (context.canPop()) {
-                    context.pop();
-                  } else {
-                    context.go('/home');
-                  }
-                },
-                icon: const Icon(Icons.home_rounded, color: Colors.white70, size: 16),
-                label: const Text(
-                  'Volver al Inicio',
-                  style: TextStyle(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white.withValues(alpha: 0.05),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                ),
-              ),
-            ),
-          ),
+
 
           // Cerrar sesión
           Positioned(
@@ -538,6 +513,22 @@ class _PaymentScreenState extends State<PaymentScreen>
           _buildBuyButton(),
 
           const SizedBox(height: 16),
+
+          _buildSecondaryButton(
+            icon: Icons.home_rounded,
+            label: 'Volver al menú principal',
+            subtitle: 'Explorar la aplicación sin comprar',
+            gradient: const [Color(0xFF64748B), Color(0xFF475569)],
+            onTap: () {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go('/home');
+              }
+            },
+          ),
+          
+          const SizedBox(height: 12),
 
           _buildSecondaryButton(
             icon: Icons.refresh_rounded,
