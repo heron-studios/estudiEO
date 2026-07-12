@@ -14,9 +14,9 @@ const _benefits = [
   _Benefit(Icons.all_inclusive_rounded,     Color(0xFF3B82F6), 'Acceso permanente a la app',         'Una vez, para siempre. Sin renovaciones.'),
   _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Simulacro Tipo Examen de Admisión',  'Con preguntas reales de exámenes de procesos pasados.'),
   _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Misión Diaria de Aprendizaje',       'Sistema inteligente para repasar temas frecuentes.'),
-  _Benefit(Icons.health_and_safety_rounded, Color(0xFF10B981), 'Examen Médico y Psicológico',        'Pruebas Eysenck, Sacks y test de personalidad.'),
-  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simulador de Entrevista Personal',   'Practica el balotario oral bajo presión.'),
-  _Benefit(Icons.extension_rounded,         Color(0xFF06B6D4), 'Minijuegos de Agilidad Mental',      'ANP Master, Silogismos y Tabla Periódica interactiva.'),
+  _Benefit(Icons.health_and_safety_rounded, Color(0xFF10B981), 'Área Médica y Psicométrica',         'Test de Eysenck, Sacks, TMT y simuladores psicotécnicos.'),
+  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simuladores de Entrevista',          'Entrevista personal con IA y trivias de cultura general policial.'),
+  _Benefit(Icons.extension_rounded,         Color(0xFF06B6D4), 'Mini-apps y Taller de Redacción',    'ANP Master, Silogismos, Productos Notables y corrección de redacción.'),
   _Benefit(Icons.support_agent_rounded,     Color(0xFFFFD700), 'Soporte VIP y Actualizaciones',      'Grupo exclusivo y nuevas preguntas sin costo adicional.'),
 ];
 
@@ -126,7 +126,11 @@ class _PaymentScreenState extends State<PaymentScreen>
               child: IconButton(
                 icon: const Icon(Icons.arrow_back_rounded, color: Colors.white70),
                 onPressed: () {
-                  context.go('/home');
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go('/home');
+                  }
                 },
                 style: IconButton.styleFrom(
                   backgroundColor: Colors.white.withValues(alpha: 0.05),
