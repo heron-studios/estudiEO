@@ -118,13 +118,19 @@ class _PaymentScreenState extends State<PaymentScreen>
             ),
           ),
 
+          // Contenido
+          SafeArea(
+            child: isWide
+                ? _buildWideLayout()
+                : _buildNarrowLayout(),
+          ),
+
           // Volver / Atrás
           Positioned(
             top: 16,
             left: 16,
             child: SafeArea(
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back_rounded, color: Colors.white70),
+              child: TextButton.icon(
                 onPressed: () {
                   if (context.canPop()) {
                     context.pop();
@@ -132,20 +138,18 @@ class _PaymentScreenState extends State<PaymentScreen>
                     context.go('/home');
                   }
                 },
-                style: IconButton.styleFrom(
+                icon: const Icon(Icons.home_rounded, color: Colors.white70, size: 16),
+                label: const Text(
+                  'Volver al Inicio',
+                  style: TextStyle(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
+                ),
+                style: TextButton.styleFrom(
                   backgroundColor: Colors.white.withValues(alpha: 0.05),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                 ),
               ),
             ),
-          ),
-
-          // Contenido
-          SafeArea(
-            child: isWide
-                ? _buildWideLayout()
-                : _buildNarrowLayout(),
           ),
 
           // Cerrar sesión
