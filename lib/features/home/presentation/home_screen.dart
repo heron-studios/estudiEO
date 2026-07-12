@@ -46,6 +46,17 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _loadPsicoProgress();
     _loadDailyVerse();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkPremiumStatus();
+    });
+  }
+
+  void _checkPremiumStatus() {
+    if (!mounted) return;
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) {
+      PremiumUpgradeDialog.show(context);
+    }
   }
 
   Future<void> _loadDailyVerse() async {
@@ -1000,6 +1011,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final bool isLargeScreen = MediaQuery.of(context).size.width >= 800;
+    final auth = context.watch<AuthService>();
+    final isPremium = auth.isPremium;
 
     // Colores del estado de diagnóstico
     final diagnosisColor = _diagnosis == 'APTO'
@@ -1117,6 +1130,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    // Badge de estado PRO/FREE
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: isPremium ? const Color(0xFF8B5CF6).withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: isPremium ? const Color(0xFF8B5CF6).withValues(alpha: 0.5) : Colors.grey.withValues(alpha: 0.5),
+                        ),
+                      ),
+                      child: Text(
+                        isPremium ? 'PRO' : 'FREE',
+                        style: TextStyle(
+                          color: isPremium ? const Color(0xFFC4B5FD) : Colors.grey[400],
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
