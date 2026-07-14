@@ -15,7 +15,7 @@ const _benefits = [
   _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Simulacro Tipo Examen de Admisión',  'Con preguntas reales de exámenes de procesos pasados.'),
   _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Misión Diaria de Aprendizaje',       'Sistema inteligente para repasar temas frecuentes.'),
   _Benefit(Icons.health_and_safety_rounded, Color(0xFF10B981), 'Área Médica y Psicométrica',         'Test de Eysenck, Sacks, TMT y simuladores psicotécnicos.'),
-  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simuladores de Entrevista',          'Entrevista personal con IA y trivias de cultura general policial.'),
+  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simuladores de Entrevista',          'Entrevista personal con IA (Groq) y trivias de cultura general policial.'),
   _Benefit(Icons.extension_rounded,         Color(0xFF06B6D4), 'Mini-apps y Taller de Redacción',    'ANP Master, Silogismos, Productos Notables y corrección de redacción.'),
   _Benefit(Icons.support_agent_rounded,     Color(0xFFFFD700), 'Soporte VIP y Actualizaciones',      'Grupo exclusivo y nuevas preguntas sin costo adicional.'),
 ];

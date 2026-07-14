@@ -554,7 +554,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             child: OutlinedButton.icon(
                               onPressed: () => _askTutor(question, _selectedAnswer),
                               icon: const Text('🤖', style: TextStyle(fontSize: 18)),
-                              label: const Text('Preguntar al Tutor IA por qué fallé'),
+                              label: const Text('Preguntar al Tutor IA (Gemini) por qué fallé'),
                               style: OutlinedButton.styleFrom(
                                 foregroundColor: NeuralDesignSystem.blueGoogle,
                                 side: BorderSide(color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.5)),

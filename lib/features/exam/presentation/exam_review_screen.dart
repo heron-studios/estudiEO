@@ -624,7 +624,7 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                               const Icon(Icons.smart_toy_rounded, color: Colors.purpleAccent, size: 20),
                               const SizedBox(width: 8),
                               const Text(
-                                'Tutor IA',
+                                'Tutor IA (Puter)',
                                 style: TextStyle(
                                   color: Colors.purpleAccent,
                                   fontSize: 15,
@@ -636,7 +636,7 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                                 ElevatedButton.icon(
                                   onPressed: () => _requestAIExplanation(question, selectedAnswer, isCorrect),
                                   icon: const Icon(Icons.auto_awesome, size: 16),
-                                  label: const Text('Explicar con IA', style: TextStyle(fontSize: 12)),
+                                  label: const Text('Explicar con IA (Puter)', style: TextStyle(fontSize: 12)),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.purpleAccent.withValues(alpha: 0.2),
                                     foregroundColor: Colors.purpleAccent,

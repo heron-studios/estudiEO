@@ -197,7 +197,7 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Simulador de Entrevista (Jurado)'),
+            title: const Text('Simulador de Entrevista (Groq)'),
           centerTitle: true,
         ),
         body: Stack(
