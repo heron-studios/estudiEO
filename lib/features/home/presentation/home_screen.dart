@@ -775,7 +775,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _showInterviewSelectionModal(BuildContext context, dynamic nt) async {
     final auth = context.read<AuthService>();
-    final canUseAI = auth.isPremium || await LimitsService.canUseIA();
+    final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
     final bool aiLimitReached = !canUseAI;
 
     if (!context.mounted) return;

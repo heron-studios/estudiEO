@@ -38,6 +38,21 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
   }
 
   Future<void> _requestAIExplanation(Question q, int selectedOptionIndex, bool isCorrect) async {
+    final auth = context.read<AuthService>();
+    final canUseIA = await LimitsService.canUseTutorIA(auth.isPremium);
+
+    if (!canUseIA) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Límite diario de consultas al Tutor IA alcanzado. Vuelve mañana o hazte Premium.'),
+            backgroundColor: Colors.redAccent,
+          ),
+        );
+      }
+      return;
+    }
+
     setState(() {
       _isLoadingAi[q.id] = true;
     });
@@ -63,6 +78,7 @@ La respuesta correcta es: "$correctAnswerText"
 Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y por qué la opción del alumno es incorrecta (si se equivocó). Usa un tono motivador y claro. Formatea tu respuesta en Markdown.
 ''';
 
+    await LimitsService.incrementTutorIACount();
     final response = await _puterService.chat(systemPrompt);
 
     if (mounted) {

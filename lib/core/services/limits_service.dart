@@ -4,7 +4,14 @@ import 'package:intl/intl.dart';
 class LimitsService {
   static const int MAX_QUESTIONS_PER_DAY = 10;
   static const int MAX_SIMULACROS_PER_WEEK = 1;
-  static const int MAX_IA_PER_WEEK = 1;
+
+  // Límites IA (Tutor/Explicador)
+  static const int MAX_TUTOR_PER_DAY_FREE = 3;
+  static const int MAX_TUTOR_PER_DAY_PREMIUM = 50;
+
+  // Límites IA (Entrevista/Simulador)
+  static const int MAX_ENTREVISTA_PER_DAY_FREE = 1;
+  static const int MAX_ENTREVISTA_PER_DAY_PREMIUM = 5; // Aunque sea premium, tiene un límite diario seguro
 
   // Keys
   static const String _kQuestionsDate = 'limits_questions_date';
@@ -13,8 +20,11 @@ class LimitsService {
   static const String _kSimulacroWeek = 'limits_simulacro_week';
   static const String _kSimulacroCount = 'limits_simulacro_count';
   
-  static const String _kIAWeek = 'limits_ia_week';
-  static const String _kIACount = 'limits_ia_count';
+  static const String _kTutorIADate = 'limits_tutor_ia_date';
+  static const String _kTutorIACount = 'limits_tutor_ia_count';
+
+  static const String _kEntrevistaIADate = 'limits_entrevista_ia_date';
+  static const String _kEntrevistaIACount = 'limits_entrevista_ia_count';
 
   /// Retorna si el usuario puede realizar otra pregunta (flashcards/trivia)
   static Future<bool> canAnswerQuestion() async {
@@ -23,7 +33,6 @@ class LimitsService {
     
     final savedDate = prefs.getString(_kQuestionsDate);
     if (savedDate != today) {
-      // Nuevo día
       await prefs.setString(_kQuestionsDate, today);
       await prefs.setInt(_kQuestionsCount, 0);
       return true;
@@ -51,9 +60,8 @@ class LimitsService {
   /// Calcula la clave semanal (ej. 2026-W30)
   static String _getCurrentWeekKey() {
     final now = DateTime.now();
-    // Aproximación simple de semana
     int weekNumber = ((now.day - now.weekday + 10) / 7).floor();
-    return '${now.year}-W$weekNumber-${now.month}'; // Diferenciar meses
+    return '${now.year}-W$weekNumber-${now.month}';
   }
 
   /// Retorna si el usuario puede hacer un simulacro
@@ -87,34 +95,67 @@ class LimitsService {
     }
   }
 
-  /// Retorna si el usuario puede usar la IA (Entrevista/Redacción)
-  static Future<bool> canUseIA() async {
+  /// Retorna si el usuario puede consultar al Tutor IA
+  static Future<bool> canUseTutorIA(bool isPremium) async {
+    final limit = isPremium ? MAX_TUTOR_PER_DAY_PREMIUM : MAX_TUTOR_PER_DAY_FREE;
     final prefs = await SharedPreferences.getInstance();
-    final weekKey = _getCurrentWeekKey();
+    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
     
-    final savedWeek = prefs.getString(_kIAWeek);
-    if (savedWeek != weekKey) {
-      await prefs.setString(_kIAWeek, weekKey);
-      await prefs.setInt(_kIACount, 0);
+    final savedDate = prefs.getString(_kTutorIADate);
+    if (savedDate != today) {
+      await prefs.setString(_kTutorIADate, today);
+      await prefs.setInt(_kTutorIACount, 0);
       return true;
     }
     
-    final count = prefs.getInt(_kIACount) ?? 0;
-    return count < MAX_IA_PER_WEEK;
+    final count = prefs.getInt(_kTutorIACount) ?? 0;
+    return count < limit;
   }
 
-  /// Incrementa el uso de IA
-  static Future<void> incrementIACount() async {
+  /// Incrementa el uso del Tutor IA
+  static Future<void> incrementTutorIACount() async {
     final prefs = await SharedPreferences.getInstance();
-    final weekKey = _getCurrentWeekKey();
+    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
     
-    final savedWeek = prefs.getString(_kIAWeek);
-    if (savedWeek != weekKey) {
-      await prefs.setString(_kIAWeek, weekKey);
-      await prefs.setInt(_kIACount, 1);
+    final savedDate = prefs.getString(_kTutorIADate);
+    if (savedDate != today) {
+      await prefs.setString(_kTutorIADate, today);
+      await prefs.setInt(_kTutorIACount, 1);
     } else {
-      final count = prefs.getInt(_kIACount) ?? 0;
-      await prefs.setInt(_kIACount, count + 1);
+      final count = prefs.getInt(_kTutorIACount) ?? 0;
+      await prefs.setInt(_kTutorIACount, count + 1);
+    }
+  }
+
+  /// Retorna si el usuario puede iniciar una entrevista simulada con IA
+  static Future<bool> canUseEntrevistaIA(bool isPremium) async {
+    final limit = isPremium ? MAX_ENTREVISTA_PER_DAY_PREMIUM : MAX_ENTREVISTA_PER_DAY_FREE;
+    final prefs = await SharedPreferences.getInstance();
+    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
+    
+    final savedDate = prefs.getString(_kEntrevistaIADate);
+    if (savedDate != today) {
+      await prefs.setString(_kEntrevistaIADate, today);
+      await prefs.setInt(_kEntrevistaIACount, 0);
+      return true;
+    }
+    
+    final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
+    return count < limit;
+  }
+
+  /// Incrementa el uso de Entrevista simulada
+  static Future<void> incrementEntrevistaIACount() async {
+    final prefs = await SharedPreferences.getInstance();
+    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
+    
+    final savedDate = prefs.getString(_kEntrevistaIADate);
+    if (savedDate != today) {
+      await prefs.setString(_kEntrevistaIADate, today);
+      await prefs.setInt(_kEntrevistaIACount, 1);
+    } else {
+      final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
+      await prefs.setInt(_kEntrevistaIACount, count + 1);
     }
   }
 }

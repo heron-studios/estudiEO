@@ -29,7 +29,7 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
   late final PuterService _puterService;
   
   int _messageCount = 0;
-  final int _maxMessages = 5;
+  final int _maxMessages = 10;
   bool _interviewFinished = false;
   bool _dailyLimitReached = false;
 
@@ -66,15 +66,16 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
 
   void _checkDailyLimit() async {
     final auth = context.read<AuthService>();
-    if (!auth.isPremium) {
-      final canUseAI = await LimitsService.canUseIA();
-      if (!canUseAI) {
-        setState(() {
-          _dailyLimitReached = true;
-          _messages.add(ChatMessage(text: 'Mi Coronel: "Usted ya tuvo su oportunidad el día de hoy. Retírese y vuelva mañana con una mejor preparación."', isUser: false));
-        });
-        return;
-      }
+    final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
+    if (!canUseAI) {
+      setState(() {
+        _dailyLimitReached = true;
+        _messages.add(ChatMessage(
+            text:
+                'Mi Coronel: "Usted ya tuvo su oportunidad. Ha agotado sus entrevistas de hoy. Retírese y vuelva mañana con una mejor preparación."',
+            isUser: false));
+      });
+      return;
     }
     _startInterview();
   }
@@ -123,12 +124,10 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
       promptConContexto = '$_systemPrompt\n\n$contextualizacion\n\nEsta es tu última intervención. Finaliza la entrevista y entrégale una rúbrica de evaluación detallada (del 1 al 20) destacando sus fortalezas, debilidades y áreas de estudio a reforzar.';
       _interviewFinished = true;
       
-      // Registrar que ya hizo su entrevista del día
+      // Registrar que ya hizo su entrevista
       if (mounted) {
         final auth = context.read<AuthService>();
-        if (!auth.isPremium) {
-          LimitsService.incrementIACount();
-        }
+        LimitsService.incrementEntrevistaIACount();
         context.read<LocalStorageService>().saveLastInterviewDate(DateTime.now());
       }
     }

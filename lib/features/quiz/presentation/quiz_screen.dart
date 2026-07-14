@@ -134,6 +134,21 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Future<void> _askTutor(Question question, int selected) async {
+    final auth = context.read<AuthService>();
+    final canUseIA = await LimitsService.canUseTutorIA(auth.isPremium);
+    
+    if (!canUseIA) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Límite diario de consultas al Tutor IA alcanzado. Vuelve mañana o hazte Premium.'),
+            backgroundColor: Colors.redAccent,
+          ),
+        );
+      }
+      return;
+    }
+
     final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : 'Ninguna';
     final respCorrecta = question.options[question.correctAnswer];
     
@@ -145,6 +160,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
 
+    await LimitsService.incrementTutorIACount();
     final explanation = await GeminiService.explicarError(question.text, respElegida, respCorrecta);
     
     if (mounted) {
