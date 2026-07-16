@@ -73,15 +73,13 @@ class MiniAppsScreen extends StatelessWidget {
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             crossAxisCount:
-                                MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                                MediaQuery.of(context).size.width > 600 ? 3 : 2,
                             mainAxisSpacing: 16,
                             crossAxisSpacing: 16,
                             childAspectRatio:
-                                MediaQuery.of(context).size.width > 900
-                                ? 2.5
-                                : (MediaQuery.of(context).size.width > 650
-                                      ? 2.0
-                                      : 2.5),
+                                MediaQuery.of(context).size.width > 600
+                                ? 1.0
+                                : 0.85,
                             children: [
                               MiniAppCard(
                                 title: 'Aptitud Física',
@@ -90,6 +88,7 @@ class MiniAppsScreen extends StatelessWidget {
                                 icon: Icons.directions_run_rounded,
                                 themeColor: const Color(0xFFF59E0B),
                                 isLocked: false,
+                                isSquare: true,
                                 onTap: () =>
                                     context.push('/fitness-calculator'),
                               ),
@@ -100,6 +99,7 @@ class MiniAppsScreen extends StatelessWidget {
                                 icon: Icons.bar_chart_rounded,
                                 themeColor: const Color(0xFF6366F1),
                                 isLocked: false,
+                                isSquare: true,
                                 onTap: () => context.push('/merit-calculator'),
                               ),
                             ],
@@ -159,16 +159,15 @@ class MiniAppsScreen extends StatelessWidget {
                       child: GridView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 600,
-                          mainAxisSpacing: 20,
-                          crossAxisSpacing: 20,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount:
+                              MediaQuery.of(context).size.width > 600 ? 3 : 2,
+                          mainAxisSpacing: 16,
+                          crossAxisSpacing: 16,
                           childAspectRatio:
-                              MediaQuery.of(context).size.width > 900
-                              ? 2.5
-                              : (MediaQuery.of(context).size.width > 650
-                                    ? 2.0
-                                    : 2.2),
+                              MediaQuery.of(context).size.width > 600
+                              ? 1.0
+                              : 0.85,
                         ),
                         itemCount: 4,
                         itemBuilder: (context, index) {
@@ -183,7 +182,9 @@ class MiniAppsScreen extends StatelessWidget {
                                   'Modo exploratorio, entrenamiento dual y supervivencia.',
                               icon: Icons.science_rounded,
                               themeColor: nt.blueGoogle,
+                              badgeText: 'EXPLORADOR',
                               isLocked: false,
+                              isSquare: true,
                               onTap: () =>
                                   context.push('/miniapps/periodic-table'),
                             );
@@ -196,6 +197,7 @@ class MiniAppsScreen extends StatelessWidget {
                               themeColor: const Color(0xFF14B8A6),
                               badgeText: 'MINIJUEGO',
                               isLocked: isLocked,
+                              isSquare: true,
                               onTap: isLocked
                                   ? () => PremiumUpgradeDialog.show(context)
                                   : () => context.push('/miniapps/silogismos'),
@@ -209,6 +211,7 @@ class MiniAppsScreen extends StatelessWidget {
                               themeColor: const Color(0xFF4ADE80),
                               badgeText: 'BIODIVERSIDAD',
                               isLocked: isLocked,
+                              isSquare: true,
                               onTap: isLocked
                                   ? () => PremiumUpgradeDialog.show(context)
                                   : () => context.push('/miniapps/anp-master'),
@@ -220,8 +223,9 @@ class MiniAppsScreen extends StatelessWidget {
                                   'Aprende de forma interactiva las fórmulas matemáticas principales.',
                               icon: Icons.calculate_rounded,
                               themeColor: Colors.orangeAccent,
-                              badgeText: 'MATEMÁTICA',
+                              badgeText: 'EXPLORADOR',
                               isLocked: isLocked,
+                              isSquare: true,
                               onTap: isLocked
                                   ? () => PremiumUpgradeDialog.show(context)
                                   : () => context.push(
@@ -251,7 +255,7 @@ class MiniAppCard extends StatefulWidget {
   final String? badgeText;
   final VoidCallback onTap;
   final bool isLocked;
-
+  final bool isSquare;
   const MiniAppCard({
     super.key,
     required this.title,
@@ -261,6 +265,7 @@ class MiniAppCard extends StatefulWidget {
     this.badgeText,
     required this.onTap,
     this.isLocked = false,
+    this.isSquare = false,
   });
 
   @override
@@ -353,112 +358,198 @@ class _MiniAppCardState extends State<MiniAppCard>
                         horizontal: 24,
                         vertical: 20,
                       ),
-                      child: Row(
-                        children: [
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 200),
-                            width: 56,
-                            height: 56,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: widget.themeColor.withValues(alpha: 0.15),
-                            ),
-                            child: Center(
-                              child: Icon(
-                                widget.icon,
-                                color: widget.themeColor,
-                                size: 32,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                      child: widget.isSquare
+                          ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Flexible(
-                                      child: Text(
-                                        widget.title,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          letterSpacing: -0.5,
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  width: 48,
+                                  height: 48,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: widget.themeColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      widget.icon,
+                                      color: widget.themeColor,
+                                      size: 24,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  widget.title,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: -0.5,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                if (widget.badgeText != null) ...[
+                                  const SizedBox(height: 6),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                      vertical: 2,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: widget.themeColor.withValues(
+                                        alpha: 0.15,
+                                      ),
+                                      borderRadius: BorderRadius.circular(6),
+                                      border: Border.all(
+                                        color: widget.themeColor.withValues(
+                                          alpha: 0.4,
                                         ),
-                                        overflow: TextOverflow.ellipsis,
+                                        width: 1,
                                       ),
                                     ),
-                                    if (widget.badgeText != null) ...[
-                                      const SizedBox(width: 8),
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 8,
-                                          vertical: 3,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: widget.themeColor.withValues(
-                                            alpha: 0.15,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            8,
-                                          ),
-                                          border: Border.all(
-                                            color: widget.themeColor.withValues(
-                                              alpha: 0.4,
+                                    child: Text(
+                                      widget.badgeText!,
+                                      style: TextStyle(
+                                        color: widget.themeColor,
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                                const SizedBox(height: 8),
+                                Expanded(
+                                  child: Text(
+                                    widget.description,
+                                    style: TextStyle(
+                                      color: Colors.white.withValues(
+                                        alpha: 0.65,
+                                      ),
+                                      fontSize: 11,
+                                      height: 1.3,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              children: [
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  width: 56,
+                                  height: 56,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: widget.themeColor.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      widget.icon,
+                                      color: widget.themeColor,
+                                      size: 32,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 20),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              widget.title,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                letterSpacing: -0.5,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
                                             ),
-                                            width: 1,
                                           ),
-                                        ),
-                                        child: Text(
-                                          widget.badgeText!,
-                                          style: TextStyle(
-                                            color: widget.themeColor,
-                                            fontSize: 9,
-                                            fontWeight: FontWeight.w900,
-                                            letterSpacing: 0.5,
+                                          if (widget.badgeText != null) ...[
+                                            const SizedBox(width: 8),
+                                            Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                    horizontal: 8,
+                                                    vertical: 3,
+                                                  ),
+                                              decoration: BoxDecoration(
+                                                color: widget.themeColor
+                                                    .withValues(alpha: 0.15),
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                border: Border.all(
+                                                  color: widget.themeColor
+                                                      .withValues(alpha: 0.4),
+                                                  width: 1,
+                                                ),
+                                              ),
+                                              child: Text(
+                                                widget.badgeText!,
+                                                style: TextStyle(
+                                                  color: widget.themeColor,
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.w900,
+                                                  letterSpacing: 0.5,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ],
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Text(
+                                        widget.description,
+                                        style: TextStyle(
+                                          color: Colors.white.withValues(
+                                            alpha: 0.65,
                                           ),
+                                          fontSize: 13,
+                                          height: 1.4,
                                         ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ],
-                                  ],
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  widget.description,
-                                  style: TextStyle(
-                                    color: Colors.white.withValues(alpha: 0.65),
-                                    fontSize: 13,
-                                    height: 1.4,
                                   ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(width: 12),
+                                Transform.translate(
+                                  offset: Offset(6 * _glow.value, 0),
+                                  child: Icon(
+                                    widget.isLocked
+                                        ? Icons.lock_rounded
+                                        : Icons.arrow_forward_ios_rounded,
+                                    color: widget.isLocked
+                                        ? Colors.white54
+                                        : Color.lerp(
+                                            Colors.white24,
+                                            widget.themeColor,
+                                            _glow.value,
+                                          ),
+                                    size: 18,
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                          const SizedBox(width: 12),
-                          Transform.translate(
-                            offset: Offset(6 * _glow.value, 0),
-                            child: Icon(
-                              widget.isLocked
-                                  ? Icons.lock_rounded
-                                  : Icons.arrow_forward_ios_rounded,
-                              color: widget.isLocked
-                                  ? Colors.white54
-                                  : Color.lerp(
-                                      Colors.white24,
-                                      widget.themeColor,
-                                      _glow.value,
-                                    ),
-                              size: 18,
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ),

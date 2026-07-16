@@ -607,38 +607,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildFitnessTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.directions_run_rounded,
-      color: const Color(0xFFF97316),
-      gradientColors: const [Color(0xFF2A1A0A), Color(0xFF1A0F05)],
-      title: 'Apt. Física',
-      subtitle: 'Calcula tu nota',
-      onTap: () => context.push('/fitness-calculator'),
-    );
-  }
-
-  Widget _buildMeritTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.leaderboard_rounded,
-      color: const Color(0xFF6366F1),
-      gradientColors: const [Color(0xFF1A1A35), Color(0xFF0F0F25)],
-      title: 'Cuadro de\nMérito',
-      subtitle: 'Nota ponderada',
-      onTap: () => context.push('/merit-calculator'),
-    );
-  }
-
-  Widget _buildRoadmapTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.map_rounded,
-      color: const Color(0xFF10B981),
-      gradientColors: const [Color(0xFF0A2010), Color(0xFF051508)],
-      title: 'Hoja de\nRuta',
-      subtitle: 'Proceso admisión',
-      onTap: () => context.push('/roadmap'),
-    );
-  }
 
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
@@ -803,15 +771,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
+    final auth = context.watch<AuthService>();
     final bool isLargeScreen = MediaQuery.of(context).size.width >= 800;
 
     // Greeting dinámica
+    String userName = auth.currentUser?.displayName?.split(' ').first ?? '';
+    if (userName.isNotEmpty) userName = ', $userName';
+
     final hour = DateTime.now().hour;
     final greeting = hour < 12
-        ? '¡Buenos días! ☀️'
+        ? '¡Buenos días$userName! ☀️'
         : hour < 18
-        ? '¡Buenas tardes! 👋'
-        : '¡Buenas noches! 🌙';
+        ? '¡Buenas tardes$userName! 👋'
+        : '¡Buenas noches$userName! 🌙';
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -1055,7 +1027,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               // ── CARDS — centradas verticalmente en el espacio restante ──
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 20),
+                  padding: const EdgeInsets.only(top: 8, bottom: 120),
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1000),

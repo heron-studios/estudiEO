@@ -11,7 +11,7 @@ class LimitsService {
 
   // Límites IA (Entrevista/Simulador)
   static const int maxEntrevistaPerDayFree = 1;
-  static const int maxEntrevistaPerDayPremium = 5; // Aunque sea premium, tiene un límite diario seguro
+  static const int maxEntrevistaPerDayPremium = 1; // Un solo intento diario para todos
 
   // Keys
   static const String _kQuestionsDate = 'limits_questions_date';
@@ -127,15 +127,22 @@ class LimitsService {
     }
   }
 
+  static int _getWaitHours(bool isPremium) => isPremium ? 24 : 48;
+
   /// Retorna si el usuario puede iniciar una entrevista simulada con IA
   static Future<bool> canUseEntrevistaIA(bool isPremium) async {
     final limit = isPremium ? maxEntrevistaPerDayPremium : maxEntrevistaPerDayFree;
     final prefs = await SharedPreferences.getInstance();
-    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
     
-    final savedDate = prefs.getString(_kEntrevistaIADate);
-    if (savedDate != today) {
-      await prefs.setString(_kEntrevistaIADate, today);
+    final savedDateString = prefs.getString(_kEntrevistaIADate);
+    if (savedDateString == null) return true;
+    
+    final savedDate = DateTime.tryParse(savedDateString);
+    if (savedDate == null) return true;
+    
+    final waitHours = _getWaitHours(isPremium);
+    if (DateTime.now().difference(savedDate).inHours >= waitHours) {
+      await prefs.remove(_kEntrevistaIADate);
       await prefs.setInt(_kEntrevistaIACount, 0);
       return true;
     }
@@ -144,18 +151,46 @@ class LimitsService {
     return count < limit;
   }
 
-  /// Incrementa el uso de Entrevista simulada
-  static Future<void> incrementEntrevistaIACount() async {
+  /// Retorna las horas restantes (si hay bloqueo)
+  static Future<int> getHorasRestantesEntrevistaIA(bool isPremium) async {
     final prefs = await SharedPreferences.getInstance();
-    final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
+    final savedDateString = prefs.getString(_kEntrevistaIADate);
+    if (savedDateString == null) return 0;
+    final savedDate = DateTime.tryParse(savedDateString);
+    if (savedDate == null) return 0;
     
-    final savedDate = prefs.getString(_kEntrevistaIADate);
-    if (savedDate != today) {
-      await prefs.setString(_kEntrevistaIADate, today);
+    final passedHours = DateTime.now().difference(savedDate).inHours;
+    final waitHours = _getWaitHours(isPremium);
+    if (passedHours >= waitHours) return 0;
+    
+    final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
+    final limit = isPremium ? maxEntrevistaPerDayPremium : maxEntrevistaPerDayFree;
+    
+    if (count >= limit) {
+       return waitHours - passedHours;
+    }
+    return 0;
+  }
+
+  /// Incrementa el uso de Entrevista simulada
+  static Future<void> incrementEntrevistaIACount(bool isPremium) async {
+    final prefs = await SharedPreferences.getInstance();
+    
+    final savedDateString = prefs.getString(_kEntrevistaIADate);
+    DateTime? savedDate;
+    if (savedDateString != null) {
+      savedDate = DateTime.tryParse(savedDateString);
+    }
+    
+    final waitHours = _getWaitHours(isPremium);
+    
+    if (savedDate == null || DateTime.now().difference(savedDate).inHours >= waitHours) {
       await prefs.setInt(_kEntrevistaIACount, 1);
     } else {
       final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
       await prefs.setInt(_kEntrevistaIACount, count + 1);
     }
+    
+    await prefs.setString(_kEntrevistaIADate, DateTime.now().toIso8601String());
   }
 }

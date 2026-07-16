@@ -21,20 +21,22 @@ class AudioService extends ChangeNotifier {
 
   Future<void> playCorrectSound() async {
     if (_isMuted) return;
-    try {
-      await _player.play(AssetSource('audio/correct.mp3'));
-    } catch (e) {
-      // Ignorar errores de audio silenciosamente
-    }
+    // Disabled to prevent iOS crash with 0-byte MP3 files.
+    // try {
+    //   await _player.play(AssetSource('audio/correct.mp3'));
+    // } catch (e) {
+    //   // Ignorar errores de audio silenciosamente
+    // }
   }
 
   Future<void> playIncorrectSound() async {
     if (_isMuted) return;
-    try {
-      await _player.play(AssetSource('audio/incorrect.mp3'));
-    } catch (e) {
-      // Ignorar errores de audio
-    }
+    // Disabled to prevent iOS crash with 0-byte MP3 files.
+    // try {
+    //   await _player.play(AssetSource('audio/incorrect.mp3'));
+    // } catch (e) {
+    //   // Ignorar errores de audio
+    // }
   }
 
   @override

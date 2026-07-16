@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
@@ -6,6 +5,7 @@ import 'package:learn/models/question.dart';
 import 'package:learn/features/interview/presentation/interview_screen.dart';
 import 'package:learn/features/interview/presentation/interview_trivia_screen.dart';
 import 'package:learn/screens/entrevista_simulator/entrevista_simulator_screen.dart';
+import 'package:learn/core/widgets/professional_splash.dart';
 
 // Screens
 import 'package:learn/features/home/presentation/app_shell.dart';
@@ -96,12 +96,7 @@ class AppRouter {
       routes: [
         GoRoute(
           path: '/loading',
-          builder: (context, state) => const Scaffold(
-            backgroundColor: Color(0xFF0F172A),
-            body: Center(
-              child: CircularProgressIndicator(color: Color(0xFF3B82F6)),
-            ),
-          ),
+          builder: (context, state) => const ProfessionalSplash(),
         ),
         GoRoute(
           path: '/onboarding',

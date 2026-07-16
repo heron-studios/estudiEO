@@ -1,51 +1,45 @@
 import 'dart:async';
 import 'package:flutter/widgets.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:learn/core/config/app_config.dart';
-import 'package:learn/core/services/api_key_storage.dart';
+import 'groq_service.dart';
 import 'puter_service.dart';
 
-/// Implementación Móvil de PuterService usando el SDK nativo de Google Gemini
+/// Implementación Móvil de PuterService usando la API de Groq (Llama 3.3 70B)
 class PuterServiceMobile implements PuterService {
+  final GroqService _groq = GroqService();
+  bool _initialized = false;
+  String _systemPrompt = '';
+
   PuterServiceMobile();
 
   @override
   Widget? buildBridgeWidget() {
-    // No se necesita WebView en móvil porque usamos la API nativa de Gemini.
+    // No se necesita WebView en móvil con Groq.
     return null;
   }
 
   @override
   Future<String> chat(String prompt) async {
-    // 1. Obtener la clave de API (del usuario o de la configuración por defecto)
-    final userKey = await ApiKeyStorage.getKey();
-    final apiKey = (userKey != null && userKey.trim().isNotEmpty) 
-        ? userKey.trim() 
-        : AppConfig.geminiApiKey.trim();
-
-    if (apiKey.isEmpty) {
-      return 'Error: No se ha configurado ninguna API Key de Gemini. Por favor configure una en Ajustes o en el Auditor de Texto.';
-    }
-
-    try {
-      // Usamos el modelo gemini-2.0-flash para respuestas rápidas y fluidas.
-      final model = GenerativeModel(
-        model: 'gemini-2.0-flash',
-        apiKey: apiKey,
-      );
-
-      final response = await model.generateContent([
-        Content.text(prompt)
-      ]).timeout(const Duration(seconds: 30));
-
-      final responseText = response.text;
-      if (responseText != null && responseText.isNotEmpty) {
-        return responseText;
+    // El primer mensaje incluye el system prompt concatenado, lo separamos
+    // para pasarlo correctamente a Groq con su rol de "system".
+    if (!_initialized) {
+      _initialized = true;
+      // El primer prompt contiene el system prompt + "\n\nPor favor, inicia..."
+      // Lo separamos para registrarlo correctamente en el historial de Groq.
+      final splitIndex = prompt.indexOf('\n\nPor favor, inicia la entrevista.');
+      if (splitIndex != -1) {
+        _systemPrompt = prompt.substring(0, splitIndex);
+        final userTurn = prompt.substring(splitIndex + 2); // "\nPor favor..."
+        return _groq.chat(systemPrompt: _systemPrompt, userPrompt: userTurn);
+      } else {
+        _systemPrompt = prompt;
+        return _groq.chat(
+          systemPrompt: _systemPrompt,
+          userPrompt: 'Inicia la entrevista.',
+        );
       }
-      return 'El jurado no pudo generar una respuesta en este momento.';
-    } catch (e) {
-      return 'Hubo un error de comunicación con el jurado (Gemini Móvil): $e';
     }
+
+    return _groq.chat(systemPrompt: _systemPrompt, userPrompt: prompt);
   }
 }
 

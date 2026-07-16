@@ -9,8 +9,8 @@ class AuthService extends ChangeNotifier {
     clientId: kIsWeb
         ? '921397124091-kr9b9smn52r45643qte4am6269gv07l9.apps.googleusercontent.com'
         : (defaultTargetPlatform == TargetPlatform.iOS
-            ? '921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl.apps.googleusercontent.com'
-            : null),
+              ? '921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl.apps.googleusercontent.com'
+              : null),
   );
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
@@ -53,6 +53,9 @@ class AuthService extends ChangeNotifier {
 
   Future<void> _checkInitialAuth() async {
     try {
+      // Wait for at least 3 seconds so the splash screen is visible
+      await Future.delayed(const Duration(seconds: 3));
+
       // Esperar a que Firebase termine de cargar la sesión persistida (hasta 2 segundos)
       final user = await _auth.userChanges().first.timeout(
         const Duration(seconds: 2),
@@ -132,8 +135,6 @@ class AuthService extends ChangeNotifier {
       return null;
     }
   }
-
-
 
   /// Cierra sesión
   Future<void> signOut() async {
@@ -241,7 +242,8 @@ class AuthService extends ChangeNotifier {
 
       if (!foundPremium) {
         // Verificar el 5to resultado (consulta de documentos por campo)
-        final querySnapshot = results[5 - 1] as QuerySnapshot<Map<String, dynamic>>?;
+        final querySnapshot =
+            results[5 - 1] as QuerySnapshot<Map<String, dynamic>>?;
         if (querySnapshot != null && querySnapshot.docs.isNotEmpty) {
           final data = querySnapshot.docs.first.data();
           if (_checkIsPaid(data)) {
@@ -255,12 +257,13 @@ class AuthService extends ChangeNotifier {
 
       if (!foundPremium) {
         if (errorMsgs.isNotEmpty) {
-          _lastVerificationError = 'Errores de conexión/permisos de Firestore:\n- ${errorMsgs.join('\n- ')}';
+          _lastVerificationError =
+              'Errores de conexión/permisos de Firestore:\n- ${errorMsgs.join('\n- ')}';
         } else {
           _lastVerificationError = 'Usuario en modo gratuito.';
         }
       }
-      
+
       // Permitimos el acceso (isAuthorized = true) independientemente de si es Premium o no
       return true;
     } catch (e) {
@@ -275,7 +278,13 @@ class AuthService extends ChangeNotifier {
     final status = data['status'];
     if (status != null) {
       final s = status.toString().toLowerCase().trim();
-      if (s == 'inactivo' || s == 'suspendido' || s == 'bloqueado' || s == 'inactive' || s == 'blocked' || s == 'false' || s == '0') {
+      if (s == 'inactivo' ||
+          s == 'suspendido' ||
+          s == 'bloqueado' ||
+          s == 'inactive' ||
+          s == 'blocked' ||
+          s == 'false' ||
+          s == '0') {
         return false;
       }
     }
@@ -284,7 +293,11 @@ class AuthService extends ChangeNotifier {
     if (acceso != null) {
       if (acceso is bool && !acceso) return false;
       final s = acceso.toString().toLowerCase().trim();
-      if (s == 'false' || s == '0' || s == 'no' || s == 'inactivo' || s == 'bloqueado') {
+      if (s == 'false' ||
+          s == '0' ||
+          s == 'no' ||
+          s == 'inactivo' ||
+          s == 'bloqueado') {
         return false;
       }
     }
@@ -297,17 +310,17 @@ class AuthService extends ChangeNotifier {
     if (isPaid is String) {
       final s = isPaid.toLowerCase().trim();
       return s == 'true' ||
-             s == 'yes' ||
-             s == 'si' ||
-             s == 'sí' ||
-             s == '1' ||
-             s == 'active' ||
-             s == 'activo' ||
-             s == 'activa' ||
-             s == 'habilitado' ||
-             s == 'habilitada' ||
-             s == 'autorizado' ||
-             s == 'autorizada';
+          s == 'yes' ||
+          s == 'si' ||
+          s == 'sí' ||
+          s == '1' ||
+          s == 'active' ||
+          s == 'activo' ||
+          s == 'activa' ||
+          s == 'habilitado' ||
+          s == 'habilitada' ||
+          s == 'autorizado' ||
+          s == 'autorizada';
     }
     if (isPaid is num) return isPaid == 1;
     return false;

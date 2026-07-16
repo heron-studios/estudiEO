@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learn/core/services/local_storage_service.dart';
+import 'dart:ui';
+import 'dart:async';
 import 'package:provider/provider.dart';
-
+import 'package:learn/core/services/local_storage_service.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -29,27 +30,48 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
   late final PuterService _puterService;
   
   int _messageCount = 0;
-  final int _maxMessages = 10;
+  final int _maxMessages = 7;
   bool _interviewFinished = false;
   bool _dailyLimitReached = false;
+
+  int _cooldownRemaining = 0;
+  Timer? _cooldownTimer;
+
+  void _startCooldown(int seconds) {
+    setState(() {
+      _cooldownRemaining = seconds;
+    });
+    _cooldownTimer?.cancel();
+    _cooldownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        _cooldownRemaining--;
+        if (_cooldownRemaining <= 0) {
+          timer.cancel();
+        }
+      });
+    });
+  }
 
   final SpeechToText _speechToText = SpeechToText();
   bool _isListening = false;
 
   final String _systemPrompt = 
-    'Actúa como un Coronel de la Policía Nacional del Perú (PNP) con más de 25 años de servicio ininterrumpido. Eres el Presidente de la Junta Evaluadora de la entrevista personal para el proceso de admisión a las Escuelas de Formación de la PNP (aplicable a Oficiales y Suboficiales).\n\n'
+    'Actúa como un exigente Coronel de la Policía Nacional del Perú (PNP) con más de 30 años de servicio, Presidente de la rigurosa Junta Evaluadora de la entrevista personal de admisión.\n\n'
     'Tu Perfil y Actitud:\n'
-    '- Imponente y Autoridad: Eres sumamente formal, directo y estricto. No tutéas al postulante; lo tratas de "Usted".\n'
-    '- Observador Crítico: Analizas no solo lo que el postulante responde, sino cómo lo argumenta. Buscas fisuras en su ética, tolerancia a la frustración y verdadera vocación de servicio.\n'
-    '- Cero Complacencia: No felicitas fácilmente. Si una respuesta es mediocre, te muestras escéptico y presionas con repreguntas.\n'
-    '- Orgullo Institucional: Tienes un profundo respeto por la mística y doctrina policial. Desprecias la indisciplina y la corrupción.\n\n'
-    'Contexto del Postulante: El candidato busca ingresar a la PNP. Esperas de él madurez, vocación de servicio y liderazgo.\n\n'
-    'Instrucciones Estrictas para la Dinámica:\n'
-    '1. Haz UNA SOLA PREGUNTA a la vez. Nunca envíes una lista de preguntas.\n'
-    '2. Espera a que el postulante responda antes de continuar.\n'
-    '3. Basado en su respuesta, realiza una repregunta incisiva o pasa a una nueva materia (Doctrina, Ética, Realidad Nacional, Liderazgo, Marco Legal).\n'
-    '4. NO USES FORMATO MARKDOWN EN TUS RESPUESTAS (sin asteriscos para negritas, sin viñetas especiales). Responde únicamente en texto plano para mantener el realismo de una conversación hablada.\n\n'
-    'El candidato acaba de tocar la puerta e ingresar a la sala de juntas. Da tu primera orden y haz tu primera pregunta para evaluar su motivación.';
+    '- Autoridad Implacable: Eres sumamente formal, cortante y directo. Exiges disciplina desde el primer segundo. Tratas al postulante de "Usted", jamás lo tutéas.\n'
+    '- Inquisidor Estratégico: No te conformas con respuestas memorizadas. Interrumpes mentalmente la mediocridad buscando contradicciones, evaluando su temple, vocación real y ética intachable.\n'
+    '- Cero Empatía Fingida: Si la respuesta es vacía o genérica, muestras tu decepción con frases cortas y repreguntas bajo presión.\n'
+    '- Mística Institucional: Valoras el honor, el sacrificio y la lealtad a la PNP por encima de todo.\n\n'
+    'Instrucciones CRÍTICAS de Formato:\n'
+    '1. EXIGE respuestas. Haz UNA SOLA PREGUNTA o repregunta directa por mensaje. NUNCA envíes varias preguntas juntas.\n'
+    '2. NO USES NINGÚN FORMATO MARKDOWN. Nada de asteriscos, negritas ni cursivas. Escribe en texto plano, como un guion de diálogo real.\n'
+    '3. Si el postulante titubea o da respuestas "de manual", córtalo y ponlo en aprietos éticos o de liderazgo.\n'
+    '4. REACCIONA ORGÁNICAMENTE. NUNCA empieces tus frases narrando lo que dijo el postulante (ej. "Usted respondió que...", "Según su respuesta..."). Empieza a hablar directamente y al grano como un Coronel humano. Si dice algo inaceptable o mediocre, lánzale la crítica o reprimenda de inmediato.\n\n'
+    'El postulante acaba de pararse frente a ti en posición de atención. Da tu orden inicial con autoridad y lanza la primera pregunta para medir su verdadera vocación.';
 
   @override
   void initState() {
@@ -68,11 +90,15 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
     final auth = context.read<AuthService>();
     final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
     if (!canUseAI) {
+      final horasRestantes = await LimitsService.getHorasRestantesEntrevistaIA(auth.isPremium);
+      final waitMessage = horasRestantes > 0 
+          ? 'Retírese, prepárese y vuelva en $horasRestantes horas' 
+          : 'Retírese y vuelva mañana';
+
       setState(() {
         _dailyLimitReached = true;
         _messages.add(ChatMessage(
-            text:
-                'Mi Coronel: "Usted ya tuvo su oportunidad. Ha agotado sus entrevistas de hoy. Retírese y vuelva mañana con una mejor preparación."',
+            text: 'Mi Coronel: "Usted ya tuvo su oportunidad. Ha agotado sus entrevistas. $waitMessage con una mejor preparación."',
             isUser: false));
       });
       return;
@@ -114,28 +140,41 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
 
     _messageCount++;
     
+    // Descontar el intento apenas envía el primer mensaje para ser estrictos
+    if (_messageCount == 1 && mounted) {
+      final auth = context.read<AuthService>();
+      LimitsService.incrementEntrevistaIACount(auth.isPremium);
+      context.read<LocalStorageService>().saveLastInterviewDate(DateTime.now());
+    }
+    
     String contextualizacion = voiceText != null 
-        ? 'El candidato respondió en voz alta (transcripción automática): "$text"\nEvalúa su respuesta, incluyendo su fluidez y coherencia al hablar, y haz la siguiente pregunta.'
-        : 'El candidato dice: "$text"\nEvalúa su respuesta y haz la siguiente pregunta.';
+        ? '[El candidato responde en voz alta: "$text". Reacciona DIRECTAMENTE a sus palabras como humano sin repetir lo que dijo, juzga su nivel y lanza tu siguiente dardo/pregunta]'
+        : '[El candidato dice: "$text". Reacciona DIRECTAMENTE de forma natural y lanza tu siguiente crítica/pregunta]';
         
     String promptConContexto = '$_systemPrompt\n\n$contextualizacion';
     
     if (_messageCount >= _maxMessages) {
-      promptConContexto = '$_systemPrompt\n\n$contextualizacion\n\nEsta es tu última intervención. Finaliza la entrevista y entrégale una rúbrica de evaluación detallada (del 1 al 20) destacando sus fortalezas, debilidades y áreas de estudio a reforzar.';
+      promptConContexto = '$_systemPrompt\n\n$contextualizacion\n\n[INSTRUCCIÓN CRÍTICA DE SISTEMA]: Esta es tu última intervención. FINALIZA LA ENTREVISTA AHORA MISMO. Haz una auditoría final CRÍTICA, DURA Y SIN FILTROS de todas las respuestas del postulante. Dale una nota final del 0 al 20 siendo MUY REALISTA, estricto y exigente (es muy raro sacar 20). Destaca sus peores errores, sus debilidades y dile directamente si con ese nivel tiene futuro en la PNP o no. NO hagas más preguntas, solo despídelo con su dura evaluación final.';
       _interviewFinished = true;
-      
-      // Registrar que ya hizo su entrevista
-      if (mounted) {
-        LimitsService.incrementEntrevistaIACount();
-        context.read<LocalStorageService>().saveLastInterviewDate(DateTime.now());
-      }
     }
     
     final response = await _puterService.chat(promptConContexto);
 
+    String finalResponse = response;
+    if (response.contains('429') || response.contains('rate_limit') || response.contains('Limit 12000')) {
+      finalResponse = '[SILENCIO INCÓMODO]... El Coronel te observa fijamente mientras toma apuntes de tu actitud. (Has respondido muy rápido, por favor espera 15 segundos y reescribe tu respuesta).';
+      _messageCount--; // Revertir el conteo ya que no fue procesado adecuadamente
+      if (_interviewFinished) {
+         _interviewFinished = false;
+      }
+      _startCooldown(15);
+    } else {
+      _startCooldown(8); // Cooldown preventivo de 8 segundos
+    }
+
     if (mounted) {
       setState(() {
-        _messages.add(ChatMessage(text: response, isUser: false));
+        _messages.add(ChatMessage(text: finalResponse, isUser: false));
         _isLoading = false;
       });
       _scrollToBottom();
@@ -174,6 +213,7 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
 
   @override
   void dispose() {
+    _cooldownTimer?.cancel();
     _textController.dispose();
     _scrollController.dispose();
     super.dispose();
@@ -187,19 +227,102 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
     return Theme(
       // Forzamos el tema oscuro para esta pantalla según requerimiento
       data: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF121212),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF1E1E1E),
-          elevation: 0,
-        ),
+        scaffoldBackgroundColor: const Color(0xFF090A0C),
       ),
-      child: Scaffold(
+      child: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (bool didPop, Object? result) async {
+          if (didPop) return;
+          final navigator = Navigator.of(context);
+          
+          if (_messageCount > 0 && !_interviewFinished && !_dailyLimitReached) {
+            final confirm = await showDialog<bool>(
+              context: context,
+              builder: (context) => AlertDialog(
+                backgroundColor: const Color(0xFF1E1E24),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                title: const Row(
+                  children: [
+                    Icon(Icons.warning_amber_rounded, color: Colors.orangeAccent),
+                    SizedBox(width: 8),
+                    Text('¿Abandonar?', style: TextStyle(color: Colors.white, fontSize: 18)),
+                  ]
+                ),
+                content: const Text(
+                  'Si sales ahora perderás el progreso actual y se consumirá tu intento de entrevista (cada mensaje procesado consume tokens valiosos).\n\n¿Estás seguro de querer salir?',
+                  style: TextStyle(color: Colors.white70, fontSize: 15, height: 1.4),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(false),
+                    child: const Text('Continuar Entrevista', style: TextStyle(color: Colors.greenAccent)),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(true),
+                    child: const Text('Salir y perder intento', style: TextStyle(color: Colors.redAccent)),
+                  ),
+                ],
+              ),
+            );
+
+            if (confirm == true) {
+              navigator.pop();
+            }
+          } else {
+            navigator.pop();
+          }
+        },
+        child: Scaffold(
+          extendBodyBehindAppBar: true,
         appBar: AppBar(
-            title: const Text('Simulador de Entrevista (Groq)'),
+          title: const Text(
+            'Junta Evaluadora PNP',
+            style: TextStyle(fontWeight: FontWeight.w600, letterSpacing: 0.5, fontSize: 18),
+          ),
           centerTitle: true,
+          backgroundColor: const Color(0xFF090A0C).withValues(alpha: 0.65),
+          elevation: 0,
+          flexibleSpace: ClipRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              child: Container(color: Colors.transparent),
+            ),
+          ),
         ),
         body: Stack(
           children: [
+            // Fondo con glows sutiles (Glassmorphism)
+            Positioned(
+              top: -100,
+              right: -50,
+              child: Container(
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: const Color(0xFF004B23).withValues(alpha: 0.12), // Verde oscuro PNP
+                  boxShadow: [
+                    BoxShadow(color: const Color(0xFF004B23).withValues(alpha: 0.12), blurRadius: 100, spreadRadius: 50)
+                  ]
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: -50,
+              left: -50,
+              child: Container(
+                width: 250,
+                height: 250,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: const Color(0xFF0D47A1).withValues(alpha: 0.08), // Azul PNP oscuro
+                  boxShadow: [
+                    BoxShadow(color: const Color(0xFF0D47A1).withValues(alpha: 0.08), blurRadius: 80, spreadRadius: 40)
+                  ]
+                ),
+              ),
+            ),
+
             // El WebView oculto si existe
             if (bridgeWidget != null)
               Positioned(
@@ -208,64 +331,87 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
                 child: bridgeWidget,
               ),
             
-            Column(
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    controller: _scrollController,
-                    padding: const EdgeInsets.all(16.0),
-                    itemCount: _messages.length,
-                    itemBuilder: (context, index) {
-                      final message = _messages[index];
-                      return _buildMessageBubble(message);
-                    },
+            SafeArea(
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      controller: _scrollController,
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+                      itemCount: _messages.length,
+                      itemBuilder: (context, index) {
+                        final message = _messages[index];
+                        return _buildMessageBubble(message);
+                      },
+                    ),
                   ),
-                ),
-                if (_isLoading)
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: CircularProgressIndicator(color: Colors.blueAccent),
-                  ),
-                _buildChatInput(),
-              ],
+                  if (_isLoading)
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.0),
+                      child: Row(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: [
+                            SizedBox(
+                              width: 14, height: 14,
+                              child: CircularProgressIndicator(color: Colors.greenAccent, strokeWidth: 2),
+                            ),
+                            SizedBox(width: 12),
+                            Text('El Coronel está evaluando...', style: TextStyle(color: Colors.white70, fontSize: 13)),
+                         ]
+                      )
+                    ),
+                  _buildChatInput(),
+                ],
+              ),
             ),
           ],
         ),
       ),
-    );
+    ));
   }
 
   Widget _buildMessageBubble(ChatMessage message) {
     return Align(
       alignment: message.isUser ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 6.0),
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-        decoration: BoxDecoration(
-          color: message.isUser ? Colors.blueAccent[700] : const Color(0xFF2C2C2C),
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(16),
-            topRight: const Radius.circular(16),
-            bottomLeft: Radius.circular(message.isUser ? 16 : 0),
-            bottomRight: Radius.circular(message.isUser ? 0 : 16),
+      child: RepaintBoundary(
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0),
+          decoration: BoxDecoration(
+            color: message.isUser 
+                ? const Color(0xFF1B5E20).withValues(alpha: 0.85) // Verde oscuro 
+                : const Color(0xFF1E1E24).withValues(alpha: 0.7),
+            border: Border.all(
+              color: message.isUser 
+                  ? Colors.greenAccent.withValues(alpha: 0.3) 
+                  : Colors.white.withValues(alpha: 0.05),
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(20),
+              topRight: const Radius.circular(20),
+              bottomLeft: Radius.circular(message.isUser ? 20 : 4),
+              bottomRight: Radius.circular(message.isUser ? 4 : 20),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              )
+            ],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            )
-          ],
-        ),
-        constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.75,
-        ),
-        child: Text(
-          message.text,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-            height: 1.4,
+          constraints: BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width * 0.85,
+          ),
+          child: Text(
+            message.text,
+            style: TextStyle(
+              color: message.isUser ? Colors.white : Colors.white.withValues(alpha: 0.9),
+              fontSize: 15.0,
+              height: 1.5,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ),
       ),
@@ -273,53 +419,102 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
   }
 
   Widget _buildChatInput() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
-      decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
-        border: Border(top: BorderSide(color: Colors.grey[800]!)),
-      ),
-      child: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: _textController,
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  hintText: 'Escribe tu respuesta...',
-                  hintStyle: TextStyle(color: Colors.grey[500]),
-                  filled: true,
-                  fillColor: const Color(0xFF2C2C2C),
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(24.0),
-                    borderSide: BorderSide.none,
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(12.0, 12.0, 12.0, 16.0),
+          decoration: BoxDecoration(
+            color: const Color(0xFF090A0C).withValues(alpha: 0.7),
+            border: Border(top: BorderSide(color: Colors.white.withValues(alpha: 0.05))),
+          ),
+          child: SafeArea(
+            top: false,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1A1A1F).withValues(alpha: 0.8),
+                      borderRadius: BorderRadius.circular(24.0),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.08), width: 1),
+                    ),
+                    child: TextField(
+                      controller: _textController,
+                      style: const TextStyle(color: Colors.white, fontSize: 15),
+                      maxLines: 4,
+                      minLines: 1,
+                      textInputAction: TextInputAction.send,
+                      onSubmitted: (_) => _sendMessage(),
+                      decoration: InputDecoration(
+                        hintText: _cooldownRemaining > 0 ? 'Espera $_cooldownRemaining s...' : 'Diríjase al Coronel...',
+                        hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.3), fontSize: 15),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0),
+                        border: InputBorder.none,
+                      ),
+                      enabled: !_isLoading && !_interviewFinished && !_dailyLimitReached && !_isListening && _cooldownRemaining <= 0,
+                    ),
                   ),
                 ),
-                onSubmitted: (_) => _sendMessage(),
-                enabled: !_isLoading && !_interviewFinished && !_dailyLimitReached && !_isListening,
-              ),
+                const SizedBox(width: 10.0),
+                GestureDetector(
+                  onTap: (_isLoading || _interviewFinished || _dailyLimitReached || _cooldownRemaining > 0) 
+                      ? null 
+                      : (_isListening ? _stopListening : _startListening),
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    margin: const EdgeInsets.only(bottom: 2),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: _isListening 
+                          ? const LinearGradient(colors: [Colors.redAccent, Colors.deepOrange])
+                          : LinearGradient(colors: [
+                              Colors.white.withValues(alpha: 0.1), 
+                              Colors.white.withValues(alpha: 0.05)
+                            ]),
+                      border: Border.all(
+                        color: _isListening ? Colors.redAccent.withValues(alpha: 0.5) : Colors.white.withValues(alpha: 0.1),
+                      ),
+                    ),
+                    child: Icon(
+                      _isListening ? Icons.stop_circle_outlined : Icons.mic_rounded, 
+                      color: _isListening ? Colors.white : Colors.white70,
+                      size: 24,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8.0),
+                GestureDetector(
+                  onTap: (_isLoading || _interviewFinished || _dailyLimitReached || _isListening || _cooldownRemaining > 0) ? null : () => _sendMessage(),
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    margin: const EdgeInsets.only(bottom: 2),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF2E7D32), Color(0xFF1B5E20)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF2E7D32).withValues(alpha: 0.3),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        )
+                      ]
+                    ),
+                    child: const Icon(
+                      Icons.send_rounded, 
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 8.0),
-            CircleAvatar(
-              backgroundColor: (_isLoading || _interviewFinished || _dailyLimitReached) ? Colors.grey : (_isListening ? Colors.redAccent : Colors.greenAccent[700]),
-              child: IconButton(
-                icon: Icon(_isListening ? Icons.mic : Icons.mic_none, color: Colors.white),
-                onPressed: (_isLoading || _interviewFinished || _dailyLimitReached) 
-                    ? null 
-                    : (_isListening ? _stopListening : _startListening),
-              ),
-            ),
-            const SizedBox(width: 8.0),
-            CircleAvatar(
-              backgroundColor: (_isLoading || _interviewFinished || _dailyLimitReached) ? Colors.grey : Colors.blueAccent,
-              child: IconButton(
-                icon: const Icon(Icons.send, color: Colors.white),
-                onPressed: (_isLoading || _interviewFinished || _dailyLimitReached || _isListening) ? null : () => _sendMessage(),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

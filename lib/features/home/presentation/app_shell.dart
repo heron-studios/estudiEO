@@ -46,6 +46,11 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
     final auth = context.read<AuthService>();
     final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
     final bool aiLimitReached = !canUseAI;
+    
+    int horasRestantes = 0;
+    if (aiLimitReached) {
+      horasRestantes = await LimitsService.getHorasRestantesEntrevistaIA(auth.isPremium);
+    }
 
     if (!context.mounted) return;
 
@@ -195,7 +200,7 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                               const SizedBox(height: 4),
                               Text(
                                 aiLimitReached
-                                    ? 'Límite diario alcanzado. Vuelve mañana.'
+                                    ? 'Disponible en $horasRestantes horas.'
                                     : 'Simulador interactivo con reconocimiento de voz.',
                                 style: TextStyle(
                                   color: aiLimitReached
@@ -241,12 +246,7 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
           child: Stack(
             children: [
               // Contenido principal
-              Positioned.fill(
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: widget.navigationShell,
-                ),
-              ),
+              Positioned.fill(child: widget.navigationShell),
 
               // Navbar flotante (horizontal)
               Positioned(
