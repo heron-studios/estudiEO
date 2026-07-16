@@ -331,37 +331,42 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
                 child: bridgeWidget,
               ),
             
-            SafeArea(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      controller: _scrollController,
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-                      itemCount: _messages.length,
-                      itemBuilder: (context, index) {
-                        final message = _messages[index];
-                        return _buildMessageBubble(message);
-                      },
-                    ),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 850),
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ListView.builder(
+                          controller: _scrollController,
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+                          itemCount: _messages.length,
+                          itemBuilder: (context, index) {
+                            final message = _messages[index];
+                            return _buildMessageBubble(message);
+                          },
+                        ),
+                      ),
+                      if (_isLoading)
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 12.0),
+                          child: Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                                SizedBox(
+                                  width: 14, height: 14,
+                                  child: CircularProgressIndicator(color: Colors.greenAccent, strokeWidth: 2),
+                                ),
+                                SizedBox(width: 12),
+                                Text('El Coronel está evaluando...', style: TextStyle(color: Colors.white70, fontSize: 13)),
+                             ]
+                          )
+                        ),
+                      _buildChatInput(),
+                    ],
                   ),
-                  if (_isLoading)
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
-                      child: Row(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                         children: [
-                            SizedBox(
-                              width: 14, height: 14,
-                              child: CircularProgressIndicator(color: Colors.greenAccent, strokeWidth: 2),
-                            ),
-                            SizedBox(width: 12),
-                            Text('El Coronel está evaluando...', style: TextStyle(color: Colors.white70, fontSize: 13)),
-                         ]
-                      )
-                    ),
-                  _buildChatInput(),
-                ],
+                ),
               ),
             ),
           ],
@@ -402,7 +407,9 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
             ],
           ),
           constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width * 0.85,
+            maxWidth: MediaQuery.of(context).size.width >= 800 
+                ? 600 
+                : MediaQuery.of(context).size.width * 0.85,
           ),
           child: Text(
             message.text,
