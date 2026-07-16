@@ -45,7 +45,71 @@ class MiniAppsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Entry animation for title and subtitle
+                    // Entry animation for Simuladores section
+                    TweenAnimationBuilder<double>(
+                      tween: Tween<double>(begin: 0.0, end: 1.0),
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeOutCubic,
+                      builder: (context, value, child) {
+                        return Transform.translate(
+                          offset: Offset(-20 * (1.0 - value), 0),
+                          child: Opacity(opacity: value, child: child),
+                        );
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'SIMULADORES OFICIALES',
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.8),
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          GridView.count(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            crossAxisCount:
+                                MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio:
+                                MediaQuery.of(context).size.width > 900
+                                ? 2.5
+                                : (MediaQuery.of(context).size.width > 650
+                                      ? 2.0
+                                      : 2.5),
+                            children: [
+                              MiniAppCard(
+                                title: 'Aptitud Física',
+                                description:
+                                    'Calculadora de puntos según las tablas de Anexos 05 y 06.',
+                                icon: Icons.directions_run_rounded,
+                                themeColor: const Color(0xFFF59E0B),
+                                isLocked: false,
+                                onTap: () =>
+                                    context.push('/fitness-calculator'),
+                              ),
+                              MiniAppCard(
+                                title: 'Cuadro de Mérito',
+                                description:
+                                    'Calculadora ponderada y simulador de bonificaciones.',
+                                icon: Icons.bar_chart_rounded,
+                                themeColor: const Color(0xFF6366F1),
+                                isLocked: false,
+                                onTap: () => context.push('/merit-calculator'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+
+                    // Entry animation for Herramientas title
                     TweenAnimationBuilder<double>(
                       tween: Tween<double>(begin: 0.0, end: 1.0),
                       duration: const Duration(milliseconds: 600),
@@ -106,7 +170,7 @@ class MiniAppsScreen extends StatelessWidget {
                                     ? 2.0
                                     : 2.2),
                         ),
-                        itemCount: 5,
+                        itemCount: 4,
                         itemBuilder: (context, index) {
                           final auth = context.read<AuthService>();
                           final isPremium = auth.isPremium;
@@ -149,7 +213,7 @@ class MiniAppsScreen extends StatelessWidget {
                                   ? () => PremiumUpgradeDialog.show(context)
                                   : () => context.push('/miniapps/anp-master'),
                             );
-                          } else if (index == 3) {
+                          } else {
                             return MiniAppCard(
                               title: 'Prod. Notables',
                               description:
@@ -163,19 +227,6 @@ class MiniAppsScreen extends StatelessWidget {
                                   : () => context.push(
                                       '/miniapps/productos-notables',
                                     ),
-                            );
-                          } else {
-                            return MiniAppCard(
-                              title: 'Auditor de Texto',
-                              description:
-                                  'Perfecciona informes, partes policiales u actas con ayuda del Perito IA.',
-                              icon: Icons.fact_check_rounded,
-                              themeColor: nt.purple,
-                              badgeText: 'INTELECTO IA',
-                              isLocked: isLocked,
-                              onTap: isLocked
-                                  ? () => PremiumUpgradeDialog.show(context)
-                                  : () => context.push('/miniapps/redaccion'),
                             );
                           }
                         },

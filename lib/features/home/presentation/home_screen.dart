@@ -607,6 +607,39 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
+  Widget _buildFitnessTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.directions_run_rounded,
+      color: const Color(0xFFF97316),
+      gradientColors: const [Color(0xFF2A1A0A), Color(0xFF1A0F05)],
+      title: 'Apt. Física',
+      subtitle: 'Calcula tu nota',
+      onTap: () => context.push('/fitness-calculator'),
+    );
+  }
+
+  Widget _buildMeritTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.leaderboard_rounded,
+      color: const Color(0xFF6366F1),
+      gradientColors: const [Color(0xFF1A1A35), Color(0xFF0F0F25)],
+      title: 'Cuadro de\nMérito',
+      subtitle: 'Nota ponderada',
+      onTap: () => context.push('/merit-calculator'),
+    );
+  }
+
+  Widget _buildRoadmapTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.map_rounded,
+      color: const Color(0xFF10B981),
+      gradientColors: const [Color(0xFF0A2010), Color(0xFF051508)],
+      title: 'Hoja de\nRuta',
+      subtitle: 'Proceso admisión',
+      onTap: () => context.push('/roadmap'),
+    );
+  }
+
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
@@ -786,7 +819,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-
           // FAB SRS Repaso
           Consumer<SrsProvider>(
             builder: (context, srs, child) {
@@ -970,26 +1002,52 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
-                  // Derecha: botón Ajustes
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.12),
+                  // Derecha: Botón Hoja de Ruta y Ajustes
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.12),
+                          ),
+                        ),
+                        child: IconButton(
+                          onPressed: () => context.push('/roadmap'),
+                          icon: const Icon(
+                            Icons.help_outline_rounded,
+                            color: Colors.white,
+                            size: 22,
+                          ),
+                          tooltip: 'Hoja de Ruta',
+                          padding: const EdgeInsets.all(8),
+                          constraints: const BoxConstraints(),
+                        ),
                       ),
-                    ),
-                    child: IconButton(
-                      onPressed: () => context.push('/settings'),
-                      icon: const Icon(
-                        Icons.settings_rounded,
-                        color: Colors.white,
-                        size: 22,
+                      const SizedBox(width: 8),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.12),
+                          ),
+                        ),
+                        child: IconButton(
+                          onPressed: () => context.push('/settings'),
+                          icon: const Icon(
+                            Icons.settings_rounded,
+                            color: Colors.white,
+                            size: 22,
+                          ),
+                          tooltip: 'Ajustes',
+                          padding: const EdgeInsets.all(8),
+                          constraints: const BoxConstraints(),
+                        ),
                       ),
-                      tooltip: 'Ajustes',
-                      padding: const EdgeInsets.all(8),
-                      constraints: const BoxConstraints(),
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -1046,6 +1104,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 children: [
                                   _buildDailyMissionCard(context, nt),
                                   const SizedBox(height: 16),
+                                  // Fila 1: Estudiar + Tarjetas
                                   Row(
                                     children: [
                                       Expanded(
@@ -1069,7 +1128,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 16),
+                                  const SizedBox(height: 12),
+                                  // Fila 2: Aprendizaje + Simulacro
                                   Row(
                                     children: [
                                       Expanded(
@@ -1094,6 +1154,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
+                                  const SizedBox(height: 24),
                                 ],
                               ),
                             );

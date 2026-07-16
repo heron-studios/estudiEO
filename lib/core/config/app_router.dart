@@ -44,9 +44,11 @@ import 'package:learn/features/medical/presentation/eysenck_test_screen.dart';
 import 'package:learn/features/medical/presentation/sacks_test_screen.dart';
 import 'package:learn/features/medical/presentation/psicologico_test_screen.dart';
 import 'package:learn/features/medical/presentation/trail_making_test_screen.dart';
-import 'package:learn/features/miniapps/presentation/redaccion_page.dart';
 import 'package:learn/features/flashcards/presentation/flashcards_selector_screen.dart';
 import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
+import 'package:learn/features/fitness/presentation/fitness_calculator_screen.dart';
+import 'package:learn/features/merit/presentation/merit_calculator_screen.dart';
+import 'package:learn/features/roadmap/presentation/roadmap_screen.dart';
 
 class AppRouter {
   static GoRouter createRouter(
@@ -272,10 +274,7 @@ class AppRouter {
           path: '/miniapps/productos-notables',
           builder: (context, state) => const ProductosNotablesScreen(),
         ),
-        GoRoute(
-          path: '/miniapps/redaccion',
-          builder: (context, state) => const RedaccionPage(),
-        ),
+
         GoRoute(
           path: '/medical',
           builder: (context, state) => const MedicalDashboardScreen(),
@@ -332,6 +331,18 @@ class AppRouter {
         GoRoute(
           path: '/psico-mission',
           builder: (context, state) => const PsicoMissionScreen(),
+        ),
+        GoRoute(
+          path: '/fitness-calculator',
+          builder: (context, state) => const FitnessCalculatorScreen(),
+        ),
+        GoRoute(
+          path: '/merit-calculator',
+          builder: (context, state) => const MeritCalculatorScreen(),
+        ),
+        GoRoute(
+          path: '/roadmap',
+          builder: (context, state) => const RoadmapScreen(),
         ),
       ],
     );
