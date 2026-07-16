@@ -214,10 +214,13 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
       ),
       body: NeuralBackgroundWrapper(
         child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 850),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
                   'Proceso de Admisión',
@@ -271,11 +274,13 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
                 const SizedBox(height: 32),
               ],
             ),
+            ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 class _ProgressHeader extends StatelessWidget {

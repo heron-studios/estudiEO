@@ -33,16 +33,19 @@ class MiniAppsScreen extends StatelessWidget {
             behavior: ScrollConfiguration.of(
               context,
             ).copyWith(scrollbars: false),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 24,
-                  right: 24,
-                  top: 20,
-                  bottom: 110,
-                ),
-                child: Column(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 900),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 24,
+                      right: 24,
+                      top: 20,
+                      bottom: 110,
+                    ),
+                    child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Entry animation for Simuladores section
@@ -243,7 +246,9 @@ class MiniAppsScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 }
 

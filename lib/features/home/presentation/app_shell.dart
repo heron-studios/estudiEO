@@ -410,6 +410,14 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                         ),
                         const SizedBox(height: 16),
                         _NavItem(
+                          icon: Icons.help_outline_rounded,
+                          label: 'Guía',
+                          isSelected: false,
+                          onTap: () => context.push('/roadmap'),
+                          nt: nt,
+                        ),
+                        const SizedBox(height: 16),
+                        _NavItem(
                           icon: Icons.support_agent_rounded,
                           label: 'Soporte',
                           isSelected: false,
