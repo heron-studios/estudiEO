@@ -2,16 +2,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 
 class LimitsService {
-  static const int MAX_QUESTIONS_PER_DAY = 10;
-  static const int MAX_SIMULACROS_PER_WEEK = 1;
+  static const int maxQuestionsPerDay = 10;
+  static const int maxSimulacrosPerWeek = 1;
 
   // Límites IA (Tutor/Explicador)
-  static const int MAX_TUTOR_PER_DAY_FREE = 3;
-  static const int MAX_TUTOR_PER_DAY_PREMIUM = 50;
+  static const int maxTutorPerDayFree = 3;
+  static const int maxTutorPerDayPremium = 50;
 
   // Límites IA (Entrevista/Simulador)
-  static const int MAX_ENTREVISTA_PER_DAY_FREE = 1;
-  static const int MAX_ENTREVISTA_PER_DAY_PREMIUM = 5; // Aunque sea premium, tiene un límite diario seguro
+  static const int maxEntrevistaPerDayFree = 1;
+  static const int maxEntrevistaPerDayPremium = 5; // Aunque sea premium, tiene un límite diario seguro
 
   // Keys
   static const String _kQuestionsDate = 'limits_questions_date';
@@ -39,7 +39,7 @@ class LimitsService {
     }
     
     final count = prefs.getInt(_kQuestionsCount) ?? 0;
-    return count < MAX_QUESTIONS_PER_DAY;
+    return count < maxQuestionsPerDay;
   }
 
   /// Incrementa el conteo de preguntas respondidas hoy
@@ -77,7 +77,7 @@ class LimitsService {
     }
     
     final count = prefs.getInt(_kSimulacroCount) ?? 0;
-    return count < MAX_SIMULACROS_PER_WEEK;
+    return count < maxSimulacrosPerWeek;
   }
 
   /// Incrementa el uso de simulacro
@@ -97,7 +97,7 @@ class LimitsService {
 
   /// Retorna si el usuario puede consultar al Tutor IA
   static Future<bool> canUseTutorIA(bool isPremium) async {
-    final limit = isPremium ? MAX_TUTOR_PER_DAY_PREMIUM : MAX_TUTOR_PER_DAY_FREE;
+    final limit = isPremium ? maxTutorPerDayPremium : maxTutorPerDayFree;
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
     
@@ -129,7 +129,7 @@ class LimitsService {
 
   /// Retorna si el usuario puede iniciar una entrevista simulada con IA
   static Future<bool> canUseEntrevistaIA(bool isPremium) async {
-    final limit = isPremium ? MAX_ENTREVISTA_PER_DAY_PREMIUM : MAX_ENTREVISTA_PER_DAY_FREE;
+    final limit = isPremium ? maxEntrevistaPerDayPremium : maxEntrevistaPerDayFree;
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
     

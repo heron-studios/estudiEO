@@ -12,8 +12,6 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
-import 'package:learn/features/auth/domain/auth_service.dart';
-import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 
 class ExamScreen extends StatefulWidget {
   final bool resume;

@@ -45,9 +45,14 @@ import 'package:learn/features/medical/presentation/sacks_test_screen.dart';
 import 'package:learn/features/medical/presentation/psicologico_test_screen.dart';
 import 'package:learn/features/medical/presentation/trail_making_test_screen.dart';
 import 'package:learn/features/miniapps/presentation/redaccion_page.dart';
+import 'package:learn/features/flashcards/presentation/flashcards_selector_screen.dart';
+import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
 
 class AppRouter {
-  static GoRouter createRouter(AuthService authService, LocalStorageService storageService) {
+  static GoRouter createRouter(
+    AuthService authService,
+    LocalStorageService storageService,
+  ) {
     return GoRouter(
       initialLocation: '/home',
       refreshListenable: authService,
@@ -56,7 +61,7 @@ class AppRouter {
         final isAuthorized = authService.isAuthorized;
         final isInitializing = authService.isInitializing;
         final hasSeenOnboarding = storageService.loadHasSeenOnboarding();
-        
+
         final isLoggingIn = state.matchedLocation == '/login';
         final isPayment = state.matchedLocation == '/payment';
         final isLoading = state.matchedLocation == '/loading';
@@ -117,11 +122,12 @@ class AppRouter {
                 ),
               ],
             ),
+
             StatefulShellBranch(
               routes: [
                 GoRoute(
-                  path: '/settings',
-                  builder: (context, state) => const SettingsScreen(),
+                  path: '/miniapps',
+                  builder: (context, state) => const MiniAppsScreen(),
                 ),
               ],
             ),
@@ -131,7 +137,9 @@ class AppRouter {
           path: '/gallery',
           builder: (context, state) {
             final extra = state.extra;
-            final mode = (extra is Map && extra.containsKey('mode')) ? extra['mode'] as String : 'quiz';
+            final mode = (extra is Map && extra.containsKey('mode'))
+                ? extra['mode'] as String
+                : 'quiz';
             return SubjectGalleryScreen(mode: mode);
           },
         ),
@@ -148,10 +156,7 @@ class AppRouter {
             return TopicGalleryScreen(subjectId: extra as String);
           },
         ),
-        GoRoute(
-          path: '/quiz',
-          builder: (context, state) => const QuizScreen(),
-        ),
+        GoRoute(path: '/quiz', builder: (context, state) => const QuizScreen()),
         GoRoute(
           path: '/quiz-results',
           builder: (context, state) => const QuizResultsScreen(),
@@ -232,8 +237,8 @@ class AppRouter {
           },
         ),
         GoRoute(
-          path: '/miniapps',
-          builder: (context, state) => const MiniAppsScreen(),
+          path: '/settings',
+          builder: (context, state) => const SettingsScreen(),
         ),
         GoRoute(
           path: '/miniapps/periodic-table',
@@ -295,6 +300,7 @@ class AppRouter {
           path: '/psicolearn',
           builder: (context, state) => const PsicoLearnScreen(),
         ),
+
         GoRoute(
           path: '/psicolearn/simulator',
           builder: (context, state) => const SimulatorScreen(),
@@ -318,6 +324,14 @@ class AppRouter {
         GoRoute(
           path: '/entrevista-simulator',
           builder: (context, state) => const EntrevistaSimulatorScreen(),
+        ),
+        GoRoute(
+          path: '/flashcards',
+          builder: (context, state) => const FlashcardsSelectorScreen(),
+        ),
+        GoRoute(
+          path: '/psico-mission',
+          builder: (context, state) => const PsicoMissionScreen(),
         ),
       ],
     );

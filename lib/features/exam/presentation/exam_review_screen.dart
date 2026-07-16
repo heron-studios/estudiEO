@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/screens/entrevista_simulator/puter_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/services/limits_service.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ExamReviewScreen extends StatefulWidget {

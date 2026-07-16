@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
-import 'package:learn/features/flashcards/presentation/flashcards_selector_screen.dart';
+
 import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 import 'package:learn/core/config/neural_theme.dart';
-import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart';
+
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/services/bible_service.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:intl/intl.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 
@@ -35,15 +34,41 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late AnimationController _fabController;
+  late Animation<double> _fabAnimation;
+
+  late AnimationController _warningLottieController;
+
   int _streakDays = 0;
   bool _todayCompleted = false;
-  String _diagnosis = 'PENDIENTE';
+
   String? _dailyVerse;
 
   @override
   void initState() {
     super.initState();
+    _fabController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+    _fabAnimation = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _fabController, curve: Curves.easeInOut));
+
+    _warningLottieController = AnimationController(vsync: this);
+
+    _warningLottieController.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        if (!mounted) return;
+        await Future.delayed(const Duration(seconds: 10));
+        if (mounted) {
+          _warningLottieController.forward(from: 0.0);
+        }
+      }
+    });
+
     _loadPsicoProgress();
     _loadDailyVerse();
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -70,6 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _fabController.dispose();
+    _warningLottieController.dispose();
     super.dispose();
   }
 
@@ -79,17 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _streakDays = progress['streak'];
       _todayCompleted = progress['todayCompleted'];
-      
-      final totalMissions = progress['totalMissions'] ?? 0;
-      final lastOverallScore = progress['lastOverallScore'] ?? 0.0;
-      
-      if (totalMissions == 0) {
-        _diagnosis = 'PENDIENTE';
-      } else if (lastOverallScore >= 0.70) {
-        _diagnosis = 'APTO';
-      } else {
-        _diagnosis = 'INAPTO';
-      }
     });
   }
 
@@ -106,19 +122,21 @@ class _HomeScreenState extends State<HomeScreen> {
               color: nt.surfaceCard,
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
-                  color: nt.successGreen.withValues(alpha: 0.4), width: 1.5),
+                color: nt.successGreen.withValues(alpha: 0.4),
+                width: 1.5,
+              ),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  width: 64,
-                  height: 64,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: nt.successGreen.withValues(alpha: 0.15),
+                SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: Lottie.asset(
+                    'assets/lottie/trophy.lottie',
+                    repeat: false,
+                    fit: BoxFit.contain,
                   ),
-                  child: Icon(Icons.check_circle_rounded, color: nt.successGreen, size: 32),
                 ),
                 const SizedBox(height: 16),
                 const Text(
@@ -135,7 +153,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Text(
                   'Ya has completado tu misión psicométrica de hoy. Vuelve mañana para un nuevo desafío y seguir aumentando tu racha.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 13,
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
@@ -147,9 +169,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    child: const Text('ENTENDIDO', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'ENTENDIDO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ],
@@ -159,8 +185,6 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
-
-
 
   void _startGuidedLearningFlow(BuildContext context) {
     final learningProvider = context.read<LearningProvider>();
@@ -174,8 +198,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       final subjectProvider = context.read<SubjectProvider>();
       final topic = subjectProvider.getTopic(topicId);
-      final subject =
-          topic != null ? subjectProvider.getSubject(topic.subjectId) : null;
+      final subject = topic != null
+          ? subjectProvider.getSubject(topic.subjectId)
+          : null;
       final topicName = topic?.name ?? 'Tema';
       final subjectName = subject?.name ?? 'Materia';
       final currentQuestionNum = session.correctCount + 1;
@@ -304,9 +329,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pop(ctx);
                 final subjectProvider = context.read<SubjectProvider>();
                 subjectProvider.selectTopic(topicId);
-                context
-                    .read<LearningProvider>()
-                    .resumeSession(topicId, nivel);
+                context.read<LearningProvider>().resumeSession(topicId, nivel);
                 context.push(
                   '/learning-quiz',
                   extra: {'topicId': topicId, 'nivel': nivel},
@@ -333,10 +356,14 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  Widget _buildSimulacroCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
+  Widget _buildSimulacroCard(
+    BuildContext context,
+    dynamic nt, {
+    bool isSquare = false,
+  }) {
     final storage = context.read<LocalStorageService>();
     final history = storage.getExamHistory();
-    String subtitle = '100 preguntas • 3 horas';
+    String subtitle = '100 preguntas · 3 horas';
     if (history.isNotEmpty) {
       final lastExam = history.first;
       final score = lastExam['score'] as int? ?? 0;
@@ -344,7 +371,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final percent = (score / total) * 100;
       subtitle = isSquare
           ? 'Último: $score/$total'
-          : 'Último: $score/$total (${percent.toInt()}%) • Iniciar Nuevo';
+          : 'Último: $score/$total (${percent.toInt()}%) · Nuevo';
     }
 
     Future<void> onTap() async {
@@ -356,19 +383,23 @@ class _HomeScreenState extends State<HomeScreen> {
             PremiumUpgradeDialog.show(
               context,
               title: 'Límite Semanal Alcanzado',
-              message: 'Solo puedes realizar 1 simulacro por semana en la versión gratuita. ¡Pásate a Premium para simulacros ilimitados!',
+              message:
+                  'Solo puedes realizar 1 simulacro por semana en la versión gratuita. ¡Pásate a Premium para simulacros ilimitados!',
             );
           }
           return;
         }
       }
 
+      if (!context.mounted) return;
+
       final savedState = storage.getActiveExamState();
       if (savedState != null) {
         final List<dynamic> qList = savedState['questions'] as List? ?? [];
-        final Map<dynamic, dynamic> ansMap = savedState['answers'] as Map? ?? {};
+        final Map<dynamic, dynamic> ansMap =
+            savedState['answers'] as Map? ?? {};
         final secondsLeft = savedState['secondsLeft'] as int? ?? 10800;
-        
+
         final h = secondsLeft ~/ 3600;
         final m = (secondsLeft % 3600) ~/ 60;
         final timeStr = h > 0 ? '${h}h ${m}m' : '${m}m';
@@ -377,27 +408,46 @@ class _HomeScreenState extends State<HomeScreen> {
           context: context,
           builder: (ctx) => AlertDialog(
             backgroundColor: const Color(0xFF1E293B),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            title: const Text('Simulacro en Progreso', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            title: const Text(
+              'Simulacro en Progreso',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             content: Text(
               'Tienes un simulacro guardado:\n'
-              '• Respondidas: ${ansMap.length} de ${qList.length}\n'
-              '• Tiempo restante: $timeStr\n\n'
+              '· Respondidas: ${ansMap.length} de ${qList.length}\n'
+              '· Tiempo restante: $timeStr\n\n'
               '¿Deseas reanudar tu examen anterior o iniciar uno nuevo?',
               style: const TextStyle(color: Color(0xFF94A3B8), height: 1.5),
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('Iniciar Nuevo', style: TextStyle(color: Colors.redAccent)),
+                child: const Text(
+                  'Iniciar Nuevo',
+                  style: TextStyle(color: Colors.redAccent),
+                ),
               ),
               ElevatedButton(
                 onPressed: () => Navigator.pop(ctx, true),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF3B82F6),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
-                child: const Text('Reanudar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'Reanudar',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ],
           ),
@@ -425,7 +475,8 @@ class _HomeScreenState extends State<HomeScreen> {
     if (isSquare) {
       return _GlassTile(
         icon: Icons.timer_rounded,
-        color: nt.pink,
+        color: const Color(0xFFD96570),
+        gradientColors: const [Color(0xFF3A1520), Color(0xFF220D13)],
         title: 'Simulacro',
         subtitle: subtitle,
         onTap: onTap,
@@ -435,28 +486,88 @@ class _HomeScreenState extends State<HomeScreen> {
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(20),
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF2A1520), Color(0xFF1A0C14)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: const Color(0xFFD96570).withValues(alpha: 0.25),
+          ),
+        ),
         child: Row(
           children: [
-            _IconBubble(icon: Icons.timer_rounded, color: nt.pink),
+            Container(
+              width: 46,
+              height: 46,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFFD96570), Color(0xFFE91E63)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(14),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFFD96570).withValues(alpha: 0.4),
+                    blurRadius: 12,
+                    spreadRadius: 0,
+                  ),
+                ],
+              ),
+              child: const Icon(
+                Icons.timer_rounded,
+                color: Colors.white,
+                size: 22,
+              ),
+            ),
             const SizedBox(width: 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Simulacro de Examen',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15)),
+                  const Text(
+                    'SIMULACRO',
+                    style: TextStyle(
+                      color: Color(0xFFD96570),
+                      fontWeight: FontWeight.w900,
+                      fontSize: 10,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                   const SizedBox(height: 2),
-                  Text(subtitle,
-                      style: const TextStyle(color: Colors.white60, fontSize: 12)),
+                  const Text(
+                    'Examen Oficial',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle,
+                    style: const TextStyle(color: Colors.white54, fontSize: 11),
+                  ),
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: Colors.white30, size: 20),
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: const Color(0xFFD96570).withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Color(0xFFD96570),
+                size: 12,
+              ),
+            ),
           ],
         ),
       ),
@@ -466,99 +577,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildEstudiarTile(BuildContext context, dynamic nt) {
     return _GlassTile(
       icon: Icons.auto_stories_rounded,
-      color: nt.blueGoogle,
+      color: const Color(0xFF4285F4),
+      gradientColors: const [Color(0xFF1A2A4A), Color(0xFF0F1E3D)],
       title: 'Estudiar',
       subtitle: 'Por asignatura',
       onTap: () => context.push('/gallery', extra: {'mode': 'quiz'}),
     );
   }
 
-  Widget _buildRepasarTile(BuildContext context, dynamic nt) {
-    return Consumer<SrsProvider>(
-      builder: (context, srs, _) {
-        final count = srs.getReviewQueue().length;
-        return _GlassTile(
-          icon: Icons.history_edu_rounded,
-          color: nt.successGreen,
-          title: 'Repasar',
-          subtitle: count > 0 ? '$count pendientes' : 'Al día ✓',
-          badge: count > 0 ? '$count' : null,
-          onTap: () => context.push('/srs-review'),
-        );
-      },
-    );
-  }
-
   Widget _buildTarjetasTile(BuildContext context, dynamic nt) {
     return _GlassTile(
       icon: Icons.style_rounded,
-      color: nt.purple,
+      color: const Color(0xFF9B72CB),
+      gradientColors: const [Color(0xFF2A1A4A), Color(0xFF1A0F3D)],
       title: 'Tarjetas',
-      subtitle: 'Memoria',
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const FlashcardsSelectorScreen(),
-        ),
-      ),
+      subtitle: 'Memoria visual',
+      onTap: () => context.push('/flashcards'),
     );
   }
 
   Widget _buildAprendizajeTile(BuildContext context, dynamic nt) {
     return _GlassTile(
       icon: Icons.school_rounded,
-      color: nt.warningAmber,
+      color: const Color(0xFFFBBF24),
+      gradientColors: const [Color(0xFF2A2010), Color(0xFF1A1508)],
       title: 'Aprendizaje',
-      subtitle: 'Modo Guiado',
+      subtitle: 'Modo guiado',
       onTap: () => _startGuidedLearningFlow(context),
     );
   }
 
-  Widget _buildMiniAppsCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    void onTap() => context.push('/miniapps');
-
-    if (isSquare) {
-      return _GlassTile(
-        icon: Icons.extension_rounded,
-        color: nt.pink,
-        title: 'Mini Apps',
-        subtitle: 'Juegos y más',
-        onTap: onTap,
-      );
-    }
-
-    return HoverGlassCard(
-      borderRadius: BorderRadius.circular(20),
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-        child: Row(
-          children: [
-            _IconBubble(icon: Icons.extension_rounded, color: nt.pink),
-            const SizedBox(width: 14),
-            const Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Mini Apps',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15)),
-                  SizedBox(height: 2),
-                  Text('Juegos y Herramientas',
-                      style: TextStyle(color: Colors.white60, fontSize: 12)),
-                ],
-              ),
-            ),
-            const Icon(Icons.chevron_right, color: Colors.white30, size: 20),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Botón de Misión Diaria para el menú principal
+  /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
       onTap: () async {
@@ -566,36 +615,66 @@ class _HomeScreenState extends State<HomeScreen> {
           _showAlreadyCompletedDialog(context, nt);
           return;
         }
-        await Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const PsicoMissionScreen()),
-        );
+        await context.push('/psico-mission');
         if (mounted) _loadPsicoProgress();
       },
       hoverGradientBorder: true,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
         decoration: BoxDecoration(
-          gradient: nt.neuralGradient.scale(0.7),
+          gradient: LinearGradient(
+            colors: _todayCompleted
+                ? [const Color(0xFF064E3B), const Color(0xFF065F46)]
+                : [
+                    const Color(0xFF1E3A8A),
+                    const Color(0xFF7C3AED),
+                    const Color(0xFFBE185D),
+                  ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
           borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color:
+                  (_todayCompleted
+                          ? const Color(0xFF4ADE80)
+                          : const Color(0xFF7C3AED))
+                      .withValues(alpha: 0.25),
+              blurRadius: 20,
+              spreadRadius: 0,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(10),
+              width: 48,
+              height: 48,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.2),
+                color: Colors.white.withValues(alpha: 0.15),
                 shape: BoxShape.circle,
+                border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
               ),
-              child: Icon(
-                _todayCompleted
-                    ? Icons.check_circle_rounded
-                    : Icons.stars_rounded,
-                color:
-                    _todayCompleted ? const Color(0xFF4ADE80) : Colors.amber,
-                size: 24,
-              ),
+              child: _todayCompleted
+                  ? const Icon(
+                      Icons.check_circle_rounded,
+                      color: Color(0xFF4ADE80),
+                      size: 26,
+                    )
+                  : ClipOval(
+                      child: Lottie.asset(
+                        'assets/lottie/warning_status.lottie',
+                        controller: _warningLottieController,
+                        onLoaded: (composition) {
+                          _warningLottieController.duration =
+                              composition.duration;
+                          _warningLottieController.forward();
+                        },
+                        fit: BoxFit.cover,
+                      ),
+                    ),
             ),
             const SizedBox(width: 14),
             Expanded(
@@ -610,27 +689,36 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
-                          fontSize: 14,
+                          fontSize: 13,
                           fontFamily: 'Outfit',
-                          letterSpacing: 0.5,
+                          letterSpacing: 1.2,
                         ),
                       ),
                       if (_streakDays > 0) ...[
                         const SizedBox(width: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 7, vertical: 2),
+                            horizontal: 7,
+                            vertical: 2,
+                          ),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [Color(0xFFFF6F00), Color(0xFFFF9100)],
                             ),
                             borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(
+                                  0xFFFF6F00,
+                                ).withValues(alpha: 0.4),
+                                blurRadius: 8,
+                              ),
+                            ],
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Text('🔥',
-                                  style: TextStyle(fontSize: 10)),
+                              const Text('🔥', style: TextStyle(fontSize: 10)),
                               const SizedBox(width: 3),
                               Text(
                                 '$_streakDays',
@@ -646,360 +734,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ],
                   ),
-                  const SizedBox(height: 2),
+                  const SizedBox(height: 3),
                   Text(
                     _todayCompleted
                         ? '¡Completada! Vuelve mañana.'
-                        : '20 preguntas psicométricas para tu perfil.',
+                        : '20 preguntas psicométricas · Perfila tu candidatura',
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.85),
-                        fontSize: 12),
+                      color: Colors.white.withValues(alpha: 0.85),
+                      fontSize: 11.5,
+                      height: 1.3,
+                    ),
                   ),
                 ],
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.15),
                 shape: BoxShape.circle,
+                border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
               ),
-              child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white, size: 12),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Botón de Examen Médico para el menú principal (reemplaza consejos psicométricos)
-  Widget _buildMedicalStudyCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    void onTap() => context.push('/medical');
-
-    if (isSquare) {
-      return _GlassTile(
-        icon: Icons.health_and_safety_rounded,
-        color: nt.cyan,
-        title: 'Examen Médico',
-        subtitle: 'Ficha y perfil',
-        badge: 'NUEVO',
-        badgeColor: nt.cyan.withValues(alpha: 0.8),
-        onTap: onTap,
-      );
-    }
-
-    return HoverGlassCard(
-      onTap: onTap,
-      hoverGradientBorder: true,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: nt.cyan.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                    color: nt.cyan.withValues(alpha: 0.3), width: 1),
+              child: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white,
+                size: 11,
               ),
-              child: Icon(Icons.health_and_safety_rounded,
-                  color: nt.cyan, size: 20),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'ESTUDIAR EXAMEN MÉDICO',
-                        style: TextStyle(
-                          color: nt.cyan,
-                          fontSize: 9,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                        decoration: BoxDecoration(
-                          color: nt.cyan.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          'NUEVO',
-                          style: TextStyle(
-                            color: Color(0xFF22D3EE),
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    'Prepárate para la evaluación médica PNP',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Outfit',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white70, size: 10),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _showInterviewSelectionModal(BuildContext context, dynamic nt) async {
-    final auth = context.read<AuthService>();
-    final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
-    final bool aiLimitReached = !canUseAI;
-
-    if (!context.mounted) return;
-
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      builder: (context) {
-        return Container(
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E1E2C),
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-            border: Border.all(color: Colors.white12, width: 1),
-          ),
-          padding: const EdgeInsets.only(top: 12, left: 24, right: 24, bottom: 40),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                'Entrevista Personal',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Selecciona el modo de preparación',
-                style: TextStyle(color: Colors.white60, fontSize: 14),
-              ),
-              const SizedBox(height: 32),
-              
-              // Opción A: Quiz
-              HoverGlassCard(
-                onTap: () {
-                  Navigator.pop(context);
-                  context.push('/interview-trivia');
-                },
-                borderRadius: BorderRadius.circular(16),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: Colors.purpleAccent.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Icon(Icons.quiz_rounded, color: Colors.purpleAccent, size: 28),
-                      ),
-                      const SizedBox(width: 16),
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Pon a prueba tus conocimientos', 
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
-                            SizedBox(height: 4),
-                            Text('Simula la ronda de preguntas frente al jurado.', 
-                                style: TextStyle(color: Colors.white60, fontSize: 12)),
-                          ],
-                        ),
-                      ),
-                      const Icon(Icons.chevron_right, color: Colors.white30),
-                    ],
-                  ),
-                ),
-              ),
-              
-              const SizedBox(height: 16),
-              
-              // Opción B: IA
-              Opacity(
-                opacity: aiLimitReached ? 0.5 : 1.0,
-                child: HoverGlassCard(
-                  onTap: aiLimitReached ? null : () {
-                    Navigator.pop(context);
-                    context.push('/entrevista-simulator');
-                  },
-                  borderRadius: BorderRadius.circular(16),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: Colors.deepPurpleAccent.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Icon(aiLimitReached ? Icons.lock_clock : Icons.smart_toy_rounded, 
-                              color: Colors.deepPurpleAccent, size: 28),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text('Entrevistador Virtual (IA)', 
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
-                              const SizedBox(height: 4),
-                              Text(aiLimitReached ? 'Límite diario alcanzado. Vuelve mañana.' : 'Simulador interactivo con reconocimiento de voz.', 
-                                  style: TextStyle(color: aiLimitReached ? Colors.redAccent : Colors.white60, fontSize: 12)),
-                            ],
-                          ),
-                        ),
-                        const Icon(Icons.chevron_right, color: Colors.white30),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-    );
-  }
-
-  /// Botón de Entrevista Personal unificado
-  Widget _buildInterviewCard(BuildContext context, dynamic nt, {bool isSquare = false}) {
-    void onTap() => _showInterviewSelectionModal(context, nt);
-
-    if (isSquare) {
-      return _GlassTile(
-        icon: Icons.record_voice_over_rounded,
-        color: Colors.purpleAccent,
-        title: 'Entrevista',
-        subtitle: 'Personal',
-        badge: 'NUEVO',
-        badgeColor: Colors.purpleAccent.withValues(alpha: 0.8),
-        onTap: onTap,
-      );
-    }
-
-    return HoverGlassCard(
-      onTap: onTap,
-      hoverGradientBorder: true,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.purpleAccent.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                    color: Colors.purpleAccent.withValues(alpha: 0.3), width: 1),
-              ),
-              child: const Icon(Icons.record_voice_over_rounded,
-                  color: Colors.purpleAccent, size: 20),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    children: [
-                      const Text(
-                        'ENTREVISTA PERSONAL',
-                        style: TextStyle(
-                          color: Colors.purpleAccent,
-                          fontSize: 9,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 1.2,
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                        decoration: BoxDecoration(
-                          color: Colors.purpleAccent.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          'NUEVO',
-                          style: TextStyle(
-                            color: Colors.purpleAccent,
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    'Simula la ronda de preguntas frente al jurado',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Outfit',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white70, size: 10),
             ),
           ],
         ),
@@ -1011,18 +771,51 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final bool isLargeScreen = MediaQuery.of(context).size.width >= 800;
-    final auth = context.watch<AuthService>();
-    final isPremium = auth.isPremium;
 
-    // Colores del estado de diagnóstico
-    final diagnosisColor = _diagnosis == 'APTO'
-        ? const Color(0xFF10B981)
-        : (_diagnosis == 'PENDIENTE'
-            ? const Color(0xFFF59E0B)
-            : const Color(0xFFEF4444));
+    // Greeting dinámica
+    final hour = DateTime.now().hour;
+    final greeting = hour < 12
+        ? '¡Buenos días! ☀️'
+        : hour < 18
+        ? '¡Buenas tardes! 👋'
+        : '¡Buenas noches! 🌙';
 
     return Scaffold(
       backgroundColor: Colors.transparent,
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+
+          // FAB SRS Repaso
+          Consumer<SrsProvider>(
+            builder: (context, srs, child) {
+              final count = srs.getReviewQueue().length;
+              if (count == 0) return const SizedBox.shrink();
+              return FadeTransition(
+                opacity: _fabAnimation,
+                child: FloatingActionButton.extended(
+                  heroTag: 'srs_fab',
+                  onPressed: () => context.push('/srs-review'),
+                  backgroundColor: nt.successGreen,
+                  elevation: 8,
+                  icon: const Icon(
+                    Icons.history_edu_rounded,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'Repasar ($count)',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -1036,123 +829,168 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Logo + Verse
+                  // Logo + Badge + Greeting
                   Expanded(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        GestureDetector(
-                          onTap: () async {
-                            final url = Uri.parse('https://pnp-edu.github.io/POL-HUB/');
-                            if (await canLaunchUrl(url)) {
-                              await launchUrl(url, mode: LaunchMode.externalApplication);
-                            }
-                          },
-                          child: const Text(
-                            'EDUPOL',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: -0.5,
-                            ),
-                          ),
-                        ),
-                        if (isLargeScreen && _dailyVerse != null) ...[
-                          const SizedBox(width: 16),
-                          Container(
-                            width: 1,
-                            height: 18,
-                            color: Colors.white.withValues(alpha: 0.2),
-                          ),
-                          const SizedBox(width: 16),
-                          Icon(
-                            Icons.auto_stories_rounded,
-                            color: Colors.white.withValues(alpha: 0.5),
-                            size: 16,
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Tooltip(
-                              message: _dailyVerse!,
-                              child: Text(
-                                _dailyVerse!,
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 13,
-                                  fontStyle: FontStyle.italic,
-                                  fontFamily: 'Inter',
-                                  overflow: TextOverflow.ellipsis,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () async {
+                                final url = Uri.parse(
+                                  'https://pnp-edu.github.io/POL-HUB/',
+                                );
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(
+                                    url,
+                                    mode: LaunchMode.externalApplication,
+                                  );
+                                }
+                              },
+                              child: ShaderMask(
+                                shaderCallback: (bounds) =>
+                                    const LinearGradient(
+                                      colors: [Colors.white, Color(0xFFB0C4FF)],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ).createShader(bounds),
+                                child: const Text(
+                                  'EDUPOL',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: -0.5,
+                                    fontFamily: 'Outfit',
+                                  ),
                                 ),
-                                maxLines: 1,
                               ),
+                            ),
+                            const SizedBox(width: 8),
+                            // Badge PRO/FREE
+                            Consumer<AuthService>(
+                              builder: (context, auth, _) {
+                                final isPro = auth.isPremium;
+                                return Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 9,
+                                    vertical: 4,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    gradient: isPro
+                                        ? const LinearGradient(
+                                            colors: [
+                                              Color(0xFF7C3AED),
+                                              Color(0xFF9B72CB),
+                                            ],
+                                          )
+                                        : null,
+                                    color: isPro
+                                        ? null
+                                        : Colors.white.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(14),
+                                    border: Border.all(
+                                      color: isPro
+                                          ? Colors.transparent
+                                          : Colors.white.withValues(alpha: 0.2),
+                                    ),
+                                    boxShadow: isPro
+                                        ? [
+                                            BoxShadow(
+                                              color: const Color(
+                                                0xFF7C3AED,
+                                              ).withValues(alpha: 0.4),
+                                              blurRadius: 8,
+                                              spreadRadius: 0,
+                                            ),
+                                          ]
+                                        : null,
+                                  ),
+                                  child: Text(
+                                    isPro ? 'PRO' : 'FREE',
+                                    style: TextStyle(
+                                      color: isPro
+                                          ? Colors.white
+                                          : Colors.white60,
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w900,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                            if (isLargeScreen && _dailyVerse != null) ...[
+                              const SizedBox(width: 16),
+                              Container(
+                                width: 1,
+                                height: 18,
+                                color: Colors.white.withValues(alpha: 0.2),
+                              ),
+                              const SizedBox(width: 16),
+                              Icon(
+                                Icons.auto_stories_rounded,
+                                color: Colors.white.withValues(alpha: 0.5),
+                                size: 16,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Tooltip(
+                                  message: _dailyVerse!,
+                                  child: Text(
+                                    _dailyVerse!,
+                                    style: const TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 13,
+                                      fontStyle: FontStyle.italic,
+                                      fontFamily: 'Inter',
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    maxLines: 1,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                        if (!isLargeScreen) ...[
+                          const SizedBox(height: 2),
+                          Text(
+                            greeting,
+                            style: const TextStyle(
+                              color: Colors.white54,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
                       ],
                     ),
                   ),
-                  if (_diagnosis != 'INAPTO') ...[
-                    const SizedBox(width: 12),
-                    // Badge de estado psicométrico (estilo notificación)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: isLargeScreen ? diagnosisColor.withValues(alpha: 0.15) : nt.surfaceCard,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: isLargeScreen ? null : [
-                          BoxShadow(
-                            color: diagnosisColor.withValues(alpha: 0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          )
-                        ],
-                        border: Border.all(
-                          color: diagnosisColor.withValues(alpha: 0.3),
-                          width: 1,
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (!isLargeScreen) ...[
-                            Icon(Icons.notifications_active_rounded, color: diagnosisColor, size: 16),
-                            const SizedBox(width: 6),
-                          ],
-                          Text(
-                            _diagnosis,
-                            style: TextStyle(
-                              color: diagnosisColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ],
+                  // Derecha: botón Ajustes
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.12),
                       ),
                     ),
-                    const SizedBox(width: 8),
-                    // Badge de estado PRO/FREE
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: isPremium ? const Color(0xFF8B5CF6).withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: isPremium ? const Color(0xFF8B5CF6).withValues(alpha: 0.5) : Colors.grey.withValues(alpha: 0.5),
-                        ),
+                    child: IconButton(
+                      onPressed: () => context.push('/settings'),
+                      icon: const Icon(
+                        Icons.settings_rounded,
+                        color: Colors.white,
+                        size: 22,
                       ),
-                      child: Text(
-                        isPremium ? 'PRO' : 'FREE',
-                        style: TextStyle(
-                          color: isPremium ? const Color(0xFFC4B5FD) : Colors.grey[400],
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      tooltip: 'Ajustes',
+                      padding: const EdgeInsets.all(8),
+                      constraints: const BoxConstraints(),
                     ),
-                  ],
+                  ),
                 ],
               ),
 
@@ -1165,91 +1003,109 @@ class _HomeScreenState extends State<HomeScreen> {
                       constraints: const BoxConstraints(maxWidth: 1000),
                       child: LayoutBuilder(
                         builder: (context, constraints) {
-                        if (isLargeScreen) {
-                          return Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    _buildDailyMissionCard(context, nt),
-                                    const SizedBox(height: 10),
-                                    _buildSimulacroCard(context, nt),
-                                    const SizedBox(height: 10),
-                                    _buildMiniAppsCard(context, nt),
-                                    const SizedBox(height: 10),
-                                    _buildMedicalStudyCard(context, nt),
-                                    const SizedBox(height: 10),
-                                    _buildInterviewCard(context, nt),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(width: 24),
-                              Expanded(
-                                flex: 6,
-                                child: GridView.count(
-                                  crossAxisCount: 2,
-                                  mainAxisSpacing: 16,
-                                  crossAxisSpacing: 16,
-                                  childAspectRatio: 1.15,
-                                  shrinkWrap: true,
-                                  physics:
-                                      const NeverScrollableScrollPhysics(),
-                                  children: [
-                                    _buildEstudiarTile(context, nt),
-                                    _buildRepasarTile(context, nt),
-                                    _buildTarjetasTile(context, nt),
-                                    _buildAprendizajeTile(context, nt),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        } else {
-                          return SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                          if (isLargeScreen) {
+                            return Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                _buildDailyMissionCard(context, nt),
-                                const SizedBox(height: 16),
-                                Row(
-                                  children: [
-                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildEstudiarTile(context, nt))),
-                                    const SizedBox(width: 12),
-                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildRepasarTile(context, nt))),
-                                    const SizedBox(width: 12),
-                                    Expanded(child: AspectRatio(aspectRatio: 1, child: _buildTarjetasTile(context, nt))),
-                                  ],
+                                Expanded(
+                                  flex: 5,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      _buildDailyMissionCard(context, nt),
+                                      const SizedBox(height: 10),
+                                      _buildSimulacroCard(context, nt),
+                                    ],
+                                  ),
                                 ),
-                                const SizedBox(height: 16),
-                                Row(
-                                  children: [
-                                    Expanded(child: AspectRatio(aspectRatio: 1.5, child: _buildAprendizajeTile(context, nt))),
-                                    const SizedBox(width: 12),
-                                    Expanded(child: AspectRatio(aspectRatio: 1.5, child: _buildSimulacroCard(context, nt, isSquare: true))),
-                                  ],
+                                const SizedBox(width: 24),
+                                Expanded(
+                                  flex: 6,
+                                  child: GridView.count(
+                                    crossAxisCount: 2,
+                                    mainAxisSpacing: 16,
+                                    crossAxisSpacing: 16,
+                                    childAspectRatio: 1.15,
+                                    shrinkWrap: true,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    children: [
+                                      _buildEstudiarTile(context, nt),
+                                      _buildTarjetasTile(context, nt),
+                                      _buildAprendizajeTile(context, nt),
+                                    ],
+                                  ),
                                 ),
-                                const SizedBox(height: 16),
-                                _buildMiniAppsCard(context, nt, isSquare: false),
-                                const SizedBox(height: 12),
-                                _buildMedicalStudyCard(context, nt, isSquare: false),
-                                const SizedBox(height: 12),
-                                _buildInterviewCard(context, nt, isSquare: false),
                               ],
-                            ),
-                          );
-                        }
-                      },
+                            );
+                          } else {
+                            return SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  _buildDailyMissionCard(context, nt),
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildEstudiarTile(
+                                            context,
+                                            nt,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildTarjetasTile(
+                                            context,
+                                            nt,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildAprendizajeTile(
+                                            context,
+                                            nt,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildSimulacroCard(
+                                            context,
+                                            nt,
+                                            isSquare: true,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
+                        },
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
         ),
       ),
     );
@@ -1257,26 +1113,23 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  _GlassTile — tile cuadrado del grid (Estudiar / Repasar / Tarjetas / etc.)
-//  Usa HoverGlassCard para el hover animado.
+//  _GlassTile — tile cuadrado del grid con gradiente por color
 // ─────────────────────────────────────────────────────────────────────────────
 class _GlassTile extends StatelessWidget {
   final IconData icon;
   final Color color;
+  final List<Color> gradientColors;
   final String title;
   final String subtitle;
-  final String? badge;
-  final Color? badgeColor;
   final VoidCallback onTap;
 
   const _GlassTile({
     required this.icon,
     required this.color,
+    required this.gradientColors,
     required this.title,
     required this.subtitle,
     required this.onTap,
-    this.badge,
-    this.badgeColor,
   });
 
   @override
@@ -1284,81 +1137,78 @@ class _GlassTile extends StatelessWidget {
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(22),
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Stack(
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: gradientColors,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(22),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _IconBubble(icon: icon, color: color),
-                const Spacer(),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
+            // Icon with glow
+            Container(
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    color.withValues(alpha: 0.35),
+                    color.withValues(alpha: 0.15),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: color.withValues(alpha: 0.4)),
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.3),
+                    blurRadius: 12,
+                    spreadRadius: 0,
                   ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  subtitle,
-                  style:
-                      const TextStyle(color: Colors.white60, fontSize: 12),
-                ),
-              ],
+                ],
+              ),
+              child: Icon(icon, color: color, size: 22),
             ),
-            if (badge != null)
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 7,
-                    vertical: 3,
-                  ),
-                  decoration: BoxDecoration(
-                    color: badgeColor ?? Colors.redAccent,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    badge!,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            const Spacer(),
+            // Title
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 15,
+                  letterSpacing: -0.2,
                 ),
               ),
+            ),
+            const SizedBox(height: 3),
+            // Subtitle with accent color
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                subtitle,
+                style: TextStyle(
+                  color: color.withValues(alpha: 0.7),
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
           ],
         ),
       ),
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-//  _IconBubble — burbuja de icono reusable
-// ─────────────────────────────────────────────────────────────────────────────
-class _IconBubble extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-
-  const _IconBubble({required this.icon, required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 38,
-      height: 38,
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Icon(icon, color: color, size: 20),
     );
   }
 }

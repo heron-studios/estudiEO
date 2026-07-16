@@ -152,6 +152,8 @@ class _QuizScreenState extends State<QuizScreen> {
     final respElegida = selected >= 0 && selected < question.options.length ? question.options[selected] : 'Ninguna';
     final respCorrecta = question.options[question.correctAnswer];
     
+    if (!mounted) return;
+
     showDialog(
       context: context,
       barrierDismissible: false,

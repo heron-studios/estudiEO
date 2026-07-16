@@ -135,48 +135,56 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
             // Layer 2: Floating Orbs (z-index: 1)
             Positioned.fill(
-              child: FloatingOrbs(orbAnimation: _orbAnimation),
+              child: RepaintBoundary(
+                child: FloatingOrbs(orbAnimation: _orbAnimation),
+              ),
             ),
 
             // Layer 3: Main Content (z-index: 2)
-            SafeArea(
-              child: Column(
-                children: [
-                  _buildNavbar(),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 52),
-                      child: Center(
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 1000),
-                          child: isDesktop
-                              ? Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: _buildHeroSection(true),
-                                    ),
-                                    const SizedBox(width: 48),
-                                    Expanded(
-                                      flex: 6,
-                                      child: _buildRightSideContent(true),
-                                    ),
-                                  ],
-                                )
-                              : Column(
-                                  children: [
-                                    _buildHeroSection(false),
-                                    const SizedBox(height: 52),
-                                    _buildRightSideContent(false),
-                                  ],
+            RepaintBoundary(
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    if (isDesktop) _buildNavbar(),
+                    Expanded(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          return SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight,
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 52),
+                                alignment: Alignment.center,
+                                child: ConstrainedBox(
+                                  constraints: const BoxConstraints(maxWidth: 1000),
+                                  child: isDesktop
+                                      ? Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              flex: 5,
+                                              child: _buildHeroSection(true),
+                                            ),
+                                            const SizedBox(width: 48),
+                                            Expanded(
+                                              flex: 6,
+                                              child: _buildRightSideContent(true),
+                                            ),
+                                          ],
+                                        )
+                                      : _buildHeroSection(false),
                                 ),
-                        ),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

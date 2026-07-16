@@ -68,7 +68,9 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
             child: _MorphBlobLayer(t: 0.2, nt: nt),
           ),
           const ColoredBox(color: Color(0x0A000000)),
-          widget.child,
+          RepaintBoundary(
+            child: widget.child,
+          ),
         ],
       );
     }
@@ -118,7 +120,9 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
           const ColoredBox(color: Color(0x0A000000)),
 
           // 6. Contenido — completamente aislado de las animaciones
-          widget.child,
+          RepaintBoundary(
+            child: widget.child,
+          ),
         ],
       ),
     );
@@ -565,10 +569,12 @@ class _BubblePainter extends CustomPainter {
         final bj = bubbles[j];
         final dx = bi.x - bj.x;
         final dy = bi.y - bj.y;
-        final d = math.sqrt(dx * dx + dy * dy);
+        final dSq = dx * dx + dy * dy;
+        const connectDistSq = _connectDist * _connectDist;
 
-        if (d >= _connectDist) continue;
-
+        if (dSq >= connectDistSq) continue;
+        
+        final d = math.sqrt(dSq);
         final proximity = 1.0 - d / _connectDist; // 0.0 lejos → 1.0 cerca
         final smoothProx = _smoothstep(proximity);
 

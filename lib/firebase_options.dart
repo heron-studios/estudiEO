@@ -61,6 +61,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '921397124091',
     projectId: 'estudieo-3405c',
     storageBucket: 'estudieo-3405c.firebasestorage.app',
+    iosClientId: '921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl.apps.googleusercontent.com',
     iosBundleId: 'com.example.learn',
   );
 }

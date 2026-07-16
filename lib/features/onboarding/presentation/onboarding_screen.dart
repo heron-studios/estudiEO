@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -65,10 +66,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            slide['icon']!,
-                            style: const TextStyle(fontSize: 100),
-                          ),
+                          if (index == 0)
+                            SizedBox(
+                              height: 180,
+                              child: Lottie.asset(
+                                'assets/Book loading.lottie',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          else if (index == 2)
+                            SizedBox(
+                              height: 180,
+                              child: Lottie.asset(
+                                'assets/Sparkles Loop Loader ai.lottie',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          else
+                            Text(
+                              slide['icon']!,
+                              style: const TextStyle(fontSize: 100),
+                            ),
                           const SizedBox(height: 40),
                           Text(
                             slide['title']!,

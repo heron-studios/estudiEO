@@ -58,6 +58,7 @@ dependencies:
   path_provider: ^2.1.5
   webview_flutter: ^4.8.0
   speech_to_text: ^7.4.0
+  lottie: ^3.5.1
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
@@ -87,6 +88,9 @@ flutter:
     - assets/audio/
     - assets/data/
     - assets/html/
+    - assets/lottie/
+    - assets/Book loading.lottie
+    - assets/Sparkles Loop Loader ai.lottie
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,4 +1,4 @@
-﻿import 'dart:ui';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 
@@ -145,7 +145,7 @@ class _RevealAnswerCardState extends State<RevealAnswerCard>
                     else
                       SizeTransition(
                         sizeFactor: _expandAnimation,
-                        axisAlignment: -1.0,
+                        alignment: const Alignment(-1.0, -1.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

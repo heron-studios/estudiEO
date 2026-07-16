@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>921397124091-b4dvbke424ft7jeebkhekt2ctk73tdso.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCdB4Z3ELk-PASkRf2sCZxTS1SB1dyVp8g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>921397124091</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.edupol.izquierdo</string>
+	<key>PROJECT_ID</key>
+	<string>estudieo-3405c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>estudieo-3405c.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:921397124091:ios:6f18ffd5f3dc06ec25c95e</string>
+</dict>
+</plist>

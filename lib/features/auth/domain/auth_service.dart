@@ -2,14 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:learn/core/config/app_config.dart';
 
 class AuthService extends ChangeNotifier {
   FirebaseAuth get _auth => FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     clientId: kIsWeb
         ? '921397124091-kr9b9smn52r45643qte4am6269gv07l9.apps.googleusercontent.com'
-        : null,
+        : (defaultTargetPlatform == TargetPlatform.iOS
+            ? '921397124091-k4jfbijukgjspsm0l4k089dcjtuqjenl.apps.googleusercontent.com'
+            : null),
   );
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 

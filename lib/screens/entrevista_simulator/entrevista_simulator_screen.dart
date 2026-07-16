@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
+
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -126,7 +126,6 @@ class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
       
       // Registrar que ya hizo su entrevista
       if (mounted) {
-        final auth = context.read<AuthService>();
         LimitsService.incrementEntrevistaIACount();
         context.read<LocalStorageService>().saveLastInterviewDate(DateTime.now());
       }

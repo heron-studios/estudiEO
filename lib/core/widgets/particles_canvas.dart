@@ -85,10 +85,13 @@ class _ParticleCanvasState extends State<ParticleCanvas> with SingleTickerProvid
       if (mousePos.dx != -999 && mousePos.dy != -999) {
         final dx = p.x - mousePos.dx;
         final dy = p.y - mousePos.dy;
-        final dist = math.sqrt(dx * dx + dy * dy);
-        if (dist < 80) {
-          p.x += (dx / dist) * 0.6;
-          p.y += (dy / dist) * 0.6;
+        final distSq = dx * dx + dy * dy;
+        if (distSq < 6400) {
+          final dist = math.sqrt(distSq);
+          if (dist > 0) {
+            p.x += (dx / dist) * 0.6;
+            p.y += (dy / dist) * 0.6;
+          }
         }
       }
     }
@@ -126,8 +129,9 @@ class _ParticlePainter extends CustomPainter {
       for (int j = i + 1; j < particles.length; j++) {
         final dx = particles[i].x - particles[j].x;
         final dy = particles[i].y - particles[j].y;
-        final d = math.sqrt(dx * dx + dy * dy);
-        if (d < 90) {
+        final d2 = dx * dx + dy * dy;
+        if (d2 < 8100) {
+          final d = math.sqrt(d2);
           final opacity = 0.12 * (1.0 - d / 90.0);
           linePaint.color = const Color(0xFF8AB4F8).withValues(alpha: opacity);
           canvas.drawLine(

@@ -20,27 +20,28 @@ class MiniAppsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-          onPressed: () => context.pop(),
-        ),
+        automaticallyImplyLeading: false,
         title: const Text(
-          'Mini Apps',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          'Interactivos',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
       body: NeuralBackgroundWrapper(
         child: SafeArea(
           child: ScrollConfiguration(
-            behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+            behavior: ScrollConfiguration.of(
+              context,
+            ).copyWith(scrollbars: false),
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                padding: const EdgeInsets.only(
+                  left: 24,
+                  right: 24,
+                  top: 20,
+                  bottom: 110,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -52,10 +53,7 @@ class MiniAppsScreen extends StatelessWidget {
                       builder: (context, value, child) {
                         return Transform.translate(
                           offset: Offset(-20 * (1.0 - value), 0),
-                          child: Opacity(
-                            opacity: value,
-                            child: child,
-                          ),
+                          child: Opacity(opacity: value, child: child),
                         );
                       },
                       child: Column(
@@ -82,7 +80,7 @@ class MiniAppsScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 28),
-                    
+
                     // Entry animation for the cards grid
                     TweenAnimationBuilder<double>(
                       tween: Tween<double>(begin: 0.0, end: 1.0),
@@ -91,10 +89,7 @@ class MiniAppsScreen extends StatelessWidget {
                       builder: (context, value, child) {
                         return Transform.translate(
                           offset: Offset(0, 30 * (1.0 - value)),
-                          child: Opacity(
-                            opacity: value,
-                            child: child,
-                          ),
+                          child: Opacity(opacity: value, child: child),
                         );
                       },
                       child: GridView.builder(
@@ -104,9 +99,12 @@ class MiniAppsScreen extends StatelessWidget {
                           maxCrossAxisExtent: 600,
                           mainAxisSpacing: 20,
                           crossAxisSpacing: 20,
-                          childAspectRatio: MediaQuery.of(context).size.width > 900
+                          childAspectRatio:
+                              MediaQuery.of(context).size.width > 900
                               ? 2.5
-                              : (MediaQuery.of(context).size.width > 650 ? 2.0 : 2.2),
+                              : (MediaQuery.of(context).size.width > 650
+                                    ? 2.0
+                                    : 2.2),
                         ),
                         itemCount: 5,
                         itemBuilder: (context, index) {
@@ -117,51 +115,67 @@ class MiniAppsScreen extends StatelessWidget {
                           if (index == 0) {
                             return MiniAppCard(
                               title: 'Tabla Periódica',
-                              description: 'Modo exploratorio, entrenamiento dual y supervivencia.',
+                              description:
+                                  'Modo exploratorio, entrenamiento dual y supervivencia.',
                               icon: Icons.science_rounded,
                               themeColor: nt.blueGoogle,
                               isLocked: false,
-                              onTap: () => context.push('/miniapps/periodic-table'),
+                              onTap: () =>
+                                  context.push('/miniapps/periodic-table'),
                             );
                           } else if (index == 1) {
                             return MiniAppCard(
                               title: 'Silogismos',
-                              description: 'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
+                              description:
+                                  'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
                               icon: Icons.account_tree_rounded,
                               themeColor: const Color(0xFF14B8A6),
                               badgeText: 'MINIJUEGO',
                               isLocked: isLocked,
-                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/silogismos'),
+                              onTap: isLocked
+                                  ? () => PremiumUpgradeDialog.show(context)
+                                  : () => context.push('/miniapps/silogismos'),
                             );
                           } else if (index == 2) {
                             return MiniAppCard(
                               title: 'ANP Master',
-                              description: 'Áreas Naturales Protegidas del Perú. Repaso visual activo y mapas.',
+                              description:
+                                  'Áreas Naturales Protegidas del Perú. Repaso visual activo y mapas.',
                               icon: Icons.map_rounded,
                               themeColor: const Color(0xFF4ADE80),
                               badgeText: 'BIODIVERSIDAD',
                               isLocked: isLocked,
-                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/anp-master'),
+                              onTap: isLocked
+                                  ? () => PremiumUpgradeDialog.show(context)
+                                  : () => context.push('/miniapps/anp-master'),
                             );
                           } else if (index == 3) {
                             return MiniAppCard(
                               title: 'Prod. Notables',
-                              description: 'Aprende de forma interactiva las fórmulas matemáticas principales.',
+                              description:
+                                  'Aprende de forma interactiva las fórmulas matemáticas principales.',
                               icon: Icons.calculate_rounded,
                               themeColor: Colors.orangeAccent,
                               badgeText: 'MATEMÁTICA',
                               isLocked: isLocked,
-                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/productos-notables'),
+                              onTap: isLocked
+                                  ? () => PremiumUpgradeDialog.show(context)
+                                  : () => context.push(
+                                      '/miniapps/productos-notables',
+                                    ),
                             );
                           } else {
                             return MiniAppCard(
                               title: 'Auditor de Texto',
-                              description: 'Perfecciona informes, partes policiales u actas con ayuda del Perito IA.',
+                              description:
+                                  'Perfecciona informes, partes policiales u actas con ayuda del Perito IA.',
                               icon: Icons.fact_check_rounded,
                               themeColor: nt.purple,
                               badgeText: 'INTELECTO IA',
                               isLocked: isLocked,
-                              onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/redaccion'),
+                              onTap: isLocked
+                                  ? () => PremiumUpgradeDialog.show(context)
+                                  : () => context.push('/miniapps/redaccion'),
                             );
                           }
                         },
@@ -202,7 +216,8 @@ class MiniAppCard extends StatefulWidget {
   State<MiniAppCard> createState() => _MiniAppCardState();
 }
 
-class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStateMixin {
+class _MiniAppCardState extends State<MiniAppCard>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
   late final Animation<double> _scale;
   late final Animation<double> _glow;
@@ -214,12 +229,14 @@ class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStat
       vsync: this,
       duration: const Duration(milliseconds: 200),
     );
-    _scale = Tween<double>(begin: 1.0, end: 1.025).animate(
-      CurvedAnimation(parent: _ctrl, curve: Curves.easeOutCubic),
-    );
-    _glow = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _ctrl, curve: Curves.easeOutCubic),
-    );
+    _scale = Tween<double>(
+      begin: 1.0,
+      end: 1.025,
+    ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOutCubic));
+    _glow = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOutCubic));
   }
 
   @override
@@ -247,65 +264,53 @@ class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStat
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(
-                    color: Color.lerp(
-                      nt.borderSubtle,
-                      widget.themeColor.withValues(alpha: 0.6),
-                      _glow.value,
-                    )!,
-                    width: 1.5,
+                    color: Colors.white.withValues(
+                      alpha: 0.08 + 0.1 * _glow.value,
+                    ),
+                    width: 1.0,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: widget.themeColor.withValues(alpha: 0.04 + 0.10 * _glow.value),
+                      color: widget.themeColor.withValues(
+                        alpha: 0.02 + 0.08 * _glow.value,
+                      ),
                       blurRadius: 24,
-                      spreadRadius: 4 * _glow.value,
+                      spreadRadius: 2 * _glow.value,
                       offset: const Offset(0, 8),
                     ),
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(23),
                   child: BackdropFilter(
-                    filter: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                    filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                     child: Container(
                       decoration: BoxDecoration(
+                        color: nt.surfaceCard.withValues(alpha: 0.3),
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            widget.themeColor.withValues(alpha: 0.12 + 0.08 * _glow.value),
-                            nt.surfaceCard.withValues(alpha: 0.4),
+                            widget.themeColor.withValues(
+                              alpha: 0.1 + 0.05 * _glow.value,
+                            ),
+                            Colors.transparent,
                           ],
                         ),
                       ),
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 20,
+                      ),
                       child: Row(
                         children: [
                           AnimatedContainer(
                             duration: const Duration(milliseconds: 200),
-                            width: 64,
-                            height: 64,
+                            width: 56,
+                            height: 56,
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  widget.themeColor.withValues(alpha: 0.25),
-                                  widget.themeColor.withValues(alpha: 0.08),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(18),
-                              border: Border.all(
-                                color: widget.themeColor.withValues(alpha: 0.3 + 0.3 * _glow.value),
-                                width: 1.5,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: widget.themeColor.withValues(alpha: 0.2 * _glow.value),
-                                  blurRadius: 12,
-                                  spreadRadius: 1,
-                                ),
-                              ],
+                              shape: BoxShape.circle,
+                              color: widget.themeColor.withValues(alpha: 0.15),
                             ),
                             child: Center(
                               child: Icon(
@@ -344,10 +349,16 @@ class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStat
                                           vertical: 3,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: widget.themeColor.withValues(alpha: 0.15),
-                                          borderRadius: BorderRadius.circular(8),
+                                          color: widget.themeColor.withValues(
+                                            alpha: 0.15,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
                                           border: Border.all(
-                                            color: widget.themeColor.withValues(alpha: 0.4),
+                                            color: widget.themeColor.withValues(
+                                              alpha: 0.4,
+                                            ),
                                             width: 1,
                                           ),
                                         ),
@@ -382,9 +393,11 @@ class _MiniAppCardState extends State<MiniAppCard> with SingleTickerProviderStat
                           Transform.translate(
                             offset: Offset(6 * _glow.value, 0),
                             child: Icon(
-                              widget.isLocked ? Icons.lock_rounded : Icons.arrow_forward_ios_rounded,
-                              color: widget.isLocked 
-                                  ? Colors.white54 
+                              widget.isLocked
+                                  ? Icons.lock_rounded
+                                  : Icons.arrow_forward_ios_rounded,
+                              color: widget.isLocked
+                                  ? Colors.white54
                                   : Color.lerp(
                                       Colors.white24,
                                       widget.themeColor,

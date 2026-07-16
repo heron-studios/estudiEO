@@ -71,36 +71,38 @@ class _BentoCardState extends State<BentoCard> {
               
               // Shimmer overlay
               Positioned.fill(
-                child: AnimatedBuilder(
-                  animation: widget.shimmerAnimation,
-                  builder: (context, _) {
-                    final double t = widget.shimmerAnimation.value;
-                    final double localT = (t - widget.shimmerPhase) % 1.0;
-                    double sweepPos;
-                    if (localT < 0.5) {
-                      sweepPos = -1.0 + (localT / 0.5) * 2.2;
-                    } else {
-                      sweepPos = 1.2 - ((localT - 0.5) / 0.5) * 2.2;
-                    }
-                    
-                    return FractionallySizedBox(
-                      widthFactor: 0.6,
-                      alignment: Alignment(sweepPos, 0.0),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.transparent,
-                              Colors.white10,
-                              Colors.transparent,
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
+                child: RepaintBoundary(
+                  child: AnimatedBuilder(
+                    animation: widget.shimmerAnimation,
+                    builder: (context, _) {
+                      final double t = widget.shimmerAnimation.value;
+                      final double localT = (t - widget.shimmerPhase) % 1.0;
+                      double sweepPos;
+                      if (localT < 0.5) {
+                        sweepPos = -1.0 + (localT / 0.5) * 2.2;
+                      } else {
+                        sweepPos = 1.2 - ((localT - 0.5) / 0.5) * 2.2;
+                      }
+                      
+                      return FractionallySizedBox(
+                        widthFactor: 0.6,
+                        alignment: Alignment(sweepPos, 0.0),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Colors.transparent,
+                                Colors.white10,
+                                Colors.transparent,
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
 

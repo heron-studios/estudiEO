@@ -12,6 +12,8 @@ import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/core/services/bible_service.dart';
+import 'package:learn/core/config/app_config.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -44,6 +46,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
       setState(() {
         _dailyVerse = verse;
       });
+    }
+  }
+
+  Future<void> _launchWhatsApp() async {
+    final urlStr =
+        'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent("Hola, necesito soporte con la plataforma EDUPOL.")}';
+    final uri = Uri.parse(urlStr);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
@@ -286,54 +297,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
         centerTitle: true,
       ),
       body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              children: [
-                if (_dailyVerse != null) ...[
-                  Text(
-                    'VERSÍCULO DEL DÍA',
-                    style: TextStyle(
-                      color: _muted.withValues(alpha: 0.7),
-                      fontSize: 12,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                      fontFamily: 'Outfit',
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(18),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: _cardBg.withValues(alpha: 0.6),
-                          borderRadius: BorderRadius.circular(18),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.08),
-                          ),
-                        ),
-                        child: Text(
-                          _dailyVerse!,
-                          style: const TextStyle(
-                            color: _text,
-                            fontSize: 14,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: 'Inter',
-                            height: 1.45,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-                ],
-                // Section: Asignaturas
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 600),
+          child: ListView(
+            padding: const EdgeInsets.all(20),
+            children: [
+              if (_dailyVerse != null) ...[
                 Text(
-                  'VISIBILIDAD DE ASIGNATURAS',
+                  'VERSÍCULO DEL DÍA',
                   style: TextStyle(
                     color: _muted.withValues(alpha: 0.7),
                     fontSize: 12,
@@ -348,6 +319,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                     child: Container(
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: _cardBg.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(18),
@@ -355,427 +327,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           color: Colors.white.withValues(alpha: 0.08),
                         ),
                       ),
-                      child: Column(
-                        children: allSubjects.map((subject) {
-                          final isVisible = !_hiddenSubjects.contains(
-                            subject.id,
-                          );
-                          return SwitchListTile(
-                            title: Row(
-                              children: [
-                                Text(
-                                  subject.icon,
-                                  style: const TextStyle(fontSize: 20),
-                                ),
-                                const SizedBox(width: 12),
-                                Expanded(
-                                  child: Text(
-                                    subject.name,
-                                    style: const TextStyle(
-                                      color: _text,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                      fontFamily: 'Inter',
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            value: isVisible,
-                            onChanged: (val) => _toggleSubject(subject.id, val),
-                            activeThumbColor: _blue,
-                            activeTrackColor: _blue.withValues(alpha: 0.3),
-                            inactiveThumbColor: _muted,
-                            inactiveTrackColor: NeuralDesignSystem.background,
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-
-                // Section: Preferencias
-                Text(
-                  'PREFERENCIAS',
-                  style: TextStyle(
-                    color: _muted.withValues(alpha: 0.7),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Outfit',
-                  ),
-                ),
-                const SizedBox(height: 12),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _cardBg.withValues(alpha: 0.6),
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
-                      child: Consumer<AudioService>(
-                        builder: (context, audioService, _) {
-                          return SwitchListTile(
-                            title: const Row(
-                              children: [
-                                Icon(Icons.volume_up_rounded, size: 20, color: _text),
-                                SizedBox(width: 12),
-                                Expanded(
-                                  child: Text(
-                                    'Efectos de sonido (SFX)',
-                                    style: TextStyle(
-                                      color: _text,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                      fontFamily: 'Inter',
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            value: !audioService.isMuted,
-                            onChanged: (_) => audioService.toggleMute(),
-                            activeThumbColor: _blue,
-                            activeTrackColor: _blue.withValues(alpha: 0.3),
-                            inactiveThumbColor: _muted,
-                            inactiveTrackColor: NeuralDesignSystem.background,
-                          );
-                        }
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-
-                // Section: Datos
-                Text(
-                  'DATOS',
-                  style: TextStyle(
-                    color: _muted.withValues(alpha: 0.7),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Outfit',
-                  ),
-                ),
-                const SizedBox(height: 12),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _cardBg.withValues(alpha: 0.6),
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          ListTile(
-                            onTap: _exportProgress,
-                            contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            leading: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: _blue.withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(
-                                  color: _blue.withValues(alpha: 0.25),
-                                ),
-                              ),
-                              child: const Icon(
-                                Icons.download_rounded,
-                                color: _blue,
-                                size: 22,
-                              ),
-                            ),
-                            title: const Text(
-                              'Exportar progreso',
-                              style: TextStyle(
-                                color: _text,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontFamily: 'Inter',
-                              ),
-                            ),
-                            subtitle: Text(
-                              'Copia de seguridad del progreso',
-                              style: TextStyle(
-                                color: _muted.withValues(alpha: 0.7),
-                                fontSize: 13,
-                              ),
-                            ),
-                            trailing: Icon(
-                              Icons.chevron_right,
-                              color: _muted.withValues(alpha: 0.5),
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.white.withValues(alpha: 0.06),
-                            height: 1,
-                          ),
-                          ListTile(
-                            onTap: _importProgress,
-                            contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            leading: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: const Color(
-                                  0xFF16A34A,
-                                ).withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(
-                                  color: const Color(
-                                    0xFF16A34A,
-                                  ).withValues(alpha: 0.25),
-                                ),
-                              ),
-                              child: const Icon(
-                                Icons.upload_rounded,
-                                color: Color(0xFF4ADE80),
-                                size: 22,
-                              ),
-                            ),
-                            title: const Text(
-                              'Importar progreso',
-                              style: TextStyle(
-                                color: _text,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontFamily: 'Inter',
-                              ),
-                            ),
-                            subtitle: Text(
-                              'Restaurar copia de seguridad',
-                              style: TextStyle(
-                                color: _muted.withValues(alpha: 0.7),
-                                fontSize: 13,
-                              ),
-                            ),
-                            trailing: Icon(
-                              Icons.chevron_right,
-                              color: _muted.withValues(alpha: 0.5),
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.white.withValues(alpha: 0.06),
-                            height: 1,
-                          ),
-                          ListTile(
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => AlertDialog(
-                                  backgroundColor:
-                                      NeuralDesignSystem.surfaceCard,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  title: const Text(
-                                    'Borrar todo el progreso',
-                                    style: TextStyle(
-                                      color: _text,
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  content: Text(
-                                    'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
-                                    style: TextStyle(
-                                      color: _muted.withValues(alpha: 0.8),
-                                    ),
-                                  ),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(ctx),
-                                      child: const Text(
-                                        'Cancelar',
-                                        style: TextStyle(color: _muted),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        context
-                                            .read<LocalStorageService>()
-                                            .clearAll();
-                                        context.read<SrsProvider>().resetAll();
-                                        context
-                                            .read<GamificationProvider>()
-                                            .reset();
-                                        context
-                                            .read<QuizProvider>()
-                                            .clearSessions();
-                                        context
-                                            .read<SubjectProvider>()
-                                            .reload();
-                                        Navigator.pop(ctx);
-                                        ScaffoldMessenger.of(
-                                          context,
-                                        ).showSnackBar(
-                                          SnackBar(
-                                            content: const Text(
-                                              'Progreso borrado.',
-                                            ),
-                                            backgroundColor:
-                                                NeuralDesignSystem.pink,
-                                            behavior: SnackBarBehavior.floating,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'Borrar',
-                                        style: TextStyle(
-                                          color: NeuralDesignSystem.pink,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            leading: Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: NeuralDesignSystem.pink.withValues(
-                                  alpha: 0.12,
-                                ),
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(
-                                  color: NeuralDesignSystem.pink.withValues(
-                                    alpha: 0.25,
-                                  ),
-                                ),
-                              ),
-                              child: const Icon(
-                                Icons.delete_forever_rounded,
-                                color: NeuralDesignSystem.pink,
-                                size: 22,
-                              ),
-                            ),
-                            title: const Text(
-                              'Borrar progreso',
-                              style: TextStyle(
-                                color: _text,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                fontFamily: 'Inter',
-                              ),
-                            ),
-                            subtitle: Text(
-                              'Rachas, niveles y tarjetas',
-                              style: TextStyle(
-                                color: _muted.withValues(alpha: 0.7),
-                                fontSize: 13,
-                              ),
-                            ),
-                            trailing: Icon(
-                              Icons.chevron_right,
-                              color: _muted.withValues(alpha: 0.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-
-                // Section: Cuenta
-                Text(
-                  'CUENTA',
-                  style: TextStyle(
-                    color: _muted.withValues(alpha: 0.7),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Outfit',
-                  ),
-                ),
-                const SizedBox(height: 12),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _cardBg.withValues(alpha: 0.6),
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
-                      child: ListTile(
-                        onTap: () async {
-                          final authService = context.read<AuthService>();
-                          Navigator.of(
-                            context,
-                          ).popUntil((route) => route.isFirst);
-                          await authService.signOut();
-                        },
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
-                        ),
-                        leading: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: NeuralDesignSystem.pink.withValues(
-                              alpha: 0.12,
-                            ),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: NeuralDesignSystem.pink.withValues(
-                                alpha: 0.25,
-                              ),
-                            ),
-                          ),
-                          child: const Icon(
-                            Icons.logout_rounded,
-                            color: NeuralDesignSystem.pink,
-                            size: 22,
-                          ),
-                        ),
-                        title: const Text(
-                          'Cerrar sesión',
-                          style: TextStyle(
-                            color: _text,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            fontFamily: 'Inter',
-                          ),
-                        ),
-                        subtitle: Text(
-                          'Salir de tu cuenta de Google',
-                          style: TextStyle(
-                            color: _muted.withValues(alpha: 0.7),
-                            fontSize: 13,
-                          ),
-                        ),
-                        trailing: Icon(
-                          Icons.chevron_right,
-                          color: _muted.withValues(alpha: 0.5),
+                      child: Text(
+                        _dailyVerse!,
+                        style: const TextStyle(
+                          color: _text,
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: 'Inter',
+                          height: 1.45,
                         ),
                       ),
                     ),
@@ -783,7 +342,513 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const SizedBox(height: 32),
               ],
-            ),
+              // Section: Asignaturas
+              Text(
+                'VISIBILIDAD DE ASIGNATURAS',
+                style: TextStyle(
+                  color: _muted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _cardBg.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    child: Column(
+                      children: allSubjects.map((subject) {
+                        final isVisible = !_hiddenSubjects.contains(subject.id);
+                        return SwitchListTile(
+                          title: Row(
+                            children: [
+                              Text(
+                                subject.icon,
+                                style: const TextStyle(fontSize: 20),
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Text(
+                                  subject.name,
+                                  style: const TextStyle(
+                                    color: _text,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
+                                    fontFamily: 'Inter',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          value: isVisible,
+                          onChanged: (val) => _toggleSubject(subject.id, val),
+                          activeThumbColor: _blue,
+                          activeTrackColor: _blue.withValues(alpha: 0.3),
+                          inactiveThumbColor: _muted,
+                          inactiveTrackColor: NeuralDesignSystem.background,
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+
+              // Section: Preferencias
+              Text(
+                'PREFERENCIAS',
+                style: TextStyle(
+                  color: _muted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _cardBg.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    child: Consumer<AudioService>(
+                      builder: (context, audioService, _) {
+                        return SwitchListTile(
+                          title: const Row(
+                            children: [
+                              Icon(
+                                Icons.volume_up_rounded,
+                                size: 20,
+                                color: _text,
+                              ),
+                              SizedBox(width: 12),
+                              Expanded(
+                                child: Text(
+                                  'Efectos de sonido (SFX)',
+                                  style: TextStyle(
+                                    color: _text,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
+                                    fontFamily: 'Inter',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          value: !audioService.isMuted,
+                          onChanged: (_) => audioService.toggleMute(),
+                          activeThumbColor: _blue,
+                          activeTrackColor: _blue.withValues(alpha: 0.3),
+                          inactiveThumbColor: _muted,
+                          inactiveTrackColor: NeuralDesignSystem.background,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+
+              // Section: Datos
+              Text(
+                'DATOS',
+                style: TextStyle(
+                  color: _muted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _cardBg.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          onTap: _exportProgress,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          leading: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: _blue.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: _blue.withValues(alpha: 0.25),
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.download_rounded,
+                              color: _blue,
+                              size: 22,
+                            ),
+                          ),
+                          title: const Text(
+                            'Exportar progreso',
+                            style: TextStyle(
+                              color: _text,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Copia de seguridad del progreso',
+                            style: TextStyle(
+                              color: _muted.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: _muted.withValues(alpha: 0.5),
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.white.withValues(alpha: 0.06),
+                          height: 1,
+                        ),
+                        ListTile(
+                          onTap: _importProgress,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          leading: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFF16A34A,
+                              ).withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: const Color(
+                                  0xFF16A34A,
+                                ).withValues(alpha: 0.25),
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.upload_rounded,
+                              color: Color(0xFF4ADE80),
+                              size: 22,
+                            ),
+                          ),
+                          title: const Text(
+                            'Importar progreso',
+                            style: TextStyle(
+                              color: _text,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Restaurar copia de seguridad',
+                            style: TextStyle(
+                              color: _muted.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: _muted.withValues(alpha: 0.5),
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.white.withValues(alpha: 0.06),
+                          height: 1,
+                        ),
+                        ListTile(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (ctx) => AlertDialog(
+                                backgroundColor: NeuralDesignSystem.surfaceCard,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                title: const Text(
+                                  'Borrar todo el progreso',
+                                  style: TextStyle(
+                                    color: _text,
+                                    fontFamily: 'Outfit',
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                content: Text(
+                                  'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
+                                  style: TextStyle(
+                                    color: _muted.withValues(alpha: 0.8),
+                                  ),
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(ctx),
+                                    child: const Text(
+                                      'Cancelar',
+                                      style: TextStyle(color: _muted),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      context
+                                          .read<LocalStorageService>()
+                                          .clearAll();
+                                      context.read<SrsProvider>().resetAll();
+                                      context
+                                          .read<GamificationProvider>()
+                                          .reset();
+                                      context
+                                          .read<QuizProvider>()
+                                          .clearSessions();
+                                      context.read<SubjectProvider>().reload();
+                                      Navigator.pop(ctx);
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
+                                        SnackBar(
+                                          content: const Text(
+                                            'Progreso borrado.',
+                                          ),
+                                          backgroundColor:
+                                              NeuralDesignSystem.pink,
+                                          behavior: SnackBarBehavior.floating,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              12,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: const Text(
+                                      'Borrar',
+                                      style: TextStyle(
+                                        color: NeuralDesignSystem.pink,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          leading: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: NeuralDesignSystem.pink.withValues(
+                                alpha: 0.12,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: NeuralDesignSystem.pink.withValues(
+                                  alpha: 0.25,
+                                ),
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.delete_forever_rounded,
+                              color: NeuralDesignSystem.pink,
+                              size: 22,
+                            ),
+                          ),
+                          title: const Text(
+                            'Borrar progreso',
+                            style: TextStyle(
+                              color: _text,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Rachas, niveles y tarjetas',
+                            style: TextStyle(
+                              color: _muted.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: _muted.withValues(alpha: 0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+
+              // Section: Cuenta
+              Text(
+                'CUENTA',
+                style: TextStyle(
+                  color: _muted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _cardBg.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          onTap: _launchWhatsApp,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          leading: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFF25D366,
+                              ).withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: const Color(
+                                  0xFF25D366,
+                                ).withValues(alpha: 0.25),
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.support_agent_rounded,
+                              color: Color(0xFF25D366),
+                              size: 22,
+                            ),
+                          ),
+                          title: const Text(
+                            'Soporte Técnico',
+                            style: TextStyle(
+                              color: _text,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Contáctanos por WhatsApp',
+                            style: TextStyle(
+                              color: _muted.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: _muted.withValues(alpha: 0.5),
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.white.withValues(alpha: 0.06),
+                          height: 1,
+                        ),
+                        ListTile(
+                          onTap: () async {
+                            final authService = context.read<AuthService>();
+                            Navigator.of(
+                              context,
+                            ).popUntil((route) => route.isFirst);
+                            await authService.signOut();
+                          },
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          leading: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: NeuralDesignSystem.pink.withValues(
+                                alpha: 0.12,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: NeuralDesignSystem.pink.withValues(
+                                  alpha: 0.25,
+                                ),
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.logout_rounded,
+                              color: NeuralDesignSystem.pink,
+                              size: 22,
+                            ),
+                          ),
+                          title: const Text(
+                            'Cerrar sesión',
+                            style: TextStyle(
+                              color: _text,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              fontFamily: 'Inter',
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Salir de tu cuenta de Google',
+                            style: TextStyle(
+                              color: _muted.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.chevron_right,
+                            color: _muted.withValues(alpha: 0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+            ],
+          ),
         ),
       ),
     );

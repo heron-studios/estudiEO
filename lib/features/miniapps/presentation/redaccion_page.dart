@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -81,7 +80,7 @@ class _RedaccionPageState extends State<RedaccionPage> {
       builder: (ctx) {
         final nt = NeuralTheme.of(context);
         return StatefulBuilder(
-          builder: (context, setDialogState) {
+          builder: (_, setDialogState) {
             bool isVerifying = false;
             String errorMsg = '';
 
@@ -101,8 +100,10 @@ class _RedaccionPageState extends State<RedaccionPage> {
               if (isValid) {
                 await ApiKeyStorage.saveKey(key);
                 await _checkApiKey();
-                if (mounted) {
+                if (ctx.mounted) {
                   Navigator.pop(ctx);
+                }
+                if (mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: const Text('API Key guardada y verificada con éxito.'),
