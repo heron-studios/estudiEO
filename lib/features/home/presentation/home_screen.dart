@@ -1034,37 +1034,44 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       child: LayoutBuilder(
                         builder: (context, constraints) {
                           if (isLargeScreen) {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                Expanded(
-                                  flex: 5,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      _buildDailyMissionCard(context, nt),
-                                      const SizedBox(height: 10),
-                                      _buildSimulacroCard(context, nt),
-                                    ],
-                                  ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: _buildDailyMissionCard(context, nt),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: _buildSimulacroCard(context, nt),
+                                    ),
+                                  ],
                                 ),
-                                const SizedBox(width: 24),
-                                Expanded(
-                                  flex: 6,
-                                  child: GridView.count(
-                                    crossAxisCount: 2,
-                                    mainAxisSpacing: 16,
-                                    crossAxisSpacing: 16,
-                                    childAspectRatio: 1.15,
-                                    shrinkWrap: true,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    children: [
-                                      _buildEstudiarTile(context, nt),
-                                      _buildTarjetasTile(context, nt),
-                                      _buildAprendizajeTile(context, nt),
-                                    ],
-                                  ),
+                                const SizedBox(height: 16),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1.25,
+                                        child: _buildEstudiarTile(context, nt),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1.25,
+                                        child: _buildTarjetasTile(context, nt),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1.25,
+                                        child: _buildAprendizajeTile(context, nt),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             );
