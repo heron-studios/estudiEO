@@ -1,4 +1,4 @@
-﻿import 'package:learn/models/srs_card.dart';
+import 'package:learn/models/srs_card.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 
 /// Motor de Repetición Espaciada Adaptativo basado en SM-2
@@ -71,8 +71,9 @@ class SrsEngine {
       final isRM = card.topicId.startsWith('rm_');
       final isExcludedRV = card.topicId == 'rv_plan'; // Solo excluir Plan de Redacción
       final isReglasOrtograficas = card.topicId == 'com_t1'; // Excluir Reglas Ortográficas
+      final isAICustom = card.topicId.startsWith('ai_topic_'); // Excluir las generadas por IA
       
-      if (isMatematicas || isRM || isExcludedRV || isReglasOrtograficas) {
+      if (isMatematicas || isRM || isExcludedRV || isReglasOrtograficas || isAICustom) {
         return false;
       }
       
