@@ -51,7 +51,7 @@ class PuterServiceWeb implements PuterService {
       final dartified = response.dartify();
       String reply;
       if (dartified is Map || dartified is List) {
-        reply = jsonEncode(dartified);
+        reply = jsonEncode(dartified, toEncodable: (e) => e.toString());
       } else {
         reply = dartified?.toString() ?? '';
       }
@@ -88,7 +88,7 @@ El formato JSON estricto esperado es:
       final response = await promise.toDart;
       final dartified = response.dartify();
       if (dartified is Map || dartified is List) {
-        return jsonEncode(dartified);
+        return jsonEncode(dartified, toEncodable: (e) => e.toString());
       }
       return dartified?.toString() ?? '';
     } catch (e) {
@@ -110,7 +110,14 @@ El formato JSON estricto esperado es:
       final response = await promise.toDart;
       final dartified = response.dartify();
       if (dartified is Map || dartified is List) {
-        return jsonEncode(dartified);
+        // En caso de que devuelva un objeto estructurado en vez del texto plano
+        if (dartified is Map && dartified.containsKey('message') && dartified['message'] is Map) {
+          return dartified['message']['content']?.toString() ?? '';
+        }
+        if (dartified is Map && dartified.containsKey('text')) {
+          return dartified['text']?.toString() ?? '';
+        }
+        return jsonEncode(dartified, toEncodable: (e) => e.toString());
       }
       return dartified?.toString() ?? '';
     } catch (e) {
