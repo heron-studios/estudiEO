@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:learn/models/srs_card.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/features/srs/domain/srs_engine.dart';
@@ -22,6 +22,11 @@ class SrsProvider extends ChangeNotifier {
   Map<String, SrsCard> get cards => _cards;
   Map<String, dynamic> get globalStats => _globalStats;
   SrsEngine get engine => _engine;
+
+  void forceReload() {
+    _loadData();
+    notifyListeners();
+  }
 
   SrsCard processAnswer(String questionId, String topicId, bool isCorrect) {
     final card = _engine.processAnswer(questionId, topicId, isCorrect);

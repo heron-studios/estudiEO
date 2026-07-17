@@ -19,6 +19,7 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
   bool _isGenerating = false;
   int _generatedCount = 0;
   String _errorMessage = '';
+  List<Question> _generatedQuestions = [];
 
   Future<void> _generateFlashcards() async {
     final text = _textController.text.trim();
@@ -26,18 +27,22 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
       setState(() => _errorMessage = 'El texto es muy corto. Pega al menos un párrafo de información.');
       return;
     }
+    if (text.length > 12000) {
+      setState(() => _errorMessage = 'El texto es demasiado largo (máx 12,000 caracteres). Por favor, resúmelo o divídelo en partes.');
+      return;
+    }
 
     setState(() {
       _isGenerating = true;
       _errorMessage = '';
       _generatedCount = 0;
+      _generatedQuestions = [];
     });
 
     try {
       final puterService = PuterService();
       final jsonResponse = await puterService.generateFlashcardsFromText(text);
       
-      // Intentar extraer el JSON si la IA incluyó basura alrededor
       String cleanJson = jsonResponse;
       final startIdx = jsonResponse.indexOf('{');
       final endIdx = jsonResponse.lastIndexOf('}');
@@ -53,43 +58,58 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
       final List flashcards = data['flashcards'];
       if (!mounted) return;
       final storage = context.read<LocalStorageService>();
+      final srsProvider = context.read<SrsProvider>();
       const uuid = Uuid();
 
       int count = 0;
+      List<Question> newQuestions = [];
+      
       for (var f in flashcards) {
         try {
-          final String questionId = 'ai_gen_${uuid.v4()}';
-          final List<String> options = List<String>.from(f['options']);
+          if (f['text'] == null || f['options'] == null || f['correctAnswer'] == null) {
+             continue; // Ignorar si faltan campos clave
+          }
+          if (f['options'] is! List) continue;
           
+          final List<String> options = List<String>.from(f['options']);
+          if (options.length < 2) continue; // Mínimo 2 opciones
+          
+          int correctAnswer = f['correctAnswer'] is int ? f['correctAnswer'] : int.tryParse(f['correctAnswer'].toString()) ?? 0;
+          if (correctAnswer < 0 || correctAnswer >= options.length) {
+            correctAnswer = 0; // Fallback seguro
+          }
+
+          final String questionId = 'ai_gen_${uuid.v4()}';
           final question = Question(
             id: questionId,
             topicId: 'ai_custom_topic',
-            text: f['text'] ?? 'Pregunta IA',
+            text: f['text'],
             options: options,
-            correctAnswer: f['correctAnswer'] ?? 0,
+            correctAnswer: correctAnswer,
             explanation: f['explanation'] ?? '',
           );
 
-          // Guardar pregunta en repositorio personalizado
           storage.saveCustomQuestion(question);
-
-          // Crear SrsCard para el sistema de repetición espaciada
-          final srsCard = SrsCard(
-            questionId: questionId,
-            topicId: 'ai_custom_topic',
-          );
+          final srsCard = SrsCard(questionId: questionId, topicId: 'ai_custom_topic');
           storage.saveSrsCard(srsCard);
           
+          newQuestions.add(question);
           count++;
         } catch (e) {
           debugPrint('Error parseando una tarjeta individual: $e');
         }
       }
 
+      if (count > 0) {
+        // Sincronizar Inmediatamente el Home/SRS Provider!
+        srsProvider.forceReload();
+      }
+
       if (mounted) {
         setState(() {
           _isGenerating = false;
           _generatedCount = count;
+          _generatedQuestions = newQuestions;
           if (count > 0) {
             _textController.clear();
           } else {
@@ -252,6 +272,35 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text('Preguntas Extraídas:', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+                    const SizedBox(height: 8),
+                    Expanded(
+                      flex: 2,
+                      child: ListView.builder(
+                        itemCount: _generatedQuestions.length,
+                        itemBuilder: (context, index) {
+                          final q = _generatedQuestions[index];
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.05),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('${index + 1}. ${q.text}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+                                const SizedBox(height: 4),
+                                Text('Respuesta: ${q.options[q.correctAnswer]}', style: const TextStyle(color: Colors.greenAccent, fontSize: 13)),
+                              ],
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ],
