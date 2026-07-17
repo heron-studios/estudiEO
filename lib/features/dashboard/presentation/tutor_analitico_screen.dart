@@ -383,12 +383,12 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
   Widget _buildErrorCard(NeuralThemeData nt) {
     return _glassCard(
       borderColor: Colors.redAccent.withValues(alpha: 0.4),
-      child: const Column(
+      child: Column(
         children: [
-          Icon(Icons.error_outline_rounded,
+          const Icon(Icons.error_outline_rounded,
               color: Colors.redAccent, size: 40),
-          SizedBox(height: 12),
-          Text(
+          const SizedBox(height: 12),
+          const Text(
             'No se pudo conectar con ARIA',
             style: TextStyle(
               color: Colors.white,
@@ -641,12 +641,12 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
           ),
           if (_displayedText.length < _aiText.length &&
               _displayedText.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
+            const Padding(
+              padding: EdgeInsets.only(top: 8),
               child: SizedBox(
                 width: 20,
                 child: LinearProgressIndicator(
-                  color: const Color(0xFF7C3AED),
+                  color: Color(0xFF7C3AED),
                   backgroundColor: Colors.transparent,
                   minHeight: 2,
                 ),
