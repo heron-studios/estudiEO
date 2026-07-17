@@ -238,197 +238,105 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    final isDesktop = MediaQuery.of(context).size.width >= 800;
 
-    if (!isDesktop) {
-      return Scaffold(
-        backgroundColor: nt.background,
-        body: NeuralBackgroundWrapper(
-          child: Stack(
-            children: [
-              // Contenido principal
-              Positioned.fill(child: widget.navigationShell),
-
-              // Navbar flotante (horizontal)
-              Positioned(
-                left: 16,
-                right: 16,
-                bottom: 16,
-                child: Center(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: BackdropFilter(
-                      filter: ui.ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8,
-                          horizontal: 24,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.35),
-                          borderRadius: BorderRadius.circular(32),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.12),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _NavItem(
-                              icon: Icons.home_rounded,
-                              label: 'Inicio',
-                              isSelected:
-                                  widget.navigationShell.currentIndex == 0,
-                              onTap: () => _goBranch(0),
-                              nt: nt,
-                            ),
-                            const SizedBox(width: 24),
-                            Transform.translate(
-                              offset: const Offset(0, -8),
-                              child: _NavItem(
-                                isProminent: true,
-                                customIcon: Transform.scale(
-                                  scale: 1.6,
-                                  child: SizedBox(
-                                    width: 48,
-                                    height: 48,
-                                    child: RepaintBoundary(
-                                      child: Lottie.asset(
-                                        'assets/sparkles.json',
-                                        fit: BoxFit.contain,
-                                        controller: _starsLottieController,
-                                        onLoaded: (composition) {
-                                          _starsLottieController.duration =
-                                              composition.duration;
-                                          _starsLottieController.repeat();
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                isSelected: false,
-                                onTap: () =>
-                                    _showInterviewSelectionModal(context, nt),
-                                nt: nt,
-                              ),
-                            ),
-                            const SizedBox(width: 24),
-                            _NavItem(
-                              icon: Icons.extension_rounded,
-                              label: 'Interactivos',
-                              isSelected:
-                                  widget.navigationShell.currentIndex == 1,
-                              onTap: () => _goBranch(1),
-                              nt: nt,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-
-    // Si estamos en Desktop / Web
     return Scaffold(
       backgroundColor: nt.background,
       body: NeuralBackgroundWrapper(
         child: Stack(
           children: [
-            // Contenido principal empujado a la derecha para no solapar el sidebar
+            // Contenido principal
             Positioned.fill(
               child: Padding(
-                padding: const EdgeInsets.only(left: 110),
+                padding: const EdgeInsets.only(bottom: 90), // Añadir padding abajo para evitar solapamiento
                 child: widget.navigationShell,
               ),
             ),
-            // Sidebar flotante
+
+            // Navbar flotante (horizontal bottom-centered)
             Positioned(
               left: 16,
-              top: 0,
-              bottom: 0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 24,
-                      horizontal: 8,
-                    ),
-                    decoration: BoxDecoration(
-                      color: nt.surfaceCard.withValues(alpha: 0.4),
-                      borderRadius: BorderRadius.circular(32),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.1),
+              right: 16,
+              bottom: 16,
+              child: Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(32),
+                  child: BackdropFilter(
+                    filter: ui.ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 24,
                       ),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // Opciones de navegación
-                        _NavItem(
-                          icon: Icons.home_rounded,
-                          label: 'Inicio',
-                          isSelected: widget.navigationShell.currentIndex == 0,
-                          onTap: () => _goBranch(0),
-                          nt: nt,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.35),
+                        borderRadius: BorderRadius.circular(32),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.12),
                         ),
-                        const SizedBox(height: 24),
-                        _NavItem(
-                          isProminent: true,
-                          customIcon: Transform.scale(
-                            scale: 1.6,
-                            child: SizedBox(
-                              width: 48,
-                              height: 48,
-                              child: RepaintBoundary(
-                                child: Lottie.asset(
-                                  'assets/sparkles.json',
-                                  fit: BoxFit.contain,
-                                  controller: _starsLottieController,
-                                  onLoaded: (composition) {
-                                    _starsLottieController.duration =
-                                        composition.duration;
-                                    _starsLottieController.repeat();
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                          isSelected: false,
-                          label: 'Simulador',
-                          onTap: () =>
-                              _showInterviewSelectionModal(context, nt),
-                          nt: nt,
-                        ),
-                        const SizedBox(height: 24),
-                        _NavItem(
-                          icon: Icons.extension_rounded,
-                          label: 'Interactivos',
-                          isSelected: widget.navigationShell.currentIndex == 1,
-                          onTap: () => _goBranch(1),
-                          nt: nt,
-                        ),
-
-                        if (!kIsWeb) ...[
-                          const SizedBox(height: 16),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
                           _NavItem(
-                            icon: Icons.support_agent_rounded,
-                            label: 'Soporte',
-                            isSelected: false,
-                            onTap: _launchWhatsApp,
+                            icon: Icons.home_rounded,
+                            label: 'Inicio',
+                            isSelected: widget.navigationShell.currentIndex == 0,
+                            onTap: () => _goBranch(0),
                             nt: nt,
                           ),
+                          const SizedBox(width: 24),
+                          Transform.translate(
+                            offset: const Offset(0, -8),
+                            child: _NavItem(
+                              isProminent: true,
+                              customIcon: Transform.scale(
+                                scale: 1.6,
+                                child: SizedBox(
+                                  width: 48,
+                                  height: 48,
+                                  child: RepaintBoundary(
+                                    child: Lottie.asset(
+                                      'assets/sparkles.json',
+                                      fit: BoxFit.contain,
+                                      controller: _starsLottieController,
+                                      onLoaded: (composition) {
+                                        _starsLottieController.duration =
+                                            composition.duration;
+                                        _starsLottieController.repeat();
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              isSelected: false,
+                              label: 'Simulador',
+                              onTap: () => _showInterviewSelectionModal(context, nt),
+                              nt: nt,
+                            ),
+                          ),
+                          const SizedBox(width: 24),
+                          _NavItem(
+                            icon: Icons.extension_rounded,
+                            label: 'Interactivos',
+                            isSelected: widget.navigationShell.currentIndex == 1,
+                            onTap: () => _goBranch(1),
+                            nt: nt,
+                          ),
+                          if (!kIsWeb) ...[
+                            const SizedBox(width: 24),
+                            _NavItem(
+                              icon: Icons.support_agent_rounded,
+                              label: 'Soporte',
+                              isSelected: false,
+                              onTap: _launchWhatsApp,
+                              nt: nt,
+                            ),
+                          ],
                         ],
-                      ],
+                      ),
                     ),
                   ),
-                ],
+                ),
               ),
             ),
           ],
