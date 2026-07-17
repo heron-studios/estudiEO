@@ -1096,6 +1096,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         builder: (context, constraints) {
                           if (isLargeScreen) {
                             return Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Row(
@@ -1147,6 +1148,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             return SingleChildScrollView(
                               physics: const BouncingScrollPhysics(),
                               child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   _buildDailyMissionCard(context, nt),

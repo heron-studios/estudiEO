@@ -1,11 +1,13 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:js_interop';
 import 'package:flutter/widgets.dart';
 import 'puter_service.dart';
 
 @JS('puter.ai.chat')
 external JSPromise _puterAiChat(JSAny prompt);
+
+@JS('JSON.stringify')
+external String _jsonStringify(JSAny? obj);
 
 /// Implementación de PuterService nativa para Web usando Puter.js
 class PuterServiceWeb implements PuterService {
@@ -51,7 +53,7 @@ class PuterServiceWeb implements PuterService {
       final dartified = response.dartify();
       String reply;
       if (dartified is Map || dartified is List) {
-        reply = jsonEncode(dartified, toEncodable: (e) => e.toString());
+        reply = _jsonStringify(response);
       } else {
         reply = dartified?.toString() ?? '';
       }
@@ -88,7 +90,7 @@ El formato JSON estricto esperado es:
       final response = await promise.toDart;
       final dartified = response.dartify();
       if (dartified is Map || dartified is List) {
-        return jsonEncode(dartified, toEncodable: (e) => e.toString());
+        return _jsonStringify(response);
       }
       return dartified?.toString() ?? '';
     } catch (e) {
@@ -117,7 +119,8 @@ El formato JSON estricto esperado es:
         if (dartified is Map && dartified.containsKey('text')) {
           return dartified['text']?.toString() ?? '';
         }
-        return jsonEncode(dartified, toEncodable: (e) => e.toString());
+        // Fallback seguro usando JSON.stringify de JavaScript nativo
+        return _jsonStringify(response);
       }
       return dartified?.toString() ?? '';
     } catch (e) {
