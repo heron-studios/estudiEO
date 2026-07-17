@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:ui' as ui;
 import 'package:lottie/lottie.dart';
 import 'package:go_router/go_router.dart';
@@ -291,8 +292,11 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                                   child: SizedBox(
                                     width: 48,
                                     height: 48,
-                                    child: Lottie.asset(
-                                      'assets/sparkles.json',
+                                    child: kIsWeb
+                                        ? const Icon(Icons.auto_awesome,
+                                            color: Colors.amber, size: 32)
+                                        : Lottie.asset(
+                                            'assets/sparkles.json',
                                       fit: BoxFit.contain,
                                       controller: _starsLottieController,
                                       onLoaded: (composition) {
@@ -383,8 +387,11 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                             child: SizedBox(
                               width: 48,
                               height: 48,
-                              child: Lottie.asset(
-                                'assets/sparkles.json',
+                              child: kIsWeb
+                                  ? const Icon(Icons.auto_awesome,
+                                      color: Colors.amber, size: 32)
+                                  : Lottie.asset(
+                                      'assets/sparkles.json',
                                 fit: BoxFit.contain,
                                 controller: _starsLottieController,
                                 onLoaded: (composition) {
@@ -408,14 +415,7 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                           onTap: () => _goBranch(1),
                           nt: nt,
                         ),
-                        const SizedBox(height: 16),
-                        _NavItem(
-                          icon: Icons.help_outline_rounded,
-                          label: 'Guía',
-                          isSelected: false,
-                          onTap: () => context.push('/roadmap'),
-                          nt: nt,
-                        ),
+
                         const SizedBox(height: 16),
                         _NavItem(
                           icon: Icons.support_agent_rounded,

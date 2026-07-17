@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
@@ -132,12 +133,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 SizedBox(
                   width: 100,
                   height: 100,
-                  child: Lottie.asset(
-                    'assets/trophy.json',
-                    width: 140,
-                    repeat: false,
-                    fit: BoxFit.contain,
-                  ),
+                  child: kIsWeb
+                      ? const Icon(Icons.emoji_events_rounded,
+                          color: Colors.amber, size: 80)
+                      : Lottie.asset(
+                          'assets/trophy.json',
+                          width: 140,
+                          repeat: false,
+                          fit: BoxFit.contain,
+                        ),
                 ),
                 const SizedBox(height: 16),
                 const Text(
@@ -666,10 +670,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       size: 26,
                     )
                   : ClipOval(
-                      child: Lottie.asset(
-                        'assets/warning_status.json',
-                        width: 120,
-                        controller: _warningLottieController,
+                      child: kIsWeb
+                          ? const Icon(Icons.warning_rounded,
+                              color: Colors.orangeAccent, size: 50)
+                          : Lottie.asset(
+                              'assets/warning_status.json',
+                              width: 120,
+                              controller: _warningLottieController,
                         onLoaded: (composition) {
                           _warningLottieController.duration =
                               composition.duration;

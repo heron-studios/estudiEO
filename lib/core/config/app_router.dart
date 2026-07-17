@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/models/learning_level.dart';
@@ -73,7 +74,7 @@ class AppRouter {
           return isLoading ? null : '/loading';
         }
 
-        if (!hasSeenOnboarding) {
+        if (!hasSeenOnboarding && !kIsWeb) {
           return isOnboarding ? null : '/onboarding';
         }
 

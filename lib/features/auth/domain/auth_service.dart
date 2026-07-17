@@ -53,8 +53,10 @@ class AuthService extends ChangeNotifier {
 
   Future<void> _checkInitialAuth() async {
     try {
-      // Wait for at least 3 seconds so the splash screen is visible
-      await Future.delayed(const Duration(seconds: 3));
+      // Wait for at least 3 seconds so the splash screen is visible (only on mobile)
+      if (!kIsWeb) {
+        await Future.delayed(const Duration(seconds: 3));
+      }
 
       // Esperar a que Firebase termine de cargar la sesión persistida (hasta 2 segundos)
       final user = await _auth.userChanges().first.timeout(
