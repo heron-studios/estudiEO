@@ -1,0 +1,90 @@
+import 'dart:async';
+import 'dart:js_interop';
+import 'package:flutter/widgets.dart';
+import 'puter_service.dart';
+
+@JS('puter.ai.chat')
+external JSPromise _puterAiChat(JSAny prompt);
+
+/// Implementación de PuterService nativa para Web usando Puter.js
+class PuterServiceWeb implements PuterService {
+  String _systemPrompt = '';
+  bool _initialized = false;
+  final List<Map<String, String>> _messages = [];
+
+  PuterServiceWeb();
+
+  @override
+  Widget? buildBridgeWidget() {
+    // En la web usamos JS interop directo, no hay bridge widget
+    return null;
+  }
+
+  @override
+  Future<String> chat(String prompt) async {
+    if (!_initialized) {
+      _initialized = true;
+      final splitIndex = prompt.indexOf('\n\nPor favor, inicia la entrevista.');
+      if (splitIndex != -1) {
+        _systemPrompt = prompt.substring(0, splitIndex);
+        final userTurn = prompt.substring(splitIndex + 2);
+        _messages.add({'role': 'system', 'content': _systemPrompt});
+        _messages.add({'role': 'user', 'content': userTurn});
+      } else {
+        _systemPrompt = prompt;
+        _messages.add({'role': 'system', 'content': _systemPrompt});
+        _messages.add({'role': 'user', 'content': 'Inicia la entrevista.'});
+      }
+    } else {
+      _messages.add({'role': 'user', 'content': prompt});
+    }
+
+    try {
+      // Concatenamos el contexto para que Puter tenga historial 
+      // usando la API básica de string.
+      String fullContext = _messages.map((m) => "${m['role'] == 'system' ? 'System' : (m['role'] == 'user' ? 'User' : 'Assistant')}: ${m['content']}").join("\n\n");
+      fullContext += "\n\nAssistant:";
+      
+      final promise = _puterAiChat(fullContext.toJS);
+      final response = await promise.toDart;
+      final reply = (response as JSString).toDart;
+      
+      _messages.add({'role': 'assistant', 'content': reply});
+      return reply;
+    } catch (e) {
+      debugPrint('Error Puter JS: $e');
+      return 'Error de conexión con Puter.js: $e';
+    }
+  }
+
+  @override
+  Future<String> generateFlashcardsFromText(String text) async {
+    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer los 5 a 10 datos más importantes como preguntas de opción múltiple.
+DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
+
+El formato JSON estricto esperado es:
+{
+  "flashcards": [
+    {
+      "text": "¿Pregunta sobre un dato clave?",
+      "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
+      "correctAnswer": 0,
+      "explanation": "Explicación breve de por qué es la correcta."
+    }
+  ]
+}''';
+    
+    String fullPrompt = '$systemPrompt\n\nTexto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.';
+    try {
+      final promise = _puterAiChat(fullPrompt.toJS);
+      final response = await promise.toDart;
+      return (response as JSString).toDart;
+    } catch (e) {
+      debugPrint('Error Puter JS Flashcards: $e');
+      throw Exception('Error al comunicarse con Puter.js: $e');
+    }
+  }
+}
+
+/// Factory que retorna esta implementación en la compilación web
+PuterService getPuterService() => PuterServiceWeb();

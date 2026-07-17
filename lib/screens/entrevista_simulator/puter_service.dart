@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'puter_service_mobile.dart';
+import 'puter_service_stub.dart'
+    if (dart.library.js_interop) 'puter_service_web.dart'
+    if (dart.library.io) 'puter_service_mobile.dart';
 
 /// Interfaz abstracta para comunicarse con el Tutor IA (Groq)
 abstract class PuterService {
