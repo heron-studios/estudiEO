@@ -96,16 +96,11 @@
   </div>
 
   <script>
-    // Clean up any active service workers to prevent cache-related infinite loading
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for (let registration of registrations) {
-          registration.unregister();
-        }
-      });
-    }
+    window.addEventListener('load', function(ev) {
+      // Allow flutter_bootstrap.js to handle service worker registration natively
+      // so the CanvasKit WASM and main.dart.js bundle are heavily cached for instant reloads.
+    });
   </script>
-  <script src="flutter_bootstrap.js?v=6" async></script>
-  <script src="https://js.puter.com/v2/"></script>
+  <script src="flutter_bootstrap.js?v=7" async></script>
 </body>
 </html>
