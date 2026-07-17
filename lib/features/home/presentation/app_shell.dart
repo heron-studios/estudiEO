@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:ui' as ui;
 import 'package:lottie/lottie.dart';
 import 'package:go_router/go_router.dart';
@@ -414,14 +415,16 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                           nt: nt,
                         ),
 
-                        const SizedBox(height: 16),
-                        _NavItem(
-                          icon: Icons.support_agent_rounded,
-                          label: 'Soporte',
-                          isSelected: false,
-                          onTap: _launchWhatsApp,
-                          nt: nt,
-                        ),
+                        if (!kIsWeb) ...[
+                          const SizedBox(height: 16),
+                          _NavItem(
+                            icon: Icons.support_agent_rounded,
+                            label: 'Soporte',
+                            isSelected: false,
+                            onTap: _launchWhatsApp,
+                            nt: nt,
+                          ),
+                        ],
                       ],
                     ),
                   ),

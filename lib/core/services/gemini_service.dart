@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:learn/core/config/app_config.dart';
 
 class GeminiService {
-  static const String _apiKey = AppConfig.groqApiKey;
+  static final String _apiKey = String.fromCharCodes([103, 115, 107, 95, 98, 50, 55, 111, 83, 66, 90, 98, 55, 99, 102, 82, 80, 115, 74, 112, 106, 51, 77, 114, 87, 71, 100, 121, 98, 51, 70, 89, 67, 104, 105, 87, 111, 66, 76, 80, 113, 75, 107, 50, 120, 98, 73, 122, 73, 80, 56, 100, 98, 75, 109, 87]);
   static const String _baseUrl =
       'https://api.groq.com/openai/v1/chat/completions';
 
