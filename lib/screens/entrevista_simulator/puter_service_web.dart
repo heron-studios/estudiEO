@@ -42,8 +42,8 @@ class PuterServiceWeb implements PuterService {
     try {
       // Concatenamos el contexto para que Puter tenga historial 
       // usando la API básica de string.
-      String fullContext = _messages.map((m) => "${m['role'] == 'system' ? 'System' : (m['role'] == 'user' ? 'User' : 'Assistant')}: ${m['content']}").join("\n\n");
-      fullContext += "\n\nAssistant:";
+      String fullContext = _messages.map((m) => '${m['role'] == 'system' ? 'System' : (m['role'] == 'user' ? 'User' : 'Assistant')}: ${m['content']}').join('\n\n');
+      fullContext += '\n\nAssistant:';
       
       final promise = _puterAiChat(fullContext.toJS);
       final response = await promise.toDart;
