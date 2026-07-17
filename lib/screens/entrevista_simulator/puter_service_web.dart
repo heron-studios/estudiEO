@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:js_interop';
 import 'package:flutter/widgets.dart';
 import 'puter_service.dart';
@@ -47,7 +48,13 @@ class PuterServiceWeb implements PuterService {
       
       final promise = _puterAiChat(fullContext.toJS);
       final response = await promise.toDart;
-      final reply = response.dartify()?.toString() ?? '';
+      final dartified = response.dartify();
+      String reply;
+      if (dartified is Map || dartified is List) {
+        reply = jsonEncode(dartified);
+      } else {
+        reply = dartified?.toString() ?? '';
+      }
       
       _messages.add({'role': 'assistant', 'content': reply});
       return reply;
@@ -79,7 +86,11 @@ El formato JSON estricto esperado es:
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
-      return response.dartify()?.toString() ?? '';
+      final dartified = response.dartify();
+      if (dartified is Map || dartified is List) {
+        return jsonEncode(dartified);
+      }
+      return dartified?.toString() ?? '';
     } catch (e) {
       debugPrint('Error Puter JS Flashcards: $e');
       throw Exception('Error al comunicarse con Puter.js: $e');
