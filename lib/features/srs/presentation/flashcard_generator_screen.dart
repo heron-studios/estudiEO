@@ -6,7 +6,6 @@ import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/srs_card.dart';
 import 'package:uuid/uuid.dart';
-import 'package:go_router/go_router.dart';
 
 class FlashcardGeneratorScreen extends StatefulWidget {
   const FlashcardGeneratorScreen({super.key});
