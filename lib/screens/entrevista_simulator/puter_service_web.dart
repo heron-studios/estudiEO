@@ -59,7 +59,7 @@ class PuterServiceWeb implements PuterService {
 
   @override
   Future<String> generateFlashcardsFromText(String text) async {
-    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer los 5 a 10 datos más importantes como preguntas de opción múltiple.
+    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS).
 DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
 
 El formato JSON estricto esperado es:
@@ -71,7 +71,7 @@ El formato JSON estricto esperado es:
       "correctAnswer": 0,
       "explanation": "Explicación breve de por qué es la correcta."
     }
-  ]
+  ] // MÁXIMO 5 ELEMENTOS
 }''';
     
     String fullPrompt = '$systemPrompt\n\nTexto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.';

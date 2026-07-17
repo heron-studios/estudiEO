@@ -5,6 +5,10 @@ import 'package:learn/screens/entrevista_simulator/puter_service.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/models/srs_card.dart';
+import 'package:learn/models/topic.dart';
+import 'package:learn/providers/srs_provider.dart';
+import 'package:learn/providers/subject_provider.dart';
+import 'package:flutter/foundation.dart'; // for kIsWeb
 import 'package:uuid/uuid.dart';
 
 class FlashcardGeneratorScreen extends StatefulWidget {
@@ -32,6 +36,16 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
       return;
     }
 
+    final storage = context.read<LocalStorageService>();
+    if (!kIsWeb) {
+      final lastGen = storage.loadLastFlashcardGenDate();
+      final now = DateTime.now();
+      if (lastGen != null && lastGen.year == now.year && lastGen.month == now.month && lastGen.day == now.day) {
+        setState(() => _errorMessage = 'Límite alcanzado: En la app móvil el límite es de 1 generación de flashcards por día. Vuelve mañana o usa la versión web que es ilimitada.');
+        return;
+      }
+    }
+
     setState(() {
       _isGenerating = true;
       _errorMessage = '';
@@ -57,8 +71,6 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
 
       final List flashcards = data['flashcards'];
       if (!mounted) return;
-      final storage = context.read<LocalStorageService>();
-      final srsProvider = context.read<SrsProvider>();
       const uuid = Uuid();
 
       int count = 0;
@@ -82,16 +94,12 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
           final String questionId = 'ai_gen_${uuid.v4()}';
           final question = Question(
             id: questionId,
-            topicId: 'ai_custom_topic',
+            topicId: 'temp_topic',
             text: f['text'],
             options: options,
             correctAnswer: correctAnswer,
             explanation: f['explanation'] ?? '',
           );
-
-          storage.saveCustomQuestion(question);
-          final srsCard = SrsCard(questionId: questionId, topicId: 'ai_custom_topic');
-          storage.saveSrsCard(srsCard);
           
           newQuestions.add(question);
           count++;
@@ -100,22 +108,19 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
         }
       }
 
-      if (count > 0) {
-        // Sincronizar Inmediatamente el Home/SRS Provider!
-        srsProvider.forceReload();
-      }
-
       if (mounted) {
         setState(() {
           _isGenerating = false;
-          _generatedCount = count;
-          _generatedQuestions = newQuestions;
-          if (count > 0) {
-            _textController.clear();
-          } else {
-            _errorMessage = 'No se pudo extraer ninguna pregunta válida del texto.';
-          }
         });
+
+        if (count > 0) {
+           if (!kIsWeb) storage.saveLastFlashcardGenDate(DateTime.now());
+           _showSaveDialog(newQuestions);
+        } else {
+           setState(() {
+             _errorMessage = 'No se pudo extraer ninguna pregunta válida del texto.';
+           });
+        }
       }
     } catch (e) {
       if (mounted) {
@@ -125,6 +130,99 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
         });
       }
     }
+  }
+
+  void _showSaveDialog(List<Question> tempQuestions) {
+     final TextEditingController nameController = TextEditingController();
+     showDialog(
+       context: context,
+       barrierDismissible: false,
+       builder: (context) => AlertDialog(
+         backgroundColor: const Color(0xFF1E2433),
+         title: const Text('¿Deseas guardar tus flashcards?', style: TextStyle(color: Colors.white, fontFamily: 'Outfit')),
+         content: Column(
+           mainAxisSize: MainAxisSize.min,
+           children: [
+             const Text('Se han generado las tarjetas. Asígnales un nombre para guardarlas en "Mis Flashcards".', style: TextStyle(color: Colors.white70)),
+             const SizedBox(height: 16),
+             TextField(
+               controller: nameController,
+               style: const TextStyle(color: Colors.white),
+               decoration: InputDecoration(
+                 hintText: 'Ej. Historia Romana',
+                 hintStyle: const TextStyle(color: Colors.white30),
+                 filled: true,
+                 fillColor: Colors.black26,
+                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+               ),
+             )
+           ]
+         ),
+         actions: [
+           TextButton(
+             onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  _generatedCount = tempQuestions.length;
+                  _generatedQuestions = tempQuestions;
+                  _textController.clear();
+                });
+             },
+             child: const Text('Descartar', style: TextStyle(color: Colors.white54)),
+           ),
+           ElevatedButton(
+             style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF8B5CF6)),
+             onPressed: () {
+                final name = nameController.text.trim();
+                if (name.isEmpty) return;
+                
+                _saveCustomTopic(name, tempQuestions);
+                Navigator.pop(context);
+                setState(() {
+                  _generatedCount = tempQuestions.length;
+                  _generatedQuestions = tempQuestions;
+                  _textController.clear();
+                });
+             },
+             child: const Text('Guardar Mazo', style: TextStyle(color: Colors.white)),
+           ),
+         ]
+       )
+     );
+  }
+
+  void _saveCustomTopic(String name, List<Question> tempQuestions) {
+     final storage = context.read<LocalStorageService>();
+     final srsProvider = context.read<SrsProvider>();
+     const uuid = Uuid();
+     final topicId = 'ai_topic_${uuid.v4()}';
+     
+     final topic = Topic(
+       id: topicId,
+       subjectId: 'ai_custom_subject',
+       name: name,
+       description: 'Mazo generado por IA',
+       questionCount: tempQuestions.length,
+     );
+     storage.saveCustomTopic(topic);
+
+     for (var q in tempQuestions) {
+       final newQ = Question(
+         id: q.id,
+         topicId: topicId,
+         text: q.text,
+         options: q.options,
+         correctAnswer: q.correctAnswer,
+         explanation: q.explanation,
+       );
+       storage.saveCustomQuestion(newQ);
+       
+       final srsCard = SrsCard(questionId: newQ.id, topicId: topicId);
+       storage.saveSrsCard(srsCard);
+     }
+     
+     srsProvider.forceReload();
+     context.read<SubjectProvider>().reload(); // Refresh the subjects list
   }
 
   @override

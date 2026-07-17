@@ -24,9 +24,22 @@ class SubjectProvider extends ChangeNotifier {
   }
 
   SubjectProvider(this._storage) {
+    _initSubjects();
+  }
+
+  void _initSubjects() {
     _allSubjects = SubjectsRepository.getAllSubjects()
         .where((s) => s.id != 'matematicas')
         .toList();
+    
+    _allSubjects.add(Subject(
+      id: 'ai_custom_subject',
+      name: 'Mis Flashcards',
+      icon: 'psychology',
+      color: '#9C27B0',
+      topicIds: [],
+    ));
+
     _currentSubject = null;
     _currentTopic = null;
     updateVisibleSubjects();
@@ -44,19 +57,19 @@ class SubjectProvider extends ChangeNotifier {
   }
 
   void selectSubject(String subjectId) {
-    _currentSubject = SubjectsRepository.getSubject(subjectId);
+    _currentSubject = getSubject(subjectId);
     _currentTopic = null;
     notifyListeners();
   }
 
   void selectTopic(String topicId) {
-    _currentTopic = SubjectsRepository.getTopic(topicId);
+    _currentTopic = getTopic(topicId);
     notifyListeners();
   }
 
   List<Topic> getTopicsForCurrentSubject() {
     if (_currentSubject == null) return [];
-    return SubjectsRepository.getTopicsBySubject(_currentSubject!.id);
+    return getTopicsBySubject(_currentSubject!.id);
   }
 
   void clearSelection() {
@@ -66,20 +79,37 @@ class SubjectProvider extends ChangeNotifier {
   }
 
   void reload() {
-    _allSubjects = SubjectsRepository.getAllSubjects()
-        .where((s) => s.id != 'matematicas')
-        .toList();
-    updateVisibleSubjects();
+    _initSubjects();
   }
 
   // Repository Wrappers to completely decouple UI from static repository
-  Subject? getSubject(String id) => SubjectsRepository.getSubject(id);
+  Subject? getSubject(String id) {
+    if (id == 'ai_custom_subject') {
+      return _allSubjects.where((s) => s.id == id).firstOrNull;
+    }
+    return SubjectsRepository.getSubject(id);
+  }
   
-  List<Topic> getTopicsBySubject(String subjectId) => SubjectsRepository.getTopicsBySubject(subjectId);
+  List<Topic> getTopicsBySubject(String subjectId) {
+    if (subjectId == 'ai_custom_subject') {
+      return _storage.loadCustomTopics();
+    }
+    return SubjectsRepository.getTopicsBySubject(subjectId);
+  }
   
-  Topic? getTopic(String id) => SubjectsRepository.getTopic(id);
+  Topic? getTopic(String id) {
+    if (id.startsWith('ai_topic_')) {
+      return _storage.loadCustomTopics().where((t) => t.id == id).firstOrNull;
+    }
+    return SubjectsRepository.getTopic(id);
+  }
   
-  List<Question> getQuestionsByTopic(String id) => SubjectsRepository.getQuestionsByTopic(id, isPremium: _isPremium);
+  List<Question> getQuestionsByTopic(String id) {
+    if (id.startsWith('ai_topic_')) {
+      return _storage.loadCustomQuestions().where((q) => q.topicId == id).toList();
+    }
+    return SubjectsRepository.getQuestionsByTopic(id, isPremium: _isPremium);
+  }
   
   List<Question> generateExamQuestions() => SubjectsRepository.generateExamQuestions(isPremium: _isPremium);
   

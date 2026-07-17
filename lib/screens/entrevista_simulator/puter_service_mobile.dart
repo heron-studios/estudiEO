@@ -44,7 +44,7 @@ class PuterServiceMobile implements PuterService {
 
   @override
   Future<String> generateFlashcardsFromText(String text) async {
-    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer los 5 a 10 datos más importantes como preguntas de opción múltiple.
+    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS para ahorrar tokens).
 DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
 
 El formato JSON estricto esperado es:
@@ -53,10 +53,10 @@ El formato JSON estricto esperado es:
     {
       "text": "¿Pregunta sobre un dato clave?",
       "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
-      "correctAnswer": 0, // Índice de la respuesta correcta (0 al 3)
+      "correctAnswer": 0,
       "explanation": "Explicación breve de por qué es la correcta."
     }
-  ]
+  ] // MÁXIMO 5 ELEMENTOS
 }''';
     
     return _groq.chatOneShot(

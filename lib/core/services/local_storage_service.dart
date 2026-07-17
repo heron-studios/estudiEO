@@ -6,6 +6,7 @@ import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/interview_result.dart';
 import 'package:learn/models/question.dart';
+import 'package:learn/models/topic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
@@ -25,6 +26,8 @@ class LocalStorageService {
   static const String lastActiveLearningSessionKey = 'last_active_learning_session';
   static const String activeExamStateKey = 'active_exam_state';
   static const String examHistoryKey = 'exam_history';
+  static const String flashcardGenDateKey = 'flashcard_gen_date';
+  static const String customTopicsKey = 'custom_topics';
 
   final Box _storage = Hive.box('estudieo_data');
   Map<String, SrsCard>? _srsCache;
@@ -795,5 +798,47 @@ class LocalStorageService {
     } catch (e) {
       debugPrint('Error saving custom question: $e');
     }
+  }
+
+  // --- Custom Topics ---
+  List<Topic> loadCustomTopics() {
+    try {
+      final data = _storage.get(customTopicsKey) as List?;
+      if (data == null) return [];
+      return data.map((e) => Topic.fromJson(Map<String, dynamic>.from(e as Map))).toList();
+    } catch (e) {
+      debugPrint('Error loading custom topics: $e');
+      return [];
+    }
+  }
+
+  void saveCustomTopic(Topic topic) {
+    try {
+      final topics = loadCustomTopics();
+      final index = topics.indexWhere((t) => t.id == topic.id);
+      if (index >= 0) {
+        topics[index] = topic;
+      } else {
+        topics.add(topic);
+      }
+      _storage.put(customTopicsKey, topics.map((t) => t.toJson()).toList());
+    } catch (e) {
+      debugPrint('Error saving custom topic: $e');
+    }
+  }
+
+  // --- Flashcard Generator Limit ---
+  DateTime? loadLastFlashcardGenDate() {
+    try {
+      final dateStr = _storage.get(flashcardGenDateKey) as String?;
+      if (dateStr == null || dateStr.isEmpty) return null;
+      return DateTime.parse(dateStr);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  void saveLastFlashcardGenDate(DateTime date) {
+    _storage.put(flashcardGenDateKey, date.toIso8601String());
   }
 }
