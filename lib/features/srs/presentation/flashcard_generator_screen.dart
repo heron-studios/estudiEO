@@ -48,12 +48,13 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
 
       final data = jsonDecode(cleanJson);
       if (data['flashcards'] == null || data['flashcards'] is! List) {
-        throw FormatException('El formato JSON no contiene un array "flashcards".');
+        throw const FormatException('El formato JSON no contiene un array "flashcards".');
       }
 
       final List flashcards = data['flashcards'];
+      if (!mounted) return;
       final storage = context.read<LocalStorageService>();
-      final uuid = const Uuid();
+      const uuid = Uuid();
 
       int count = 0;
       for (var f in flashcards) {
@@ -133,7 +134,13 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
-                blurFilter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+                    blurRadius: 100,
+                    spreadRadius: 20,
+                  )
+                ]
               ),
             ),
           ),
@@ -144,11 +151,11 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
+                  Row(
                     children: [
-                      Icon(Icons.auto_awesome_rounded, color: Color(0xFF8B5CF6), size: 28),
-                      SizedBox(width: 12),
-                      Expanded(
+                      const Icon(Icons.auto_awesome_rounded, color: Color(0xFF8B5CF6), size: 28),
+                      const SizedBox(width: 12),
+                      const Expanded(
                         child: Text(
                           'Extraer Flashcards',
                           style: TextStyle(
