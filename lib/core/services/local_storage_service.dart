@@ -5,6 +5,7 @@ import 'package:learn/models/quiz_session.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/interview_result.dart';
+import 'package:learn/models/question.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
@@ -762,5 +763,37 @@ class LocalStorageService {
       debugPrint('Error saving interview result: $e');
     }
   }
-}
 
+  // --- Custom AI Questions ---
+  static const String customQuestionsKey = 'custom_questions';
+
+  List<Question> loadCustomQuestions() {
+    try {
+      final data = _storage.get(customQuestionsKey) as List?;
+      if (data == null) return [];
+      return data.map((e) => Question.fromJson(Map<String, dynamic>.from(e as Map))).toList();
+    } catch (e) {
+      debugPrint('Error loading custom questions: $e');
+      return [];
+    }
+  }
+
+  Question? getCustomQuestion(String id) {
+    return loadCustomQuestions().where((q) => q.id == id).firstOrNull;
+  }
+
+  void saveCustomQuestion(Question question) {
+    try {
+      final questions = loadCustomQuestions();
+      final index = questions.indexWhere((q) => q.id == question.id);
+      if (index >= 0) {
+        questions[index] = question;
+      } else {
+        questions.add(question);
+      }
+      _storage.put(customQuestionsKey, questions.map((q) => q.toJson()).toList());
+    } catch (e) {
+      debugPrint('Error saving custom question: $e');
+    }
+  }
+}

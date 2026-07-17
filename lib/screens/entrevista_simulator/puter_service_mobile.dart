@@ -41,6 +41,30 @@ class PuterServiceMobile implements PuterService {
 
     return _groq.chat(systemPrompt: _systemPrompt, userPrompt: prompt);
   }
+
+  @override
+  Future<String> generateFlashcardsFromText(String text) async {
+    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer los 5 a 10 datos más importantes como preguntas de opción múltiple.
+DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
+
+El formato JSON estricto esperado es:
+{
+  "flashcards": [
+    {
+      "text": "¿Pregunta sobre un dato clave?",
+      "options": ["Opción A", "Opción B", "Opción C", "Opción D"],
+      "correctAnswer": 0, // Índice de la respuesta correcta (0 al 3)
+      "explanation": "Explicación breve de por qué es la correcta."
+    }
+  ]
+}''';
+    
+    return _groq.chatOneShot(
+      systemPrompt: systemPrompt,
+      userPrompt: 'Texto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.',
+      expectJson: true,
+    );
+  }
 }
 
 /// Factory que retorna esta implementación en compilación móvil (iOS/Android)

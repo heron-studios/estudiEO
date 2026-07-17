@@ -13,4 +13,7 @@ abstract class PuterService {
 
   /// Envía un prompt a Puter.js y retorna la respuesta.
   Future<String> chat(String prompt);
+
+  /// Genera Flashcards a partir de un texto libre (Retorna JSON).
+  Future<String> generateFlashcardsFromText(String text);
 }

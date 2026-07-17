@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
@@ -39,6 +39,9 @@ class LearningProvider extends ChangeNotifier {
     if (_currentSession == null) return null;
     final id = _currentSession!.currentQuestionId;
     if (id == null) return null;
+    if (id.startsWith('ai_gen_')) {
+      return _storage.getCustomQuestion(id);
+    }
     return SubjectsRepository.getQuestion(id);
   }
 

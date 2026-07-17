@@ -172,7 +172,7 @@ class MiniAppsScreen extends StatelessWidget {
                               ? 1.0
                               : 0.85,
                         ),
-                        itemCount: 4,
+                        itemCount: 5,
                         itemBuilder: (context, index) {
                           final auth = context.read<AuthService>();
                           final isPremium = auth.isPremium;
@@ -193,6 +193,18 @@ class MiniAppsScreen extends StatelessWidget {
                             );
                           } else if (index == 1) {
                             return MiniAppCard(
+                              title: 'Generador Flashcards IA',
+                              description:
+                                  'Crea tarjetas de memoria automáticas desde cualquier texto.',
+                              icon: Icons.auto_awesome_rounded,
+                              themeColor: const Color(0xFF8B5CF6),
+                              badgeText: 'EXPERIMENTAL',
+                              isLocked: false, // Disponible para todos (o puede ser premium)
+                              isSquare: true,
+                              onTap: () => context.push('/srs/generator'),
+                            );
+                          } else if (index == 2) {
+                            return MiniAppCard(
                               title: 'Silogismos',
                               description:
                                   'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
@@ -205,7 +217,7 @@ class MiniAppsScreen extends StatelessWidget {
                                   ? () => PremiumUpgradeDialog.show(context)
                                   : () => context.push('/miniapps/silogismos'),
                             );
-                          } else if (index == 2) {
+                          } else if (index == 3) {
                             return MiniAppCard(
                               title: 'ANP Master',
                               description:

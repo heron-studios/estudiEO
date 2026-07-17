@@ -23,6 +23,7 @@ import 'package:learn/features/quiz/presentation/quiz_screen.dart';
 import 'package:learn/features/quiz/presentation/quiz_results_screen.dart';
 import 'package:learn/features/srs/presentation/srs_review_screen.dart';
 import 'package:learn/features/srs/presentation/srs_mini_quiz_screen.dart';
+import 'package:learn/features/srs/presentation/flashcard_generator_screen.dart';
 import 'package:learn/features/settings/presentation/settings_screen.dart';
 import 'package:learn/features/premium/presentation/payment_screen.dart';
 import 'package:learn/features/learning/presentation/learning_theory_screen.dart';
@@ -187,6 +188,10 @@ class AppRouter {
         GoRoute(
           path: '/srs-review',
           builder: (context, state) => const SrsReviewScreen(),
+        ),
+        GoRoute(
+          path: '/srs/generator',
+          builder: (context, state) => const FlashcardGeneratorScreen(),
         ),
         GoRoute(
           path: '/srs-mini-quiz',

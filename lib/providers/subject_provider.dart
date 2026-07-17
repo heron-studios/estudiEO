@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
 import 'package:learn/models/subject.dart';
 import 'package:learn/models/topic.dart';
@@ -85,7 +85,12 @@ class SubjectProvider extends ChangeNotifier {
   
   List<Question> getAllQuestionsByTopicShuffled(String id) => SubjectsRepository.getAllQuestionsByTopicShuffled(id, isPremium: _isPremium);
   
-  Question? getQuestion(String id) => SubjectsRepository.getQuestion(id, isPremium: _isPremium);
+  Question? getQuestion(String id) {
+    if (id.startsWith('ai_gen_')) {
+      return _storage.getCustomQuestion(id);
+    }
+    return SubjectsRepository.getQuestion(id, isPremium: _isPremium);
+  }
 
   List<Question> getQuestionsByTopicAndLevel(String id, Dificultad nivel, {int count = 10}) =>
       SubjectsRepository.getQuestionsByTopicAndLevel(id, nivel, count: count, isPremium: _isPremium);

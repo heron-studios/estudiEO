@@ -46,4 +46,46 @@ class GroqService {
       return 'Hubo un error de comunicación con el jurado: $e';
     }
   }
+
+  /// Método para llamadas sin estado (one-shot), útil para generar Flashcards.
+  /// Se puede forzar que devuelva JSON añadiendo expectJson = true.
+  Future<String> chatOneShot({
+    required String systemPrompt,
+    required String userPrompt,
+    bool expectJson = false,
+  }) async {
+    try {
+      final body = {
+        'model': 'llama-3.3-70b-versatile',
+        'messages': [
+          {'role': 'system', 'content': systemPrompt},
+          {'role': 'user', 'content': userPrompt},
+        ],
+        'temperature': 0.3, // Menor temperatura para tareas estructuradas
+        'max_tokens': 2048,
+      };
+
+      if (expectJson) {
+        body['response_format'] = {'type': 'json_object'};
+      }
+
+      final response = await http.post(
+        Uri.parse(_apiUrl),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $_apiKey',
+        },
+        body: jsonEncode(body),
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(utf8.decode(response.bodyBytes));
+        return data['choices'][0]['message']['content'].toString();
+      } else {
+        return '{"error": "${response.statusCode} - ${response.body}"}';
+      }
+    } catch (e) {
+      return '{"error": "Hubo un error de red: $e"}';
+    }
+  }
 }
