@@ -292,9 +292,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                                     width: 48,
                                     height: 48,
                                     child: Lottie.asset(
-                                      'assets/Sparkles Loop Loader ai.lottie',
+                                      'assets/sparkles.json',
                                       fit: BoxFit.contain,
-                                      decoder: (bytes) => LottieComposition.decodeZip(bytes),
                                       controller: _starsLottieController,
                                       onLoaded: (composition) {
                                         _starsLottieController.duration =
@@ -385,9 +384,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                               width: 48,
                               height: 48,
                               child: Lottie.asset(
-                                'assets/Sparkles Loop Loader ai.lottie',
+                                'assets/sparkles.json',
                                 fit: BoxFit.contain,
-                                decoder: (bytes) => LottieComposition.decodeZip(bytes),
                                 controller: _starsLottieController,
                                 onLoaded: (composition) {
                                   _starsLottieController.duration =

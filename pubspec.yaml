@@ -89,8 +89,8 @@ flutter:
     - assets/data/
     - assets/html/
     - assets/lottie/
-    - assets/Book loading.lottie
-    - assets/Sparkles Loop Loader ai.lottie
+    - assets/book_loading.json
+    - assets/sparkles.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

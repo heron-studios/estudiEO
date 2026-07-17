@@ -70,7 +70,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             SizedBox(
                               height: 180,
                               child: Lottie.asset(
-                                'assets/Book loading.lottie',
+                                'assets/book_loading.json',
                                 fit: BoxFit.contain,
                               ),
                             )
@@ -78,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             SizedBox(
                               height: 180,
                               child: Lottie.asset(
-                                'assets/Sparkles Loop Loader ai.lottie',
+                                'assets/sparkles.json',
                                 fit: BoxFit.contain,
                               ),
                             )

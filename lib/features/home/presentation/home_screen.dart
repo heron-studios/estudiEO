@@ -133,7 +133,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   width: 100,
                   height: 100,
                   child: Lottie.asset(
-                    'assets/lottie/trophy.lottie',
+                    'assets/trophy.json',
+                    width: 140,
                     repeat: false,
                     fit: BoxFit.contain,
                   ),
@@ -666,7 +667,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     )
                   : ClipOval(
                       child: Lottie.asset(
-                        'assets/lottie/warning_status.lottie',
+                        'assets/warning_status.json',
+                        width: 120,
                         controller: _warningLottieController,
                         onLoaded: (composition) {
                           _warningLottieController.duration =
