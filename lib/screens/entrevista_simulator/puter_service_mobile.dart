@@ -66,6 +66,19 @@ El formato JSON estricto esperado es:
       expectJson: true,
     );
   }
+  @override
+  Future<String> generateTutorAnalysis(String statsJson) async {
+    const String systemPrompt = 'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
+        'Analizas los datos de rendimiento de un estudiante preparando un examen de policía en Colombia '
+        'y generas un consejo motivacional, personalizado y preciso en 3-4 oraciones. '
+        'Resaltas su fortaleza, identificas su mayor debilidad y sugieres una acción concreta. '
+        'Usa un tono cálido, alentador y directo. NO uses listas con viñetas. Escribe en español.';
+
+    return _groq.chatOneShot(
+      systemPrompt: systemPrompt,
+      userPrompt: 'Estos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.',
+    );
+  }
 }
 
 /// Factory que retorna esta implementación en compilación móvil (iOS/Android)

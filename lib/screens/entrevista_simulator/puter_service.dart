@@ -18,4 +18,7 @@ abstract class PuterService {
 
   /// Genera Flashcards a partir de un texto libre (Retorna JSON).
   Future<String> generateFlashcardsFromText(String text);
+
+  /// Genera un análisis personalizado del estudiante con base en sus estadísticas (Retorna texto natural).
+  Future<String> generateTutorAnalysis(String statsJson);
 }

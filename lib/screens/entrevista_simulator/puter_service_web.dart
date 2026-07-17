@@ -96,6 +96,28 @@ El formato JSON estricto esperado es:
       throw Exception('Error al comunicarse con Puter.js: $e');
     }
   }
+  @override
+  Future<String> generateTutorAnalysis(String statsJson) async {
+    const String systemPrompt = 'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
+        'Analizas los datos de rendimiento de un estudiante preparando un examen de policía en Colombia '
+        'y generas un consejo motivacional, personalizado y preciso en 3-4 oraciones. '
+        'Resaltas su fortaleza, identificas su mayor debilidad y sugieres una acción concreta. '
+        'Usa un tono cálido, alentador y directo. NO uses listas con viñetas. Escribe en español.';
+
+    final fullPrompt = '$systemPrompt\n\nEstos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.';
+    try {
+      final promise = _puterAiChat(fullPrompt.toJS);
+      final response = await promise.toDart;
+      final dartified = response.dartify();
+      if (dartified is Map || dartified is List) {
+        return jsonEncode(dartified);
+      }
+      return dartified?.toString() ?? '';
+    } catch (e) {
+      debugPrint('Error Puter JS Tutor: $e');
+      throw Exception('Error al comunicarse con Puter.js: $e');
+    }
+  }
 }
 
 /// Factory que retorna esta implementación en la compilación web

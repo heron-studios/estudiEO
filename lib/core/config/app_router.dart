@@ -51,6 +51,7 @@ import 'package:learn/features/psicolearn/presentation/psico_mission_screen.dart
 import 'package:learn/features/fitness/presentation/fitness_calculator_screen.dart';
 import 'package:learn/features/merit/presentation/merit_calculator_screen.dart';
 import 'package:learn/features/roadmap/presentation/roadmap_screen.dart';
+import 'package:learn/features/dashboard/presentation/tutor_analitico_screen.dart';
 
 class AppRouter {
   static GoRouter createRouter(
@@ -344,6 +345,10 @@ class AppRouter {
         GoRoute(
           path: '/roadmap',
           builder: (context, state) => const RoadmapScreen(),
+        ),
+        GoRoute(
+          path: '/tutor-analitico',
+          builder: (context, state) => const TutorAnaliticoScreen(),
         ),
       ],
     );

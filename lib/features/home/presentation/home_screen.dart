@@ -610,6 +610,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
+  Widget _buildTutorTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.psychology_rounded,
+      color: const Color(0xFFC084FC),
+      gradientColors: const [Color(0xFF2D1460), Color(0xFF1A0D3D)],
+      title: 'Tutor IA',
+      subtitle: 'Análisis personal',
+      onTap: () => context.push('/tutor-analitico'),
+    );
+  }
+
 
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
@@ -1121,6 +1132,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         child: _buildAprendizajeTile(context, nt),
                                       ),
                                     ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1.25,
+                                        child: _buildTutorTile(context, nt),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -1183,10 +1201,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
+                                  const SizedBox(height: 12),
+                                  // Fila 3: Tutor IA (ancho completo)
+                                  _buildTutorTile(context, nt),
                                   const SizedBox(height: 24),
                                 ],
                               ),
                             );
+
                           }
                         },
                       ),
