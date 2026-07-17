@@ -69,6 +69,9 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
         throw const FormatException('El formato JSON no contiene un array "flashcards".');
       }
 
+      String topicName = data['topicName']?.toString() ?? '';
+      if (topicName.isEmpty) topicName = 'Mazo generado por IA';
+
       final List flashcards = data['flashcards'];
       if (!mounted) return;
       const uuid = Uuid();
@@ -109,15 +112,27 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
       }
 
       if (mounted) {
-        setState(() {
-          _isGenerating = false;
-        });
-
         if (count > 0) {
            if (!kIsWeb) storage.saveLastFlashcardGenDate(DateTime.now());
-           _showSaveDialog(newQuestions);
+           _saveCustomTopic(topicName, newQuestions);
+           
+           setState(() {
+             _isGenerating = false;
+             _generatedCount = count;
+             _generatedQuestions = newQuestions;
+             _textController.clear();
+           });
+           
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(
+               content: Text('¡Guardado automáticamente como "$topicName"!'),
+               backgroundColor: const Color(0xFF8B5CF6),
+               behavior: SnackBarBehavior.floating,
+             )
+           );
         } else {
            setState(() {
+             _isGenerating = false;
              _errorMessage = 'No se pudo extraer ninguna pregunta válida del texto.';
            });
         }
@@ -132,64 +147,7 @@ class _FlashcardGeneratorScreenState extends State<FlashcardGeneratorScreen> {
     }
   }
 
-  void _showSaveDialog(List<Question> tempQuestions) {
-     final TextEditingController nameController = TextEditingController();
-     showDialog(
-       context: context,
-       barrierDismissible: false,
-       builder: (context) => AlertDialog(
-         backgroundColor: const Color(0xFF1E2433),
-         title: const Text('¿Deseas guardar tus flashcards?', style: TextStyle(color: Colors.white, fontFamily: 'Outfit')),
-         content: Column(
-           mainAxisSize: MainAxisSize.min,
-           children: [
-             const Text('Se han generado las tarjetas. Asígnales un nombre para guardarlas en "Mis Flashcards".', style: TextStyle(color: Colors.white70)),
-             const SizedBox(height: 16),
-             TextField(
-               controller: nameController,
-               style: const TextStyle(color: Colors.white),
-               decoration: InputDecoration(
-                 hintText: 'Ej. Historia Romana',
-                 hintStyle: const TextStyle(color: Colors.white30),
-                 filled: true,
-                 fillColor: Colors.black26,
-                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-               ),
-             )
-           ]
-         ),
-         actions: [
-           TextButton(
-             onPressed: () {
-                Navigator.pop(context);
-                setState(() {
-                  _generatedCount = tempQuestions.length;
-                  _generatedQuestions = tempQuestions;
-                  _textController.clear();
-                });
-             },
-             child: const Text('Descartar', style: TextStyle(color: Colors.white54)),
-           ),
-           ElevatedButton(
-             style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF8B5CF6)),
-             onPressed: () {
-                final name = nameController.text.trim();
-                if (name.isEmpty) return;
-                
-                _saveCustomTopic(name, tempQuestions);
-                Navigator.pop(context);
-                setState(() {
-                  _generatedCount = tempQuestions.length;
-                  _generatedQuestions = tempQuestions;
-                  _textController.clear();
-                });
-             },
-             child: const Text('Guardar Mazo', style: TextStyle(color: Colors.white)),
-           ),
-         ]
-       )
-     );
-  }
+  // Eliminamos _showSaveDialog ya que el guardado ahora es automático
 
   void _saveCustomTopic(String name, List<Question> tempQuestions) {
      final storage = context.read<LocalStorageService>();

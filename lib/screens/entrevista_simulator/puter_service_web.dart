@@ -64,6 +64,7 @@ DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas 
 
 El formato JSON estricto esperado es:
 {
+  "topicName": "Nombre corto y descriptivo del tema (ej. Revolución Francesa)",
   "flashcards": [
     {
       "text": "¿Pregunta sobre un dato clave?",
