@@ -4,6 +4,7 @@ import 'package:learn/models/gamification.dart';
 import 'package:learn/models/quiz_session.dart';
 import 'package:learn/models/learning_session.dart';
 import 'package:learn/models/learning_level.dart';
+import 'package:learn/models/interview_result.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
@@ -731,4 +732,35 @@ class LocalStorageService {
       _storage.put('last_interview_date', DateFormat('yyyy-MM-dd').format(date));
     } catch (_) {}
   }
+
+  // --- Interview History ---
+  static const String _kInterviewHistory = 'interview_history_v1';
+
+  /// Retorna el historial de entrevistas ordenado del más reciente al más antiguo.
+  List<InterviewResult> getInterviewHistory() {
+    try {
+      final raw = _storage.get(_kInterviewHistory) as List? ?? [];
+      return raw
+          .map((e) => InterviewResult.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList()
+          ..sort((a, b) => b.date.compareTo(a.date));
+    } catch (e) {
+      debugPrint('Error loading interview history: $e');
+      return [];
+    }
+  }
+
+  /// Guarda un nuevo resultado de entrevista en el historial (máx 30 registros).
+  void saveInterviewResult(InterviewResult result) {
+    try {
+      final history = getInterviewHistory();
+      history.insert(0, result);
+      // Limitar a los últimos 30 registros
+      final trimmed = history.take(30).toList();
+      _storage.put(_kInterviewHistory, trimmed.map((r) => r.toJson()).toList());
+    } catch (e) {
+      debugPrint('Error saving interview result: $e');
+    }
+  }
 }
+
