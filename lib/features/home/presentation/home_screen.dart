@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/learning_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/learning_session.dart';
 
@@ -963,10 +964,67 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
-                  // Derecha: Botón Hoja de Ruta y Ajustes
+                  // Derecha: Gamificación, Hoja de Ruta y Ajustes
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Consumer<GamificationProvider>(
+                        builder: (context, gami, child) {
+                          return Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Racha
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange.withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.local_fire_department_rounded, color: Colors.orangeAccent, size: 16),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '${gami.streak}',
+                                      style: const TextStyle(
+                                        color: Colors.orangeAccent,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              // Nivel
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF7C3AED).withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(color: const Color(0xFF7C3AED).withValues(alpha: 0.3)),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.star_rounded, color: Color(0xFFC084FC), size: 16),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      'Nvl ${gami.level}',
+                                      style: const TextStyle(
+                                        color: Color(0xFFC084FC),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                            ],
+                          );
+                        },
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white.withValues(alpha: 0.08),
