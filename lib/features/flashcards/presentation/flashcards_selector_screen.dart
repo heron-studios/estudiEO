@@ -5,7 +5,7 @@ import 'package:learn/models/topic.dart';
 import 'package:learn/features/flashcards/presentation/flashcards_screen.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
-
+import 'package:go_router/go_router.dart';
 
 /// Pantalla de selección de tema para entrar a Tarjetas de Memoria.
 /// Muestra primero materias en chips horizontales y luego los temas en lista.
@@ -118,6 +118,70 @@ class _FlashcardsSelectorScreenState extends State<FlashcardsSelectorScreen> {
                 style: TextStyle(color: _muted.withValues(alpha: 0.8), fontSize: 13),
               ),
               const SizedBox(height: 14),
+
+              // ── BANNER GENERADOR IA ──
+              GestureDetector(
+                onTap: () => context.push('/srs/generator'),
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color(0xFF8B5CF6).withValues(alpha: 0.3),
+                        const Color(0xFF8B5CF6).withValues(alpha: 0.1)
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: const Color(0xFF8B5CF6).withValues(alpha: 0.4)),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.auto_awesome_rounded, color: Color(0xFF8B5CF6), size: 24),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                const Text(
+                                  'Generador IA',
+                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+                                ),
+                                const SizedBox(width: 8),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: const Text('EXPERIMENTAL', style: TextStyle(color: Color(0xFF8B5CF6), fontSize: 8, fontWeight: FontWeight.bold)),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              'Crea tarjetas desde cualquier texto',
+                              style: TextStyle(color: Colors.white70, fontSize: 12),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white54, size: 14),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
 
               // ── SUBJECT CHIPS (horizontal) ──
               if (_subjects.isEmpty)
