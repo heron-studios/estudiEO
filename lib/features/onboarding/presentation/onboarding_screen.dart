@@ -69,17 +69,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           if (index == 0)
                             SizedBox(
                               height: 180,
-                              child: Lottie.asset(
-                                'assets/book_loading.json',
-                                fit: BoxFit.contain,
+                              child: RepaintBoundary(
+                                child: Lottie.asset(
+                                  'assets/book_loading.json',
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             )
                           else if (index == 2)
                             SizedBox(
                               height: 180,
-                              child: Lottie.asset(
-                                'assets/sparkles.json',
-                                fit: BoxFit.contain,
+                              child: RepaintBoundary(
+                                child: Lottie.asset(
+                                  'assets/sparkles.json',
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             )
                           else

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'dart:ui' as ui;
 import 'package:lottie/lottie.dart';
 import 'package:go_router/go_router.dart';
@@ -292,18 +291,17 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                                   child: SizedBox(
                                     width: 48,
                                     height: 48,
-                                    child: kIsWeb
-                                        ? const Icon(Icons.auto_awesome,
-                                            color: Colors.amber, size: 32)
-                                        : Lottie.asset(
-                                            'assets/sparkles.json',
-                                      fit: BoxFit.contain,
-                                      controller: _starsLottieController,
-                                      onLoaded: (composition) {
-                                        _starsLottieController.duration =
-                                            composition.duration;
-                                        _starsLottieController.repeat();
-                                      },
+                                    child: RepaintBoundary(
+                                      child: Lottie.asset(
+                                        'assets/sparkles.json',
+                                        fit: BoxFit.contain,
+                                        controller: _starsLottieController,
+                                        onLoaded: (composition) {
+                                          _starsLottieController.duration =
+                                              composition.duration;
+                                          _starsLottieController.repeat();
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -387,18 +385,17 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                             child: SizedBox(
                               width: 48,
                               height: 48,
-                              child: kIsWeb
-                                  ? const Icon(Icons.auto_awesome,
-                                      color: Colors.amber, size: 32)
-                                  : Lottie.asset(
-                                      'assets/sparkles.json',
-                                fit: BoxFit.contain,
-                                controller: _starsLottieController,
-                                onLoaded: (composition) {
-                                  _starsLottieController.duration =
-                                      composition.duration;
-                                  _starsLottieController.repeat();
-                                },
+                              child: RepaintBoundary(
+                                child: Lottie.asset(
+                                  'assets/sparkles.json',
+                                  fit: BoxFit.contain,
+                                  controller: _starsLottieController,
+                                  onLoaded: (composition) {
+                                    _starsLottieController.duration =
+                                        composition.duration;
+                                    _starsLottieController.repeat();
+                                  },
+                                ),
                               ),
                             ),
                           ),
