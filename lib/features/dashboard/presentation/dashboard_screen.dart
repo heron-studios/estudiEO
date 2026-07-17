@@ -129,7 +129,7 @@ class DashboardScreen extends StatelessWidget {
                     SizedBox(height: 12),
                     _GeneralStats(),
                     SizedBox(height: 28),
-                    _SectionLabel('CONSEJO DEL TUTOR IA (Gemini)'),
+                    _SectionLabel('CONSEJO DEL TUTOR IA'),
                     SizedBox(height: 12),
                     _TutorAdviceSection(),
                     SizedBox(height: 28),
@@ -294,7 +294,7 @@ class _TutorAdviceSectionState extends State<_TutorAdviceSection> {
     } catch (e) {
       if (mounted) {
         setState(() {
-          _advice = 'El Tutor IA (Gemini) está descansando. ¡Sigue estudiando duro!';
+          _advice = 'El Tutor IA está descansando. ¡Sigue estudiando duro!';
           _isLoading = false;
         });
       }

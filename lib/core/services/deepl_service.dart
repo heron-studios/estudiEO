@@ -25,11 +25,11 @@ class DeepLService {
       debugPrint('Traductor: Clave DeepL no configurada. Intentando con Gemini...');
     }
 
-    // 2. Intentar con Gemini si la clave está configurada
-    final String geminiKey = AppConfig.geminiApiKey.trim();
-    if (geminiKey.isNotEmpty) {
+    // 2. Intentar con Groq si la clave está configurada
+    final String groqKey = AppConfig.groqApiKey.trim();
+    if (groqKey.isNotEmpty) {
       try {
-        debugPrint('Traductor: Intentando con Gemini...');
+        debugPrint('Traductor: Intentando con Groq...');
         final result = await GeminiService.translateTriviaQuestions(questions);
         // Si result es diferente al original (es decir, no falló retornando la misma referencia)
         if (result != questions) {

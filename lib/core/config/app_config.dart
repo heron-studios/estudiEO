@@ -4,10 +4,10 @@ class AppConfig {
   /// Número de WhatsApp para ventas de Premium
   static const String whatsappNumber = '51955285763';
 
-  /// Clave de API de Gemini para el tutor nemotécnico de IA.
-  /// Puede ser configurada al compilar con: --dart-define=GEMINI_API_KEY=tu_clave
-  static const String geminiApiKey = String.fromEnvironment(
-    'GEMINI_API_KEY',
+  /// Clave de API de Groq para el tutor de IA.
+  /// Puede ser configurada al compilar con: --dart-define=GROQ_API_KEY=tu_clave
+  static const String groqApiKey = String.fromEnvironment(
+    'GROQ_API_KEY',
     defaultValue: '',
   );
 

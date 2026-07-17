@@ -643,7 +643,7 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                               const Icon(Icons.smart_toy_rounded, color: Colors.purpleAccent, size: 20),
                               const SizedBox(width: 8),
                               const Text(
-                                'Tutor IA (Puter)',
+                                'Tutor IA',
                                 style: TextStyle(
                                   color: Colors.purpleAccent,
                                   fontSize: 15,

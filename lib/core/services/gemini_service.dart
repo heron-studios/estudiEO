@@ -3,9 +3,9 @@ import 'package:http/http.dart' as http;
 import 'package:learn/core/config/app_config.dart';
 
 class GeminiService {
-  static const String _apiKey = AppConfig.geminiApiKey;
+  static const String _apiKey = AppConfig.groqApiKey;
   static const String _baseUrl =
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+      'https://api.groq.com/openai/v1/chat/completions';
 
   /// Genera un concepto nemotécnico/explicación corta para reforzar una tarjeta.
   static Future<String> explicarConcepto(String pregunta, String respuesta) async {
@@ -53,41 +53,35 @@ class GeminiService {
     return _callGemini(systemPrompt, userPrompt);
   }
 
-  /// Llama a la API de Gemini con system + user prompt. Retorna el texto generado.
+  /// Llama a la API de Groq con system + user prompt. Retorna el texto generado.
   static Future<String> _callGemini(String system, String user) async {
-    final uri = Uri.parse('$_baseUrl?key=$_apiKey');
+    final uri = Uri.parse(_baseUrl);
 
     final body = jsonEncode({
-      'systemInstruction': {
-        'parts': [
-          {'text': system}
-        ]
-      },
-      'contents': [
-        {
-          'parts': [
-            {'text': user}
-          ]
-        }
+      'model': 'llama-3.3-70b-versatile',
+      'messages': [
+        {'role': 'system', 'content': system},
+        {'role': 'user', 'content': user}
       ],
-      'generationConfig': {
-        'temperature': 0.7,
-        'maxOutputTokens': 200,
-      }
+      'temperature': 0.7,
+      'max_completion_tokens': 200,
     });
 
     try {
       final response = await http
           .post(
             uri,
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer $_apiKey',
+            },
             body: body,
           )
           .timeout(const Duration(seconds: 30));
 
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
-        final text = json['candidates']?[0]?['content']?['parts']?[0]?['text'];
+        final text = json['choices']?[0]?['message']?['content'];
         if (text != null && text.toString().trim().isNotEmpty) {
           return text.toString().trim();
         }

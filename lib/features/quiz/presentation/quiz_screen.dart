@@ -572,7 +572,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             child: OutlinedButton.icon(
                               onPressed: () => _askTutor(question, _selectedAnswer),
                               icon: const Text('🤖', style: TextStyle(fontSize: 18)),
-                              label: const Text('Preguntar al Tutor IA (Gemini) por qué fallé'),
+                              label: const Text('Preguntar al Tutor IA por qué fallé'),
                               style: OutlinedButton.styleFrom(
                                 foregroundColor: NeuralDesignSystem.blueGoogle,
                                 side: BorderSide(color: NeuralDesignSystem.blueGoogle.withValues(alpha: 0.5)),
@@ -592,13 +592,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 if (isAnswered)
                   Container(
                     padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
-                    decoration: BoxDecoration(
-                      color: NeuralDesignSystem.background.withValues(alpha: 0.9),
-                      border: Border(
-                        top: BorderSide(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
+                    decoration: const BoxDecoration(
+                      color: Colors.transparent,
                     ),
                     child: SizedBox(
                       width: double.infinity,
