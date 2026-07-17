@@ -47,7 +47,7 @@ class PuterServiceWeb implements PuterService {
       
       final promise = _puterAiChat(fullContext.toJS);
       final response = await promise.toDart;
-      final reply = (response as JSString).toDart;
+      final reply = response.dartify()?.toString() ?? '';
       
       _messages.add({'role': 'assistant', 'content': reply});
       return reply;
@@ -78,7 +78,7 @@ El formato JSON estricto esperado es:
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
-      return (response as JSString).toDart;
+      return response.dartify()?.toString() ?? '';
     } catch (e) {
       debugPrint('Error Puter JS Flashcards: $e');
       throw Exception('Error al comunicarse con Puter.js: $e');
