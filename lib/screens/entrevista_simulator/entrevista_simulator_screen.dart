@@ -160,9 +160,9 @@ class _EntrevistaSimulatorScreenState
             children: [
               Container(
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     colors: [Color(0xFF8B5CF6), Color(0xFF6D28D9)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
