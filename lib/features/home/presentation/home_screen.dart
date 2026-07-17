@@ -653,36 +653,41 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
         child: Row(
           children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
-              ),
-              child: _todayCompleted
-                  ? const Icon(
+            _todayCompleted
+                ? Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.3)),
+                    ),
+                    child: const Icon(
                       Icons.check_circle_rounded,
                       color: Color(0xFF4ADE80),
                       size: 26,
-                    )
-                  : ClipOval(
-                      child: RepaintBoundary(
+                    ),
+                  )
+                : SizedBox(
+                    width: 58,
+                    height: 58,
+                    child: RepaintBoundary(
+                      child: Transform.scale(
+                        scale: 1.4,
                         child: Lottie.asset(
                           'assets/lottie/warning_status.json',
-                          width: 120,
                           controller: _warningLottieController,
                           onLoaded: (composition) {
                             _warningLottieController.duration =
                                 composition.duration;
                             _warningLottieController.forward();
                           },
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
-            ),
+                  ),
             const SizedBox(width: 14),
             Expanded(
               child: Column(
@@ -793,39 +798,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          // FAB SRS Repaso
-          Consumer<SrsProvider>(
-            builder: (context, srs, child) {
-              final count = srs.getReviewQueue().length;
-              if (count == 0) return const SizedBox.shrink();
-              return FadeTransition(
-                opacity: _fabAnimation,
-                child: FloatingActionButton.extended(
-                  heroTag: 'srs_fab',
-                  onPressed: () => context.push('/srs-review'),
-                  backgroundColor: nt.successGreen,
-                  elevation: 8,
-                  icon: const Icon(
-                    Icons.history_edu_rounded,
-                    color: Colors.white,
-                  ),
-                  label: Text(
-                    'Repasar ($count)',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -1029,11 +1001,83 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ],
               ),
+              
+              // ── BANNER DE REPASO (SRS) ──────────────────────────────────
+              Consumer<SrsProvider>(
+                builder: (context, srs, child) {
+                  final count = srs.getReviewQueue().length;
+                  if (count == 0) return const SizedBox.shrink();
+                  
+                  return FadeTransition(
+                    opacity: _fabAnimation,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 16, bottom: 8),
+                      child: Container(
+                        width: double.infinity,
+                        constraints: const BoxConstraints(maxWidth: 1000),
+                        child: HoverGlassCard(
+                          onTap: () => context.push('/srs-review'),
+                          hoverGradientBorder: true,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [nt.successGreen.withValues(alpha: 0.8), nt.successGreen.withValues(alpha: 0.4)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(Icons.history_edu_rounded, color: Colors.white, size: 28),
+                                ),
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '🎯 ¡Tienes $count repaso${count > 1 ? 's' : ''} pendiente${count > 1 ? 's' : ''}!',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          fontFamily: 'Outfit',
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4),
+                                      const Text(
+                                        'Refuerza tu memoria ahora',
+                                        style: TextStyle(
+                                          color: Colors.white70,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
 
               // ── CARDS — centradas verticalmente en el espacio restante ──
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 120),
+                  padding: const EdgeInsets.only(top: 8, bottom: 16),
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 1000),

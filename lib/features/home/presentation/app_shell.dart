@@ -400,6 +400,7 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                             ),
                           ),
                           isSelected: false,
+                          label: 'Simulador',
                           onTap: () =>
                               _showInterviewSelectionModal(context, nt),
                           nt: nt,
@@ -459,10 +460,26 @@ class _NavItem extends StatelessWidget {
       return GestureDetector(
         onTap: onTap,
         behavior: HitTestBehavior.opaque,
-        child: SizedBox(
-          width: 56,
-          height: 56,
-          child: Center(child: customIcon ?? const SizedBox()),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: 56,
+              height: 56,
+              child: Center(child: customIcon ?? const SizedBox()),
+            ),
+            if (label != null && label!.isNotEmpty) ...[
+              const SizedBox(height: 0),
+              Text(
+                label!,
+                style: TextStyle(
+                  color: isSelected ? nt.blueGoogle : Colors.white54,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ],
         ),
       );
     }
