@@ -1023,144 +1023,67 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   // Derecha: Gamificación, Hoja de Ruta y Ajustes
                   Consumer<GamificationProvider>(
                     builder: (context, gami, child) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.min,
+                      return Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        alignment: WrapAlignment.end,
                         children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              // Trophy (Leaderboard)
-                              GestureDetector(
-                                onTap: () =>
-                                    _showLeaderboardDialog(context, nt),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 6,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.amber.withValues(alpha: 0.15),
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.amber.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                    ),
-                                  ),
-                                  child: const Icon(
-                                    Icons.emoji_events_rounded,
-                                    color: Colors.amber,
-                                    size: 16,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              // Racha
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 6,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.orange.withValues(alpha: 0.15),
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: Colors.orange.withValues(alpha: 0.3),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.local_fire_department_rounded,
-                                      color: Colors.orangeAccent,
-                                      size: 16,
-                                    ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      '${gami.streak}',
-                                      style: const TextStyle(
-                                        color: Colors.orangeAccent,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              if (isLargeScreen) ...[
-                                const SizedBox(width: 8),
-                                // Hoja de Ruta (?)
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.08),
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.white.withValues(alpha: 0.12),
-                                    ),
-                                  ),
-                                  child: IconButton(
-                                    onPressed: () => context.push('/roadmap'),
-                                    icon: const Icon(
-                                      Icons.help_outline_rounded,
-                                      color: Colors.white,
-                                      size: 22,
-                                    ),
-                                    tooltip: 'Hoja de Ruta',
-                                    padding: const EdgeInsets.all(8),
-                                    constraints: const BoxConstraints(),
-                                  ),
-                                ),
-                                const SizedBox(width: 8),
-                                // Ajustes (⚙️)
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.08),
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.white.withValues(alpha: 0.12),
-                                    ),
-                                  ),
-                                  child: IconButton(
-                                    onPressed: () => context.push('/settings'),
-                                    icon: const Icon(
-                                      Icons.settings_rounded,
-                                      color: Colors.white,
-                                      size: 22,
-                                    ),
-                                    tooltip: 'Ajustes',
-                                    padding: const EdgeInsets.all(8),
-                                    constraints: const BoxConstraints(),
-                                  ),
-                                ),
-                              ],
-                            ],
-                          ),
-                          const SizedBox(height: 6),
-                          // Nivel
+                          // Unified Gamification Stats Pill
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 6,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                             decoration: BoxDecoration(
-                              color: const Color(
-                                0xFF7C3AED,
-                              ).withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(12),
+                              color: nt.surfaceCard.withValues(alpha: 0.4), // Premium glass effect
+                              borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: const Color(
-                                  0xFF7C3AED,
-                                ).withValues(alpha: 0.3),
+                                color: Colors.white.withValues(alpha: 0.15),
+                                width: 1.0,
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
+                                // Trophy (Leaderboard)
+                                GestureDetector(
+                                  onTap: () => _showLeaderboardDialog(context, nt),
+                                  child: const Icon(
+                                    Icons.emoji_events_rounded,
+                                    color: Colors.amber,
+                                    size: 18,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 12),
+                                  width: 1,
+                                  height: 16,
+                                  color: Colors.white.withValues(alpha: 0.2),
+                                ),
+                                // Racha
+                                const Icon(
+                                  Icons.local_fire_department_rounded,
+                                  color: Colors.orangeAccent,
+                                  size: 18,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '${gami.streak}',
+                                  style: const TextStyle(
+                                    color: Colors.orangeAccent,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 12),
+                                  width: 1,
+                                  height: 16,
+                                  color: Colors.white.withValues(alpha: 0.2),
+                                ),
+                                // Nivel
                                 const Icon(
                                   Icons.star_rounded,
                                   color: Color(0xFFC084FC),
-                                  size: 16,
+                                  size: 18,
                                 ),
                                 const SizedBox(width: 4),
                                 Text(
@@ -1168,12 +1091,56 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   style: const TextStyle(
                                     color: Color(0xFFC084FC),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 13,
+                                    fontSize: 14,
                                   ),
                                 ),
                               ],
                             ),
                           ),
+                          if (isLargeScreen) ...[
+                            // Hoja de Ruta (?)
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.08),
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.12),
+                                ),
+                              ),
+                              child: IconButton(
+                                onPressed: () => context.push('/roadmap'),
+                                icon: const Icon(
+                                  Icons.help_outline_rounded,
+                                  color: Colors.white,
+                                  size: 22,
+                                ),
+                                tooltip: 'Hoja de Ruta',
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(),
+                              ),
+                            ),
+                            // Ajustes (⚙️)
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.08),
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.12),
+                                ),
+                              ),
+                              child: IconButton(
+                                onPressed: () => context.push('/settings'),
+                                icon: const Icon(
+                                  Icons.settings_rounded,
+                                  color: Colors.white,
+                                  size: 22,
+                                ),
+                                tooltip: 'Ajustes',
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(),
+                              ),
+                            ),
+                          ],
                         ],
                       );
                     },
