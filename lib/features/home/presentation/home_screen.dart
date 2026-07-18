@@ -944,6 +944,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               glowColor: const Color(0xFF94A3B8),
               onPressed: () => context.push('/settings'),
             ),
+            _PremiumFabButton(
+              tooltip: 'Arena',
+              icon: Icons.sports_esports_rounded,
+              glowColor: const Color(0xFFF59E0B),
+              onPressed: () => context.push('/arena'),
+            ),
+            _PremiumFabButton(
+              tooltip: 'Tutor',
+              icon: Icons.psychology_rounded,
+              glowColor: const Color(0xFFC084FC),
+              onPressed: () => context.push('/tutor-analitico'),
+            ),
           ],
         ),
       ),
@@ -1362,23 +1374,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   ],
                                 ),
                                 const SizedBox(height: 16),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 2.6,
-                                        child: _buildArenaTile(context, nt),
+                                if (isLargeScreen)
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 2.6,
+                                          child: _buildArenaTile(context, nt),
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(width: 16),
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 2.6,
-                                        child: _buildTutorTile(context, nt),
+                                      const SizedBox(width: 16),
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 2.6,
+                                          child: _buildTutorTile(context, nt),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
+                                    ],
+                                  ),
                               ],
                             );
                           } else {
@@ -1441,30 +1454,31 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ],
                                   ),
                                   const SizedBox(height: 10),
-                                  // Fila 3: Arena + Tutor
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 1.45,
-                                          child: _buildArenaTile(
-                                            context,
-                                            nt,
+                                  // Fila 3: Arena + Tutor (Solo si somehow entra a mobile pero con isLargeScreen false, que no es el caso, pero por seguridad)
+                                  if (isLargeScreen)
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: AspectRatio(
+                                            aspectRatio: 1.45,
+                                            child: _buildArenaTile(
+                                              context,
+                                              nt,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(width: 10),
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 1.45,
-                                          child: _buildTutorTile(
-                                            context,
-                                            nt,
+                                        const SizedBox(width: 10),
+                                        Expanded(
+                                          child: AspectRatio(
+                                            aspectRatio: 1.45,
+                                            child: _buildTutorTile(
+                                              context,
+                                              nt,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
                                   const SizedBox(height: 16),
                                 ],
                               ),
