@@ -9,7 +9,17 @@ class ProfessionalSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
-      body: AnimatedGridBackground(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 1.0,
+            colors: [
+              const Color(0xFF1E293B),
+              const Color(0xFF0F172A),
+            ],
+          ),
+        ),
         child: SafeArea(
           child: Center(
             child: Column(

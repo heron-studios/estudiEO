@@ -20,6 +20,7 @@ import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
+import 'package:learn/core/widgets/animated_grid_bg.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -1420,11 +1421,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(24),
-              child: DefaultTabController(
-                length: 2,
-                initialIndex: userSchool == 'EETSPN' ? 1 : 0,
-                child: Column(
-                  children: [
+              child: AnimatedGridBackground(
+                child: DefaultTabController(
+                  length: 2,
+                  initialIndex: userSchool == 'EETSPN' ? 1 : 0,
+                  child: Column(
+                    children: [
                     Container(
                       padding: const EdgeInsets.only(top: 24, bottom: 8),
                       decoration: BoxDecoration(
@@ -1488,6 +1490,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ],
                 ),
               ),
+            ),
             ),
           ),
         );
