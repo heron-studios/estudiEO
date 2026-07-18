@@ -700,6 +700,28 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
+  Widget _buildArenaTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.sports_esports_rounded,
+      color: const Color(0xFFF59E0B),
+      gradientColors: const [Color(0xFF2A1F10), Color(0xFF1A1308)],
+      title: 'Arena',
+      subtitle: 'Entrenamiento',
+      onTap: () => context.push('/arena'),
+    );
+  }
+
+  Widget _buildTutorTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.psychology_rounded,
+      color: const Color(0xFFC084FC),
+      gradientColors: const [Color(0xFF23103A), Color(0xFF140822)],
+      title: 'Tutor IA',
+      subtitle: 'Análisis',
+      onTap: () => context.push('/tutor-analitico'),
+    );
+  }
+
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
@@ -878,8 +900,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      floatingActionButtonLocation: ExpandableFab.location,
-      floatingActionButton: Padding(
+      floatingActionButtonLocation: isLargeScreen ? null : ExpandableFab.location,
+      floatingActionButton: isLargeScreen ? null : Padding(
         padding: const EdgeInsets.only(bottom: 24.0, right: 8.0),
         child: ExpandableFab(
           distance: 76.0,
@@ -910,31 +932,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ),
           children: [
-            if (!isLargeScreen) ...[
-              _PremiumFabButton(
-                tooltip: 'Ayuda',
-                icon: Icons.help_outline_rounded,
-                glowColor: Colors.white,
-                onPressed: () => context.push('/roadmap'),
-              ),
-              _PremiumFabButton(
-                tooltip: 'Configuración',
-                icon: Icons.settings_rounded,
-                glowColor: const Color(0xFF94A3B8),
-                onPressed: () => context.push('/settings'),
-              ),
-            ],
             _PremiumFabButton(
-              tooltip: 'Arena',
-              icon: Icons.sports_esports_rounded,
-              glowColor: const Color(0xFFF59E0B),
-              onPressed: () => context.push('/arena'),
+              tooltip: 'Ayuda',
+              icon: Icons.help_outline_rounded,
+              glowColor: Colors.white,
+              onPressed: () => context.push('/roadmap'),
             ),
             _PremiumFabButton(
-              tooltip: 'Tutor',
-              icon: Icons.psychology_rounded,
-              glowColor: const Color(0xFFC084FC),
-              onPressed: () => context.push('/tutor-analitico'),
+              tooltip: 'Configuración',
+              icon: Icons.settings_rounded,
+              glowColor: const Color(0xFF94A3B8),
+              onPressed: () => context.push('/settings'),
             ),
           ],
         ),
@@ -1353,6 +1361,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                   ],
                                 ),
+                                const SizedBox(height: 16),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 2.6,
+                                        child: _buildArenaTile(context, nt),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 2.6,
+                                        child: _buildTutorTile(context, nt),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ],
                             );
                           } else {
@@ -1409,6 +1435,31 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             context,
                                             nt,
                                             isSquare: true,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  // Fila 3: Arena + Tutor
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.45,
+                                          child: _buildArenaTile(
+                                            context,
+                                            nt,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.45,
+                                          child: _buildTutorTile(
+                                            context,
+                                            nt,
                                           ),
                                         ),
                                       ),
