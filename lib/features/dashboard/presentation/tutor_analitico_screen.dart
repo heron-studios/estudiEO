@@ -9,6 +9,7 @@ import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/features/dashboard/domain/study_stats_collector.dart';
 import 'package:learn/screens/entrevista_simulator/puter_service.dart';
+import 'package:learn/core/services/local_storage_service.dart';
 
 class TutorAnaliticoScreen extends StatefulWidget {
   const TutorAnaliticoScreen({super.key});
@@ -60,7 +61,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
     super.dispose();
   }
 
-  Future<void> _analyze() async {
+  Future<void> _analyze({bool forceRefresh = false}) async {
     setState(() {
       _isLoading = true;
       _hasError = false;
@@ -84,9 +85,32 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       _visualStats = collector.buildVisualStats();
       _worstSubjectId = _visualStats['worstSubjectId'] as String?;
 
+      final storage = context.read<LocalStorageService>();
+      
+      if (!forceRefresh) {
+        final cachedText = storage.loadTutorAnalysis();
+        final cachedTime = storage.loadTutorAnalysisTime();
+        
+        if (cachedText != null && cachedText.isNotEmpty && cachedTime != null) {
+          final now = DateTime.now();
+          if (now.difference(cachedTime).inHours < 24) {
+            if (!mounted) return;
+            setState(() {
+              _isLoading = false;
+              _aiText = cachedText;
+            });
+            _fadeCtrl.forward();
+            _startTypingEffect(cachedText);
+            return;
+          }
+        }
+      }
+
       final statsJson = collector.buildStatsJson();
       final puter = PuterService();
       final result = await puter.generateTutorAnalysis(statsJson);
+      
+      storage.saveTutorAnalysis(result);
 
       if (!mounted) return;
       setState(() {
@@ -189,6 +213,22 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                           const SizedBox(height: 16),
                           _buildSubjectBars(nt),
                           const SizedBox(height: 16),
+                          Center(
+                            child: TextButton.icon(
+                              onPressed: _isLoading ? null : () => _analyze(forceRefresh: true),
+                              icon: const Icon(Icons.refresh_rounded, color: Colors.white54, size: 20),
+                              label: const Text(
+                                'Actualizar Análisis',
+                                style: TextStyle(color: Colors.white54, fontFamily: 'Inter'),
+                              ),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white.withValues(alpha: 0.05),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 80),
                           FadeTransition(
                             opacity: _fadeAnim,
                             child: _buildAiAdviceCard(nt),

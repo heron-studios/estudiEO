@@ -28,6 +28,8 @@ class LocalStorageService {
   static const String examHistoryKey = 'exam_history';
   static const String flashcardGenDateKey = 'flashcard_gen_date';
   static const String customTopicsKey = 'custom_topics';
+  static const String tutorAiCacheTextKey = 'tutor_ai_cache_text';
+  static const String tutorAiCacheTimeKey = 'tutor_ai_cache_time';
 
   final Box _storage = Hive.box('estudieo_data');
   Map<String, SrsCard>? _srsCache;
@@ -840,5 +842,23 @@ class LocalStorageService {
 
   void saveLastFlashcardGenDate(DateTime date) {
     _storage.put(flashcardGenDateKey, date.toIso8601String());
+  }
+
+  // ─── Tutor IA Cache ─────────────────────────────────────────
+  void saveTutorAnalysis(String text) {
+    _storage.put(tutorAiCacheTextKey, text);
+    _storage.put(tutorAiCacheTimeKey, DateTime.now().toIso8601String());
+  }
+  
+  String? loadTutorAnalysis() {
+    return _storage.get(tutorAiCacheTextKey) as String?;
+  }
+  
+  DateTime? loadTutorAnalysisTime() {
+    final timeStr = _storage.get(tutorAiCacheTimeKey) as String?;
+    if (timeStr != null) {
+      return DateTime.tryParse(timeStr);
+    }
+    return null;
   }
 }
