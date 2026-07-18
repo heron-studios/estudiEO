@@ -416,6 +416,8 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Outfit',
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4),
                 Text(
