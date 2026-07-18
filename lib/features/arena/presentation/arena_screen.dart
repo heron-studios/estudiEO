@@ -110,6 +110,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
   }
 
   Widget _buildLobby() {
+    final nt = Theme.of(context).extension<NeuralThemeData>()!;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -145,6 +146,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
   }
 
   Widget _buildGameArea() {
+    final nt = Theme.of(context).extension<NeuralThemeData>()!;
     if (_match!.status == 'waiting') {
       return Center(
         child: Column(
@@ -241,6 +243,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
   }
 
   Widget _buildResults(String myName, int myScore, String oppName, int oppScore) {
+    final nt = Theme.of(context).extension<NeuralThemeData>()!;
     final won = myScore > oppScore;
     final tie = myScore == oppScore;
 
