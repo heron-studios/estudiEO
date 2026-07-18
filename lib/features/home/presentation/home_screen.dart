@@ -19,6 +19,7 @@ import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -634,28 +635,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildTutorTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.psychology_rounded,
-      color: const Color(0xFFC084FC),
-      gradientColors: const [Color(0xFF2D1460), Color(0xFF1A0D3D)],
-      title: 'Tutor IA',
-      subtitle: 'Análisis personal',
-      onTap: () => context.push('/tutor-analitico'),
-    );
-  }
-
-  Widget _buildArenaTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.sports_esports_rounded,
-      color: Colors.orangeAccent,
-      gradientColors: const [Color(0xFF3D1D0F), Color(0xFF1D0E05)],
-      title: 'Arena',
-      subtitle: 'Multijugador',
-      onTap: () => context.push('/arena'),
-    );
-  }
-
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
@@ -669,7 +648,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       },
       hoverGradientBorder: true,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: _todayCompleted
@@ -682,7 +661,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
               color:
@@ -690,7 +669,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ? const Color(0xFF4ADE80)
                           : const Color(0xFF7C3AED))
                       .withValues(alpha: 0.25),
-              blurRadius: 20,
+              blurRadius: 16,
               spreadRadius: 0,
               offset: const Offset(0, 4),
             ),
@@ -700,8 +679,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           children: [
             _todayCompleted
                 ? Container(
-                    width: 48,
-                    height: 48,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
@@ -712,12 +691,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     child: const Icon(
                       Icons.check_circle_rounded,
                       color: Color(0xFF4ADE80),
-                      size: 26,
+                      size: 24,
                     ),
                   )
                 : SizedBox(
-                    width: 58,
-                    height: 58,
+                    width: 48,
+                    height: 48,
                     child: RepaintBoundary(
                       child: Transform.scale(
                         scale: 1.4,
@@ -734,7 +713,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-            const SizedBox(width: 14),
+            const SizedBox(width: 12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -828,22 +807,47 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    final auth = context.watch<AuthService>();
     final bool isLargeScreen = MediaQuery.of(context).size.width >= 800;
 
-    // Greeting dinámica
-    String userName = auth.currentUser?.displayName?.split(' ').first ?? '';
-    if (userName.isNotEmpty) userName = ', $userName';
-
-    final hour = DateTime.now().hour;
-    final greeting = hour < 12
-        ? '¡Buenos días$userName! ☀️'
-        : hour < 18
-        ? '¡Buenas tardes$userName! 👋'
-        : '¡Buenas noches$userName! 🌙';
+    // Greeting removido para mayor espacio en web móvil
 
     return Scaffold(
       backgroundColor: Colors.transparent,
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: ExpandableFab(
+        distance: 60.0,
+        type: ExpandableFabType.up,
+        overlayStyle: const ExpandableFabOverlayStyle(blur: 2),
+        openButtonBuilder: RotateFloatingActionButtonBuilder(
+          child: const Icon(Icons.apps_rounded),
+          fabSize: ExpandableFabSize.regular,
+          backgroundColor: const Color(0xFFEF4444),
+          foregroundColor: Colors.white,
+        ),
+        closeButtonBuilder: DefaultFloatingActionButtonBuilder(
+          child: const Icon(Icons.close),
+          fabSize: ExpandableFabSize.regular,
+          backgroundColor: const Color(0xFFEF4444),
+          foregroundColor: Colors.white,
+        ),
+        children: [
+          FloatingActionButton.small(
+            heroTag: null,
+            backgroundColor: Colors.orangeAccent,
+            child: const Icon(
+              Icons.sports_esports_rounded,
+              color: Colors.white,
+            ),
+            onPressed: () => context.push('/arena'),
+          ),
+          FloatingActionButton.small(
+            heroTag: null,
+            backgroundColor: const Color(0xFFC084FC),
+            child: const Icon(Icons.psychology_rounded, color: Colors.white),
+            onPressed: () => context.push('/tutor-analitico'),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -984,27 +988,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             ],
                           ],
                         ),
-                        if (!isLargeScreen) ...[
-                          const SizedBox(height: 2),
-                          Text(
-                            greeting,
-                            style: const TextStyle(
-                              color: Colors.white54,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
                       ],
                     ),
                   ),
                   // Derecha: Gamificación, Hoja de Ruta y Ajustes
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Consumer<GamificationProvider>(
-                        builder: (context, gami, child) {
-                          return Row(
+                  Consumer<GamificationProvider>(
+                    builder: (context, gami, child) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               // Trophy (Leaderboard)
@@ -1066,89 +1060,92 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 ),
                               ),
                               const SizedBox(width: 8),
-                              // Nivel
+                              // Hoja de Ruta (?)
                               Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 6,
-                                ),
                                 decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFF7C3AED,
-                                  ).withValues(alpha: 0.15),
+                                  color: Colors.white.withValues(alpha: 0.08),
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: const Color(
-                                      0xFF7C3AED,
-                                    ).withValues(alpha: 0.3),
+                                    color: Colors.white.withValues(alpha: 0.12),
                                   ),
                                 ),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.star_rounded,
-                                      color: Color(0xFFC084FC),
-                                      size: 16,
-                                    ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      'Nvl ${gami.level}',
-                                      style: const TextStyle(
-                                        color: Color(0xFFC084FC),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
+                                child: IconButton(
+                                  onPressed: () => context.push('/roadmap'),
+                                  icon: const Icon(
+                                    Icons.help_outline_rounded,
+                                    color: Colors.white,
+                                    size: 22,
+                                  ),
+                                  tooltip: 'Hoja de Ruta',
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(),
                                 ),
                               ),
-                              const SizedBox(width: 12),
+                              const SizedBox(width: 8),
+                              // Ajustes (⚙️)
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.08),
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                    color: Colors.white.withValues(alpha: 0.12),
+                                  ),
+                                ),
+                                child: IconButton(
+                                  onPressed: () => context.push('/settings'),
+                                  icon: const Icon(
+                                    Icons.settings_rounded,
+                                    color: Colors.white,
+                                    size: 22,
+                                  ),
+                                  tooltip: 'Ajustes',
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(),
+                                ),
+                              ),
                             ],
-                          );
-                        },
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.08),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.12),
                           ),
-                        ),
-                        child: IconButton(
-                          onPressed: () => context.push('/roadmap'),
-                          icon: const Icon(
-                            Icons.help_outline_rounded,
-                            color: Colors.white,
-                            size: 22,
+                          const SizedBox(height: 6),
+                          // Nivel
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 6,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFF7C3AED,
+                              ).withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: const Color(
+                                  0xFF7C3AED,
+                                ).withValues(alpha: 0.3),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  Icons.star_rounded,
+                                  color: Color(0xFFC084FC),
+                                  size: 16,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  'Nvl ${gami.level}',
+                                  style: const TextStyle(
+                                    color: Color(0xFFC084FC),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          tooltip: 'Hoja de Ruta',
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(),
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.08),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.12),
-                          ),
-                        ),
-                        child: IconButton(
-                          onPressed: () => context.push('/settings'),
-                          icon: const Icon(
-                            Icons.settings_rounded,
-                            color: Colors.white,
-                            size: 22,
-                          ),
-                          tooltip: 'Ajustes',
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(),
-                        ),
-                      ),
-                    ],
+                        ],
+                      );
+                    },
                   ),
                 ],
               ),
@@ -1294,20 +1291,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(width: 16),
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 1.25,
-                                        child: _buildTutorTile(context, nt),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 16),
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 1.25,
-                                        child: _buildArenaTile(context, nt),
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ],
@@ -1320,23 +1303,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   _buildDailyMissionCard(context, nt),
-                                  const SizedBox(height: 16),
+                                  const SizedBox(height: 12),
                                   // Fila 1: Estudiar + Tarjetas
                                   Row(
                                     children: [
                                       Expanded(
                                         child: AspectRatio(
-                                          aspectRatio: 1.15,
+                                          aspectRatio: 1.45,
                                           child: _buildEstudiarTile(
                                             context,
                                             nt,
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 12),
+                                      const SizedBox(width: 10),
                                       Expanded(
                                         child: AspectRatio(
-                                          aspectRatio: 1.15,
+                                          aspectRatio: 1.45,
                                           child: _buildTarjetasTile(
                                             context,
                                             nt,
@@ -1345,23 +1328,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 12),
+                                  const SizedBox(height: 10),
                                   // Fila 2: Aprendizaje + Simulacro
                                   Row(
                                     children: [
                                       Expanded(
                                         child: AspectRatio(
-                                          aspectRatio: 1.15,
+                                          aspectRatio: 1.45,
                                           child: _buildAprendizajeTile(
                                             context,
                                             nt,
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 12),
+                                      const SizedBox(width: 10),
                                       Expanded(
                                         child: AspectRatio(
-                                          aspectRatio: 1.15,
+                                          aspectRatio: 1.45,
                                           child: _buildSimulacroCard(
                                             context,
                                             nt,
@@ -1371,26 +1354,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 12),
-                                  // Fila 3: Tutor IA + Arena
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 1.15,
-                                          child: _buildTutorTile(context, nt),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 1.15,
-                                          child: _buildArenaTile(context, nt),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 24),
+                                  const SizedBox(height: 16),
                                 ],
                               ),
                             );
