@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
@@ -839,40 +840,56 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             if (!isLargeScreen) ...[
               FloatingActionButton.small(
                 heroTag: null,
+                tooltip: 'Ayuda y preguntas frecuentes',
                 backgroundColor: nt.surfaceElevated,
                 foregroundColor: nt.textMuted,
                 shape: const CircleBorder(),
                 elevation: 4,
                 child: const Icon(Icons.help_outline_rounded),
-                onPressed: () => context.push('/roadmap'),
+                onPressed: () {
+                  HapticFeedback.selectionClick();
+                  context.push('/roadmap');
+                },
               ),
               FloatingActionButton.small(
                 heroTag: null,
+                tooltip: 'Configuración de la cuenta',
                 backgroundColor: nt.surfaceElevated,
                 foregroundColor: nt.textMuted,
                 shape: const CircleBorder(),
                 elevation: 4,
                 child: const Icon(Icons.settings_rounded),
-                onPressed: () => context.push('/settings'),
+                onPressed: () {
+                  HapticFeedback.selectionClick();
+                  context.push('/settings');
+                },
               ),
             ],
             FloatingActionButton.small(
               heroTag: null,
+              tooltip: 'Arena de entrenamiento',
               backgroundColor: nt.surfaceElevated,
               foregroundColor: nt.warningAmber,
               shape: const CircleBorder(),
               elevation: 4,
               child: const Icon(Icons.sports_esports_rounded),
-              onPressed: () => context.push('/arena'),
+              onPressed: () {
+                HapticFeedback.selectionClick();
+                context.push('/arena');
+              },
             ),
             FloatingActionButton.small(
               heroTag: null,
+              tooltip: 'Tutor Analítico',
               backgroundColor: nt.surfaceElevated,
               foregroundColor: nt.purple,
               shape: const CircleBorder(),
               elevation: 4,
               child: const Icon(Icons.psychology_rounded),
-              onPressed: () => context.push('/tutor-analitico'),
+              onPressed: () {
+                HapticFeedback.selectionClick();
+                context.push('/tutor-analitico');
+              },
             ),
           ],
         ),
