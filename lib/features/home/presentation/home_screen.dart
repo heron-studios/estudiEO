@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -32,6 +33,68 @@ import 'package:learn/core/widgets/animated_grid_bg.dart';
 //  • Consejo psicométrico debajo del botón de misión diaria.
 //  • PsicoLearnBanner eliminado; fallidos van a Repasar (SRS) integrado.
 // ─────────────────────────────────────────────────────────────────────────────
+class _PremiumFabButton extends StatelessWidget {
+  final IconData icon;
+  final String tooltip;
+  final Color glowColor;
+  final VoidCallback onPressed;
+
+  const _PremiumFabButton({
+    required this.icon,
+    required this.tooltip,
+    required this.glowColor,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      label: tooltip,
+      child: Tooltip(
+        message: tooltip,
+        child: GestureDetector(
+          onTap: () {
+            HapticFeedback.selectionClick();
+            onPressed();
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(28),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              child: Container(
+                width: 56,
+                height: 56,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: const Color(0xFF0F172A).withValues(alpha: 0.6),
+                  border: Border.all(
+                    color: glowColor.withValues(alpha: 0.5),
+                    width: 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: glowColor.withValues(alpha: 0.3),
+                      blurRadius: 15,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Icon(
+                    icon,
+                    color: glowColor,
+                    size: 26,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -823,73 +886,55 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           type: ExpandableFabType.fan,
           fanAngle: 90, // Set to 90 degrees to ensure a perfect quarter-circle and avoid right-edge clipping
           openButtonBuilder: RotateFloatingActionButtonBuilder(
-            child: const Icon(Icons.apps_rounded, size: 28),
+            child: const Icon(Icons.explore_rounded, size: 28),
             fabSize: ExpandableFabSize.regular,
-            backgroundColor: nt.surfaceElevated,
-            foregroundColor: nt.cyan,
-            shape: const CircleBorder(),
+            backgroundColor: const Color(0xFF1E293B),
+            foregroundColor: const Color(0xFF60A5FA),
+            shape: CircleBorder(
+              side: BorderSide(
+                color: const Color(0xFF60A5FA).withValues(alpha: 0.3),
+                width: 1.5,
+              ),
+            ),
           ),
           closeButtonBuilder: DefaultFloatingActionButtonBuilder(
             child: const Icon(Icons.close_rounded, size: 28),
             fabSize: ExpandableFabSize.regular,
-            backgroundColor: nt.surfaceCard,
-            foregroundColor: nt.textPrimaryAlt,
-            shape: const CircleBorder(),
+            backgroundColor: const Color(0xFF0F172A),
+            foregroundColor: const Color(0xFFF43F5E),
+            shape: CircleBorder(
+              side: BorderSide(
+                color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
+                width: 1.5,
+              ),
+            ),
           ),
           children: [
             if (!isLargeScreen) ...[
-              FloatingActionButton.small(
-                heroTag: null,
-                tooltip: 'Ayuda y preguntas frecuentes',
-                backgroundColor: nt.surfaceElevated,
-                foregroundColor: nt.textMuted,
-                shape: const CircleBorder(),
-                elevation: 4,
-                child: const Icon(Icons.help_outline_rounded),
-                onPressed: () {
-                  HapticFeedback.selectionClick();
-                  context.push('/roadmap');
-                },
+              _PremiumFabButton(
+                tooltip: 'Ayuda',
+                icon: Icons.help_outline_rounded,
+                glowColor: Colors.white,
+                onPressed: () => context.push('/roadmap'),
               ),
-              FloatingActionButton.small(
-                heroTag: null,
-                tooltip: 'Configuración de la cuenta',
-                backgroundColor: nt.surfaceElevated,
-                foregroundColor: nt.textMuted,
-                shape: const CircleBorder(),
-                elevation: 4,
-                child: const Icon(Icons.settings_rounded),
-                onPressed: () {
-                  HapticFeedback.selectionClick();
-                  context.push('/settings');
-                },
+              _PremiumFabButton(
+                tooltip: 'Configuración',
+                icon: Icons.settings_rounded,
+                glowColor: const Color(0xFF94A3B8),
+                onPressed: () => context.push('/settings'),
               ),
             ],
-            FloatingActionButton.small(
-              heroTag: null,
-              tooltip: 'Arena de entrenamiento',
-              backgroundColor: nt.surfaceElevated,
-              foregroundColor: nt.warningAmber,
-              shape: const CircleBorder(),
-              elevation: 4,
-              child: const Icon(Icons.sports_esports_rounded),
-              onPressed: () {
-                HapticFeedback.selectionClick();
-                context.push('/arena');
-              },
+            _PremiumFabButton(
+              tooltip: 'Arena',
+              icon: Icons.sports_esports_rounded,
+              glowColor: const Color(0xFFF59E0B),
+              onPressed: () => context.push('/arena'),
             ),
-            FloatingActionButton.small(
-              heroTag: null,
-              tooltip: 'Tutor Analítico',
-              backgroundColor: nt.surfaceElevated,
-              foregroundColor: nt.purple,
-              shape: const CircleBorder(),
-              elevation: 4,
-              child: const Icon(Icons.psychology_rounded),
-              onPressed: () {
-                HapticFeedback.selectionClick();
-                context.push('/tutor-analitico');
-              },
+            _PremiumFabButton(
+              tooltip: 'Tutor',
+              icon: Icons.psychology_rounded,
+              glowColor: const Color(0xFFC084FC),
+              onPressed: () => context.push('/tutor-analitico'),
             ),
           ],
         ),
