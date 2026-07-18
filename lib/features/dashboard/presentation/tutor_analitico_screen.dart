@@ -480,7 +480,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.only(left: 12),
                       child: Text(
-                        total == 0 ? '' : 'EO PNP ($eo)',
+                        'EO PNP ($eo)',
                         style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -498,7 +498,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                       alignment: Alignment.centerRight,
                       padding: const EdgeInsets.only(right: 12),
                       child: Text(
-                        total == 0 ? '' : 'EETSPN ($eets)',
+                        'EETSPN ($eets)',
                         style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
