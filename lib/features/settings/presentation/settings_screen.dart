@@ -11,7 +11,6 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/config/app_config.dart';
-import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:learn/core/services/audio_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -908,8 +907,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       await storage.saveUserName(nameController.text.trim());
                       await storage.saveTargetSchool(selectedSchool);
                       
-                      final leaderboard = LeaderboardService();
-                      await leaderboard.registerApplicant(selectedSchool);
+                      // El leaderboard ahora es por ranking y se sincroniza en HomeScreen
                       
                       if (context.mounted) {
                         Navigator.pop(context);

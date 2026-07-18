@@ -4,47 +4,48 @@ import 'package:flutter/foundation.dart';
 class LeaderboardService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   
-  static const String _collection = 'app_stats';
-  static const String _document = 'leaderboard';
+  // No longer using app_stats/leaderboard global document
 
-  /// Incrementa el contador global de postulantes para la escuela dada.
-  Future<void> registerApplicant(String school) async {
+  /// Sincroniza el puntaje (XP) de un usuario en la colección de su escuela.
+  Future<void> syncUserScore({
+    required String uid,
+    required String name,
+    required String school,
+    required int xp,
+  }) async {
     try {
-      final docRef = _firestore.collection(_collection).doc(_document);
+      if (uid.isEmpty || name.isEmpty || school.isEmpty) return;
+
+      final collectionName = school == 'EO PNP' ? 'leaderboard_eo_pnp' : 'leaderboard_eetspn';
       
-      final schoolKey = school == 'EO PNP' ? 'eo_pnp' : 'eetspn';
-
-      await _firestore.runTransaction((transaction) async {
-        final snapshot = await transaction.get(docRef);
-
-        if (!snapshot.exists) {
-          transaction.set(docRef, {
-            'eo_pnp': schoolKey == 'eo_pnp' ? 1 : 0,
-            'eetspn': schoolKey == 'eetspn' ? 1 : 0,
-          });
-        } else {
-          final currentCount = (snapshot.data()?[schoolKey] as int?) ?? 0;
-          transaction.update(docRef, {
-            schoolKey: currentCount + 1,
-          });
-        }
-      });
+      await _firestore.collection(collectionName).doc(uid).set({
+        'name': name,
+        'xp': xp,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
     } catch (e) {
-      debugPrint('Error registering applicant in leaderboard: $e');
+      debugPrint('Error syncing user score: $e');
     }
   }
 
-  /// Escucha en tiempo real la cantidad de postulantes de cada escuela.
-  Stream<Map<String, int>> getLeaderboardStream() {
-    return _firestore.collection(_collection).doc(_document).snapshots().map((snapshot) {
-      if (!snapshot.exists || snapshot.data() == null) {
-        return {'eo_pnp': 0, 'eetspn': 0};
-      }
-      final data = snapshot.data()!;
-      return {
-        'eo_pnp': (data['eo_pnp'] as int?) ?? 0,
-        'eetspn': (data['eetspn'] as int?) ?? 0,
-      };
+  /// Obtiene los mejores estudiantes de una escuela ordenados por XP.
+  Stream<List<Map<String, dynamic>>> getTopRankings(String school, {int limit = 20}) {
+    final collectionName = school == 'EO PNP' ? 'leaderboard_eo_pnp' : 'leaderboard_eetspn';
+    
+    return _firestore
+        .collection(collectionName)
+        .orderBy('xp', descending: true)
+        .limit(limit)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) {
+        final data = doc.data();
+        return {
+          'uid': doc.id,
+          'name': data['name'] ?? 'Aspirante',
+          'xp': (data['xp'] as num?)?.toInt() ?? 0,
+        };
+      }).toList();
     });
   }
 }

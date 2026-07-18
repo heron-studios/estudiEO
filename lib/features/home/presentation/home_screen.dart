@@ -18,6 +18,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HomeScreen — Pantalla principal del dashboard neural
@@ -74,7 +75,29 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _loadDailyVerse();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _checkPremiumStatus();
+      _syncLeaderboard();
     });
+  }
+
+  Future<void> _syncLeaderboard() async {
+    final auth = context.read<AuthService>();
+    final user = auth.currentUser;
+    if (user == null) return;
+    
+    final storage = context.read<LocalStorageService>();
+    final name = storage.loadUserName();
+    final school = storage.loadTargetSchool();
+    
+    final gami = context.read<GamificationProvider>();
+    final xp = gami.xp;
+    
+    final leaderboard = LeaderboardService();
+    await leaderboard.syncUserScore(
+      uid: user.uid,
+      name: name,
+      school: school,
+      xp: xp,
+    );
   }
 
   void _checkPremiumStatus() {
@@ -767,6 +790,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ),
                         ),
                       ],
+                      const Spacer(),
+                      GestureDetector(
+                        onTap: () => _showLeaderboardDialog(context, nt),
+                        child: Container(
+                          padding: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.amber.withValues(alpha: 0.5)),
+                          ),
+                          child: const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 18),
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -1316,7 +1352,176 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       ),
     );
   }
+
+  void _showLeaderboardDialog(BuildContext context, NeuralThemeData nt) {
+    final storage = context.read<LocalStorageService>();
+    final userSchool = storage.loadTargetSchool();
+    
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.75,
+            decoration: BoxDecoration(
+              color: nt.surfaceCard,
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.5),
+                  blurRadius: 30,
+                )
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24),
+              child: DefaultTabController(
+                length: 2,
+                initialIndex: userSchool == 'EETSPN' ? 1 : 0,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 24, bottom: 8),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            nt.blueGoogle.withValues(alpha: 0.2),
+                            Colors.transparent,
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 40),
+                          const SizedBox(height: 8),
+                          const Text(
+                            'Ranking Global',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Outfit',
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          TabBar(
+                            indicatorColor: nt.blueGoogle,
+                            labelColor: Colors.white,
+                            unselectedLabelColor: nt.textSecondary,
+                            tabs: const [
+                              Tab(text: 'EO PNP'),
+                              Tab(text: 'EETSPN'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          _buildLeaderboardList(nt, 'EO PNP'),
+                          _buildLeaderboardList(nt, 'EETSPN'),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('Cerrar', style: TextStyle(color: nt.textSecondary)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      }
+    );
+  }
+
+  Widget _buildLeaderboardList(NeuralThemeData nt, String school) {
+    return StreamBuilder<List<Map<String, dynamic>>>(
+      stream: LeaderboardService().getTopRankings(school),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError || !snapshot.hasData || snapshot.data!.isEmpty) {
+          return Center(
+            child: Text(
+              'Aún no hay datos para $school',
+              style: TextStyle(color: nt.textSecondary),
+            ),
+          );
+        }
+
+        final users = snapshot.data!;
+        return ListView.builder(
+          padding: const EdgeInsets.all(16),
+          itemCount: users.length,
+          itemBuilder: (context, index) {
+            final user = users[index];
+            final rank = index + 1;
+            
+            Color rankColor;
+            if (rank == 1) rankColor = const Color(0xFFFFD700);
+            else if (rank == 2) rankColor = const Color(0xFFC0C0C0);
+            else if (rank == 3) rankColor = const Color(0xFFCD7F32);
+            else rankColor = nt.textSecondary;
+
+            return Container(
+              margin: const EdgeInsets.only(bottom: 8),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: rank <= 3 ? 0.05 : 0.02),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: rank <= 3 
+                      ? rankColor.withValues(alpha: 0.3) 
+                      : Colors.white.withValues(alpha: 0.05),
+                ),
+              ),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: rankColor.withValues(alpha: 0.2),
+                  child: Text(
+                    '$rank',
+                    style: TextStyle(
+                      color: rankColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                title: Text(
+                  user['name'] ?? 'Aspirante',
+                  style: TextStyle(
+                    color: rank <= 3 ? Colors.white : nt.textPrimary,
+                    fontWeight: rank <= 3 ? FontWeight.bold : FontWeight.normal,
+                  ),
+                ),
+                trailing: Text(
+                  '${user['xp']} XP',
+                  style: TextStyle(
+                    color: nt.blueGoogle,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 }
+
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  _GlassTile — tile cuadrado del grid con gradiente por color

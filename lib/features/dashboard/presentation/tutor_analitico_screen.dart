@@ -7,7 +7,6 @@ import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
-import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:learn/features/dashboard/domain/study_stats_collector.dart';
 import 'package:learn/screens/entrevista_simulator/puter_service.dart';
 import 'package:learn/core/services/local_storage_service.dart';
@@ -210,10 +209,8 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                       children: [
                         const SizedBox(height: 12),
                         _buildAriaHeader(),
-                        const SizedBox(height: 24),
-                        _buildProfileCard(nt),
-                        const SizedBox(height: 24),
-                        _buildLeaderboardBar(nt),
+                        const SizedBox(height: 16),
+                        Center(child: _buildProfileCard(nt)),
                         const SizedBox(height: 24),
                         if (_isLoading) _buildLoadingCard(nt),
                         if (_hasError) _buildErrorCard(nt),
@@ -390,145 +387,28 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
 
   Widget _buildProfileCard(NeuralThemeData nt) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: nt.surfaceCard.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          CircleAvatar(
-            radius: 24,
-            backgroundColor: nt.blueGoogle.withValues(alpha: 0.2),
-            child: Icon(Icons.person, color: nt.blueGoogle, size: 28),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Bienvenido, $_userName',
-                  style: TextStyle(
-                    color: nt.textPrimary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Outfit',
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'Objetivo: $_targetSchool',
-                  style: TextStyle(
-                    color: nt.textSecondary,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
+          Icon(Icons.school, color: nt.blueGoogle, size: 16),
+          const SizedBox(width: 8),
+          Text(
+            '$_userName • $_targetSchool',
+            style: TextStyle(
+              color: nt.textPrimary,
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Outfit',
             ),
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildLeaderboardBar(NeuralThemeData nt) {
-    final leaderboard = LeaderboardService();
-    return StreamBuilder<Map<String, int>>(
-      stream: leaderboard.getLeaderboardStream(),
-      builder: (context, snapshot) {
-        int eo = 0;
-        int eets = 0;
-        if (snapshot.hasData) {
-          eo = snapshot.data!['eo_pnp'] ?? 0;
-          eets = snapshot.data!['eetspn'] ?? 0;
-        }
-        final total = eo + eets;
-        final eoFlex = total == 0 ? 1 : eo;
-        final eetsFlex = total == 0 ? 1 : eets;
-
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Leaderboard Global de Aspirantes',
-              style: TextStyle(
-                color: nt.textPrimary,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Outfit',
-              ),
-            ),
-            const SizedBox(height: 12),
-            Container(
-              height: 36,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                color: Colors.black26,
-              ),
-              clipBehavior: Clip.antiAlias,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: eoFlex,
-                    child: Container(
-                      color: nt.blueGoogle,
-                      alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Text(
-                        'EO PNP ($eo)',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: eetsFlex,
-                    child: Container(
-                      color: const Color(0xFF10B981),
-                      alignment: Alignment.centerRight,
-                      padding: const EdgeInsets.only(right: 12),
-                      child: Text(
-                        'EETSPN ($eets)',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Oficiales',
-                  style: TextStyle(color: nt.textSecondary, fontSize: 12),
-                ),
-                Text(
-                  'Suboficiales',
-                  style: TextStyle(color: nt.textSecondary, fontSize: 12),
-                ),
-              ],
-            ),
-          ],
-        );
-      },
     );
   }
 

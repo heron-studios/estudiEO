@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/services/local_storage_service.dart';
-import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -112,8 +111,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       await storage.saveTargetSchool(selectedSchool);
                       storage.saveHasSeenOnboarding(true);
                       
-                      final leaderboard = LeaderboardService();
-                      await leaderboard.registerApplicant(selectedSchool);
+                      // Sincronizado posteriormente en HomeScreen
                       
                       if (context.mounted) {
                         context.go('/home');
