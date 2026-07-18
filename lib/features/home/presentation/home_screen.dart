@@ -814,39 +814,56 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return Scaffold(
       backgroundColor: Colors.transparent,
       floatingActionButtonLocation: ExpandableFab.location,
-      floatingActionButton: ExpandableFab(
-        distance: 60.0,
-        type: ExpandableFabType.up,
-        overlayStyle: const ExpandableFabOverlayStyle(blur: 2),
-        openButtonBuilder: RotateFloatingActionButtonBuilder(
-          child: const Icon(Icons.apps_rounded),
-          fabSize: ExpandableFabSize.regular,
-          backgroundColor: const Color(0xFFEF4444),
-          foregroundColor: Colors.white,
-        ),
-        closeButtonBuilder: DefaultFloatingActionButtonBuilder(
-          child: const Icon(Icons.close),
-          fabSize: ExpandableFabSize.regular,
-          backgroundColor: const Color(0xFFEF4444),
-          foregroundColor: Colors.white,
-        ),
-        children: [
-          FloatingActionButton.small(
-            heroTag: null,
-            backgroundColor: Colors.orangeAccent,
-            child: const Icon(
-              Icons.sports_esports_rounded,
-              color: Colors.white,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 24.0, right: 8.0),
+        child: ExpandableFab(
+          distance: 60.0,
+          type: ExpandableFabType.up,
+          // overlayStyle con blur removido para optimizar rendimiento en web móvil
+          openButtonBuilder: RotateFloatingActionButtonBuilder(
+            child: const Icon(Icons.apps_rounded),
+            fabSize: ExpandableFabSize.regular,
+            backgroundColor: const Color(0xFFEF4444),
+            foregroundColor: Colors.white,
+          ),
+          closeButtonBuilder: DefaultFloatingActionButtonBuilder(
+            child: const Icon(Icons.close),
+            fabSize: ExpandableFabSize.regular,
+            backgroundColor: const Color(0xFFEF4444),
+            foregroundColor: Colors.white,
+          ),
+          children: [
+            if (!isLargeScreen) ...[
+              FloatingActionButton.small(
+                heroTag: null,
+                backgroundColor: const Color(0xFF1E293B),
+                child: const Icon(Icons.help_outline_rounded, color: Colors.white),
+                onPressed: () => context.push('/roadmap'),
+              ),
+              FloatingActionButton.small(
+                heroTag: null,
+                backgroundColor: const Color(0xFF1E293B),
+                child: const Icon(Icons.settings_rounded, color: Colors.white),
+                onPressed: () => context.push('/settings'),
+              ),
+            ],
+            FloatingActionButton.small(
+              heroTag: null,
+              backgroundColor: Colors.orangeAccent,
+              child: const Icon(
+                Icons.sports_esports_rounded,
+                color: Colors.white,
+              ),
+              onPressed: () => context.push('/arena'),
             ),
-            onPressed: () => context.push('/arena'),
-          ),
-          FloatingActionButton.small(
-            heroTag: null,
-            backgroundColor: const Color(0xFFC084FC),
-            child: const Icon(Icons.psychology_rounded, color: Colors.white),
-            onPressed: () => context.push('/tutor-analitico'),
-          ),
-        ],
+            FloatingActionButton.small(
+              heroTag: null,
+              backgroundColor: const Color(0xFFC084FC),
+              child: const Icon(Icons.psychology_rounded, color: Colors.white),
+              onPressed: () => context.push('/tutor-analitico'),
+            ),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -1059,50 +1076,52 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   ],
                                 ),
                               ),
-                              const SizedBox(width: 8),
-                              // Hoja de Ruta (?)
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.08),
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: Colors.white.withValues(alpha: 0.12),
+                              if (isLargeScreen) ...[
+                                const SizedBox(width: 8),
+                                // Hoja de Ruta (?)
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.08),
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                      color: Colors.white.withValues(alpha: 0.12),
+                                    ),
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () => context.push('/roadmap'),
+                                    icon: const Icon(
+                                      Icons.help_outline_rounded,
+                                      color: Colors.white,
+                                      size: 22,
+                                    ),
+                                    tooltip: 'Hoja de Ruta',
+                                    padding: const EdgeInsets.all(8),
+                                    constraints: const BoxConstraints(),
                                   ),
                                 ),
-                                child: IconButton(
-                                  onPressed: () => context.push('/roadmap'),
-                                  icon: const Icon(
-                                    Icons.help_outline_rounded,
-                                    color: Colors.white,
-                                    size: 22,
+                                const SizedBox(width: 8),
+                                // Ajustes (⚙️)
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.08),
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                      color: Colors.white.withValues(alpha: 0.12),
+                                    ),
                                   ),
-                                  tooltip: 'Hoja de Ruta',
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(),
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              // Ajustes (⚙️)
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withValues(alpha: 0.08),
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: Colors.white.withValues(alpha: 0.12),
+                                  child: IconButton(
+                                    onPressed: () => context.push('/settings'),
+                                    icon: const Icon(
+                                      Icons.settings_rounded,
+                                      color: Colors.white,
+                                      size: 22,
+                                    ),
+                                    tooltip: 'Ajustes',
+                                    padding: const EdgeInsets.all(8),
+                                    constraints: const BoxConstraints(),
                                   ),
                                 ),
-                                child: IconButton(
-                                  onPressed: () => context.push('/settings'),
-                                  icon: const Icon(
-                                    Icons.settings_rounded,
-                                    color: Colors.white,
-                                    size: 22,
-                                  ),
-                                  tooltip: 'Ajustes',
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(),
-                                ),
-                              ),
+                              ],
                             ],
                           ),
                           const SizedBox(height: 6),
