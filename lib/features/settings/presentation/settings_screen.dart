@@ -10,8 +10,9 @@ import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/config/neural_design_system.dart';
-import 'package:learn/core/services/audio_service.dart';
 import 'package:learn/core/config/app_config.dart';
+import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
+import 'package:learn/core/services/audio_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -289,6 +290,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
+              // Section: Perfil
+              Text(
+                'PERFIL DEL ASPIRANTE',
+                style: TextStyle(
+                  color: _muted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: _cardBg.withValues(alpha: 0.6),
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    child: ListTile(
+                      leading: const Icon(Icons.person, color: _blue),
+                      title: const Text('Editar Perfil y Escuela', style: TextStyle(color: _text)),
+                      subtitle: const Text('Actualiza tu nombre y escuela objetivo', style: TextStyle(color: _muted, fontSize: 12)),
+                      trailing: const Icon(Icons.chevron_right, color: _muted),
+                      onTap: _showEditProfileDialog,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+
               // Section: Asignaturas
               Text(
                 'VISIBILIDAD DE ASIGNATURAS',
@@ -798,6 +835,101 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showEditProfileDialog() {
+    final storage = context.read<LocalStorageService>();
+    final nameController = TextEditingController(text: storage.loadUserName());
+    String selectedSchool = storage.loadTargetSchool();
+    bool isLoading = false;
+
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              backgroundColor: _cardBg,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              title: const Text('Editar Perfil', style: TextStyle(color: _text, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Tu nombre o alias', style: TextStyle(color: _muted, fontSize: 14)),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: nameController,
+                    style: const TextStyle(color: _text),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black26,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text('Escuela a la que postulas', style: TextStyle(color: _muted, fontSize: 14)),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<String>(
+                    initialValue: selectedSchool,
+                    dropdownColor: _cardBg,
+                    style: const TextStyle(color: _text),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black26,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                    ),
+                    items: const [
+                      DropdownMenuItem<String>(value: 'EO PNP', child: Text('EO PNP')),
+                      DropdownMenuItem<String>(value: 'EETSPN', child: Text('EETSPN')),
+                    ],
+                    onChanged: (newValue) {
+                      setState(() {
+                        selectedSchool = newValue!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              actions: [
+                if (isLoading)
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CircularProgressIndicator(),
+                  )
+                else
+                  ElevatedButton(
+                    onPressed: () async {
+                      if (nameController.text.trim().isEmpty) return;
+                      setState(() => isLoading = true);
+                      
+                      await storage.saveUserName(nameController.text.trim());
+                      await storage.saveTargetSchool(selectedSchool);
+                      
+                      final leaderboard = LeaderboardService();
+                      await leaderboard.registerApplicant(selectedSchool);
+                      
+                      if (context.mounted) {
+                        Navigator.pop(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Perfil actualizado')),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: _blue,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: const Text('Guardar', style: TextStyle(fontWeight: FontWeight.bold)),
+                  ),
+              ],
+            );
+          },
+        );
+      }
     );
   }
 }
