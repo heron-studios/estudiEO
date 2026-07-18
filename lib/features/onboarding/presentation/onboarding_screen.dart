@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -35,9 +36,106 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   ];
 
+  void _showRegistrationDialog() {
+    final nameController = TextEditingController();
+    String selectedSchool = 'EO PNP';
+    bool isLoading = false;
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            final nt = NeuralTheme.of(context);
+            return AlertDialog(
+              backgroundColor: nt.surfaceCard,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              title: Text('Último Paso', style: TextStyle(color: nt.textPrimary, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('¿Cuál es tu nombre o alias?', style: TextStyle(color: nt.textSecondary, fontSize: 14)),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: nameController,
+                    style: TextStyle(color: nt.textPrimary),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black26,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                      hintText: 'Ej. aspirante007',
+                      hintStyle: TextStyle(color: nt.textSecondary.withValues(alpha: 0.5)),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text('¿A qué escuela postulas?', style: TextStyle(color: nt.textSecondary, fontSize: 14)),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<String>(
+                    initialValue: selectedSchool,
+                    dropdownColor: nt.surfaceCard,
+                    style: TextStyle(color: nt.textPrimary),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.black26,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                    ),
+                    items: ['EO PNP', 'EETSPN'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        selectedSchool = newValue!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              actions: [
+                if (isLoading)
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CircularProgressIndicator(),
+                  )
+                else
+                  ElevatedButton(
+                    onPressed: () async {
+                      if (nameController.text.trim().isEmpty) return;
+                      setState(() => isLoading = true);
+                      
+                      final storage = context.read<LocalStorageService>();
+                      await storage.saveUserName(nameController.text.trim());
+                      await storage.saveTargetSchool(selectedSchool);
+                      storage.saveHasSeenOnboarding(true);
+                      
+                      final leaderboard = LeaderboardService();
+                      await leaderboard.registerApplicant(selectedSchool);
+                      
+                      if (context.mounted) {
+                        context.go('/home');
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: nt.blueGoogle,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: const Text('Comenzar Misión', style: TextStyle(fontWeight: FontWeight.bold)),
+                  ),
+              ],
+            );
+          },
+        );
+      }
+    );
+  }
+
   void _finishOnboarding() {
-    context.read<LocalStorageService>().saveHasSeenOnboarding(true);
-    context.go('/home');
+    _showRegistrationDialog();
   }
 
   @override

@@ -30,6 +30,8 @@ class LocalStorageService {
   static const String customTopicsKey = 'custom_topics';
   static const String tutorAiCacheTextKey = 'tutor_ai_cache_text';
   static const String tutorAiCacheTimeKey = 'tutor_ai_cache_time';
+  static const String targetSchoolKey = 'target_school';
+  static const String userNameKey = 'user_name';
 
   final Box _storage = Hive.box('estudieo_data');
   Map<String, SrsCard>? _srsCache;
@@ -44,6 +46,24 @@ class LocalStorageService {
     } catch (e) {
       debugPrint('LocalStorageService init: $e');
     }
+  }
+
+  // ─── Profile Data ───────────────────────────────────────
+
+  Future<void> saveTargetSchool(String school) async {
+    await _storage.put(targetSchoolKey, school);
+  }
+
+  String loadTargetSchool() {
+    return _storage.get(targetSchoolKey) as String? ?? 'EO PNP';
+  }
+
+  Future<void> saveUserName(String name) async {
+    await _storage.put(userNameKey, name);
+  }
+
+  String loadUserName() {
+    return _storage.get(userNameKey) as String? ?? 'Aspirante';
   }
 
   // ─── SRS Data ───────────────────────────────────────

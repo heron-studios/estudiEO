@@ -11,7 +11,6 @@ import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/audio_service.dart';
-import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/config/app_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,23 +29,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   static const _blue = NeuralDesignSystem.blueGoogle;
 
   late List<String> _hiddenSubjects;
-  String? _dailyVerse;
-
   @override
   void initState() {
     super.initState();
     final storage = context.read<LocalStorageService>();
     _hiddenSubjects = storage.loadHiddenSubjects();
-    _loadDailyVerse();
-  }
-
-  Future<void> _loadDailyVerse() async {
-    final verse = await BibleService.getDailyVerse();
-    if (mounted) {
-      setState(() {
-        _dailyVerse = verse;
-      });
-    }
   }
 
   Future<void> _launchWhatsApp() async {
@@ -302,46 +289,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
-              if (_dailyVerse != null) ...[
-                Text(
-                  'VERSÍCULO DEL DÍA',
-                  style: TextStyle(
-                    color: _muted.withValues(alpha: 0.7),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Outfit',
-                  ),
-                ),
-                const SizedBox(height: 12),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: _cardBg.withValues(alpha: 0.6),
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
-                      child: Text(
-                        _dailyVerse!,
-                        style: const TextStyle(
-                          color: _text,
-                          fontSize: 14,
-                          fontStyle: FontStyle.italic,
-                          fontFamily: 'Inter',
-                          height: 1.45,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-              ],
               // Section: Asignaturas
               Text(
                 'VISIBILIDAD DE ASIGNATURAS',

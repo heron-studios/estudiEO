@@ -7,6 +7,7 @@ import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
+import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
 import 'package:learn/features/dashboard/domain/study_stats_collector.dart';
 import 'package:learn/screens/entrevista_simulator/puter_service.dart';
 import 'package:learn/core/services/local_storage_service.dart';
@@ -33,6 +34,9 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
   Map<String, dynamic> _visualStats = {};
   Timer? _typingTimer;
   String? _worstSubjectId;
+  
+  String _userName = 'Aspirante';
+  String _targetSchool = 'EO PNP';
 
   @override
   void initState() {
@@ -45,10 +49,14 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       vsync: this,
       duration: const Duration(milliseconds: 600),
     );
-    _pulseAnim = Tween<double>(begin: 0.85, end: 1.0).animate(
-      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
+    _fadeAnim = CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOutCubic);
+    _pulseAnim = Tween<double>(begin: 0.95, end: 1.05).animate(
+      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOutSine),
     );
-    _fadeAnim = CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOut);
+
+    final storage = context.read<LocalStorageService>();
+    _userName = storage.loadUserName();
+    _targetSchool = storage.loadTargetSchool();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => _analyze());
   }
@@ -152,7 +160,6 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       backgroundColor: nt.background,
       body: Stack(
         children: [
-          // Background gradient
           Positioned.fill(
             child: DecoratedBox(
               decoration: BoxDecoration(
@@ -167,7 +174,6 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
               ),
             ),
           ),
-          // Orb accent
           Positioned(
             right: -60,
             bottom: 80,
@@ -191,7 +197,6 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
             ),
           ),
 
-          // Main content
           SafeArea(
             child: Column(
               children: [
@@ -205,6 +210,10 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                       children: [
                         const SizedBox(height: 12),
                         _buildAriaHeader(),
+                        const SizedBox(height: 24),
+                        _buildProfileCard(nt),
+                        const SizedBox(height: 24),
+                        _buildLeaderboardBar(nt),
                         const SizedBox(height: 24),
                         if (_isLoading) _buildLoadingCard(nt),
                         if (_hasError) _buildErrorCard(nt),
@@ -299,7 +308,6 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
   Widget _buildAriaHeader() {
     return Row(
       children: [
-        // Avatar con pulso
         RepaintBoundary(
           child: ScaleTransition(
             scale: _pulseAnim,
@@ -377,6 +385,148 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildProfileCard(NeuralThemeData nt) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: nt.surfaceCard.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 24,
+            backgroundColor: nt.blueGoogle.withValues(alpha: 0.2),
+            child: Icon(Icons.person, color: nt.blueGoogle, size: 28),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Bienvenido, $_userName',
+                  style: TextStyle(
+                    color: nt.textPrimary,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Outfit',
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Objetivo: $_targetSchool',
+                  style: TextStyle(
+                    color: nt.textSecondary,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLeaderboardBar(NeuralThemeData nt) {
+    final leaderboard = LeaderboardService();
+    return StreamBuilder<Map<String, int>>(
+      stream: leaderboard.getLeaderboardStream(),
+      builder: (context, snapshot) {
+        int eo = 0;
+        int eets = 0;
+        if (snapshot.hasData) {
+          eo = snapshot.data!['eo_pnp'] ?? 0;
+          eets = snapshot.data!['eetspn'] ?? 0;
+        }
+        final total = eo + eets;
+        final eoFlex = total == 0 ? 1 : eo;
+        final eetsFlex = total == 0 ? 1 : eets;
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Leaderboard Global de Aspirantes',
+              style: TextStyle(
+                color: nt.textPrimary,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Outfit',
+              ),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              height: 36,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                color: Colors.black26,
+              ),
+              clipBehavior: Clip.antiAlias,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: eoFlex,
+                    child: Container(
+                      color: nt.blueGoogle,
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Text(
+                        total == 0 ? '' : 'EO PNP ($eo)',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: eetsFlex,
+                    child: Container(
+                      color: const Color(0xFF10B981),
+                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Text(
+                        total == 0 ? '' : 'EETSPN ($eets)',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Oficiales',
+                  style: TextStyle(color: nt.textSecondary, fontSize: 12),
+                ),
+                Text(
+                  'Suboficiales',
+                  style: TextStyle(color: nt.textSecondary, fontSize: 12),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 
