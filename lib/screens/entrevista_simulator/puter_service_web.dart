@@ -17,6 +17,19 @@ class PuterServiceWeb implements PuterService {
 
   PuterServiceWeb();
 
+  String _extractContent(dynamic dartified, JSAny? response) {
+    if (dartified is Map) {
+      if (dartified.containsKey('message') && dartified['message'] is Map) {
+        return dartified['message']['content']?.toString() ?? '';
+      }
+      if (dartified.containsKey('text')) {
+        return dartified['text']?.toString() ?? '';
+      }
+      return _jsonStringify(response);
+    }
+    return dartified?.toString() ?? '';
+  }
+
   @override
   Widget? buildBridgeWidget() {
     // En la web usamos JS interop directo, no hay bridge widget
@@ -51,12 +64,8 @@ class PuterServiceWeb implements PuterService {
       final promise = _puterAiChat(fullContext.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
-      String reply;
-      if (dartified is Map || dartified is List) {
-        reply = _jsonStringify(response);
-      } else {
-        reply = dartified?.toString() ?? '';
-      }
+      
+      String reply = _extractContent(dartified, response);
       
       _messages.add({'role': 'assistant', 'content': reply});
       return reply;
@@ -89,10 +98,7 @@ El formato JSON estricto esperado es:
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
-      if (dartified is Map || dartified is List) {
-        return _jsonStringify(response);
-      }
-      return dartified?.toString() ?? '';
+      return _extractContent(dartified, response);
     } catch (e) {
       debugPrint('Error Puter JS Flashcards: $e');
       throw Exception('Error al comunicarse con Puter.js: $e');
@@ -111,18 +117,8 @@ El formato JSON estricto esperado es:
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
-      if (dartified is Map || dartified is List) {
-        // En caso de que devuelva un objeto estructurado en vez del texto plano
-        if (dartified is Map && dartified.containsKey('message') && dartified['message'] is Map) {
-          return dartified['message']['content']?.toString() ?? '';
-        }
-        if (dartified is Map && dartified.containsKey('text')) {
-          return dartified['text']?.toString() ?? '';
-        }
-        // Fallback seguro usando JSON.stringify de JavaScript nativo
-        return _jsonStringify(response);
-      }
-      return dartified?.toString() ?? '';
+      
+      return _extractContent(dartified, response);
     } catch (e) {
       debugPrint('Error Puter JS Tutor: $e');
       throw Exception('Error al comunicarse con Puter.js: $e');
