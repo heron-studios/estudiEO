@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:learn/core/widgets/animated_grid_bg.dart';
 import 'package:learn/core/services/bible_service.dart';
 
 class ProfessionalSplash extends StatelessWidget {
@@ -10,13 +9,13 @@ class ProfessionalSplash extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: RadialGradient(
             center: Alignment.center,
             radius: 1.0,
             colors: [
-              const Color(0xFF1E293B),
-              const Color(0xFF0F172A),
+              Color(0xFF1E293B),
+              Color(0xFF0F172A),
             ],
           ),
         ),
