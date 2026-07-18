@@ -550,8 +550,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
   }
 
   Widget _buildProfileCard(NeuralThemeData nt) {
-    if (_totalMissions == 0 || _lastScores.isEmpty)
+    if (_totalMissions == 0 || _lastScores.isEmpty) {
       return const SizedBox.shrink();
+    }
 
     // Encontrar la dimensión más débil para dar una recomendación útil
     String weakestDim = '';

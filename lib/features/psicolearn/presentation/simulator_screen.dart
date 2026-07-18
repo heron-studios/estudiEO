@@ -72,9 +72,12 @@ class _SimulatorScreenState extends State<SimulatorScreen>
   }
 
   Color _timerColor() {
-    if (_secondsRemaining < 300) return const Color(0xFFEF4444); // rojo < 5 min
-    if (_secondsRemaining < 900)
+    if (_secondsRemaining < 300) {
+      return const Color(0xFFEF4444); // rojo < 5 min
+    }
+    if (_secondsRemaining < 900) {
       return const Color(0xFFF59E0B); // ámbar < 15 min
+    }
     return const Color(0xFF4ADE80); // verde
   }
 

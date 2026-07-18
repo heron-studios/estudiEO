@@ -28,7 +28,7 @@ class ArenaMatch {
 
   factory ArenaMatch.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>?;
-    if (data == null)
+    if (data == null) {
       return ArenaMatch(
         id: doc.id,
         player1Id: '',
@@ -37,6 +37,7 @@ class ArenaMatch {
         createdAt: DateTime.now(),
         questions: [],
       );
+    }
 
     return ArenaMatch(
       id: doc.id,
