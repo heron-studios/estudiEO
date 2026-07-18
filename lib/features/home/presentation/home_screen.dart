@@ -622,6 +622,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
+  Widget _buildArenaTile(BuildContext context, dynamic nt) {
+    return _GlassTile(
+      icon: Icons.sports_esports_rounded,
+      color: Colors.orangeAccent,
+      gradientColors: const [Color(0xFF3D1D0F), Color(0xFF1D0E05)],
+      title: 'Arena',
+      subtitle: 'Multijugador',
+      onTap: () => context.push('/arena'),
+    );
+  }
+
 
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
@@ -1198,6 +1209,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         child: _buildTutorTile(context, nt),
                                       ),
                                     ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: AspectRatio(
+                                        aspectRatio: 1.25,
+                                        child: _buildArenaTile(context, nt),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -1262,8 +1280,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ],
                                   ),
                                   const SizedBox(height: 12),
-                                  // Fila 3: Tutor IA (ancho completo)
-                                  _buildTutorTile(context, nt),
+                                  // Fila 3: Tutor IA + Arena
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildTutorTile(context, nt),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Expanded(
+                                        child: AspectRatio(
+                                          aspectRatio: 1.15,
+                                          child: _buildArenaTile(context, nt),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   const SizedBox(height: 24),
                                 ],
                               ),
