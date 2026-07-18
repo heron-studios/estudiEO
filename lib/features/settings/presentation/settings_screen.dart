@@ -283,563 +283,272 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 600),
-          child: ListView(
-            padding: const EdgeInsets.all(20),
-            children: [
-              // Section: Perfil
-              Text(
-                'PERFIL DEL ASPIRANTE',
-                style: TextStyle(
-                  color: _muted.withValues(alpha: 0.7),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  fontFamily: 'Outfit',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: _cardBg.withValues(alpha: 0.6),
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
-                      ),
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: ListView(
+              padding: const EdgeInsets.all(20),
+              children: [
+                _buildSectionTitle('PERFIL DEL ASPIRANTE'),
+                _SettingsGlassSection(
+                  children: [
+                    _SettingsTile(
+                      icon: Icons.person,
+                      iconColor: _blue,
+                      title: 'Editar Perfil y Escuela',
+                      subtitle: 'Actualiza tu nombre y escuela objetivo',
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _showEditProfileDialog();
+                      },
                     ),
-                    child: ListTile(
-                      leading: const Icon(Icons.person, color: _blue),
-                      title: const Text(
-                        'Editar Perfil y Escuela',
-                        style: TextStyle(color: _text),
-                      ),
-                      subtitle: const Text(
-                        'Actualiza tu nombre y escuela objetivo',
-                        style: TextStyle(color: _muted, fontSize: 12),
-                      ),
-                      trailing: const Icon(Icons.chevron_right, color: _muted),
-                      onTap: _showEditProfileDialog,
-                    ),
-                  ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 32),
+                const SizedBox(height: 32),
 
-              // Section: Asignaturas
-              Text(
-                'VISIBILIDAD DE ASIGNATURAS',
-                style: TextStyle(
-                  color: _muted.withValues(alpha: 0.7),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  fontFamily: 'Outfit',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: _cardBg.withValues(alpha: 0.6),
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
-                      ),
-                    ),
-                    child: Column(
-                      children: allSubjects.map((subject) {
-                        final isVisible = !_hiddenSubjects.contains(subject.id);
-                        return SwitchListTile(
-                          title: Row(
-                            children: [
-                              Text(
-                                subject.icon,
-                                style: const TextStyle(fontSize: 20),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  subject.name,
-                                  style: const TextStyle(
-                                    color: _text,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter',
-                                  ),
+                _buildSectionTitle('VISIBILIDAD DE ASIGNATURAS'),
+                _SettingsGlassSection(
+                  children: allSubjects.map((subject) {
+                    final isVisible = !_hiddenSubjects.contains(subject.id);
+                    return Semantics(
+                      label: 'Visibilidad de ${subject.name}',
+                      child: SwitchListTile(
+                        title: Row(
+                          children: [
+                            Text(
+                              subject.icon,
+                              style: const TextStyle(fontSize: 20),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                subject.name,
+                                style: const TextStyle(
+                                  color: _text,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
+                                  fontFamily: 'Inter',
                                 ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
-                            ],
-                          ),
-                          value: isVisible,
-                          onChanged: (val) => _toggleSubject(subject.id, val),
-                          activeThumbColor: _blue,
-                          activeTrackColor: _blue.withValues(alpha: 0.3),
-                          inactiveThumbColor: _muted,
-                          inactiveTrackColor: NeuralDesignSystem.background,
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 32),
-
-              // Section: Preferencias
-              Text(
-                'PREFERENCIAS',
-                style: TextStyle(
-                  color: _muted.withValues(alpha: 0.7),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  fontFamily: 'Outfit',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: _cardBg.withValues(alpha: 0.6),
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
+                            ),
+                          ],
+                        ),
+                        value: isVisible,
+                        onChanged: (val) {
+                          HapticFeedback.lightImpact();
+                          _toggleSubject(subject.id, val);
+                        },
+                        activeThumbColor: _blue,
+                        activeTrackColor: _blue.withValues(alpha: 0.3),
+                        inactiveThumbColor: _muted,
+                        inactiveTrackColor: NeuralDesignSystem.background,
                       ),
-                    ),
-                    child: Consumer<AudioService>(
+                    );
+                  }).toList(),
+                ),
+                const SizedBox(height: 32),
+
+                _buildSectionTitle('PREFERENCIAS'),
+                _SettingsGlassSection(
+                  children: [
+                    Consumer<AudioService>(
                       builder: (context, audioService, _) {
-                        return SwitchListTile(
-                          title: const Row(
-                            children: [
-                              Icon(
-                                Icons.volume_up_rounded,
-                                size: 20,
-                                color: _text,
-                              ),
-                              SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  'Efectos de sonido (SFX)',
-                                  style: TextStyle(
-                                    color: _text,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 15,
-                                    fontFamily: 'Inter',
+                        return Semantics(
+                          label: 'Efectos de sonido',
+                          child: SwitchListTile(
+                            title: const Row(
+                              children: [
+                                Icon(
+                                  Icons.volume_up_rounded,
+                                  size: 20,
+                                  color: _text,
+                                ),
+                                SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    'Efectos de sonido (SFX)',
+                                    style: TextStyle(
+                                      color: _text,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                      fontFamily: 'Inter',
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            value: !audioService.isMuted,
+                            onChanged: (_) {
+                              HapticFeedback.lightImpact();
+                              audioService.toggleMute();
+                            },
+                            activeThumbColor: _blue,
+                            activeTrackColor: _blue.withValues(alpha: 0.3),
+                            inactiveThumbColor: _muted,
+                            inactiveTrackColor: NeuralDesignSystem.background,
                           ),
-                          value: !audioService.isMuted,
-                          onChanged: (_) => audioService.toggleMute(),
-                          activeThumbColor: _blue,
-                          activeTrackColor: _blue.withValues(alpha: 0.3),
-                          inactiveThumbColor: _muted,
-                          inactiveTrackColor: NeuralDesignSystem.background,
                         );
                       },
                     ),
-                  ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 32),
+                const SizedBox(height: 32),
 
-              // Section: Datos
-              Text(
-                'DATOS',
-                style: TextStyle(
-                  color: _muted.withValues(alpha: 0.7),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  fontFamily: 'Outfit',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: _cardBg.withValues(alpha: 0.6),
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
-                      ),
+                _buildSectionTitle('DATOS'),
+                _SettingsGlassSection(
+                  children: [
+                    _SettingsTile(
+                      icon: Icons.download_rounded,
+                      iconColor: _blue,
+                      title: 'Exportar progreso',
+                      subtitle: 'Copia de seguridad del progreso',
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _exportProgress();
+                      },
                     ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          onTap: _exportProgress,
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          leading: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: _blue.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: _blue.withValues(alpha: 0.25),
-                              ),
-                            ),
-                            child: const Icon(
-                              Icons.download_rounded,
-                              color: _blue,
-                              size: 22,
-                            ),
-                          ),
-                          title: const Text(
-                            'Exportar progreso',
-                            style: TextStyle(
-                              color: _text,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              fontFamily: 'Inter',
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Copia de seguridad del progreso',
-                            style: TextStyle(
-                              color: _muted.withValues(alpha: 0.7),
-                              fontSize: 13,
-                            ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: _muted.withValues(alpha: 0.5),
-                          ),
-                        ),
-                        Divider(
-                          color: Colors.white.withValues(alpha: 0.06),
-                          height: 1,
-                        ),
-                        ListTile(
-                          onTap: _importProgress,
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          leading: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: const Color(
-                                0xFF16A34A,
-                              ).withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: const Color(
-                                  0xFF16A34A,
-                                ).withValues(alpha: 0.25),
-                              ),
-                            ),
-                            child: const Icon(
-                              Icons.upload_rounded,
-                              color: Color(0xFF4ADE80),
-                              size: 22,
-                            ),
-                          ),
-                          title: const Text(
-                            'Importar progreso',
-                            style: TextStyle(
-                              color: _text,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              fontFamily: 'Inter',
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Restaurar copia de seguridad',
-                            style: TextStyle(
-                              color: _muted.withValues(alpha: 0.7),
-                              fontSize: 13,
-                            ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: _muted.withValues(alpha: 0.5),
-                          ),
-                        ),
-                        Divider(
-                          color: Colors.white.withValues(alpha: 0.06),
-                          height: 1,
-                        ),
-                        ListTile(
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (ctx) => AlertDialog(
-                                backgroundColor: NeuralDesignSystem.surfaceCard,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                title: const Text(
-                                  'Borrar todo el progreso',
-                                  style: TextStyle(
-                                    color: _text,
-                                    fontFamily: 'Outfit',
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                content: Text(
-                                  'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
-                                  style: TextStyle(
-                                    color: _muted.withValues(alpha: 0.8),
-                                  ),
-                                ),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.pop(ctx),
-                                    child: const Text(
-                                      'Cancelar',
-                                      style: TextStyle(color: _muted),
-                                    ),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      context
-                                          .read<LocalStorageService>()
-                                          .clearAll();
-                                      context.read<SrsProvider>().resetAll();
-                                      context
-                                          .read<GamificationProvider>()
-                                          .reset();
-                                      context
-                                          .read<QuizProvider>()
-                                          .clearSessions();
-                                      context.read<SubjectProvider>().reload();
-                                      Navigator.pop(ctx);
-                                      ScaffoldMessenger.of(
-                                        context,
-                                      ).showSnackBar(
-                                        SnackBar(
-                                          content: const Text(
-                                            'Progreso borrado.',
-                                          ),
-                                          backgroundColor:
-                                              NeuralDesignSystem.pink,
-                                          behavior: SnackBarBehavior.floating,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              12,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    child: const Text(
-                                      'Borrar',
-                                      style: TextStyle(
-                                        color: NeuralDesignSystem.pink,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          leading: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: NeuralDesignSystem.pink.withValues(
-                                alpha: 0.12,
-                              ),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: NeuralDesignSystem.pink.withValues(
-                                  alpha: 0.25,
-                                ),
-                              ),
-                            ),
-                            child: const Icon(
-                              Icons.delete_forever_rounded,
-                              color: NeuralDesignSystem.pink,
-                              size: 22,
-                            ),
-                          ),
-                          title: const Text(
-                            'Borrar progreso',
-                            style: TextStyle(
-                              color: _text,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              fontFamily: 'Inter',
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Rachas, niveles y tarjetas',
-                            style: TextStyle(
-                              color: _muted.withValues(alpha: 0.7),
-                              fontSize: 13,
-                            ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: _muted.withValues(alpha: 0.5),
-                          ),
-                        ),
-                      ],
+                    _buildDivider(),
+                    _SettingsTile(
+                      icon: Icons.upload_rounded,
+                      iconColor: const Color(0xFF4ADE80),
+                      title: 'Importar progreso',
+                      subtitle: 'Restaurar copia de seguridad',
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _importProgress();
+                      },
                     ),
-                  ),
+                    _buildDivider(),
+                    _SettingsTile(
+                      icon: Icons.delete_forever_rounded,
+                      iconColor: NeuralDesignSystem.pink,
+                      title: 'Borrar progreso',
+                      subtitle: 'Rachas, niveles y tarjetas',
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _showDeleteProgressDialog();
+                      },
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 32),
+                const SizedBox(height: 32),
 
-              // Section: Cuenta
-              Text(
-                'CUENTA',
-                style: TextStyle(
-                  color: _muted.withValues(alpha: 0.7),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.5,
-                  fontFamily: 'Outfit',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: _cardBg.withValues(alpha: 0.6),
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
-                      ),
+                _buildSectionTitle('CUENTA'),
+                _SettingsGlassSection(
+                  children: [
+                    _SettingsTile(
+                      icon: Icons.support_agent_rounded,
+                      iconColor: const Color(0xFF25D366),
+                      title: 'Soporte Técnico',
+                      subtitle: 'Contáctanos por WhatsApp',
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _launchWhatsApp();
+                      },
                     ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          onTap: _launchWhatsApp,
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          leading: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: const Color(
-                                0xFF25D366,
-                              ).withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: const Color(
-                                  0xFF25D366,
-                                ).withValues(alpha: 0.25),
-                              ),
-                            ),
-                            child: const Icon(
-                              Icons.support_agent_rounded,
-                              color: Color(0xFF25D366),
-                              size: 22,
-                            ),
-                          ),
-                          title: const Text(
-                            'Soporte Técnico',
-                            style: TextStyle(
-                              color: _text,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              fontFamily: 'Inter',
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Contáctanos por WhatsApp',
-                            style: TextStyle(
-                              color: _muted.withValues(alpha: 0.7),
-                              fontSize: 13,
-                            ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: _muted.withValues(alpha: 0.5),
-                          ),
-                        ),
-                        Divider(
-                          color: Colors.white.withValues(alpha: 0.06),
-                          height: 1,
-                        ),
-                        ListTile(
-                          onTap: () async {
-                            final authService = context.read<AuthService>();
-                            Navigator.of(
-                              context,
-                            ).popUntil((route) => route.isFirst);
-                            await authService.signOut();
-                          },
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          leading: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: NeuralDesignSystem.pink.withValues(
-                                alpha: 0.12,
-                              ),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: NeuralDesignSystem.pink.withValues(
-                                  alpha: 0.25,
-                                ),
-                              ),
-                            ),
-                            child: const Icon(
-                              Icons.logout_rounded,
-                              color: NeuralDesignSystem.pink,
-                              size: 22,
-                            ),
-                          ),
-                          title: const Text(
-                            'Cerrar sesión',
-                            style: TextStyle(
-                              color: _text,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              fontFamily: 'Inter',
-                            ),
-                          ),
-                          subtitle: Text(
-                            'Salir de tu cuenta de Google',
-                            style: TextStyle(
-                              color: _muted.withValues(alpha: 0.7),
-                              fontSize: 13,
-                            ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: _muted.withValues(alpha: 0.5),
-                          ),
-                        ),
-                      ],
+                    _buildDivider(),
+                    _SettingsTile(
+                      icon: Icons.logout_rounded,
+                      iconColor: NeuralDesignSystem.pink,
+                      title: 'Cerrar sesión',
+                      subtitle: 'Salir de tu cuenta de Google',
+                      onTap: () async {
+                        HapticFeedback.lightImpact();
+                        final authService = context.read<AuthService>();
+                        Navigator.of(context).popUntil((route) => route.isFirst);
+                        await authService.signOut();
+                      },
                     ),
-                  ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 32),
-            ],
+                const SizedBox(height: 32),
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  void _showDeleteProgressDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: NeuralDesignSystem.surfaceCard,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: const Text(
+          'Borrar todo el progreso',
+          style: TextStyle(
+            color: NeuralDesignSystem.textPrimary,
+            fontFamily: 'Outfit',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        content: Text(
+          'Esto eliminará tu racha, historial de tarjetas (SRS) y estadísticas. ¿Estás seguro?',
+          style: TextStyle(
+            color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.8),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancelar', style: TextStyle(color: NeuralDesignSystem.textSecondary)),
+          ),
+          TextButton(
+            onPressed: () {
+              context.read<LocalStorageService>().clearAll();
+              context.read<SrsProvider>().resetAll();
+              context.read<GamificationProvider>().reset();
+              context.read<QuizProvider>().clearSessions();
+              context.read<SubjectProvider>().reload();
+              Navigator.pop(ctx);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: const Text('Progreso borrado.'),
+                  backgroundColor: NeuralDesignSystem.pink,
+                  behavior: SnackBarBehavior.floating,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              );
+            },
+            child: const Text(
+              'Borrar',
+              style: TextStyle(color: NeuralDesignSystem.pink),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: _muted.withValues(alpha: 0.7),
+          fontSize: 12,
+          fontWeight: FontWeight.w800,
+          letterSpacing: 1.5,
+          fontFamily: 'Outfit',
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDivider() {
+    return Divider(
+      color: Colors.white.withValues(alpha: 0.06),
+      height: 1,
     );
   }
 
@@ -966,6 +675,105 @@ class _SettingsScreenState extends State<SettingsScreen> {
           },
         );
       },
+    );
+  }
+}
+
+class _SettingsGlassSection extends StatelessWidget {
+  final List<Widget> children;
+
+  const _SettingsGlassSection({required this.children});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+        child: Container(
+          decoration: BoxDecoration(
+            color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.6),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.15),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Column(
+            children: children,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SettingsTile extends StatelessWidget {
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  const _SettingsTile({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: onTap,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      leading: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              iconColor.withValues(alpha: 0.2),
+              iconColor.withValues(alpha: 0.05),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: iconColor.withValues(alpha: 0.3),
+            width: 1.5,
+          ),
+        ),
+        child: Icon(icon, color: iconColor, size: 22),
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: NeuralDesignSystem.textPrimary,
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          fontFamily: 'Inter',
+        ),
+      ),
+      subtitle: Text(
+        subtitle,
+        style: TextStyle(
+          color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.7),
+          fontSize: 13,
+        ),
+      ),
+      trailing: Icon(
+        Icons.chevron_right,
+        color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.5),
+      ),
     );
   }
 }
