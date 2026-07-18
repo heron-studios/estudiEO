@@ -790,19 +790,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ),
                         ),
                       ],
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: () => _showLeaderboardDialog(context, nt),
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: Colors.amber.withValues(alpha: 0.15),
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.amber.withValues(alpha: 0.5)),
-                          ),
-                          child: const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 18),
-                        ),
-                      ),
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -1020,6 +1007,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           return Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
+                              // Trophy (Leaderboard)
+                              GestureDetector(
+                                onTap: () => _showLeaderboardDialog(context, nt),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                  decoration: BoxDecoration(
+                                    color: Colors.amber.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+                                  ),
+                                  child: const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 16),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
                               // Racha
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -1472,10 +1473,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             final rank = index + 1;
             
             Color rankColor;
-            if (rank == 1) rankColor = const Color(0xFFFFD700);
-            else if (rank == 2) rankColor = const Color(0xFFC0C0C0);
-            else if (rank == 3) rankColor = const Color(0xFFCD7F32);
-            else rankColor = nt.textSecondary;
+            if (rank == 1) {
+              rankColor = const Color(0xFFFFD700);
+            } else if (rank == 2) {
+              rankColor = const Color(0xFFC0C0C0);
+            } else if (rank == 3) {
+              rankColor = const Color(0xFFCD7F32);
+            } else {
+              rankColor = nt.textSecondary;
+            }
 
             return Container(
               margin: const EdgeInsets.only(bottom: 8),
