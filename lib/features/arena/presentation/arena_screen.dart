@@ -90,8 +90,10 @@ class _ArenaScreenState extends State<ArenaScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final nt = Theme.of(context).extension<NeuralThemeData>()!;
+
     return Scaffold(
-      backgroundColor: NeuralDesignSystem.background,
+      backgroundColor: nt.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -112,7 +114,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.sports_esports_rounded, size: 80, color: NeuralDesignSystem.accentPurple),
+          Icon(Icons.sports_esports_rounded, size: 80, color: nt.purple),
           const SizedBox(height: 20),
           const Text('Combate 1v1', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
           const SizedBox(height: 10),
@@ -121,7 +123,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
           if (_isSearching)
             Column(
               children: [
-                CircularProgressIndicator(color: NeuralDesignSystem.accentCyan),
+                CircularProgressIndicator(color: nt.cyan),
                 const SizedBox(height: 16),
                 const Text('Buscando oponente...', style: TextStyle(color: Colors.white54)),
               ],
@@ -129,7 +131,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
           else
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: NeuralDesignSystem.accentPurple,
+                backgroundColor: nt.purple,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -148,7 +150,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(color: NeuralDesignSystem.accentCyan),
+            CircularProgressIndicator(color: nt.cyan),
             const SizedBox(height: 20),
             Text('Esperando que alguien se una a ${_match!.player1Name}...', style: const TextStyle(color: Colors.white70)),
           ],
@@ -176,7 +178,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildPlayerScore(myName, myScore, NeuralDesignSystem.accentCyan),
+              _buildPlayerScore(myName, myScore, nt.cyan),
               const Text('VS', style: TextStyle(color: Colors.white54, fontWeight: FontWeight.bold, fontSize: 20)),
               _buildPlayerScore(oppName, oppScore, Colors.pinkAccent),
             ],
@@ -197,7 +199,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
           // Opciones
           ...List.generate((q['options'] as List).length, (index) {
             final option = q['options'][index];
-            Color btnColor = NeuralDesignSystem.surfaceCard;
+            Color btnColor = nt.surfaceCard;
             if (_answeredCurrent) {
               if (index == q['correctAnswer']) {
                 btnColor = Colors.green.withValues(alpha: 0.3);
@@ -260,7 +262,7 @@ class _ArenaScreenState extends State<ArenaScreen> {
           const SizedBox(height: 40),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: NeuralDesignSystem.accentPurple,
+              backgroundColor: nt.purple,
               foregroundColor: Colors.white,
             ),
             onPressed: () => context.pop(),
