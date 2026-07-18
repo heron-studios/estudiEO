@@ -18,7 +18,8 @@ class InterviewTriviaScreen extends StatefulWidget {
   State<InterviewTriviaScreen> createState() => _InterviewTriviaScreenState();
 }
 
-class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with TickerProviderStateMixin {
+class _InterviewTriviaScreenState extends State<InterviewTriviaScreen>
+    with TickerProviderStateMixin {
   // Configuración del Examen
   String _difficulty = 'all'; // all, easy, medium, hard
   final Map<String, bool> _categories = {
@@ -77,7 +78,10 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       duration: const Duration(seconds: 2),
     );
     _interviewerScale = Tween<double>(begin: 1.0, end: 1.05).animate(
-      CurvedAnimation(parent: _interviewerPulseController, curve: Curves.easeInOut),
+      CurvedAnimation(
+        parent: _interviewerPulseController,
+        curve: Curves.easeInOut,
+      ),
     );
   }
 
@@ -106,7 +110,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       List<dynamic> loadedQuestions = [];
 
       // Carga offline desde assets/data/pnp_trivia.json
-      final String response = await rootBundle.loadString('assets/data/pnp_trivia.json');
+      final String response = await rootBundle.loadString(
+        'assets/data/pnp_trivia.json',
+      );
       final Map<String, dynamic> data = jsonDecode(response);
       final List<dynamic> rawQuestions = data['preguntas_pnp'] ?? [];
 
@@ -148,7 +154,8 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
     } catch (e) {
       setState(() {
         _isLoading = false;
-        _errorMessage = 'No se pudo iniciar el examen. Detalles: ${e.toString().split(':').last.trim()}.\nVerifica los recursos del sistema.';
+        _errorMessage =
+            'No se pudo iniciar el examen. Detalles: ${e.toString().split(':').last.trim()}.\nVerifica los recursos del sistema.';
       });
     }
   }
@@ -161,7 +168,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
 
     final question = _questions[_currentIndex];
     final String correct = question['correctAnswer'];
-    final List<String> incorrects = List<String>.from(question['incorrectAnswers']);
+    final List<String> incorrects = List<String>.from(
+      question['incorrectAnswers'],
+    );
 
     setState(() {
       _shuffledOptions = [correct, ...incorrects];
@@ -187,7 +196,8 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       }
 
       final elapsed = DateTime.now().difference(startTime);
-      final remainingMs = (_reactionTimeSeconds * 1000) - elapsed.inMilliseconds;
+      final remainingMs =
+          (_reactionTimeSeconds * 1000) - elapsed.inMilliseconds;
 
       if (remainingMs <= 0) {
         timer.cancel();
@@ -262,7 +272,8 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
 
   Future<void> _finishExam() async {
     setState(() {
-      _aiFeedback = '¡Buen esfuerzo! Continúa practicando tu cultura general para asegurar tu aptitud.';
+      _aiFeedback =
+          '¡Buen esfuerzo! Continúa practicando tu cultura general para asegurar tu aptitud.';
       _isLoading = false;
     });
   }
@@ -288,7 +299,10 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+            icon: const Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.white,
+            ),
             onPressed: () {
               if (_setupPhase) {
                 context.pop();
@@ -312,14 +326,14 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
           child: _isLoading
               ? _buildLoadingState(nt)
               : _errorMessage != null
-                  ? _buildErrorState(nt)
-                  : _setupPhase
-                      ? _buildSetupPhase(nt)
-                      : _questions.isEmpty
-                          ? const SizedBox.shrink()
-                          : _currentIndex < _questions.length
-                              ? _buildActiveExam(nt, isDark)
-                              : _buildResultsState(nt, isDark),
+              ? _buildErrorState(nt)
+              : _setupPhase
+              ? _buildSetupPhase(nt)
+              : _questions.isEmpty
+              ? const SizedBox.shrink()
+              : _currentIndex < _questions.length
+              ? _buildActiveExam(nt, isDark)
+              : _buildResultsState(nt, isDark),
         ),
       ),
     );
@@ -338,7 +352,11 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
             Text(
               _loadingMessage,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
@@ -354,27 +372,49 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.error_outline_rounded, size: 64, color: Colors.redAccent),
+            const Icon(
+              Icons.error_outline_rounded,
+              size: 64,
+              color: Colors.redAccent,
+            ),
             const SizedBox(height: 16),
             Text(
               _errorMessage ?? 'Ocurrió un error desconocido.',
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white70, fontSize: 14, height: 1.5),
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.5,
+              ),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: _startExam,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purpleAccent,
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 12,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: const Text('Reintentar', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+              child: const Text(
+                'Reintentar',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
             const SizedBox(height: 12),
             TextButton(
               onPressed: _resetToSetup,
-              child: const Text('Volver a Configuración', style: TextStyle(color: Colors.white60)),
+              child: const Text(
+                'Volver a Configuración',
+                style: TextStyle(color: Colors.white60),
+              ),
             ),
           ],
         ),
@@ -399,7 +439,10 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.purple.withValues(alpha: 0.1), Colors.deepPurple.withValues(alpha: 0.25)],
+                      colors: [
+                        Colors.purple.withValues(alpha: 0.1),
+                        Colors.deepPurple.withValues(alpha: 0.25),
+                      ],
                     ),
                   ),
                   child: Column(
@@ -409,20 +452,35 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                         decoration: BoxDecoration(
                           color: Colors.purple.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.purpleAccent.withValues(alpha: 0.3)),
+                          border: Border.all(
+                            color: Colors.purpleAccent.withValues(alpha: 0.3),
+                          ),
                         ),
-                        child: const Icon(Icons.record_voice_over_rounded, size: 40, color: Colors.purpleAccent),
+                        child: const Icon(
+                          Icons.record_voice_over_rounded,
+                          size: 40,
+                          color: Colors.purpleAccent,
+                        ),
                       ),
                       const SizedBox(height: 16),
                       const Text(
                         'Simulador de Balotario Oral',
-                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Outfit'),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Outfit',
+                        ),
                       ),
                       const SizedBox(height: 8),
                       const Text(
                         'En la entrevista personal de la PNP, el jurado realiza preguntas aleatorias para medir tus conocimientos de cultura general. Practica responder bajo presión.',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 13,
+                          height: 1.4,
+                        ),
                       ),
                     ],
                   ),
@@ -431,7 +489,15 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
               const SizedBox(height: 20),
 
               // Dificultad
-              const Text('DIFICULTAD DEL EXAMEN', style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.w900, letterSpacing: 0.8)),
+              const Text(
+                'DIFICULTAD DEL EXAMEN',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 0.8,
+                ),
+              ),
               const SizedBox(height: 10),
               Row(
                 children: [
@@ -450,10 +516,24 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('TEMAS A EVALUAR', style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.w900, letterSpacing: 0.8)),
+                  const Text(
+                    'TEMAS A EVALUAR',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.8,
+                    ),
+                  ),
                   TextButton(
                     onPressed: _selectAllCategories,
-                    child: const Text('Todos / Ninguno', style: TextStyle(color: Colors.purpleAccent, fontSize: 12)),
+                    child: const Text(
+                      'Todos / Ninguno',
+                      style: TextStyle(
+                        color: Colors.purpleAccent,
+                        fontSize: 12,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -475,13 +555,19 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                     checkmarkColor: Colors.purpleAccent,
                     labelStyle: TextStyle(
                       color: isSelected ? Colors.white : Colors.white60,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                      fontWeight: isSelected
+                          ? FontWeight.bold
+                          : FontWeight.normal,
                       fontSize: 12,
                     ),
                     backgroundColor: Colors.white.withValues(alpha: 0.05),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: isSelected ? Colors.purpleAccent.withValues(alpha: 0.5) : Colors.white10),
+                      side: BorderSide(
+                        color: isSelected
+                            ? Colors.purpleAccent.withValues(alpha: 0.5)
+                            : Colors.white10,
+                      ),
                     ),
                   );
                 }).toList(),
@@ -495,11 +581,20 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                   backgroundColor: Colors.purpleAccent,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                   elevation: 8,
                   shadowColor: Colors.purpleAccent.withValues(alpha: 0.5),
                 ),
-                child: const Text('INICIAR SIMULACIÓN', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, letterSpacing: 1.0)),
+                child: const Text(
+                  'INICIAR SIMULACIÓN',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 14,
+                    letterSpacing: 1.0,
+                  ),
+                ),
               ),
             ],
           ),
@@ -516,7 +611,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
-            color: isSelected ? Colors.purpleAccent.withValues(alpha: 0.2) : Colors.white.withValues(alpha: 0.04),
+            color: isSelected
+                ? Colors.purpleAccent.withValues(alpha: 0.2)
+                : Colors.white.withValues(alpha: 0.04),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected ? Colors.purpleAccent : Colors.white10,
@@ -537,7 +634,6 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       ),
     );
   }
-
 
   void _selectAllCategories() {
     final anyActive = _categories.values.any((v) => v);
@@ -572,24 +668,30 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
     String jurySpeech;
     Color speechColor = Colors.white;
     if (_isTimeout) {
-      jurySpeech = '«¡Tiempo agotado, postulante! En la Policía la indecisión cuesta vidas. No responder a tiempo demuestra falta de preparación táctica y mental. Siguiente pregunta.»';
+      jurySpeech =
+          '«¡Tiempo agotado, postulante! En la Policía la indecisión cuesta vidas. No responder a tiempo demuestra falta de preparación táctica y mental. Siguiente pregunta.»';
       speechColor = Colors.redAccent;
     } else if (_isAnswered) {
       if (_selectedOption == null) {
-        jurySpeech = '«Ha decidido evadir la pregunta. Un oficial de policía debe afrontar los retos, no evadirlos. La respuesta correcta era: ${question['correctAnswer']}.»';
+        jurySpeech =
+            '«Ha decidido evadir la pregunta. Un oficial de policía debe afrontar los retos, no evadirlos. La respuesta correcta era: ${question['correctAnswer']}.»';
         speechColor = Colors.orangeAccent;
       } else {
-        final bool correctSelected = _selectedOption == question['correctAnswer'];
+        final bool correctSelected =
+            _selectedOption == question['correctAnswer'];
         if (correctSelected) {
-          jurySpeech = '«Respuesta conforme, postulante. Demuestra conocimiento e instrucción. Prosiga con firmeza.»';
+          jurySpeech =
+              '«Respuesta conforme, postulante. Demuestra conocimiento e instrucción. Prosiga con firmeza.»';
           speechColor = nt.successGreen;
         } else {
-          jurySpeech = '«¡Incorrecto! Esa respuesta es errónea. Un error de conocimiento constitucional o de doctrina policial es inadmisible en nuestro servicio. La respuesta correcta es: ${question['correctAnswer']}.»';
+          jurySpeech =
+              '«¡Incorrecto! Esa respuesta es errónea. Un error de conocimiento constitucional o de doctrina policial es inadmisible en nuestro servicio. La respuesta correcta es: ${question['correctAnswer']}.»';
           speechColor = Colors.orangeAccent;
         }
       }
     } else {
-      jurySpeech = '«Postulante, responda con firmeza la siguiente interrogante: $questionText»';
+      jurySpeech =
+          '«Postulante, responda con firmeza la siguiente interrogante: $questionText»';
       speechColor = Colors.white;
     }
 
@@ -609,16 +711,28 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                 decoration: BoxDecoration(
                   color: categoryColor.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: categoryColor.withValues(alpha: 0.4)),
+                  border: Border.all(
+                    color: categoryColor.withValues(alpha: 0.4),
+                  ),
                 ),
                 child: Text(
-                  _categoryNamesSp[category]?.toUpperCase() ?? category.toUpperCase(),
-                  style: TextStyle(color: categoryColor, fontSize: 9, fontWeight: FontWeight.w900, letterSpacing: 1.0),
+                  _categoryNamesSp[category]?.toUpperCase() ??
+                      category.toUpperCase(),
+                  style: TextStyle(
+                    color: categoryColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.0,
+                  ),
                 ),
               ),
               Text(
                 'Pregunta ${_currentIndex + 1} de ${_questions.length}',
-                style: const TextStyle(color: Colors.white54, fontSize: 12, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  color: Colors.white54,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -646,18 +760,27 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: const LinearGradient(
-                                colors: [Colors.purpleAccent, Colors.deepPurple],
+                                colors: [
+                                  Colors.purpleAccent,
+                                  Colors.deepPurple,
+                                ],
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.purpleAccent.withValues(alpha: 0.3),
+                                  color: Colors.purpleAccent.withValues(
+                                    alpha: 0.3,
+                                  ),
                                   blurRadius: 15,
                                   spreadRadius: 2,
-                                )
+                                ),
                               ],
                             ),
                             child: const Center(
-                              child: Icon(Icons.security_rounded, color: Colors.white, size: 30),
+                              child: Icon(
+                                Icons.security_rounded,
+                                color: Colors.white,
+                                size: 30,
+                              ),
                             ),
                           ),
                         );
@@ -669,11 +792,19 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                       children: [
                         const Text(
                           'JURADO EVALUADOR',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 11, letterSpacing: 1.2),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 11,
+                            letterSpacing: 1.2,
+                          ),
                         ),
                         Text(
                           'Rango: $rankName • Dificultad: ${difficulty.toUpperCase()}',
-                          style: const TextStyle(color: Colors.white54, fontSize: 9),
+                          style: const TextStyle(
+                            color: Colors.white54,
+                            fontSize: 9,
+                          ),
                         ),
                       ],
                     ),
@@ -693,13 +824,15 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                       bottomRight: Radius.circular(24),
                       bottomLeft: Radius.circular(4),
                     ),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.1),
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.2),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
-                      )
+                      ),
                     ],
                   ),
                   child: Text(
@@ -716,7 +849,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                 const SizedBox(height: 24),
 
                 // Opciones de respuesta
-                ..._shuffledOptions.map((opt) => _buildOptionCard(opt, question['correctAnswer'], nt)),
+                ..._shuffledOptions.map(
+                  (opt) => _buildOptionCard(opt, question['correctAnswer'], nt),
+                ),
 
                 const SizedBox(height: 20),
               ],
@@ -731,7 +866,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
   }
 
   Widget _buildTimerBar(NeuralThemeData nt) {
-    Color timerColor = _timerProgress < 0.25 ? Colors.redAccent : Colors.purpleAccent;
+    Color timerColor = _timerProgress < 0.25
+        ? Colors.redAccent
+        : Colors.purpleAccent;
     return Container(
       width: double.infinity,
       height: 4,
@@ -744,7 +881,11 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
     );
   }
 
-  Widget _buildOptionCard(String option, String correctAnswer, NeuralThemeData nt) {
+  Widget _buildOptionCard(
+    String option,
+    String correctAnswer,
+    NeuralThemeData nt,
+  ) {
     final bool isCorrect = option == correctAnswer;
     final bool isSelected = _selectedOption == option;
 
@@ -756,11 +897,19 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       if (isCorrect) {
         cardBorderColor = nt.successGreen.withValues(alpha: 0.6);
         cardBgColor = nt.successGreen.withValues(alpha: 0.1);
-        iconSuffix = Icon(Icons.check_circle_rounded, color: nt.successGreen, size: 20);
+        iconSuffix = Icon(
+          Icons.check_circle_rounded,
+          color: nt.successGreen,
+          size: 20,
+        );
       } else if (isSelected) {
         cardBorderColor = Colors.redAccent.withValues(alpha: 0.6);
         cardBgColor = Colors.redAccent.withValues(alpha: 0.1);
-        iconSuffix = const Icon(Icons.cancel_rounded, color: Colors.redAccent, size: 20);
+        iconSuffix = const Icon(
+          Icons.cancel_rounded,
+          color: Colors.redAccent,
+          size: 20,
+        );
       }
     }
 
@@ -782,9 +931,13 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                 child: Text(
                   option,
                   style: TextStyle(
-                    color: _isAnswered && !isCorrect && !isSelected ? Colors.white38 : Colors.white,
+                    color: _isAnswered && !isCorrect && !isSelected
+                        ? Colors.white38
+                        : Colors.white,
                     fontSize: 14,
-                    fontWeight: isSelected || (_isAnswered && isCorrect) ? FontWeight.bold : FontWeight.normal,
+                    fontWeight: isSelected || (_isAnswered && isCorrect)
+                        ? FontWeight.bold
+                        : FontWeight.normal,
                   ),
                 ),
               ),
@@ -804,7 +957,9 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       decoration: BoxDecoration(
         color: Colors.black12,
-        border: Border(top: BorderSide(color: Colors.white.withValues(alpha: 0.05))),
+        border: Border(
+          top: BorderSide(color: Colors.white.withValues(alpha: 0.05)),
+        ),
       ),
       child: Row(
         children: [
@@ -815,9 +970,18 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: Colors.white24),
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-                child: const Text('SALTAR PREGUNTA', style: TextStyle(color: Colors.white60, fontSize: 11, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'SALTAR PREGUNTA',
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
           ] else ...[
@@ -828,15 +992,23 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                   backgroundColor: Colors.purpleAccent,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
                 child: Text(
-                  _currentIndex < _questions.length - 1 ? 'SIGUIENTE PREGUNTA' : 'VER RESULTADOS',
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, letterSpacing: 0.5),
+                  _currentIndex < _questions.length - 1
+                      ? 'SIGUIENTE PREGUNTA'
+                      : 'VER RESULTADOS',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                    letterSpacing: 0.5,
+                  ),
                 ),
               ),
             ),
-          ]
+          ],
         ],
       ),
     );
@@ -858,19 +1030,45 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                 decoration: BoxDecoration(
                   color: isDark ? nt.surfaceCard : Colors.white,
                   borderRadius: BorderRadius.circular(24),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.1),
+                  ),
                 ),
                 child: Column(
                   children: [
-                    const Icon(Icons.analytics_rounded, size: 50, color: Colors.purpleAccent),
+                    const Icon(
+                      Icons.analytics_rounded,
+                      size: 50,
+                      color: Colors.purpleAccent,
+                    ),
                     const SizedBox(height: 12),
-                    const Text('RESUMEN DE EVALUACIÓN', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Outfit')),
+                    const Text(
+                      'RESUMEN DE EVALUACIÓN',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Outfit',
+                      ),
+                    ),
                     const SizedBox(height: 20),
-                    _buildResultRow('Correctas', '$_correctCount', nt.successGreen),
+                    _buildResultRow(
+                      'Correctas',
+                      '$_correctCount',
+                      nt.successGreen,
+                    ),
                     const Divider(color: Colors.white10),
-                    _buildResultRow('Incorrectas', '$_incorrectCount', Colors.redAccent),
+                    _buildResultRow(
+                      'Incorrectas',
+                      '$_incorrectCount',
+                      Colors.redAccent,
+                    ),
                     const Divider(color: Colors.white10),
-                    _buildResultRow('Sin responder (Timeout)', '$_timeoutCount', Colors.orangeAccent),
+                    _buildResultRow(
+                      'Sin responder (Timeout)',
+                      '$_timeoutCount',
+                      Colors.orangeAccent,
+                    ),
                     const Divider(color: Colors.white10),
                     _buildResultRow('Saltadas', '$_skippedCount', Colors.grey),
                   ],
@@ -895,19 +1093,33 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                               color: Colors.purple.withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(Icons.psychology_rounded, color: Colors.purpleAccent, size: 20),
+                            child: const Icon(
+                              Icons.psychology_rounded,
+                              color: Colors.purpleAccent,
+                              size: 20,
+                            ),
                           ),
                           const SizedBox(width: 10),
                           const Text(
                             'RETROALIMENTACIÓN DE IA',
-                            style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w900, fontSize: 12, letterSpacing: 0.8),
+                            style: TextStyle(
+                              color: Colors.purpleAccent,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 12,
+                              letterSpacing: 0.8,
+                            ),
                           ),
                         ],
                       ),
                       const SizedBox(height: 14),
                       Text(
                         _aiFeedback!,
-                        style: const TextStyle(color: Colors.white, fontSize: 13, height: 1.4, fontStyle: FontStyle.italic),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          height: 1.4,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
                     ],
                   ),
@@ -922,14 +1134,22 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
                   backgroundColor: Colors.purpleAccent,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-                child: const Text('FINALIZAR Y VOLVER', style: TextStyle(fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'FINALIZAR Y VOLVER',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(height: 12),
               TextButton(
                 onPressed: _resetToSetup,
-                child: const Text('Realizar otra simulación', style: TextStyle(color: Colors.white70)),
+                child: const Text(
+                  'Realizar otra simulación',
+                  style: TextStyle(color: Colors.white70),
+                ),
               ),
             ],
           ),
@@ -944,8 +1164,18 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: const TextStyle(color: Colors.white70, fontSize: 13)),
-          Text(value, style: TextStyle(color: color, fontSize: 16, fontWeight: FontWeight.w900)),
+          Text(
+            label,
+            style: const TextStyle(color: Colors.white70, fontSize: 13),
+          ),
+          Text(
+            value,
+            style: TextStyle(
+              color: color,
+              fontSize: 16,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
         ],
       ),
     );
@@ -957,7 +1187,10 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E1F20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('¿Abandonar Simulación?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: const Text(
+          '¿Abandonar Simulación?',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         content: const Text(
           'Si sales ahora, perderás el progreso de esta entrevista de cultura general.',
           style: TextStyle(color: Colors.white70),
@@ -965,7 +1198,10 @@ class _InterviewTriviaScreenState extends State<InterviewTriviaScreen> with Tick
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Continuar', style: TextStyle(color: Colors.purpleAccent)),
+            child: const Text(
+              'Continuar',
+              style: TextStyle(color: Colors.purpleAccent),
+            ),
           ),
           ElevatedButton(
             onPressed: () {

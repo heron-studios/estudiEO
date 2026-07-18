@@ -47,10 +47,12 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
     final auth = context.read<AuthService>();
     final canUseAI = await LimitsService.canUseEntrevistaIA(auth.isPremium);
     final bool aiLimitReached = !canUseAI;
-    
+
     int horasRestantes = 0;
     if (aiLimitReached) {
-      horasRestantes = await LimitsService.getHorasRestantesEntrevistaIA(auth.isPremium);
+      horasRestantes = await LimitsService.getHorasRestantesEntrevistaIA(
+        auth.isPremium,
+      );
     }
 
     if (!context.mounted) return;
@@ -247,7 +249,9 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
             // Contenido principal
             Positioned.fill(
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 90), // Añadir padding abajo para evitar solapamiento
+                padding: const EdgeInsets.only(
+                  bottom: 90,
+                ), // Añadir padding abajo para evitar solapamiento
                 child: widget.navigationShell,
               ),
             ),
@@ -280,7 +284,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                           _NavItem(
                             icon: Icons.home_rounded,
                             label: 'Inicio',
-                            isSelected: widget.navigationShell.currentIndex == 0,
+                            isSelected:
+                                widget.navigationShell.currentIndex == 0,
                             onTap: () => _goBranch(0),
                             nt: nt,
                           ),
@@ -310,7 +315,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                               ),
                               isSelected: false,
                               label: 'Simulador',
-                              onTap: () => _showInterviewSelectionModal(context, nt),
+                              onTap: () =>
+                                  _showInterviewSelectionModal(context, nt),
                               nt: nt,
                             ),
                           ),
@@ -318,7 +324,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                           _NavItem(
                             icon: Icons.extension_rounded,
                             label: 'Interactivos',
-                            isSelected: widget.navigationShell.currentIndex == 1,
+                            isSelected:
+                                widget.navigationShell.currentIndex == 1,
                             onTap: () => _goBranch(1),
                             nt: nt,
                           ),

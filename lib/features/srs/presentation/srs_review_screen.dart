@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/subject_provider.dart';
@@ -50,7 +50,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     final questionId = _reviewQueue[_currentIndex];
     final question = context.read<SubjectProvider>().getQuestion(questionId);
     final srs = context.read<SrsProvider>();
-    
+
     if (question != null) {
       srs.processAnswer(questionId, question.topicId, isCorrect);
     }
@@ -81,8 +81,14 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: _cardBg,
-          title: const Text('¡Has revisado 20 tarjetas!', style: TextStyle(color: _text)),
-          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: _muted)),
+          title: const Text(
+            '¡Has revisado 20 tarjetas!',
+            style: TextStyle(color: _text),
+          ),
+          content: const Text(
+            'Probemos si te las aprendiste. ¿Listo para un quiz rápido?',
+            style: TextStyle(color: _muted),
+          ),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -91,8 +97,7 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                 _cardsReviewedInBatch = 0;
                 _batchQuestionIds.clear();
 
-                context.push('/srs-mini-quiz', extra: batch,
-                ).then((didPass) {
+                context.push('/srs-mini-quiz', extra: batch).then((didPass) {
                   if (!mounted) return;
                   final passed = (didPass == true);
                   if (passed) {
@@ -116,12 +121,20 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                         context: context,
                         builder: (ctx) => AlertDialog(
                           backgroundColor: _cardBg,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           title: const Row(
                             children: [
-                              Icon(Icons.warning_amber_rounded, color: Colors.amber),
+                              Icon(
+                                Icons.warning_amber_rounded,
+                                color: Colors.amber,
+                              ),
                               SizedBox(width: 8),
-                              Text('Repetir Repaso', style: TextStyle(color: _text)),
+                              Text(
+                                'Repetir Repaso',
+                                style: TextStyle(color: _text),
+                              ),
                             ],
                           ),
                           content: Text(
@@ -131,7 +144,10 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.pop(ctx),
-                              child: const Text('Entendido', style: TextStyle(color: _blue)),
+                              child: const Text(
+                                'Entendido',
+                                style: TextStyle(color: _blue),
+                              ),
                             ),
                           ],
                         ),
@@ -140,8 +156,14 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                   }
                 });
               },
-              style: ElevatedButton.styleFrom(backgroundColor: _green, foregroundColor: _cardBg),
-              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: _green,
+                foregroundColor: _cardBg,
+              ),
+              child: const Text(
+                'Realizar quiz rápido',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         );
@@ -155,8 +177,10 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
     Navigator.pop(context);
     messenger.showSnackBar(
       SnackBar(
-        content: const Text('¡Revisión completada! Has repasado tus tarjetas.',
-            style: TextStyle(fontWeight: FontWeight.bold)),
+        content: const Text(
+          '¡Revisión completada! Has repasado tus tarjetas.',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: _green.withValues(alpha: 0.9),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -184,11 +208,17 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                 SizedBox(height: 16),
                 Text(
                   '¡Al día!',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: _text),
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: _text,
+                  ),
                 ),
                 SizedBox(height: 8),
-                Text('No tienes tarjetas pendientes de repaso.',
-                    style: TextStyle(color: _muted)),
+                Text(
+                  'No tienes tarjetas pendientes de repaso.',
+                  style: TextStyle(color: _muted),
+                ),
               ],
             ),
           ),
@@ -209,8 +239,10 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
         ),
         body: const NeuralBackgroundWrapper(
           child: Center(
-            child: Text('Error cargando la pregunta.',
-                style: TextStyle(color: Colors.white)),
+            child: Text(
+              'Error cargando la pregunta.',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ),
       );
@@ -227,11 +259,20 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
           children: [
             const Text(
               'REPASO ESPACIADO',
-              style: TextStyle(color: _green, fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 1.5),
+              style: TextStyle(
+                color: _green,
+                fontSize: 10,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.5,
+              ),
             ),
             Text(
               '${_currentIndex + 1} de ${_reviewQueue.length}',
-              style: const TextStyle(color: _text, fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                color: _text,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
@@ -243,7 +284,10 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 650),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -293,13 +337,20 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                     decoration: BoxDecoration(
                                       color: _green.withValues(alpha: 0.15),
                                       borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(color: _green, width: 2),
+                                      border: Border.all(
+                                        color: _green,
+                                        width: 2,
+                                      ),
                                     ),
                                     child: Center(
                                       child: SingleChildScrollView(
                                         child: Text(
-                                          (question.options.isNotEmpty && question.correctAnswer >= 0 && question.correctAnswer < question.options.length) 
-                                              ? question.options[question.correctAnswer] 
+                                          (question.options.isNotEmpty &&
+                                                  question.correctAnswer >= 0 &&
+                                                  question.correctAnswer <
+                                                      question.options.length)
+                                              ? question.options[question
+                                                    .correctAnswer]
                                               : 'Por favor, reinicia la app por completo (Hot Restart) para cargar los nuevos datos.',
                                           textAlign: TextAlign.center,
                                           style: const TextStyle(
@@ -319,14 +370,27 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                       child: ElevatedButton.icon(
                                         onPressed: () => _handleAnswer(false),
                                         icon: const Icon(Icons.close_rounded),
-                                        label: const Text('No lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        label: const Text(
+                                          'No lo sabía',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.redAccent.withValues(alpha: 0.2),
+                                          backgroundColor: Colors.redAccent
+                                              .withValues(alpha: 0.2),
                                           foregroundColor: Colors.redAccent,
-                                          padding: const EdgeInsets.symmetric(vertical: 16),
+                                          padding: const EdgeInsets.symmetric(
+                                            vertical: 16,
+                                          ),
                                           shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(14),
-                                              side: const BorderSide(color: Colors.redAccent)),
+                                            borderRadius: BorderRadius.circular(
+                                              14,
+                                            ),
+                                            side: const BorderSide(
+                                              color: Colors.redAccent,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -335,14 +399,30 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                       child: ElevatedButton.icon(
                                         onPressed: () => _handleAnswer(true),
                                         icon: const Icon(Icons.check_rounded),
-                                        label: const Text('Lo sabía', style: TextStyle(fontWeight: FontWeight.bold)),
+                                        label: const Text(
+                                          'Lo sabía',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: const Color(0xFF4ADE80).withValues(alpha: 0.2),
-                                          foregroundColor: const Color(0xFF4ADE80),
-                                          padding: const EdgeInsets.symmetric(vertical: 16),
+                                          backgroundColor: const Color(
+                                            0xFF4ADE80,
+                                          ).withValues(alpha: 0.2),
+                                          foregroundColor: const Color(
+                                            0xFF4ADE80,
+                                          ),
+                                          padding: const EdgeInsets.symmetric(
+                                            vertical: 16,
+                                          ),
                                           shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(14),
-                                              side: const BorderSide(color: Color(0xFF4ADE80))),
+                                            borderRadius: BorderRadius.circular(
+                                              14,
+                                            ),
+                                            side: const BorderSide(
+                                              color: Color(0xFF4ADE80),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -356,16 +436,28 @@ class _SrsReviewScreenState extends State<SrsReviewScreen> {
                                 decoration: BoxDecoration(
                                   color: _cardBg,
                                   borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: _border, width: 1.5),
+                                  border: Border.all(
+                                    color: _border,
+                                    width: 1.5,
+                                  ),
                                 ),
                                 child: const Center(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.touch_app, color: _muted, size: 48),
+                                      Icon(
+                                        Icons.touch_app,
+                                        color: _muted,
+                                        size: 48,
+                                      ),
                                       SizedBox(height: 16),
-                                      Text('Toca para ver la respuesta',
-                                          style: TextStyle(color: _muted, fontSize: 18)),
+                                      Text(
+                                        'Toca para ver la respuesta',
+                                        style: TextStyle(
+                                          color: _muted,
+                                          fontSize: 18,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),

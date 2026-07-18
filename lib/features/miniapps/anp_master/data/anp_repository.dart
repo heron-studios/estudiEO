@@ -12,7 +12,8 @@ class ANPRepository {
       establishedYear: 1973,
       keyFauna: ['Gallito de las rocas', 'Caimán negro', 'Jaguar'],
       svgAssetPath: 'assets/vectors/anp/manu.svg',
-      mnemonicHint: 'Manu es el pulmón gigante que comparten Madre de Dios y Cusco; recuerda al Gallito de las rocas saltando en la selva alta.',
+      mnemonicHint:
+          'Manu es el pulmón gigante que comparten Madre de Dios y Cusco; recuerda al Gallito de las rocas saltando en la selva alta.',
       relativeX: 0.70,
       relativeY: 0.64,
     ),
@@ -26,7 +27,8 @@ class ANPRepository {
       establishedYear: 1975,
       keyFauna: ['Oso de anteojos', 'Cóndor andino', 'Vicuña'],
       svgAssetPath: 'assets/vectors/anp/huascaran.svg',
-      mnemonicHint: 'El Huascarán es la montaña más alta; refugio del oso de anteojos y cóndores en Áncash.',
+      mnemonicHint:
+          'El Huascarán es la montaña más alta; refugio del oso de anteojos y cóndores en Áncash.',
       relativeX: 0.40,
       relativeY: 0.42,
     ),
@@ -40,7 +42,8 @@ class ANPRepository {
       establishedYear: 1975,
       keyFauna: ['Lobo marino', 'Pingüino de Humboldt', 'Flamenco'],
       svgAssetPath: 'assets/vectors/anp/paracas.svg',
-      mnemonicHint: 'Paracas es la costa que preserva al pingüino y al lobo marino; zona de uso sostenible en Ica.',
+      mnemonicHint:
+          'Paracas es la costa que preserva al pingüino y al lobo marino; zona de uso sostenible en Ica.',
       relativeX: 0.43,
       relativeY: 0.65,
     ),
@@ -54,7 +57,8 @@ class ANPRepository {
       establishedYear: 1981,
       keyFauna: ['Oso de anteojos', 'Gallito de las rocas', 'Puma'],
       svgAssetPath: 'assets/vectors/anp/machupicchu.svg',
-      mnemonicHint: 'La ciudadela Inca por excelencia; santuario histórico que protege el legado en Cusco.',
+      mnemonicHint:
+          'La ciudadela Inca por excelencia; santuario histórico que protege el legado en Cusco.',
       relativeX: 0.64,
       relativeY: 0.69,
     ),
@@ -68,7 +72,8 @@ class ANPRepository {
       establishedYear: 1974,
       keyFauna: ['Vicuña', 'Zorro andino', 'Gato montés'],
       svgAssetPath: 'assets/vectors/anp/huayllay.svg',
-      mnemonicHint: 'Un bosque de piedras en Pasco; santuario nacional de asombrosa formación geológica.',
+      mnemonicHint:
+          'Un bosque de piedras en Pasco; santuario nacional de asombrosa formación geológica.',
       relativeX: 0.48,
       relativeY: 0.48,
     ),
@@ -82,7 +87,8 @@ class ANPRepository {
       establishedYear: 1982,
       keyFauna: ['Lobo de río', 'Paiche', 'Delfín rosado'],
       svgAssetPath: 'assets/vectors/anp/pacaya.svg',
-      mnemonicHint: 'Pacaya Samiria es el "bosque de espejos" en Loreto; protege al paiche y delfín rosado en ríos navegables.',
+      mnemonicHint:
+          'Pacaya Samiria es el "bosque de espejos" en Loreto; protege al paiche y delfín rosado en ríos navegables.',
       relativeX: 0.62,
       relativeY: 0.22,
     ),
@@ -96,7 +102,8 @@ class ANPRepository {
       establishedYear: 1988,
       keyFauna: ['Cocodrilo de Tumbes', 'Cangrejo rojo', 'Concha negra'],
       svgAssetPath: 'assets/vectors/anp/manglares.svg',
-      mnemonicHint: 'Los Manglares de Tumbes protegen un ecosistema único en el extremo noroeste; santuario nacional de uso indirecto.',
+      mnemonicHint:
+          'Los Manglares de Tumbes protegen un ecosistema único en el extremo noroeste; santuario nacional de uso indirecto.',
       relativeX: 0.16,
       relativeY: 0.16,
     ),
@@ -110,7 +117,8 @@ class ANPRepository {
       establishedYear: 1980,
       keyFauna: ['Vicuña', 'Ganso andino', 'Zorro andino'],
       svgAssetPath: 'assets/vectors/anp/pampa_ayacucho.svg',
-      mnemonicHint: 'La pampa histórica donde se libró la batalla de Ayacucho en 1824, consolidando la independencia.',
+      mnemonicHint:
+          'La pampa histórica donde se libró la batalla de Ayacucho en 1824, consolidando la independencia.',
       relativeX: 0.53,
       relativeY: 0.62,
     ),
@@ -124,7 +132,8 @@ class ANPRepository {
       establishedYear: 1978,
       keyFauna: ['Zambullidor del Titicaca', 'Rana gigante', 'Parihuana'],
       svgAssetPath: 'assets/vectors/anp/titicaca.svg',
-      mnemonicHint: 'Protege las riquezas del lago más alto en Puno; reserva nacional de totorales y humedal RAMSAR.',
+      mnemonicHint:
+          'Protege las riquezas del lago más alto en Puno; reserva nacional de totorales y humedal RAMSAR.',
       relativeX: 0.81,
       relativeY: 0.77,
     ),
@@ -138,7 +147,8 @@ class ANPRepository {
       establishedYear: 1990,
       keyFauna: ['Guacamayo', 'Lobo de río', 'Jaguar'],
       svgAssetPath: 'assets/vectors/anp/tambopata.svg',
-      mnemonicHint: 'Tambopata está en Madre de Dios, cerca de la frontera; protege collpas de guacamayos y ríos de uso directo.',
+      mnemonicHint:
+          'Tambopata está en Madre de Dios, cerca de la frontera; protege collpas de guacamayos y ríos de uso directo.',
       relativeX: 0.82,
       relativeY: 0.62,
     ),
@@ -152,7 +162,8 @@ class ANPRepository {
       establishedYear: 1983,
       keyFauna: ['Mono choro de cola amarilla', 'Jaguar', 'Oso de anteojos'],
       svgAssetPath: 'assets/vectors/anp/rio_abiseo.svg',
-      mnemonicHint: 'Río Abiseo es patrimonio cultural y natural de la humanidad en San Martín; protege restos del Gran Pajatén.',
+      mnemonicHint:
+          'Río Abiseo es patrimonio cultural y natural de la humanidad en San Martín; protege restos del Gran Pajatén.',
       relativeX: 0.48,
       relativeY: 0.32,
     ),
@@ -166,7 +177,8 @@ class ANPRepository {
       establishedYear: 1977,
       keyFauna: ['Zorro costeño', 'Cernícalo', 'Picaflor de oasis'],
       svgAssetPath: 'assets/vectors/anp/lachay.svg',
-      mnemonicHint: 'Lachay es el oasis de neblinas y lomas en Lima; reserva nacional donde renace la vegetación en invierno.',
+      mnemonicHint:
+          'Lachay es el oasis de neblinas y lomas en Lima; reserva nacional donde renace la vegetación en invierno.',
       relativeX: 0.38,
       relativeY: 0.54,
     ),
@@ -180,7 +192,8 @@ class ANPRepository {
       establishedYear: 1996,
       keyFauna: ['Lobo de crin', 'Ciervo de los pantanos', 'Jaguar'],
       svgAssetPath: 'assets/vectors/anp/bahuaja_sonene.svg',
-      mnemonicHint: 'Bahuaja Sonene protege la única sabana de palmeras del Perú en Madre de Dios y Puno; parque nacional intangible.',
+      mnemonicHint:
+          'Bahuaja Sonene protege la única sabana de palmeras del Perú en Madre de Dios y Puno; parque nacional intangible.',
       relativeX: 0.85,
       relativeY: 0.69,
     ),
@@ -194,7 +207,8 @@ class ANPRepository {
       establishedYear: 2009,
       keyFauna: ['Guanay', 'Piquero', 'Pelícano peruano', 'Lobo marino'],
       svgAssetPath: 'assets/vectors/anp/islas_guaneras.svg',
-      mnemonicHint: 'La reserva que recorre el litoral peruano protegiendo las islas y puntas de aves fertilizadoras y lobos.',
+      mnemonicHint:
+          'La reserva que recorre el litoral peruano protegiendo las islas y puntas de aves fertilizadoras y lobos.',
       relativeX: 0.34,
       relativeY: 0.48,
     ),
@@ -208,7 +222,8 @@ class ANPRepository {
       establishedYear: 2021,
       keyFauna: ['Ballena azul', 'Tiburón azul', 'Cachalote'],
       svgAssetPath: 'assets/vectors/anp/dorsal_nasca.svg',
-      mnemonicHint: 'La Dorsal de Nasca es la primera reserva netamente marina y profunda de montes submarinos del Perú.',
+      mnemonicHint:
+          'La Dorsal de Nasca es la primera reserva netamente marina y profunda de montes submarinos del Perú.',
       relativeX: 0.28,
       relativeY: 0.72,
     ),
@@ -222,7 +237,8 @@ class ANPRepository {
       establishedYear: 1974,
       keyFauna: ['Vicuña', 'Zorro andino', 'Ganso andino'],
       svgAssetPath: 'assets/vectors/anp/chacamarca.svg',
-      mnemonicHint: 'Chacamarca es la pampa histórica de Junín donde se libró la batalla de 1824 usando armas blancas.',
+      mnemonicHint:
+          'Chacamarca es la pampa histórica de Junín donde se libró la batalla de 1824 usando armas blancas.',
       relativeX: 0.49,
       relativeY: 0.50,
     ),

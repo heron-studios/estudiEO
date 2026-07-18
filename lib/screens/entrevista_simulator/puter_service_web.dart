@@ -56,17 +56,22 @@ class PuterServiceWeb implements PuterService {
     }
 
     try {
-      // Concatenamos el contexto para que Puter tenga historial 
+      // Concatenamos el contexto para que Puter tenga historial
       // usando la API básica de string.
-      String fullContext = _messages.map((m) => '${m['role'] == 'system' ? 'System' : (m['role'] == 'user' ? 'User' : 'Assistant')}: ${m['content']}').join('\n\n');
+      String fullContext = _messages
+          .map(
+            (m) =>
+                '${m['role'] == 'system' ? 'System' : (m['role'] == 'user' ? 'User' : 'Assistant')}: ${m['content']}',
+          )
+          .join('\n\n');
       fullContext += '\n\nAssistant:';
-      
+
       final promise = _puterAiChat(fullContext.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
-      
+
       String reply = _extractContent(dartified, response);
-      
+
       _messages.add({'role': 'assistant', 'content': reply});
       return reply;
     } catch (e) {
@@ -77,7 +82,8 @@ class PuterServiceWeb implements PuterService {
 
   @override
   Future<String> generateFlashcardsFromText(String text) async {
-    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS).
+    const String systemPrompt =
+        '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS).
 DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
 
 El formato JSON estricto esperado es:
@@ -92,8 +98,9 @@ El formato JSON estricto esperado es:
     }
   ] // MÁXIMO 5 ELEMENTOS
 }''';
-    
-    String fullPrompt = '$systemPrompt\n\nTexto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.';
+
+    String fullPrompt =
+        '$systemPrompt\n\nTexto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.';
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
@@ -104,20 +111,23 @@ El formato JSON estricto esperado es:
       throw Exception('Error al comunicarse con Puter.js: $e');
     }
   }
+
   @override
   Future<String> generateTutorAnalysis(String statsJson) async {
-    const String systemPrompt = 'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
+    const String systemPrompt =
+        'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
         'Analizas los datos de rendimiento de un estudiante preparando un examen de policía en Colombia '
         'y generas un consejo motivacional, personalizado y preciso en 3-4 oraciones. '
         'Resaltas su fortaleza, identificas su mayor debilidad y sugieres una acción concreta. '
         'Usa un tono cálido, alentador y directo. NO uses listas con viñetas. Escribe en español.';
 
-    final fullPrompt = '$systemPrompt\n\nEstos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.';
+    final fullPrompt =
+        '$systemPrompt\n\nEstos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.';
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
-      
+
       return _extractContent(dartified, response);
     } catch (e) {
       debugPrint('Error Puter JS Tutor: $e');

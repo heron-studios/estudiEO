@@ -11,15 +11,16 @@ class LimitsService {
 
   // Límites IA (Entrevista/Simulador)
   static const int maxEntrevistaPerDayFree = 1;
-  static const int maxEntrevistaPerDayPremium = 1; // Un solo intento diario para todos
+  static const int maxEntrevistaPerDayPremium =
+      1; // Un solo intento diario para todos
 
   // Keys
   static const String _kQuestionsDate = 'limits_questions_date';
   static const String _kQuestionsCount = 'limits_questions_count';
-  
+
   static const String _kSimulacroWeek = 'limits_simulacro_week';
   static const String _kSimulacroCount = 'limits_simulacro_count';
-  
+
   static const String _kTutorIADate = 'limits_tutor_ia_date';
   static const String _kTutorIACount = 'limits_tutor_ia_count';
 
@@ -30,14 +31,14 @@ class LimitsService {
   static Future<bool> canAnswerQuestion() async {
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    
+
     final savedDate = prefs.getString(_kQuestionsDate);
     if (savedDate != today) {
       await prefs.setString(_kQuestionsDate, today);
       await prefs.setInt(_kQuestionsCount, 0);
       return true;
     }
-    
+
     final count = prefs.getInt(_kQuestionsCount) ?? 0;
     return count < maxQuestionsPerDay;
   }
@@ -46,7 +47,7 @@ class LimitsService {
   static Future<void> incrementQuestionCount() async {
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    
+
     final savedDate = prefs.getString(_kQuestionsDate);
     if (savedDate != today) {
       await prefs.setString(_kQuestionsDate, today);
@@ -68,14 +69,14 @@ class LimitsService {
   static Future<bool> canTakeSimulacro() async {
     final prefs = await SharedPreferences.getInstance();
     final weekKey = _getCurrentWeekKey();
-    
+
     final savedWeek = prefs.getString(_kSimulacroWeek);
     if (savedWeek != weekKey) {
       await prefs.setString(_kSimulacroWeek, weekKey);
       await prefs.setInt(_kSimulacroCount, 0);
       return true;
     }
-    
+
     final count = prefs.getInt(_kSimulacroCount) ?? 0;
     return count < maxSimulacrosPerWeek;
   }
@@ -84,7 +85,7 @@ class LimitsService {
   static Future<void> incrementSimulacroCount() async {
     final prefs = await SharedPreferences.getInstance();
     final weekKey = _getCurrentWeekKey();
-    
+
     final savedWeek = prefs.getString(_kSimulacroWeek);
     if (savedWeek != weekKey) {
       await prefs.setString(_kSimulacroWeek, weekKey);
@@ -100,14 +101,14 @@ class LimitsService {
     final limit = isPremium ? maxTutorPerDayPremium : maxTutorPerDayFree;
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    
+
     final savedDate = prefs.getString(_kTutorIADate);
     if (savedDate != today) {
       await prefs.setString(_kTutorIADate, today);
       await prefs.setInt(_kTutorIACount, 0);
       return true;
     }
-    
+
     final count = prefs.getInt(_kTutorIACount) ?? 0;
     return count < limit;
   }
@@ -116,7 +117,7 @@ class LimitsService {
   static Future<void> incrementTutorIACount() async {
     final prefs = await SharedPreferences.getInstance();
     final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-    
+
     final savedDate = prefs.getString(_kTutorIADate);
     if (savedDate != today) {
       await prefs.setString(_kTutorIADate, today);
@@ -131,22 +132,24 @@ class LimitsService {
 
   /// Retorna si el usuario puede iniciar una entrevista simulada con IA
   static Future<bool> canUseEntrevistaIA(bool isPremium) async {
-    final limit = isPremium ? maxEntrevistaPerDayPremium : maxEntrevistaPerDayFree;
+    final limit = isPremium
+        ? maxEntrevistaPerDayPremium
+        : maxEntrevistaPerDayFree;
     final prefs = await SharedPreferences.getInstance();
-    
+
     final savedDateString = prefs.getString(_kEntrevistaIADate);
     if (savedDateString == null) return true;
-    
+
     final savedDate = DateTime.tryParse(savedDateString);
     if (savedDate == null) return true;
-    
+
     final waitHours = _getWaitHours(isPremium);
     if (DateTime.now().difference(savedDate).inHours >= waitHours) {
       await prefs.remove(_kEntrevistaIADate);
       await prefs.setInt(_kEntrevistaIACount, 0);
       return true;
     }
-    
+
     final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
     return count < limit;
   }
@@ -158,16 +161,18 @@ class LimitsService {
     if (savedDateString == null) return 0;
     final savedDate = DateTime.tryParse(savedDateString);
     if (savedDate == null) return 0;
-    
+
     final passedHours = DateTime.now().difference(savedDate).inHours;
     final waitHours = _getWaitHours(isPremium);
     if (passedHours >= waitHours) return 0;
-    
+
     final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
-    final limit = isPremium ? maxEntrevistaPerDayPremium : maxEntrevistaPerDayFree;
-    
+    final limit = isPremium
+        ? maxEntrevistaPerDayPremium
+        : maxEntrevistaPerDayFree;
+
     if (count >= limit) {
-       return waitHours - passedHours;
+      return waitHours - passedHours;
     }
     return 0;
   }
@@ -175,22 +180,23 @@ class LimitsService {
   /// Incrementa el uso de Entrevista simulada
   static Future<void> incrementEntrevistaIACount(bool isPremium) async {
     final prefs = await SharedPreferences.getInstance();
-    
+
     final savedDateString = prefs.getString(_kEntrevistaIADate);
     DateTime? savedDate;
     if (savedDateString != null) {
       savedDate = DateTime.tryParse(savedDateString);
     }
-    
+
     final waitHours = _getWaitHours(isPremium);
-    
-    if (savedDate == null || DateTime.now().difference(savedDate).inHours >= waitHours) {
+
+    if (savedDate == null ||
+        DateTime.now().difference(savedDate).inHours >= waitHours) {
       await prefs.setInt(_kEntrevistaIACount, 1);
     } else {
       final count = prefs.getInt(_kEntrevistaIACount) ?? 0;
       await prefs.setInt(_kEntrevistaIACount, count + 1);
     }
-    
+
     await prefs.setString(_kEntrevistaIADate, DateTime.now().toIso8601String());
   }
 }

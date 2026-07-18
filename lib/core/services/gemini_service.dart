@@ -2,12 +2,72 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class GeminiService {
-  static final String _apiKey = String.fromCharCodes([103, 115, 107, 95, 98, 50, 55, 111, 83, 66, 90, 98, 55, 99, 102, 82, 80, 115, 74, 112, 106, 51, 77, 114, 87, 71, 100, 121, 98, 51, 70, 89, 67, 104, 105, 87, 111, 66, 76, 80, 113, 75, 107, 50, 120, 98, 73, 122, 73, 80, 56, 100, 98, 75, 109, 87]);
+  static final String _apiKey = String.fromCharCodes([
+    103,
+    115,
+    107,
+    95,
+    98,
+    50,
+    55,
+    111,
+    83,
+    66,
+    90,
+    98,
+    55,
+    99,
+    102,
+    82,
+    80,
+    115,
+    74,
+    112,
+    106,
+    51,
+    77,
+    114,
+    87,
+    71,
+    100,
+    121,
+    98,
+    51,
+    70,
+    89,
+    67,
+    104,
+    105,
+    87,
+    111,
+    66,
+    76,
+    80,
+    113,
+    75,
+    107,
+    50,
+    120,
+    98,
+    73,
+    122,
+    73,
+    80,
+    56,
+    100,
+    98,
+    75,
+    109,
+    87,
+  ]);
   static const String _baseUrl =
       'https://api.groq.com/openai/v1/chat/completions';
 
   /// Genera un concepto nemotécnico/explicación corta para reforzar una tarjeta.
-  static Future<String> explicarConcepto(String pregunta, String respuesta) async {
+  static Future<String> explicarConcepto(
+    String pregunta,
+    String respuesta,
+  ) async {
     const systemPrompt =
         'Eres un tutor amigable experto en técnicas de estudio para la EO PNP. '
         'Dado un par pregunta-respuesta, genera UN concepto nemotécnico o truco de memoria '
@@ -21,7 +81,9 @@ class GeminiService {
   }
 
   /// Genera un consejo breve y motivador basado en el progreso actual del usuario.
-  static Future<String> darConsejoPersonalizado(Map<String, dynamic> stats) async {
+  static Future<String> darConsejoPersonalizado(
+    Map<String, dynamic> stats,
+  ) async {
     const systemPrompt =
         'Eres un tutor de Inteligencia Artificial para postulantes a la EO PNP. '
         'Recibirás estadísticas del estudiante (tarjetas nuevas, aprendiendo, dominadas, por revisar). '
@@ -29,7 +91,7 @@ class GeminiService {
         'Si hay muchas tarjetas "por revisar", motívalo a repasarlas. Si hay muchas "dominadas", felicítalo. '
         'Usa un tono directo, militar, pero amigable.';
 
-    final userPrompt = 
+    final userPrompt =
         'Nuevas: ${stats['new']}, Aprendiendo: ${stats['learning']}, '
         'Dominadas: ${stats['mastered']}, Por revisar: ${stats['overdue']}';
 
@@ -37,14 +99,18 @@ class GeminiService {
   }
 
   /// Explica por qué una respuesta es incorrecta y resalta la correcta.
-  static Future<String> explicarError(String pregunta, String respElegida, String respCorrecta) async {
+  static Future<String> explicarError(
+    String pregunta,
+    String respElegida,
+    String respCorrecta,
+  ) async {
     const systemPrompt =
         'Eres un tutor experto para postulantes PNP. '
         'El estudiante falló una pregunta. Recibirás la pregunta, la respuesta que él eligió (incorrecta) y la respuesta correcta. '
         'Tu tarea es explicar, en máximo 3-4 líneas claras, por qué su opción es incorrecta y por qué la correcta es la verdadera. '
         'Sé empático, didáctico y fomenta el aprendizaje.';
 
-    final userPrompt = 
+    final userPrompt =
         'Pregunta: $pregunta\n'
         'El estudiante respondió: $respElegida\n'
         'Respuesta correcta: $respCorrecta';
@@ -60,7 +126,7 @@ class GeminiService {
       'model': 'llama-3.3-70b-versatile',
       'messages': [
         {'role': 'system', 'content': system},
-        {'role': 'user', 'content': user}
+        {'role': 'user', 'content': user},
       ],
       'temperature': 0.7,
       'max_completion_tokens': 200,
@@ -94,7 +160,9 @@ class GeminiService {
   }
 
   /// Traduce preguntas de trivia del inglés al español usando Gemini 2.0 Flash.
-  static Future<List<dynamic>> translateTriviaQuestions(List<dynamic> questions) async {
+  static Future<List<dynamic>> translateTriviaQuestions(
+    List<dynamic> questions,
+  ) async {
     const systemPrompt =
         'Eres un traductor experto de inglés a español neutro. '
         'Se te proporcionará una lista de preguntas de trivia en formato JSON. '
@@ -129,7 +197,11 @@ class GeminiService {
   }
 
   /// Genera preguntas del jurado PNP por IA en formato JSON compatible.
-  static Future<List<dynamic>> generarPreguntasTriviaPNP(List<String> categories, String difficulty, int limit) async {
+  static Future<List<dynamic>> generarPreguntasTriviaPNP(
+    List<String> categories,
+    String difficulty,
+    int limit,
+  ) async {
     final systemPrompt =
         'Eres un jurado experto y sumamente riguroso del examen de entrevista personal para la Escuela de Oficiales de la Policía Nacional del Perú (EO PNP). '
         'Tu tarea es generar exactamente $limit preguntas de opción múltiple enfocadas en evaluar los conocimientos que un postulante a la PNP debe dominar para su entrevista. '
@@ -155,7 +227,8 @@ class GeminiService {
         'Debes elegir solo entre las categorías especificadas en la siguiente lista de interés del examen: ${categories.join(", ")}.\n'
         'Devuelve ÚNICAMENTE el código JSON generado, sin bloques de código de markdown (no uses ```json ni ```), sin texto explicativo. El resultado debe ser un array JSON válido.';
 
-    final userPrompt = 'Genera exactamente $limit preguntas de opción múltiple sobre las categorías: ${categories.join(", ")} con nivel de dificultad: $difficulty.';
+    final userPrompt =
+        'Genera exactamente $limit preguntas de opción múltiple sobre las categorías: ${categories.join(", ")} con nivel de dificultad: $difficulty.';
 
     try {
       final responseText = await _callGemini(systemPrompt, userPrompt);
@@ -182,7 +255,10 @@ class GeminiService {
   }
 
   /// Genera una evaluación corta y motivadora al terminar el examen de entrevista de cultura general.
-  static Future<String> generarFeedbackEntrevistaTrivia(int score, int total) async {
+  static Future<String> generarFeedbackEntrevistaTrivia(
+    int score,
+    int total,
+  ) async {
     const systemPrompt =
         'Eres un jurado experto y exigente para el examen de admisión a la EO PNP. '
         'El estudiante acaba de rendir una simulación de examen de cultura general para la entrevista personal. '

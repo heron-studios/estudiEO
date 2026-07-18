@@ -18,18 +18,20 @@ class ANPFlashcardsView extends StatefulWidget {
 class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
   final SpacedRepetitionEngine _engine = SpacedRepetitionEngine();
   final List<ANPModel> _allAnps = ANPRepository.getAllANPs();
-  
+
   List<String> _studyQueue = [];
   int _currentIndex = 0;
   int _cardsReviewedThisSession = 0;
-  
+
   late ConfettiController _confettiController;
   final GlobalKey<_FlipCardState> _cardKey = GlobalKey<_FlipCardState>();
 
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
     _engine.initItems(_allAnps.map((e) => e.id).toList());
     _loadQueue();
   }
@@ -56,10 +58,10 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
     if (_studyQueue.isEmpty) return;
 
     final currentId = _studyQueue[_currentIndex];
-    
+
     // Process in engine
     _engine.processAnswer(currentId, qualityScore);
-    
+
     setState(() {
       _cardsReviewedThisSession++;
     });
@@ -91,8 +93,13 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: NeuralTheme.of(context).surfaceCard,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
-          title: const Text('¡Sesión Completada! 🎉', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(28),
+          ),
+          title: const Text(
+            '¡Sesión Completada! 🎉',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
           content: Text(
             'Has repasado $_cardsReviewedThisSession tarjetas de áreas naturales usando repetición espaciada.\n\nEl algoritmo SM-2 ha programado las fechas de tus próximos repasos.',
             style: const TextStyle(color: Colors.white70),
@@ -103,7 +110,13 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                 context.pop(); // close dialog
                 context.pop(); // return to dashboard
               },
-              child: const Text('Volver al Menú', style: TextStyle(color: Colors.greenAccent, fontWeight: FontWeight.bold)),
+              child: const Text(
+                'Volver al Menú',
+                style: TextStyle(
+                  color: Colors.greenAccent,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -112,7 +125,10 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                   _loadQueue();
                 });
               },
-              child: const Text('Repasar otra vez', style: TextStyle(color: Colors.orangeAccent)),
+              child: const Text(
+                'Repasar otra vez',
+                style: TextStyle(color: Colors.orangeAccent),
+              ),
             ),
           ],
         );
@@ -128,7 +144,12 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
       return Scaffold(
         backgroundColor: nt.background,
         appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
-        body: const Center(child: Text('Cargando tarjetas...', style: TextStyle(color: Colors.white))),
+        body: const Center(
+          child: Text(
+            'Cargando tarjetas...',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
       );
     }
 
@@ -146,7 +167,10 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: const Text(
@@ -170,17 +194,27 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                       children: [
                         Text(
                           'Progreso: ${_currentIndex + 1} de ${_studyQueue.length}',
-                          style: const TextStyle(color: Colors.white70, fontSize: 13),
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 13,
+                          ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 4,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.05),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
                             'EF: ${srsItem?.easinessFactor.toStringAsFixed(2) ?? '2.50'}',
-                            style: TextStyle(color: nt.cyan, fontSize: 11, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: nt.cyan,
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -196,7 +230,8 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                             Container(color: Colors.white10),
                             AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
-                              width: MediaQuery.of(context).size.width * progress,
+                              width:
+                                  MediaQuery.of(context).size.width * progress,
                               color: nt.blueGoogle,
                             ),
                           ],
@@ -204,7 +239,7 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    
+
                     // The Flashcard itself
                     Expanded(
                       child: Center(
@@ -228,7 +263,7 @@ class _ANPFlashcardsViewState extends State<ANPFlashcardsView> {
                 ),
               ),
             ),
-            
+
             // Confetti Overlay
             Align(
               alignment: Alignment.topCenter,
@@ -250,17 +285,14 @@ class _FlipCard extends StatefulWidget {
   final ANPModel anp;
   final Function(int) onReview;
 
-  const _FlipCard({
-    super.key,
-    required this.anp,
-    required this.onReview,
-  });
+  const _FlipCard({super.key, required this.anp, required this.onReview});
 
   @override
   State<_FlipCard> createState() => _FlipCardState();
 }
 
-class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixin {
+class _FlipCardState extends State<_FlipCard>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   bool _isFront = true;
@@ -272,9 +304,10 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
       vsync: this,
       duration: const Duration(milliseconds: 400),
     );
-    _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _animation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -360,9 +393,15 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: (isIndirect ? nt.pink : nt.successGreen).withValues(alpha: 0.12),
+              color: (isIndirect ? nt.pink : nt.successGreen).withValues(
+                alpha: 0.12,
+              ),
               shape: BoxShape.circle,
-              border: Border.all(color: (isIndirect ? nt.pink : nt.successGreen).withValues(alpha: 0.3)),
+              border: Border.all(
+                color: (isIndirect ? nt.pink : nt.successGreen).withValues(
+                  alpha: 0.3,
+                ),
+              ),
             ),
             child: Icon(
               Icons.landscape_rounded,
@@ -391,7 +430,11 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
             ),
             child: Text(
               widget.anp.category,
-              style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold, fontSize: 13),
+              style: TextStyle(
+                color: nt.blueGoogle,
+                fontWeight: FontWeight.bold,
+                fontSize: 13,
+              ),
             ),
           ),
           const Spacer(),
@@ -426,24 +469,40 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
         children: [
           const Text(
             'Datos de Admisión',
-            style: TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 14),
+            style: TextStyle(
+              color: Colors.orangeAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
           ),
           const SizedBox(height: 16),
           _infoRow('Región:', widget.anp.regions.join(', ')),
-          _infoRow('Establecido:', '${widget.anp.establishedYear} (${DateTime.now().year - widget.anp.establishedYear} años)'),
+          _infoRow(
+            'Establecido:',
+            '${widget.anp.establishedYear} (${DateTime.now().year - widget.anp.establishedYear} años)',
+          ),
           _infoRow('Tipo de Uso:', widget.anp.useType),
           _infoRow('Fauna Clave:', widget.anp.keyFauna.join(', ')),
           const SizedBox(height: 16),
           const Text(
             'Mnemotecnia:',
-            style: TextStyle(color: Colors.greenAccent, fontWeight: FontWeight.bold, fontSize: 14),
+            style: TextStyle(
+              color: Colors.greenAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
           ),
           const SizedBox(height: 6),
           Expanded(
             child: SingleChildScrollView(
               child: Text(
                 widget.anp.mnemonicHint,
-                style: const TextStyle(color: Colors.white70, height: 1.4, fontStyle: FontStyle.italic, fontSize: 13),
+                style: const TextStyle(
+                  color: Colors.white70,
+                  height: 1.4,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 13,
+                ),
               ),
             ),
           ),
@@ -451,7 +510,11 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
           // SM-2 Review feedback buttons
           const Text(
             '¿Qué tan bien lo recordabas?',
-            style: TextStyle(color: Colors.white30, fontSize: 11, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              color: Colors.white30,
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8),
@@ -509,7 +572,11 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
         children: [
           Text(
             label,
-            style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 13),
+            style: TextStyle(
+              color: color,
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+            ),
           ),
           const SizedBox(height: 2),
           Text(
@@ -537,7 +604,11 @@ class _FlipCardState extends State<_FlipCard> with SingleTickerProviderStateMixi
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 13),
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 13,
+              ),
             ),
           ),
         ],

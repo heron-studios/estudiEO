@@ -10,13 +10,48 @@ import 'package:learn/features/auth/domain/auth_service.dart';
 
 // ─── Beneficios del plan ──────────────────────────────────────────────────────
 const _benefits = [
-  _Benefit(Icons.all_inclusive_rounded,     Color(0xFF3B82F6), 'Acceso permanente a la app',         'Una vez, para siempre. Sin renovaciones.'),
-  _Benefit(Icons.quiz_rounded,              Color(0xFF8B5CF6), 'Simulacro Tipo Examen de Admisión',  'Con preguntas reales de exámenes de procesos pasados.'),
-  _Benefit(Icons.psychology_rounded,        Color(0xFFF59E0B), 'Misión Diaria de Aprendizaje',       'Sistema inteligente para repasar temas frecuentes.'),
-  _Benefit(Icons.health_and_safety_rounded, Color(0xFF10B981), 'Área Médica y Psicométrica',         'Test de Eysenck, Sacks, TMT y simuladores psicotécnicos.'),
-  _Benefit(Icons.record_voice_over_rounded, Color(0xFFEF4444), 'Simuladores de Entrevista',          'Entrevista personal con IA (Groq) y trivias de cultura general policial.'),
-  _Benefit(Icons.extension_rounded,         Color(0xFF06B6D4), 'Mini-apps y Taller de Redacción',    'ANP Master, Silogismos, Productos Notables y corrección de redacción.'),
-  _Benefit(Icons.support_agent_rounded,     Color(0xFFFFD700), 'Soporte VIP y Actualizaciones',      'Grupo exclusivo y nuevas preguntas sin costo adicional.'),
+  _Benefit(
+    Icons.all_inclusive_rounded,
+    Color(0xFF3B82F6),
+    'Acceso permanente a la app',
+    'Una vez, para siempre. Sin renovaciones.',
+  ),
+  _Benefit(
+    Icons.quiz_rounded,
+    Color(0xFF8B5CF6),
+    'Simulacro Tipo Examen de Admisión',
+    'Con preguntas reales de exámenes de procesos pasados.',
+  ),
+  _Benefit(
+    Icons.psychology_rounded,
+    Color(0xFFF59E0B),
+    'Misión Diaria de Aprendizaje',
+    'Sistema inteligente para repasar temas frecuentes.',
+  ),
+  _Benefit(
+    Icons.health_and_safety_rounded,
+    Color(0xFF10B981),
+    'Área Médica y Psicométrica',
+    'Test de Eysenck, Sacks, TMT y simuladores psicotécnicos.',
+  ),
+  _Benefit(
+    Icons.record_voice_over_rounded,
+    Color(0xFFEF4444),
+    'Simuladores de Entrevista',
+    'Entrevista personal con IA (Groq) y trivias de cultura general policial.',
+  ),
+  _Benefit(
+    Icons.extension_rounded,
+    Color(0xFF06B6D4),
+    'Mini-apps y Taller de Redacción',
+    'ANP Master, Silogismos, Productos Notables y corrección de redacción.',
+  ),
+  _Benefit(
+    Icons.support_agent_rounded,
+    Color(0xFFFFD700),
+    'Soporte VIP y Actualizaciones',
+    'Grupo exclusivo y nuevas preguntas sin costo adicional.',
+  ),
 ];
 
 class _Benefit {
@@ -53,24 +88,38 @@ class _PaymentScreenState extends State<PaymentScreen>
   void initState() {
     super.initState();
 
-    _pulseCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 2))
-      ..repeat(reverse: true);
-    _floatCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 3))
-      ..repeat(reverse: true);
-    _entranceCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 800))
-      ..forward();
-    _bgCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 8));
+    _pulseCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat(reverse: true);
+    _floatCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat(reverse: true);
+    _entranceCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    )..forward();
+    _bgCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 8),
+    );
     if (kIsWeb) {
       _bgCtrl.repeat();
     }
 
-    _pulseAnim = Tween<double>(begin: 0.97, end: 1.03).animate(
-      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
+    _pulseAnim = Tween<double>(
+      begin: 0.97,
+      end: 1.03,
+    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
+    _floatAnim = Tween<double>(
+      begin: -6.0,
+      end: 6.0,
+    ).animate(CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut));
+    _entranceAnim = CurvedAnimation(
+      parent: _entranceCtrl,
+      curve: Curves.easeOutBack,
     );
-    _floatAnim = Tween<double>(begin: -6.0, end: 6.0).animate(
-      CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut),
-    );
-    _entranceAnim = CurvedAnimation(parent: _entranceCtrl, curve: Curves.easeOutBack);
   }
 
   @override
@@ -83,7 +132,8 @@ class _PaymentScreenState extends State<PaymentScreen>
   }
 
   Future<void> _launchWhatsApp() async {
-    const text = 'Hola! estoy interesado en adquirir la aplicacion con el descuento Cyber Wow de 15 soles, mas informacion por favor';
+    const text =
+        'Hola! estoy interesado en adquirir la aplicacion con el descuento Cyber Wow de 15 soles, mas informacion por favor';
     final uri = Uri.parse(
       'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
     );
@@ -92,7 +142,10 @@ class _PaymentScreenState extends State<PaymentScreen>
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('No se pudo abrir WhatsApp: $e'), backgroundColor: Colors.redAccent),
+          SnackBar(
+            content: Text('No se pudo abrir WhatsApp: $e'),
+            backgroundColor: Colors.redAccent,
+          ),
         );
       }
     }
@@ -111,20 +164,13 @@ class _PaymentScreenState extends State<PaymentScreen>
           Positioned.fill(
             child: AnimatedBuilder(
               animation: _bgCtrl,
-              builder: (_, __) => CustomPaint(
-                painter: _BgPainter(_bgCtrl.value),
-              ),
+              builder: (_, __) =>
+                  CustomPaint(painter: _BgPainter(_bgCtrl.value)),
             ),
           ),
 
           // Contenido
-          SafeArea(
-            child: isWide
-                ? _buildWideLayout()
-                : _buildNarrowLayout(),
-          ),
-
-
+          SafeArea(child: isWide ? _buildWideLayout() : _buildNarrowLayout()),
 
           // Cerrar sesión
           Positioned(
@@ -138,7 +184,10 @@ class _PaymentScreenState extends State<PaymentScreen>
                     context: context,
                     builder: (ctx) => AlertDialog(
                       backgroundColor: const Color(0xFF1E293B),
-                      title: const Text('¿Cerrar Sesión?', style: TextStyle(color: Colors.white)),
+                      title: const Text(
+                        '¿Cerrar Sesión?',
+                        style: TextStyle(color: Colors.white),
+                      ),
                       content: const Text(
                         '¿Estás seguro de que deseas salir y volver al inicio de sesión?',
                         style: TextStyle(color: Color(0xFF94A3B8)),
@@ -146,12 +195,20 @@ class _PaymentScreenState extends State<PaymentScreen>
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(ctx, false),
-                          child: const Text('Cancelar', style: TextStyle(color: Colors.white70)),
+                          child: const Text(
+                            'Cancelar',
+                            style: TextStyle(color: Colors.white70),
+                          ),
                         ),
                         ElevatedButton(
                           onPressed: () => Navigator.pop(ctx, true),
-                          style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFEF4444)),
-                          child: const Text('Salir', style: TextStyle(color: Colors.white)),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFEF4444),
+                          ),
+                          child: const Text(
+                            'Salir',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),
@@ -160,15 +217,28 @@ class _PaymentScreenState extends State<PaymentScreen>
                     await authService.signOut();
                   }
                 },
-                icon: const Icon(Icons.logout_rounded, color: Colors.white70, size: 16),
+                icon: const Icon(
+                  Icons.logout_rounded,
+                  color: Colors.white70,
+                  size: 16,
+                ),
                 label: const Text(
                   'Cerrar Sesión',
-                  style: TextStyle(color: Colors.white70, fontSize: 13, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.white.withValues(alpha: 0.05),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 10,
+                  ),
                 ),
               ),
             ),
@@ -220,7 +290,9 @@ class _PaymentScreenState extends State<PaymentScreen>
                   flex: 5,
                   child: Column(
                     children: [
-                      const SizedBox(height: 12), // Alínea verticalmente con el título de la izquierda
+                      const SizedBox(
+                        height: 12,
+                      ), // Alínea verticalmente con el título de la izquierda
                       ScaleTransition(
                         scale: _entranceAnim,
                         child: _buildUnifiedCheckoutCard(),
@@ -287,12 +359,18 @@ class _PaymentScreenState extends State<PaymentScreen>
           ],
           stops: const [0.0, 0.5, 1.0],
         ),
-        border: Border.all(color: const Color(0xFFFFD700).withValues(alpha: 0.5)),
+        border: Border.all(
+          color: const Color(0xFFFFD700).withValues(alpha: 0.5),
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.local_fire_department_rounded, color: Color(0xFFFFD700), size: 16),
+          const Icon(
+            Icons.local_fire_department_rounded,
+            color: Color(0xFFFFD700),
+            size: 16,
+          ),
           const SizedBox(width: 6),
           Text(
             'OFERTA ESPECIAL · ACCESO PERMANENTE',
@@ -317,7 +395,8 @@ class _PaymentScreenState extends State<PaymentScreen>
       ),
       child: AnimatedBuilder(
         animation: _pulseAnim,
-        builder: (_, child) => Transform.scale(scale: _pulseAnim.value, child: child),
+        builder: (_, child) =>
+            Transform.scale(scale: _pulseAnim.value, child: child),
         child: Container(
           width: 110,
           height: 110,
@@ -328,8 +407,16 @@ class _PaymentScreenState extends State<PaymentScreen>
               center: Alignment(-0.3, -0.3),
             ),
             boxShadow: [
-              BoxShadow(color: const Color(0xFF3B82F6).withValues(alpha: 0.6), blurRadius: 40, spreadRadius: 10),
-              BoxShadow(color: const Color(0xFF7C3AED).withValues(alpha: 0.4), blurRadius: 60, spreadRadius: 5),
+              BoxShadow(
+                color: const Color(0xFF3B82F6).withValues(alpha: 0.6),
+                blurRadius: 40,
+                spreadRadius: 10,
+              ),
+              BoxShadow(
+                color: const Color(0xFF7C3AED).withValues(alpha: 0.4),
+                blurRadius: 60,
+                spreadRadius: 5,
+              ),
             ],
           ),
           child: Stack(
@@ -343,7 +430,11 @@ class _PaymentScreenState extends State<PaymentScreen>
                   color: Colors.white.withValues(alpha: 0.08),
                 ),
               ),
-              const Icon(Icons.military_tech_rounded, color: Colors.white, size: 52),
+              const Icon(
+                Icons.military_tech_rounded,
+                color: Colors.white,
+                size: 52,
+              ),
             ],
           ),
         ),
@@ -361,7 +452,11 @@ class _PaymentScreenState extends State<PaymentScreen>
             children: [
               ShaderMask(
                 shaderCallback: (b) => const LinearGradient(
-                  colors: [Color(0xFF60A5FA), Color(0xFFA78BFA), Color(0xFFF472B6)],
+                  colors: [
+                    Color(0xFF60A5FA),
+                    Color(0xFFA78BFA),
+                    Color(0xFFF472B6),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(b),
@@ -379,7 +474,11 @@ class _PaymentScreenState extends State<PaymentScreen>
               const SizedBox(height: 12),
               Text(
                 'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EDUPOL. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
-                style: TextStyle(fontSize: 14, color: Colors.white.withValues(alpha: 0.65), height: 1.5),
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white.withValues(alpha: 0.65),
+                  height: 1.5,
+                ),
               ),
             ],
           ),
@@ -415,7 +514,11 @@ class _PaymentScreenState extends State<PaymentScreen>
         Text(
           'Miles de alumnos y cadetes ya aprobaron con EDUPOL.\nSé el próximo.',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 15, color: Colors.white.withValues(alpha: 0.6), height: 1.6),
+          style: TextStyle(
+            fontSize: 15,
+            color: Colors.white.withValues(alpha: 0.6),
+            height: 1.6,
+          ),
         ),
       ],
     );
@@ -423,40 +526,62 @@ class _PaymentScreenState extends State<PaymentScreen>
 
   Widget _buildBenefitsList() {
     return Column(
-      children: _benefits.map((b) => Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 2),
-              width: 32,
-              height: 32,
-              decoration: BoxDecoration(
-                color: b.color.withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-                border: Border.all(color: b.color.withValues(alpha: 0.3)),
-              ),
-              child: Icon(b.icon, color: b.color, size: 16),
-            ),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(
+      children: _benefits
+          .map(
+            (b) => Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(b.title, style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 2),
-                  Text(b.subtitle, style: TextStyle(color: Colors.white.withValues(alpha: 0.5), fontSize: 12.5, height: 1.35)),
+                  Container(
+                    margin: const EdgeInsets.only(top: 2),
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      color: b.color.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
+                      border: Border.all(color: b.color.withValues(alpha: 0.3)),
+                    ),
+                    child: Icon(b.icon, color: b.color, size: 16),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          b.title,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          b.subtitle,
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.5),
+                            fontSize: 12.5,
+                            height: 1.35,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 4, left: 8),
+                    child: Icon(
+                      Icons.check_circle_rounded,
+                      color: Color(0xFF22C55E),
+                      size: 18,
+                    ),
+                  ),
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 4, left: 8),
-              child: Icon(Icons.check_circle_rounded, color: Color(0xFF22C55E), size: 18),
-            ),
-          ],
-        ),
-      )).toList(),
+          )
+          .toList(),
     );
   }
 
@@ -473,28 +598,62 @@ class _PaymentScreenState extends State<PaymentScreen>
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)]),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)],
+                  ),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: const Icon(Icons.workspace_premium_rounded, color: Colors.white, size: 22),
+                child: const Icon(
+                  Icons.workspace_premium_rounded,
+                  color: Colors.white,
+                  size: 22,
+                ),
               ),
               const SizedBox(width: 12),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('PLAN COMPLETO', style: TextStyle(color: Color(0xFF93C5FD), fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.5)),
-                  Text('Acceso Permanente', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text(
+                    'PLAN COMPLETO',
+                    style: TextStyle(
+                      color: Color(0xFF93C5FD),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  Text(
+                    'Acceso Permanente',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
               const Spacer(),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF22C55E).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: const Color(0xFF22C55E).withValues(alpha: 0.5)),
+                  border: Border.all(
+                    color: const Color(0xFF22C55E).withValues(alpha: 0.5),
+                  ),
                 ),
-                child: const Text('ÚNICO PAGO', style: TextStyle(color: Color(0xFF4ADE80), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 0.8)),
+                child: const Text(
+                  'ÚNICO PAGO',
+                  style: TextStyle(
+                    color: Color(0xFF4ADE80),
+                    fontSize: 10,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.8,
+                  ),
+                ),
               ),
             ],
           ),
@@ -526,7 +685,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               }
             },
           ),
-          
+
           const SizedBox(height: 8),
 
           _buildSecondaryButton(
@@ -534,7 +693,9 @@ class _PaymentScreenState extends State<PaymentScreen>
             label: 'Comunidad de WhatsApp',
             subtitle: 'Únete para recibir novedades gratis',
             gradient: const [Color(0xFF25D366), Color(0xFF075E54)],
-            onTap: () => _launchUrl('https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05'),
+            onTap: () => _launchUrl(
+              'https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05',
+            ),
           ),
 
           const SizedBox(height: 8),
@@ -544,7 +705,9 @@ class _PaymentScreenState extends State<PaymentScreen>
             label: 'Descargar App (Android / PC)',
             subtitle: 'Consigue la versión para celular y computadora',
             gradient: const [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
-            onTap: () => _launchUrl('https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing'),
+            onTap: () => _launchUrl(
+              'https://drive.google.com/drive/folders/1HOvLB-RUYYPUABrrNRbjrrVFcEs-6ooE?usp=sharing',
+            ),
           ),
 
           const SizedBox(height: 16),
@@ -570,10 +733,22 @@ class _PaymentScreenState extends State<PaymentScreen>
           end: Alignment.bottomRight,
           colors: [Color(0xFF1E3A5F), Color(0xFF0F1F3D), Color(0xFF1A1040)],
         ),
-        border: Border.all(color: const Color(0xFF3B82F6).withValues(alpha: 0.5), width: 1.5),
+        border: Border.all(
+          color: const Color(0xFF3B82F6).withValues(alpha: 0.5),
+          width: 1.5,
+        ),
         boxShadow: [
-          BoxShadow(color: const Color(0xFF3B82F6).withValues(alpha: 0.2), blurRadius: 35, spreadRadius: 5, offset: const Offset(0, 10)),
-          BoxShadow(color: const Color(0xFF7C3AED).withValues(alpha: 0.15), blurRadius: 45, offset: const Offset(0, -5)),
+          BoxShadow(
+            color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
+            blurRadius: 35,
+            spreadRadius: 5,
+            offset: const Offset(0, 10),
+          ),
+          BoxShadow(
+            color: const Color(0xFF7C3AED).withValues(alpha: 0.15),
+            blurRadius: 45,
+            offset: const Offset(0, -5),
+          ),
         ],
       ),
       child: ClipRRect(
@@ -597,22 +772,48 @@ class _PaymentScreenState extends State<PaymentScreen>
           children: [
             const Padding(
               padding: EdgeInsets.only(top: 10),
-              child: Text('S/', style: TextStyle(color: Color(0xFF60A5FA), fontSize: 22, fontWeight: FontWeight.w700)),
+              child: Text(
+                'S/',
+                style: TextStyle(
+                  color: Color(0xFF60A5FA),
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
             const SizedBox(width: 4),
             ShaderMask(
               shaderCallback: (b) => const LinearGradient(
                 colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
               ).createShader(b),
-              child: const Text('15', style: TextStyle(color: Colors.white, fontSize: 72, fontWeight: FontWeight.w900, height: 1, letterSpacing: -3)),
+              child: const Text(
+                '15',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 72,
+                  fontWeight: FontWeight.w900,
+                  height: 1,
+                  letterSpacing: -3,
+                ),
+              ),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('.00', style: TextStyle(color: Color(0xFF60A5FA), fontSize: 22, fontWeight: FontWeight.w700)),
-                  Text('soles', style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13)),
+                  Text(
+                    '.00',
+                    style: TextStyle(
+                      color: Color(0xFF60A5FA),
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    'soles',
+                    style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+                  ),
                 ],
               ),
             ),
@@ -626,11 +827,17 @@ class _PaymentScreenState extends State<PaymentScreen>
             decoration: BoxDecoration(
               color: const Color(0xFFEF4444).withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: const Color(0xFFEF4444).withValues(alpha: 0.5)),
+              border: Border.all(
+                color: const Color(0xFFEF4444).withValues(alpha: 0.5),
+              ),
             ),
             child: const Text(
               '🔥 Descuento Cyber Wow 50%: de 30 soles a 15 soles todo el mes de julio',
-              style: TextStyle(color: Color(0xFFEF4444), fontSize: 13, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                color: Color(0xFFEF4444),
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -638,7 +845,10 @@ class _PaymentScreenState extends State<PaymentScreen>
         Center(
           child: Text(
             'Pago único · Sin mensualidades · Sin sorpresas',
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.5), fontSize: 12),
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.5),
+              fontSize: 12,
+            ),
           ),
         ),
       ],
@@ -649,11 +859,31 @@ class _PaymentScreenState extends State<PaymentScreen>
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const _TrustItem(icon: Icons.verified_user_rounded,  label: '100%\nSeguro',             color: Color(0xFF22C55E)),
-        Container(height: 40, width: 1, color: Colors.white.withValues(alpha: 0.1)),
-        const _TrustItem(icon: Icons.flash_on_rounded,       label: 'Activación\nInmediata',     color: Color(0xFF3B82F6)),
-        Container(height: 40, width: 1, color: Colors.white.withValues(alpha: 0.1)),
-        const _TrustItem(icon: Icons.phone_android_rounded,  label: 'Yape /\nPlin',              color: Color(0xFF8B5CF6)),
+        const _TrustItem(
+          icon: Icons.verified_user_rounded,
+          label: '100%\nSeguro',
+          color: Color(0xFF22C55E),
+        ),
+        Container(
+          height: 40,
+          width: 1,
+          color: Colors.white.withValues(alpha: 0.1),
+        ),
+        const _TrustItem(
+          icon: Icons.flash_on_rounded,
+          label: 'Activación\nInmediata',
+          color: Color(0xFF3B82F6),
+        ),
+        Container(
+          height: 40,
+          width: 1,
+          color: Colors.white.withValues(alpha: 0.1),
+        ),
+        const _TrustItem(
+          icon: Icons.phone_android_rounded,
+          label: 'Yape /\nPlin',
+          color: Color(0xFF8B5CF6),
+        ),
       ],
     );
   }
@@ -661,7 +891,10 @@ class _PaymentScreenState extends State<PaymentScreen>
   Widget _buildBuyButton() {
     return GestureDetector(
       onTapDown: (_) => setState(() => _isPressing = true),
-      onTapUp: (_) { setState(() => _isPressing = false); _launchWhatsApp(); },
+      onTapUp: (_) {
+        setState(() => _isPressing = false);
+        _launchWhatsApp();
+      },
       onTapCancel: () => setState(() => _isPressing = false),
       child: AnimatedScale(
         scale: _isPressing ? 0.96 : 1.0,
@@ -680,7 +913,9 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF25D366).withValues(alpha: 0.5 * _pulseAnim.value),
+                  color: const Color(
+                    0xFF25D366,
+                  ).withValues(alpha: 0.5 * _pulseAnim.value),
                   blurRadius: 25 * _pulseAnim.value,
                   spreadRadius: 2,
                   offset: const Offset(0, 6),
@@ -698,10 +933,19 @@ class _PaymentScreenState extends State<PaymentScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('COMPRAR AHORA · S/15',
-                      style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
-                  Text('Contactar por WhatsApp',
-                      style: TextStyle(color: Colors.white70, fontSize: 11)),
+                  Text(
+                    'COMPRAR AHORA · S/15',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                  Text(
+                    'Contactar por WhatsApp',
+                    style: TextStyle(color: Colors.white70, fontSize: 11),
+                  ),
                 ],
               ),
             ],
@@ -717,15 +961,29 @@ class _PaymentScreenState extends State<PaymentScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.lock_outline_rounded, color: Colors.white.withValues(alpha: 0.3), size: 14),
+            Icon(
+              Icons.lock_outline_rounded,
+              color: Colors.white.withValues(alpha: 0.3),
+              size: 14,
+            ),
             const SizedBox(width: 6),
-            Text('Pago 100% seguro por Yape o Plin',
-                style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 12)),
+            Text(
+              'Pago 100% seguro por Yape o Plin',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.4),
+                fontSize: 12,
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 6),
-        Text('Tu acceso se activa en menos de 1 hora',
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.3), fontSize: 11)),
+        Text(
+          'Tu acceso se activa en menos de 1 hora',
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.3),
+            fontSize: 11,
+          ),
+        ),
       ],
     );
   }
@@ -737,7 +995,10 @@ class _PaymentScreenState extends State<PaymentScreen>
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('No se pudo abrir el enlace: $e'), backgroundColor: Colors.redAccent),
+          SnackBar(
+            content: Text('No se pudo abrir el enlace: $e'),
+            backgroundColor: Colors.redAccent,
+          ),
         );
       }
     }
@@ -795,7 +1056,11 @@ class _PaymentScreenState extends State<PaymentScreen>
                 ],
               ),
             ),
-            Icon(Icons.arrow_forward_ios_rounded, color: Colors.white.withValues(alpha: 0.3), size: 14),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white.withValues(alpha: 0.3),
+              size: 14,
+            ),
           ],
         ),
       ),
@@ -809,7 +1074,11 @@ class _TrustItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final Color color;
-  const _TrustItem({required this.icon, required this.label, required this.color});
+  const _TrustItem({
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -825,9 +1094,16 @@ class _TrustItem extends StatelessWidget {
           child: Icon(icon, color: color, size: 20),
         ),
         const SizedBox(height: 6),
-        Text(label,
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 11, fontWeight: FontWeight.w600, height: 1.3)),
+        Text(
+          label,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.7),
+            fontSize: 11,
+            fontWeight: FontWeight.w600,
+            height: 1.3,
+          ),
+        ),
       ],
     );
   }
@@ -853,10 +1129,12 @@ class _BgPainter extends CustomPainter {
     // Orbes de luz
     _drawOrb(canvas, size, 0.15, 0.2, 0.0, const Color(0xFF3B82F6));
     _drawOrb(canvas, size, 0.85, 0.6, 0.3, const Color(0xFF7C3AED));
-    _drawOrb(canvas, size, 0.5,  0.9, 0.6, const Color(0xFF06B6D4));
+    _drawOrb(canvas, size, 0.5, 0.9, 0.6, const Color(0xFF06B6D4));
 
     // Grid sutil
-    final grid = Paint()..color = Colors.white.withValues(alpha: 0.025)..strokeWidth = 0.5;
+    final grid = Paint()
+      ..color = Colors.white.withValues(alpha: 0.025)
+      ..strokeWidth = 0.5;
     const step = 50.0;
     for (double x = 0; x < size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), grid);
@@ -866,16 +1144,32 @@ class _BgPainter extends CustomPainter {
     }
   }
 
-  void _drawOrb(Canvas canvas, Size size, double nx, double ny, double phase, Color color) {
+  void _drawOrb(
+    Canvas canvas,
+    Size size,
+    double nx,
+    double ny,
+    double phase,
+    Color color,
+  ) {
     final pulse = math.sin((t + phase) * 2 * math.pi) * 0.5 + 0.5;
     final radius = (size.shortestSide * 0.55) * (0.85 + pulse * 0.15);
     final opacity = 0.04 + pulse * 0.04;
 
     final paint = Paint()
-      ..shader = RadialGradient(
-        colors: [color.withValues(alpha: opacity), color.withValues(alpha: 0)],
-      ).createShader(Rect.fromCircle(center: Offset(nx * size.width, ny * size.height), radius: radius));
-    
+      ..shader =
+          RadialGradient(
+            colors: [
+              color.withValues(alpha: opacity),
+              color.withValues(alpha: 0),
+            ],
+          ).createShader(
+            Rect.fromCircle(
+              center: Offset(nx * size.width, ny * size.height),
+              radius: radius,
+            ),
+          );
+
     if (kIsWeb) {
       paint.maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
     }

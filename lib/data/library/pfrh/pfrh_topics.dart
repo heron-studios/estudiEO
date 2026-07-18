@@ -48,13 +48,14 @@ final Map<String, Topic> pfrhTopics = {
   //   description: "Violencia fisica, psicologica, sexual, economica, patrimonial y medidas de proteccion.",
   //   questionCount: 150,
   // ),
-  
+
   // Topics con teoría (modo aprendizaje guiado)
   'pfrh_persona_familia': Topic(
     id: 'pfrh_persona_familia',
     subjectId: 'pfrh',
     name: '1. Persona, Familia, Identidad y Convivencia Escolar',
-    description: 'Desarrollo humano, identidad personal y nacional, convivencia positiva, funciones familiares, mediación de conflictos y autocuidado.',
+    description:
+        'Desarrollo humano, identidad personal y nacional, convivencia positiva, funciones familiares, mediación de conflictos y autocuidado.',
     questionCount: 40,
     theoryByLevel: personaFamiliaTheory,
   ),
@@ -62,7 +63,8 @@ final Map<String, Topic> pfrhTopics = {
     id: 'pfrh_derechos_humanos',
     subjectId: 'pfrh',
     name: '2. Derechos Humanos',
-    description: 'Garantías fundamentales, Declaración Universal de los Derechos Humanos, debido proceso, EDH, paz positiva y perspectivas críticas.',
+    description:
+        'Garantías fundamentales, Declaración Universal de los Derechos Humanos, debido proceso, EDH, paz positiva y perspectivas críticas.',
     questionCount: 40,
     theoryByLevel: derechosHumanosTheory,
   ),
@@ -70,7 +72,8 @@ final Map<String, Topic> pfrhTopics = {
     id: 'pfrh_identidad_normas',
     subjectId: 'pfrh',
     name: '3. Identidad Personal y Nacional. Normas Sociales.',
-    description: 'Identidad personal, identidad nacional, normas morales, sociales y jurídicas, diversidad cultural e interculturalidad.',
+    description:
+        'Identidad personal, identidad nacional, normas morales, sociales y jurídicas, diversidad cultural e interculturalidad.',
     questionCount: 40,
     theoryByLevel: identidadNormasTheory,
   ),
@@ -78,7 +81,8 @@ final Map<String, Topic> pfrhTopics = {
     id: 'pfrh_autoestima_autocuidado',
     subjectId: 'pfrh',
     name: '4. Autoestima y Autocuidado',
-    description: 'Autoestima, autocuidado físico/emocional/mental/social, autorregulación, mindfulness, pilares de la autoestima y perspectiva de género.',
+    description:
+        'Autoestima, autocuidado físico/emocional/mental/social, autorregulación, mindfulness, pilares de la autoestima y perspectiva de género.',
     questionCount: 40,
     theoryByLevel: autoestimaAutocuidadoTheory,
   ),

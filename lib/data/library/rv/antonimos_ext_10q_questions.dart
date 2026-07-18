@@ -10,11 +10,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Mucho''',
       r'''Escaso''',
       r'''Copioso''',
-      r'''Rico'''
+      r'''Rico''',
     ],
     correctAnswer: 2,
-    explanation: r'''La palabra "abundante" significa que hay gran cantidad de algo; por lo tanto, su antónimo o significado contrario directo es "escaso".''',
-  ),Question(
+    explanation:
+        r'''La palabra "abundante" significa que hay gran cantidad de algo; por lo tanto, su antónimo o significado contrario directo es "escaso".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q2',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál de las siguientes palabras es el antónimo de "acabar"?''',
@@ -23,11 +25,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Iniciar''',
       r'''Finalizar''',
       r'''Concluir''',
-      r'''Pausar'''
+      r'''Pausar''',
     ],
     correctAnswer: 1,
-    explanation: r'''El verbo "acabar" indica la finalización de una acción, por lo que su significado opuesto es "iniciar" o empezar.''',
-  ),Question(
+    explanation:
+        r'''El verbo "acabar" indica la finalización de una acción, por lo que su significado opuesto es "iniciar" o empezar.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q3',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo de la palabra "bonito".''',
@@ -36,11 +40,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Lindo''',
       r'''Agraciado''',
       r'''Feo''',
-      r'''Bello'''
+      r'''Bello''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Bonito" es un adjetivo que califica algo positivamente por su apariencia; su antónimo lexical absoluto es "feo".''',
-  ),Question(
+    explanation:
+        r'''"Bonito" es un adjetivo que califica algo positivamente por su apariencia; su antónimo lexical absoluto es "feo".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q4',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del verbo "comprar".''',
@@ -49,11 +55,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Adquirir''',
       r'''Regalar''',
       r'''Obtener''',
-      r'''Pagar'''
+      r'''Pagar''',
     ],
     correctAnswer: 0,
-    explanation: r'''"Comprar" y "vender" son antónimos recíprocos; la existencia de una acción implica necesariamente la opuesta en el mismo proceso comercial.''',
-  ),Question(
+    explanation:
+        r'''"Comprar" y "vender" son antónimos recíprocos; la existencia de una acción implica necesariamente la opuesta en el mismo proceso comercial.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q5',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo de la palabra "demente"?''',
@@ -62,11 +70,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Cuerdo''',
       r'''Insano''',
       r'''Orate''',
-      r'''Tonto'''
+      r'''Tonto''',
     ],
     correctAnswer: 1,
-    explanation: r'''Una persona "demente" es alguien que ha perdido el juicio o la razón, por lo cual su antónimo adecuado es "cuerdo".''',
-  ),Question(
+    explanation:
+        r'''Una persona "demente" es alguien que ha perdido el juicio o la razón, por lo cual su antónimo adecuado es "cuerdo".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q6',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo del adjetivo "fácil".''',
@@ -75,11 +85,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Breve''',
       r'''Difícil''',
       r'''Claro''',
-      r'''Directo'''
+      r'''Directo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Lo "fácil" es aquello que no requiere gran esfuerzo; su opuesto lexical directo y absoluto es "difícil".''',
-  ),Question(
+    explanation:
+        r'''Lo "fácil" es aquello que no requiere gran esfuerzo; su opuesto lexical directo y absoluto es "difícil".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q7',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál de las siguientes palabras es antónimo de "oscuro"?''',
@@ -88,11 +100,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Bruno''',
       r'''Claro''',
       r'''Opaco''',
-      r'''Sombrío'''
+      r'''Sombrío''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el campo semántico de la luminosidad o el color, el término que se opone directamente a "oscuro" es "claro".''',
-  ),Question(
+    explanation:
+        r'''En el campo semántico de la luminosidad o el color, el término que se opone directamente a "oscuro" es "claro".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q8',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de la palabra "paz".''',
@@ -101,11 +115,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Guerra''',
       r'''Armonía''',
       r'''Calma''',
-      r'''Silencio'''
+      r'''Silencio''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Paz" significa una situación de armonía o ausencia de conflictos violentos, siendo "guerra" su antónimo más contundente.''',
-  ),Question(
+    explanation:
+        r'''"Paz" significa una situación de armonía o ausencia de conflictos violentos, siendo "guerra" su antónimo más contundente.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q9',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo de "valiente".''',
@@ -114,11 +130,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Cobarde''',
       r'''Fuerte''',
       r'''Osado''',
-      r'''Heroico'''
+      r'''Heroico''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Valiente" describe a quien actúa con valor y coraje frente al peligro; su antónimo es "cobarde", que denota miedo o falta de valor.''',
-  ),Question(
+    explanation:
+        r'''"Valiente" describe a quien actúa con valor y coraje frente al peligro; su antónimo es "cobarde", que denota miedo o falta de valor.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q10',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del verbo "entrar"?''',
@@ -127,11 +145,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Ingresar''',
       r'''Acceder''',
       r'''Pasar''',
-      r'''Llegar'''
+      r'''Llegar''',
     ],
     correctAnswer: 0,
-    explanation: r'''"Entrar" y "salir" representan acciones direccionales opuestas respecto a un mismo espacio, siendo antónimos directos.''',
-  ),Question(
+    explanation:
+        r'''"Entrar" y "salir" representan acciones direccionales opuestas respecto a un mismo espacio, siendo antónimos directos.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q1',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de la palabra "complejo".''',
@@ -140,11 +160,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Difícil''',
       r'''Simple''',
       r'''Enrevesado''',
-      r'''Arduo'''
+      r'''Arduo''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Complejo" hace referencia a algo que está compuesto de múltiples elementos o es difícil de entender; su opuesto es "simple".''',
-  ),Question(
+    explanation:
+        r'''"Complejo" hace referencia a algo que está compuesto de múltiples elementos o es difícil de entender; su opuesto es "simple".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q2',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo de la palabra "dadivoso"?''',
@@ -153,11 +175,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Caritativo''',
       r'''Desprendido''',
       r'''Tacaño''',
-      r'''Amable'''
+      r'''Amable''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Dadivoso" describe a una persona generosa o desinteresada, por lo que su antónimo correspondiente es "tacaño" (avaro o mezquino).''',
-  ),Question(
+    explanation:
+        r'''"Dadivoso" describe a una persona generosa o desinteresada, por lo que su antónimo correspondiente es "tacaño" (avaro o mezquino).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q3',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo del verbo "destruir".''',
@@ -166,11 +190,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Demoler''',
       r'''Construir''',
       r'''Devastar''',
-      r'''Arrasar'''
+      r'''Arrasar''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Destruir" significa deshacer o arruinar algo creado; su acción diametralmente opuesta es "construir" o edificar.''',
-  ),Question(
+    explanation:
+        r'''"Destruir" significa deshacer o arruinar algo creado; su acción diametralmente opuesta es "construir" o edificar.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q4',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del sustantivo "dicha".''',
@@ -179,11 +205,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Felicidad''',
       r'''Ventura''',
       r'''Desventura''',
-      r'''Bienestar'''
+      r'''Bienestar''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Dicha" equivale a un estado de felicidad o suerte favorable; el antónimo que mantiene la misma categoría gramatical es "desventura" o infelicidad.''',
-  ),Question(
+    explanation:
+        r'''"Dicha" equivale a un estado de felicidad o suerte favorable; el antónimo que mantiene la misma categoría gramatical es "desventura" o infelicidad.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q5',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del adjetivo "efímero"?''',
@@ -192,11 +220,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Duradero''',
       r'''Breve''',
       r'''Pasajero''',
-      r'''Rápido'''
+      r'''Rápido''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Efímero" describe algo que dura muy poco tiempo o un solo día; su antónimo lexical y lógico es "duradero" (o perenne).''',
-  ),Question(
+    explanation:
+        r'''"Efímero" describe algo que dura muy poco tiempo o un solo día; su antónimo lexical y lógico es "duradero" (o perenne).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q6',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo de la palabra "hostil".''',
@@ -205,11 +235,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Agresivo''',
       r'''Amable''',
       r'''Contrario''',
-      r'''Violento'''
+      r'''Violento''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Hostil" se refiere a una actitud adversa, enemiga o agresiva; la oposición precisa recae en el adjetivo "amable" o cordial.''',
-  ),Question(
+    explanation:
+        r'''"Hostil" se refiere a una actitud adversa, enemiga o agresiva; la oposición precisa recae en el adjetivo "amable" o cordial.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q7',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál de las siguientes palabras es antónimo de "opaco"?''',
@@ -218,11 +250,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Transparente''',
       r'''Sombrío''',
       r'''Turbio''',
-      r'''Negro'''
+      r'''Negro''',
     ],
     correctAnswer: 1,
-    explanation: r'''Un cuerpo "opaco" es aquel que no permite el paso de la luz; su antónimo absoluto en propiedades físicas es "transparente" (o diáfano).''',
-  ),Question(
+    explanation:
+        r'''Un cuerpo "opaco" es aquel que no permite el paso de la luz; su antónimo absoluto en propiedades físicas es "transparente" (o diáfano).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q8',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de la palabra "caótico".''',
@@ -231,11 +265,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Confuso''',
       r'''Ordenado''',
       r'''Revuelto''',
-      r'''Alborotado'''
+      r'''Alborotado''',
     ],
     correctAnswer: 2,
-    explanation: r'''Lo "caótico" pertenece al caos, desorden o confusión absoluta. El término opuesto por excelencia es "ordenado".''',
-  ),Question(
+    explanation:
+        r'''Lo "caótico" pertenece al caos, desorden o confusión absoluta. El término opuesto por excelencia es "ordenado".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q9',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del adjetivo "parco"?''',
@@ -244,11 +280,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Moderado''',
       r'''Locuaz''',
       r'''Escaso''',
-      r'''Resumido'''
+      r'''Resumido''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Parco" califica a alguien de pocas palabras o muy moderado al hablar o actuar; su antónimo semántico es "locuaz" (hablador).''',
-  ),Question(
+    explanation:
+        r'''"Parco" califica a alguien de pocas palabras o muy moderado al hablar o actuar; su antónimo semántico es "locuaz" (hablador).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q10',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo de "sano".''',
@@ -257,11 +295,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Vital''',
       r'''Vigoroso''',
       r'''Enfermo''',
-      r'''Fuerte'''
+      r'''Fuerte''',
     ],
     correctAnswer: 3,
-    explanation: r'''El adjetivo "sano" indica que un ser goza de perfecta salud o no tiene lesiones. Su antónimo directo y complementario es "enfermo".''',
-  ),Question(
+    explanation:
+        r'''El adjetivo "sano" indica que un ser goza de perfecta salud o no tiene lesiones. Su antónimo directo y complementario es "enfermo".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q1',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de "tácito".''',
@@ -270,11 +310,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Implícito''',
       r'''Secreto''',
       r'''Expreso''',
-      r'''Callado'''
+      r'''Callado''',
     ],
     correctAnswer: 3,
-    explanation: r'''Algo "tácito" es aquello que no se dice formalmente, sino que se supone o infiere. Su antónimo es "expreso" (o explícito), que significa manifestado claramente.''',
-  ),Question(
+    explanation:
+        r'''Algo "tácito" es aquello que no se dice formalmente, sino que se supone o infiere. Su antónimo es "expreso" (o explícito), que significa manifestado claramente.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q2',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo de la palabra "desidia"?''',
@@ -283,11 +325,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Pereza''',
       r'''Cuidado''',
       r'''Apatía''',
-      r'''Abandono'''
+      r'''Abandono''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Desidia" es un sustantivo que denota negligencia o falta de interés en hacer las cosas; el término opuesto en actitud es el "cuidado" o diligencia.''',
-  ),Question(
+    explanation:
+        r'''"Desidia" es un sustantivo que denota negligencia o falta de interés en hacer las cosas; el término opuesto en actitud es el "cuidado" o diligencia.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q3',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo del sustantivo "beneficio".''',
@@ -296,11 +340,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Ganancia''',
       r'''Utilidad''',
       r'''Detrimento''',
-      r'''Ayuda'''
+      r'''Ayuda''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Beneficio" se define como el bien que se hace o se recibe. Su antónimo absoluto es "detrimento", que implica destrucción, daño o menoscabo.''',
-  ),Question(
+    explanation:
+        r'''"Beneficio" se define como el bien que se hace o se recibe. Su antónimo absoluto es "detrimento", que implica destrucción, daño o menoscabo.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q4',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del adjetivo "misántropo".''',
@@ -309,11 +355,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Sociable''',
       r'''Solitario''',
       r'''Uraño''',
-      r'''Arisco'''
+      r'''Arisco''',
     ],
     correctAnswer: 1,
-    explanation: r'''El "misántropo" es aquel que siente aversión al trato con otras personas; su opuesto lógico y de actitud es el individuo "sociable".''',
-  ),Question(
+    explanation:
+        r'''El "misántropo" es aquel que siente aversión al trato con otras personas; su opuesto lógico y de actitud es el individuo "sociable".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q5',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo de la palabra "ileso"?''',
@@ -322,11 +370,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Incólume''',
       r'''Intacto''',
       r'''Herido''',
-      r'''Salvo'''
+      r'''Salvo''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Ileso" significa que no ha recibido lesión ni daño en un accidente o ataque. Su antónimo complementario es "herido" o vulnerado.''',
-  ),Question(
+    explanation:
+        r'''"Ileso" significa que no ha recibido lesión ni daño en un accidente o ataque. Su antónimo complementario es "herido" o vulnerado.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q6',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de "gélido".''',
@@ -335,11 +385,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Glacial''',
       r'''Tórrido''',
       r'''Congelado''',
-      r'''Frío'''
+      r'''Frío''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Gélido" expresa una intensidad térmica extrema (muy frío). Su antónimo, en el extremo opuesto de la misma escala de temperatura, es "tórrido" (muy caliente o ardiente).''',
-  ),Question(
+    explanation:
+        r'''"Gélido" expresa una intensidad térmica extrema (muy frío). Su antónimo, en el extremo opuesto de la misma escala de temperatura, es "tórrido" (muy caliente o ardiente).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q7',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál de las siguientes palabras es antónimo de "proficuo"?''',
@@ -348,11 +400,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Provechoso''',
       r'''Útil''',
       r'''Improductivo''',
-      r'''Favorable'''
+      r'''Favorable''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Proficuo" es un adjetivo que significa provechoso o ventajoso. En consecuencia, su antonimia lexical recae en "improductivo" o inútil.''',
-  ),Question(
+    explanation:
+        r'''"Proficuo" es un adjetivo que significa provechoso o ventajoso. En consecuencia, su antonimia lexical recae en "improductivo" o inútil.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q8',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo de la palabra "subrepticio".''',
@@ -361,11 +415,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Patente''',
       r'''Escondido''',
       r'''Solapado''',
-      r'''Furtivo'''
+      r'''Furtivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Lo "subrepticio" es aquello que se hace o sucede de manera oculta o a escondidas. Su antónimo exacto es "patente" (evidente o manifiesto).''',
-  ),Question(
+    explanation:
+        r'''Lo "subrepticio" es aquello que se hace o sucede de manera oculta o a escondidas. Su antónimo exacto es "patente" (evidente o manifiesto).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q9',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del adjetivo "lacónico".''',
@@ -374,11 +430,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Conciso''',
       r'''Locuaz''',
       r'''Sucinto''',
-      r'''Resumido'''
+      r'''Resumido''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Lacónico" califica a alguien que habla de manera muy concisa o con pocas palabras. Su antónimo es "locuaz" (hablador o facundo).''',
-  ),Question(
+    explanation:
+        r'''"Lacónico" califica a alguien que habla de manera muy concisa o con pocas palabras. Su antónimo es "locuaz" (hablador o facundo).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q10',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del adjetivo "lenitivo"?''',
@@ -387,11 +445,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Atenuante''',
       r'''Paliativo''',
       r'''Severo''',
-      r'''Sedante'''
+      r'''Sedante''',
     ],
     correctAnswer: 3,
-    explanation: r'''Un "lenitivo" (o la cualidad de lenidad) alude a aquello que suaviza, mitiga un castigo o dolor. Su antónimo implica actuar con dureza y todo el rigor, es decir, ser "severo" o drástico.''',
-  ),Question(
+    explanation:
+        r'''Un "lenitivo" (o la cualidad de lenidad) alude a aquello que suaviza, mitiga un castigo o dolor. Su antónimo implica actuar con dureza y todo el rigor, es decir, ser "severo" o drástico.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q1',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del adjetivo "pródigo".''',
@@ -400,11 +460,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Dilapidador''',
       r'''Tacaño''',
       r'''Generoso''',
-      r'''Gastador'''
+      r'''Gastador''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Pródigo" describe a quien derrocha o gasta en exceso sus bienes. Su antónimo absoluto, manteniendo la condición adjetiva y negando el gasto, es "tacaño" (no ahorrativo, pues el tacaño atesora sin intención de gastar).''',
-  ),Question(
+    explanation:
+        r'''"Pródigo" describe a quien derrocha o gasta en exceso sus bienes. Su antónimo absoluto, manteniendo la condición adjetiva y negando el gasto, es "tacaño" (no ahorrativo, pues el tacaño atesora sin intención de gastar).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q2',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del sustantivo "poltronería"?''',
@@ -413,11 +475,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Ociosidad''',
       r'''Abulia''',
       r'''Laboriosidad''',
-      r'''Apatía'''
+      r'''Apatía''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Poltronería" es la falta de disposición para el trabajo (holgazanería o pereza); su antónimo directo es la aplicación al trabajo, es decir, "laboriosidad" (o diligencia).''',
-  ),Question(
+    explanation:
+        r'''"Poltronería" es la falta de disposición para el trabajo (holgazanería o pereza); su antónimo directo es la aplicación al trabajo, es decir, "laboriosidad" (o diligencia).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q3',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo del adjetivo "atrabiliario".''',
@@ -426,11 +490,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Sosegado''',
       r'''Colérico''',
       r'''Irritable''',
-      r'''Bilioso'''
+      r'''Bilioso''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Atrabiliario" proviene de "atrabilis", designando a la persona de mal genio crónico, renegona o colérica. Su opuesto de carácter es "sosegado", apacible o sereno.''',
-  ),Question(
+    explanation:
+        r'''"Atrabiliario" proviene de "atrabilis", designando a la persona de mal genio crónico, renegona o colérica. Su opuesto de carácter es "sosegado", apacible o sereno.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q4',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo del sustantivo "entelequia".''',
@@ -439,11 +505,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Quimera''',
       r'''Realidad''',
       r'''Utopía''',
-      r'''Ficción'''
+      r'''Ficción''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Entelequia" hace referencia a algo irreal, quimérico o fantástico que solo existe en la mente. El antónimo categórico que se contrapone a esta ilusión es "realidad".''',
-  ),Question(
+    explanation:
+        r'''"Entelequia" hace referencia a algo irreal, quimérico o fantástico que solo existe en la mente. El antónimo categórico que se contrapone a esta ilusión es "realidad".''',
+  ),
+  Question(
     id: 'ant_corto_10q_q5',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo de la palabra "egregio"?''',
@@ -452,11 +520,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Ilustre''',
       r'''Ínclito''',
       r'''Mediocre''',
-      r'''Insigne'''
+      r'''Insigne''',
     ],
     correctAnswer: 3,
-    explanation: r'''El adjetivo "egregio" califica a una persona de suma importancia, célebre o ilustre. El antónimo preciso para contrastar esa condición de excelencia es "mediocre" (o desconocido).''',
-  ),Question(
+    explanation:
+        r'''El adjetivo "egregio" califica a una persona de suma importancia, célebre o ilustre. El antónimo preciso para contrastar esa condición de excelencia es "mediocre" (o desconocido).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q6',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de "inane".''',
@@ -465,11 +535,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Fútil''',
       r'''Trivial''',
       r'''Baladí''',
-      r'''Capital'''
+      r'''Capital''',
     ],
     correctAnswer: 4,
-    explanation: r'''"Inane" significa vano, fútil o que carece de importancia. El antónimo exacto, que denota máxima relevancia o peso, es el adjetivo "capital" (o importante).''',
-  ),Question(
+    explanation:
+        r'''"Inane" significa vano, fútil o que carece de importancia. El antónimo exacto, que denota máxima relevancia o peso, es el adjetivo "capital" (o importante).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q7',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del sustantivo "baldón"?''',
@@ -478,11 +550,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Oprobio''',
       r'''Injuria''',
       r'''Encomio''',
-      r'''Agravio'''
+      r'''Agravio''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Baldón" es un oprobio, una mancha a la honra o una afrenta pública. Su opuesto, siendo también sustantivo, es una alabanza o discurso en favor, es decir, un "encomio" o panegírico.''',
-  ),Question(
+    explanation:
+        r'''"Baldón" es un oprobio, una mancha a la honra o una afrenta pública. Su opuesto, siendo también sustantivo, es una alabanza o discurso en favor, es decir, un "encomio" o panegírico.''',
+  ),
+  Question(
     id: 'ant_corto_10q_q8',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Seleccione el antónimo del adjetivo "epicúreo".''',
@@ -491,11 +565,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Sensual''',
       r'''Asceta''',
       r'''Licencioso''',
-      r'''Disoluto'''
+      r'''Disoluto''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Epicúreo" alude a la persona entregada a los placeres de la vida, el gozo y la sensualidad. En filosofía y semántica, se contrapone directamente a "asceta" (quien renuncia a los placeres materiales).''',
-  ),Question(
+    explanation:
+        r'''"Epicúreo" alude a la persona entregada a los placeres de la vida, el gozo y la sensualidad. En filosofía y semántica, se contrapone directamente a "asceta" (quien renuncia a los placeres materiales).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q9',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''Identifique el antónimo de "pusilánime".''',
@@ -504,11 +580,13 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Cobarde''',
       r'''Timorato''',
       r'''Miedoso''',
-      r'''Valiente'''
+      r'''Valiente''',
     ],
     correctAnswer: 4,
-    explanation: r'''Un "pusilánime" carece de ánimo y valor para enfrentar peligros o desgracias. El adjetivo opuesto y correcto por antonomasia es "valiente" (o bizarro, arrojado).''',
-  ),Question(
+    explanation:
+        r'''Un "pusilánime" carece de ánimo y valor para enfrentar peligros o desgracias. El adjetivo opuesto y correcto por antonomasia es "valiente" (o bizarro, arrojado).''',
+  ),
+  Question(
     id: 'ant_corto_10q_q10',
     topicId: 'eo_pnp_antonimos_ext_10q',
     text: r'''¿Cuál es el antónimo del sustantivo "iniquidad"?''',
@@ -517,9 +595,10 @@ final List<Question> antonimosExt10qQuestions = [
       r'''Vileza''',
       r'''Perversidad''',
       r'''Bondad''',
-      r'''Bajeza'''
+      r'''Bajeza''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Iniquidad" significa injusticia grande o maldad (pravedad). Al ser un sustantivo abstracto y negativo, su antónimo absoluto recae en la rectitud y la "bondad" o equidad.''',
+    explanation:
+        r'''"Iniquidad" significa injusticia grande o maldad (pravedad). Al ser un sustantivo abstracto y negativo, su antónimo absoluto recae en la rectitud y la "bondad" o equidad.''',
   ),
 ];

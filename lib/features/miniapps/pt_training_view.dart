@@ -5,12 +5,7 @@ import 'package:learn/data/periodic_table_data.dart';
 import 'package:learn/models/chemical_element.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 
-enum QuestionType {
-  symbolToName,
-  nameToSymbol,
-  atomicNumber,
-  family,
-}
+enum QuestionType { symbolToName, nameToSymbol, atomicNumber, family }
 
 class PtTrainingView extends StatefulWidget {
   const PtTrainingView({super.key});
@@ -19,16 +14,17 @@ class PtTrainingView extends StatefulWidget {
   State<PtTrainingView> createState() => _PtTrainingViewState();
 }
 
-class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProviderStateMixin {
+class _PtTrainingViewState extends State<PtTrainingView>
+    with SingleTickerProviderStateMixin {
   final Random _random = Random();
   late ChemicalElement _currentElement;
   late List<String> _options;
   late QuestionType _questionType;
-  
+
   int _score = 0;
   int _streak = 0;
   int _lives = 3;
-  
+
   String? _selectedAnswer;
   bool _answered = false;
   String? _hintMessage;
@@ -51,8 +47,8 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
     _answered = false;
     _selectedAnswer = null;
     _hintMessage = null;
-    
-    // Select question type based on a bit of randomness, 
+
+    // Select question type based on a bit of randomness,
     // maybe family and atomic number are slightly less frequent.
     int typeRand = _random.nextInt(10);
     if (typeRand < 3) {
@@ -64,9 +60,10 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
     } else {
       _questionType = QuestionType.family;
     }
-    
-    _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
-    
+
+    _currentElement =
+        periodicTableElements[_random.nextInt(periodicTableElements.length)];
+
     // Determine the correct answer string based on the question type
     String correctAnswer;
     switch (_questionType) {
@@ -83,12 +80,13 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
         correctAnswer = _currentElement.family;
         break;
     }
-    
+
     Set<String> optionsSet = {correctAnswer};
-    
+
     // Generate other options
     while (optionsSet.length < (_streak > 10 ? 6 : 4)) {
-      ChemicalElement randomElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+      ChemicalElement randomElement =
+          periodicTableElements[_random.nextInt(periodicTableElements.length)];
       switch (_questionType) {
         case QuestionType.symbolToName:
           optionsSet.add(randomElement.name);
@@ -104,18 +102,18 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
           break;
       }
     }
-    
+
     _options = optionsSet.toList();
     _options.shuffle();
   }
 
   void _handleAnswer(String selected) {
     if (_answered || _isGameOver) return;
-    
+
     setState(() {
       _answered = true;
       _selectedAnswer = selected;
-      
+
       bool isCorrect = false;
       switch (_questionType) {
         case QuestionType.symbolToName:
@@ -150,47 +148,62 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
     String msg = '';
     switch (_questionType) {
       case QuestionType.symbolToName:
-        msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
+        msg =
+            "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
         break;
       case QuestionType.nameToSymbol:
-        msg = "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+        msg =
+            "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
         break;
       case QuestionType.atomicNumber:
-        msg = "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
+        msg =
+            "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
         break;
       case QuestionType.family:
-        msg = "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
+        msg =
+            "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
         break;
     }
 
     if (correct.symbol == 'Na') {
       msg += '💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!';
     } else if (correct.symbol == 'K') {
-      msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
+      msg +=
+          "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
     } else if (correct.symbol == 'Fe') {
-      msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
+      msg +=
+          "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
     } else if (correct.symbol == 'Cu') {
       msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
     } else if (correct.symbol == 'Ag') {
-      msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
+      msg +=
+          "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
     } else if (correct.symbol == 'Sn') {
-      msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
+      msg +=
+          "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
     } else if (correct.symbol == 'Sb') {
-      msg += '💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!';
+      msg +=
+          '💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!';
     } else if (correct.symbol == 'W') {
-      msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
+      msg +=
+          "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
     } else if (correct.symbol == 'Au') {
-      msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
+      msg +=
+          "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
     } else if (correct.symbol == 'Hg') {
-      msg += '💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.';
+      msg +=
+          '💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.';
     } else if (correct.symbol == 'Pb') {
-      msg += '💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
+      msg +=
+          '💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
     } else if (correct.symbol == 'P') {
-      msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
+      msg +=
+          "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
     } else if (correct.symbol == 'S') {
       msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
     } else {
-      msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
+      msg +=
+          "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
     }
 
     if (_lives <= 0) {
@@ -213,14 +226,14 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    
+
     if (_isGameOver) {
       return _buildGameOverScreen(nt);
     }
 
     String promptText = '';
     String hintText = '';
-    
+
     switch (_questionType) {
       case QuestionType.symbolToName:
         promptText = _currentElement.symbol;
@@ -245,7 +258,10 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 500),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24.0,
+              vertical: 16.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -258,7 +274,9 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                         return Padding(
                           padding: const EdgeInsets.only(right: 4.0),
                           child: Icon(
-                            index < _lives ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                            index < _lives
+                                ? Icons.favorite_rounded
+                                : Icons.favorite_border_rounded,
                             color: nt.pink,
                             size: 28,
                           ),
@@ -267,15 +285,23 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                     ),
                     Row(
                       children: [
-                        _StatPill(icon: Icons.star_rounded, value: '$_score', color: nt.blueGoogle),
+                        _StatPill(
+                          icon: Icons.star_rounded,
+                          value: '$_score',
+                          color: nt.blueGoogle,
+                        ),
                         const SizedBox(width: 8),
-                        _StatPill(icon: Icons.local_fire_department_rounded, value: '$_streak', color: nt.warningAmber),
+                        _StatPill(
+                          icon: Icons.local_fire_department_rounded,
+                          value: '$_streak',
+                          color: nt.warningAmber,
+                        ),
                       ],
                     ),
                   ],
                 ),
                 const SizedBox(height: 24),
-                
+
                 // Main Question Card
                 Expanded(
                   child: HoverGlassCard(
@@ -299,16 +325,24 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
                           margin: const EdgeInsets.only(bottom: 16),
                           decoration: BoxDecoration(
                             color: nt.blueGoogle.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                            border: Border.all(
+                              color: nt.blueGoogle.withValues(alpha: 0.3),
+                            ),
                           ),
                           child: Text(
                             hintText,
-                            style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: nt.blueGoogle,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -327,7 +361,9 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             color: nt.pink.withValues(alpha: 0.1),
-                            border: Border.all(color: nt.pink.withValues(alpha: 0.5)),
+                            border: Border.all(
+                              color: nt.pink.withValues(alpha: 0.5),
+                            ),
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
@@ -335,28 +371,52 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.lightbulb_outline_rounded, color: nt.pink),
+                                  Icon(
+                                    Icons.lightbulb_outline_rounded,
+                                    color: nt.pink,
+                                  ),
                                   const SizedBox(width: 8),
-                                  const Text('¡Sigue intentando!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                  const Text(
+                                    '¡Sigue intentando!',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ],
                               ),
                               const SizedBox(height: 8),
                               Text(
                                 _hintMessage!,
-                                style: const TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 13,
+                                  height: 1.4,
+                                ),
                               ),
                               const SizedBox(height: 12),
                               SizedBox(
                                 width: double.infinity,
                                 child: ElevatedButton(
-                                  onPressed: () => setState(() => _generateQuestion()),
+                                  onPressed: () =>
+                                      setState(() => _generateQuestion()),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: nt.pink,
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
                                   ),
-                                  child: Text(_lives > 0 ? 'SIGUIENTE PREGUNTA' : 'TERMINAR', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                  child: Text(
+                                    _lives > 0
+                                        ? 'SIGUIENTE PREGUNTA'
+                                        : 'TERMINAR',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         )
@@ -369,9 +429,13 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                   crossAxisCount: 2,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
-                  childAspectRatio: _options.length > 4 ? 2.5 : 2.0, // Flatter buttons for more options
+                  childAspectRatio: _options.length > 4
+                      ? 2.5
+                      : 2.0, // Flatter buttons for more options
                   physics: const NeverScrollableScrollPhysics(),
-                  children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
+                  children: _options
+                      .map((option) => _buildOptionCard(nt, option))
+                      .toList(),
                 ),
               ],
             ),
@@ -390,7 +454,11 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
           children: [
             const Text(
               '¡Entrenamiento Finalizado!',
-              style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 40),
@@ -399,18 +467,37 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
               decoration: BoxDecoration(
                 color: nt.surfaceElevated,
                 shape: BoxShape.circle,
-                border: Border.all(color: nt.pink.withValues(alpha: 0.5), width: 4),
+                border: Border.all(
+                  color: nt.pink.withValues(alpha: 0.5),
+                  width: 4,
+                ),
                 boxShadow: [
-                  BoxShadow(color: nt.pink.withValues(alpha: 0.2), blurRadius: 40, spreadRadius: 10),
-                ]
+                  BoxShadow(
+                    color: nt.pink.withValues(alpha: 0.2),
+                    blurRadius: 40,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
               child: Column(
                 children: [
-                  Text('PUNTAJE', style: TextStyle(color: nt.pink, fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2)),
+                  Text(
+                    'PUNTAJE',
+                    style: TextStyle(
+                      color: nt.pink,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                    ),
+                  ),
                   const SizedBox(height: 8),
                   Text(
                     '$_score',
-                    style: const TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 80,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ],
               ),
@@ -422,10 +509,19 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
               child: ElevatedButton.icon(
                 onPressed: _restartGame,
                 icon: const Icon(Icons.refresh_rounded, color: Colors.white),
-                label: const Text('Entrenar de Nuevo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                label: const Text(
+                  'Entrenar de Nuevo',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: nt.blueGoogle,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
               ),
             ),
@@ -483,7 +579,7 @@ class _PtTrainingViewState extends State<PtTrainingView> with SingleTickerProvid
                 color: nt.successGreen.withValues(alpha: 0.2),
                 blurRadius: 15,
                 spreadRadius: 1,
-              )
+              ),
           ],
         ),
         child: Center(
@@ -513,7 +609,11 @@ class _StatPill extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatPill({required this.icon, required this.value, required this.color});
+  const _StatPill({
+    required this.icon,
+    required this.value,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {

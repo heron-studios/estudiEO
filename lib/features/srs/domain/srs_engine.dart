@@ -65,18 +65,26 @@ class SrsEngine {
     final cards = _storage.loadSrsCards();
     final queue = cards.values.where((card) {
       if (!card.isOverdue) return false;
-      
+
       // Excluir materias/temas específicos de las tarjetas de memoria
-      final isMatematicas = card.topicId.startsWith('mat_'); 
+      final isMatematicas = card.topicId.startsWith('mat_');
       final isRM = card.topicId.startsWith('rm_');
-      final isExcludedRV = card.topicId == 'rv_plan'; // Solo excluir Plan de Redacción
-      final isReglasOrtograficas = card.topicId == 'com_t1'; // Excluir Reglas Ortográficas
-      final isAICustom = card.topicId.startsWith('ai_topic_'); // Excluir las generadas por IA
-      
-      if (isMatematicas || isRM || isExcludedRV || isReglasOrtograficas || isAICustom) {
+      final isExcludedRV =
+          card.topicId == 'rv_plan'; // Solo excluir Plan de Redacción
+      final isReglasOrtograficas =
+          card.topicId == 'com_t1'; // Excluir Reglas Ortográficas
+      final isAICustom = card.topicId.startsWith(
+        'ai_topic_',
+      ); // Excluir las generadas por IA
+
+      if (isMatematicas ||
+          isRM ||
+          isExcludedRV ||
+          isReglasOrtograficas ||
+          isAICustom) {
         return false;
       }
-      
+
       return true;
     }).toList();
 

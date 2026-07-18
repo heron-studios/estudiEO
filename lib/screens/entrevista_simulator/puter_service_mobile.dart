@@ -44,7 +44,8 @@ class PuterServiceMobile implements PuterService {
 
   @override
   Future<String> generateFlashcardsFromText(String text) async {
-    const String systemPrompt = '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS para ahorrar tokens).
+    const String systemPrompt =
+        '''Eres un experto creador de exámenes de admisión. Tu tarea es leer el texto proporcionado y extraer EXACTAMENTE LOS 5 DATOS más importantes como preguntas de opción múltiple. (MAX 5 PREGUNTAS para ahorrar tokens).
 DEBES RESPONDER ÚNICA Y EXCLUSIVAMENTE CON UN OBJETO JSON VÁLIDO. NO incluyas saludos, ni explicaciones adicionales, ni formato markdown como ```json.
 
 El formato JSON estricto esperado es:
@@ -59,16 +60,19 @@ El formato JSON estricto esperado es:
     }
   ] // MÁXIMO 5 ELEMENTOS
 }''';
-    
+
     return _groq.chatOneShot(
       systemPrompt: systemPrompt,
-      userPrompt: 'Texto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.',
+      userPrompt:
+          'Texto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.',
       expectJson: true,
     );
   }
+
   @override
   Future<String> generateTutorAnalysis(String statsJson) async {
-    const String systemPrompt = 'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
+    const String systemPrompt =
+        'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
         'Analizas los datos de rendimiento de un estudiante preparando un examen de policía en Colombia '
         'y generas un consejo motivacional, personalizado y preciso en 3-4 oraciones. '
         'Resaltas su fortaleza, identificas su mayor debilidad y sugieres una acción concreta. '
@@ -76,7 +80,8 @@ El formato JSON estricto esperado es:
 
     return _groq.chatOneShot(
       systemPrompt: systemPrompt,
-      userPrompt: 'Estos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.',
+      userPrompt:
+          'Estos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.',
     );
   }
 }

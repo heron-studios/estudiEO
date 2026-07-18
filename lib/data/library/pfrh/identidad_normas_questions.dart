@@ -14,7 +14,8 @@ final List<Question> identidadNormasQuestions = [
       r'''El conjunto de reglas establecidas por una religión específica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La identidad personal es el concepto que cada persona desarrolla sobre sí misma, compuesto de valores, metas y creencias que configuran su "esencia" y la distinguen de los demás.''',
+    explanation:
+        r'''La identidad personal es el concepto que cada persona desarrolla sobre sí misma, compuesto de valores, metas y creencias que configuran su "esencia" y la distinguen de los demás.''',
   ),
   Question(
     id: 'pfrh_in_f2',
@@ -28,12 +29,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Tratados internacionales de libre comercio firmados por varios países.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las normas de convivencia son pautas de conducta socialmente establecidas que regulan la interacción entre individuos, fundamentadas en el respeto mutuo, la tolerancia y la empatía, para posibilitar la vida en sociedad.''',
+    explanation:
+        r'''Las normas de convivencia son pautas de conducta socialmente establecidas que regulan la interacción entre individuos, fundamentadas en el respeto mutuo, la tolerancia y la empatía, para posibilitar la vida en sociedad.''',
   ),
   Question(
     id: 'pfrh_in_f3',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuál es el principal elemento que distingue a la "identidad nacional" de la "identidad personal"?''',
+    text:
+        r'''¿Cuál es el principal elemento que distingue a la "identidad nacional" de la "identidad personal"?''',
     options: [
       r'''La identidad nacional se basa en la biología, mientras que la personal es cultural.''',
       r'''La identidad nacional es el sentimiento de pertenencia a un territorio y comunidad política compartida, mientras que la personal es el reconocimiento de uno mismo como ser único e individual.''',
@@ -42,12 +45,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Son sinónimos exactos y se usan de manera intercambiable en las ciencias sociales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La identidad personal es el conjunto de rasgos únicos que definen al individuo. La identidad nacional es el sentimiento colectivo de pertenencia a una nación, basada en historia, cultura y símbolos compartidos.''',
+    explanation:
+        r'''La identidad personal es el conjunto de rasgos únicos que definen al individuo. La identidad nacional es el sentimiento colectivo de pertenencia a una nación, basada en historia, cultura y símbolos compartidos.''',
   ),
   Question(
     id: 'pfrh_in_f4',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuáles son los tres tipos fundamentales de normas que regulan la conducta humana en sociedad?''',
+    text:
+        r'''¿Cuáles son los tres tipos fundamentales de normas que regulan la conducta humana en sociedad?''',
     options: [
       r'''Normas matemáticas, normas físicas y normas químicas.''',
       r'''Normas religiosas, normas deportivas y normas artísticas.''',
@@ -56,12 +61,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Normas internacionales, normas nacionales y normas familiares.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas se clasifican principalmente en morales (basadas en la conciencia individual), sociales (pautas de convivencia grupales) y jurídicas (leyes emanadas del Estado con carácter obligatorio y coercitivo).''',
+    explanation:
+        r'''Las normas se clasifican principalmente en morales (basadas en la conciencia individual), sociales (pautas de convivencia grupales) y jurídicas (leyes emanadas del Estado con carácter obligatorio y coercitivo).''',
   ),
   Question(
     id: 'pfrh_in_f5',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué son los "símbolos patrios" y cuál es su función dentro de la identidad nacional?''',
+    text:
+        r'''¿Qué son los "símbolos patrios" y cuál es su función dentro de la identidad nacional?''',
     options: [
       r'''Son marcas registradas comerciales que el Estado usa para proteger sus exportaciones en el mercado global.''',
       r'''Son emblemas y representaciones oficiales que unifican y sintetizan la historia, los valores y la soberanía de una nación, fomentando el sentido de pertenencia.''',
@@ -70,12 +77,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Son logotipos deportivos usados únicamente en eventos olímpicos para distinguir a los atletas de cada país.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los símbolos patrios (como la bandera, el escudo y el himno) son representaciones oficiales que condensan la historia y los valores de una nación, fortaleciendo la identidad colectiva y el sentido de pertenencia de sus ciudadanos.''',
+    explanation:
+        r'''Los símbolos patrios (como la bandera, el escudo y el himno) son representaciones oficiales que condensan la historia y los valores de una nación, fortaleciendo la identidad colectiva y el sentido de pertenencia de sus ciudadanos.''',
   ),
   Question(
     id: 'pfrh_in_f6',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuál de las siguientes opciones describe correctamente una "norma jurídica"?''',
+    text:
+        r'''¿Cuál de las siguientes opciones describe correctamente una "norma jurídica"?''',
     options: [
       r'''Es una regla que surge espontáneamente del acuerdo informal entre los vecinos de un barrio.''',
       r'''Es una norma de conducta que una persona se impone a sí misma según sus creencias íntimas.''',
@@ -84,12 +93,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Es una costumbre cultural que se transmite de generación en generación de forma oral.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La norma jurídica es emitida por el Estado, tiene carácter obligatorio para todos, y su incumplimiento puede acarrear una sanción coercitiva (multa, pena, etc.), a diferencia de las normas morales o sociales.''',
+    explanation:
+        r'''La norma jurídica es emitida por el Estado, tiene carácter obligatorio para todos, y su incumplimiento puede acarrear una sanción coercitiva (multa, pena, etc.), a diferencia de las normas morales o sociales.''',
   ),
   Question(
     id: 'pfrh_in_f7',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Según la psicología del desarrollo, ¿en qué etapa de la vida comienza a consolidarse con mayor fuerza la identidad personal?''',
+    text:
+        r'''Según la psicología del desarrollo, ¿en qué etapa de la vida comienza a consolidarse con mayor fuerza la identidad personal?''',
     options: [
       r'''En la primera infancia (0 a 3 años), cuando el bebé aprende a distinguir objetos.''',
       r'''En la tercera edad (60 años en adelante), cuando la persona hace un balance de su vida.''',
@@ -98,12 +109,14 @@ final List<Question> identidadNormasQuestions = [
       r'''En la madurez laboral (35-40 años), cuando la persona alcanza la estabilidad económica y define su rol social.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La adolescencia es la etapa crítica de la construcción identitaria. El psicólogo Erik Erikson la describió como la fase del conflicto "identidad vs. confusión de roles", en la que el joven busca definir quién es, sus valores y su lugar en el mundo.''',
+    explanation:
+        r'''La adolescencia es la etapa crítica de la construcción identitaria. El psicólogo Erik Erikson la describió como la fase del conflicto "identidad vs. confusión de roles", en la que el joven busca definir quién es, sus valores y su lugar en el mundo.''',
   ),
   Question(
     id: 'pfrh_in_f8',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuál es la diferencia esencial entre una "norma moral" y una "norma social"?''',
+    text:
+        r'''¿Cuál es la diferencia esencial entre una "norma moral" y una "norma social"?''',
     options: [
       r'''Las normas morales son creadas por el Estado, mientras que las sociales las crea la Iglesia.''',
       r'''Las normas morales regulan el comportamiento en el trabajo, mientras que las sociales regulan la familia.''',
@@ -112,12 +125,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Las normas morales son las más importantes de un país, mientras que las sociales son simples modismos efímeros.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La norma moral es interna y personal (la conciencia como juez), mientras que la norma social es externa y grupal (surge del consenso del colectivo). Ambas carecen de la coercitividad estatal que sí tienen las normas jurídicas.''',
+    explanation:
+        r'''La norma moral es interna y personal (la conciencia como juez), mientras que la norma social es externa y grupal (surge del consenso del colectivo). Ambas carecen de la coercitividad estatal que sí tienen las normas jurídicas.''',
   ),
   Question(
     id: 'pfrh_in_f9',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Por qué el respeto a la diversidad cultural es fundamental para la convivencia en una sociedad pluricultural como el Perú?''',
+    text:
+        r'''¿Por qué el respeto a la diversidad cultural es fundamental para la convivencia en una sociedad pluricultural como el Perú?''',
     options: [
       r'''Porque la diversidad cultural solo crea problemas y debe ser eliminada mediante la educación uniforme.''',
       r'''Porque el Estado peruano exige por ley que todos los ciudadanos practiquen únicamente la cultura andina.''',
@@ -126,7 +141,8 @@ final List<Question> identidadNormasQuestions = [
       r'''Porque las diferencias culturales hacen más fácil dividir el territorio nacional en regiones autónomas separadas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En una nación pluricultural, el respeto a la diversidad es la base de la convivencia democrática. Reconocer y valorar las culturas previene el racismo, la exclusión y fortalece la identidad nacional inclusiva, donde todos se sienten parte.''',
+    explanation:
+        r'''En una nación pluricultural, el respeto a la diversidad es la base de la convivencia democrática. Reconocer y valorar las culturas previene el racismo, la exclusión y fortalece la identidad nacional inclusiva, donde todos se sienten parte.''',
   ),
   Question(
     id: 'pfrh_in_f10',
@@ -140,14 +156,16 @@ final List<Question> identidadNormasQuestions = [
       r'''Que tienen validez únicamente en los juzgados y en los tribunales de justicia, pero no en la vida cotidiana.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coercitividad es la característica distintiva de la norma jurídica: el Estado puede obligar a su cumplimiento a través de la fuerza legítima (sanciones penales, multas, etc.), lo que la diferencia de las normas morales o sociales.''',
+    explanation:
+        r'''La coercitividad es la característica distintiva de la norma jurídica: el Estado puede obligar a su cumplimiento a través de la fuerza legítima (sanciones penales, multas, etc.), lo que la diferencia de las normas morales o sociales.''',
   ),
 
   // ─── Nivel Medio ───
   Question(
     id: 'pfrh_in_m1',
     topicId: 'pfrh_identidad_normas',
-    text: r'''En la teoría de Erik Erikson, ¿cuál es el nombre del conflicto psicosocial central de la adolescencia y qué ocurre si no se resuelve positivamente?''',
+    text:
+        r'''En la teoría de Erik Erikson, ¿cuál es el nombre del conflicto psicosocial central de la adolescencia y qué ocurre si no se resuelve positivamente?''',
     options: [
       r'''Autonomía vs. Vergüenza; si falla, el joven no aprende a caminar ni a hablar correctamente.''',
       r'''Generatividad vs. Estancamiento; si falla, el adulto mayor cae en una depresión profunda e irreversible.''',
@@ -156,12 +174,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Intimidad vs. Aislamiento; si falla, el adolescente se vuelve incapaz de razonar matemáticamente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Para Erikson, la adolescencia enfrenta el dilema "Identidad vs. Confusión de roles". Una resolución positiva genera un sentido claro del yo; una negativa produce confusión, incapacidad para comprometerse con valores o un rol social coherente.''',
+    explanation:
+        r'''Para Erikson, la adolescencia enfrenta el dilema "Identidad vs. Confusión de roles". Una resolución positiva genera un sentido claro del yo; una negativa produce confusión, incapacidad para comprometerse con valores o un rol social coherente.''',
   ),
   Question(
     id: 'pfrh_in_m2',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo se diferencia la "identidad étnica" de la "identidad nacional" y por qué pueden existir tensiones entre ambas?''',
+    text:
+        r'''¿Cómo se diferencia la "identidad étnica" de la "identidad nacional" y por qué pueden existir tensiones entre ambas?''',
     options: [
       r'''Son conceptos idénticos; toda nación es un grupo étnico homogéneo con el mismo origen racial y lingüístico.''',
       r'''La identidad étnica se basa en rasgos culturales, lingüísticos y de origen compartidos de un grupo específico; la nacional abarca al Estado-nación que puede contener múltiples grupos étnicos. Las tensiones surgen cuando el Estado no reconoce o marginaliza a las minorías étnicas.''',
@@ -170,12 +190,14 @@ final List<Question> identidadNormasQuestions = [
       r'''No puede haber tensión alguna entre ellas porque el Estado siempre las integra mediante la educación intercultural bilingüe.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La identidad étnica es la del grupo específico (idioma, tradiciones, historia propias). La nacional es la del Estado-nación plural. Cuando el Estado homogeneiza y no reconoce la diversidad étnica, genera exclusión y conflictos identitarios.''',
+    explanation:
+        r'''La identidad étnica es la del grupo específico (idioma, tradiciones, historia propias). La nacional es la del Estado-nación plural. Cuando el Estado homogeneiza y no reconoce la diversidad étnica, genera exclusión y conflictos identitarios.''',
   ),
   Question(
     id: 'pfrh_in_m3',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué distingue a las "normas morales" de las "normas jurídicas" en términos de su origen, obligatoriedad y sanción?''',
+    text:
+        r'''¿Qué distingue a las "normas morales" de las "normas jurídicas" en términos de su origen, obligatoriedad y sanción?''',
     options: [
       r'''Ambas son creadas por el Estado; la única diferencia es que las morales están escritas en la Constitución y las jurídicas en el Código Civil.''',
       r'''Las normas morales son de cumplimiento obligatorio y tienen sanciones penales; las jurídicas son opcionales y sin consecuencias legales.''',
@@ -184,12 +206,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Son sinónimas; toda norma moral tiene su equivalente jurídico exacto en el sistema legal de cada país.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas morales son internas (conciencia), heterogéneas entre culturas, y su incumplimiento genera culpa o sanción social. Las jurídicas son externas (Estado), uniformes en el territorio, y su incumplimiento genera sanciones coercitivas formales.''',
+    explanation:
+        r'''Las normas morales son internas (conciencia), heterogéneas entre culturas, y su incumplimiento genera culpa o sanción social. Las jurídicas son externas (Estado), uniformes en el territorio, y su incumplimiento genera sanciones coercitivas formales.''',
   ),
   Question(
     id: 'pfrh_in_m4',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué papel cumple la "socialización" (familia, escuela, pares, medios) en la construcción de la identidad personal?''',
+    text:
+        r'''¿Qué papel cumple la "socialización" (familia, escuela, pares, medios) en la construcción de la identidad personal?''',
     options: [
       r'''Es un proceso irrelevante, ya que la identidad está completamente determinada por los genes desde el nacimiento.''',
       r'''Es el proceso a través del cual el individuo internaliza valores, normas y formas de ver el mundo, dando forma activa a su identidad en interacción con su entorno social y cultural.''',
@@ -198,12 +222,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Es un proceso exclusivo de las sociedades occidentales modernas, sin equivalente en las culturas tradicionales indígenas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La socialización es el proceso continuo e interactivo mediante el cual la persona internaliza las normas, valores y creencias de su cultura. La familia, la escuela y los pares son agentes clave que moldean activamente quién es el individuo.''',
+    explanation:
+        r'''La socialización es el proceso continuo e interactivo mediante el cual la persona internaliza las normas, valores y creencias de su cultura. La familia, la escuela y los pares son agentes clave que moldean activamente quién es el individuo.''',
   ),
   Question(
     id: 'pfrh_in_m5',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo puede el "multiculturalismo" enriquecer la identidad nacional de un país como el Perú?''',
+    text:
+        r'''¿Cómo puede el "multiculturalismo" enriquecer la identidad nacional de un país como el Perú?''',
     options: [
       r'''Fragmentando la nación en pequeños Estados independientes sin vínculo político ni cultural alguno entre sí.''',
       r'''Imponiendo una cultura dominante única que absorba y borre las diferencias para lograr la homogeneidad nacional.''',
@@ -212,12 +238,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Generando inevitablemente conflictos sociales irresolubles que amenazan la estabilidad del Estado democrático.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El multiculturalismo, cuando se gestiona con políticas de reconocimiento e inclusión, enriquece la identidad nacional al integrar la diversidad (lenguas, saberes, cosmovisiones) como un activo colectivo, y no como una amenaza.''',
+    explanation:
+        r'''El multiculturalismo, cuando se gestiona con políticas de reconocimiento e inclusión, enriquece la identidad nacional al integrar la diversidad (lenguas, saberes, cosmovisiones) como un activo colectivo, y no como una amenaza.''',
   ),
   Question(
     id: 'pfrh_in_m6',
     topicId: 'pfrh_identidad_normas',
-    text: r'''En materia de convivencia escolar, ¿cuál es la función del "reglamento interno" o "manual de convivencia" desde la perspectiva de los derechos?''',
+    text:
+        r'''En materia de convivencia escolar, ¿cuál es la función del "reglamento interno" o "manual de convivencia" desde la perspectiva de los derechos?''',
     options: [
       r'''Funciona como un instrumento punitivo exclusivo para castigar y expulsar a los estudiantes con conductas disruptivas.''',
       r'''Es un documento que concede a los directores poderes ilimitados para sancionar a estudiantes y padres de familia sin proceso.''',
@@ -226,12 +254,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Es una simple formalidad administrativa sin ningún efecto real sobre el comportamiento cotidiano dentro de la institución.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El manual de convivencia es el instrumento normativo de la institución educativa que, desde un enfoque de derechos, debe construirse participativamente y equilibrar los derechos de todos (estudiantes, docentes, padres), estableciendo deberes, procesos claros y sanciones proporcionales.''',
+    explanation:
+        r'''El manual de convivencia es el instrumento normativo de la institución educativa que, desde un enfoque de derechos, debe construirse participativamente y equilibrar los derechos de todos (estudiantes, docentes, padres), estableciendo deberes, procesos claros y sanciones proporcionales.''',
   ),
   Question(
     id: 'pfrh_in_m7',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Por qué se afirma que la identidad es "dinámica" y no estática a lo largo de la vida?''',
+    text:
+        r'''¿Por qué se afirma que la identidad es "dinámica" y no estática a lo largo de la vida?''',
     options: [
       r'''Porque la identidad cambia radicalmente cada año según la moda y las tendencias culturales del momento.''',
       r'''Porque el Estado puede reasignar una nueva identidad oficial a las personas que incumplan sus obligaciones tributarias.''',
@@ -240,12 +270,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Porque solo los artistas y los filósofos tienen la capacidad de transformar su identidad a lo largo del tiempo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La identidad es dinámica porque se construye en un proceso continuo de interacción social, reflexión y experiencia. A lo largo de la vida, las personas incorporan nuevas experiencias, cuestionan creencias anteriores y reformulan quiénes son.''',
+    explanation:
+        r'''La identidad es dinámica porque se construye en un proceso continuo de interacción social, reflexión y experiencia. A lo largo de la vida, las personas incorporan nuevas experiencias, cuestionan creencias anteriores y reformulan quiénes son.''',
   ),
   Question(
     id: 'pfrh_in_m8',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué relación existe entre la "norma jurídica" y la "dignidad humana" en el Estado de Derecho?''',
+    text:
+        r'''¿Qué relación existe entre la "norma jurídica" y la "dignidad humana" en el Estado de Derecho?''',
     options: [
       r'''No existe ninguna relación; las leyes solo se preocupan por el orden económico y la seguridad del Estado.''',
       r'''En un Estado de Derecho, las normas jurídicas deben estar fundamentadas y limitadas por el respeto a la dignidad humana, siendo inconstitucionales aquellas que la vulneren.''',
@@ -254,12 +286,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Solo las normas jurídicas internacionales están obligadas a respetar la dignidad; las nacionales pueden ignorarla.''',
     ],
     correctAnswer: 1,
-    explanation: r'''En el Estado de Derecho, la dignidad humana es el valor supremo y fundamento de todo el ordenamiento jurídico. Toda norma que la vulnere puede ser declarada inconstitucional, ya que los derechos fundamentales actúan como límite al poder legislativo del Estado.''',
+    explanation:
+        r'''En el Estado de Derecho, la dignidad humana es el valor supremo y fundamento de todo el ordenamiento jurídico. Toda norma que la vulnere puede ser declarada inconstitucional, ya que los derechos fundamentales actúan como límite al poder legislativo del Estado.''',
   ),
   Question(
     id: 'pfrh_in_m9',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuáles son las características que distinguen a las "normas jurídicas" de todas las demás normas sociales?''',
+    text:
+        r'''¿Cuáles son las características que distinguen a las "normas jurídicas" de todas las demás normas sociales?''',
     options: [
       r'''Son las únicas normas que se aprenden en la escuela primaria y que los niños deben memorizar.''',
       r'''Son normas de carácter externo, heterónomo (impuestas desde fuera), bilateral (establecen derechos y obligaciones recíprocos), general (para todos) y coercible (el Estado puede forzar su cumplimiento).''',
@@ -268,12 +302,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Son las únicas normas creadas de forma democrática, ya que las demás son imposiciones de grupos de poder sin legitimidad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las normas jurídicas se caracterizan por ser externas (no dependen de la conciencia individual), heterónomas (emanadas del Estado), bilaterales (derechos y deberes), generales (para todos en el territorio) y coercibles (su incumplimiento acarrea sanción estatal).''',
+    explanation:
+        r'''Las normas jurídicas se caracterizan por ser externas (no dependen de la conciencia individual), heterónomas (emanadas del Estado), bilaterales (derechos y deberes), generales (para todos en el territorio) y coercibles (su incumplimiento acarrea sanción estatal).''',
   ),
   Question(
     id: 'pfrh_in_m10',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo influyen los "medios de comunicación y las redes sociales" en la construcción de la identidad en los adolescentes de hoy?''',
+    text:
+        r'''¿Cómo influyen los "medios de comunicación y las redes sociales" en la construcción de la identidad en los adolescentes de hoy?''',
     options: [
       r'''No tienen ninguna influencia, ya que la identidad adolescente solo se forma dentro del núcleo familiar.''',
       r'''Solo tienen influencia positiva, ya que exponen a los jóvenes a modelos de conducta ideales y estilos de vida saludables.''',
@@ -282,14 +318,16 @@ final List<Question> identidadNormasQuestions = [
       r'''Solo son relevantes para la identidad de adolescentes en países desarrollados con alta conectividad tecnológica.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los medios y las redes sociales son agentes de socialización contemporáneos de enorme influencia. Pueden ampliar perspectivas y conectar identidades, pero también generan presión por la imagen corporal, ideales inalcanzables y fenómenos como el ciberbullying.''',
+    explanation:
+        r'''Los medios y las redes sociales son agentes de socialización contemporáneos de enorme influencia. Pueden ampliar perspectivas y conectar identidades, pero también generan presión por la imagen corporal, ideales inalcanzables y fenómenos como el ciberbullying.''',
   ),
 
   // ─── Nivel Difícil ───
   Question(
     id: 'pfrh_in_d1',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Desde la perspectiva de las ciencias sociales, ¿cómo se entiende el concepto de "nación" como una "comunidad imaginada" (según Benedict Anderson)?''',
+    text:
+        r'''Desde la perspectiva de las ciencias sociales, ¿cómo se entiende el concepto de "nación" como una "comunidad imaginada" (según Benedict Anderson)?''',
     options: [
       r'''Como una fantasía colectiva sin ningún fundamento histórico real, creada por las élites para manipular a las masas.''',
       r'''Como una comunidad política soberana y limitada, imaginada porque sus miembros, aunque no se conocen entre sí, comparten un sentido de comunidad a través de relatos, símbolos e instituciones comunes.''',
@@ -298,12 +336,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Como el conjunto de empleados y funcionarios del gobierno central que administran los recursos del Estado.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Anderson define la nación como una "comunidad imaginada" porque es limitada (tiene fronteras), soberana, y sus miembros se conciben como parte de una comunidad aunque nunca se conozcan, gracias a narrativas, medios e instituciones que crean el sentido de "nosotros".''',
+    explanation:
+        r'''Anderson define la nación como una "comunidad imaginada" porque es limitada (tiene fronteras), soberana, y sus miembros se conciben como parte de una comunidad aunque nunca se conozcan, gracias a narrativas, medios e instituciones que crean el sentido de "nosotros".''',
   ),
   Question(
     id: 'pfrh_in_d2',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuál es la tensión entre el "nacionalismo" como proyecto identitario y el respeto a la diversidad cultural e indígena en el Perú?''',
+    text:
+        r'''¿Cuál es la tensión entre el "nacionalismo" como proyecto identitario y el respeto a la diversidad cultural e indígena en el Perú?''',
     options: [
       r'''No existe tensión alguna; el Estado peruano siempre ha reconocido y valorado plenamente a todos sus pueblos indígenas.''',
       r'''El nacionalismo peruano históricamente se construyó sobre un relato criollo-mestizo que tendió a marginalizar o folclorizar las identidades indígenas y amazónicas, creando una brecha entre la identidad oficial y las identidades de los pueblos originarios.''',
@@ -312,12 +352,14 @@ final List<Question> identidadNormasQuestions = [
       r'''El nacionalismo peruano es idéntico a todos los nacionalismos latinoamericanos y no presenta ninguna característica particular.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El proyecto nacional peruano históricamente priorizó el modelo criollo-limeño, marginalizando las culturas andinas y amazónicas. Esta tensión persiste: la identidad oficial no siempre refleja la pluriculturalidad real del país, generando exclusión e invisibilización.''',
+    explanation:
+        r'''El proyecto nacional peruano históricamente priorizó el modelo criollo-limeño, marginalizando las culturas andinas y amazónicas. Esta tensión persiste: la identidad oficial no siempre refleja la pluriculturalidad real del país, generando exclusión e invisibilización.''',
   ),
   Question(
     id: 'pfrh_in_d3',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Desde la teoría de la "identidad social" de Henri Tajfel, ¿cómo los grupos de pertenencia afectan la auto-percepción y las relaciones intergrupales?''',
+    text:
+        r'''Desde la teoría de la "identidad social" de Henri Tajfel, ¿cómo los grupos de pertenencia afectan la auto-percepción y las relaciones intergrupales?''',
     options: [
       r'''Los grupos de pertenencia no tienen ningún efecto sobre la auto-percepción individual, que es siempre completamente autónoma.''',
       r'''La pertenencia a un grupo (ingroup) contribuye a la auto-estima colectiva, y las personas tienden a favorecer a su grupo por encima de los exogrupos (outgroup), lo que puede alimentar prejuicios y discriminación intergrupal.''',
@@ -326,12 +368,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Tajfel demostró que los seres humanos son esencialmente universalistas y nunca favorecen a su grupo propio sobre los demás.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Tajfel demostró que la categorización social (pertenencia a un grupo) es central para la identidad. Las personas buscan una identidad social positiva favoreciendo a su endogrupo, lo que puede derivar en discriminación del exogrupo si no se gestiona con educación intercultural.''',
+    explanation:
+        r'''Tajfel demostró que la categorización social (pertenencia a un grupo) es central para la identidad. Las personas buscan una identidad social positiva favoreciendo a su endogrupo, lo que puede derivar en discriminación del exogrupo si no se gestiona con educación intercultural.''',
   ),
   Question(
     id: 'pfrh_in_d4',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo se relaciona la "crisis de identidad" con el fenómeno de la "anomia" social descrito por Émile Durkheim?''',
+    text:
+        r'''¿Cómo se relaciona la "crisis de identidad" con el fenómeno de la "anomia" social descrito por Émile Durkheim?''',
     options: [
       r'''La anomia es un término económico que describe la hiperinflación y no tiene relación con la identidad personal o social.''',
       r'''Son conceptos opuestos; mientras la crisis de identidad fortalece las normas sociales, la anomia las debilita.''',
@@ -340,12 +384,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Durkheim afirmó que la anomia siempre es positiva, ya que libera a los individuos de las ataduras sociales y les permite construir su identidad de manera completamente libre.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Durkheim describió la anomia como el estado en que las normas sociales se debilitan o colapsan. Sin referentes normativos claros, los individuos experimentan desorientación y pérdida de sentido colectivo, lo que puede desencadenar crisis de identidad social y personal.''',
+    explanation:
+        r'''Durkheim describió la anomia como el estado en que las normas sociales se debilitan o colapsan. Sin referentes normativos claros, los individuos experimentan desorientación y pérdida de sentido colectivo, lo que puede desencadenar crisis de identidad social y personal.''',
   ),
   Question(
     id: 'pfrh_in_d5',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué implica el concepto de "ciudadanía activa" en relación con las normas sociales y la identidad nacional?''',
+    text:
+        r'''¿Qué implica el concepto de "ciudadanía activa" en relación con las normas sociales y la identidad nacional?''',
     options: [
       r'''Implica que los ciudadanos deben obedecer pasivamente todas las leyes del Estado sin cuestionarlas ni participar en su modificación.''',
       r'''Implica únicamente el cumplimiento del deber de votar en las elecciones presidenciales cada cinco años.''',
@@ -354,12 +400,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Implica que solo los ciudadanos con educación universitaria tienen el derecho y la capacidad de participar en la vida política del país.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La ciudadanía activa va más allá del cumplimiento pasivo de normas: supone la participación democrática, el ejercicio de los derechos, la vigilancia del poder y la contribución crítica a la construcción del bien común y la identidad nacional.''',
+    explanation:
+        r'''La ciudadanía activa va más allá del cumplimiento pasivo de normas: supone la participación democrática, el ejercicio de los derechos, la vigilancia del poder y la contribución crítica a la construcción del bien común y la identidad nacional.''',
   ),
   Question(
     id: 'pfrh_in_d6',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo el fenómeno de la "globalización" puede afectar simultáneamente de forma positiva y negativa la identidad cultural de los pueblos?''',
+    text:
+        r'''¿Cómo el fenómeno de la "globalización" puede afectar simultáneamente de forma positiva y negativa la identidad cultural de los pueblos?''',
     options: [
       r'''Solo tiene efectos positivos: la globalización garantiza la preservación de todas las culturas locales mediante internet y los museos digitales.''',
       r'''Solo tiene efectos negativos: destruye irremediablemente todas las culturas locales y las reemplaza por una monocultura occidental consumista.''',
@@ -368,12 +416,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La globalización es un proceso neutral que no tiene ningún tipo de impacto sobre las identidades culturales de ningún pueblo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La globalización es un fenómeno de doble filo: facilita el intercambio y enriquecimiento cultural, pero también puede derivar en la homogeneización (McDonalidización), la pérdida de idiomas minoritarios y la subordinación de culturas locales ante la cultura hegemónica global.''',
+    explanation:
+        r'''La globalización es un fenómeno de doble filo: facilita el intercambio y enriquecimiento cultural, pero también puede derivar en la homogeneización (McDonalidización), la pérdida de idiomas minoritarios y la subordinación de culturas locales ante la cultura hegemónica global.''',
   ),
   Question(
     id: 'pfrh_in_d7',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué rol juega la "memoria histórica" en la construcción y consolidación de la identidad nacional?''',
+    text:
+        r'''¿Qué rol juega la "memoria histórica" en la construcción y consolidación de la identidad nacional?''',
     options: [
       r'''La memoria histórica no tiene ningún rol; la identidad nacional se construye solo mirando el futuro y olvidando el pasado.''',
       r'''La memoria histórica compartida (eventos, héroes, traumas, luchas colectivas) proporciona los cimientos narrativos que dan sentido de continuidad, pertenencia y propósito colectivo a la identidad nacional.''',
@@ -382,12 +432,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La memoria histórica de las derrotas y traumas nacionales siempre debilita la identidad nacional y debe ser borrada de los libros de texto.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La memoria histórica compartida (batallas ganadas, personajes emblemáticos, injusticias sufridas y superadas) es el sustrato narrativo de la identidad nacional. Genera el sentido de un "nosotros" con una historia y un proyecto común hacia el futuro.''',
+    explanation:
+        r'''La memoria histórica compartida (batallas ganadas, personajes emblemáticos, injusticias sufridas y superadas) es el sustrato narrativo de la identidad nacional. Genera el sentido de un "nosotros" con una historia y un proyecto común hacia el futuro.''',
   ),
   Question(
     id: 'pfrh_in_d8',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo se articula el principio constitucional de "igualdad ante la ley" con la necesidad de normas especiales para grupos en situación de vulnerabilidad?''',
+    text:
+        r'''¿Cómo se articula el principio constitucional de "igualdad ante la ley" con la necesidad de normas especiales para grupos en situación de vulnerabilidad?''',
     options: [
       r'''Son principios incompatibles; si existe igualdad ante la ley, no puede haber normas especiales para ningún grupo.''',
       r'''Las normas especiales para grupos vulnerables (niños, personas con discapacidad, pueblos indígenas) no violan la igualdad, sino que la realizan materialmente: al reconocer la desigualdad real, aplican una discriminación positiva para garantizar que todos alcancen las mismas oportunidades.''',
@@ -396,12 +448,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Solo los grupos con representación parlamentaria pueden acceder a normas especiales; los pueblos indígenas sin representación no.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La igualdad material (no solo formal) reconoce que para lograr igualdad de resultados, se requiere tratar diferente a quienes están en situación de desventaja. Esta es la base de la "discriminación positiva" o acción afirmativa, que es constitucional.''',
+    explanation:
+        r'''La igualdad material (no solo formal) reconoce que para lograr igualdad de resultados, se requiere tratar diferente a quienes están en situación de desventaja. Esta es la base de la "discriminación positiva" o acción afirmativa, que es constitucional.''',
   ),
   Question(
     id: 'pfrh_in_d9',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué importancia tiene la "interculturalidad" (no solo el multiculturalismo) para la convivencia y la identidad en sociedades diversas?''',
+    text:
+        r'''¿Qué importancia tiene la "interculturalidad" (no solo el multiculturalismo) para la convivencia y la identidad en sociedades diversas?''',
     options: [
       r'''La interculturalidad es idéntica al multiculturalismo; ambos términos describen exactamente el mismo fenómeno social.''',
       r'''La interculturalidad va más allá del reconocimiento pasivo de culturas: propone el diálogo activo, el intercambio y el enriquecimiento mutuo entre culturas, superando la mera coexistencia paralela del multiculturalismo.''',
@@ -410,12 +464,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La interculturalidad solo es relevante para las zonas rurales con comunidades indígenas y no tiene aplicación en los contextos urbanos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El multiculturalismo reconoce la diversidad; la interculturalidad propone la interacción activa y el diálogo igualitario entre culturas. Va más allá de la coexistencia paralela y busca el enriquecimiento y la transformación mutua a través del encuentro cultural.''',
+    explanation:
+        r'''El multiculturalismo reconoce la diversidad; la interculturalidad propone la interacción activa y el diálogo igualitario entre culturas. Va más allá de la coexistencia paralela y busca el enriquecimiento y la transformación mutua a través del encuentro cultural.''',
   ),
   Question(
     id: 'pfrh_in_d10',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cuál es la diferencia entre "discriminación" y "distinción" en el marco del Derecho Internacional de los Derechos Humanos y las normas jurídicas?''',
+    text:
+        r'''¿Cuál es la diferencia entre "discriminación" y "distinción" en el marco del Derecho Internacional de los Derechos Humanos y las normas jurídicas?''',
     options: [
       r'''Son sinónimos exactos; toda distinción entre personas es una forma de discriminación ilegal.''',
       r'''La "discriminación" es la diferenciación arbitraria, injusta e irrazonable basada en categorías prohibidas (raza, género, etc.). La "distinción" es una diferenciación justificada, objetiva y razonable que busca una finalidad legítima (ej. medidas afirmativas).''',
@@ -424,14 +480,16 @@ final List<Question> identidadNormasQuestions = [
       r'''No existe ninguna diferencia práctica; los tribunales internacionales tratan a ambos conceptos como equivalentes.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El DIDH distingue entre discriminación (diferenciación arbitraria, sin justificación objetiva, que vulnera la igualdad) y distinción (diferenciación justificada, objetiva y razonable con fin legítimo, como la acción afirmativa para grupos históricamente excluidos).''',
+    explanation:
+        r'''El DIDH distingue entre discriminación (diferenciación arbitraria, sin justificación objetiva, que vulnera la igualdad) y distinción (diferenciación justificada, objetiva y razonable con fin legítimo, como la acción afirmativa para grupos históricamente excluidos).''',
   ),
 
   // ─── Nivel Extremo ───
   Question(
     id: 'pfrh_in_e1',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Desde la teoría poscolonial (Frantz Fanon, Aimé Césaire), ¿cómo el proceso colonial afectó la identidad de los pueblos colonizados y qué implica la "descolonización de la identidad"?''',
+    text:
+        r'''Desde la teoría poscolonial (Frantz Fanon, Aimé Césaire), ¿cómo el proceso colonial afectó la identidad de los pueblos colonizados y qué implica la "descolonización de la identidad"?''',
     options: [
       r'''El colonialismo no tuvo ningún efecto sobre la identidad de los pueblos colonizados, que mantuvieron sus culturas intactas.''',
       r'''El colonialismo impuso una identidad subalterna al colonizado (inferiorización, negación de su cultura y lengua); la descolonización implica recuperar la agencia, resignificar la propia historia y reconstruir una identidad desde los propios marcos culturales y epistémicos.''',
@@ -440,12 +498,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La teoría poscolonial es un movimiento extremista que propone el odio racial hacia los europeos como forma de reparación histórica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Fanon analizó cómo el colonialismo no solo dominó territorialmente, sino que destruyó la identidad del colonizado (inferiorización, blanqueamiento cultural). La descolonización identitaria implica recuperar la agencia, revalorizar la propia cultura y deconstruir la mirada del colonizador internalizada.''',
+    explanation:
+        r'''Fanon analizó cómo el colonialismo no solo dominó territorialmente, sino que destruyó la identidad del colonizado (inferiorización, blanqueamiento cultural). La descolonización identitaria implica recuperar la agencia, revalorizar la propia cultura y deconstruir la mirada del colonizador internalizada.''',
   ),
   Question(
     id: 'pfrh_in_e2',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo el concepto de "interseccionalidad" (Kimberlé Crenshaw) complejiza la comprensión de la identidad y la discriminación más allá de categorías únicas como raza o género?''',
+    text:
+        r'''¿Cómo el concepto de "interseccionalidad" (Kimberlé Crenshaw) complejiza la comprensión de la identidad y la discriminación más allá de categorías únicas como raza o género?''',
     options: [
       r'''La interseccionalidad propone que solo existe un eje de discriminación válido (la raza) y que todos los demás son secundarios.''',
       r'''La interseccionalidad revela que las identidades son multidimensionales y que las diversas categorías de opresión (raza, género, clase, etnia, sexualidad) se superponen e interactúan, generando formas específicas y compuestas de discriminación que no pueden analizarse de manera aislada.''',
@@ -454,12 +514,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La interseccionalidad es un concepto matemático que calcula cuántos tipos de discriminación sufre una persona usando una fórmula estadística.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Crenshaw demostró que no se puede analizar la discriminación considerando un solo eje. Una mujer indígena pobre sufre discriminaciones específicas que surgen de la intersección de raza, género y clase simultáneamente, creando experiencias que no se pueden comprender analizando cada categoría por separado.''',
+    explanation:
+        r'''Crenshaw demostró que no se puede analizar la discriminación considerando un solo eje. Una mujer indígena pobre sufre discriminaciones específicas que surgen de la intersección de raza, género y clase simultáneamente, creando experiencias que no se pueden comprender analizando cada categoría por separado.''',
   ),
   Question(
     id: 'pfrh_in_e3',
     topicId: 'pfrh_identidad_normas',
-    text: r'''En el debate filosófico sobre la fundamentación de las normas, ¿cuál es la diferencia entre el "iusnaturalismo" y el "iuspositivismo" y cómo impactan en la concepción de la identidad jurídica del ciudadano?''',
+    text:
+        r'''En el debate filosófico sobre la fundamentación de las normas, ¿cuál es la diferencia entre el "iusnaturalismo" y el "iuspositivismo" y cómo impactan en la concepción de la identidad jurídica del ciudadano?''',
     options: [
       r'''Son corrientes idénticas; ambas afirman que las leyes del Estado son absolutas e incuestionables en todo contexto.''',
       r'''El iusnaturalismo sostiene que existen derechos anteriores y superiores al Estado (derechos naturales); el iuspositivismo afirma que solo son válidas las normas positivas creadas por el Estado. En el primer caso, el ciudadano tiene derechos inalienables; en el segundo, sus derechos dependen de lo que el Estado legisla.''',
@@ -468,12 +530,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Estas corrientes solo tienen relevancia histórica en el siglo XIX y han sido completamente superadas por el Derecho Internacional contemporáneo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El iusnaturalismo (Locke, Rousseau) establece derechos previos al Estado que este debe reconocer; el iuspositivismo (Kelsen) sostiene que el derecho es solo el conjunto de normas positivamente establecidas. Esta tensión es central en el debate sobre derechos humanos universales vs. soberanía legislativa.''',
+    explanation:
+        r'''El iusnaturalismo (Locke, Rousseau) establece derechos previos al Estado que este debe reconocer; el iuspositivismo (Kelsen) sostiene que el derecho es solo el conjunto de normas positivamente establecidas. Esta tensión es central en el debate sobre derechos humanos universales vs. soberanía legislativa.''',
   ),
   Question(
     id: 'pfrh_in_e4',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo la "gastronomía peruana" ha funcionado, según algunos académicos, como un "relato identitario" capaz de reformular la identidad nacional en el siglo XXI?''',
+    text:
+        r'''¿Cómo la "gastronomía peruana" ha funcionado, según algunos académicos, como un "relato identitario" capaz de reformular la identidad nacional en el siglo XXI?''',
     options: [
       r'''La gastronomía peruana es un fenómeno exclusivamente económico y turístico, sin ninguna dimensión identitaria o simbólica relevante.''',
       r'''La gastronomía peruana ha servido como "soft diplomacy" y como un relato de fusión e inclusión cultural (afroperuana, andina, amazónica, chifa, nikkei) que permite una narrativa de identidad nacional mestiza más positiva, aunque también ha sido criticada por ser un proyecto de las élites limeñas.''',
@@ -482,12 +546,14 @@ final List<Question> identidadNormasQuestions = [
       r'''La gastronomía peruana es un ejemplo de cómo la identidad nacional puede construirse sin ninguna referencia a la historia colonial o a las desigualdades sociales del pasado.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El "boom gastronómico" peruano ha sido analizado como un relato identitario que celebra la fusión cultural (andina, amazónica, afroperuana, asiática). Aunque inclusivo en el discurso, también ha sido criticado por centralizar el protagonismo en Lima y las élites, sin abordar las desigualdades estructurales.''',
+    explanation:
+        r'''El "boom gastronómico" peruano ha sido analizado como un relato identitario que celebra la fusión cultural (andina, amazónica, afroperuana, asiática). Aunque inclusivo en el discurso, también ha sido criticado por centralizar el protagonismo en Lima y las élites, sin abordar las desigualdades estructurales.''',
   ),
   Question(
     id: 'pfrh_in_e5',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Desde la perspectiva del "contractualismo" (Hobbes, Locke, Rousseau), ¿cuál es el fundamento de las normas jurídicas y su relación con la identidad ciudadana?''',
+    text:
+        r'''Desde la perspectiva del "contractualismo" (Hobbes, Locke, Rousseau), ¿cuál es el fundamento de las normas jurídicas y su relación con la identidad ciudadana?''',
     options: [
       r'''El contractualismo afirma que las normas jurídicas son impuestas por una divinidad y que el pueblo debe aceptarlas sin cuestionarlas.''',
       r'''Las normas jurídicas emanan de un "contrato social" en el que los individuos ceden parte de su libertad natural al Estado a cambio de seguridad y orden. La identidad ciudadana surge de ser parte de esta comunidad política contractual.''',
@@ -496,12 +562,14 @@ final List<Question> identidadNormasQuestions = [
       r'''El contrato social es un proceso que se renueva cada año mediante un plebiscito obligatorio donde los ciudadanos votan si aceptan o rechazan el ordenamiento legal vigente.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El contractualismo fundamenta las normas jurídicas en un acuerdo racional de los individuos para salir del "estado de naturaleza". Aunque Hobbes, Locke y Rousseau difieren en los detalles, todos coinciden en que la legitimidad del Estado y sus normas emana del consentimiento de los gobernados.''',
+    explanation:
+        r'''El contractualismo fundamenta las normas jurídicas en un acuerdo racional de los individuos para salir del "estado de naturaleza". Aunque Hobbes, Locke y Rousseau difieren en los detalles, todos coinciden en que la legitimidad del Estado y sus normas emana del consentimiento de los gobernados.''',
   ),
   Question(
     id: 'pfrh_in_e6',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo la "teoría crítica de la raza" (Critical Race Theory) cuestiona la supuesta neutralidad de las normas jurídicas respecto a la identidad racial?''',
+    text:
+        r'''¿Cómo la "teoría crítica de la raza" (Critical Race Theory) cuestiona la supuesta neutralidad de las normas jurídicas respecto a la identidad racial?''',
     options: [
       r'''Afirma que las normas jurídicas son perfectamente neutrales e imparciales, ya que fueron creadas por juristas sin ningún sesgo racial.''',
       r'''Argumenta que el racismo no existe en el ámbito jurídico porque la Constitución de los países democráticos prohíbe explícitamente la discriminación.''',
@@ -510,12 +578,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Es una teoría filosófica puramente abstracta sin ninguna aplicación práctica en los sistemas legales o en los debates de políticas públicas concretas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La TCR sostiene que el racismo no es solo un problema individual de prejuicio, sino que está incrustado en las estructuras legales e institucionales. Las normas aparentemente neutrales pueden tener impactos racialmente desiguales si ignoran las condiciones históricas de desigualdad.''',
+    explanation:
+        r'''La TCR sostiene que el racismo no es solo un problema individual de prejuicio, sino que está incrustado en las estructuras legales e institucionales. Las normas aparentemente neutrales pueden tener impactos racialmente desiguales si ignoran las condiciones históricas de desigualdad.''',
   ),
   Question(
     id: 'pfrh_in_e7',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Cómo la "psicología social" explica el fenómeno del "conformismo normativo" y sus implicaciones para la identidad individual?''',
+    text:
+        r'''¿Cómo la "psicología social" explica el fenómeno del "conformismo normativo" y sus implicaciones para la identidad individual?''',
     options: [
       r'''El conformismo normativo demuestra que los seres humanos son naturalmente rebeldes y siempre rechazan las normas sociales.''',
       r'''El conformismo normativo es la tendencia de los individuos a ajustar su comportamiento y creencias a las normas del grupo, incluso cuando van en contra de su juicio propio, para evitar el rechazo social y mantener la pertenencia grupal.''',
@@ -524,12 +594,14 @@ final List<Question> identidadNormasQuestions = [
       r'''El conformismo normativo siempre es positivo para la sociedad porque garantiza el orden y la cohesión social sin conflictos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Experimentos como los de Asch y Milgram demostraron la poderosa presión del grupo sobre el individuo. El conformismo normativo puede llevar a sacrificar el juicio personal para encajar, lo que plantea interrogantes sobre autonomía, autenticidad identitaria y responsabilidad moral.''',
+    explanation:
+        r'''Experimentos como los de Asch y Milgram demostraron la poderosa presión del grupo sobre el individuo. El conformismo normativo puede llevar a sacrificar el juicio personal para encajar, lo que plantea interrogantes sobre autonomía, autenticidad identitaria y responsabilidad moral.''',
   ),
   Question(
     id: 'pfrh_in_e8',
     topicId: 'pfrh_identidad_normas',
-    text: r'''¿Qué implica el principio jurídico de "pluralismo jurídico" para el reconocimiento de la identidad y las normas de los pueblos indígenas en el ordenamiento del Estado peruano?''',
+    text:
+        r'''¿Qué implica el principio jurídico de "pluralismo jurídico" para el reconocimiento de la identidad y las normas de los pueblos indígenas en el ordenamiento del Estado peruano?''',
     options: [
       r'''Implica que los pueblos indígenas están completamente exentos de cumplir cualquier norma del Estado peruano.''',
       r'''El pluralismo jurídico reconoce que en un mismo territorio pueden coexistir sistemas normativos distintos (el estatal y los consuetudinarios indígenas), lo que implica el reconocimiento legal de la justicia comunal y las autoridades propias de los pueblos originarios.''',
@@ -538,12 +610,14 @@ final List<Question> identidadNormasQuestions = [
       r'''Implica que los ciudadanos pueden elegir libremente a qué sistema jurídico (estatal o indígena) desean someterse, sin importar su origen étnico.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El pluralismo jurídico, reconocido en la Constitución Política del Perú (Art. 149) y el Convenio 169 de la OIT, establece que las comunidades campesinas y nativas pueden ejercer funciones jurisdiccionales mediante sus autoridades y el derecho consuetudinario.''',
+    explanation:
+        r'''El pluralismo jurídico, reconocido en la Constitución Política del Perú (Art. 149) y el Convenio 169 de la OIT, establece que las comunidades campesinas y nativas pueden ejercer funciones jurisdiccionales mediante sus autoridades y el derecho consuetudinario.''',
   ),
   Question(
     id: 'pfrh_in_e9',
     topicId: 'pfrh_identidad_normas',
-    text: r'''En el marco de la "educación ciudadana crítica", ¿cómo debe abordarse la tensión entre el patriotismo como sentimiento de identidad nacional y el cosmopolitismo como perspectiva de ciudadanía global?''',
+    text:
+        r'''En el marco de la "educación ciudadana crítica", ¿cómo debe abordarse la tensión entre el patriotismo como sentimiento de identidad nacional y el cosmopolitismo como perspectiva de ciudadanía global?''',
     options: [
       r'''El patriotismo y el cosmopolitismo son absolutamente incompatibles; una educación debe elegir uno u otro y excluir completamente el contrario.''',
       r'''Una educación ciudadana crítica puede integrar ambas perspectivas: cultivar el apego reflexivo a la comunidad local y nacional (patriotismo crítico) mientras se desarrolla la conciencia de la interdependencia global y la responsabilidad hacia todos los seres humanos (cosmopolitismo).''',
@@ -552,12 +626,14 @@ final List<Question> identidadNormasQuestions = [
       r'''El cosmopolitismo es un proyecto de las élites globalizadas para destruir las identidades nacionales de los países del Sur Global.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ciudadanía crítica contemporánea integra el amor reflexivo a lo propio (no el chauvinismo ciego) con la conciencia de la interdependencia global. No son opuestos: se puede ser peruano comprometido y, simultáneamente, ciudadano del mundo con responsabilidad hacia los derechos humanos universales.''',
+    explanation:
+        r'''La ciudadanía crítica contemporánea integra el amor reflexivo a lo propio (no el chauvinismo ciego) con la conciencia de la interdependencia global. No son opuestos: se puede ser peruano comprometido y, simultáneamente, ciudadano del mundo con responsabilidad hacia los derechos humanos universales.''',
   ),
   Question(
     id: 'pfrh_in_e10',
     topicId: 'pfrh_identidad_normas',
-    text: r'''Atendiendo al Programa Curricular y a la "Cultura de Paz" (Resolución ONU 53/243), ¿cuál es la implicación epistemológica y pragmática del "Desarrollo Sostenible" en la trama de los Derechos Humanos y la Convivencia Nacional/Global?''',
+    text:
+        r'''Atendiendo al Programa Curricular y a la "Cultura de Paz" (Resolución ONU 53/243), ¿cuál es la implicación epistemológica y pragmática del "Desarrollo Sostenible" en la trama de los Derechos Humanos y la Convivencia Nacional/Global?''',
     options: [
       r'''Promueve el aceleramiento drástico e incontrolado del calentamiento global para obligar a las sociedades subdesarrolladas a adoptar tecnologías limpias importadas que fortalezcan monopolios ecológicos privados en Europa.''',
       r'''Autoriza la explotación ilimitada de recursos naturales por corporaciones financieras multinacionales si los réditos económicos son destinados a la construcción de imponentes museos patrióticos monumentales.''',
@@ -566,6 +642,7 @@ final List<Question> identidadNormasQuestions = [
       r'''Demanda que las Naciones Unidas reubiquen a los pueblos marginados a zonas urbanas altamente industrializadas, forzando la erradicación total de los modos de vida agrarios.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La cultura de paz de la ONU integra explícitamente el desarrollo sostenible, entendiendo que el respeto a los derechos humanos y a la equidad intrageneracional y ambiental son bases indivisibles y obligatorias para erradicar las inequidades y preservar la vida armónica a nivel global.''',
+    explanation:
+        r'''La cultura de paz de la ONU integra explícitamente el desarrollo sostenible, entendiendo que el respeto a los derechos humanos y a la equidad intrageneracional y ambiental son bases indivisibles y obligatorias para erradicar las inequidades y preservar la vida armónica a nivel global.''',
   ),
 ];

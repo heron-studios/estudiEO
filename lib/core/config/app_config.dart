@@ -1,6 +1,4 @@
-
 class AppConfig {
-
   /// Número de WhatsApp para ventas de Premium
   static const String whatsappNumber = '51955285763';
 

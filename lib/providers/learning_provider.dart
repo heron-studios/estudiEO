@@ -173,7 +173,7 @@ class LearningProvider extends ChangeNotifier {
 
     _currentSession!.isLevelCompleted = true;
     _currentSession!.finishedAt = DateTime.now();
-    
+
     _gamification?.addXp(50);
 
     _storage.saveLearningProgress(_completedLevels);
@@ -240,11 +240,7 @@ class LearningProvider extends ChangeNotifier {
       return null;
     }
 
-    return {
-      'topicId': topicId,
-      'nivel': nivel,
-      'session': session,
-    };
+    return {'topicId': topicId, 'nivel': nivel, 'session': session};
   }
 
   // ─── Helpers ─────────────────────────────────────────────────────────────

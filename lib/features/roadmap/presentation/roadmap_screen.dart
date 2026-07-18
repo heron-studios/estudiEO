@@ -218,69 +218,72 @@ class _RoadmapScreenState extends State<RoadmapScreen> {
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 850),
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 16,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Proceso de Admisión',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontSize: 26,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -0.5,
-                  ),
+                  children: [
+                    const Text(
+                      'Proceso de Admisión',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -0.5,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'EO-PNP 2026 · 12 fases secuenciales',
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.5),
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    // Progress
+                    _ProgressHeader(
+                      completed: _completedCount,
+                      total: 12,
+                      anyFailed: _anyFailed,
+                    ),
+                    const SizedBox(height: 8),
+                    // Alert de traje formal
+                    const _AlertBanner(
+                      icon: Icons.info_outline_rounded,
+                      color: Color(0xFF38BDF8),
+                      text: 'No hay proceso de admisión en curso.',
+                    ),
+                    const SizedBox(height: 20),
+                    // Timeline
+                    ListView.separated(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _phases.length,
+                      separatorBuilder: (_, __) =>
+                          const _TimelineConnector(active: false),
+                      itemBuilder: (context, i) {
+                        return _PhaseCard(
+                          phase: _phases[i],
+                          state: _states[i],
+                          blocked: !_canToggle(i) && _states[i] == 0,
+                          onTap: () => _toggle(i),
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 32),
+                  ],
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  'EO-PNP 2026 · 12 fases secuenciales',
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    fontSize: 13,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                // Progress
-                _ProgressHeader(
-                  completed: _completedCount,
-                  total: 12,
-                  anyFailed: _anyFailed,
-                ),
-                const SizedBox(height: 8),
-                // Alert de traje formal
-                const _AlertBanner(
-                  icon: Icons.info_outline_rounded,
-                  color: Color(0xFF38BDF8),
-                  text: 'No hay proceso de admisión en curso.',
-                ),
-                const SizedBox(height: 20),
-                // Timeline
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: _phases.length,
-                  separatorBuilder: (_, __) =>
-                      const _TimelineConnector(active: false),
-                  itemBuilder: (context, i) {
-                    return _PhaseCard(
-                      phase: _phases[i],
-                      state: _states[i],
-                      blocked: !_canToggle(i) && _states[i] == 0,
-                      onTap: () => _toggle(i),
-                    );
-                  },
-                ),
-                const SizedBox(height: 32),
-              ],
-            ),
+              ),
             ),
           ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }
 
 class _ProgressHeader extends StatelessWidget {

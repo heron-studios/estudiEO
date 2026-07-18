@@ -6,12 +6,7 @@ import 'package:learn/data/periodic_table_data.dart';
 import 'package:learn/models/chemical_element.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
 
-enum QuestionType {
-  symbolToName,
-  nameToSymbol,
-  atomicNumber,
-  family,
-}
+enum QuestionType { symbolToName, nameToSymbol, atomicNumber, family }
 
 class PtSurvivalView extends StatefulWidget {
   const PtSurvivalView({super.key});
@@ -20,16 +15,17 @@ class PtSurvivalView extends StatefulWidget {
   State<PtSurvivalView> createState() => _PtSurvivalViewState();
 }
 
-class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProviderStateMixin {
+class _PtSurvivalViewState extends State<PtSurvivalView>
+    with SingleTickerProviderStateMixin {
   final Random _random = Random();
   late ChemicalElement _currentElement;
   late List<String> _options;
   late QuestionType _questionType;
-  
+
   int _score = 0;
   int _comboMultiplier = 1;
   int _correctInARow = 0;
-  
+
   String? _selectedAnswer;
   bool _answered = false;
 
@@ -38,7 +34,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
   bool _isPlaying = false;
   bool _isGameOver = false;
   String? _hintMessage;
-  
+
   // Animation for time changes
   int _timeChange = 0;
   bool _showTimeChange = false;
@@ -95,14 +91,16 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
     _answered = false;
     _selectedAnswer = null;
     _hintMessage = null;
-    
+
     // Difficulty progression based on score or time passed
     int difficultyLevel = _score ~/ 100; // Increase difficulty every 100 points
-    
+
     int typeRand = _random.nextInt(10);
     if (difficultyLevel == 0) {
       // Easy level: only symbol/name
-      _questionType = typeRand < 5 ? QuestionType.symbolToName : QuestionType.nameToSymbol;
+      _questionType = typeRand < 5
+          ? QuestionType.symbolToName
+          : QuestionType.nameToSymbol;
     } else if (difficultyLevel == 1) {
       // Medium level: add atomic number
       if (typeRand < 4) {
@@ -124,16 +122,20 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
         _questionType = QuestionType.family;
       }
     }
-    
-    // Filter elements based on difficulty? We can just pick randomly for now, 
+
+    // Filter elements based on difficulty? We can just pick randomly for now,
     // maybe pick lighter elements more often early on.
     if (difficultyLevel < 2) {
       // First 36 elements
-      _currentElement = periodicTableElements[_random.nextInt(min(36, periodicTableElements.length))];
+      _currentElement =
+          periodicTableElements[_random.nextInt(
+            min(36, periodicTableElements.length),
+          )];
     } else {
-      _currentElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+      _currentElement =
+          periodicTableElements[_random.nextInt(periodicTableElements.length)];
     }
-    
+
     String correctAnswer;
     switch (_questionType) {
       case QuestionType.symbolToName:
@@ -149,13 +151,14 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
         correctAnswer = _currentElement.family;
         break;
     }
-    
+
     Set<String> optionsSet = {correctAnswer};
-    
+
     int optionsCount = difficultyLevel >= 3 ? 6 : 4;
-    
+
     while (optionsSet.length < optionsCount) {
-      ChemicalElement randomElement = periodicTableElements[_random.nextInt(periodicTableElements.length)];
+      ChemicalElement randomElement =
+          periodicTableElements[_random.nextInt(periodicTableElements.length)];
       switch (_questionType) {
         case QuestionType.symbolToName:
           optionsSet.add(randomElement.name);
@@ -171,7 +174,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
           break;
       }
     }
-    
+
     _options = optionsSet.toList();
     _options.shuffle();
   }
@@ -188,11 +191,11 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
 
   void _handleAnswer(String selected) {
     if (_answered || !_isPlaying) return;
-    
+
     setState(() {
       _answered = true;
       _selectedAnswer = selected;
-      
+
       bool isCorrect = false;
       switch (_questionType) {
         case QuestionType.symbolToName:
@@ -214,9 +217,9 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
         if (_correctInARow % 3 == 0) {
           _comboMultiplier++; // Increase multiplier every 3 correct answers
         }
-        
+
         _score += 10 * _comboMultiplier;
-        
+
         // Add time
         int addedTime = 2;
         _timeLeft += addedTime;
@@ -231,7 +234,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
         // Reset combo
         _correctInARow = 0;
         _comboMultiplier = 1;
-        
+
         // Subtract time
         int subTime = -5;
         _timeLeft += subTime;
@@ -240,7 +243,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
 
         _timer?.cancel();
         _hintMessage = _getHint(_currentElement, selected);
-        
+
         if (_timeLeft <= 0) {
           _endGame();
         }
@@ -263,47 +266,62 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
     String msg = '';
     switch (_questionType) {
       case QuestionType.symbolToName:
-        msg = "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
+        msg =
+            "Elegiste '$wrong' pero el símbolo ${correct.symbol} le pertenece a '${correct.name}'.\n";
         break;
       case QuestionType.nameToSymbol:
-        msg = "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
+        msg =
+            "Elegiste '$wrong' pero '${correct.name}' se representa con ${correct.symbol}.\n";
         break;
       case QuestionType.atomicNumber:
-        msg = "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
+        msg =
+            "Elegiste '$wrong' pero el elemento con Z=${correct.atomicNumber} es '${correct.name}'.\n";
         break;
       case QuestionType.family:
-        msg = "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
+        msg =
+            "Elegiste '$wrong' pero '${correct.name}' es un(a) '${correct.family}'.\n";
         break;
     }
 
     if (correct.symbol == 'Na') {
       msg += '💡 Regla: Na viene de Natrium (latín). ¡Na-trium = Na-Sodio!';
     } else if (correct.symbol == 'K') {
-      msg += "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
+      msg +=
+          "💡 Regla: K viene de Kalium. ¡Piensa en el 'Potasio' como una vitamina K gigante!";
     } else if (correct.symbol == 'Fe') {
-      msg += "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
+      msg +=
+          "💡 Regla: Fe = Ferrum. Acuérdate de la palabra 'Ferro-carril' que está hecho de Hierro.";
     } else if (correct.symbol == 'Cu') {
       msg += "💡 Regla: Cu = Cuprum. Piensa en un 'CUbo' de Cobre brillante.";
     } else if (correct.symbol == 'Ag') {
-      msg += "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
+      msg +=
+          "💡 Regla: Ag = Argentum. 'Argentina' significa tierra de plata. Ag = Plata.";
     } else if (correct.symbol == 'Sn') {
-      msg += "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
+      msg +=
+          "💡 Regla: Sn = Stannum. 'eStañó' suena parecido si te fijas en la S y la N.";
     } else if (correct.symbol == 'Sb') {
-      msg += '💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!';
+      msg +=
+          '💡 Regla: Sb = Stibium. Antimonio es Sb... ¡Suena nada parecido, es el más rebelde de la tabla!';
     } else if (correct.symbol == 'W') {
-      msg += "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
+      msg +=
+          "💡 Regla: W = Wolframio (Tungsteno). El filamento de los focos viejos formaba una 'W'.";
     } else if (correct.symbol == 'Au') {
-      msg += "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
+      msg +=
+          "💡 Regla: Au = Aurum. Cuando ves oro robado gritas '¡Au, mi oro!'";
     } else if (correct.symbol == 'Hg') {
-      msg += '💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.';
+      msg +=
+          '💡 Regla: Hg = Hydrargyrum. Piensa en un termómetro antiguo de Mercurio.';
     } else if (correct.symbol == 'Pb') {
-      msg += '💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
+      msg +=
+          '💡 Regla: Pb = Plumbum. Viene de Plomero, porque antes usaban tubos de Plomo (Pb).';
     } else if (correct.symbol == 'P') {
-      msg += "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
+      msg +=
+          "💡 Regla: P = Fósforo. En griego es 'Phosphorus', por eso lleva P.";
     } else if (correct.symbol == 'S') {
       msg += "💡 Regla: S = Azufre. En inglés es 'Sulphur', por eso lleva S.";
     } else {
-      msg += "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
+      msg +=
+          "💡 Regla: Fíjate en las letras de '${correct.name}', coinciden con su símbolo '${correct.symbol}'.";
     }
 
     return msg;
@@ -323,7 +341,7 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
 
     String promptText = '';
     String hintText = '';
-    
+
     switch (_questionType) {
       case QuestionType.symbolToName:
         promptText = _currentElement.symbol;
@@ -350,7 +368,10 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 500),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24.0,
+              vertical: 16.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -387,9 +408,13 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                                       child: Opacity(
                                         opacity: 1.0 - (value.abs() / 10),
                                         child: Text(
-                                          _timeChange > 0 ? '+$_timeChange' : '$_timeChange',
+                                          _timeChange > 0
+                                              ? '+$_timeChange'
+                                              : '$_timeChange',
                                           style: TextStyle(
-                                            color: _timeChange > 0 ? nt.successGreen : nt.pink,
+                                            color: _timeChange > 0
+                                                ? nt.successGreen
+                                                : nt.pink,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16,
                                           ),
@@ -407,33 +432,54 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                       children: [
                         if (_comboMultiplier > 1)
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 6,
+                            ),
                             margin: const EdgeInsets.only(right: 8),
                             decoration: BoxDecoration(
                               color: nt.warningAmber.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: nt.warningAmber.withValues(alpha: 0.5)),
+                              border: Border.all(
+                                color: nt.warningAmber.withValues(alpha: 0.5),
+                              ),
                             ),
                             child: Row(
                               children: [
-                                Icon(Icons.bolt, color: nt.warningAmber, size: 16),
+                                Icon(
+                                  Icons.bolt,
+                                  color: nt.warningAmber,
+                                  size: 16,
+                                ),
                                 Text(
                                   'x$_comboMultiplier',
-                                  style: TextStyle(color: nt.warningAmber, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                    color: nt.warningAmber,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
                           decoration: BoxDecoration(
                             color: nt.blueGoogle.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                            border: Border.all(
+                              color: nt.blueGoogle.withValues(alpha: 0.3),
+                            ),
                           ),
                           child: Text(
                             '$_score pts',
-                            style: TextStyle(color: nt.blueGoogle, fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: nt.blueGoogle,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -471,14 +517,19 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   // Adjust size slightly if it's family text
-                                  fontSize: _questionType == QuestionType.family ? 40 : 80, 
+                                  fontSize: _questionType == QuestionType.family
+                                      ? 40
+                                      : 80,
                                 ),
                               ),
                             ),
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
                           margin: const EdgeInsets.only(bottom: 16),
                           decoration: BoxDecoration(
                             color: nt.blueGoogle.withValues(alpha: 0.15),
@@ -486,7 +537,10 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                           ),
                           child: Text(
                             hintText,
-                            style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: nt.blueGoogle,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -511,13 +565,23 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                           children: [
                             Icon(Icons.timer_off_rounded, color: nt.pink),
                             const SizedBox(width: 8),
-                            const Text('¡Error!', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            const Text(
+                              '¡Error!',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 8),
                         Text(
                           _hintMessage!,
-                          style: const TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 13,
+                            height: 1.4,
+                          ),
                         ),
                         const SizedBox(height: 12),
                         SizedBox(
@@ -526,11 +590,19 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                             onPressed: _continueAfterHint,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: nt.pink,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
                             ),
-                            child: const Text('CONTINUAR', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            child: const Text(
+                              'CONTINUAR',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -545,7 +617,9 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                       crossAxisSpacing: 16,
                       childAspectRatio: _options.length > 4 ? 2.5 : 1.6,
                       physics: const NeverScrollableScrollPhysics(),
-                      children: _options.map((option) => _buildOptionCard(nt, option)).toList(),
+                      children: _options
+                          .map((option) => _buildOptionCard(nt, option))
+                          .toList(),
                     ),
                   ),
               ],
@@ -568,17 +642,32 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
               decoration: BoxDecoration(
                 color: nt.warningAmber.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
-                border: Border.all(color: nt.warningAmber.withValues(alpha: 0.3), width: 2),
+                border: Border.all(
+                  color: nt.warningAmber.withValues(alpha: 0.3),
+                  width: 2,
+                ),
                 boxShadow: [
-                  BoxShadow(color: nt.warningAmber.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5),
-                ]
+                  BoxShadow(
+                    color: nt.warningAmber.withValues(alpha: 0.2),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
               ),
-              child: Icon(Icons.timer_rounded, color: nt.warningAmber, size: 80),
+              child: Icon(
+                Icons.timer_rounded,
+                color: nt.warningAmber,
+                size: 80,
+              ),
             ),
             const SizedBox(height: 32),
             const Text(
               'Supervivencia',
-              style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 12),
             const Text(
@@ -594,11 +683,20 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
                 onPressed: _startGame,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: nt.warningAmber,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(28),
+                  ),
                   elevation: 8,
                   shadowColor: nt.warningAmber.withValues(alpha: 0.5),
                 ),
-                child: const Text('Comenzar', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                child: const Text(
+                  'Comenzar',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ],
@@ -616,7 +714,11 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
           children: [
             const Text(
               '¡Tiempo Agotado!',
-              style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 40),
             Container(
@@ -624,18 +726,37 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
               decoration: BoxDecoration(
                 color: nt.surfaceElevated,
                 shape: BoxShape.circle,
-                border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.5), width: 4),
+                border: Border.all(
+                  color: nt.blueGoogle.withValues(alpha: 0.5),
+                  width: 4,
+                ),
                 boxShadow: [
-                  BoxShadow(color: nt.blueGoogle.withValues(alpha: 0.2), blurRadius: 40, spreadRadius: 10),
-                ]
+                  BoxShadow(
+                    color: nt.blueGoogle.withValues(alpha: 0.2),
+                    blurRadius: 40,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
               child: Column(
                 children: [
-                  Text('PUNTAJE', style: TextStyle(color: nt.blueGoogle, fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2)),
+                  Text(
+                    'PUNTAJE',
+                    style: TextStyle(
+                      color: nt.blueGoogle,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                    ),
+                  ),
                   const SizedBox(height: 8),
                   Text(
                     '$_score',
-                    style: const TextStyle(color: Colors.white, fontSize: 80, fontWeight: FontWeight.w900),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 80,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ],
               ),
@@ -647,10 +768,19 @@ class _PtSurvivalViewState extends State<PtSurvivalView> with SingleTickerProvid
               child: ElevatedButton.icon(
                 onPressed: _startGame,
                 icon: const Icon(Icons.refresh_rounded, color: Colors.white),
-                label: const Text('Jugar de Nuevo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                label: const Text(
+                  'Jugar de Nuevo',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: nt.blueGoogle,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
               ),
             ),

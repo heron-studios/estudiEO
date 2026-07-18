@@ -95,14 +95,12 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
       if (questions.isEmpty) {
         final failedIds = storage.getFailedPsicoQuestionIds();
         questions = await _service.loadDailyMission(20, failedIds: failedIds);
-        storage.savePsicoDailyMissionIds(
-            questions.map((q) => q.id).toList());
+        storage.savePsicoDailyMissionIds(questions.map((q) => q.id).toList());
       }
     } else {
       final failedIds = storage.getFailedPsicoQuestionIds();
       questions = await _service.loadDailyMission(20, failedIds: failedIds);
-      storage.savePsicoDailyMissionIds(
-          questions.map((q) => q.id).toList());
+      storage.savePsicoDailyMissionIds(questions.map((q) => q.id).toList());
     }
 
     if (!mounted) return;
@@ -123,7 +121,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
     final isCorrect = optionKey == question.correctAnswer;
 
     final dim = question.dimension;
-    final int score = question.puntosOpciones[optionKey] ??
+    final int score =
+        question.puntosOpciones[optionKey] ??
         (isCorrect ? question.puntajeMaximo : 0);
     _dimensionScores[dim] = (_dimensionScores[dim] ?? 0) + score;
     _dimensionMax[dim] = (_dimensionMax[dim] ?? 0) + question.puntajeMaximo;
@@ -161,7 +160,9 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
 
   void _nextQuestion() {
     final auth = context.read<AuthService>();
-    if (!auth.isPremium && _currentIndex >= 7 && _currentIndex < _questions!.length - 1) {
+    if (!auth.isPremium &&
+        _currentIndex >= 7 &&
+        _currentIndex < _questions!.length - 1) {
       _feedbackController.reset();
       setState(() {
         _showingFeedback = false;
@@ -170,7 +171,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
       PremiumUpgradeDialog.show(
         context,
         title: 'Límite Gratuito',
-        message: 'Has alcanzado el límite de 8 preguntas. Actualiza a Premium para completar la misión completa de 20 preguntas.',
+        message:
+            'Has alcanzado el límite de 8 preguntas. Actualiza a Premium para completar la misión completa de 20 preguntas.',
       );
       _finishMission();
       return;
@@ -183,9 +185,9 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
         _showingFeedback = false;
         _selectedOptionKey = null;
       });
-      context
-          .read<LocalStorageService>()
-          .savePsicoMissionCurrentIndex(_currentIndex);
+      context.read<LocalStorageService>().savePsicoMissionCurrentIndex(
+        _currentIndex,
+      );
     } else {
       _finishMission();
     }
@@ -267,8 +269,10 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
           children: [
             CircularProgressIndicator(color: nt.blueGoogle),
             const SizedBox(height: 16),
-            const Text('Preparando tu misión...',
-                style: TextStyle(color: Colors.white70)),
+            const Text(
+              'Preparando tu misión...',
+              style: TextStyle(color: Colors.white70),
+            ),
           ],
         ),
       );
@@ -294,8 +298,7 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                     child: LinearProgressIndicator(
                       value: progress,
                       backgroundColor: Colors.white.withValues(alpha: 0.1),
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(nt.blueGoogle),
+                      valueColor: AlwaysStoppedAnimation<Color>(nt.blueGoogle),
                       minHeight: 8,
                     ),
                   ),
@@ -304,9 +307,10 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                 Text(
                   '${_currentIndex + 1}/${_questions!.length}',
                   style: const TextStyle(
-                      color: Colors.white70,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13),
+                    color: Colors.white70,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                 ),
               ],
             ),
@@ -319,11 +323,11 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
           ScaleTransition(
             scale: _comboAnimation,
             child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                    colors: [Color(0xFFFF6F00), Color(0xFFFF9100)]),
+                  colors: [Color(0xFFFF6F00), Color(0xFFFF9100)],
+                ),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -336,8 +340,11 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.local_fire_department_rounded,
-                      color: Colors.white, size: 18),
+                  const Icon(
+                    Icons.local_fire_department_rounded,
+                    color: Colors.white,
+                    size: 18,
+                  ),
                   const SizedBox(width: 8),
                   Text(
                     '¡COMBO x$_comboCount!',
@@ -382,12 +389,15 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                       padding: const EdgeInsets.only(bottom: 12),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
+                          horizontal: 12,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: nt.purple.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                              color: nt.purple.withValues(alpha: 0.3)),
+                            color: nt.purple.withValues(alpha: 0.3),
+                          ),
                         ),
                         child: Text(
                           question.displayDimension.toUpperCase(),
@@ -415,19 +425,15 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                   const SizedBox(height: 36),
 
                   // Opciones (dinámicas)
-                  ...question.options.entries
-                      .toList()
-                      .asMap()
-                      .entries
-                      .map((indexedEntry) {
+                  ...question.options.entries.toList().asMap().entries.map((
+                    indexedEntry,
+                  ) {
                     final idx = indexedEntry.key;
                     final entry = indexedEntry.value;
                     final labels = ['A', 'B', 'C', 'D', 'E'];
-                    final label =
-                        idx < labels.length ? labels[idx] : entry.key;
+                    final label = idx < labels.length ? labels[idx] : entry.key;
                     final isSelected = _selectedOptionKey == entry.key;
-                    final isCorrectAnswer =
-                        entry.key == question.correctAnswer;
+                    final isCorrectAnswer = entry.key == question.correctAnswer;
 
                     Color borderColor = Colors.white.withValues(alpha: 0.12);
                     Color bgColor = Colors.white.withValues(alpha: 0.04);
@@ -436,16 +442,24 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                     if (_showingFeedback) {
                       if (isCorrectAnswer) {
                         borderColor = const Color(0xFF4ADE80);
-                        bgColor = const Color(0xFF4ADE80).withValues(alpha: 0.08);
+                        bgColor = const Color(
+                          0xFF4ADE80,
+                        ).withValues(alpha: 0.08);
                         trailingWidget = const Icon(
-                            Icons.check_circle_rounded,
-                            color: Color(0xFF4ADE80),
-                            size: 20);
+                          Icons.check_circle_rounded,
+                          color: Color(0xFF4ADE80),
+                          size: 20,
+                        );
                       } else if (isSelected) {
                         borderColor = const Color(0xFFEF4444);
-                        bgColor = const Color(0xFFEF4444).withValues(alpha: 0.08);
-                        trailingWidget = const Icon(Icons.cancel_rounded,
-                            color: Color(0xFFEF4444), size: 20);
+                        bgColor = const Color(
+                          0xFFEF4444,
+                        ).withValues(alpha: 0.08);
+                        trailingWidget = const Icon(
+                          Icons.cancel_rounded,
+                          color: Color(0xFFEF4444),
+                          size: 20,
+                        );
                       }
                     } else if (isSelected) {
                       borderColor = nt.blueGoogle;
@@ -463,13 +477,16 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                           duration: const Duration(milliseconds: 280),
                           width: double.infinity,
                           padding: const EdgeInsets.symmetric(
-                              vertical: 18, horizontal: 20),
+                            vertical: 18,
+                            horizontal: 20,
+                          ),
                           decoration: BoxDecoration(
                             color: bgColor,
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(
                               color: borderColor,
-                              width: _showingFeedback &&
+                              width:
+                                  _showingFeedback &&
                                       (isCorrectAnswer || isSelected)
                                   ? 1.5
                                   : 1,
@@ -484,25 +501,29 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                                   shape: BoxShape.circle,
                                   color: _showingFeedback
                                       ? (isCorrectAnswer
-                                          ? const Color(0xFF4ADE80)
-                                              .withValues(alpha: 0.2)
-                                          : (isSelected
-                                              ? const Color(0xFFEF4444)
-                                                  .withValues(alpha: 0.2)
-                                              : Colors.white10))
+                                            ? const Color(
+                                                0xFF4ADE80,
+                                              ).withValues(alpha: 0.2)
+                                            : (isSelected
+                                                  ? const Color(
+                                                      0xFFEF4444,
+                                                    ).withValues(alpha: 0.2)
+                                                  : Colors.white10))
                                       : (isSelected
-                                          ? nt.blueGoogle.withValues(alpha: 0.2)
-                                          : Colors.white10),
+                                            ? nt.blueGoogle.withValues(
+                                                alpha: 0.2,
+                                              )
+                                            : Colors.white10),
                                   border: Border.all(
                                     color: _showingFeedback
                                         ? (isCorrectAnswer
-                                            ? const Color(0xFF4ADE80)
-                                            : (isSelected
-                                                ? const Color(0xFFEF4444)
-                                                : Colors.transparent))
+                                              ? const Color(0xFF4ADE80)
+                                              : (isSelected
+                                                    ? const Color(0xFFEF4444)
+                                                    : Colors.transparent))
                                         : (isSelected
-                                            ? nt.blueGoogle
-                                            : Colors.transparent),
+                                              ? nt.blueGoogle
+                                              : Colors.transparent),
                                     width: 1,
                                   ),
                                 ),
@@ -510,7 +531,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                                 child: Text(
                                   label,
                                   style: TextStyle(
-                                    color: _showingFeedback &&
+                                    color:
+                                        _showingFeedback &&
                                             (isCorrectAnswer || isSelected)
                                         ? Colors.white
                                         : Colors.white54,
@@ -549,7 +571,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
         ),
 
         // Feedback panel (si se equivoca o si acertó y hay un contexto explicativo)
-        if (_showingFeedback && (!_selectedIsCorrect || question.contextoCorrecto.isNotEmpty))
+        if (_showingFeedback &&
+            (!_selectedIsCorrect || question.contextoCorrecto.isNotEmpty))
           FadeTransition(
             opacity: _feedbackAnimation,
             child: SlideTransition(
@@ -562,10 +585,11 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                 child: StaticGlassContainer(
                   padding: const EdgeInsets.all(18),
                   borderRadius: BorderRadius.circular(20),
-                  borderColor: (_selectedIsCorrect
-                          ? const Color(0xFF4ADE80)
-                          : const Color(0xFFEF4444))
-                      .withValues(alpha: 0.4),
+                  borderColor:
+                      (_selectedIsCorrect
+                              ? const Color(0xFF4ADE80)
+                              : const Color(0xFFEF4444))
+                          .withValues(alpha: 0.4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -574,20 +598,22 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: (_selectedIsCorrect
-                                      ? const Color(0xFF4ADE80)
-                                      : Colors.orangeAccent)
-                                  .withValues(alpha: 0.15),
+                              color:
+                                  (_selectedIsCorrect
+                                          ? const Color(0xFF4ADE80)
+                                          : Colors.orangeAccent)
+                                      .withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
-                                _selectedIsCorrect
-                                    ? Icons.stars_rounded
-                                    : Icons.psychology_alt_rounded,
-                                color: _selectedIsCorrect
-                                    ? const Color(0xFF4ADE80)
-                                    : Colors.orangeAccent,
-                                size: 22),
+                              _selectedIsCorrect
+                                  ? Icons.stars_rounded
+                                  : Icons.psychology_alt_rounded,
+                              color: _selectedIsCorrect
+                                  ? const Color(0xFF4ADE80)
+                                  : Colors.orangeAccent,
+                              size: 22,
+                            ),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
@@ -621,8 +647,8 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                       if (!_selectedIsCorrect) ...[
                         _buildFeedbackBlock(
                           title: 'Respuesta recomendada',
-                          content: question.options[question.correctAnswer] ??
-                              'N/A',
+                          content:
+                              question.options[question.correctAnswer] ?? 'N/A',
                           color: const Color(0xFF4ADE80),
                           icon: Icons.task_alt_rounded,
                         ),
@@ -635,10 +661,10 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                         content: _selectedIsCorrect
                             ? question.contextoCorrecto
                             : (question.contextoIncorrecto.isNotEmpty
-                                ? question.contextoIncorrecto
-                                : (question.hint.isNotEmpty
-                                    ? question.hint
-                                    : 'En este tipo de preguntas, suele haber una opción que refleja mayor equilibrio o resiliencia.')),
+                                  ? question.contextoIncorrecto
+                                  : (question.hint.isNotEmpty
+                                        ? question.hint
+                                        : 'En este tipo de preguntas, suele haber una opción que refleja mayor equilibrio o resiliencia.')),
                         color: _selectedIsCorrect
                             ? const Color(0xFF4ADE80)
                             : Colors.orangeAccent,
@@ -660,14 +686,17 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                       ElevatedButton.icon(
                         onPressed: _nextQuestion,
                         icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                        label: const Text('Continuar',
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        label: const Text(
+                          'Continuar',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: nt.blueGoogle,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12)),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                     ],
@@ -772,7 +801,9 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                     shape: BoxShape.circle,
                     color: resultColor.withValues(alpha: 0.15),
                     border: Border.all(
-                        color: resultColor.withValues(alpha: 0.4), width: 2),
+                      color: resultColor.withValues(alpha: 0.4),
+                      width: 2,
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: resultColor.withValues(alpha: 0.2),
@@ -804,12 +835,15 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                 // Puntaje general
                 Container(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 10),
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
                   decoration: BoxDecoration(
                     color: resultColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(
-                        color: resultColor.withValues(alpha: 0.3)),
+                      color: resultColor.withValues(alpha: 0.3),
+                    ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -849,11 +883,17 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                     }
 
                     return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
+                      ),
                       decoration: BoxDecoration(
                         color: diagColor.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: diagColor.withValues(alpha: 0.4), width: 1.5),
+                        border: Border.all(
+                          color: diagColor.withValues(alpha: 0.4),
+                          width: 1.5,
+                        ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -873,13 +913,12 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                         ],
                       ),
                     );
-                  }
+                  },
                 ),
                 const SizedBox(height: 12),
                 Text(
                   'Dimensión destacada: $topDim',
-                  style: const TextStyle(
-                      color: Colors.white70, fontSize: 13),
+                  style: const TextStyle(color: Colors.white70, fontSize: 13),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
@@ -925,16 +964,16 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
                                 child: Text(
                                   e.key,
                                   style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 13),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 13,
+                                  ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -942,9 +981,10 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                               Text(
                                 '${(pct * 100).toInt()}%',
                                 style: TextStyle(
-                                    color: dimColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13),
+                                  color: dimColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                ),
                               ),
                             ],
                           ),
@@ -955,8 +995,9 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                               value: pct,
                               minHeight: 8,
                               backgroundColor: Colors.white12,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(dimColor),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                dimColor,
+                              ),
                             ),
                           ),
                         ],
@@ -971,15 +1012,20 @@ class _PsicoMissionScreenState extends State<PsicoMissionScreen>
                   child: ElevatedButton.icon(
                     onPressed: () => context.pop(),
                     icon: const Icon(Icons.check_rounded),
-                    label: const Text('COMPLETAR MISIÓN',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, letterSpacing: 0.5)),
+                    label: const Text(
+                      'COMPLETAR MISIÓN',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: nt.blueGoogle,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
                     ),
                   ),
                 ),

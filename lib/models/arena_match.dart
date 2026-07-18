@@ -10,7 +10,8 @@ class ArenaMatch {
   final int player2Score;
   final String status; // 'waiting', 'playing', 'finished'
   final DateTime createdAt;
-  final List<dynamic> questions; // Lista de mapas: { text, options, correctAnswer }
+  final List<dynamic>
+  questions; // Lista de mapas: { text, options, correctAnswer }
 
   ArenaMatch({
     required this.id,
@@ -27,8 +28,16 @@ class ArenaMatch {
 
   factory ArenaMatch.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>?;
-    if (data == null) return ArenaMatch(id: doc.id, player1Id: '', player1Name: '', status: 'waiting', createdAt: DateTime.now(), questions: []);
-    
+    if (data == null)
+      return ArenaMatch(
+        id: doc.id,
+        player1Id: '',
+        player1Name: '',
+        status: 'waiting',
+        createdAt: DateTime.now(),
+        questions: [],
+      );
+
     return ArenaMatch(
       id: doc.id,
       player1Id: data['player1Id'] ?? '',

@@ -23,7 +23,8 @@ class LocalStorageService {
   static const String sfxMutedKey = 'sfx_muted';
   static const String learningSessionsKey = 'learning_sessions';
   static const String learningProgressKey = 'learning_progress';
-  static const String lastActiveLearningSessionKey = 'last_active_learning_session';
+  static const String lastActiveLearningSessionKey =
+      'last_active_learning_session';
   static const String activeExamStateKey = 'active_exam_state';
   static const String examHistoryKey = 'exam_history';
   static const String flashcardGenDateKey = 'flashcard_gen_date';
@@ -180,9 +181,7 @@ class LocalStorageService {
   // â”€â”€â”€ Sync Meta â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _touchSyncMeta() {
-    _storage.put(syncMetaKey, {
-      'updatedAt': DateTime.now().toIso8601String(),
-    });
+    _storage.put(syncMetaKey, {'updatedAt': DateTime.now().toIso8601String()});
   }
 
   DateTime getLastSyncTime() {
@@ -388,14 +387,19 @@ class LocalStorageService {
     }
   }
 
-  static const String psicolearnLastCompletedDateKey = 'psicolearn_last_completed_date';
+  static const String psicolearnLastCompletedDateKey =
+      'psicolearn_last_completed_date';
   static const String psicolearnStreakKey = 'psicolearn_streak';
   static const String psicolearnCurrentIndexKey = 'psicolearn_current_index';
-  static const String psicolearnCurrentIndexDateKey = 'psicolearn_current_index_date';
-  static const String psicolearnDailyMissionIdsKey = 'psicolearn_daily_mission_ids';
-  static const String psicolearnDailyMissionDateKey = 'psicolearn_daily_mission_date';
+  static const String psicolearnCurrentIndexDateKey =
+      'psicolearn_current_index_date';
+  static const String psicolearnDailyMissionIdsKey =
+      'psicolearn_daily_mission_ids';
+  static const String psicolearnDailyMissionDateKey =
+      'psicolearn_daily_mission_date';
   static const String psicolearnLastScoresKey = 'psicolearn_last_scores';
-  static const String psicolearnLastOverallScoreKey = 'psicolearn_last_overall_score';
+  static const String psicolearnLastOverallScoreKey =
+      'psicolearn_last_overall_score';
   static const String psicolearnTotalMissionsKey = 'psicolearn_total_missions';
 
   // ─── PsicoLearn Progress ─────────────────────────────────────────────
@@ -406,10 +410,15 @@ class LocalStorageService {
       if (dateRaw != null) {
         final date = DateTime.parse(dateRaw.toString());
         final now = DateTime.now();
-        if (now.year == date.year && now.month == date.month && now.day == date.day) {
+        if (now.year == date.year &&
+            now.month == date.month &&
+            now.day == date.day) {
           final data = _storage.get(psicolearnDailyMissionIdsKey) as List?;
           if (data != null) {
-            return data.map((e) => int.tryParse(e.toString()) ?? -1).where((id) => id != -1).toList();
+            return data
+                .map((e) => int.tryParse(e.toString()) ?? -1)
+                .where((id) => id != -1)
+                .toList();
           }
         }
       }
@@ -420,7 +429,10 @@ class LocalStorageService {
   void savePsicoDailyMissionIds(List<int> ids) {
     try {
       _storage.put(psicolearnDailyMissionIdsKey, ids);
-      _storage.put(psicolearnDailyMissionDateKey, DateTime.now().toIso8601String());
+      _storage.put(
+        psicolearnDailyMissionDateKey,
+        DateTime.now().toIso8601String(),
+      );
     } catch (_) {}
   }
 
@@ -437,7 +449,9 @@ class LocalStorageService {
       if (dateRaw != null) {
         final date = DateTime.parse(dateRaw.toString());
         final now = DateTime.now();
-        if (now.year == date.year && now.month == date.month && now.day == date.day) {
+        if (now.year == date.year &&
+            now.month == date.month &&
+            now.day == date.day) {
           return _storage.get(psicolearnCurrentIndexKey) as int? ?? 0;
         }
       }
@@ -450,7 +464,10 @@ class LocalStorageService {
   void savePsicoMissionCurrentIndex(int index) {
     try {
       _storage.put(psicolearnCurrentIndexKey, index);
-      _storage.put(psicolearnCurrentIndexDateKey, DateTime.now().toIso8601String());
+      _storage.put(
+        psicolearnCurrentIndexDateKey,
+        DateTime.now().toIso8601String(),
+      );
     } catch (_) {}
   }
 
@@ -518,11 +535,19 @@ class LocalStorageService {
 
       if (lastCompletedRaw != null) {
         final lastCompleted = DateTime.parse(lastCompletedRaw.toString());
-        
+
         // Use year/month/day to check if it was yesterday
-        final yesterday = DateTime(now.year, now.month, now.day).subtract(const Duration(days: 1));
-        final lastCompletedDate = DateTime(lastCompleted.year, lastCompleted.month, lastCompleted.day);
-        
+        final yesterday = DateTime(
+          now.year,
+          now.month,
+          now.day,
+        ).subtract(const Duration(days: 1));
+        final lastCompletedDate = DateTime(
+          lastCompleted.year,
+          lastCompleted.month,
+          lastCompleted.day,
+        );
+
         if (lastCompletedDate == yesterday) {
           // Increment streak
           streak++;
@@ -548,11 +573,13 @@ class LocalStorageService {
       final streak = _storage.get(psicolearnStreakKey) as int? ?? 0;
       final lastCompletedRaw = _storage.get(psicolearnLastCompletedDateKey);
       bool todayCompleted = false;
-      
+
       if (lastCompletedRaw != null) {
         final lastCompleted = DateTime.parse(lastCompletedRaw.toString());
         final now = DateTime.now();
-        if (now.year == lastCompleted.year && now.month == lastCompleted.month && now.day == lastCompleted.day) {
+        if (now.year == lastCompleted.year &&
+            now.month == lastCompleted.month &&
+            now.day == lastCompleted.day) {
           todayCompleted = true;
         }
       }
@@ -583,13 +610,17 @@ class LocalStorageService {
 
   // ─── PsicoLearn Re Entrenamiento ──────────────────────────────────────────
 
-  static const String psicolearnFailedQuestionsKey = 'psicolearn_failed_questions';
+  static const String psicolearnFailedQuestionsKey =
+      'psicolearn_failed_questions';
 
   List<int> getFailedPsicoQuestionIds() {
     try {
       final data = _storage.get(psicolearnFailedQuestionsKey) as List?;
       if (data == null) return [];
-      return data.map((e) => int.tryParse(e.toString()) ?? -1).where((id) => id != -1).toList();
+      return data
+          .map((e) => int.tryParse(e.toString()) ?? -1)
+          .where((id) => id != -1)
+          .toList();
     } catch (_) {
       return [];
     }
@@ -755,7 +786,10 @@ class LocalStorageService {
 
   void saveLastInterviewDate(DateTime date) {
     try {
-      _storage.put('last_interview_date', DateFormat('yyyy-MM-dd').format(date));
+      _storage.put(
+        'last_interview_date',
+        DateFormat('yyyy-MM-dd').format(date),
+      );
     } catch (_) {}
   }
 
@@ -767,9 +801,12 @@ class LocalStorageService {
     try {
       final raw = _storage.get(_kInterviewHistory) as List? ?? [];
       return raw
-          .map((e) => InterviewResult.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map(
+            (e) =>
+                InterviewResult.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList()
-          ..sort((a, b) => b.date.compareTo(a.date));
+        ..sort((a, b) => b.date.compareTo(a.date));
     } catch (e) {
       debugPrint('Error loading interview history: $e');
       return [];
@@ -796,7 +833,9 @@ class LocalStorageService {
     try {
       final data = _storage.get(customQuestionsKey) as List?;
       if (data == null) return [];
-      return data.map((e) => Question.fromJson(Map<String, dynamic>.from(e as Map))).toList();
+      return data
+          .map((e) => Question.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList();
     } catch (e) {
       debugPrint('Error loading custom questions: $e');
       return [];
@@ -816,7 +855,10 @@ class LocalStorageService {
       } else {
         questions.add(question);
       }
-      _storage.put(customQuestionsKey, questions.map((q) => q.toJson()).toList());
+      _storage.put(
+        customQuestionsKey,
+        questions.map((q) => q.toJson()).toList(),
+      );
     } catch (e) {
       debugPrint('Error saving custom question: $e');
     }
@@ -827,7 +869,9 @@ class LocalStorageService {
     try {
       final data = _storage.get(customTopicsKey) as List?;
       if (data == null) return [];
-      return data.map((e) => Topic.fromJson(Map<String, dynamic>.from(e as Map))).toList();
+      return data
+          .map((e) => Topic.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList();
     } catch (e) {
       debugPrint('Error loading custom topics: $e');
       return [];
@@ -869,11 +913,11 @@ class LocalStorageService {
     _storage.put(tutorAiCacheTextKey, text);
     _storage.put(tutorAiCacheTimeKey, DateTime.now().toIso8601String());
   }
-  
+
   String? loadTutorAnalysis() {
     return _storage.get(tutorAiCacheTextKey) as String?;
   }
-  
+
   DateTime? loadTutorAnalysisTime() {
     final timeStr = _storage.get(tutorAiCacheTimeKey) as String?;
     if (timeStr != null) {

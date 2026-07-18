@@ -73,7 +73,8 @@ class _SimulatorScreenState extends State<SimulatorScreen>
 
   Color _timerColor() {
     if (_secondsRemaining < 300) return const Color(0xFFEF4444); // rojo < 5 min
-    if (_secondsRemaining < 900) return const Color(0xFFF59E0B); // ámbar < 15 min
+    if (_secondsRemaining < 900)
+      return const Color(0xFFF59E0B); // ámbar < 15 min
     return const Color(0xFF4ADE80); // verde
   }
 
@@ -119,8 +120,10 @@ class _SimulatorScreenState extends State<SimulatorScreen>
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Volver al simulador',
-                  style: TextStyle(color: Colors.white54)),
+              child: const Text(
+                'Volver al simulador',
+                style: TextStyle(color: Colors.white54),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -133,7 +136,8 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                 backgroundColor: NeuralTheme.of(context).pink,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
               child: const Text('Finalizar de todos modos'),
             ),
@@ -158,8 +162,10 @@ class _SimulatorScreenState extends State<SimulatorScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child:
-                const Text('Cancelar', style: TextStyle(color: Colors.white54)),
+            child: const Text(
+              'Cancelar',
+              style: TextStyle(color: Colors.white54),
+            ),
           ),
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(true),
@@ -167,7 +173,8 @@ class _SimulatorScreenState extends State<SimulatorScreen>
               backgroundColor: NeuralTheme.of(context).pink,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
             child: const Text('Abandonar'),
           ),
@@ -193,8 +200,9 @@ class _SimulatorScreenState extends State<SimulatorScreen>
       maxPossibleScore += q.puntajeMaximo;
     }
 
-    final double percentage =
-        maxPossibleScore > 0 ? (totalScore / maxPossibleScore) : 0;
+    final double percentage = maxPossibleScore > 0
+        ? (totalScore / maxPossibleScore)
+        : 0;
     final bool isApto = percentage >= 0.70;
 
     showDialog(
@@ -212,7 +220,9 @@ class _SimulatorScreenState extends State<SimulatorScreen>
               color: nt.surfaceCard,
               borderRadius: BorderRadius.circular(28),
               border: Border.all(
-                  color: resultColor.withValues(alpha: 0.5), width: 1.5),
+                color: resultColor.withValues(alpha: 0.5),
+                width: 1.5,
+              ),
               boxShadow: [
                 BoxShadow(
                   color: resultColor.withValues(alpha: 0.15),
@@ -232,7 +242,9 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                     shape: BoxShape.circle,
                     color: resultColor.withValues(alpha: 0.15),
                     border: Border.all(
-                        color: resultColor.withValues(alpha: 0.4), width: 2),
+                      color: resultColor.withValues(alpha: 0.4),
+                      width: 2,
+                    ),
                   ),
                   child: Icon(
                     isApto
@@ -256,13 +268,17 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                 ),
                 const SizedBox(height: 8),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 8,
+                  ),
                   decoration: BoxDecoration(
                     color: resultColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(
-                        color: resultColor.withValues(alpha: 0.3), width: 1),
+                      color: resultColor.withValues(alpha: 0.3),
+                      width: 1,
+                    ),
                   ),
                   child: Text(
                     isApto ? 'APTO' : 'INAPTO',
@@ -302,8 +318,7 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                   child: LinearProgressIndicator(
                     value: percentage,
                     backgroundColor: Colors.white10,
-                    valueColor:
-                        AlwaysStoppedAnimation<Color>(resultColor),
+                    valueColor: AlwaysStoppedAnimation<Color>(resultColor),
                     minHeight: 10,
                   ),
                 ),
@@ -324,14 +339,17 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                       context.pop();
                     },
                     icon: const Icon(Icons.home_rounded),
-                    label: const Text('VOLVER AL INICIO',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    label: const Text(
+                      'VOLVER AL INICIO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: nt.blueGoogle,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
                     ),
                   ),
                 ),
@@ -360,12 +378,18 @@ class _SimulatorScreenState extends State<SimulatorScreen>
         children: [
           Icon(icon, color: color, size: 20),
           const SizedBox(width: 12),
-          Text(label, style: const TextStyle(color: Colors.white60, fontSize: 13)),
+          Text(
+            label,
+            style: const TextStyle(color: Colors.white60, fontSize: 13),
+          ),
           const Spacer(),
           Text(
             value,
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
           ),
         ],
       ),
@@ -383,12 +407,14 @@ class _SimulatorScreenState extends State<SimulatorScreen>
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
         side: BorderSide(
-            color: NeuralTheme.of(context).blueGoogle.withValues(alpha: 0.3)),
+          color: NeuralTheme.of(context).blueGoogle.withValues(alpha: 0.3),
+        ),
       ),
-      title:
-          Text(title, style: TextStyle(color: titleColor, fontWeight: FontWeight.bold)),
-      content:
-          Text(content, style: const TextStyle(color: Colors.white70)),
+      title: Text(
+        title,
+        style: TextStyle(color: titleColor, fontWeight: FontWeight.bold),
+      ),
+      content: Text(content, style: const TextStyle(color: Colors.white70)),
       actions: actions,
     );
   }
@@ -404,7 +430,8 @@ class _SimulatorScreenState extends State<SimulatorScreen>
           color: NeuralTheme.of(context).background,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
           border: Border.all(
-              color: NeuralTheme.of(context).blueGoogle.withValues(alpha: 0.3)),
+            color: NeuralTheme.of(context).blueGoogle.withValues(alpha: 0.3),
+          ),
         ),
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -421,17 +448,20 @@ class _SimulatorScreenState extends State<SimulatorScreen>
             const Text(
               'Navegación Rápida',
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Outfit'),
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Outfit',
+              ),
             ),
             const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildLegendDot(NeuralTheme.of(context).blueGoogle,
-                    'Respondida'),
+                _buildLegendDot(
+                  NeuralTheme.of(context).blueGoogle,
+                  'Respondida',
+                ),
                 const SizedBox(width: 16),
                 _buildLegendDot(Colors.white24, 'Sin responder'),
               ],
@@ -446,8 +476,9 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                 ),
                 itemCount: _questions!.length,
                 itemBuilder: (context, index) {
-                  final isAnswered =
-                      _answers.containsKey(_questions![index].id);
+                  final isAnswered = _answers.containsKey(
+                    _questions![index].id,
+                  );
                   final isCurrent = index == _currentIndex;
                   return InkWell(
                     onTap: () {
@@ -460,19 +491,19 @@ class _SimulatorScreenState extends State<SimulatorScreen>
                         color: isCurrent
                             ? NeuralTheme.of(context).blueGoogle
                             : (isAnswered
-                                ? NeuralTheme.of(context)
-                                    .blueGoogle
-                                    .withValues(alpha: 0.25)
-                                : Colors.transparent),
+                                  ? NeuralTheme.of(
+                                      context,
+                                    ).blueGoogle.withValues(alpha: 0.25)
+                                  : Colors.transparent),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: isCurrent
                               ? NeuralTheme.of(context).blueGoogle
                               : (isAnswered
-                                  ? NeuralTheme.of(context)
-                                      .blueGoogle
-                                      .withValues(alpha: 0.5)
-                                  : Colors.white24),
+                                    ? NeuralTheme.of(
+                                        context,
+                                      ).blueGoogle.withValues(alpha: 0.5)
+                                    : Colors.white24),
                         ),
                       ),
                       alignment: Alignment.center,
@@ -505,14 +536,13 @@ class _SimulatorScreenState extends State<SimulatorScreen>
         Container(
           width: 12,
           height: 12,
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
-          ),
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         ),
         const SizedBox(width: 6),
-        Text(label,
-            style: const TextStyle(color: Colors.white60, fontSize: 12)),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white60, fontSize: 12),
+        ),
       ],
     );
   }
@@ -528,10 +558,13 @@ class _SimulatorScreenState extends State<SimulatorScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularProgressIndicator(
-                    color: NeuralTheme.of(context).blueGoogle),
+                  color: NeuralTheme.of(context).blueGoogle,
+                ),
                 const SizedBox(height: 16),
-                const Text('Preparando simulacro...',
-                    style: TextStyle(color: Colors.white70)),
+                const Text(
+                  'Preparando simulacro...',
+                  style: TextStyle(color: Colors.white70),
+                ),
               ],
             ),
           ),
@@ -556,313 +589,348 @@ class _SimulatorScreenState extends State<SimulatorScreen>
       child: NeuralBackgroundWrapper(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.close, color: Colors.white60),
-            onPressed: () async {
-              final shouldPop = await _onWillPop();
-              if (shouldPop && context.mounted) context.pop();
-            },
-          ),
-          title: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                decoration: BoxDecoration(
-                  color: _timerColor().withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                      color: _timerColor().withValues(alpha: 0.4), width: 1),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.timer_rounded,
-                        color: _timerColor(), size: 16),
-                    const SizedBox(width: 6),
-                    Text(
-                      _formatTime(_secondsRemaining),
-                      style: TextStyle(
-                        color: _timerColor(),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        letterSpacing: 1.5,
-                      ),
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(
+              icon: const Icon(Icons.close, color: Colors.white60),
+              onPressed: () async {
+                final shouldPop = await _onWillPop();
+                if (shouldPop && context.mounted) context.pop();
+              },
+            ),
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: _timerColor().withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: _timerColor().withValues(alpha: 0.4),
+                      width: 1,
                     ),
-                  ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.timer_rounded, color: _timerColor(), size: 16),
+                      const SizedBox(width: 6),
+                      Text(
+                        _formatTime(_secondsRemaining),
+                        style: TextStyle(
+                          color: _timerColor(),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+              ],
+            ),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                icon: Icon(Icons.grid_view_rounded, color: nt.blueGoogle),
+                onPressed: _showGridBottomSheet,
+                tooltip: 'Navegación rápida',
               ),
             ],
           ),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              icon:
-                  Icon(Icons.grid_view_rounded, color: nt.blueGoogle),
-              onPressed: _showGridBottomSheet,
-              tooltip: 'Navegación rápida',
-            ),
-          ],
-        ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              // Barra de progreso con estadísticas
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Pregunta ${_currentIndex + 1} de $totalCount',
-                          style: TextStyle(
-                            color: nt.blueGoogle,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Icon(Icons.check_circle_rounded,
-                                color: nt.successGreen, size: 14),
-                            const SizedBox(width: 4),
-                            Text(
-                              '$answeredCount respondidas',
-                              style: const TextStyle(
-                                  color: Colors.white54, fontSize: 12),
+          body: SafeArea(
+            child: Column(
+              children: [
+                // Barra de progreso con estadísticas
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Pregunta ${_currentIndex + 1} de $totalCount',
+                            style: TextStyle(
+                              color: nt.blueGoogle,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
                             ),
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.check_circle_rounded,
+                                color: nt.successGreen,
+                                size: 14,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                '$answeredCount respondidas',
+                                style: const TextStyle(
+                                  color: Colors.white54,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(4),
+                        child: LinearProgressIndicator(
+                          value: (_currentIndex + 1) / totalCount,
+                          backgroundColor: Colors.white10,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            nt.blueGoogle,
+                          ),
+                          minHeight: 4,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // Contenido principal
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 8,
+                    ),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 700),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            // Etiqueta de dimensión
+                            if (question.dimension.isNotEmpty &&
+                                question.dimension != 'General')
+                              Container(
+                                margin: const EdgeInsets.only(bottom: 12),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: nt.purple.withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: nt.purple.withValues(alpha: 0.3),
+                                  ),
+                                ),
+                                child: Text(
+                                  question.displayDimension.toUpperCase(),
+                                  style: TextStyle(
+                                    color: nt.purple,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1.2,
+                                  ),
+                                ),
+                              ),
+
+                            // Pregunta
+                            StaticGlassContainer(
+                              padding: const EdgeInsets.all(24),
+                              borderRadius: BorderRadius.circular(20),
+                              child: Text(
+                                question.text,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+
+                            // Opciones (renderizadas dinámicamente)
+                            ...question.options.entries
+                                .toList()
+                                .asMap()
+                                .entries
+                                .map((indexedEntry) {
+                                  final idx = indexedEntry.key;
+                                  final entry = indexedEntry.value;
+                                  final labels = ['A', 'B', 'C', 'D', 'E'];
+                                  final label = idx < labels.length
+                                      ? labels[idx]
+                                      : entry.key;
+                                  final isSelected =
+                                      _answers[question.id] == entry.key;
+
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 10),
+                                    child: InkWell(
+                                      onTap: () => _onOptionSelected(entry.key),
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: AnimatedContainer(
+                                        duration: const Duration(
+                                          milliseconds: 200,
+                                        ),
+                                        padding: const EdgeInsets.all(18),
+                                        decoration: BoxDecoration(
+                                          color: isSelected
+                                              ? nt.blueGoogle.withValues(
+                                                  alpha: 0.15,
+                                                )
+                                              : nt.surfaceCard,
+                                          borderRadius: BorderRadius.circular(
+                                            16,
+                                          ),
+                                          border: Border.all(
+                                            color: isSelected
+                                                ? nt.blueGoogle
+                                                : Colors.white10,
+                                            width: isSelected ? 1.5 : 1,
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              width: 34,
+                                              height: 34,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: isSelected
+                                                    ? nt.blueGoogle
+                                                    : Colors.white10,
+                                              ),
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                label,
+                                                style: TextStyle(
+                                                  color: isSelected
+                                                      ? Colors.white
+                                                      : Colors.white54,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 13,
+                                                ),
+                                              ),
+                                            ),
+                                            const SizedBox(width: 14),
+                                            Expanded(
+                                              child: Text(
+                                                entry.value,
+                                                style: TextStyle(
+                                                  color: isSelected
+                                                      ? Colors.white
+                                                      : Colors.white70,
+                                                  fontSize: 15,
+                                                  height: 1.3,
+                                                ),
+                                              ),
+                                            ),
+                                            if (isSelected)
+                                              Icon(
+                                                Icons
+                                                    .radio_button_checked_rounded,
+                                                color: nt.blueGoogle,
+                                                size: 20,
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                            const SizedBox(height: 8),
                           ],
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(4),
-                      child: LinearProgressIndicator(
-                        value: (_currentIndex + 1) / totalCount,
-                        backgroundColor: Colors.white10,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(nt.blueGoogle),
-                        minHeight: 4,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Contenido principal
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 8),
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 700),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          // Etiqueta de dimensión
-                          if (question.dimension.isNotEmpty &&
-                              question.dimension != 'General')
-                            Container(
-                              margin: const EdgeInsets.only(bottom: 12),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 4),
-                              decoration: BoxDecoration(
-                                color:
-                                    nt.purple.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(20),
-                                border: Border.all(
-                                    color: nt.purple.withValues(alpha: 0.3)),
-                              ),
-                              child: Text(
-                                question.displayDimension.toUpperCase(),
-                                style: TextStyle(
-                                  color: nt.purple,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1.2,
-                                ),
-                              ),
-                            ),
-
-                          // Pregunta
-                          StaticGlassContainer(
-                            padding: const EdgeInsets.all(24),
-                            borderRadius: BorderRadius.circular(20),
-                            child: Text(
-                              question.text,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                height: 1.5,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-
-                          // Opciones (renderizadas dinámicamente)
-                          ...question.options.entries
-                              .toList()
-                              .asMap()
-                              .entries
-                              .map((indexedEntry) {
-                            final idx = indexedEntry.key;
-                            final entry = indexedEntry.value;
-                            final labels = ['A', 'B', 'C', 'D', 'E'];
-                            final label = idx < labels.length
-                                ? labels[idx]
-                                : entry.key;
-                            final isSelected =
-                                _answers[question.id] == entry.key;
-
-                            return Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: InkWell(
-                                onTap: () =>
-                                    _onOptionSelected(entry.key),
-                                borderRadius: BorderRadius.circular(16),
-                                child: AnimatedContainer(
-                                  duration:
-                                      const Duration(milliseconds: 200),
-                                  padding: const EdgeInsets.all(18),
-                                  decoration: BoxDecoration(
-                                    color: isSelected
-                                        ? nt.blueGoogle
-                                            .withValues(alpha: 0.15)
-                                        : nt.surfaceCard,
-                                    borderRadius:
-                                        BorderRadius.circular(16),
-                                    border: Border.all(
-                                      color: isSelected
-                                          ? nt.blueGoogle
-                                          : Colors.white10,
-                                      width: isSelected ? 1.5 : 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        width: 34,
-                                        height: 34,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: isSelected
-                                              ? nt.blueGoogle
-                                              : Colors.white10,
-                                        ),
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          label,
-                                          style: TextStyle(
-                                            color: isSelected
-                                                ? Colors.white
-                                                : Colors.white54,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 14),
-                                      Expanded(
-                                        child: Text(
-                                          entry.value,
-                                          style: TextStyle(
-                                            color: isSelected
-                                                ? Colors.white
-                                                : Colors.white70,
-                                            fontSize: 15,
-                                            height: 1.3,
-                                          ),
-                                        ),
-                                      ),
-                                      if (isSelected)
-                                        Icon(
-                                          Icons.radio_button_checked_rounded,
-                                          color: nt.blueGoogle,
-                                          size: 20,
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                          const SizedBox(height: 8),
-                        ],
                       ),
                     ),
                   ),
                 ),
-              ),
 
-              // Barra de navegación inferior
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
-                decoration: BoxDecoration(
-                  color: nt.surfaceCard,
-                  border: const Border(top: BorderSide(color: Colors.white10)),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _currentIndex > 0
-                        ? TextButton.icon(
-                            onPressed: _previousQuestion,
-                            icon: const Icon(Icons.arrow_back_rounded,
-                                color: Colors.white60, size: 18),
-                            label: const Text('Anterior',
-                                style: TextStyle(color: Colors.white60)),
-                          )
-                        : const SizedBox(width: 100),
-                    isLast
-                        ? ElevatedButton.icon(
-                            onPressed: _finishExam,
-                            icon: const Icon(Icons.flag_rounded, size: 18),
-                            label: const Text('FINALIZAR',
+                // Barra de navegación inferior
+                Container(
+                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+                  decoration: BoxDecoration(
+                    color: nt.surfaceCard,
+                    border: const Border(
+                      top: BorderSide(color: Colors.white10),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _currentIndex > 0
+                          ? TextButton.icon(
+                              onPressed: _previousQuestion,
+                              icon: const Icon(
+                                Icons.arrow_back_rounded,
+                                color: Colors.white60,
+                                size: 18,
+                              ),
+                              label: const Text(
+                                'Anterior',
+                                style: TextStyle(color: Colors.white60),
+                              ),
+                            )
+                          : const SizedBox(width: 100),
+                      isLast
+                          ? ElevatedButton.icon(
+                              onPressed: _finishExam,
+                              icon: const Icon(Icons.flag_rounded, size: 18),
+                              label: const Text(
+                                'FINALIZAR',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1)),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: nt.blueGoogle,
-                              foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 24, vertical: 14),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: nt.blueGoogle,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 14,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
+                            )
+                          : ElevatedButton.icon(
+                              onPressed: _nextQuestion,
+                              icon: const Icon(
+                                Icons.arrow_forward_rounded,
+                                size: 18,
+                              ),
+                              label: const Text('Siguiente'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white10,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 14,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
                             ),
-                          )
-                        : ElevatedButton.icon(
-                            onPressed: _nextQuestion,
-                            icon: const Icon(Icons.arrow_forward_rounded,
-                                size: 18),
-                            label: const Text('Siguiente'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white10,
-                              foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 14),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
-                            ),
-                          ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
     );
   }
 }

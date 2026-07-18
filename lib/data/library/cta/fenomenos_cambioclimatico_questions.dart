@@ -14,12 +14,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El uso desmedido de recursos fósiles.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los fenómenos naturales son eventos que ocurren en la naturaleza sin la intervención directa de los seres humanos.''',
+    explanation:
+        r'''Los fenómenos naturales son eventos que ocurren en la naturaleza sin la intervención directa de los seres humanos.''',
   ),
   Question(
     id: 'fen_cli_f2',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Cuál es la diferencia fundamental entre un fenómeno natural y un desastre natural?''',
+    text:
+        r'''¿Cuál es la diferencia fundamental entre un fenómeno natural y un desastre natural?''',
     options: [
       r'''El desastre natural solo ocurre en invierno.''',
       r'''El fenómeno natural es creado por el hombre y el desastre no.''',
@@ -28,12 +30,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''No existe ninguna diferencia entre ambos.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Un fenómeno natural extremo se clasifica como desastre natural cuando provoca pérdidas humanas o materiales en las poblaciones.''',
+    explanation:
+        r'''Un fenómeno natural extremo se clasifica como desastre natural cuando provoca pérdidas humanas o materiales en las poblaciones.''',
   ),
   Question(
     id: 'fen_cli_f3',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué función tiene el "efecto invernadero" en su estado natural para el planeta Tierra?''',
+    text:
+        r'''¿Qué función tiene el "efecto invernadero" en su estado natural para el planeta Tierra?''',
     options: [
       r'''Enfriar rápidamente la atmósfera.''',
       r'''Retener parte de la radiación térmica del sol para mantener una temperatura adecuada y permitir el desarrollo de la vida.''',
@@ -42,12 +46,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Generar huracanes en zonas secas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El efecto invernadero natural retiene el calor térmico del Sol en la atmósfera, manteniendo la temperatura media terrestre apta para la vida.''',
+    explanation:
+        r'''El efecto invernadero natural retiene el calor térmico del Sol en la atmósfera, manteniendo la temperatura media terrestre apta para la vida.''',
   ),
   Question(
     id: 'fen_cli_f4',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Cuál es la principal actividad humana que ha incrementado peligrosamente el efecto invernadero?''',
+    text:
+        r'''¿Cuál es la principal actividad humana que ha incrementado peligrosamente el efecto invernadero?''',
     options: [
       r'''El uso excesivo de energía eólica y solar.''',
       r'''La quema de combustibles fósiles como carbón, petróleo y gas natural en industrias y transporte.''',
@@ -56,12 +62,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El uso de bicicletas eléctricas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La quema de carbón, petróleo y gas libera Gases de Efecto Invernadero adicionales, reteniendo excesivamente la radiación térmica.''',
+    explanation:
+        r'''La quema de carbón, petróleo y gas libera Gases de Efecto Invernadero adicionales, reteniendo excesivamente la radiación térmica.''',
   ),
   Question(
     id: 'fen_cli_f5',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué gas es reconocido como el mayor contribuyente al efecto invernadero antropogénico?''',
+    text:
+        r'''¿Qué gas es reconocido como el mayor contribuyente al efecto invernadero antropogénico?''',
     options: [
       r'''El Helio.''',
       r'''El Argón.''',
@@ -70,12 +78,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El Oxígeno diatómico ($O_2$).''',
     ],
     correctAnswer: 3,
-    explanation: r'''El dióxido de carbono (CO2) es el gas de efecto invernadero antropogénico (generado por el ser humano) emitido en mayor cantidad.''',
+    explanation:
+        r'''El dióxido de carbono (CO2) es el gas de efecto invernadero antropogénico (generado por el ser humano) emitido en mayor cantidad.''',
   ),
   Question(
     id: 'fen_cli_f6',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Según la clasificación científica, ¿qué tipo de fenómeno natural es un terremoto o sismo?''',
+    text:
+        r'''Según la clasificación científica, ¿qué tipo de fenómeno natural es un terremoto o sismo?''',
     options: [
       r'''Un fenómeno geofísico o geológico.''',
       r'''Un fenómeno biológico.''',
@@ -84,12 +94,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Un fenómeno meteorológico.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los sismos se originan por el movimiento de las placas tectónicas terrestres, enmarcándose como fenómenos geológicos o geofísicos.''',
+    explanation:
+        r'''Los sismos se originan por el movimiento de las placas tectónicas terrestres, enmarcándose como fenómenos geológicos o geofísicos.''',
   ),
   Question(
     id: 'fen_cli_f7',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Cómo se define el "cambio climático" en la época contemporánea?''',
+    text:
+        r'''¿Cómo se define el "cambio climático" en la época contemporánea?''',
     options: [
       r'''Como el cambio normal de las estaciones de primavera a verano.''',
       r'''Como la aparición diaria de auroras boreales.''',
@@ -98,12 +110,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Como la rotación del Sol alrededor de la Tierra.''',
     ],
     correctAnswer: 3,
-    explanation: r'''El cambio climático actual se refiere a la alteración global del clima impulsada por el calentamiento antropogénico.''',
+    explanation:
+        r'''El cambio climático actual se refiere a la alteración global del clima impulsada por el calentamiento antropogénico.''',
   ),
   Question(
     id: 'fen_cli_f8',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué consecuencia directa tiene el aumento de las temperaturas globales sobre los glaciares?''',
+    text:
+        r'''¿Qué consecuencia directa tiene el aumento de las temperaturas globales sobre los glaciares?''',
     options: [
       r'''Los fortalece y los expande.''',
       r'''Provoca su derretimiento o deshielo, contribuyendo a la subida global del nivel del mar.''',
@@ -112,12 +126,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Los transforma en volcanes activos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El calentamiento del clima causa el deshielo de los glaciares y masas de hielo terrestres, incrementando el caudal de agua en el océano mundial.''',
+    explanation:
+        r'''El calentamiento del clima causa el deshielo de los glaciares y masas de hielo terrestres, incrementando el caudal de agua en el océano mundial.''',
   ),
   Question(
     id: 'fen_cli_f9',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Las lluvias intensas, inundaciones y tsunamis se clasifican como fenómenos naturales de tipo:''',
+    text:
+        r'''Las lluvias intensas, inundaciones y tsunamis se clasifican como fenómenos naturales de tipo:''',
     options: [
       r'''Geológicos.''',
       r'''Biológicos.''',
@@ -126,12 +142,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Terrestres.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los fenómenos asociados a las masas de agua superficiales y subterráneas se clasifican como hidrológicos.''',
+    explanation:
+        r'''Los fenómenos asociados a las masas de agua superficiales y subterráneas se clasifican como hidrológicos.''',
   ),
   Question(
     id: 'fen_cli_f10',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Las migraciones de especies animales o las plagas de insectos, ¿qué tipo de fenómeno natural son?''',
+    text:
+        r'''Las migraciones de especies animales o las plagas de insectos, ¿qué tipo de fenómeno natural son?''',
     options: [
       r'''Meteorológico.''',
       r'''Biológico.''',
@@ -140,14 +158,16 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Antropogénico.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las migraciones y las plagas involucran a seres vivos y sus dinámicas orgánicas, de modo que son fenómenos biológicos.''',
+    explanation:
+        r'''Las migraciones y las plagas involucran a seres vivos y sus dinámicas orgánicas, de modo que son fenómenos biológicos.''',
   ),
 
   // Nivel Medio
   Question(
     id: 'fen_cli_m1',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''A nivel oceánico y atmosférico, ¿por qué los huracanes se están volviendo eventos climáticos cada vez más devastadores?''',
+    text:
+        r'''A nivel oceánico y atmosférico, ¿por qué los huracanes se están volviendo eventos climáticos cada vez más devastadores?''',
     options: [
       r'''Porque el nivel del mar ha disminuido.''',
       r'''Porque las aves migratorias desvían sus rutas.''',
@@ -156,12 +176,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Porque el viento solar impacta el ecuador.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las aguas marinas más calientes actúan como combustible para los ciclones tropicales, aportándoles mayor energía y humedad.''',
+    explanation:
+        r'''Las aguas marinas más calientes actúan como combustible para los ciclones tropicales, aportándoles mayor energía y humedad.''',
   ),
   Question(
     id: 'fen_cli_m2',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué sucedería con la temperatura de la superficie del planeta Tierra si desapareciera por completo el efecto invernadero natural?''',
+    text:
+        r'''¿Qué sucedería con la temperatura de la superficie del planeta Tierra si desapareciera por completo el efecto invernadero natural?''',
     options: [
       r'''La temperatura subiría a más de 100 ºC.''',
       r'''La temperatura media descendería bruscamente hasta unos 18 °C bajo cero, haciendo inviable la vida tal como la conocemos.''',
@@ -170,12 +192,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El núcleo de la Tierra se solidificaría.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Sin los gases de invernadero naturales, la energía infrarroja escaparía al espacio y la temperatura media global colapsaría a unos -18 °C.''',
+    explanation:
+        r'''Sin los gases de invernadero naturales, la energía infrarroja escaparía al espacio y la temperatura media global colapsaría a unos -18 °C.''',
   ),
   Question(
     id: 'fen_cli_m3',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Identifica a los tres principales "Gases de Efecto Invernadero" (GEI) que contribuyen al calentamiento global actual:''',
+    text:
+        r'''Identifica a los tres principales "Gases de Efecto Invernadero" (GEI) que contribuyen al calentamiento global actual:''',
     options: [
       r'''Neón, Oxígeno y Radón.''',
       r'''Helio, Cloro y Nitrógeno molecular.''',
@@ -184,12 +208,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Cobre, Plomo y Flúor.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El CO2, CH4 y N2O son los gases más emitidos y con mayor potencial de calentamiento debido al forzamiento radiativo antropogénico.''',
+    explanation:
+        r'''El CO2, CH4 y N2O son los gases más emitidos y con mayor potencial de calentamiento debido al forzamiento radiativo antropogénico.''',
   ),
   Question(
     id: 'fen_cli_m4',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Cómo define la meteorología a una sequía agravada por el cambio climático?''',
+    text:
+        r'''¿Cómo define la meteorología a una sequía agravada por el cambio climático?''',
     options: [
       r'''Exceso estructural de agua dulce por lluvias.''',
       r'''Cierre temporal de los estomas de las hojas.''',
@@ -198,12 +224,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''La inundación de valles secos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las sequías se recrudecen porque el calor promueve una evaporación acelerada de las fuentes hídricas y de la humedad del suelo.''',
+    explanation:
+        r'''Las sequías se recrudecen porque el calor promueve una evaporación acelerada de las fuentes hídricas y de la humedad del suelo.''',
   ),
   Question(
     id: 'fen_cli_m5',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''El cambio climático amenaza la fertilidad del suelo, provocando la pérdida de su potencial biológico hasta convertir tierras fértiles en páramos yermos. ¿Cómo se conoce a este proceso?''',
+    text:
+        r'''El cambio climático amenaza la fertilidad del suelo, provocando la pérdida de su potencial biológico hasta convertir tierras fértiles en páramos yermos. ¿Cómo se conoce a este proceso?''',
     options: [
       r'''Salinización.''',
       r'''Fotorrespiración.''',
@@ -212,12 +240,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Inundación pluvial.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La desertificación es la degradación de tierras de zonas secas derivada de factores como variaciones climáticas y actividades humanas destructivas.''',
+    explanation:
+        r'''La desertificación es la degradación de tierras de zonas secas derivada de factores como variaciones climáticas y actividades humanas destructivas.''',
   ),
   Question(
     id: 'fen_cli_m6',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''La caída de un meteorito desde el espacio exterior hacia la superficie de la Tierra representa un fenómeno natural de tipo:''',
+    text:
+        r'''La caída de un meteorito desde el espacio exterior hacia la superficie de la Tierra representa un fenómeno natural de tipo:''',
     options: [
       r'''Astronómico.''',
       r'''Meteorológico.''',
@@ -226,12 +256,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Subveniente.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Todo suceso originado en el espacio exterior (nebulosas, cometas, meteoritos) se enmarca científicamente como un fenómeno astronómico.''',
+    explanation:
+        r'''Todo suceso originado en el espacio exterior (nebulosas, cometas, meteoritos) se enmarca científicamente como un fenómeno astronómico.''',
   ),
   Question(
     id: 'fen_cli_m7',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué gran acuerdo internacional se firmó en 2015 en la COP21 con el propósito de mitigar los gases de efecto invernadero?''',
+    text:
+        r'''¿Qué gran acuerdo internacional se firmó en 2015 en la COP21 con el propósito de mitigar los gases de efecto invernadero?''',
     options: [
       r'''El Protocolo de Kioto.''',
       r'''El Tratado de la Antártida.''',
@@ -240,12 +272,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El Pacto del Océano Ártico.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el Acuerdo de París de 2015, los países signatarios se comprometieron a limitar el forzamiento del calentamiento muy por debajo de los 2 °C.''',
+    explanation:
+        r'''En el Acuerdo de París de 2015, los países signatarios se comprometieron a limitar el forzamiento del calentamiento muy por debajo de los 2 °C.''',
   ),
   Question(
     id: 'fen_cli_m8',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''En ecología y sostenibilidad, ¿qué utilidad tiene calcular la "huella de carbono"?''',
+    text:
+        r'''En ecología y sostenibilidad, ¿qué utilidad tiene calcular la "huella de carbono"?''',
     options: [
       r'''Medir el tamaño de las pisadas de los animales.''',
       r'''Contabilizar la cantidad de oxígeno puro en un bosque.''',
@@ -254,12 +288,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Medir la presión atmosférica del viento.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La huella de carbono es un indicador que cuantifica los gases de efecto invernadero emitidos directa o indirectamente por un individuo u organización.''',
+    explanation:
+        r'''La huella de carbono es un indicador que cuantifica los gases de efecto invernadero emitidos directa o indirectamente por un individuo u organización.''',
   ),
   Question(
     id: 'fen_cli_m9',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Por qué es fundamental la conservación de los bosques mundiales para frenar el aumento del $CO_2$ en la atmósfera?''',
+    text:
+        r'''¿Por qué es fundamental la conservación de los bosques mundiales para frenar el aumento del $CO_2$ en la atmósfera?''',
     options: [
       r'''Porque los árboles emiten carbono al aire libre.''',
       r'''Porque bloquean la radiación solar.''',
@@ -268,12 +304,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Porque evitan que caigan meteoritos en el suelo fértil.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los ecosistemas boscosos absorben y retienen CO2 atmosférico como materia vegetal a través de la fotosíntesis, actuando como sumideros de carbono.''',
+    explanation:
+        r'''Los ecosistemas boscosos absorben y retienen CO2 atmosférico como materia vegetal a través de la fotosíntesis, actuando como sumideros de carbono.''',
   ),
   Question(
     id: 'fen_cli_m10',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''En materia energética, cambiar los combustibles fósiles por paneles fotovoltaicos y aerogeneradores ayuda al planeta porque:''',
+    text:
+        r'''En materia energética, cambiar los combustibles fósiles por paneles fotovoltaicos y aerogeneradores ayuda al planeta porque:''',
     options: [
       r'''Utilizan fuentes de energía renovables (Sol y viento) que no emiten gases de efecto invernadero y no se agotan a escala humana.''',
       r'''Utilizan minerales radiactivos como el uranio.''',
@@ -282,14 +320,16 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Promueven una mayor quema de biomasa de carbón.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las energías renovables limpias (solar, eólica) no generan emisiones de CO2 durante su operación y provienen de recursos ilimitados.''',
+    explanation:
+        r'''Las energías renovables limpias (solar, eólica) no generan emisiones de CO2 durante su operación y provienen de recursos ilimitados.''',
   ),
 
   // Nivel Difícil
   Question(
     id: 'fen_cli_d1',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Con respecto a las amenazas a la salud humana, la Organización Mundial de la Salud (OMS) alerta que el cambio climático y el incremento de temperaturas ocasionará:''',
+    text:
+        r'''Con respecto a las amenazas a la salud humana, la Organización Mundial de la Salud (OMS) alerta que el cambio climático y el incremento de temperaturas ocasionará:''',
     options: [
       r'''La erradicación total de virus estacionales.''',
       r'''Un descenso significativo en problemas cardiovasculares.''',
@@ -298,12 +338,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El fin de las alergias al polen vegetal.''',
     ],
     correctAnswer: 3,
-    explanation: r'''El calor térmico permite que mosquitos y otros vectores transmisores de patógenos colonicen latitudes más frías que antes les eran hostiles.''',
+    explanation:
+        r'''El calor térmico permite que mosquitos y otros vectores transmisores de patógenos colonicen latitudes más frías que antes les eran hostiles.''',
   ),
   Question(
     id: 'fen_cli_d2',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''La "fenología" de plantas y animales se ve directamente alterada por el cambio climático. ¿Qué impacto directo sufre este comportamiento biológico?''',
+    text:
+        r'''La "fenología" de plantas y animales se ve directamente alterada por el cambio climático. ¿Qué impacto directo sufre este comportamiento biológico?''',
     options: [
       r'''Se desajustan sus ciclos de vida, provocando que aves migratorias adelanten sus vuelos o que las plantas florezcan fuera de temporada, amenazando el equilibrio del ecosistema.''',
       r'''Las especies desarrollan pulmones anaerobios.''',
@@ -312,12 +354,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Se evita cualquier tipo de migración forzada.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La fenología estudia los eventos biológicos estacionales (migración, floración). El aumento térmico desajusta estas etapas, rompiendo sincronías ecológicas.''',
+    explanation:
+        r'''La fenología estudia los eventos biológicos estacionales (migración, floración). El aumento térmico desajusta estas etapas, rompiendo sincronías ecológicas.''',
   ),
   Question(
     id: 'fen_cli_d3',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''A nivel de oceanografía química, ¿qué catastrófico efecto colateral genera la absorción de más del 30% de las emisiones de $CO_2$ por parte de los mares?''',
+    text:
+        r'''A nivel de oceanografía química, ¿qué catastrófico efecto colateral genera la absorción de más del 30% de las emisiones de $CO_2$ por parte de los mares?''',
     options: [
       r'''La sublimación masiva del hielo.''',
       r'''La desionización del gas inerte marino.''',
@@ -326,12 +370,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El aumento excesivo del volumen de agua dulce en los casquetes.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El CO2 disuelto en agua salada se convierte en ácido carbónico, disminuyendo la disponibilidad del ion carbonato necesario para los caparazones calcáreos.''',
+    explanation:
+        r'''El CO2 disuelto en agua salada se convierte en ácido carbónico, disminuyendo la disponibilidad del ion carbonato necesario para los caparazones calcáreos.''',
   ),
   Question(
     id: 'fen_cli_d4',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''A nivel sociodemográfico, ¿por qué los efectos del calentamiento global son profundamente desiguales e impactan más en sectores marginados, ancianos o mujeres?''',
+    text:
+        r'''A nivel sociodemográfico, ¿por qué los efectos del calentamiento global son profundamente desiguales e impactan más en sectores marginados, ancianos o mujeres?''',
     options: [
       r'''Porque habitan en lugares alejados de las costas siempre.''',
       r'''Porque las tormentas se dirigen magnéticamente a ellos.''',
@@ -340,12 +386,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Porque la radiación infrarroja afecta solo según la edad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La justicia climática expone que las clases y grupos más pobres y marginados carecen de resiliencia financiera y física para mitigar y sobrellevar los siniestros del clima.''',
+    explanation:
+        r'''La justicia climática expone que las clases y grupos más pobres y marginados carecen de resiliencia financiera y física para mitigar y sobrellevar los siniestros del clima.''',
   ),
   Question(
     id: 'fen_cli_d5',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Las selvas y bosques europeos enfrentan graves alteraciones ecológicas hoy en día. Según previsiones climáticas, ¿cómo altera el cambio climático la silvicultura y supervivencia forestal?''',
+    text:
+        r'''Las selvas y bosques europeos enfrentan graves alteraciones ecológicas hoy en día. Según previsiones climáticas, ¿cómo altera el cambio climático la silvicultura y supervivencia forestal?''',
     options: [
       r'''Erradicando el dióxido de carbono al 100%.''',
       r'''Aumentando dramáticamente el estrés hídrico por sequías, extendiendo la duración de las temporadas de incendios forestales y exacerbando el daño de plagas o enfermedades invasoras.''',
@@ -354,12 +402,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Fomentando el crecimiento acelerado e infinito de los árboles por sobredosis de $CO_2$.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estrés por calor y sequía debilita a los árboles, haciéndolos presas de plagas destructivas y facilitando la propagación de mega-incendios debido a la falta de humedad.''',
+    explanation:
+        r'''El estrés por calor y sequía debilita a los árboles, haciéndolos presas de plagas destructivas y facilitando la propagación de mega-incendios debido a la falta de humedad.''',
   ),
   Question(
     id: 'fen_cli_d6',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''En las regiones del Ártico y de altas montañas, el derretimiento de los hielos tiene un impacto colateral grave sobre un elemento del subsuelo. ¿Cuál es?''',
+    text:
+        r'''En las regiones del Ártico y de altas montañas, el derretimiento de los hielos tiene un impacto colateral grave sobre un elemento del subsuelo. ¿Cuál es?''',
     options: [
       r'''El Cinturón de Kuiper terrestre.''',
       r'''La heliopausa oceánica.''',
@@ -368,12 +418,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Los yacimientos de materia oscura.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El permafrost es suelo permanentemente helado; al descongelarse, el terreno pierde soporte (dañando edificios) y libera gases orgánicos retenidos.''',
+    explanation:
+        r'''El permafrost es suelo permanentemente helado; al descongelarse, el terreno pierde soporte (dañando edificios) y libera gases orgánicos retenidos.''',
   ),
   Question(
     id: 'fen_cli_d7',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Por qué el cambio climático afecta laboral y económicamente a sectores fuertemente dependientes de las condiciones meteorológicas, como el turismo de invierno o la agricultura en el sur de Europa?''',
+    text:
+        r'''¿Por qué el cambio climático afecta laboral y económicamente a sectores fuertemente dependientes de las condiciones meteorológicas, como el turismo de invierno o la agricultura en el sur de Europa?''',
     options: [
       r'''Porque altera la predictibilidad del clima, disminuyendo drásticamente la cubierta de nieve para el turismo o reduciendo los rendimientos agrícolas por severas sequías.''',
       r'''Porque impide que las máquinas eléctricas funcionen con normalidad al aire libre.''',
@@ -382,12 +434,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Porque promueve un crecimiento descontrolado de bosques que ocultan las atracciones turísticas.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La reducción en la predictibilidad estacional provoca pérdidas de rendimiento agrícola y de viabilidad de los destinos de deportes de nieve.''',
+    explanation:
+        r'''La reducción en la predictibilidad estacional provoca pérdidas de rendimiento agrícola y de viabilidad de los destinos de deportes de nieve.''',
   ),
   Question(
     id: 'fen_cli_d8',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''En la ciencia atmosférica, además de ser el principal responsable del calentamiento, ¿qué otro origen antropogénico puntual tiene el potente GEI óxido nitroso ($N_2O$)?Hash''',
+    text:
+        r'''En la ciencia atmosférica, además de ser el principal responsable del calentamiento, ¿qué otro origen antropogénico puntual tiene el potente GEI óxido nitroso ($N_2O$)?Hash''',
     options: [
       r'''La respiración natural de los grandes mamíferos salvajes.''',
       r'''El escape de las válvulas de las centrales nucleares.''',
@@ -396,12 +450,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''La combustión de madera en chimeneas de hogares rurales.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los abonos sintéticos nitrogenados aplicados en la agricultura intensiva reaccionan bacterianamente en el suelo liberando gas N2O, un potente gas de invernadero.''',
+    explanation:
+        r'''Los abonos sintéticos nitrogenados aplicados en la agricultura intensiva reaccionan bacterianamente en el suelo liberando gas N2O, un potente gas de invernadero.''',
   ),
   Question(
     id: 'fen_cli_d9',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Diferenciando térmicamente los tipos de inundaciones exacerbadas por el cambio climático, ¿qué distingue a una inundación pluvial de una inundación fluvial?''',
+    text:
+        r'''Diferenciando térmicamente los tipos de inundaciones exacerbadas por el cambio climático, ¿qué distingue a una inundación pluvial de una inundación fluvial?''',
     options: [
       r'''La pluvial ocurre solo con nieve, la fluvial con lava.''',
       r'''La fluvial proviene de tsunamis marinos, la pluvial de pantanos.''',
@@ -410,12 +466,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''No hay distinción, son sinónimos científicos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La pluvial se asocia directamente a la lluvia localizada saturante; la fluvial resulta del colapso del caudal y desborde de un río.''',
+    explanation:
+        r'''La pluvial se asocia directamente a la lluvia localizada saturante; la fluvial resulta del colapso del caudal y desborde de un río.''',
   ),
   Question(
     id: 'fen_cli_d10',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Las industrias enfrentan serios desafíos económicos ante el calentamiento. En el caso del "sector de los seguros", ¿qué repercusión directa a mediano plazo tendrá el constante aumento de fenómenos climáticos extremos?''',
+    text:
+        r'''Las industrias enfrentan serios desafíos económicos ante el calentamiento. En el caso del "sector de los seguros", ¿qué repercusión directa a mediano plazo tendrá el constante aumento de fenómenos climáticos extremos?''',
     options: [
       r'''Un cese rotundo en la emisión de pólizas para siempre.''',
       r'Aumentarán súbitamente los precios y las primas de seguros por las altas indemnizaciones, lo cual marginará a sectores sociales que no podrán costear su protección.',
@@ -424,14 +482,16 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El Estado obligará a los ciudadanos a no asegurar sus bienes para ahorrar costos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El aumento de desastres naturales eleva las reclamaciones de cobertura, obligando al encarecimiento masivo de las tarifas de los seguros.''',
+    explanation:
+        r'''El aumento de desastres naturales eleva las reclamaciones de cobertura, obligando al encarecimiento masivo de las tarifas de los seguros.''',
   ),
 
   // Nivel Extremo
   Question(
     id: 'fen_cli_e1',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Para contener las perturbaciones más devastadoras en el clima global y los ecosistemas, el IPCC (Grupo Intergubernamental de Expertos) alertó que no debemos rebasar cierto límite crítico en el aumento de la temperatura terrestre por encima de niveles preindustriales. ¿Cuál es ese límite?''',
+    text:
+        r'''Para contener las perturbaciones más devastadoras en el clima global y los ecosistemas, el IPCC (Grupo Intergubernamental de Expertos) alertó que no debemos rebasar cierto límite crítico en el aumento de la temperatura terrestre por encima de niveles preindustriales. ¿Cuál es ese límite?''',
     options: [
       r'''3,5 ºC.''',
       r'''5 ºC.''',
@@ -440,12 +500,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''10 ºC.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los científicos recomiendan estabilizar el calentamiento en un límite máximo de 1.5 °C para mitigar puntos de no retorno climáticos irreversibles.''',
+    explanation:
+        r'''Los científicos recomiendan estabilizar el calentamiento en un límite máximo de 1.5 °C para mitigar puntos de no retorno climáticos irreversibles.''',
   ),
   Question(
     id: 'fen_cli_e2',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Explicando la subida del nivel del mar desde un punto de vista térmico y de dinámica de fluidos, ¿qué fenómeno físico independiente al deshielo contribuye gravemente a esta subida en los océanos?''',
+    text:
+        r'''Explicando la subida del nivel del mar desde un punto de vista térmico y de dinámica de fluidos, ¿qué fenómeno físico independiente al deshielo contribuye gravemente a esta subida en los océanos?''',
     options: [
       r'''La sublimación intensa del metano submarino.''',
       r'''El engrosamiento progresivo de la corteza oceánica que empuja el agua.''',
@@ -454,12 +516,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''La caída de troyanos de asteroides en el agua.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La expansión termal significa que el agua líquida de los océanos aumenta su volumen específico a nivel molecular conforme se incrementa su temperatura media.''',
+    explanation:
+        r'''La expansión termal significa que el agua líquida de los océanos aumenta su volumen específico a nivel molecular conforme se incrementa su temperatura media.''',
   ),
   Question(
     id: 'fen_cli_e3',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué dinámica de retroalimentación climática perversa se produce al derretirse aceleradamente el hielo de los glaciares en lo referente al "albedo" terrestre?''',
+    text:
+        r'''¿Qué dinámica de retroalimentación climática perversa se produce al derretirse aceleradamente el hielo de los glaciares en lo referente al "albedo" terrestre?''',
     options: [
       r'''El hielo libera nitrógeno puro que enfría la estratosfera, paralizando la fotosíntesis.''',
       r'''Se produce más sal marina, neutralizando el agua.''',
@@ -468,12 +532,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El albedo aumenta al máximo congelando instantáneamente el aire.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Menor cobertura de hielo reduce la reflectividad planetaria (albedo); la superficie descubierta (agua o tierra oscura) absorbe más radiación térmica, acelerando el calentamiento en un bucle positivo.''',
+    explanation:
+        r'''Menor cobertura de hielo reduce la reflectividad planetaria (albedo); la superficie descubierta (agua o tierra oscura) absorbe más radiación térmica, acelerando el calentamiento en un bucle positivo.''',
   ),
   Question(
     id: 'fen_cli_e4',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''¿Qué son los llamados "Science Based Targets" (Objetivos Basados en la Ciencia) en el contexto de la acción climática corporativa?''',
+    text:
+        r'''¿Qué son los llamados "Science Based Targets" (Objetivos Basados en la Ciencia) en el contexto de la acción climática corporativa?''',
     options: [
       r'''Las métricas usadas por astrónomos para medir la distancia al Sol.''',
       r'Es una iniciativa que aprueba y alinea los compromisos de las empresas privadas para garantizar que sus estrategias reduzcan las emisiones absolutas de GEI (Alcances 1, 2 y 3) conforme a lo requerido por la ciencia para frenar el calentamiento global.',
@@ -482,12 +548,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El uso de microgeneración de energía mediante la respiración en granjas agrarias.''',
     ],
     correctAnswer: 1,
-    explanation: r'''SBTi es una alianza que valida y asegura que los planes empresariales reduzcan emisiones alineándose con la meta científica de los 1.5 °C del Acuerdo de París.''',
+    explanation:
+        r'''SBTi es una alianza que valida y asegura que los planes empresariales reduzcan emisiones alineándose con la meta científica de los 1.5 °C del Acuerdo de París.''',
   ),
   Question(
     id: 'fen_cli_e5',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Desde la física de las transformaciones de energía, ¿por qué el cambio climático altera y disminuye la capacidad de generación eléctrica de las centrales térmicas y nucleares en verano?''',
+    text:
+        r'''Desde la física de las transformaciones de energía, ¿por qué el cambio climático altera y disminuye la capacidad de generación eléctrica de las centrales térmicas y nucleares en verano?''',
     options: [
       r'''Porque el sol derrite el uranio enriquecido.''',
       r'''Porque las plantas fotovoltaicas no funcionan con radiación directa.''',
@@ -496,12 +564,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Porque el viento solar bloquea las aspas eólicas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las centrales térmicas y nucleares necesitan focos de refrigeración de agua fría (ríos o mares) para condensar vapor en sus generadores; si el agua escasea o está caliente, la eficiencia cae bruscamente.''',
+    explanation:
+        r'''Las centrales térmicas y nucleares necesitan focos de refrigeración de agua fría (ríos o mares) para condensar vapor en sus generadores; si el agua escasea o está caliente, la eficiencia cae bruscamente.''',
   ),
   Question(
     id: 'fen_cli_e6',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''El calentamiento antropogénico también interfiere en las corrientes oceánicas y climáticas globales. En el sur de Europa y el Mediterráneo, el déficit crónico de recursos hídricos combinado con uso excesivo no sostenible se conoce como:''',
+    text:
+        r'''El calentamiento antropogénico también interfiere en las corrientes oceánicas y climáticas globales. En el sur de Europa y el Mediterráneo, el déficit crónico de recursos hídricos combinado con uso excesivo no sostenible se conoce como:''',
     options: [
       r'''Inundación repentina local.''',
       r'Escasez estructural de agua o estrés hídrico.',
@@ -510,12 +580,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Microgeneración de salinidad hidroeléctrica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estrés hídrico ocurre cuando la demanda total de agua disponible de calidad supera el suministro natural sostenible, cronificándose por el cambio del clima.''',
+    explanation:
+        r'''El estrés hídrico ocurre cuando la demanda total de agua disponible de calidad supera el suministro natural sostenible, cronificándose por el cambio del clima.''',
   ),
   Question(
     id: 'fen_cli_e7',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''A nivel macroeconómico mundial, si evaluamos la "economía verde" ante el cambio climático, ¿qué ambivalencia existe respecto a las inversiones en adaptación y mitigación para la sociedad?''',
+    text:
+        r'''A nivel macroeconómico mundial, si evaluamos la "economía verde" ante el cambio climático, ¿qué ambivalencia existe respecto a las inversiones en adaptación y mitigación para la sociedad?''',
     options: [
       r'''Que provocará la desaparición absoluta del comercio.''',
       r'Aunque requerirán enormes costes financieros para reformar las infraestructuras, en su aplicación crearán grandes oportunidades laborales emergentes, como empleos en defensas costeras, edificios ecológicos y gestión renovable.',
@@ -524,12 +596,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Generará empleo únicamente en el desarrollo de armas atómicas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La transición ecológica requiere altos capitales de reestructuración física, pero promueve a su vez el desarrollo de empleos verdes sustentables en tecnologías limpias.''',
+    explanation:
+        r'''La transición ecológica requiere altos capitales de reestructuración física, pero promueve a su vez el desarrollo de empleos verdes sustentables en tecnologías limpias.''',
   ),
   Question(
     id: 'fen_cli_e8',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''La migración climática forzada se convertirá en la principal causa de refugiados. Según estimaciones del Banco Mundial, debido a tierras yermas, sequías extremas y violentas inundaciones, ¿a cuántas personas podría forzar el clima a huir de sus tierras en 2050?''',
+    text:
+        r'''La migración climática forzada se convertirá en la principal causa de refugiados. Según estimaciones del Banco Mundial, debido a tierras yermas, sequías extremas y violentas inundaciones, ¿a cuántas personas podría forzar el clima a huir de sus tierras en 2050?''',
     options: [
       r'''Aproximadamente a 5.000 personas.''',
       r'''A toda la población europea sin excepción.''',
@@ -538,12 +612,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''A mil millones de habitantes del continente antártico.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La desertificación y el estrés del clima desplazarán a millones de personas del sur global, proyectándose 140 millones de migrantes climáticos internos para 2050.''',
+    explanation:
+        r'''La desertificación y el estrés del clima desplazarán a millones de personas del sur global, proyectándose 140 millones de migrantes climáticos internos para 2050.''',
   ),
   Question(
     id: 'fen_cli_e9',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Las innovadoras tecnologías de "microgeneración" proponen reducir indirectamente la huella de carbono minimizando las baterías tóxicas. ¿Cómo se relacionan con las transformaciones energéticas cotidianas?''',
+    text:
+        r'''Las innovadoras tecnologías de "microgeneración" proponen reducir indirectamente la huella de carbono minimizando las baterías tóxicas. ¿Cómo se relacionan con las transformaciones energéticas cotidianas?''',
     options: [
       r'''Queman madera en nanopartículas para mover coches.''',
       r'Sostienen la captación minúscula de energías locales residuales (fricción al caminar, calor respiratorio, o pequeña energía térmica) transformándolas a nivel nanoescala en electricidad para autoabastecer sensores o dispositivos portátiles.',
@@ -552,12 +628,14 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''Usan energía sonora de las olas del mar para iluminar ciudades enteras.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La microgeneración o cosecha de energía recolecta fracciones de energía del entorno (vibratoria, térmica residual) para transformarla en electricidad a nivel nano.''',
+    explanation:
+        r'''La microgeneración o cosecha de energía recolecta fracciones de energía del entorno (vibratoria, térmica residual) para transformarla en electricidad a nivel nano.''',
   ),
   Question(
     id: 'fen_cli_e10',
     topicId: 'cta_fenomenos_cambioclimatico',
-    text: r'''Existe un debate cosmológico sobre un teórico exoplaneta del sistema solar en el cinturón de Kuiper que los científicos modelaron a través de ordenadores para explicar alteraciones en órbitas. ¿Qué nombre provisional adquirió este hipotético gigante y de qué sería muestra en dinámica geofísica?''',
+    text:
+        r'''Existe un debate cosmológico sobre un teórico exoplaneta del sistema solar en el cinturón de Kuiper que los científicos modelaron a través de ordenadores para explicar alteraciones en órbitas. ¿Qué nombre provisional adquirió este hipotético gigante y de qué sería muestra en dinámica geofísica?''',
     options: [
       r'''El planeta enano Plutón.''',
       r'Se le denominó "Phattie" o Planeta Nueve, hipotetizado matemáticamente debido a las misteriosas perturbaciones gravitacionales observadas en lejanos cuerpos transneptunianos como Sedna.',
@@ -566,6 +644,7 @@ final List<Question> fenomenosCambioclimaticoQuestions = [
       r'''El gran Gigante gaseoso de Antimateria.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Se trata de Phattie o Planeta 9, postulado matemáticamente para justificar el extraño alineamiento orbital de ciertos cuerpos helados lejanos.''',
+    explanation:
+        r'''Se trata de Phattie o Planeta 9, postulado matemáticamente para justificar el extraño alineamiento orbital de ciertos cuerpos helados lejanos.''',
   ),
 ];

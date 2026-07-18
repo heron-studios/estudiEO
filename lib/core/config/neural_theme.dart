@@ -84,14 +84,19 @@ class NeuralThemeData extends ThemeExtension<NeuralThemeData> {
     successGreen: Color(0xFF4ADE80),
     warningAmber: Color(0xFFFBBF24),
     neuralGradient: LinearGradient(
-      colors: [Color(0xFF4285F4), Color(0xFF9B72CB), Color(0xFFD96570), Color(0xFF22D3EE)],
+      colors: [
+        Color(0xFF4285F4),
+        Color(0xFF9B72CB),
+        Color(0xFFD96570),
+        Color(0xFF22D3EE),
+      ],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     ),
     cardOpacityMin: 0.40,
     cardOpacityMax: 0.60,
-    borderSubtle: Color(0x1AFFFFFF),   // rgba(255,255,255,0.10)
-    borderHover: Color(0x38FFFFFF),    // rgba(255,255,255,0.22)
+    borderSubtle: Color(0x1AFFFFFF), // rgba(255,255,255,0.10)
+    borderHover: Color(0x38FFFFFF), // rgba(255,255,255,0.22)
     blobBlueOpacity: 0.18,
     blobPurpleOpacity: 0.15,
     blobPinkOpacity: 0.12,
@@ -163,14 +168,30 @@ class NeuralThemeData extends ThemeExtension<NeuralThemeData> {
       cyan: Color.lerp(cyan, other.cyan, t)!,
       successGreen: Color.lerp(successGreen, other.successGreen, t)!,
       warningAmber: Color.lerp(warningAmber, other.warningAmber, t)!,
-      neuralGradient: LinearGradient.lerp(neuralGradient, other.neuralGradient, t)!,
+      neuralGradient: LinearGradient.lerp(
+        neuralGradient,
+        other.neuralGradient,
+        t,
+      )!,
       cardOpacityMin: ui.lerpDouble(cardOpacityMin, other.cardOpacityMin, t)!,
       cardOpacityMax: ui.lerpDouble(cardOpacityMax, other.cardOpacityMax, t)!,
       borderSubtle: Color.lerp(borderSubtle, other.borderSubtle, t)!,
       borderHover: Color.lerp(borderHover, other.borderHover, t)!,
-      blobBlueOpacity: ui.lerpDouble(blobBlueOpacity, other.blobBlueOpacity, t)!,
-      blobPurpleOpacity: ui.lerpDouble(blobPurpleOpacity, other.blobPurpleOpacity, t)!,
-      blobPinkOpacity: ui.lerpDouble(blobPinkOpacity, other.blobPinkOpacity, t)!,
+      blobBlueOpacity: ui.lerpDouble(
+        blobBlueOpacity,
+        other.blobBlueOpacity,
+        t,
+      )!,
+      blobPurpleOpacity: ui.lerpDouble(
+        blobPurpleOpacity,
+        other.blobPurpleOpacity,
+        t,
+      )!,
+      blobPinkOpacity: ui.lerpDouble(
+        blobPinkOpacity,
+        other.blobPinkOpacity,
+        t,
+      )!,
     );
   }
 }

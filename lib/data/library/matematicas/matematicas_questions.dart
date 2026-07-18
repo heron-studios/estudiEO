@@ -4,63 +4,47 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q1',
     topicId: 'mat_algebra',
-    text: r'''Si la ecuación cuadrática $x^2 - (k+2)x + 9 = 0$ tiene raíces reales e iguales, determine el valor positivo de $k$.''',
-    options: [
-      r'''4''',
-      r'''-8''',
-      r'''8''',
-      r'''2''',
-      r'''E) 16''',
-    ],
+    text:
+        r'''Si la ecuación cuadrática $x^2 - (k+2)x + 9 = 0$ tiene raíces reales e iguales, determine el valor positivo de $k$.''',
+    options: [r'''4''', r'''-8''', r'''8''', r'''2''', r'''E) 16'''],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A (4). Para raíces iguales, el discriminante debe ser 0: $\Delta = (k+2)^2 - 4(1)(9) = 0 \Rightarrow (k+2)^2 = 36$. Las soluciones son $k=4$ o $k=-8$. El distractor C (8) es un 'Distractor de Falla Algebraica', ya que el postulante asume erróneamente que si $(k+2)^2 = 36$, entonces $k+2 = 10$.""",
+    explanation:
+        r"""La respuesta correcta es A (4). Para raíces iguales, el discriminante debe ser 0: $\Delta = (k+2)^2 - 4(1)(9) = 0 \Rightarrow (k+2)^2 = 36$. Las soluciones son $k=4$ o $k=-8$. El distractor C (8) es un 'Distractor de Falla Algebraica', ya que el postulante asume erróneamente que si $(k+2)^2 = 36$, entonces $k+2 = 10$.""",
   ),
   Question(
     id: 'mat_q2',
     topicId: 'mat_algebra',
-    text: r'''Simplifique la siguiente expresión algebraica: $E = \frac{(x+y)^2 - (x-y)^2}{2xy}$''',
-    options: [
-      r'''1''',
-      r'''2''',
-      r'''$x^2+y^2$''',
-      r'''4''',
-      r'''E) $2xy$''',
-    ],
+    text:
+        r'''Simplifique la siguiente expresión algebraica: $E = \frac{(x+y)^2 - (x-y)^2}{2xy}$''',
+    options: [r'''1''', r'''2''', r'''$x^2+y^2$''', r'''4''', r'''E) $2xy$'''],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (2). Aplicando la Identidad de Legendre: $(x+y)^2 - (x-y)^2 = 4xy$. Al dividir entre $2xy$, queda 2. El distractor A (1) ocurre si el alumno simplifica erróneamente $4xy$ con $2xy$ ignorando el coeficiente 2. El distractor D (4) es el 'Distractor por Cierre Prematuro' (se detiene al hallar el numerador).""",
+    explanation:
+        r"""La respuesta correcta es B (2). Aplicando la Identidad de Legendre: $(x+y)^2 - (x-y)^2 = 4xy$. Al dividir entre $2xy$, queda 2. El distractor A (1) ocurre si el alumno simplifica erróneamente $4xy$ con $2xy$ ignorando el coeficiente 2. El distractor D (4) es el 'Distractor por Cierre Prematuro' (se detiene al hallar el numerador).""",
   ),
   Question(
     id: 'mat_q3',
     topicId: 'mat_algebra',
     text: r'''Reduzca la expresión: $M = \frac{2^{n+3} - 2^{n+1}}{2^n}$''',
-    options: [
-      r'''2''',
-      r'''4''',
-      r'''6''',
-      r'''$2^n$''',
-      r'''E) 8''',
-    ],
+    options: [r'''2''', r'''4''', r'''6''', r'''$2^n$''', r'''E) 8'''],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (6). Factorizando $2^n$ en el numerador: $2^n(2^3 - 2^1) / 2^n = 8 - 2 = 6$. El distractor A (2) asume una resta de exponentes errónea ($3-1=2$). El distractor B (4) es una 'Falla Operativa' común si se asume $2^3 = 6$.""",
+    explanation:
+        r"""La respuesta correcta es C (6). Factorizando $2^n$ en el numerador: $2^n(2^3 - 2^1) / 2^n = 8 - 2 = 6$. El distractor A (2) asume una resta de exponentes errónea ($3-1=2$). El distractor B (4) es una 'Falla Operativa' común si se asume $2^3 = 6$.""",
   ),
   Question(
     id: 'mat_q4',
     topicId: 'mat_algebra',
-    text: r'''Resuelva el sistema lineal:n$3x - 2y = 12$n$x + y = 9$nIndique el valor de $xy$.''',
-    options: [
-      r'''6''',
-      r'''3''',
-      r'''15''',
-      r'''18''',
-      r'''E) 9''',
-    ],
+    text:
+        r'''Resuelva el sistema lineal:n$3x - 2y = 12$n$x + y = 9$nIndique el valor de $xy$.''',
+    options: [r'''6''', r'''3''', r'''15''', r'''18''', r'''E) 9'''],
     correctAnswer: 3,
-    explanation: r"""La respuesta correcta es D (18). Multiplicando la segunda ecuación por 2: $2x+2y=18$. Sumando con la primera: $5x = 30 \Rightarrow x=6$. Luego $y=3$. Piden $xy = 18$. El distractor A (6) es el clásico 'Distractor por Cierre Prematuro', asumiendo que solo piden 'x'.""",
+    explanation:
+        r"""La respuesta correcta es D (18). Multiplicando la segunda ecuación por 2: $2x+2y=18$. Sumando con la primera: $5x = 30 \Rightarrow x=6$. Luego $y=3$. Piden $xy = 18$. El distractor A (6) es el clásico 'Distractor por Cierre Prematuro', asumiendo que solo piden 'x'.""",
   ),
   Question(
     id: 'mat_q5',
     topicId: 'mat_algebra',
-    text: r'''Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?''',
+    text:
+        r'''Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?''',
     options: [
       r'''13 m''',
       r'''14 m''',
@@ -69,12 +53,14 @@ final List<Question> matematicasQuestions = [
       r'''E) 17 m''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (15 m). Originalmente la hipotenusa es $\sqrt{12^2 + 5^2} = 13$ m. Si se alarga 2 m más, es $13+2=15$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.""",
+    explanation:
+        r"""La respuesta correcta es C (15 m). Originalmente la hipotenusa es $\sqrt{12^2 + 5^2} = 13$ m. Si se alarga 2 m más, es $13+2=15$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.""",
   ),
   Question(
     id: 'mat_q6',
     topicId: 'mat_algebra',
-    text: r'''El área de un terreno rectangular es $120 m^2$. Si el largo es $2 m$ mayor que el ancho, halle el perímetro.''',
+    text:
+        r'''El área de un terreno rectangular es $120 m^2$. Si el largo es $2 m$ mayor que el ancho, halle el perímetro.''',
     options: [
       r'''10 m''',
       r'''12 m''',
@@ -83,21 +69,18 @@ final List<Question> matematicasQuestions = [
       r'''E) 48 m''',
     ],
     correctAnswer: 3,
-    explanation: r"""La respuesta correcta es D (44 m). $x(x+2) = 120 \Rightarrow x=10$, largo=12. El perímetro es $2(10+12) = 44$. El distractor B (12) es un distractor de paso intermedio. El distractor C (22) es 'Falla Procedimental' (solo sumar un largo y un ancho).""",
+    explanation:
+        r"""La respuesta correcta es D (44 m). $x(x+2) = 120 \Rightarrow x=10$, largo=12. El perímetro es $2(10+12) = 44$. El distractor B (12) es un distractor de paso intermedio. El distractor C (22) es 'Falla Procedimental' (solo sumar un largo y un ancho).""",
   ),
   Question(
     id: 'mat_q7',
     topicId: 'mat_algebra',
-    text: r'''Si se cumple que $\overline{abc} - \overline{cba} = \overline{mxy}$, halle $m+x+y$.''',
-    options: [
-      r'''9''',
-      r'''10''',
-      r'''18''',
-      r'''27''',
-      r'''E) 12''',
-    ],
+    text:
+        r'''Si se cumple que $\overline{abc} - \overline{cba} = \overline{mxy}$, halle $m+x+y$.''',
+    options: [r'''9''', r'''10''', r'''18''', r'''27''', r'''E) 12'''],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es C (18). Por propiedad de sustracción en base 10: el centro $x=9$ y los extremos suman 9 ($m+y=9$). Entonces $m+x+y=18$. El distractor A (9) es el valor de la suma parcial y asume mal.''',
+    explanation:
+        r'''La respuesta correcta es C (18). Por propiedad de sustracción en base 10: el centro $x=9$ y los extremos suman 9 ($m+y=9$). Entonces $m+x+y=18$. El distractor A (9) es el valor de la suma parcial y asume mal.''',
   ),
   Question(
     id: 'mat_q8',
@@ -111,7 +94,8 @@ final List<Question> matematicasQuestions = [
       r'''E) $x-1$''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C ($x-4$). Al aplicar aspa simple, es $(x-3)(x-4)$. El distractor B ($x+4$) es el 'Distractor de Falla de Signo', el postulante suma erróneamente en vez de respetar la regla $-3 \times -4 = 12$.""",
+    explanation:
+        r"""La respuesta correcta es C ($x-4$). Al aplicar aspa simple, es $(x-3)(x-4)$. El distractor B ($x+4$) es el 'Distractor de Falla de Signo', el postulante suma erróneamente en vez de respetar la regla $-3 \times -4 = 12$.""",
   ),
   Question(
     id: 'mat_q9',
@@ -125,46 +109,34 @@ final List<Question> matematicasQuestions = [
       r'''E) $\frac{1}{24}$''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (7/12). MCM de 2,3,4 es 12. $(6+4-3)/12 = 7/12$. El distractor A (1/5) es la 'Trampa de la suma lineal' (suma/resta directa de denominadores), el error más penalizado.""",
+    explanation:
+        r"""La respuesta correcta es C (7/12). MCM de 2,3,4 es 12. $(6+4-3)/12 = 7/12$. El distractor A (1/5) es la 'Trampa de la suma lineal' (suma/resta directa de denominadores), el error más penalizado.""",
   ),
   Question(
     id: 'mat_q10',
     topicId: 'mat_algebra',
-    text: r'''Dos números están en relación de 3 a 5. Si la suma de ambos es 64, ¿cuál es su diferencia?''',
-    options: [
-      r'''8''',
-      r'''16''',
-      r'''24''',
-      r'''40''',
-      r'''E) 32''',
-    ],
+    text:
+        r'''Dos números están en relación de 3 a 5. Si la suma de ambos es 64, ¿cuál es su diferencia?''',
+    options: [r'''8''', r'''16''', r'''24''', r'''40''', r'''E) 32'''],
     correctAnswer: 1,
-    explanation: r'''La respuesta correcta es B (16). $3k+5k=8k=64 \Rightarrow k=8$. La diferencia es $5k-3k = 2k = 16$. El distractor A (8) es cierre prematuro. Los distractores C y D (24 y 40) son los números originales.''',
+    explanation:
+        r'''La respuesta correcta es B (16). $3k+5k=8k=64 \Rightarrow k=8$. La diferencia es $5k-3k = 2k = 16$. El distractor A (8) es cierre prematuro. Los distractores C y D (24 y 40) son los números originales.''',
   ),
   Question(
     id: 'mat_q11',
     topicId: 'mat_algebra',
-    text: r'''Diez obreros pueden hacer una obra en 12 días. ¿En cuántos días harán la misma obra 15 obreros?''',
-    options: [
-      r'''18''',
-      r'''10''',
-      r'''8''',
-      r'''6''',
-      r'''E) 15''',
-    ],
+    text:
+        r'''Diez obreros pueden hacer una obra en 12 días. ¿En cuántos días harán la misma obra 15 obreros?''',
+    options: [r'''18''', r'''10''', r'''8''', r'''6''', r'''E) 15'''],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (8). Es regla de tres inversa: $(10)(12)/15 = 8$. El distractor A (18) es una 'Trampa Estructural' por aplicar regla de tres directa multiplicando aspas $(12*15)/10=18$.""",
+    explanation:
+        r"""La respuesta correcta es C (8). Es regla de tres inversa: $(10)(12)/15 = 8$. El distractor A (18) es una 'Trampa Estructural' por aplicar regla de tres directa multiplicando aspas $(12*15)/10=18$.""",
   ),
   Question(
     id: 'mat_q12',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 3 = 7''',
-    options: [
-      r'''2''',
-      r'''3''',
-      r'''1''',
-      r'''4''',
-    ],
+    options: [r'''2''', r'''3''', r'''1''', r'''4'''],
     correctAnswer: 0,
     explanation: r'''Al restar 3 queda 2x = 4; al dividir entre 2, x = 2.''',
   ),
@@ -172,12 +144,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q13',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 4 = 13''',
-    options: [
-      r'''4''',
-      r'''3''',
-      r'''2''',
-      r'''5''',
-    ],
+    options: [r'''4''', r'''3''', r'''2''', r'''5'''],
     correctAnswer: 1,
     explanation: r'''Al restar 4 queda 3x = 9; al dividir entre 3, x = 3.''',
   ),
@@ -185,12 +152,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q14',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 5 = 21''',
-    options: [
-      r'''5''',
-      r'''3''',
-      r'''4''',
-      r'''6''',
-    ],
+    options: [r'''5''', r'''3''', r'''4''', r'''6'''],
     correctAnswer: 2,
     explanation: r'''Al restar 5 queda 4x = 16; al dividir entre 4, x = 4.''',
   ),
@@ -198,12 +160,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q15',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 6 = 31''',
-    options: [
-      r'''6''',
-      r'''4''',
-      r'''7''',
-      r'''5''',
-    ],
+    options: [r'''6''', r'''4''', r'''7''', r'''5'''],
     correctAnswer: 3,
     explanation: r'''Al restar 6 queda 5x = 25; al dividir entre 5, x = 5.''',
   ),
@@ -211,12 +168,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q16',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 7 = 43''',
-    options: [
-      r'''6''',
-      r'''7''',
-      r'''5''',
-      r'''8''',
-    ],
+    options: [r'''6''', r'''7''', r'''5''', r'''8'''],
     correctAnswer: 0,
     explanation: r'''Al restar 7 queda 6x = 36; al dividir entre 6, x = 6.''',
   ),
@@ -224,12 +176,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q17',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 8 = 22''',
-    options: [
-      r'''8''',
-      r'''7''',
-      r'''6''',
-      r'''9''',
-    ],
+    options: [r'''8''', r'''7''', r'''6''', r'''9'''],
     correctAnswer: 1,
     explanation: r'''Al restar 8 queda 2x = 14; al dividir entre 2, x = 7.''',
   ),
@@ -237,12 +184,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q18',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 9 = 33''',
-    options: [
-      r'''9''',
-      r'''7''',
-      r'''8''',
-      r'''10''',
-    ],
+    options: [r'''9''', r'''7''', r'''8''', r'''10'''],
     correctAnswer: 2,
     explanation: r'''Al restar 9 queda 3x = 24; al dividir entre 3, x = 8.''',
   ),
@@ -250,12 +192,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q19',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 3 = 39''',
-    options: [
-      r'''10''',
-      r'''8''',
-      r'''11''',
-      r'''9''',
-    ],
+    options: [r'''10''', r'''8''', r'''11''', r'''9'''],
     correctAnswer: 3,
     explanation: r'''Al restar 3 queda 4x = 36; al dividir entre 4, x = 9.''',
   ),
@@ -263,12 +200,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q20',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 4 = 54''',
-    options: [
-      r'''10''',
-      r'''11''',
-      r'''9''',
-      r'''12''',
-    ],
+    options: [r'''10''', r'''11''', r'''9''', r'''12'''],
     correctAnswer: 0,
     explanation: r'''Al restar 4 queda 5x = 50; al dividir entre 5, x = 10.''',
   ),
@@ -276,12 +208,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q21',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 5 = 17''',
-    options: [
-      r'''3''',
-      r'''2''',
-      r'''1''',
-      r'''4''',
-    ],
+    options: [r'''3''', r'''2''', r'''1''', r'''4'''],
     correctAnswer: 1,
     explanation: r'''Al restar 5 queda 6x = 12; al dividir entre 6, x = 2.''',
   ),
@@ -289,12 +216,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q22',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 6 = 12''',
-    options: [
-      r'''4''',
-      r'''2''',
-      r'''3''',
-      r'''5''',
-    ],
+    options: [r'''4''', r'''2''', r'''3''', r'''5'''],
     correctAnswer: 2,
     explanation: r'''Al restar 6 queda 2x = 6; al dividir entre 2, x = 3.''',
   ),
@@ -302,12 +224,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q23',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 7 = 19''',
-    options: [
-      r'''5''',
-      r'''3''',
-      r'''6''',
-      r'''4''',
-    ],
+    options: [r'''5''', r'''3''', r'''6''', r'''4'''],
     correctAnswer: 3,
     explanation: r'''Al restar 7 queda 3x = 12; al dividir entre 3, x = 4.''',
   ),
@@ -315,12 +232,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q24',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 8 = 28''',
-    options: [
-      r'''5''',
-      r'''6''',
-      r'''4''',
-      r'''7''',
-    ],
+    options: [r'''5''', r'''6''', r'''4''', r'''7'''],
     correctAnswer: 0,
     explanation: r'''Al restar 8 queda 4x = 20; al dividir entre 4, x = 5.''',
   ),
@@ -328,12 +240,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q25',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 9 = 39''',
-    options: [
-      r'''7''',
-      r'''6''',
-      r'''5''',
-      r'''8''',
-    ],
+    options: [r'''7''', r'''6''', r'''5''', r'''8'''],
     correctAnswer: 1,
     explanation: r'''Al restar 9 queda 5x = 30; al dividir entre 5, x = 6.''',
   ),
@@ -341,12 +248,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q26',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 3 = 45''',
-    options: [
-      r'''8''',
-      r'''6''',
-      r'''7''',
-      r'''9''',
-    ],
+    options: [r'''8''', r'''6''', r'''7''', r'''9'''],
     correctAnswer: 2,
     explanation: r'''Al restar 3 queda 6x = 42; al dividir entre 6, x = 7.''',
   ),
@@ -354,12 +256,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q27',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 4 = 20''',
-    options: [
-      r'''9''',
-      r'''7''',
-      r'''10''',
-      r'''8''',
-    ],
+    options: [r'''9''', r'''7''', r'''10''', r'''8'''],
     correctAnswer: 3,
     explanation: r'''Al restar 4 queda 2x = 16; al dividir entre 2, x = 8.''',
   ),
@@ -367,12 +264,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q28',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 5 = 32''',
-    options: [
-      r'''9''',
-      r'''10''',
-      r'''8''',
-      r'''11''',
-    ],
+    options: [r'''9''', r'''10''', r'''8''', r'''11'''],
     correctAnswer: 0,
     explanation: r'''Al restar 5 queda 3x = 27; al dividir entre 3, x = 9.''',
   ),
@@ -380,12 +272,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q29',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 6 = 46''',
-    options: [
-      r'''11''',
-      r'''10''',
-      r'''9''',
-      r'''12''',
-    ],
+    options: [r'''11''', r'''10''', r'''9''', r'''12'''],
     correctAnswer: 1,
     explanation: r'''Al restar 6 queda 4x = 40; al dividir entre 4, x = 10.''',
   ),
@@ -393,12 +280,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q30',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 7 = 17''',
-    options: [
-      r'''3''',
-      r'''1''',
-      r'''2''',
-      r'''4''',
-    ],
+    options: [r'''3''', r'''1''', r'''2''', r'''4'''],
     correctAnswer: 2,
     explanation: r'''Al restar 7 queda 5x = 10; al dividir entre 5, x = 2.''',
   ),
@@ -406,12 +288,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q31',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 8 = 26''',
-    options: [
-      r'''4''',
-      r'''2''',
-      r'''5''',
-      r'''3''',
-    ],
+    options: [r'''4''', r'''2''', r'''5''', r'''3'''],
     correctAnswer: 3,
     explanation: r'''Al restar 8 queda 6x = 18; al dividir entre 6, x = 3.''',
   ),
@@ -419,12 +296,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q32',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 9 = 17''',
-    options: [
-      r'''4''',
-      r'''5''',
-      r'''3''',
-      r'''6''',
-    ],
+    options: [r'''4''', r'''5''', r'''3''', r'''6'''],
     correctAnswer: 0,
     explanation: r'''Al restar 9 queda 2x = 8; al dividir entre 2, x = 4.''',
   ),
@@ -432,12 +304,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q33',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 3 = 18''',
-    options: [
-      r'''6''',
-      r'''5''',
-      r'''4''',
-      r'''7''',
-    ],
+    options: [r'''6''', r'''5''', r'''4''', r'''7'''],
     correctAnswer: 1,
     explanation: r'''Al restar 3 queda 3x = 15; al dividir entre 3, x = 5.''',
   ),
@@ -445,12 +312,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q34',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 4 = 28''',
-    options: [
-      r'''7''',
-      r'''5''',
-      r'''6''',
-      r'''8''',
-    ],
+    options: [r'''7''', r'''5''', r'''6''', r'''8'''],
     correctAnswer: 2,
     explanation: r'''Al restar 4 queda 4x = 24; al dividir entre 4, x = 6.''',
   ),
@@ -458,12 +320,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q35',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 5 = 40''',
-    options: [
-      r'''8''',
-      r'''6''',
-      r'''9''',
-      r'''7''',
-    ],
+    options: [r'''8''', r'''6''', r'''9''', r'''7'''],
     correctAnswer: 3,
     explanation: r'''Al restar 5 queda 5x = 35; al dividir entre 5, x = 7.''',
   ),
@@ -471,12 +328,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q36',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 6 = 54''',
-    options: [
-      r'''8''',
-      r'''9''',
-      r'''7''',
-      r'''10''',
-    ],
+    options: [r'''8''', r'''9''', r'''7''', r'''10'''],
     correctAnswer: 0,
     explanation: r'''Al restar 6 queda 6x = 48; al dividir entre 6, x = 8.''',
   ),
@@ -484,12 +336,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q37',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 7 = 25''',
-    options: [
-      r'''10''',
-      r'''9''',
-      r'''8''',
-      r'''11''',
-    ],
+    options: [r'''10''', r'''9''', r'''8''', r'''11'''],
     correctAnswer: 1,
     explanation: r'''Al restar 7 queda 2x = 18; al dividir entre 2, x = 9.''',
   ),
@@ -497,12 +344,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q38',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 8 = 38''',
-    options: [
-      r'''11''',
-      r'''9''',
-      r'''10''',
-      r'''12''',
-    ],
+    options: [r'''11''', r'''9''', r'''10''', r'''12'''],
     correctAnswer: 2,
     explanation: r'''Al restar 8 queda 3x = 30; al dividir entre 3, x = 10.''',
   ),
@@ -510,12 +352,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q39',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 9 = 17''',
-    options: [
-      r'''3''',
-      r'''1''',
-      r'''4''',
-      r'''2''',
-    ],
+    options: [r'''3''', r'''1''', r'''4''', r'''2'''],
     correctAnswer: 3,
     explanation: r'''Al restar 9 queda 4x = 8; al dividir entre 4, x = 2.''',
   ),
@@ -523,12 +360,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q40',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 3 = 18''',
-    options: [
-      r'''3''',
-      r'''4''',
-      r'''2''',
-      r'''5''',
-    ],
+    options: [r'''3''', r'''4''', r'''2''', r'''5'''],
     correctAnswer: 0,
     explanation: r'''Al restar 3 queda 5x = 15; al dividir entre 5, x = 3.''',
   ),
@@ -536,12 +368,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q41',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 4 = 28''',
-    options: [
-      r'''5''',
-      r'''4''',
-      r'''3''',
-      r'''6''',
-    ],
+    options: [r'''5''', r'''4''', r'''3''', r'''6'''],
     correctAnswer: 1,
     explanation: r'''Al restar 4 queda 6x = 24; al dividir entre 6, x = 4.''',
   ),
@@ -549,12 +376,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q42',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 5 = 15''',
-    options: [
-      r'''6''',
-      r'''4''',
-      r'''5''',
-      r'''7''',
-    ],
+    options: [r'''6''', r'''4''', r'''5''', r'''7'''],
     correctAnswer: 2,
     explanation: r'''Al restar 5 queda 2x = 10; al dividir entre 2, x = 5.''',
   ),
@@ -562,12 +384,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q43',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 6 = 24''',
-    options: [
-      r'''7''',
-      r'''5''',
-      r'''8''',
-      r'''6''',
-    ],
+    options: [r'''7''', r'''5''', r'''8''', r'''6'''],
     correctAnswer: 3,
     explanation: r'''Al restar 6 queda 3x = 18; al dividir entre 3, x = 6.''',
   ),
@@ -575,12 +392,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q44',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 7 = 35''',
-    options: [
-      r'''7''',
-      r'''8''',
-      r'''6''',
-      r'''9''',
-    ],
+    options: [r'''7''', r'''8''', r'''6''', r'''9'''],
     correctAnswer: 0,
     explanation: r'''Al restar 7 queda 4x = 28; al dividir entre 4, x = 7.''',
   ),
@@ -588,12 +400,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q45',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 8 = 48''',
-    options: [
-      r'''9''',
-      r'''8''',
-      r'''7''',
-      r'''10''',
-    ],
+    options: [r'''9''', r'''8''', r'''7''', r'''10'''],
     correctAnswer: 1,
     explanation: r'''Al restar 8 queda 5x = 40; al dividir entre 5, x = 8.''',
   ),
@@ -601,12 +408,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q46',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 6x + 9 = 63''',
-    options: [
-      r'''10''',
-      r'''8''',
-      r'''9''',
-      r'''11''',
-    ],
+    options: [r'''10''', r'''8''', r'''9''', r'''11'''],
     correctAnswer: 2,
     explanation: r'''Al restar 9 queda 6x = 54; al dividir entre 6, x = 9.''',
   ),
@@ -614,12 +416,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q47',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 2x + 3 = 23''',
-    options: [
-      r'''11''',
-      r'''9''',
-      r'''12''',
-      r'''10''',
-    ],
+    options: [r'''11''', r'''9''', r'''12''', r'''10'''],
     correctAnswer: 3,
     explanation: r'''Al restar 3 queda 2x = 20; al dividir entre 2, x = 10.''',
   ),
@@ -627,12 +424,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q48',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 3x + 4 = 10''',
-    options: [
-      r'''2''',
-      r'''3''',
-      r'''1''',
-      r'''4''',
-    ],
+    options: [r'''2''', r'''3''', r'''1''', r'''4'''],
     correctAnswer: 0,
     explanation: r'''Al restar 4 queda 3x = 6; al dividir entre 3, x = 2.''',
   ),
@@ -640,12 +432,7 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q49',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 4x + 5 = 17''',
-    options: [
-      r'''4''',
-      r'''3''',
-      r'''2''',
-      r'''5''',
-    ],
+    options: [r'''4''', r'''3''', r'''2''', r'''5'''],
     correctAnswer: 1,
     explanation: r'''Al restar 5 queda 4x = 12; al dividir entre 4, x = 3.''',
   ),
@@ -653,705 +440,505 @@ final List<Question> matematicasQuestions = [
     id: 'mat_q50',
     topicId: 'mat_algebra',
     text: r'''Resuelva la ecuacion: 5x + 6 = 26''',
-    options: [
-      r'''5''',
-      r'''3''',
-      r'''4''',
-      r'''6''',
-    ],
+    options: [r'''5''', r'''3''', r'''4''', r'''6'''],
     correctAnswer: 2,
     explanation: r'''Al restar 6 queda 5x = 20; al dividir entre 5, x = 4.''',
   ),
   Question(
     id: 'mat_q51',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 1 = 73''',
-    options: [
-      r'''8''',
-      r'''9''',
-      r'''10''',
-      r'''7''',
-      r'''11''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 1 = 73''',
+    options: [r'''8''', r'''9''', r'''10''', r'''7''', r'''11'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 9x + 1 = 73, primero restamos 1 a ambos miembros obteniendo 9x = 72. Luego, dividimos entre 9 para despejar x: x = 72 / 9 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 1 = 73, primero restamos 1 a ambos miembros obteniendo 9x = 72. Luego, dividimos entre 9 para despejar x: x = 72 / 9 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
   ),
   Question(
     id: 'mat_q52',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 2 = 47''',
-    options: [
-      r'''9''',
-      r'''10''',
-      r'''12''',
-      r'''8''',
-      r'''11''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 2 = 47''',
+    options: [r'''9''', r'''10''', r'''12''', r'''8''', r'''11'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 5x + 2 = 47, primero restamos 2 a ambos miembros obteniendo 5x = 45. Luego, dividimos entre 5 para despejar x: x = 45 / 5 = 9. Por lo tanto, el valor correcto de la incógnita es 9.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 2 = 47, primero restamos 2 a ambos miembros obteniendo 5x = 45. Luego, dividimos entre 5 para despejar x: x = 45 / 5 = 9. Por lo tanto, el valor correcto de la incógnita es 9.''',
   ),
   Question(
     id: 'mat_q53',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 8 = 73''',
-    options: [
-      r'''14''',
-      r'''12''',
-      r'''13''',
-      r'''16''',
-      r'''15''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 8 = 73''',
+    options: [r'''14''', r'''12''', r'''13''', r'''16''', r'''15'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 5x + 8 = 73, primero restamos 8 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 8 = 73, primero restamos 8 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q54',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 14 = 84''',
-    options: [
-      r'''10''',
-      r'''13''',
-      r'''9''',
-      r'''11''',
-      r'''12''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 14 = 84''',
+    options: [r'''10''', r'''13''', r'''9''', r'''11''', r'''12'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 7x + 14 = 84, primero restamos 14 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 14 = 84, primero restamos 14 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q55',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 10 = 40''',
-    options: [
-      r'''5''',
-      r'''4''',
-      r'''3''',
-      r'''6''',
-      r'''2''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 10 = 40''',
+    options: [r'''5''', r'''4''', r'''3''', r'''6''', r'''2'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 10x + 10 = 40, primero restamos 10 a ambos miembros obteniendo 10x = 30. Luego, dividimos entre 10 para despejar x: x = 30 / 10 = 3. Por lo tanto, el valor correcto de la incógnita es 3.''',
+    explanation:
+        r'''Para resolver la ecuación 10x + 10 = 40, primero restamos 10 a ambos miembros obteniendo 10x = 30. Luego, dividimos entre 10 para despejar x: x = 30 / 10 = 3. Por lo tanto, el valor correcto de la incógnita es 3.''',
   ),
   Question(
     id: 'mat_q56',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 19 = 84''',
-    options: [
-      r'''13''',
-      r'''15''',
-      r'''14''',
-      r'''16''',
-      r'''12''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 19 = 84''',
+    options: [r'''13''', r'''15''', r'''14''', r'''16''', r'''12'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 5x + 19 = 84, primero restamos 19 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 19 = 84, primero restamos 19 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q57',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 25 = 53''',
-    options: [
-      r'''14''',
-      r'''13''',
-      r'''17''',
-      r'''16''',
-      r'''15''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 25 = 53''',
+    options: [r'''14''', r'''13''', r'''17''', r'''16''', r'''15'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 2x + 25 = 53, primero restamos 25 a ambos miembros obteniendo 2x = 28. Luego, dividimos entre 2 para despejar x: x = 28 / 2 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 25 = 53, primero restamos 25 a ambos miembros obteniendo 2x = 28. Luego, dividimos entre 2 para despejar x: x = 28 / 2 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
   ),
   Question(
     id: 'mat_q58',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 17 = 167''',
-    options: [
-      r'''14''',
-      r'''15''',
-      r'''16''',
-      r'''17''',
-      r'''18''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 17 = 167''',
+    options: [r'''14''', r'''15''', r'''16''', r'''17''', r'''18'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 10x + 17 = 167, primero restamos 17 a ambos miembros obteniendo 10x = 150. Luego, dividimos entre 10 para despejar x: x = 150 / 10 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
+    explanation:
+        r'''Para resolver la ecuación 10x + 17 = 167, primero restamos 17 a ambos miembros obteniendo 10x = 150. Luego, dividimos entre 10 para despejar x: x = 150 / 10 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
   ),
   Question(
     id: 'mat_q59',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 6 = 36''',
-    options: [
-      r'''9''',
-      r'''12''',
-      r'''10''',
-      r'''11''',
-      r'''13''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 6 = 36''',
+    options: [r'''9''', r'''12''', r'''10''', r'''11''', r'''13'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 3x + 6 = 36, primero restamos 6 a ambos miembros obteniendo 3x = 30. Luego, dividimos entre 3 para despejar x: x = 30 / 3 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 3x + 6 = 36, primero restamos 6 a ambos miembros obteniendo 3x = 30. Luego, dividimos entre 3 para despejar x: x = 30 / 3 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q60',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 20 = 56''',
-    options: [
-      r'''11''',
-      r'''14''',
-      r'''15''',
-      r'''13''',
-      r'''12''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 20 = 56''',
+    options: [r'''11''', r'''14''', r'''15''', r'''13''', r'''12'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 3x + 20 = 56, primero restamos 20 a ambos miembros obteniendo 3x = 36. Luego, dividimos entre 3 para despejar x: x = 36 / 3 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
+    explanation:
+        r'''Para resolver la ecuación 3x + 20 = 56, primero restamos 20 a ambos miembros obteniendo 3x = 36. Luego, dividimos entre 3 para despejar x: x = 36 / 3 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
   ),
   Question(
     id: 'mat_q61',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 20 = 76''',
-    options: [
-      r'''7''',
-      r'''8''',
-      r'''11''',
-      r'''10''',
-      r'''9''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 20 = 76''',
+    options: [r'''7''', r'''8''', r'''11''', r'''10''', r'''9'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 7x + 20 = 76, primero restamos 20 a ambos miembros obteniendo 7x = 56. Luego, dividimos entre 7 para despejar x: x = 56 / 7 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 20 = 76, primero restamos 20 a ambos miembros obteniendo 7x = 56. Luego, dividimos entre 7 para despejar x: x = 56 / 7 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
   ),
   Question(
     id: 'mat_q62',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 5 = 113''',
-    options: [
-      r'''14''',
-      r'''13''',
-      r'''11''',
-      r'''12''',
-      r'''15''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 5 = 113''',
+    options: [r'''14''', r'''13''', r'''11''', r'''12''', r'''15'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 9x + 5 = 113, primero restamos 5 a ambos miembros obteniendo 9x = 108. Luego, dividimos entre 9 para despejar x: x = 108 / 9 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 5 = 113, primero restamos 5 a ambos miembros obteniendo 9x = 108. Luego, dividimos entre 9 para despejar x: x = 108 / 9 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
   ),
   Question(
     id: 'mat_q63',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 22 = 43''',
-    options: [
-      r'''8''',
-      r'''7''',
-      r'''6''',
-      r'''9''',
-      r'''10''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 3x + 22 = 43''',
+    options: [r'''8''', r'''7''', r'''6''', r'''9''', r'''10'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 3x + 22 = 43, primero restamos 22 a ambos miembros obteniendo 3x = 21. Luego, dividimos entre 3 para despejar x: x = 21 / 3 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
+    explanation:
+        r'''Para resolver la ecuación 3x + 22 = 43, primero restamos 22 a ambos miembros obteniendo 3x = 21. Luego, dividimos entre 3 para despejar x: x = 21 / 3 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
   ),
   Question(
     id: 'mat_q64',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 5 = 41''',
-    options: [
-      r'''3''',
-      r'''7''',
-      r'''5''',
-      r'''6''',
-      r'''4''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 5 = 41''',
+    options: [r'''3''', r'''7''', r'''5''', r'''6''', r'''4'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 9x + 5 = 41, primero restamos 5 a ambos miembros obteniendo 9x = 36. Luego, dividimos entre 9 para despejar x: x = 36 / 9 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 5 = 41, primero restamos 5 a ambos miembros obteniendo 9x = 36. Luego, dividimos entre 9 para despejar x: x = 36 / 9 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q65',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 10 = 100''',
-    options: [
-      r'''8''',
-      r'''10''',
-      r'''9''',
-      r'''12''',
-      r'''11''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 10 = 100''',
+    options: [r'''8''', r'''10''', r'''9''', r'''12''', r'''11'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 10x + 10 = 100, primero restamos 10 a ambos miembros obteniendo 10x = 90. Luego, dividimos entre 10 para despejar x: x = 90 / 10 = 9. Por lo tanto, el valor correcto de la incógnita es 9.''',
+    explanation:
+        r'''Para resolver la ecuación 10x + 10 = 100, primero restamos 10 a ambos miembros obteniendo 10x = 90. Luego, dividimos entre 10 para despejar x: x = 90 / 10 = 9. Por lo tanto, el valor correcto de la incógnita es 9.''',
   ),
   Question(
     id: 'mat_q66',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 1 = 43''',
-    options: [
-      r'''8''',
-      r'''10''',
-      r'''7''',
-      r'''9''',
-      r'''6''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 1 = 43''',
+    options: [r'''8''', r'''10''', r'''7''', r'''9''', r'''6'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 6x + 1 = 43, primero restamos 1 a ambos miembros obteniendo 6x = 42. Luego, dividimos entre 6 para despejar x: x = 42 / 6 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 1 = 43, primero restamos 1 a ambos miembros obteniendo 6x = 42. Luego, dividimos entre 6 para despejar x: x = 42 / 6 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
   ),
   Question(
     id: 'mat_q67',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 15 = 80''',
-    options: [
-      r'''15''',
-      r'''13''',
-      r'''14''',
-      r'''12''',
-      r'''16''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 15 = 80''',
+    options: [r'''15''', r'''13''', r'''14''', r'''12''', r'''16'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 5x + 15 = 80, primero restamos 15 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 15 = 80, primero restamos 15 a ambos miembros obteniendo 5x = 65. Luego, dividimos entre 5 para despejar x: x = 65 / 5 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q68',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 9 = 37''',
-    options: [
-      r'''17''',
-      r'''13''',
-      r'''15''',
-      r'''16''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 9 = 37''',
+    options: [r'''17''', r'''13''', r'''15''', r'''16''', r'''14'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 2x + 9 = 37, primero restamos 9 a ambos miembros obteniendo 2x = 28. Luego, dividimos entre 2 para despejar x: x = 28 / 2 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 9 = 37, primero restamos 9 a ambos miembros obteniendo 2x = 28. Luego, dividimos entre 2 para despejar x: x = 28 / 2 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
   ),
   Question(
     id: 'mat_q69',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 6 = 118''',
-    options: [
-      r'''16''',
-      r'''15''',
-      r'''17''',
-      r'''14''',
-      r'''13''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 6 = 118''',
+    options: [r'''16''', r'''15''', r'''17''', r'''14''', r'''13'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 8x + 6 = 118, primero restamos 6 a ambos miembros obteniendo 8x = 112. Luego, dividimos entre 8 para despejar x: x = 112 / 8 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
+    explanation:
+        r'''Para resolver la ecuación 8x + 6 = 118, primero restamos 6 a ambos miembros obteniendo 8x = 112. Luego, dividimos entre 8 para despejar x: x = 112 / 8 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
   ),
   Question(
     id: 'mat_q70',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 24 = 48''',
-    options: [
-      r'''4''',
-      r'''6''',
-      r'''3''',
-      r'''7''',
-      r'''5''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 24 = 48''',
+    options: [r'''4''', r'''6''', r'''3''', r'''7''', r'''5'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 6x + 24 = 48, primero restamos 24 a ambos miembros obteniendo 6x = 24. Luego, dividimos entre 6 para despejar x: x = 24 / 6 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 24 = 48, primero restamos 24 a ambos miembros obteniendo 6x = 24. Luego, dividimos entre 6 para despejar x: x = 24 / 6 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q71',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 2 = 22''',
-    options: [
-      r'''3''',
-      r'''7''',
-      r'''6''',
-      r'''5''',
-      r'''4''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 2 = 22''',
+    options: [r'''3''', r'''7''', r'''6''', r'''5''', r'''4'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 5x + 2 = 22, primero restamos 2 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 2 = 22, primero restamos 2 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q72',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 9 = 144''',
-    options: [
-      r'''15''',
-      r'''16''',
-      r'''18''',
-      r'''17''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 9 = 144''',
+    options: [r'''15''', r'''16''', r'''18''', r'''17''', r'''14'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 9x + 9 = 144, primero restamos 9 a ambos miembros obteniendo 9x = 135. Luego, dividimos entre 9 para despejar x: x = 135 / 9 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 9 = 144, primero restamos 9 a ambos miembros obteniendo 9x = 135. Luego, dividimos entre 9 para despejar x: x = 135 / 9 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
   ),
   Question(
     id: 'mat_q73',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 7 = 77''',
-    options: [
-      r'''12''',
-      r'''11''',
-      r'''10''',
-      r'''9''',
-      r'''13''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 7 = 77''',
+    options: [r'''12''', r'''11''', r'''10''', r'''9''', r'''13'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 7x + 7 = 77, primero restamos 7 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 7 = 77, primero restamos 7 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q74',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 13 = 103''',
-    options: [
-      r'''14''',
-      r'''18''',
-      r'''17''',
-      r'''15''',
-      r'''16''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 13 = 103''',
+    options: [r'''14''', r'''18''', r'''17''', r'''15''', r'''16'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 6x + 13 = 103, primero restamos 13 a ambos miembros obteniendo 6x = 90. Luego, dividimos entre 6 para despejar x: x = 90 / 6 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 13 = 103, primero restamos 13 a ambos miembros obteniendo 6x = 90. Luego, dividimos entre 6 para despejar x: x = 90 / 6 = 15. Por lo tanto, el valor correcto de la incógnita es 15.''',
   ),
   Question(
     id: 'mat_q75',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 4x + 5 = 53''',
-    options: [
-      r'''13''',
-      r'''11''',
-      r'''15''',
-      r'''12''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 4x + 5 = 53''',
+    options: [r'''13''', r'''11''', r'''15''', r'''12''', r'''14'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 4x + 5 = 53, primero restamos 5 a ambos miembros obteniendo 4x = 48. Luego, dividimos entre 4 para despejar x: x = 48 / 4 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
+    explanation:
+        r'''Para resolver la ecuación 4x + 5 = 53, primero restamos 5 a ambos miembros obteniendo 4x = 48. Luego, dividimos entre 4 para despejar x: x = 48 / 4 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
   ),
   Question(
     id: 'mat_q76',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 13 = 125''',
-    options: [
-      r'''16''',
-      r'''17''',
-      r'''15''',
-      r'''13''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 13 = 125''',
+    options: [r'''16''', r'''17''', r'''15''', r'''13''', r'''14'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 8x + 13 = 125, primero restamos 13 a ambos miembros obteniendo 8x = 112. Luego, dividimos entre 8 para despejar x: x = 112 / 8 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
+    explanation:
+        r'''Para resolver la ecuación 8x + 13 = 125, primero restamos 13 a ambos miembros obteniendo 8x = 112. Luego, dividimos entre 8 para despejar x: x = 112 / 8 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
   ),
   Question(
     id: 'mat_q77',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 4x + 25 = 81''',
-    options: [
-      r'''16''',
-      r'''14''',
-      r'''13''',
-      r'''15''',
-      r'''17''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 4x + 25 = 81''',
+    options: [r'''16''', r'''14''', r'''13''', r'''15''', r'''17'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 4x + 25 = 81, primero restamos 25 a ambos miembros obteniendo 4x = 56. Luego, dividimos entre 4 para despejar x: x = 56 / 4 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
+    explanation:
+        r'''Para resolver la ecuación 4x + 25 = 81, primero restamos 25 a ambos miembros obteniendo 4x = 56. Luego, dividimos entre 4 para despejar x: x = 56 / 4 = 14. Por lo tanto, el valor correcto de la incógnita es 14.''',
   ),
   Question(
     id: 'mat_q78',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 22 = 36''',
-    options: [
-      r'''4''',
-      r'''3''',
-      r'''5''',
-      r'''4''',
-      r'''2''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 22 = 36''',
+    options: [r'''4''', r'''3''', r'''5''', r'''4''', r'''2'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 7x + 22 = 36, primero restamos 22 a ambos miembros obteniendo 7x = 14. Luego, dividimos entre 7 para despejar x: x = 14 / 7 = 2. Por lo tanto, el valor correcto de la incógnita es 2.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 22 = 36, primero restamos 22 a ambos miembros obteniendo 7x = 14. Luego, dividimos entre 7 para despejar x: x = 14 / 7 = 2. Por lo tanto, el valor correcto de la incógnita es 2.''',
   ),
   Question(
     id: 'mat_q79',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 15 = 35''',
-    options: [
-      r'''4''',
-      r'''5''',
-      r'''6''',
-      r'''7''',
-      r'''3''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 15 = 35''',
+    options: [r'''4''', r'''5''', r'''6''', r'''7''', r'''3'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 5x + 15 = 35, primero restamos 15 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 15 = 35, primero restamos 15 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q80',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 2 = 34''',
-    options: [
-      r'''7''',
-      r'''6''',
-      r'''5''',
-      r'''4''',
-      r'''3''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 8x + 2 = 34''',
+    options: [r'''7''', r'''6''', r'''5''', r'''4''', r'''3'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 8x + 2 = 34, primero restamos 2 a ambos miembros obteniendo 8x = 32. Luego, dividimos entre 8 para despejar x: x = 32 / 8 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 8x + 2 = 34, primero restamos 2 a ambos miembros obteniendo 8x = 32. Luego, dividimos entre 8 para despejar x: x = 32 / 8 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q81',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 21 = 47''',
-    options: [
-      r'''15''',
-      r'''14''',
-      r'''16''',
-      r'''12''',
-      r'''13''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 21 = 47''',
+    options: [r'''15''', r'''14''', r'''16''', r'''12''', r'''13'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 2x + 21 = 47, primero restamos 21 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 21 = 47, primero restamos 21 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q83',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 1 = 27''',
-    options: [
-      r'''15''',
-      r'''13''',
-      r'''16''',
-      r'''14''',
-      r'''12''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 1 = 27''',
+    options: [r'''15''', r'''13''', r'''16''', r'''14''', r'''12'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 2x + 1 = 27, primero restamos 1 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 1 = 27, primero restamos 1 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q84',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 2 = 28''',
-    options: [
-      r'''15''',
-      r'''16''',
-      r'''12''',
-      r'''13''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 2 = 28''',
+    options: [r'''15''', r'''16''', r'''12''', r'''13''', r'''14'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 2x + 2 = 28, primero restamos 2 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 2 = 28, primero restamos 2 a ambos miembros obteniendo 2x = 26. Luego, dividimos entre 2 para despejar x: x = 26 / 2 = 13. Por lo tanto, el valor correcto de la incógnita es 13.''',
   ),
   Question(
     id: 'mat_q85',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 2 = 22''',
-    options: [
-      r'''12''',
-      r'''13''',
-      r'''9''',
-      r'''10''',
-      r'''11''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 2 = 22''',
+    options: [r'''12''', r'''13''', r'''9''', r'''10''', r'''11'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 2x + 2 = 22, primero restamos 2 a ambos miembros obteniendo 2x = 20. Luego, dividimos entre 2 para despejar x: x = 20 / 2 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 2 = 22, primero restamos 2 a ambos miembros obteniendo 2x = 20. Luego, dividimos entre 2 para despejar x: x = 20 / 2 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q86',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 14 = 80''',
-    options: [
-      r'''11''',
-      r'''12''',
-      r'''14''',
-      r'''13''',
-      r'''10''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 14 = 80''',
+    options: [r'''11''', r'''12''', r'''14''', r'''13''', r'''10'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 6x + 14 = 80, primero restamos 14 a ambos miembros obteniendo 6x = 66. Luego, dividimos entre 6 para despejar x: x = 66 / 6 = 11. Por lo tanto, el valor correcto de la incógnita es 11.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 14 = 80, primero restamos 14 a ambos miembros obteniendo 6x = 66. Luego, dividimos entre 6 para despejar x: x = 66 / 6 = 11. Por lo tanto, el valor correcto de la incógnita es 11.''',
   ),
   Question(
     id: 'mat_q87',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 2 = 58''',
-    options: [
-      r'''10''',
-      r'''7''',
-      r'''8''',
-      r'''11''',
-      r'''9''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 2 = 58''',
+    options: [r'''10''', r'''7''', r'''8''', r'''11''', r'''9'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 7x + 2 = 58, primero restamos 2 a ambos miembros obteniendo 7x = 56. Luego, dividimos entre 7 para despejar x: x = 56 / 7 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 2 = 58, primero restamos 2 a ambos miembros obteniendo 7x = 56. Luego, dividimos entre 7 para despejar x: x = 56 / 7 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
   ),
   Question(
     id: 'mat_q88',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 25 = 88''',
-    options: [
-      r'''7''',
-      r'''6''',
-      r'''8''',
-      r'''9''',
-      r'''10''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 25 = 88''',
+    options: [r'''7''', r'''6''', r'''8''', r'''9''', r'''10'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 9x + 25 = 88, primero restamos 25 a ambos miembros obteniendo 9x = 63. Luego, dividimos entre 9 para despejar x: x = 63 / 9 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 25 = 88, primero restamos 25 a ambos miembros obteniendo 9x = 63. Luego, dividimos entre 9 para despejar x: x = 63 / 9 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
   ),
   Question(
     id: 'mat_q89',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 5 = 75''',
-    options: [
-      r'''10''',
-      r'''11''',
-      r'''12''',
-      r'''13''',
-      r'''9''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 7x + 5 = 75''',
+    options: [r'''10''', r'''11''', r'''12''', r'''13''', r'''9'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 7x + 5 = 75, primero restamos 5 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 7x + 5 = 75, primero restamos 5 a ambos miembros obteniendo 7x = 70. Luego, dividimos entre 7 para despejar x: x = 70 / 7 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q90',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 13 = 61''',
-    options: [
-      r'''8''',
-      r'''9''',
-      r'''7''',
-      r'''11''',
-      r'''10''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 13 = 61''',
+    options: [r'''8''', r'''9''', r'''7''', r'''11''', r'''10'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 6x + 13 = 61, primero restamos 13 a ambos miembros obteniendo 6x = 48. Luego, dividimos entre 6 para despejar x: x = 48 / 6 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 13 = 61, primero restamos 13 a ambos miembros obteniendo 6x = 48. Luego, dividimos entre 6 para despejar x: x = 48 / 6 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
   ),
   Question(
     id: 'mat_q91',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 5 = 25''',
-    options: [
-      r'''4''',
-      r'''7''',
-      r'''3''',
-      r'''6''',
-      r'''5''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 5 = 25''',
+    options: [r'''4''', r'''7''', r'''3''', r'''6''', r'''5'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 5x + 5 = 25, primero restamos 5 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 5 = 25, primero restamos 5 a ambos miembros obteniendo 5x = 20. Luego, dividimos entre 5 para despejar x: x = 20 / 5 = 4. Por lo tanto, el valor correcto de la incógnita es 4.''',
   ),
   Question(
     id: 'mat_q92',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 15 = 25''',
-    options: [
-      r'''4''',
-      r'''7''',
-      r'''6''',
-      r'''5''',
-      r'''8''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 2x + 15 = 25''',
+    options: [r'''4''', r'''7''', r'''6''', r'''5''', r'''8'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 2x + 15 = 25, primero restamos 15 a ambos miembros obteniendo 2x = 10. Luego, dividimos entre 2 para despejar x: x = 10 / 2 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
+    explanation:
+        r'''Para resolver la ecuación 2x + 15 = 25, primero restamos 15 a ambos miembros obteniendo 2x = 10. Luego, dividimos entre 2 para despejar x: x = 10 / 2 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
   ),
   Question(
     id: 'mat_q93',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 24 = 84''',
-    options: [
-      r'''9''',
-      r'''13''',
-      r'''10''',
-      r'''12''',
-      r'''11''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 24 = 84''',
+    options: [r'''9''', r'''13''', r'''10''', r'''12''', r'''11'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 6x + 24 = 84, primero restamos 24 a ambos miembros obteniendo 6x = 60. Luego, dividimos entre 6 para despejar x: x = 60 / 6 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 24 = 84, primero restamos 24 a ambos miembros obteniendo 6x = 60. Luego, dividimos entre 6 para despejar x: x = 60 / 6 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q94',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 21 = 46''',
-    options: [
-      r'''8''',
-      r'''5''',
-      r'''7''',
-      r'''6''',
-      r'''4''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 5x + 21 = 46''',
+    options: [r'''8''', r'''5''', r'''7''', r'''6''', r'''4'''],
     correctAnswer: 1,
-    explanation: r'''Para resolver la ecuación 5x + 21 = 46, primero restamos 21 a ambos miembros obteniendo 5x = 25. Luego, dividimos entre 5 para despejar x: x = 25 / 5 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
+    explanation:
+        r'''Para resolver la ecuación 5x + 21 = 46, primero restamos 21 a ambos miembros obteniendo 5x = 25. Luego, dividimos entre 5 para despejar x: x = 25 / 5 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
   ),
   Question(
     id: 'mat_q95',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 2 = 29''',
-    options: [
-      r'''2''',
-      r'''6''',
-      r'''3''',
-      r'''5''',
-      r'''4''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 2 = 29''',
+    options: [r'''2''', r'''6''', r'''3''', r'''5''', r'''4'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 9x + 2 = 29, primero restamos 2 a ambos miembros obteniendo 9x = 27. Luego, dividimos entre 9 para despejar x: x = 27 / 9 = 3. Por lo tanto, el valor correcto de la incógnita es 3.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 2 = 29, primero restamos 2 a ambos miembros obteniendo 9x = 27. Luego, dividimos entre 9 para despejar x: x = 27 / 9 = 3. Por lo tanto, el valor correcto de la incógnita es 3.''',
   ),
   Question(
     id: 'mat_q96',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 2 = 92''',
-    options: [
-      r'''11''',
-      r'''9''',
-      r'''10''',
-      r'''12''',
-      r'''13''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 2 = 92''',
+    options: [r'''11''', r'''9''', r'''10''', r'''12''', r'''13'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 9x + 2 = 92, primero restamos 2 a ambos miembros obteniendo 9x = 90. Luego, dividimos entre 9 para despejar x: x = 90 / 9 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 2 = 92, primero restamos 2 a ambos miembros obteniendo 9x = 90. Luego, dividimos entre 9 para despejar x: x = 90 / 9 = 10. Por lo tanto, el valor correcto de la incógnita es 10.''',
   ),
   Question(
     id: 'mat_q97',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 21 = 101''',
-    options: [
-      r'''8''',
-      r'''11''',
-      r'''7''',
-      r'''9''',
-      r'''10''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 10x + 21 = 101''',
+    options: [r'''8''', r'''11''', r'''7''', r'''9''', r'''10'''],
     correctAnswer: 0,
-    explanation: r'''Para resolver la ecuación 10x + 21 = 101, primero restamos 21 a ambos miembros obteniendo 10x = 80. Luego, dividimos entre 10 para despejar x: x = 80 / 10 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
+    explanation:
+        r'''Para resolver la ecuación 10x + 21 = 101, primero restamos 21 a ambos miembros obteniendo 10x = 80. Luego, dividimos entre 10 para despejar x: x = 80 / 10 = 8. Por lo tanto, el valor correcto de la incógnita es 8.''',
   ),
   Question(
     id: 'mat_q98',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 18 = 90''',
-    options: [
-      r'''11''',
-      r'''13''',
-      r'''15''',
-      r'''12''',
-      r'''14''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 6x + 18 = 90''',
+    options: [r'''11''', r'''13''', r'''15''', r'''12''', r'''14'''],
     correctAnswer: 3,
-    explanation: r'''Para resolver la ecuación 6x + 18 = 90, primero restamos 18 a ambos miembros obteniendo 6x = 72. Luego, dividimos entre 6 para despejar x: x = 72 / 6 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
+    explanation:
+        r'''Para resolver la ecuación 6x + 18 = 90, primero restamos 18 a ambos miembros obteniendo 6x = 72. Luego, dividimos entre 6 para despejar x: x = 72 / 6 = 12. Por lo tanto, el valor correcto de la incógnita es 12.''',
   ),
   Question(
     id: 'mat_q99',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 25 = 70''',
-    options: [
-      r'''8''',
-      r'''4''',
-      r'''5''',
-      r'''7''',
-      r'''6''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 25 = 70''',
+    options: [r'''8''', r'''4''', r'''5''', r'''7''', r'''6'''],
     correctAnswer: 2,
-    explanation: r'''Para resolver la ecuación 9x + 25 = 70, primero restamos 25 a ambos miembros obteniendo 9x = 45. Luego, dividimos entre 9 para despejar x: x = 45 / 9 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 25 = 70, primero restamos 25 a ambos miembros obteniendo 9x = 45. Luego, dividimos entre 9 para despejar x: x = 45 / 9 = 5. Por lo tanto, el valor correcto de la incógnita es 5.''',
   ),
   Question(
     id: 'mat_q100',
     topicId: 'mat_algebra',
-    text: r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 9 = 72''',
-    options: [
-      r'''9''',
-      r'''6''',
-      r'''8''',
-      r'''10''',
-      r'''7''',
-    ],
+    text:
+        r'''Resuelva la siguiente ecuación lineal y determine el valor de la variable x: 9x + 9 = 72''',
+    options: [r'''9''', r'''6''', r'''8''', r'''10''', r'''7'''],
     correctAnswer: 4,
-    explanation: r'''Para resolver la ecuación 9x + 9 = 72, primero restamos 9 a ambos miembros obteniendo 9x = 63. Luego, dividimos entre 9 para despejar x: x = 63 / 9 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
+    explanation:
+        r'''Para resolver la ecuación 9x + 9 = 72, primero restamos 9 a ambos miembros obteniendo 9x = 63. Luego, dividimos entre 9 para despejar x: x = 63 / 9 = 7. Por lo tanto, el valor correcto de la incógnita es 7.''',
   ),
   Question(
     id: 'mat_q101',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo, las medidas de sus ángulos internos están en proporción a 2, 3 y 4. Calcule la medida del ángulo mayor.''',
+    text:
+        r'''En un triángulo, las medidas de sus ángulos internos están en proporción a 2, 3 y 4. Calcule la medida del ángulo mayor.''',
     options: [
       r'''$40^\circ$''',
       r'''$60^\circ$''',
@@ -1360,40 +947,34 @@ final List<Question> matematicasQuestions = [
       r'''E) $20^\circ$''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C ($80^\circ$). Suma de ángulos es 180. $2k+3k+4k = 9k = 180 \Rightarrow k=20$. El mayor es $4k = 80$. El distractor E (20) es el 'Distractor de Cierre Prematuro', el valor de k.""",
+    explanation:
+        r"""La respuesta correcta es C ($80^\circ$). Suma de ángulos es 180. $2k+3k+4k = 9k = 180 \Rightarrow k=20$. El mayor es $4k = 80$. El distractor E (20) es el 'Distractor de Cierre Prematuro', el valor de k.""",
   ),
   Question(
     id: 'mat_q102',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, la hipotenusa mide $5k$ y uno de los catetos mide $3k$. Si el área del triángulo es $24u^2$, halle el valor de $k$ (considerar $k > 0$).''',
-    options: [
-      r'''1''',
-      r'''2''',
-      r'''3''',
-      r'''4''',
-      r'''E) 12''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, la hipotenusa mide $5k$ y uno de los catetos mide $3k$. Si el área del triángulo es $24u^2$, halle el valor de $k$ (considerar $k > 0$).''',
+    options: [r'''1''', r'''2''', r'''3''', r'''4''', r'''E) 12'''],
     correctAnswer: 1,
-    explanation: r'''La respuesta correcta es B (2). El otro cateto es $4k$. El área es $(3k)(4k)/2 = 6k^2 = 24 \Rightarrow k^2 = 4 \Rightarrow k=2$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume $12k^2=24$).''',
+    explanation:
+        r'''La respuesta correcta es B (2). El otro cateto es $4k$. El área es $(3k)(4k)/2 = 6k^2 = 24 \Rightarrow k^2 = 4 \Rightarrow k=2$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume $12k^2=24$).''',
   ),
   Question(
     id: 'mat_q103',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo ABC (recto en B), si $\sin(A) = \frac{4}{5}$, calcule $E = 4\tan(C) + 5\cos(A)$.''',
-    options: [
-      r'''4''',
-      r'''5''',
-      r'''6''',
-      r'''7''',
-      r'''E) 8''',
-    ],
+    text:
+        r'''En un triángulo rectángulo ABC (recto en B), si $\sin(A) = \frac{4}{5}$, calcule $E = 4\tan(C) + 5\cos(A)$.''',
+    options: [r'''4''', r'''5''', r'''6''', r'''7''', r'''E) 8'''],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es C (6). Triángulo 3-4-5. Si $\sin(A)=4/5$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. $\tan(C)=3/4$, $\cos(A)=3/5$. $E = 4(3/4) + 5(3/5) = 3 + 3 = 6$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).''',
+    explanation:
+        r'''La respuesta correcta es C (6). Triángulo 3-4-5. Si $\sin(A)=4/5$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. $\tan(C)=3/4$, $\cos(A)=3/5$. $E = 4(3/4) + 5(3/5) = 3 + 3 = 6$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).''',
   ),
   Question(
     id: 'mat_q104',
     topicId: 'mat_angulos',
-    text: r'''Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de $45^\circ$. ¿A qué distancia de la base del faro se encuentra el barco?''',
+    text:
+        r'''Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de $45^\circ$. ¿A qué distancia de la base del faro se encuentra el barco?''',
     options: [
       r'''20 m''',
       r'''40 m''',
@@ -1402,12 +983,14 @@ final List<Question> matematicasQuestions = [
       r'''E) 80 m''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C ($40\sqrt{2}$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.""",
+    explanation:
+        r"""La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C ($40\sqrt{2}$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.""",
   ),
   Question(
     id: 'mat_q105',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''100 grados''',
       r'''110 grados''',
@@ -1415,12 +998,14 @@ final List<Question> matematicasQuestions = [
       r'''80 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.''',
   ),
   Question(
     id: 'mat_q106',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''101 grados''',
       r'''91 grados''',
@@ -1428,12 +1013,14 @@ final List<Question> matematicasQuestions = [
       r'''89 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.''',
   ),
   Question(
     id: 'mat_q107',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''92 grados''',
       r'''72 grados''',
@@ -1441,12 +1028,14 @@ final List<Question> matematicasQuestions = [
       r'''98 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.''',
   ),
   Question(
     id: 'mat_q108',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''83 grados''',
       r'''63 grados''',
@@ -1454,12 +1043,14 @@ final List<Question> matematicasQuestions = [
       r'''73 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.''',
   ),
   Question(
     id: 'mat_q109',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''64 grados''',
       r'''74 grados''',
@@ -1467,12 +1058,14 @@ final List<Question> matematicasQuestions = [
       r'''116 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.''',
   ),
   Question(
     id: 'mat_q110',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''85 grados''',
       r'''75 grados''',
@@ -1480,12 +1073,14 @@ final List<Question> matematicasQuestions = [
       r'''105 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.''',
   ),
   Question(
     id: 'mat_q111',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''106 grados''',
       r'''86 grados''',
@@ -1493,12 +1088,14 @@ final List<Question> matematicasQuestions = [
       r'''84 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.''',
   ),
   Question(
     id: 'mat_q112',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''97 grados''',
       r'''77 grados''',
@@ -1506,12 +1103,14 @@ final List<Question> matematicasQuestions = [
       r'''87 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.''',
   ),
   Question(
     id: 'mat_q113',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''78 grados''',
       r'''88 grados''',
@@ -1519,12 +1118,14 @@ final List<Question> matematicasQuestions = [
       r'''102 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.''',
   ),
   Question(
     id: 'mat_q114',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''79 grados''',
       r'''69 grados''',
@@ -1532,12 +1133,14 @@ final List<Question> matematicasQuestions = [
       r'''111 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.''',
   ),
   Question(
     id: 'mat_q115',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''90 grados''',
       r'''70 grados''',
@@ -1545,12 +1148,14 @@ final List<Question> matematicasQuestions = [
       r'''100 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.''',
   ),
   Question(
     id: 'mat_q116',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''81 grados''',
       r'''61 grados''',
@@ -1558,12 +1163,14 @@ final List<Question> matematicasQuestions = [
       r'''71 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.''',
   ),
   Question(
     id: 'mat_q117',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''92 grados''',
       r'''102 grados''',
@@ -1571,12 +1178,14 @@ final List<Question> matematicasQuestions = [
       r'''88 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.''',
   ),
   Question(
     id: 'mat_q118',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''93 grados''',
       r'''83 grados''',
@@ -1584,12 +1193,14 @@ final List<Question> matematicasQuestions = [
       r'''97 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.''',
   ),
   Question(
     id: 'mat_q119',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''84 grados''',
       r'''64 grados''',
@@ -1597,12 +1208,14 @@ final List<Question> matematicasQuestions = [
       r'''106 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.''',
   ),
   Question(
     id: 'mat_q120',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''95 grados''',
       r'''75 grados''',
@@ -1610,12 +1223,14 @@ final List<Question> matematicasQuestions = [
       r'''85 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.''',
   ),
   Question(
     id: 'mat_q121',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 55 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 55 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''76 grados''',
       r'''86 grados''',
@@ -1623,12 +1238,14 @@ final List<Question> matematicasQuestions = [
       r'''104 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 49 = 76 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 49 = 76 grados.''',
   ),
   Question(
     id: 'mat_q122',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 60 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 60 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''77 grados''',
       r'''67 grados''',
@@ -1636,12 +1253,14 @@ final List<Question> matematicasQuestions = [
       r'''113 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 53 = 67 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 53 = 67 grados.''',
   ),
   Question(
     id: 'mat_q123',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 35 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 35 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''98 grados''',
       r'''78 grados''',
@@ -1649,12 +1268,14 @@ final List<Question> matematicasQuestions = [
       r'''92 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 57 = 88 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 57 = 88 grados.''',
   ),
   Question(
     id: 'mat_q124',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 40 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 40 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''89 grados''',
       r'''69 grados''',
@@ -1662,12 +1283,14 @@ final List<Question> matematicasQuestions = [
       r'''79 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 61 = 79 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 61 = 79 grados.''',
   ),
   Question(
     id: 'mat_q125',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 45 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 45 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''90 grados''',
       r'''100 grados''',
@@ -1675,12 +1298,14 @@ final List<Question> matematicasQuestions = [
       r'''90 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 45 = 90 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 45 = 90 grados.''',
   ),
   Question(
     id: 'mat_q126',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 50 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 50 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''91 grados''',
       r'''81 grados''',
@@ -1688,12 +1313,14 @@ final List<Question> matematicasQuestions = [
       r'''99 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 49 = 81 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 49 = 81 grados.''',
   ),
   Question(
     id: 'mat_q127',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 55 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 55 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''82 grados''',
       r'''62 grados''',
@@ -1701,12 +1328,14 @@ final List<Question> matematicasQuestions = [
       r'''108 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 53 = 72 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 53 = 72 grados.''',
   ),
   Question(
     id: 'mat_q128',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 60 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 60 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''73 grados''',
       r'''53 grados''',
@@ -1714,12 +1343,14 @@ final List<Question> matematicasQuestions = [
       r'''63 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 57 = 63 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 57 = 63 grados.''',
   ),
   Question(
     id: 'mat_q129',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 35 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 35 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''84 grados''',
       r'''94 grados''',
@@ -1727,12 +1358,14 @@ final List<Question> matematicasQuestions = [
       r'''96 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 61 = 84 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 61 = 84 grados.''',
   ),
   Question(
     id: 'mat_q130',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 40 grados y 45 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 40 grados y 45 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''105 grados''',
       r'''95 grados''',
@@ -1740,12 +1373,14 @@ final List<Question> matematicasQuestions = [
       r'''85 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 45 = 95 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 45 = 95 grados.''',
   ),
   Question(
     id: 'mat_q131',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 45 grados y 49 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 45 grados y 49 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''96 grados''',
       r'''76 grados''',
@@ -1753,12 +1388,14 @@ final List<Question> matematicasQuestions = [
       r'''94 grados''',
     ],
     correctAnswer: 2,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 49 = 86 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 49 = 86 grados.''',
   ),
   Question(
     id: 'mat_q132',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 50 grados y 53 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 50 grados y 53 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''87 grados''',
       r'''67 grados''',
@@ -1766,12 +1403,14 @@ final List<Question> matematicasQuestions = [
       r'''77 grados''',
     ],
     correctAnswer: 3,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 53 = 77 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 53 = 77 grados.''',
   ),
   Question(
     id: 'mat_q133',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 55 grados y 57 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 55 grados y 57 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''68 grados''',
       r'''78 grados''',
@@ -1779,12 +1418,14 @@ final List<Question> matematicasQuestions = [
       r'''112 grados''',
     ],
     correctAnswer: 0,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 57 = 68 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 57 = 68 grados.''',
   ),
   Question(
     id: 'mat_q134',
     topicId: 'mat_angulos',
-    text: r'''En un triangulo, dos angulos interiores miden 60 grados y 61 grados. Cuanto mide el tercer angulo?''',
+    text:
+        r'''En un triangulo, dos angulos interiores miden 60 grados y 61 grados. Cuanto mide el tercer angulo?''',
     options: [
       r'''69 grados''',
       r'''59 grados''',
@@ -1792,746 +1433,544 @@ final List<Question> matematicasQuestions = [
       r'''121 grados''',
     ],
     correctAnswer: 1,
-    explanation: r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 61 = 59 grados.''',
+    explanation:
+        r'''La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 61 = 59 grados.''',
   ),
   Question(
     id: 'mat_q151',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 32° y 75°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''68°''',
-      r'''73°''',
-      r'''78°''',
-      r'''107°''',
-      r'''83°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 32° y 75°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''68°''', r'''73°''', r'''78°''', r'''107°''', r'''83°'''],
     correctAnswer: 1,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 32° - 75° = 73°. El tercer ángulo mide 73°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 32° - 75° = 73°. El tercer ángulo mide 73°.''',
   ),
   Question(
     id: 'mat_q152',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 60°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''25°''',
-      r'''30°''',
-      r'''150°''',
-      r'''35°''',
-      r'''150°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 60°, determine la medida de su ángulo complementario.''',
+    options: [r'''25°''', r'''30°''', r'''150°''', r'''35°''', r'''150°'''],
     correctAnswer: 1,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 60° = 30°. Por lo tanto, el ángulo complementario mide 30°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 60° = 30°. Por lo tanto, el ángulo complementario mide 30°.''',
   ),
   Question(
     id: 'mat_q153',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 49°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''136°''',
-      r'''121°''',
-      r'''49°''',
-      r'''131°''',
-      r'''141°''',
-    ],
+    text:
+        r'''Si un ángulo mide 49°, halle la medida de su ángulo suplementario.''',
+    options: [r'''136°''', r'''121°''', r'''49°''', r'''131°''', r'''141°'''],
     correctAnswer: 3,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 49° = 131°. El ángulo suplementario mide 131°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 49° = 131°. El ángulo suplementario mide 131°.''',
   ),
   Question(
     id: 'mat_q154',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 73°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''73°''',
-      r'''12°''',
-      r'''17°''',
-      r'''163°''',
-      r'''22°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 73°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''73°''', r'''12°''', r'''17°''', r'''163°''', r'''22°'''],
     correctAnswer: 2,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 73° = 17°. El ángulo agudo mide 17°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 73° = 17°. El ángulo agudo mide 17°.''',
   ),
   Question(
     id: 'mat_q155',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 46° y 75°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''121°''',
-      r'''69°''',
-      r'''64°''',
-      r'''59°''',
-      r'''54°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 46° y 75°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''121°''', r'''69°''', r'''64°''', r'''59°''', r'''54°'''],
     correctAnswer: 3,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 46° - 75° = 59°. El tercer ángulo mide 59°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 46° - 75° = 59°. El tercer ángulo mide 59°.''',
   ),
   Question(
     id: 'mat_q156',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 59°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''149°''',
-      r'''36°''',
-      r'''149°''',
-      r'''26°''',
-      r'''31°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 59°, determine la medida de su ángulo complementario.''',
+    options: [r'''149°''', r'''36°''', r'''149°''', r'''26°''', r'''31°'''],
     correctAnswer: 4,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 59° = 31°. Por lo tanto, el ángulo complementario mide 31°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 59° = 31°. Por lo tanto, el ángulo complementario mide 31°.''',
   ),
   Question(
     id: 'mat_q157',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 71°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''109°''',
-      r'''99°''',
-      r'''114°''',
-      r'''71°''',
-      r'''119°''',
-    ],
+    text:
+        r'''Si un ángulo mide 71°, halle la medida de su ángulo suplementario.''',
+    options: [r'''109°''', r'''99°''', r'''114°''', r'''71°''', r'''119°'''],
     correctAnswer: 0,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 71° = 109°. El ángulo suplementario mide 109°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 71° = 109°. El ángulo suplementario mide 109°.''',
   ),
   Question(
     id: 'mat_q158',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 30°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''60°''',
-      r'''55°''',
-      r'''65°''',
-      r'''120°''',
-      r'''30°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 30°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''60°''', r'''55°''', r'''65°''', r'''120°''', r'''30°'''],
     correctAnswer: 0,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 30° = 60°. El ángulo agudo mide 60°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 30° = 60°. El ángulo agudo mide 60°.''',
   ),
   Question(
     id: 'mat_q159',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 71° y 75°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''146°''',
-      r'''34°''',
-      r'''44°''',
-      r'''39°''',
-      r'''29°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 71° y 75°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''146°''', r'''34°''', r'''44°''', r'''39°''', r'''29°'''],
     correctAnswer: 1,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 71° - 75° = 34°. El tercer ángulo mide 34°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 71° - 75° = 34°. El tercer ángulo mide 34°.''',
   ),
   Question(
     id: 'mat_q160',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 72°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''18°''',
-      r'''13°''',
-      r'''162°''',
-      r'''162°''',
-      r'''23°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 72°, determine la medida de su ángulo complementario.''',
+    options: [r'''18°''', r'''13°''', r'''162°''', r'''162°''', r'''23°'''],
     correctAnswer: 0,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 72° = 18°. Por lo tanto, el ángulo complementario mide 18°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 72° = 18°. Por lo tanto, el ángulo complementario mide 18°.''',
   ),
   Question(
     id: 'mat_q161',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 20°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''165°''',
-      r'''150°''',
-      r'''170°''',
-      r'''160°''',
-      r'''20°''',
-    ],
+    text:
+        r'''Si un ángulo mide 20°, halle la medida de su ángulo suplementario.''',
+    options: [r'''165°''', r'''150°''', r'''170°''', r'''160°''', r'''20°'''],
     correctAnswer: 3,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 20° = 160°. El ángulo suplementario mide 160°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 20° = 160°. El ángulo suplementario mide 160°.''',
   ),
   Question(
     id: 'mat_q162',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 53°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''53°''',
-      r'''143°''',
-      r'''42°''',
-      r'''37°''',
-      r'''32°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 53°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''53°''', r'''143°''', r'''42°''', r'''37°''', r'''32°'''],
     correctAnswer: 3,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 53° = 37°. El ángulo agudo mide 37°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 53° = 37°. El ángulo agudo mide 37°.''',
   ),
   Question(
     id: 'mat_q163',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 50° y 71°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''59°''',
-      r'''121°''',
-      r'''69°''',
-      r'''64°''',
-      r'''54°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 50° y 71°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''59°''', r'''121°''', r'''69°''', r'''64°''', r'''54°'''],
     correctAnswer: 0,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 50° - 71° = 59°. El tercer ángulo mide 59°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 50° - 71° = 59°. El tercer ángulo mide 59°.''',
   ),
   Question(
     id: 'mat_q164',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 49°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''36°''',
-      r'''46°''',
-      r'''139°''',
-      r'''139°''',
-      r'''41°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 49°, determine la medida de su ángulo complementario.''',
+    options: [r'''36°''', r'''46°''', r'''139°''', r'''139°''', r'''41°'''],
     correctAnswer: 4,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 49° = 41°. Por lo tanto, el ángulo complementario mide 41°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 49° = 41°. Por lo tanto, el ángulo complementario mide 41°.''',
   ),
   Question(
     id: 'mat_q165',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 40°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''150°''',
-      r'''130°''',
-      r'''140°''',
-      r'''40°''',
-      r'''145°''',
-    ],
+    text:
+        r'''Si un ángulo mide 40°, halle la medida de su ángulo suplementario.''',
+    options: [r'''150°''', r'''130°''', r'''140°''', r'''40°''', r'''145°'''],
     correctAnswer: 2,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 40° = 140°. El ángulo suplementario mide 140°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 40° = 140°. El ángulo suplementario mide 140°.''',
   ),
   Question(
     id: 'mat_q166',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 43°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''42°''',
-      r'''133°''',
-      r'''43°''',
-      r'''47°''',
-      r'''52°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 43°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''42°''', r'''133°''', r'''43°''', r'''47°''', r'''52°'''],
     correctAnswer: 3,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 43° = 47°. El ángulo agudo mide 47°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 43° = 47°. El ángulo agudo mide 47°.''',
   ),
   Question(
     id: 'mat_q167',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 33° y 25°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''117°''',
-      r'''122°''',
-      r'''58°''',
-      r'''132°''',
-      r'''127°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 33° y 25°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''117°''', r'''122°''', r'''58°''', r'''132°''', r'''127°'''],
     correctAnswer: 1,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 33° - 25° = 122°. El tercer ángulo mide 122°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 33° - 25° = 122°. El tercer ángulo mide 122°.''',
   ),
   Question(
     id: 'mat_q168',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 36°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''49°''',
-      r'''59°''',
-      r'''54°''',
-      r'''126°''',
-      r'''126°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 36°, determine la medida de su ángulo complementario.''',
+    options: [r'''49°''', r'''59°''', r'''54°''', r'''126°''', r'''126°'''],
     correctAnswer: 2,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 36° = 54°. Por lo tanto, el ángulo complementario mide 54°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 36° = 54°. Por lo tanto, el ángulo complementario mide 54°.''',
   ),
   Question(
     id: 'mat_q169',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 57°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''133°''',
-      r'''123°''',
-      r'''128°''',
-      r'''113°''',
-      r'''57°''',
-    ],
+    text:
+        r'''Si un ángulo mide 57°, halle la medida de su ángulo suplementario.''',
+    options: [r'''133°''', r'''123°''', r'''128°''', r'''113°''', r'''57°'''],
     correctAnswer: 1,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 57° = 123°. El ángulo suplementario mide 123°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 57° = 123°. El ángulo suplementario mide 123°.''',
   ),
   Question(
     id: 'mat_q171',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 50° y 25°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''75°''',
-      r'''105°''',
-      r'''115°''',
-      r'''100°''',
-      r'''110°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 50° y 25°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''75°''', r'''105°''', r'''115°''', r'''100°''', r'''110°'''],
     correctAnswer: 1,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 50° - 25° = 105°. El tercer ángulo mide 105°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 50° - 25° = 105°. El tercer ángulo mide 105°.''',
   ),
   Question(
     id: 'mat_q173',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 75°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''105°''',
-      r'''95°''',
-      r'''75°''',
-      r'''115°''',
-      r'''110°''',
-    ],
+    text:
+        r'''Si un ángulo mide 75°, halle la medida de su ángulo suplementario.''',
+    options: [r'''105°''', r'''95°''', r'''75°''', r'''115°''', r'''110°'''],
     correctAnswer: 0,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 75° = 105°. El ángulo suplementario mide 105°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 75° = 105°. El ángulo suplementario mide 105°.''',
   ),
   Question(
     id: 'mat_q174',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 24°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''66°''',
-      r'''114°''',
-      r'''61°''',
-      r'''71°''',
-      r'''24°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 24°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''66°''', r'''114°''', r'''61°''', r'''71°''', r'''24°'''],
     correctAnswer: 0,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 24° = 66°. El ángulo agudo mide 66°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 24° = 66°. El ángulo agudo mide 66°.''',
   ),
   Question(
     id: 'mat_q175',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 43° y 41°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''96°''',
-      r'''101°''',
-      r'''106°''',
-      r'''84°''',
-      r'''91°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 43° y 41°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''96°''', r'''101°''', r'''106°''', r'''84°''', r'''91°'''],
     correctAnswer: 0,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 43° - 41° = 96°. El tercer ángulo mide 96°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 43° - 41° = 96°. El tercer ángulo mide 96°.''',
   ),
   Question(
     id: 'mat_q176',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 52°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''33°''',
-      r'''43°''',
-      r'''38°''',
-      r'''142°''',
-      r'''142°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 52°, determine la medida de su ángulo complementario.''',
+    options: [r'''33°''', r'''43°''', r'''38°''', r'''142°''', r'''142°'''],
     correctAnswer: 2,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 52° = 38°. Por lo tanto, el ángulo complementario mide 38°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 52° = 38°. Por lo tanto, el ángulo complementario mide 38°.''',
   ),
   Question(
     id: 'mat_q177',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 24°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''24°''',
-      r'''146°''',
-      r'''161°''',
-      r'''166°''',
-      r'''156°''',
-    ],
+    text:
+        r'''Si un ángulo mide 24°, halle la medida de su ángulo suplementario.''',
+    options: [r'''24°''', r'''146°''', r'''161°''', r'''166°''', r'''156°'''],
     correctAnswer: 4,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 24° = 156°. El ángulo suplementario mide 156°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 24° = 156°. El ángulo suplementario mide 156°.''',
   ),
   Question(
     id: 'mat_q178',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 56°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''146°''',
-      r'''56°''',
-      r'''39°''',
-      r'''29°''',
-      r'''34°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 56°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''146°''', r'''56°''', r'''39°''', r'''29°''', r'''34°'''],
     correctAnswer: 4,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 56° = 34°. El ángulo agudo mide 34°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 56° = 34°. El ángulo agudo mide 34°.''',
   ),
   Question(
     id: 'mat_q179',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 36° y 35°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''119°''',
-      r'''71°''',
-      r'''104°''',
-      r'''114°''',
-      r'''109°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 36° y 35°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''119°''', r'''71°''', r'''104°''', r'''114°''', r'''109°'''],
     correctAnswer: 4,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 36° - 35° = 109°. El tercer ángulo mide 109°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 36° - 35° = 109°. El tercer ángulo mide 109°.''',
   ),
   Question(
     id: 'mat_q181',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 35°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''150°''',
-      r'''145°''',
-      r'''135°''',
-      r'''155°''',
-      r'''35°''',
-    ],
+    text:
+        r'''Si un ángulo mide 35°, halle la medida de su ángulo suplementario.''',
+    options: [r'''150°''', r'''145°''', r'''135°''', r'''155°''', r'''35°'''],
     correctAnswer: 1,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 35° = 145°. El ángulo suplementario mide 145°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 35° = 145°. El ángulo suplementario mide 145°.''',
   ),
   Question(
     id: 'mat_q182',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 34°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''61°''',
-      r'''56°''',
-      r'''34°''',
-      r'''124°''',
-      r'''51°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 34°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''61°''', r'''56°''', r'''34°''', r'''124°''', r'''51°'''],
     correctAnswer: 1,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 34° = 56°. El ángulo agudo mide 56°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 34° = 56°. El ángulo agudo mide 56°.''',
   ),
   Question(
     id: 'mat_q183',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 56° y 73°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''46°''',
-      r'''56°''',
-      r'''61°''',
-      r'''129°''',
-      r'''51°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 56° y 73°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''46°''', r'''56°''', r'''61°''', r'''129°''', r'''51°'''],
     correctAnswer: 4,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 56° - 73° = 51°. El tercer ángulo mide 51°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 56° - 73° = 51°. El tercer ángulo mide 51°.''',
   ),
   Question(
     id: 'mat_q184',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 47°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''137°''',
-      r'''43°''',
-      r'''38°''',
-      r'''48°''',
-      r'''137°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 47°, determine la medida de su ángulo complementario.''',
+    options: [r'''137°''', r'''43°''', r'''38°''', r'''48°''', r'''137°'''],
     correctAnswer: 1,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 47° = 43°. Por lo tanto, el ángulo complementario mide 43°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 47° = 43°. Por lo tanto, el ángulo complementario mide 43°.''',
   ),
   Question(
     id: 'mat_q185',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 66°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''104°''',
-      r'''119°''',
-      r'''66°''',
-      r'''124°''',
-      r'''114°''',
-    ],
+    text:
+        r'''Si un ángulo mide 66°, halle la medida de su ángulo suplementario.''',
+    options: [r'''104°''', r'''119°''', r'''66°''', r'''124°''', r'''114°'''],
     correctAnswer: 4,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 66° = 114°. El ángulo suplementario mide 114°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 66° = 114°. El ángulo suplementario mide 114°.''',
   ),
   Question(
     id: 'mat_q186',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 49°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''36°''',
-      r'''139°''',
-      r'''41°''',
-      r'''49°''',
-      r'''46°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 49°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''36°''', r'''139°''', r'''41°''', r'''49°''', r'''46°'''],
     correctAnswer: 2,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 49° = 41°. El ángulo agudo mide 41°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 49° = 41°. El ángulo agudo mide 41°.''',
   ),
   Question(
     id: 'mat_q187',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 63° y 66°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''129°''',
-      r'''46°''',
-      r'''56°''',
-      r'''51°''',
-      r'''61°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 63° y 66°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''129°''', r'''46°''', r'''56°''', r'''51°''', r'''61°'''],
     correctAnswer: 3,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 63° - 66° = 51°. El tercer ángulo mide 51°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 63° - 66° = 51°. El tercer ángulo mide 51°.''',
   ),
   Question(
     id: 'mat_q188',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 53°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''37°''',
-      r'''143°''',
-      r'''143°''',
-      r'''42°''',
-      r'''32°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 53°, determine la medida de su ángulo complementario.''',
+    options: [r'''37°''', r'''143°''', r'''143°''', r'''42°''', r'''32°'''],
     correctAnswer: 0,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 53° = 37°. Por lo tanto, el ángulo complementario mide 37°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 53° = 37°. Por lo tanto, el ángulo complementario mide 37°.''',
   ),
   Question(
     id: 'mat_q190',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 65°. ¿Cuánto mide el otro ángulo agudo?''',
-    options: [
-      r'''20°''',
-      r'''25°''',
-      r'''30°''',
-      r'''155°''',
-      r'''65°''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, uno de sus ángulos agudos mide 65°. ¿Cuánto mide el otro ángulo agudo?''',
+    options: [r'''20°''', r'''25°''', r'''30°''', r'''155°''', r'''65°'''],
     correctAnswer: 1,
-    explanation: r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 65° = 25°. El ángulo agudo mide 25°.''',
+    explanation:
+        r'''En un triángulo rectángulo, la suma de los ángulos agudos es siempre 90°, ya que el tercer ángulo es recto (90°). Así, restando de 90°: 90° - 65° = 25°. El ángulo agudo mide 25°.''',
   ),
   Question(
     id: 'mat_q191',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 56° y 57°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''67°''',
-      r'''113°''',
-      r'''62°''',
-      r'''77°''',
-      r'''72°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 56° y 57°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''67°''', r'''113°''', r'''62°''', r'''77°''', r'''72°'''],
     correctAnswer: 0,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 56° - 57° = 67°. El tercer ángulo mide 67°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 56° - 57° = 67°. El tercer ángulo mide 67°.''',
   ),
   Question(
     id: 'mat_q193',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 29°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''161°''',
-      r'''156°''',
-      r'''151°''',
-      r'''29°''',
-      r'''141°''',
-    ],
+    text:
+        r'''Si un ángulo mide 29°, halle la medida de su ángulo suplementario.''',
+    options: [r'''161°''', r'''156°''', r'''151°''', r'''29°''', r'''141°'''],
     correctAnswer: 2,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 29° = 151°. El ángulo suplementario mide 151°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 29° = 151°. El ángulo suplementario mide 151°.''',
   ),
   Question(
     id: 'mat_q195',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 67° y 71°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''138°''',
-      r'''52°''',
-      r'''47°''',
-      r'''42°''',
-      r'''37°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 67° y 71°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''138°''', r'''52°''', r'''47°''', r'''42°''', r'''37°'''],
     correctAnswer: 3,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 67° - 71° = 42°. El tercer ángulo mide 42°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 67° - 71° = 42°. El tercer ángulo mide 42°.''',
   ),
   Question(
     id: 'mat_q196',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 75°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''20°''',
-      r'''165°''',
-      r'''10°''',
-      r'''165°''',
-      r'''15°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 75°, determine la medida de su ángulo complementario.''',
+    options: [r'''20°''', r'''165°''', r'''10°''', r'''165°''', r'''15°'''],
     correctAnswer: 4,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 75° = 15°. Por lo tanto, el ángulo complementario mide 15°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 75° = 15°. Por lo tanto, el ángulo complementario mide 15°.''',
   ),
   Question(
     id: 'mat_q197',
     topicId: 'mat_angulos',
-    text: r'''Si un ángulo mide 26°, halle la medida de su ángulo suplementario.''',
-    options: [
-      r'''159°''',
-      r'''26°''',
-      r'''154°''',
-      r'''144°''',
-      r'''164°''',
-    ],
+    text:
+        r'''Si un ángulo mide 26°, halle la medida de su ángulo suplementario.''',
+    options: [r'''159°''', r'''26°''', r'''154°''', r'''144°''', r'''164°'''],
     correctAnswer: 2,
-    explanation: r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 26° = 154°. El ángulo suplementario mide 154°.''',
+    explanation:
+        r'''Dos ángulos son suplementarios si la suma de sus medidas es igual a 180°. Restando el ángulo dado de 180°: 180° - 26° = 154°. El ángulo suplementario mide 154°.''',
   ),
   Question(
     id: 'mat_q199',
     topicId: 'mat_angulos',
-    text: r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 55° y 71°. Halle el valor de la medida del tercer ángulo.''',
-    options: [
-      r'''59°''',
-      r'''126°''',
-      r'''49°''',
-      r'''64°''',
-      r'''54°''',
-    ],
+    text:
+        r'''En un triángulo plano, las medidas de dos de sus ángulos internos son 55° y 71°. Halle el valor de la medida del tercer ángulo.''',
+    options: [r'''59°''', r'''126°''', r'''49°''', r'''64°''', r'''54°'''],
     correctAnswer: 4,
-    explanation: r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 55° - 71° = 54°. El tercer ángulo mide 54°.''',
+    explanation:
+        r'''En todo triángulo euclidiano, la suma de las medidas de los tres ángulos internos es siempre igual a 180°. Por tanto, restamos los ángulos conocidos: 180° - 55° - 71° = 54°. El tercer ángulo mide 54°.''',
   ),
   Question(
     id: 'mat_q200',
     topicId: 'mat_angulos',
-    text: r'''Si se tiene un ángulo que mide 39°, determine la medida de su ángulo complementario.''',
-    options: [
-      r'''51°''',
-      r'''129°''',
-      r'''56°''',
-      r'''46°''',
-      r'''129°''',
-    ],
+    text:
+        r'''Si se tiene un ángulo que mide 39°, determine la medida de su ángulo complementario.''',
+    options: [r'''51°''', r'''129°''', r'''56°''', r'''46°''', r'''129°'''],
     correctAnswer: 0,
-    explanation: r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 39° = 51°. Por lo tanto, el ángulo complementario mide 51°.''',
+    explanation:
+        r'''Dos ángulos son complementarios si la suma de sus medidas es igual a 90°. Restando el ángulo dado de 90°: 90° - 39° = 51°. Por lo tanto, el ángulo complementario mide 51°.''',
   ),
   Question(
     id: 'mat_q205',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.''',
-    options: [
-      r'''5 cm''',
-      r'''6 cm''',
-      r'''3 cm''',
-      r'''7 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.''',
+    options: [r'''5 cm''', r'''6 cm''', r'''3 cm''', r'''7 cm'''],
     correctAnswer: 0,
-    explanation: r'''Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.''',
   ),
   Question(
     id: 'mat_q206',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.''',
-    options: [
-      r'''14 cm''',
-      r'''13 cm''',
-      r'''11 cm''',
-      r'''17 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.''',
+    options: [r'''14 cm''', r'''13 cm''', r'''11 cm''', r'''17 cm'''],
     correctAnswer: 1,
-    explanation: r'''Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.''',
   ),
   Question(
     id: 'mat_q207',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.''',
-    options: [
-      r'''11 cm''',
-      r'''8 cm''',
-      r'''10 cm''',
-      r'''14 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.''',
+    options: [r'''11 cm''', r'''8 cm''', r'''10 cm''', r'''14 cm'''],
     correctAnswer: 2,
-    explanation: r'''Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.''',
   ),
   Question(
     id: 'mat_q208',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.''',
-    options: [
-      r'''26 cm''',
-      r'''23 cm''',
-      r'''31 cm''',
-      r'''25 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.''',
+    options: [r'''26 cm''', r'''23 cm''', r'''31 cm''', r'''25 cm'''],
     correctAnswer: 3,
-    explanation: r'''Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.''',
   ),
   Question(
     id: 'mat_q209',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.''',
-    options: [
-      r'''17 cm''',
-      r'''18 cm''',
-      r'''15 cm''',
-      r'''23 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.''',
+    options: [r'''17 cm''', r'''18 cm''', r'''15 cm''', r'''23 cm'''],
     correctAnswer: 0,
-    explanation: r'''Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.''',
   ),
   Question(
     id: 'mat_q210',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.''',
-    options: [
-      r'''16 cm''',
-      r'''15 cm''',
-      r'''13 cm''',
-      r'''21 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.''',
+    options: [r'''16 cm''', r'''15 cm''', r'''13 cm''', r'''21 cm'''],
     correctAnswer: 1,
-    explanation: r'''Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.''',
   ),
   Question(
     id: 'mat_q211',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.''',
-    options: [
-      r'''27 cm''',
-      r'''24 cm''',
-      r'''26 cm''',
-      r'''34 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.''',
+    options: [r'''27 cm''', r'''24 cm''', r'''26 cm''', r'''34 cm'''],
     correctAnswer: 2,
-    explanation: r'''Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.''',
   ),
   Question(
     id: 'mat_q212',
     topicId: 'mat_pitagoras',
-    text: r'''Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.''',
-    options: [
-      r'''21 cm''',
-      r'''18 cm''',
-      r'''28 cm''',
-      r'''20 cm''',
-    ],
+    text:
+        r'''Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.''',
+    options: [r'''21 cm''', r'''18 cm''', r'''28 cm''', r'''20 cm'''],
     correctAnswer: 3,
-    explanation: r'''Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.''',
+    explanation:
+        r'''Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.''',
   ),
   Question(
     id: 'mat_q251',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 3 cm y 4 cm respectivamente. Calcule la longitud de su hipotenusa.''',
-    options: [
-      r'''7 cm''',
-      r'''5 cm''',
-      r'''6 cm''',
-      r'''7 cm''',
-      r'''4 cm''',
-    ],
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 3 cm y 4 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    options: [r'''7 cm''', r'''5 cm''', r'''6 cm''', r'''7 cm''', r'''4 cm'''],
     correctAnswer: 1,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 3² + 4² = 9 + 16 = 25. La raíz cuadrada de 25 es 5 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 3² + 4² = 9 + 16 = 25. La raíz cuadrada de 25 es 5 cm.''',
   ),
   Question(
     id: 'mat_q252',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 13 m y uno de sus catetos mide 5 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''11 m''',
-      r'''8 m''',
-      r'''13 m''',
-      r'''12 m''',
-      r'''14 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 13 m y uno de sus catetos mide 5 m. Calcule la longitud del otro cateto.''',
+    options: [r'''11 m''', r'''8 m''', r'''13 m''', r'''12 m''', r'''14 m'''],
     correctAnswer: 3,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 13² - 5² = 169 - 25 = 144. La raíz de 144 es 12 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 13² - 5² = 169 - 25 = 144. La raíz de 144 es 12 m.''',
   ),
   Question(
     id: 'mat_q253',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 8 cm y 15 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 8 cm y 15 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''19 cm''',
       r'''16 cm''',
@@ -2540,26 +1979,24 @@ final List<Question> matematicasQuestions = [
       r'''18 cm''',
     ],
     correctAnswer: 2,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 8² + 15² = 64 + 225 = 289. La raíz cuadrada de 289 es 17 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 8² + 15² = 64 + 225 = 289. La raíz cuadrada de 289 es 17 cm.''',
   ),
   Question(
     id: 'mat_q254',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 25 m y uno de sus catetos mide 7 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''24 m''',
-      r'''25 m''',
-      r'''26 m''',
-      r'''23 m''',
-      r'''18 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 25 m y uno de sus catetos mide 7 m. Calcule la longitud del otro cateto.''',
+    options: [r'''24 m''', r'''25 m''', r'''26 m''', r'''23 m''', r'''18 m'''],
     correctAnswer: 0,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 25² - 7² = 625 - 49 = 576. La raíz de 576 es 24 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 25² - 7² = 625 - 49 = 576. La raíz de 576 es 24 m.''',
   ),
   Question(
     id: 'mat_q255',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 20 cm y 21 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 20 cm y 21 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''29 cm''',
       r'''28 cm''',
@@ -2568,26 +2005,24 @@ final List<Question> matematicasQuestions = [
       r'''41 cm''',
     ],
     correctAnswer: 0,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 20² + 21² = 400 + 441 = 841. La raíz cuadrada de 841 es 29 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 20² + 21² = 400 + 441 = 841. La raíz cuadrada de 841 es 29 cm.''',
   ),
   Question(
     id: 'mat_q256',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 37 m y uno de sus catetos mide 12 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''34 m''',
-      r'''37 m''',
-      r'''35 m''',
-      r'''36 m''',
-      r'''25 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 37 m y uno de sus catetos mide 12 m. Calcule la longitud del otro cateto.''',
+    options: [r'''34 m''', r'''37 m''', r'''35 m''', r'''36 m''', r'''25 m'''],
     correctAnswer: 2,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 37² - 12² = 1369 - 144 = 1225. La raíz de 1225 es 35 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 37² - 12² = 1369 - 144 = 1225. La raíz de 1225 es 35 m.''',
   ),
   Question(
     id: 'mat_q257',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 6 cm y 8 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 6 cm y 8 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''12 cm''',
       r'''10 cm''',
@@ -2596,26 +2031,24 @@ final List<Question> matematicasQuestions = [
       r'''9 cm''',
     ],
     correctAnswer: 1,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 6² + 8² = 36 + 64 = 100. La raíz cuadrada de 100 es 10 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 6² + 8² = 36 + 64 = 100. La raíz cuadrada de 100 es 10 cm.''',
   ),
   Question(
     id: 'mat_q258',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 26 m y uno de sus catetos mide 10 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''25 m''',
-      r'''23 m''',
-      r'''16 m''',
-      r'''26 m''',
-      r'''24 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 26 m y uno de sus catetos mide 10 m. Calcule la longitud del otro cateto.''',
+    options: [r'''25 m''', r'''23 m''', r'''16 m''', r'''26 m''', r'''24 m'''],
     correctAnswer: 4,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 26² - 10² = 676 - 100 = 576. La raíz de 576 es 24 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 26² - 10² = 676 - 100 = 576. La raíz de 576 es 24 m.''',
   ),
   Question(
     id: 'mat_q259',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 16 cm y 30 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 16 cm y 30 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''33 cm''',
       r'''35 cm''',
@@ -2624,26 +2057,24 @@ final List<Question> matematicasQuestions = [
       r'''46 cm''',
     ],
     correctAnswer: 2,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 16² + 30² = 256 + 900 = 1156. La raíz cuadrada de 1156 es 34 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 16² + 30² = 256 + 900 = 1156. La raíz cuadrada de 1156 es 34 cm.''',
   ),
   Question(
     id: 'mat_q260',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 50 m y uno de sus catetos mide 14 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''36 m''',
-      r'''50 m''',
-      r'''49 m''',
-      r'''48 m''',
-      r'''47 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 50 m y uno de sus catetos mide 14 m. Calcule la longitud del otro cateto.''',
+    options: [r'''36 m''', r'''50 m''', r'''49 m''', r'''48 m''', r'''47 m'''],
     correctAnswer: 3,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 50² - 14² = 2500 - 196 = 2304. La raíz de 2304 es 48 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 50² - 14² = 2500 - 196 = 2304. La raíz de 2304 es 48 m.''',
   ),
   Question(
     id: 'mat_q261',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 40 cm y 42 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 40 cm y 42 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''58 cm''',
       r'''60 cm''',
@@ -2652,26 +2083,24 @@ final List<Question> matematicasQuestions = [
       r'''59 cm''',
     ],
     correctAnswer: 0,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 40² + 42² = 1600 + 1764 = 3364. La raíz cuadrada de 3364 es 58 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 40² + 42² = 1600 + 1764 = 3364. La raíz cuadrada de 3364 es 58 cm.''',
   ),
   Question(
     id: 'mat_q262',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 74 m y uno de sus catetos mide 24 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''71 m''',
-      r'''72 m''',
-      r'''69 m''',
-      r'''50 m''',
-      r'''70 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 74 m y uno de sus catetos mide 24 m. Calcule la longitud del otro cateto.''',
+    options: [r'''71 m''', r'''72 m''', r'''69 m''', r'''50 m''', r'''70 m'''],
     correctAnswer: 4,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 74² - 24² = 5476 - 576 = 4900. La raíz de 4900 es 70 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 74² - 24² = 5476 - 576 = 4900. La raíz de 4900 es 70 m.''',
   ),
   Question(
     id: 'mat_q263',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 9 cm y 12 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 9 cm y 12 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''15 cm''',
       r'''21 cm''',
@@ -2680,26 +2109,24 @@ final List<Question> matematicasQuestions = [
       r'''17 cm''',
     ],
     correctAnswer: 0,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 9² + 12² = 81 + 144 = 225. La raíz cuadrada de 225 es 15 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 9² + 12² = 81 + 144 = 225. La raíz cuadrada de 225 es 15 cm.''',
   ),
   Question(
     id: 'mat_q264',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 39 m y uno de sus catetos mide 15 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''36 m''',
-      r'''37 m''',
-      r'''35 m''',
-      r'''24 m''',
-      r'''38 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 39 m y uno de sus catetos mide 15 m. Calcule la longitud del otro cateto.''',
+    options: [r'''36 m''', r'''37 m''', r'''35 m''', r'''24 m''', r'''38 m'''],
     correctAnswer: 0,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 39² - 15² = 1521 - 225 = 1296. La raíz de 1296 es 36 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 39² - 15² = 1521 - 225 = 1296. La raíz de 1296 es 36 m.''',
   ),
   Question(
     id: 'mat_q265',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 24 cm y 45 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 24 cm y 45 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''52 cm''',
       r'''50 cm''',
@@ -2708,26 +2135,24 @@ final List<Question> matematicasQuestions = [
       r'''53 cm''',
     ],
     correctAnswer: 2,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 24² + 45² = 576 + 2025 = 2601. La raíz cuadrada de 2601 es 51 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 24² + 45² = 576 + 2025 = 2601. La raíz cuadrada de 2601 es 51 cm.''',
   ),
   Question(
     id: 'mat_q266',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 75 m y uno de sus catetos mide 21 m. Calcule la longitud del otro cateto.''',
-    options: [
-      r'''71 m''',
-      r'''73 m''',
-      r'''74 m''',
-      r'''54 m''',
-      r'''72 m''',
-    ],
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 75 m y uno de sus catetos mide 21 m. Calcule la longitud del otro cateto.''',
+    options: [r'''71 m''', r'''73 m''', r'''74 m''', r'''54 m''', r'''72 m'''],
     correctAnswer: 4,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 75² - 21² = 5625 - 441 = 5184. La raíz de 5184 es 72 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 75² - 21² = 5625 - 441 = 5184. La raíz de 5184 es 72 m.''',
   ),
   Question(
     id: 'mat_q267',
     topicId: 'mat_pitagoras',
-    text: r'''En un triángulo rectángulo, las longitudes de los catetos son 60 cm y 63 cm respectivamente. Calcule la longitud de su hipotenusa.''',
+    text:
+        r'''En un triángulo rectángulo, las longitudes de los catetos son 60 cm y 63 cm respectivamente. Calcule la longitud de su hipotenusa.''',
     options: [
       r'''123 cm''',
       r'''87 cm''',
@@ -2736,12 +2161,14 @@ final List<Question> matematicasQuestions = [
       r'''86 cm''',
     ],
     correctAnswer: 1,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 60² + 63² = 3600 + 3969 = 7569. La raíz cuadrada de 7569 es 87 cm.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), el cuadrado de la hipotenusa es la suma de los cuadrados de los catetos: 60² + 63² = 3600 + 3969 = 7569. La raíz cuadrada de 7569 es 87 cm.''',
   ),
   Question(
     id: 'mat_q268',
     topicId: 'mat_pitagoras',
-    text: r'''La hipotenusa de un triángulo rectángulo mide 111 m y uno de sus catetos mide 36 m. Calcule la longitud del otro cateto.''',
+    text:
+        r'''La hipotenusa de un triángulo rectángulo mide 111 m y uno de sus catetos mide 36 m. Calcule la longitud del otro cateto.''',
     options: [
       r'''75 m''',
       r'''107 m''',
@@ -2750,116 +2177,86 @@ final List<Question> matematicasQuestions = [
       r'''106 m''',
     ],
     correctAnswer: 3,
-    explanation: r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 111² - 36² = 12321 - 1296 = 11025. La raíz de 11025 es 105 m.''',
+    explanation:
+        r'''Por el Teorema de Pitágoras (a² + b² = c²), despejando el cateto desconocido: b² = c² - a². Reemplazando: 111² - 36² = 12321 - 1296 = 11025. La raíz de 11025 es 105 m.''',
   ),
   Question(
     id: 'mat_q302',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de sen 30 grados.''',
-    options: [
-      r'''1/2''',
-      r'''raiz(3)/2''',
-      r'''1''',
-      r'''raiz(2)/2''',
-    ],
+    options: [r'''1/2''', r'''raiz(3)/2''', r'''1''', r'''raiz(2)/2'''],
     correctAnswer: 0,
-    explanation: r'''Sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q303',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de cos 60 grados.''',
-    options: [
-      r'''raiz(3)/2''',
-      r'''1/2''',
-      r'''0''',
-      r'''raiz(2)/2''',
-    ],
+    options: [r'''raiz(3)/2''', r'''1/2''', r'''0''', r'''raiz(2)/2'''],
     correctAnswer: 1,
-    explanation: r'''Cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q304',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de tan 45 grados.''',
-    options: [
-      r'''1/2''',
-      r'''raiz(3)''',
-      r'''1''',
-      r'''0''',
-    ],
+    options: [r'''1/2''', r'''raiz(3)''', r'''1''', r'''0'''],
     correctAnswer: 2,
-    explanation: r'''Tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q305',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de sen 90 grados.''',
-    options: [
-      r'''0''',
-      r'''1/2''',
-      r'''raiz(3)/2''',
-      r'''1''',
-    ],
+    options: [r'''0''', r'''1/2''', r'''raiz(3)/2''', r'''1'''],
     correctAnswer: 3,
-    explanation: r'''Sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q306',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de cos 0 grados.''',
-    options: [
-      r'''1''',
-      r'''0''',
-      r'''1/2''',
-      r'''raiz(2)/2''',
-    ],
+    options: [r'''1''', r'''0''', r'''1/2''', r'''raiz(2)/2'''],
     correctAnswer: 0,
-    explanation: r'''Cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q307',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de tan 30 grados.''',
-    options: [
-      r'''raiz(3)''',
-      r'''raiz(3)/3''',
-      r'''1''',
-      r'''1/2''',
-    ],
+    options: [r'''raiz(3)''', r'''raiz(3)/3''', r'''1''', r'''1/2'''],
     correctAnswer: 1,
-    explanation: r'''Tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q308',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de cos 30 grados.''',
-    options: [
-      r'''1/2''',
-      r'''raiz(2)/2''',
-      r'''raiz(3)/2''',
-      r'''1''',
-    ],
+    options: [r'''1/2''', r'''raiz(2)/2''', r'''raiz(3)/2''', r'''1'''],
     correctAnswer: 2,
-    explanation: r'''Cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q309',
     topicId: 'mat_trigo',
     text: r'''Determine el valor exacto de sen 45 grados.''',
-    options: [
-      r'''1/2''',
-      r'''raiz(3)/2''',
-      r'''1''',
-      r'''raiz(2)/2''',
-    ],
+    options: [r'''1/2''', r'''raiz(3)/2''', r'''1''', r'''raiz(2)/2'''],
     correctAnswer: 3,
-    explanation: r'''Sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
+    explanation:
+        r'''Sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.''',
   ),
   Question(
     id: 'mat_q351',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(30°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(30°)''',
     options: [
       r'''√2/2''',
       r'''√3/2''',
@@ -2868,12 +2265,14 @@ final List<Question> matematicasQuestions = [
       r'''1/2''',
     ],
     correctAnswer: 4,
-    explanation: r'''El seno de 30° es un valor notable fundamental equivalente a 1/2 (o 0.5) en el triángulo de 30° y 60°.''',
+    explanation:
+        r'''El seno de 30° es un valor notable fundamental equivalente a 1/2 (o 0.5) en el triángulo de 30° y 60°.''',
   ),
   Question(
     id: 'mat_q352',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(60°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(60°)''',
     options: [
       r'''1/2''',
       r'''0''',
@@ -2882,54 +2281,44 @@ final List<Question> matematicasQuestions = [
       r'''√2/2''',
     ],
     correctAnswer: 0,
-    explanation: r'''El coseno de 60° equivale a 1/2 en el triángulo rectángulo de 30° y 60° (cateto adyacente sobre hipotenusa).''',
+    explanation:
+        r'''El coseno de 60° equivale a 1/2 en el triángulo rectángulo de 30° y 60° (cateto adyacente sobre hipotenusa).''',
   ),
   Question(
     id: 'mat_q353',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: tan(45°)''',
-    options: [
-      r'''1''',
-      r'''√3/2''',
-      r'''0''',
-      r'''indefinido''',
-      r'''√2/2''',
-    ],
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: tan(45°)''',
+    options: [r'''1''', r'''√3/2''', r'''0''', r'''indefinido''', r'''√2/2'''],
     correctAnswer: 0,
-    explanation: r'''La tangente de 45° es igual a 1, dado que los catetos de un triángulo de 45° son congruentes y opuesto/adyacente = 1/1.''',
+    explanation:
+        r'''La tangente de 45° es igual a 1, dado que los catetos de un triángulo de 45° son congruentes y opuesto/adyacente = 1/1.''',
   ),
   Question(
     id: 'mat_q354',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(90°)''',
-    options: [
-      r'''indefinido''',
-      r'''1''',
-      r'''0''',
-      r'''√2/2''',
-      r'''√3/2''',
-    ],
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(90°)''',
+    options: [r'''indefinido''', r'''1''', r'''0''', r'''√2/2''', r'''√3/2'''],
     correctAnswer: 1,
-    explanation: r'''El seno de 90° es la máxima ordenada de la circunferencia trigonométrica, equivalente a 1.''',
+    explanation:
+        r'''El seno de 90° es la máxima ordenada de la circunferencia trigonométrica, equivalente a 1.''',
   ),
   Question(
     id: 'mat_q355',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(0°)''',
-    options: [
-      r'''√3/2''',
-      r'''1''',
-      r'''0''',
-      r'''√2/2''',
-      r'''indefinido''',
-    ],
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(0°)''',
+    options: [r'''√3/2''', r'''1''', r'''0''', r'''√2/2''', r'''indefinido'''],
     correctAnswer: 1,
-    explanation: r'''El coseno de 0° representa el máximo desplazamiento en el eje de las abscisas, dando un valor de 1.''',
+    explanation:
+        r'''El coseno de 0° representa el máximo desplazamiento en el eje de las abscisas, dando un valor de 1.''',
   ),
   Question(
     id: 'mat_q356',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(37°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(37°)''',
     options: [
       r'''√3/2''',
       r'''0''',
@@ -2938,12 +2327,14 @@ final List<Question> matematicasQuestions = [
       r'''3/5''',
     ],
     correctAnswer: 4,
-    explanation: r'''El seno de 37° equivale a 3/5 (o 0.6) según el triángulo rectángulo notable de 37° y 53°.''',
+    explanation:
+        r'''El seno de 37° equivale a 3/5 (o 0.6) según el triángulo rectángulo notable de 37° y 53°.''',
   ),
   Question(
     id: 'mat_q357',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(37°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(37°)''',
     options: [
       r'''indefinido''',
       r'''√2/2''',
@@ -2952,12 +2343,14 @@ final List<Question> matematicasQuestions = [
       r'''0''',
     ],
     correctAnswer: 3,
-    explanation: r'''El coseno de 37° equivale a 4/5 (o 0.8) en el triángulo rectángulo aproximado de 37° y 53°.''',
+    explanation:
+        r'''El coseno de 37° equivale a 4/5 (o 0.8) en el triángulo rectángulo aproximado de 37° y 53°.''',
   ),
   Question(
     id: 'mat_q358',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: tan(37°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: tan(37°)''',
     options: [
       r'''indefinido''',
       r'''0''',
@@ -2966,12 +2359,14 @@ final List<Question> matematicasQuestions = [
       r'''√2/2''',
     ],
     correctAnswer: 3,
-    explanation: r'''La tangente de 37° es 3/4, calculada como el cateto opuesto (3k) entre el cateto adyacente (4k) en el triángulo aproximado.''',
+    explanation:
+        r'''La tangente de 37° es 3/4, calculada como el cateto opuesto (3k) entre el cateto adyacente (4k) en el triángulo aproximado.''',
   ),
   Question(
     id: 'mat_q359',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(53°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: sen(53°)''',
     options: [
       r'''4/5''',
       r'''√2/2''',
@@ -2980,12 +2375,14 @@ final List<Question> matematicasQuestions = [
       r'''0''',
     ],
     correctAnswer: 0,
-    explanation: r'''El seno de 53° es 4/5 en el triángulo rectángulo notable aproximado de 37° y 53°.''',
+    explanation:
+        r'''El seno de 53° es 4/5 en el triángulo rectángulo notable aproximado de 37° y 53°.''',
   ),
   Question(
     id: 'mat_q360',
     topicId: 'mat_trigo',
-    text: r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(53°)''',
+    text:
+        r'''Determine el valor exacto de la siguiente expresión trigonométrica notable: cos(53°)''',
     options: [
       r'''indefinido''',
       r'''0''',
@@ -2994,287 +2391,208 @@ final List<Question> matematicasQuestions = [
       r'''3/5''',
     ],
     correctAnswer: 4,
-    explanation: r'''El coseno de 53° es 3/5 en el triángulo aproximado de 37° y 53°.''',
+    explanation:
+        r'''El coseno de 53° es 3/5 en el triángulo aproximado de 37° y 53°.''',
   ),
   Question(
     id: 'mat_q361',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(30°)''',
-    options: [
-      r'''1''',
-      r'''5/4''',
-      r'''√3''',
-      r'''0''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(30°)''',
+    options: [r'''1''', r'''5/4''', r'''√3''', r'''0''', r'''1/2'''],
     correctAnswer: 0,
-    explanation: r'''Calculamos el valor de la función notable primero: sen(30°) = 1/2. Multiplicando por dos, obtenemos: 2 * (1/2) = 1.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: sen(30°) = 1/2. Multiplicando por dos, obtenemos: 2 * (1/2) = 1.''',
   ),
   Question(
     id: 'mat_q362',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(60°)''',
-    options: [
-      r'''√3''',
-      r'''1''',
-      r'''1/2''',
-      r'''5/4''',
-      r'''0''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(60°)''',
+    options: [r'''√3''', r'''1''', r'''1/2''', r'''5/4''', r'''0'''],
     correctAnswer: 1,
-    explanation: r'''Calculamos el valor de la función notable primero: cos(60°) = 1/2. Multiplicando por dos, obtenemos: 2 * (1/2) = 1.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: cos(60°) = 1/2. Multiplicando por dos, obtenemos: 2 * (1/2) = 1.''',
   ),
   Question(
     id: 'mat_q363',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * tan(45°)''',
-    options: [
-      r'''√3''',
-      r'''2''',
-      r'''1/2''',
-      r'''5/4''',
-      r'''0''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * tan(45°)''',
+    options: [r'''√3''', r'''2''', r'''1/2''', r'''5/4''', r'''0'''],
     correctAnswer: 1,
-    explanation: r'''Calculamos el valor de la función notable primero: tan(45°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: tan(45°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
   ),
   Question(
     id: 'mat_q364',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(90°)''',
-    options: [
-      r'''1/2''',
-      r'''√3''',
-      r'''5/4''',
-      r'''2''',
-      r'''0''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(90°)''',
+    options: [r'''1/2''', r'''√3''', r'''5/4''', r'''2''', r'''0'''],
     correctAnswer: 3,
-    explanation: r'''Calculamos el valor de la función notable primero: sen(90°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: sen(90°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
   ),
   Question(
     id: 'mat_q365',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(0°)''',
-    options: [
-      r'''0''',
-      r'''1/2''',
-      r'''√3''',
-      r'''2''',
-      r'''5/4''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(0°)''',
+    options: [r'''0''', r'''1/2''', r'''√3''', r'''2''', r'''5/4'''],
     correctAnswer: 3,
-    explanation: r'''Calculamos el valor de la función notable primero: cos(0°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: cos(0°) = 1. Multiplicando por dos, obtenemos: 2 * (1) = 2.''',
   ),
   Question(
     id: 'mat_q366',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(37°)''',
-    options: [
-      r'''0''',
-      r'''1/2''',
-      r'''5/4''',
-      r'''√3''',
-      r'''6/5''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(37°)''',
+    options: [r'''0''', r'''1/2''', r'''5/4''', r'''√3''', r'''6/5'''],
     correctAnswer: 4,
-    explanation: r'''Calculamos el valor de la función notable primero: sen(37°) = 3/5. Multiplicando por dos, obtenemos: 2 * (3/5) = 6/5.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: sen(37°) = 3/5. Multiplicando por dos, obtenemos: 2 * (3/5) = 6/5.''',
   ),
   Question(
     id: 'mat_q367',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(37°)''',
-    options: [
-      r'''5/4''',
-      r'''8/5''',
-      r'''√3''',
-      r'''0''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(37°)''',
+    options: [r'''5/4''', r'''8/5''', r'''√3''', r'''0''', r'''1/2'''],
     correctAnswer: 1,
-    explanation: r'''Calculamos el valor de la función notable primero: cos(37°) = 4/5. Multiplicando por dos, obtenemos: 2 * (4/5) = 8/5.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: cos(37°) = 4/5. Multiplicando por dos, obtenemos: 2 * (4/5) = 8/5.''',
   ),
   Question(
     id: 'mat_q368',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * tan(37°)''',
-    options: [
-      r'''3/2''',
-      r'''1/2''',
-      r'''0''',
-      r'''√3''',
-      r'''5/4''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * tan(37°)''',
+    options: [r'''3/2''', r'''1/2''', r'''0''', r'''√3''', r'''5/4'''],
     correctAnswer: 0,
-    explanation: r'''Calculamos el valor de la función notable primero: tan(37°) = 3/4. Multiplicando por dos, obtenemos: 2 * (3/4) = 3/2.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: tan(37°) = 3/4. Multiplicando por dos, obtenemos: 2 * (3/4) = 3/2.''',
   ),
   Question(
     id: 'mat_q369',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(53°)''',
-    options: [
-      r'''√3''',
-      r'''0''',
-      r'''5/4''',
-      r'''8/5''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * sen(53°)''',
+    options: [r'''√3''', r'''0''', r'''5/4''', r'''8/5''', r'''1/2'''],
     correctAnswer: 3,
-    explanation: r'''Calculamos el valor de la función notable primero: sen(53°) = 4/5. Multiplicando por dos, obtenemos: 2 * (4/5) = 8/5.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: sen(53°) = 4/5. Multiplicando por dos, obtenemos: 2 * (4/5) = 8/5.''',
   ),
   Question(
     id: 'mat_q370',
     topicId: 'mat_trigo',
-    text: r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(53°)''',
-    options: [
-      r'''6/5''',
-      r'''√3''',
-      r'''5/4''',
-      r'''0''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Si se duplica la expresión notables, calcule el valor resultante de: 2 * cos(53°)''',
+    options: [r'''6/5''', r'''√3''', r'''5/4''', r'''0''', r'''1/2'''],
     correctAnswer: 0,
-    explanation: r'''Calculamos el valor de la función notable primero: cos(53°) = 3/5. Multiplicando por dos, obtenemos: 2 * (3/5) = 6/5.''',
+    explanation:
+        r'''Calculamos el valor de la función notable primero: cos(53°) = 3/5. Multiplicando por dos, obtenemos: 2 * (3/5) = 6/5.''',
   ),
   Question(
     id: 'mat_q371',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(30°) + tan(45°)''',
-    options: [
-      r'''5/2''',
-      r'''1''',
-      r'''3/5''',
-      r'''3/2''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(30°) + tan(45°)''',
+    options: [r'''5/2''', r'''1''', r'''3/5''', r'''3/2''', r'''1/2'''],
     correctAnswer: 3,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que sen(30°) = 1/2. Sumamos ambos valores numéricos: 1/2 + 1 = 3/2.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que sen(30°) = 1/2. Sumamos ambos valores numéricos: 1/2 + 1 = 3/2.''',
   ),
   Question(
     id: 'mat_q372',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(60°) + tan(45°)''',
-    options: [
-      r'''3/2''',
-      r'''3/5''',
-      r'''5/2''',
-      r'''1/2''',
-      r'''1''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(60°) + tan(45°)''',
+    options: [r'''3/2''', r'''3/5''', r'''5/2''', r'''1/2''', r'''1'''],
     correctAnswer: 0,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que cos(60°) = 1/2. Sumamos ambos valores numéricos: 1/2 + 1 = 3/2.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que cos(60°) = 1/2. Sumamos ambos valores numéricos: 1/2 + 1 = 3/2.''',
   ),
   Question(
     id: 'mat_q373',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: tan(45°) + tan(45°)''',
-    options: [
-      r'''3/5''',
-      r'''5/2''',
-      r'''1/2''',
-      r'''2''',
-      r'''1''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: tan(45°) + tan(45°)''',
+    options: [r'''3/5''', r'''5/2''', r'''1/2''', r'''2''', r'''1'''],
     correctAnswer: 3,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que tan(45°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que tan(45°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
   ),
   Question(
     id: 'mat_q374',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(90°) + tan(45°)''',
-    options: [
-      r'''3/5''',
-      r'''2''',
-      r'''1/2''',
-      r'''1''',
-      r'''5/2''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(90°) + tan(45°)''',
+    options: [r'''3/5''', r'''2''', r'''1/2''', r'''1''', r'''5/2'''],
     correctAnswer: 1,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que sen(90°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que sen(90°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
   ),
   Question(
     id: 'mat_q375',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(0°) + tan(45°)''',
-    options: [
-      r'''5/2''',
-      r'''2''',
-      r'''1/2''',
-      r'''1''',
-      r'''3/5''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(0°) + tan(45°)''',
+    options: [r'''5/2''', r'''2''', r'''1/2''', r'''1''', r'''3/5'''],
     correctAnswer: 1,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que cos(0°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que cos(0°) = 1. Sumamos ambos valores numéricos: 1 + 1 = 2.''',
   ),
   Question(
     id: 'mat_q376',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(37°) + tan(45°)''',
-    options: [
-      r'''3/5''',
-      r'''5/2''',
-      r'''8/5''',
-      r'''1/2''',
-      r'''1''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(37°) + tan(45°)''',
+    options: [r'''3/5''', r'''5/2''', r'''8/5''', r'''1/2''', r'''1'''],
     correctAnswer: 2,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que sen(37°) = 3/5. Sumamos ambos valores numéricos: 3/5 + 1 = 8/5.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que sen(37°) = 3/5. Sumamos ambos valores numéricos: 3/5 + 1 = 8/5.''',
   ),
   Question(
     id: 'mat_q377',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(37°) + tan(45°)''',
-    options: [
-      r'''5/2''',
-      r'''1/2''',
-      r'''1''',
-      r'''9/5''',
-      r'''3/5''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(37°) + tan(45°)''',
+    options: [r'''5/2''', r'''1/2''', r'''1''', r'''9/5''', r'''3/5'''],
     correctAnswer: 3,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que cos(37°) = 4/5. Sumamos ambos valores numéricos: 4/5 + 1 = 9/5.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que cos(37°) = 4/5. Sumamos ambos valores numéricos: 4/5 + 1 = 9/5.''',
   ),
   Question(
     id: 'mat_q378',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: tan(37°) + tan(45°)''',
-    options: [
-      r'''1/2''',
-      r'''5/2''',
-      r'''3/5''',
-      r'''1''',
-      r'''7/4''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: tan(37°) + tan(45°)''',
+    options: [r'''1/2''', r'''5/2''', r'''3/5''', r'''1''', r'''7/4'''],
     correctAnswer: 4,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que tan(37°) = 3/4. Sumamos ambos valores numéricos: 3/4 + 1 = 7/4.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que tan(37°) = 3/4. Sumamos ambos valores numéricos: 3/4 + 1 = 7/4.''',
   ),
   Question(
     id: 'mat_q379',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(53°) + tan(45°)''',
-    options: [
-      r'''1''',
-      r'''9/5''',
-      r'''3/5''',
-      r'''1/2''',
-      r'''5/2''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: sen(53°) + tan(45°)''',
+    options: [r'''1''', r'''9/5''', r'''3/5''', r'''1/2''', r'''5/2'''],
     correctAnswer: 1,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que sen(53°) = 4/5. Sumamos ambos valores numéricos: 4/5 + 1 = 9/5.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que sen(53°) = 4/5. Sumamos ambos valores numéricos: 4/5 + 1 = 9/5.''',
   ),
   Question(
     id: 'mat_q380',
     topicId: 'mat_trigo',
-    text: r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(53°) + tan(45°)''',
-    options: [
-      r'''1''',
-      r'''5/2''',
-      r'''3/5''',
-      r'''8/5''',
-      r'''1/2''',
-    ],
+    text:
+        r'''Calcule el resultado de sumar las siguientes razones notables en un solo término: cos(53°) + tan(45°)''',
+    options: [r'''1''', r'''5/2''', r'''3/5''', r'''8/5''', r'''1/2'''],
     correctAnswer: 3,
-    explanation: r'''Sabiendo que tan(45°) = 1, y que cos(53°) = 3/5. Sumamos ambos valores numéricos: 3/5 + 1 = 8/5.''',
+    explanation:
+        r'''Sabiendo que tan(45°) = 1, y que cos(53°) = 3/5. Sumamos ambos valores numéricos: 3/5 + 1 = 8/5.''',
   ),
   Question(
     id: 'mat_q381',
@@ -3283,29 +2601,20 @@ final List<Question> matematicasQuestions = [
 $2x + 3y = 12$
 $x - y = 1$
 Determine el valor de $x + y$.''',
-    options: [
-      r'''3''',
-      r'''5''',
-      r'''2''',
-      r'''4''',
-      r'''6''',
-    ],
+    options: [r'''3''', r'''5''', r'''2''', r'''4''', r'''6'''],
     correctAnswer: 1,
-    explanation: r'''De la segunda ecuacin tenemos $x = y + 1$. Sustituyendo en la primera: $2(y+1) + 3y = 12 \Rightarrow 2y + 2 + 3y = 12 \Rightarrow 5y = 10 \Rightarrow y = 2$. Luego $x = 3$. Por lo tanto $x+y = 5$.''',
+    explanation:
+        r'''De la segunda ecuacin tenemos $x = y + 1$. Sustituyendo en la primera: $2(y+1) + 3y = 12 \Rightarrow 2y + 2 + 3y = 12 \Rightarrow 5y = 10 \Rightarrow y = 2$. Luego $x = 3$. Por lo tanto $x+y = 5$.''',
   ),
   Question(
     id: 'mat_q382',
     topicId: 'mat_algebra',
-    text: r'''Halle el valor de $M$ si: $M = \sqrt{a^2 + b^2 + 2ab}$ donde $a=4$ y $b=3$.''',
-    options: [
-      r'''5''',
-      r'''7''',
-      r'''12''',
-      r'''25''',
-      r'''49''',
-    ],
+    text:
+        r'''Halle el valor de $M$ si: $M = \sqrt{a^2 + b^2 + 2ab}$ donde $a=4$ y $b=3$.''',
+    options: [r'''5''', r'''7''', r'''12''', r'''25''', r'''49'''],
     correctAnswer: 1,
-    explanation: r'''Sabemos que $a^2 + b^2 + 2ab = (a+b)^2$. Entonces $M = \sqrt{(a+b)^2} = a+b = 4+3 = 7$.''',
+    explanation:
+        r'''Sabemos que $a^2 + b^2 + 2ab = (a+b)^2$. Entonces $M = \sqrt{(a+b)^2} = a+b = 4+3 = 7$.''',
   ),
   Question(
     id: 'mat_q383',
@@ -3319,34 +2628,27 @@ Determine el valor de $x + y$.''',
       r'''(x-1)(x-12)''',
     ],
     correctAnswer: 0,
-    explanation: r'''Buscamos dos nmeros que sumados den -7 y multiplicados den 12. Estos son -3 y -4. Por lo tanto, se factoriza como $(x-3)(x-4)$.''',
+    explanation:
+        r'''Buscamos dos nmeros que sumados den -7 y multiplicados den 12. Estos son -3 y -4. Por lo tanto, se factoriza como $(x-3)(x-4)$.''',
   ),
   Question(
     id: 'mat_q384',
     topicId: 'mat_algebra',
-    text: r'''Si $x^3 = 8$ y $y^2 = 9$, determine el mayor valor posible para la expresin $x+y$.''',
-    options: [
-      r'''-1''',
-      r'''1''',
-      r'''5''',
-      r'''6''',
-      r'''17''',
-    ],
+    text:
+        r'''Si $x^3 = 8$ y $y^2 = 9$, determine el mayor valor posible para la expresin $x+y$.''',
+    options: [r'''-1''', r'''1''', r'''5''', r'''6''', r'''17'''],
     correctAnswer: 2,
-    explanation: r'''De $x^3 = 8$ se obtiene nicamente $x = 2$ (en los nmeros reales). De $y^2 = 9$, se tienen dos posibles valores: $y=3$ o $y=-3$. Para obtener el mayor valor de $x+y$, tomamos $y=3$. As $x+y = 2+3 = 5$.''',
+    explanation:
+        r'''De $x^3 = 8$ se obtiene nicamente $x = 2$ (en los nmeros reales). De $y^2 = 9$, se tienen dos posibles valores: $y=3$ o $y=-3$. Para obtener el mayor valor de $x+y$, tomamos $y=3$. As $x+y = 2+3 = 5$.''',
   ),
   Question(
     id: 'mat_q385',
     topicId: 'mat_algebra',
-    text: r'''Halle la raz de la ecuacin logartmica: $\log_{2}(x) + \log_{2}(2) = 3$''',
-    options: [
-      r'''2''',
-      r'''4''',
-      r'''6''',
-      r'''8''',
-      r'''16''',
-    ],
+    text:
+        r'''Halle la raz de la ecuacin logartmica: $\log_{2}(x) + \log_{2}(2) = 3$''',
+    options: [r'''2''', r'''4''', r'''6''', r'''8''', r'''16'''],
     correctAnswer: 1,
-    explanation: r'''Sabemos que $\log_{2}(2) = 1$. Entonces la ecuacin queda $\log_{2}(x) + 1 = 3 \Rightarrow \log_{2}(x) = 2 \Rightarrow x = 2^2 = 4$.''',
+    explanation:
+        r'''Sabemos que $\log_{2}(2) = 1$. Entonces la ecuacin queda $\log_{2}(x) + 1 = 3 \Rightarrow \log_{2}(x) = 2 \Rightarrow x = 2^2 = 4$.''',
   ),
 ];

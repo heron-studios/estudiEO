@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// Replaces the old animated grid lines with the EO PNP school image.
 class AnimatedGridBackground extends StatelessWidget {
   final Widget child;
-  
+
   const AnimatedGridBackground({super.key, required this.child});
 
   @override

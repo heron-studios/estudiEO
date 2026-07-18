@@ -14,12 +14,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''El mecanismo por el cual las plantas cambian de color en otoño.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La fotosíntesis se define como el proceso vital en el que la energía luminosa es transformada en energía química estable (como la glucosa) por los organismos vegetales.''',
+    explanation:
+        r'''La fotosíntesis se define como el proceso vital en el que la energía luminosa es transformada en energía química estable (como la glucosa) por los organismos vegetales.''',
   ),
   Question(
     id: 'veg_fot_f2',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cuáles son los reactantes o ingredientes iniciales necesarios para que ocurra la fotosíntesis?''',
+    text:
+        r'''¿Cuáles son los reactantes o ingredientes iniciales necesarios para que ocurra la fotosíntesis?''',
     options: [
       r'''Oxígeno, glucosa y tierra.''',
       r'''Nitrógeno, ATP y NADPH.''',
@@ -28,12 +30,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Hidrógeno, sales minerales y oscuridad.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Para iniciar la reacción química de la fotosíntesis, la célula vegetal requiere captar agua, dióxido de carbono y la energía de la luz solar.''',
+    explanation:
+        r'''Para iniciar la reacción química de la fotosíntesis, la célula vegetal requiere captar agua, dióxido de carbono y la energía de la luz solar.''',
   ),
   Question(
     id: 'veg_fot_f3',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿En qué orgánulo exclusivo de las células vegetales se lleva a cabo la fotosíntesis?''',
+    text:
+        r'''¿En qué orgánulo exclusivo de las células vegetales se lleva a cabo la fotosíntesis?''',
     options: [
       r'''En la mitocondria.''',
       r'''En el cloroplasto.''',
@@ -42,12 +46,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''En el aparato de Golgi.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La fotosíntesis tiene lugar en los cloroplastos, orgánulos celulares especializados presentes en las plantas y algas que las células animales no poseen.''',
+    explanation:
+        r'''La fotosíntesis tiene lugar en los cloroplastos, orgánulos celulares especializados presentes en las plantas y algas que las células animales no poseen.''',
   ),
   Question(
     id: 'veg_fot_f4',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué pigmento es el responsable de capturar la energía de la luz solar y darle el color verde a las plantas?''',
+    text:
+        r'''¿Qué pigmento es el responsable de capturar la energía de la luz solar y darle el color verde a las plantas?''',
     options: [
       r'''La melanina.''',
       r'''El caroteno.''',
@@ -56,12 +62,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''La xantofila.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La clorofila es el pigmento verde fundamental ubicado en las membranas de los tilacoides; su función es absorber la energía solar y excitar los electrones.''',
+    explanation:
+        r'''La clorofila es el pigmento verde fundamental ubicado en las membranas de los tilacoides; su función es absorber la energía solar y excitar los electrones.''',
   ),
   Question(
     id: 'veg_fot_f5',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué gas fundamental para la vida humana es liberado a la atmósfera como producto de desperdicio de la fotosíntesis?''',
+    text:
+        r'''¿Qué gas fundamental para la vida humana es liberado a la atmósfera como producto de desperdicio de la fotosíntesis?''',
     options: [
       r'''El dióxido de carbono.''',
       r'''El metano.''',
@@ -70,12 +78,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''El monóxido de carbono.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Como subproducto de las reacciones de fotosíntesis, los vegetales liberan gas oxígeno al exterior, permitiendo la supervivencia de los organismos aerobios.''',
+    explanation:
+        r'''Como subproducto de las reacciones de fotosíntesis, los vegetales liberan gas oxígeno al exterior, permitiendo la supervivencia de los organismos aerobios.''',
   ),
   Question(
     id: 'veg_fot_f6',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cuál es el principal producto que las plantas fabrican como su "alimento" para obtener energía y crecer?''',
+    text:
+        r'''¿Cuál es el principal producto que las plantas fabrican como su "alimento" para obtener energía y crecer?''',
     options: [
       r'''El agua purificada.''',
       r'''La glucosa.''',
@@ -84,12 +94,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''El dióxido de carbono.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los productos finales incluyen la glucosa, una molécula de azúcar simple que funciona como almacén de energía química y combustible para el metabolismo de la planta.''',
+    explanation:
+        r'''Los productos finales incluyen la glucosa, una molécula de azúcar simple que funciona como almacén de energía química y combustible para el metabolismo de la planta.''',
   ),
   Question(
     id: 'veg_fot_f7',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cómo se llaman las entradas o poros especiales en las hojas por donde entra el dióxido de carbono y sale el oxígeno?''',
+    text:
+        r'''¿Cómo se llaman las entradas o poros especiales en las hojas por donde entra el dióxido de carbono y sale el oxígeno?''',
     options: [
       r'''Tilacoides.''',
       r'''Granas.''',
@@ -98,12 +110,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Estomas.''',
     ],
     correctAnswer: 4,
-    explanation: r'''En la superficie de las hojas existen pequeños poros llamados estomas que permiten el intercambio gaseoso: el CO2 entra hacia el mesófilo y el oxígeno se difunde al exterior.''',
+    explanation:
+        r'''En la superficie de las hojas existen pequeños poros llamados estomas que permiten el intercambio gaseoso: el CO2 entra hacia el mesófilo y el oxígeno se difunde al exterior.''',
   ),
   Question(
     id: 'veg_fot_f8',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿De dónde obtienen principalmente las plantas el agua necesaria para la fotosíntesis?''',
+    text:
+        r'''¿De dónde obtienen principalmente las plantas el agua necesaria para la fotosíntesis?''',
     options: [
       r'''La absorben directamente por los estomas de las hojas.''',
       r'''Las absorben a través de las raíces y las venas la transportan hasta las hojas.''',
@@ -112,12 +126,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Del rocío que se deposita en la clorofila.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El agua, uno de los reactantes, es absorbida por las raíces de la planta en el suelo y es transportada a través de venas hasta llegar a las células de la hoja.''',
+    explanation:
+        r'''El agua, uno de los reactantes, es absorbida por las raíces de la planta en el suelo y es transportada a través de venas hasta llegar a las células de la hoja.''',
   ),
   Question(
     id: 'veg_fot_f9',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué tipo de nutrición tienen los organismos como las plantas que fabrican su propio alimento mediante la luz?''',
+    text:
+        r'''¿Qué tipo de nutrición tienen los organismos como las plantas que fabrican su propio alimento mediante la luz?''',
     options: [
       r'''Quimioheterótrofos.''',
       r'''Fotoheterótrofos.''',
@@ -126,12 +142,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Parásitos.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Dado que producen su propio alimento (fijan su propio carbono) utilizando la energía de la luz, estos organismos ecológicamente se clasifican como fotoautótrofos.''',
+    explanation:
+        r'''Dado que producen su propio alimento (fijan su propio carbono) utilizando la energía de la luz, estos organismos ecológicamente se clasifican como fotoautótrofos.''',
   ),
   Question(
     id: 'veg_fot_f10',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''A nivel ecológico global, ¿por qué es tan importante la fotosíntesis para los seres vivos heterótrofos (como los animales)?''',
+    text:
+        r'''A nivel ecológico global, ¿por qué es tan importante la fotosíntesis para los seres vivos heterótrofos (como los animales)?''',
     options: [
       r'''Porque destruye el exceso de oxígeno en la atmósfera.''',
       r'''Porque calienta el planeta mediante energía térmica.''',
@@ -140,14 +158,16 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Porque transforma la glucosa en luz solar.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La fotosíntesis es crucial porque proporciona la base de la cadena trófica mediante el carbono fijo (azúcares) y libera el oxígeno necesario para la respiración aeróbica de los animales.''',
+    explanation:
+        r'''La fotosíntesis es crucial porque proporciona la base de la cadena trófica mediante el carbono fijo (azúcares) y libera el oxígeno necesario para la respiración aeróbica de los animales.''',
   ),
 
   // Nivel Medio
   Question(
     id: 'veg_fot_m1',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cuáles son las dos fases principales en las que se divide el proceso de la fotosíntesis?''',
+    text:
+        r'''¿Cuáles son las dos fases principales en las que se divide el proceso de la fotosíntesis?''',
     options: [
       r'''Fase de condensación y fase de sublimación.''',
       r'''Ciclo del agua y fase gaseosa.''',
@@ -156,12 +176,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Fotólisis y glucólisis.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La fotosíntesis es un proceso de dos etapas complejas: las reacciones dependientes de la luz (fase luminosa) y las reacciones independientes de la luz o ciclo de Calvin (fase oscura).''',
+    explanation:
+        r'''La fotosíntesis es un proceso de dos etapas complejas: las reacciones dependientes de la luz (fase luminosa) y las reacciones independientes de la luz o ciclo de Calvin (fase oscura).''',
   ),
   Question(
     id: 'veg_fot_m2',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿En qué parte específica del cloroplasto se lleva a cabo la fase luminosa?''',
+    text:
+        r'''¿En qué parte específica del cloroplasto se lleva a cabo la fase luminosa?''',
     options: [
       r'''En la mitocondria.''',
       r'''En las vacuolas.''',
@@ -170,12 +192,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''En el citoplasma.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las reacciones lumínicas, donde la clorofila captura la energía y genera ATP y NADPH, ocurren en las membranas de los sacos aplanados llamados tilacoides.''',
+    explanation:
+        r'''Las reacciones lumínicas, donde la clorofila captura la energía y genera ATP y NADPH, ocurren en las membranas de los sacos aplanados llamados tilacoides.''',
   ),
   Question(
     id: 'veg_fot_m3',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Dónde se produce la fase oscura o ciclo de Calvin dentro del cloroplasto?''',
+    text:
+        r'''¿Dónde se produce la fase oscura o ciclo de Calvin dentro del cloroplasto?''',
     options: [
       r'''En el espacio tilacoidal.''',
       r'''En el núcleo celular.''',
@@ -184,12 +208,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''En la superficie de la hoja.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La fase oscura o biosintética se lleva a cabo en el estroma, el medio fluido interior del cloroplasto, donde se utilizan el ATP y NADPH para fijar el carbono.''',
+    explanation:
+        r'''La fase oscura o biosintética se lleva a cabo en el estroma, el medio fluido interior del cloroplasto, donde se utilizan el ATP y NADPH para fijar el carbono.''',
   ),
   Question(
     id: 'veg_fot_m4',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué dos moléculas energéticas se fabrican durante la fase luminosa para ser utilizadas posteriormente en la fase oscura?''',
+    text:
+        r'''¿Qué dos moléculas energéticas se fabrican durante la fase luminosa para ser utilizadas posteriormente en la fase oscura?''',
     options: [
       r'''Oxígeno y Agua.''',
       r'''Clorofila y Glucosa.''',
@@ -198,7 +224,8 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Helio y Nitrógeno.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Durante las reacciones dependientes de la luz, la energía se almacena de forma temporal produciendo ATP y el portador de electrones reducido NADPH.''',
+    explanation:
+        r'''Durante las reacciones dependientes de la luz, la energía se almacena de forma temporal produciendo ATP y el portador de electrones reducido NADPH.''',
   ),
   Question(
     id: 'veg_fot_m5',
@@ -212,12 +239,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''El azúcar se destruye para generar agua y dióxido de carbono.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el ciclo de Calvin, sin necesidad directa de luz, la planta emplea el ATP y NADPH de la fase lumínica para fijar el CO2 inorgánico y sintetizar compuestos orgánicos como la glucosa.''',
+    explanation:
+        r'''En el ciclo de Calvin, sin necesidad directa de luz, la planta emplea el ATP y NADPH de la fase lumínica para fijar el CO2 inorgánico y sintetizar compuestos orgánicos como la glucosa.''',
   ),
   Question(
     id: 'veg_fot_m6',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué función ecológica de la fotosíntesis es clave frente a la crisis climática global actual?''',
+    text:
+        r'''¿Qué función ecológica de la fotosíntesis es clave frente a la crisis climática global actual?''',
     options: [
       r'''Calienta la atmósfera para evitar glaciaciones.''',
       r'''Produce los gases de efecto invernadero necesarios.''',
@@ -226,12 +255,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Destruye la capa de ozono.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los organismos fotosintéticos actúan como sumideros vitales al retirar grandes cantidades de CO2 atmosférico, ayudando a mantener el equilibrio en el ciclo del carbono y mitigar el cambio climático.''',
+    explanation:
+        r'''Los organismos fotosintéticos actúan como sumideros vitales al retirar grandes cantidades de CO2 atmosférico, ayudando a mantener el equilibrio en el ciclo del carbono y mitigar el cambio climático.''',
   ),
   Question(
     id: 'veg_fot_m7',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué es lo que ocurre con la fotosíntesis en los árboles caducifolios durante el otoño?''',
+    text:
+        r'''¿Qué es lo que ocurre con la fotosíntesis en los árboles caducifolios durante el otoño?''',
     options: [
       r'''Se detiene por completo instantáneamente en el equinoccio.''',
       r'''Aumenta al máximo porque hay menos calor estresante.''',
@@ -240,12 +271,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''La planta cambia su proceso a la quimiosíntesis.''',
     ],
     correctAnswer: 3,
-    explanation: r'''En otoño, la fotosíntesis disminuye su eficiencia por menos luz solar y menores temperaturas; las hojas pierden clorofila y cambian de color mientras el árbol entra en reposo.''',
+    explanation:
+        r'''En otoño, la fotosíntesis disminuye su eficiencia por menos luz solar y menores temperaturas; las hojas pierden clorofila y cambian de color mientras el árbol entra en reposo.''',
   ),
   Question(
     id: 'veg_fot_m8',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué sucede fisiológicamente con una planta ante una escasez de agua (sequía) y cómo afecta su fotosíntesis?''',
+    text:
+        r'''¿Qué sucede fisiológicamente con una planta ante una escasez de agua (sequía) y cómo afecta su fotosíntesis?''',
     options: [
       r'''Abre más sus estomas para buscar agua en el aire, aumentando la fotosíntesis.''',
       r'''Se vuelve totalmente un organismo heterótrofo.''',
@@ -254,12 +287,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Libera más oxígeno para crear agua nueva.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Frente a la falta de humedad, las plantas cierran sus estomas para prevenir la deshidratación; sin embargo, este mecanismo de defensa limita drásticamente la entrada de dióxido de carbono, frenando la fotosíntesis.''',
+    explanation:
+        r'''Frente a la falta de humedad, las plantas cierran sus estomas para prevenir la deshidratación; sin embargo, este mecanismo de defensa limita drásticamente la entrada de dióxido de carbono, frenando la fotosíntesis.''',
   ),
   Question(
     id: 'veg_fot_m9',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''Aparte de la luz y el CO2, ¿qué otro factor ambiental influye decisivamente en el rendimiento fotosintético?''',
+    text:
+        r'''Aparte de la luz y el CO2, ¿qué otro factor ambiental influye decisivamente en el rendimiento fotosintético?''',
     options: [
       r'''La intensidad del sonido ambiental.''',
       r'''La presión atmosférica del nitrógeno.''',
@@ -268,12 +303,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''La fuerza del magnetismo terrestre.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La temperatura influye directamente: a mayor temperatura, mayor actividad hasta llegar a un punto máximo u óptimo, a partir del cual el exceso de calor puede desnaturalizar las enzimas encargadas del proceso.''',
+    explanation:
+        r'''La temperatura influye directamente: a mayor temperatura, mayor actividad hasta llegar a un punto máximo u óptimo, a partir del cual el exceso de calor puede desnaturalizar las enzimas encargadas del proceso.''',
   ),
   Question(
     id: 'veg_fot_m10',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''Existen plantas excepcionales, como la Gastrodia kuroshimensis, que no realizan fotosíntesis. ¿Cómo sobreviven?''',
+    text:
+        r'''Existen plantas excepcionales, como la Gastrodia kuroshimensis, que no realizan fotosíntesis. ¿Cómo sobreviven?''',
     options: [
       r'''Absorben la luz de la luna en lugar de la del sol.''',
       r'''Se alimentan de rocas calcáreas.''',
@@ -282,14 +319,16 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Realizan fisión nuclear en sus raíces.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Existen raras excepciones de plantas que no fotosintetizan; en su lugar, utilizan la micoheterotrofia, obteniendo todos sus nutrientes a través de relaciones simbióticas con hongos.''',
+    explanation:
+        r'''Existen raras excepciones de plantas que no fotosintetizan; en su lugar, utilizan la micoheterotrofia, obteniendo todos sus nutrientes a través de relaciones simbióticas con hongos.''',
   ),
 
   // Nivel Difícil
   Question(
     id: 'veg_fot_d1',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué es exactamente un "fotosistema" en el contexto de la fotosíntesis?''',
+    text:
+        r'''¿Qué es exactamente un "fotosistema" en el contexto de la fotosíntesis?''',
     options: [
       r'''Un conjunto de raíces diseñadas para absorber agua rápidamente.''',
       r'Una unidad fotosintética en la membrana tilacoidal compuesta por cientos de moléculas de clorofila y carotenoides que actúan como "moléculas antena" para absorber luz.',
@@ -298,12 +337,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''El espacio vacío dentro del estroma.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los fotosistemas son asociaciones de pigmentos (clorofilas y carotenoides) en la membrana del tilacoide que actúan como colectores o embudos de energía luminosa hacia un centro de reacción.''',
+    explanation:
+        r'''Los fotosistemas son asociaciones de pigmentos (clorofilas y carotenoides) en la membrana del tilacoide que actúan como colectores o embudos de energía luminosa hacia un centro de reacción.''',
   ),
   Question(
     id: 'veg_fot_d2',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''Al excitarse la "clorofila a" del Fotosistema II (P680), pierde un electrón. ¿Cómo recupera la clorofila ese electrón perdido?''',
+    text:
+        r'''Al excitarse la "clorofila a" del Fotosistema II (P680), pierde un electrón. ¿Cómo recupera la clorofila ese electrón perdido?''',
     options: [
       r'''Lo toma directamente del aire circundante.''',
       r'''Lo absorbe del dióxido de carbono.''',
@@ -312,12 +353,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''A través del ciclo de Calvin.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El hueco electrónico en el P680 del Fotosistema II se rellena tomando electrones de la fotólisis del agua, que también libera el oxígeno.''',
+    explanation:
+        r'''El hueco electrónico en el P680 del Fotosistema II se rellena tomando electrones de la fotólisis del agua, que también libera el oxígeno.''',
   ),
   Question(
     id: 'veg_fot_d3',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué caracteriza a la fotofosforilación "cíclica" a diferencia de la acíclica?''',
+    text:
+        r'''¿Qué caracteriza a la fotofosforilación "cíclica" a diferencia de la acíclica?''',
     options: [
       r'''Produce enormes cantidades de oxígeno y glucosa.''',
       r'''Intervienen ambos fotosistemas (I y II) simultáneamente.''',
@@ -326,12 +369,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Ocurre íntegramente en el núcleo celular.''',
     ],
     correctAnswer: 3,
-    explanation: r'''En la fotofosforilación cíclica solo actúa el Fotosistema I (PS I), de modo que los electrones son reciclados para generar ATP sin producir NADPH ni liberar O2.''',
+    explanation:
+        r'''En la fotofosforilación cíclica solo actúa el Fotosistema I (PS I), de modo que los electrones son reciclados para generar ATP sin producir NADPH ni liberar O2.''',
   ),
   Question(
     id: 'veg_fot_d4',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cuál es el papel del gradiente electroquímico de protones (H+) en el cloroplasto?''',
+    text:
+        r'''¿Cuál es el papel del gradiente electroquímico de protones (H+) en el cloroplasto?''',
     options: [
       r'''Destruir las enzimas defectuosas.''',
       r'''Mantener la hoja hidratada.''',
@@ -340,12 +385,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Absorber la luz verde que la clorofila rechaza.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El bombeo de protones crea una gradiente electroquímica cuyo flujo de retorno a través de la ATPasa sintetiza ATP a partir de ADP y fosfato inorgánico.''',
+    explanation:
+        r'''El bombeo de protones crea una gradiente electroquímica cuyo flujo de retorno a través de la ATPasa sintetiza ATP a partir de ADP y fosfato inorgánico.''',
   ),
   Question(
     id: 'veg_fot_d5',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''Si comparamos la fotosíntesis vegetal con la respiración celular, ¿qué afirmación es correcta?''',
+    text:
+        r'''Si comparamos la fotosíntesis vegetal con la respiración celular, ¿qué afirmación es correcta?''',
     options: [
       r'''Son exactamente el mismo proceso biológico con distinto nombre.''',
       r'''La fotosíntesis ocurre de noche y la respiración de día.''',
@@ -354,12 +401,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''La fotosíntesis destruye la glucosa y la respiración la fabrica.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La fotosíntesis es un proceso anabólico reductor que produce carbohidratos consumiendo CO2 y energía luminosa, mientras la respiración celular es catabólica y oxidativa.''',
+    explanation:
+        r'''La fotosíntesis es un proceso anabólico reductor que produce carbohidratos consumiendo CO2 y energía luminosa, mientras la respiración celular es catabólica y oxidativa.''',
   ),
   Question(
     id: 'veg_fot_d6',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué efecto tiene un aumento excesivo en la concentración de oxígeno (O2) sobre el rendimiento de la fotosíntesis?''',
+    text:
+        r'''¿Qué efecto tiene un aumento excesivo en la concentración de oxígeno (O2) sobre el rendimiento de la fotosíntesis?''',
     options: [
       r'''Acelera la fase oscura duplicando la glucosa.''',
       r'''No tiene ningún efecto en absoluto.''',
@@ -368,7 +417,8 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Rompe las membranas de los tilacoides de inmediato.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las altas concentraciones de O2 inducen fotorrespiración porque la enzima Rubisco actúa como oxigenasa en lugar de carboxilasa, reduciendo la eficiencia.''',
+    explanation:
+        r'''Las altas concentraciones de O2 inducen fotorrespiración porque la enzima Rubisco actúa como oxigenasa en lugar de carboxilasa, reduciendo la eficiencia.''',
   ),
   Question(
     id: 'veg_fot_d7',
@@ -382,12 +432,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Son las aberturas epidérmicas de la hoja.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las granas son pilas de tilacoides que aumentan el área superficial membranal para alojar los fotosistemas encargados de la captación de luz.''',
+    explanation:
+        r'''Las granas son pilas de tilacoides que aumentan el área superficial membranal para alojar los fotosistemas encargados de la captación de luz.''',
   ),
   Question(
     id: 'veg_fot_d8',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''Históricamente, ¿qué impacto tuvo la aparición de bacterias fotosintéticas (similares a cianobacterias) hace unos 3.000 millones de años?''',
+    text:
+        r'''Históricamente, ¿qué impacto tuvo la aparición de bacterias fotosintéticas (similares a cianobacterias) hace unos 3.000 millones de años?''',
     options: [
       r'''Causaron la extinción de todas las plantas terrestres.''',
       r'''Convirtieron los océanos en ácido sulfúrico.''',
@@ -396,12 +448,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Detuvieron el movimiento de rotación de la Tierra.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La fotosíntesis oxigénica llevada a cabo por las cianobacterias primitivas acumuló oxígeno gaseoso en la atmósfera, marcando la evolución biogeoquímica del planeta.''',
+    explanation:
+        r'''La fotosíntesis oxigénica llevada a cabo por las cianobacterias primitivas acumuló oxígeno gaseoso en la atmósfera, marcando la evolución biogeoquímica del planeta.''',
   ),
   Question(
     id: 'veg_fot_d9',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué longitudes de onda absorben específicamente las "clorofilas a" en los centros de reacción de los Fotosistemas I y II?''',
+    text:
+        r'''¿Qué longitudes de onda absorben específicamente las "clorofilas a" en los centros de reacción de los Fotosistemas I y II?''',
     options: [
       r'''400 nm y 500 nm.''',
       r'''700 nm en el Fotosistema I y 680 nm en el Fotosistema II.''',
@@ -410,12 +464,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Luz verde exclusivamente.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los picos de absorción específicos en los centros de reacción son 700 nm para el Fotosistema I (P700) y 680 nm para el Fotosistema II (P680).''',
+    explanation:
+        r'''Los picos de absorción específicos en los centros de reacción son 700 nm para el Fotosistema I (P700) y 680 nm para el Fotosistema II (P680).''',
   ),
   Question(
     id: 'veg_fot_d10',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿De qué molécula proviene específicamente el oxígeno que respiramos, el cual es desechado durante la fotosíntesis?''',
+    text:
+        r'''¿De qué molécula proviene específicamente el oxígeno que respiramos, el cual es desechado durante la fotosíntesis?''',
     options: [
       r'''Del Dióxido de carbono (CO2).''',
       r'''Del Agua (H2O) tras sufrir fotólisis en la fase luminosa.''',
@@ -424,14 +480,16 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Del ácido abscísico de las hojas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El O2 liberado proviene directamente del agua tras la reacción de fotólisis que tiene lugar en la fase luminosa en el fotosistema II.''',
+    explanation:
+        r'''El O2 liberado proviene directamente del agua tras la reacción de fotólisis que tiene lugar en la fase luminosa en el fotosistema II.''',
   ),
 
   // Nivel Extremo
   Question(
     id: 'veg_fot_e1',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''En el balance energético del Ciclo de Calvin, ¿cuánto ATP y NADPH se requiere consumir exactamente para extraer una molécula neta de glucosa (6 Carbonos)?''',
+    text:
+        r'''En el balance energético del Ciclo de Calvin, ¿cuánto ATP y NADPH se requiere consumir exactamente para extraer una molécula neta de glucosa (6 Carbonos)?''',
     options: [
       r'''6 ATP y 6 NADPH.''',
       r'''3 ATP y 2 NADPH.''',
@@ -440,12 +498,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''1 ATP y 1 NADPH.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La síntesis de una molécula de glucosa requiere fijar 6 carbonos de CO2, lo cual consume un total de 18 moléculas de ATP y 12 moléculas de NADPH.''',
+    explanation:
+        r'''La síntesis de una molécula de glucosa requiere fijar 6 carbonos de CO2, lo cual consume un total de 18 moléculas de ATP y 12 moléculas de NADPH.''',
   ),
   Question(
     id: 'veg_fot_e2',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''En la fase de carboxilación del ciclo de Calvin, ¿a qué molécula preexistente se une el dióxido de carbono inorgánico para iniciar el ciclo?''',
+    text:
+        r'''En la fase de carboxilación del ciclo de Calvin, ¿a qué molécula preexistente se une el dióxido de carbono inorgánico para iniciar el ciclo?''',
     options: [
       r'''Al Gliceraldehído-3-fosfato.''',
       r'''Al Ácido 3-fosfoglicérico.''',
@@ -454,12 +514,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''A una molécula de clorofila pura.''',
     ],
     correctAnswer: 3,
-    explanation: r'''El CO2 gaseoso se fija catalíticamente sobre el aceptor Ribulosa-1,5-difosfato (RuBP) mediante la enzima Rubisco.''',
+    explanation:
+        r'''El CO2 gaseoso se fija catalíticamente sobre el aceptor Ribulosa-1,5-difosfato (RuBP) mediante la enzima Rubisco.''',
   ),
   Question(
     id: 'veg_fot_e3',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué ruta metabólica alterna a la fotosíntesis utilizan ciertos autótrofos para fijar carbono obteniendo energía mediante la oxidación de compuestos inorgánicos reducidos como el metano o ácido sulfhídrico?''',
+    text:
+        r'''¿Qué ruta metabólica alterna a la fotosíntesis utilizan ciertos autótrofos para fijar carbono obteniendo energía mediante la oxidación de compuestos inorgánicos reducidos como el metano o ácido sulfhídrico?''',
     options: [
       r'''Fermentación láctica.''',
       r'''Ciclo de Krebs.''',
@@ -468,12 +530,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Fosforilación oxidativa solar.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La quimiosíntesis es el proceso metabólico por el cual bacterias autótrofas (quimiolitótrofas) sintetizan materia orgánica oxidando compuestos inorgánicos reducidos.''',
+    explanation:
+        r'''La quimiosíntesis es el proceso metabólico por el cual bacterias autótrofas (quimiolitótrofas) sintetizan materia orgánica oxidando compuestos inorgánicos reducidos.''',
   ),
   Question(
     id: 'veg_fot_e4',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué compuesto químico actúan oxidando las "ferrobacterias" para lograr energía metabólica en hábitats acuáticos?''',
+    text:
+        r'''¿Qué compuesto químico actúan oxidando las "ferrobacterias" para lograr energía metabólica en hábitats acuáticos?''',
     options: [
       r'''Oxidan amoniaco para convertirlo en nitritos.''',
       r'''Oxidan hierro ferroso disuelto convirtiéndolo a hierro férrico, precipitándolo como hidróxido férrico.''',
@@ -482,12 +546,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Oxidan hidrógeno molecular a agua.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las ferrobacterias obtienen su energía a través de la oxidación metabólica del hierro ferroso (Fe²⁺) a hierro férrico (Fe³⁺).''',
+    explanation:
+        r'''Las ferrobacterias obtienen su energía a través de la oxidación metabólica del hierro ferroso (Fe²⁺) a hierro férrico (Fe³⁺).''',
   ),
   Question(
     id: 'veg_fot_e5',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Cuál es la molécula principal de tres carbonos que resulta de la fase de reducción del ciclo de Calvin y que es exportada al citoplasma para sintetizar azúcares, ácidos grasos o aminoácidos?''',
+    text:
+        r'''¿Cuál es la molécula principal de tres carbonos que resulta de la fase de reducción del ciclo de Calvin y que es exportada al citoplasma para sintetizar azúcares, ácidos grasos o aminoácidos?''',
     options: [
       r'''Ribulosa-1,5-difosfato.''',
       r'''Gliceraldehído-3-fosfato (G3P).''',
@@ -496,12 +562,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Oxalacetato.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El gliceraldehído-3-fosfato (G3P) es el producto neto de tres carbonos del ciclo de Calvin, utilizado por la célula para generar hexosas y otros metabolitos.''',
+    explanation:
+        r'''El gliceraldehído-3-fosfato (G3P) es el producto neto de tres carbonos del ciclo de Calvin, utilizado por la célula para generar hexosas y otros metabolitos.''',
   ),
   Question(
     id: 'veg_fot_e6',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''A nivel del esquema en Z del transporte electrónico de los tilacoides, ¿qué diferencia clave existe en la "fotofosforilación acíclica" con respecto al metabolismo de electrones?''',
+    text:
+        r'''A nivel del esquema en Z del transporte electrónico de los tilacoides, ¿qué diferencia clave existe en la "fotofosforilación acíclica" con respecto al metabolismo de electrones?''',
     options: [
       r'''Los electrones regresan al P680 en un círculo perfecto.''',
       r'''No requiere fotones de luz para activar los electrones.''',
@@ -510,12 +578,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Se bombean electrones al núcleo celular.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En la fotofosforilación no cíclica o acíclica, hay un flujo unidireccional y continuo de electrones desde el agua (donante primario) hasta el NADP+ (aceptor final).''',
+    explanation:
+        r'''En la fotofosforilación no cíclica o acíclica, hay un flujo unidireccional y continuo de electrones desde el agua (donante primario) hasta el NADP+ (aceptor final).''',
   ),
   Question(
     id: 'veg_fot_e7',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''¿Qué función ecológica extremadamente especializada cumplen las bacterias nitrificantes (como Nitrosomonas y Nitrobacter) en los ciclos biogeoquímicos mediante su quimiosíntesis?''',
+    text:
+        r'''¿Qué función ecológica extremadamente especializada cumplen las bacterias nitrificantes (como Nitrosomonas y Nitrobacter) en los ciclos biogeoquímicos mediante su quimiosíntesis?''',
     options: [
       r'''Degradar el plástico del subsuelo.''',
       r'''Oxidan compuestos reducidos de nitrógeno en el suelo; unas oxidan amoniaco a nitritos y otras oxidan nitritos a nitratos.''',
@@ -524,12 +594,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Evaporar el agua subterránea.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las bacterias nitrificantes oxidan compuestos inorgánicos de nitrógeno (amoníaco a nitrito, y nitrito a nitrato), aportando energía para sí mismas y proporcionando nitrógeno asimilable a las plantas.''',
+    explanation:
+        r'''Las bacterias nitrificantes oxidan compuestos inorgánicos de nitrógeno (amoníaco a nitrito, y nitrito a nitrato), aportando energía para sí mismas y proporcionando nitrógeno asimilable a las plantas.''',
   ),
   Question(
     id: 'veg_fot_e8',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''En la fase luminosa, el complejo de citocromos y la cadena de transportadores mueven electrones, pero simultáneamente movilizan otra partícula subatómica creando un "potencial electroquímico". ¿Qué se está movilizando?''',
+    text:
+        r'''En la fase luminosa, el complejo de citocromos y la cadena de transportadores mueven electrones, pero simultáneamente movilizan otra partícula subatómica creando un "potencial electroquímico". ¿Qué se está movilizando?''',
     options: [
       r'''Neutrones neutros hacia el núcleo celular.''',
       r'''Moléculas de ATP enteras hacia el estroma.''',
@@ -538,12 +610,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Moléculas gigantes de glucosa al exterior del cloroplasto.''',
     ],
     correctAnswer: 3,
-    explanation: r'''El paso de electrones libera energía libre utilizada para bombear activamente protones H+ al espacio intratilacoidal, estableciendo un gradiente quimiosmótico.''',
+    explanation:
+        r'''El paso de electrones libera energía libre utilizada para bombear activamente protones H+ al espacio intratilacoidal, estableciendo un gradiente quimiosmótico.''',
   ),
   Question(
     id: 'veg_fot_e9',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''El proceso de la "gluconeogénesis" en otros organismos es anabólico pero distinto a la fotosíntesis. ¿En qué consiste fundamentalmente?''',
+    text:
+        r'''El proceso de la "gluconeogénesis" en otros organismos es anabólico pero distinto a la fotosíntesis. ¿En qué consiste fundamentalmente?''',
     options: [
       r'''En la destrucción total de glucosa en ausencia de oxígeno.''',
       r'''En sintetizar proteínas directamente desde la luz.''',
@@ -552,12 +626,14 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''En transformar lípidos en ADN estructural.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La gluconeogénesis es la vía anabólica que sintetiza glucosa a partir de sustratos no carbohidratos (como el lactato, glicerol, piruvato o aminoácidos glucogénicos).''',
+    explanation:
+        r'''La gluconeogénesis es la vía anabólica que sintetiza glucosa a partir de sustratos no carbohidratos (como el lactato, glicerol, piruvato o aminoácidos glucogénicos).''',
   ),
   Question(
     id: 'veg_fot_e10',
     topicId: 'cta_vegetales_fotosintesis',
-    text: r'''En términos termodinámicos, ¿cómo se justifica que la fotosíntesis y la respiración celular funcionen como procesos complementarios unidos por la luz solar?''',
+    text:
+        r'''En términos termodinámicos, ¿cómo se justifica que la fotosíntesis y la respiración celular funcionen como procesos complementarios unidos por la luz solar?''',
     options: [
       r'''Porque ambas rompen enlaces moleculares para liberar fotones directamente.''',
       r'''La fotosíntesis es endergónica (requiere y almacena energía de la luz en enlaces químicos), mientras que la respiración es exergónica (rompe esos enlaces liberando energía para el trabajo celular).''',
@@ -566,6 +642,7 @@ final List<Question> vegetalesFotosintesisQuestions = [
       r'''Porque ambas reacciones carecen de reacciones redox.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La fotosíntesis captura energía electromagnética de forma endergónica en enlaces químicos, mientras que la respiración libera exergónicamente esa energía almacenada para realizar trabajo celular.''',
+    explanation:
+        r'''La fotosíntesis captura energía electromagnética de forma endergónica en enlaces químicos, mientras que la respiración libera exergónicamente esa energía almacenada para realizar trabajo celular.''',
   ),
 ];

@@ -5,11 +5,7 @@ class InterviewCard extends StatefulWidget {
   final InterviewQuestion question;
   final int index;
 
-  const InterviewCard({
-    super.key,
-    required this.question,
-    required this.index,
-  });
+  const InterviewCard({super.key, required this.question, required this.index});
 
   @override
   State<InterviewCard> createState() => _InterviewCardState();
@@ -31,8 +27,8 @@ class _InterviewCardState extends State<InterviewCard> {
         color: isDark ? const Color(0xFF161B22) : Colors.white,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: _isExpanded 
-              ? accentColor.withValues(alpha: 0.5) 
+          color: _isExpanded
+              ? accentColor.withValues(alpha: 0.5)
               : (isDark ? Colors.white10 : Colors.black12),
           width: 1.5,
         ),
@@ -56,7 +52,10 @@ class _InterviewCardState extends State<InterviewCard> {
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: accentColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
@@ -73,7 +72,9 @@ class _InterviewCardState extends State<InterviewCard> {
                   ),
                   const Spacer(),
                   Icon(
-                    _isExpanded ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded,
+                    _isExpanded
+                        ? Icons.keyboard_arrow_up_rounded
+                        : Icons.keyboard_arrow_down_rounded,
                     color: isDark ? Colors.white38 : Colors.black38,
                   ),
                 ],
@@ -91,7 +92,9 @@ class _InterviewCardState extends State<InterviewCard> {
               AnimatedCrossFade(
                 firstChild: const SizedBox(width: double.infinity),
                 secondChild: _buildExpandedContent(isDark, accentColor),
-                crossFadeState: _isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+                crossFadeState: _isExpanded
+                    ? CrossFadeState.showSecond
+                    : CrossFadeState.showFirst,
                 duration: const Duration(milliseconds: 300),
               ),
             ],
@@ -108,7 +111,11 @@ class _InterviewCardState extends State<InterviewCard> {
         const SizedBox(height: 20),
         const Divider(height: 1),
         const SizedBox(height: 20),
-        _sectionHeader(Icons.psychology_rounded, 'ANÁLISIS DEL EVALUADOR', accentColor),
+        _sectionHeader(
+          Icons.psychology_rounded,
+          'ANÁLISIS DEL EVALUADOR',
+          accentColor,
+        ),
         const SizedBox(height: 8),
         Text(
           widget.question.puntosClave,
@@ -119,14 +126,20 @@ class _InterviewCardState extends State<InterviewCard> {
           ),
         ),
         const SizedBox(height: 20),
-        _sectionHeader(Icons.verified_user_rounded, 'RESPUESTA IDEAL', Colors.greenAccent),
+        _sectionHeader(
+          Icons.verified_user_rounded,
+          'RESPUESTA IDEAL',
+          Colors.greenAccent,
+        ),
         const SizedBox(height: 8),
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.greenAccent.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.1)),
+            border: Border.all(
+              color: Colors.greenAccent.withValues(alpha: 0.1),
+            ),
           ),
           child: Text(
             widget.question.respuestaIdeal,

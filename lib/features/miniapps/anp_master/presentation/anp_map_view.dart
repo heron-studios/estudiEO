@@ -14,8 +14,7 @@ class ANPMapView extends StatefulWidget {
   State<ANPMapView> createState() => _ANPMapViewState();
 }
 
-class _ANPMapViewState extends State<ANPMapView>
-    with TickerProviderStateMixin {
+class _ANPMapViewState extends State<ANPMapView> with TickerProviderStateMixin {
   bool _isBlindMode = false;
   ANPModel? _selectedANP;
   final List<ANPModel> _anps = ANPRepository.getAllANPs();
@@ -50,14 +49,17 @@ class _ANPMapViewState extends State<ANPMapView>
   @override
   void initState() {
     super.initState();
-    _confettiController =
-        ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),
     )..repeat(reverse: true);
-    _pulseAnimation =
-        Tween<double>(begin: 1.0, end: 1.3).animate(_pulseController);
+    _pulseAnimation = Tween<double>(
+      begin: 1.0,
+      end: 1.3,
+    ).animate(_pulseController);
   }
 
   @override
@@ -80,8 +82,7 @@ class _ANPMapViewState extends State<ANPMapView>
       _selectedANP = null;
       _incorrectTappedANP = null;
       _showCorrectLocation = false;
-      _remainingGameAnps =
-          _anps.map((e) => e.id).toList()..shuffle();
+      _remainingGameAnps = _anps.map((e) => e.id).toList()..shuffle();
       _nextGameTurn();
     });
   }
@@ -101,8 +102,7 @@ class _ANPMapViewState extends State<ANPMapView>
       _confettiController.play();
       setState(() {
         _targetANP = null;
-        _gameMessage =
-            '¡Felicidades! Has ubicado todas las áreas con éxito.';
+        _gameMessage = '¡Felicidades! Has ubicado todas las áreas con éxito.';
         _messageColor = Colors.greenAccent;
       });
       return;
@@ -167,14 +167,18 @@ class _ANPMapViewState extends State<ANPMapView>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: Text(
           _isBlindMode ? 'Desafío del Guardaparque' : 'Mapa Interactivo',
           style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
         actions: [
@@ -183,18 +187,16 @@ class _ANPMapViewState extends State<ANPMapView>
               _isBlindMode
                   ? Icons.explore_rounded
                   : Icons.visibility_off_rounded,
-              color:
-                  _isBlindMode ? Colors.greenAccent : Colors.orangeAccent,
+              color: _isBlindMode ? Colors.greenAccent : Colors.orangeAccent,
               size: 20,
             ),
             label: Text(
               _isBlindMode ? 'Explorar' : 'Modo Ciego',
               style: TextStyle(
-                  color: _isBlindMode
-                      ? Colors.greenAccent
-                      : Colors.orangeAccent,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12),
+                color: _isBlindMode ? Colors.greenAccent : Colors.orangeAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
             ),
             onPressed: () {
               if (_isBlindMode) {
@@ -219,14 +221,15 @@ class _ANPMapViewState extends State<ANPMapView>
                       : _buildExplorePanel(nt),
 
                   // Category Filter Chips (only in explore mode)
-                  if (!_isBlindMode)
-                    _buildFilterChips(nt),
+                  if (!_isBlindMode) _buildFilterChips(nt),
 
                   // Map Canvas
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0, vertical: 8.0),
+                        horizontal: 20.0,
+                        vertical: 8.0,
+                      ),
                       child: LayoutBuilder(
                         builder: (context, constraints) {
                           final width = constraints.maxWidth;
@@ -255,11 +258,11 @@ class _ANPMapViewState extends State<ANPMapView>
 
                               // Pins
                               ..._filteredANPs.map((anp) {
-                                final isSelected =
-                                    _selectedANP?.id == anp.id;
-                                final isTarget = _isBlindMode &&
-                                    _targetANP?.id == anp.id;
-                                final isIncorrectTapped = _isBlindMode &&
+                                final isSelected = _selectedANP?.id == anp.id;
+                                final isTarget =
+                                    _isBlindMode && _targetANP?.id == anp.id;
+                                final isIncorrectTapped =
+                                    _isBlindMode &&
                                     _incorrectTappedANP?.id == anp.id;
 
                                 double size = 28;
@@ -278,7 +281,9 @@ class _ANPMapViewState extends State<ANPMapView>
                                   }
                                 } else {
                                   final catColor = _getCategoryColor(
-                                      anp.category, nt);
+                                    anp.category,
+                                    nt,
+                                  );
                                   pinColor = isSelected
                                       ? Colors.orangeAccent
                                       : catColor;
@@ -295,14 +300,20 @@ class _ANPMapViewState extends State<ANPMapView>
                                             animation: _pulseAnimation,
                                             builder: (ctx, child) =>
                                                 Transform.scale(
-                                              scale: _pulseAnimation.value,
-                                              child: child,
-                                            ),
+                                                  scale: _pulseAnimation.value,
+                                                  child: child,
+                                                ),
                                             child: _buildInteractivePin(
-                                                anp, pinColor, size),
+                                              anp,
+                                              pinColor,
+                                              size,
+                                            ),
                                           )
                                         : _buildInteractivePin(
-                                            anp, pinColor, size),
+                                            anp,
+                                            pinColor,
+                                            size,
+                                          ),
                                   ),
                                 );
                               }),
@@ -330,7 +341,7 @@ class _ANPMapViewState extends State<ANPMapView>
                 colors: const [
                   Colors.greenAccent,
                   Colors.blueAccent,
-                  Colors.orangeAccent
+                  Colors.orangeAccent,
                 ],
               ),
             ),
@@ -357,10 +368,8 @@ class _ANPMapViewState extends State<ANPMapView>
 
   Widget _buildBlindGamePanel(NeuralThemeData nt) {
     return Container(
-      padding:
-          const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-      margin:
-          const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
       decoration: BoxDecoration(
         color: nt.surfaceCard.withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(18),
@@ -376,21 +385,27 @@ class _ANPMapViewState extends State<ANPMapView>
                 Text(
                   _gameMessage,
                   style: TextStyle(
-                      color: _messageColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13),
+                    color: _messageColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                 ),
                 if (_targetANP != null) ...[
                   const SizedBox(height: 3),
                   Row(
                     children: [
-                      Icon(Icons.tips_and_updates_rounded,
-                          color: nt.warningAmber, size: 12),
+                      Icon(
+                        Icons.tips_and_updates_rounded,
+                        color: nt.warningAmber,
+                        size: 12,
+                      ),
                       const SizedBox(width: 4),
                       Text(
                         'Pista: ${_targetANP!.regions.join(", ")}',
                         style: const TextStyle(
-                            color: Colors.white38, fontSize: 11),
+                          color: Colors.white38,
+                          fontSize: 11,
+                        ),
                       ),
                     ],
                   ),
@@ -399,28 +414,28 @@ class _ANPMapViewState extends State<ANPMapView>
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 14, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
             decoration: BoxDecoration(
               color: nt.blueGoogle.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                  color: nt.blueGoogle.withValues(alpha: 0.3)),
+              border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
             ),
             child: Column(
               children: [
                 Text(
                   '$_gameScore/$_gameTotal',
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
                 ),
                 Text(
                   'Score',
                   style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
-                      fontSize: 9),
+                    color: Colors.white.withValues(alpha: 0.5),
+                    fontSize: 9,
+                  ),
                 ),
               ],
             ),
@@ -432,25 +447,29 @@ class _ANPMapViewState extends State<ANPMapView>
 
   Widget _buildExplorePanel(NeuralThemeData nt) {
     return Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
       child: Row(
         children: [
-          Icon(Icons.touch_app_rounded,
-              color: Colors.white.withValues(alpha: 0.4), size: 16),
+          Icon(
+            Icons.touch_app_rounded,
+            color: Colors.white.withValues(alpha: 0.4),
+            size: 16,
+          ),
           const SizedBox(width: 6),
           Text(
             'Toca los pines para explorar las ANPs',
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.5),
-                fontSize: 12),
+              color: Colors.white.withValues(alpha: 0.5),
+              fontSize: 12,
+            ),
           ),
           const Spacer(),
           Text(
             '${_filteredANPs.length} áreas',
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.4),
-                fontSize: 11),
+              color: Colors.white.withValues(alpha: 0.4),
+              fontSize: 11,
+            ),
           ),
         ],
       ),
@@ -467,18 +486,17 @@ class _ANPMapViewState extends State<ANPMapView>
         itemBuilder: (context, i) {
           final filter = _filters[i];
           final isActive = filter == _activeFilter;
-          final color = i == 0
-              ? nt.cyan
-              : _getCategoryColor(filter, nt);
+          final color = i == 0 ? nt.cyan : _getCategoryColor(filter, nt);
           return Padding(
             padding: const EdgeInsets.only(right: 8),
             child: GestureDetector(
-              onTap: () =>
-                  setState(() => _activeFilter = filter),
+              onTap: () => setState(() => _activeFilter = filter),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 12, vertical: 6),
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: isActive
                       ? color.withValues(alpha: 0.2)
@@ -496,9 +514,7 @@ class _ANPMapViewState extends State<ANPMapView>
                   style: TextStyle(
                     color: isActive ? color : Colors.white38,
                     fontSize: 11,
-                    fontWeight: isActive
-                        ? FontWeight.bold
-                        : FontWeight.normal,
+                    fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
                   ),
                 ),
               ),
@@ -531,13 +547,11 @@ class _ANPMapViewState extends State<ANPMapView>
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.location_on_rounded,
-                    color: item.$2, size: 12),
+                Icon(Icons.location_on_rounded, color: item.$2, size: 12),
                 const SizedBox(width: 4),
                 Text(
                   item.$1,
-                  style: const TextStyle(
-                      color: Colors.white70, fontSize: 9),
+                  style: const TextStyle(color: Colors.white70, fontSize: 9),
                 ),
               ],
             ),
@@ -547,8 +561,7 @@ class _ANPMapViewState extends State<ANPMapView>
     );
   }
 
-  Widget _buildInteractivePin(
-      ANPModel anp, Color pinColor, double size) {
+  Widget _buildInteractivePin(ANPModel anp, Color pinColor, double size) {
     return Tooltip(
       message: _isBlindMode ? '???' : anp.name,
       child: Column(
@@ -561,32 +574,30 @@ class _ANPMapViewState extends State<ANPMapView>
               color: pinColor,
               size: size,
               shadows: [
-                Shadow(
-                  color: pinColor.withValues(alpha: 0.5),
-                  blurRadius: 8,
-                )
+                Shadow(color: pinColor.withValues(alpha: 0.5), blurRadius: 8),
               ],
             ),
           ),
           if (!_isBlindMode)
             Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 5, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
               decoration: BoxDecoration(
                 color: Colors.black.withValues(alpha: 0.65),
                 borderRadius: BorderRadius.circular(5),
                 border: Border.all(
-                    color: pinColor.withValues(alpha: 0.3),
-                    width: 0.5),
+                  color: pinColor.withValues(alpha: 0.3),
+                  width: 0.5,
+                ),
               ),
               child: Text(
                 anp.name.length > 14
                     ? '${anp.name.substring(0, 11)}...'
                     : anp.name,
                 style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 8,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 8,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
         ],
@@ -613,9 +624,10 @@ class _ANPMapViewState extends State<ANPMapView>
         border: Border.all(color: Colors.white12),
         boxShadow: const [
           BoxShadow(
-              color: Colors.black45,
-              blurRadius: 20,
-              offset: Offset(0, 10)),
+            color: Colors.black45,
+            blurRadius: 20,
+            offset: Offset(0, 10),
+          ),
         ],
       ),
       child: ClipRRect(
@@ -632,16 +644,19 @@ class _ANPMapViewState extends State<ANPMapView>
                     child: Text(
                       _selectedANP!.name,
                       style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close_rounded,
-                        color: Colors.white38, size: 20),
-                    onPressed: () =>
-                        setState(() => _selectedANP = null),
+                    icon: const Icon(
+                      Icons.close_rounded,
+                      color: Colors.white38,
+                      size: 20,
+                    ),
+                    onPressed: () => setState(() => _selectedANP = null),
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
                   ),
@@ -652,16 +667,11 @@ class _ANPMapViewState extends State<ANPMapView>
               Row(
                 children: [
                   _buildBadge(
-                    isIndirect
-                        ? 'Uso Indirecto'
-                        : 'Uso Directo',
+                    isIndirect ? 'Uso Indirecto' : 'Uso Directo',
                     isIndirect ? nt.pink : nt.successGreen,
                   ),
                   const SizedBox(width: 8),
-                  _buildBadge(
-                    _selectedANP!.category,
-                    nt.blueGoogle,
-                  ),
+                  _buildBadge(_selectedANP!.category, nt.blueGoogle),
                   const SizedBox(width: 8),
                   _buildBadge(
                     'Est. ${_selectedANP!.establishedYear}',
@@ -672,34 +682,37 @@ class _ANPMapViewState extends State<ANPMapView>
               const SizedBox(height: 12),
               // Region
               _buildInfoRow(
-                  Icons.map_rounded,
-                  'Regiones:',
-                  _selectedANP!.regions.join(', '),
-                  nt.purple),
+                Icons.map_rounded,
+                'Regiones:',
+                _selectedANP!.regions.join(', '),
+                nt.purple,
+              ),
               // Fauna
               _buildInfoRow(
-                  Icons.pets_rounded,
-                  'Fauna:',
-                  _selectedANP!.keyFauna.join(' · '),
-                  nt.successGreen),
+                Icons.pets_rounded,
+                'Fauna:',
+                _selectedANP!.keyFauna.join(' · '),
+                nt.successGreen,
+              ),
               const SizedBox(height: 10),
               // Relative size bar
               Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Extensión relativa',
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        fontSize: 11),
+                      color: Colors.white.withValues(alpha: 0.5),
+                      fontSize: 11,
+                    ),
                   ),
                   Text(
                     '${(_selectedANP!.extensionHa / 1000).toStringAsFixed(1)}K Ha',
                     style: TextStyle(
-                        color: nt.cyan,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold),
+                      color: nt.cyan,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -710,14 +723,11 @@ class _ANPMapViewState extends State<ANPMapView>
                   height: 5,
                   child: Stack(
                     children: [
-                      Container(
-                          color: Colors.white
-                              .withValues(alpha: 0.08)),
+                      Container(color: Colors.white.withValues(alpha: 0.08)),
                       AnimatedContainer(
-                        duration:
-                            const Duration(milliseconds: 600),
-                        width: (MediaQuery.of(context).size.width -
-                                72) *
+                        duration: const Duration(milliseconds: 600),
+                        width:
+                            (MediaQuery.of(context).size.width - 72) *
                             relativeSize,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -736,23 +746,26 @@ class _ANPMapViewState extends State<ANPMapView>
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.04),
                   borderRadius: BorderRadius.circular(12),
-                  border:
-                      Border.all(color: Colors.white10),
+                  border: Border.all(color: Colors.white10),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.lightbulb_rounded,
-                        color: nt.warningAmber, size: 16),
+                    Icon(
+                      Icons.lightbulb_rounded,
+                      color: nt.warningAmber,
+                      size: 16,
+                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
                         _selectedANP!.mnemonicHint,
                         style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            fontStyle: FontStyle.italic,
-                            height: 1.4),
+                          color: Colors.white70,
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                          height: 1.4,
+                        ),
                       ),
                     ),
                   ],
@@ -776,13 +789,15 @@ class _ANPMapViewState extends State<ANPMapView>
       child: Text(
         label,
         style: TextStyle(
-            color: color, fontSize: 10, fontWeight: FontWeight.bold),
+          color: color,
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
 
-  Widget _buildInfoRow(
-      IconData icon, String label, String value, Color color) {
+  Widget _buildInfoRow(IconData icon, String label, String value, Color color) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6.0),
       child: Row(
@@ -792,17 +807,17 @@ class _ANPMapViewState extends State<ANPMapView>
           const SizedBox(width: 6),
           Text(
             label,
-            style: const TextStyle(
-                color: Colors.white54, fontSize: 12),
+            style: const TextStyle(color: Colors.white54, fontSize: 12),
           ),
           const SizedBox(width: 4),
           Expanded(
             child: Text(
               value,
               style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12),
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -836,7 +851,10 @@ class PeruMapPainter extends CustomPainter {
     final r = Random(42);
     for (int i = 0; i < 60; i++) {
       canvas.drawCircle(
-          Offset(r.nextDouble() * w, r.nextDouble() * h), 1.2, dotPaint);
+        Offset(r.nextDouble() * w, r.nextDouble() * h),
+        1.2,
+        dotPaint,
+      );
     }
 
     // Costa path
@@ -891,16 +909,18 @@ class PeruMapPainter extends CustomPainter {
 
     void drawRegion(Path path, Color color) {
       canvas.drawPath(
-          path,
-          Paint()
-            ..color = color.withValues(alpha: 0.14)
-            ..style = PaintingStyle.fill);
+        path,
+        Paint()
+          ..color = color.withValues(alpha: 0.14)
+          ..style = PaintingStyle.fill,
+      );
       canvas.drawPath(
-          path,
-          Paint()
-            ..color = color.withValues(alpha: 0.45)
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 1.8);
+        path,
+        Paint()
+          ..color = color.withValues(alpha: 0.45)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.8,
+      );
     }
 
     drawRegion(pathCosta, coastalColor);
@@ -926,11 +946,12 @@ class PeruMapPainter extends CustomPainter {
       ..close();
 
     canvas.drawPath(
-        pathOutline,
-        Paint()
-          ..color = Colors.white.withValues(alpha: 0.15)
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 2.5);
+      pathOutline,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.15)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2.5,
+    );
   }
 
   @override

@@ -33,7 +33,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
   Map<String, dynamic> _visualStats = {};
   Timer? _typingTimer;
   String? _worstSubjectId;
-  
+
   String _userName = 'Aspirante';
   String _targetSchool = 'EO PNP';
 
@@ -49,9 +49,10 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       duration: const Duration(milliseconds: 600),
     );
     _fadeAnim = CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOutCubic);
-    _pulseAnim = Tween<double>(begin: 0.95, end: 1.05).animate(
-      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOutSine),
-    );
+    _pulseAnim = Tween<double>(
+      begin: 0.95,
+      end: 1.05,
+    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOutSine));
 
     final storage = context.read<LocalStorageService>();
     _userName = storage.loadUserName();
@@ -93,11 +94,11 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       _worstSubjectId = _visualStats['worstSubjectId'] as String?;
 
       final storage = context.read<LocalStorageService>();
-      
+
       if (!forceRefresh) {
         final cachedText = storage.loadTutorAnalysis();
         final cachedTime = storage.loadTutorAnalysisTime();
-        
+
         if (cachedText != null && cachedText.isNotEmpty && cachedTime != null) {
           final now = DateTime.now();
           if (now.difference(cachedTime).inHours < 24) {
@@ -116,7 +117,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       final statsJson = collector.buildStatsJson();
       final puter = PuterService();
       final result = await puter.generateTutorAnalysis(statsJson);
-      
+
       storage.saveTutorAnalysis(result);
 
       if (!mounted) return;
@@ -221,16 +222,32 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                           const SizedBox(height: 16),
                           Center(
                             child: TextButton.icon(
-                              onPressed: _isLoading ? null : () => _analyze(forceRefresh: true),
-                              icon: const Icon(Icons.refresh_rounded, color: Colors.white54, size: 20),
+                              onPressed: _isLoading
+                                  ? null
+                                  : () => _analyze(forceRefresh: true),
+                              icon: const Icon(
+                                Icons.refresh_rounded,
+                                color: Colors.white54,
+                                size: 20,
+                              ),
                               label: const Text(
                                 'Actualizar Análisis',
-                                style: TextStyle(color: Colors.white54, fontFamily: 'Inter'),
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontFamily: 'Inter',
+                                ),
                               ),
                               style: TextButton.styleFrom(
-                                backgroundColor: Colors.white.withValues(alpha: 0.05),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                backgroundColor: Colors.white.withValues(
+                                  alpha: 0.05,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 12,
+                                ),
                               ),
                             ),
                           ),
@@ -277,10 +294,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
             ),
           ),
           const Spacer(),
-          _glassButton(
-            icon: Icons.refresh_rounded,
-            onTap: _analyze,
-          ),
+          _glassButton(icon: Icons.refresh_rounded, onTap: _analyze),
         ],
       ),
     );
@@ -327,10 +341,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                 ],
               ),
               child: const Center(
-                child: Text(
-                  '🧠',
-                  style: TextStyle(fontSize: 32),
-                ),
+                child: Text('🧠', style: TextStyle(fontSize: 32)),
               ),
             ),
           ),
@@ -360,13 +371,16 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
               ),
               const SizedBox(height: 6),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 3,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF7C3AED).withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                      color: const Color(0xFF7C3AED).withValues(alpha: 0.5)),
+                    color: const Color(0xFF7C3AED).withValues(alpha: 0.5),
+                  ),
                 ),
                 child: const Text(
                   '✦ ANÁLISIS EN TIEMPO REAL',
@@ -457,8 +471,11 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       borderColor: Colors.redAccent.withValues(alpha: 0.4),
       child: Column(
         children: [
-          const Icon(Icons.error_outline_rounded,
-              color: Colors.redAccent, size: 40),
+          const Icon(
+            Icons.error_outline_rounded,
+            color: Colors.redAccent,
+            size: 40,
+          ),
           const SizedBox(height: 12),
           const Text(
             'No se pudo conectar con ARIA',
@@ -471,22 +488,25 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
           const SizedBox(height: 6),
           Text(
             _errorMsg,
-            style:
-                TextStyle(color: Colors.white.withValues(alpha: 0.5), fontSize: 12),
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.5),
+              fontSize: 12,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 16),
           GestureDetector(
             onTap: _analyze,
             child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
               decoration: BoxDecoration(
                 color: const Color(0xFF7C3AED).withValues(alpha: 0.3),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Text('Reintentar',
-                  style: TextStyle(color: Colors.white)),
+              child: const Text(
+                'Reintentar',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           const SizedBox(height: 8),
@@ -506,32 +526,41 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
     return Row(
       children: [
         Expanded(
-            child: _metricCard(
-                icon: '⚡', label: 'Nivel', value: '$level', sub: '$xp XP')),
+          child: _metricCard(
+            icon: '⚡',
+            label: 'Nivel',
+            value: '$level',
+            sub: '$xp XP',
+          ),
+        ),
         const SizedBox(width: 10),
         Expanded(
-            child: _metricCard(
-                icon: '🔥',
-                label: 'Racha',
-                value: '$streak',
-                sub: 'días seguidos')),
+          child: _metricCard(
+            icon: '🔥',
+            label: 'Racha',
+            value: '$streak',
+            sub: 'días seguidos',
+          ),
+        ),
         const SizedBox(width: 10),
         Expanded(
-            child: _metricCard(
-                icon: '🎯',
-                label: 'Precisión',
-                value: '${(globalAvg).toStringAsFixed(0)}%',
-                sub: '$sessions sesiones')),
+          child: _metricCard(
+            icon: '🎯',
+            label: 'Precisión',
+            value: '${(globalAvg).toStringAsFixed(0)}%',
+            sub: '$sessions sesiones',
+          ),
+        ),
         const SizedBox(width: 10),
         Expanded(
-            child: _metricCard(
-                icon: '📚',
-                label: 'Repasos',
-                value: '$pending',
-                sub: 'pendientes',
-                accentColor: pending > 0
-                    ? Colors.orangeAccent
-                    : nt.successGreen)),
+          child: _metricCard(
+            icon: '📚',
+            label: 'Repasos',
+            value: '$pending',
+            sub: 'pendientes',
+            accentColor: pending > 0 ? Colors.orangeAccent : nt.successGreen,
+          ),
+        ),
       ],
     );
   }
@@ -567,12 +596,17 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
           Text(
             label,
             style: const TextStyle(
-                color: Colors.white, fontSize: 11, fontWeight: FontWeight.w600),
+              color: Colors.white,
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Text(
             sub,
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.4), fontSize: 10),
+              color: Colors.white.withValues(alpha: 0.4),
+              fontSize: 10,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -614,9 +648,10 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                       Text(
                         p['subject'] as String,
                         style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600),
+                          color: Colors.white70,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Text(
                         '${pct.toStringAsFixed(0)}%',
@@ -683,8 +718,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
               ),
               const Spacer(),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
                   color: const Color(0xFF7C3AED).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
@@ -731,7 +765,9 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
 
   Widget _buildActionCta(NeuralThemeData nt) {
     final subjectList = context.read<SubjectProvider>().subjects;
-    final subject = subjectList.where((s) => s.id == _worstSubjectId).firstOrNull;
+    final subject = subjectList
+        .where((s) => s.id == _worstSubjectId)
+        .firstOrNull;
     if (subject == null) return const SizedBox.shrink();
 
     return GestureDetector(
@@ -763,8 +799,11 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                 color: const Color(0xFFDC2626).withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Icon(Icons.fitness_center_rounded,
-                  color: Colors.redAccent, size: 22),
+              child: const Icon(
+                Icons.fitness_center_rounded,
+                color: Colors.redAccent,
+                size: 22,
+              ),
             ),
             const SizedBox(width: 14),
             Expanded(
@@ -783,15 +822,19 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
                   Text(
                     subject.name,
                     style: const TextStyle(
-                        color: Colors.redAccent,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600),
+                      color: Colors.redAccent,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ],
               ),
             ),
-            const Icon(Icons.arrow_forward_ios_rounded,
-                color: Colors.white54, size: 16),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white54,
+              size: 16,
+            ),
           ],
         ),
       ),
@@ -808,9 +851,7 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
         gradient: gradient,
-        color: gradient == null
-            ? Colors.white.withValues(alpha: 0.05)
-            : null,
+        color: gradient == null ? Colors.white.withValues(alpha: 0.05) : null,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: borderColor ?? Colors.white.withValues(alpha: 0.1),

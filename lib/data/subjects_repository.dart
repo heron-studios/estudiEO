@@ -186,9 +186,11 @@ class SubjectsRepository {
     final List<Question> exam = [];
 
     quotas.forEach((subjectId, count) {
-      final subjectQuestions = List<Question>.from(getQuestionsBySubject(subjectId));
+      final subjectQuestions = List<Question>.from(
+        getQuestionsBySubject(subjectId),
+      );
       if (subjectQuestions.isEmpty) return; // Fail safe
-      
+
       subjectQuestions.shuffle();
       if (subjectQuestions.length >= count) {
         exam.addAll(subjectQuestions.take(count));

@@ -17,11 +17,11 @@ class TrailMakingTestScreen extends StatefulWidget {
 
 class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
   late TrailLevel currentLevel;
-  
+
   List<TrailNode> connectedNodes = [];
   Offset? currentDragPosition;
   bool hasError = false;
-  
+
   int _secondsRemaining = 0;
   Timer? _timer;
   bool _isPlaying = false;
@@ -70,7 +70,10 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
           hasError = true;
           _isFinished = true;
         });
-        _showGameOverDialog('¡Tiempo agotado!', 'Inténtalo de nuevo para mejorar tu velocidad.');
+        _showGameOverDialog(
+          '¡Tiempo agotado!',
+          'Inténtalo de nuevo para mejorar tu velocidad.',
+        );
       }
     });
   }
@@ -82,29 +85,45 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: NeuralTheme.of(context).surfaceCard,
-          title: Text(title, style: TextStyle(color: NeuralTheme.of(context).textPrimary, fontFamily: 'Outfit')),
-          content: Text(message, style: TextStyle(color: NeuralTheme.of(context).textSecondary)),
+          title: Text(
+            title,
+            style: TextStyle(
+              color: NeuralTheme.of(context).textPrimary,
+              fontFamily: 'Outfit',
+            ),
+          ),
+          content: Text(
+            message,
+            style: TextStyle(color: NeuralTheme.of(context).textSecondary),
+          ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 _loadLevel(currentLevel);
               },
-              child: Text('Reintentar', style: TextStyle(color: NeuralTheme.of(context).blueGoogle)),
+              child: Text(
+                'Reintentar',
+                style: TextStyle(color: NeuralTheme.of(context).blueGoogle),
+              ),
             ),
             if (connectedNodes.length == currentLevel.nodes.length)
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                   // Go to next level if available
-                  int nextIndex = TrailMakingLevels.levels.indexOf(currentLevel) + 1;
+                  int nextIndex =
+                      TrailMakingLevels.levels.indexOf(currentLevel) + 1;
                   if (nextIndex < TrailMakingLevels.levels.length) {
                     _loadLevel(TrailMakingLevels.levels[nextIndex]);
                   } else {
                     context.pop();
                   }
                 },
-                child: Text('Continuar', style: TextStyle(color: NeuralTheme.of(context).successGreen)),
+                child: Text(
+                  'Continuar',
+                  style: TextStyle(color: NeuralTheme.of(context).successGreen),
+                ),
               ),
           ],
         );
@@ -115,7 +134,7 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
   void _handlePanStart(DragStartDetails details, Size size) {
     if (!_isPlaying) _startGame();
     if (_isFinished) return;
-    
+
     _checkCollision(details.localPosition, size);
   }
 
@@ -138,7 +157,7 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
 
   void _checkCollision(Offset position, Size size) {
     const double nodeRadius = 25.0; // Radio visual del nodo
-    
+
     for (var node in currentLevel.nodes) {
       // Coordenadas absolutas del nodo
       final Offset nodeCenter = Offset(
@@ -167,20 +186,23 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
           setState(() {
             connectedNodes.add(node);
             hasError = false;
-            
+
             // Check win
             if (connectedNodes.length == currentLevel.nodes.length) {
               _timer?.cancel();
               _isFinished = true;
-              _showGameOverDialog('¡Excelente!', 'Has completado el test satisfactoriamente en ${currentLevel.timeLimitSeconds - _secondsRemaining} segundos.');
+              _showGameOverDialog(
+                '¡Excelente!',
+                'Has completado el test satisfactoriamente en ${currentLevel.timeLimitSeconds - _secondsRemaining} segundos.',
+              );
             }
           });
         } else {
           // Incorrecto
           if (connectedNodes.isNotEmpty) {
-             setState(() {
-               hasError = true;
-             });
+            setState(() {
+              hasError = true;
+            });
           }
         }
         break; // Solo chequear un nodo a la vez
@@ -213,22 +235,27 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
                 child: DropdownButton<TrailLevel>(
                   value: currentLevel,
                   dropdownColor: nt.surfaceElevated,
-                  icon: Icon(Icons.keyboard_arrow_down, color: nt.textPrimaryAlt),
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: nt.textPrimaryAlt,
+                  ),
                   style: TextStyle(color: nt.textPrimaryAlt, fontSize: 14),
                   onChanged: (TrailLevel? newLevel) {
                     if (newLevel != null) {
                       _loadLevel(newLevel);
                     }
                   },
-                  items: TrailMakingLevels.levels.map<DropdownMenuItem<TrailLevel>>((TrailLevel level) {
-                    return DropdownMenuItem<TrailLevel>(
-                      value: level,
-                      child: Text(level.title),
-                    );
-                  }).toList(),
+                  items: TrailMakingLevels.levels
+                      .map<DropdownMenuItem<TrailLevel>>((TrailLevel level) {
+                        return DropdownMenuItem<TrailLevel>(
+                          value: level,
+                          child: Text(level.title),
+                        );
+                      })
+                      .toList(),
                 ),
               ),
-            )
+            ),
           ],
         ),
         body: Column(
@@ -248,12 +275,18 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.timer_outlined, color: _secondsRemaining <= 5 ? nt.pink : nt.cyan, size: 20),
+                        Icon(
+                          Icons.timer_outlined,
+                          color: _secondsRemaining <= 5 ? nt.pink : nt.cyan,
+                          size: 20,
+                        ),
                         const SizedBox(width: 8),
                         Text(
                           '00:${_secondsRemaining.toString().padLeft(2, '0')}',
                           style: TextStyle(
-                            color: _secondsRemaining <= 5 ? nt.pink : nt.textPrimary,
+                            color: _secondsRemaining <= 5
+                                ? nt.pink
+                                : nt.textPrimary,
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Outfit',
@@ -273,11 +306,20 @@ class _TrailMakingTestScreenState extends State<TrailMakingTestScreen> {
                   child: LayoutBuilder(
                     builder: (context, constraints) {
                       return GestureDetector(
-                        onPanStart: (details) => _handlePanStart(details, Size(constraints.maxWidth, constraints.maxHeight)),
-                        onPanUpdate: (details) => _handlePanUpdate(details, Size(constraints.maxWidth, constraints.maxHeight)),
+                        onPanStart: (details) => _handlePanStart(
+                          details,
+                          Size(constraints.maxWidth, constraints.maxHeight),
+                        ),
+                        onPanUpdate: (details) => _handlePanUpdate(
+                          details,
+                          Size(constraints.maxWidth, constraints.maxHeight),
+                        ),
                         onPanEnd: _handlePanEnd,
                         child: CustomPaint(
-                          size: Size(constraints.maxWidth, constraints.maxHeight),
+                          size: Size(
+                            constraints.maxWidth,
+                            constraints.maxHeight,
+                          ),
                           painter: TrailPainter(
                             level: currentLevel,
                             connectedNodes: connectedNodes,
@@ -338,7 +380,7 @@ class TrailPainter extends CustomPainter {
       ..color = nt.borderSubtle
       ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
-      
+
     final connectedNodeBorderPaint = Paint()
       ..color = nt.cyan
       ..strokeWidth = 3.0
@@ -346,28 +388,48 @@ class TrailPainter extends CustomPainter {
 
     // 1. Draw connected lines
     for (int i = 0; i < connectedNodes.length - 1; i++) {
-      final p1 = Offset(connectedNodes[i].xOffset * size.width, connectedNodes[i].yOffset * size.height);
-      final p2 = Offset(connectedNodes[i+1].xOffset * size.width, connectedNodes[i+1].yOffset * size.height);
+      final p1 = Offset(
+        connectedNodes[i].xOffset * size.width,
+        connectedNodes[i].yOffset * size.height,
+      );
+      final p2 = Offset(
+        connectedNodes[i + 1].xOffset * size.width,
+        connectedNodes[i + 1].yOffset * size.height,
+      );
       canvas.drawLine(p1, p2, linePaint);
     }
 
     // 2. Draw current drag line
     if (connectedNodes.isNotEmpty && currentDragPosition != null) {
       final lastNode = connectedNodes.last;
-      final p1 = Offset(lastNode.xOffset * size.width, lastNode.yOffset * size.height);
-      canvas.drawLine(p1, currentDragPosition!, hasError ? errorLinePaint : linePaint);
+      final p1 = Offset(
+        lastNode.xOffset * size.width,
+        lastNode.yOffset * size.height,
+      );
+      canvas.drawLine(
+        p1,
+        currentDragPosition!,
+        hasError ? errorLinePaint : linePaint,
+      );
     }
 
     // 3. Draw nodes
     for (var node in level.nodes) {
-      final center = Offset(node.xOffset * size.width, node.yOffset * size.height);
+      final center = Offset(
+        node.xOffset * size.width,
+        node.yOffset * size.height,
+      );
       final isConnected = connectedNodes.contains(node);
 
       // Circle background
       canvas.drawCircle(center, nodeRadius, nodePaint);
-      
+
       // Circle border
-      canvas.drawCircle(center, nodeRadius, isConnected ? connectedNodeBorderPaint : nodeBorderPaint);
+      canvas.drawCircle(
+        center,
+        nodeRadius,
+        isConnected ? connectedNodeBorderPaint : nodeBorderPaint,
+      );
 
       // Text label
       final textSpan = TextSpan(
@@ -385,13 +447,13 @@ class TrailPainter extends CustomPainter {
         textAlign: TextAlign.center,
       );
       textPainter.layout(minWidth: 0, maxWidth: nodeRadius * 2);
-      
+
       // Center text
       final textOffset = Offset(
         center.dx - (textPainter.width / 2),
         center.dy - (textPainter.height / 2),
       );
-      
+
       textPainter.paint(canvas, textOffset);
     }
   }
@@ -399,8 +461,8 @@ class TrailPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant TrailPainter oldDelegate) {
     return oldDelegate.connectedNodes.length != connectedNodes.length ||
-           oldDelegate.currentDragPosition != currentDragPosition ||
-           oldDelegate.hasError != hasError ||
-           oldDelegate.level != level;
+        oldDelegate.currentDragPosition != currentDragPosition ||
+        oldDelegate.hasError != hasError ||
+        oldDelegate.level != level;
   }
 }

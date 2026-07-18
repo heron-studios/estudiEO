@@ -28,7 +28,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
   int _currentIndex = 0; // Index in _filteredIndices
   String _filter = 'all'; // all, correct, incorrect, omitted
   final List<int> _filteredIndices = [];
-  
+
   late final PuterService _puterService;
   final Map<String, String> _aiExplanations = {};
   final Map<String, bool> _isLoadingAi = {};
@@ -40,7 +40,11 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
     _applyFilter();
   }
 
-  Future<void> _requestAIExplanation(Question q, int selectedOptionIndex, bool isCorrect) async {
+  Future<void> _requestAIExplanation(
+    Question q,
+    int selectedOptionIndex,
+    bool isCorrect,
+  ) async {
     final auth = context.read<AuthService>();
     final canUseIA = await LimitsService.canUseTutorIA(auth.isPremium);
 
@@ -48,7 +52,9 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Límite diario de consultas al Tutor IA alcanzado. Vuelve mañana o hazte Premium.'),
+            content: Text(
+              'Límite diario de consultas al Tutor IA alcanzado. Vuelve mañana o hazte Premium.',
+            ),
             backgroundColor: Colors.redAccent,
           ),
         );
@@ -60,15 +66,18 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       _isLoadingAi[q.id] = true;
     });
 
-    final String selectedAnswerText = selectedOptionIndex >= 0 && selectedOptionIndex < q.options.length 
-        ? q.options[selectedOptionIndex] 
+    final String selectedAnswerText =
+        selectedOptionIndex >= 0 && selectedOptionIndex < q.options.length
+        ? q.options[selectedOptionIndex]
         : 'Ninguna (Omitida)';
-    
-    final String correctAnswerText = q.correctAnswer >= 0 && q.correctAnswer < q.options.length 
-        ? q.options[q.correctAnswer] 
+
+    final String correctAnswerText =
+        q.correctAnswer >= 0 && q.correctAnswer < q.options.length
+        ? q.options[q.correctAnswer]
         : 'Desconocida';
 
-    final String systemPrompt = '''
+    final String systemPrompt =
+        '''
 Actúa como un profesor experto y empático de una academia pre-policial. 
 El alumno está revisando su simulacro de examen y necesita entender una pregunta.
 Pregunta: "${q.text}"
@@ -110,7 +119,7 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
         _filteredIndices.add(i);
       }
     }
-    
+
     // Reset index to 0 if out of bounds
     if (_currentIndex >= _filteredIndices.length) {
       _currentIndex = 0;
@@ -175,7 +184,11 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                     children: [
                       const Text(
                         'Revisión - Mapa de Preguntas',
-                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const Spacer(),
                       IconButton(
@@ -197,11 +210,12 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                   Expanded(
                     child: GridView.builder(
                       controller: scrollController,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 5,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                      ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                          ),
                       itemCount: widget.questions.length,
                       itemBuilder: (context, idx) {
                         final q = widget.questions[idx];
@@ -213,11 +227,15 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                         Color textColor = Colors.white;
 
                         if (!isOmitted) {
-                          bgColor = isCorrect ? const Color(0xFF10B981) : const Color(0xFFEF4444);
+                          bgColor = isCorrect
+                              ? const Color(0xFF10B981)
+                              : const Color(0xFFEF4444);
                         }
 
-                        final originalIndexInFiltered = _filteredIndices.indexOf(idx);
-                        final isSelectedInReview = originalIndexInFiltered == _currentIndex;
+                        final originalIndexInFiltered = _filteredIndices
+                            .indexOf(idx);
+                        final isSelectedInReview =
+                            originalIndexInFiltered == _currentIndex;
 
                         Border? border;
                         if (isSelectedInReview) {
@@ -285,7 +303,11 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
         children: [
           const Text(
             'Mapa de Preguntas',
-            style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 12),
           Row(
@@ -315,11 +337,14 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                 Color textColor = Colors.white;
 
                 if (!isOmitted) {
-                  bgColor = isCorrect ? const Color(0xFF10B981) : const Color(0xFFEF4444);
+                  bgColor = isCorrect
+                      ? const Color(0xFF10B981)
+                      : const Color(0xFFEF4444);
                 }
 
                 final originalIndexInFiltered = _filteredIndices.indexOf(idx);
-                final isSelectedInReview = originalIndexInFiltered == _currentIndex;
+                final isSelectedInReview =
+                    originalIndexInFiltered == _currentIndex;
 
                 Border? border;
                 if (isSelectedInReview) {
@@ -379,16 +404,21 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
   ) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: isLargeScreen ? double.infinity : 650),
+        constraints: BoxConstraints(
+          maxWidth: isLargeScreen ? double.infinity : 650,
+        ),
         child: Column(
           children: [
             _buildHeaderBar(isLargeScreen),
             _buildFilterRow(),
-            
+
             // Question and details
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -397,8 +427,8 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: _currentIndex > 0 
-                              ? () => setState(() => _currentIndex--) 
+                          onPressed: _currentIndex > 0
+                              ? () => setState(() => _currentIndex--)
                               : null,
                           icon: const Icon(Icons.arrow_back_ios, size: 18),
                           color: Colors.white,
@@ -413,8 +443,8 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                           ),
                         ),
                         IconButton(
-                          onPressed: _currentIndex < _filteredIndices.length - 1 
-                              ? () => setState(() => _currentIndex++) 
+                          onPressed: _currentIndex < _filteredIndices.length - 1
+                              ? () => setState(() => _currentIndex++)
                               : null,
                           icon: const Icon(Icons.arrow_forward_ios, size: 18),
                           color: Colors.white,
@@ -429,16 +459,25 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
                           decoration: BoxDecoration(
                             color: subjectColor.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: subjectColor.withValues(alpha: 0.4), width: 1),
+                            border: Border.all(
+                              color: subjectColor.withValues(alpha: 0.4),
+                              width: 1,
+                            ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text(subjectIcon, style: const TextStyle(fontSize: 14)),
+                              Text(
+                                subjectIcon,
+                                style: const TextStyle(fontSize: 14),
+                              ),
                               const SizedBox(width: 6),
                               Text(
                                 currentSubject?.name.toUpperCase() ?? 'MATERIA',
@@ -452,38 +491,43 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                             ],
                           ),
                         ),
-                        
+
                         // Correct/Incorrect/Omitted Badge
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
                           decoration: BoxDecoration(
-                            color: isOmitted 
-                                ? const Color(0xFF475569).withValues(alpha: 0.2) 
-                                : isCorrect 
-                                    ? const Color(0xFF10B981).withValues(alpha: 0.2) 
-                                    : const Color(0xFFEF4444).withValues(alpha: 0.2),
+                            color: isOmitted
+                                ? const Color(0xFF475569).withValues(alpha: 0.2)
+                                : isCorrect
+                                ? const Color(0xFF10B981).withValues(alpha: 0.2)
+                                : const Color(
+                                    0xFFEF4444,
+                                  ).withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
-                              color: isOmitted 
-                                  ? const Color(0xFF475569) 
-                                  : isCorrect 
-                                      ? const Color(0xFF10B981) 
-                                      : const Color(0xFFEF4444),
+                              color: isOmitted
+                                  ? const Color(0xFF475569)
+                                  : isCorrect
+                                  ? const Color(0xFF10B981)
+                                  : const Color(0xFFEF4444),
                               width: 1,
                             ),
                           ),
                           child: Text(
-                            isOmitted 
-                                ? 'OMITIDA' 
-                                : isCorrect 
-                                    ? 'CORRECTA' 
-                                    : 'INCORRECTA',
+                            isOmitted
+                                ? 'OMITIDA'
+                                : isCorrect
+                                ? 'CORRECTA'
+                                : 'INCORRECTA',
                             style: TextStyle(
-                              color: isOmitted 
-                                  ? const Color(0xFF94A3B8) 
-                                  : isCorrect 
-                                      ? const Color(0xFF34D399) 
-                                      : const Color(0xFFF87171),
+                              color: isOmitted
+                                  ? const Color(0xFF94A3B8)
+                                  : isCorrect
+                                  ? const Color(0xFF34D399)
+                                  : const Color(0xFFF87171),
                               fontSize: 11,
                               fontWeight: FontWeight.w800,
                               letterSpacing: 1.1,
@@ -537,7 +581,10 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 12),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 18,
+                            vertical: 16,
+                          ),
                           decoration: BoxDecoration(
                             color: itemBg,
                             border: Border.all(color: itemBorder, width: 1.5),
@@ -550,7 +597,9 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                                 height: 28,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: const Color(0xFF334155).withValues(alpha: 0.3),
+                                  color: const Color(
+                                    0xFF334155,
+                                  ).withValues(alpha: 0.3),
                                 ),
                                 child: Center(
                                   child: Text(
@@ -574,9 +623,9 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                                 ),
                               ),
                               if (rightIcon != null) ...[
-                                        const SizedBox(width: 10),
-                                        Icon(rightIcon, color: iconColor, size: 22),
-                              ]
+                                const SizedBox(width: 10),
+                                Icon(rightIcon, color: iconColor, size: 22),
+                              ],
                             ],
                           ),
                         ),
@@ -598,7 +647,11 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                         children: [
                           Row(
                             children: [
-                              const Icon(Icons.info_outline, color: Color(0xFF60A5FA), size: 20),
+                              const Icon(
+                                Icons.info_outline,
+                                color: Color(0xFF60A5FA),
+                                size: 20,
+                              ),
                               const SizedBox(width: 8),
                               Text(
                                 'Explicación Teórica',
@@ -612,8 +665,8 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            question.explanation.isNotEmpty 
-                                ? question.explanation 
+                            question.explanation.isNotEmpty
+                                ? question.explanation
                                 : 'No hay una explicación detallada disponible para esta pregunta en este momento.',
                             style: const TextStyle(
                               color: Color(0xFFE2E8F0),
@@ -640,7 +693,11 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                         children: [
                           Row(
                             children: [
-                              const Icon(Icons.smart_toy_rounded, color: Colors.purpleAccent, size: 20),
+                              const Icon(
+                                Icons.smart_toy_rounded,
+                                color: Colors.purpleAccent,
+                                size: 20,
+                              ),
                               const SizedBox(width: 8),
                               const Text(
                                 'Tutor IA',
@@ -651,39 +708,76 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
                                 ),
                               ),
                               const Spacer(),
-                              if (!(_isLoadingAi[question.id] ?? false) && !_aiExplanations.containsKey(question.id))
+                              if (!(_isLoadingAi[question.id] ?? false) &&
+                                  !_aiExplanations.containsKey(question.id))
                                 ElevatedButton.icon(
-                                  onPressed: () => _requestAIExplanation(question, selectedAnswer, isCorrect),
-                                  icon: const Icon(Icons.auto_awesome, size: 16),
-                                  label: const Text('Explicar con IA (Puter)', style: TextStyle(fontSize: 12)),
+                                  onPressed: () => _requestAIExplanation(
+                                    question,
+                                    selectedAnswer,
+                                    isCorrect,
+                                  ),
+                                  icon: const Icon(
+                                    Icons.auto_awesome,
+                                    size: 16,
+                                  ),
+                                  label: const Text(
+                                    'Explicar con IA (Puter)',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.purpleAccent.withValues(alpha: 0.2),
+                                    backgroundColor: Colors.purpleAccent
+                                        .withValues(alpha: 0.2),
                                     foregroundColor: Colors.purpleAccent,
                                     elevation: 0,
-                                    side: const BorderSide(color: Colors.purpleAccent),
-                                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                    side: const BorderSide(
+                                      color: Colors.purpleAccent,
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 12,
+                                      vertical: 8,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
                                   ),
                                 ),
                             ],
                           ),
                           if (_isLoadingAi[question.id] ?? false) ...[
                             const SizedBox(height: 16),
-                            const Center(child: CircularProgressIndicator(color: Colors.purpleAccent)),
-                          ] else if (_aiExplanations.containsKey(question.id)) ...[
+                            const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.purpleAccent,
+                              ),
+                            ),
+                          ] else if (_aiExplanations.containsKey(
+                            question.id,
+                          )) ...[
                             const SizedBox(height: 12),
                             MarkdownBody(
                               data: _aiExplanations[question.id]!,
                               styleSheet: MarkdownStyleSheet(
-                                p: const TextStyle(color: Color(0xFFE2E8F0), fontSize: 14, height: 1.5),
-                                strong: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                p: const TextStyle(
+                                  color: Color(0xFFE2E8F0),
+                                  fontSize: 14,
+                                  height: 1.5,
+                                ),
+                                strong: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ] else ...[
                             const SizedBox(height: 8),
                             Text(
                               '¿Aún tienes dudas? Pídele a nuestro Profesor IA que te lo explique paso a paso.',
-                              style: TextStyle(color: Colors.purple[200]!.withValues(alpha: 0.7), fontSize: 13),
+                              style: TextStyle(
+                                color: Colors.purple[200]!.withValues(
+                                  alpha: 0.7,
+                                ),
+                                fontSize: 13,
+                              ),
                             ),
                           ],
                         ],
@@ -714,7 +808,10 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
           ),
         ),
         body: const Center(
-          child: Text('No hay preguntas para revisar.', style: TextStyle(color: Colors.white)),
+          child: Text(
+            'No hay preguntas para revisar.',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       );
     }
@@ -754,7 +851,9 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
 
     final currentSubject = _getCurrentSubject(question);
     final subjectColorHex = currentSubject?.color ?? '#3B82F6';
-    final colorVal = int.tryParse(subjectColorHex.replaceAll('#', ''), radix: 16) ?? 0xFF3B82F6;
+    final colorVal =
+        int.tryParse(subjectColorHex.replaceAll('#', ''), radix: 16) ??
+        0xFF3B82F6;
     final subjectColor = Color(colorVal | 0xFF000000);
     final subjectIcon = currentSubject?.icon ?? '📚';
 
@@ -765,14 +864,10 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
       body: Stack(
         children: [
           if (bridgeWidget != null)
-            Positioned(
-              top: -100,
-              left: -100,
-              child: bridgeWidget,
-            ),
+            Positioned(top: -100, left: -100, child: bridgeWidget),
           NeuralBackgroundWrapper(
             child: SafeArea(
-              child: isLargeScreen 
+              child: isLargeScreen
                   ? Center(
                       child: SizedBox(
                         width: screenWidth.clamp(0.0, 960.0),
@@ -827,7 +922,11 @@ Explica brevemente y paso a paso por qué la respuesta correcta es la correcta y
           const Expanded(
             child: Text(
               'Revisión de Respuestas',
-              style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
               textAlign: TextAlign.center,
             ),
           ),

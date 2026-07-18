@@ -33,16 +33,15 @@ class StudyStatsCollector {
         .length;
 
     // --- Quiz Stats ---
-    final completedSessions =
-        quiz.sessions.where((s) => s.isCompleted).toList();
+    final completedSessions = quiz.sessions
+        .where((s) => s.isCompleted)
+        .toList();
     final totalSessions = completedSessions.length;
 
     // Calcular promedio global
     final globalAvg = totalSessions > 0
-        ? completedSessions
-                .map((s) => s.percentage)
-                .reduce((a, b) => a + b) /
-            totalSessions
+        ? completedSessions.map((s) => s.percentage).reduce((a, b) => a + b) /
+              totalSessions
         : 0.0;
 
     // Calcular rendimiento por materia
@@ -56,14 +55,14 @@ class StudyStatsCollector {
 
     for (final subject in subjectList) {
       final topicIds = subject.topicIds;
-      final subjectSessions =
-          completedSessions.where((s) => topicIds.contains(s.topicId)).toList();
+      final subjectSessions = completedSessions
+          .where((s) => topicIds.contains(s.topicId))
+          .toList();
 
       if (subjectSessions.isEmpty) continue;
 
-      final avg = subjectSessions
-              .map((s) => s.percentage)
-              .reduce((a, b) => a + b) /
+      final avg =
+          subjectSessions.map((s) => s.percentage).reduce((a, b) => a + b) /
           subjectSessions.length;
       final best = subjectSessions
           .map((s) => s.percentage)
@@ -89,8 +88,7 @@ class StudyStatsCollector {
     // Recencia: sesiones de los últimos 7 días
     final weekAgo = DateTime.now().subtract(const Duration(days: 7));
     final recentSessions = completedSessions
-        .where((s) =>
-            s.finishedAt != null && s.finishedAt!.isAfter(weekAgo))
+        .where((s) => s.finishedAt != null && s.finishedAt!.isAfter(weekAgo))
         .length;
 
     final stats = {
@@ -128,14 +126,13 @@ class StudyStatsCollector {
   /// Devuelve las stats ya parseadas para el dashboard visual (no para la IA)
   Map<String, dynamic> buildVisualStats() {
     final gami = gamification.gamification;
-    final completedSessions =
-        quiz.sessions.where((s) => s.isCompleted).toList();
+    final completedSessions = quiz.sessions
+        .where((s) => s.isCompleted)
+        .toList();
     final totalSessions = completedSessions.length;
     final globalAvg = totalSessions > 0
-        ? completedSessions
-                .map((s) => s.percentage)
-                .reduce((a, b) => a + b) /
-            totalSessions
+        ? completedSessions.map((s) => s.percentage).reduce((a, b) => a + b) /
+              totalSessions
         : 0.0;
 
     final subjectList = subjects.subjects;
@@ -146,12 +143,12 @@ class StudyStatsCollector {
 
     for (final subject in subjectList) {
       final topicIds = subject.topicIds;
-      final subjectSessions =
-          completedSessions.where((s) => topicIds.contains(s.topicId)).toList();
+      final subjectSessions = completedSessions
+          .where((s) => topicIds.contains(s.topicId))
+          .toList();
       if (subjectSessions.isEmpty) continue;
-      final avg = subjectSessions
-              .map((s) => s.percentage)
-              .reduce((a, b) => a + b) /
+      final avg =
+          subjectSessions.map((s) => s.percentage).reduce((a, b) => a + b) /
           subjectSessions.length;
 
       subjectPerformance.add({

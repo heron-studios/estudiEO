@@ -15,11 +15,11 @@ class InterviewResult {
   });
 
   Map<String, dynamic> toJson() => {
-        'date': date.toIso8601String(),
-        'score': score,
-        'evaluation': evaluation,
-        'messagesCount': messagesCount,
-      };
+    'date': date.toIso8601String(),
+    'score': score,
+    'evaluation': evaluation,
+    'messagesCount': messagesCount,
+  };
 
   factory InterviewResult.fromJson(Map<String, dynamic> json) {
     return InterviewResult(
@@ -69,4 +69,3 @@ class InterviewResult {
     return const Color(0xFFEF4444);
   }
 }
-

@@ -11,6 +11,6 @@ final Subject ctaSubject = Subject(
     'cta_sistema_solar',
     'cta_tabla_periodica',
     'cta_vegetales_fotosintesis',
-    'cta_fenomenos_cambioclimatico'
+    'cta_fenomenos_cambioclimatico',
   ],
 );

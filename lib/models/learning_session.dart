@@ -36,8 +36,8 @@ class LearningSession {
     DateTime? startedAt,
     this.finishedAt,
     this.isLevelCompleted = false,
-  })  : completedIds = completedIds ?? [],
-        startedAt = startedAt ?? DateTime.now();
+  }) : completedIds = completedIds ?? [],
+       startedAt = startedAt ?? DateTime.now();
 
   /// ID de la pregunta actualmente en el frente de la cola.
   String? get currentQuestionId =>
@@ -48,20 +48,19 @@ class LearningSession {
 
   bool get isFinished => correctCount >= targetCorrect;
 
-  Duration get elapsed =>
-      (finishedAt ?? DateTime.now()).difference(startedAt);
+  Duration get elapsed => (finishedAt ?? DateTime.now()).difference(startedAt);
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'topicId': topicId,
-        'nivel': nivel.key,
-        'questionQueue': questionQueue,
-        'completedIds': completedIds,
-        'correctCount': correctCount,
-        'startedAt': startedAt.toIso8601String(),
-        'finishedAt': finishedAt?.toIso8601String(),
-        'isLevelCompleted': isLevelCompleted,
-      };
+    'id': id,
+    'topicId': topicId,
+    'nivel': nivel.key,
+    'questionQueue': questionQueue,
+    'completedIds': completedIds,
+    'correctCount': correctCount,
+    'startedAt': startedAt.toIso8601String(),
+    'finishedAt': finishedAt?.toIso8601String(),
+    'isLevelCompleted': isLevelCompleted,
+  };
 
   factory LearningSession.fromJson(Map<String, dynamic> json) =>
       LearningSession(

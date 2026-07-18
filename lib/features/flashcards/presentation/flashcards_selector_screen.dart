@@ -14,7 +14,8 @@ class FlashcardsSelectorScreen extends StatefulWidget {
   const FlashcardsSelectorScreen({super.key});
 
   @override
-  State<FlashcardsSelectorScreen> createState() => _FlashcardsSelectorScreenState();
+  State<FlashcardsSelectorScreen> createState() =>
+      _FlashcardsSelectorScreenState();
 }
 
 class _FlashcardsSelectorScreenState extends State<FlashcardsSelectorScreen> {
@@ -40,11 +41,14 @@ class _FlashcardsSelectorScreenState extends State<FlashcardsSelectorScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final provider = context.watch<SubjectProvider>();
-    _subjects = provider.subjects.where((s) => 
-      s.name != 'Matemáticas' && 
-      s.name != 'Matemática' && 
-      s.name != 'Razonamiento Matemático'
-    ).toList();
+    _subjects = provider.subjects
+        .where(
+          (s) =>
+              s.name != 'Matemáticas' &&
+              s.name != 'Matemática' &&
+              s.name != 'Razonamiento Matemático',
+        )
+        .toList();
     if (_subjects.isNotEmpty) {
       if (!_isSelectionInitialized) {
         _selected = _subjects.first;
@@ -93,261 +97,325 @@ class _FlashcardsSelectorScreenState extends State<FlashcardsSelectorScreen> {
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            Text('Tarjetas de Memoria',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold)),
+            Text(
+              'Tarjetas de Memoria',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
       body: NeuralBackgroundWrapper(
         child: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 650),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // ── SUBTITLE ──
-              Text(
-                'Elige una materia y un tema para estudiar con tarjetas.',
-                style: TextStyle(color: _muted.withValues(alpha: 0.8), fontSize: 13),
-              ),
-              const SizedBox(height: 14),
-
-              // ── BANNER GENERADOR IA ──
-              GestureDetector(
-                onTap: () => context.push('/srs/generator'),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0xFF8B5CF6).withValues(alpha: 0.3),
-                        const Color(0xFF8B5CF6).withValues(alpha: 0.1)
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 650),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // ── SUBTITLE ──
+                    Text(
+                      'Elige una materia y un tema para estudiar con tarjetas.',
+                      style: TextStyle(
+                        color: _muted.withValues(alpha: 0.8),
+                        fontSize: 13,
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: const Color(0xFF8B5CF6).withValues(alpha: 0.4)),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(Icons.auto_awesome_rounded, color: Color(0xFF8B5CF6), size: 24),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                const Text(
-                                  'Generador IA',
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
-                                ),
-                                const SizedBox(width: 8),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: const Text('EXPERIMENTAL', style: TextStyle(color: Color(0xFF8B5CF6), fontSize: 8, fontWeight: FontWeight.bold)),
-                                ),
-                              ],
-                            ),
-                            const Text(
-                              'Crea tarjetas desde cualquier texto',
-                              style: TextStyle(color: Colors.white70, fontSize: 12),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white54, size: 14),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
+                    const SizedBox(height: 14),
 
-              // ── SUBJECT CHIPS (horizontal) ──
-              if (_subjects.isEmpty)
-                const Center(
-                    child: Text('No hay asignaturas visibles',
-                        style: TextStyle(color: Colors.white54)))
-              else
-                SizedBox(
-                  height: 38,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                  itemCount: _subjects.length,
-                  separatorBuilder: (_, __) => const SizedBox(width: 8),
-                  itemBuilder: (context, i) {
-                    final s = _subjects[i];
-                    final isSelected = s.id == _selected.id;
-                    final color = _parseColor(s.color);
-                    return GestureDetector(
-                      onTap: () => _selectSubject(s),
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 180),
+                    // ── BANNER GENERADOR IA ──
+                    GestureDetector(
+                      onTap: () => context.push('/srs/generator'),
+                      child: Container(
+                        width: double.infinity,
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 14, vertical: 8),
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
                         decoration: BoxDecoration(
-                          color: isSelected
-                              ? color.withValues(alpha: 0.25)
-                              : _card,
-                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color(0xFF8B5CF6).withValues(alpha: 0.3),
+                              const Color(0xFF8B5CF6).withValues(alpha: 0.1),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
                           border: Border.all(
-                            color: isSelected
-                                ? color
-                                : _border,
-                            width: isSelected ? 1.5 : 1,
+                            color: const Color(
+                              0xFF8B5CF6,
+                            ).withValues(alpha: 0.4),
                           ),
                         ),
                         child: Row(
                           children: [
-                            Text(s.icon,
-                                style: const TextStyle(fontSize: 14)),
-                            const SizedBox(width: 6),
-                            Text(
-                              s.name.split(' ').take(2).join(' '),
-                              style: TextStyle(
-                                color: isSelected ? color : _muted,
-                                fontWeight: isSelected
-                                    ? FontWeight.bold
-                                    : FontWeight.normal,
-                                fontSize: 12,
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: const Color(
+                                  0xFF8B5CF6,
+                                ).withValues(alpha: 0.2),
+                                shape: BoxShape.circle,
                               ),
+                              child: const Icon(
+                                Icons.auto_awesome_rounded,
+                                color: Color(0xFF8B5CF6),
+                                size: 24,
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Text(
+                                        'Generador IA',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 6,
+                                          vertical: 2,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: const Color(
+                                            0xFF8B5CF6,
+                                          ).withValues(alpha: 0.2),
+                                          borderRadius: BorderRadius.circular(
+                                            4,
+                                          ),
+                                        ),
+                                        child: const Text(
+                                          'EXPERIMENTAL',
+                                          style: TextStyle(
+                                            color: Color(0xFF8B5CF6),
+                                            fontSize: 8,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Text(
+                                    'Crea tarjetas desde cualquier texto',
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.white54,
+                              size: 14,
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
-              ),
-
-              const SizedBox(height: 16),
-
-              // ── TOPIC LABEL ──
-              if (_subjects.isNotEmpty) ...[
-                Row(
-                  children: [
-                    Text(
-                      '${_selected.icon}  Temas de ${_selected.name}',
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14),
                     ),
-                    const Spacer(),
-                    Text(
-                      '${_topics.length} temas',
-                      style: const TextStyle(color: _muted, fontSize: 12),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
-              ],
+                    const SizedBox(height: 16),
 
-              // ── TOPIC LIST (expanded, no outer scroll) ──
-              Expanded(
-                child: _topics.isEmpty
-                    ? const Center(
-                        child: Text('Sin temas disponibles',
-                            style: TextStyle(color: Colors.white38)))
-                    : ListView.separated(
-                        itemCount: _topics.length,
-                        separatorBuilder: (_, __) => const SizedBox(height: 6),
-                        itemBuilder: (context, i) {
-                          final t = _topics[i];
-                          return Material(
-                            color: _card,
-                            borderRadius: BorderRadius.circular(14),
-                            child: InkWell(
-                              onTap: () => _openFlashcards(t),
-                              borderRadius: BorderRadius.circular(14),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(14),
-                                  border: Border.all(
-                                      color: _border, width: 1),
-                                ),
+                    // ── SUBJECT CHIPS (horizontal) ──
+                    if (_subjects.isEmpty)
+                      const Center(
+                        child: Text(
+                          'No hay asignaturas visibles',
+                          style: TextStyle(color: Colors.white54),
+                        ),
+                      )
+                    else
+                      SizedBox(
+                        height: 38,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: _subjects.length,
+                          separatorBuilder: (_, __) => const SizedBox(width: 8),
+                          itemBuilder: (context, i) {
+                            final s = _subjects[i];
+                            final isSelected = s.id == _selected.id;
+                            final color = _parseColor(s.color);
+                            return GestureDetector(
+                              onTap: () => _selectSubject(s),
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 180),
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 14),
+                                  horizontal: 14,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isSelected
+                                      ? color.withValues(alpha: 0.25)
+                                      : _card,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: isSelected ? color : _border,
+                                    width: isSelected ? 1.5 : 1,
+                                  ),
+                                ),
                                 child: Row(
                                   children: [
-                                    Container(
-                                      width: 32,
-                                      height: 32,
-                                      decoration: BoxDecoration(
-                                        color: _purple
-                                            .withValues(alpha: 0.12),
-                                        borderRadius:
-                                            BorderRadius.circular(8),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          '${i + 1}',
-                                          style: const TextStyle(
-                                              color: _purpleLight,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 13),
-                                        ),
+                                    Text(
+                                      s.icon,
+                                      style: const TextStyle(fontSize: 14),
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Text(
+                                      s.name.split(' ').take(2).join(' '),
+                                      style: TextStyle(
+                                        color: isSelected ? color : _muted,
+                                        fontWeight: isSelected
+                                            ? FontWeight.bold
+                                            : FontWeight.normal,
+                                        fontSize: 12,
                                       ),
                                     ),
-                                    const SizedBox(width: 12),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+
+                    const SizedBox(height: 16),
+
+                    // ── TOPIC LABEL ──
+                    if (_subjects.isNotEmpty) ...[
+                      Row(
+                        children: [
+                          Text(
+                            '${_selected.icon}  Temas de ${_selected.name}',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            '${_topics.length} temas',
+                            style: const TextStyle(color: _muted, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                    ],
+
+                    // ── TOPIC LIST (expanded, no outer scroll) ──
+                    Expanded(
+                      child: _topics.isEmpty
+                          ? const Center(
+                              child: Text(
+                                'Sin temas disponibles',
+                                style: TextStyle(color: Colors.white38),
+                              ),
+                            )
+                          : ListView.separated(
+                              itemCount: _topics.length,
+                              separatorBuilder: (_, __) =>
+                                  const SizedBox(height: 6),
+                              itemBuilder: (context, i) {
+                                final t = _topics[i];
+                                return Material(
+                                  color: _card,
+                                  borderRadius: BorderRadius.circular(14),
+                                  child: InkWell(
+                                    onTap: () => _openFlashcards(t),
+                                    borderRadius: BorderRadius.circular(14),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(14),
+                                        border: Border.all(
+                                          color: _border,
+                                          width: 1,
+                                        ),
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                        vertical: 14,
+                                      ),
+                                      child: Row(
                                         children: [
-                                          Text(t.name,
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 14)),
-                                          Text(
-                                            '${t.questionCount} tarjetas',
-                                            style: const TextStyle(
-                                                color: _muted,
-                                                fontSize: 11),
+                                          Container(
+                                            width: 32,
+                                            height: 32,
+                                            decoration: BoxDecoration(
+                                              color: _purple.withValues(
+                                                alpha: 0.12,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                '${i + 1}',
+                                                style: const TextStyle(
+                                                  color: _purpleLight,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 13,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  t.name,
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '${t.questionCount} tarjetas',
+                                                  style: const TextStyle(
+                                                    color: _muted,
+                                                    fontSize: 11,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const Icon(
+                                            Icons.auto_awesome_rounded,
+                                            color: _purple,
+                                            size: 18,
                                           ),
                                         ],
                                       ),
                                     ),
-                                    const Icon(
-                                        Icons.auto_awesome_rounded,
-                                        color: _purple,
-                                        size: 18),
-                                  ],
-                                ),
-                              ),
+                                  ),
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
+                    ),
+                  ],
+                ),
               ),
-            ],
+            ),
           ),
         ),
       ),
-        ),
-      ),
-    ),
-  );
-}
+    );
+  }
 }

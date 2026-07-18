@@ -69,11 +69,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
       _streakDays = progress['streak'];
       _todayCompleted = progress['todayCompleted'];
       _failedCount = failedIds.length;
-      
+
       _totalMissions = progress['totalMissions'] ?? 0;
       _lastOverallScore = progress['lastOverallScore'] ?? 0.0;
       _lastScores = Map<String, double>.from(progress['lastScores'] ?? {});
-      
+
       if (_totalMissions == 0) {
         _diagnosis = 'PENDIENTE';
       } else if (_lastOverallScore >= 0.70) {
@@ -123,7 +123,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
               color: nt.surfaceCard,
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
-                  color: nt.successGreen.withValues(alpha: 0.4), width: 1.5),
+                color: nt.successGreen.withValues(alpha: 0.4),
+                width: 1.5,
+              ),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -135,7 +137,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                     shape: BoxShape.circle,
                     color: nt.successGreen.withValues(alpha: 0.15),
                   ),
-                  child: Icon(Icons.check_circle_rounded, color: nt.successGreen, size: 32),
+                  child: Icon(
+                    Icons.check_circle_rounded,
+                    color: nt.successGreen,
+                    size: 32,
+                  ),
                 ),
                 const SizedBox(height: 16),
                 const Text(
@@ -152,7 +158,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 const Text(
                   'Ya has completado tu misión psicométrica de hoy. Vuelve mañana para un nuevo desafío y seguir aumentando tu racha.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 13,
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
@@ -164,9 +174,13 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                    child: const Text('ENTENDIDO', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'ENTENDIDO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ],
@@ -206,7 +220,10 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 padding: const EdgeInsets.only(right: 12),
                 child: Center(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [Color(0xFFFF6F00), Color(0xFFFF9100)],
@@ -286,9 +303,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                             children: [
                               _buildHeader(nt),
                               const SizedBox(height: 16),
-                              Expanded(
-                                child: _buildStatsCol(),
-                              ),
+                              Expanded(child: _buildStatsCol()),
                               const SizedBox(height: 16),
                               _buildMedicalStudyCard(nt),
                             ],
@@ -304,9 +319,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                               _buildDailyMission(nt),
                               _buildProfileCard(nt),
                               const SizedBox(height: 16),
-                              Expanded(
-                                child: _buildModulesGridDesktop(),
-                              ),
+                              Expanded(child: _buildModulesGridDesktop()),
                             ],
                           ),
                         ),
@@ -336,7 +349,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
               color: nt.blueGoogle.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                  color: nt.blueGoogle.withValues(alpha: 0.4), width: 1),
+                color: nt.blueGoogle.withValues(alpha: 0.4),
+                width: 1,
+              ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -361,8 +376,8 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
               final baseColor = _diagnosis == 'APTO'
                   ? const Color(0xFF10B981)
                   : (_diagnosis == 'PENDIENTE'
-                      ? const Color(0xFFF59E0B)
-                      : const Color(0xFFEF4444));
+                        ? const Color(0xFFF59E0B)
+                        : const Color(0xFFEF4444));
 
               return ShaderMask(
                 shaderCallback: (bounds) => LinearGradient(
@@ -471,7 +486,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
             iconColor: _failedCount > 0
                 ? const Color(0xFFEF4444)
                 : const Color(0xFF4ADE80),
-            value: _failedCount > 0 ? '$_failedCount pendientes' : 'Todo limpio',
+            value: _failedCount > 0
+                ? '$_failedCount pendientes'
+                : 'Todo limpio',
             label: 'Repaso',
           ),
         ),
@@ -496,7 +513,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
               color: iconColor.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                  color: iconColor.withValues(alpha: 0.3), width: 1),
+                color: iconColor.withValues(alpha: 0.3),
+                width: 1,
+              ),
             ),
             child: Icon(icon, color: iconColor, size: 18),
           ),
@@ -531,7 +550,8 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
   }
 
   Widget _buildProfileCard(NeuralThemeData nt) {
-    if (_totalMissions == 0 || _lastScores.isEmpty) return const SizedBox.shrink();
+    if (_totalMissions == 0 || _lastScores.isEmpty)
+      return const SizedBox.shrink();
 
     // Encontrar la dimensión más débil para dar una recomendación útil
     String weakestDim = '';
@@ -543,7 +563,8 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
       }
     });
 
-    String recommendation = 'Tu perfil está equilibrado y apto para la PNP. ¡Sigue así!';
+    String recommendation =
+        'Tu perfil está equilibrado y apto para la PNP. ¡Sigue así!';
     if (_diagnosis != 'APTO' && weakestDim.isNotEmpty) {
       recommendation = 'Concéntrate en mejorar en la dimensión: $weakestDim.';
     }
@@ -559,7 +580,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
           children: [
             Row(
               children: [
-                Icon(Icons.psychology_alt_rounded, color: nt.blueGoogle, size: 20),
+                Icon(
+                  Icons.psychology_alt_rounded,
+                  color: nt.blueGoogle,
+                  size: 20,
+                ),
                 const SizedBox(width: 8),
                 const Text(
                   'PERFIL PSICOMÉTRICO ACTUAL',
@@ -573,11 +598,16 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 ),
                 const Spacer(),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 3,
+                  ),
                   decoration: BoxDecoration(
                     color: nt.blueGoogle.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
+                    border: Border.all(
+                      color: nt.blueGoogle.withValues(alpha: 0.3),
+                    ),
                   ),
                   child: Text(
                     '$_totalMissions ${_totalMissions == 1 ? "misión" : "misiones"}',
@@ -649,8 +679,12 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
               child: Row(
                 children: [
                   Icon(
-                    _diagnosis == 'APTO' ? Icons.check_circle_rounded : Icons.info_outline_rounded,
-                    color: _diagnosis == 'APTO' ? nt.successGreen : nt.warningAmber,
+                    _diagnosis == 'APTO'
+                        ? Icons.check_circle_rounded
+                        : Icons.info_outline_rounded,
+                    color: _diagnosis == 'APTO'
+                        ? nt.successGreen
+                        : nt.warningAmber,
                     size: 14,
                   ),
                   const SizedBox(width: 8),
@@ -702,7 +736,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 shape: BoxShape.circle,
               ),
               child: Icon(
-                _todayCompleted ? Icons.check_circle_rounded : Icons.stars_rounded,
+                _todayCompleted
+                    ? Icons.check_circle_rounded
+                    : Icons.stars_rounded,
                 color: _todayCompleted ? const Color(0xFF4ADE80) : Colors.amber,
                 size: 28,
               ),
@@ -716,11 +752,12 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                   const Text(
                     'MISIÓN DIARIA',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 16,
-                        fontFamily: 'Outfit',
-                        letterSpacing: 0.5),
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 16,
+                      fontFamily: 'Outfit',
+                      letterSpacing: 0.5,
+                    ),
                   ),
                   const SizedBox(height: 2),
                   Text(
@@ -728,8 +765,9 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                         ? '¡Misión de hoy completada! Vuelve mañana.'
                         : '20 preguntas psicométricas para mejorar tu perfil.',
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.85),
-                        fontSize: 12),
+                      color: Colors.white.withValues(alpha: 0.85),
+                      fontSize: 12,
+                    ),
                   ),
                 ],
               ),
@@ -740,8 +778,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 color: Colors.white.withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white, size: 14),
+              child: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white,
+                size: 14,
+              ),
             ),
           ],
         ),
@@ -797,9 +838,13 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
         title: 'REPASAR',
         subtitle: 'Corrige los errores de tu misión',
         icon: Icons.history_edu_rounded,
-        color: _failedCount > 0 ? const Color(0xFFEF4444) : const Color(0xFF10B981),
+        color: _failedCount > 0
+            ? const Color(0xFFEF4444)
+            : const Color(0xFF10B981),
         badge: _failedCount > 0 ? '$_failedCount PEND' : 'AL DÍA',
-        badgeColor: _failedCount > 0 ? const Color(0xFFEF4444) : const Color(0xFF10B981),
+        badgeColor: _failedCount > 0
+            ? const Color(0xFFEF4444)
+            : const Color(0xFF10B981),
         onTap: () => context.push('/psicolearn/re-entrenamiento'),
       ),
       _buildModuleCard(
@@ -837,9 +882,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -856,12 +899,17 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                   child: Icon(icon, color: color, size: 20),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
                     color: badgeColor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                        color: badgeColor.withValues(alpha: 0.4), width: 1),
+                      color: badgeColor.withValues(alpha: 0.4),
+                      width: 1,
+                    ),
                   ),
                   child: Text(
                     badge,
@@ -910,9 +958,7 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
         child: Row(
           children: [
             Container(
@@ -921,10 +967,15 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 color: nt.cyan.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(14),
                 border: Border.all(
-                    color: nt.cyan.withValues(alpha: 0.3), width: 1.5),
+                  color: nt.cyan.withValues(alpha: 0.3),
+                  width: 1.5,
+                ),
               ),
-              child: Icon(Icons.health_and_safety_rounded,
-                  color: nt.cyan, size: 24),
+              child: Icon(
+                Icons.health_and_safety_rounded,
+                color: nt.cyan,
+                size: 24,
+              ),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -945,7 +996,10 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: nt.cyan.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
@@ -991,8 +1045,11 @@ class _PsicoLearnScreenState extends State<PsicoLearnScreen>
                 color: Colors.white.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.arrow_forward_ios_rounded,
-                  color: Colors.white70, size: 12),
+              child: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white70,
+                size: 12,
+              ),
             ),
           ],
         ),

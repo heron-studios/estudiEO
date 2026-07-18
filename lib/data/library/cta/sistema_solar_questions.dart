@@ -14,21 +14,18 @@ final List<Question> sistemaSolarQuestions = [
       r'''Una nebulosa planetaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Sol es la única estrella y el cuerpo central de nuestro sistema planetario, aportando la energía lumínica y térmica fundamental, y concentra más del 99,86% de la masa del sistema.''',
+    explanation:
+        r'''El Sol es la única estrella y el cuerpo central de nuestro sistema planetario, aportando la energía lumínica y térmica fundamental, y concentra más del 99,86% de la masa del sistema.''',
   ),
   Question(
     id: 'sys_sol_f2',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Cuántos planetas principales conforman oficialmente el sistema solar en la actualidad?''',
-    options: [
-      r'''7''',
-      r'''8''',
-      r'''9''',
-      r'''12''',
-      r'''5''',
-    ],
+    text:
+        r'''¿Cuántos planetas principales conforman oficialmente el sistema solar en la actualidad?''',
+    options: [r'''7''', r'''8''', r'''9''', r'''12''', r'''5'''],
     correctAnswer: 1,
-    explanation: r'''Tras la redefinición de la Unión Astronómica Internacional en 2006, el sistema solar está compuesto oficialmente por 8 planetas principales, habiendo pasado Plutón a la categoría de planeta enano.''',
+    explanation:
+        r'''Tras la redefinición de la Unión Astronómica Internacional en 2006, el sistema solar está compuesto oficialmente por 8 planetas principales, habiendo pasado Plutón a la categoría de planeta enano.''',
   ),
   Question(
     id: 'sys_sol_f3',
@@ -42,12 +39,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Venus, Marte, Urano, Neptuno.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los planetas interiores, cercanos al Sol, son Mercurio, Venus, Tierra y Marte, y se caracterizan por tener un tamaño menor y una superficie sólida de roca y metal.''',
+    explanation:
+        r'''Los planetas interiores, cercanos al Sol, son Mercurio, Venus, Tierra y Marte, y se caracterizan por tener un tamaño menor y una superficie sólida de roca y metal.''',
   ),
   Question(
     id: 'sys_sol_f4',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué nombre recibe el movimiento que realiza la Tierra al girar alrededor del Sol?''',
+    text:
+        r'''¿Qué nombre recibe el movimiento que realiza la Tierra al girar alrededor del Sol?''',
     options: [
       r'''Rotación.''',
       r'''Sublimación.''',
@@ -56,12 +55,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Gravedad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El movimiento por el cual un planeta recorre su órbita elíptica alrededor del Sol se denomina traslación (mientras que el giro sobre sí mismo es la rotación).''',
+    explanation:
+        r'''El movimiento por el cual un planeta recorre su órbita elíptica alrededor del Sol se denomina traslación (mientras que el giro sobre sí mismo es la rotación).''',
   ),
   Question(
     id: 'sys_sol_f5',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Cuál de los siguientes planetas NO tiene ningún satélite natural girando a su alrededor?''',
+    text:
+        r'''¿Cuál de los siguientes planetas NO tiene ningún satélite natural girando a su alrededor?''',
     options: [
       r'''Marte.''',
       r'''Júpiter.''',
@@ -70,12 +71,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Mercurio.''',
     ],
     correctAnswer: 4,
-    explanation: r'''De los ocho planetas principales del sistema solar, Mercurio y Venus son los únicos que no poseen lunas o satélites naturales.''',
+    explanation:
+        r'''De los ocho planetas principales del sistema solar, Mercurio y Venus son los únicos que no poseen lunas o satélites naturales.''',
   ),
   Question(
     id: 'sys_sol_f6',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué característica primordial hace a la Tierra un lugar apto para la vida en contraste con los demás planetas del sistema?''',
+    text:
+        r'''¿Qué característica primordial hace a la Tierra un lugar apto para la vida en contraste con los demás planetas del sistema?''',
     options: [
       r'''Es el planeta más cercano al Sol.''',
       r'''Tiene anillos de hielo y roca.''',
@@ -84,7 +87,8 @@ final List<Question> sistemaSolarQuestions = [
       r'''Es el planeta de mayor tamaño de todo el sistema.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La Tierra se distingue por estar en la zona de habitabilidad que permite el agua en estado líquido (cubriendo el 71% de su superficie) y tener una atmósfera con oxígeno, vital para la vida.''',
+    explanation:
+        r'''La Tierra se distingue por estar en la zona de habitabilidad que permite el agua en estado líquido (cubriendo el 71% de su superficie) y tener una atmósfera con oxígeno, vital para la vida.''',
   ),
   Question(
     id: 'sys_sol_f7',
@@ -98,7 +102,8 @@ final List<Question> sistemaSolarQuestions = [
       r'''Cuerpos menores.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Júpiter y Saturno son conocidos como gigantes gaseosos, estando compuestos en su inmensa mayoría por gases ligeros como el helio y el hidrógeno.''',
+    explanation:
+        r'''Júpiter y Saturno son conocidos como gigantes gaseosos, estando compuestos en su inmensa mayoría por gases ligeros como el helio y el hidrógeno.''',
   ),
   Question(
     id: 'sys_sol_f8',
@@ -112,12 +117,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''El centro de gravedad del sistema solar.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Luna es clasificada como un satélite natural, un cuerpo celeste de gran tamaño que orbita alrededor de un planeta principal, en este caso, la Tierra.''',
+    explanation:
+        r'''La Luna es clasificada como un satélite natural, un cuerpo celeste de gran tamaño que orbita alrededor de un planeta principal, en este caso, la Tierra.''',
   ),
   Question(
     id: 'sys_sol_f9',
     topicId: 'cta_sistema_solar',
-    text: r'''Según la ciencia, ¿cuál es la fuerza que mantiene a los planetas atrapados en sus órbitas girando alrededor del Sol?''',
+    text:
+        r'''Según la ciencia, ¿cuál es la fuerza que mantiene a los planetas atrapados en sus órbitas girando alrededor del Sol?''',
     options: [
       r'''La fuerza de atracción gravitatoria (gravedad).''',
       r'''El magnetismo nuclear.''',
@@ -126,12 +133,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''La fuerza de inercia oscura.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El sistema solar es un sistema que mantiene ligados a los astros mediante la fuerza gravitacional ejercida por la inmensa masa del Sol.''',
+    explanation:
+        r'''El sistema solar es un sistema que mantiene ligados a los astros mediante la fuerza gravitacional ejercida por la inmensa masa del Sol.''',
   ),
   Question(
     id: 'sys_sol_f10',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Cuál de estos cuerpos celestes es considerado hoy en día un "planeta enano"?''',
+    text:
+        r'''¿Cuál de estos cuerpos celestes es considerado hoy en día un "planeta enano"?''',
     options: [
       r'''Marte.''',
       r'''Titán.''',
@@ -140,14 +149,16 @@ final List<Question> sistemaSolarQuestions = [
       r'''Ganímedes.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Plutón fue degradado en 2006 de planeta principal a planeta enano porque, aunque es esférico, no ha limpiado la vecindad de su órbita de otros objetos menores.''',
+    explanation:
+        r'''Plutón fue degradado en 2006 de planeta principal a planeta enano porque, aunque es esférico, no ha limpiado la vecindad de su órbita de otros objetos menores.''',
   ),
 
   // Nivel Medio
   Question(
     id: 'sys_sol_m1',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Dónde se encuentra situado principalmente el llamado "cinturón de asteroides"?''',
+    text:
+        r'''¿Dónde se encuentra situado principalmente el llamado "cinturón de asteroides"?''',
     options: [
       r'''Entre Mercurio y el Sol.''',
       r'''Entre las órbitas de Marte y Júpiter.''',
@@ -156,12 +167,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Entre Saturno y Urano.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El cinturón de asteroides es una franja de cuerpos menores rocosos y metálicos que orbitan al Sol, ubicados geográficamente entre los planetas Marte y Júpiter.''',
+    explanation:
+        r'''El cinturón de asteroides es una franja de cuerpos menores rocosos y metálicos que orbitan al Sol, ubicados geográficamente entre los planetas Marte y Júpiter.''',
   ),
   Question(
     id: 'sys_sol_m2',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Por qué a Venus se le suele llamar coloquialmente el planeta "hermano de la Tierra"?''',
+    text:
+        r'''¿Por qué a Venus se le suele llamar coloquialmente el planeta "hermano de la Tierra"?''',
     options: [
       r'''Porque ambos tienen agua líquida.''',
       r'''Porque Venus también tiene un satélite llamado Luna.''',
@@ -170,12 +183,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Porque sus temperaturas son exactamente iguales.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Venus tiene unas proporciones de tamaño, densidad y masa muy parecidas a las de la Tierra, lo que le ha valido el apodo de planeta hermano en la astronomía.''',
+    explanation:
+        r'''Venus tiene unas proporciones de tamaño, densidad y masa muy parecidas a las de la Tierra, lo que le ha valido el apodo de planeta hermano en la astronomía.''',
   ),
   Question(
     id: 'sys_sol_m3',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué compuesto químico es el responsable del característico color rojizo de la superficie de Marte?''',
+    text:
+        r'''¿Qué compuesto químico es el responsable del característico color rojizo de la superficie de Marte?''',
     options: [
       r'''El dióxido de carbono líquido.''',
       r'''El óxido de hierro.''',
@@ -184,7 +199,8 @@ final List<Question> sistemaSolarQuestions = [
       r'''El helio en estado sólido.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El suelo marciano es rico en minerales de óxido de hierro, lo cual le confiere la tonalidad herrumbre o rojiza al planeta.''',
+    explanation:
+        r'''El suelo marciano es rico en minerales de óxido de hierro, lo cual le confiere la tonalidad herrumbre o rojiza al planeta.''',
   ),
   Question(
     id: 'sys_sol_m4',
@@ -198,12 +214,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Satélites artificiales creados por el ser humano.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los cometas son objetos menores formados por hielo y polvo que tienen órbitas muy excéntricas; cuando se acercan al calor del Sol, el hielo sublima, formando su brillante y característica cola.''',
+    explanation:
+        r'''Los cometas son objetos menores formados por hielo y polvo que tienen órbitas muy excéntricas; cuando se acercan al calor del Sol, el hielo sublima, formando su brillante y característica cola.''',
   ),
   Question(
     id: 'sys_sol_m5',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué rasgo físico diferencia notoriamente a Urano del resto de los gigantes gaseosos?''',
+    text:
+        r'''¿Qué rasgo físico diferencia notoriamente a Urano del resto de los gigantes gaseosos?''',
     options: [
       r'''No posee atmósfera.''',
       r'''Es el único que tiene anillos.''',
@@ -212,12 +230,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Está formado de hierro sólido.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La inclinación axial de Urano es sumamente extrema (casi 90°), lo que provoca que parezca orbitar girando sobre su propio costado en lugar de como una peonza vertical.''',
+    explanation:
+        r'''La inclinación axial de Urano es sumamente extrema (casi 90°), lo que provoca que parezca orbitar girando sobre su propio costado en lugar de como una peonza vertical.''',
   ),
   Question(
     id: 'sys_sol_m6',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué gas presente en su atmósfera es responsable del color azul intenso del planeta Neptuno?''',
+    text:
+        r'''¿Qué gas presente en su atmósfera es responsable del color azul intenso del planeta Neptuno?''',
     options: [
       r'''Metano.''',
       r'''Oxígeno.''',
@@ -226,12 +246,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Cloro.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las altas concentraciones del gas metano en la atmósfera del gigante helado Neptuno absorben la luz roja y reflejan la azul, dándole su particular color.''',
+    explanation:
+        r'''Las altas concentraciones del gas metano en la atmósfera del gigante helado Neptuno absorben la luz roja y reflejan la azul, dándole su particular color.''',
   ),
   Question(
     id: 'sys_sol_m7',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué fenómeno natural es generado directamente por la atracción gravitatoria combinada de la Luna y el Sol sobre los océanos terrestres?''',
+    text:
+        r'''¿Qué fenómeno natural es generado directamente por la atracción gravitatoria combinada de la Luna y el Sol sobre los océanos terrestres?''',
     options: [
       r'''Los huracanes.''',
       r'''Los sismos.''',
@@ -240,12 +262,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Los tsunamis.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las subidas y bajadas diarias del nivel del mar (mareas) son el resultado directo de la fuerza de gravedad que ejercen principalmente la Luna y, en menor medida, el Sol sobre el agua de la Tierra.''',
+    explanation:
+        r'''Las subidas y bajadas diarias del nivel del mar (mareas) son el resultado directo de la fuerza de gravedad que ejercen principalmente la Luna y, en menor medida, el Sol sobre el agua de la Tierra.''',
   ),
   Question(
     id: 'sys_sol_m8',
     topicId: 'cta_sistema_solar',
-    text: r'''Aproximadamente, ¿cuál es la composición de los gases que conforman la atmósfera del Planeta Tierra?''',
+    text:
+        r'''Aproximadamente, ¿cuál es la composición de los gases que conforman la atmósfera del Planeta Tierra?''',
     options: [
       r'''95% Dióxido de carbono, 5% Oxígeno.''',
       r'''50% Helio, 50% Hidrógeno.''',
@@ -254,12 +278,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''100% Oxígeno puro.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La atmósfera que permite la respiración y protege la superficie terrestre está compuesta mayoritariamente por gas nitrógeno (78%) y oxígeno diatómico (21%).''',
+    explanation:
+        r'''La atmósfera que permite la respiración y protege la superficie terrestre está compuesta mayoritariamente por gas nitrógeno (78%) y oxígeno diatómico (21%).''',
   ),
   Question(
     id: 'sys_sol_m9',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Por qué razón ocurren las diferentes estaciones del año (primavera, verano, otoño, invierno) en la Tierra?''',
+    text:
+        r'''¿Por qué razón ocurren las diferentes estaciones del año (primavera, verano, otoño, invierno) en la Tierra?''',
     options: [
       r'''Por la variación en la cantidad de luz que emite el Sol cada mes.''',
       r'''Porque la Luna eclipsa al Sol periódicamente.''',
@@ -268,12 +294,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Porque el planeta se detiene en su órbita.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las estaciones no se deben a la cercanía con el Sol, sino a la inclinación del eje terrestre; al orbitar a lo largo del año, la radiación solar incide con diferente ángulo en los hemisferios.''',
+    explanation:
+        r'''Las estaciones no se deben a la cercanía con el Sol, sino a la inclinación del eje terrestre; al orbitar a lo largo del año, la radiación solar incide con diferente ángulo en los hemisferios.''',
   ),
   Question(
     id: 'sys_sol_m10',
     topicId: 'cta_sistema_solar',
-    text: r'''En la clasificación de objetos menores, ¿cuál es la diferencia si una roca espacial es un "meteoroide" o un "meteorito"?''',
+    text:
+        r'''En la clasificación de objetos menores, ¿cuál es la diferencia si una roca espacial es un "meteoroide" o un "meteorito"?''',
     options: [
       r'''Los meteoroides están hechos de gas, los meteoritos de metal.''',
       r'''Ambos son el mismo objeto pero en diferentes idiomas.''',
@@ -282,7 +310,8 @@ final List<Question> sistemaSolarQuestions = [
       r'''Los meteoritos siempre son esféricos.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Si el pequeño cuerpo espacial se desintegra en el aire produce un meteoro (estrella fugaz), pero los fragmentos que logran tocar el suelo terrestre sin consumirse del todo reciben el nombre de meteoritos.''',
+    explanation:
+        r'''Si el pequeño cuerpo espacial se desintegra en el aire produce un meteoro (estrella fugaz), pero los fragmentos que logran tocar el suelo terrestre sin consumirse del todo reciben el nombre de meteoritos.''',
   ),
 
   // Nivel Difícil
@@ -298,12 +327,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''El conjunto de tormentas presentes en el ecuador de Júpiter.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Nube de Oort es un gran reservorio esférico de cuerpos helados ubicado en la frontera exterior extrema del sistema solar, marcando su límite de influencia gravitatoria.''',
+    explanation:
+        r'''La Nube de Oort es un gran reservorio esférico de cuerpos helados ubicado en la frontera exterior extrema del sistema solar, marcando su límite de influencia gravitatoria.''',
   ),
   Question(
     id: 'sys_sol_d2',
     topicId: 'cta_sistema_solar',
-    text: r'''Según la teoría científica actual, ¿cómo se originó nuestro sistema solar hace unos 4.568 millones de años?''',
+    text:
+        r'''Según la teoría científica actual, ¿cómo se originó nuestro sistema solar hace unos 4.568 millones de años?''',
     options: [
       r'''Por la explosión simultánea de cinco planetas gigantes.''',
       r'''Por la colisión entre la Vía Láctea y otra galaxia.''',
@@ -312,12 +343,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Por la fisión nuclear de un agujero negro.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los datos científicos sustentan que una inmensa nube interestelar colapsó sobre sí misma por gravedad, formando en su denso y caliente centro al Sol, mientras los restos del disco conformaron los planetas.''',
+    explanation:
+        r'''Los datos científicos sustentan que una inmensa nube interestelar colapsó sobre sí misma por gravedad, formando en su denso y caliente centro al Sol, mientras los restos del disco conformaron los planetas.''',
   ),
   Question(
     id: 'sys_sol_d3',
     topicId: 'cta_sistema_solar',
-    text: r'''Dentro de la geografía del sistema solar, ¿qué delimita físicamente la "Heliopausa"?''',
+    text:
+        r'''Dentro de la geografía del sistema solar, ¿qué delimita físicamente la "Heliopausa"?''',
     options: [
       r'''El límite exacto donde el Sol dejará de brillar en el futuro.''',
       r'''La región fronteriza donde la burbuja protectora de viento solar choca y se equilibra con el medio interestelar externo.''',
@@ -326,12 +359,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''El área de asteroides que separa a los planetas rocosos de los gaseosos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La heliosfera, creada por el viento solar, termina en la heliopausa; es la frontera donde las partículas expulsadas por el Sol ya no tienen fuerza para empujar contra el gas interestelar de otras estrellas.''',
+    explanation:
+        r'''La heliosfera, creada por el viento solar, termina en la heliopausa; es la frontera donde las partículas expulsadas por el Sol ya no tienen fuerza para empujar contra el gas interestelar de otras estrellas.''',
   ),
   Question(
     id: 'sys_sol_d4',
     topicId: 'cta_sistema_solar',
-    text: r'''A nivel matemático, ¿qué pretendía explicar o predecir la famosa "Ley de Titius-Bode"?''',
+    text:
+        r'''A nivel matemático, ¿qué pretendía explicar o predecir la famosa "Ley de Titius-Bode"?''',
     options: [
       r'''La velocidad de rotación exacta del Sol.''',
       r'''El peso de un objeto en la Luna.''',
@@ -340,12 +375,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''La vida útil que le queda a la Vía Láctea.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Titius-Bode es una progresión aritmética que curiosamente coincidía con las distancias de los planetas conocidos en su época, ayudando a intuir el lugar del cinturón de asteroides, aunque hoy muchos científicos la consideran una coincidencia sin base física estricta.''',
+    explanation:
+        r'''Titius-Bode es una progresión aritmética que curiosamente coincidía con las distancias de los planetas conocidos en su época, ayudando a intuir el lugar del cinturón de asteroides, aunque hoy muchos científicos la consideran una coincidencia sin base física estricta.''',
   ),
   Question(
     id: 'sys_sol_d5',
     topicId: 'cta_sistema_solar',
-    text: r'''En el siglo XVI, Nicolás Copérnico revolucionó la astronomía al plantear el modelo heliocéntrico, pero cometió un error respecto a las órbitas que luego fue corregido por Johannes Kepler. ¿Cuál fue ese error?''',
+    text:
+        r'''En el siglo XVI, Nicolás Copérnico revolucionó la astronomía al plantear el modelo heliocéntrico, pero cometió un error respecto a las órbitas que luego fue corregido por Johannes Kepler. ¿Cuál fue ese error?''',
     options: [
       r'''Creía que la Tierra era el centro del universo.''',
       r'''Afirmó que Júpiter no tenía satélites.''',
@@ -354,12 +391,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Calculó que el sistema solar solo tenía tres planetas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Copérnico postuló que la Tierra se movía en un círculo, pero Kepler, con sus leyes del movimiento planetario (Leyes de Kepler), comprobó que los planetas se mueven en trayectorias de forma elíptica o de óvalo.''',
+    explanation:
+        r'''Copérnico postuló que la Tierra se movía en un círculo, pero Kepler, con sus leyes del movimiento planetario (Leyes de Kepler), comprobó que los planetas se mueven en trayectorias de forma elíptica o de óvalo.''',
   ),
   Question(
     id: 'sys_sol_d6',
     topicId: 'cta_sistema_solar',
-    text: r'''A la fecha, ¿qué es la hipótesis del "Phattie" o el Planeta Nueve en el entorno astronómico?''',
+    text:
+        r'''A la fecha, ¿qué es la hipótesis del "Phattie" o el Planeta Nueve en el entorno astronómico?''',
     options: [
       r'''Un planeta que se estrelló contra la Tierra creando la Luna.''',
       r'Un hipotético noveno planeta gigante y helado, deducido por modelos matemáticos para explicar anomalías en las órbitas de objetos lejanos del cinturón de Kuiper.',
@@ -368,12 +407,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''El nombre técnico que recibe Plutón desde 2006.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Estudios de 2016 modelaron matemáticamente que un gran cuerpo masivo, aún no observado directamente (Phattie), ejerce perturbaciones gravitatorias misteriosas sobre objetos lejanos como Sedna.''',
+    explanation:
+        r'''Estudios de 2016 modelaron matemáticamente que un gran cuerpo masivo, aún no observado directamente (Phattie), ejerce perturbaciones gravitatorias misteriosas sobre objetos lejanos como Sedna.''',
   ),
   Question(
     id: 'sys_sol_d7',
     topicId: 'cta_sistema_solar',
-    text: r'''Los objetos del sistema solar conocidos como "Centauros" tienen un comportamiento dual. ¿Por qué se les llama así y dónde orbitan?''',
+    text:
+        r'''Los objetos del sistema solar conocidos como "Centauros" tienen un comportamiento dual. ¿Por qué se les llama así y dónde orbitan?''',
     options: [
       r'''Son mitad estrella y mitad planeta, orbitando al Sol.''',
       r'''Orbitan a Mercurio y Venus de forma intermitente.''',
@@ -382,12 +423,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Viajan en el límite del sistema, más allá de la Nube de Oort.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los centauros provienen probablemente del cinturón de Kuiper y cruzan las órbitas de los planetas gigantes; al igual que los centauros mitológicos (mitad hombre/mitad caballo), presentan propiedades combinadas de rocas (asteroides) y objetos helados (cometas).''',
+    explanation:
+        r'''Los centauros provienen probablemente del cinturón de Kuiper y cruzan las órbitas de los planetas gigantes; al igual que los centauros mitológicos (mitad hombre/mitad caballo), presentan propiedades combinadas de rocas (asteroides) y objetos helados (cometas).''',
   ),
   Question(
     id: 'sys_sol_d8',
     topicId: 'cta_sistema_solar',
-    text: r'''En la dinámica de formación planetaria, ¿por qué los planetas rocosos (terrestres) se formaron cerca del Sol y los gaseosos lejos, basándose en la "línea de congelamiento"?''',
+    text:
+        r'''En la dinámica de formación planetaria, ¿por qué los planetas rocosos (terrestres) se formaron cerca del Sol y los gaseosos lejos, basándose en la "línea de congelamiento"?''',
     options: [
       r'''Porque el Sol repelió todo el gas hacia el espacio exterior instantáneamente.''',
       r'''Porque los asteroides chocaron destruyendo el gas cerca de la Tierra.''',
@@ -396,12 +439,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Porque los planetas rocosos son fragmentos de una estrella antigua.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La radiación de la protoestrella solar calentó el disco interior; solo materiales pesados resistieron. En zonas distantes y frías ("línea de congelación"), el agua, metano y amoniaco eran sólidos, permitiendo a los embriones planetarios crecer tanto que capturaron atmósferas enormes.''',
+    explanation:
+        r'''La radiación de la protoestrella solar calentó el disco interior; solo materiales pesados resistieron. En zonas distantes y frías ("línea de congelación"), el agua, metano y amoniaco eran sólidos, permitiendo a los embriones planetarios crecer tanto que capturaron atmósferas enormes.''',
   ),
   Question(
     id: 'sys_sol_d9',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué son los llamados "asteroides troyanos" en el sistema solar?''',
+    text:
+        r'''¿Qué son los llamados "asteroides troyanos" en el sistema solar?''',
     options: [
       r'''Rocas que destruyeron a los dinosaurios en la Tierra.''',
       r'''Asteroides que comparten la órbita de un planeta mayor (usualmente Júpiter), viajando agrupados en puntos de equilibrio gravitacional por delante y por detrás del mismo.''',
@@ -410,12 +455,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Satélites artificiales enviados para proteger el espacio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los troyanos son familias de asteroides que coorbitan estables atrapados en zonas específicas (puntos de Lagrange) de un planeta; Júpiter tiene los grupos troyanos más grandes conocidos.''',
+    explanation:
+        r'''Los troyanos son familias de asteroides que coorbitan estables atrapados en zonas específicas (puntos de Lagrange) de un planeta; Júpiter tiene los grupos troyanos más grandes conocidos.''',
   ),
   Question(
     id: 'sys_sol_d10',
     topicId: 'cta_sistema_solar',
-    text: r'''¿En qué zona o componente de nuestra galaxia, la Vía Láctea, se localiza y transita nuestro sistema solar?''',
+    text:
+        r'''¿En qué zona o componente de nuestra galaxia, la Vía Láctea, se localiza y transita nuestro sistema solar?''',
     options: [
       r'''En el agujero negro central.''',
       r'''En el cúmulo globular Omega Centauri.''',
@@ -424,14 +471,16 @@ final List<Question> sistemaSolarQuestions = [
       r'''Flotando en el centro exacto del universo observable.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Nuestro sistema planetario no está en el centro galáctico, sino en la periferia de la galaxia espiral, viajando a gran velocidad en una región conocida como el Brazo de Orión.''',
+    explanation:
+        r'''Nuestro sistema planetario no está en el centro galáctico, sino en la periferia de la galaxia espiral, viajando a gran velocidad en una región conocida como el Brazo de Orión.''',
   ),
 
   // Nivel Extremo
   Question(
     id: 'sys_sol_e1',
     topicId: 'cta_sistema_solar',
-    text: r'''A nivel evolutivo estelar, ¿qué suceso marcará el inicio del fin del Sol dentro de aproximadamente 5.000 millones de años?''',
+    text:
+        r'''A nivel evolutivo estelar, ¿qué suceso marcará el inicio del fin del Sol dentro de aproximadamente 5.000 millones de años?''',
     options: [
       r'''Chocará contra la Tierra por un desvío orbital.''',
       r'''Agotará el hidrógeno de su núcleo, cesando el equilibrio actual, y se expandirá masivamente transformándose en una estrella Gigante Roja.''',
@@ -440,12 +489,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Absorberá a Júpiter y se convertirá en una estrella de neutrones.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Cuando el combustible primario (hidrógeno) se agota, el núcleo colapsa y calienta las capas externas, forzándolas a expandirse unas 260 veces, tragándose los planetas interiores como gigante roja.''',
+    explanation:
+        r'''Cuando el combustible primario (hidrógeno) se agota, el núcleo colapsa y calienta las capas externas, forzándolas a expandirse unas 260 veces, tragándose los planetas interiores como gigante roja.''',
   ),
   Question(
     id: 'sys_sol_e2',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué remanente cósmico dejará nuestro Sol tras expulsar sus capas exteriores como una nebulosa planetaria al finalizar su ciclo de vida?''',
+    text:
+        r'''¿Qué remanente cósmico dejará nuestro Sol tras expulsar sus capas exteriores como una nebulosa planetaria al finalizar su ciclo de vida?''',
     options: [
       r'''Un púlsar radiactivo.''',
       r'''Un cuásar emisor de rayos gamma.''',
@@ -454,12 +505,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Un gigante de hielo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Por carecer de la masa masiva necesaria para estallar en supernova, el destino del Sol es desprender su envoltura y dejar expuesto su núcleo contraído, brillando tenuemente como enana blanca.''',
+    explanation:
+        r'''Por carecer de la masa masiva necesaria para estallar en supernova, el destino del Sol es desprender su envoltura y dejar expuesto su núcleo contraído, brillando tenuemente como enana blanca.''',
   ),
   Question(
     id: 'sys_sol_e3',
     topicId: 'cta_sistema_solar',
-    text: r'''Durante su estancia en la "secuencia principal" (su fase de vida estable actual), ¿qué es el "equilibrio hidrostático" que mantiene al Sol estable?''',
+    text:
+        r'''Durante su estancia en la "secuencia principal" (su fase de vida estable actual), ¿qué es el "equilibrio hidrostático" que mantiene al Sol estable?''',
     options: [
       r'''La presión térmica que empuja hacia afuera provocada por la fusión nuclear en el núcleo se iguala exactamente con la fuerza de la gravedad que comprime la estrella hacia adentro.''',
       r'''El magnetismo de Júpiter equilibra la temperatura solar.''',
@@ -468,12 +521,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''La velocidad de rotación compensa la falta de elementos pesados.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En toda estrella de la secuencia principal, existe un equilibrio entre la gravedad que tira hacia el centro y la presión de radiación térmica generada por la fusión nuclear hacia el exterior.''',
+    explanation:
+        r'''En toda estrella de la secuencia principal, existe un equilibrio entre la gravedad que tira hacia el centro y la presión de radiación térmica generada por la fusión nuclear hacia el exterior.''',
   ),
   Question(
     id: 'sys_sol_e4',
     topicId: 'cta_sistema_solar',
-    text: r'''A nivel métrico topográfico, ¿cuál es la forma geométrica precisa del Planeta Tierra derivada de sus dinámicas rotacionales?''',
+    text:
+        r'''A nivel métrico topográfico, ¿cuál es la forma geométrica precisa del Planeta Tierra derivada de sus dinámicas rotacionales?''',
     options: [
       r'''Una esfera perfecta matemática donde todos sus radios son exactos.''',
       r'''Un cilindro elongado en el ecuador.''',
@@ -482,12 +537,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Un plano circular sostenido por gravedad magnética.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Tierra no es una esfera perfecta. El movimiento de rotación ha generado un abultamiento en el ecuador y un achatamiento en los polos, conformando un "esferoide oblato".''',
+    explanation:
+        r'''La Tierra no es una esfera perfecta. El movimiento de rotación ha generado un abultamiento en el ecuador y un achatamiento en los polos, conformando un "esferoide oblato".''',
   ),
   Question(
     id: 'sys_sol_e5',
     topicId: 'cta_sistema_solar',
-    text: r'''Usando un modelo espacial a escala donde el Sol fuese una pelota de unos 220 mm de diámetro y la Tierra estuviese a unos 23,6 metros, ¿dónde se ubicaría aproximadamente la estrella más cercana, Próxima Centauri, para comprender las vastas dimensiones astronómicas?''',
+    text:
+        r'''Usando un modelo espacial a escala donde el Sol fuese una pelota de unos 220 mm de diámetro y la Tierra estuviese a unos 23,6 metros, ¿dónde se ubicaría aproximadamente la estrella más cercana, Próxima Centauri, para comprender las vastas dimensiones astronómicas?''',
     options: [
       r'''A unos 50 metros del Sol.''',
       r'''A 1 kilómetro en la misma escala.''',
@@ -496,12 +553,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Apenas a 2 metros detrás del Sol.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En esta escala reducida de 1:6.300.000.000, los 4.24 años luz que nos separan de Próxima Centauri equivalen a una distancia física de 6.332 km.''',
+    explanation:
+        r'''En esta escala reducida de 1:6.300.000.000, los 4.24 años luz que nos separan de Próxima Centauri equivalen a una distancia física de 6.332 km.''',
   ),
   Question(
     id: 'sys_sol_e6',
     topicId: 'cta_sistema_solar',
-    text: r'''En física planetaria, ¿qué describe exactamente el "viento solar" que emana constantemente nuestra estrella y causa las auroras polares en la Tierra?''',
+    text:
+        r'''En física planetaria, ¿qué describe exactamente el "viento solar" que emana constantemente nuestra estrella y causa las auroras polares en la Tierra?''',
     options: [
       r'''Gases tóxicos que provienen del polvo marciano.''',
       r'''Grandes huracanes de oxígeno que empujan a las nubes terrícolas.''',
@@ -510,12 +569,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Partículas de materia oscura que frenan la rotación planetaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El viento solar es una corriente de partículas cargadas (protones y electrones en estado de plasma) eyectadas por la corona solar a velocidades supersónicas.''',
+    explanation:
+        r'''El viento solar es una corriente de partículas cargadas (protones y electrones en estado de plasma) eyectadas por la corona solar a velocidades supersónicas.''',
   ),
   Question(
     id: 'sys_sol_e7',
     topicId: 'cta_sistema_solar',
-    text: r'''A nivel astronómico observacional, ¿qué sucede geométricamente durante un Eclipse Solar total?''',
+    text:
+        r'''A nivel astronómico observacional, ¿qué sucede geométricamente durante un Eclipse Solar total?''',
     options: [
       r'''La Tierra se interpone entre el Sol y la Luna, bloqueando la luz.''',
       r'''El Sol se apaga temporalmente debido a manchas solares masivas.''',
@@ -524,12 +585,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''El Sol se oculta detrás del planeta Júpiter.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Un eclipse solar ocurre cuando la Luna pasa en línea recta entre la Tierra y el Sol, cubriendo la fotosfera solar total o parcialmente.''',
+    explanation:
+        r'''Un eclipse solar ocurre cuando la Luna pasa en línea recta entre la Tierra y el Sol, cubriendo la fotosfera solar total o parcialmente.''',
   ),
   Question(
     id: 'sys_sol_e8',
     topicId: 'cta_sistema_solar',
-    text: r'''La exploración de exoplanetas (sistemas planetarios fuera del nuestro) arroja dudas sobre nuestro propio hogar astronómico. ¿Qué conclusión importante resalta la ciencia actual sobre comparar nuestro sistema solar con otros detectados?''',
+    text:
+        r'''La exploración de exoplanetas (sistemas planetarios fuera del nuestro) arroja dudas sobre nuestro propio hogar astronómico. ¿Qué conclusión importante resalta la ciencia actual sobre comparar nuestro sistema solar con otros detectados?''',
     options: [
       r'''El nuestro es el único sistema que existe en todo el universo.''',
       r'''Todos los sistemas del universo tienen exactamente 8 planetas igual que nosotros.''',
@@ -538,12 +601,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Que no existen las estrellas de tipo G2 salvo el Sol.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Muchos de los sistemas conocidos poseen planetas gigantes de período corto ("Júpiteres calientes") o supertierras, pero las limitaciones observacionales sesgan estos hallazgos; aún no sabemos si nuestro sistema es común.''',
+    explanation:
+        r'''Muchos de los sistemas conocidos poseen planetas gigantes de período corto ("Júpiteres calientes") o supertierras, pero las limitaciones observacionales sesgan estos hallazgos; aún no sabemos si nuestro sistema es común.''',
   ),
   Question(
     id: 'sys_sol_e9',
     topicId: 'cta_sistema_solar',
-    text: r'''¿Qué rol crucial a escala universal juegan las nubes interestelares, como la nube molecular primigenia de la que nacimos?''',
+    text:
+        r'''¿Qué rol crucial a escala universal juegan las nubes interestelares, como la nube molecular primigenia de la que nacimos?''',
     options: [
       r'''Destruyen las galaxias al chocar con ellas.''',
       r'''Absorben toda la materia oscura dejando el vacío espacio blanco.''',
@@ -552,12 +617,14 @@ final List<Question> sistemaSolarQuestions = [
       r'''Son simplemente vapor de agua congelada flotando sin ninguna función.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las nubes moleculares densas y frías de gas y polvo colapsan bajo su propia gravedad, formando núcleos calientes (protoestrellas) que darán origen a nuevas estrellas y sistemas planetarios.''',
+    explanation:
+        r'''Las nubes moleculares densas y frías de gas y polvo colapsan bajo su propia gravedad, formando núcleos calientes (protoestrellas) que darán origen a nuevas estrellas y sistemas planetarios.''',
   ),
   Question(
     id: 'sys_sol_e10',
     topicId: 'cta_sistema_solar',
-    text: r'''Considerando los efectos de la Luna sobre el planeta Tierra más allá de las mareas, ¿cuál es su influencia fundamental para el sostenimiento de climas predecibles vitales para la biosfera a largo plazo?''',
+    text:
+        r'''Considerando los efectos de la Luna sobre el planeta Tierra más allá de las mareas, ¿cuál es su influencia fundamental para el sostenimiento de climas predecibles vitales para la biosfera a largo plazo?''',
     options: [
       r'''Su campo magnético rechaza meteoritos gigantes todos los días.''',
       r'''Ejerce una atracción gravitatoria que sirve para "estabilizar" o fijar la inclinación del eje orbital de la Tierra a lo largo del tiempo, previniening oscilaciones climáticas caóticas o extremas.''',
@@ -566,6 +633,7 @@ final List<Question> sistemaSolarQuestions = [
       r'''Detiene la rotación de la Tierra para que los días duren 24 horas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Luna ejerce una estabilización gravitacional del eje de inclinación axial de la Tierra (que oscila ligeramente entre 22.1° y 24.5°), previniendo cambios drásticos en la insolación planetaria y estabilizando el clima global.''',
+    explanation:
+        r'''La Luna ejerce una estabilización gravitacional del eje de inclinación axial de la Tierra (que oscila ligeramente entre 22.1° y 24.5°), previniendo cambios drásticos en la insolación planetaria y estabilizando el clima global.''',
   ),
 ];

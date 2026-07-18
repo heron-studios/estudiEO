@@ -315,8 +315,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     child: ListTile(
                       leading: const Icon(Icons.person, color: _blue),
-                      title: const Text('Editar Perfil y Escuela', style: TextStyle(color: _text)),
-                      subtitle: const Text('Actualiza tu nombre y escuela objetivo', style: TextStyle(color: _muted, fontSize: 12)),
+                      title: const Text(
+                        'Editar Perfil y Escuela',
+                        style: TextStyle(color: _text),
+                      ),
+                      subtitle: const Text(
+                        'Actualiza tu nombre y escuela objetivo',
+                        style: TextStyle(color: _muted, fontSize: 12),
+                      ),
                       trailing: const Icon(Icons.chevron_right, color: _muted),
                       onTap: _showEditProfileDialog,
                     ),
@@ -851,13 +857,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
           builder: (context, setState) {
             return AlertDialog(
               backgroundColor: _cardBg,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              title: const Text('Editar Perfil', style: TextStyle(color: _text, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              title: const Text(
+                'Editar Perfil',
+                style: TextStyle(
+                  color: _text,
+                  fontFamily: 'Outfit',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Tu nombre o alias', style: TextStyle(color: _muted, fontSize: 14)),
+                  const Text(
+                    'Tu nombre o alias',
+                    style: TextStyle(color: _muted, fontSize: 14),
+                  ),
                   const SizedBox(height: 8),
                   TextField(
                     controller: nameController,
@@ -865,11 +883,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.black26,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text('Escuela a la que postulas', style: TextStyle(color: _muted, fontSize: 14)),
+                  const Text(
+                    'Escuela a la que postulas',
+                    style: TextStyle(color: _muted, fontSize: 14),
+                  ),
                   const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
                     initialValue: selectedSchool,
@@ -878,11 +902,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.black26,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                     items: const [
-                      DropdownMenuItem<String>(value: 'EO PNP', child: Text('EO PNP')),
-                      DropdownMenuItem<String>(value: 'EETSPN', child: Text('EETSPN')),
+                      DropdownMenuItem<String>(
+                        value: 'EO PNP',
+                        child: Text('EO PNP'),
+                      ),
+                      DropdownMenuItem<String>(
+                        value: 'EETSPN',
+                        child: Text('EETSPN'),
+                      ),
                     ],
                     onChanged: (newValue) {
                       setState(() {
@@ -903,12 +936,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     onPressed: () async {
                       if (nameController.text.trim().isEmpty) return;
                       setState(() => isLoading = true);
-                      
+
                       await storage.saveUserName(nameController.text.trim());
                       await storage.saveTargetSchool(selectedSchool);
-                      
+
                       // El leaderboard ahora es por ranking y se sincroniza en HomeScreen
-                      
+
                       if (context.mounted) {
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -919,15 +952,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: _blue,
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                    child: const Text('Guardar', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'Guardar',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
               ],
             );
           },
         );
-      }
+      },
     );
   }
 }

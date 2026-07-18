@@ -12,6 +12,7 @@ import 'package:learn/core/config/neural_design_system.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/core/widgets/premium_upgrade_dialog.dart';
+
 class TopicGalleryScreen extends StatelessWidget {
   final String subjectId;
   final String mode;
@@ -47,7 +48,10 @@ class TopicGalleryScreen extends StatelessWidget {
       body: NeuralBackgroundWrapper(
         child: topics.isEmpty
             ? const Center(
-                child: Text('No hay temas disponibles', style: TextStyle(color: Colors.white60)),
+                child: Text(
+                  'No hay temas disponibles',
+                  style: TextStyle(color: Colors.white60),
+                ),
               )
             : Center(
                 child: ConstrainedBox(
@@ -88,15 +92,17 @@ class _TopicTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authService = context.watch<AuthService>();
-    final bool isPremium = authService.currentUser != null && authService.isAuthorized;
+    final bool isPremium =
+        authService.currentUser != null && authService.isAuthorized;
 
     // Usar la cantidad real de preguntas según si es premium o no
     final int dynamicQuestionCount = topic.questionCount;
 
     final learningProvider = context.read<LearningProvider>();
     final currentLevel = learningProvider.getCurrentLevel(topic.id);
-    final allCompleted = Dificultad.values
-        .every((d) => learningProvider.isLevelCompleted(topic.id, d));
+    final allCompleted = Dificultad.values.every(
+      (d) => learningProvider.isLevelCompleted(topic.id, d),
+    );
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
@@ -114,7 +120,8 @@ class _TopicTile extends StatelessWidget {
                     PremiumUpgradeDialog.show(
                       context,
                       title: 'Límite Diario Alcanzado',
-                      message: 'Has respondido tus 10 preguntas gratuitas de hoy. ¡Vuelve mañana o hazte Premium para estudiar sin límites!',
+                      message:
+                          'Has respondido tus 10 preguntas gratuitas de hoy. ¡Vuelve mañana o hazte Premium para estudiar sin límites!',
                     );
                   }
                   return;
@@ -128,7 +135,9 @@ class _TopicTile extends StatelessWidget {
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        content: Text('¡Próximamente! Estamos preparando el contenido guiado para este tema.'),
+                        content: Text(
+                          '¡Próximamente! Estamos preparando el contenido guiado para este tema.',
+                        ),
                         duration: Duration(seconds: 2),
                       ),
                     );
@@ -155,9 +164,13 @@ class _TopicTile extends StatelessWidget {
                     width: 36,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: NeuralDesignSystem.background.withValues(alpha: 0.8),
+                      color: NeuralDesignSystem.background.withValues(
+                        alpha: 0.8,
+                      ),
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
                     ),
                     child: Center(
                       child: Text(
@@ -194,11 +207,21 @@ class _TopicTile extends StatelessWidget {
                             if (topic.theoryByLevel != null) ...[
                               const SizedBox(width: 8),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 6,
+                                  vertical: 2,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: NeuralDesignSystem.pink.withValues(alpha: 0.15),
+                                  color: NeuralDesignSystem.pink.withValues(
+                                    alpha: 0.15,
+                                  ),
                                   borderRadius: BorderRadius.circular(6),
-                                  border: Border.all(color: NeuralDesignSystem.pink.withValues(alpha: 0.6), width: 0.8),
+                                  border: Border.all(
+                                    color: NeuralDesignSystem.pink.withValues(
+                                      alpha: 0.6,
+                                    ),
+                                    width: 0.8,
+                                  ),
                                 ),
                                 child: const Text(
                                   'NUEVO',
@@ -218,7 +241,8 @@ class _TopicTile extends StatelessWidget {
                           Text(
                             topic.description,
                             style: TextStyle(
-                              color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.7),
+                              color: NeuralDesignSystem.textSecondary
+                                  .withValues(alpha: 0.7),
                               fontSize: 12,
                             ),
                             maxLines: 1,
@@ -253,8 +277,11 @@ class _TopicTile extends StatelessWidget {
                       Text(
                         'preguntas',
                         style: TextStyle(
-                            color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.6),
-                            fontSize: 10),
+                          color: NeuralDesignSystem.textSecondary.withValues(
+                            alpha: 0.6,
+                          ),
+                          fontSize: 10,
+                        ),
                       ),
                     ],
                   ),
@@ -273,11 +300,10 @@ class _TopicTile extends StatelessWidget {
     );
   }
 
-
   void _startGuidedLearning(BuildContext context, Topic topic) {
     context.read<SubjectProvider>().selectTopic(topic.id);
     final lp = context.read<LearningProvider>();
-    
+
     // Check if there is any pending session on any level for this topic
     final pendingLevel = lp.getPendingSessionLevel(topic.id);
 
@@ -314,7 +340,10 @@ class _TopicTile extends StatelessWidget {
             children: [
               Text(
                 'Tienes una práctica pendiente para este tema:',
-                style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.6),
+                  fontSize: 13,
+                ),
               ),
               const SizedBox(height: 12),
               Container(
@@ -323,7 +352,9 @@ class _TopicTile extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.04),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.08),
+                  ),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -340,11 +371,16 @@ class _TopicTile extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 3,
+                          ),
                           decoration: BoxDecoration(
                             color: pendingLevel.color.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(6),
-                            border: Border.all(color: pendingLevel.color.withValues(alpha: 0.4)),
+                            border: Border.all(
+                              color: pendingLevel.color.withValues(alpha: 0.4),
+                            ),
                           ),
                           child: Text(
                             '${pendingLevel.emoji} Nivel ${pendingLevel.displayName}',
@@ -371,7 +407,10 @@ class _TopicTile extends StatelessWidget {
             ],
           ),
           actionsAlignment: MainAxisAlignment.end,
-          actionsPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          actionsPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 12,
+          ),
           actions: [
             // Botón de Reiniciar
             TextButton(
@@ -379,7 +418,9 @@ class _TopicTile extends StatelessWidget {
                 Navigator.pop(ctx);
                 lp.resetTopicProgress(topic.id);
                 // Iniciar nueva sesión
-                context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': pendingLevel},
+                context.push(
+                  '/learning-theory',
+                  extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
               child: const Text(
@@ -391,12 +432,17 @@ class _TopicTile extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
-                context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': pendingLevel},
+                context.push(
+                  '/learning-theory',
+                  extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
               child: Text(
                 'Ver Teoría',
-                style: TextStyle(color: Colors.white.withValues(alpha: 0.7), fontSize: 13),
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.7),
+                  fontSize: 13,
+                ),
               ),
             ),
             // Botón de Continuar
@@ -404,10 +450,9 @@ class _TopicTile extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(ctx);
                 lp.resumeSession(topic.id, pendingLevel);
-                context.push('/learning-quiz', extra: {
-                    'topicId': topic.id,
-                    'nivel': pendingLevel,
-                  },
+                context.push(
+                  '/learning-quiz',
+                  extra: {'topicId': topic.id, 'nivel': pendingLevel},
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -428,7 +473,9 @@ class _TopicTile extends StatelessWidget {
       );
     } else {
       final currentLevel = lp.getCurrentLevel(topic.id);
-      context.push('/learning-theory', extra: {'topicId': topic.id, 'nivel': currentLevel},
+      context.push(
+        '/learning-theory',
+        extra: {'topicId': topic.id, 'nivel': currentLevel},
       );
     }
   }
@@ -436,27 +483,45 @@ class _TopicTile extends StatelessWidget {
   void _startQuickQuiz(BuildContext context, Topic topic) {
     context.read<SubjectProvider>().selectTopic(topic.id);
     final quizProvider = context.read<QuizProvider>();
-    
+
     if (quizProvider.hasPendingSessionForTopic(topic.id)) {
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
           backgroundColor: const Color(0xFF1E293B),
-          title: const Text('Sesión Pendiente', style: TextStyle(color: Colors.white)),
-          content: const Text('Tienes un quiz sin terminar. ¿Qué deseas hacer?', style: TextStyle(color: Colors.white70)),
+          title: const Text(
+            'Sesión Pendiente',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: const Text(
+            'Tienes un quiz sin terminar. ¿Qué deseas hacer?',
+            style: TextStyle(color: Colors.white70),
+          ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
-                final allQuestions = context.read<SubjectProvider>().getAllQuestionsByTopicShuffled(topic.id);
+                final allQuestions = context
+                    .read<SubjectProvider>()
+                    .getAllQuestionsByTopicShuffled(topic.id);
                 if (allQuestions.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('No hay preguntas para este tema.')));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('No hay preguntas para este tema.'),
+                    ),
+                  );
                   return;
                 }
-                quizProvider.createSession(topic.id, allQuestions.map((q) => q.id).toList());
+                quizProvider.createSession(
+                  topic.id,
+                  allQuestions.map((q) => q.id).toList(),
+                );
                 context.push('/quiz');
               },
-              child: const Text('Empezar de nuevo', style: TextStyle(color: Color(0xFFF87171))),
+              child: const Text(
+                'Empezar de nuevo',
+                style: TextStyle(color: Color(0xFFF87171)),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -464,21 +529,28 @@ class _TopicTile extends StatelessWidget {
                 quizProvider.resumeSession(topic.id);
                 context.push('/quiz');
               },
-              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF3B82F6)),
-              child: const Text('Continuar respondiendo', style: TextStyle(color: Colors.white)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF3B82F6),
+              ),
+              child: const Text(
+                'Continuar respondiendo',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
-        )
+        ),
       );
     } else {
-      final allQuestions = context.read<SubjectProvider>().getAllQuestionsByTopicShuffled(topic.id);
+      final allQuestions = context
+          .read<SubjectProvider>()
+          .getAllQuestionsByTopicShuffled(topic.id);
       if (allQuestions.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('No hay preguntas para este tema.')),
         );
         return;
       }
-      
+
       final questionIds = allQuestions.map((q) => q.id).toList();
       quizProvider.createSession(topic.id, questionIds);
       context.push('/quiz');
@@ -536,8 +608,8 @@ class _LevelProgressIndicator extends StatelessWidget {
               color: completed
                   ? d.color
                   : isCurrent
-                      ? d.color.withValues(alpha: 0.4)
-                      : const Color(0xFF1E293B),
+                  ? d.color.withValues(alpha: 0.4)
+                  : const Color(0xFF1E293B),
               borderRadius: BorderRadius.circular(3),
             ),
           ),
@@ -546,4 +618,3 @@ class _LevelProgressIndicator extends StatelessWidget {
     );
   }
 }
-

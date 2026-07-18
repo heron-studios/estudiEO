@@ -24,8 +24,7 @@ class EntrevistaSimulatorScreen extends StatefulWidget {
       _EntrevistaSimulatorScreenState();
 }
 
-class _EntrevistaSimulatorScreenState
-    extends State<EntrevistaSimulatorScreen> {
+class _EntrevistaSimulatorScreenState extends State<EntrevistaSimulatorScreen> {
   final TextEditingController _textController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
 
@@ -39,7 +38,8 @@ class _EntrevistaSimulatorScreenState
   final int _maxMessagesFree = 3;
   bool _interviewFinished = false;
   bool _dailyLimitReached = false;
-  bool _freeUpgradeWallShown = false; // Muro de actualización para free en pregunta 3
+  bool _freeUpgradeWallShown =
+      false; // Muro de actualización para free en pregunta 3
 
   int _cooldownRemaining = 0;
   Timer? _cooldownTimer;
@@ -49,7 +49,10 @@ class _EntrevistaSimulatorScreenState
     setState(() => _cooldownRemaining = seconds);
     _cooldownTimer?.cancel();
     _cooldownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (!mounted) { timer.cancel(); return; }
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
       setState(() {
         _cooldownRemaining--;
         if (_cooldownRemaining <= 0) timer.cancel();
@@ -94,8 +97,9 @@ class _EntrevistaSimulatorScreenState
     _isPremium = auth.isPremium;
     final canUseAI = await LimitsService.canUseEntrevistaIA(_isPremium);
     if (!canUseAI) {
-      final horasRestantes =
-          await LimitsService.getHorasRestantesEntrevistaIA(_isPremium);
+      final horasRestantes = await LimitsService.getHorasRestantesEntrevistaIA(
+        _isPremium,
+      );
       final waitMessage = horasRestantes > 0
           ? 'Retírese, prepárese y vuelva en $horasRestantes horas'
           : 'Retírese y vuelva mañana';
@@ -104,10 +108,13 @@ class _EntrevistaSimulatorScreenState
           : 'Ya usó su entrevista. Debe esperar 48 horas para el siguiente intento.';
       setState(() {
         _dailyLimitReached = true;
-        _messages.add(ChatMessage(
+        _messages.add(
+          ChatMessage(
             text:
                 'Mi Coronel: "Usted ya tuvo su oportunidad. $waitLabel $waitMessage con una mejor preparación."',
-            isUser: false));
+            isUser: false,
+          ),
+        );
       });
       return;
     }
@@ -152,7 +159,7 @@ class _EntrevistaSimulatorScreenState
                 color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
                 blurRadius: 40,
                 spreadRadius: 10,
-              )
+              ),
             ],
           ),
           child: Column(
@@ -168,8 +175,11 @@ class _EntrevistaSimulatorScreenState
                     end: Alignment.bottomRight,
                   ),
                 ),
-                child: const Icon(Icons.star_rounded,
-                    color: Colors.white, size: 36),
+                child: const Icon(
+                  Icons.star_rounded,
+                  color: Colors.white,
+                  size: 36,
+                ),
               ),
               const SizedBox(height: 20),
               const Text(
@@ -314,7 +324,10 @@ class _EntrevistaSimulatorScreenState
     }
 
     // Si usuario Free llegó a 3 preguntas, mostrar muro de upgrade
-    if (!_isPremium && _messageCount >= _maxMessagesFree && !_freeUpgradeWallShown && !response.contains('429')) {
+    if (!_isPremium &&
+        _messageCount >= _maxMessagesFree &&
+        !_freeUpgradeWallShown &&
+        !response.contains('429')) {
       Future.delayed(const Duration(milliseconds: 800), () {
         if (mounted) _showUpgradeWall();
       });
@@ -334,9 +347,11 @@ class _EntrevistaSimulatorScreenState
   }
 
   void _startListening() async {
-    await _speechToText.listen(onResult: (result) {
-      if (result.finalResult) _sendMessage(voiceText: result.recognizedWords);
-    });
+    await _speechToText.listen(
+      onResult: (result) {
+        if (result.finalResult) _sendMessage(voiceText: result.recognizedWords);
+      },
+    );
     setState(() => _isListening = true);
   }
 
@@ -373,28 +388,43 @@ class _EntrevistaSimulatorScreenState
               builder: (context) => AlertDialog(
                 backgroundColor: const Color(0xFF1E1E24),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
-                title: const Row(children: [
-                  Icon(Icons.warning_amber_rounded, color: Colors.orangeAccent),
-                  SizedBox(width: 8),
-                  Text('¿Abandonar?',
-                      style: TextStyle(color: Colors.white, fontSize: 18)),
-                ]),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                title: const Row(
+                  children: [
+                    Icon(
+                      Icons.warning_amber_rounded,
+                      color: Colors.orangeAccent,
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      '¿Abandonar?',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ],
+                ),
                 content: const Text(
                   'Si sales ahora perderás el progreso actual y se consumirá tu intento de entrevista.\n\n¿Estás seguro de querer salir?',
-                  style:
-                      TextStyle(color: Colors.white70, fontSize: 15, height: 1.4),
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 15,
+                    height: 1.4,
+                  ),
                 ),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.of(context).pop(false),
-                    child: const Text('Continuar Entrevista',
-                        style: TextStyle(color: Colors.greenAccent)),
+                    child: const Text(
+                      'Continuar Entrevista',
+                      style: TextStyle(color: Colors.greenAccent),
+                    ),
                   ),
                   TextButton(
                     onPressed: () => Navigator.of(context).pop(true),
-                    child: const Text('Salir y perder intento',
-                        style: TextStyle(color: Colors.redAccent)),
+                    child: const Text(
+                      'Salir y perder intento',
+                      style: TextStyle(color: Colors.redAccent),
+                    ),
                   ),
                 ],
               ),
@@ -410,9 +440,10 @@ class _EntrevistaSimulatorScreenState
             title: const Text(
               'Junta Evaluadora PNP',
               style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                  fontSize: 18),
+                fontWeight: FontWeight.w600,
+                letterSpacing: 0.5,
+                fontSize: 18,
+              ),
             ),
             centerTitle: true,
             // Fondo simple sin BackdropFilter para mejorar rendimiento web
@@ -422,11 +453,12 @@ class _EntrevistaSimulatorScreenState
               // Botón historial solo para Pro
               if (_isPremium)
                 IconButton(
-                  icon: const Icon(Icons.history_rounded,
-                      color: Colors.white70),
+                  icon: const Icon(
+                    Icons.history_rounded,
+                    color: Colors.white70,
+                  ),
                   tooltip: 'Historial de entrevistas',
-                  onPressed: () =>
-                      _showInterviewHistory(),
+                  onPressed: () => _showInterviewHistory(),
                 ),
             ],
           ),
@@ -453,15 +485,13 @@ class _EntrevistaSimulatorScreenState
                   height: 200,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color:
-                        const Color(0xFF0D47A1).withValues(alpha: 0.07),
+                    color: const Color(0xFF0D47A1).withValues(alpha: 0.07),
                   ),
                 ),
               ),
 
               if (bridgeWidget != null)
-                Positioned(
-                    top: -100, left: -100, child: bridgeWidget),
+                Positioned(top: -100, left: -100, child: bridgeWidget),
 
               Center(
                 child: ConstrainedBox(
@@ -476,7 +506,9 @@ class _EntrevistaSimulatorScreenState
                           child: ListView.builder(
                             controller: _scrollController,
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 24.0),
+                              horizontal: 16.0,
+                              vertical: 24.0,
+                            ),
                             itemCount: _messages.length,
                             itemBuilder: (context, index) {
                               final message = _messages[index];
@@ -494,13 +526,18 @@ class _EntrevistaSimulatorScreenState
                                   width: 14,
                                   height: 14,
                                   child: CircularProgressIndicator(
-                                      color: Colors.greenAccent,
-                                      strokeWidth: 2),
+                                    color: Colors.greenAccent,
+                                    strokeWidth: 2,
+                                  ),
                                 ),
                                 SizedBox(width: 12),
-                                Text('El Coronel está evaluando...',
-                                    style: TextStyle(
-                                        color: Colors.white70, fontSize: 13)),
+                                Text(
+                                  'El Coronel está evaluando...',
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 13,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -518,29 +555,37 @@ class _EntrevistaSimulatorScreenState
   }
 
   Widget _buildFreeBanner() {
-    final remaining = (_maxMessagesFree - _messageCount).clamp(0, _maxMessagesFree);
+    final remaining = (_maxMessagesFree - _messageCount).clamp(
+      0,
+      _maxMessagesFree,
+    );
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
       child: Row(
         children: [
-          const Icon(Icons.info_outline_rounded,
-              color: Color(0xFF8B5CF6), size: 16),
+          const Icon(
+            Icons.info_outline_rounded,
+            color: Color(0xFF8B5CF6),
+            size: 16,
+          ),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               'Plan Free: $remaining pregunta${remaining != 1 ? 's' : ''} restante${remaining != 1 ? 's' : ''}. Actualiza a Pro para la entrevista completa.',
-              style: const TextStyle(
-                  color: Color(0xFFBBA7F5), fontSize: 12),
+              style: const TextStyle(color: Color(0xFFBBA7F5), fontSize: 12),
             ),
           ),
           GestureDetector(
             onTap: () => context.push('/premium'),
-            child: const Text('Ver Pro →',
-                style: TextStyle(
-                    color: Color(0xFF8B5CF6),
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold)),
+            child: const Text(
+              'Ver Pro →',
+              style: TextStyle(
+                color: Color(0xFF8B5CF6),
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
@@ -548,8 +593,7 @@ class _EntrevistaSimulatorScreenState
   }
 
   void _showInterviewHistory() {
-    final history =
-        context.read<LocalStorageService>().getInterviewHistory();
+    final history = context.read<LocalStorageService>().getInterviewHistory();
 
     showModalBottomSheet(
       context: context,
@@ -615,8 +659,7 @@ class _EntrevistaSimulatorScreenState
                         color: const Color(0xFF1E1E28),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
-                          color:
-                              r.scoreColor.withValues(alpha: 0.3),
+                          color: r.scoreColor.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -629,7 +672,8 @@ class _EntrevistaSimulatorScreenState
                               shape: BoxShape.circle,
                               color: r.scoreColor.withValues(alpha: 0.15),
                               border: Border.all(
-                                  color: r.scoreColor.withValues(alpha: 0.5)),
+                                color: r.scoreColor.withValues(alpha: 0.5),
+                              ),
                             ),
                             child: Center(
                               child: Text(
@@ -711,13 +755,11 @@ class _EntrevistaSimulatorScreenState
 
   Widget _buildMessageBubble(ChatMessage message) {
     return Align(
-      alignment:
-          message.isUser ? Alignment.centerRight : Alignment.centerLeft,
+      alignment: message.isUser ? Alignment.centerRight : Alignment.centerLeft,
       child: RepaintBoundary(
         child: Container(
           margin: const EdgeInsets.only(bottom: 16.0),
-          padding:
-              const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0),
           decoration: BoxDecoration(
             color: message.isUser
                 ? const Color(0xFF1B5E20).withValues(alpha: 0.85)
@@ -739,7 +781,7 @@ class _EntrevistaSimulatorScreenState
                 color: Colors.black.withValues(alpha: 0.2),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
-              )
+              ),
             ],
           ),
           constraints: BoxConstraints(
@@ -764,7 +806,8 @@ class _EntrevistaSimulatorScreenState
   }
 
   Widget _buildChatInput() {
-    final bool inputBlocked = _isLoading ||
+    final bool inputBlocked =
+        _isLoading ||
         _interviewFinished ||
         _dailyLimitReached ||
         _isListening ||
@@ -775,8 +818,9 @@ class _EntrevistaSimulatorScreenState
       decoration: BoxDecoration(
         // Sin BackdropFilter para mejor rendimiento en web
         color: const Color(0xFF090A0C).withValues(alpha: 0.95),
-        border:
-            Border(top: BorderSide(color: Colors.white.withValues(alpha: 0.07))),
+        border: Border(
+          top: BorderSide(color: Colors.white.withValues(alpha: 0.07)),
+        ),
       ),
       child: SafeArea(
         top: false,
@@ -789,12 +833,13 @@ class _EntrevistaSimulatorScreenState
                   color: const Color(0xFF1A1A1F).withValues(alpha: 0.8),
                   borderRadius: BorderRadius.circular(24.0),
                   border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.08), width: 1),
+                    color: Colors.white.withValues(alpha: 0.08),
+                    width: 1,
+                  ),
                 ),
                 child: TextField(
                   controller: _textController,
-                  style:
-                      const TextStyle(color: Colors.white, fontSize: 15),
+                  style: const TextStyle(color: Colors.white, fontSize: 15),
                   maxLines: 4,
                   minLines: 1,
                   textInputAction: TextInputAction.send,
@@ -804,10 +849,13 @@ class _EntrevistaSimulatorScreenState
                         ? 'Espera $_cooldownRemaining s...'
                         : 'Diríjase al Coronel...',
                     hintStyle: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.3),
-                        fontSize: 15),
+                      color: Colors.white.withValues(alpha: 0.3),
+                      fontSize: 15,
+                    ),
                     contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 18.0, vertical: 14.0),
+                      horizontal: 18.0,
+                      vertical: 14.0,
+                    ),
                     border: InputBorder.none,
                   ),
                   enabled: !inputBlocked,
@@ -826,11 +874,14 @@ class _EntrevistaSimulatorScreenState
                   shape: BoxShape.circle,
                   gradient: _isListening
                       ? const LinearGradient(
-                          colors: [Colors.redAccent, Colors.deepOrange])
-                      : LinearGradient(colors: [
-                          Colors.white.withValues(alpha: 0.1),
-                          Colors.white.withValues(alpha: 0.05)
-                        ]),
+                          colors: [Colors.redAccent, Colors.deepOrange],
+                        )
+                      : LinearGradient(
+                          colors: [
+                            Colors.white.withValues(alpha: 0.1),
+                            Colors.white.withValues(alpha: 0.05),
+                          ],
+                        ),
                   border: Border.all(
                     color: _isListening
                         ? Colors.redAccent.withValues(alpha: 0.5)
@@ -838,9 +889,7 @@ class _EntrevistaSimulatorScreenState
                   ),
                 ),
                 child: Icon(
-                  _isListening
-                      ? Icons.stop_circle_outlined
-                      : Icons.mic_rounded,
+                  _isListening ? Icons.stop_circle_outlined : Icons.mic_rounded,
                   color: _isListening ? Colors.white : Colors.white70,
                   size: 24,
                 ),
@@ -864,11 +913,14 @@ class _EntrevistaSimulatorScreenState
                       color: const Color(0xFF2E7D32).withValues(alpha: 0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
-                    )
+                    ),
                   ],
                 ),
-                child: const Icon(Icons.send_rounded,
-                    color: Colors.white, size: 24),
+                child: const Icon(
+                  Icons.send_rounded,
+                  color: Colors.white,
+                  size: 24,
+                ),
               ),
             ),
           ],

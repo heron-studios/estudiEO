@@ -27,7 +27,8 @@ class AuditMaestroResult {
 }
 
 class AiTacticalService {
-  static const String _kModel = 'gemini-flash-latest'; // Modelo rápido y optimizado para texto
+  static const String _kModel =
+      'gemini-flash-latest'; // Modelo rápido y optimizado para texto
 
   // System Prompt Maestro que formatea la respuesta como JSON estricto
   static const String _kSystemPromptMaestro = '''
@@ -54,13 +55,10 @@ Tu respuesta debe ser un objeto JSON estricto con dos claves:
   /// Valida si una API Key es funcional (Ping de red rápido)
   static Future<bool> validarToken(String token) async {
     try {
-      final model = GenerativeModel(
-        model: _kModel,
-        apiKey: token,
-      );
-      final response = await model.generateContent([
-        Content.text('Responde únicamente la palabra OK')
-      ]).timeout(const Duration(seconds: 8));
+      final model = GenerativeModel(model: _kModel, apiKey: token);
+      final response = await model
+          .generateContent([Content.text('Responde únicamente la palabra OK')])
+          .timeout(const Duration(seconds: 8));
 
       return response.text != null && response.text!.trim().isNotEmpty;
     } catch (_) {
@@ -105,7 +103,8 @@ Tu respuesta debe ser un objeto JSON estricto con dos claves:
       String clean = rawContent.trim();
       if (clean.startsWith('```')) {
         final lines = clean.split('\n');
-        if (lines.first.startsWith('```json') || lines.first.startsWith('```')) {
+        if (lines.first.startsWith('```json') ||
+            lines.first.startsWith('```')) {
           lines.removeAt(0);
         }
         if (lines.isNotEmpty && lines.last.startsWith('```')) {

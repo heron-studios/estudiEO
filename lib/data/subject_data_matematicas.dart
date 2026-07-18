@@ -14,18 +14,22 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q1',
     topicId: 'mat_algebra',
-    text: 'Si la ecuación cuadrática \$x^2 - (k+2)x + 9 = 0\$ tiene raíces reales e iguales, determine el valor positivo de \$k\$.',
+    text:
+        'Si la ecuación cuadrática \$x^2 - (k+2)x + 9 = 0\$ tiene raíces reales e iguales, determine el valor positivo de \$k\$.',
     options: ['A) 4', 'B) -8', 'C) 8', 'D) 2', 'E) 16'],
     correctAnswer: 0,
-    explanation: "La respuesta correcta es A (4). Para raíces iguales, el discriminante debe ser 0: \$\\Delta = (k+2)^2 - 4(1)(9) = 0 \\Rightarrow (k+2)^2 = 36\$. Las soluciones son \$k=4\$ o \$k=-8\$. El distractor C (8) es un 'Distractor de Falla Algebraica', ya que el postulante asume erróneamente que si \$(k+2)^2 = 36\$, entonces \$k+2 = 10\$.",
+    explanation:
+        "La respuesta correcta es A (4). Para raíces iguales, el discriminante debe ser 0: \$\\Delta = (k+2)^2 - 4(1)(9) = 0 \\Rightarrow (k+2)^2 = 36\$. Las soluciones son \$k=4\$ o \$k=-8\$. El distractor C (8) es un 'Distractor de Falla Algebraica', ya que el postulante asume erróneamente que si \$(k+2)^2 = 36\$, entonces \$k+2 = 10\$.",
   ),
   Question(
     id: 'mat_q2',
     topicId: 'mat_algebra',
-    text: 'Simplifique la siguiente expresión algebraica: \$E = \\frac{(x+y)^2 - (x-y)^2}{2xy}\$',
+    text:
+        'Simplifique la siguiente expresión algebraica: \$E = \\frac{(x+y)^2 - (x-y)^2}{2xy}\$',
     options: ['A) 1', 'B) 2', 'C) \$x^2+y^2\$', 'D) 4', 'E) \$2xy\$'],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B (2). Aplicando la Identidad de Legendre: \$(x+y)^2 - (x-y)^2 = 4xy\$. Al dividir entre \$2xy\$, queda 2. El distractor A (1) ocurre si el alumno simplifica erróneamente \$4xy\$ con \$2xy\$ ignorando el coeficiente 2. El distractor D (4) es el 'Distractor por Cierre Prematuro' (se detiene al hallar el numerador).",
+    explanation:
+        "La respuesta correcta es B (2). Aplicando la Identidad de Legendre: \$(x+y)^2 - (x-y)^2 = 4xy\$. Al dividir entre \$2xy\$, queda 2. El distractor A (1) ocurre si el alumno simplifica erróneamente \$4xy\$ con \$2xy\$ ignorando el coeficiente 2. El distractor D (4) es el 'Distractor por Cierre Prematuro' (se detiene al hallar el numerador).",
   ),
   Question(
     id: 'mat_q3',
@@ -33,71 +37,98 @@ final List<Question> matematicasQuestions = [
     text: 'Reduzca la expresión: \$M = \\frac{2^{n+3} - 2^{n+1}}{2^n}\$',
     options: ['A) 2', 'B) 4', 'C) 6', 'D) \$2^n\$', 'E) 8'],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (6). Factorizando \$2^n\$ en el numerador: \$2^n(2^3 - 2^1) / 2^n = 8 - 2 = 6\$. El distractor A (2) asume una resta de exponentes errónea (\$3-1=2\$). El distractor B (4) es una 'Falla Operativa' común si se asume \$2^3 = 6\$.",
+    explanation:
+        "La respuesta correcta es C (6). Factorizando \$2^n\$ en el numerador: \$2^n(2^3 - 2^1) / 2^n = 8 - 2 = 6\$. El distractor A (2) asume una resta de exponentes errónea (\$3-1=2\$). El distractor B (4) es una 'Falla Operativa' común si se asume \$2^3 = 6\$.",
   ),
   Question(
     id: 'mat_q4',
     topicId: 'mat_algebra',
-    text: 'Resuelva el sistema lineal:\n\$3x - 2y = 12\$\n\$x + y = 9\$\nIndique el valor de \$xy\$.',
+    text:
+        'Resuelva el sistema lineal:\n\$3x - 2y = 12\$\n\$x + y = 9\$\nIndique el valor de \$xy\$.',
     options: ['A) 6', 'B) 3', 'C) 15', 'D) 18', 'E) 9'],
     correctAnswer: 3,
-    explanation: "La respuesta correcta es D (18). Multiplicando la segunda ecuación por 2: \$2x+2y=18\$. Sumando con la primera: \$5x = 30 \\Rightarrow x=6\$. Luego \$y=3\$. Piden \$xy = 18\$. El distractor A (6) es el clásico 'Distractor por Cierre Prematuro', asumiendo que solo piden 'x'.",
+    explanation:
+        "La respuesta correcta es D (18). Multiplicando la segunda ecuación por 2: \$2x+2y=18\$. Sumando con la primera: \$5x = 30 \\Rightarrow x=6\$. Luego \$y=3\$. Piden \$xy = 18\$. El distractor A (6) es el clásico 'Distractor por Cierre Prematuro', asumiendo que solo piden 'x'.",
   ),
   Question(
     id: 'mat_q5',
     topicId: 'mat_algebra',
-    text: 'Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?',
+    text:
+        'Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?',
     options: ['A) 13 m', 'B) 14 m', 'C) 15 m', 'D) 16 m', 'E) 17 m'],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (15 m). Originalmente la hipotenusa es \$\\sqrt{12^2 + 5^2} = 13\$ m. Si se alarga 2 m más, es \$13+2=15\$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.",
+    explanation:
+        "La respuesta correcta es C (15 m). Originalmente la hipotenusa es \$\\sqrt{12^2 + 5^2} = 13\$ m. Si se alarga 2 m más, es \$13+2=15\$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.",
   ),
   Question(
     id: 'mat_q6',
     topicId: 'mat_algebra',
-    text: 'El área de un terreno rectangular es \$120 m^2\$. Si el largo es \$2 m\$ mayor que el ancho, halle el perímetro.',
+    text:
+        'El área de un terreno rectangular es \$120 m^2\$. Si el largo es \$2 m\$ mayor que el ancho, halle el perímetro.',
     options: ['A) 10 m', 'B) 12 m', 'C) 22 m', 'D) 44 m', 'E) 48 m'],
     correctAnswer: 3,
-    explanation: "La respuesta correcta es D (44 m). \$x(x+2) = 120 \\Rightarrow x=10\$, largo=12. El perímetro es \$2(10+12) = 44\$. El distractor B (12) es un distractor de paso intermedio. El distractor C (22) es 'Falla Procedimental' (solo sumar un largo y un ancho).",
+    explanation:
+        "La respuesta correcta es D (44 m). \$x(x+2) = 120 \\Rightarrow x=10\$, largo=12. El perímetro es \$2(10+12) = 44\$. El distractor B (12) es un distractor de paso intermedio. El distractor C (22) es 'Falla Procedimental' (solo sumar un largo y un ancho).",
   ),
   Question(
     id: 'mat_q7',
     topicId: 'mat_algebra',
-    text: 'Si se cumple que \$\\overline{abc} - \\overline{cba} = \\overline{mxy}\$, halle \$m+x+y\$.',
+    text:
+        'Si se cumple que \$\\overline{abc} - \\overline{cba} = \\overline{mxy}\$, halle \$m+x+y\$.',
     options: ['A) 9', 'B) 10', 'C) 18', 'D) 27', 'E) 12'],
     correctAnswer: 2,
-    explanation: 'La respuesta correcta es C (18). Por propiedad de sustracción en base 10: el centro \$x=9\$ y los extremos suman 9 (\$m+y=9\$). Entonces \$m+x+y=18\$. El distractor A (9) es el valor de la suma parcial y asume mal.',
+    explanation:
+        'La respuesta correcta es C (18). Por propiedad de sustracción en base 10: el centro \$x=9\$ y los extremos suman 9 (\$m+y=9\$). Entonces \$m+x+y=18\$. El distractor A (9) es el valor de la suma parcial y asume mal.',
   ),
   Question(
     id: 'mat_q8',
     topicId: 'mat_algebra',
     text: 'Al factorizar \$x^2 - 7x + 12\$, uno de sus factores primos es:',
-    options: ['A) \$x+3\$', 'B) \$x+4\$', 'C) \$x-4\$', 'D) \$x+7\$', 'E) \$x-1\$'],
+    options: [
+      'A) \$x+3\$',
+      'B) \$x+4\$',
+      'C) \$x-4\$',
+      'D) \$x+7\$',
+      'E) \$x-1\$',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (\$x-4\$). Al aplicar aspa simple, es \$(x-3)(x-4)\$. El distractor B (\$x+4\$) es el 'Distractor de Falla de Signo', el postulante suma erróneamente en vez de respetar la regla \$-3 \\times -4 = 12\$.",
+    explanation:
+        "La respuesta correcta es C (\$x-4\$). Al aplicar aspa simple, es \$(x-3)(x-4)\$. El distractor B (\$x+4\$) es el 'Distractor de Falla de Signo', el postulante suma erróneamente en vez de respetar la regla \$-3 \\times -4 = 12\$.",
   ),
   Question(
     id: 'mat_q9',
     topicId: 'mat_algebra',
     text: 'Efectúe: \$\\frac{1}{2} + \\frac{1}{3} - \\frac{1}{4}\$',
-    options: ['A) \$\\frac{1}{5}\$', 'B) \$\\frac{5}{12}\$', 'C) \$\\frac{7}{12}\$', 'D) \$\\frac{1}{12}\$', 'E) \$\\frac{1}{24}\$'],
+    options: [
+      'A) \$\\frac{1}{5}\$',
+      'B) \$\\frac{5}{12}\$',
+      'C) \$\\frac{7}{12}\$',
+      'D) \$\\frac{1}{12}\$',
+      'E) \$\\frac{1}{24}\$',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (7/12). MCM de 2,3,4 es 12. \$(6+4-3)/12 = 7/12\$. El distractor A (1/5) es la 'Trampa de la suma lineal' (suma/resta directa de denominadores), el error más penalizado.",
+    explanation:
+        "La respuesta correcta es C (7/12). MCM de 2,3,4 es 12. \$(6+4-3)/12 = 7/12\$. El distractor A (1/5) es la 'Trampa de la suma lineal' (suma/resta directa de denominadores), el error más penalizado.",
   ),
   Question(
     id: 'mat_q10',
     topicId: 'mat_algebra',
-    text: 'Dos números están en relación de 3 a 5. Si la suma de ambos es 64, ¿cuál es su diferencia?',
+    text:
+        'Dos números están en relación de 3 a 5. Si la suma de ambos es 64, ¿cuál es su diferencia?',
     options: ['A) 8', 'B) 16', 'C) 24', 'D) 40', 'E) 32'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es B (16). \$3k+5k=8k=64 \\Rightarrow k=8\$. La diferencia es \$5k-3k = 2k = 16\$. El distractor A (8) es cierre prematuro. Los distractores C y D (24 y 40) son los números originales.',
+    explanation:
+        'La respuesta correcta es B (16). \$3k+5k=8k=64 \\Rightarrow k=8\$. La diferencia es \$5k-3k = 2k = 16\$. El distractor A (8) es cierre prematuro. Los distractores C y D (24 y 40) son los números originales.',
   ),
   Question(
     id: 'mat_q11',
     topicId: 'mat_algebra',
-    text: 'Diez obreros pueden hacer una obra en 12 días. ¿En cuántos días harán la misma obra 15 obreros?',
+    text:
+        'Diez obreros pueden hacer una obra en 12 días. ¿En cuántos días harán la misma obra 15 obreros?',
     options: ['A) 18', 'B) 10', 'C) 8', 'D) 6', 'E) 15'],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (8). Es regla de tres inversa: \$(10)(12)/15 = 8\$. El distractor A (18) es una 'Trampa Estructural' por aplicar regla de tres directa multiplicando aspas \$(12*15)/10=18\$.",
+    explanation:
+        "La respuesta correcta es C (8). Es regla de tres inversa: \$(10)(12)/15 = 8\$. El distractor A (18) es una 'Trampa Estructural' por aplicar regla de tres directa multiplicando aspas \$(12*15)/10=18\$.",
   ),
   Question(
     id: 'mat_q12',
@@ -814,407 +845,520 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q101',
     topicId: 'mat_angulos',
-    text: 'En un triángulo, las medidas de sus ángulos internos están en proporción a 2, 3 y 4. Calcule la medida del ángulo mayor.',
-    options: ['A) \$40^\\circ\$', 'B) \$60^\\circ\$', 'C) \$80^\\circ\$', 'D) \$100^\\circ\$', 'E) \$20^\\circ\$'],
+    text:
+        'En un triángulo, las medidas de sus ángulos internos están en proporción a 2, 3 y 4. Calcule la medida del ángulo mayor.',
+    options: [
+      'A) \$40^\\circ\$',
+      'B) \$60^\\circ\$',
+      'C) \$80^\\circ\$',
+      'D) \$100^\\circ\$',
+      'E) \$20^\\circ\$',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (\$80^\\circ\$). Suma de ángulos es 180. \$2k+3k+4k = 9k = 180 \\Rightarrow k=20\$. El mayor es \$4k = 80\$. El distractor E (20) es el 'Distractor de Cierre Prematuro', el valor de k.",
+    explanation:
+        "La respuesta correcta es C (\$80^\\circ\$). Suma de ángulos es 180. \$2k+3k+4k = 9k = 180 \\Rightarrow k=20\$. El mayor es \$4k = 80\$. El distractor E (20) es el 'Distractor de Cierre Prematuro', el valor de k.",
   ),
   Question(
     id: 'mat_q102',
     topicId: 'mat_angulos',
-    text: 'En un triángulo rectángulo, la hipotenusa mide \$5k\$ y uno de los catetos mide \$3k\$. Si el área del triángulo es \$24u^2\$, halle el valor de \$k\$ (considerar \$k > 0\$).',
+    text:
+        'En un triángulo rectángulo, la hipotenusa mide \$5k\$ y uno de los catetos mide \$3k\$. Si el área del triángulo es \$24u^2\$, halle el valor de \$k\$ (considerar \$k > 0\$).',
     options: ['A) 1', 'B) 2', 'C) 3', 'D) 4', 'E) 12'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es B (2). El otro cateto es \$4k\$. El área es \$(3k)(4k)/2 = 6k^2 = 24 \\Rightarrow k^2 = 4 \\Rightarrow k=2\$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume \$12k^2=24\$).',
+    explanation:
+        'La respuesta correcta es B (2). El otro cateto es \$4k\$. El área es \$(3k)(4k)/2 = 6k^2 = 24 \\Rightarrow k^2 = 4 \\Rightarrow k=2\$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume \$12k^2=24\$).',
   ),
   Question(
     id: 'mat_q103',
     topicId: 'mat_angulos',
-    text: 'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
+    text:
+        'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
     options: ['A) 4', 'B) 5', 'C) 6', 'D) 7', 'E) 8'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
+    explanation:
+        'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
   ),
   Question(
     id: 'mat_q104',
     topicId: 'mat_angulos',
-    text: 'Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de \$45^\\circ\$. ¿A qué distancia de la base del faro se encuentra el barco?',
-    options: ['A) 20 m', 'B) 40 m', 'C) \$40\\sqrt{2}\$ m', 'D) \$20\\sqrt{2}\$ m', 'E) 80 m'],
+    text:
+        'Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de \$45^\\circ\$. ¿A qué distancia de la base del faro se encuentra el barco?',
+    options: [
+      'A) 20 m',
+      'B) 40 m',
+      'C) \$40\\sqrt{2}\$ m',
+      'D) \$20\\sqrt{2}\$ m',
+      'E) 80 m',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C (\$40\\sqrt{2}\$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.",
+    explanation:
+        "La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C (\$40\\sqrt{2}\$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.",
   ),
   Question(
     id: 'mat_q105',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['100 grados', '110 grados', '90 grados', '80 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.',
   ),
   Question(
     id: 'mat_q106',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['101 grados', '91 grados', '81 grados', '89 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.',
   ),
   Question(
     id: 'mat_q107',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['92 grados', '72 grados', '82 grados', '98 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.',
   ),
   Question(
     id: 'mat_q108',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['83 grados', '63 grados', '107 grados', '73 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.',
   ),
   Question(
     id: 'mat_q109',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['64 grados', '74 grados', '54 grados', '116 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.',
   ),
   Question(
     id: 'mat_q110',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['85 grados', '75 grados', '65 grados', '105 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.',
   ),
   Question(
     id: 'mat_q111',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['106 grados', '86 grados', '96 grados', '84 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.',
   ),
   Question(
     id: 'mat_q112',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['97 grados', '77 grados', '93 grados', '87 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.',
   ),
   Question(
     id: 'mat_q113',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['78 grados', '88 grados', '68 grados', '102 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.',
   ),
   Question(
     id: 'mat_q114',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['79 grados', '69 grados', '59 grados', '111 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.',
   ),
   Question(
     id: 'mat_q115',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['90 grados', '70 grados', '80 grados', '100 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.',
   ),
   Question(
     id: 'mat_q116',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['81 grados', '61 grados', '109 grados', '71 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.',
   ),
   Question(
     id: 'mat_q117',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['92 grados', '102 grados', '82 grados', '88 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.',
   ),
   Question(
     id: 'mat_q118',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['93 grados', '83 grados', '73 grados', '97 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.',
   ),
   Question(
     id: 'mat_q119',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['84 grados', '64 grados', '74 grados', '106 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.',
   ),
   Question(
     id: 'mat_q120',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['95 grados', '75 grados', '95 grados', '85 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.',
   ),
   Question(
     id: 'mat_q121',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['76 grados', '86 grados', '66 grados', '104 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 49 = 76 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 49 = 76 grados.',
   ),
   Question(
     id: 'mat_q122',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['77 grados', '67 grados', '57 grados', '113 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 53 = 67 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 53 = 67 grados.',
   ),
   Question(
     id: 'mat_q123',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['98 grados', '78 grados', '88 grados', '92 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 57 = 88 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 57 = 88 grados.',
   ),
   Question(
     id: 'mat_q124',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['89 grados', '69 grados', '101 grados', '79 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 61 = 79 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 61 = 79 grados.',
   ),
   Question(
     id: 'mat_q125',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['90 grados', '100 grados', '80 grados', '90 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 45 = 90 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 45 = 90 grados.',
   ),
   Question(
     id: 'mat_q126',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['91 grados', '81 grados', '71 grados', '99 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 49 = 81 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 49 = 81 grados.',
   ),
   Question(
     id: 'mat_q127',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['82 grados', '62 grados', '72 grados', '108 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 53 = 72 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 53 = 72 grados.',
   ),
   Question(
     id: 'mat_q128',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['73 grados', '53 grados', '117 grados', '63 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 57 = 63 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 57 = 63 grados.',
   ),
   Question(
     id: 'mat_q129',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['84 grados', '94 grados', '74 grados', '96 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 61 = 84 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 61 = 84 grados.',
   ),
   Question(
     id: 'mat_q130',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['105 grados', '95 grados', '85 grados', '85 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 45 = 95 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 45 = 95 grados.',
   ),
   Question(
     id: 'mat_q131',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['96 grados', '76 grados', '86 grados', '94 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 49 = 86 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 49 = 86 grados.',
   ),
   Question(
     id: 'mat_q132',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['87 grados', '67 grados', '103 grados', '77 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 53 = 77 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 53 = 77 grados.',
   ),
   Question(
     id: 'mat_q133',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['68 grados', '78 grados', '58 grados', '112 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 57 = 68 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 57 = 68 grados.',
   ),
   Question(
     id: 'mat_q134',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['69 grados', '59 grados', '49 grados', '121 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 61 = 59 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 61 = 59 grados.',
   ),
   Question(
     id: 'mat_q135',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['110 grados', '90 grados', '100 grados', '80 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 45 = 100 grados.',
   ),
   Question(
     id: 'mat_q136',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['101 grados', '81 grados', '89 grados', '91 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 49 = 91 grados.',
   ),
   Question(
     id: 'mat_q137',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['82 grados', '92 grados', '72 grados', '98 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 53 = 82 grados.',
   ),
   Question(
     id: 'mat_q138',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['83 grados', '73 grados', '63 grados', '107 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 57 = 73 grados.',
   ),
   Question(
     id: 'mat_q139',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['74 grados', '54 grados', '64 grados', '116 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 61 = 64 grados.',
   ),
   Question(
     id: 'mat_q140',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['85 grados', '65 grados', '105 grados', '75 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 45 = 75 grados.',
   ),
   Question(
     id: 'mat_q141',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['96 grados', '106 grados', '86 grados', '84 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 49 = 96 grados.',
   ),
   Question(
     id: 'mat_q142',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['97 grados', '87 grados', '77 grados', '93 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 53 = 87 grados.',
   ),
   Question(
     id: 'mat_q143',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['88 grados', '68 grados', '78 grados', '102 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 57 = 78 grados.',
   ),
   Question(
     id: 'mat_q144',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['79 grados', '59 grados', '111 grados', '69 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 61 = 69 grados.',
   ),
   Question(
     id: 'mat_q145',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 55 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['80 grados', '90 grados', '70 grados', '100 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 55 - 45 = 80 grados.',
   ),
   Question(
     id: 'mat_q146',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 60 grados y 49 grados. Cuanto mide el tercer angulo?',
     options: ['81 grados', '71 grados', '61 grados', '109 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 60 - 49 = 71 grados.',
   ),
   Question(
     id: 'mat_q147',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 35 grados y 53 grados. Cuanto mide el tercer angulo?',
     options: ['102 grados', '82 grados', '92 grados', '88 grados'],
     correctAnswer: 2,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 35 - 53 = 92 grados.',
   ),
   Question(
     id: 'mat_q148',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 40 grados y 57 grados. Cuanto mide el tercer angulo?',
     options: ['93 grados', '73 grados', '97 grados', '83 grados'],
     correctAnswer: 3,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 40 - 57 = 83 grados.',
   ),
   Question(
     id: 'mat_q149',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 45 grados y 61 grados. Cuanto mide el tercer angulo?',
     options: ['74 grados', '84 grados', '64 grados', '106 grados'],
     correctAnswer: 0,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 45 - 61 = 74 grados.',
   ),
   Question(
     id: 'mat_q150',
     topicId: 'mat_angulos',
-    text: 'En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?',
+    text:
+        'En un triangulo, dos angulos interiores miden 50 grados y 45 grados. Cuanto mide el tercer angulo?',
     options: ['95 grados', '85 grados', '75 grados', '95 grados'],
     correctAnswer: 1,
-    explanation: 'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.',
+    explanation:
+        'La suma de angulos interiores de un triangulo es 180 grados. Entonces 180 - 50 - 45 = 85 grados.',
   ),
   Question(
     id: 'mat_q151',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 37° y 61°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 37° y 61°. Halle el tercer ángulo.',
     options: ['82°', '92°', '72°', '98°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 37 - 61 = 82°.',
@@ -1222,7 +1366,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q152',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 66° y 43°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 66° y 43°. Halle el tercer ángulo.',
     options: ['71°', '81°', '61°', '109°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 66 - 43 = 71°.',
@@ -1230,7 +1375,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q153',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 49° y 70°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 49° y 70°. Halle el tercer ángulo.',
     options: ['61°', '71°', '51°', '119°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 49 - 70 = 61°.',
@@ -1238,7 +1384,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q154',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 49° y 78°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 49° y 78°. Halle el tercer ángulo.',
     options: ['53°', '63°', '43°', '127°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 49 - 78 = 53°.',
@@ -1246,7 +1393,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q155',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 78°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 78°. Halle el tercer ángulo.',
     options: ['67°', '77°', '57°', '113°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 35 - 78 = 67°.',
@@ -1254,7 +1402,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q156',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 39° y 74°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 39° y 74°. Halle el tercer ángulo.',
     options: ['67°', '77°', '57°', '113°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 39 - 74 = 67°.',
@@ -1262,7 +1411,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q157',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 39°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 39°. Halle el tercer ángulo.',
     options: ['79°', '89°', '69°', '101°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 62 - 39 = 79°.',
@@ -1270,7 +1420,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q158',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 66° y 47°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 66° y 47°. Halle el tercer ángulo.',
     options: ['67°', '77°', '57°', '113°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 66 - 47 = 67°.',
@@ -1278,7 +1429,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q159',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 51°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 51°. Halle el tercer ángulo.',
     options: ['98°', '108°', '88°', '82°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 31 - 51 = 98°.',
@@ -1286,7 +1438,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q160',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 79°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 79°. Halle el tercer ángulo.',
     options: ['66°', '76°', '56°', '114°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 35 - 79 = 66°.',
@@ -1294,7 +1447,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q161',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 63° y 34°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 63° y 34°. Halle el tercer ángulo.',
     options: ['83°', '93°', '73°', '97°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 63 - 34 = 83°.',
@@ -1302,7 +1456,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q162',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 59° y 70°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 59° y 70°. Halle el tercer ángulo.',
     options: ['51°', '61°', '41°', '129°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 59 - 70 = 51°.',
@@ -1310,7 +1465,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q163',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 56° y 59°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 56° y 59°. Halle el tercer ángulo.',
     options: ['65°', '75°', '55°', '115°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 56 - 59 = 65°.',
@@ -1318,7 +1474,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q164',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 80° y 58°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 80° y 58°. Halle el tercer ángulo.',
     options: ['42°', '52°', '32°', '138°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 80 - 58 = 42°.',
@@ -1326,7 +1483,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q165',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 52° y 69°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 52° y 69°. Halle el tercer ángulo.',
     options: ['59°', '69°', '49°', '121°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 52 - 69 = 59°.',
@@ -1334,7 +1492,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q166',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 40° y 76°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 40° y 76°. Halle el tercer ángulo.',
     options: ['64°', '74°', '54°', '116°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 40 - 76 = 64°.',
@@ -1342,7 +1501,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q167',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 45° y 35°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 45° y 35°. Halle el tercer ángulo.',
     options: ['100°', '110°', '90°', '80°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 45 - 35 = 100°.',
@@ -1350,7 +1510,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q168',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 74° y 56°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 74° y 56°. Halle el tercer ángulo.',
     options: ['50°', '60°', '40°', '130°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 74 - 56 = 50°.',
@@ -1358,7 +1519,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q169',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 80° y 67°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 80° y 67°. Halle el tercer ángulo.',
     options: ['33°', '43°', '23°', '147°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 80 - 67 = 33°.',
@@ -1366,7 +1528,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q170',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 64° y 53°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 64° y 53°. Halle el tercer ángulo.',
     options: ['63°', '73°', '53°', '117°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 64 - 53 = 63°.',
@@ -1374,7 +1537,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q171',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 53° y 41°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 53° y 41°. Halle el tercer ángulo.',
     options: ['86°', '96°', '76°', '94°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 53 - 41 = 86°.',
@@ -1382,7 +1546,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q172',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 59° y 61°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 59° y 61°. Halle el tercer ángulo.',
     options: ['60°', '70°', '50°', '120°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 59 - 61 = 60°.',
@@ -1390,7 +1555,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q173',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 42°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 42°. Halle el tercer ángulo.',
     options: ['73°', '83°', '63°', '107°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 65 - 42 = 73°.',
@@ -1398,7 +1564,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q174',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 78° y 68°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 78° y 68°. Halle el tercer ángulo.',
     options: ['34°', '44°', '24°', '146°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 78 - 68 = 34°.',
@@ -1406,7 +1573,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q175',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 69° y 67°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 69° y 67°. Halle el tercer ángulo.',
     options: ['44°', '54°', '34°', '136°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 69 - 67 = 44°.',
@@ -1414,7 +1582,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q176',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 37° y 67°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 37° y 67°. Halle el tercer ángulo.',
     options: ['76°', '86°', '66°', '104°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 37 - 67 = 76°.',
@@ -1422,7 +1591,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q177',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 69° y 34°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 69° y 34°. Halle el tercer ángulo.',
     options: ['77°', '87°', '67°', '103°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 69 - 34 = 77°.',
@@ -1430,7 +1600,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q178',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 69°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 69°. Halle el tercer ángulo.',
     options: ['46°', '56°', '36°', '134°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 65 - 69 = 46°.',
@@ -1438,7 +1609,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q179',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 58° y 70°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 58° y 70°. Halle el tercer ángulo.',
     options: ['52°', '62°', '42°', '128°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 58 - 70 = 52°.',
@@ -1446,7 +1618,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q180',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 79° y 42°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 79° y 42°. Halle el tercer ángulo.',
     options: ['59°', '69°', '49°', '121°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 79 - 42 = 59°.',
@@ -1454,7 +1627,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q181',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 39° y 63°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 39° y 63°. Halle el tercer ángulo.',
     options: ['78°', '88°', '68°', '102°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 39 - 63 = 78°.',
@@ -1462,7 +1636,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q182',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 32° y 46°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 32° y 46°. Halle el tercer ángulo.',
     options: ['102°', '112°', '92°', '78°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 32 - 46 = 102°.',
@@ -1470,7 +1645,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q183',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 38° y 51°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 38° y 51°. Halle el tercer ángulo.',
     options: ['91°', '101°', '81°', '89°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 38 - 51 = 91°.',
@@ -1478,7 +1654,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q184',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 69°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 69°. Halle el tercer ángulo.',
     options: ['80°', '90°', '70°', '100°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 31 - 69 = 80°.',
@@ -1486,7 +1663,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q185',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 38° y 63°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 38° y 63°. Halle el tercer ángulo.',
     options: ['79°', '89°', '69°', '101°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 38 - 63 = 79°.',
@@ -1494,7 +1672,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q186',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 43°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 43°. Halle el tercer ángulo.',
     options: ['75°', '85°', '65°', '105°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 62 - 43 = 75°.',
@@ -1502,7 +1681,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q187',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 41°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 41°. Halle el tercer ángulo.',
     options: ['74°', '84°', '64°', '106°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 65 - 41 = 74°.',
@@ -1510,7 +1690,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q188',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 46°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 62° y 46°. Halle el tercer ángulo.',
     options: ['72°', '82°', '62°', '108°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 62 - 46 = 72°.',
@@ -1518,7 +1699,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q189',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 64°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 35° y 64°. Halle el tercer ángulo.',
     options: ['81°', '91°', '71°', '99°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 35 - 64 = 81°.',
@@ -1526,7 +1708,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q190',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 60° y 52°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 60° y 52°. Halle el tercer ángulo.',
     options: ['68°', '78°', '58°', '112°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 60 - 52 = 68°.',
@@ -1534,7 +1717,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q191',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 45° y 50°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 45° y 50°. Halle el tercer ángulo.',
     options: ['85°', '95°', '75°', '95°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 45 - 50 = 85°.',
@@ -1542,7 +1726,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q192',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 63° y 67°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 63° y 67°. Halle el tercer ángulo.',
     options: ['50°', '60°', '40°', '130°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 63 - 67 = 50°.',
@@ -1550,7 +1735,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q193',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 57° y 39°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 57° y 39°. Halle el tercer ángulo.',
     options: ['84°', '94°', '74°', '96°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 57 - 39 = 84°.',
@@ -1558,7 +1744,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q194',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 79° y 41°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 79° y 41°. Halle el tercer ángulo.',
     options: ['60°', '70°', '50°', '120°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 79 - 41 = 60°.',
@@ -1566,7 +1753,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q195',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 58°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 65° y 58°. Halle el tercer ángulo.',
     options: ['57°', '67°', '47°', '123°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 65 - 58 = 57°.',
@@ -1574,7 +1762,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q196',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 48° y 59°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 48° y 59°. Halle el tercer ángulo.',
     options: ['73°', '83°', '63°', '107°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 48 - 59 = 73°.',
@@ -1582,7 +1771,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q197',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 74° y 74°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 74° y 74°. Halle el tercer ángulo.',
     options: ['32°', '42°', '22°', '148°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 74 - 74 = 32°.',
@@ -1590,7 +1780,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q198',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 32°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 31° y 32°. Halle el tercer ángulo.',
     options: ['117°', '127°', '107°', '63°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 31 - 32 = 117°.',
@@ -1598,7 +1789,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q199',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 58° y 38°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 58° y 38°. Halle el tercer ángulo.',
     options: ['84°', '94°', '74°', '96°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 58 - 38 = 84°.',
@@ -1606,7 +1798,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q200',
     topicId: 'mat_angulos',
-    text: 'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 57° y 64°. Halle el tercer ángulo.',
+    text:
+        'FIJA GEOMETRÍA: En un triángulo, dos ángulos miden 57° y 64°. Halle el tercer ángulo.',
     options: ['59°', '69°', '49°', '121°'],
     correctAnswer: 0,
     explanation: 'La suma es 180°. 180 - 57 - 64 = 59°.',
@@ -1614,39 +1807,54 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q201',
     topicId: 'mat_pitagoras',
-    text: 'En un triángulo rectángulo, la hipotenusa mide \$5k\$ y uno de los catetos mide \$3k\$. Si el área del triángulo es \$24u^2\$, halle el valor de \$k\$ (considerar \$k > 0\$).',
+    text:
+        'En un triángulo rectángulo, la hipotenusa mide \$5k\$ y uno de los catetos mide \$3k\$. Si el área del triángulo es \$24u^2\$, halle el valor de \$k\$ (considerar \$k > 0\$).',
     options: ['A) 1', 'B) 2', 'C) 3', 'D) 4', 'E) 12'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es B (2). El otro cateto es \$4k\$. El área es \$(3k)(4k)/2 = 6k^2 = 24 \\Rightarrow k^2 = 4 \\Rightarrow k=2\$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume \$12k^2=24\$).',
+    explanation:
+        'La respuesta correcta es B (2). El otro cateto es \$4k\$. El área es \$(3k)(4k)/2 = 6k^2 = 24 \\Rightarrow k^2 = 4 \\Rightarrow k=2\$. El distractor D (4) ocurre si el postulante no divide entre 2 la fórmula del área (asume \$12k^2=24\$).',
   ),
   Question(
     id: 'mat_q202',
     topicId: 'mat_pitagoras',
-    text: 'Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?',
+    text:
+        'Un poste de 12 metros de altura está sujeto por un cable tirante desde su extremo superior hasta el piso, a 5 metros de su base. Si el cable se alarga 2 metros más, ¿cuál será su nueva longitud?',
     options: ['A) 13 m', 'B) 14 m', 'C) 15 m', 'D) 16 m', 'E) 17 m'],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (15 m). Originalmente la hipotenusa es \$\\sqrt{12^2 + 5^2} = 13\$ m. Si se alarga 2 m más, es \$13+2=15\$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.",
+    explanation:
+        "La respuesta correcta es C (15 m). Originalmente la hipotenusa es \$\\sqrt{12^2 + 5^2} = 13\$ m. Si se alarga 2 m más, es \$13+2=15\$ m. El distractor A (13 m) es un 'Distractor por Cierre Prematuro', se detiene al hallar la longitud inicial.",
   ),
   Question(
     id: 'mat_q203',
     topicId: 'mat_pitagoras',
-    text: 'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
+    text:
+        'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
     options: ['A) 4', 'B) 5', 'C) 6', 'D) 7', 'E) 8'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
+    explanation:
+        'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
   ),
   Question(
     id: 'mat_q204',
     topicId: 'mat_pitagoras',
-    text: 'Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de \$45^\\circ\$. ¿A qué distancia de la base del faro se encuentra el barco?',
-    options: ['A) 20 m', 'B) 40 m', 'C) \$40\\sqrt{2}\$ m', 'D) \$20\\sqrt{2}\$ m', 'E) 80 m'],
+    text:
+        'Desde lo alto de un faro de 40 m de altura, se observa un barco con un ángulo de depresión de \$45^\\circ\$. ¿A qué distancia de la base del faro se encuentra el barco?',
+    options: [
+      'A) 20 m',
+      'B) 40 m',
+      'C) \$40\\sqrt{2}\$ m',
+      'D) \$20\\sqrt{2}\$ m',
+      'E) 80 m',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C (\$40\\sqrt{2}\$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.",
+    explanation:
+        "La respuesta correcta es B (40 m). El ángulo de depresión alterna con la elevación formando un triángulo rectángulo isósceles. El distractor C (\$40\\sqrt{2}\$) es la hipotenusa (distancia visual), clásica trampa por no leer 'distancia a la base'.",
   ),
   Question(
     id: 'mat_q205',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1654,7 +1862,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q206',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1662,7 +1871,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q207',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1670,7 +1880,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q208',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1678,7 +1889,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q209',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -1686,7 +1898,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q210',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -1694,7 +1907,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q211',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
     options: ['27 cm', '24 cm', '26 cm', '34 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.',
@@ -1702,7 +1916,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q212',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
     options: ['21 cm', '18 cm', '28 cm', '20 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.',
@@ -1710,7 +1925,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q213',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1718,7 +1934,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q214',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1726,7 +1943,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q215',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1734,7 +1952,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q216',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1742,7 +1961,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q217',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -1750,7 +1970,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q218',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -1758,7 +1979,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q219',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
     options: ['27 cm', '24 cm', '26 cm', '34 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.',
@@ -1766,7 +1988,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q220',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
     options: ['21 cm', '18 cm', '28 cm', '20 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.',
@@ -1774,7 +1997,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q221',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1782,7 +2006,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q222',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1790,7 +2015,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q223',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1798,7 +2024,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q224',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1806,7 +2033,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q225',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -1814,7 +2042,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q226',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -1822,7 +2051,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q227',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
     options: ['27 cm', '24 cm', '26 cm', '34 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.',
@@ -1830,7 +2060,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q228',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
     options: ['21 cm', '18 cm', '28 cm', '20 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.',
@@ -1838,7 +2069,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q229',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1846,7 +2078,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q230',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1854,7 +2087,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q231',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1862,7 +2096,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q232',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1870,7 +2105,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q233',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -1878,7 +2114,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q234',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -1886,7 +2123,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q235',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
     options: ['27 cm', '24 cm', '26 cm', '34 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.',
@@ -1894,7 +2132,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q236',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
     options: ['21 cm', '18 cm', '28 cm', '20 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.',
@@ -1902,7 +2141,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q237',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1910,7 +2150,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q238',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1918,7 +2159,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q239',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1926,7 +2168,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q240',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1934,7 +2177,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q241',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -1942,7 +2186,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q242',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -1950,7 +2195,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q243',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 10 cm y 24 cm. Halle la hipotenusa.',
     options: ['27 cm', '24 cm', '26 cm', '34 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 10^2 + 24^2 = 676; por tanto h = 26 cm.',
@@ -1958,7 +2204,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q244',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 12 cm y 16 cm. Halle la hipotenusa.',
     options: ['21 cm', '18 cm', '28 cm', '20 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 12^2 + 16^2 = 400; por tanto h = 20 cm.',
@@ -1966,7 +2213,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q245',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 3 cm y 4 cm. Halle la hipotenusa.',
     options: ['5 cm', '6 cm', '3 cm', '7 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 3^2 + 4^2 = 25; por tanto h = 5 cm.',
@@ -1974,7 +2222,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q246',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 5 cm y 12 cm. Halle la hipotenusa.',
     options: ['14 cm', '13 cm', '11 cm', '17 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 5^2 + 12^2 = 169; por tanto h = 13 cm.',
@@ -1982,7 +2231,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q247',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 6 cm y 8 cm. Halle la hipotenusa.',
     options: ['11 cm', '8 cm', '10 cm', '14 cm'],
     correctAnswer: 2,
     explanation: 'Por Pitagoras: h^2 = 6^2 + 8^2 = 100; por tanto h = 10 cm.',
@@ -1990,7 +2240,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q248',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 7 cm y 24 cm. Halle la hipotenusa.',
     options: ['26 cm', '23 cm', '31 cm', '25 cm'],
     correctAnswer: 3,
     explanation: 'Por Pitagoras: h^2 = 7^2 + 24^2 = 625; por tanto h = 25 cm.',
@@ -1998,7 +2249,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q249',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 8 cm y 15 cm. Halle la hipotenusa.',
     options: ['17 cm', '18 cm', '15 cm', '23 cm'],
     correctAnswer: 0,
     explanation: 'Por Pitagoras: h^2 = 8^2 + 15^2 = 289; por tanto h = 17 cm.',
@@ -2006,7 +2258,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q250',
     topicId: 'mat_pitagoras',
-    text: 'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
+    text:
+        'Un triangulo rectangulo tiene catetos de 9 cm y 12 cm. Halle la hipotenusa.',
     options: ['16 cm', '15 cm', '13 cm', '21 cm'],
     correctAnswer: 1,
     explanation: 'Por Pitagoras: h^2 = 9^2 + 12^2 = 225; por tanto h = 15 cm.',
@@ -2022,7 +2275,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q252',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 25 y un cateto 7. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 25 y un cateto 7. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2046,7 +2300,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q255',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 10 y un cateto 6. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 10 y un cateto 6. Halle el otro cateto.',
     options: ['8', '9', '10', '7'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2054,7 +2309,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q256',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 39 y un cateto 15. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 39 y un cateto 15. Halle el otro cateto.',
     options: ['36', '37', '38', '35'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2062,7 +2318,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q257',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 25 y un cateto 7. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 25 y un cateto 7. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2070,7 +2327,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q258',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 21. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 21. Halle el otro cateto.',
     options: ['72', '73', '74', '71'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2078,7 +2336,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q259',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 60 y un cateto 36. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 60 y un cateto 36. Halle el otro cateto.',
     options: ['48', '49', '50', '47'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2086,7 +2345,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q260',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2094,7 +2354,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q261',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 30 y un cateto 18. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 30 y un cateto 18. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2102,7 +2363,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q262',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2126,7 +2388,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q265',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2150,7 +2413,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q268',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 45. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 45. Halle el otro cateto.',
     options: ['60', '61', '62', '59'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2198,7 +2462,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q274',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 15 y un cateto 9. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 15 y un cateto 9. Halle el otro cateto.',
     options: ['12', '13', '14', '11'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2222,7 +2487,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q277',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2238,7 +2504,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q279',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
     options: ['48', '49', '50', '47'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2246,7 +2513,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q280',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
     options: ['48', '49', '50', '47'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2254,7 +2522,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q281',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 45. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 75 y un cateto 45. Halle el otro cateto.',
     options: ['60', '61', '62', '59'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2270,7 +2539,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q283',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 13 y un cateto 5. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 13 y un cateto 5. Halle el otro cateto.',
     options: ['12', '13', '14', '11'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2294,7 +2564,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q286',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 50 y un cateto 14. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 50 y un cateto 14. Halle el otro cateto.',
     options: ['48', '49', '50', '47'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2310,7 +2581,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q288',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 52 y un cateto 20. Halle el otro cateto.',
     options: ['48', '49', '50', '47'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2318,7 +2590,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q289',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 15 y un cateto 9. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 15 y un cateto 9. Halle el otro cateto.',
     options: ['12', '13', '14', '11'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2342,7 +2615,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q292',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 17 y un cateto 8. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 17 y un cateto 8. Halle el otro cateto.',
     options: ['15', '16', '17', '14'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2350,7 +2624,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q293',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 26 y un cateto 10. Halle el otro cateto.',
     options: ['24', '25', '26', '23'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2374,7 +2649,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q296',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 90 y un cateto 54. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 90 y un cateto 54. Halle el otro cateto.',
     options: ['72', '73', '74', '71'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2382,7 +2658,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q297',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 5 y un cateto 3. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 5 y un cateto 3. Halle el otro cateto.',
     options: ['4', '5', '6', '3'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2390,7 +2667,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q298',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 10 y un cateto 6. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 10 y un cateto 6. Halle el otro cateto.',
     options: ['8', '9', '10', '7'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2398,7 +2676,8 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q299',
     topicId: 'mat_pitagoras',
-    text: 'FIJA PITÁGORAS: La hipotenusa mide 78 y un cateto 30. Halle el otro cateto.',
+    text:
+        'FIJA PITÁGORAS: La hipotenusa mide 78 y un cateto 30. Halle el otro cateto.',
     options: ['72', '73', '74', '71'],
     correctAnswer: 0,
     explanation: 'Por el Teorema de Pitágoras: a² + b² = c².',
@@ -2414,10 +2693,12 @@ final List<Question> matematicasQuestions = [
   Question(
     id: 'mat_q301',
     topicId: 'mat_trigo',
-    text: 'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
+    text:
+        'En un triángulo rectángulo ABC (recto en B), si \$\\sin(A) = \\frac{4}{5}\$, calcule \$E = 4\\tan(C) + 5\\cos(A)\$.',
     options: ['A) 4', 'B) 5', 'C) 6', 'D) 7', 'E) 8'],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
+    explanation:
+        'La respuesta correcta es C (6). Triángulo 3-4-5. Si \$\\sin(A)=4/5\$, opuesto a A es 4, adyacente es 3. El ángulo C tiene opuesto 3 y adyacente 4. \$\\tan(C)=3/4\$, \$\\cos(A)=3/5\$. \$E = 4(3/4) + 5(3/5) = 3 + 3 = 6\$. El distractor B (5) asume mal las razones (ej. intercambiar seno por coseno).',
   ),
   Question(
     id: 'mat_q302',
@@ -2425,7 +2706,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q303',
@@ -2433,7 +2715,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q304',
@@ -2441,7 +2724,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q305',
@@ -2449,7 +2733,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q306',
@@ -2457,7 +2742,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q307',
@@ -2465,7 +2751,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q308',
@@ -2473,7 +2760,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q309',
@@ -2481,7 +2769,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q310',
@@ -2489,7 +2778,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q311',
@@ -2497,7 +2787,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q312',
@@ -2505,7 +2796,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q313',
@@ -2513,7 +2805,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q314',
@@ -2521,7 +2814,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q315',
@@ -2529,7 +2823,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q316',
@@ -2537,7 +2832,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q317',
@@ -2545,7 +2841,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q318',
@@ -2553,7 +2850,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q319',
@@ -2561,7 +2859,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q320',
@@ -2569,7 +2868,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q321',
@@ -2577,7 +2877,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q322',
@@ -2585,7 +2886,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q323',
@@ -2593,7 +2895,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q324',
@@ -2601,7 +2904,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q325',
@@ -2609,7 +2913,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q326',
@@ -2617,7 +2922,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q327',
@@ -2625,7 +2931,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q328',
@@ -2633,7 +2940,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q329',
@@ -2641,7 +2949,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q330',
@@ -2649,7 +2958,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q331',
@@ -2657,7 +2967,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q332',
@@ -2665,7 +2976,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q333',
@@ -2673,7 +2985,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q334',
@@ -2681,7 +2994,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q335',
@@ -2689,7 +3003,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q336',
@@ -2697,7 +3012,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q337',
@@ -2705,7 +3021,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q338',
@@ -2713,7 +3030,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q339',
@@ -2721,7 +3039,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q340',
@@ -2729,7 +3048,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q341',
@@ -2737,7 +3057,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q342',
@@ -2745,7 +3066,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q343',
@@ -2753,7 +3075,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 60 grados.',
     options: ['raiz(3)/2', '1/2', '0', 'raiz(2)/2'],
     correctAnswer: 1,
-    explanation: 'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 60 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q344',
@@ -2761,7 +3084,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 45 grados.',
     options: ['1/2', 'raiz(3)', '1', '0'],
     correctAnswer: 2,
-    explanation: 'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q345',
@@ -2769,7 +3093,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 90 grados.',
     options: ['0', '1/2', 'raiz(3)/2', '1'],
     correctAnswer: 3,
-    explanation: 'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 90 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q346',
@@ -2777,7 +3102,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 0 grados.',
     options: ['1', '0', '1/2', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 0 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q347',
@@ -2785,7 +3111,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de tan 30 grados.',
     options: ['raiz(3)', 'raiz(3)/3', '1', '1/2'],
     correctAnswer: 1,
-    explanation: 'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'tan 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q348',
@@ -2793,7 +3120,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de cos 30 grados.',
     options: ['1/2', 'raiz(2)/2', 'raiz(3)/2', '1'],
     correctAnswer: 2,
-    explanation: 'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'cos 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q349',
@@ -2801,7 +3129,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 45 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 3,
-    explanation: 'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 45 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q350',
@@ -2809,7 +3138,8 @@ final List<Question> matematicasQuestions = [
     text: 'Determine el valor exacto de sen 30 grados.',
     options: ['1/2', 'raiz(3)/2', '1', 'raiz(2)/2'],
     correctAnswer: 0,
-    explanation: 'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
+    explanation:
+        'sen 30 grados es una razon trigonometrica notable que se memoriza en la tabla de angulos de 0, 30, 45, 60 y 90 grados.',
   ),
   Question(
     id: 'mat_q351',

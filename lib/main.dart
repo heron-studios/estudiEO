@@ -36,7 +36,9 @@ void main() async {
       MultiProvider(
         providers: [
           Provider<LocalStorageService>.value(value: storageService),
-          ChangeNotifierProvider<AudioService>(create: (_) => AudioService(storageService)),
+          ChangeNotifierProvider<AudioService>(
+            create: (_) => AudioService(storageService),
+          ),
           ChangeNotifierProvider(create: (_) => AuthService()),
           ChangeNotifierProvider(create: (_) => SrsProvider(storageService)),
           ChangeNotifierProvider(
@@ -45,11 +47,13 @@ void main() async {
           ChangeNotifierProvider(create: (_) => QuizProvider(storageService)),
           ChangeNotifierProxyProvider<AuthService, SubjectProvider>(
             create: (_) => SubjectProvider(storageService),
-            update: (_, auth, subject) => subject!..setPremium(auth.isAuthorized),
+            update: (_, auth, subject) =>
+                subject!..setPremium(auth.isAuthorized),
           ),
           ChangeNotifierProxyProvider<GamificationProvider, LearningProvider>(
             create: (_) => LearningProvider(storageService),
-            update: (_, gamification, learning) => learning!..updateGamification(gamification),
+            update: (_, gamification, learning) =>
+                learning!..updateGamification(gamification),
           ),
         ],
         child: const MyApp(),
@@ -77,11 +81,19 @@ class FallbackApp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.error_outline, color: Colors.redAccent, size: 60),
+                const Icon(
+                  Icons.error_outline,
+                  color: Colors.redAccent,
+                  size: 60,
+                ),
                 const SizedBox(height: 16),
                 const Text(
                   'Error de Inicialización',
-                  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -111,7 +123,10 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _router = AppRouter.createRouter(context.read<AuthService>(), context.read<LocalStorageService>());
+    _router = AppRouter.createRouter(
+      context.read<AuthService>(),
+      context.read<LocalStorageService>(),
+    );
   }
 
   @override

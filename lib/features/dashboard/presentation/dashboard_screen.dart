@@ -26,7 +26,10 @@ import 'package:learn/core/services/export_service.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
-  static Future<void> _exportProgress(BuildContext context, {required bool asPdf}) async {
+  static Future<void> _exportProgress(
+    BuildContext context, {
+    required bool asPdf,
+  }) async {
     // Show a loading dialog
     showDialog(
       context: context,
@@ -85,9 +88,9 @@ class DashboardScreen extends StatelessWidget {
     } catch (e) {
       if (context.mounted) {
         Navigator.pop(context); // Close loading dialog if open
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error al exportar: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Error al exportar: $e')));
       }
     }
   }
@@ -100,12 +103,18 @@ class DashboardScreen extends StatelessWidget {
         title: const Text('Mi Progreso'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
+            icon: const Icon(
+              Icons.picture_as_pdf_rounded,
+              color: Colors.redAccent,
+            ),
             tooltip: 'Exportar PDF',
             onPressed: () => _exportProgress(context, asPdf: true),
           ),
           IconButton(
-            icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
+            icon: const Icon(
+              Icons.description_rounded,
+              color: Colors.blueAccent,
+            ),
             tooltip: 'Exportar Word',
             onPressed: () => _exportProgress(context, asPdf: false),
           ),
@@ -113,34 +122,34 @@ class DashboardScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-          // PageStorageKey garantiza que la posición de scroll se conserve
-          // cuando el usuario navega a una vista de estudio y regresa.
-          key: const PageStorageKey<String>('dashboard_scroll'),
-          physics: const BouncingScrollPhysics(),
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 600),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _SectionLabel('REPASO ESPACIADO'),
-                    SizedBox(height: 12),
-                    _GeneralStats(),
-                    SizedBox(height: 28),
-                    _SectionLabel('CONSEJO DEL TUTOR IA'),
-                    SizedBox(height: 12),
-                    _TutorAdviceSection(),
-                    SizedBox(height: 28),
-                    _SectionLabel('POR ASIGNATURA'),
-                    SizedBox(height: 12),
-                    _SubjectStats(),
-                    SizedBox(height: 32),
-                  ],
-                ),
+        // PageStorageKey garantiza que la posición de scroll se conserve
+        // cuando el usuario navega a una vista de estudio y regresa.
+        key: const PageStorageKey<String>('dashboard_scroll'),
+        physics: const BouncingScrollPhysics(),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _SectionLabel('REPASO ESPACIADO'),
+                  SizedBox(height: 12),
+                  _GeneralStats(),
+                  SizedBox(height: 28),
+                  _SectionLabel('CONSEJO DEL TUTOR IA'),
+                  SizedBox(height: 12),
+                  _TutorAdviceSection(),
+                  SizedBox(height: 28),
+                  _SectionLabel('POR ASIGNATURA'),
+                  SizedBox(height: 12),
+                  _SubjectStats(),
+                  SizedBox(height: 32),
+                ],
               ),
             ),
+          ),
         ),
       ),
     );
@@ -200,7 +209,10 @@ class _GeneralStats extends StatelessWidget {
                   value: '$total',
                   color: nt.blueGoogle,
                 ),
-                Divider(color: Colors.white.withValues(alpha: 0.07), height: 24),
+                Divider(
+                  color: Colors.white.withValues(alpha: 0.07),
+                  height: 24,
+                ),
                 if (total > 0) ...[
                   SizedBox(
                     height: 200,
@@ -215,7 +227,11 @@ class _GeneralStats extends StatelessWidget {
                               value: nuevos.toDouble(),
                               title: '$nuevos',
                               radius: 40,
-                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                              titleStyle: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           if (aprendiendo > 0)
                             PieChartSectionData(
@@ -223,7 +239,11 @@ class _GeneralStats extends StatelessWidget {
                               value: aprendiendo.toDouble(),
                               title: '$aprendiendo',
                               radius: 40,
-                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                              titleStyle: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           if (dominadas > 0)
                             PieChartSectionData(
@@ -231,7 +251,11 @@ class _GeneralStats extends StatelessWidget {
                               value: dominadas.toDouble(),
                               title: '$dominadas',
                               radius: 40,
-                              titleStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                              titleStyle: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           if (porRevisar > 0)
                             PieChartSectionData(
@@ -239,7 +263,11 @@ class _GeneralStats extends StatelessWidget {
                               value: porRevisar.toDouble(),
                               title: '$porRevisar',
                               radius: 45,
-                              titleStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+                              titleStyle: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                         ],
                       ),
@@ -248,9 +276,21 @@ class _GeneralStats extends StatelessWidget {
                   const SizedBox(height: 20),
                 ],
                 _StatRow(label: 'Nuevas', value: '$nuevos', color: nt.cyan),
-                _StatRow(label: 'Aprendiendo', value: '$aprendiendo', color: nt.warningAmber),
-                _StatRow(label: 'Dominadas', value: '$dominadas', color: nt.successGreen),
-                _StatRow(label: 'Por revisar', value: '$porRevisar', color: nt.pink),
+                _StatRow(
+                  label: 'Aprendiendo',
+                  value: '$aprendiendo',
+                  color: nt.warningAmber,
+                ),
+                _StatRow(
+                  label: 'Dominadas',
+                  value: '$dominadas',
+                  color: nt.successGreen,
+                ),
+                _StatRow(
+                  label: 'Por revisar',
+                  value: '$porRevisar',
+                  color: nt.pink,
+                ),
               ],
             ),
           ),
@@ -304,7 +344,7 @@ class _TutorAdviceSectionState extends State<_TutorAdviceSection> {
   @override
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
-    
+
     return StaticGlassContainer(
       borderRadius: BorderRadius.circular(20),
       child: Padding(

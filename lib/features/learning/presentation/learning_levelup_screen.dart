@@ -67,16 +67,15 @@ class _LearningLevelUpScreenState extends State<LearningLevelUpScreen>
       CurvedAnimation(parent: _trophyController, curve: Curves.easeOut),
     );
 
-    _textOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _textController, curve: Curves.easeIn),
-    );
+    _textOpacity = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _textController, curve: Curves.easeIn));
 
     _textSlide = Tween<Offset>(
       begin: const Offset(0, 0.3),
       end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: _textController, curve: Curves.easeOut),
-    );
+    ).animate(CurvedAnimation(parent: _textController, curve: Curves.easeOut));
 
     // Secuencia de animaciones
     Future.delayed(const Duration(milliseconds: 200), () {
@@ -98,10 +97,9 @@ class _LearningLevelUpScreenState extends State<LearningLevelUpScreen>
   void _goToNextLevel(BuildContext context) {
     final nextNivel = widget.nivel.next!;
     context.read<LearningProvider>().clearCurrentSession();
-    context.replace('/learning-theory', extra: {
-        'topicId': widget.topicId,
-        'nivel': nextNivel,
-      },
+    context.replace(
+      '/learning-theory',
+      extra: {'topicId': widget.topicId, 'nivel': nextNivel},
     );
   }
 
@@ -175,13 +173,16 @@ class _LearningLevelUpScreenState extends State<LearningLevelUpScreen>
                                 ],
                               ),
                               border: Border.all(
-                                color: widget.nivel.color.withValues(alpha: 0.6),
+                                color: widget.nivel.color.withValues(
+                                  alpha: 0.6,
+                                ),
                                 width: 2.5,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: widget.nivel.color
-                                      .withValues(alpha: 0.35),
+                                  color: widget.nivel.color.withValues(
+                                    alpha: 0.35,
+                                  ),
                                   blurRadius: 40,
                                   spreadRadius: 5,
                                 ),
@@ -209,14 +210,18 @@ class _LearningLevelUpScreenState extends State<LearningLevelUpScreen>
                               // Etiqueta de nivel completado
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 7),
+                                  horizontal: 16,
+                                  vertical: 7,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: widget.nivel.color
-                                      .withValues(alpha: 0.15),
+                                  color: widget.nivel.color.withValues(
+                                    alpha: 0.15,
+                                  ),
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                    color: widget.nivel.color
-                                        .withValues(alpha: 0.4),
+                                    color: widget.nivel.color.withValues(
+                                      alpha: 0.4,
+                                    ),
                                   ),
                                 ),
                                 child: Text(
@@ -341,11 +346,9 @@ class _StatRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const _StatItem(label: 'Aciertos', value: '10/10', icon: '✅'),
-          Container(
-              width: 1, height: 36, color: const Color(0xFF1F2937)),
+          Container(width: 1, height: 36, color: const Color(0xFF1F2937)),
           const _StatItem(label: 'Puntuación', value: '100%', icon: '🎯'),
-          Container(
-              width: 1, height: 36, color: const Color(0xFF1F2937)),
+          Container(width: 1, height: 36, color: const Color(0xFF1F2937)),
           _StatItem(label: 'Tiempo', value: _fmt(elapsed), icon: '⏱'),
         ],
       ),
@@ -358,8 +361,11 @@ class _StatItem extends StatelessWidget {
   final String value;
   final String icon;
 
-  const _StatItem(
-      {required this.label, required this.value, required this.icon});
+  const _StatItem({
+    required this.label,
+    required this.value,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {

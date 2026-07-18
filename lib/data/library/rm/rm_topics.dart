@@ -28,7 +28,8 @@ final Map<String, Topic> razonamientoMatematicoTopics = {
     id: 'rm_ecuaciones',
     subjectId: 'rm',
     name: '4. Planteo de ecuaciones',
-    description: 'Problemas generales, razonamiento logico y metodos operativos.',
+    description:
+        'Problemas generales, razonamiento logico y metodos operativos.',
     questionCount: 117,
   ),
 };

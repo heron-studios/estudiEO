@@ -35,13 +35,14 @@ final Map<String, Topic> ctaTopics = {
   //   description: "Sistema solar, cambio climatico, capa de ozono, glaciares y conservacion ambiental.",
   //   questionCount: 154,
   // ),
-  
+
   // Topics con teoría (modo aprendizaje guiado)
   'cta_materia_energia': Topic(
     id: 'cta_materia_energia',
     subjectId: 'cta',
     name: '1. Materia y Energía',
-    description: 'Propiedades de la materia, estados de agregación y transformaciones energéticas.',
+    description:
+        'Propiedades de la materia, estados de agregación y transformaciones energéticas.',
     questionCount: 80,
     theoryByLevel: materiaEnergiaTheory,
   ),
@@ -49,7 +50,8 @@ final Map<String, Topic> ctaTopics = {
     id: 'cta_sistema_solar',
     subjectId: 'cta',
     name: '2. El sistema solar. Planeta Tierra.',
-    description: 'El sistema solar, astros y planetas. Dinámicas, movimientos y características de la Tierra.',
+    description:
+        'El sistema solar, astros y planetas. Dinámicas, movimientos y características de la Tierra.',
     questionCount: 40,
     theoryByLevel: sistemaSolarTheory,
   ),
@@ -57,7 +59,8 @@ final Map<String, Topic> ctaTopics = {
     id: 'cta_tabla_periodica',
     subjectId: 'cta',
     name: '3. Tabla periódica de los elementos (símbolos y organización)',
-    description: 'Estructura, símbolos, organización en grupos/periodos y tendencias periódicas.',
+    description:
+        'Estructura, símbolos, organización en grupos/periodos y tendencias periódicas.',
     questionCount: 40,
     theoryByLevel: tablaPeriodicaTheory,
   ),
@@ -65,7 +68,8 @@ final Map<String, Topic> ctaTopics = {
     id: 'cta_vegetales_fotosintesis',
     subjectId: 'cta',
     name: '4. Los vegetales y la fotosíntesis',
-    description: 'Procesos de fotosíntesis, fases luminosa y oscura, cloroplastos y ciclos bioquímicos.',
+    description:
+        'Procesos de fotosíntesis, fases luminosa y oscura, cloroplastos y ciclos bioquímicos.',
     questionCount: 40,
     theoryByLevel: vegetalesFotosintesisTheory,
   ),
@@ -73,7 +77,8 @@ final Map<String, Topic> ctaTopics = {
     id: 'cta_fenomenos_cambioclimatico',
     subjectId: 'cta',
     name: '5. Los fenómenos naturales y el cambio climático',
-    description: 'Fenómenos naturales, efecto invernadero, calentamiento global y sus consecuencias socio-ambientales.',
+    description:
+        'Fenómenos naturales, efecto invernadero, calentamiento global y sus consecuencias socio-ambientales.',
     questionCount: 40,
     theoryByLevel: fenomenosCambioclimaticoTheory,
   ),

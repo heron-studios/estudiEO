@@ -1,4 +1,4 @@
-﻿class QuizSession {
+class QuizSession {
   final String id;
   final String topicId;
   final List<String> questionIds;
@@ -17,9 +17,9 @@
     DateTime? startedAt,
     this.finishedAt,
     this.isCompleted = false,
-  })  : answers = answers ?? {},
-        correctness = correctness ?? {},
-        startedAt = startedAt ?? DateTime.now();
+  }) : answers = answers ?? {},
+       correctness = correctness ?? {},
+       startedAt = startedAt ?? DateTime.now();
 
   int get correctCount => correctness.values.where((v) => v).length;
   int get answeredCount => answers.length;

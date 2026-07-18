@@ -9,7 +9,8 @@ class PremiumUpgradeDialog extends StatefulWidget {
   const PremiumUpgradeDialog({
     super.key,
     this.title = 'Contenido Premium',
-    this.message = 'Actualiza tu cuenta a Premium para desbloquear el acceso completo a esta funcionalidad y llevar tu preparación al máximo nivel.',
+    this.message =
+        'Actualiza tu cuenta a Premium para desbloquear el acceso completo a esta funcionalidad y llevar tu preparación al máximo nivel.',
   });
 
   static void show(BuildContext context, {String? title, String? message}) {
@@ -21,15 +22,14 @@ class PremiumUpgradeDialog extends StatefulWidget {
       transitionDuration: const Duration(milliseconds: 400),
       pageBuilder: (context, anim1, anim2) => PremiumUpgradeDialog(
         title: title ?? 'Contenido Premium',
-        message: message ?? 'Actualiza tu cuenta a Premium para desbloquear el acceso completo a esta funcionalidad y llevar tu preparación al máximo nivel.',
+        message:
+            message ??
+            'Actualiza tu cuenta a Premium para desbloquear el acceso completo a esta funcionalidad y llevar tu preparación al máximo nivel.',
       ),
       transitionBuilder: (context, anim1, anim2, child) {
         return ScaleTransition(
           scale: CurvedAnimation(parent: anim1, curve: Curves.easeOutBack),
-          child: FadeTransition(
-            opacity: anim1,
-            child: child,
-          ),
+          child: FadeTransition(opacity: anim1, child: child),
         );
       },
     );
@@ -39,15 +39,22 @@ class PremiumUpgradeDialog extends StatefulWidget {
   State<PremiumUpgradeDialog> createState() => _PremiumUpgradeDialogState();
 }
 
-class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with SingleTickerProviderStateMixin {
+class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog>
+    with SingleTickerProviderStateMixin {
   late AnimationController _pulseCtrl;
   late Animation<double> _pulseAnim;
 
   @override
   void initState() {
     super.initState();
-    _pulseCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat(reverse: true);
-    _pulseAnim = Tween<double>(begin: 0.9, end: 1.1).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
+    _pulseCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat(reverse: true);
+    _pulseAnim = Tween<double>(
+      begin: 0.9,
+      end: 1.1,
+    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
   }
 
   @override
@@ -73,7 +80,9 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
               color: const Color(0xFF0F172A).withValues(alpha: 0.8),
               borderRadius: BorderRadius.circular(32),
               border: Border.all(
-                color: const Color(0xFFFFD700).withValues(alpha: 0.4), // Borde dorado
+                color: const Color(
+                  0xFFFFD700,
+                ).withValues(alpha: 0.4), // Borde dorado
                 width: 1.5,
               ),
               boxShadow: [
@@ -105,7 +114,9 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFFFD700).withValues(alpha: 0.5),
+                              color: const Color(
+                                0xFFFFD700,
+                              ).withValues(alpha: 0.5),
                               blurRadius: 25,
                               spreadRadius: 4,
                             ),
@@ -121,7 +132,7 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
                   },
                 ),
                 const SizedBox(height: 28),
-                
+
                 // Título
                 Text(
                   widget.title,
@@ -135,7 +146,7 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
                   ),
                 ),
                 const SizedBox(height: 16),
-                
+
                 // Mensaje
                 Text(
                   widget.message,
@@ -147,7 +158,7 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
                   ),
                 ),
                 const SizedBox(height: 36),
-                
+
                 // Botón principal
                 Container(
                   width: double.infinity,
@@ -191,23 +202,23 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog> with Single
                   ),
                 ),
                 const SizedBox(height: 16),
-                
+
                 // Botón secundario
                 TextButton(
                   onPressed: () => Navigator.pop(context),
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white54,
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 24,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
                   child: const Text(
                     'Quizás más tarde',
-                    style: TextStyle(
-                      fontSize: 14, 
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                 ),
               ],

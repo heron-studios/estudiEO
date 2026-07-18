@@ -92,8 +92,9 @@ class _ANPQuizViewState extends State<ANPQuizView>
   @override
   void initState() {
     super.initState();
-    _confettiController =
-        ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
 
     _timerController = AnimationController(
       vsync: this,
@@ -111,9 +112,13 @@ class _ANPQuizViewState extends State<ANPQuizView>
     );
     _answerScaleAnim = TweenSequence([
       TweenSequenceItem(
-          tween: Tween<double>(begin: 1.0, end: 1.04), weight: 50),
+        tween: Tween<double>(begin: 1.0, end: 1.04),
+        weight: 50,
+      ),
       TweenSequenceItem(
-          tween: Tween<double>(begin: 1.04, end: 1.0), weight: 50),
+        tween: Tween<double>(begin: 1.04, end: 1.0),
+        weight: 50,
+      ),
     ]).animate(_answerFeedbackController);
 
     _engine.initItems(_allAnps.map((e) => e.id).toList());
@@ -159,7 +164,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
       return [
         _QuestionType.useType,
         _QuestionType.category,
-        _QuestionType.region
+        _QuestionType.region,
       ];
     }
     if (_selectedDifficulty == _Difficulty.expert) {
@@ -186,28 +191,23 @@ class _ANPQuizViewState extends State<ANPQuizView>
     switch (_currentQuestionType) {
       case _QuestionType.region:
         _correctAnswer = _currentANP.regions.join(', ');
-        final otherRegions = _allAnps
-            .where((e) => e.id != _currentANP.id)
-            .map((e) => e.regions.join(', '))
-            .toSet()
-            .toList()
-          ..shuffle();
+        final otherRegions =
+            _allAnps
+                .where((e) => e.id != _currentANP.id)
+                .map((e) => e.regions.join(', '))
+                .toSet()
+                .toList()
+              ..shuffle();
         _options.add(_correctAnswer);
         _options.addAll(otherRegions.take(3));
         break;
       case _QuestionType.useType:
         _correctAnswer = _currentANP.useType;
-        _options = [
-          'Directo (Tangible/Sostenible)',
-          'Indirecto (Intangible)',
-        ];
+        _options = ['Directo (Tangible/Sostenible)', 'Indirecto (Intangible)'];
         break;
       case _QuestionType.category:
         _correctAnswer = _currentANP.category;
-        final categories = _allAnps
-            .map((e) => e.category)
-            .toSet()
-            .toList()
+        final categories = _allAnps.map((e) => e.category).toSet().toList()
           ..remove(_correctAnswer)
           ..shuffle();
         _options.add(_correctAnswer);
@@ -215,23 +215,25 @@ class _ANPQuizViewState extends State<ANPQuizView>
         break;
       case _QuestionType.fauna:
         _correctAnswer = _currentANP.keyFauna.first;
-        final otherFauna = _allAnps
-            .where((e) => e.id != _currentANP.id)
-            .expand((e) => e.keyFauna)
-            .toSet()
-            .toList()
-          ..shuffle();
+        final otherFauna =
+            _allAnps
+                .where((e) => e.id != _currentANP.id)
+                .expand((e) => e.keyFauna)
+                .toSet()
+                .toList()
+              ..shuffle();
         _options.add(_correctAnswer);
         _options.addAll(otherFauna.take(3));
         break;
       case _QuestionType.established:
         _correctAnswer = _currentANP.establishedYear.toString();
-        final otherYears = _allAnps
-            .where((e) => e.id != _currentANP.id)
-            .map((e) => e.establishedYear.toString())
-            .toSet()
-            .toList()
-          ..shuffle();
+        final otherYears =
+            _allAnps
+                .where((e) => e.id != _currentANP.id)
+                .map((e) => e.establishedYear.toString())
+                .toSet()
+                .toList()
+              ..shuffle();
         _options.add(_correctAnswer);
         _options.addAll(otherYears.take(3));
         break;
@@ -270,8 +272,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
       if (isCorrect) {
         _streak++;
         _multiplier = _streak >= 3 ? 2 : 1;
-        final timeBonus =
-            ((1.0 - _timerController.value) * 10).round();
+        final timeBonus = ((1.0 - _timerController.value) * 10).round();
         _score += (10 + timeBonus) * _multiplier;
         _engine.processAnswer(_dueItems[_currentIndex], 5);
         _correctAnswers++;
@@ -330,7 +331,8 @@ class _ANPQuizViewState extends State<ANPQuizView>
         return AlertDialog(
           backgroundColor: nt.surfaceCard,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(28)),
+            borderRadius: BorderRadius.circular(28),
+          ),
           contentPadding: const EdgeInsets.all(24),
           title: Row(
             children: [
@@ -340,13 +342,12 @@ class _ANPQuizViewState extends State<ANPQuizView>
               ),
               Expanded(
                 child: Text(
-                  success
-                      ? '¡Desafío Completado!'
-                      : '¡Fin de la Partida!',
+                  success ? '¡Desafío Completado!' : '¡Fin de la Partida!',
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ],
@@ -367,7 +368,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
                   children: [
                     _resultStat('Puntos', '$_score', Colors.greenAccent),
                     _resultStat(
-                        'Correctas', '$_correctAnswers', nt.successGreen),
+                      'Correctas',
+                      '$_correctAnswers',
+                      nt.successGreen,
+                    ),
                     _resultStat('Errores', '$_wrongAnswers', nt.pink),
                   ],
                 ),
@@ -377,8 +381,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
               ..._totalByType.entries.map((entry) {
                 final correct = _correctByType[entry.key] ?? 0;
                 final total = entry.value;
-                final pct =
-                    total > 0 ? (correct / total * 100).round() : 0;
+                final pct = total > 0 ? (correct / total * 100).round() : 0;
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Row(
@@ -386,17 +389,18 @@ class _ANPQuizViewState extends State<ANPQuizView>
                       Text(
                         _typeLabel(entry.key),
                         style: const TextStyle(
-                            color: Colors.white70, fontSize: 12),
+                          color: Colors.white70,
+                          fontSize: 12,
+                        ),
                       ),
                       const Spacer(),
                       Text(
                         '$correct/$total ($pct%)',
                         style: TextStyle(
-                            color: pct >= 70
-                                ? Colors.greenAccent
-                                : nt.pink,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
+                          color: pct >= 70 ? Colors.greenAccent : nt.pink,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -410,8 +414,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
                 context.pop();
                 context.pop();
               },
-              child: const Text('Salir',
-                  style: TextStyle(color: Colors.white54)),
+              child: const Text(
+                'Salir',
+                style: TextStyle(color: Colors.white54),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -421,10 +427,13 @@ class _ANPQuizViewState extends State<ANPQuizView>
               style: ElevatedButton.styleFrom(
                 backgroundColor: nt.blueGoogle,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: const Text('Jugar de Nuevo',
-                  style: TextStyle(color: Colors.white)),
+              child: const Text(
+                'Jugar de Nuevo',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         );
@@ -435,14 +444,18 @@ class _ANPQuizViewState extends State<ANPQuizView>
   Widget _resultStat(String label, String value, Color color) {
     return Column(
       children: [
-        Text(value,
-            style: TextStyle(
-                color: color,
-                fontSize: 22,
-                fontWeight: FontWeight.bold)),
-        Text(label,
-            style: const TextStyle(
-                color: Colors.white54, fontSize: 11)),
+        Text(
+          value,
+          style: TextStyle(
+            color: color,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white54, fontSize: 11),
+        ),
       ],
     );
   }
@@ -477,14 +490,18 @@ class _ANPQuizViewState extends State<ANPQuizView>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: Text(
           'Desafío ${_currentIndex + 1}/${_dueItems.length}',
           style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
@@ -493,8 +510,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
           children: [
             SafeArea(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -502,8 +518,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
                     const SizedBox(height: 12),
                     // Timer row with 50/50
                     Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         // 50/50 power-up
                         GestureDetector(
@@ -511,23 +526,20 @@ class _ANPQuizViewState extends State<ANPQuizView>
                               ? null
                               : _useFiftyFifty,
                           child: AnimatedContainer(
-                            duration:
-                                const Duration(milliseconds: 200),
+                            duration: const Duration(milliseconds: 200),
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 14, vertical: 8),
+                              horizontal: 14,
+                              vertical: 8,
+                            ),
                             decoration: BoxDecoration(
                               color: _fiftyFiftyUsed
-                                  ? Colors.white
-                                      .withValues(alpha: 0.04)
-                                  : nt.warningAmber
-                                      .withValues(alpha: 0.15),
-                              borderRadius:
-                                  BorderRadius.circular(12),
+                                  ? Colors.white.withValues(alpha: 0.04)
+                                  : nt.warningAmber.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(12),
                               border: Border.all(
                                 color: _fiftyFiftyUsed
                                     ? Colors.white12
-                                    : nt.warningAmber
-                                        .withValues(alpha: 0.4),
+                                    : nt.warningAmber.withValues(alpha: 0.4),
                               ),
                             ),
                             child: Row(
@@ -563,10 +575,8 @@ class _ANPQuizViewState extends State<ANPQuizView>
                             AnimatedBuilder(
                               animation: _timerController,
                               builder: (context, child) {
-                                final value =
-                                    1.0 - _timerController.value;
-                                Color ringColor =
-                                    Colors.greenAccent;
+                                final value = 1.0 - _timerController.value;
+                                Color ringColor = Colors.greenAccent;
                                 if (value < 0.3) {
                                   ringColor = Colors.redAccent;
                                 } else if (value < 0.6) {
@@ -579,8 +589,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
                                     value: value,
                                     strokeWidth: 5,
                                     color: ringColor,
-                                    backgroundColor:
-                                        Colors.white10,
+                                    backgroundColor: Colors.white10,
                                   ),
                                 );
                               },
@@ -588,11 +597,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
                             AnimatedBuilder(
                               animation: _timerController,
                               builder: (context, child) {
-                                final secs = (_timerSeconds *
-                                        (1.0 -
-                                            _timerController
-                                                .value))
-                                    .ceil();
+                                final secs =
+                                    (_timerSeconds *
+                                            (1.0 - _timerController.value))
+                                        .ceil();
                                 return Text(
                                   '$secs',
                                   style: const TextStyle(
@@ -610,27 +618,24 @@ class _ANPQuizViewState extends State<ANPQuizView>
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 200),
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 14, vertical: 8),
+                            horizontal: 14,
+                            vertical: 8,
+                          ),
                           decoration: BoxDecoration(
                             color: _multiplier > 1
                                 ? nt.pink.withValues(alpha: 0.2)
-                                : Colors.white
-                                    .withValues(alpha: 0.04),
-                            borderRadius:
-                                BorderRadius.circular(12),
+                                : Colors.white.withValues(alpha: 0.04),
+                            borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               color: _multiplier > 1
-                                  ? nt.pink
-                                      .withValues(alpha: 0.5)
+                                  ? nt.pink.withValues(alpha: 0.5)
                                   : Colors.white12,
                             ),
                           ),
                           child: Text(
                             'x$_multiplier',
                             style: TextStyle(
-                              color: _multiplier > 1
-                                  ? nt.pink
-                                  : Colors.white38,
+                              color: _multiplier > 1 ? nt.pink : Colors.white38,
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                             ),
@@ -677,10 +682,8 @@ class _ANPQuizViewState extends State<ANPQuizView>
                         physics: const BouncingScrollPhysics(),
                         children: [
                           ..._options
-                              .where((o) =>
-                                  !_eliminatedOptions.contains(o))
-                              .map((option) =>
-                                  _buildOptionCard(nt, option)),
+                              .where((o) => !_eliminatedOptions.contains(o))
+                              .map((option) => _buildOptionCard(nt, option)),
                           if (_answered && _lives > 0) ...[
                             const SizedBox(height: 10),
                             _buildExplanationCard(nt),
@@ -691,20 +694,20 @@ class _ANPQuizViewState extends State<ANPQuizView>
                                 onPressed: _nextQuestion,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: nt.blueGoogle,
-                                  padding:
-                                      const EdgeInsets.symmetric(
-                                          vertical: 16),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 16,
+                                  ),
                                   shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(
-                                              16)),
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
                                 ),
                                 child: const Text(
                                   'Siguiente Desafío →',
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -741,8 +744,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
       ),
@@ -762,11 +767,15 @@ class _ANPQuizViewState extends State<ANPQuizView>
                       color: nt.purple.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: nt.purple.withValues(alpha: 0.4),
-                          width: 2),
+                        color: nt.purple.withValues(alpha: 0.4),
+                        width: 2,
+                      ),
                     ),
-                    child: Icon(Icons.shield_rounded,
-                        color: nt.purple, size: 48),
+                    child: Icon(
+                      Icons.shield_rounded,
+                      color: nt.purple,
+                      size: 48,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -784,38 +793,49 @@ class _ANPQuizViewState extends State<ANPQuizView>
                   'Demuestra tu dominio de las ANPs del SINANPE\ncon vidas, rachas y contrarreloj.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
-                      fontSize: 14,
-                      height: 1.5),
+                    color: Colors.white.withValues(alpha: 0.5),
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 32),
                 Text(
                   'Selecciona la dificultad:',
                   style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 12),
                 // Difficulty selection
-                ..._Difficulty.values
-                    .map((d) => _buildDifficultyCard(nt, d)),
+                ..._Difficulty.values.map((d) => _buildDifficultyCard(nt, d)),
                 const SizedBox(height: 24),
                 // Game rules preview
                 StaticGlassContainer(
                   padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      _ruleRow(Icons.favorite_rounded,
-                          'Vidas: $_initialLives corazones', nt.pink),
-                      _ruleRow(Icons.timer_rounded,
-                          'Tiempo: ${_timerSeconds}s por pregunta',
-                          nt.warningAmber),
-                      _ruleRow(Icons.flash_on_rounded,
-                          'Power-up 50/50 disponible (x1)',
-                          nt.successGreen),
-                      _ruleRow(Icons.local_fire_department_rounded,
-                          'Racha x2 a partir de 3 correctas', nt.cyan),
+                      _ruleRow(
+                        Icons.favorite_rounded,
+                        'Vidas: $_initialLives corazones',
+                        nt.pink,
+                      ),
+                      _ruleRow(
+                        Icons.timer_rounded,
+                        'Tiempo: ${_timerSeconds}s por pregunta',
+                        nt.warningAmber,
+                      ),
+                      _ruleRow(
+                        Icons.flash_on_rounded,
+                        'Power-up 50/50 disponible (x1)',
+                        nt.successGreen,
+                      ),
+                      _ruleRow(
+                        Icons.local_fire_department_rounded,
+                        'Racha x2 a partir de 3 correctas',
+                        nt.cyan,
+                      ),
                     ],
                   ),
                 ),
@@ -826,14 +846,16 @@ class _ANPQuizViewState extends State<ANPQuizView>
                     backgroundColor: nt.purple,
                     padding: const EdgeInsets.symmetric(vertical: 18),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18)),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
                   ),
                   child: const Text(
                     '¡Comenzar Desafío!',
                     style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -872,8 +894,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: GestureDetector(
-        onTap: () =>
-            setState(() => _selectedDifficulty = d),
+        onTap: () => setState(() => _selectedDifficulty = d),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.all(16),
@@ -891,9 +912,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
           ),
           child: Row(
             children: [
-              Icon(icon,
-                  color: isSelected ? color : Colors.white38,
-                  size: 24),
+              Icon(icon, color: isSelected ? color : Colors.white38, size: 24),
               const SizedBox(width: 14),
               Expanded(
                 child: Column(
@@ -910,8 +929,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
                     Text(
                       subtitle,
                       style: TextStyle(
-                        color: Colors.white
-                            .withValues(alpha: 0.4),
+                        color: Colors.white.withValues(alpha: 0.4),
                         fontSize: 12,
                       ),
                     ),
@@ -919,8 +937,7 @@ class _ANPQuizViewState extends State<ANPQuizView>
                 ),
               ),
               if (isSelected)
-                Icon(Icons.check_circle_rounded,
-                    color: color, size: 22),
+                Icon(Icons.check_circle_rounded, color: color, size: 22),
             ],
           ),
         ),
@@ -935,9 +952,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
         children: [
           Icon(icon, color: color, size: 16),
           const SizedBox(width: 10),
-          Text(text,
-              style: const TextStyle(
-                  color: Colors.white70, fontSize: 13)),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white70, fontSize: 13),
+          ),
         ],
       ),
     );
@@ -950,23 +968,30 @@ class _ANPQuizViewState extends State<ANPQuizView>
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('SCORE: $_score',
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14)),
+            Text(
+              'SCORE: $_score',
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
             if (_streak > 0)
               Row(
                 children: [
-                  Icon(Icons.local_fire_department_rounded,
-                      color: nt.warningAmber, size: 12),
+                  Icon(
+                    Icons.local_fire_department_rounded,
+                    color: nt.warningAmber,
+                    size: 12,
+                  ),
                   const SizedBox(width: 3),
                   Text(
                     'Racha: $_streak',
                     style: TextStyle(
-                        color: nt.warningAmber,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold),
+                      color: nt.warningAmber,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -1020,15 +1045,19 @@ class _ANPQuizViewState extends State<ANPQuizView>
         children: [
           Row(
             children: [
-              Icon(Icons.lightbulb_outline_rounded,
-                  color: nt.warningAmber, size: 16),
+              Icon(
+                Icons.lightbulb_outline_rounded,
+                color: nt.warningAmber,
+                size: 16,
+              ),
               const SizedBox(width: 8),
               const Text(
                 'Justificación y Mnemotecnia',
                 style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 13),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                ),
               ),
             ],
           ),
@@ -1038,7 +1067,10 @@ class _ANPQuizViewState extends State<ANPQuizView>
             '${_currentANP.useType}. Se ubica en ${_currentANP.regions.join(", ")}.\n\n'
             '"${_currentANP.mnemonicHint}"',
             style: const TextStyle(
-                color: Colors.white70, fontSize: 12, height: 1.5),
+              color: Colors.white70,
+              fontSize: 12,
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -1084,17 +1116,24 @@ class _ANPQuizViewState extends State<ANPQuizView>
                 child: Text(
                   option,
                   style: TextStyle(
-                      color: textColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
+                    color: textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               if (_answered && isCorrect)
-                const Icon(Icons.check_circle_rounded,
-                    color: Colors.greenAccent, size: 20),
+                const Icon(
+                  Icons.check_circle_rounded,
+                  color: Colors.greenAccent,
+                  size: 20,
+                ),
               if (_answered && isSelected && !isCorrect)
-                const Icon(Icons.cancel_rounded,
-                    color: Colors.redAccent, size: 20),
+                const Icon(
+                  Icons.cancel_rounded,
+                  color: Colors.redAccent,
+                  size: 20,
+                ),
             ],
           ),
         ),

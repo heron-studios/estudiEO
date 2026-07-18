@@ -8,12 +8,14 @@ class InterviewService {
   InterviewService(this._storage);
 
   Future<List<InterviewQuestion>> getAvailableQuestions() async {
-    final String raw = await rootBundle.loadString('assets/data/entrevista.json');
+    final String raw = await rootBundle.loadString(
+      'assets/data/entrevista.json',
+    );
     final Map<String, dynamic> data = json.decode(raw);
     final List<dynamic> rawList = data['preguntas_entrevista'] as List<dynamic>;
 
     final masteredIds = _storage.getInterviewMasteredQuestions();
-    
+
     final allQuestions = rawList
         .map((q) => InterviewQuestion.fromJson(q as Map<String, dynamic>))
         .where((q) => !masteredIds.contains(q.id.toString()))

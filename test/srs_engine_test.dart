@@ -5,7 +5,7 @@ import 'package:learn/core/services/local_storage_service.dart';
 
 class FakeLocalStorageService implements LocalStorageService {
   Map<String, SrsCard> cards = {};
-  
+
   @override
   SrsCard? getSrsCard(String questionId) => cards[questionId];
 
@@ -38,7 +38,7 @@ void main() {
   group('SrsEngine', () {
     test('processAnswer for new card (Correct)', () {
       final card = engine.processAnswer('q1', 't1', true);
-      
+
       expect(card.questionId, 'q1');
       expect(card.repetitions, 1);
       expect(card.interval, 1);
@@ -47,7 +47,7 @@ void main() {
 
     test('processAnswer for new card (Incorrect)', () {
       final card = engine.processAnswer('q2', 't1', false);
-      
+
       expect(card.questionId, 'q2');
       expect(card.repetitions, 0);
       expect(card.interval, 0);
@@ -80,18 +80,22 @@ void main() {
       final overdueCard = SrsCard(questionId: 'c1', topicId: 't1')
         ..lastReviewed = now.subtract(const Duration(days: 5))
         ..interval = 1
-        ..nextReviewDate = now.subtract(const Duration(days: 4)); // Overdue by 4 days
-      
+        ..nextReviewDate = now.subtract(
+          const Duration(days: 4),
+        ); // Overdue by 4 days
+
       final futureCard = SrsCard(questionId: 'c2', topicId: 't1')
         ..lastReviewed = now
         ..interval = 5
         ..nextReviewDate = now.add(const Duration(days: 5)); // Not overdue
-      
+
       final excludedCard = SrsCard(questionId: 'c3', topicId: 'mat_1')
         ..lastReviewed = now.subtract(const Duration(days: 5))
         ..interval = 1
-        ..nextReviewDate = now.subtract(const Duration(days: 4)); // Overdue but excluded topic
-      
+        ..nextReviewDate = now.subtract(
+          const Duration(days: 4),
+        ); // Overdue but excluded topic
+
       fakeStorage.cards = {
         'c1': overdueCard,
         'c2': futureCard,
@@ -99,9 +103,12 @@ void main() {
       };
 
       final queue = engine.getReviewQueue();
-      
+
       expect(queue.length, 1);
-      expect(queue.first.questionId, 'c1'); // only c1 is overdue and not excluded
+      expect(
+        queue.first.questionId,
+        'c1',
+      ); // only c1 is overdue and not excluded
     });
   });
 }

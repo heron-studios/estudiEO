@@ -87,11 +87,11 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Cuadrados',
       eqTitle: 'Área total = (a + b)² =',
       size: 210,
-      examTip: '💡 PNP TIP: "(a+b)² tiene 3 términos: a², 2ab, b²". El término medio siempre es 2ab.',
+      examTip:
+          '💡 PNP TIP: "(a+b)² tiene 3 términos: a², 2ab, b²". El término medio siempre es 2ab.',
       initialGuide:
           'Un cuadrado de lado (a+b) se divide en 4 secciones. Toca a² para comenzar.',
-      doneGuide:
-          '¡Listo! Sumando las 4 áreas encontramos la fórmula completa.',
+      doneGuide: '¡Listo! Sumando las 4 áreas encontramos la fórmula completa.',
       finalLabel: 'Simplificando (ab + ab = 2ab):',
       finalFormula: '(a + b)² = a² + 2ab + b²',
       finalSub: 'Los dos rectángulos iguales (ab + ab) se combinan en 2ab.',
@@ -104,24 +104,59 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'a2', label: 'a²', baseColor: Color(0xFF1D6C87),
-          w: 140, h: 140, x: 0, y: 0, order: 0, termText: 'a²', sign: null,
+          id: 'a2',
+          label: 'a²',
+          baseColor: Color(0xFF1D6C87),
+          w: 140,
+          h: 140,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: 'a²',
+          sign: null,
           guide: 'Cuadrado a²: Es el cuadrado de lado a. Área = a × a = a².',
         ),
         FormulaBlock(
-          id: 'ab1', label: 'ab', baseColor: Color(0xFF6B5AA3),
-          w: 70, h: 140, x: 140, y: 0, order: 1, termText: 'ab', sign: '+',
-          guide: 'Rectángulo ab (derecha): Mide b de ancho y a de alto. Área = ab.',
+          id: 'ab1',
+          label: 'ab',
+          baseColor: Color(0xFF6B5AA3),
+          w: 70,
+          h: 140,
+          x: 140,
+          y: 0,
+          order: 1,
+          termText: 'ab',
+          sign: '+',
+          guide:
+              'Rectángulo ab (derecha): Mide b de ancho y a de alto. Área = ab.',
         ),
         FormulaBlock(
-          id: 'ab2', label: 'ab', baseColor: Color(0xFF6B5AA3),
-          w: 140, h: 70, x: 0, y: 140, order: 2, termText: 'ab', sign: '+',
-          guide: 'Rectángulo ab (abajo): Mide a de ancho y b de alto. ¡Igual al anterior!',
+          id: 'ab2',
+          label: 'ab',
+          baseColor: Color(0xFF6B5AA3),
+          w: 140,
+          h: 70,
+          x: 0,
+          y: 140,
+          order: 2,
+          termText: 'ab',
+          sign: '+',
+          guide:
+              'Rectángulo ab (abajo): Mide a de ancho y b de alto. ¡Igual al anterior!',
         ),
         FormulaBlock(
-          id: 'b2', label: 'b²', baseColor: Color(0xFF9A6B1A),
-          w: 70, h: 70, x: 140, y: 140, order: 3, termText: 'b²', sign: '+',
-          guide: 'Cuadrado b²: La esquina final, lado b. Área = b². ¡El cuadrado está completo!',
+          id: 'b2',
+          label: 'b²',
+          baseColor: Color(0xFF9A6B1A),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 140,
+          order: 3,
+          termText: 'b²',
+          sign: '+',
+          guide:
+              'Cuadrado b²: La esquina final, lado b. Área = b². ¡El cuadrado está completo!',
         ),
       ],
     ),
@@ -131,14 +166,16 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Cuadrados',
       eqTitle: 'Área del cuadrado (a − b)² =',
       size: 210,
-      examTip: '💡 PNP TIP: "(a-b)² = a² - 2ab + b²". El signo del término medio es NEGATIVO.',
+      examTip:
+          '💡 PNP TIP: "(a-b)² = a² - 2ab + b²". El signo del término medio es NEGATIVO.',
       initialGuide:
           'El cuadrado de lado (a−b). Toca a² para ver cómo se construye recortando.',
       doneGuide:
           '¡Listo! El cuadrado de lado (a−b) se obtiene quitando 2ab y devolviendo b².',
       finalLabel: 'Simplificando (−ab − ab + b²):',
       finalFormula: '(a − b)² = a² − 2ab + b²',
-      finalSub: 'Quitamos dos franjas iguales y devolvemos la esquina contada dos veces.',
+      finalSub:
+          'Quitamos dos franjas iguales y devolvemos la esquina contada dos veces.',
       nextTab: 'conj',
       sideLabels: [
         {'text': 'a-b', 'cx': 35.0, 'cy': -22.0, 'axis': 'top'},
@@ -148,24 +185,59 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'a2', label: 'a²', baseColor: Color(0xFF1D6C87),
-          w: 140, h: 140, x: 0, y: 0, order: 0, termText: 'a²', sign: null,
+          id: 'a2',
+          label: 'a²',
+          baseColor: Color(0xFF1D6C87),
+          w: 140,
+          h: 140,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: 'a²',
+          sign: null,
           guide: 'Cuadrado a²: Partimos del cuadrado de lado a. Área = a².',
         ),
         FormulaBlock(
-          id: 'ab1', label: '−ab', baseColor: Color(0xFF8A3030),
-          w: 70, h: 140, x: 140, y: 0, order: 1, termText: 'ab', sign: '−',
-          guide: 'Franja derecha (−ab): Recortamos esta franja vertical. Área quitada = ab.',
+          id: 'ab1',
+          label: '−ab',
+          baseColor: Color(0xFF8A3030),
+          w: 70,
+          h: 140,
+          x: 140,
+          y: 0,
+          order: 1,
+          termText: 'ab',
+          sign: '−',
+          guide:
+              'Franja derecha (−ab): Recortamos esta franja vertical. Área quitada = ab.',
         ),
         FormulaBlock(
-          id: 'ab2', label: '−ab', baseColor: Color(0xFF8A3030),
-          w: 140, h: 70, x: 0, y: 140, order: 2, termText: 'ab', sign: '−',
-          guide: 'Franja inferior (−ab): ¡Pero la esquina b² se restó dos veces!',
+          id: 'ab2',
+          label: '−ab',
+          baseColor: Color(0xFF8A3030),
+          w: 140,
+          h: 70,
+          x: 0,
+          y: 140,
+          order: 2,
+          termText: 'ab',
+          sign: '−',
+          guide:
+              'Franja inferior (−ab): ¡Pero la esquina b² se restó dos veces!',
         ),
         FormulaBlock(
-          id: 'b2r', label: '+b²', baseColor: Color(0xFF9A6B1A),
-          w: 70, h: 70, x: 140, y: 140, order: 3, termText: 'b²', sign: '+',
-          guide: 'Esquina b² (devuelta): Se restó dos veces, la sumamos de vuelta.',
+          id: 'b2r',
+          label: '+b²',
+          baseColor: Color(0xFF9A6B1A),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 140,
+          order: 3,
+          termText: 'b²',
+          sign: '+',
+          guide:
+              'Esquina b² (devuelta): Se restó dos veces, la sumamos de vuelta.',
         ),
       ],
     ),
@@ -175,14 +247,16 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Cuadrados',
       eqTitle: 'Área = (a+b) × (a−b) =',
       size: 210,
-      examTip: '💡 PNP TIP: "Diferencia de cuadrados = a²-b²". Los términos ab se cancelan. ¡Sin término medio!',
+      examTip:
+          '💡 PNP TIP: "Diferencia de cuadrados = a²-b²". Los términos ab se cancelan. ¡Sin término medio!',
       initialGuide:
           'Rectángulo de base (a+b) y altura (a−b). Descubre la diferencia de cuadrados.',
       doneGuide:
           '¡Listo! Los rectángulos +ab y −ab se cancelan. El resultado es a² − b².',
       finalLabel: 'Los términos +ab y −ab se cancelan:',
       finalFormula: '(a+b)(a−b) = a² − b²',
-      finalSub: '¡Los rectángulos ab se anulan entre sí! Solo quedan los cuadrados.',
+      finalSub:
+          '¡Los rectángulos ab se anulan entre sí! Solo quedan los cuadrados.',
       nextTab: 'cube_sum',
       sideLabels: [
         {'text': 'a', 'cx': 70.0, 'cy': -22.0, 'axis': 'top'},
@@ -192,24 +266,57 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'a2', label: 'a²', baseColor: Color(0xFF1D6C87),
-          w: 140, h: 140, x: 0, y: 0, order: 0, termText: 'a²', sign: null,
+          id: 'a2',
+          label: 'a²',
+          baseColor: Color(0xFF1D6C87),
+          w: 140,
+          h: 140,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: 'a²',
+          sign: null,
           guide: 'Área a²: El cuadrado en la esquina superior izquierda.',
         ),
         FormulaBlock(
-          id: 'ab1', label: '+ab', baseColor: Color(0xFF6B5AA3),
-          w: 70, h: 140, x: 140, y: 0, order: 1, termText: 'ab', sign: '+',
+          id: 'ab1',
+          label: '+ab',
+          baseColor: Color(0xFF6B5AA3),
+          w: 70,
+          h: 140,
+          x: 140,
+          y: 0,
+          order: 1,
+          termText: 'ab',
+          sign: '+',
           guide: 'Franja +ab (derecha alta): Base b, altura a. Área = +ab.',
         ),
         FormulaBlock(
-          id: 'ab2', label: '−ab', baseColor: Color(0xFF8A3030),
-          w: 140, h: 70, x: 0, y: 140, order: 2, termText: 'ab', sign: '−',
+          id: 'ab2',
+          label: '−ab',
+          baseColor: Color(0xFF8A3030),
+          w: 140,
+          h: 70,
+          x: 0,
+          y: 140,
+          order: 2,
+          termText: 'ab',
+          sign: '−',
           guide: 'Franja −ab (inferior): Base a, altura b. Área = −ab.',
         ),
         FormulaBlock(
-          id: 'b2r', label: '−b²', baseColor: Color(0xFF4A4A4A),
-          w: 70, h: 70, x: 140, y: 140, order: 3, termText: 'b²', sign: '−',
-          guide: 'Esquina −b²: Área = −b². Suma todo: a² + ab − ab − b² = a² − b².',
+          id: 'b2r',
+          label: '−b²',
+          baseColor: Color(0xFF4A4A4A),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 140,
+          order: 3,
+          termText: 'b²',
+          sign: '−',
+          guide:
+              'Esquina −b²: Área = −b². Suma todo: a² + ab − ab − b² = a² − b².',
         ),
       ],
     ),
@@ -219,14 +326,15 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Cubos',
       eqTitle: 'Expansión del cubo de la suma:',
       size: 210,
-      examTip: '💡 PNP TIP: "(a+b)³ tiene 4 términos: a³, 3a²b, 3ab², b³". Los coeficientes son 1-3-3-1.',
+      examTip:
+          '💡 PNP TIP: "(a+b)³ tiene 4 términos: a³, 3a²b, 3ab², b³". Los coeficientes son 1-3-3-1.',
       initialGuide:
           'El cubo de la suma expande (a+b) tres veces. Toca cada término para descubrirlo.',
-      doneGuide:
-          '¡Listo! Memoriza el patrón: 1·a³ + 3·a²b + 3·ab² + 1·b³',
+      doneGuide: '¡Listo! Memoriza el patrón: 1·a³ + 3·a²b + 3·ab² + 1·b³',
       finalLabel: 'Coeficientes del triángulo de Pascal (1,3,3,1):',
       finalFormula: '(a+b)³ = a³ + 3a²b + 3ab² + b³',
-      finalSub: 'Cada coeficiente corresponde a la fila 3 del triángulo de Pascal.',
+      finalSub:
+          'Cada coeficiente corresponde a la fila 3 del triángulo de Pascal.',
       nextTab: 'cube_diff',
       sideLabels: [
         {'text': 'a³', 'cx': 30.0, 'cy': -22.0, 'axis': 'top'},
@@ -236,24 +344,60 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'a3', label: 'a³', baseColor: Color(0xFF1D6C87),
-          w: 60, h: 210, x: 0, y: 0, order: 0, termText: 'a³', sign: null,
-          guide: 'Término a³: Proviene de a×a×a. Es el primer término con coeficiente 1.',
+          id: 'a3',
+          label: 'a³',
+          baseColor: Color(0xFF1D6C87),
+          w: 60,
+          h: 210,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: 'a³',
+          sign: null,
+          guide:
+              'Término a³: Proviene de a×a×a. Es el primer término con coeficiente 1.',
         ),
         FormulaBlock(
-          id: '3a2b', label: '3a²b', baseColor: Color(0xFF2E7D6B),
-          w: 75, h: 210, x: 62, y: 0, order: 1, termText: '3a²b', sign: '+',
-          guide: 'Término 3a²b: Hay 3 formas de elegir una b de los 3 factores. Coeficiente = 3.',
+          id: '3a2b',
+          label: '3a²b',
+          baseColor: Color(0xFF2E7D6B),
+          w: 75,
+          h: 210,
+          x: 62,
+          y: 0,
+          order: 1,
+          termText: '3a²b',
+          sign: '+',
+          guide:
+              'Término 3a²b: Hay 3 formas de elegir una b de los 3 factores. Coeficiente = 3.',
         ),
         FormulaBlock(
-          id: '3ab2', label: '3ab²', baseColor: Color(0xFF6B5AA3),
-          w: 55, h: 210, x: 139, y: 0, order: 2, termText: '3ab²', sign: '+',
-          guide: 'Término 3ab²: Hay 3 formas de elegir una a de los 3 factores. Coeficiente = 3.',
+          id: '3ab2',
+          label: '3ab²',
+          baseColor: Color(0xFF6B5AA3),
+          w: 55,
+          h: 210,
+          x: 139,
+          y: 0,
+          order: 2,
+          termText: '3ab²',
+          sign: '+',
+          guide:
+              'Término 3ab²: Hay 3 formas de elegir una a de los 3 factores. Coeficiente = 3.',
         ),
         FormulaBlock(
-          id: 'b3', label: 'b³', baseColor: Color(0xFF9A6B1A),
-          w: 16, h: 210, x: 194, y: 0, order: 3, termText: 'b³', sign: '+',
-          guide: 'Término b³: Proviene de b×b×b. Es el último término con coeficiente 1.',
+          id: 'b3',
+          label: 'b³',
+          baseColor: Color(0xFF9A6B1A),
+          w: 16,
+          h: 210,
+          x: 194,
+          y: 0,
+          order: 3,
+          termText: 'b³',
+          sign: '+',
+          guide:
+              'Término b³: Proviene de b×b×b. Es el último término con coeficiente 1.',
         ),
       ],
     ),
@@ -263,14 +407,15 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Cubos',
       eqTitle: 'Expansión del cubo de la diferencia:',
       size: 210,
-      examTip: '💡 PNP TIP: "(a-b)³ alterna signos: +a³, -3a²b, +3ab², -b³". El patrón es +−+−.',
+      examTip:
+          '💡 PNP TIP: "(a-b)³ alterna signos: +a³, -3a²b, +3ab², -b³". El patrón es +−+−.',
       initialGuide:
           'El cubo de la diferencia. Los signos alternan: +, −, +, −.',
-      doneGuide:
-          '¡Listo! Nota el patrón de signos alternados: + − + −',
+      doneGuide: '¡Listo! Nota el patrón de signos alternados: + − + −',
       finalLabel: 'Signos alternados (+ − + −):',
       finalFormula: '(a−b)³ = a³ − 3a²b + 3ab² − b³',
-      finalSub: 'Los signos alternos distinguen al cubo de la diferencia del cubo de la suma.',
+      finalSub:
+          'Los signos alternos distinguen al cubo de la diferencia del cubo de la suma.',
       nextTab: 'sum_cubes',
       sideLabels: [
         {'text': 'a³', 'cx': 30.0, 'cy': -22.0, 'axis': 'top'},
@@ -280,23 +425,57 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'a3', label: 'a³', baseColor: Color(0xFF1D6C87),
-          w: 60, h: 210, x: 0, y: 0, order: 0, termText: 'a³', sign: null,
+          id: 'a3',
+          label: 'a³',
+          baseColor: Color(0xFF1D6C87),
+          w: 60,
+          h: 210,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: 'a³',
+          sign: null,
           guide: 'Término +a³: Igual que en el cubo de la suma. Positivo.',
         ),
         FormulaBlock(
-          id: 'n3a2b', label: '−3a²b', baseColor: Color(0xFF8A3030),
-          w: 75, h: 210, x: 62, y: 0, order: 1, termText: '3a²b', sign: '−',
-          guide: 'Término −3a²b: Coeficiente 3, pero negativo porque sustituimos +b por −b.',
+          id: 'n3a2b',
+          label: '−3a²b',
+          baseColor: Color(0xFF8A3030),
+          w: 75,
+          h: 210,
+          x: 62,
+          y: 0,
+          order: 1,
+          termText: '3a²b',
+          sign: '−',
+          guide:
+              'Término −3a²b: Coeficiente 3, pero negativo porque sustituimos +b por −b.',
         ),
         FormulaBlock(
-          id: '3ab2', label: '+3ab²', baseColor: Color(0xFF2E7D6B),
-          w: 55, h: 210, x: 139, y: 0, order: 2, termText: '3ab²', sign: '+',
-          guide: 'Término +3ab²: (−b)² = b², así el signo vuelve a ser positivo.',
+          id: '3ab2',
+          label: '+3ab²',
+          baseColor: Color(0xFF2E7D6B),
+          w: 55,
+          h: 210,
+          x: 139,
+          y: 0,
+          order: 2,
+          termText: '3ab²',
+          sign: '+',
+          guide:
+              'Término +3ab²: (−b)² = b², así el signo vuelve a ser positivo.',
         ),
         FormulaBlock(
-          id: 'nb3', label: '−b³', baseColor: Color(0xFF5A3A6B),
-          w: 16, h: 210, x: 194, y: 0, order: 3, termText: 'b³', sign: '−',
+          id: 'nb3',
+          label: '−b³',
+          baseColor: Color(0xFF5A3A6B),
+          w: 16,
+          h: 210,
+          x: 194,
+          y: 0,
+          order: 3,
+          termText: 'b³',
+          sign: '−',
           guide: 'Término −b³: (−b)³ = −b³. El patrón + − + − se completa.',
         ),
       ],
@@ -307,7 +486,8 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Factorizaciones',
       eqTitle: 'Factorización de la suma de cubos:',
       size: 210,
-      examTip: '💡 PNP TIP: "a³+b³ = (a+b)(a²-ab+b²)". El factor cuadrático tiene signo NEGATIVO en ab.',
+      examTip:
+          '💡 PNP TIP: "a³+b³ = (a+b)(a²-ab+b²)". El factor cuadrático tiene signo NEGATIVO en ab.',
       initialGuide:
           'Suma de cubos. Esta es una factorización, no una expansión. Descubre los factores.',
       doneGuide:
@@ -324,23 +504,57 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'apb', label: '(a+b)', baseColor: Color(0xFF1D6C87),
-          w: 140, h: 210, x: 0, y: 0, order: 0, termText: '(a+b)', sign: null,
-          guide: 'Factor (a+b): El primer factor de la factorización. Binomio simple.',
+          id: 'apb',
+          label: '(a+b)',
+          baseColor: Color(0xFF1D6C87),
+          w: 140,
+          h: 210,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: '(a+b)',
+          sign: null,
+          guide:
+              'Factor (a+b): El primer factor de la factorización. Binomio simple.',
         ),
         FormulaBlock(
-          id: 'a2', label: 'a²', baseColor: Color(0xFF2E7D6B),
-          w: 70, h: 70, x: 140, y: 0, order: 1, termText: 'a²', sign: '×',
+          id: 'a2',
+          label: 'a²',
+          baseColor: Color(0xFF2E7D6B),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 0,
+          order: 1,
+          termText: 'a²',
+          sign: '×',
           guide: 'Término a²: El cuadrado de a en el trinomio (a²−ab+b²).',
         ),
         FormulaBlock(
-          id: 'nab', label: '−ab', baseColor: Color(0xFF8A3030),
-          w: 70, h: 70, x: 140, y: 70, order: 2, termText: 'ab', sign: '−',
-          guide: 'Término −ab: El producto mixto con signo NEGATIVO. ¡Clave para distinguirlo!',
+          id: 'nab',
+          label: '−ab',
+          baseColor: Color(0xFF8A3030),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 70,
+          order: 2,
+          termText: 'ab',
+          sign: '−',
+          guide:
+              'Término −ab: El producto mixto con signo NEGATIVO. ¡Clave para distinguirlo!',
         ),
         FormulaBlock(
-          id: 'b2', label: 'b²', baseColor: Color(0xFF9A6B1A),
-          w: 70, h: 70, x: 140, y: 140, order: 3, termText: 'b²', sign: '+',
+          id: 'b2',
+          label: 'b²',
+          baseColor: Color(0xFF9A6B1A),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 140,
+          order: 3,
+          termText: 'b²',
+          sign: '+',
           guide: 'Término +b²: El cuadrado de b. ¡Factorización completa!',
         ),
       ],
@@ -351,14 +565,16 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       category: 'Factorizaciones',
       eqTitle: 'Factorización de la diferencia de cubos:',
       size: 210,
-      examTip: '💡 PNP TIP: "a³-b³ = (a-b)(a²+ab+b²)". El factor cuadrático tiene signo POSITIVO en ab.',
+      examTip:
+          '💡 PNP TIP: "a³-b³ = (a-b)(a²+ab+b²)". El factor cuadrático tiene signo POSITIVO en ab.',
       initialGuide:
           'Diferencia de cubos. Similar a la suma, pero los signos cambian.',
       doneGuide:
           '¡Listo! La diferencia de cubos factoriza de forma simétrica a la suma.',
       finalLabel: 'Factorización de diferencia de cubos:',
       finalFormula: 'a³ − b³ = (a−b)(a² + ab + b²)',
-      finalSub: 'Truco: ahora el trinomio tiene el producto ab con signo POSITIVO.',
+      finalSub:
+          'Truco: ahora el trinomio tiene el producto ab con signo POSITIVO.',
       nextTab: null,
       sideLabels: [
         {'text': 'a-b', 'cx': 70.0, 'cy': -22.0, 'axis': 'top'},
@@ -368,24 +584,58 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       ],
       blocks: [
         FormulaBlock(
-          id: 'amb', label: '(a−b)', baseColor: Color(0xFF8A3030),
-          w: 140, h: 210, x: 0, y: 0, order: 0, termText: '(a−b)', sign: null,
+          id: 'amb',
+          label: '(a−b)',
+          baseColor: Color(0xFF8A3030),
+          w: 140,
+          h: 210,
+          x: 0,
+          y: 0,
+          order: 0,
+          termText: '(a−b)',
+          sign: null,
           guide: 'Factor (a−b): El primer factor. Binomio con signo negativo.',
         ),
         FormulaBlock(
-          id: 'a2', label: 'a²', baseColor: Color(0xFF2E7D6B),
-          w: 70, h: 70, x: 140, y: 0, order: 1, termText: 'a²', sign: '×',
+          id: 'a2',
+          label: 'a²',
+          baseColor: Color(0xFF2E7D6B),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 0,
+          order: 1,
+          termText: 'a²',
+          sign: '×',
           guide: 'Término a²: El cuadrado de a en el trinomio (a²+ab+b²).',
         ),
         FormulaBlock(
-          id: 'pab', label: '+ab', baseColor: Color(0xFF6B5AA3),
-          w: 70, h: 70, x: 140, y: 70, order: 2, termText: 'ab', sign: '+',
-          guide: 'Término +ab: El producto mixto con signo POSITIVO. ¡Diferencia del caso anterior!',
+          id: 'pab',
+          label: '+ab',
+          baseColor: Color(0xFF6B5AA3),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 70,
+          order: 2,
+          termText: 'ab',
+          sign: '+',
+          guide:
+              'Término +ab: El producto mixto con signo POSITIVO. ¡Diferencia del caso anterior!',
         ),
         FormulaBlock(
-          id: 'b2', label: 'b²', baseColor: Color(0xFF9A6B1A),
-          w: 70, h: 70, x: 140, y: 140, order: 3, termText: 'b²', sign: '+',
-          guide: 'Término +b²: Cuadrado de b. ¡Todos los signos del trinomio son positivos!',
+          id: 'b2',
+          label: 'b²',
+          baseColor: Color(0xFF9A6B1A),
+          w: 70,
+          h: 70,
+          x: 140,
+          y: 140,
+          order: 3,
+          termText: 'b²',
+          sign: '+',
+          guide:
+              'Término +b²: Cuadrado de b. ¡Todos los signos del trinomio son positivos!',
         ),
       ],
     ),
@@ -420,8 +670,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
   void initState() {
     super.initState();
     _audioPlayer = AudioPlayer();
-    _confettiController =
-        ConfettiController(duration: const Duration(seconds: 3));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 3),
+    );
     _doneAnim = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -486,14 +737,14 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
     final formula = _formulas[_quizFormulaKey]!;
     _quizCorrectAnswer = formula.finalFormula;
 
-    final otherAnswers = keys
-        .where((k) => k != _quizFormulaKey)
-        .map((k) => _formulas[k]!.finalFormula)
-        .toList()
-      ..shuffle();
+    final otherAnswers =
+        keys
+            .where((k) => k != _quizFormulaKey)
+            .map((k) => _formulas[k]!.finalFormula)
+            .toList()
+          ..shuffle();
 
-    _quizOptions = [_quizCorrectAnswer, ...otherAnswers.take(3)]
-      ..shuffle();
+    _quizOptions = [_quizCorrectAnswer, ...otherAnswers.take(3)]..shuffle();
     _quizSelectedAnswer = null;
     _quizAnswered = false;
   }
@@ -534,8 +785,10 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: const Text(
@@ -553,13 +806,16 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             padding: const EdgeInsets.only(right: 16),
             child: Center(
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: nt.blueGoogle.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                      color: nt.blueGoogle.withValues(alpha: 0.3)),
+                    color: nt.blueGoogle.withValues(alpha: 0.3),
+                  ),
                 ),
                 child: Text(
                   '${_unlockedTabs.length}/${_formulas.length} 🔓',
@@ -638,8 +894,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(10),
                   border: _activeTab == 0
-                      ? Border.all(
-                          color: nt.blueGoogle.withValues(alpha: 0.4))
+                      ? Border.all(color: nt.blueGoogle.withValues(alpha: 0.4))
                       : null,
                 ),
                 child: Row(
@@ -647,18 +902,14 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                   children: [
                     Icon(
                       Icons.science_rounded,
-                      color: _activeTab == 0
-                          ? nt.blueGoogle
-                          : Colors.white38,
+                      color: _activeTab == 0 ? nt.blueGoogle : Colors.white38,
                       size: 16,
                     ),
                     const SizedBox(width: 6),
                     Text(
                       'Laboratorio',
                       style: TextStyle(
-                        color: _activeTab == 0
-                            ? nt.blueGoogle
-                            : Colors.white38,
+                        color: _activeTab == 0 ? nt.blueGoogle : Colors.white38,
                         fontWeight: _activeTab == 0
                             ? FontWeight.bold
                             : FontWeight.normal,
@@ -682,8 +933,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(10),
                   border: _activeTab == 1
-                      ? Border.all(
-                          color: nt.pink.withValues(alpha: 0.4))
+                      ? Border.all(color: nt.pink.withValues(alpha: 0.4))
                       : null,
                 ),
                 child: Row(
@@ -691,17 +941,14 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                   children: [
                     Icon(
                       Icons.quiz_rounded,
-                      color:
-                          _activeTab == 1 ? nt.pink : Colors.white38,
+                      color: _activeTab == 1 ? nt.pink : Colors.white38,
                       size: 16,
                     ),
                     const SizedBox(width: 6),
                     Text(
                       'Quiz Rápido',
                       style: TextStyle(
-                        color: _activeTab == 1
-                            ? nt.pink
-                            : Colors.white38,
+                        color: _activeTab == 1 ? nt.pink : Colors.white38,
                         fontWeight: _activeTab == 1
                             ? FontWeight.bold
                             : FontWeight.normal,
@@ -712,7 +959,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                       const SizedBox(width: 4),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 1),
+                          horizontal: 5,
+                          vertical: 1,
+                        ),
                         decoration: BoxDecoration(
                           color: nt.pink.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(4),
@@ -720,9 +969,10 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                         child: Text(
                           '$_quizScore',
                           style: TextStyle(
-                              color: nt.pink,
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold),
+                            color: nt.pink,
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -766,8 +1016,11 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
           Center(
             child: TextButton.icon(
               onPressed: _resetCurrent,
-              icon: const Icon(Icons.refresh_rounded,
-                  color: Colors.white54, size: 16),
+              icon: const Icon(
+                Icons.refresh_rounded,
+                color: Colors.white54,
+                size: 16,
+              ),
               label: const Text(
                 'Reiniciar esta fórmula',
                 style: TextStyle(color: Colors.white54, fontSize: 12),
@@ -780,24 +1033,21 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
   }
 
   Widget _buildCategoryTabs(NeuralThemeData nt) {
-    final categories =
-        _formulas.values.map((f) => f.category).toSet().toList();
+    final categories = _formulas.values.map((f) => f.category).toSet().toList();
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: categories.map((cat) {
-          final isActive =
-              _f.category == cat;
+          final isActive = _f.category == cat;
           final color = cat == 'Cuadrados'
               ? nt.blueGoogle
               : cat == 'Cubos'
-                  ? nt.purple
-                  : nt.successGreen;
+              ? nt.purple
+              : nt.successGreen;
           return Padding(
             padding: const EdgeInsets.only(right: 8),
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 12, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: isActive
                     ? color.withValues(alpha: 0.15)
@@ -814,9 +1064,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 style: TextStyle(
                   color: isActive ? color : Colors.white38,
                   fontSize: 11,
-                  fontWeight: isActive
-                      ? FontWeight.bold
-                      : FontWeight.normal,
+                  fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
                 ),
               ),
             ),
@@ -842,7 +1090,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 14, vertical: 9),
+                  horizontal: 14,
+                  vertical: 9,
+                ),
                 decoration: BoxDecoration(
                   color: isActive
                       ? nt.blueGoogle.withValues(alpha: 0.2)
@@ -851,9 +1101,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                   border: Border.all(
                     color: isActive
                         ? nt.blueGoogle
-                        : (isUnlocked
-                            ? Colors.white24
-                            : Colors.transparent),
+                        : (isUnlocked ? Colors.white24 : Colors.transparent),
                     width: 1.5,
                   ),
                 ),
@@ -863,17 +1111,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                     if (!isUnlocked)
                       const Padding(
                         padding: EdgeInsets.only(right: 5),
-                        child: Icon(Icons.lock_rounded,
-                            size: 11, color: Colors.white30),
+                        child: Icon(
+                          Icons.lock_rounded,
+                          size: 11,
+                          color: Colors.white30,
+                        ),
                       ),
                     Text(
                       formula.title,
                       style: TextStyle(
                         color: isActive
                             ? nt.blueGoogle
-                            : (isUnlocked
-                                ? Colors.white
-                                : Colors.white30),
+                            : (isUnlocked ? Colors.white : Colors.white30),
                         fontWeight: isActive
                             ? FontWeight.bold
                             : FontWeight.normal,
@@ -891,10 +1140,8 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
   }
 
   Widget _buildProgressBar(NeuralThemeData nt) {
-    final pct =
-        _f.blocks.isEmpty ? 0.0 : _stepOrder / _f.blocks.length;
-    final fIdx =
-        _formulas.keys.toList().indexOf(_current) + 1;
+    final pct = _f.blocks.isEmpty ? 0.0 : _stepOrder / _f.blocks.length;
+    final fIdx = _formulas.keys.toList().indexOf(_current) + 1;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -904,14 +1151,16 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             Text(
               'Fórmula $fIdx de ${_formulas.length}  ·  paso $_stepOrder/${_f.blocks.length}',
               style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.45),
-                  fontSize: 11),
+                color: Colors.white.withValues(alpha: 0.45),
+                fontSize: 11,
+              ),
             ),
             Text(
               '${(pct * 100).round()}%',
               style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.45),
-                  fontSize: 11),
+                color: Colors.white.withValues(alpha: 0.45),
+                fontSize: 11,
+              ),
             ),
           ],
         ),
@@ -920,20 +1169,25 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
           borderRadius: BorderRadius.circular(4),
           child: SizedBox(
             height: 5,
-            child: LayoutBuilder(builder: (ctx, constraints) {
-              return Stack(children: [
-                Container(color: Colors.white10),
-                AnimatedContainer(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeOut,
-                  width: constraints.maxWidth * pct,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [nt.blueGoogle, nt.purple]),
-                  ),
-                ),
-              ]);
-            }),
+            child: LayoutBuilder(
+              builder: (ctx, constraints) {
+                return Stack(
+                  children: [
+                    Container(color: Colors.white10),
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOut,
+                      width: constraints.maxWidth * pct,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [nt.blueGoogle, nt.purple],
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
         const SizedBox(height: 8),
@@ -951,8 +1205,8 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 color: isDone
                     ? nt.blueGoogle
                     : (isActive
-                        ? Colors.white60
-                        : Colors.white.withValues(alpha: 0.15)),
+                          ? Colors.white60
+                          : Colors.white.withValues(alpha: 0.15)),
                 borderRadius: BorderRadius.circular(4),
               ),
             );
@@ -1002,7 +1256,10 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             child: Text(
               guideText,
               style: const TextStyle(
-                  color: Colors.white, fontSize: 13, height: 1.5),
+                color: Colors.white,
+                fontSize: 13,
+                height: 1.5,
+              ),
             ),
           ),
         ],
@@ -1026,17 +1283,19 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               left: pad,
               top: pad - 12,
               child: Container(
-                  width: size,
-                  height: 1,
-                  color: Colors.white.withValues(alpha: 0.12)),
+                width: size,
+                height: 1,
+                color: Colors.white.withValues(alpha: 0.12),
+              ),
             ),
             Positioned(
               left: pad - 12,
               top: pad,
               child: Container(
-                  width: 1,
-                  height: size,
-                  color: Colors.white.withValues(alpha: 0.12)),
+                width: 1,
+                height: size,
+                color: Colors.white.withValues(alpha: 0.12),
+              ),
             ),
             ..._f.sideLabels.map((lbl) {
               final isTop = lbl['axis'] == 'top';
@@ -1062,8 +1321,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               final blockDone = _clickedBlocks.contains(b.id);
               final isNext = !blockDone && b.order == _stepOrder;
               final isPending = !blockDone && b.order > _stepOrder;
-              final opacity =
-                  blockDone ? 0.5 : (isPending ? 0.15 : 1.0);
+              final opacity = blockDone ? 0.5 : (isPending ? 0.15 : 1.0);
 
               return Positioned(
                 left: pad + b.x,
@@ -1076,22 +1334,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                     duration: const Duration(milliseconds: 350),
                     curve: Curves.easeOut,
                     decoration: BoxDecoration(
-                      color: b.baseColor
-                          .withValues(alpha: opacity),
+                      color: b.baseColor.withValues(alpha: opacity),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: isNext
-                            ? Colors.white
-                                .withValues(alpha: 0.85)
-                            : Colors.white
-                                .withValues(alpha: 0.07),
+                            ? Colors.white.withValues(alpha: 0.85)
+                            : Colors.white.withValues(alpha: 0.07),
                         width: isNext ? 2.5 : 1.0,
                       ),
                       boxShadow: isNext
                           ? [
                               BoxShadow(
-                                color: b.baseColor
-                                    .withValues(alpha: 0.6),
+                                color: b.baseColor.withValues(alpha: 0.6),
                                 blurRadius: 16,
                                 spreadRadius: 3,
                               ),
@@ -1111,22 +1365,22 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                                     : (isPending ? 0.2 : 1.0),
                               ),
                               fontWeight: FontWeight.bold,
-                              fontSize:
-                                  b.w < 50 ? 10 : (b.w < 80 ? 13 : 17),
+                              fontSize: b.w < 50 ? 10 : (b.w < 80 ? 13 : 17),
                             ),
                           ),
                           if (blockDone)
-                            const Icon(Icons.check_rounded,
-                                color: Colors.white54, size: 13),
+                            const Icon(
+                              Icons.check_rounded,
+                              color: Colors.white54,
+                              size: 13,
+                            ),
                           if (isNext)
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 3),
+                              padding: const EdgeInsets.only(top: 3),
                               child: Text(
                                 'toca aquí',
                                 style: TextStyle(
-                                  color: Colors.white
-                                      .withValues(alpha: 0.65),
+                                  color: Colors.white.withValues(alpha: 0.65),
                                   fontSize: 8,
                                 ),
                               ),
@@ -1158,8 +1412,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
           Text(
             _f.eqTitle,
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.45),
-                fontSize: 12),
+              color: Colors.white.withValues(alpha: 0.45),
+              fontSize: 12,
+            ),
           ),
           const SizedBox(height: 10),
           Wrap(
@@ -1171,19 +1426,21 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 Text(
                   'toca las secciones →',
                   style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.3),
-                      fontSize: 13),
+                    color: Colors.white.withValues(alpha: 0.3),
+                    fontSize: 13,
+                  ),
                 )
               else
                 for (int i = 0; i < _stepOrder; i++) ...[
                   if (_f.blocks[i].sign != null)
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
                       child: Text(
                         _f.blocks[i].sign!,
                         style: const TextStyle(
-                            color: Colors.white70, fontSize: 18),
+                          color: Colors.white70,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   AnimatedScale(
@@ -1191,14 +1448,14 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                     duration: const Duration(milliseconds: 200),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 5),
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
                       decoration: BoxDecoration(
-                        color: _f.blocks[i].baseColor
-                            .withValues(alpha: 0.28),
+                        color: _f.blocks[i].baseColor.withValues(alpha: 0.28),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: _f.blocks[i].baseColor
-                              .withValues(alpha: 0.45),
+                          color: _f.blocks[i].baseColor.withValues(alpha: 0.45),
                         ),
                       ),
                       child: Text(
@@ -1235,16 +1492,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             end: Alignment.bottomRight,
           ),
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(
-              color: nt.blueGoogle.withValues(alpha: 0.4)),
+          border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.4)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Icon(Icons.auto_awesome_rounded,
-                    color: nt.blueGoogle, size: 16),
+                Icon(
+                  Icons.auto_awesome_rounded,
+                  color: nt.blueGoogle,
+                  size: 16,
+                ),
                 const SizedBox(width: 8),
                 Text(
                   _f.finalLabel,
@@ -1287,14 +1546,12 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
       decoration: BoxDecoration(
         color: nt.warningAmber.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(
-            color: nt.warningAmber.withValues(alpha: 0.25)),
+        border: Border.all(color: nt.warningAmber.withValues(alpha: 0.25)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.school_rounded,
-              color: nt.warningAmber, size: 18),
+          Icon(Icons.school_rounded, color: nt.warningAmber, size: 18),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
@@ -1336,14 +1593,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
           shadowColor: Colors.transparent,
           padding: const EdgeInsets.symmetric(vertical: 16),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16)),
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
         onPressed: () => _switchFormula(_f.nextTab!),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.arrow_forward_rounded,
-                color: Colors.white, size: 18),
+            const Icon(
+              Icons.arrow_forward_rounded,
+              color: Colors.white,
+              size: 18,
+            ),
             const SizedBox(width: 8),
             Text(
               'Continuar con $nextTitle',
@@ -1374,23 +1635,30 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('SCORE: $_quizScore',
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15)),
+                  Text(
+                    'SCORE: $_quizScore',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
                   if (_quizStreak > 0)
                     Row(
                       children: [
-                        Icon(Icons.local_fire_department_rounded,
-                            color: nt.warningAmber, size: 12),
+                        Icon(
+                          Icons.local_fire_department_rounded,
+                          color: nt.warningAmber,
+                          size: 12,
+                        ),
                         const SizedBox(width: 3),
                         Text(
                           'Racha: $_quizStreak',
                           style: TextStyle(
-                              color: nt.warningAmber,
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold),
+                            color: nt.warningAmber,
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -1399,8 +1667,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               Text(
                 '$_quizTotal preguntas respondidas',
                 style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.4),
-                    fontSize: 11),
+                  color: Colors.white.withValues(alpha: 0.4),
+                  fontSize: 11,
+                ),
               ),
             ],
           ),
@@ -1419,8 +1688,7 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
-              border:
-                  Border.all(color: nt.purple.withValues(alpha: 0.3)),
+              border: Border.all(color: nt.purple.withValues(alpha: 0.3)),
             ),
             child: Column(
               children: [
@@ -1446,7 +1714,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 const SizedBox(height: 6),
                 Container(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 10, vertical: 4),
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(8),
@@ -1454,8 +1724,9 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                   child: Text(
                     formula.category,
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        fontSize: 11),
+                      color: Colors.white.withValues(alpha: 0.5),
+                      fontSize: 11,
+                    ),
                   ),
                 ),
               ],
@@ -1468,21 +1739,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             final isSelected = _quizSelectedAnswer == option;
             final isCorrect = option == _quizCorrectAnswer;
 
-            Color borderColor =
-                Colors.white.withValues(alpha: 0.1);
+            Color borderColor = Colors.white.withValues(alpha: 0.1);
             Color bgColor = Colors.white.withValues(alpha: 0.03);
             Color textColor = Colors.white70;
 
             if (_quizAnswered) {
               if (isCorrect) {
                 borderColor = Colors.greenAccent;
-                bgColor =
-                    Colors.greenAccent.withValues(alpha: 0.09);
+                bgColor = Colors.greenAccent.withValues(alpha: 0.09);
                 textColor = Colors.greenAccent;
               } else if (isSelected) {
                 borderColor = Colors.redAccent;
-                bgColor =
-                    Colors.redAccent.withValues(alpha: 0.09);
+                bgColor = Colors.redAccent.withValues(alpha: 0.09);
                 textColor = Colors.redAccent;
               }
             }
@@ -1490,18 +1758,17 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
             return Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: GestureDetector(
-                onTap: _quizAnswered
-                    ? null
-                    : () => _submitQuizAnswer(option),
+                onTap: _quizAnswered ? null : () => _submitQuizAnswer(option),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 14),
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
                   decoration: BoxDecoration(
                     color: bgColor,
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                        color: borderColor, width: 1.5),
+                    border: Border.all(color: borderColor, width: 1.5),
                   ),
                   child: Row(
                     children: [
@@ -1516,13 +1783,17 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                         ),
                       ),
                       if (_quizAnswered && isCorrect)
-                        const Icon(Icons.check_circle_rounded,
-                            color: Colors.greenAccent, size: 18),
-                      if (_quizAnswered &&
-                          isSelected &&
-                          !isCorrect)
-                        const Icon(Icons.cancel_rounded,
-                            color: Colors.redAccent, size: 18),
+                        const Icon(
+                          Icons.check_circle_rounded,
+                          color: Colors.greenAccent,
+                          size: 18,
+                        ),
+                      if (_quizAnswered && isSelected && !isCorrect)
+                        const Icon(
+                          Icons.cancel_rounded,
+                          color: Colors.redAccent,
+                          size: 18,
+                        ),
                     ],
                   ),
                 ),
@@ -1544,15 +1815,19 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.school_rounded,
-                          color: nt.warningAmber, size: 15),
+                      Icon(
+                        Icons.school_rounded,
+                        color: nt.warningAmber,
+                        size: 15,
+                      ),
                       const SizedBox(width: 8),
                       const Text(
                         'Tip de Examen',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
                     ],
                   ),
@@ -1560,9 +1835,10 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
                   Text(
                     formula.examTip,
                     style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 12,
-                        height: 1.5),
+                      color: Colors.white70,
+                      fontSize: 12,
+                      height: 1.5,
+                    ),
                   ),
                 ],
               ),
@@ -1572,17 +1848,18 @@ class _ProductosNotablesScreenState extends State<ProductosNotablesScreen>
               onPressed: _nextQuizQuestion,
               style: ElevatedButton.styleFrom(
                 backgroundColor: nt.pink,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16),
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
+                  borderRadius: BorderRadius.circular(16),
+                ),
               ),
               child: const Text(
                 'Siguiente pregunta →',
                 style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],

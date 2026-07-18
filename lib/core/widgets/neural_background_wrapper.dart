@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform, TargetPlatform;
+import 'package:flutter/foundation.dart'
+    show kIsWeb, defaultTargetPlatform, TargetPlatform;
 import 'package:learn/core/config/neural_theme.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -29,13 +30,16 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
   @override
   void initState() {
     super.initState();
-    _isMobile = !kIsWeb && (defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS);
-    
+    _isMobile =
+        !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.android ||
+            defaultTargetPlatform == TargetPlatform.iOS);
+
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 60),
     );
-    
+
     // Solo animar si no es mobile (por performance extremo)
     if (!_isMobile) {
       _controller.repeat();
@@ -61,16 +65,10 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
         fit: StackFit.expand,
         children: [
           ColoredBox(color: nt.background),
-          RepaintBoundary(
-            child: _PlasmaBackground(t: 0.1, nt: nt),
-          ),
-          RepaintBoundary(
-            child: _MorphBlobLayer(t: 0.2, nt: nt),
-          ),
+          RepaintBoundary(child: _PlasmaBackground(t: 0.1, nt: nt)),
+          RepaintBoundary(child: _MorphBlobLayer(t: 0.2, nt: nt)),
           const ColoredBox(color: Color(0x0A000000)),
-          RepaintBoundary(
-            child: widget.child,
-          ),
+          RepaintBoundary(child: widget.child),
         ],
       );
     }
@@ -88,10 +86,8 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
           RepaintBoundary(
             child: AnimatedBuilder(
               animation: _controller,
-              builder: (_, __) => _PlasmaBackground(
-                t: _controller.value,
-                nt: nt,
-              ),
+              builder: (_, __) =>
+                  _PlasmaBackground(t: _controller.value, nt: nt),
             ),
           ),
 
@@ -120,9 +116,7 @@ class _NeuralBackgroundWrapperState extends State<NeuralBackgroundWrapper>
           const ColoredBox(color: Color(0x0A000000)),
 
           // 6. Contenido — completamente aislado de las animaciones
-          RepaintBoundary(
-            child: widget.child,
-          ),
+          RepaintBoundary(child: widget.child),
         ],
       ),
     );
@@ -196,7 +190,8 @@ class _PlasmaBackgroundPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_PlasmaBackgroundPainter old) => old.t != t || old.nt != nt;
+  bool shouldRepaint(_PlasmaBackgroundPainter old) =>
+      old.t != t || old.nt != nt;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -256,10 +251,7 @@ class _MorphBlobPainter extends CustomPainter {
           0.10 * math.sin(t * math.pi * 2 * freq2 * morphSpeed * 1.3 + phase2);
 
       final r = baseR * (1.0 + variation);
-      points.add(Offset(
-        cx + r * math.cos(angle),
-        cy + r * math.sin(angle),
-      ));
+      points.add(Offset(cx + r * math.cos(angle), cy + r * math.sin(angle)));
     }
     return points;
   }
@@ -310,13 +302,13 @@ class _MorphBlobPainter extends CustomPainter {
     final paint = Paint()
       ..shader = RadialGradient(
         colors: [
-          color.withValues(alpha: 0.35), 
+          color.withValues(alpha: 0.35),
           color.withValues(alpha: 0.15),
           Colors.transparent,
         ],
         stops: const [0.0, 0.5, 1.0],
       ).createShader(path.getBounds());
-      
+
     canvas.drawPath(path, paint);
   }
 
@@ -378,12 +370,12 @@ class _Bubble {
   double y;
   double vx;
   double vy;
-  final double r;        // radio visual
-  double a;             // opacidad actual (se anima)
+  final double r; // radio visual
+  double a; // opacidad actual (se anima)
   final double aTarget; // opacidad objetivo
   final Color color;
   final double glowFactor; // intensidad del glow (0.5 – 1.0)
-  double phase;          // fase personal para pulsación
+  double phase; // fase personal para pulsación
 
   _Bubble({
     required this.x,
@@ -433,8 +425,6 @@ class _PlasmaCanvasState extends State<_PlasmaCanvas>
   // Cantidad de burbujas — más en mobile porque el renderer es más eficiente
   static const int _bubbleCount = kIsWeb ? 28 : 55;
 
-
-
   @override
   void initState() {
     super.initState();
@@ -451,23 +441,27 @@ class _PlasmaCanvasState extends State<_PlasmaCanvas>
   }
 
   void _initBubbles(Size size) {
-    final rng = math.Random(42); // seed fijo → misma distribución inicial siempre
+    final rng = math.Random(
+      42,
+    ); // seed fijo → misma distribución inicial siempre
     final colors = [widget.blueGoogle, widget.purple, widget.pink];
     _bubbles.clear();
     for (int i = 0; i < _bubbleCount; i++) {
       final color = colors[i % 3];
-      _bubbles.add(_Bubble(
-        x: rng.nextDouble() * size.width,
-        y: rng.nextDouble() * size.height,
-        vx: (rng.nextDouble() - 0.5) * _speedScale,
-        vy: (rng.nextDouble() - 0.5) * _speedScale,
-        r: rng.nextDouble() * 2.8 + 1.2, // 1.2 – 4.0 px
-        a: rng.nextDouble() * 0.6 + 0.2,
-        aTarget: rng.nextDouble() * 0.6 + 0.3,
-        color: color,
-        glowFactor: rng.nextDouble() * 0.5 + 0.5,
-        phase: rng.nextDouble() * math.pi * 2,
-      ));
+      _bubbles.add(
+        _Bubble(
+          x: rng.nextDouble() * size.width,
+          y: rng.nextDouble() * size.height,
+          vx: (rng.nextDouble() - 0.5) * _speedScale,
+          vy: (rng.nextDouble() - 0.5) * _speedScale,
+          r: rng.nextDouble() * 2.8 + 1.2, // 1.2 – 4.0 px
+          a: rng.nextDouble() * 0.6 + 0.2,
+          aTarget: rng.nextDouble() * 0.6 + 0.3,
+          color: color,
+          glowFactor: rng.nextDouble() * 0.5 + 0.5,
+          phase: rng.nextDouble() * math.pi * 2,
+        ),
+      );
     }
   }
 
@@ -512,25 +506,27 @@ class _PlasmaCanvasState extends State<_PlasmaCanvas>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final size = Size(constraints.maxWidth, constraints.maxHeight);
-      return AnimatedBuilder(
-        animation: _ticker,
-        builder: (_, __) {
-          _tick(size, widget.mouseNotifier.value);
-          return CustomPaint(
-            size: size,
-            painter: _BubblePainter(
-              bubbles: _bubbles,
-              blueGoogle: widget.blueGoogle,
-              purple: widget.purple,
-              pink: widget.pink,
-              globalT: widget.controller.value,
-            ),
-          );
-        },
-      );
-    });
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final size = Size(constraints.maxWidth, constraints.maxHeight);
+        return AnimatedBuilder(
+          animation: _ticker,
+          builder: (_, __) {
+            _tick(size, widget.mouseNotifier.value);
+            return CustomPaint(
+              size: size,
+              painter: _BubblePainter(
+                bubbles: _bubbles,
+                blueGoogle: widget.blueGoogle,
+                purple: widget.purple,
+                pink: widget.pink,
+                globalT: widget.controller.value,
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 }
 
@@ -573,7 +569,7 @@ class _BubblePainter extends CustomPainter {
         const connectDistSq = _connectDist * _connectDist;
 
         if (dSq >= connectDistSq) continue;
-        
+
         final d = math.sqrt(dSq);
         final proximity = 1.0 - d / _connectDist; // 0.0 lejos → 1.0 cerca
         final smoothProx = _smoothstep(proximity);
@@ -586,9 +582,7 @@ class _BubblePainter extends CustomPainter {
         final col = Color.lerp(bi.color, bj.color, 0.5)!;
 
         // Ancho del tentáculo — más grueso cuando más cerca
-        final strokeW = kIsWeb
-            ? smoothProx * 0.8
-            : smoothProx * 1.2;
+        final strokeW = kIsWeb ? smoothProx * 0.8 : smoothProx * 1.2;
 
         paint
           ..color = col.withValues(alpha: opacity)

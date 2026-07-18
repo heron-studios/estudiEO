@@ -7,7 +7,6 @@ import 'narracion_ext_10q_questions.dart';
 import 'literatura_peruana_ext_10q_questions.dart';
 import 'literatura_peruana_rebuscada_ext_10q_questions.dart';
 
-
 final List<Question> comunicacionQuestions = [
   ...literaturaPeruanaExt10qQuestions,
   ...literaturaPeruanaRebuscadaExt10qQuestions,
@@ -19,20 +18,18 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q3',
     topicId: 'com_t1',
-    text: r"""Señale la opción que presenta la escritura correcta del plural de 'lápiz'.""",
-    options: [
-      r'''Lápises''',
-      r'''Lápices''',
-      r'''Lápizes''',
-      r'''Lápics''',
-    ],
+    text:
+        r"""Señale la opción que presenta la escritura correcta del plural de 'lápiz'.""",
+    options: [r'''Lápises''', r'''Lápices''', r'''Lápizes''', r'''Lápics'''],
     correctAnswer: 1,
-    explanation: r"""Las palabras que en singular terminan en 'z' cambian esta letra por 'c' al formar el plural (lápiz -> lápices).""",
+    explanation:
+        r"""Las palabras que en singular terminan en 'z' cambian esta letra por 'c' al formar el plural (lápiz -> lápices).""",
   ),
   Question(
     id: 'com_q6',
     topicId: 'com_t1',
-    text: r"""¿En qué oración se ha cometido un error ortográfico en el uso de 'b' o 'v'?""",
+    text:
+        r"""¿En qué oración se ha cometido un error ortográfico en el uso de 'b' o 'v'?""",
     options: [
       r'''El suboficial fue benevolente con el anciano.''',
       r'''Siempre iba a patrullar por la misma avenida.''',
@@ -40,12 +37,14 @@ final List<Question> comunicacionQuestions = [
       r'''La movivilidad de la comisaría sufrió un desperfecto.''',
     ],
     correctAnswer: 3,
-    explanation: r"""La palabra correcta es 'movilidad'. Se escriben con 'b' las palabras terminadas en '-bilidad', excepto 'movilidad' y 'civilidad'.""",
+    explanation:
+        r"""La palabra correcta es 'movilidad'. Se escriben con 'b' las palabras terminadas en '-bilidad', excepto 'movilidad' y 'civilidad'.""",
   ),
   Question(
     id: 'com_q7',
     topicId: 'com_t1',
-    text: r'''Seleccione la alternativa donde todas las palabras estén correctamente escritas.''',
+    text:
+        r'''Seleccione la alternativa donde todas las palabras estén correctamente escritas.''',
     options: [
       r'''Convicción, ascensión, objeción.''',
       r'''Decición, comprensión, ilusión.''',
@@ -53,12 +52,14 @@ final List<Question> comunicacionQuestions = [
       r'''Intensión (propósito), actuación, diverción.''',
     ],
     correctAnswer: 0,
-    explanation: r"""'Convicción', 'ascensión' y 'objeción' están escritas correctamente. Errores en las demás: decisión, reflexión, diversión.""",
+    explanation:
+        r"""'Convicción', 'ascensión' y 'objeción' están escritas correctamente. Errores en las demás: decisión, reflexión, diversión.""",
   ),
   Question(
     id: 'com_q8',
     topicId: 'com_t1',
-    text: r"""¿Cuál de las siguientes oraciones presenta un uso correcto de 'll' y 'y'?""",
+    text:
+        r"""¿Cuál de las siguientes oraciones presenta un uso correcto de 'll' y 'y'?""",
     options: [
       r'''El sospechoso se calló al suelo tras tropezar.''',
       r'''La yanta del patrullero se reventó en la persecución.''',
@@ -66,12 +67,14 @@ final List<Question> comunicacionQuestions = [
       r'''Rayó el papel con el bolígrafo y ralló el queso para la cena.''',
     ],
     correctAnswer: 2,
-    explanation: r"""'Callado' del verbo callar se escribe con 'll'. En A debió ser 'cayó' (de caer), en B 'llanta', en D el orden es correcto pero la oración C es plenamente coherente y correcta en su contexto principal. (Nota: en D, 'ralló' de rallar y 'rayó' de rayar están bien usados, pero 'callado' es una aplicación directa).""",
+    explanation:
+        r"""'Callado' del verbo callar se escribe con 'll'. En A debió ser 'cayó' (de caer), en B 'llanta', en D el orden es correcto pero la oración C es plenamente coherente y correcta en su contexto principal. (Nota: en D, 'ralló' de rallar y 'rayó' de rayar están bien usados, pero 'callado' es una aplicación directa).""",
   ),
   Question(
     id: 'com_q9',
     topicId: 'com_t1',
-    text: r"""Complete la oración con las grafías correctas: 'El a_ente de inteligencia logró _estionar la estrategia de manera _enial.""",
+    text:
+        r"""Complete la oración con las grafías correctas: 'El a_ente de inteligencia logró _estionar la estrategia de manera _enial.""",
     options: [
       r'''j - g - j''',
       r'''g - g - g''',
@@ -79,12 +82,14 @@ final List<Question> comunicacionQuestions = [
       r'''j - j - j''',
     ],
     correctAnswer: 1,
-    explanation: r"""Agente, gestionar y genial se escriben con 'g'. La sílaba 'gen' y el prefijo/lexema 'gest' llevan 'g'.""",
+    explanation:
+        r"""Agente, gestionar y genial se escriben con 'g'. La sílaba 'gen' y el prefijo/lexema 'gest' llevan 'g'.""",
   ),
   Question(
     id: 'com_q10',
     topicId: 'com_t1',
-    text: r"""Identifique la oración con el uso normativo correcto de la 'r' y 'rr'.""",
+    text:
+        r"""Identifique la oración con el uso normativo correcto de la 'r' y 'rr'.""",
     options: [
       r'''El auto rojo fue interceptado en la carretera.''',
       r'''Se formó un enrredo en la vía pública.''',
@@ -92,7 +97,8 @@ final List<Question> comunicacionQuestions = [
       r'''La persecución ocurrió en los aledaños de Enriquez.''',
     ],
     correctAnswer: 0,
-    explanation: r"""'Carretera' usa 'rr' intervocálica para sonido fuerte, y 'rojo' usa 'r' inicial. En B es 'enredo', en C es 'irresponsabilidad' (aquí está bien escrita, pero en la D 'Enríquez' usa 'r' después de n). Wait, en C 'irresponsabilidad' es correcta. A y C son correctas. Ajuste: La opción C tiene 'irresponsabilidad' correcta, cambiamos a 'El auto rojo' que es 100% indiscutible.""",
+    explanation:
+        r"""'Carretera' usa 'rr' intervocálica para sonido fuerte, y 'rojo' usa 'r' inicial. En B es 'enredo', en C es 'irresponsabilidad' (aquí está bien escrita, pero en la D 'Enríquez' usa 'r' después de n). Wait, en C 'irresponsabilidad' es correcta. A y C son correctas. Ajuste: La opción C tiene 'irresponsabilidad' correcta, cambiamos a 'El auto rojo' que es 100% indiscutible.""",
   ),
   Question(
     id: 'com_q11',
@@ -105,20 +111,18 @@ final List<Question> comunicacionQuestions = [
       r"""Consonante 'n', 's' y no en vocal.""",
     ],
     correctAnswer: 2,
-    explanation: r"""Por regla general, las palabras agudas se tildan si terminan en vocal (a, e, i, o, u) o en las consonantes 'n' o 's'.""",
+    explanation:
+        r"""Por regla general, las palabras agudas se tildan si terminan en vocal (a, e, i, o, u) o en las consonantes 'n' o 's'.""",
   ),
   Question(
     id: 'com_q12',
     topicId: 'com_t1',
-    text: r'''¿Cuál de las siguientes es una palabra grave (llana) que debe llevar tilde?''',
-    options: [
-      r'''Examen''',
-      r'''Volumen''',
-      r'''Arbol''',
-      r'''Crisis''',
-    ],
+    text:
+        r'''¿Cuál de las siguientes es una palabra grave (llana) que debe llevar tilde?''',
+    options: [r'''Examen''', r'''Volumen''', r'''Arbol''', r'''Crisis'''],
     correctAnswer: 2,
-    explanation: r"""'Árbol' es grave y termina en 'l' (consonante distinta de 'n' o 's'), por lo que lleva tilde.""",
+    explanation:
+        r"""'Árbol' es grave y termina en 'l' (consonante distinta de 'n' o 's'), por lo que lleva tilde.""",
   ),
   Question(
     id: 'com_q13',
@@ -131,7 +135,8 @@ final List<Question> comunicacionQuestions = [
       r'''Monosílabos''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las palabras esdrújulas y sobresdrújulas siempre llevan tilde en la vocal tónica.''',
+    explanation:
+        r'''Las palabras esdrújulas y sobresdrújulas siempre llevan tilde en la vocal tónica.''',
   ),
   Question(
     id: 'com_q14',
@@ -144,25 +149,23 @@ final List<Question> comunicacionQuestions = [
       r'''La sílaba anterior a la antepenúltima''',
     ],
     correctAnswer: 3,
-    explanation: r'''En las palabras sobresdrújulas, el acento recae en la sílaba anterior a la antepenúltima (trágicamente, cómpramelo).''',
+    explanation:
+        r'''En las palabras sobresdrújulas, el acento recae en la sílaba anterior a la antepenúltima (trágicamente, cómpramelo).''',
   ),
   Question(
     id: 'com_q15',
     topicId: 'com_t1',
     text: r'''Identifique la palabra que requiere tilde ortográfica.''',
-    options: [
-      r'''Virgen''',
-      r'''Margen''',
-      r'''Origen''',
-      r'''Regimen''',
-    ],
+    options: [r'''Virgen''', r'''Margen''', r'''Origen''', r'''Regimen'''],
     correctAnswer: 3,
-    explanation: r"""'Régimen' es una palabra esdrújula, por lo que siempre debe llevar tilde.""",
+    explanation:
+        r"""'Régimen' es una palabra esdrújula, por lo que siempre debe llevar tilde.""",
   ),
   Question(
     id: 'com_q16',
     topicId: 'com_t1',
-    text: r'''Señale la serie compuesta exclusivamente por palabras agudas que no deben llevar tilde.''',
+    text:
+        r'''Señale la serie compuesta exclusivamente por palabras agudas que no deben llevar tilde.''',
     options: [
       r'''Reloj, pared, verdad, capaz.''',
       r'''Corazon, cipres, cafe, rubi.''',
@@ -170,12 +173,14 @@ final List<Question> comunicacionQuestions = [
       r'''Ciudad, local, jabali, feliz.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Reloj, pared, verdad y capaz son palabras agudas terminadas en consonantes distintas de 'n' o 's', por lo que no llevan tilde.""",
+    explanation:
+        r"""Reloj, pared, verdad y capaz son palabras agudas terminadas en consonantes distintas de 'n' o 's', por lo que no llevan tilde.""",
   ),
   Question(
     id: 'com_q17',
     topicId: 'com_t1',
-    text: r'''¿En qué alternativa se encuentra correctamente tildada la palabra compuesta?''',
+    text:
+        r'''¿En qué alternativa se encuentra correctamente tildada la palabra compuesta?''',
     options: [
       r'''Físico-quimico''',
       r'''Decimoseptimo''',
@@ -183,25 +188,24 @@ final List<Question> comunicacionQuestions = [
       r'''Baloncesto''',
     ],
     correctAnswer: 3,
-    explanation: r"""'Baloncesto' no lleva tilde. 'Físico-químico' debería llevar tilde en ambas; 'decimoséptimo' lleva tilde; 'rioplatense' es sin tilde.""",
+    explanation:
+        r"""'Baloncesto' no lleva tilde. 'Físico-químico' debería llevar tilde en ambas; 'decimoséptimo' lleva tilde; 'rioplatense' es sin tilde.""",
   ),
   Question(
     id: 'com_q18',
     topicId: 'com_t1',
-    text: r"""¿Cuántas tildes faltan en la siguiente oración? 'El alferez entrego el atestado al comisario despues del operativo'.""",
-    options: [
-      r'''Dos''',
-      r'''Tres''',
-      r'''Cuatro''',
-      r'''Cinco''',
-    ],
+    text:
+        r"""¿Cuántas tildes faltan en la siguiente oración? 'El alferez entrego el atestado al comisario despues del operativo'.""",
+    options: [r'''Dos''', r'''Tres''', r'''Cuatro''', r'''Cinco'''],
     correctAnswer: 1,
-    explanation: r'''Faltan tres tildes: alférez (grave terminada en z), entregó (aguda terminada en vocal), después (aguda terminada en s).''',
+    explanation:
+        r'''Faltan tres tildes: alférez (grave terminada en z), entregó (aguda terminada en vocal), después (aguda terminada en s).''',
   ),
   Question(
     id: 'com_q19',
     topicId: 'com_t1',
-    text: r'''Identifique la opción en la que el cambio de sílaba tónica altera completamente el sentido del enunciado.''',
+    text:
+        r'''Identifique la opción en la que el cambio de sílaba tónica altera completamente el sentido del enunciado.''',
     options: [
       r'''Transito / Tránsito / Transitó''',
       r'''Ciudad / Cuidad''',
@@ -209,12 +213,14 @@ final List<Question> comunicacionQuestions = [
       r'''Comisaría / Comisario''',
     ],
     correctAnswer: 0,
-    explanation: r"""La palabra 'transito' (yo), 'tránsito' (vehicular) y 'transitó' (él) cambian de significado y función gramatical al cambiar la acentuación (aguda, grave, esdrújula).""",
+    explanation:
+        r"""La palabra 'transito' (yo), 'tránsito' (vehicular) y 'transitó' (él) cambian de significado y función gramatical al cambiar la acentuación (aguda, grave, esdrújula).""",
   ),
   Question(
     id: 'com_q20',
     topicId: 'com_t1',
-    text: r'''Seleccione la oración que presenta correcta acentuación ortográfica en todos sus términos.''',
+    text:
+        r'''Seleccione la oración que presenta correcta acentuación ortográfica en todos sus términos.''',
     options: [
       r'''El dictamen fue evaluado por el juez superior.''',
       r'''Los examenes de los cadetes se revisarán mañana.''',
@@ -222,12 +228,14 @@ final List<Question> comunicacionQuestions = [
       r'''El vehiculo policial supero el limite de velocidad.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En la opción A, todas las palabras están bien acentuadas. Errores: B (exámenes), C (tensión), D (vehículo, superó, límite).''',
+    explanation:
+        r'''En la opción A, todas las palabras están bien acentuadas. Errores: B (exámenes), C (tensión), D (vehículo, superó, límite).''',
   ),
   Question(
     id: 'com_q21',
     topicId: 'com_t1',
-    text: r"""Según las normas de tildación diacrítica, la palabra 'él' lleva tilde cuando funciona como:""",
+    text:
+        r"""Según las normas de tildación diacrítica, la palabra 'él' lleva tilde cuando funciona como:""",
     options: [
       r'''Artículo definido''',
       r'''Pronombre personal''',
@@ -235,7 +243,8 @@ final List<Question> comunicacionQuestions = [
       r'''Adjetivo demostrativo''',
     ],
     correctAnswer: 1,
-    explanation: r"""Lleva tilde cuando es pronombre personal (ej. Lo hizo por él) para diferenciarlo del artículo 'el'.""",
+    explanation:
+        r"""Lleva tilde cuando es pronombre personal (ej. Lo hizo por él) para diferenciarlo del artículo 'el'.""",
   ),
   Question(
     id: 'com_q22',
@@ -248,12 +257,14 @@ final List<Question> comunicacionQuestions = [
       r'''Cuando acompaña a un sustantivo propio.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Lleva tilde cuando proviene del verbo saber (ej. Yo lo sé) o del verbo ser (ej. Sé valiente).''',
+    explanation:
+        r'''Lleva tilde cuando proviene del verbo saber (ej. Yo lo sé) o del verbo ser (ej. Sé valiente).''',
   ),
   Question(
     id: 'com_q23',
     topicId: 'com_t1',
-    text: r"""El monosílabo 'te' se escribe con tilde ('té') si funciona como:""",
+    text:
+        r"""El monosílabo 'te' se escribe con tilde ('té') si funciona como:""",
     options: [
       r'''Pronombre personal''',
       r'''Preposición''',
@@ -261,12 +272,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sustantivo (infusión)''',
     ],
     correctAnswer: 3,
-    explanation: r'''Solo lleva tilde cuando hace referencia a la planta o a la bebida (sustantivo).''',
+    explanation:
+        r'''Solo lleva tilde cuando hace referencia a la planta o a la bebida (sustantivo).''',
   ),
   Question(
     id: 'com_q25',
     topicId: 'com_t1',
-    text: r"""¿Qué oración presenta un uso correcto de las tildes diacríticas en 'si' y 'sí'?""",
+    text:
+        r"""¿Qué oración presenta un uso correcto de las tildes diacríticas en 'si' y 'sí'?""",
     options: [
       r'''Sí vienes temprano, te daré el informe.''',
       r'''El cadete volvió en si luego del desmayo.''',
@@ -274,7 +287,8 @@ final List<Question> comunicacionQuestions = [
       r'''Tocó una sonata en sí menor para el público.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Lleva tilde cuando es adverbio de afirmación o pronombre personal (volvió en sí). No lleva cuando es condicional o nota musical.''',
+    explanation:
+        r'''Lleva tilde cuando es adverbio de afirmación o pronombre personal (volvió en sí). No lleva cuando es condicional o nota musical.''',
   ),
   Question(
     id: 'com_q26',
@@ -287,7 +301,8 @@ final List<Question> comunicacionQuestions = [
       r'''Tanto la B como la C son correctas.''',
     ],
     correctAnswer: 3,
-    explanation: r"""En la B, 'de' es preposición (sin tilde). En la C, 'dé' es del verbo dar (con tilde). Ambas son correctas.""",
+    explanation:
+        r"""En la B, 'de' es preposición (sin tilde). En la C, 'dé' es del verbo dar (con tilde). Ambas son correctas.""",
   ),
   Question(
     id: 'com_q27',
@@ -300,12 +315,14 @@ final List<Question> comunicacionQuestions = [
       r'''¿Aun esperas que el sospechoso confiese?''',
     ],
     correctAnswer: 2,
-    explanation: r"""'Aun' se escribe sin tilde cuando equivale a 'incluso', 'hasta' o 'también' (Aun los más experimentados...). Lleva tilde cuando equivale a 'todavía'.""",
+    explanation:
+        r"""'Aun' se escribe sin tilde cuando equivale a 'incluso', 'hasta' o 'también' (Aun los más experimentados...). Lleva tilde cuando equivale a 'todavía'.""",
   ),
   Question(
     id: 'com_q28',
     topicId: 'com_t1',
-    text: r'''¿En qué alternativa hay un error en la tildación de interrogativos/exclamativos?''',
+    text:
+        r'''¿En qué alternativa hay un error en la tildación de interrogativos/exclamativos?''',
     options: [
       r'''¡Qué difícil es resolver este caso!''',
       r'''No sé quién dejó la puerta abierta.''',
@@ -313,12 +330,14 @@ final List<Question> comunicacionQuestions = [
       r'''Pregúntale a que hora llegará el relevo.''',
     ],
     correctAnswer: 3,
-    explanation: r"""En la D debe ser 'a qué hora', ya que es una interrogativa indirecta.""",
+    explanation:
+        r"""En la D debe ser 'a qué hora', ya que es una interrogativa indirecta.""",
   ),
   Question(
     id: 'com_q29',
     topicId: 'com_t1',
-    text: r'''¿Qué oración presenta correcta tildación de un pronombre interrogativo indirecto?''',
+    text:
+        r'''¿Qué oración presenta correcta tildación de un pronombre interrogativo indirecto?''',
     options: [
       r'''Quien mal anda, mal acaba.''',
       r'''La calle donde ocurrió el asalto fue acordonada.''',
@@ -326,12 +345,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hazlo como te lo enseñaron en la Escuela.''',
     ],
     correctAnswer: 2,
-    explanation: r"""'Cuándo' lleva tilde por ser interrogativo indirecto. En A, B y D son relativos y no deben llevar tilde.""",
+    explanation:
+        r"""'Cuándo' lleva tilde por ser interrogativo indirecto. En A, B y D son relativos y no deben llevar tilde.""",
   ),
   Question(
     id: 'com_q30',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta correcta tildación diacrítica en todos sus vocablos.''',
+    text:
+        r'''Señale la oración que presenta correcta tildación diacrítica en todos sus vocablos.''',
     options: [
       r'''Él túvo que firmar el acta él mismo.''',
       r'''Tú debes de presentar tu identificación.''',
@@ -339,12 +360,14 @@ final List<Question> comunicacionQuestions = [
       r'''Té pedí que trajeras el té para el comandante.''',
     ],
     correctAnswer: 1,
-    explanation: r"""En la B, 'Tú' (pronombre) lleva tilde, y 'tu' (posesivo) no. Errores: A ('tuvo' no lleva tilde), C (segundo 'sé' debe llevar tilde, verbo ser), D (primer 'te' es pronombre, no lleva tilde).""",
+    explanation:
+        r"""En la B, 'Tú' (pronombre) lleva tilde, y 'tu' (posesivo) no. Errores: A ('tuvo' no lleva tilde), C (segundo 'sé' debe llevar tilde, verbo ser), D (primer 'te' es pronombre, no lleva tilde).""",
   ),
   Question(
     id: 'com_q31',
     topicId: 'com_t1',
-    text: r'''Según la RAE, ¿cómo se deben escribir los nombres de los días de la semana y los meses del año por regla general?''',
+    text:
+        r'''Según la RAE, ¿cómo se deben escribir los nombres de los días de la semana y los meses del año por regla general?''',
     options: [
       r'''Siempre con mayúscula inicial.''',
       r'''Con mayúscula solo si tienen más de cinco letras.''',
@@ -352,12 +375,14 @@ final List<Question> comunicacionQuestions = [
       r'''Con mayúscula solo en documentos oficiales y fechas patrias.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los días de la semana y los meses del año se escriben en minúscula, salvo que inicien oración o formen parte de un nombre propio (ej. 28 de Julio).''',
+    explanation:
+        r'''Los días de la semana y los meses del año se escriben en minúscula, salvo que inicien oración o formen parte de un nombre propio (ej. 28 de Julio).''',
   ),
   Question(
     id: 'com_q32',
     topicId: 'com_t1',
-    text: r'''Respecto a los nombres de cargos (ej. comisario, presidente, ministro), la regla actual indica que:''',
+    text:
+        r'''Respecto a los nombres de cargos (ej. comisario, presidente, ministro), la regla actual indica que:''',
     options: [
       r'''Deben escribirse siempre con mayúscula inicial.''',
       r'''Se escriben con mayúscula solo si no van acompañados del nombre de la persona.''',
@@ -365,12 +390,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se escriben con mayúscula cuando refieren a cargos militares o policiales, y minúscula los civiles.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Ortografía de la lengua española (2010) establece que los sustantivos que designan títulos, cargos y dignidades deben escribirse con minúscula inicial.''',
+    explanation:
+        r'''La Ortografía de la lengua española (2010) establece que los sustantivos que designan títulos, cargos y dignidades deben escribirse con minúscula inicial.''',
   ),
   Question(
     id: 'com_q33',
     topicId: 'com_t1',
-    text: r'''¿Cómo se escriben correctamente los nombres de instituciones u organismos como la policía?''',
+    text:
+        r'''¿Cómo se escriben correctamente los nombres de instituciones u organismos como la policía?''',
     options: [
       r'''policía nacional del perú''',
       r'''Policía nacional del Perú''',
@@ -378,12 +405,14 @@ final List<Question> comunicacionQuestions = [
       r'''Policía Nacional del perú''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los sustantivos y adjetivos que componen el nombre de entidades, organismos e instituciones se escriben con mayúscula inicial.''',
+    explanation:
+        r'''Los sustantivos y adjetivos que componen el nombre de entidades, organismos e instituciones se escriben con mayúscula inicial.''',
   ),
   Question(
     id: 'com_q34',
     topicId: 'com_t1',
-    text: r'''Los nombres de festividades religiosas o civiles (ej. Navidad, Día de la Madre) se escriben:''',
+    text:
+        r'''Los nombres de festividades religiosas o civiles (ej. Navidad, Día de la Madre) se escriben:''',
     options: [
       r'''Totalmente en mayúsculas sostenidas.''',
       r'''Con mayúscula inicial en todos sus sustantivos y adjetivos.''',
@@ -391,12 +420,14 @@ final List<Question> comunicacionQuestions = [
       r'''Solo se usa mayúscula en la primera palabra.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los nombres de festividades, tanto civiles como religiosas, se escriben con mayúscula inicial en todas sus palabras significativas.''',
+    explanation:
+        r'''Los nombres de festividades, tanto civiles como religiosas, se escriben con mayúscula inicial en todas sus palabras significativas.''',
   ),
   Question(
     id: 'com_q35',
     topicId: 'com_t1',
-    text: r'''Identifique la oración que hace un uso correcto de las mayúsculas en relación con la geografía.''',
+    text:
+        r'''Identifique la oración que hace un uso correcto de las mayúsculas en relación con la geografía.''',
     options: [
       r'''La patrulla recorrió el Río Amazonas.''',
       r'''El accidente ocurrió en la cordillera de los Andes.''',
@@ -404,12 +435,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Océano Pacífico baña las costas peruanas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los nombres genéricos de accidentes geográficos (cordillera, río, océano) se escriben con minúscula, pero el nombre propio que los acompaña va con mayúscula (Andes).''',
+    explanation:
+        r'''Los nombres genéricos de accidentes geográficos (cordillera, río, océano) se escriben con minúscula, pero el nombre propio que los acompaña va con mayúscula (Andes).''',
   ),
   Question(
     id: 'com_q36',
     topicId: 'com_t1',
-    text: r'''En cuanto al uso de minúsculas, señale la alternativa correcta:''',
+    text:
+        r'''En cuanto al uso de minúsculas, señale la alternativa correcta:''',
     options: [
       r'''El suboficial Pérez es de origen Piurano.''',
       r'''El Coronel dispuso el cierre de las vías.''',
@@ -417,12 +450,14 @@ final List<Question> comunicacionQuestions = [
       r'''Aprobó el examen de Derecho Penal en la Universidad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los gentilicios y los nombres de los idiomas se escriben con minúscula. (A: piurano, B: coronel, D: universidad en uso genérico).''',
+    explanation:
+        r'''Los gentilicios y los nombres de los idiomas se escriben con minúscula. (A: piurano, B: coronel, D: universidad en uso genérico).''',
   ),
   Question(
     id: 'com_q37',
     topicId: 'com_t1',
-    text: r"""¿En qué caso la palabra 'estado' debe escribirse obligatoriamente con mayúscula inicial?""",
+    text:
+        r"""¿En qué caso la palabra 'estado' debe escribirse obligatoriamente con mayúscula inicial?""",
     options: [
       r'''Cuando se encuentra en un estado de emergencia.''',
       r'''Cuando hace referencia al conjunto de los órganos de gobierno de un país soberano.''',
@@ -430,12 +465,14 @@ final List<Question> comunicacionQuestions = [
       r'''Cuando indica el estado civil de una persona en un parte policial.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Se escribe 'Estado' (con mayúscula inicial) cuando se refiere a la entidad política y soberana.""",
+    explanation:
+        r"""Se escribe 'Estado' (con mayúscula inicial) cuando se refiere a la entidad política y soberana.""",
   ),
   Question(
     id: 'com_q38',
     topicId: 'com_t1',
-    text: r'''Marque la opción donde hay un uso INCOMPATIBLE con las normas de uso de mayúsculas en siglas o acrónimos.''',
+    text:
+        r'''Marque la opción donde hay un uso INCOMPATIBLE con las normas de uso de mayúsculas en siglas o acrónimos.''',
     options: [
       r'''La PNP realizó un operativo exitoso.''',
       r'''El D.N.I. del intervenido era falso.''',
@@ -443,12 +480,14 @@ final List<Question> comunicacionQuestions = [
       r'''Presentó su queja ante Indecopi.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las siglas no llevan puntos entre sus letras. Lo correcto es DNI.''',
+    explanation:
+        r'''Las siglas no llevan puntos entre sus letras. Lo correcto es DNI.''',
   ),
   Question(
     id: 'com_q39',
     topicId: 'com_t1',
-    text: r'''¿Cuál de las siguientes oraciones presenta un error en el uso de mayúsculas y minúsculas?''',
+    text:
+        r'''¿Cuál de las siguientes oraciones presenta un error en el uso de mayúsculas y minúsculas?''',
     options: [
       r'''El presidente de la República firmó la nueva ley.''',
       r'''Trabaja en el Ministerio de Defensa.''',
@@ -456,7 +495,8 @@ final List<Question> comunicacionQuestions = [
       r'''El General Martínez acudió a la ceremonia.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los cargos y grados militares/policiales (general, coronel, capitán) se escriben con minúscula inicial (general Martínez).''',
+    explanation:
+        r'''Los cargos y grados militares/policiales (general, coronel, capitán) se escriben con minúscula inicial (general Martínez).''',
   ),
   Question(
     id: 'com_q40',
@@ -469,12 +509,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Papa Francisco visitó varios países de Sudamérica.''',
     ],
     correctAnswer: 0,
-    explanation: r"""En A, la denominación oficial de la ley y su número están correctos. En B debe ser 'Ciudad de la Eterna Primavera' (antonomasia); en C 'Constitución Política'; en D 'papa' va en minúscula por ser cargo.""",
+    explanation:
+        r"""En A, la denominación oficial de la ley y su número están correctos. En B debe ser 'Ciudad de la Eterna Primavera' (antonomasia); en C 'Constitución Política'; en D 'papa' va en minúscula por ser cargo.""",
   ),
   Question(
     id: 'com_q41',
     topicId: 'com_t1',
-    text: r'''En el encabezado de un acta de intervención policial, ¿cuál es la forma ortográficamente correcta según la normativa actual de la RAE?''',
+    text:
+        r'''En el encabezado de un acta de intervención policial, ¿cuál es la forma ortográficamente correcta según la normativa actual de la RAE?''',
     options: [
       r'''El Comisario de la Policía Nacional del Perú, Mayor Pérez...''',
       r'''El comisario de la Policía Nacional del Perú, mayor Pérez...''',
@@ -482,12 +524,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Comisario de la Policía Nacional del Perú, mayor Pérez...''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los grados y cargos (comisario, mayor) se escriben con minúscula, mientras que el nombre de la institución (Policía Nacional del Perú) se escribe con mayúsculas iniciales.''',
+    explanation:
+        r'''Los grados y cargos (comisario, mayor) se escriben con minúscula, mientras que el nombre de la institución (Policía Nacional del Perú) se escribe con mayúsculas iniciales.''',
   ),
   Question(
     id: 'com_q42',
     topicId: 'com_t1',
-    text: r'''Durante la redacción de un atestado, el instructor anota la siguiente frase. Identifique cuál de las alternativas está correctamente escrita:''',
+    text:
+        r'''Durante la redacción de un atestado, el instructor anota la siguiente frase. Identifique cuál de las alternativas está correctamente escrita:''',
     options: [
       r'''El vehiculo fue hallado en estado de abondono en la vía publica.''',
       r'''El vehículo fue allado en estado de abandono en la vía pública.''',
@@ -495,12 +539,14 @@ final List<Question> comunicacionQuestions = [
       r'''El vehículo fue hallado en estado de abandono en la via pública.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Vehículo (esdrújula), hallado (con h y ll), abandono (b), vía (hiato), pública (esdrújula).''',
+    explanation:
+        r'''Vehículo (esdrújula), hallado (con h y ll), abandono (b), vía (hiato), pública (esdrújula).''',
   ),
   Question(
     id: 'com_q43',
     topicId: 'com_t1',
-    text: r'''Un suboficial debe transcribir textualmente el testimonio de un sospechoso. ¿Cuál de las opciones aplica correctamente la tildación diacrítica?''',
+    text:
+        r'''Un suboficial debe transcribir textualmente el testimonio de un sospechoso. ¿Cuál de las opciones aplica correctamente la tildación diacrítica?''',
     options: [
       r'''Yo no sé qué más quería él de mi, si ya le había dado todo tú dinero.''',
       r'''Yo no se qué más quería el de mí, si ya le había dado todo tu dinero.''',
@@ -508,12 +554,14 @@ final List<Question> comunicacionQuestions = [
       r'''Yo no sé que mas quería él de mí, si ya le había dado todo tú dinero.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Sé (verbo), qué (interrogativo), más (cantidad), él (pronombre), mí (pronombre), tu (adjetivo posesivo sin tilde).''',
+    explanation:
+        r'''Sé (verbo), qué (interrogativo), más (cantidad), él (pronombre), mí (pronombre), tu (adjetivo posesivo sin tilde).''',
   ),
   Question(
     id: 'com_q44',
     topicId: 'com_t1',
-    text: r'''En un informe de inteligencia sobre tráfico ilícito, se emplean los siguientes términos. ¿Cuál de las series está escrita sin ningún error ortográfico?''',
+    text:
+        r'''En un informe de inteligencia sobre tráfico ilícito, se emplean los siguientes términos. ¿Cuál de las series está escrita sin ningún error ortográfico?''',
     options: [
       r'''Investigación, aprehensión, incautación, ilícito.''',
       r'''Inbestigación, aprensión, incautación, hilícito.''',
@@ -521,12 +569,14 @@ final List<Question> comunicacionQuestions = [
       r'''Investigación, aprehención, incautación, ilísito.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las grafías correctas son: investigación (v, c), aprehensión (con h intermedia y s), incautación (c), ilícito (esdrújula, c). (Nota: en la C 'extorsión' está mal escrita).""",
+    explanation:
+        r"""Las grafías correctas son: investigación (v, c), aprehensión (con h intermedia y s), incautación (c), ilícito (esdrújula, c). (Nota: en la C 'extorsión' está mal escrita).""",
   ),
   Question(
     id: 'com_q45',
     topicId: 'com_t1',
-    text: r'''¿Cuál de las siguientes redacciones legales usadas en el entorno policial es correcta en el uso de mayúsculas?''',
+    text:
+        r'''¿Cuál de las siguientes redacciones legales usadas en el entorno policial es correcta en el uso de mayúsculas?''',
     options: [
       r'''El Fiscal de Turno ordenó el levantamiento del cadáver.''',
       r'''El fiscal de turno ordenó el levantamiento del Cadáver.''',
@@ -534,12 +584,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Fiscal de turno ordenó el levantamiento del cadáver.''',
     ],
     correctAnswer: 2,
-    explanation: r"""'fiscal de turno' es un cargo/función genérica y se escribe íntegramente en minúscula.""",
+    explanation:
+        r"""'fiscal de turno' es un cargo/función genérica y se escribe íntegramente en minúscula.""",
   ),
   Question(
     id: 'com_q46',
     topicId: 'com_t1',
-    text: r"""En un parte de ocurrencia se narran los hechos de un robo. Elija la oración que contiene un error de grafía ('b'/'v', 'c'/'s'/'z' o 'g'/'j').""",
+    text:
+        r"""En un parte de ocurrencia se narran los hechos de un robo. Elija la oración que contiene un error de grafía ('b'/'v', 'c'/'s'/'z' o 'g'/'j').""",
     options: [
       r'''El agraviado opuso resistencia pasiva.''',
       r'''El malhechor sustrajo las pertenencias con rapidez.''',
@@ -547,12 +599,14 @@ final List<Question> comunicacionQuestions = [
       r'''La intervención preventiva evitó una tragedia.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La palabra es 'cerrajería', con 'a' y con 'j', derivada de 'cerrojo', pero 'cerrojería' no es el término estándar o su derivación con 'j' es 'cerrajería'. Espera, 'cerrojería' es válida pero la 'g'/'j'? No, 'cerrajería' se escribe con j. El error evidente es que 'rotura de la cerrojería' suena raro, pero busquemos otro. Cambiemos la opción C: 'El patrullaje constató la rotura del cerrojo de la reja, lo que exijió actuar.' (Error: exigió). Ajustamos la C en el código para que sea 'exijió'.""",
+    explanation:
+        r"""La palabra es 'cerrajería', con 'a' y con 'j', derivada de 'cerrojo', pero 'cerrojería' no es el término estándar o su derivación con 'j' es 'cerrajería'. Espera, 'cerrojería' es válida pero la 'g'/'j'? No, 'cerrajería' se escribe con j. El error evidente es que 'rotura de la cerrojería' suena raro, pero busquemos otro. Cambiemos la opción C: 'El patrullaje constató la rotura del cerrojo de la reja, lo que exijió actuar.' (Error: exigió). Ajustamos la C en el código para que sea 'exijió'.""",
   ),
   Question(
     id: 'com_q47',
     topicId: 'com_t1',
-    text: r"""En un parte de ocurrencia se narran los hechos. Elija la oración que contiene un error en el uso de grafías ('b'/'v', 'c'/'s'/'z' o 'g'/'j').""",
+    text:
+        r"""En un parte de ocurrencia se narran los hechos. Elija la oración que contiene un error en el uso de grafías ('b'/'v', 'c'/'s'/'z' o 'g'/'j').""",
     options: [
       r'''El agraviado opuso tenaz resistencia ante el agresor.''',
       r'''El malhechor sustrajo las pertenencias con rapidez.''',
@@ -560,12 +614,14 @@ final List<Question> comunicacionQuestions = [
       r'''La intervención preventiva evitó una tragedia mayor.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La forma verbal del verbo tener es 'tuvo', con 'v'. 'Tubo' con 'b' se refiere a una pieza cilíndrica hueca.""",
+    explanation:
+        r"""La forma verbal del verbo tener es 'tuvo', con 'v'. 'Tubo' con 'b' se refiere a una pieza cilíndrica hueca.""",
   ),
   Question(
     id: 'com_q48',
     topicId: 'com_t1',
-    text: r'''En el contexto de las diligencias preliminares, determine qué oración emplea adecuadamente la acentuación general.''',
+    text:
+        r'''En el contexto de las diligencias preliminares, determine qué oración emplea adecuadamente la acentuación general.''',
     options: [
       r'''Se dispuso la busqueda inmediata de los profugos de la carcel.''',
       r'''El peritaje fisicoquímico determinó la presencia de estupefacientes.''',
@@ -573,12 +629,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se notifico al Ministerio Público sobre el hallasgo del armamento.''',
     ],
     correctAnswer: 1,
-    explanation: r"""En la palabra compuesta 'fisicoquímico', el primer elemento pierde su tilde. En A faltan tildes (búsqueda, prófugos, cárcel), en C 'este' no lleva tilde, en D faltó tilde en 'notificó' y 'hallazgo' se escribe con z.""",
+    explanation:
+        r"""En la palabra compuesta 'fisicoquímico', el primer elemento pierde su tilde. En A faltan tildes (búsqueda, prófugos, cárcel), en C 'este' no lleva tilde, en D faltó tilde en 'notificó' y 'hallazgo' se escribe con z.""",
   ),
   Question(
     id: 'com_q49',
     topicId: 'com_t1',
-    text: r'''Al redactar una papeleta de infracción al tránsito, el efectivo anotó la falta. ¿Cuál de las siguientes descripciones es ortográficamente impecable?''',
+    text:
+        r'''Al redactar una papeleta de infracción al tránsito, el efectivo anotó la falta. ¿Cuál de las siguientes descripciones es ortográficamente impecable?''',
     options: [
       r'''Conducir en estado de ebriedad, superando el límite máximo permitido.''',
       r'''Conducir en estado de hevriedad, superando el limite máximo permitido.''',
@@ -586,12 +644,14 @@ final List<Question> comunicacionQuestions = [
       r'''Conducir en estado de ebriedad, superando el límite máximo permitído.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Todas las palabras están correctamente escritas y tildadas. En B: 'hevriedad', 'limite'. En C: 'maximo'. En D: 'permitído' (no lleva tilde).""",
+    explanation:
+        r"""Todas las palabras están correctamente escritas y tildadas. En B: 'hevriedad', 'limite'. En C: 'maximo'. En D: 'permitído' (no lleva tilde).""",
   ),
   Question(
     id: 'com_q50',
     topicId: 'com_t1',
-    text: r'''¿Cuál de las siguientes menciones a instituciones y documentos legales en un informe policial sigue las reglas vigentes de mayúsculas y minúsculas?''',
+    text:
+        r'''¿Cuál de las siguientes menciones a instituciones y documentos legales en un informe policial sigue las reglas vigentes de mayúsculas y minúsculas?''',
     options: [
       r'''Según el Código Penal, se remitió el caso al Poder Judicial.''',
       r'''Según el código penal, se remitió el caso al Poder judicial.''',
@@ -599,12 +659,14 @@ final List<Question> comunicacionQuestions = [
       r'''Según el Código Penal, se remitió el caso al poder Judicial.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Los nombres de documentos legales oficiales y entidades del Estado llevan mayúscula inicial en todos sus sustantivos y adjetivos: 'Código Penal' y 'Poder Judicial'.""",
+    explanation:
+        r"""Los nombres de documentos legales oficiales y entidades del Estado llevan mayúscula inicial en todos sus sustantivos y adjetivos: 'Código Penal' y 'Poder Judicial'.""",
   ),
   Question(
     id: 'com_q51',
     topicId: 'com_t1',
-    text: r'''El instructor cierra el acta de intervención con la siguiente frase. Indique cuál tiene la puntuación y ortografía correctas en sus tildes diacríticas:''',
+    text:
+        r'''El instructor cierra el acta de intervención con la siguiente frase. Indique cuál tiene la puntuación y ortografía correctas en sus tildes diacríticas:''',
     options: [
       r'''Asímismo, se hace constar que no se encontró más evidencia.''',
       r'''Asimismo, se hace constar que no se encontró mas evidencia.''',
@@ -612,12 +674,14 @@ final List<Question> comunicacionQuestions = [
       r'''Así mismo, se hace constar que no sé encontró más evidencia.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La palabra 'asimismo' no lleva tilde. 'Más' lleva tilde por ser adverbio de cantidad. 'Consta' no tiene tildes raras, y el 'se' es pronombre, por lo que no lleva tilde.""",
+    explanation:
+        r"""La palabra 'asimismo' no lleva tilde. 'Más' lleva tilde por ser adverbio de cantidad. 'Consta' no tiene tildes raras, y el 'se' es pronombre, por lo que no lleva tilde.""",
   ),
   Question(
     id: 'com_q52',
     topicId: 'com_t1',
-    text: r'''¿Cuál es el signo de puntuación que se utiliza para separar elementos de una enumeración cuando estos ya incluyen comas?''',
+    text:
+        r'''¿Cuál es el signo de puntuación que se utiliza para separar elementos de una enumeración cuando estos ya incluyen comas?''',
     options: [
       r'''La coma''',
       r'''El punto y coma''',
@@ -625,12 +689,14 @@ final List<Question> comunicacionQuestions = [
       r'''El punto seguido''',
     ],
     correctAnswer: 1,
-    explanation: r'''El punto y coma se usa para separar los elementos de una enumeración cuando se trata de expresiones complejas que ya incluyen comas.''',
+    explanation:
+        r'''El punto y coma se usa para separar los elementos de una enumeración cuando se trata de expresiones complejas que ya incluyen comas.''',
   ),
   Question(
     id: 'com_q53',
     topicId: 'com_t1',
-    text: r'''La coma que se emplea para aislar el nombre de la persona o cosa a la que nos dirigimos se denomina:''',
+    text:
+        r'''La coma que se emplea para aislar el nombre de la persona o cosa a la que nos dirigimos se denomina:''',
     options: [
       r'''Coma enumerativa''',
       r'''Coma elíptica''',
@@ -638,7 +704,8 @@ final List<Question> comunicacionQuestions = [
       r'''Coma apositiva''',
     ],
     correctAnswer: 2,
-    explanation: r'''La coma vocativa sirve para separar el vocativo (la persona a la que nos dirigimos) del resto de la oración.''',
+    explanation:
+        r'''La coma vocativa sirve para separar el vocativo (la persona a la que nos dirigimos) del resto de la oración.''',
   ),
   Question(
     id: 'com_q54',
@@ -651,12 +718,14 @@ final List<Question> comunicacionQuestions = [
       r'''Alterar el orden lógico de la oración.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coma elíptica se utiliza para sustituir un verbo que se ha omitido por haber sido mencionado antes o por sobreentenderse.''',
+    explanation:
+        r'''La coma elíptica se utiliza para sustituir un verbo que se ha omitido por haber sido mencionado antes o por sobreentenderse.''',
   ),
   Question(
     id: 'com_q55',
     topicId: 'com_t1',
-    text: r'''Según la normativa, antes de una cita textual se debe utilizar:''',
+    text:
+        r'''Según la normativa, antes de una cita textual se debe utilizar:''',
     options: [
       r'''Punto y coma''',
       r'''Coma''',
@@ -664,7 +733,8 @@ final List<Question> comunicacionQuestions = [
       r'''Dos puntos''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los dos puntos se emplean para introducir una cita textual, la cual debe ir entre comillas.''',
+    explanation:
+        r'''Los dos puntos se emplean para introducir una cita textual, la cual debe ir entre comillas.''',
   ),
   Question(
     id: 'com_q56',
@@ -677,7 +747,8 @@ final List<Question> comunicacionQuestions = [
       r'''Marcar las sílabas tónicas de una palabra.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las comillas se usan para enmarcar citas textuales, ironías, neologismos o palabras de otros idiomas.''',
+    explanation:
+        r'''Las comillas se usan para enmarcar citas textuales, ironías, neologismos o palabras de otros idiomas.''',
   ),
   Question(
     id: 'com_q57',
@@ -690,7 +761,8 @@ final List<Question> comunicacionQuestions = [
       r'''Para introducir la intervención de un personaje en un diálogo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los paréntesis se utilizan para insertar incisos, aclaraciones, fechas, lugares, desarrollo de siglas, etc.''',
+    explanation:
+        r'''Los paréntesis se utilizan para insertar incisos, aclaraciones, fechas, lugares, desarrollo de siglas, etc.''',
   ),
   Question(
     id: 'com_q58',
@@ -703,12 +775,14 @@ final List<Question> comunicacionQuestions = [
       r'''Una cantidad variable de puntos''',
     ],
     correctAnswer: 1,
-    explanation: r'''La RAE establece que los puntos suspensivos son siempre y únicamente tres puntos consecutivos (...).''',
+    explanation:
+        r'''La RAE establece que los puntos suspensivos son siempre y únicamente tres puntos consecutivos (...).''',
   ),
   Question(
     id: 'com_q59',
     topicId: 'com_t1',
-    text: r'''Identifique la oración que presenta el uso correcto de la coma hiperbática.''',
+    text:
+        r'''Identifique la oración que presenta el uso correcto de la coma hiperbática.''',
     options: [
       r'''Durante la noche de ayer, los efectivos patrullaron el barrio.''',
       r'''Los efectivos, patrullaron el barrio durante la noche de ayer.''',
@@ -716,12 +790,14 @@ final List<Question> comunicacionQuestions = [
       r'''Durante la noche de ayer los efectivos, patrullaron el barrio.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coma hiperbática se usa cuando un complemento circunstancial u otro elemento se adelanta al inicio de la oración, alterando el orden lógico.''',
+    explanation:
+        r'''La coma hiperbática se usa cuando un complemento circunstancial u otro elemento se adelanta al inicio de la oración, alterando el orden lógico.''',
   ),
   Question(
     id: 'com_q60',
     topicId: 'com_t1',
-    text: r'''Señale la alternativa con un uso correcto de la coma apositiva.''',
+    text:
+        r'''Señale la alternativa con un uso correcto de la coma apositiva.''',
     options: [
       r'''Lima la capital del Perú, es muy poblada.''',
       r'''Lima, la capital del Perú, es muy poblada.''',
@@ -729,12 +805,14 @@ final List<Question> comunicacionQuestions = [
       r'''Lima la capital, del Perú, es muy poblada.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La aposición (la capital del Perú) explica o precisa al sustantivo anterior (Lima) y debe ir encerrada entre comas.''',
+    explanation:
+        r'''La aposición (la capital del Perú) explica o precisa al sustantivo anterior (Lima) y debe ir encerrada entre comas.''',
   ),
   Question(
     id: 'com_q61',
     topicId: 'com_t1',
-    text: r"""¿En cuál de las siguientes oraciones se ha cometido el error de la 'coma criminal' (separar el sujeto del verbo)?""",
+    text:
+        r"""¿En cuál de las siguientes oraciones se ha cometido el error de la 'coma criminal' (separar el sujeto del verbo)?""",
     options: [
       r'''El agente de tránsito, intervino al conductor infractor.''',
       r'''El agente de tránsito que estaba en la esquina intervino al conductor.''',
@@ -742,12 +820,14 @@ final List<Question> comunicacionQuestions = [
       r'''El agente de tránsito intervino al conductor infractor.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La 'coma criminal' es el error ortográfico que consiste en colocar una coma entre el sujeto (El agente de tránsito) y su predicado/verbo (intervino).""",
+    explanation:
+        r"""La 'coma criminal' es el error ortográfico que consiste en colocar una coma entre el sujeto (El agente de tránsito) y su predicado/verbo (intervino).""",
   ),
   Question(
     id: 'com_q62',
     topicId: 'com_t1',
-    text: r'''Elija la oración en la que se ha aplicado correctamente el punto y coma.''',
+    text:
+        r'''Elija la oración en la que se ha aplicado correctamente el punto y coma.''',
     options: [
       r'''El oficial investigaba el caso; el suboficial, recababa las pruebas.''',
       r'''El oficial investigaba el caso; pero el suboficial recababa, las pruebas.''',
@@ -755,7 +835,8 @@ final List<Question> comunicacionQuestions = [
       r'''El oficial investigaba el caso, el suboficial; recababa las pruebas.''',
     ],
     correctAnswer: 0,
-    explanation: r"""El punto y coma separa dos proposiciones sintácticamente independientes pero relacionadas semánticamente. La coma en la segunda proposición es elíptica (reemplaza a 'investigaba' o actúa separando el sujeto en un paralelismo; mejor dicho, reemplaza a un verbo omitido si se estructurara así. Wait, 'el suboficial, recababa' es coma criminal. Let me fix the option A). nNueva Opción A correcta: 'El teniente interrogaba al sospechoso; el alférez, a los testigos.' (Coma elíptica correcta).""",
+    explanation:
+        r"""El punto y coma separa dos proposiciones sintácticamente independientes pero relacionadas semánticamente. La coma en la segunda proposición es elíptica (reemplaza a 'investigaba' o actúa separando el sujeto en un paralelismo; mejor dicho, reemplaza a un verbo omitido si se estructurara así. Wait, 'el suboficial, recababa' es coma criminal. Let me fix the option A). nNueva Opción A correcta: 'El teniente interrogaba al sospechoso; el alférez, a los testigos.' (Coma elíptica correcta).""",
   ),
   Question(
     id: 'com_q64',
@@ -768,12 +849,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se incautaron armas..., drogas, dinero, etc.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Los puntos suspensivos se usan al final de una enumeración abierta, equivalente a 'etcétera'. No deben combinarse con 'etc.' ni con 'y' en cierres de enumeración.""",
+    explanation:
+        r"""Los puntos suspensivos se usan al final de una enumeración abierta, equivalente a 'etcétera'. No deben combinarse con 'etc.' ni con 'y' en cierres de enumeración.""",
   ),
   Question(
     id: 'com_q66',
     topicId: 'com_t1',
-    text: r'''En un texto policial, para intercalar un comentario del propio autor dentro de una cita textual ajena, el signo adecuado es:''',
+    text:
+        r'''En un texto policial, para intercalar un comentario del propio autor dentro de una cita textual ajena, el signo adecuado es:''',
     options: [
       r'''Las comas''',
       r'''Los paréntesis''',
@@ -781,7 +864,8 @@ final List<Question> comunicacionQuestions = [
       r'''Las rayas''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los corchetes [ ] se usan para introducir aclaraciones o modificaciones del editor o autor dentro de un texto citado textualmente.''',
+    explanation:
+        r'''Los corchetes [ ] se usan para introducir aclaraciones o modificaciones del editor o autor dentro de un texto citado textualmente.''',
   ),
   Question(
     id: 'com_q67',
@@ -794,7 +878,8 @@ final List<Question> comunicacionQuestions = [
       r'''Estimado colega te envío, el informe.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Lleva coma vocativa para aislar al destinatario 'Estimado colega' del resto de la oración.""",
+    explanation:
+        r"""Lleva coma vocativa para aislar al destinatario 'Estimado colega' del resto de la oración.""",
   ),
   Question(
     id: 'com_q68',
@@ -807,7 +892,8 @@ final List<Question> comunicacionQuestions = [
       r'''Una vocal cerrada tónica se une a una vocal abierta.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El diptongo es la unión de dos vocales en una misma sílaba (cerrada+cerrada, o abierta+cerrada átona).''',
+    explanation:
+        r'''El diptongo es la unión de dos vocales en una misma sílaba (cerrada+cerrada, o abierta+cerrada átona).''',
   ),
   Question(
     id: 'com_q69',
@@ -820,12 +906,14 @@ final List<Question> comunicacionQuestions = [
       r'''Una vocal cerrada y una abierta átona.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El hiato simple se da cuando convergen dos vocales abiertas (a, e, o) o dos vocales idénticas (aa, ee, ii, oo, uu) y se separan en sílabas distintas.''',
+    explanation:
+        r'''El hiato simple se da cuando convergen dos vocales abiertas (a, e, o) o dos vocales idénticas (aa, ee, ii, oo, uu) y se separan en sílabas distintas.''',
   ),
   Question(
     id: 'com_q70',
     topicId: 'com_t1',
-    text: r'''El hiato acentual, que obliga a colocar tilde sin importar las reglas generales, se forma por:''',
+    text:
+        r'''El hiato acentual, que obliga a colocar tilde sin importar las reglas generales, se forma por:''',
     options: [
       r'''La unión de dos vocales cerradas.''',
       r'''El encuentro de una vocal abierta átona y una cerrada tónica (o viceversa).''',
@@ -833,7 +921,8 @@ final List<Question> comunicacionQuestions = [
       r'''La terminación en -mente de un adjetivo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El hiato acentual (o disolvente) ocurre cuando la mayor fuerza de voz recae sobre la vocal cerrada (i, u) junto a una abierta, lo que exige la tilde robúrica (ej. pa-ís, rí-o).''',
+    explanation:
+        r'''El hiato acentual (o disolvente) ocurre cuando la mayor fuerza de voz recae sobre la vocal cerrada (i, u) junto a una abierta, lo que exige la tilde robúrica (ej. pa-ís, rí-o).''',
   ),
   Question(
     id: 'com_q71',
@@ -846,12 +935,14 @@ final List<Question> comunicacionQuestions = [
       r'''Tres vocales abiertas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El triptongo requiere el esquema de: vocal cerrada + vocal abierta tónica + vocal cerrada (ej. buey, averigüéis).''',
+    explanation:
+        r'''El triptongo requiere el esquema de: vocal cerrada + vocal abierta tónica + vocal cerrada (ej. buey, averigüéis).''',
   ),
   Question(
     id: 'com_q72',
     topicId: 'com_t1',
-    text: r"""¿Cuál es la correcta división silábica de la palabra 'cooperación'?""",
+    text:
+        r"""¿Cuál es la correcta división silábica de la palabra 'cooperación'?""",
     options: [
       r'''co-o-pe-ra-ción''',
       r'''coo-pe-ra-ción''',
@@ -859,12 +950,14 @@ final List<Question> comunicacionQuestions = [
       r'''coo-per-a-ción''',
     ],
     correctAnswer: 0,
-    explanation: r"""Al haber dos vocales abiertas iguales ('oo'), se produce un hiato simple y se separan en sílabas distintas (co-o). 'ción' es diptongo.""",
+    explanation:
+        r"""Al haber dos vocales abiertas iguales ('oo'), se produce un hiato simple y se separan en sílabas distintas (co-o). 'ción' es diptongo.""",
   ),
   Question(
     id: 'com_q73',
     topicId: 'com_t1',
-    text: r'''Identifique la palabra que presenta un hiato acentual y un diptongo a la vez.''',
+    text:
+        r'''Identifique la palabra que presenta un hiato acentual y un diptongo a la vez.''',
     options: [
       r'''Policíaco''',
       r'''Averiguaría''',
@@ -872,12 +965,14 @@ final List<Question> comunicacionQuestions = [
       r'''Cuidaríamos''',
     ],
     correctAnswer: 1,
-    explanation: r"""En 'a-ve-ri-gua-rí-a', la sílaba 'gua' tiene diptongo (ua) y 'rí-a' presenta hiato acentual (í-a).""",
+    explanation:
+        r"""En 'a-ve-ri-gua-rí-a', la sílaba 'gua' tiene diptongo (ua) y 'rí-a' presenta hiato acentual (í-a).""",
   ),
   Question(
     id: 'com_q74',
     topicId: 'com_t1',
-    text: r'''Señale la serie de palabras que presenten exclusivamente hiatos acentuales.''',
+    text:
+        r'''Señale la serie de palabras que presenten exclusivamente hiatos acentuales.''',
     options: [
       r'''Día, grúa, búho.''',
       r'''Poeta, marea, caer.''',
@@ -885,20 +980,17 @@ final List<Question> comunicacionQuestions = [
       r'''Reír, baúl, piojo.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Día (í-a), grúa (ú-a) y búho (ú-o, la h no impide el hiato) son hiatos acentuales. En la B son hiatos simples, en la C son diptongos, en la D 'piojo' tiene diptongo.""",
+    explanation:
+        r"""Día (í-a), grúa (ú-a) y búho (ú-o, la h no impide el hiato) son hiatos acentuales. En la B son hiatos simples, en la C son diptongos, en la D 'piojo' tiene diptongo.""",
   ),
   Question(
     id: 'com_q75',
     topicId: 'com_t1',
     text: r'''¿Qué palabra presenta un triptongo ortográficamente válido?''',
-    options: [
-      r'''Huida''',
-      r'''Limpiáis''',
-      r'''Paraguayo''',
-      r'''Veíamos''',
-    ],
+    options: [r'''Huida''', r'''Limpiáis''', r'''Paraguayo''', r'''Veíamos'''],
     correctAnswer: 1,
-    explanation: r"""Limpiáis (i + a + i). La 'y' final en paraguayo forma sílaba con la 'o' (pa-ra-gua-yo), no es triptongo fonético-ortográfico estricto en la misma sílaba como 'guay' (sílaba final).""",
+    explanation:
+        r"""Limpiáis (i + a + i). La 'y' final en paraguayo forma sílaba con la 'o' (pa-ra-gua-yo), no es triptongo fonético-ortográfico estricto en la misma sílaba como 'guay' (sílaba final).""",
   ),
   Question(
     id: 'com_q76',
@@ -911,7 +1003,8 @@ final List<Question> comunicacionQuestions = [
       r'''Convierte a la palabra en esdrújula.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La 'h' intercalada entre dos vocales no impide que estas formen diptongo. Se silabea ex-haus-to.""",
+    explanation:
+        r"""La 'h' intercalada entre dos vocales no impide que estas formen diptongo. Se silabea ex-haus-to.""",
   ),
   Question(
     id: 'com_q78',
@@ -924,7 +1017,8 @@ final List<Question> comunicacionQuestions = [
       r'''proh-i-bi-do''',
     ],
     correctAnswer: 1,
-    explanation: r"""La 'h' intercalada no impide el diptongo. Por tanto, 'oi' forman diptongo y la sílaba es 'prohi' (prohi-bi-do).""",
+    explanation:
+        r"""La 'h' intercalada no impide el diptongo. Por tanto, 'oi' forman diptongo y la sílaba es 'prohi' (prohi-bi-do).""",
   ),
   Question(
     id: 'com_q79',
@@ -937,12 +1031,14 @@ final List<Question> comunicacionQuestions = [
       r'''Diesiseis''',
     ],
     correctAnswer: 2,
-    explanation: r"""Se escribe en una sola palabra: dieciséis. Al ser aguda terminada en 's', lleva tilde.""",
+    explanation:
+        r"""Se escribe en una sola palabra: dieciséis. Al ser aguda terminada en 's', lleva tilde.""",
   ),
   Question(
     id: 'com_q80',
     topicId: 'com_t1',
-    text: r'''Sobre los puntos cardinales (norte, sur, este, oeste), la RAE indica que:''',
+    text:
+        r'''Sobre los puntos cardinales (norte, sur, este, oeste), la RAE indica que:''',
     options: [
       r'''Siempre se escriben con mayúscula inicial.''',
       r'''Se escriben con minúscula inicial, salvo que formen parte de un nombre propio.''',
@@ -950,7 +1046,8 @@ final List<Question> comunicacionQuestions = [
       r'''Deben ir siempre abreviados.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los puntos cardinales son nombres comunes y se escriben con minúscula (ej. viajaron rumbo al norte), a menos que integren un topónimo (Corea del Norte).''',
+    explanation:
+        r'''Los puntos cardinales son nombres comunes y se escriben con minúscula (ej. viajaron rumbo al norte), a menos que integren un topónimo (Corea del Norte).''',
   ),
   Question(
     id: 'com_q81',
@@ -963,7 +1060,8 @@ final List<Question> comunicacionQuestions = [
       r'''Luzs / Cruzs''',
     ],
     correctAnswer: 1,
-    explanation: r"""Las palabras que terminan en 'z' hacen su plural cambiando la 'z' por 'c' antes de la terminación 'es'.""",
+    explanation:
+        r"""Las palabras que terminan en 'z' hacen su plural cambiando la 'z' por 'c' antes de la terminación 'es'.""",
   ),
   Question(
     id: 'com_q82',
@@ -976,12 +1074,14 @@ final List<Question> comunicacionQuestions = [
       r"""Llevan tilde en la terminación '-mente'.""",
     ],
     correctAnswer: 2,
-    explanation: r"""Los adverbios terminados en '-mente' mantienen la tilde del adjetivo original (rápido -> rápidamente, suave -> suavemente).""",
+    explanation:
+        r"""Los adverbios terminados en '-mente' mantienen la tilde del adjetivo original (rápido -> rápidamente, suave -> suavemente).""",
   ),
   Question(
     id: 'com_q83',
     topicId: 'com_t1',
-    text: r"""Según las últimas actualizaciones de la RAE, la palabra 'solo' (como adverbio equivalente a solamente) y los pronombres demostrativos (este, ese, aquel):""",
+    text:
+        r"""Según las últimas actualizaciones de la RAE, la palabra 'solo' (como adverbio equivalente a solamente) y los pronombres demostrativos (este, ese, aquel):""",
     options: [
       r'''No deben llevar tilde obligatoriamente, se puede prescindir de ella incluso en casos de ambigüedad si el contexto lo aclara.''',
       r'''Deben llevar tilde siempre.''',
@@ -989,12 +1089,14 @@ final List<Question> comunicacionQuestions = [
       r'''Fueron eliminados del diccionario.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La RAE recomienda no tildar el adverbio 'solo' ni los pronombres demostrativos. Su uso con tilde es excepcional y solo justificable si quien escribe percibe riesgo de ambigüedad.""",
+    explanation:
+        r"""La RAE recomienda no tildar el adverbio 'solo' ni los pronombres demostrativos. Su uso con tilde es excepcional y solo justificable si quien escribe percibe riesgo de ambigüedad.""",
   ),
   Question(
     id: 'com_q84',
     topicId: 'com_t1',
-    text: r"""Seleccione la serie de palabras donde NO existe ningún error ortográfico por uso de 'b' o 'v'.""",
+    text:
+        r"""Seleccione la serie de palabras donde NO existe ningún error ortográfico por uso de 'b' o 'v'.""",
     options: [
       r'''Nauseabundo, moribundo, vagabundo.''',
       r'''Movilidad, civilidad, contavilidad.''',
@@ -1002,12 +1104,14 @@ final List<Question> comunicacionQuestions = [
       r'''Subversivo, obio, advertencia.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las palabras terminadas en '-bundo' se escriben con 'b'. Errores: contabilidad, omnívoro, obvio.""",
+    explanation:
+        r"""Las palabras terminadas en '-bundo' se escriben con 'b'. Errores: contabilidad, omnívoro, obvio.""",
   ),
   Question(
     id: 'com_q85',
     topicId: 'com_t1',
-    text: r"""¿Qué oración contiene un adverbio terminado en '-mente' correctamente tildado?""",
+    text:
+        r"""¿Qué oración contiene un adverbio terminado en '-mente' correctamente tildado?""",
     options: [
       r'''El agente actuó friámente ante el peligro.''',
       r'''Resolvió el examen díficilmente.''',
@@ -1015,12 +1119,14 @@ final List<Question> comunicacionQuestions = [
       r'''Caminó despacioménte hacia la puerta.''',
     ],
     correctAnswer: 2,
-    explanation: r"""Minucioso no lleva tilde, por lo tanto 'minuciosamente' tampoco. Frío tiene tilde en la í, difícil en la í, despacio no tiene.""",
+    explanation:
+        r"""Minucioso no lleva tilde, por lo tanto 'minuciosamente' tampoco. Frío tiene tilde en la í, difícil en la í, despacio no tiene.""",
   ),
   Question(
     id: 'com_q86',
     topicId: 'com_t1',
-    text: r'''En el uso de prefijos, ¿cuál de las siguientes palabras compuestas está escrita correctamente?''',
+    text:
+        r'''En el uso de prefijos, ¿cuál de las siguientes palabras compuestas está escrita correctamente?''',
     options: [
       r'''Ex presidente''',
       r'''Anti-robo''',
@@ -1028,12 +1134,14 @@ final List<Question> comunicacionQuestions = [
       r'''Pre universitario''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los prefijos se escriben soldados a la palabra base (viceministro, expresidente, antirrobo, preuniversitario).''',
+    explanation:
+        r'''Los prefijos se escriben soldados a la palabra base (viceministro, expresidente, antirrobo, preuniversitario).''',
   ),
   Question(
     id: 'com_q87',
     topicId: 'com_t1',
-    text: r'''En la formación de palabras compuestas sin guion, respecto a la tildación, ocurre que:''',
+    text:
+        r'''En la formación de palabras compuestas sin guion, respecto a la tildación, ocurre que:''',
     options: [
       r'''Ambos elementos conservan su tilde original.''',
       r'''El primer elemento pierde la tilde y el segundo la conserva si le corresponde.''',
@@ -1041,12 +1149,14 @@ final List<Question> comunicacionQuestions = [
       r'''Nunca llevan tilde.''',
     ],
     correctAnswer: 1,
-    explanation: r'''En palabras compuestas unidas (ej. asimismo, balonpié -> balompié, decimoséptimo), el primer componente pierde su tilde si la tenía, y el segundo la mantiene.''',
+    explanation:
+        r'''En palabras compuestas unidas (ej. asimismo, balonpié -> balompié, decimoséptimo), el primer componente pierde su tilde si la tenía, y el segundo la mantiene.''',
   ),
   Question(
     id: 'com_q88',
     topicId: 'com_t1',
-    text: r'''Respecto a los títulos de libros o documentos formales, la regla de las mayúsculas indica que:''',
+    text:
+        r'''Respecto a los títulos de libros o documentos formales, la regla de las mayúsculas indica que:''',
     options: [
       r'''Solo la primera palabra y los nombres propios llevan mayúscula inicial.''',
       r'''Todas las palabras importantes deben ir en mayúsculas.''',
@@ -1054,12 +1164,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se puede usar a criterio del autor.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En títulos de obras de creación (libros, películas, cuadros), solo se escribe con mayúscula inicial la primera palabra y los nombres propios que contenga.''',
+    explanation:
+        r'''En títulos de obras de creación (libros, películas, cuadros), solo se escribe con mayúscula inicial la primera palabra y los nombres propios que contenga.''',
   ),
   Question(
     id: 'com_q89',
     topicId: 'com_t1',
-    text: r'''Un instructor redacta el inventario de una incautación en un acta. Elija la opción con puntuación correcta:''',
+    text:
+        r'''Un instructor redacta el inventario de una incautación en un acta. Elija la opción con puntuación correcta:''',
     options: [
       r'''Se incautó lo siguiente, dos armas de fuego; quince municiones; y tres teléfonos móviles.''',
       r'''Se incautó lo siguiente: dos armas de fuego, quince municiones y tres teléfonos móviles.''',
@@ -1067,12 +1179,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se incautó, lo siguiente: dos armas de fuego, quince municiones y tres teléfonos móviles.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Uso correcto de dos puntos antes de la enumeración y comas para separar los elementos simples, unidos por 'y' al final.""",
+    explanation:
+        r"""Uso correcto de dos puntos antes de la enumeración y comas para separar los elementos simples, unidos por 'y' al final.""",
   ),
   Question(
     id: 'com_q90',
     topicId: 'com_t1',
-    text: r'''Durante una intervención en la vía pública, el suboficial da una orden. ¿Cuál oración presenta el uso correcto de la coma vocativa?''',
+    text:
+        r'''Durante una intervención en la vía pública, el suboficial da una orden. ¿Cuál oración presenta el uso correcto de la coma vocativa?''',
     options: [
       r'''Por favor ciudadano detenga el motor del vehículo.''',
       r'''Por favor, ciudadano detenga el motor del vehículo.''',
@@ -1080,12 +1194,14 @@ final List<Question> comunicacionQuestions = [
       r'''Por favor ciudadano, detenga el motor del vehículo.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La palabra 'ciudadano' es el vocativo. Cuando va en medio de la oración, debe aislarse entre dos comas.""",
+    explanation:
+        r"""La palabra 'ciudadano' es el vocativo. Cuando va en medio de la oración, debe aislarse entre dos comas.""",
   ),
   Question(
     id: 'com_q91',
     topicId: 'com_t1',
-    text: r'''Al tomar la manifestación del denunciante, ¿cómo debe aplicarse la puntuación en la cita textual?''',
+    text:
+        r'''Al tomar la manifestación del denunciante, ¿cómo debe aplicarse la puntuación en la cita textual?''',
     options: [
       r'''El agraviado manifestó que, los delincuentes huyeron en una moto roja.''',
       r'''El agraviado manifestó: «Los delincuentes huyeron en una moto roja».''',
@@ -1093,12 +1209,14 @@ final List<Question> comunicacionQuestions = [
       r'''El agraviado, manifestó: «Los delincuentes huyeron en una moto roja».''',
     ],
     correctAnswer: 1,
-    explanation: r'''Se usan dos puntos antes de la cita y esta se encierra entre comillas (españolas o inglesas). No debe haber coma entre el sujeto y el verbo.''',
+    explanation:
+        r'''Se usan dos puntos antes de la cita y esta se encierra entre comillas (españolas o inglesas). No debe haber coma entre el sujeto y el verbo.''',
   ),
   Question(
     id: 'com_q92',
     topicId: 'com_t1',
-    text: r'''En un atestado con múltiples detenidos, ¿cuál es la estructura correcta al usar punto y coma para separar grupos?''',
+    text:
+        r'''En un atestado con múltiples detenidos, ¿cuál es la estructura correcta al usar punto y coma para separar grupos?''',
     options: [
       r'''Detenidos: Juan Pérez, peruano, Carlos Gómez, chileno, y Luis Rojas, boliviano.''',
       r'''Detenidos: Juan Pérez, peruano; Carlos Gómez, chileno; y Luis Rojas, boliviano.''',
@@ -1106,12 +1224,14 @@ final List<Question> comunicacionQuestions = [
       r'''Detenidos: Juan Pérez peruano, Carlos Gómez chileno y Luis Rojas boliviano.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Cuando los elementos de la enumeración ya incluyen comas (para las aposiciones de nacionalidad), se debe usar punto y coma para separar los distintos elementos de la serie.''',
+    explanation:
+        r'''Cuando los elementos de la enumeración ya incluyen comas (para las aposiciones de nacionalidad), se debe usar punto y coma para separar los distintos elementos de la serie.''',
   ),
   Question(
     id: 'com_q93',
     topicId: 'com_t1',
-    text: r'''En el informe sobre el hallazgo de un escondite, se requiere precisión ortográfica. ¿Qué opción está correcta en acentuación y grafías?''',
+    text:
+        r'''En el informe sobre el hallazgo de un escondite, se requiere precisión ortográfica. ¿Qué opción está correcta en acentuación y grafías?''',
     options: [
       r'''El reén aprovechó la uida de los captores para pedir auxilio.''',
       r'''El rehén aprovechó la huida de los captores para pedir auxilio.''',
@@ -1119,12 +1239,14 @@ final List<Question> comunicacionQuestions = [
       r'''El rehen aprovechó la huida de los captores para pedir auxilio.''',
     ],
     correctAnswer: 1,
-    explanation: r"""'Rehén' lleva h intercalada y tilde por aguda en n. 'Huida' tiene diptongo ui, por lo que es grave terminada en vocal y NO lleva tilde.""",
+    explanation:
+        r"""'Rehén' lleva h intercalada y tilde por aguda en n. 'Huida' tiene diptongo ui, por lo que es grave terminada en vocal y NO lleva tilde.""",
   ),
   Question(
     id: 'com_q94',
     topicId: 'com_t1',
-    text: r'''Identifique el uso adecuado de los signos de puntuación y mayúsculas en la identificación de un individuo dentro del acta.''',
+    text:
+        r'''Identifique el uso adecuado de los signos de puntuación y mayúsculas en la identificación de un individuo dentro del acta.''',
     options: [
       r"""El sujeto de alias, 'El cojo' fue trasladado a la comisaría.""",
       r"""El sujeto, de alias 'El Cojo', fue trasladado a la comisaría.""",
@@ -1132,12 +1254,14 @@ final List<Question> comunicacionQuestions = [
       r'''El sujeto, de alias "el cojo" fue trasladado a la comisaría.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El apodo va con mayúscula en sus términos significativos y, si se usa como inciso explicativo, va entre comas. 'Comisaría' va con minúscula por uso genérico, a menos que sea el nombre oficial entero.""",
+    explanation:
+        r"""El apodo va con mayúscula en sus términos significativos y, si se usa como inciso explicativo, va entre comas. 'Comisaría' va con minúscula por uso genérico, a menos que sea el nombre oficial entero.""",
   ),
   Question(
     id: 'com_q95',
     topicId: 'com_t1',
-    text: r"""Un parte policial relata una persecución. Detecte la oración que comete el error de la 'coma criminal'.""",
+    text:
+        r"""Un parte policial relata una persecución. Detecte la oración que comete el error de la 'coma criminal'.""",
     options: [
       r'''El patrullero de la unidad sectorial, llegó a los pocos minutos.''',
       r'''Al llegar a los pocos minutos, el patrullero cerró el paso al vehículo.''',
@@ -1145,12 +1269,14 @@ final List<Question> comunicacionQuestions = [
       r'''Rápidamente, los efectivos policiales redujeron a los delincuentes.''',
     ],
     correctAnswer: 0,
-    explanation: r"""En la opción A, la coma separa innecesariamente el sujeto ('El patrullero de la unidad sectorial') de su verbo ('llegó').""",
+    explanation:
+        r"""En la opción A, la coma separa innecesariamente el sujeto ('El patrullero de la unidad sectorial') de su verbo ('llegó').""",
   ),
   Question(
     id: 'com_q96',
     topicId: 'com_t1',
-    text: r'''En un documento elevado a la fiscalía, ¿qué cita de norma legal presenta uso correcto de mayúsculas y signos auxiliares?''',
+    text:
+        r'''En un documento elevado a la fiscalía, ¿qué cita de norma legal presenta uso correcto de mayúsculas y signos auxiliares?''',
     options: [
       r'''El hecho configura delito según el Art. 188° del código penal.''',
       r'''El hecho configura delito según el artículo 188 (Robo Agravado) del Código Penal.''',
@@ -1158,12 +1284,14 @@ final List<Question> comunicacionQuestions = [
       r'''El hecho configura delito, según el Artículo 188 (Robo agravado) del código penal.''',
     ],
     correctAnswer: 1,
-    explanation: r"""'Código Penal' se escribe con mayúsculas iniciales. El nombre del delito suele escribirse con iniciales en mayúscula en contextos legales formales, y los paréntesis encierran la aclaración.""",
+    explanation:
+        r"""'Código Penal' se escribe con mayúsculas iniciales. El nombre del delito suele escribirse con iniciales en mayúscula en contextos legales formales, y los paréntesis encierran la aclaración.""",
   ),
   Question(
     id: 'com_q98',
     topicId: 'com_t1',
-    text: r'''En la transcripción de una amenaza recibida por el agraviado, el instructor de la PNP anota un final abierto debido a la falta de información audible. ¿Qué puntuación es la correcta?''',
+    text:
+        r'''En la transcripción de una amenaza recibida por el agraviado, el instructor de la PNP anota un final abierto debido a la falta de información audible. ¿Qué puntuación es la correcta?''',
     options: [
       r'''El extorsionador dijo: «Si no pagas el cupo el día de mañana, atente a las...».''',
       r'''El extorsionador dijo: «Si no pagas el cupo el día de mañana, atente a las...» etc.''',
@@ -1171,12 +1299,14 @@ final List<Question> comunicacionQuestions = [
       r'''El extorsionador dijo: «Si no pagas el cupo el día de mañana, atente a las....»''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los puntos suspensivos son tres. Si la cita queda incompleta, se colocan los tres puntos dentro de las comillas de cierre, y el punto final no se añade si los suspensivos ya cumplen esa función.''',
+    explanation:
+        r'''Los puntos suspensivos son tres. Si la cita queda incompleta, se colocan los tres puntos dentro de las comillas de cierre, y el punto final no se añade si los suspensivos ya cumplen esa función.''',
   ),
   Question(
     id: 'com_q99',
     topicId: 'com_t1',
-    text: r'''Un acta indica la circunstancia de tiempo. Señale la oración escrita con correcta puntuación hiperbática e inicial.''',
+    text:
+        r'''Un acta indica la circunstancia de tiempo. Señale la oración escrita con correcta puntuación hiperbática e inicial.''',
     options: [
       r'''Siendo las 14:00 horas, del 12 de mayo nos constituimos al lugar de los hechos.''',
       r'''Siendo las 14:00 horas del 12 de mayo, nos constituimos al lugar de los hechos.''',
@@ -1184,25 +1314,24 @@ final List<Question> comunicacionQuestions = [
       r'''Siendo, las 14:00 horas del 12 de mayo nos constituimos al lugar de los hechos.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El complemento circunstancial de tiempo largo se adelanta y va seguido de coma hiperbática. 'Mayo' va con minúscula.""",
+    explanation:
+        r"""El complemento circunstancial de tiempo largo se adelanta y va seguido de coma hiperbática. 'Mayo' va con minúscula.""",
   ),
   Question(
     id: 'com_q100',
     topicId: 'com_t1',
-    text: r"""¿Cuál es el vocablo en el siguiente fragmento policial que obliga el uso de tilde por hiato acentual? 'El agente realizo un peritaje al vehiculo de la comisaria'.""",
-    options: [
-      r'''Agente''',
-      r'''Realizo''',
-      r'''Vehículo''',
-      r'''Comisaría''',
-    ],
+    text:
+        r"""¿Cuál es el vocablo en el siguiente fragmento policial que obliga el uso de tilde por hiato acentual? 'El agente realizo un peritaje al vehiculo de la comisaria'.""",
+    options: [r'''Agente''', r'''Realizo''', r'''Vehículo''', r'''Comisaría'''],
     correctAnswer: 3,
-    explanation: r"""La palabra 'comisaría' presenta un hiato acentual (í-a). 'Vehículo' tiene tilde por ser esdrújula, no por hiato acentual.""",
+    explanation:
+        r"""La palabra 'comisaría' presenta un hiato acentual (í-a). 'Vehículo' tiene tilde por ser esdrújula, no por hiato acentual.""",
   ),
   Question(
     id: 'com_q101',
     topicId: 'com_t1',
-    text: r"""Analice el siguiente extracto de atestado: 'El capitán Ramírez informó que el sospechoso, a quien nadie conocía, escapó rápidamente'. ¿Cuántas reglas ortográficas aplicadas justifican las tildes en esta oración?""",
+    text:
+        r"""Analice el siguiente extracto de atestado: 'El capitán Ramírez informó que el sospechoso, a quien nadie conocía, escapó rápidamente'. ¿Cuántas reglas ortográficas aplicadas justifican las tildes en esta oración?""",
     options: [
       r'''Dos (aguda y esdrújula).''',
       r'''Tres (aguda, grave y adverbio terminado en -mente).''',
@@ -1210,12 +1339,14 @@ final List<Question> comunicacionQuestions = [
       r'''Cinco.''',
     ],
     correctAnswer: 2,
-    explanation: r"""Capitán, informó, escapó (agudas); Ramírez (grave); conocía (hiato acentual); rápidamente (adverbio terminado en -mente que conserva la tilde de 'rápida'). Son cuatro categorías distintas.""",
+    explanation:
+        r"""Capitán, informó, escapó (agudas); Ramírez (grave); conocía (hiato acentual); rápidamente (adverbio terminado en -mente que conserva la tilde de 'rápida'). Son cuatro categorías distintas.""",
   ),
   Question(
     id: 'com_q102',
     topicId: 'com_t1',
-    text: r'''Durante el registro de un arma, se emplea un conector lógico. Elija la opción con puntuación correcta.''',
+    text:
+        r'''Durante el registro de un arma, se emplea un conector lógico. Elija la opción con puntuación correcta.''',
     options: [
       r'''El arma tenía el número de serie limado, por lo tanto será sometida a peritaje.''',
       r'''El arma tenía el número de serie limado; por lo tanto, será sometida a peritaje.''',
@@ -1223,25 +1354,24 @@ final List<Question> comunicacionQuestions = [
       r'''El arma tenía el número de serie limado, por lo tanto, será sometida a peritaje.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los conectores compuestos (por lo tanto, sin embargo) separan oraciones relacionadas. Si las proposiciones son largas, va punto y coma antes y coma después.''',
+    explanation:
+        r'''Los conectores compuestos (por lo tanto, sin embargo) separan oraciones relacionadas. Si las proposiciones son largas, va punto y coma antes y coma después.''',
   ),
   Question(
     id: 'com_q103',
     topicId: 'com_t1',
-    text: r"""Lea el siguiente párrafo de un informe: 'El oficial superior luego de inspeccionar el aerea; dispuso que los Suboficiales se retiren'. ¿Cuántos errores de ortografía y puntuación hay en total?""",
-    options: [
-      r'''Dos''',
-      r'''Tres''',
-      r'''Cuatro''',
-      r'''Cinco''',
-    ],
+    text:
+        r"""Lea el siguiente párrafo de un informe: 'El oficial superior luego de inspeccionar el aerea; dispuso que los Suboficiales se retiren'. ¿Cuántos errores de ortografía y puntuación hay en total?""",
+    options: [r'''Dos''', r'''Tres''', r'''Cuatro''', r'''Cinco'''],
     correctAnswer: 2,
-    explanation: r"""Errores: 1) Faltan comas en el inciso 'luego de inspeccionar el área' (2 comas); 2) área está mal escrita (aerea -> área); 3) El punto y coma es incorrecto ahí (separa verbo 'dispuso'); 4) 'Suboficiales' debe ir con minúscula inicial.""",
+    explanation:
+        r"""Errores: 1) Faltan comas en el inciso 'luego de inspeccionar el área' (2 comas); 2) área está mal escrita (aerea -> área); 3) El punto y coma es incorrecto ahí (separa verbo 'dispuso'); 4) 'Suboficiales' debe ir con minúscula inicial.""",
   ),
   Question(
     id: 'com_q104',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta uso correcto de las grafías y acentuación diacrítica.''',
+    text:
+        r'''Señale la oración que presenta uso correcto de las grafías y acentuación diacrítica.''',
     options: [
       r'''Éste libro es más interesante de lo que creí.''',
       r'''Sólo te pido que seas sincero conmigo.''',
@@ -1250,12 +1380,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El té pidió que le sirvan en la taza grande.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C ('Aún no sé si vendrá...'). 'Aún' lleva tilde cuando equivale a 'todavía', y 'sé' del verbo saber. Los distractores A y B son 'Trampas de Regla Obsoleta' (según la RAE, 'este' y 'solo' ya no llevan tilde nunca). D omite la tilde diacrítica en 'dé' (verbo dar). E presenta 'té' como pronombre cuando debería ser pronombre 'te' sin tilde ('El te pidió...').""",
+    explanation:
+        r"""La respuesta correcta es C ('Aún no sé si vendrá...'). 'Aún' lleva tilde cuando equivale a 'todavía', y 'sé' del verbo saber. Los distractores A y B son 'Trampas de Regla Obsoleta' (según la RAE, 'este' y 'solo' ya no llevan tilde nunca). D omite la tilde diacrítica en 'dé' (verbo dar). E presenta 'té' como pronombre cuando debería ser pronombre 'te' sin tilde ('El te pidió...').""",
   ),
   Question(
     id: 'com_q105',
     topicId: 'com_t1',
-    text: r'''Elija la opción donde se ha empleado correctamente la coma ( , ).''',
+    text:
+        r'''Elija la opción donde se ha empleado correctamente la coma ( , ).''',
     options: [
       r'''María, preparó un informe detallado para la reunión.''',
       r'''Los estudiantes que, estudian a diario, aprueban.''',
@@ -1264,12 +1396,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Juan y Pedro, fueron al parque de la reserva.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C. Se usa la coma hiperbática porque la proposición subordinada ('Cuando llegues a casa') se ha movido al inicio. Todos los demás distractores representan el error de 'Coma Criminal' (separar sujeto de predicado o verbo de su objeto directo), penalizado fuertemente en la corrección.""",
+    explanation:
+        r"""La respuesta correcta es C. Se usa la coma hiperbática porque la proposición subordinada ('Cuando llegues a casa') se ha movido al inicio. Todos los demás distractores representan el error de 'Coma Criminal' (separar sujeto de predicado o verbo de su objeto directo), penalizado fuertemente en la corrección.""",
   ),
   Question(
     id: 'com_q106',
     topicId: 'com_t1',
-    text: r'''Determine qué alternativa contiene un diptongo decreciente y un hiato simple, respectivamente.''',
+    text:
+        r'''Determine qué alternativa contiene un diptongo decreciente y un hiato simple, respectivamente.''',
     options: [
       r'''Peine - Poeta''',
       r'''Ciudad - Caos''',
@@ -1278,12 +1412,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Deuda - País''',
     ],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A. 'Peine' tiene diptongo decreciente (vocal abierta 'e' seguida de cerrada 'i'). 'Poeta' tiene hiato simple ('o-e', dos vocales abiertas). El distractor E (Deuda - País) es una 'Falla Estructural', porque 'País' es un hiato acentual (abierta + cerrada tónica), no simple.""",
+    explanation:
+        r"""La respuesta correcta es A. 'Peine' tiene diptongo decreciente (vocal abierta 'e' seguida de cerrada 'i'). 'Poeta' tiene hiato simple ('o-e', dos vocales abiertas). El distractor E (Deuda - País) es una 'Falla Estructural', porque 'País' es un hiato acentual (abierta + cerrada tónica), no simple.""",
   ),
   Question(
     id: 'com_q107',
     topicId: 'com_t1',
-    text: r'''Indique la alternativa que presenta uso incorrecto de las letras mayúsculas.''',
+    text:
+        r'''Indique la alternativa que presenta uso incorrecto de las letras mayúsculas.''',
     options: [
       r'''El río Amazonas cruza varios países de Sudamérica.''',
       r'''Viajaremos al sur en los próximos meses de Diciembre y Enero.''',
@@ -1292,12 +1428,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) La Organización de las Naciones Unidas intervino en el conflicto.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B. Los meses, días de la semana y estaciones se escriben con minúscula inicial salvo que empiecen un enunciado. Los distractores como C (República) usan la 'Trampa de Rango', el alumno cree que 'presidente' debe ir con mayúscula por reverencia, lo cual es incorrecto según las nuevas normas, pero la 'R' de República está bien aplicada como parte de la entidad oficial.""",
+    explanation:
+        r"""La respuesta correcta es B. Los meses, días de la semana y estaciones se escriben con minúscula inicial salvo que empiecen un enunciado. Los distractores como C (República) usan la 'Trampa de Rango', el alumno cree que 'presidente' debe ir con mayúscula por reverencia, lo cual es incorrecto según las nuevas normas, pero la 'R' de República está bien aplicada como parte de la entidad oficial.""",
   ),
   Question(
     id: 'com_q108',
     topicId: 'com_t1',
-    text: r'''Marque la alternativa en la que el pronombre enclítico esté usado correctamente según la norma ortográfica vigente.''',
+    text:
+        r'''Marque la alternativa en la que el pronombre enclítico esté usado correctamente según la norma ortográfica vigente.''',
     options: [
       r'''Denos una oportunidad para demostrar nuestro valor.''',
       r'''Diganlón de una vez por todas.''',
@@ -1306,12 +1444,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Llévemosnos este paquete a la comisaría.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A ('Denos'). Es el imperativo de 'dar' + 'nos'. Los distractores C y E son 'Transgresiones Morfológicas' clásicas del habla popular coloquial ('sientensen' por 'siéntense' y 'llévemosnos' por 'llevémonos'). El error más marcado es marcar C porque 'suena' bien al oído urbano (Falla por Eufonía Social).""",
+    explanation:
+        r"""La respuesta correcta es A ('Denos'). Es el imperativo de 'dar' + 'nos'. Los distractores C y E son 'Transgresiones Morfológicas' clásicas del habla popular coloquial ('sientensen' por 'siéntense' y 'llévemosnos' por 'llevémonos'). El error más marcado es marcar C porque 'suena' bien al oído urbano (Falla por Eufonía Social).""",
   ),
   Question(
     id: 'com_q109',
     topicId: 'com_t1',
-    text: r'''Identifique el tipo de palabra según su acento que lleva la mayor fuerza de voz en la última sílaba y se tilda si termina en vocal, N o S:''',
+    text:
+        r'''Identifique el tipo de palabra según su acento que lleva la mayor fuerza de voz en la última sílaba y se tilda si termina en vocal, N o S:''',
     options: [
       r'''Aguda o oxítona''',
       r'''Grave o paroxítona''',
@@ -1320,12 +1460,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sobresdrújula''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las palabras agudas u oxítonas se tildan cuando terminan en las consonantes 'n', 's' o en cualquier vocal.""",
+    explanation:
+        r"""Las palabras agudas u oxítonas se tildan cuando terminan en las consonantes 'n', 's' o en cualquier vocal.""",
   ),
   Question(
     id: 'com_q110',
     topicId: 'com_t1',
-    text: r'''Las palabras cuyas mayor fuerza de voz recae en la penúltima sílaba y se tildan si NO terminan en N, S o vocal, se clasifican como:''',
+    text:
+        r'''Las palabras cuyas mayor fuerza de voz recae en la penúltima sílaba y se tildan si NO terminan en N, S o vocal, se clasifican como:''',
     options: [
       r'''Triptongo''',
       r'''Esdrújula''',
@@ -1334,12 +1476,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sobresdrújula''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las palabras graves o llanas se acentúan gráficamente si terminan en cualquier consonante diferente de N o S, o vocal.''',
+    explanation:
+        r'''Las palabras graves o llanas se acentúan gráficamente si terminan en cualquier consonante diferente de N o S, o vocal.''',
   ),
   Question(
     id: 'com_q111',
     topicId: 'com_t1',
-    text: r'''¿Qué clase de palabras llevan la mayor fuerza de voz en la antepenúltima sílaba y siempre llevan tilde de forma obligatoria en el español?''',
+    text:
+        r'''¿Qué clase de palabras llevan la mayor fuerza de voz en la antepenúltima sílaba y siempre llevan tilde de forma obligatoria en el español?''',
     options: [
       r'''Sobresdrújulas''',
       r'''Monosílabas''',
@@ -1348,12 +1492,14 @@ final List<Question> comunicacionQuestions = [
       r'''Esdrújulas''',
     ],
     correctAnswer: 4,
-    explanation: r'''Las palabras esdrújulas y sobresdrújulas siempre llevan tilde sin excepción.''',
+    explanation:
+        r'''Las palabras esdrújulas y sobresdrújulas siempre llevan tilde sin excepción.''',
   ),
   Question(
     id: 'com_q113',
     topicId: 'com_t1',
-    text: r'''Señale la alternativa donde el monosílabo sustantivo debe llevar tilde diacrítica obligatoriamente:''',
+    text:
+        r'''Señale la alternativa donde el monosílabo sustantivo debe llevar tilde diacrítica obligatoriamente:''',
     options: [
       r'''No te vayas tan temprano hoy.''',
       r'''Te lo dije ayer por la mañana.''',
@@ -1362,12 +1508,14 @@ final List<Question> comunicacionQuestions = [
       r'''Me gusta tomar té caliente por las tardes.''',
     ],
     correctAnswer: 4,
-    explanation: r"""El sustantivo 'té' (infusión) lleva tilde diacrítica para distinguirse del pronombre 'te'.""",
+    explanation:
+        r"""El sustantivo 'té' (infusión) lleva tilde diacrítica para distinguirse del pronombre 'te'.""",
   ),
   Question(
     id: 'com_q114',
     topicId: 'com_t1',
-    text: r"""En la frase 'Solo _____ que nada _____, decía Sócrates', las formas verbales correspondientes a saber y ser deben escribirse como:""",
+    text:
+        r"""En la frase 'Solo _____ que nada _____, decía Sócrates', las formas verbales correspondientes a saber y ser deben escribirse como:""",
     options: [
       r'''Si - si''',
       r'''Sé - se''',
@@ -1376,12 +1524,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se - sé''',
     ],
     correctAnswer: 2,
-    explanation: r"""El monosílabo 'sé' lleva tilde diacrítica cuando corresponde a la primera persona de indicativo de 'saber' o al imperativo de 'ser'.""",
+    explanation:
+        r"""El monosílabo 'sé' lleva tilde diacrítica cuando corresponde a la primera persona de indicativo de 'saber' o al imperativo de 'ser'.""",
   ),
   Question(
     id: 'com_q115',
     topicId: 'com_t1',
-    text: r'''La separación de una vocal cerrada tónica (í, ú) y una vocal abierta átona (a, e, o) en sílabas distintas se conoce como:''',
+    text:
+        r'''La separación de una vocal cerrada tónica (í, ú) y una vocal abierta átona (a, e, o) en sílabas distintas se conoce como:''',
     options: [
       r'''Sinalefa''',
       r'''Diptongo creciente''',
@@ -1390,12 +1540,14 @@ final List<Question> comunicacionQuestions = [
       r'''Triptongo''',
     ],
     correctAnswer: 3,
-    explanation: r'''El hiato acentual se produce cuando la vocal cerrada es la que lleva la mayor fuerza de voz, destruyendo el diptongo y exigiendo tilde.''',
+    explanation:
+        r'''El hiato acentual se produce cuando la vocal cerrada es la que lleva la mayor fuerza de voz, destruyendo el diptongo y exigiendo tilde.''',
   ),
   Question(
     id: 'com_q116',
     topicId: 'com_t1',
-    text: r'''La unión de dos vocales en una misma sílaba (una abierta y una cerrada átona, o dos cerradas distintas) se denomina:''',
+    text:
+        r'''La unión de dos vocales en una misma sílaba (una abierta y una cerrada átona, o dos cerradas distintas) se denomina:''',
     options: [
       r'''Hiato''',
       r'''Sinalefa''',
@@ -1404,12 +1556,14 @@ final List<Question> comunicacionQuestions = [
       r'''Triptongo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Un diptongo es la secuencia de dos vocales que forman parte de una misma sílaba.''',
+    explanation:
+        r'''Un diptongo es la secuencia de dos vocales que forman parte de una misma sílaba.''',
   ),
   Question(
     id: 'com_q117',
     topicId: 'com_t1',
-    text: r"""En el sujeto 'Lima, la tres veces coronada villa, es hermosa', el elemento entre comas que repite la idea del núcleo del sujeto es:""",
+    text:
+        r"""En el sujeto 'Lima, la tres veces coronada villa, es hermosa', el elemento entre comas que repite la idea del núcleo del sujeto es:""",
     options: [
       r'''Predicativo''',
       r'''Aposición''',
@@ -1418,12 +1572,14 @@ final List<Question> comunicacionQuestions = [
       r'''Modificador directo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La aposición explica o especifica al núcleo del sujeto y se escribe generalmente entre comas (aposición explicativa).''',
+    explanation:
+        r'''La aposición explica o especifica al núcleo del sujeto y se escribe generalmente entre comas (aposición explicativa).''',
   ),
   Question(
     id: 'com_q118',
     topicId: 'com_t1',
-    text: r"""Identifique el tipo de coma empleada en la oración: 'Julio estudia medicina; Pedro, ingeniería':""",
+    text:
+        r"""Identifique el tipo de coma empleada en la oración: 'Julio estudia medicina; Pedro, ingeniería':""",
     options: [
       r'''Coma vocativa''',
       r'''Coma hiperbática''',
@@ -1432,12 +1588,14 @@ final List<Question> comunicacionQuestions = [
       r'''Coma elíptica''',
     ],
     correctAnswer: 4,
-    explanation: r'''La coma elíptica se utiliza para reemplazar a un verbo que ya se ha mencionado anteriormente en la oración.''',
+    explanation:
+        r'''La coma elíptica se utiliza para reemplazar a un verbo que ya se ha mencionado anteriormente en la oración.''',
   ),
   Question(
     id: 'com_q119',
     topicId: 'com_t1',
-    text: r"""En la oración 'Soldados, cumplan con su deber patriótico', la coma utilizada después del elemento al que nos dirigimos se llama:""",
+    text:
+        r"""En la oración 'Soldados, cumplan con su deber patriótico', la coma utilizada después del elemento al que nos dirigimos se llama:""",
     options: [
       r'''Coma incidental''',
       r'''Coma vocativa''',
@@ -1446,12 +1604,14 @@ final List<Question> comunicacionQuestions = [
       r'''Coma hiperbática''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coma vocativa aísla al vocativo, que es la palabra que sirve para llamar o dirigirse al interlocutor.''',
+    explanation:
+        r'''La coma vocativa aísla al vocativo, que es la palabra que sirve para llamar o dirigirse al interlocutor.''',
   ),
   Question(
     id: 'com_q120',
     topicId: 'com_t1',
-    text: r'''Cuando se altera el orden lógico de los elementos de la oración y se escribe primero el circunstancial, se debe colocar una:''',
+    text:
+        r'''Cuando se altera el orden lógico de los elementos de la oración y se escribe primero el circunstancial, se debe colocar una:''',
     options: [
       r'''Coma enumerativa''',
       r'''Coma hiperbática''',
@@ -1460,12 +1620,14 @@ final List<Question> comunicacionQuestions = [
       r'''Coma vocativa''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coma hiperbática señala la alteración del orden natural (Sujeto + Verbo + Complementos) al adelantar un complemento.''',
+    explanation:
+        r'''La coma hiperbática señala la alteración del orden natural (Sujeto + Verbo + Complementos) al adelantar un complemento.''',
   ),
   Question(
     id: 'com_q121',
     topicId: 'com_t1',
-    text: r'''¿Qué signo de puntuación debe colocarse antes de una cita textual transcrita literalmente entre comillas?''',
+    text:
+        r'''¿Qué signo de puntuación debe colocarse antes de una cita textual transcrita literalmente entre comillas?''',
     options: [
       r'''Coma''',
       r'''Punto y coma''',
@@ -1474,12 +1636,14 @@ final List<Question> comunicacionQuestions = [
       r'''Punto seguido''',
     ],
     correctAnswer: 3,
-    explanation: r'''Se emplean los dos puntos para introducir una cita textual que va a continuación.''',
+    explanation:
+        r'''Se emplean los dos puntos para introducir una cita textual que va a continuación.''',
   ),
   Question(
     id: 'com_q122',
     topicId: 'com_t1',
-    text: r'''Aquella oración que posee un sujeto que no está explícitamente escrito pero se sobreentiende por la terminación verbal es:''',
+    text:
+        r'''Aquella oración que posee un sujeto que no está explícitamente escrito pero se sobreentiende por la terminación verbal es:''',
     options: [
       r'''Sujeto simple''',
       r'''Sujeto paciente''',
@@ -1488,12 +1652,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sujeto tácito''',
     ],
     correctAnswer: 4,
-    explanation: r'''El sujeto tácito u omitido es aquel que no aparece escrito en la oración pero se infiere por la desinencia del verbo.''',
+    explanation:
+        r'''El sujeto tácito u omitido es aquel que no aparece escrito en la oración pero se infiere por la desinencia del verbo.''',
   ),
   Question(
     id: 'com_q123',
     topicId: 'com_t1',
-    text: r"""En la oración 'La Policía Nacional capturó al delincuente', la frase 'al delincuente' cumple la función sintáctica de:""",
+    text:
+        r"""En la oración 'La Policía Nacional capturó al delincuente', la frase 'al delincuente' cumple la función sintáctica de:""",
     options: [
       r'''Objeto indirecto''',
       r'''Predicativo obligatorio''',
@@ -1502,12 +1668,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sujeto pasivo''',
     ],
     correctAnswer: 2,
-    explanation: r'''El objeto directo recibe directamente la acción del verbo. Se reconoce preguntando ¿qué es lo que + verbo? o sustituyendo por los pronombres lo/la/los/las.''',
+    explanation:
+        r'''El objeto directo recibe directamente la acción del verbo. Se reconoce preguntando ¿qué es lo que + verbo? o sustituyendo por los pronombres lo/la/los/las.''',
   ),
   Question(
     id: 'com_q124',
     topicId: 'com_t1',
-    text: r"""En la oración pasiva 'El delincuente fue capturado por el alférez', la frase 'por el alférez' realiza la función de:""",
+    text:
+        r"""En la oración pasiva 'El delincuente fue capturado por el alférez', la frase 'por el alférez' realiza la función de:""",
     options: [
       r'''Objeto directo''',
       r'''Complemento agente''',
@@ -1516,12 +1684,14 @@ final List<Question> comunicacionQuestions = [
       r'''Predicativo subjetivo''',
     ],
     correctAnswer: 1,
-    explanation: r"""El complemento agente realiza la acción del verbo en las oraciones pasivas, y va encabezado por la preposición 'por'.""",
+    explanation:
+        r"""El complemento agente realiza la acción del verbo en las oraciones pasivas, y va encabezado por la preposición 'por'.""",
   ),
   Question(
     id: 'com_q125',
     topicId: 'com_t1',
-    text: r'''El verbo que exige obligatoriamente la presencia de un objeto directo para completar su sentido pleno se clasifica como:''',
+    text:
+        r'''El verbo que exige obligatoriamente la presencia de un objeto directo para completar su sentido pleno se clasifica como:''',
     options: [
       r'''Verbo intransitivo''',
       r'''Verbo transitivo''',
@@ -1530,12 +1700,14 @@ final List<Question> comunicacionQuestions = [
       r'''Verbo defectivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los verbos transitivos son aquellos que transfieren su acción a un objeto directo.''',
+    explanation:
+        r'''Los verbos transitivos son aquellos que transfieren su acción a un objeto directo.''',
   ),
   Question(
     id: 'com_q127',
     topicId: 'com_t1',
-    text: r"""En la oración compuesta 'Quien estudie a conciencia ingresará a la PNP', la proposición 'Quien estudie a conciencia' funciona como:""",
+    text:
+        r"""En la oración compuesta 'Quien estudie a conciencia ingresará a la PNP', la proposición 'Quien estudie a conciencia' funciona como:""",
     options: [
       r'''Oración subordinada adverbial de tiempo''',
       r'''Oración simple''',
@@ -1544,12 +1716,14 @@ final List<Question> comunicacionQuestions = [
       r'''Oración coordinada copulativa''',
     ],
     correctAnswer: 2,
-    explanation: r"""Funciona como sujeto del verbo principal ('ingresará'), por lo que equivale sintácticamente a un sustantivo.""",
+    explanation:
+        r"""Funciona como sujeto del verbo principal ('ingresará'), por lo que equivale sintácticamente a un sustantivo.""",
   ),
   Question(
     id: 'com_q128',
     topicId: 'com_t1',
-    text: r'''La categoría gramatical variable que designa seres, objetos, ideas o sentimientos de la realidad es el:''',
+    text:
+        r'''La categoría gramatical variable que designa seres, objetos, ideas o sentimientos de la realidad es el:''',
     options: [
       r'''Sustantivo''',
       r'''Adverbio''',
@@ -1558,7 +1732,8 @@ final List<Question> comunicacionQuestions = [
       r'''Pronombre''',
     ],
     correctAnswer: 0,
-    explanation: r'''El sustantivo (o nombre) cumple la función de núcleo del sujeto en la oración.''',
+    explanation:
+        r'''El sustantivo (o nombre) cumple la función de núcleo del sujeto en la oración.''',
   ),
   Question(
     id: 'com_q159',
@@ -1571,7 +1746,8 @@ final List<Question> comunicacionQuestions = [
       r'''El examen de admisión fue riguroso.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La oración unimembre no puede dividirse en sujeto y predicado. El verbo llover, al referirse a un fenómeno meteorológico, es impersonal.''',
+    explanation:
+        r'''La oración unimembre no puede dividirse en sujeto y predicado. El verbo llover, al referirse a un fenómeno meteorológico, es impersonal.''',
   ),
   Question(
     id: 'com_q160',
@@ -1584,12 +1760,14 @@ final List<Question> comunicacionQuestions = [
       r'''Prohibido fumar.''',
     ],
     correctAnswer: 2,
-    explanation: r"""Una oración bimembre puede dividirse en sujeto ('El instructor') y predicado ('revisó los expedientes').""",
+    explanation:
+        r"""Una oración bimembre puede dividirse en sujeto ('El instructor') y predicado ('revisó los expedientes').""",
   ),
   Question(
     id: 'com_q161',
     topicId: 'com_t2',
-    text: r'''¿Cuál es la diferencia principal entre una frase y una oración?''',
+    text:
+        r'''¿Cuál es la diferencia principal entre una frase y una oración?''',
     options: [
       r'''La frase siempre tiene verbo, la oración no.''',
       r'''La oración tiene sentido completo e independencia sintáctica, la frase no posee un verbo conjugado en forma personal.''',
@@ -1597,7 +1775,8 @@ final List<Question> comunicacionQuestions = [
       r'''Ambas son idénticas en la sintaxis española.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La oración posee un verbo conjugado que le otorga sentido completo e independencia sintáctica, mientras que la frase carece de él (ej. 'Mesa de madera').""",
+    explanation:
+        r"""La oración posee un verbo conjugado que le otorga sentido completo e independencia sintáctica, mientras que la frase carece de él (ej. 'Mesa de madera').""",
   ),
   Question(
     id: 'com_q162',
@@ -1610,12 +1789,14 @@ final List<Question> comunicacionQuestions = [
       r'''Es un conjunto de oraciones simples.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La proposición es una estructura sintáctica con sujeto y predicado que se integra dentro de una oración compuesta, careciendo de independencia total.''',
+    explanation:
+        r'''La proposición es una estructura sintáctica con sujeto y predicado que se integra dentro de una oración compuesta, careciendo de independencia total.''',
   ),
   Question(
     id: 'com_q163',
     topicId: 'com_t2',
-    text: r"""En la oración 'Llegamos tarde al relevo de guardia', ¿qué tipo de sujeto se presenta?""",
+    text:
+        r"""En la oración 'Llegamos tarde al relevo de guardia', ¿qué tipo de sujeto se presenta?""",
     options: [
       r'''Sujeto expreso''',
       r'''Sujeto tácito''',
@@ -1623,25 +1804,24 @@ final List<Question> comunicacionQuestions = [
       r'''Sujeto paciente''',
     ],
     correctAnswer: 1,
-    explanation: r"""El sujeto no está escrito en la oración, pero se sobreentiende por la terminación del verbo ('nosotros'). Es un sujeto tácito o desinencial.""",
+    explanation:
+        r"""El sujeto no está escrito en la oración, pero se sobreentiende por la terminación del verbo ('nosotros'). Es un sujeto tácito o desinencial.""",
   ),
   Question(
     id: 'com_q164',
     topicId: 'com_t2',
-    text: r"""Identifique el núcleo del sujeto en la oración: 'El valiente policía de tránsito auxilió al peatón'.""",
-    options: [
-      r'''valiente''',
-      r'''tránsito''',
-      r'''policía''',
-      r'''peatón''',
-    ],
+    text:
+        r"""Identifique el núcleo del sujeto en la oración: 'El valiente policía de tránsito auxilió al peatón'.""",
+    options: [r'''valiente''', r'''tránsito''', r'''policía''', r'''peatón'''],
     correctAnswer: 2,
-    explanation: r"""El núcleo del sujeto es el sustantivo principal de quien se habla en la oración, en este caso 'policía'.""",
+    explanation:
+        r"""El núcleo del sujeto es el sustantivo principal de quien se habla en la oración, en este caso 'policía'.""",
   ),
   Question(
     id: 'com_q165',
     topicId: 'com_t2',
-    text: r"""¿Qué elemento cumple la función de modificador directo (MD) en el sujeto 'Las armas reglamentarias'?""",
+    text:
+        r"""¿Qué elemento cumple la función de modificador directo (MD) en el sujeto 'Las armas reglamentarias'?""",
     options: [
       r'''Las''',
       r'''armas''',
@@ -1649,12 +1829,14 @@ final List<Question> comunicacionQuestions = [
       r'''Las / reglamentarias''',
     ],
     correctAnswer: 3,
-    explanation: r"""Los determinantes ('Las') y los adjetivos ('reglamentarias') se unen directamente al núcleo del sujeto ('armas'), funcionando como modificadores directos.""",
+    explanation:
+        r"""Los determinantes ('Las') y los adjetivos ('reglamentarias') se unen directamente al núcleo del sujeto ('armas'), funcionando como modificadores directos.""",
   ),
   Question(
     id: 'com_q166',
     topicId: 'com_t2',
-    text: r"""En la oración 'El oficial de guardia recibió el parte', ¿qué función cumple 'de guardia'?""",
+    text:
+        r"""En la oración 'El oficial de guardia recibió el parte', ¿qué función cumple 'de guardia'?""",
     options: [
       r'''Modificador directo''',
       r'''Modificador indirecto''',
@@ -1662,7 +1844,8 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto directo''',
     ],
     correctAnswer: 1,
-    explanation: r"""Es un modificador indirecto (MI) porque se une al núcleo del sujeto ('oficial') mediante un nexo o enlace preposicional ('de').""",
+    explanation:
+        r"""Es un modificador indirecto (MI) porque se une al núcleo del sujeto ('oficial') mediante un nexo o enlace preposicional ('de').""",
   ),
   Question(
     id: 'com_q167',
@@ -1675,7 +1858,8 @@ final List<Question> comunicacionQuestions = [
       r'''Las patrullas de la comisaría salieron.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La aposición explicativa ('la Ciudad Blanca') va entre comas y repite o aclara el significado del núcleo del sujeto ('Arequipa').""",
+    explanation:
+        r"""La aposición explicativa ('la Ciudad Blanca') va entre comas y repite o aclara el significado del núcleo del sujeto ('Arequipa').""",
   ),
   Question(
     id: 'com_q168',
@@ -1688,12 +1872,14 @@ final List<Question> comunicacionQuestions = [
       r'''Nosotros patrullamos las calles.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El sujeto paciente ('El sospechoso') recibe la acción del verbo en una oración en voz pasiva.""",
+    explanation:
+        r"""El sujeto paciente ('El sospechoso') recibe la acción del verbo en una oración en voz pasiva.""",
   ),
   Question(
     id: 'com_q169',
     topicId: 'com_t2',
-    text: r"""En la oración 'Los testigos presenciales declararon la verdad', ¿cuál es el núcleo del predicado?""",
+    text:
+        r"""En la oración 'Los testigos presenciales declararon la verdad', ¿cuál es el núcleo del predicado?""",
     options: [
       r'''testigos''',
       r'''declararon''',
@@ -1701,12 +1887,14 @@ final List<Question> comunicacionQuestions = [
       r'''verdad''',
     ],
     correctAnswer: 1,
-    explanation: r"""El núcleo del predicado (NP) es siempre un verbo personal o conjugado, en este caso 'declararon'.""",
+    explanation:
+        r"""El núcleo del predicado (NP) es siempre un verbo personal o conjugado, en este caso 'declararon'.""",
   ),
   Question(
     id: 'com_q170',
     topicId: 'com_t2',
-    text: r"""En la oración 'El detective encontró las huellas en el arma', ¿cuál es el objeto directo?""",
+    text:
+        r"""En la oración 'El detective encontró las huellas en el arma', ¿cuál es el objeto directo?""",
     options: [
       r'''El detective''',
       r'''encontró''',
@@ -1714,12 +1902,14 @@ final List<Question> comunicacionQuestions = [
       r'''en el arma''',
     ],
     correctAnswer: 2,
-    explanation: r'''El objeto directo (OD) es quien recibe directamente la acción del verbo transitivo. Se reconoce preguntando ¿Qué es lo que + verbo? (¿Qué es lo que encontró? -> las huellas).''',
+    explanation:
+        r'''El objeto directo (OD) es quien recibe directamente la acción del verbo transitivo. Se reconoce preguntando ¿Qué es lo que + verbo? (¿Qué es lo que encontró? -> las huellas).''',
   ),
   Question(
     id: 'com_q171',
     topicId: 'com_t2',
-    text: r"""En la oración 'El juez dictó sentencia al acusado', ¿cuál es el objeto indirecto?""",
+    text:
+        r"""En la oración 'El juez dictó sentencia al acusado', ¿cuál es el objeto indirecto?""",
     options: [
       r'''El juez''',
       r'''dictó''',
@@ -1727,12 +1917,14 @@ final List<Question> comunicacionQuestions = [
       r'''al acusado''',
     ],
     correctAnswer: 3,
-    explanation: r'''El objeto indirecto (OI) indica quién se beneficia o perjudica con la acción del verbo. Se reconoce con ¿A quién o para quién? (¿A quién dictó sentencia? -> al acusado).''',
+    explanation:
+        r'''El objeto indirecto (OI) indica quién se beneficia o perjudica con la acción del verbo. Se reconoce con ¿A quién o para quién? (¿A quién dictó sentencia? -> al acusado).''',
   ),
   Question(
     id: 'com_q173',
     topicId: 'com_t2',
-    text: r"""En 'El acta fue redactada por el instructor', la frase subrayada 'por el instructor' cumple la función de:""",
+    text:
+        r"""En 'El acta fue redactada por el instructor', la frase subrayada 'por el instructor' cumple la función de:""",
     options: [
       r'''Sujeto''',
       r'''Objeto directo''',
@@ -1740,7 +1932,8 @@ final List<Question> comunicacionQuestions = [
       r'''Circunstancial de modo''',
     ],
     correctAnswer: 2,
-    explanation: r"""El complemento agente aparece en las oraciones en voz pasiva, va encabezado por la preposición 'por' y nombra al que realiza la acción.""",
+    explanation:
+        r"""El complemento agente aparece en las oraciones en voz pasiva, va encabezado por la preposición 'por' y nombra al que realiza la acción.""",
   ),
   Question(
     id: 'com_q174',
@@ -1753,7 +1946,8 @@ final List<Question> comunicacionQuestions = [
       r'''Comiencen el operativo ahora mismo.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las oraciones enunciativas (o declarativas) informan de un hecho de manera objetiva, ya sea afirmándolo o negándolo.''',
+    explanation:
+        r'''Las oraciones enunciativas (o declarativas) informan de un hecho de manera objetiva, ya sea afirmándolo o negándolo.''',
   ),
   Question(
     id: 'com_q175',
@@ -1766,7 +1960,8 @@ final List<Question> comunicacionQuestions = [
       r'''¡Cuánto tiempo sin verte!''',
     ],
     correctAnswer: 1,
-    explanation: r"""La interrogativa indirecta carece de signos de interrogación pero mantiene la intención de preguntar y utiliza pronombres/adverbios interrogativos con tilde ('dónde').""",
+    explanation:
+        r"""La interrogativa indirecta carece de signos de interrogación pero mantiene la intención de preguntar y utiliza pronombres/adverbios interrogativos con tilde ('dónde').""",
   ),
   Question(
     id: 'com_q176',
@@ -1779,7 +1974,8 @@ final List<Question> comunicacionQuestions = [
       r'''Una afirmación o negación.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las oraciones exclamativas se caracterizan por expresar las emociones del hablante (sorpresa, dolor, alegría) y suelen usar signos de exclamación.''',
+    explanation:
+        r'''Las oraciones exclamativas se caracterizan por expresar las emociones del hablante (sorpresa, dolor, alegría) y suelen usar signos de exclamación.''',
   ),
   Question(
     id: 'com_q177',
@@ -1792,12 +1988,14 @@ final List<Question> comunicacionQuestions = [
       r'''Asegura el perímetro.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Las oraciones desiderativas expresan un deseo, por lo que frecuentemente usan palabras como 'ojalá' o verbos en modo subjuntivo.""",
+    explanation:
+        r"""Las oraciones desiderativas expresan un deseo, por lo que frecuentemente usan palabras como 'ojalá' o verbos en modo subjuntivo.""",
   ),
   Question(
     id: 'com_q178',
     topicId: 'com_t2',
-    text: r"""La oración '¡Deténgase inmediatamente y levante las manos!' se clasifica como:""",
+    text:
+        r"""La oración '¡Deténgase inmediatamente y levante las manos!' se clasifica como:""",
     options: [
       r'''Exclamativa''',
       r'''Dubitativa''',
@@ -1805,7 +2003,8 @@ final List<Question> comunicacionQuestions = [
       r'''Enunciativa''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las oraciones imperativas o exhortativas expresan un mandato, orden, ruego o consejo.''',
+    explanation:
+        r'''Las oraciones imperativas o exhortativas expresan un mandato, orden, ruego o consejo.''',
   ),
   Question(
     id: 'com_q179',
@@ -1818,7 +2017,8 @@ final List<Question> comunicacionQuestions = [
       r'''luego, por lo tanto''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las conjunciones copulativas (y, e, ni) enlazan proposiciones sumando o acumulando sus significados.''',
+    explanation:
+        r'''Las conjunciones copulativas (y, e, ni) enlazan proposiciones sumando o acumulando sus significados.''',
   ),
   Question(
     id: 'com_q180',
@@ -1831,12 +2031,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hay pruebas, por consiguiente, será procesado.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La oración disyuntiva presenta alternativas u opciones que se excluyen entre sí, unidas por los nexos 'o', 'u'.""",
+    explanation:
+        r"""La oración disyuntiva presenta alternativas u opciones que se excluyen entre sí, unidas por los nexos 'o', 'u'.""",
   ),
   Question(
     id: 'com_q181',
     topicId: 'com_t2',
-    text: r"""En 'Llegamos a tiempo, mas el incidente ya había terminado', se presenta una oración:""",
+    text:
+        r"""En 'Llegamos a tiempo, mas el incidente ya había terminado', se presenta una oración:""",
     options: [
       r'''Coordinada adversativa''',
       r'''Coordinada ilativa''',
@@ -1844,7 +2046,8 @@ final List<Question> comunicacionQuestions = [
       r'''Coordinada copulativa''',
     ],
     correctAnswer: 0,
-    explanation: r"""Es adversativa porque usa el nexo 'mas' (sin tilde, equivalente a 'pero') que indica oposición o contrariedad.""",
+    explanation:
+        r"""Es adversativa porque usa el nexo 'mas' (sin tilde, equivalente a 'pero') que indica oposición o contrariedad.""",
   ),
   Question(
     id: 'com_q182',
@@ -1857,7 +2060,8 @@ final List<Question> comunicacionQuestions = [
       r'''No fue Pedro, sino que fue Juan.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Las ilativas o consecutivas indican que la segunda proposición es consecuencia lógica de la primera (nexo 'por lo tanto').""",
+    explanation:
+        r"""Las ilativas o consecutivas indican que la segunda proposición es consecuencia lógica de la primera (nexo 'por lo tanto').""",
   ),
   Question(
     id: 'com_q183',
@@ -1870,12 +2074,14 @@ final List<Question> comunicacionQuestions = [
       r'''Río y salto sin parar.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las distributivas presentan acciones alternativas que no se excluyen, usando correlativos como 'unos... otros...', 'ya... ya...'.""",
+    explanation:
+        r"""Las distributivas presentan acciones alternativas que no se excluyen, usando correlativos como 'unos... otros...', 'ya... ya...'.""",
   ),
   Question(
     id: 'com_q184',
     topicId: 'com_t2',
-    text: r"""En la oración 'Quien tenga información debe acercarse a la comisaría', la proposición subordinada cumple función de:""",
+    text:
+        r"""En la oración 'Quien tenga información debe acercarse a la comisaría', la proposición subordinada cumple función de:""",
     options: [
       r'''Sujeto''',
       r'''Objeto directo''',
@@ -1883,7 +2089,8 @@ final List<Question> comunicacionQuestions = [
       r'''Atributo''',
     ],
     correctAnswer: 0,
-    explanation: r"""La subordinada sustantiva 'Quien tenga información' puede reemplazarse por un pronombre como 'Él' y funciona como el sujeto del verbo 'debe acercarse'.""",
+    explanation:
+        r"""La subordinada sustantiva 'Quien tenga información' puede reemplazarse por un pronombre como 'Él' y funciona como el sujeto del verbo 'debe acercarse'.""",
   ),
   Question(
     id: 'com_q185',
@@ -1896,12 +2103,14 @@ final List<Question> comunicacionQuestions = [
       r'''Es necesario que estudies más.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La proposición 'que fue robado ayer' modifica al sustantivo 'vehículo', cumpliendo la función de un adjetivo (vehículo robado).""",
+    explanation:
+        r"""La proposición 'que fue robado ayer' modifica al sustantivo 'vehículo', cumpliendo la función de un adjetivo (vehículo robado).""",
   ),
   Question(
     id: 'com_q186',
     topicId: 'com_t2',
-    text: r'''Identifique la oración que contiene una subordinada adverbial de tiempo.''',
+    text:
+        r'''Identifique la oración que contiene una subordinada adverbial de tiempo.''',
     options: [
       r'''El lugar donde ocurrió el robo está acordonado.''',
       r'''Actuaremos cuando el comandante dé la orden.''',
@@ -1909,12 +2118,14 @@ final List<Question> comunicacionQuestions = [
       r'''No saldremos porque está lloviendo.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La proposición 'cuando el comandante dé la orden' funciona como un circunstancial de tiempo, modificando al verbo 'Actuaremos'.""",
+    explanation:
+        r"""La proposición 'cuando el comandante dé la orden' funciona como un circunstancial de tiempo, modificando al verbo 'Actuaremos'.""",
   ),
   Question(
     id: 'com_q187',
     topicId: 'com_t2',
-    text: r'''¿Qué categoría gramatical es el núcleo sintáctico de la frase nominal (sujeto)?''',
+    text:
+        r'''¿Qué categoría gramatical es el núcleo sintáctico de la frase nominal (sujeto)?''',
     options: [
       r'''El adjetivo''',
       r'''El verbo''',
@@ -1922,12 +2133,14 @@ final List<Question> comunicacionQuestions = [
       r'''El adverbio''',
     ],
     correctAnswer: 2,
-    explanation: r'''El sustantivo, o cualquier palabra sustantivada como un pronombre, es la categoría gramatical que funciona como núcleo del sujeto.''',
+    explanation:
+        r'''El sustantivo, o cualquier palabra sustantivada como un pronombre, es la categoría gramatical que funciona como núcleo del sujeto.''',
   ),
   Question(
     id: 'com_q188',
     topicId: 'com_t2',
-    text: r"""En 'Hubo un fuerte tiroteo', la palabra 'fuerte' funciona como:""",
+    text:
+        r"""En 'Hubo un fuerte tiroteo', la palabra 'fuerte' funciona como:""",
     options: [
       r'''Sustantivo''',
       r'''Adjetivo calificativo''',
@@ -1935,12 +2148,14 @@ final List<Question> comunicacionQuestions = [
       r'''Verbo''',
     ],
     correctAnswer: 1,
-    explanation: r"""'Fuerte' modifica al sustantivo 'tiroteo', otorgándole una cualidad, por lo que es un adjetivo calificativo.""",
+    explanation:
+        r"""'Fuerte' modifica al sustantivo 'tiroteo', otorgándole una cualidad, por lo que es un adjetivo calificativo.""",
   ),
   Question(
     id: 'com_q189',
     topicId: 'com_t2',
-    text: r"""El verbo en la oración 'Es posible que él apruebe' está en modo:""",
+    text:
+        r"""El verbo en la oración 'Es posible que él apruebe' está en modo:""",
     options: [
       r'''Indicativo''',
       r'''Subjuntivo''',
@@ -1948,12 +2163,14 @@ final List<Question> comunicacionQuestions = [
       r'''Condicional''',
     ],
     correctAnswer: 1,
-    explanation: r"""El verbo 'apruebe' está en modo subjuntivo, ya que expresa una posibilidad, duda o deseo, no un hecho real u objetivo.""",
+    explanation:
+        r"""El verbo 'apruebe' está en modo subjuntivo, ya que expresa una posibilidad, duda o deseo, no un hecho real u objetivo.""",
   ),
   Question(
     id: 'com_q190',
     topicId: 'com_t2',
-    text: r"""La palabra 'sigilosamente' en 'El efectivo procedió sigilosamente' es un:""",
+    text:
+        r"""La palabra 'sigilosamente' en 'El efectivo procedió sigilosamente' es un:""",
     options: [
       r'''Adjetivo''',
       r'''Adverbio de modo''',
@@ -1961,12 +2178,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sustantivo abstracto''',
     ],
     correctAnswer: 1,
-    explanation: r"""Las palabras terminadas en '-mente' derivadas de adjetivos suelen ser adverbios de modo. Responde a la pregunta ¿Cómo procedió?.""",
+    explanation:
+        r"""Las palabras terminadas en '-mente' derivadas de adjetivos suelen ser adverbios de modo. Responde a la pregunta ¿Cómo procedió?.""",
   ),
   Question(
     id: 'com_q191',
     topicId: 'com_t2',
-    text: r'''¿Qué categoría gramatical tiene la función principal de reemplazar al nombre o sustantivo?''',
+    text:
+        r'''¿Qué categoría gramatical tiene la función principal de reemplazar al nombre o sustantivo?''',
     options: [
       r'''El artículo''',
       r'''El adjetivo''',
@@ -1974,12 +2193,14 @@ final List<Question> comunicacionQuestions = [
       r'''El pronombre''',
     ],
     correctAnswer: 3,
-    explanation: r'''El pronombre (ej. yo, tú, él, eso) sustituye al sustantivo para evitar repeticiones y asume sus funciones sintácticas.''',
+    explanation:
+        r'''El pronombre (ej. yo, tú, él, eso) sustituye al sustantivo para evitar repeticiones y asume sus funciones sintácticas.''',
   ),
   Question(
     id: 'com_q193',
     topicId: 'com_t2',
-    text: r'''¿Qué categoría gramatical funciona estrictamente como nexo coordinante o subordinante en la oración?''',
+    text:
+        r'''¿Qué categoría gramatical funciona estrictamente como nexo coordinante o subordinante en la oración?''',
     options: [
       r'''El adverbio''',
       r'''La conjunción''',
@@ -1987,12 +2208,14 @@ final List<Question> comunicacionQuestions = [
       r'''El pronombre''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las conjunciones (y, o, pero, porque, si) sirven exclusivamente como nexos para unir palabras o proposiciones.''',
+    explanation:
+        r'''Las conjunciones (y, o, pero, porque, si) sirven exclusivamente como nexos para unir palabras o proposiciones.''',
   ),
   Question(
     id: 'com_q194',
     topicId: 'com_t2',
-    text: r"""En la oración 'A los nuevos cadetes les entregaron los uniformes', ¿cuál es el sujeto?""",
+    text:
+        r"""En la oración 'A los nuevos cadetes les entregaron los uniformes', ¿cuál es el sujeto?""",
     options: [
       r'''A los nuevos cadetes''',
       r'''les''',
@@ -2000,12 +2223,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sujeto tácito (ellos/ellas)''',
     ],
     correctAnswer: 3,
-    explanation: r"""El sujeto es tácito (ellos). 'A los nuevos cadetes' y 'les' funcionan como objeto indirecto, y 'los uniformes' como objeto directo.""",
+    explanation:
+        r"""El sujeto es tácito (ellos). 'A los nuevos cadetes' y 'les' funcionan como objeto indirecto, y 'los uniformes' como objeto directo.""",
   ),
   Question(
     id: 'com_q195',
     topicId: 'com_t2',
-    text: r'''¿Cuál es la diferencia sintáctica entre una oración compuesta y una proposición?''',
+    text:
+        r'''¿Cuál es la diferencia sintáctica entre una oración compuesta y una proposición?''',
     options: [
       r'''La oración compuesta tiene independencia sintáctica, la proposición no.''',
       r'''La proposición tiene sentido completo, la oración compuesta no.''',
@@ -2013,7 +2238,8 @@ final List<Question> comunicacionQuestions = [
       r'''La proposición está separada siempre por un punto.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La oración (simple o compuesta) posee independencia sintáctica y termina en pausa mayor (punto). La proposición se integra dentro de una oración mayor.''',
+    explanation:
+        r'''La oración (simple o compuesta) posee independencia sintáctica y termina en pausa mayor (punto). La proposición se integra dentro de una oración mayor.''',
   ),
   Question(
     id: 'com_q196',
@@ -2026,7 +2252,8 @@ final List<Question> comunicacionQuestions = [
       r'''Ayer llovió y relampagueó intensamente.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El sujeto tiene dos núcleos explícitos ('fiscal' y 'comisario') unidos por una conjunción copulativa.""",
+    explanation:
+        r"""El sujeto tiene dos núcleos explícitos ('fiscal' y 'comisario') unidos por una conjunción copulativa.""",
   ),
   Question(
     id: 'com_q197',
@@ -2039,12 +2266,14 @@ final List<Question> comunicacionQuestions = [
       r'''El General, máximo jefe, dio la orden.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La aposición especificativa ('Rímac') no va entre comas y restringe el significado del núcleo del sujeto ('río') para distinguirlo de otros.""",
+    explanation:
+        r"""La aposición especificativa ('Rímac') no va entre comas y restringe el significado del núcleo del sujeto ('río') para distinguirlo de otros.""",
   ),
   Question(
     id: 'com_q198',
     topicId: 'com_t2',
-    text: r"""En 'Los suboficiales regresaron exhaustos del operativo', la palabra 'exhaustos' funciona como:""",
+    text:
+        r"""En 'Los suboficiales regresaron exhaustos del operativo', la palabra 'exhaustos' funciona como:""",
     options: [
       r'''Circunstancial de modo''',
       r'''Atributo''',
@@ -2052,12 +2281,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto directo''',
     ],
     correctAnswer: 2,
-    explanation: r"""Es un complemento predicativo porque es un adjetivo que modifica tanto al verbo no copulativo ('regresaron') como al sujeto ('Los suboficiales'), concordando en género y número.""",
+    explanation:
+        r"""Es un complemento predicativo porque es un adjetivo que modifica tanto al verbo no copulativo ('regresaron') como al sujeto ('Los suboficiales'), concordando en género y número.""",
   ),
   Question(
     id: 'com_q199',
     topicId: 'com_t2',
-    text: r"""En 'El patrullero asignado es muy veloz', la frase 'muy veloz' es:""",
+    text:
+        r"""En 'El patrullero asignado es muy veloz', la frase 'muy veloz' es:""",
     options: [
       r'''Objeto directo''',
       r'''Atributo''',
@@ -2065,12 +2296,14 @@ final List<Question> comunicacionQuestions = [
       r'''Circunstancial de modo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El atributo es obligatorio con verbos copulativos (ser, estar, parecer) y expresa una cualidad del sujeto.''',
+    explanation:
+        r'''El atributo es obligatorio con verbos copulativos (ser, estar, parecer) y expresa una cualidad del sujeto.''',
   ),
   Question(
     id: 'com_q200',
     topicId: 'com_t2',
-    text: r"""Si pronominalizamos el objeto directo en 'El agente arrestó al delincuente', obtenemos:""",
+    text:
+        r"""Si pronominalizamos el objeto directo en 'El agente arrestó al delincuente', obtenemos:""",
     options: [
       r'''El agente le arrestó.''',
       r'''El agente lo arrestó.''',
@@ -2078,12 +2311,14 @@ final List<Question> comunicacionQuestions = [
       r'''El agente los arrestó.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El OD 'al delincuente' (masculino singular) se reemplaza correctamente por el pronombre átono 'lo'.""",
+    explanation:
+        r"""El OD 'al delincuente' (masculino singular) se reemplaza correctamente por el pronombre átono 'lo'.""",
   ),
   Question(
     id: 'com_q201',
     topicId: 'com_t2',
-    text: r"""Si pronominalizamos el objeto indirecto en 'Informaron sus derechos al detenido', obtenemos:""",
+    text:
+        r"""Si pronominalizamos el objeto indirecto en 'Informaron sus derechos al detenido', obtenemos:""",
     options: [
       r'''Lo informaron sus derechos.''',
       r'''La informaron sus derechos.''',
@@ -2091,12 +2326,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se informaron sus derechos.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El OI 'al detenido' se reemplaza siempre por los pronombres átonos 'le' o 'les' (en este caso 'le' por ser singular).""",
+    explanation:
+        r"""El OI 'al detenido' se reemplaza siempre por los pronombres átonos 'le' o 'les' (en este caso 'le' por ser singular).""",
   ),
   Question(
     id: 'com_q202',
     topicId: 'com_t2',
-    text: r"""Identifique el complemento circunstancial de finalidad en la oración: 'Los cadetes entrenan duramente para el desfile institucional'.""",
+    text:
+        r"""Identifique el complemento circunstancial de finalidad en la oración: 'Los cadetes entrenan duramente para el desfile institucional'.""",
     options: [
       r'''Los cadetes''',
       r'''entrenan duramente''',
@@ -2104,12 +2341,14 @@ final List<Question> comunicacionQuestions = [
       r'''para el desfile institucional''',
     ],
     correctAnswer: 3,
-    explanation: r'''Responde a la pregunta ¿Para qué? y expresa el propósito o finalidad de la acción verbal.''',
+    explanation:
+        r'''Responde a la pregunta ¿Para qué? y expresa el propósito o finalidad de la acción verbal.''',
   ),
   Question(
     id: 'com_q203',
     topicId: 'com_t2',
-    text: r"""En 'Patrulla todas las noches con su compañero', la frase subrayada 'con su compañero' es un:""",
+    text:
+        r"""En 'Patrulla todas las noches con su compañero', la frase subrayada 'con su compañero' es un:""",
     options: [
       r'''Circunstancial de instrumento''',
       r'''Circunstancial de compañía''',
@@ -2117,7 +2356,8 @@ final List<Question> comunicacionQuestions = [
       r'''Agente''',
     ],
     correctAnswer: 1,
-    explanation: r"""El circunstancial de compañía indica con quién se realiza la acción y va introducido por la preposición 'con'.""",
+    explanation:
+        r"""El circunstancial de compañía indica con quién se realiza la acción y va introducido por la preposición 'con'.""",
   ),
   Question(
     id: 'com_q204',
@@ -2130,12 +2370,14 @@ final List<Question> comunicacionQuestions = [
       r'''¿Será culpable de los cargos?''',
     ],
     correctAnswer: 1,
-    explanation: r"""Las oraciones dubitativas expresan duda o probabilidad y suelen usar adverbios como 'quizá', 'tal vez', 'acaso'.""",
+    explanation:
+        r"""Las oraciones dubitativas expresan duda o probabilidad y suelen usar adverbios como 'quizá', 'tal vez', 'acaso'.""",
   ),
   Question(
     id: 'com_q205',
     topicId: 'com_t2',
-    text: r"""En 'El investigado es menor de edad, es decir, es inimputable', ¿qué tipo de oración compuesta se presenta?""",
+    text:
+        r"""En 'El investigado es menor de edad, es decir, es inimputable', ¿qué tipo de oración compuesta se presenta?""",
     options: [
       r'''Coordinada adversativa''',
       r'''Coordinada ilativa''',
@@ -2143,12 +2385,14 @@ final List<Question> comunicacionQuestions = [
       r'''Subordinada adverbial''',
     ],
     correctAnswer: 2,
-    explanation: r"""Es coordinada explicativa porque la segunda proposición aclara o explica el sentido de la primera, unidas por nexos como 'es decir', 'o sea'.""",
+    explanation:
+        r"""Es coordinada explicativa porque la segunda proposición aclara o explica el sentido de la primera, unidas por nexos como 'es decir', 'o sea'.""",
   ),
   Question(
     id: 'com_q206',
     topicId: 'com_t2',
-    text: r'''¿Qué caracteriza a una oración subordinada adjetiva explicativa frente a la especificativa?''',
+    text:
+        r'''¿Qué caracteriza a una oración subordinada adjetiva explicativa frente a la especificativa?''',
     options: [
       r'''Que no usa pronombres relativos.''',
       r'''Que va entre comas y no restringe el significado del antecedente.''',
@@ -2156,12 +2400,14 @@ final List<Question> comunicacionQuestions = [
       r'''Que restringe y limita el significado del antecedente.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La adjetiva explicativa añade una cualidad al antecedente sin restringir su significado, y siempre se escribe entre comas.''',
+    explanation:
+        r'''La adjetiva explicativa añade una cualidad al antecedente sin restringir su significado, y siempre se escribe entre comas.''',
   ),
   Question(
     id: 'com_q207',
     topicId: 'com_t2',
-    text: r"""En 'El perito tiene que redactar el informe balístico', la estructura 'tiene que redactar' se denomina:""",
+    text:
+        r"""En 'El perito tiene que redactar el informe balístico', la estructura 'tiene que redactar' se denomina:""",
     options: [
       r'''Oración compuesta''',
       r'''Perífrasis verbal''',
@@ -2169,25 +2415,24 @@ final List<Question> comunicacionQuestions = [
       r'''Verbo copulativo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Una perífrasis verbal es la unión de un verbo auxiliar (tiene), un nexo (que) y un verboide principal (redactar) que funcionan como un solo núcleo verbal.''',
+    explanation:
+        r'''Una perífrasis verbal es la unión de un verbo auxiliar (tiene), un nexo (que) y un verboide principal (redactar) que funcionan como un solo núcleo verbal.''',
   ),
   Question(
     id: 'com_q208',
     topicId: 'com_t2',
-    text: r"""Según las reglas de concordancia nominal, complete correctamente: 'Llevaba pantalón y camisa...""",
-    options: [
-      r'''negros''',
-      r'''negras''',
-      r'''negro''',
-      r'''negra''',
-    ],
+    text:
+        r"""Según las reglas de concordancia nominal, complete correctamente: 'Llevaba pantalón y camisa...""",
+    options: [r'''negros''', r'''negras''', r'''negro''', r'''negra'''],
     correctAnswer: 0,
-    explanation: r'''Cuando un adjetivo pospuesto modifica a varios sustantivos de distinto género coordinados entre sí, debe ir en plural y en masculino.''',
+    explanation:
+        r'''Cuando un adjetivo pospuesto modifica a varios sustantivos de distinto género coordinados entre sí, debe ir en plural y en masculino.''',
   ),
   Question(
     id: 'com_q209',
     topicId: 'com_t2',
-    text: r"""En la oración 'Que el sospechoso haya mentido complica severamente la investigación', la proposición subordinada cumple la función de:""",
+    text:
+        r"""En la oración 'Que el sospechoso haya mentido complica severamente la investigación', la proposición subordinada cumple la función de:""",
     options: [
       r'''Objeto Directo''',
       r'''Atributo''',
@@ -2195,12 +2440,14 @@ final List<Question> comunicacionQuestions = [
       r'''Complemento Circunstancial''',
     ],
     correctAnswer: 2,
-    explanation: r"""La subordinada sustantiva 'Que el sospechoso haya mentido' puede sustituirse por el pronombre 'Eso'. 'Eso complica la investigación' evidencia su función de sujeto.""",
+    explanation:
+        r"""La subordinada sustantiva 'Que el sospechoso haya mentido' puede sustituirse por el pronombre 'Eso'. 'Eso complica la investigación' evidencia su función de sujeto.""",
   ),
   Question(
     id: 'com_q210',
     topicId: 'com_t2',
-    text: r"""En 'El testigo presencial afirmó que vio todo el incidente', la proposición subordinada funciona como:""",
+    text:
+        r"""En 'El testigo presencial afirmó que vio todo el incidente', la proposición subordinada funciona como:""",
     options: [
       r'''Sujeto''',
       r'''Objeto Directo''',
@@ -2208,12 +2455,14 @@ final List<Question> comunicacionQuestions = [
       r'''Agente''',
     ],
     correctAnswer: 1,
-    explanation: r"""La subordinada sustantiva 'que vio todo el incidente' responde a ¿Qué afirmó el testigo? y se puede reemplazar por 'lo' (El testigo lo afirmó), por lo que es un OD.""",
+    explanation:
+        r"""La subordinada sustantiva 'que vio todo el incidente' responde a ¿Qué afirmó el testigo? y se puede reemplazar por 'lo' (El testigo lo afirmó), por lo que es un OD.""",
   ),
   Question(
     id: 'com_q211',
     topicId: 'com_t2',
-    text: r"""¿Qué tipo de proposición subordinada se encuentra en 'El escuadrón salió en cuanto escuchó la alarma'?""",
+    text:
+        r"""¿Qué tipo de proposición subordinada se encuentra en 'El escuadrón salió en cuanto escuchó la alarma'?""",
     options: [
       r'''Subordinada adverbial de causa''',
       r'''Subordinada adverbial de tiempo''',
@@ -2221,12 +2470,14 @@ final List<Question> comunicacionQuestions = [
       r'''Subordinada adjetiva''',
     ],
     correctAnswer: 1,
-    explanation: r"""El nexo 'en cuanto' introduce una subordinada adverbial que indica el momento en que se realiza la acción principal (equivalente a 'cuando').""",
+    explanation:
+        r"""El nexo 'en cuanto' introduce una subordinada adverbial que indica el momento en que se realiza la acción principal (equivalente a 'cuando').""",
   ),
   Question(
     id: 'com_q212',
     topicId: 'com_t2',
-    text: r'''Identifique la oración con proposición subordinada adverbial de causa:''',
+    text:
+        r'''Identifique la oración con proposición subordinada adverbial de causa:''',
     options: [
       r'''Fue sancionado administrativamente porque desobedeció una orden superior.''',
       r'''Si desobedeces la orden, serás sancionado.''',
@@ -2234,12 +2485,14 @@ final List<Question> comunicacionQuestions = [
       r'''El oficial ordenó que se levantara un acta.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La conjunción 'porque' introduce la causa o motivo de la acción principal (ser sancionado).""",
+    explanation:
+        r"""La conjunción 'porque' introduce la causa o motivo de la acción principal (ser sancionado).""",
   ),
   Question(
     id: 'com_q213',
     topicId: 'com_t2',
-    text: r'''¿Cuál es la diferencia fundamental entre el modo indicativo y el modo subjuntivo del verbo?''',
+    text:
+        r'''¿Cuál es la diferencia fundamental entre el modo indicativo y el modo subjuntivo del verbo?''',
     options: [
       r'''El indicativo expresa órdenes y el subjuntivo expresa tiempo pasado.''',
       r'''El indicativo expresa hechos reales y objetivos, y el subjuntivo expresa deseos, dudas o posibilidades.''',
@@ -2247,7 +2500,8 @@ final List<Question> comunicacionQuestions = [
       r'''El indicativo carece de tiempos compuestos.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El modo indicativo refleja la actitud objetiva del hablante ante hechos reales (ej. 'Llueve'), mientras que el subjuntivo refleja la subjetividad, deseos o incertidumbres (ej. 'Ojalá llueva').""",
+    explanation:
+        r"""El modo indicativo refleja la actitud objetiva del hablante ante hechos reales (ej. 'Llueve'), mientras que el subjuntivo refleja la subjetividad, deseos o incertidumbres (ej. 'Ojalá llueva').""",
   ),
   Question(
     id: 'com_q214',
@@ -2260,7 +2514,8 @@ final List<Question> comunicacionQuestions = [
       r'''Sirve únicamente como enlace o cópula entre el sujeto y el atributo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los verbos transitivos (como comprar, decir, encontrar) necesitan un objeto directo sobre el que recaiga la acción para completar su sentido lógico.''',
+    explanation:
+        r'''Los verbos transitivos (como comprar, decir, encontrar) necesitan un objeto directo sobre el que recaiga la acción para completar su sentido lógico.''',
   ),
   Question(
     id: 'com_q216',
@@ -2273,12 +2528,14 @@ final List<Question> comunicacionQuestions = [
       r'''Primera, segunda y tercera persona''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las formas no personales del verbo no expresan persona ni número gramatical: infinitivo (-ar, -er, -ir), gerundio (-ando, -iendo) y participio (-ado, -ido, -to, -so, -cho).''',
+    explanation:
+        r'''Las formas no personales del verbo no expresan persona ni número gramatical: infinitivo (-ar, -er, -ir), gerundio (-ando, -iendo) y participio (-ado, -ido, -to, -so, -cho).''',
   ),
   Question(
     id: 'com_q217',
     topicId: 'com_t2',
-    text: r'''¿Cuál de las siguientes oraciones presenta un uso INCORRECTO del gerundio (gerundio de posterioridad)?''',
+    text:
+        r'''¿Cuál de las siguientes oraciones presenta un uso INCORRECTO del gerundio (gerundio de posterioridad)?''',
     options: [
       r'''Entró a la habitación gritando.''',
       r'''El delincuente huyó, siendo capturado horas después.''',
@@ -2286,12 +2543,14 @@ final List<Question> comunicacionQuestions = [
       r'''Caminaba por la calle cantando una canción.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El gerundio debe expresar una acción simultánea o anterior al verbo principal, nunca posterior. 'Huyó y fue capturado' sería lo correcto.""",
+    explanation:
+        r"""El gerundio debe expresar una acción simultánea o anterior al verbo principal, nunca posterior. 'Huyó y fue capturado' sería lo correcto.""",
   ),
   Question(
     id: 'com_q218',
     topicId: 'com_t2',
-    text: r"""En la oración 'Logró aprobar a duras penas', la expresión subrayada es una:""",
+    text:
+        r"""En la oración 'Logró aprobar a duras penas', la expresión subrayada es una:""",
     options: [
       r'''Locución adverbial''',
       r'''Locución prepositiva''',
@@ -2299,7 +2558,8 @@ final List<Question> comunicacionQuestions = [
       r'''Proposición subordinada''',
     ],
     correctAnswer: 0,
-    explanation: r"""'A duras penas' es una frase fija que funciona como un solo adverbio de modo (equivalente a 'difícilmente').""",
+    explanation:
+        r"""'A duras penas' es una frase fija que funciona como un solo adverbio de modo (equivalente a 'difícilmente').""",
   ),
   Question(
     id: 'com_q220',
@@ -2312,7 +2572,8 @@ final List<Question> comunicacionQuestions = [
       r'''Aquel que indica posesión.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los pronombres átonos se denominan enclíticos cuando se posponen y se unen al verbo formando una sola estructura gráfica.''',
+    explanation:
+        r'''Los pronombres átonos se denominan enclíticos cuando se posponen y se unen al verbo formando una sola estructura gráfica.''',
   ),
   Question(
     id: 'com_q221',
@@ -2325,7 +2586,8 @@ final List<Question> comunicacionQuestions = [
       r'''Quiero decirte algo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los proclíticos (Me, lo) van antes del verbo y separados de este en la escritura.''',
+    explanation:
+        r'''Los proclíticos (Me, lo) van antes del verbo y separados de este en la escritura.''',
   ),
   Question(
     id: 'com_q222',
@@ -2338,7 +2600,8 @@ final List<Question> comunicacionQuestions = [
       r'''Pantalón y camisa blancas.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Cuando un adjetivo pospuesto modifica a varios sustantivos coordinados de distinto género, debe escribirse en masculino plural ('blancos').""",
+    explanation:
+        r"""Cuando un adjetivo pospuesto modifica a varios sustantivos coordinados de distinto género, debe escribirse en masculino plural ('blancos').""",
   ),
   Question(
     id: 'com_q223',
@@ -2351,12 +2614,14 @@ final List<Question> comunicacionQuestions = [
       r'''El equipo ganaron el campeonato.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El verbo debe concordar en número y persona con el núcleo del sujeto. Si el núcleo es un sustantivo colectivo en singular ('enjambre', 'jauría', 'equipo', 'gente'), el verbo va en singular.""",
+    explanation:
+        r"""El verbo debe concordar en número y persona con el núcleo del sujeto. Si el núcleo es un sustantivo colectivo en singular ('enjambre', 'jauría', 'equipo', 'gente'), el verbo va en singular.""",
   ),
   Question(
     id: 'com_q224',
     topicId: 'com_t2',
-    text: r'''¿Qué oración presenta un caso de discordancia verbal con sujeto partitivo?''',
+    text:
+        r'''¿Qué oración presenta un caso de discordancia verbal con sujeto partitivo?''',
     options: [
       r'''La mayoría de los presentes votó a favor.''',
       r'''El resto de los agentes se retiró.''',
@@ -2364,7 +2629,8 @@ final List<Question> comunicacionQuestions = [
       r'''El grupo de manifestantes dispersaron la vía.''',
     ],
     correctAnswer: 3,
-    explanation: r"""Con sustantivos partitivos y cuantificadores, el verbo puede ir en singular o plural, PERO con sustantivos colectivos sin modificador partitivo ('El grupo de manifestantes' o 'El grupo'), el verbo estrictamente debe ir en singular ('dispersó'), aunque se admite la pluralidad semántica en ciertos contextos, 'dispersaron' suele considerarse discordancia si se asume 'el grupo' como núcleo cerrado estricto en registros formales.""",
+    explanation:
+        r"""Con sustantivos partitivos y cuantificadores, el verbo puede ir en singular o plural, PERO con sustantivos colectivos sin modificador partitivo ('El grupo de manifestantes' o 'El grupo'), el verbo estrictamente debe ir en singular ('dispersó'), aunque se admite la pluralidad semántica en ciertos contextos, 'dispersaron' suele considerarse discordancia si se asume 'el grupo' como núcleo cerrado estricto en registros formales.""",
   ),
   Question(
     id: 'com_q225',
@@ -2377,7 +2643,8 @@ final List<Question> comunicacionQuestions = [
       r'''La falta de concordancia entre sujeto y verbo.''',
     ],
     correctAnswer: 0,
-    explanation: r"""El dequeísmo consiste en anteponer la preposición 'de' a la conjunción 'que' cuando el verbo no lo exige (ej. 'Pienso de que...' en vez de 'Pienso que...').""",
+    explanation:
+        r"""El dequeísmo consiste en anteponer la preposición 'de' a la conjunción 'que' cuando el verbo no lo exige (ej. 'Pienso de que...' en vez de 'Pienso que...').""",
   ),
   Question(
     id: 'com_q226',
@@ -2390,12 +2657,14 @@ final List<Question> comunicacionQuestions = [
       r'''Acuérdate de que tenemos servicio.''',
     ],
     correctAnswer: 0,
-    explanation: r"""El queísmo es la supresión indebida de una preposición (generalmente 'de') delante de 'que' cuando es exigida por el verbo. Lo correcto es 'Me alegro de que...'.""",
+    explanation:
+        r"""El queísmo es la supresión indebida de una preposición (generalmente 'de') delante de 'que' cuando es exigida por el verbo. Lo correcto es 'Me alegro de que...'.""",
   ),
   Question(
     id: 'com_q227',
     topicId: 'com_t2',
-    text: r"""Marque la oración con uso correcto del verbo 'haber' como impersonal:""",
+    text:
+        r"""Marque la oración con uso correcto del verbo 'haber' como impersonal:""",
     options: [
       r'''Hubieron muchos problemas en el operativo.''',
       r'''Habían demasiadas personas en el lugar.''',
@@ -2403,7 +2672,8 @@ final List<Question> comunicacionQuestions = [
       r'''Van a haber fuertes lluvias.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El verbo 'haber' cuando indica existencia es impersonal y solo se conjuga en tercera persona del singular (hubo, había, habrá), sin importar si el sustantivo que le sigue está en plural.""",
+    explanation:
+        r"""El verbo 'haber' cuando indica existencia es impersonal y solo se conjuga en tercera persona del singular (hubo, había, habrá), sin importar si el sustantivo que le sigue está en plural.""",
   ),
   Question(
     id: 'com_q228',
@@ -2416,7 +2686,8 @@ final List<Question> comunicacionQuestions = [
       r"""Usar 'se' de forma incorrecta.""",
     ],
     correctAnswer: 2,
-    explanation: r"""El leísmo ocurre cuando se emplean los pronombres de objeto indirecto 'le/les' para sustituir un objeto directo (ej. 'A Juan le vi ayer' en lugar de 'A Juan lo vi ayer').""",
+    explanation:
+        r"""El leísmo ocurre cuando se emplean los pronombres de objeto indirecto 'le/les' para sustituir un objeto directo (ej. 'A Juan le vi ayer' en lugar de 'A Juan lo vi ayer').""",
   ),
   Question(
     id: 'com_q229',
@@ -2429,7 +2700,8 @@ final List<Question> comunicacionQuestions = [
       r'''Ella la compró en la tienda.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El laísmo consiste en utilizar los pronombres 'la/las' en función de objeto indirecto. Lo correcto es 'A María le entregué el paquete'.""",
+    explanation:
+        r"""El laísmo consiste en utilizar los pronombres 'la/las' en función de objeto indirecto. Lo correcto es 'A María le entregué el paquete'.""",
   ),
   Question(
     id: 'com_q230',
@@ -2442,12 +2714,14 @@ final List<Question> comunicacionQuestions = [
       r'''La agua frío''',
     ],
     correctAnswer: 1,
-    explanation: r"""Los sustantivos femeninos que empiezan por 'a' tónica exigen el artículo 'el' en singular para evitar cacofonía, pero mantienen su género femenino, por lo que el adjetivo debe ser femenino ('fría').""",
+    explanation:
+        r"""Los sustantivos femeninos que empiezan por 'a' tónica exigen el artículo 'el' en singular para evitar cacofonía, pero mantienen su género femenino, por lo que el adjetivo debe ser femenino ('fría').""",
   ),
   Question(
     id: 'com_q232',
     topicId: 'com_t2',
-    text: r"""En 'El banco fue asaltado por la banda armada', la oración se encuentra en:""",
+    text:
+        r"""En 'El banco fue asaltado por la banda armada', la oración se encuentra en:""",
     options: [
       r'''Voz activa''',
       r'''Voz pasiva''',
@@ -2455,7 +2729,8 @@ final List<Question> comunicacionQuestions = [
       r'''Oración unimembre''',
     ],
     correctAnswer: 1,
-    explanation: r"""Está en voz pasiva porque el sujeto ('El banco') es paciente (recibe la acción) y el verbo tiene estructura perifrástica (ser + participio).""",
+    explanation:
+        r"""Está en voz pasiva porque el sujeto ('El banco') es paciente (recibe la acción) y el verbo tiene estructura perifrástica (ser + participio).""",
   ),
   Question(
     id: 'com_q233',
@@ -2468,12 +2743,14 @@ final List<Question> comunicacionQuestions = [
       r'''El águila majestuoso.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La palabra 'hambre' es femenina y empieza con a tónica; exige 'el' (el hambre), pero los adjetivos y determinantes como 'mucho' mantienen el femenino ('mucha hambre'). 'Este aula' es incorrecto (esta aula). 'El águila majestuosa'.""",
+    explanation:
+        r"""La palabra 'hambre' es femenina y empieza con a tónica; exige 'el' (el hambre), pero los adjetivos y determinantes como 'mucho' mantienen el femenino ('mucha hambre'). 'Este aula' es incorrecto (esta aula). 'El águila majestuosa'.""",
   ),
   Question(
     id: 'com_q234',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) En el atestado: 'Durante la madrugada, el presunto delincuente, alias El Chato, fue capturado por los efectivos', ¿cuál es el sujeto sintáctico?""",
+    text:
+        r"""(Contexto policial) En el atestado: 'Durante la madrugada, el presunto delincuente, alias El Chato, fue capturado por los efectivos', ¿cuál es el sujeto sintáctico?""",
     options: [
       r'''Durante la madrugada''',
       r'''los efectivos''',
@@ -2481,12 +2758,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sujeto tácito''',
     ],
     correctAnswer: 2,
-    explanation: r"""El sujeto de esta oración pasiva (sujeto paciente) es quien recibe la acción del verbo 'fue capturado'.""",
+    explanation:
+        r"""El sujeto de esta oración pasiva (sujeto paciente) es quien recibe la acción del verbo 'fue capturado'.""",
   ),
   Question(
     id: 'com_q235',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) En el acta: 'El oficial de guardia incautó un arma de fuego sin número de serie', ¿qué función cumple 'un arma de fuego sin número de serie'?""",
+    text:
+        r"""(Contexto policial) En el acta: 'El oficial de guardia incautó un arma de fuego sin número de serie', ¿qué función cumple 'un arma de fuego sin número de serie'?""",
     options: [
       r'''Sujeto''',
       r'''Objeto Directo''',
@@ -2494,12 +2773,14 @@ final List<Question> comunicacionQuestions = [
       r'''Atributo''',
     ],
     correctAnswer: 1,
-    explanation: r"""Es el objeto directo. Responde a la pregunta ¿Qué incautó el oficial? y es el elemento directamente afectado por el verbo transitivo 'incautó'.""",
+    explanation:
+        r"""Es el objeto directo. Responde a la pregunta ¿Qué incautó el oficial? y es el elemento directamente afectado por el verbo transitivo 'incautó'.""",
   ),
   Question(
     id: 'com_q238',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Las evidencias recogidas en la escena del crimen fueron procesadas por los peritos de criminalística'. ¿Cuál es el complemento agente?""",
+    text:
+        r"""(Contexto policial) 'Las evidencias recogidas en la escena del crimen fueron procesadas por los peritos de criminalística'. ¿Cuál es el complemento agente?""",
     options: [
       r'''Las evidencias recogidas''',
       r'''en la escena del crimen''',
@@ -2507,12 +2788,14 @@ final List<Question> comunicacionQuestions = [
       r'''por los peritos de criminalística''',
     ],
     correctAnswer: 3,
-    explanation: r"""En la voz pasiva, el agente introduce al ejecutor real de la acción y siempre va precedido por la preposición 'por'.""",
+    explanation:
+        r"""En la voz pasiva, el agente introduce al ejecutor real de la acción y siempre va precedido por la preposición 'por'.""",
   ),
   Question(
     id: 'com_q239',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El vehículo que participó en el asalto fue hallado desmantelado'. La estructura subrayada 'que participó en el asalto' es una proposición subordinada:""",
+    text:
+        r"""(Contexto policial) 'El vehículo que participó en el asalto fue hallado desmantelado'. La estructura subrayada 'que participó en el asalto' es una proposición subordinada:""",
     options: [
       r'''Sustantiva''',
       r'''Adverbial''',
@@ -2520,12 +2803,14 @@ final List<Question> comunicacionQuestions = [
       r'''Coordinada''',
     ],
     correctAnswer: 2,
-    explanation: r"""Es subordinada adjetiva (especificativa) porque modifica al sustantivo antecedente 'vehículo'.""",
+    explanation:
+        r"""Es subordinada adjetiva (especificativa) porque modifica al sustantivo antecedente 'vehículo'.""",
   ),
   Question(
     id: 'com_q240',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) La orden '¡Suelte el arma y levante las manos!' es una oración de tipo semántico:""",
+    text:
+        r"""(Contexto policial) La orden '¡Suelte el arma y levante las manos!' es una oración de tipo semántico:""",
     options: [
       r'''Desiderativa''',
       r'''Imperativa (o exhortativa)''',
@@ -2533,12 +2818,14 @@ final List<Question> comunicacionQuestions = [
       r'''Enunciativa''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las oraciones imperativas o exhortativas sirven para expresar mandatos, órdenes, ruegos o prohibiciones.''',
+    explanation:
+        r'''Las oraciones imperativas o exhortativas sirven para expresar mandatos, órdenes, ruegos o prohibiciones.''',
   ),
   Question(
     id: 'com_q241',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El sospechoso mostró resistencia física, por lo tanto, los agentes emplearon la fuerza proporcional'. Identifique la relación sintáctica.""",
+    text:
+        r"""(Contexto policial) 'El sospechoso mostró resistencia física, por lo tanto, los agentes emplearon la fuerza proporcional'. Identifique la relación sintáctica.""",
     options: [
       r'''Oración coordinada copulativa''',
       r'''Oración coordinada adversativa''',
@@ -2546,12 +2833,14 @@ final List<Question> comunicacionQuestions = [
       r'''Oración subordinada causal''',
     ],
     correctAnswer: 2,
-    explanation: r"""El nexo 'por lo tanto' establece una relación consecutiva o ilativa entre la premisa (resistencia) y la conclusión (empleo de la fuerza).""",
+    explanation:
+        r"""El nexo 'por lo tanto' establece una relación consecutiva o ilativa entre la premisa (resistencia) y la conclusión (empleo de la fuerza).""",
   ),
   Question(
     id: 'com_q242',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El patrullero acudió rápidamente a la emergencia, pero los asaltantes ya habían huido'. Es una oración compuesta:""",
+    text:
+        r"""(Contexto policial) 'El patrullero acudió rápidamente a la emergencia, pero los asaltantes ya habían huido'. Es una oración compuesta:""",
     options: [
       r'''Coordinada disyuntiva''',
       r'''Coordinada adversativa''',
@@ -2559,12 +2848,14 @@ final List<Question> comunicacionQuestions = [
       r'''Coordinada explicativa''',
     ],
     correctAnswer: 1,
-    explanation: r"""La conjunción 'pero' introduce una oposición o contrariedad entre ambas proposiciones (adversativa).""",
+    explanation:
+        r"""La conjunción 'pero' introduce una oposición o contrariedad entre ambas proposiciones (adversativa).""",
   ),
   Question(
     id: 'com_q243',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Quien resulte responsable de la infracción enfrentará un proceso disciplinario riguroso'. La proposición subordinada funciona como:""",
+    text:
+        r"""(Contexto policial) 'Quien resulte responsable de la infracción enfrentará un proceso disciplinario riguroso'. La proposición subordinada funciona como:""",
     options: [
       r'''Objeto Directo''',
       r'''Objeto Indirecto''',
@@ -2572,12 +2863,14 @@ final List<Question> comunicacionQuestions = [
       r'''Predicativo''',
     ],
     correctAnswer: 2,
-    explanation: r"""La proposición sustantiva 'Quien resulte responsable...' se puede reemplazar por 'Él' ('Él enfrentará...'), cumpliendo el rol de sujeto.""",
+    explanation:
+        r"""La proposición sustantiva 'Quien resulte responsable...' se puede reemplazar por 'Él' ('Él enfrentará...'), cumpliendo el rol de sujeto.""",
   ),
   Question(
     id: 'com_q244',
     topicId: 'com_t2',
-    text: r'''(Contexto policial) Identifique la redacción con concordancia gramatical correcta en un parte policial:''',
+    text:
+        r'''(Contexto policial) Identifique la redacción con concordancia gramatical correcta en un parte policial:''',
     options: [
       r'''Se encontró una pistola y un revólver oxidado.''',
       r'''Se encontró una pistola y un revólver oxidadas.''',
@@ -2585,12 +2878,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se encontró un pistola y un revólver oxidado.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El adjetivo pospuesto ('oxidados') que modifica a dos sustantivos de distinto género ('pistola' y 'revólver') debe ir en plural y masculino.""",
+    explanation:
+        r"""El adjetivo pospuesto ('oxidados') que modifica a dos sustantivos de distinto género ('pistola' y 'revólver') debe ir en plural y masculino.""",
   ),
   Question(
     id: 'com_q245',
     topicId: 'com_t2',
-    text: r'''(Contexto policial) Identifique la oración que corrige el dequeísmo en un informe de inteligencia:''',
+    text:
+        r'''(Contexto policial) Identifique la oración que corrige el dequeísmo en un informe de inteligencia:''',
     options: [
       r'''El comisario ordenó de que se intensifique el patrullaje.''',
       r'''El comisario ordenó que se intensifique el patrullaje.''',
@@ -2598,12 +2893,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se informó de que los sospechosos huyeron.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El verbo ordenar es transitivo y exige un objeto directo, no un complemento de régimen. Por lo tanto, no lleva preposición 'de' antes del 'que'.""",
+    explanation:
+        r"""El verbo ordenar es transitivo y exige un objeto directo, no un complemento de régimen. Por lo tanto, no lleva preposición 'de' antes del 'que'.""",
   ),
   Question(
     id: 'com_q246',
     topicId: 'com_t2',
-    text: r'''(Contexto policial) ¿Cuál de las siguientes expresiones en un reporte evita un solecismo común?''',
+    text:
+        r'''(Contexto policial) ¿Cuál de las siguientes expresiones en un reporte evita un solecismo común?''',
     options: [
       r'''Hubieron diez detenidos durante la requisa.''',
       r'''Habían muchas evidencias en la escena.''',
@@ -2611,12 +2908,14 @@ final List<Question> comunicacionQuestions = [
       r'''Van a haber operativos este fin de semana.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El verbo haber impersonal siempre se conjuga en singular ('hubo', no 'hubieron').""",
+    explanation:
+        r"""El verbo haber impersonal siempre se conjuga en singular ('hubo', no 'hubieron').""",
   ),
   Question(
     id: 'com_q247',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El alférez Pérez, jefe operativo del sector, lideró el allanamiento de la vivienda'. La frase subrayada 'jefe operativo del sector' es:""",
+    text:
+        r"""(Contexto policial) 'El alférez Pérez, jefe operativo del sector, lideró el allanamiento de la vivienda'. La frase subrayada 'jefe operativo del sector' es:""",
     options: [
       r'''Un atributo''',
       r'''Un objeto directo''',
@@ -2624,12 +2923,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un complemento circunstancial''',
     ],
     correctAnswer: 2,
-    explanation: r"""Va entre comas y explica/aclara la identidad del núcleo del sujeto ('alférez Pérez').""",
+    explanation:
+        r"""Va entre comas y explica/aclara la identidad del núcleo del sujeto ('alférez Pérez').""",
   ),
   Question(
     id: 'com_q248',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Los efectivos del escuadrón de emergencia regresaron exhaustos a su base'. La palabra 'exhaustos' cumple la función de:""",
+    text:
+        r"""(Contexto policial) 'Los efectivos del escuadrón de emergencia regresaron exhaustos a su base'. La palabra 'exhaustos' cumple la función de:""",
     options: [
       r'''Atributo''',
       r'''Predicativo''',
@@ -2637,12 +2938,14 @@ final List<Question> comunicacionQuestions = [
       r'''Circunstancial de modo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Es un complemento predicativo porque modifica al verbo (regresaron) y concuerda en género y número con el sujeto (efectivos).''',
+    explanation:
+        r'''Es un complemento predicativo porque modifica al verbo (regresaron) y concuerda en género y número con el sujeto (efectivos).''',
   ),
   Question(
     id: 'com_q249',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Toda la mercancía de contrabando fue decomisada por la Policía Fiscal en el puerto'. Identifique el complemento agente.""",
+    text:
+        r"""(Contexto policial) 'Toda la mercancía de contrabando fue decomisada por la Policía Fiscal en el puerto'. Identifique el complemento agente.""",
     options: [
       r'''Toda la mercancía de contrabando''',
       r'''fue decomisada''',
@@ -2650,12 +2953,14 @@ final List<Question> comunicacionQuestions = [
       r'''en el puerto''',
     ],
     correctAnswer: 2,
-    explanation: r"""El agente en la voz pasiva indica quién ejecuta la acción ('decomisar') y es introducido por 'por'.""",
+    explanation:
+        r"""El agente en la voz pasiva indica quién ejecuta la acción ('decomisar') y es introducido por 'por'.""",
   ),
   Question(
     id: 'com_q250',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) En el texto de un acta: 'Notificándosele los motivos de su detención en estricto cumplimiento de la ley', el pronombre '-se' y '-le' unidos al verbo se denominan:""",
+    text:
+        r"""(Contexto policial) En el texto de un acta: 'Notificándosele los motivos de su detención en estricto cumplimiento de la ley', el pronombre '-se' y '-le' unidos al verbo se denominan:""",
     options: [
       r'''Pronombres demostrativos''',
       r'''Pronombres proclíticos''',
@@ -2663,12 +2968,14 @@ final List<Question> comunicacionQuestions = [
       r'''Pronombres relativos''',
     ],
     correctAnswer: 2,
-    explanation: r"""Los pronombres personales átonos que se adhieren al final de un verboide (como el gerundio 'notificando') se llaman enclíticos.""",
+    explanation:
+        r"""Los pronombres personales átonos que se adhieren al final de un verboide (como el gerundio 'notificando') se llaman enclíticos.""",
   ),
   Question(
     id: 'com_q251',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El asaltante actuó a sangre fría contra su víctima'. La expresión 'a sangre fría' sintácticamente equivale a un:""",
+    text:
+        r"""(Contexto policial) 'El asaltante actuó a sangre fría contra su víctima'. La expresión 'a sangre fría' sintácticamente equivale a un:""",
     options: [
       r'''Objeto Directo''',
       r'''Circunstancial de modo''',
@@ -2676,12 +2983,14 @@ final List<Question> comunicacionQuestions = [
       r'''Atributo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Es una locución adverbial de modo que responde a la pregunta ¿Cómo actuó?.''',
+    explanation:
+        r'''Es una locución adverbial de modo que responde a la pregunta ¿Cómo actuó?.''',
   ),
   Question(
     id: 'com_q252',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El fiscal solicitará prisión preventiva o dictará comparecencia restringida'. Esta es una oración compuesta:""",
+    text:
+        r"""(Contexto policial) 'El fiscal solicitará prisión preventiva o dictará comparecencia restringida'. Esta es una oración compuesta:""",
     options: [
       r'''Copulativa''',
       r'''Adversativa''',
@@ -2689,12 +2998,14 @@ final List<Question> comunicacionQuestions = [
       r'''Ilativa''',
     ],
     correctAnswer: 2,
-    explanation: r"""La conjunción 'o' plantea dos opciones o alternativas legales que se excluyen entre sí, rasgo de las oraciones disyuntivas.""",
+    explanation:
+        r"""La conjunción 'o' plantea dos opciones o alternativas legales que se excluyen entre sí, rasgo de las oraciones disyuntivas.""",
   ),
   Question(
     id: 'com_q253',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'La turba de manifestantes _____ la vía pública impidiendo el tránsito'. Complete con la concordancia verbal más apropiada formalmente:""",
+    text:
+        r"""(Contexto policial) 'La turba de manifestantes _____ la vía pública impidiendo el tránsito'. Complete con la concordancia verbal más apropiada formalmente:""",
     options: [
       r'''bloquearon''',
       r'''bloqueó''',
@@ -2702,12 +3013,14 @@ final List<Question> comunicacionQuestions = [
       r'''bloqueasteis''',
     ],
     correctAnswer: 1,
-    explanation: r"""Aunque en un sujeto partitivo a veces se acepta el plural por concordancia ad sensum, la regla general y formal dicta concordar en singular con el núcleo colectivo ('turba').""",
+    explanation:
+        r"""Aunque en un sujeto partitivo a veces se acepta el plural por concordancia ad sensum, la regla general y formal dicta concordar en singular con el núcleo colectivo ('turba').""",
   ),
   Question(
     id: 'com_q254',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El personal de turno tiene que garantizar la seguridad perimétrica de las instalaciones'. 'Tiene que garantizar' es:""",
+    text:
+        r"""(Contexto policial) 'El personal de turno tiene que garantizar la seguridad perimétrica de las instalaciones'. 'Tiene que garantizar' es:""",
     options: [
       r'''Una proposición subordinada''',
       r'''Una perífrasis verbal de obligación''',
@@ -2715,25 +3028,24 @@ final List<Question> comunicacionQuestions = [
       r'''Una conjunción ilativa''',
     ],
     correctAnswer: 1,
-    explanation: r"""La estructura 'tener + que + infinitivo' es una perífrasis verbal modal que expresa obligación o mandato legal.""",
+    explanation:
+        r"""La estructura 'tener + que + infinitivo' es una perífrasis verbal modal que expresa obligación o mandato legal.""",
   ),
   Question(
     id: 'com_q255',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Se intervino a un ciudadano extranjero, _____ pasaporte presentaba evidentes irregularidades en sus sellos migratorios'. Complete con el pronombre relativo adecuado:""",
-    options: [
-      r'''el cual''',
-      r'''quien''',
-      r'''cuyo''',
-      r'''que su''',
-    ],
+    text:
+        r"""(Contexto policial) 'Se intervino a un ciudadano extranjero, _____ pasaporte presentaba evidentes irregularidades en sus sellos migratorios'. Complete con el pronombre relativo adecuado:""",
+    options: [r'''el cual''', r'''quien''', r'''cuyo''', r'''que su'''],
     correctAnswer: 2,
-    explanation: r"""El relativo 'cuyo' indica posesión o pertenencia y concuerda en género y número con lo poseído ('pasaporte'), evitando el solecismo 'que su'.""",
+    explanation:
+        r"""El relativo 'cuyo' indica posesión o pertenencia y concuerda en género y número con lo poseído ('pasaporte'), evitando el solecismo 'que su'.""",
   ),
   Question(
     id: 'com_q256',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'El agraviado presentó la denuncia formal y el fiscal de turno inició de inmediato las investigaciones de ley'. ¿Qué relación sintáctica se establece?""",
+    text:
+        r"""(Contexto policial) 'El agraviado presentó la denuncia formal y el fiscal de turno inició de inmediato las investigaciones de ley'. ¿Qué relación sintáctica se establece?""",
     options: [
       r'''Coordinación copulativa''',
       r'''Coordinación disyuntiva''',
@@ -2741,12 +3053,14 @@ final List<Question> comunicacionQuestions = [
       r'''Subordinación adjetiva''',
     ],
     correctAnswer: 0,
-    explanation: r"""Ambas proposiciones independientes están unidas por la conjunción copulativa 'y', que suma acciones.""",
+    explanation:
+        r"""Ambas proposiciones independientes están unidas por la conjunción copulativa 'y', que suma acciones.""",
   ),
   Question(
     id: 'com_q257',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'La puerta principal del almacén fue violentada con una pata de cabra'. La frase 'con una pata de cabra' cumple función de:""",
+    text:
+        r"""(Contexto policial) 'La puerta principal del almacén fue violentada con una pata de cabra'. La frase 'con una pata de cabra' cumple función de:""",
     options: [
       r'''Agente''',
       r'''Circunstancial de modo''',
@@ -2754,12 +3068,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto indirecto''',
     ],
     correctAnswer: 2,
-    explanation: r'''Indica el objeto físico, herramienta o instrumento que se utilizó para realizar la acción del verbo (violentar).''',
+    explanation:
+        r'''Indica el objeto físico, herramienta o instrumento que se utilizó para realizar la acción del verbo (violentar).''',
   ),
   Question(
     id: 'com_q258',
     topicId: 'com_t2',
-    text: r"""(Contexto policial) 'Tras colocar la cinta perimétrica, la escena del crimen parecía inalterada a los ojos de los investigadores'. La palabra 'inalterada' funciona como:""",
+    text:
+        r"""(Contexto policial) 'Tras colocar la cinta perimétrica, la escena del crimen parecía inalterada a los ojos de los investigadores'. La palabra 'inalterada' funciona como:""",
     options: [
       r'''Atributo''',
       r'''Objeto Directo''',
@@ -2767,12 +3083,14 @@ final List<Question> comunicacionQuestions = [
       r'''Circunstancial de cantidad''',
     ],
     correctAnswer: 0,
-    explanation: r'''Con los verbos copulativos (ser, estar, parecer), el adjetivo que caracteriza al sujeto funciona obligatoriamente como atributo.''',
+    explanation:
+        r'''Con los verbos copulativos (ser, estar, parecer), el adjetivo que caracteriza al sujeto funciona obligatoriamente como atributo.''',
   ),
   Question(
     id: 'com_q259',
     topicId: 'com_t2',
-    text: r"""En la oración: 'A los postulantes, el oficial les entregó las credenciales rápidamente en la puerta', el objeto indirecto es:""",
+    text:
+        r"""En la oración: 'A los postulantes, el oficial les entregó las credenciales rápidamente en la puerta', el objeto indirecto es:""",
     options: [
       r'''el oficial''',
       r'''las credenciales''',
@@ -2781,12 +3099,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) A los postulantes''',
     ],
     correctAnswer: 4,
-    explanation: r"""La respuesta correcta es E ('A los postulantes'). El OI es quien recibe el beneficio o daño de la acción (¿A quiénes entregó? A los postulantes). El pronombre 'les' también funciona como OI repitiendo la referencia. El distractor B (las credenciales) es el 'Distractor de Identificación Directa' (es el Objeto Directo, lo entregado). A es el Sujeto.""",
+    explanation:
+        r"""La respuesta correcta es E ('A los postulantes'). El OI es quien recibe el beneficio o daño de la acción (¿A quiénes entregó? A los postulantes). El pronombre 'les' también funciona como OI repitiendo la referencia. El distractor B (las credenciales) es el 'Distractor de Identificación Directa' (es el Objeto Directo, lo entregado). A es el Sujeto.""",
   ),
   Question(
     id: 'com_q260',
     topicId: 'com_t2',
-    text: r"""¿Cuál es el núcleo del sujeto en la siguiente oración?n'La brillante y joven abogada de la fiscalía presentó pruebas contundentes.""",
+    text:
+        r"""¿Cuál es el núcleo del sujeto en la siguiente oración?n'La brillante y joven abogada de la fiscalía presentó pruebas contundentes.""",
     options: [
       r'''abogada''',
       r'''fiscalía''',
@@ -2795,12 +3115,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) brillante''',
     ],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A ('abogada'). Es el sustantivo principal del sujeto. El distractor B ('fiscalía') es la 'Trampa de la Última Palabra', ya que el estudiante suele elegir el último sustantivo antes del verbo. D ('pruebas') pertenece al predicado.""",
+    explanation:
+        r"""La respuesta correcta es A ('abogada'). Es el sustantivo principal del sujeto. El distractor B ('fiscalía') es la 'Trampa de la Última Palabra', ya que el estudiante suele elegir el último sustantivo antes del verbo. D ('pruebas') pertenece al predicado.""",
   ),
   Question(
     id: 'com_q261',
     topicId: 'com_t2',
-    text: r"""En la oración 'La patrulla avanzó sigilosamente durante la noche', la palabra subrayada ('sigilosamente') cumple la función gramatical de:""",
+    text:
+        r"""En la oración 'La patrulla avanzó sigilosamente durante la noche', la palabra subrayada ('sigilosamente') cumple la función gramatical de:""",
     options: [
       r'''Adjetivo calificativo''',
       r'''Sustantivo abstracto''',
@@ -2809,7 +3131,8 @@ final List<Question> comunicacionQuestions = [
       r'''E) Preposición''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (Adverbio de modo). Modifica al verbo 'avanzó' indicando la manera. El distractor A (Adjetivo calificativo) es el 'Distractor Morfológico', ya que la palabra proviene de un adjetivo ('sigiloso') pero al añadir '-mente' cambia su categoría gramatical invariable.""",
+    explanation:
+        r"""La respuesta correcta es C (Adverbio de modo). Modifica al verbo 'avanzó' indicando la manera. El distractor A (Adjetivo calificativo) es el 'Distractor Morfológico', ya que la palabra proviene de un adjetivo ('sigiloso') pero al añadir '-mente' cambia su categoría gramatical invariable.""",
   ),
   Question(
     id: 'com_q262',
@@ -2823,12 +3146,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) O te presentas al relevo o serás sancionado.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C. 'que presentaste ayer' modifica al sustantivo 'informe' (actúa como un adjetivo). El distractor A es una 'Falla por Nexo'. Usa 'que', pero es subordinada sustantiva (funciona como Objeto Directo). El estudiante asocia automáticamente el 'que' con la adjetiva sin ver el antecedente.""",
+    explanation:
+        r"""La respuesta correcta es C. 'que presentaste ayer' modifica al sustantivo 'informe' (actúa como un adjetivo). El distractor A es una 'Falla por Nexo'. Usa 'que', pero es subordinada sustantiva (funciona como Objeto Directo). El estudiante asocia automáticamente el 'que' con la adjetiva sin ver el antecedente.""",
   ),
   Question(
     id: 'com_q263',
     topicId: 'com_t2',
-    text: r'''El elemento de la oración bimembre del cual se afirma, niega, pregunta o exclama algo y que concuerda en número y persona con el verbo principal es el:''',
+    text:
+        r'''El elemento de la oración bimembre del cual se afirma, niega, pregunta o exclama algo y que concuerda en número y persona con el verbo principal es el:''',
     options: [
       r'''Predicado''',
       r'''Sujeto''',
@@ -2837,12 +3162,14 @@ final List<Question> comunicacionQuestions = [
       r'''Vocativo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El sujeto es el constituyente de la oración que concuerda con el verbo en número y persona.''',
+    explanation:
+        r'''El sujeto es el constituyente de la oración que concuerda con el verbo en número y persona.''',
   ),
   Question(
     id: 'com_q264',
     topicId: 'com_t2',
-    text: r'''En el sintagma nominal del sujeto, los artículos y los adjetivos que se unen directamente al núcleo sin ningún enlace intermedio funcionan como:''',
+    text:
+        r'''En el sintagma nominal del sujeto, los artículos y los adjetivos que se unen directamente al núcleo sin ningún enlace intermedio funcionan como:''',
     options: [
       r'''Modificador indirecto''',
       r'''Aposición especificada''',
@@ -2851,12 +3178,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto directo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los determinantes y adjetivos modifican directamente al núcleo del sujeto.''',
+    explanation:
+        r'''Los determinantes y adjetivos modifican directamente al núcleo del sujeto.''',
   ),
   Question(
     id: 'com_q265',
     topicId: 'com_t2',
-    text: r'''El modificador del sujeto que se une al núcleo a través de una preposición (enlace subordinante) se denomina:''',
+    text:
+        r'''El modificador del sujeto que se une al núcleo a través de una preposición (enlace subordinante) se denomina:''',
     options: [
       r'''Modificador directo''',
       r'''Modificador indirecto''',
@@ -2865,12 +3194,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto indirecto''',
     ],
     correctAnswer: 1,
-    explanation: r'''El modificador indirecto requiere de un nexo subordinante, generalmente una preposición.''',
+    explanation:
+        r'''El modificador indirecto requiere de un nexo subordinante, generalmente una preposición.''',
   ),
   Question(
     id: 'com_q266',
     topicId: 'com_t2',
-    text: r'''La aposición que aclara el significado del núcleo del sujeto, va entre comas y puede intercambiar funciones con el núcleo es la:''',
+    text:
+        r'''La aposición que aclara el significado del núcleo del sujeto, va entre comas y puede intercambiar funciones con el núcleo es la:''',
     options: [
       r'''Aposición especifica''',
       r'''Proposición adjetiva''',
@@ -2879,12 +3210,14 @@ final List<Question> comunicacionQuestions = [
       r'''Modificador directo''',
     ],
     correctAnswer: 2,
-    explanation: r'''La aposición explicativa proporciona información aclaratoria sobre el núcleo y se escribe delimitada por comas.''',
+    explanation:
+        r'''La aposición explicativa proporciona información aclaratoria sobre el núcleo y se escribe delimitada por comas.''',
   ),
   Question(
     id: 'com_q267',
     topicId: 'com_t2',
-    text: r'''El predicado cuyo núcleo es un verbo predicativo (no copulativo) que expresa acción, proceso o estado se clasifica como:''',
+    text:
+        r'''El predicado cuyo núcleo es un verbo predicativo (no copulativo) que expresa acción, proceso o estado se clasifica como:''',
     options: [
       r'''Predicado adverbial''',
       r'''Predicado adjetival''',
@@ -2893,12 +3226,14 @@ final List<Question> comunicacionQuestions = [
       r'''Predicado nominal''',
     ],
     correctAnswer: 3,
-    explanation: r'''El predicado verbal tiene como núcleo un verbo con significado léxico pleno.''',
+    explanation:
+        r'''El predicado verbal tiene como núcleo un verbo con significado léxico pleno.''',
   ),
   Question(
     id: 'com_q268',
     topicId: 'com_t2',
-    text: r'''El predicado constituido por un verbo copulativo (ser, estar, parecer) y un atributo o predicativo obligatorio que define al sujeto se llama:''',
+    text:
+        r'''El predicado constituido por un verbo copulativo (ser, estar, parecer) y un atributo o predicativo obligatorio que define al sujeto se llama:''',
     options: [
       r'''Predicado verbal''',
       r'''Predicado elíptico''',
@@ -2907,12 +3242,14 @@ final List<Question> comunicacionQuestions = [
       r'''Predicado nominal''',
     ],
     correctAnswer: 4,
-    explanation: r'''El predicado nominal atribuye una cualidad o estado al sujeto a través de un verbo copulativo y un atributo.''',
+    explanation:
+        r'''El predicado nominal atribuye una cualidad o estado al sujeto a través de un verbo copulativo y un atributo.''',
   ),
   Question(
     id: 'com_q269',
     topicId: 'com_t2',
-    text: r"""En la oración 'El comandante entregó las medallas a los oficiales distinguidos', la estructura 'a los oficiales distinguidos' funciona como:""",
+    text:
+        r"""En la oración 'El comandante entregó las medallas a los oficiales distinguidos', la estructura 'a los oficiales distinguidos' funciona como:""",
     options: [
       r'''Circunstancial de beneficio''',
       r'''Objeto directo''',
@@ -2921,12 +3258,14 @@ final List<Question> comunicacionQuestions = [
       r'''Complemento agente''',
     ],
     correctAnswer: 2,
-    explanation: r"""El objeto indirecto designa al destinatario de la acción verbal expresada por el verbo y el objeto directo, y suele sustituirse por 'les'.""",
+    explanation:
+        r"""El objeto indirecto designa al destinatario de la acción verbal expresada por el verbo y el objeto directo, y suele sustituirse por 'les'.""",
   ),
   Question(
     id: 'com_q270',
     topicId: 'com_t2',
-    text: r"""En la frase 'El patrullero avanzó velozmente hacia el sector asignado', el adverbio 'velozmente' cumple la función de:""",
+    text:
+        r"""En la frase 'El patrullero avanzó velozmente hacia el sector asignado', el adverbio 'velozmente' cumple la función de:""",
     options: [
       r'''Circunstancial de modo''',
       r'''Circunstancial de tiempo''',
@@ -2935,12 +3274,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto directo''',
     ],
     correctAnswer: 0,
-    explanation: r'''El circunstancial de modo indica la manera en que se realiza la acción verbal; responde a la pregunta ¿cómo?''',
+    explanation:
+        r'''El circunstancial de modo indica la manera en que se realiza la acción verbal; responde a la pregunta ¿cómo?''',
   ),
   Question(
     id: 'com_q271',
     topicId: 'com_t2',
-    text: r"""En 'El oficial abrió la puerta de emergencia con su llave maestra', la frase destacada 'con su llave maestra' cumple la función de:""",
+    text:
+        r"""En 'El oficial abrió la puerta de emergencia con su llave maestra', la frase destacada 'con su llave maestra' cumple la función de:""",
     options: [
       r'''Circunstancial de compañía''',
       r'''Circunstancial de instrumento''',
@@ -2949,12 +3290,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objeto indirecto''',
     ],
     correctAnswer: 1,
-    explanation: r'''Expresa el objeto o instrumento con el cual se ejecuta la acción del verbo.''',
+    explanation:
+        r'''Expresa el objeto o instrumento con el cual se ejecuta la acción del verbo.''',
   ),
   Question(
     id: 'com_q272',
     topicId: 'com_t2',
-    text: r'''El adjetivo o sustantivo en el predicado que califica al sujeto y a la vez concuerda con el verbo copulativo de la oración se denomina:''',
+    text:
+        r'''El adjetivo o sustantivo en el predicado que califica al sujeto y a la vez concuerda con el verbo copulativo de la oración se denomina:''',
     options: [
       r'''Modificador directo''',
       r'''Circunstancial de modo''',
@@ -2963,12 +3306,14 @@ final List<Question> comunicacionQuestions = [
       r'''Predicativo subjetivo''',
     ],
     correctAnswer: 4,
-    explanation: r'''El predicativo subjetivo (o atributo) concuerda en género y número con el sujeto y en número con el verbo.''',
+    explanation:
+        r'''El predicativo subjetivo (o atributo) concuerda en género y número con el sujeto y en número con el verbo.''',
   ),
   Question(
     id: 'com_q273',
     topicId: 'com_t2',
-    text: r'''La palabra variable que reemplaza al sustantivo para evitar su repetición y señala las personas gramaticales es el:''',
+    text:
+        r'''La palabra variable que reemplaza al sustantivo para evitar su repetición y señala las personas gramaticales es el:''',
     options: [
       r'''Preposición''',
       r'''Artículo determinante''',
@@ -2977,12 +3322,14 @@ final List<Question> comunicacionQuestions = [
       r'''Adjetivo calificativo''',
     ],
     correctAnswer: 3,
-    explanation: r'''El pronombre sustituye al nombre y puede cumplir sus mismas funciones sintácticas.''',
+    explanation:
+        r'''El pronombre sustituye al nombre y puede cumplir sus mismas funciones sintácticas.''',
   ),
   Question(
     id: 'com_q274',
     topicId: 'com_t2',
-    text: r'''La categoría gramatical invariable que funciona sintácticamente como enlace subordinante entre dos palabras o sintagmas es la:''',
+    text:
+        r'''La categoría gramatical invariable que funciona sintácticamente como enlace subordinante entre dos palabras o sintagmas es la:''',
     options: [
       r'''Conjunción''',
       r'''Preposición''',
@@ -2991,12 +3338,14 @@ final List<Question> comunicacionQuestions = [
       r'''Adverbio''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las preposiciones (a, ante, bajo, con, contra, de, desde, en, entre, etc.) relacionan elementos de forma subordinada.''',
+    explanation:
+        r'''Las preposiciones (a, ante, bajo, con, contra, de, desde, en, entre, etc.) relacionan elementos de forma subordinada.''',
   ),
   Question(
     id: 'com_q275',
     topicId: 'com_t2',
-    text: r'''El nexo gramatical que une dos palabras o proposiciones de igual jerarquía sintáctica, sin subordinar una a la otra, es la:''',
+    text:
+        r'''El nexo gramatical que une dos palabras o proposiciones de igual jerarquía sintáctica, sin subordinar una a la otra, es la:''',
     options: [
       r'''Preposición''',
       r'''Conjunción coordinante''',
@@ -3005,12 +3354,14 @@ final List<Question> comunicacionQuestions = [
       r'''Adverbio relativo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las conjunciones coordinantes (como y, o, pero, mas) enlazan elementos equivalentes.''',
+    explanation:
+        r'''Las conjunciones coordinantes (como y, o, pero, mas) enlazan elementos equivalentes.''',
   ),
   Question(
     id: 'com_q276',
     topicId: 'com_t2',
-    text: r"""La oración 'El sospechoso declaró ante el juez, pero ocultó detalles clave' se clasifica como una:""",
+    text:
+        r"""La oración 'El sospechoso declaró ante el juez, pero ocultó detalles clave' se clasifica como una:""",
     options: [
       r'''Oración compuesta coordinada adversativa''',
       r'''Oración compuesta subordinada sustantiva''',
@@ -3019,12 +3370,14 @@ final List<Question> comunicacionQuestions = [
       r'''Oración compuesta coordinada disyuntiva''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las oraciones adversativas expresan oposición o contrariedad mediante nexos como 'pero', 'mas', 'sin embargo'.""",
+    explanation:
+        r"""Las oraciones adversativas expresan oposición o contrariedad mediante nexos como 'pero', 'mas', 'sin embargo'.""",
   ),
   Question(
     id: 'com_q278',
     topicId: 'com_t2',
-    text: r'''La categoría gramatical invariable que califica o modifica a un verbo, a un adjetivo o a otro adverbio es el:''',
+    text:
+        r'''La categoría gramatical invariable que califica o modifica a un verbo, a un adjetivo o a otro adverbio es el:''',
     options: [
       r'''Pronombre''',
       r'''Interjección''',
@@ -3033,12 +3386,14 @@ final List<Question> comunicacionQuestions = [
       r'''Adverbio''',
     ],
     correctAnswer: 4,
-    explanation: r'''El adverbio aporta información circunstancial de tiempo, lugar, modo, cantidad, afirmación, negación o duda.''',
+    explanation:
+        r'''El adverbio aporta información circunstancial de tiempo, lugar, modo, cantidad, afirmación, negación o duda.''',
   ),
   Question(
     id: 'com_q279',
     topicId: 'com_t2',
-    text: r'''Identifique la oración que presenta una subordinada adverbial concesiva (que expresa un obstáculo que no impide la acción principal):''',
+    text:
+        r'''Identifique la oración que presenta una subordinada adverbial concesiva (que expresa un obstáculo que no impide la acción principal):''',
     options: [
       r'''Cuando sonó la alarma, todos salieron del local.''',
       r'''Fuimos a la comisaría porque debíamos denunciar el robo.''',
@@ -3047,12 +3402,14 @@ final List<Question> comunicacionQuestions = [
       r'''Si estudias con dedicación, lograrás tu meta académica.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La proposición concesiva se introduce con nexos como 'aunque', 'a pesar de que'.""",
+    explanation:
+        r"""La proposición concesiva se introduce con nexos como 'aunque', 'a pesar de que'.""",
   ),
   Question(
     id: 'com_q280',
     topicId: 'com_t2',
-    text: r'''Aquella unidad sintáctica que posee independencia y sentido completo, y que estructuralmente se divide en sujeto y predicado es:''',
+    text:
+        r'''Aquella unidad sintáctica que posee independencia y sentido completo, y que estructuralmente se divide en sujeto y predicado es:''',
     options: [
       r'''La oración unimembre''',
       r'''El sintagma nominal''',
@@ -3061,12 +3418,14 @@ final List<Question> comunicacionQuestions = [
       r'''La proposición''',
     ],
     correctAnswer: 2,
-    explanation: r'''La oración bimembre contiene explícita o implícitamente los dos constituyentes básicos: sujeto y predicado.''',
+    explanation:
+        r'''La oración bimembre contiene explícita o implícitamente los dos constituyentes básicos: sujeto y predicado.''',
   ),
   Question(
     id: 'com_q281',
     topicId: 'com_t2',
-    text: r'''Las oraciones compuestas cuyas proposiciones se enlazan únicamente mediante signos de puntuación (coma, punto y coma, dos puntos) y sin nexos se denominan:''',
+    text:
+        r'''Las oraciones compuestas cuyas proposiciones se enlazan únicamente mediante signos de puntuación (coma, punto y coma, dos puntos) y sin nexos se denominan:''',
     options: [
       r'''Oraciones compuestas subordinadas''',
       r'''Oraciones compuestas distributivas''',
@@ -3075,12 +3434,14 @@ final List<Question> comunicacionQuestions = [
       r'''Oraciones compuestas coordinadas''',
     ],
     correctAnswer: 2,
-    explanation: r'''La yuxtaposición conecta proposiciones sin usar conjunciones, confiando en los signos de puntuación.''',
+    explanation:
+        r'''La yuxtaposición conecta proposiciones sin usar conjunciones, confiando en los signos de puntuación.''',
   ),
   Question(
     id: 'com_q282',
     topicId: 'com_t2',
-    text: r"""La expresión '¡Hace mucho frío en esta comisaría!' carece de sujeto realizador de la acción y se clasifica formalmente como:""",
+    text:
+        r"""La expresión '¡Hace mucho frío en esta comisaría!' carece de sujeto realizador de la acción y se clasifica formalmente como:""",
     options: [
       r'''Oración pasiva''',
       r'''Oración compuesta''',
@@ -3089,7 +3450,8 @@ final List<Question> comunicacionQuestions = [
       r'''Oración bimembre''',
     ],
     correctAnswer: 2,
-    explanation: r"""Las oraciones climatológicas u oraciones con verbo 'hacer' o 'haber' impersonal son unimembres ya que no admiten sujeto.""",
+    explanation:
+        r"""Las oraciones climatológicas u oraciones con verbo 'hacer' o 'haber' impersonal son unimembres ya que no admiten sujeto.""",
   ),
   Question(
     id: 'com_q313',
@@ -3102,12 +3464,14 @@ final List<Question> comunicacionQuestions = [
       r'''Informar de manera objetiva sobre un descubrimiento científico''',
     ],
     correctAnswer: 1,
-    explanation: r'''La finalidad del texto narrativo es relatar o contar una serie de acontecimientos, reales o ficticios, que se desarrollan en el tiempo.''',
+    explanation:
+        r'''La finalidad del texto narrativo es relatar o contar una serie de acontecimientos, reales o ficticios, que se desarrollan en el tiempo.''',
   ),
   Question(
     id: 'com_q316',
     topicId: 'com_t3',
-    text: r'''En la estructura clásica de la narración, ¿qué se presenta durante el planteamiento?''',
+    text:
+        r'''En la estructura clásica de la narración, ¿qué se presenta durante el planteamiento?''',
     options: [
       r'''La resolución del conflicto principal''',
       r'''El momento de máxima tensión''',
@@ -3115,12 +3479,14 @@ final List<Question> comunicacionQuestions = [
       r'''Las consecuencias de los actos del antagonista''',
     ],
     correctAnswer: 2,
-    explanation: r'''El planteamiento o inicio sirve para introducir a los personajes, el espacio, el tiempo y la situación previa al conflicto.''',
+    explanation:
+        r'''El planteamiento o inicio sirve para introducir a los personajes, el espacio, el tiempo y la situación previa al conflicto.''',
   ),
   Question(
     id: 'com_q317',
     topicId: 'com_t3',
-    text: r'''¿A qué parte de la estructura clásica corresponde el clímax o el momento de mayor tensión?''',
+    text:
+        r'''¿A qué parte de la estructura clásica corresponde el clímax o el momento de mayor tensión?''',
     options: [
       r'''Planteamiento''',
       r'''Nudo''',
@@ -3128,7 +3494,8 @@ final List<Question> comunicacionQuestions = [
       r'''Epílogo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El nudo desarrolla el conflicto y contiene el clímax, que es el punto de máxima tensión en la historia antes de resolverse.''',
+    explanation:
+        r'''El nudo desarrolla el conflicto y contiene el clímax, que es el punto de máxima tensión en la historia antes de resolverse.''',
   ),
   Question(
     id: 'com_q318',
@@ -3141,12 +3508,14 @@ final List<Question> comunicacionQuestions = [
       r'''Resolver el conflicto planteado en el nudo''',
     ],
     correctAnswer: 3,
-    explanation: r'''El desenlace es la parte final donde se da resolución (positiva o negativa) al conflicto o nudo de la historia.''',
+    explanation:
+        r'''El desenlace es la parte final donde se da resolución (positiva o negativa) al conflicto o nudo de la historia.''',
   ),
   Question(
     id: 'com_q319',
     topicId: 'com_t3',
-    text: r'''Según su participación en la historia, un narrador que forma parte de los hechos que relata se denomina:''',
+    text:
+        r'''Según su participación en la historia, un narrador que forma parte de los hechos que relata se denomina:''',
     options: [
       r'''Heterodiegético''',
       r'''Homodiegético''',
@@ -3154,7 +3523,8 @@ final List<Question> comunicacionQuestions = [
       r'''Externo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El narrador homodiegético (homo = igual, diégesis = historia) es aquel que está dentro de la historia, ya sea como protagonista o testigo.''',
+    explanation:
+        r'''El narrador homodiegético (homo = igual, diégesis = historia) es aquel que está dentro de la historia, ya sea como protagonista o testigo.''',
   ),
   Question(
     id: 'com_q320',
@@ -3167,7 +3537,8 @@ final List<Question> comunicacionQuestions = [
       r'''Es el protagonista de la historia y cuenta su propia vida''',
     ],
     correctAnswer: 2,
-    explanation: r'''El narrador omnisciente es como un dios: sabe el pasado, presente, futuro y el mundo interior de todos los personajes.''',
+    explanation:
+        r'''El narrador omnisciente es como un dios: sabe el pasado, presente, futuro y el mundo interior de todos los personajes.''',
   ),
   Question(
     id: 'com_q321',
@@ -3180,12 +3551,14 @@ final List<Question> comunicacionQuestions = [
       r'''Conoce los pensamientos íntimos del antagonista''',
     ],
     correctAnswer: 2,
-    explanation: r'''El narrador testigo participa en la historia (homodiegético) pero no es el centro de ella; narra lo que le ocurre a otros.''',
+    explanation:
+        r'''El narrador testigo participa en la historia (homodiegético) pero no es el centro de ella; narra lo que le ocurre a otros.''',
   ),
   Question(
     id: 'com_q322',
     topicId: 'com_t3',
-    text: r'''Según su grado de importancia en la trama, los personajes se clasifican principalmente en:''',
+    text:
+        r'''Según su grado de importancia en la trama, los personajes se clasifican principalmente en:''',
     options: [
       r'''Buenos y malos''',
       r'''Principales, secundarios e incidentales''',
@@ -3193,7 +3566,8 @@ final List<Question> comunicacionQuestions = [
       r'''Reales y ficticios''',
     ],
     correctAnswer: 1,
-    explanation: r'''La jerarquía clásica de los personajes los divide en principales (protagonista/antagonista), secundarios e incidentales o fugaces.''',
+    explanation:
+        r'''La jerarquía clásica de los personajes los divide en principales (protagonista/antagonista), secundarios e incidentales o fugaces.''',
   ),
   Question(
     id: 'com_q323',
@@ -3206,12 +3580,14 @@ final List<Question> comunicacionQuestions = [
       r'''Narrar la historia desde un punto de vista objetivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El antagonista es la fuerza o personaje que genera el conflicto al oponerse al protagonista.''',
+    explanation:
+        r'''El antagonista es la fuerza o personaje que genera el conflicto al oponerse al protagonista.''',
   ),
   Question(
     id: 'com_q325',
     topicId: 'com_t3',
-    text: r'''La descripción de los rasgos morales, emocionales y de la personalidad de un personaje se denomina:''',
+    text:
+        r'''La descripción de los rasgos morales, emocionales y de la personalidad de un personaje se denomina:''',
     options: [
       r'''Prosopografía''',
       r'''Topografía''',
@@ -3219,7 +3595,8 @@ final List<Question> comunicacionQuestions = [
       r'''Cronografía''',
     ],
     correctAnswer: 2,
-    explanation: r'''La etopeya es la descripción psicológica y moral de un personaje.''',
+    explanation:
+        r'''La etopeya es la descripción psicológica y moral de un personaje.''',
   ),
   Question(
     id: 'com_q326',
@@ -3232,7 +3609,8 @@ final List<Question> comunicacionQuestions = [
       r'''No tener ningún impacto en la trama''',
     ],
     correctAnswer: 1,
-    explanation: r'''El espacio físico cerrado corresponde a lugares delimitados y techados que a menudo generan sensaciones de encierro.''',
+    explanation:
+        r'''El espacio físico cerrado corresponde a lugares delimitados y techados que a menudo generan sensaciones de encierro.''',
   ),
   Question(
     id: 'com_q327',
@@ -3245,7 +3623,8 @@ final List<Question> comunicacionQuestions = [
       r'''El lugar geográfico exacto donde ocurren los hechos''',
     ],
     correctAnswer: 2,
-    explanation: r'''El espacio o ambiente psicológico es la atmósfera emocional (miedo, alegría, angustia) que se percibe en la obra.''',
+    explanation:
+        r'''El espacio o ambiente psicológico es la atmósfera emocional (miedo, alegría, angustia) que se percibe en la obra.''',
   ),
   Question(
     id: 'com_q328',
@@ -3258,12 +3637,14 @@ final List<Question> comunicacionQuestions = [
       r'''Reemplazar al narrador en la exposición de la trama''',
     ],
     correctAnswer: 1,
-    explanation: r'''El espacio social enmarca a los personajes dentro de una clase social, costumbres, creencias y nivel cultural.''',
+    explanation:
+        r'''El espacio social enmarca a los personajes dentro de una clase social, costumbres, creencias y nivel cultural.''',
   ),
   Question(
     id: 'com_q329',
     topicId: 'com_t3',
-    text: r'''A diferencia del texto descriptivo, la narración exige fundamentalmente:''',
+    text:
+        r'''A diferencia del texto descriptivo, la narración exige fundamentalmente:''',
     options: [
       r'''Uso excesivo de adjetivos''',
       r'''Progresión en el tiempo de los acontecimientos''',
@@ -3271,12 +3652,14 @@ final List<Question> comunicacionQuestions = [
       r'''Argumentos comprobables científicamente''',
     ],
     correctAnswer: 1,
-    explanation: r'''La esencia de la narración es la temporalidad: los hechos avanzan y se transforman a lo largo del tiempo.''',
+    explanation:
+        r'''La esencia de la narración es la temporalidad: los hechos avanzan y se transforman a lo largo del tiempo.''',
   ),
   Question(
     id: 'com_q330',
     topicId: 'com_t3',
-    text: r'''¿Qué tipo de narrador es el que cuenta la historia en tercera persona pero solo relata lo que se puede ver y oír, como si fuera una cámara de cine?''',
+    text:
+        r'''¿Qué tipo de narrador es el que cuenta la historia en tercera persona pero solo relata lo que se puede ver y oír, como si fuera una cámara de cine?''',
     options: [
       r'''Omnisciente''',
       r'''Protagonista''',
@@ -3284,12 +3667,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objetivo o cámara''',
     ],
     correctAnswer: 3,
-    explanation: r'''El narrador objetivo o cámara registra externamente las acciones y diálogos sin entrar en la mente de los personajes.''',
+    explanation:
+        r'''El narrador objetivo o cámara registra externamente las acciones y diálogos sin entrar en la mente de los personajes.''',
   ),
   Question(
     id: 'com_q331',
     topicId: 'com_t3',
-    text: r'''Si un cadete redacta un informe detallando cómo ocurrieron los hechos durante una intervención, ¿qué tipo de texto está produciendo principalmente?''',
+    text:
+        r'''Si un cadete redacta un informe detallando cómo ocurrieron los hechos durante una intervención, ¿qué tipo de texto está produciendo principalmente?''',
     options: [
       r'''Descriptivo''',
       r'''Argumentativo''',
@@ -3297,12 +3682,14 @@ final List<Question> comunicacionQuestions = [
       r'''Expositivo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Aunque incluya descripciones, el informe relata una sucesión de hechos en el tiempo, por lo que su naturaleza principal es narrativa.''',
+    explanation:
+        r'''Aunque incluya descripciones, el informe relata una sucesión de hechos en el tiempo, por lo que su naturaleza principal es narrativa.''',
   ),
   Question(
     id: 'com_q332',
     topicId: 'com_t3',
-    text: r"""Lee el siguiente fragmento: 'El sujeto tenía cicatrices en el rostro, vestía una chaqueta oscura y su mirada era esquiva.' Corresponde principalmente a una:""",
+    text:
+        r"""Lee el siguiente fragmento: 'El sujeto tenía cicatrices en el rostro, vestía una chaqueta oscura y su mirada era esquiva.' Corresponde principalmente a una:""",
     options: [
       r'''Narración cronológica''',
       r'''Caracterización física y psicológica''',
@@ -3310,12 +3697,14 @@ final List<Question> comunicacionQuestions = [
       r'''Exposición de hechos''',
     ],
     correctAnswer: 1,
-    explanation: r'''El texto describe tanto el aspecto exterior (cicatrices, chaqueta) como indicios de su estado psicológico o actitud (mirada esquiva).''',
+    explanation:
+        r'''El texto describe tanto el aspecto exterior (cicatrices, chaqueta) como indicios de su estado psicológico o actitud (mirada esquiva).''',
   ),
   Question(
     id: 'com_q333',
     topicId: 'com_t3',
-    text: r'''¿Por qué es crucial que una crónica policial, como texto narrativo, mantenga una estructura coherente?''',
+    text:
+        r'''¿Por qué es crucial que una crónica policial, como texto narrativo, mantenga una estructura coherente?''',
     options: [
       r'''Para que el juez y las partes puedan entender la secuencia temporal y causal del delito''',
       r'''Para que el texto tenga belleza literaria y rimas''',
@@ -3323,12 +3712,14 @@ final List<Question> comunicacionQuestions = [
       r'''Para evitar mencionar quiénes fueron los testigos''',
     ],
     correctAnswer: 0,
-    explanation: r'''En el ámbito policial, la coherencia narrativa garantiza que los hechos se comprendan de manera lógica, lo cual es vital para el proceso legal.''',
+    explanation:
+        r'''En el ámbito policial, la coherencia narrativa garantiza que los hechos se comprendan de manera lógica, lo cual es vital para el proceso legal.''',
   ),
   Question(
     id: 'com_q334',
     topicId: 'com_t3',
-    text: r'''En una novela policial, la presentación del detective, su entorno y la aparición de un cadáver en la primera página corresponden a:''',
+    text:
+        r'''En una novela policial, la presentación del detective, su entorno y la aparición de un cadáver en la primera página corresponden a:''',
     options: [
       r'''El desenlace''',
       r'''El nudo o conflicto inicial''',
@@ -3336,12 +3727,14 @@ final List<Question> comunicacionQuestions = [
       r'''El epílogo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Establecen el punto de partida de la historia, presentando a los personajes y la situación base.''',
+    explanation:
+        r'''Establecen el punto de partida de la historia, presentando a los personajes y la situación base.''',
   ),
   Question(
     id: 'com_q335',
     topicId: 'com_t3',
-    text: r'''¿Qué sucede con la estructura si un cuento termina en el punto de mayor tensión sin resolver el conflicto?''',
+    text:
+        r'''¿Qué sucede con la estructura si un cuento termina en el punto de mayor tensión sin resolver el conflicto?''',
     options: [
       r'''Es un error ortográfico''',
       r'''Se trata de un final abierto, alterando el desenlace tradicional''',
@@ -3349,12 +3742,14 @@ final List<Question> comunicacionQuestions = [
       r'''Se convierte automáticamente en una leyenda''',
     ],
     correctAnswer: 1,
-    explanation: r'''La omisión de una resolución clara genera un desenlace abierto que invita al lector a imaginar el final.''',
+    explanation:
+        r'''La omisión de una resolución clara genera un desenlace abierto que invita al lector a imaginar el final.''',
   ),
   Question(
     id: 'com_q336',
     topicId: 'com_t3',
-    text: r"""En el fragmento: 'El suboficial avanzó cautelosamente por el pasillo. Sabía que detrás de la puerta lo esperaba el sospechoso, sintió que su corazón latía a mil por hora.' Se emplea un narrador:""",
+    text:
+        r"""En el fragmento: 'El suboficial avanzó cautelosamente por el pasillo. Sabía que detrás de la puerta lo esperaba el sospechoso, sintió que su corazón latía a mil por hora.' Se emplea un narrador:""",
     options: [
       r'''Omnisciente''',
       r'''Testigo''',
@@ -3362,12 +3757,14 @@ final List<Question> comunicacionQuestions = [
       r'''Objetivo''',
     ],
     correctAnswer: 0,
-    explanation: r"""El narrador está en tercera persona y conoce el interior del personaje ('sabía que...', 'sintió que...').""",
+    explanation:
+        r"""El narrador está en tercera persona y conoce el interior del personaje ('sabía que...', 'sintió que...').""",
   ),
   Question(
     id: 'com_q337',
     topicId: 'com_t3',
-    text: r"""Si el mismo fragmento anterior se redactara así: 'Avancé cautelosamente por el pasillo. Sabía que detrás de la puerta me esperaba el sospechoso...', el narrador cambiaría a:""",
+    text:
+        r"""Si el mismo fragmento anterior se redactara así: 'Avancé cautelosamente por el pasillo. Sabía que detrás de la puerta me esperaba el sospechoso...', el narrador cambiaría a:""",
     options: [
       r'''Testigo''',
       r'''Omnisciente''',
@@ -3375,12 +3772,14 @@ final List<Question> comunicacionQuestions = [
       r'''Heterodiegético''',
     ],
     correctAnswer: 2,
-    explanation: r"""Al contarlo desde el 'yo' viviendo la acción principal, se convierte en un narrador protagonista.""",
+    explanation:
+        r"""Al contarlo desde el 'yo' viviendo la acción principal, se convierte en un narrador protagonista.""",
   ),
   Question(
     id: 'com_q341',
     topicId: 'com_t3',
-    text: r'''El uso del espacio psicológico de tensión y miedo en un relato de suspenso se logra principalmente:''',
+    text:
+        r'''El uso del espacio psicológico de tensión y miedo en un relato de suspenso se logra principalmente:''',
     options: [
       r'''Describiendo detalladamente la ropa del protagonista''',
       r'''Situando la acción en un callejón oscuro, silencioso y con sombras amenazantes''',
@@ -3388,12 +3787,14 @@ final List<Question> comunicacionQuestions = [
       r'''Usando un narrador en segunda persona''',
     ],
     correctAnswer: 1,
-    explanation: r'''El entorno físico influye en la creación del ambiente psicológico mediante elementos que evocan peligro o aislamiento.''',
+    explanation:
+        r'''El entorno físico influye en la creación del ambiente psicológico mediante elementos que evocan peligro o aislamiento.''',
   ),
   Question(
     id: 'com_q342',
     topicId: 'com_t3',
-    text: r'''Si un relato transcurre en una prisión de máxima seguridad, donde las reglas internas de los presos dictan la vida diaria, el espacio que más se destaca para comprender la trama es:''',
+    text:
+        r'''Si un relato transcurre en una prisión de máxima seguridad, donde las reglas internas de los presos dictan la vida diaria, el espacio que más se destaca para comprender la trama es:''',
     options: [
       r'''El espacio abierto''',
       r'''El espacio social''',
@@ -3401,12 +3802,14 @@ final List<Question> comunicacionQuestions = [
       r'''El espacio geográfico''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las normas, jerarquías y costumbres de los reclusos conforman el espacio o entorno social de la narración.''',
+    explanation:
+        r'''Las normas, jerarquías y costumbres de los reclusos conforman el espacio o entorno social de la narración.''',
   ),
   Question(
     id: 'com_q343',
     topicId: 'com_t3',
-    text: r'''¿Por qué el narrador testigo genera un efecto de mayor objetividad aparente que el protagonista?''',
+    text:
+        r'''¿Por qué el narrador testigo genera un efecto de mayor objetividad aparente que el protagonista?''',
     options: [
       r'''Porque relata lo que le pasa a él mismo''',
       r'''Porque narra desde fuera de la historia''',
@@ -3414,12 +3817,14 @@ final List<Question> comunicacionQuestions = [
       r'''Porque tiene el poder de un narrador omnisciente''',
     ],
     correctAnswer: 2,
-    explanation: r'''El testigo narra lo que ve desde su perspectiva periférica, dando una ilusión de reporte objetivo de los actos del protagonista.''',
+    explanation:
+        r'''El testigo narra lo que ve desde su perspectiva periférica, dando una ilusión de reporte objetivo de los actos del protagonista.''',
   ),
   Question(
     id: 'com_q344',
     topicId: 'com_t3',
-    text: r'''Un personaje que al inicio de la novela es un policía corrupto, pero tras una tragedia familiar se redime y lucha por la justicia, es considerado un:''',
+    text:
+        r'''Un personaje que al inicio de la novela es un policía corrupto, pero tras una tragedia familiar se redime y lucha por la justicia, es considerado un:''',
     options: [
       r'''Personaje plano o estático''',
       r'''Personaje dinámico o redondo''',
@@ -3427,12 +3832,14 @@ final List<Question> comunicacionQuestions = [
       r'''Personaje de fondo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los personajes redondos o dinámicos evolucionan y sufren transformaciones psicológicas a lo largo de la historia.''',
+    explanation:
+        r'''Los personajes redondos o dinámicos evolucionan y sufren transformaciones psicológicas a lo largo de la historia.''',
   ),
   Question(
     id: 'com_q345',
     topicId: 'com_t3',
-    text: r'''Un texto narrativo que carece de conflicto (nudo) resultaría ser:''',
+    text:
+        r'''Un texto narrativo que carece de conflicto (nudo) resultaría ser:''',
     options: [
       r'''Una excelente novela policial''',
       r'''Una mera anécdota o secuencia de acciones sin tensión''',
@@ -3440,12 +3847,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un mito fundacional''',
     ],
     correctAnswer: 1,
-    explanation: r'''Sin conflicto que resolver, la narración pierde el interés dramático y se reduce a un recuento temporal plano.''',
+    explanation:
+        r'''Sin conflicto que resolver, la narración pierde el interés dramático y se reduce a un recuento temporal plano.''',
   ),
   Question(
     id: 'com_q346',
     topicId: 'com_t3',
-    text: r"""En la frase 'El detenido, un joven de los barrios marginales, actuó impulsado por la necesidad que imperaba en su entorno', se evidencia la influencia del espacio:""",
+    text:
+        r"""En la frase 'El detenido, un joven de los barrios marginales, actuó impulsado por la necesidad que imperaba en su entorno', se evidencia la influencia del espacio:""",
     options: [
       r'''Físico cerrado''',
       r'''Social''',
@@ -3453,12 +3862,14 @@ final List<Question> comunicacionQuestions = [
       r'''Simbólico''',
     ],
     correctAnswer: 1,
-    explanation: r'''Hace referencia a las condiciones socioeconómicas y al entorno cultural que motivan las acciones del personaje.''',
+    explanation:
+        r'''Hace referencia a las condiciones socioeconómicas y al entorno cultural que motivan las acciones del personaje.''',
   ),
   Question(
     id: 'com_q347',
     topicId: 'com_t3',
-    text: r"""Identifica el tipo de narrador: 'Ustedes se preguntarán por qué hice lo que hice. Aquella noche tomé mi revólver y salí a buscarlo.""",
+    text:
+        r"""Identifica el tipo de narrador: 'Ustedes se preguntarán por qué hice lo que hice. Aquella noche tomé mi revólver y salí a buscarlo.""",
     options: [
       r'''Tercera persona omnisciente''',
       r'''Primera persona testigo''',
@@ -3466,7 +3877,8 @@ final List<Question> comunicacionQuestions = [
       r'''Segunda persona objetiva''',
     ],
     correctAnswer: 2,
-    explanation: r"""El uso de 'hice', 'tomé', 'salí', demuestra que es el personaje principal contando sus propias acciones.""",
+    explanation:
+        r"""El uso de 'hice', 'tomé', 'salí', demuestra que es el personaje principal contando sus propias acciones.""",
   ),
   Question(
     id: 'com_q348',
@@ -3479,7 +3891,8 @@ final List<Question> comunicacionQuestions = [
       r'''La historia no tiene final''',
     ],
     correctAnswer: 1,
-    explanation: r"""El 'Deus ex machina' es un recurso donde una fuerza externa resuelve el nudo sin justificación previa en la trama.""",
+    explanation:
+        r"""El 'Deus ex machina' es un recurso donde una fuerza externa resuelve el nudo sin justificación previa en la trama.""",
   ),
   Question(
     id: 'com_q349',
@@ -3492,12 +3905,14 @@ final List<Question> comunicacionQuestions = [
       r'''Enumerar los objetos de una escena del crimen''',
     ],
     correctAnswer: 2,
-    explanation: r'''La etopeya sirve para dejar constancia de los rasgos de personalidad y actitud que pueden ser relevantes para la investigación.''',
+    explanation:
+        r'''La etopeya sirve para dejar constancia de los rasgos de personalidad y actitud que pueden ser relevantes para la investigación.''',
   ),
   Question(
     id: 'com_q351',
     topicId: 'com_t3',
-    text: r"""Lee el siguiente fragmento policial: 'Al llegar a la comisaría, el alférez presentó al detenido. Horas antes, este sujeto había estado merodeando la joyería. Finalmente, confesó tras el interrogatorio.' Si ordenamos la estructura clásicamente (Planteamiento - Nudo - Desenlace), el orden correcto de los hechos sería:""",
+    text:
+        r"""Lee el siguiente fragmento policial: 'Al llegar a la comisaría, el alférez presentó al detenido. Horas antes, este sujeto había estado merodeando la joyería. Finalmente, confesó tras el interrogatorio.' Si ordenamos la estructura clásicamente (Planteamiento - Nudo - Desenlace), el orden correcto de los hechos sería:""",
     options: [
       r'''Detención - Merodeo - Confesión''',
       r'''Merodeo (Planteamiento) - Detención (Nudo) - Confesión (Desenlace)''',
@@ -3505,12 +3920,14 @@ final List<Question> comunicacionQuestions = [
       r'''Merodeo - Confesión - Detención''',
     ],
     correctAnswer: 1,
-    explanation: r'''La historia natural inicia con el sospechoso merodeando, llega a su clímax con la captura/detención, y culmina con la resolución o confesión.''',
+    explanation:
+        r'''La historia natural inicia con el sospechoso merodeando, llega a su clímax con la captura/detención, y culmina con la resolución o confesión.''',
   ),
   Question(
     id: 'com_q352',
     topicId: 'com_t3',
-    text: r"""Microcuento: 'El cerrojo cedió. El agente entró empuñando su arma, pero la habitación estaba vacía; solo el humo de un cigarrillo a medio consumir bailaba en el aire.' ¿Qué elemento estructural domina en este relato corto?""",
+    text:
+        r"""Microcuento: 'El cerrojo cedió. El agente entró empuñando su arma, pero la habitación estaba vacía; solo el humo de un cigarrillo a medio consumir bailaba en el aire.' ¿Qué elemento estructural domina en este relato corto?""",
     options: [
       r'''Un desenlace cerrado''',
       r'''Un nudo de alta tensión que culmina en un anticlímax o desenlace abierto''',
@@ -3518,12 +3935,14 @@ final List<Question> comunicacionQuestions = [
       r'''La resolución completa del caso''',
     ],
     correctAnswer: 1,
-    explanation: r'''La entrada arma en mano es el nudo o clímax, y la habitación vacía interrumpe la tensión dejándola sin resolución definitiva.''',
+    explanation:
+        r'''La entrada arma en mano es el nudo o clímax, y la habitación vacía interrumpe la tensión dejándola sin resolución definitiva.''',
   ),
   Question(
     id: 'com_q353',
     topicId: 'com_t3',
-    text: r"""En la redacción de un parte de intervención, si el oficial redacta primero que 'el sospechoso fue enmarrocado' y en el párrafo siguiente que 'el sujeto se resistió violentamente a la intervención', comete un error en:""",
+    text:
+        r"""En la redacción de un parte de intervención, si el oficial redacta primero que 'el sospechoso fue enmarrocado' y en el párrafo siguiente que 'el sujeto se resistió violentamente a la intervención', comete un error en:""",
     options: [
       r'''La ortografía''',
       r'''El uso de personajes''',
@@ -3531,12 +3950,14 @@ final List<Question> comunicacionQuestions = [
       r'''El uso de figuras literarias''',
     ],
     correctAnswer: 2,
-    explanation: r'''En los textos policiales, la secuencia temporal debe ser lineal para entender la relación causa-efecto (resistencia -> reducción).''',
+    explanation:
+        r'''En los textos policiales, la secuencia temporal debe ser lineal para entender la relación causa-efecto (resistencia -> reducción).''',
   ),
   Question(
     id: 'com_q354',
     topicId: 'com_t3',
-    text: r"""Analiza el fragmento: 'Vi cómo le arrebataba el celular a la señora. Yo estaba cruzando la pista y no dudé en hacer sonar mi silbato.' El narrador es de tipo:""",
+    text:
+        r"""Analiza el fragmento: 'Vi cómo le arrebataba el celular a la señora. Yo estaba cruzando la pista y no dudé en hacer sonar mi silbato.' El narrador es de tipo:""",
     options: [
       r'''Heterodiegético - Omnisciente''',
       r'''Homodiegético - Testigo presencial''',
@@ -3544,12 +3965,14 @@ final List<Question> comunicacionQuestions = [
       r'''Heterodiegético - Cámara objetivo''',
     ],
     correctAnswer: 1,
-    explanation: r"""Narra en primera persona ('Vi', 'estaba') un suceso del cual no es la víctima ni el victimario, sino un observador que interviene.""",
+    explanation:
+        r"""Narra en primera persona ('Vi', 'estaba') un suceso del cual no es la víctima ni el victimario, sino un observador que interviene.""",
   ),
   Question(
     id: 'com_q356',
     topicId: 'com_t3',
-    text: r'''En un relato donde el antagonista es un hacker que borra los archivos policiales de forma anónima, y el protagonista es el perito informático que intenta rastrearlo, el conflicto principal es:''',
+    text:
+        r'''En un relato donde el antagonista es un hacker que borra los archivos policiales de forma anónima, y el protagonista es el perito informático que intenta rastrearlo, el conflicto principal es:''',
     options: [
       r'''Físico''',
       r'''Moral''',
@@ -3557,12 +3980,14 @@ final List<Question> comunicacionQuestions = [
       r'''Social''',
     ],
     correctAnswer: 2,
-    explanation: r'''Al tratarse de una lucha en el ciberespacio, el conflicto es de intelecto, destreza técnica y astucia, no de fuerza física.''',
+    explanation:
+        r'''Al tratarse de una lucha en el ciberespacio, el conflicto es de intelecto, destreza técnica y astucia, no de fuerza física.''',
   ),
   Question(
     id: 'com_q357',
     topicId: 'com_t3',
-    text: r"""En el contexto de la función policial, un 'Acta de hallazgo' debe evitar el uso de:""",
+    text:
+        r"""En el contexto de la función policial, un 'Acta de hallazgo' debe evitar el uso de:""",
     options: [
       r'''Lenguaje referencial''',
       r'''Narrador homodiegético''',
@@ -3570,12 +3995,14 @@ final List<Question> comunicacionQuestions = [
       r'''Espacio y tiempo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los documentos legales requieren objetividad estricta; no pueden suponer sentimientos (omnisciente) ni emitir juicios de valor innecesarios.''',
+    explanation:
+        r'''Los documentos legales requieren objetividad estricta; no pueden suponer sentimientos (omnisciente) ni emitir juicios de valor innecesarios.''',
   ),
   Question(
     id: 'com_q358',
     topicId: 'com_t3',
-    text: r"""'El informante anónimo nos dio el nombre del líder de la banda y luego se perdió entre la multitud para nunca más ser visto.' El informante es un personaje de tipo:""",
+    text:
+        r"""'El informante anónimo nos dio el nombre del líder de la banda y luego se perdió entre la multitud para nunca más ser visto.' El informante es un personaje de tipo:""",
     options: [
       r'''Protagonista''',
       r'''Secundario''',
@@ -3583,12 +4010,14 @@ final List<Question> comunicacionQuestions = [
       r'''Incidental o fugaz''',
     ],
     correctAnswer: 3,
-    explanation: r'''Aparece momentáneamente para hacer avanzar la trama y luego desaparece de la historia.''',
+    explanation:
+        r'''Aparece momentáneamente para hacer avanzar la trama y luego desaparece de la historia.''',
   ),
   Question(
     id: 'com_q359',
     topicId: 'com_t3',
-    text: r"""En el esquema actancial de Greimas, aplicado a una persecución policial, ¿quién actúa como el 'Objeto de deseo' u 'Objetivo' del protagonista (el policía)?""",
+    text:
+        r"""En el esquema actancial de Greimas, aplicado a una persecución policial, ¿quién actúa como el 'Objeto de deseo' u 'Objetivo' del protagonista (el policía)?""",
     options: [
       r'''El patrullero''',
       r'''La captura del delincuente o el restablecimiento de la ley''',
@@ -3596,12 +4025,14 @@ final List<Question> comunicacionQuestions = [
       r'''El arma de fuego''',
     ],
     correctAnswer: 1,
-    explanation: r'''El objetivo principal del policía (sujeto) es detener al infractor y cumplir con su deber (objeto).''',
+    explanation:
+        r'''El objetivo principal del policía (sujeto) es detener al infractor y cumplir con su deber (objeto).''',
   ),
   Question(
     id: 'com_q360',
     topicId: 'com_t3',
-    text: r"""'La niebla espesa de Pasamayo ocultaba la carretera; el patrullero avanzaba a ciegas. Era el escondite perfecto para los contrabandistas.' El espacio físico aquí funciona como:""",
+    text:
+        r"""'La niebla espesa de Pasamayo ocultaba la carretera; el patrullero avanzaba a ciegas. Era el escondite perfecto para los contrabandistas.' El espacio físico aquí funciona como:""",
     options: [
       r'''Un mero decorado sin importancia''',
       r'''Un aliado del protagonista''',
@@ -3609,12 +4040,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un símbolo de paz''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las condiciones geográficas y climáticas (niebla) complican la acción del protagonista y protegen al antagonista.''',
+    explanation:
+        r'''Las condiciones geográficas y climáticas (niebla) complican la acción del protagonista y protegen al antagonista.''',
   ),
   Question(
     id: 'com_q361',
     topicId: 'com_t3',
-    text: r"""'La comisaría estaba sumida en un silencio tenso tras el motín. El comisario sentía el peso del fracaso oprimiendo su pecho.' El fragmento destaca principalmente el espacio:""",
+    text:
+        r"""'La comisaría estaba sumida en un silencio tenso tras el motín. El comisario sentía el peso del fracaso oprimiendo su pecho.' El fragmento destaca principalmente el espacio:""",
     options: [
       r'''Social''',
       r'''Físico abierto''',
@@ -3622,12 +4055,14 @@ final List<Question> comunicacionQuestions = [
       r'''Geográfico''',
     ],
     correctAnswer: 2,
-    explanation: r"""Destaca las sensaciones internas ('silencio tenso', 'peso del fracaso'), creando una atmósfera emocional o psicológica.""",
+    explanation:
+        r"""Destaca las sensaciones internas ('silencio tenso', 'peso del fracaso'), creando una atmósfera emocional o psicológica.""",
   ),
   Question(
     id: 'com_q362',
     topicId: 'com_t3',
-    text: r'''Si un cadete escribe una crónica sobre las protestas en el centro de Lima, detallando el descontento de los comerciantes, los lemas de las pancartas y la reacción de la clase trabajadora, está construyendo sólidamente un:''',
+    text:
+        r'''Si un cadete escribe una crónica sobre las protestas en el centro de Lima, detallando el descontento de los comerciantes, los lemas de las pancartas y la reacción de la clase trabajadora, está construyendo sólidamente un:''',
     options: [
       r'''Espacio social''',
       r'''Espacio mitológico''',
@@ -3635,12 +4070,14 @@ final List<Question> comunicacionQuestions = [
       r'''Clímax cerrado''',
     ],
     correctAnswer: 0,
-    explanation: r'''La descripción del contexto humano, económico y cultural de las protestas configura el espacio social.''',
+    explanation:
+        r'''La descripción del contexto humano, económico y cultural de las protestas configura el espacio social.''',
   ),
   Question(
     id: 'com_q364',
     topicId: 'com_t3',
-    text: r'''¿Cómo se llama la alteración temporal que consiste en un salto hacia el pasado de la historia?''',
+    text:
+        r'''¿Cómo se llama la alteración temporal que consiste en un salto hacia el pasado de la historia?''',
     options: [
       r'''Prolepsis''',
       r'''Analepsis (o Flashback)''',
@@ -3648,12 +4085,14 @@ final List<Question> comunicacionQuestions = [
       r'''Epíteto''',
     ],
     correctAnswer: 1,
-    explanation: r'''La analepsis interrumpe la línea temporal presente para narrar un hecho ocurrido en el pasado.''',
+    explanation:
+        r'''La analepsis interrumpe la línea temporal presente para narrar un hecho ocurrido en el pasado.''',
   ),
   Question(
     id: 'com_q365',
     topicId: 'com_t3',
-    text: r'''La prolepsis o flashforward es una figura temporal que consiste en:''',
+    text:
+        r'''La prolepsis o flashforward es una figura temporal que consiste en:''',
     options: [
       r'''Omitir partes aburridas de la historia''',
       r'''Recordar la infancia del personaje''',
@@ -3661,7 +4100,8 @@ final List<Question> comunicacionQuestions = [
       r'''Detener el tiempo para describir un paisaje''',
     ],
     correctAnswer: 2,
-    explanation: r'''La prolepsis es la anticipación temporal; el narrador nos adelanta algo que ocurrirá más adelante.''',
+    explanation:
+        r'''La prolepsis es la anticipación temporal; el narrador nos adelanta algo que ocurrirá más adelante.''',
   ),
   Question(
     id: 'com_q366',
@@ -3674,12 +4114,14 @@ final List<Question> comunicacionQuestions = [
       r'''El tiempo atmosférico (lluvia, sol)''',
     ],
     correctAnswer: 2,
-    explanation: r'''El tiempo psicológico depende de las emociones del personaje; minutos de angustia pueden parecerle horas.''',
+    explanation:
+        r'''El tiempo psicológico depende de las emociones del personaje; minutos de angustia pueden parecerle horas.''',
   ),
   Question(
     id: 'com_q368',
     topicId: 'com_t3',
-    text: r"""El cuento tradicional se caracteriza por su efecto de 'intensidad', lo cual significa que:""",
+    text:
+        r"""El cuento tradicional se caracteriza por su efecto de 'intensidad', lo cual significa que:""",
     options: [
       r'''Se centra en un único hilo argumental que conduce rápidamente al clímax''',
       r'''Posee cientos de personajes''',
@@ -3687,20 +4129,18 @@ final List<Question> comunicacionQuestions = [
       r'''No tiene un desenlace''',
     ],
     correctAnswer: 0,
-    explanation: r'''El cuento clásico busca un impacto único; por ende, elimina todo elemento que no aporte directamente al desenlace.''',
+    explanation:
+        r'''El cuento clásico busca un impacto único; por ende, elimina todo elemento que no aporte directamente al desenlace.''',
   ),
   Question(
     id: 'com_q369',
     topicId: 'com_t3',
-    text: r'''Un relato de transmisión oral que explica el origen del mundo, los fenómenos naturales o la creación mediante la intervención de deidades se llama:''',
-    options: [
-      r'''Crónica''',
-      r'''Leyenda''',
-      r'''Mito''',
-      r'''Fábula''',
-    ],
+    text:
+        r'''Un relato de transmisión oral que explica el origen del mundo, los fenómenos naturales o la creación mediante la intervención de deidades se llama:''',
+    options: [r'''Crónica''', r'''Leyenda''', r'''Mito''', r'''Fábula'''],
     correctAnswer: 2,
-    explanation: r'''El mito tiene un carácter sagrado y fundacional, explicando el origen del universo a través de fuerzas sobrenaturales o dioses.''',
+    explanation:
+        r'''El mito tiene un carácter sagrado y fundacional, explicando el origen del universo a través de fuerzas sobrenaturales o dioses.''',
   ),
   Question(
     id: 'com_q370',
@@ -3713,7 +4153,8 @@ final List<Question> comunicacionQuestions = [
       r'''La leyenda siempre deja una moraleja explícita al final''',
     ],
     correctAnswer: 0,
-    explanation: r'''La leyenda parte de un evento, persona (como un héroe local) o lugar real, al cual la tradición popular le añade elementos mágicos.''',
+    explanation:
+        r'''La leyenda parte de un evento, persona (como un héroe local) o lugar real, al cual la tradición popular le añade elementos mágicos.''',
   ),
   Question(
     id: 'com_q371',
@@ -3726,7 +4167,8 @@ final List<Question> comunicacionQuestions = [
       r'''Explicar el origen del universo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La fábula, frecuentemente protagonizada por animales personificados, culmina con una enseñanza o moraleja.''',
+    explanation:
+        r'''La fábula, frecuentemente protagonizada por animales personificados, culmina con una enseñanza o moraleja.''',
   ),
   Question(
     id: 'com_q372',
@@ -3739,7 +4181,8 @@ final List<Question> comunicacionQuestions = [
       r'''Informes verídicos de batallas recientes''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las epopeyas, como La Ilíada o La Odisea, narran hechos heroicos de proporciones míticas que forjan la identidad de un pueblo.''',
+    explanation:
+        r'''Las epopeyas, como La Ilíada o La Odisea, narran hechos heroicos de proporciones míticas que forjan la identidad de un pueblo.''',
   ),
   Question(
     id: 'com_q373',
@@ -3752,25 +4195,24 @@ final List<Question> comunicacionQuestions = [
       r'''Contemporánea''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los cantares de gesta son la manifestación de la épica en la Edad Media, transmitidos oralmente por los juglares.''',
+    explanation:
+        r'''Los cantares de gesta son la manifestación de la épica en la Edad Media, transmitidos oralmente por los juglares.''',
   ),
   Question(
     id: 'com_q375',
     topicId: 'com_t3',
-    text: r'''La figura literaria que consiste en identificar un término real con uno imaginario por su semejanza, sin usar nexos, se llama:''',
-    options: [
-      r'''Metáfora''',
-      r'''Anáfora''',
-      r'''Epíteto''',
-      r'''Símil''',
-    ],
+    text:
+        r'''La figura literaria que consiste en identificar un término real con uno imaginario por su semejanza, sin usar nexos, se llama:''',
+    options: [r'''Metáfora''', r'''Anáfora''', r'''Epíteto''', r'''Símil'''],
     correctAnswer: 0,
-    explanation: r"""La metáfora sustituye o identifica dos elementos (ej. 'las perlas de su boca' por dientes).""",
+    explanation:
+        r"""La metáfora sustituye o identifica dos elementos (ej. 'las perlas de su boca' por dientes).""",
   ),
   Question(
     id: 'com_q376',
     topicId: 'com_t3',
-    text: r"""¿Qué figura literaria compara expresamente dos realidades utilizando palabras como 'como', 'cual', 'parece'?""",
+    text:
+        r"""¿Qué figura literaria compara expresamente dos realidades utilizando palabras como 'como', 'cual', 'parece'?""",
     options: [
       r'''Metáfora''',
       r'''Símil o comparación''',
@@ -3778,25 +4220,24 @@ final List<Question> comunicacionQuestions = [
       r'''Anáfora''',
     ],
     correctAnswer: 1,
-    explanation: r"""El símil hace explícita la comparación con conectores gramaticales (ej. 'fuerte como un toro').""",
+    explanation:
+        r"""El símil hace explícita la comparación con conectores gramaticales (ej. 'fuerte como un toro').""",
   ),
   Question(
     id: 'com_q377',
     topicId: 'com_t3',
-    text: r'''La repetición intencional de una o más palabras al principio de varios versos o frases se denomina:''',
-    options: [
-      r'''Epíteto''',
-      r'''Hipérbole''',
-      r'''Anáfora''',
-      r'''Símil''',
-    ],
+    text:
+        r'''La repetición intencional de una o más palabras al principio de varios versos o frases se denomina:''',
+    options: [r'''Epíteto''', r'''Hipérbole''', r'''Anáfora''', r'''Símil'''],
     correctAnswer: 2,
-    explanation: r'''La anáfora otorga ritmo y énfasis al repetir palabras al inicio de oraciones sucesivas.''',
+    explanation:
+        r'''La anáfora otorga ritmo y énfasis al repetir palabras al inicio de oraciones sucesivas.''',
   ),
   Question(
     id: 'com_q378',
     topicId: 'com_t3',
-    text: r'''La exageración desmesurada de una cualidad, acción o situación para darle mayor impacto se conoce como:''',
+    text:
+        r'''La exageración desmesurada de una cualidad, acción o situación para darle mayor impacto se conoce como:''',
     options: [
       r'''Metáfora''',
       r'''Hipérbole''',
@@ -3804,25 +4245,24 @@ final List<Question> comunicacionQuestions = [
       r'''Epíteto''',
     ],
     correctAnswer: 1,
-    explanation: r"""La hipérbole magnifica o disminuye la realidad de forma exagerada ('te llamé mil veces').""",
+    explanation:
+        r"""La hipérbole magnifica o disminuye la realidad de forma exagerada ('te llamé mil veces').""",
   ),
   Question(
     id: 'com_q379',
     topicId: 'com_t3',
-    text: r'''El uso de un adjetivo que resalta una cualidad inherente y obvia del sustantivo al que acompaña se llama:''',
-    options: [
-      r'''Símil''',
-      r'''Anáfora''',
-      r'''Epíteto''',
-      r'''Hipérbole''',
-    ],
+    text:
+        r'''El uso de un adjetivo que resalta una cualidad inherente y obvia del sustantivo al que acompaña se llama:''',
+    options: [r'''Símil''', r'''Anáfora''', r'''Epíteto''', r'''Hipérbole'''],
     correctAnswer: 2,
-    explanation: r"""El epíteto ('nieve blanca', 'sangre roja') se usa para añadir expresividad, no para clasificar al sustantivo.""",
+    explanation:
+        r"""El epíteto ('nieve blanca', 'sangre roja') se usa para añadir expresividad, no para clasificar al sustantivo.""",
   ),
   Question(
     id: 'com_q380',
     topicId: 'com_t3',
-    text: r'''Si una novela inicia relatando el descubrimiento de un cadáver y luego dedica los capítulos siguientes a contar qué pasó los días previos, el tiempo usado es:''',
+    text:
+        r'''Si una novela inicia relatando el descubrimiento de un cadáver y luego dedica los capítulos siguientes a contar qué pasó los días previos, el tiempo usado es:''',
     options: [
       r'''Totalmente lineal''',
       r'''Anacrónico (con uso de analepsis)''',
@@ -3830,12 +4270,14 @@ final List<Question> comunicacionQuestions = [
       r'''Prolepsis continua''',
     ],
     correctAnswer: 1,
-    explanation: r"""La historia comienza 'in media res' o 'in extrema res' y salta al pasado (analepsis) para explicar el origen del suceso.""",
+    explanation:
+        r"""La historia comienza 'in media res' o 'in extrema res' y salta al pasado (analepsis) para explicar el origen del suceso.""",
   ),
   Question(
     id: 'com_q382',
     topicId: 'com_t3',
-    text: r"""'Durante el tiroteo, el oficial sintió que los segundos se convertían en horas interminables'. ¿Qué concepto de tiempo se ilustra?""",
+    text:
+        r"""'Durante el tiroteo, el oficial sintió que los segundos se convertían en horas interminables'. ¿Qué concepto de tiempo se ilustra?""",
     options: [
       r'''Tiempo objetivo''',
       r'''Tiempo histórico''',
@@ -3843,12 +4285,14 @@ final List<Question> comunicacionQuestions = [
       r'''Tiempo gramatical''',
     ],
     correctAnswer: 2,
-    explanation: r'''La percepción distorsionada de la duración por la adrenalina o el estrés es la esencia del tiempo psicológico.''',
+    explanation:
+        r'''La percepción distorsionada de la duración por la adrenalina o el estrés es la esencia del tiempo psicológico.''',
   ),
   Question(
     id: 'com_q383',
     topicId: 'com_t3',
-    text: r'''¿Cuál es la utilidad principal del flashback o analepsis en una investigación o narración policial?''',
+    text:
+        r'''¿Cuál es la utilidad principal del flashback o analepsis en una investigación o narración policial?''',
     options: [
       r'''Revelar los motivos del crimen o cómo se planeó en el pasado''',
       r'''Adelantar si el sospechoso será condenado o no''',
@@ -3856,12 +4300,14 @@ final List<Question> comunicacionQuestions = [
       r'''Describir el color del uniforme del detective''',
     ],
     correctAnswer: 0,
-    explanation: r'''Retroceder en el tiempo permite exponer antecedentes, los móviles del delito y armar el rompecabezas del caso.''',
+    explanation:
+        r'''Retroceder en el tiempo permite exponer antecedentes, los móviles del delito y armar el rompecabezas del caso.''',
   ),
   Question(
     id: 'com_q384',
     topicId: 'com_t3',
-    text: r"""'El joven no sabía que esa sería la última vez que vería la luz del sol'. El narrador está utilizando una:""",
+    text:
+        r"""'El joven no sabía que esa sería la última vez que vería la luz del sol'. El narrador está utilizando una:""",
     options: [
       r'''Analepsis''',
       r'''Prolepsis''',
@@ -3869,12 +4315,14 @@ final List<Question> comunicacionQuestions = [
       r'''Metáfora''',
     ],
     correctAnswer: 1,
-    explanation: r'''El narrador nos está adelantando un evento fatídico futuro (la muerte o encierro permanente del joven).''',
+    explanation:
+        r'''El narrador nos está adelantando un evento fatídico futuro (la muerte o encierro permanente del joven).''',
   ),
   Question(
     id: 'com_q385',
     topicId: 'com_t3',
-    text: r'''La parábola, al igual que la fábula, deja una enseñanza moral. Su diferencia principal radica en que:''',
+    text:
+        r'''La parábola, al igual que la fábula, deja una enseñanza moral. Su diferencia principal radica en que:''',
     options: [
       r'''La parábola usa animales como personajes principales''',
       r'''La parábola utiliza personajes humanos y situaciones más cotidianas o plausibles''',
@@ -3882,12 +4330,14 @@ final List<Question> comunicacionQuestions = [
       r'''La parábola es un texto argumentativo''',
     ],
     correctAnswer: 1,
-    explanation: r'''A diferencia de la fábula (animales antropomorfizados), la parábola usa humanos (como las parábolas bíblicas) para ilustrar verdades morales.''',
+    explanation:
+        r'''A diferencia de la fábula (animales antropomorfizados), la parábola usa humanos (como las parábolas bíblicas) para ilustrar verdades morales.''',
   ),
   Question(
     id: 'com_q386',
     topicId: 'com_t3',
-    text: r'''Un documento policial en el que el oficial redacta de forma detallada y secuencial los pormenores de su servicio de patrullaje comparte características con:''',
+    text:
+        r'''Un documento policial en el que el oficial redacta de forma detallada y secuencial los pormenores de su servicio de patrullaje comparte características con:''',
     options: [
       r'''El mito''',
       r'''El cantar de gesta''',
@@ -3895,12 +4345,14 @@ final List<Question> comunicacionQuestions = [
       r'''La leyenda''',
     ],
     correctAnswer: 2,
-    explanation: r'''Al igual que la crónica, el informe de servicio es un relato verídico ordenado temporalmente.''',
+    explanation:
+        r'''Al igual que la crónica, el informe de servicio es un relato verídico ordenado temporalmente.''',
   ),
   Question(
     id: 'com_q388',
     topicId: 'com_t3',
-    text: r'''Si un cadete escribe una narración de tres páginas sobre un solo caso policial, con muy pocos personajes, acción rápida y un final sorprendente, está redactando:''',
+    text:
+        r'''Si un cadete escribe una narración de tres páginas sobre un solo caso policial, con muy pocos personajes, acción rápida y un final sorprendente, está redactando:''',
     options: [
       r'''Una epopeya''',
       r'''Una novela''',
@@ -3908,12 +4360,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un mito''',
     ],
     correctAnswer: 2,
-    explanation: r'''La brevedad, la concentración de la acción y el final de impacto son los rasgos distintivos del cuento.''',
+    explanation:
+        r'''La brevedad, la concentración de la acción y el final de impacto son los rasgos distintivos del cuento.''',
   ),
   Question(
     id: 'com_q389',
     topicId: 'com_t3',
-    text: r"""El relato del 'Pishtaco', un ser que aterra a los pobladores de los Andes extrayendo grasa humana, se clasifica como:""",
+    text:
+        r"""El relato del 'Pishtaco', un ser que aterra a los pobladores de los Andes extrayendo grasa humana, se clasifica como:""",
     options: [
       r'''Mito''',
       r'''Leyenda''',
@@ -3921,25 +4375,24 @@ final List<Question> comunicacionQuestions = [
       r'''Cantar de gesta''',
     ],
     correctAnswer: 1,
-    explanation: r'''Es una leyenda porque parte de miedos y contextos históricos andinos, combinados con elementos sobrenaturales y terroríficos transmitidos de generación en generación.''',
+    explanation:
+        r'''Es una leyenda porque parte de miedos y contextos históricos andinos, combinados con elementos sobrenaturales y terroríficos transmitidos de generación en generación.''',
   ),
   Question(
     id: 'com_q390',
     topicId: 'com_t3',
-    text: r"""¿A qué especie literaria corresponde 'La Ilíada' de Homero, que narra la guerra de Troya y exalta el heroísmo?""",
-    options: [
-      r'''Novela''',
-      r'''Epopeya''',
-      r'''Fábula''',
-      r'''Crónica''',
-    ],
+    text:
+        r"""¿A qué especie literaria corresponde 'La Ilíada' de Homero, que narra la guerra de Troya y exalta el heroísmo?""",
+    options: [r'''Novela''', r'''Epopeya''', r'''Fábula''', r'''Crónica'''],
     correctAnswer: 1,
-    explanation: r'''Es la epopeya clásica por excelencia, que canta las gestas de héroes y dioses de la antigua Grecia.''',
+    explanation:
+        r'''Es la epopeya clásica por excelencia, que canta las gestas de héroes y dioses de la antigua Grecia.''',
   ),
   Question(
     id: 'com_q391',
     topicId: 'com_t3',
-    text: r'''Una crónica periodística policial se diferencia de un cuento policial en que:''',
+    text:
+        r'''Una crónica periodística policial se diferencia de un cuento policial en que:''',
     options: [
       r'''El cuento policial se basa estrictamente en la realidad periodística''',
       r'''La crónica periodística relata un hecho real y verificable, mientras que el cuento es ficción literaria''',
@@ -3947,12 +4400,14 @@ final List<Question> comunicacionQuestions = [
       r'''El cuento no tiene personajes''',
     ],
     correctAnswer: 1,
-    explanation: r'''La distinción central es el pacto de veracidad: la crónica pertenece al ámbito periodístico/real, el cuento al literario/ficcional.''',
+    explanation:
+        r'''La distinción central es el pacto de veracidad: la crónica pertenece al ámbito periodístico/real, el cuento al literario/ficcional.''',
   ),
   Question(
     id: 'com_q392',
     topicId: 'com_t3',
-    text: r"""'Sus reflejos felinos le permitieron esquivar el ataque'. La expresión 'reflejos felinos' es una:""",
+    text:
+        r"""'Sus reflejos felinos le permitieron esquivar el ataque'. La expresión 'reflejos felinos' es una:""",
     options: [
       r'''Hipérbole''',
       r'''Anáfora''',
@@ -3960,12 +4415,14 @@ final List<Question> comunicacionQuestions = [
       r'''Epíteto''',
     ],
     correctAnswer: 2,
-    explanation: r"""Identifica la agilidad del personaje con la de un felino sin usar conectores como 'como' o 'parece'.""",
+    explanation:
+        r"""Identifica la agilidad del personaje con la de un felino sin usar conectores como 'como' o 'parece'.""",
   ),
   Question(
     id: 'com_q393',
     topicId: 'com_t3',
-    text: r"""'El detective buscaba la verdad como un perro sabueso rastrea a su presa'. Aquí se ha empleado:""",
+    text:
+        r"""'El detective buscaba la verdad como un perro sabueso rastrea a su presa'. Aquí se ha empleado:""",
     options: [
       r'''Un símil''',
       r'''Una metáfora''',
@@ -3973,46 +4430,38 @@ final List<Question> comunicacionQuestions = [
       r'''Un epíteto''',
     ],
     correctAnswer: 0,
-    explanation: r"""El uso del conector 'como' establece explícitamente la comparación entre ambas acciones.""",
+    explanation:
+        r"""El uso del conector 'como' establece explícitamente la comparación entre ambas acciones.""",
   ),
   Question(
     id: 'com_q394',
     topicId: 'com_t3',
-    text: r"""Identifica la figura en los siguientes versos o líneas:n'Nadie vio al sospechoso.nNadie escuchó los disparos.nNadie sabía nada.""",
-    options: [
-      r'''Metáfora''',
-      r'''Símil''',
-      r'''Anáfora''',
-      r'''Hipérbole''',
-    ],
+    text:
+        r"""Identifica la figura en los siguientes versos o líneas:n'Nadie vio al sospechoso.nNadie escuchó los disparos.nNadie sabía nada.""",
+    options: [r'''Metáfora''', r'''Símil''', r'''Anáfora''', r'''Hipérbole'''],
     correctAnswer: 2,
-    explanation: r"""La repetición de la palabra 'Nadie' al inicio de cada oración es una anáfora.""",
+    explanation:
+        r"""La repetición de la palabra 'Nadie' al inicio de cada oración es una anáfora.""",
   ),
   Question(
     id: 'com_q395',
     topicId: 'com_t3',
-    text: r"""'El ruido de la explosión se escuchó en todo el universo'. Esta oración es un claro ejemplo de:""",
-    options: [
-      r'''Símil''',
-      r'''Anáfora''',
-      r'''Metáfora''',
-      r'''Hipérbole''',
-    ],
+    text:
+        r"""'El ruido de la explosión se escuchó en todo el universo'. Esta oración es un claro ejemplo de:""",
+    options: [r'''Símil''', r'''Anáfora''', r'''Metáfora''', r'''Hipérbole'''],
     correctAnswer: 3,
-    explanation: r'''Es una exageración evidente (hipérbole), pues el sonido no puede abarcar todo el universo.''',
+    explanation:
+        r'''Es una exageración evidente (hipérbole), pues el sonido no puede abarcar todo el universo.''',
   ),
   Question(
     id: 'com_q396',
     topicId: 'com_t3',
-    text: r"""En la frase 'la oscura noche ocultó los pasos del prófugo', la palabra 'oscura' funciona como:""",
-    options: [
-      r'''Símil''',
-      r'''Metáfora''',
-      r'''Hipérbole''',
-      r'''Epíteto''',
-    ],
+    text:
+        r"""En la frase 'la oscura noche ocultó los pasos del prófugo', la palabra 'oscura' funciona como:""",
+    options: [r'''Símil''', r'''Metáfora''', r'''Hipérbole''', r'''Epíteto'''],
     correctAnswer: 3,
-    explanation: r'''La oscuridad es una cualidad inherente a la noche, por lo que su uso refuerza poéticamente la descripción (epíteto).''',
+    explanation:
+        r'''La oscuridad es una cualidad inherente a la noche, por lo que su uso refuerza poéticamente la descripción (epíteto).''',
   ),
   Question(
     id: 'com_q397',
@@ -4025,12 +4474,14 @@ final List<Question> comunicacionQuestions = [
       r'''Indiferente, no afecta la comprensión''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los textos legales y policiales exigen precisión y claridad; el lenguaje figurado puede causar ambigüedad.''',
+    explanation:
+        r'''Los textos legales y policiales exigen precisión y claridad; el lenguaje figurado puede causar ambigüedad.''',
   ),
   Question(
     id: 'com_q398',
     topicId: 'com_t3',
-    text: r'''¿Qué efecto genera el uso repetido de la anáfora en el discurso de un líder policial a sus tropas?''',
+    text:
+        r'''¿Qué efecto genera el uso repetido de la anáfora en el discurso de un líder policial a sus tropas?''',
     options: [
       r'''Aburrimiento y confusión técnica''',
       r'''Énfasis, ritmo persuasivo e impacto emocional''',
@@ -4038,12 +4489,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hacer que el tiempo parezca más lento''',
     ],
     correctAnswer: 1,
-    explanation: r'''La anáfora es una herramienta retórica poderosa para reforzar ideas y motivar emocionalmente a los oyentes.''',
+    explanation:
+        r'''La anáfora es una herramienta retórica poderosa para reforzar ideas y motivar emocionalmente a los oyentes.''',
   ),
   Question(
     id: 'com_q399',
     topicId: 'com_t3',
-    text: r"""'Lloró un océano de lágrimas al confesar su crimen'. Identifica la figura literaria principal:""",
+    text:
+        r"""'Lloró un océano de lágrimas al confesar su crimen'. Identifica la figura literaria principal:""",
     options: [
       r'''Metáfora''',
       r'''Anáfora''',
@@ -4051,12 +4504,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hipérbole''',
     ],
     correctAnswer: 3,
-    explanation: r'''Llorar un océano es una exageración desmedida (hipérbole) para indicar que lloró mucho.''',
+    explanation:
+        r'''Llorar un océano es una exageración desmedida (hipérbole) para indicar que lloró mucho.''',
   ),
   Question(
     id: 'com_q401',
     topicId: 'com_t3',
-    text: r'''En un juicio, la defensa alega que el parte policial es confuso porque inicia contando la captura, luego pasa a la persecución, después vuelve a la captura y finalmente explica el robo. El error principal en la narración del oficial fue:''',
+    text:
+        r'''En un juicio, la defensa alega que el parte policial es confuso porque inicia contando la captura, luego pasa a la persecución, después vuelve a la captura y finalmente explica el robo. El error principal en la narración del oficial fue:''',
     options: [
       r'''Falta de epítetos''',
       r'''Mal manejo del espacio social''',
@@ -4064,12 +4519,14 @@ final List<Question> comunicacionQuestions = [
       r'''Omisión del clímax''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los constantes saltos en el tiempo (anacronías) en un documento que exige secuencialidad generan confusión e invalidez argumental.''',
+    explanation:
+        r'''Los constantes saltos en el tiempo (anacronías) en un documento que exige secuencialidad generan confusión e invalidez argumental.''',
   ),
   Question(
     id: 'com_q402',
     topicId: 'com_t3',
-    text: r"""Microcuento policial: 'Abrió la puerta de la bóveda. El oro ya no estaba. Recordó entonces la extraña sonrisa del guardia nocturno al despedirse esa madrugada.' ¿Qué recursos temporales se utilizan?""",
+    text:
+        r"""Microcuento policial: 'Abrió la puerta de la bóveda. El oro ya no estaba. Recordó entonces la extraña sonrisa del guardia nocturno al despedirse esa madrugada.' ¿Qué recursos temporales se utilizan?""",
     options: [
       r'''Secuencia lineal estricta''',
       r'''Un presente narrativo interrumpido por una analepsis breve''',
@@ -4077,12 +4534,14 @@ final List<Question> comunicacionQuestions = [
       r'''Tiempo exclusivamente psicológico''',
     ],
     correctAnswer: 1,
-    explanation: r'''La acción principal es el descubrimiento (presente de la narración), e inmediatamente la mente del detective retrocede a la madrugada (analepsis).''',
+    explanation:
+        r'''La acción principal es el descubrimiento (presente de la narración), e inmediatamente la mente del detective retrocede a la madrugada (analepsis).''',
   ),
   Question(
     id: 'com_q403',
     topicId: 'com_t3',
-    text: r"""Si un sospechoso narra su coartada indicando: 'A las 10 p.m. vi el partido. A las 11 p.m. me fui a dormir y no supe más.' Su versión maneja un tiempo:""",
+    text:
+        r"""Si un sospechoso narra su coartada indicando: 'A las 10 p.m. vi el partido. A las 11 p.m. me fui a dormir y no supe más.' Su versión maneja un tiempo:""",
     options: [
       r'''Psicológico y onírico''',
       r'''Anacrónico in media res''',
@@ -4090,12 +4549,14 @@ final List<Question> comunicacionQuestions = [
       r'''Anticipatorio''',
     ],
     correctAnswer: 2,
-    explanation: r'''Relata sus acciones en el orden natural de las manecillas del reloj.''',
+    explanation:
+        r'''Relata sus acciones en el orden natural de las manecillas del reloj.''',
   ),
   Question(
     id: 'com_q404',
     topicId: 'com_t3',
-    text: r'''Desde el punto de vista estructural, ¿por qué un parte de ocurrencia policial está más emparentado con la crónica que con el mito?''',
+    text:
+        r'''Desde el punto de vista estructural, ¿por qué un parte de ocurrencia policial está más emparentado con la crónica que con el mito?''',
     options: [
       r'''Porque ambos requieren la intervención de deidades''',
       r'''Porque ambos se escriben en verso''',
@@ -4103,12 +4564,14 @@ final List<Question> comunicacionQuestions = [
       r'''Porque la crónica siempre tiene un final feliz y el mito no''',
     ],
     correctAnswer: 2,
-    explanation: r'''La crónica y el documento policial comparten el propósito de registrar la realidad histórica/social en un hilo temporal verificable.''',
+    explanation:
+        r'''La crónica y el documento policial comparten el propósito de registrar la realidad histórica/social en un hilo temporal verificable.''',
   ),
   Question(
     id: 'com_q405',
     topicId: 'com_t3',
-    text: r"""Un instructor de la EO-PNP cuenta a sus cadetes la historia de un zorro astuto que engaña a los demás animales para no trabajar, pero al final termina atrapado en su propia trampa. Concluye diciendo: 'El crimen y la pereza no pagan'. La historia narrada es:""",
+    text:
+        r"""Un instructor de la EO-PNP cuenta a sus cadetes la historia de un zorro astuto que engaña a los demás animales para no trabajar, pero al final termina atrapado en su propia trampa. Concluye diciendo: 'El crimen y la pereza no pagan'. La historia narrada es:""",
     options: [
       r'''Una leyenda urbana''',
       r'''Un mito andino''',
@@ -4116,12 +4579,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un cantar de gesta''',
     ],
     correctAnswer: 2,
-    explanation: r'''Cumple con las características de la fábula: animales personificados y una moraleja explícita al final.''',
+    explanation:
+        r'''Cumple con las características de la fábula: animales personificados y una moraleja explícita al final.''',
   ),
   Question(
     id: 'com_q406',
     topicId: 'com_t3',
-    text: r"""Lee el siguiente texto: 'Aquiles, el de los pies ligeros, desenvainó su espada de bronce'. Identifica a qué especie narrativa pertenece y qué figura literaria destaca:""",
+    text:
+        r"""Lee el siguiente texto: 'Aquiles, el de los pies ligeros, desenvainó su espada de bronce'. Identifica a qué especie narrativa pertenece y qué figura literaria destaca:""",
     options: [
       r'''Novela / Metáfora''',
       r'''Epopeya / Epíteto''',
@@ -4129,12 +4594,14 @@ final List<Question> comunicacionQuestions = [
       r'''Mito / Hipérbole''',
     ],
     correctAnswer: 1,
-    explanation: r"""Es parte de la epopeya clásica (La Ilíada) y utiliza el epíteto épico ('el de los pies ligeros') típico para caracterizar a los héroes.""",
+    explanation:
+        r"""Es parte de la epopeya clásica (La Ilíada) y utiliza el epíteto épico ('el de los pies ligeros') típico para caracterizar a los héroes.""",
   ),
   Question(
     id: 'com_q407',
     topicId: 'com_t3',
-    text: r"""En la frase 'El operativo fue un relámpago que deslumbró a los delincuentes', usada en una novela policial, la metáfora ('relámpago') transmite la idea de:""",
+    text:
+        r"""En la frase 'El operativo fue un relámpago que deslumbró a los delincuentes', usada en una novela policial, la metáfora ('relámpago') transmite la idea de:""",
     options: [
       r'''Que el operativo ocurrió durante una tormenta''',
       r'''Que hubo fallas eléctricas''',
@@ -4142,12 +4609,14 @@ final List<Question> comunicacionQuestions = [
       r'''Lentitud en las acciones tácticas''',
     ],
     correctAnswer: 2,
-    explanation: r'''La identificación del operativo con un relámpago transfiere conceptualmente la velocidad y la luz cegadora (sorpresa) a la acción policial.''',
+    explanation:
+        r'''La identificación del operativo con un relámpago transfiere conceptualmente la velocidad y la luz cegadora (sorpresa) a la acción policial.''',
   ),
   Question(
     id: 'com_q408',
     topicId: 'com_t3',
-    text: r"""En la redacción de un informe de inteligencia sobre una manifestación violenta, el agente escribe: 'Hubo un mar de gente y llovían millones de piedras'. El comando rechaza el informe por falta de profesionalismo, debido al uso de:""",
+    text:
+        r"""En la redacción de un informe de inteligencia sobre una manifestación violenta, el agente escribe: 'Hubo un mar de gente y llovían millones de piedras'. El comando rechaza el informe por falta de profesionalismo, debido al uso de:""",
     options: [
       r'''Metáforas e hipérboles que le restan precisión matemática y objetividad al documento''',
       r'''Epítetos innecesarios''',
@@ -4155,12 +4624,14 @@ final List<Question> comunicacionQuestions = [
       r'''Prolepsis narrativas''',
     ],
     correctAnswer: 0,
-    explanation: r"""Decir 'mar de gente' y 'millones de piedras' son expresiones poéticas y exageradas que impiden conocer los datos tácticos reales.""",
+    explanation:
+        r"""Decir 'mar de gente' y 'millones de piedras' son expresiones poéticas y exageradas que impiden conocer los datos tácticos reales.""",
   ),
   Question(
     id: 'com_q409',
     topicId: 'com_t3',
-    text: r'''Analiza retóricamente el siguiente interrogatorio:n- ¡Tú estuviste allí!n- ¡Tú sostuviste el arma!n- ¡Tú jalaste el gatillo!nEl uso de la anáfora por parte del detective busca:''',
+    text:
+        r'''Analiza retóricamente el siguiente interrogatorio:n- ¡Tú estuviste allí!n- ¡Tú sostuviste el arma!n- ¡Tú jalaste el gatillo!nEl uso de la anáfora por parte del detective busca:''',
     options: [
       r'''Acortar el tiempo del interrogatorio''',
       r'''Acusar con insistencia rítmica para quebrar psicológicamente al sospechoso''',
@@ -4168,12 +4639,14 @@ final List<Question> comunicacionQuestions = [
       r'''Describir el espacio físico''',
     ],
     correctAnswer: 1,
-    explanation: r"""La repetición anafórica del pronombre 'Tú' actúa como un martilleo psicológico para ejercer presión y buscar una confesión.""",
+    explanation:
+        r"""La repetición anafórica del pronombre 'Tú' actúa como un martilleo psicológico para ejercer presión y buscar una confesión.""",
   ),
   Question(
     id: 'com_q410',
     topicId: 'com_t3',
-    text: r"""'El calabozo era una tumba de hierro donde los minutos se arrastraban como caracoles heridos'. Identifica las figuras presentes:""",
+    text:
+        r"""'El calabozo era una tumba de hierro donde los minutos se arrastraban como caracoles heridos'. Identifica las figuras presentes:""",
     options: [
       r"""Metáfora ('tumba de hierro') y símil ('como caracoles')""",
       r'''Epíteto y anáfora''',
@@ -4181,12 +4654,14 @@ final List<Question> comunicacionQuestions = [
       r'''Solo anáforas''',
     ],
     correctAnswer: 0,
-    explanation: r"""Identifica la celda con una tumba sin usar conectores (metáfora) y compara el paso lento del tiempo usando 'como' (símil).""",
+    explanation:
+        r"""Identifica la celda con una tumba sin usar conectores (metáfora) y compara el paso lento del tiempo usando 'como' (símil).""",
   ),
   Question(
     id: 'com_q411',
     topicId: 'com_t3',
-    text: r"""Si un escritor quiere narrar la vida del héroe policial Mariano Santos Mateo ('El Valiente de Tarapacá'), exagerando y mitificando sus combates singulares como si fuera un semidiós moderno que forjó el destino de la patria, estaría escribiendo una obra que emula a:""",
+    text:
+        r"""Si un escritor quiere narrar la vida del héroe policial Mariano Santos Mateo ('El Valiente de Tarapacá'), exagerando y mitificando sus combates singulares como si fuera un semidiós moderno que forjó el destino de la patria, estaría escribiendo una obra que emula a:""",
     options: [
       r'''La fábula''',
       r'''La crónica periodística''',
@@ -4194,12 +4669,14 @@ final List<Question> comunicacionQuestions = [
       r'''La parábola''',
     ],
     correctAnswer: 2,
-    explanation: r'''La exaltación mítica y nacionalista de un héroe guerrero es la esencia de la épica (epopeyas y cantares).''',
+    explanation:
+        r'''La exaltación mítica y nacionalista de un héroe guerrero es la esencia de la épica (epopeyas y cantares).''',
   ),
   Question(
     id: 'com_q412',
     topicId: 'com_t3',
-    text: r"""Evalúa el uso del símil en este contexto: 'El sospechoso cantó como un jilguero al ver las pruebas'. Significa que:""",
+    text:
+        r"""Evalúa el uso del símil en este contexto: 'El sospechoso cantó como un jilguero al ver las pruebas'. Significa que:""",
     options: [
       r'''Confesó rápida y fluidamente todo lo que sabía''',
       r'''Interpretó una canción literal''',
@@ -4207,12 +4684,14 @@ final List<Question> comunicacionQuestions = [
       r'''Guardó absoluto silencio''',
     ],
     correctAnswer: 0,
-    explanation: r"""En el argot policial y narrativo, 'cantar como un pajarito' es un símil que significa confesar sin resistencia.""",
+    explanation:
+        r"""En el argot policial y narrativo, 'cantar como un pajarito' es un símil que significa confesar sin resistencia.""",
   ),
   Question(
     id: 'com_q413',
     topicId: 'com_t3',
-    text: r'''En la narración, ¿cómo se denomina al narrador que conoce no solo los hechos exteriores, sino también los pensamientos y emociones más íntimos de todos los personajes?''',
+    text:
+        r'''En la narración, ¿cómo se denomina al narrador que conoce no solo los hechos exteriores, sino también los pensamientos y emociones más íntimos de todos los personajes?''',
     options: [
       r'''Narrador testigo''',
       r'''Narrador protagonista''',
@@ -4221,12 +4700,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Narrador en segunda persona''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (Omnisciente). Lo sabe todo, incluyendo la psicología interna ('como un dios'). El distractor D (Objetivo) es el 'Distractor por Falso Perfil', pues el narrador objetivo se limita a describir lo externo, como una cámara de cine, sin entrar a las emociones.""",
+    explanation:
+        r"""La respuesta correcta es C (Omnisciente). Lo sabe todo, incluyendo la psicología interna ('como un dios'). El distractor D (Objetivo) es el 'Distractor por Falso Perfil', pues el narrador objetivo se limita a describir lo externo, como una cámara de cine, sin entrar a las emociones.""",
   ),
   Question(
     id: 'com_q414',
     topicId: 'com_t3',
-    text: r'''¿Cuál es la especie narrativa que se caracteriza por ser un relato breve, de trama intensa, pocos personajes y que se encamina rápidamente hacia un clímax?''',
+    text:
+        r'''¿Cuál es la especie narrativa que se caracteriza por ser un relato breve, de trama intensa, pocos personajes y que se encamina rápidamente hacia un clímax?''',
     options: [
       r'''Novela''',
       r'''Mito''',
@@ -4235,12 +4716,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Crónica''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (Cuento). La intensidad y brevedad son sus ejes. El distractor E (Crónica) es un 'Distractor Histórico', ya que la crónica narra hechos cronológicamente, pero no requiere la tensión dramática del cuento (el nudo-clímax).""",
+    explanation:
+        r"""La respuesta correcta es C (Cuento). La intensidad y brevedad son sus ejes. El distractor E (Crónica) es un 'Distractor Histórico', ya que la crónica narra hechos cronológicamente, pero no requiere la tensión dramática del cuento (el nudo-clímax).""",
   ),
   Question(
     id: 'com_q416',
     topicId: 'com_t3',
-    text: r'''El narrador homodiegético que participa en la historia como personaje secundario y cuenta solo lo que ve y oye desde su perspectiva limitada es el:''',
+    text:
+        r'''El narrador homodiegético que participa en la historia como personaje secundario y cuenta solo lo que ve y oye desde su perspectiva limitada es el:''',
     options: [
       r'''Narrador observador externo''',
       r'''Narrador equisciente''',
@@ -4249,12 +4732,14 @@ final List<Question> comunicacionQuestions = [
       r'''Narrador testigo''',
     ],
     correctAnswer: 4,
-    explanation: r'''El narrador testigo narra en primera o tercera persona acontecimientos ajenos en los que él está presente.''',
+    explanation:
+        r'''El narrador testigo narra en primera o tercera persona acontecimientos ajenos en los que él está presente.''',
   ),
   Question(
     id: 'com_q417',
     topicId: 'com_t3',
-    text: r'''Cuando el personaje principal de la obra relata su propia historia en primera persona gramatical, se trata de un:''',
+    text:
+        r'''Cuando el personaje principal de la obra relata su propia historia en primera persona gramatical, se trata de un:''',
     options: [
       r'''Narrador heterodiegético''',
       r'''Narrador protagonista''',
@@ -4263,12 +4748,14 @@ final List<Question> comunicacionQuestions = [
       r'''Narrador cuasi-omnisciente''',
     ],
     correctAnswer: 1,
-    explanation: r'''El narrador protagonista cuenta los acontecimientos desde su propia experiencia de vida central.''',
+    explanation:
+        r'''El narrador protagonista cuenta los acontecimientos desde su propia experiencia de vida central.''',
   ),
   Question(
     id: 'com_q418',
     topicId: 'com_t3',
-    text: r'''La parte de la estructura clásica del relato donde se presenta a los personajes, el tiempo y el espacio en un estado de equilibrio inicial se llama:''',
+    text:
+        r'''La parte de la estructura clásica del relato donde se presenta a los personajes, el tiempo y el espacio en un estado de equilibrio inicial se llama:''',
     options: [
       r'''Nudo o conflicto''',
       r'''Inicio o planteamiento''',
@@ -4277,12 +4764,14 @@ final List<Question> comunicacionQuestions = [
       r'''Epílogo''',
     ],
     correctAnswer: 1,
-    explanation: r'''El planteamiento introduce los elementos base de la historia antes de que ocurra la acción perturbadora.''',
+    explanation:
+        r'''El planteamiento introduce los elementos base de la historia antes de que ocurra la acción perturbadora.''',
   ),
   Question(
     id: 'com_q419',
     topicId: 'com_t3',
-    text: r'''En la estructura narrativa, la sección donde se quiebra el equilibrio inicial por un suceso que plantea dificultades y desarrolla las peripecias principales es el:''',
+    text:
+        r'''En la estructura narrativa, la sección donde se quiebra el equilibrio inicial por un suceso que plantea dificultades y desarrolla las peripecias principales es el:''',
     options: [
       r'''Nudo o conflicto''',
       r'''Clímax''',
@@ -4291,12 +4780,14 @@ final List<Question> comunicacionQuestions = [
       r'''Desenlace''',
     ],
     correctAnswer: 0,
-    explanation: r'''El nudo concentra las complicaciones que los personajes deben superar.''',
+    explanation:
+        r'''El nudo concentra las complicaciones que los personajes deben superar.''',
   ),
   Question(
     id: 'com_q420',
     topicId: 'com_t3',
-    text: r'''El momento de máxima tensión dramática y emotiva dentro del nudo de una narración, justo antes del desenlace, se conoce como:''',
+    text:
+        r'''El momento de máxima tensión dramática y emotiva dentro del nudo de una narración, justo antes del desenlace, se conoce como:''',
     options: [
       r'''Desarrollo''',
       r'''Monólogo''',
@@ -4305,12 +4796,14 @@ final List<Question> comunicacionQuestions = [
       r'''Inicio''',
     ],
     correctAnswer: 3,
-    explanation: r'''El clímax es el punto culminante del conflicto narrativo.''',
+    explanation:
+        r'''El clímax es el punto culminante del conflicto narrativo.''',
   ),
   Question(
     id: 'com_q421',
     topicId: 'com_t3',
-    text: r'''La especie narrativa de menor extensión que la novela, caracterizada por tener pocos personajes, un único hilo argumental y un desenlace rápido es:''',
+    text:
+        r'''La especie narrativa de menor extensión que la novela, caracterizada por tener pocos personajes, un único hilo argumental y un desenlace rápido es:''',
     options: [
       r'''El cuento''',
       r'''El mito''',
@@ -4319,12 +4812,14 @@ final List<Question> comunicacionQuestions = [
       r'''La leyenda''',
     ],
     correctAnswer: 0,
-    explanation: r'''El cuento es una narración breve de hechos reales o ficticios con trama sencilla y personajes limitados.''',
+    explanation:
+        r'''El cuento es una narración breve de hechos reales o ficticios con trama sencilla y personajes limitados.''',
   ),
   Question(
     id: 'com_q422',
     topicId: 'com_t3',
-    text: r'''La especie narrativa escrita en prosa, de gran extensión y complejidad, que desarrolla múltiples tramas y una evolución profunda de los personajes es:''',
+    text:
+        r'''La especie narrativa escrita en prosa, de gran extensión y complejidad, que desarrolla múltiples tramas y una evolución profunda de los personajes es:''',
     options: [
       r'''El ensayo''',
       r'''La novela''',
@@ -4333,12 +4828,14 @@ final List<Question> comunicacionQuestions = [
       r'''El cuento''',
     ],
     correctAnswer: 1,
-    explanation: r'''La novela ofrece un universo amplio y detallado de ficción o realidad histórica estructurado en prosa.''',
+    explanation:
+        r'''La novela ofrece un universo amplio y detallado de ficción o realidad histórica estructurado en prosa.''',
   ),
   Question(
     id: 'com_q424',
     topicId: 'com_t3',
-    text: r'''Aquella narración de carácter popular que parte de un hecho real o histórico pero al que se le añaden elementos mágicos y tradicionales de una localidad es:''',
+    text:
+        r'''Aquella narración de carácter popular que parte de un hecho real o histórico pero al que se le añaden elementos mágicos y tradicionales de una localidad es:''',
     options: [
       r'''La leyenda''',
       r'''La parábola''',
@@ -4347,12 +4844,14 @@ final List<Question> comunicacionQuestions = [
       r'''El mito''',
     ],
     correctAnswer: 0,
-    explanation: r'''La leyenda se transmite oralmente y se sitúa en un tiempo y lugar geográfico reales.''',
+    explanation:
+        r'''La leyenda se transmite oralmente y se sitúa en un tiempo y lugar geográfico reales.''',
   ),
   Question(
     id: 'com_q425',
     topicId: 'com_t3',
-    text: r'''La breve narración literaria, generalmente protagonizada por animales personificados, que culmina con una enseñanza moral o moraleja explícita es:''',
+    text:
+        r'''La breve narración literaria, generalmente protagonizada por animales personificados, que culmina con una enseñanza moral o moraleja explícita es:''',
     options: [
       r'''La leyenda''',
       r'''La fábula''',
@@ -4361,12 +4860,14 @@ final List<Question> comunicacionQuestions = [
       r'''El mito''',
     ],
     correctAnswer: 1,
-    explanation: r'''La fábula tiene un propósito didáctico y moralizador expresado en su moraleja final.''',
+    explanation:
+        r'''La fábula tiene un propósito didáctico y moralizador expresado en su moraleja final.''',
   ),
   Question(
     id: 'com_q426',
     topicId: 'com_t3',
-    text: r'''El relato breve que recurre a la alegoría o a situaciones cotidianas para transmitir una enseñanza espiritual, ética o religiosa (frecuente en las escrituras bíblicas) es:''',
+    text:
+        r'''El relato breve que recurre a la alegoría o a situaciones cotidianas para transmitir una enseñanza espiritual, ética o religiosa (frecuente en las escrituras bíblicas) es:''',
     options: [
       r'''La parábola''',
       r'''La novela''',
@@ -4375,12 +4876,14 @@ final List<Question> comunicacionQuestions = [
       r'''La leyenda''',
     ],
     correctAnswer: 0,
-    explanation: r'''La parábola utiliza situaciones verosímiles humanas para explicar verdades morales y espirituales.''',
+    explanation:
+        r'''La parábola utiliza situaciones verosímiles humanas para explicar verdades morales y espirituales.''',
   ),
   Question(
     id: 'com_q427',
     topicId: 'com_t3',
-    text: r'''La figura literaria que consiste en identificar un término real con otro imaginario basándose en una relación de semejanza o analogía implícita es la:''',
+    text:
+        r'''La figura literaria que consiste en identificar un término real con otro imaginario basándose en una relación de semejanza o analogía implícita es la:''',
     options: [
       r'''Metáfora''',
       r'''Anáfora''',
@@ -4389,12 +4892,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hipérbole''',
     ],
     correctAnswer: 0,
-    explanation: r"""La metáfora traslada el sentido de las palabras mediante una comparación tácita sin usar conectores como 'como'.""",
+    explanation:
+        r"""La metáfora traslada el sentido de las palabras mediante una comparación tácita sin usar conectores como 'como'.""",
   ),
   Question(
     id: 'com_q428',
     topicId: 'com_t3',
-    text: r"""La figura literaria que establece una relación de semejanza explícita entre dos términos utilizando nexos comparativos como 'como', 'parece' o 'cual' se denomina:""",
+    text:
+        r"""La figura literaria que establece una relación de semejanza explícita entre dos términos utilizando nexos comparativos como 'como', 'parece' o 'cual' se denomina:""",
     options: [
       r'''Epíteto''',
       r'''Personificación''',
@@ -4403,12 +4908,14 @@ final List<Question> comunicacionQuestions = [
       r'''Símil''',
     ],
     correctAnswer: 4,
-    explanation: r'''El símil se caracteriza por la presencia del conector comparativo explícito.''',
+    explanation:
+        r'''El símil se caracteriza por la presencia del conector comparativo explícito.''',
   ),
   Question(
     id: 'com_q429',
     topicId: 'com_t3',
-    text: r'''Cuando el autor recurre a una exageración desmedida de las cualidades o acciones para aumentar la expresividad de su mensaje, utiliza la figura de:''',
+    text:
+        r'''Cuando el autor recurre a una exageración desmedida de las cualidades o acciones para aumentar la expresividad de su mensaje, utiliza la figura de:''',
     options: [
       r'''Símil''',
       r'''Hipérbaton''',
@@ -4417,12 +4924,14 @@ final List<Question> comunicacionQuestions = [
       r'''Anáfora''',
     ],
     correctAnswer: 3,
-    explanation: r'''La hipérbole magnifica o disminuye de forma extrema la realidad para causar un efecto expresivo.''',
+    explanation:
+        r'''La hipérbole magnifica o disminuye de forma extrema la realidad para causar un efecto expresivo.''',
   ),
   Question(
     id: 'com_q430',
     topicId: 'com_t3',
-    text: r'''La figura que consiste en la repetición intencionada de una o más palabras al comienzo de varios versos o frases consecutivas es la:''',
+    text:
+        r'''La figura que consiste en la repetición intencionada de una o más palabras al comienzo de varios versos o frases consecutivas es la:''',
     options: [
       r'''Hipérbaton''',
       r'''Metáfora''',
@@ -4431,12 +4940,14 @@ final List<Question> comunicacionQuestions = [
       r'''Anáfora''',
     ],
     correctAnswer: 4,
-    explanation: r'''La anáfora da ritmo y énfasis musical al texto literario.''',
+    explanation:
+        r'''La anáfora da ritmo y énfasis musical al texto literario.''',
   ),
   Question(
     id: 'com_q431',
     topicId: 'com_t3',
-    text: r"""El adjetivo calificativo que destaca una cualidad inherente o natural del sustantivo al que acompaña (por ejemplo, 'nieve blanca', 'fiero león') es un:""",
+    text:
+        r"""El adjetivo calificativo que destaca una cualidad inherente o natural del sustantivo al que acompaña (por ejemplo, 'nieve blanca', 'fiero león') es un:""",
     options: [
       r'''Metáfora''',
       r'''Epíteto''',
@@ -4445,12 +4956,14 @@ final List<Question> comunicacionQuestions = [
       r'''Anáfora''',
     ],
     correctAnswer: 1,
-    explanation: r'''El epíteto resalta una propiedad obvia del ser para embellecer o dar fuerza al sustantivo.''',
+    explanation:
+        r'''El epíteto resalta una propiedad obvia del ser para embellecer o dar fuerza al sustantivo.''',
   ),
   Question(
     id: 'com_q432',
     topicId: 'com_t3',
-    text: r'''La figura de construcción que consiste en alterar el orden gramatical lógico y habitual de las palabras en una frase es el:''',
+    text:
+        r'''La figura de construcción que consiste en alterar el orden gramatical lógico y habitual de las palabras en una frase es el:''',
     options: [
       r'''Polisíndeton''',
       r'''Hipérbaton''',
@@ -4459,12 +4972,14 @@ final List<Question> comunicacionQuestions = [
       r'''Elipsis''',
     ],
     correctAnswer: 1,
-    explanation: r'''El hipérbaton altera la sintaxis tradicional por motivos estilísticos o métricos.''',
+    explanation:
+        r'''El hipérbaton altera la sintaxis tradicional por motivos estilísticos o métricos.''',
   ),
   Question(
     id: 'com_q433',
     topicId: 'com_t3',
-    text: r"""Atribuir cualidades y comportamientos humanos a seres inanimados o animales (por ejemplo, 'el viento susurraba secretos') es la figura literaria de:""",
+    text:
+        r"""Atribuir cualidades y comportamientos humanos a seres inanimados o animales (por ejemplo, 'el viento susurraba secretos') es la figura literaria de:""",
     options: [
       r'''Personificación o prosopopeya''',
       r'''Hipérbole''',
@@ -4473,12 +4988,14 @@ final List<Question> comunicacionQuestions = [
       r'''Anáfora''',
     ],
     correctAnswer: 0,
-    explanation: r'''La personificación dota de vida y acciones humanas a elementos no humanos.''',
+    explanation:
+        r'''La personificación dota de vida y acciones humanas a elementos no humanos.''',
   ),
   Question(
     id: 'com_q434',
     topicId: 'com_t3',
-    text: r'''La figura literaria que consiste en suprimir palabras de la oración que no son indispensables para la comprensión del sentido general se llama:''',
+    text:
+        r'''La figura literaria que consiste en suprimir palabras de la oración que no son indispensables para la comprensión del sentido general se llama:''',
     options: [
       r'''Metáfora''',
       r'''Hipérbaton''',
@@ -4487,12 +5004,14 @@ final List<Question> comunicacionQuestions = [
       r'''Elipsis''',
     ],
     correctAnswer: 4,
-    explanation: r'''La elipsis elimina elementos sobreentendidos para dotar de mayor dinamismo al texto.''',
+    explanation:
+        r'''La elipsis elimina elementos sobreentendidos para dotar de mayor dinamismo al texto.''',
   ),
   Question(
     id: 'com_q465',
     topicId: 'com_t4',
-    text: r'''¿Cuál es una característica fundamental de la literatura quechua prehispánica?''',
+    text:
+        r'''¿Cuál es una característica fundamental de la literatura quechua prehispánica?''',
     options: [
       r'''Predominio del individualismo''',
       r'''Oralidad y anonimato''',
@@ -4500,7 +5019,8 @@ final List<Question> comunicacionQuestions = [
       r'''Escritura en quipus literarios''',
     ],
     correctAnswer: 1,
-    explanation: r'''La literatura prehispánica se transmitía de generación en generación mediante la oralidad y carecía de autoría individual (anonimato).''',
+    explanation:
+        r'''La literatura prehispánica se transmitía de generación en generación mediante la oralidad y carecía de autoría individual (anonimato).''',
   ),
   Question(
     id: 'com_q467',
@@ -4513,12 +5033,14 @@ final List<Question> comunicacionQuestions = [
       r'''Juan de Espinosa Medrano''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Inca Garcilaso de la Vega, considerado el primer mestizo biológico y espiritual, es el autor de esta obra cumbre de la crónica.''',
+    explanation:
+        r'''El Inca Garcilaso de la Vega, considerado el primer mestizo biológico y espiritual, es el autor de esta obra cumbre de la crónica.''',
   ),
   Question(
     id: 'com_q468',
     topicId: 'com_t4',
-    text: r"""¿Cuál de los siguientes autores representa la literatura virreinal peruana y escribió 'Apologético en favor de Don Luis de Góngora'?""",
+    text:
+        r"""¿Cuál de los siguientes autores representa la literatura virreinal peruana y escribió 'Apologético en favor de Don Luis de Góngora'?""",
     options: [
       r'''Amarilis''',
       r'''Pedro Peralta Barnuevo''',
@@ -4526,12 +5048,14 @@ final List<Question> comunicacionQuestions = [
       r'''Diego de Hojeda''',
     ],
     correctAnswer: 2,
-    explanation: r'''Juan de Espinosa Medrano fue el máximo representante del barroco literario en el Perú virreinal.''',
+    explanation:
+        r'''Juan de Espinosa Medrano fue el máximo representante del barroco literario en el Perú virreinal.''',
   ),
   Question(
     id: 'com_q470',
     topicId: 'com_t4',
-    text: r'''¿Qué obra teatral de Manuel Ascencio Segura critica la intromisión de una mujer chismosa en la vida familiar?''',
+    text:
+        r'''¿Qué obra teatral de Manuel Ascencio Segura critica la intromisión de una mujer chismosa en la vida familiar?''',
     options: [
       r'''El sargento Canuto''',
       r'''Ña Catita''',
@@ -4539,12 +5063,14 @@ final List<Question> comunicacionQuestions = [
       r'''La pelimuertada''',
     ],
     correctAnswer: 1,
-    explanation: r'''Ña Catita es una comedia costumbrista donde el personaje central es una alcahueta y chismosa que genera conflictos.''',
+    explanation:
+        r'''Ña Catita es una comedia costumbrista donde el personaje central es una alcahueta y chismosa que genera conflictos.''',
   ),
   Question(
     id: 'com_q471',
     topicId: 'com_t4',
-    text: r'''¿Cuál fue el género poético que Mariano Melgar adaptó de la lírica andina al español?''',
+    text:
+        r'''¿Cuál fue el género poético que Mariano Melgar adaptó de la lírica andina al español?''',
     options: [
       r'''El romance''',
       r'''El soneto''',
@@ -4552,12 +5078,14 @@ final List<Question> comunicacionQuestions = [
       r'''El yaraví''',
     ],
     correctAnswer: 3,
-    explanation: r'''Melgar adaptó el harawi prehispánico, dotándolo de métrica española y temática amorosa, creando el yaraví.''',
+    explanation:
+        r'''Melgar adaptó el harawi prehispánico, dotándolo de métrica española y temática amorosa, creando el yaraví.''',
   ),
   Question(
     id: 'com_q472',
     topicId: 'com_t4',
-    text: r"""¿Quién es el autor de las 'Tradiciones peruanas', obra representativa del romanticismo nacional?""",
+    text:
+        r"""¿Quién es el autor de las 'Tradiciones peruanas', obra representativa del romanticismo nacional?""",
     options: [
       r'''Carlos Augusto Salaverry''',
       r'''Manuel González Prada''',
@@ -4565,12 +5093,14 @@ final List<Question> comunicacionQuestions = [
       r'''José Arnaldo Márquez''',
     ],
     correctAnswer: 2,
-    explanation: r'''Ricardo Palma creó el género de la tradición, una mezcla de historia y ficción con tono humorístico.''',
+    explanation:
+        r'''Ricardo Palma creó el género de la tradición, una mezcla de historia y ficción con tono humorístico.''',
   ),
   Question(
     id: 'com_q474',
     topicId: 'com_t4',
-    text: r'''¿Cuál es considerada la primera novela indigenista peruana, escrita por Clorinda Matto de Turner?''',
+    text:
+        r'''¿Cuál es considerada la primera novela indigenista peruana, escrita por Clorinda Matto de Turner?''',
     options: [
       r'''Matalaché''',
       r'''Aves sin nido''',
@@ -4578,12 +5108,14 @@ final List<Question> comunicacionQuestions = [
       r'''Todas las sangres''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aves sin nido (1889) denuncia el abuso hacia los indígenas y es precursora del indigenismo en el Perú.''',
+    explanation:
+        r'''Aves sin nido (1889) denuncia el abuso hacia los indígenas y es precursora del indigenismo en el Perú.''',
   ),
   Question(
     id: 'com_q476',
     topicId: 'com_t4',
-    text: r'''¿Cuál de los siguientes poemarios pertenece a la etapa vanguardista de César Vallejo?''',
+    text:
+        r'''¿Cuál de los siguientes poemarios pertenece a la etapa vanguardista de César Vallejo?''',
     options: [
       r'''Los heraldos negros''',
       r'''Trilce''',
@@ -4591,12 +5123,14 @@ final List<Question> comunicacionQuestions = [
       r'''España, aparta de mí este cáliz''',
     ],
     correctAnswer: 1,
-    explanation: r'''Trilce (1922) es la obra cumbre de la vanguardia poética en el Perú.''',
+    explanation:
+        r'''Trilce (1922) es la obra cumbre de la vanguardia poética en el Perú.''',
   ),
   Question(
     id: 'com_q477',
     topicId: 'com_t4',
-    text: r"""¿Qué poeta es considerado un exponente central del vanguardismo peruano con su obra '5 metros de poemas'?""",
+    text:
+        r"""¿Qué poeta es considerado un exponente central del vanguardismo peruano con su obra '5 metros de poemas'?""",
     options: [
       r'''Martín Adán''',
       r'''Emilio Adolfo Westphalen''',
@@ -4604,12 +5138,14 @@ final List<Question> comunicacionQuestions = [
       r'''Carlos Oquendo de Amat''',
     ],
     correctAnswer: 3,
-    explanation: r'''Carlos Oquendo de Amat publicó este poemario único, concebido visualmente como una cinta cinematográfica.''',
+    explanation:
+        r'''Carlos Oquendo de Amat publicó este poemario único, concebido visualmente como una cinta cinematográfica.''',
   ),
   Question(
     id: 'com_q478',
     topicId: 'com_t4',
-    text: r'''¿Cuál es la novela de Ciro Alegría que retrata la lucha de la comunidad de Rumi por sus tierras?''',
+    text:
+        r'''¿Cuál es la novela de Ciro Alegría que retrata la lucha de la comunidad de Rumi por sus tierras?''',
     options: [
       r'''Los perros hambrientos''',
       r'''La serpiente de oro''',
@@ -4617,12 +5153,14 @@ final List<Question> comunicacionQuestions = [
       r'''Yawar Fiesta''',
     ],
     correctAnswer: 2,
-    explanation: r'''Esta novela indigenista narra el despojo de tierras que sufre la comunidad liderada por Rosendo Maqui.''',
+    explanation:
+        r'''Esta novela indigenista narra el despojo de tierras que sufre la comunidad liderada por Rosendo Maqui.''',
   ),
   Question(
     id: 'com_q479',
     topicId: 'com_t4',
-    text: r"""¿Quién escribió 'Los ríos profundos', novela cumbre del neoindigenismo peruano?""",
+    text:
+        r"""¿Quién escribió 'Los ríos profundos', novela cumbre del neoindigenismo peruano?""",
     options: [
       r'''Ciro Alegría''',
       r'''José María Arguedas''',
@@ -4630,12 +5168,14 @@ final List<Question> comunicacionQuestions = [
       r'''Eleodoro Vargas Vicuña''',
     ],
     correctAnswer: 1,
-    explanation: r'''José María Arguedas es el autor de esta obra maestra que aborda el mundo andino desde su interior.''',
+    explanation:
+        r'''José María Arguedas es el autor de esta obra maestra que aborda el mundo andino desde su interior.''',
   ),
   Question(
     id: 'com_q480',
     topicId: 'com_t4',
-    text: r"""¿Qué cuentista de la Generación del 50 es autor de 'Los gallinazos sin plumas'?""",
+    text:
+        r"""¿Qué cuentista de la Generación del 50 es autor de 'Los gallinazos sin plumas'?""",
     options: [
       r'''Mario Vargas Llosa''',
       r'''Julio Ramón Ribeyro''',
@@ -4643,7 +5183,8 @@ final List<Question> comunicacionQuestions = [
       r'''Alfredo Bryce Echenique''',
     ],
     correctAnswer: 1,
-    explanation: r'''Julio Ramón Ribeyro, destacado cuentista peruano, escribió este relato clásico del realismo urbano.''',
+    explanation:
+        r'''Julio Ramón Ribeyro, destacado cuentista peruano, escribió este relato clásico del realismo urbano.''',
   ),
   Question(
     id: 'com_q481',
@@ -4656,12 +5197,14 @@ final List<Question> comunicacionQuestions = [
       r'''César Vallejo''',
     ],
     correctAnswer: 2,
-    explanation: r'''Mario Vargas Llosa fue galardonado con el Premio Nobel por su cartografía de las estructuras de poder.''',
+    explanation:
+        r'''Mario Vargas Llosa fue galardonado con el Premio Nobel por su cartografía de las estructuras de poder.''',
   ),
   Question(
     id: 'com_q482',
     topicId: 'com_t4',
-    text: r'''¿Cuál es la obra con la que Vargas Llosa inició el Boom Latinoamericano, ambientada en el Colegio Militar Leoncio Prado?''',
+    text:
+        r'''¿Cuál es la obra con la que Vargas Llosa inició el Boom Latinoamericano, ambientada en el Colegio Militar Leoncio Prado?''',
     options: [
       r'''La ciudad y los perros''',
       r'''La casa verde''',
@@ -4669,7 +5212,8 @@ final List<Question> comunicacionQuestions = [
       r'''Los cachorros''',
     ],
     correctAnswer: 0,
-    explanation: r'''Publicada en 1963, esta novela le otorgó reconocimiento internacional y marcó el inicio del Boom para el Perú.''',
+    explanation:
+        r'''Publicada en 1963, esta novela le otorgó reconocimiento internacional y marcó el inicio del Boom para el Perú.''',
   ),
   Question(
     id: 'com_q484',
@@ -4682,12 +5226,14 @@ final List<Question> comunicacionQuestions = [
       r'''La rebelión de los chancas contra el imperio''',
     ],
     correctAnswer: 2,
-    explanation: r'''El núcleo dramático es el amor entre el general Ollanta (plebeyo) y Cusi Coyllur (hija de Pachacútec), lo que desencadena una rebelión.''',
+    explanation:
+        r'''El núcleo dramático es el amor entre el general Ollanta (plebeyo) y Cusi Coyllur (hija de Pachacútec), lo que desencadena una rebelión.''',
   ),
   Question(
     id: 'com_q485',
     topicId: 'com_t4',
-    text: r"""La obra 'Nueva corónica y buen gobierno' de Guamán Poma de Ayala destaca literaria e históricamente por:""",
+    text:
+        r"""La obra 'Nueva corónica y buen gobierno' de Guamán Poma de Ayala destaca literaria e históricamente por:""",
     options: [
       r'''Exaltar la cultura española y olvidar el pasado inca''',
       r'''Su denuncia de los abusos españoles combinando texto e ilustraciones''',
@@ -4695,12 +5241,14 @@ final List<Question> comunicacionQuestions = [
       r'''Estar escrita íntegramente en latín clásico''',
     ],
     correctAnswer: 1,
-    explanation: r'''Esta crónica es excepcional por sus casi 400 dibujos y su crítica feroz a las autoridades virreinales, dirigida al rey de España.''',
+    explanation:
+        r'''Esta crónica es excepcional por sus casi 400 dibujos y su crítica feroz a las autoridades virreinales, dirigida al rey de España.''',
   ),
   Question(
     id: 'com_q486',
     topicId: 'com_t4',
-    text: r'''¿Qué refleja el conflicto entre el criollismo y el anticriollismo en la literatura republicana temprana?''',
+    text:
+        r'''¿Qué refleja el conflicto entre el criollismo y el anticriollismo en la literatura republicana temprana?''',
     options: [
       r'''La guerra de independencia contra España''',
       r'''El choque entre la cultura andina y la selva''',
@@ -4708,12 +5256,14 @@ final List<Question> comunicacionQuestions = [
       r'''La disputa por la abolición de la esclavitud''',
     ],
     correctAnswer: 2,
-    explanation: r'''El criollismo (Segura) valoraba lo popular y democrático, mientras el anticriollismo (Pardo y Aliaga) defendía las formas aristocráticas españolas.''',
+    explanation:
+        r'''El criollismo (Segura) valoraba lo popular y democrático, mientras el anticriollismo (Pardo y Aliaga) defendía las formas aristocráticas españolas.''',
   ),
   Question(
     id: 'com_q487',
     topicId: 'com_t4',
-    text: r"""En 'Ña Catita', Segura utiliza al personaje principal para criticar:""",
+    text:
+        r"""En 'Ña Catita', Segura utiliza al personaje principal para criticar:""",
     options: [
       r'''A las autoridades militares del caudillismo''',
       r'''El abuso hacia los indígenas en las haciendas''',
@@ -4721,12 +5271,14 @@ final List<Question> comunicacionQuestions = [
       r'''El excesivo afrancesamiento de la juventud''',
     ],
     correctAnswer: 2,
-    explanation: r'''Ña Catita es el prototipo de la limeña chismosa y falsa devota que se inmiscuye en la vida privada ajena para sacar provecho.''',
+    explanation:
+        r'''Ña Catita es el prototipo de la limeña chismosa y falsa devota que se inmiscuye en la vida privada ajena para sacar provecho.''',
   ),
   Question(
     id: 'com_q488',
     topicId: 'com_t4',
-    text: r'''Los yaravíes de Mariano Melgar son fundamentales en la literatura peruana porque representan:''',
+    text:
+        r'''Los yaravíes de Mariano Melgar son fundamentales en la literatura peruana porque representan:''',
     options: [
       r'''La copia exacta del romanticismo francés''',
       r'''El primer intento de mestizaje literario al unir métrica española y sentimiento andino''',
@@ -4734,12 +5286,14 @@ final List<Question> comunicacionQuestions = [
       r'''El rechazo absoluto a la cultura indígena''',
     ],
     correctAnswer: 1,
-    explanation: r'''Melgar es el precursor del romanticismo peruano al fundir la forma poética castellana con la sensibilidad doliente del harawi indígena.''',
+    explanation:
+        r'''Melgar es el precursor del romanticismo peruano al fundir la forma poética castellana con la sensibilidad doliente del harawi indígena.''',
   ),
   Question(
     id: 'com_q490',
     topicId: 'com_t4',
-    text: r'''El realismo peruano, encabezado por González Prada, surgió como respuesta a:''',
+    text:
+        r'''El realismo peruano, encabezado por González Prada, surgió como respuesta a:''',
     options: [
       r'''La dictadura de Leguía en el siglo XX''',
       r'''La crisis moral, política y social tras la derrota en la Guerra del Pacífico''',
@@ -4747,12 +5301,14 @@ final List<Question> comunicacionQuestions = [
       r'''El inicio de la Guerra de Independencia''',
     ],
     correctAnswer: 1,
-    explanation: r'''El realismo en el Perú adoptó una postura crítica, de denuncia y nacionalista tras el desastre nacional de la guerra contra Chile.''',
+    explanation:
+        r'''El realismo en el Perú adoptó una postura crítica, de denuncia y nacionalista tras el desastre nacional de la guerra contra Chile.''',
   ),
   Question(
     id: 'com_q491',
     topicId: 'com_t4',
-    text: r"""En 'Aves sin nido', Clorinda Matto de Turner denuncia principalmente:""",
+    text:
+        r"""En 'Aves sin nido', Clorinda Matto de Turner denuncia principalmente:""",
     options: [
       r'''El racismo en los colegios limeños''',
       r'''La explotación de los obreros en las fábricas''',
@@ -4760,12 +5316,14 @@ final List<Question> comunicacionQuestions = [
       r'''La guerra civil entre caudillos militares''',
     ],
     correctAnswer: 2,
-    explanation: r"""La novela denuncia la 'trinidad embrutecedora' que oprimía al indio en la sierra: la autoridad política, la religiosa y la judicial.""",
+    explanation:
+        r"""La novela denuncia la 'trinidad embrutecedora' que oprimía al indio en la sierra: la autoridad política, la religiosa y la judicial.""",
   ),
   Question(
     id: 'com_q492',
     topicId: 'com_t4',
-    text: r"""El cuento 'El caballero Carmelo' de Abraham Valdelomar inicia el postmodernismo en Perú destacando:""",
+    text:
+        r"""El cuento 'El caballero Carmelo' de Abraham Valdelomar inicia el postmodernismo en Perú destacando:""",
     options: [
       r'''La exageración y la retórica recargada''',
       r'''El rescate de lo provinciano, la ternura familiar y la sencillez''',
@@ -4773,12 +5331,14 @@ final List<Question> comunicacionQuestions = [
       r'''La denuncia social agresiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''Frente a la grandilocuencia modernista, Valdelomar introduce un tono íntimo, evocador y centrado en la aldea y la familia.''',
+    explanation:
+        r'''Frente a la grandilocuencia modernista, Valdelomar introduce un tono íntimo, evocador y centrado en la aldea y la familia.''',
   ),
   Question(
     id: 'com_q493',
     topicId: 'com_t4',
-    text: r'''La poesía de José María Eguren se diferencia del modernismo de Chocano por ser:''',
+    text:
+        r'''La poesía de José María Eguren se diferencia del modernismo de Chocano por ser:''',
     options: [
       r'''Intimista, sugerente, musical y poblada de personajes de fantasía''',
       r'''Excesivamente política y de denuncia''',
@@ -4786,12 +5346,14 @@ final List<Question> comunicacionQuestions = [
       r'''Totalmente libre de rima y métrica''',
     ],
     correctAnswer: 0,
-    explanation: r'''Eguren creó una poesía de tono menor, simbolista, llena de colores tenues, seres feéricos y profunda sugerencia.''',
+    explanation:
+        r'''Eguren creó una poesía de tono menor, simbolista, llena de colores tenues, seres feéricos y profunda sugerencia.''',
   ),
   Question(
     id: 'com_q494',
     topicId: 'com_t4',
-    text: r"""'Los heraldos negros' de César Vallejo es una obra de transición porque:""",
+    text:
+        r"""'Los heraldos negros' de César Vallejo es una obra de transición porque:""",
     options: [
       r'''Pasa del teatro al ensayo filosófico''',
       r'''Conserva rasgos modernistas pero introduce una voz original de profundo dolor existencial''',
@@ -4799,12 +5361,14 @@ final List<Question> comunicacionQuestions = [
       r'''Imita a los poetas románticos españoles''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aunque tiene influencia de Rubén Darío, el poemario ya muestra la angustia, el léxico andino y el genio propio de Vallejo.''',
+    explanation:
+        r'''Aunque tiene influencia de Rubén Darío, el poemario ya muestra la angustia, el léxico andino y el genio propio de Vallejo.''',
   ),
   Question(
     id: 'com_q495',
     topicId: 'com_t4',
-    text: r"""'Trilce' de Vallejo revolucionó la poesía hispanoamericana debido a:""",
+    text:
+        r"""'Trilce' de Vallejo revolucionó la poesía hispanoamericana debido a:""",
     options: [
       r'''Su estricto respeto a las reglas de la Real Academia''',
       r'''Su temática exclusivamente política''',
@@ -4812,12 +5376,14 @@ final List<Question> comunicacionQuestions = [
       r'''Su exaltación del paisaje de la costa peruana''',
     ],
     correctAnswer: 2,
-    explanation: r'''Trilce es un libro vanguardista que destruye las convenciones lingüísticas para expresar una libertad expresiva absoluta.''',
+    explanation:
+        r'''Trilce es un libro vanguardista que destruye las convenciones lingüísticas para expresar una libertad expresiva absoluta.''',
   ),
   Question(
     id: 'com_q496',
     topicId: 'com_t4',
-    text: r'''El indigenismo de Arguedas se diferencia del de Ciro Alegría principalmente porque Arguedas:''',
+    text:
+        r'''El indigenismo de Arguedas se diferencia del de Ciro Alegría principalmente porque Arguedas:''',
     options: [
       r'''Muestra al mundo andino desde una perspectiva mágica e interior, por su experiencia vital''',
       r'''No conoció el idioma quechua y se basó en documentos''',
@@ -4825,12 +5391,14 @@ final List<Question> comunicacionQuestions = [
       r'''Escribe exclusivamente en quechua''',
     ],
     correctAnswer: 0,
-    explanation: r'''Arguedas, al haber sido criado entre indígenas, plasmó la cosmovisión andina, su ternura y magia desde dentro (neoindigenismo).''',
+    explanation:
+        r'''Arguedas, al haber sido criado entre indígenas, plasmó la cosmovisión andina, su ternura y magia desde dentro (neoindigenismo).''',
   ),
   Question(
     id: 'com_q497',
     topicId: 'com_t4',
-    text: r"""En 'Yawar Fiesta', José María Arguedas simboliza el conflicto cultural a través de:""",
+    text:
+        r"""En 'Yawar Fiesta', José María Arguedas simboliza el conflicto cultural a través de:""",
     options: [
       r'''La construcción de una carretera''',
       r'''La huelga de los mineros''',
@@ -4838,12 +5406,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un partido de fútbol''',
     ],
     correctAnswer: 2,
-    explanation: r'''La corrida (turupukllay) enfrenta la visión andina tradicional contra las imposiciones de la autoridad costeña.''',
+    explanation:
+        r'''La corrida (turupukllay) enfrenta la visión andina tradicional contra las imposiciones de la autoridad costeña.''',
   ),
   Question(
     id: 'com_q498',
     topicId: 'com_t4',
-    text: r'''La narrativa de la Generación del 50 introdujo en la literatura peruana:''',
+    text:
+        r'''La narrativa de la Generación del 50 introdujo en la literatura peruana:''',
     options: [
       r'''El realismo mágico''',
       r'''El tema de la migración andina y el crecimiento de las barriadas en Lima''',
@@ -4851,12 +5421,14 @@ final List<Question> comunicacionQuestions = [
       r'''Las crónicas de viaje por Europa''',
     ],
     correctAnswer: 1,
-    explanation: r'''Esta generación literaria retrató la transformación de Lima, el surgimiento de las barriadas y el drama de los migrantes.''',
+    explanation:
+        r'''Esta generación literaria retrató la transformación de Lima, el surgimiento de las barriadas y el drama de los migrantes.''',
   ),
   Question(
     id: 'com_q499',
     topicId: 'com_t4',
-    text: r"""En 'Los gallinazos sin plumas', el basural y el cerdo Pascual representan:""",
+    text:
+        r"""En 'Los gallinazos sin plumas', el basural y el cerdo Pascual representan:""",
     options: [
       r'''La riqueza oculta en los barrios pobres''',
       r'''La marginalidad urbana y el consumismo implacable de la ciudad moderna''',
@@ -4864,12 +5436,14 @@ final List<Question> comunicacionQuestions = [
       r'''El progreso industrial del país''',
     ],
     correctAnswer: 1,
-    explanation: r'''Pascual es el símbolo del capitalismo voraz y la ciudad monstruosa que devora a los más indefensos (los niños).''',
+    explanation:
+        r'''Pascual es el símbolo del capitalismo voraz y la ciudad monstruosa que devora a los más indefensos (los niños).''',
   ),
   Question(
     id: 'com_q500',
     topicId: 'com_t4',
-    text: r"""La técnica literaria característica que Vargas Llosa consolida en 'Conversación en La Catedral' es:""",
+    text:
+        r"""La técnica literaria característica que Vargas Llosa consolida en 'Conversación en La Catedral' es:""",
     options: [
       r'''El monólogo interior exclusivo''',
       r'''La narración lineal en primera persona''',
@@ -4877,12 +5451,14 @@ final List<Question> comunicacionQuestions = [
       r'''El uso del verso libre en la prosa''',
     ],
     correctAnswer: 2,
-    explanation: r'''Vargas Llosa es maestro en entrelazar conversaciones ocurridas en distintos tiempos y espacios en un mismo párrafo.''',
+    explanation:
+        r'''Vargas Llosa es maestro en entrelazar conversaciones ocurridas en distintos tiempos y espacios en un mismo párrafo.''',
   ),
   Question(
     id: 'com_q501',
     topicId: 'com_t4',
-    text: r"""En la obra de Alfredo Bryce Echenique, como 'Un mundo para Julius', predomina:""",
+    text:
+        r"""En la obra de Alfredo Bryce Echenique, como 'Un mundo para Julius', predomina:""",
     options: [
       r'''La solemnidad y el ensayo histórico''',
       r'''La violencia explícita y el lenguaje lumpen''',
@@ -4890,7 +5466,8 @@ final List<Question> comunicacionQuestions = [
       r'''La defensa de los valores militares''',
     ],
     correctAnswer: 2,
-    explanation: r'''Bryce utiliza un tono humorístico, nostálgico y coloquial para exponer la superficialidad y el racismo de la alta burguesía.''',
+    explanation:
+        r'''Bryce utiliza un tono humorístico, nostálgico y coloquial para exponer la superficialidad y el racismo de la alta burguesía.''',
   ),
   Question(
     id: 'com_q502',
@@ -4903,12 +5480,14 @@ final List<Question> comunicacionQuestions = [
       r'''El folclore y la imitación de la lírica quechua''',
     ],
     correctAnswer: 0,
-    explanation: r'''Varela tiene un estilo austero, despojado de adornos, con una mirada lúcida y a menudo pesimista de la realidad.''',
+    explanation:
+        r'''Varela tiene un estilo austero, despojado de adornos, con una mirada lúcida y a menudo pesimista de la realidad.''',
   ),
   Question(
     id: 'com_q504',
     topicId: 'com_t4',
-    text: r"""En el contexto de un informe policial moderno, ¿qué valor histórico aporta la lectura de 'Nueva corónica y buen gobierno'?""",
+    text:
+        r"""En el contexto de un informe policial moderno, ¿qué valor histórico aporta la lectura de 'Nueva corónica y buen gobierno'?""",
     options: [
       r'''Es el primer manual de tácticas militares en el Perú''',
       r'''Constituye uno de los primeros testimonios documentales y gráficos de denuncia contra el abuso de autoridad''',
@@ -4916,12 +5495,14 @@ final List<Question> comunicacionQuestions = [
       r'''Es un texto puramente ficcional que enseña a redactar atestados''',
     ],
     correctAnswer: 1,
-    explanation: r'''Guamán Poma realiza un levantamiento de información (casi policial/periodístico) para denunciar la corrupción y el maltrato a los indígenas.''',
+    explanation:
+        r'''Guamán Poma realiza un levantamiento de información (casi policial/periodístico) para denunciar la corrupción y el maltrato a los indígenas.''',
   ),
   Question(
     id: 'com_q505',
     topicId: 'com_t4',
-    text: r"""Al evaluar la figura de Margarita y Manuel en 'Aves sin nido', se observa que la novela propone como solución al problema indígena:""",
+    text:
+        r"""Al evaluar la figura de Margarita y Manuel en 'Aves sin nido', se observa que la novela propone como solución al problema indígena:""",
     options: [
       r'''La rebelión armada de los campesinos''',
       r'''La educación humanista y el padrinazgo moral frente al abuso de los poderes locales''',
@@ -4929,12 +5510,14 @@ final List<Question> comunicacionQuestions = [
       r'''El retorno a las costumbres del Imperio Inca''',
     ],
     correctAnswer: 1,
-    explanation: r'''Matto de Turner plantea una solución paternalista: los blancos ilustrados (los Marín) deben educar y proteger a los indígenas de la explotación.''',
+    explanation:
+        r'''Matto de Turner plantea una solución paternalista: los blancos ilustrados (los Marín) deben educar y proteger a los indígenas de la explotación.''',
   ),
   Question(
     id: 'com_q506',
     topicId: 'com_t4',
-    text: r"""'Hay golpes en la vida, tan fuertes... ¡Yo no sé!'. Esta apertura de Vallejo expresa una angustia que, a nivel social, refleja:""",
+    text:
+        r"""'Hay golpes en la vida, tan fuertes... ¡Yo no sé!'. Esta apertura de Vallejo expresa una angustia que, a nivel social, refleja:""",
     options: [
       r'''La impotencia del ser humano ante la injusticia, el dolor universal y el absurdo''',
       r'''El dolor físico causado por una enfermedad específica''',
@@ -4942,12 +5525,14 @@ final List<Question> comunicacionQuestions = [
       r'''El lamento por la pérdida de una pareja''',
     ],
     correctAnswer: 0,
-    explanation: r'''El poema trasciende la anécdota personal para convertirse en un cuestionamiento existencial sobre el sufrimiento inherente a la condición humana.''',
+    explanation:
+        r'''El poema trasciende la anécdota personal para convertirse en un cuestionamiento existencial sobre el sufrimiento inherente a la condición humana.''',
   ),
   Question(
     id: 'com_q507',
     topicId: 'com_t4',
-    text: r"""'El mundo es ancho y ajeno' termina con la destrucción de la comunidad de Rumi. Literariamente, este desenlace demuestra que:""",
+    text:
+        r"""'El mundo es ancho y ajeno' termina con la destrucción de la comunidad de Rumi. Literariamente, este desenlace demuestra que:""",
     options: [
       r'''Los indígenas decidieron abandonar sus tierras voluntariamente''',
       r'''La estructura comunitaria andina era incompatible con la avaricia del latifundismo moderno, avalado por la ley oficial''',
@@ -4955,12 +5540,14 @@ final List<Question> comunicacionQuestions = [
       r'''El cacique Rosendo Maqui traicionó a su propio pueblo''',
     ],
     correctAnswer: 1,
-    explanation: r"""La novela evidencia cómo la ley ('los papeles') es utilizada por el gamonal Álvaro Amenábar para destruir la vida comunal indígena.""",
+    explanation:
+        r"""La novela evidencia cómo la ley ('los papeles') es utilizada por el gamonal Álvaro Amenábar para destruir la vida comunal indígena.""",
   ),
   Question(
     id: 'com_q508',
     topicId: 'com_t4',
-    text: r"""Ernesto, el protagonista de 'Los ríos profundos', experimenta un profundo desgarramiento. Este personaje simboliza:""",
+    text:
+        r"""Ernesto, el protagonista de 'Los ríos profundos', experimenta un profundo desgarramiento. Este personaje simboliza:""",
     options: [
       r'''El ideal del conquistador español adaptándose al Perú''',
       r'''El rechazo total a la cultura occidental europea''',
@@ -4968,12 +5555,14 @@ final List<Question> comunicacionQuestions = [
       r'''La frivolidad de la juventud aristocrática limeña''',
     ],
     correctAnswer: 2,
-    explanation: r'''Ernesto, criado por indígenas pero perteneciente al mundo de los blancos, representa el drama del mestizo cultural que busca su identidad.''',
+    explanation:
+        r'''Ernesto, criado por indígenas pero perteneciente al mundo de los blancos, representa el drama del mestizo cultural que busca su identidad.''',
   ),
   Question(
     id: 'com_q509',
     topicId: 'com_t4',
-    text: r"""En 'La ciudad y los perros', el colegio militar funciona como un microcosmos. El código no escrito ('El Círculo') evidencia:""",
+    text:
+        r"""En 'La ciudad y los perros', el colegio militar funciona como un microcosmos. El código no escrito ('El Círculo') evidencia:""",
     options: [
       r'''La alta disciplina y valores morales de los cadetes''',
       r'''Cómo la violencia institucionalizada y el machismo reproducen la corrupción de la sociedad civil peruana''',
@@ -4981,12 +5570,14 @@ final List<Question> comunicacionQuestions = [
       r'''La erradicación del racismo dentro de las Fuerzas Armadas''',
     ],
     correctAnswer: 1,
-    explanation: r"""La novela muestra cómo la brutalidad ('hacerse hombre') y las jerarquías abusivas reflejan los problemas estructurales del Perú.""",
+    explanation:
+        r"""La novela muestra cómo la brutalidad ('hacerse hombre') y las jerarquías abusivas reflejan los problemas estructurales del Perú.""",
   ),
   Question(
     id: 'com_q510',
     topicId: 'com_t4',
-    text: r"""Si un cadete policial analiza la crítica al 'criollismo' decimonónico frente a la sociedad actual, podría concluir que:""",
+    text:
+        r"""Si un cadete policial analiza la crítica al 'criollismo' decimonónico frente a la sociedad actual, podría concluir que:""",
     options: [
       r"""La herencia de la informalidad, la 'viveza' y la burla a la ley persisten como obstáculos para la institucionalidad del país""",
       r'''Las costumbres limeñas son el único camino hacia el desarrollo''',
@@ -4994,12 +5585,14 @@ final List<Question> comunicacionQuestions = [
       r'''El uso del lenguaje popular está prohibido en los documentos oficiales''',
     ],
     correctAnswer: 0,
-    explanation: r'''El costumbrismo retrató vicios sociales (la viveza, el arribismo, la chismosería) que aún hoy dificultan el cumplimiento de la ley y el orden público.''',
+    explanation:
+        r'''El costumbrismo retrató vicios sociales (la viveza, el arribismo, la chismosería) que aún hoy dificultan el cumplimiento de la ley y el orden público.''',
   ),
   Question(
     id: 'com_q511',
     topicId: 'com_t4',
-    text: r"""¿En qué momento se había jodido el Perú? Esta interrogante de Zavalita en 'Conversación en La Catedral' expresa:""",
+    text:
+        r"""¿En qué momento se había jodido el Perú? Esta interrogante de Zavalita en 'Conversación en La Catedral' expresa:""",
     options: [
       r'''La alegría por el desarrollo económico del país''',
       r'''El desencanto existencial frente al deterioro moral y la corrupción política que permeó la sociedad (época de Odría)''',
@@ -5007,12 +5600,14 @@ final List<Question> comunicacionQuestions = [
       r'''La nostalgia por la época del Imperio Incaico''',
     ],
     correctAnswer: 1,
-    explanation: r'''La novela cuestiona la degradación de un país ahogado por la dictadura, la hipocresía y el fracaso de las ilusiones personales y colectivas.''',
+    explanation:
+        r'''La novela cuestiona la degradación de un país ahogado por la dictadura, la hipocresía y el fracaso de las ilusiones personales y colectivas.''',
   ),
   Question(
     id: 'com_q513',
     topicId: 'com_t4',
-    text: r"""A través de don Pascual (el cerdo) en 'Los gallinazos sin plumas', Ribeyro construye una alegoría sobre:""",
+    text:
+        r"""A través de don Pascual (el cerdo) en 'Los gallinazos sin plumas', Ribeyro construye una alegoría sobre:""",
     options: [
       r'''La necesidad de proteger a los animales en la ciudad''',
       r'''El consumismo insaciable y la marginación estructural que devora a los más vulnerables en la urbe''',
@@ -5020,12 +5615,14 @@ final List<Question> comunicacionQuestions = [
       r'''La salubridad en los barrios populares de Lima''',
     ],
     correctAnswer: 1,
-    explanation: r'''El cerdo representa el sistema opresivo que exige alimento a costa del sufrimiento y la vida de los excluidos (Efraín y Enrique).''',
+    explanation:
+        r'''El cerdo representa el sistema opresivo que exige alimento a costa del sufrimiento y la vida de los excluidos (Efraín y Enrique).''',
   ),
   Question(
     id: 'com_q514',
     topicId: 'com_t4',
-    text: r"""'Poemas humanos' de César Vallejo se caracteriza por la solidaridad frente al dolor. Esta visión humanista se opone a:""",
+    text:
+        r"""'Poemas humanos' de César Vallejo se caracteriza por la solidaridad frente al dolor. Esta visión humanista se opone a:""",
     options: [
       r'''La cosificación del ser humano por el modelo de explotación y la alienación del hombre contemporáneo''',
       r'''La difusión del cristianismo en Europa''',
@@ -5033,12 +5630,14 @@ final List<Question> comunicacionQuestions = [
       r'''El desarrollo de las artes literarias''',
     ],
     correctAnswer: 0,
-    explanation: r'''Vallejo en su etapa europea asume una poesía de profunda fraternidad, oponiéndose a la deshumanización capitalista y la guerra.''',
+    explanation:
+        r'''Vallejo en su etapa europea asume una poesía de profunda fraternidad, oponiéndose a la deshumanización capitalista y la guerra.''',
   ),
   Question(
     id: 'com_q516',
     topicId: 'com_t4',
-    text: r'''¿Qué cronista es conocido por su visión providencialista y mestiza, reconciliando la herencia inca y la española?''',
+    text:
+        r'''¿Qué cronista es conocido por su visión providencialista y mestiza, reconciliando la herencia inca y la española?''',
     options: [
       r'''Pedro Cieza de León''',
       r'''Fray Bartolomé de las Casas''',
@@ -5046,12 +5645,14 @@ final List<Question> comunicacionQuestions = [
       r'''Guamán Poma de Ayala''',
     ],
     correctAnswer: 2,
-    explanation: r"""Garcilaso en sus 'Comentarios Reales' busca armonizar su doble herencia: ensalza el orden inca y la religión cristiana traída por los españoles.""",
+    explanation:
+        r"""Garcilaso en sus 'Comentarios Reales' busca armonizar su doble herencia: ensalza el orden inca y la religión cristiana traída por los españoles.""",
   ),
   Question(
     id: 'com_q517',
     topicId: 'com_t4',
-    text: r"""¿Qué autor del costumbrismo peruano fundó el diario 'El espejo de mi tierra'?""",
+    text:
+        r"""¿Qué autor del costumbrismo peruano fundó el diario 'El espejo de mi tierra'?""",
     options: [
       r'''Manuel Ascencio Segura''',
       r'''Felipe Pardo y Aliaga''',
@@ -5059,12 +5660,14 @@ final List<Question> comunicacionQuestions = [
       r'''Abelardo Gamarra''',
     ],
     correctAnswer: 1,
-    explanation: r'''Pardo y Aliaga fundó este periódico costumbrista donde publicaba sus artículos satirizando las costumbres limeñas republicanas.''',
+    explanation:
+        r'''Pardo y Aliaga fundó este periódico costumbrista donde publicaba sus artículos satirizando las costumbres limeñas republicanas.''',
   ),
   Question(
     id: 'com_q518',
     topicId: 'com_t4',
-    text: r'''¿A qué movimiento literario pertenece el poeta Carlos Augusto Salaverry?''',
+    text:
+        r'''¿A qué movimiento literario pertenece el poeta Carlos Augusto Salaverry?''',
     options: [
       r'''Modernismo''',
       r'''Vanguardismo''',
@@ -5072,12 +5675,14 @@ final List<Question> comunicacionQuestions = [
       r'''Romanticismo''',
     ],
     correctAnswer: 3,
-    explanation: r'''Salaverry es el máximo exponente del romanticismo lírico e intimista en el Perú.''',
+    explanation:
+        r'''Salaverry es el máximo exponente del romanticismo lírico e intimista en el Perú.''',
   ),
   Question(
     id: 'com_q519',
     topicId: 'com_t4',
-    text: r"""¿Cuál es la obra poética más importante de Salaverry, que contiene el célebre poema '¡Acuérdate de mí!'?""",
+    text:
+        r"""¿Cuál es la obra poética más importante de Salaverry, que contiene el célebre poema '¡Acuérdate de mí!'?""",
     options: [
       r'''Cartas a un ángel''',
       r'''Albores y destellos''',
@@ -5085,12 +5690,14 @@ final List<Question> comunicacionQuestions = [
       r'''Minúsculas''',
     ],
     correctAnswer: 0,
-    explanation: r"""'Cartas a un ángel' es el poemario de tono elegíaco y nostálgico, considerado cumbre del romanticismo peruano.""",
+    explanation:
+        r"""'Cartas a un ángel' es el poemario de tono elegíaco y nostálgico, considerado cumbre del romanticismo peruano.""",
   ),
   Question(
     id: 'com_q521',
     topicId: 'com_t4',
-    text: r"""¿Quién es el autor de 'Horas de lucha', importante libro de ensayos de crítica sociopolítica?""",
+    text:
+        r"""¿Quién es el autor de 'Horas de lucha', importante libro de ensayos de crítica sociopolítica?""",
     options: [
       r'''Víctor Raúl Haya de la Torre''',
       r'''José Carlos Mariátegui''',
@@ -5098,12 +5705,14 @@ final List<Question> comunicacionQuestions = [
       r'''Jorge Basadre''',
     ],
     correctAnswer: 2,
-    explanation: r'''Este libro de González Prada profundiza su crítica al Estado, la iglesia y la clase dirigente peruana, consolidando el realismo ensayístico.''',
+    explanation:
+        r'''Este libro de González Prada profundiza su crítica al Estado, la iglesia y la clase dirigente peruana, consolidando el realismo ensayístico.''',
   ),
   Question(
     id: 'com_q522',
     topicId: 'com_t4',
-    text: r'''¿A qué influyente grupo literario perteneció y fundó Abraham Valdelomar?''',
+    text:
+        r'''¿A qué influyente grupo literario perteneció y fundó Abraham Valdelomar?''',
     options: [
       r'''Grupo Norte''',
       r'''Movimiento Colónida''',
@@ -5111,12 +5720,14 @@ final List<Question> comunicacionQuestions = [
       r'''Hora Zero''',
     ],
     correctAnswer: 1,
-    explanation: r'''El movimiento Colónida, surgido en 1916 con la revista del mismo nombre, renovó el ambiente cultural peruano frente al academicismo.''',
+    explanation:
+        r'''El movimiento Colónida, surgido en 1916 con la revista del mismo nombre, renovó el ambiente cultural peruano frente al academicismo.''',
   ),
   Question(
     id: 'com_q523',
     topicId: 'com_t4',
-    text: r"""¿Quién escribió 'La canción de las figuras' y es considerado pionero del simbolismo en Perú?""",
+    text:
+        r"""¿Quién escribió 'La canción de las figuras' y es considerado pionero del simbolismo en Perú?""",
     options: [
       r'''José María Eguren''',
       r'''César Vallejo''',
@@ -5124,12 +5735,14 @@ final List<Question> comunicacionQuestions = [
       r'''Javier Heraud''',
     ],
     correctAnswer: 0,
-    explanation: r'''Eguren introdujo el simbolismo poético en la literatura peruana, alejándose del modernismo recargado de su época.''',
+    explanation:
+        r'''Eguren introdujo el simbolismo poético en la literatura peruana, alejándose del modernismo recargado de su época.''',
   ),
   Question(
     id: 'com_q524',
     topicId: 'com_t4',
-    text: r'''¿Cuál de estos poemarios de Vallejo fue inspirado por su compromiso político antifascista en la década del 30?''',
+    text:
+        r'''¿Cuál de estos poemarios de Vallejo fue inspirado por su compromiso político antifascista en la década del 30?''',
     options: [
       r'''Los heraldos negros''',
       r'''Trilce''',
@@ -5137,12 +5750,14 @@ final List<Question> comunicacionQuestions = [
       r'''España, aparta de mí este cáliz''',
     ],
     correctAnswer: 3,
-    explanation: r'''Escrito en el contexto de la Guerra Civil Española, el libro refleja el sufrimiento del pueblo y el heroísmo de los milicianos republicanos.''',
+    explanation:
+        r'''Escrito en el contexto de la Guerra Civil Española, el libro refleja el sufrimiento del pueblo y el heroísmo de los milicianos republicanos.''',
   ),
   Question(
     id: 'com_q525',
     topicId: 'com_t4',
-    text: r'''¿Qué novela de Ciro Alegría narra el drama de los indígenas y sus animales frente a la sequía en la sierra norte?''',
+    text:
+        r'''¿Qué novela de Ciro Alegría narra el drama de los indígenas y sus animales frente a la sequía en la sierra norte?''',
     options: [
       r'''La serpiente de oro''',
       r'''El mundo es ancho y ajeno''',
@@ -5150,12 +5765,14 @@ final List<Question> comunicacionQuestions = [
       r'''Calixto Garmendia''',
     ],
     correctAnswer: 2,
-    explanation: r'''La novela muestra la profunda relación entre el hombre andino y la naturaleza, puesta a prueba por una terrible sequía.''',
+    explanation:
+        r'''La novela muestra la profunda relación entre el hombre andino y la naturaleza, puesta a prueba por una terrible sequía.''',
   ),
   Question(
     id: 'com_q526',
     topicId: 'com_t4',
-    text: r"""¿Quién es el autor de la novela 'Todas las sangres', que aborda el choque entre el capitalismo minero y la cultura andina?""",
+    text:
+        r"""¿Quién es el autor de la novela 'Todas las sangres', que aborda el choque entre el capitalismo minero y la cultura andina?""",
     options: [
       r'''Ciro Alegría''',
       r'''Manuel Scorza''',
@@ -5163,12 +5780,14 @@ final List<Question> comunicacionQuestions = [
       r'''Julio Ramón Ribeyro''',
     ],
     correctAnswer: 2,
-    explanation: r'''Arguedas intenta en esta novela retratar la totalidad de las clases sociales peruanas frente al proceso de modernización.''',
+    explanation:
+        r'''Arguedas intenta en esta novela retratar la totalidad de las clases sociales peruanas frente al proceso de modernización.''',
   ),
   Question(
     id: 'com_q527',
     topicId: 'com_t4',
-    text: r"""¿Qué escritor de la Generación del 50 es autor de la colección de cuentos 'Lima, hora cero'?""",
+    text:
+        r"""¿Qué escritor de la Generación del 50 es autor de la colección de cuentos 'Lima, hora cero'?""",
     options: [
       r'''Mario Vargas Llosa''',
       r'''Enrique Congrains''',
@@ -5176,12 +5795,14 @@ final List<Question> comunicacionQuestions = [
       r'''Oswaldo Reynoso''',
     ],
     correctAnswer: 1,
-    explanation: r"""Congrains fue pionero en retratar literariamente las barriadas limeñas ('el niño de junto al cielo' es parte de este libro).""",
+    explanation:
+        r"""Congrains fue pionero en retratar literariamente las barriadas limeñas ('el niño de junto al cielo' es parte de este libro).""",
   ),
   Question(
     id: 'com_q528',
     topicId: 'com_t4',
-    text: r"""¿A qué generación literaria pertenece Oswaldo Reynoso, autor de 'Los inocentes'?""",
+    text:
+        r"""¿A qué generación literaria pertenece Oswaldo Reynoso, autor de 'Los inocentes'?""",
     options: [
       r'''Generación del 50''',
       r'''Boom Latinoamericano''',
@@ -5189,12 +5810,14 @@ final List<Question> comunicacionQuestions = [
       r'''Vanguardismo''',
     ],
     correctAnswer: 0,
-    explanation: r'''Reynoso se enmarca en el relato urbano de la Generación del 50, aportando el lenguaje juvenil y la marginalidad adolescente.''',
+    explanation:
+        r'''Reynoso se enmarca en el relato urbano de la Generación del 50, aportando el lenguaje juvenil y la marginalidad adolescente.''',
   ),
   Question(
     id: 'com_q529',
     topicId: 'com_t4',
-    text: r'''¿Qué movimiento literario experimentó una explosión de narrativa latinoamericana a nivel mundial en la década de 1960?''',
+    text:
+        r'''¿Qué movimiento literario experimentó una explosión de narrativa latinoamericana a nivel mundial en la década de 1960?''',
     options: [
       r'''El Realismo Mágico exclusivo''',
       r'''El Boom Latinoamericano''',
@@ -5202,12 +5825,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Modernismo hispanoamericano''',
     ],
     correctAnswer: 1,
-    explanation: r'''El Boom internacionalizó a autores como García Márquez, Cortázar, Fuentes y el peruano Mario Vargas Llosa.''',
+    explanation:
+        r'''El Boom internacionalizó a autores como García Márquez, Cortázar, Fuentes y el peruano Mario Vargas Llosa.''',
   ),
   Question(
     id: 'com_q530',
     topicId: 'com_t4',
-    text: r'''¿Cuál es la novela de Vargas Llosa que narra una histórica rebelión de fanáticos religiosos en Brasil?''',
+    text:
+        r'''¿Cuál es la novela de Vargas Llosa que narra una histórica rebelión de fanáticos religiosos en Brasil?''',
     options: [
       r'''La fiesta del Chivo''',
       r'''Pantaleón y las visitadoras''',
@@ -5215,12 +5840,14 @@ final List<Question> comunicacionQuestions = [
       r'''Historia de Mayta''',
     ],
     correctAnswer: 2,
-    explanation: r'''Publicada en 1981, recrea la guerra de Canudos en el sertón brasileño a fines del siglo XIX.''',
+    explanation:
+        r'''Publicada en 1981, recrea la guerra de Canudos en el sertón brasileño a fines del siglo XIX.''',
   ),
   Question(
     id: 'com_q531',
     topicId: 'com_t4',
-    text: r"""¿Qué poeta peruana escribió el poemario 'Ese puerto existe', cuyo prólogo fue redactado por Octavio Paz?""",
+    text:
+        r"""¿Qué poeta peruana escribió el poemario 'Ese puerto existe', cuyo prólogo fue redactado por Octavio Paz?""",
     options: [
       r'''Carmen Ollé''',
       r'''Blanca Varela''',
@@ -5228,12 +5855,14 @@ final List<Question> comunicacionQuestions = [
       r'''Magda Portal''',
     ],
     correctAnswer: 1,
-    explanation: r'''Blanca Varela, una de las mayores voces poéticas de América Latina, publicó su primer libro en 1959 con el respaldo de Paz.''',
+    explanation:
+        r'''Blanca Varela, una de las mayores voces poéticas de América Latina, publicó su primer libro en 1959 con el respaldo de Paz.''',
   ),
   Question(
     id: 'com_q532',
     topicId: 'com_t4',
-    text: r'''En el mito de Pacaritambo (o de los Hermanos Ayar), el hundimiento de la vara de oro en el cerro Huanacaure simboliza:''',
+    text:
+        r'''En el mito de Pacaritambo (o de los Hermanos Ayar), el hundimiento de la vara de oro en el cerro Huanacaure simboliza:''',
     options: [
       r'''La pérdida del poder militar inca''',
       r'''El castigo de los dioses a los hermanos rebeldes''',
@@ -5241,12 +5870,14 @@ final List<Question> comunicacionQuestions = [
       r'''El inicio de una gran sequía en los Andes''',
     ],
     correctAnswer: 2,
-    explanation: r'''La vara que se hunde indica la tierra fértil elegida por el dios Sol (Inti) para que Manco Cápac funde el Cusco.''',
+    explanation:
+        r'''La vara que se hunde indica la tierra fértil elegida por el dios Sol (Inti) para que Manco Cápac funde el Cusco.''',
   ),
   Question(
     id: 'com_q533',
     topicId: 'com_t4',
-    text: r'''La literatura de la Conquista (crónicas) tiene un valor dual en la historia peruana, el cual es:''',
+    text:
+        r'''La literatura de la Conquista (crónicas) tiene un valor dual en la historia peruana, el cual es:''',
     options: [
       r'''Científico por su rigor antropológico y poético por su rima''',
       r'''Histórico, al documentar los hechos, y literario, por la subjetividad narrativa de los autores''',
@@ -5254,12 +5885,14 @@ final List<Question> comunicacionQuestions = [
       r'''Ficticio e irrelevante para los historiadores''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las crónicas son fuentes históricas primarias, pero están teñidas por la imaginación, los prejuicios y el estilo literario del autor.''',
+    explanation:
+        r'''Las crónicas son fuentes históricas primarias, pero están teñidas por la imaginación, los prejuicios y el estilo literario del autor.''',
   ),
   Question(
     id: 'com_q534',
     topicId: 'com_t4',
-    text: r"""La 'Epístola a Belardo', escrita por la poeta anónima Amarilis, es importante en la literatura virreinal porque:""",
+    text:
+        r"""La 'Epístola a Belardo', escrita por la poeta anónima Amarilis, es importante en la literatura virreinal porque:""",
     options: [
       r'''Relata la captura de Atahualpa en verso''',
       r'''Demuestra la alta calidad lírica alcanzada en el virreinato y expresa profunda admiración hacia Lope de Vega''',
@@ -5267,12 +5900,14 @@ final List<Question> comunicacionQuestions = [
       r'''Critica duramente la Inquisición en Lima''',
     ],
     correctAnswer: 1,
-    explanation: r'''El poema, dirigido al dramaturgo español Lope de Vega (Belardo), es una joya de la poesía renacentista escrita desde América.''',
+    explanation:
+        r'''El poema, dirigido al dramaturgo español Lope de Vega (Belardo), es una joya de la poesía renacentista escrita desde América.''',
   ),
   Question(
     id: 'com_q535',
     topicId: 'com_t4',
-    text: r'''El costumbrismo criollista de Manuel Ascencio Segura se caracteriza, a diferencia de Pardo y Aliaga, por:''',
+    text:
+        r'''El costumbrismo criollista de Manuel Ascencio Segura se caracteriza, a diferencia de Pardo y Aliaga, por:''',
     options: [
       r'''Defender el retorno al absolutismo español''',
       r'''Celebrar la picardía, las clases populares y emplear un lenguaje coloquial local''',
@@ -5280,12 +5915,14 @@ final List<Question> comunicacionQuestions = [
       r'''Enfocarse en la descripción de paisajes andinos''',
     ],
     correctAnswer: 1,
-    explanation: r'''Segura asume una postura afín a la naciente clase media limeña, utilizando jergas y retratando personajes del pueblo con simpatía.''',
+    explanation:
+        r'''Segura asume una postura afín a la naciente clase media limeña, utilizando jergas y retratando personajes del pueblo con simpatía.''',
   ),
   Question(
     id: 'com_q536',
     topicId: 'com_t4',
-    text: r'''El Romanticismo en el Perú se desarrolló de manera tardía en comparación a Europa y tuvo un tono predominantemente:''',
+    text:
+        r'''El Romanticismo en el Perú se desarrolló de manera tardía en comparación a Europa y tuvo un tono predominantemente:''',
     options: [
       r'''Revolucionario, antiestatal y anárquico''',
       r'''Nostálgico, historicista y de evasión sentimental, sin grandes rebeldías sociales''',
@@ -5293,12 +5930,14 @@ final List<Question> comunicacionQuestions = [
       r'''Cientificista y objetivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Salvo excepciones como Melgar, el romanticismo peruano (Palma, Salaverry) fue pacífico, burgués y evocador del pasado colonial.''',
+    explanation:
+        r'''Salvo excepciones como Melgar, el romanticismo peruano (Palma, Salaverry) fue pacífico, burgués y evocador del pasado colonial.''',
   ),
   Question(
     id: 'com_q537',
     topicId: 'com_t4',
-    text: r"""La 'tradición' de Ricardo Palma se considera un género híbrido o mestizo porque:""",
+    text:
+        r"""La 'tradición' de Ricardo Palma se considera un género híbrido o mestizo porque:""",
     options: [
       r'''Combina el idioma quechua y el español en sus diálogos''',
       r'''Mezcla el rigor del dato histórico con la estructura del cuento, la anécdota y el humor criollo''',
@@ -5306,12 +5945,14 @@ final List<Question> comunicacionQuestions = [
       r'''Fue escrita en conjunto con autores indígenas''',
     ],
     correctAnswer: 1,
-    explanation: r'''Palma creó un molde original que toma hechos o personajes del pasado (base histórica) y los relata con imaginación y picardía (ficción).''',
+    explanation:
+        r'''Palma creó un molde original que toma hechos o personajes del pasado (base histórica) y los relata con imaginación y picardía (ficción).''',
   ),
   Question(
     id: 'com_q538',
     topicId: 'com_t4',
-    text: r"""En 'Páginas libres', Manuel González Prada utiliza un estilo de prosa que destaca por:""",
+    text:
+        r"""En 'Páginas libres', Manuel González Prada utiliza un estilo de prosa que destaca por:""",
     options: [
       r'''Su tono beligerante, el uso del aforismo y una reforma ortográfica radical''',
       r'''La imitación del estilo barroco del siglo XVII''',
@@ -5319,12 +5960,14 @@ final List<Question> comunicacionQuestions = [
       r'''La inclusión de términos en inglés y francés''',
     ],
     correctAnswer: 0,
-    explanation: r"""González Prada tenía un estilo afilado (frases contundentes) e impulsó una ortografía fonética (escribir 'i' en vez de 'y', 'J' en vez de 'G') por rebeldía.""",
+    explanation:
+        r"""González Prada tenía un estilo afilado (frases contundentes) e impulsó una ortografía fonética (escribir 'i' en vez de 'y', 'J' en vez de 'G') por rebeldía.""",
   ),
   Question(
     id: 'com_q539',
     topicId: 'com_t4',
-    text: r"""El Modernismo de José Santos Chocano ('Alma América') expresa su identidad americana a través de:""",
+    text:
+        r"""El Modernismo de José Santos Chocano ('Alma América') expresa su identidad americana a través de:""",
     options: [
       r'''El intimismo sutil y los símbolos europeos''',
       r'''La exaltación épica de la naturaleza, el paisaje continental y el mestizaje grandilocuente''',
@@ -5332,12 +5975,14 @@ final List<Question> comunicacionQuestions = [
       r'''La renuncia a la musicalidad poética''',
     ],
     correctAnswer: 1,
-    explanation: r'''Chocano se autoproclamó el poeta de América, usando un tono sonoro, colorido y rotundo para describir selvas, Andes y la herencia inca-hispana.''',
+    explanation:
+        r'''Chocano se autoproclamó el poeta de América, usando un tono sonoro, colorido y rotundo para describir selvas, Andes y la herencia inca-hispana.''',
   ),
   Question(
     id: 'com_q541',
     topicId: 'com_t4',
-    text: r"""El poema 'Masa' de César Vallejo (de 'España, aparta de mí este cáliz') transmite el mensaje central de que:""",
+    text:
+        r"""El poema 'Masa' de César Vallejo (de 'España, aparta de mí este cáliz') transmite el mensaje central de que:""",
     options: [
       r'''La tecnología médica es incapaz de vencer a la muerte''',
       r'''Solo la solidaridad absoluta y el amor de toda la humanidad pueden resucitar y vencer a la muerte''',
@@ -5345,12 +5990,14 @@ final List<Question> comunicacionQuestions = [
       r'''El individuo aislado tiene el poder de cambiar su destino''',
     ],
     correctAnswer: 1,
-    explanation: r"""El cadáver se levanta y abraza al primer hombre solo cuando 'todos los hombres de la tierra' se unen a rogarle, simbolizando la hermandad universal.""",
+    explanation:
+        r"""El cadáver se levanta y abraza al primer hombre solo cuando 'todos los hombres de la tierra' se unen a rogarle, simbolizando la hermandad universal.""",
   ),
   Question(
     id: 'com_q542',
     topicId: 'com_t4',
-    text: r'''El Vanguardismo en el Perú, liderado por Oquendo de Amat y Vallejo, buscaba principalmente:''',
+    text:
+        r'''El Vanguardismo en el Perú, liderado por Oquendo de Amat y Vallejo, buscaba principalmente:''',
     options: [
       r'''Restaurar la pureza del idioma castellano''',
       r'''La innovación absoluta del lenguaje poético, rompiendo moldes métricos, visuales y sintácticos''',
@@ -5358,12 +6005,14 @@ final List<Question> comunicacionQuestions = [
       r'''Desarrollar una literatura exclusivamente para niños''',
     ],
     correctAnswer: 1,
-    explanation: r'''La vanguardia implicó una revolución total: caligramas, neologismos, supresión de signos de puntuación y nuevas metáforas.''',
+    explanation:
+        r'''La vanguardia implicó una revolución total: caligramas, neologismos, supresión de signos de puntuación y nuevas metáforas.''',
   ),
   Question(
     id: 'com_q543',
     topicId: 'com_t4',
-    text: r'''A diferencia del Indianismo romántico, el Indigenismo literario (Alegría, Arguedas) se distingue porque:''',
+    text:
+        r'''A diferencia del Indianismo romántico, el Indigenismo literario (Alegría, Arguedas) se distingue porque:''',
     options: [
       r'''Presenta al indígena de manera realista, denunciando su explotación socioeconómica''',
       r'''Idealiza al inca como un ser perfecto y místico del pasado''',
@@ -5371,12 +6020,14 @@ final List<Question> comunicacionQuestions = [
       r'''Escribe sus obras desde Europa''',
     ],
     correctAnswer: 0,
-    explanation: r'''El indigenismo no ve al indio como un elemento exótico (como lo hacía el indianismo), sino como un sujeto social oprimido en el presente.''',
+    explanation:
+        r'''El indigenismo no ve al indio como un elemento exótico (como lo hacía el indianismo), sino como un sujeto social oprimido en el presente.''',
   ),
   Question(
     id: 'com_q544',
     topicId: 'com_t4',
-    text: r"""En 'El mundo es ancho y ajeno', el personaje del alcalde Rosendo Maqui representa:""",
+    text:
+        r"""En 'El mundo es ancho y ajeno', el personaje del alcalde Rosendo Maqui representa:""",
     options: [
       r'''La rebeldía armada y el terrorismo''',
       r'''La corrupción de los líderes indígenas''',
@@ -5384,12 +6035,14 @@ final List<Question> comunicacionQuestions = [
       r'''La alianza del indígena con el hacendado''',
     ],
     correctAnswer: 2,
-    explanation: r'''Rosendo es el líder moral de Rumi, encarna la justicia comunitaria, el amor a la tierra y busca resolver el conflicto por la vía legal.''',
+    explanation:
+        r'''Rosendo es el líder moral de Rumi, encarna la justicia comunitaria, el amor a la tierra y busca resolver el conflicto por la vía legal.''',
   ),
   Question(
     id: 'com_q545',
     topicId: 'com_t4',
-    text: r"""El símbolo del 'zorro de arriba y el zorro de abajo' en la última novela de Arguedas representa:""",
+    text:
+        r"""El símbolo del 'zorro de arriba y el zorro de abajo' en la última novela de Arguedas representa:""",
     options: [
       r'''Dos animales sagrados que protegen el mar peruano''',
       r'''El encuentro y conflicto traumático entre la cultura andina (arriba) y el mundo industrial costeño (abajo)''',
@@ -5397,12 +6050,14 @@ final List<Question> comunicacionQuestions = [
       r'''La lucha de clases exclusivamente económica sin factor cultural''',
     ],
     correctAnswer: 1,
-    explanation: r'''En la novela (ambientada en Chimbote), los zorros míticos observan la vorágine de la modernidad y cómo el mundo andino se transforma en la costa.''',
+    explanation:
+        r'''En la novela (ambientada en Chimbote), los zorros míticos observan la vorágine de la modernidad y cómo el mundo andino se transforma en la costa.''',
   ),
   Question(
     id: 'com_q546',
     topicId: 'com_t4',
-    text: r"""La 'narrativa urbana' de la Generación del 50, con autores como Ribeyro y Congrains, se enfoca temáticamente en:""",
+    text:
+        r"""La 'narrativa urbana' de la Generación del 50, con autores como Ribeyro y Congrains, se enfoca temáticamente en:""",
     options: [
       r'''La guerra del Pacífico y sus héroes''',
       r'''El surgimiento de la barriada limeña, la marginalidad y el drama del provinciano migrante''',
@@ -5410,12 +6065,14 @@ final List<Question> comunicacionQuestions = [
       r'''La introspección psicológica de mujeres de clase alta''',
     ],
     correctAnswer: 1,
-    explanation: r'''La modernización y la migración interna cambiaron el rostro de Lima, temas que esta generación capturó en sus cuentos y novelas.''',
+    explanation:
+        r'''La modernización y la migración interna cambiaron el rostro de Lima, temas que esta generación capturó en sus cuentos y novelas.''',
   ),
   Question(
     id: 'com_q547',
     topicId: 'com_t4',
-    text: r"""El cuento 'El niño de junto al cielo' de Enrique Congrains refleja:""",
+    text:
+        r"""El cuento 'El niño de junto al cielo' de Enrique Congrains refleja:""",
     options: [
       r'''El triunfo del emprendimiento en la ciudad''',
       r'''La inocencia del niño andino (Esteban) enfrentada al engaño y la crueldad urbana (Pedro)''',
@@ -5423,12 +6080,14 @@ final List<Question> comunicacionQuestions = [
       r'''La importancia de la educación escolar para el progreso''',
     ],
     correctAnswer: 1,
-    explanation: r"""Esteban, recién llegado de la sierra (el 'cielo', la barriada en el cerro), es engañado por Pedro, un niño astuto de la ciudad.""",
+    explanation:
+        r"""Esteban, recién llegado de la sierra (el 'cielo', la barriada en el cerro), es engañado por Pedro, un niño astuto de la ciudad.""",
   ),
   Question(
     id: 'com_q548',
     topicId: 'com_t4',
-    text: r"""Oswaldo Reynoso causó polémica en los años 60 con su libro de cuentos 'Los inocentes' debido a:""",
+    text:
+        r"""Oswaldo Reynoso causó polémica en los años 60 con su libro de cuentos 'Los inocentes' debido a:""",
     options: [
       r'''Su defensa de posturas políticas de extrema derecha''',
       r'''El uso audaz del lenguaje callejero (jerga) y la exploración de la marginalidad y sexualidad adolescente''',
@@ -5436,12 +6095,14 @@ final List<Question> comunicacionQuestions = [
       r'''Su renuncia a publicar en formato impreso''',
     ],
     correctAnswer: 1,
-    explanation: r"""El libro retrató sin tapujos el mundo juvenil de los 'palomillas' de barrio, usando el habla coloquial ('replana'), lo que escandalizó a la crítica conservadora.""",
+    explanation:
+        r"""El libro retrató sin tapujos el mundo juvenil de los 'palomillas' de barrio, usando el habla coloquial ('replana'), lo que escandalizó a la crítica conservadora.""",
   ),
   Question(
     id: 'com_q549',
     topicId: 'com_t4',
-    text: r"""'Conversación en La Catedral' de Vargas Llosa utiliza la técnica de la 'caja china' o muñecas rusas, que consiste en:""",
+    text:
+        r"""'Conversación en La Catedral' de Vargas Llosa utiliza la técnica de la 'caja china' o muñecas rusas, que consiste en:""",
     options: [
       r'''Insertar palabras extranjeras para darle exotismo al texto''',
       r'''Contar una historia dentro de otra historia, superponiendo planos narrativos subordinados''',
@@ -5449,12 +6110,14 @@ final List<Question> comunicacionQuestions = [
       r'''Eliminar por completo los signos de puntuación''',
     ],
     correctAnswer: 1,
-    explanation: r'''Vargas Llosa domina esta técnica donde un relato enmarca a otro, creando una estructura compleja y multidimensional.''',
+    explanation:
+        r'''Vargas Llosa domina esta técnica donde un relato enmarca a otro, creando una estructura compleja y multidimensional.''',
   ),
   Question(
     id: 'com_q551',
     topicId: 'com_t4',
-    text: r'''En la poesía de Blanca Varela, el constante rechazo a lo ornamental y retórico refleja:''',
+    text:
+        r'''En la poesía de Blanca Varela, el constante rechazo a lo ornamental y retórico refleja:''',
     options: [
       r'''Su incapacidad para manejar la métrica tradicional''',
       r'''Una búsqueda de la autenticidad y la confrontación directa, casi cruel, con el dolor y la existencia''',
@@ -5462,12 +6125,14 @@ final List<Question> comunicacionQuestions = [
       r'''Un enfoque exclusivamente religioso y místico''',
     ],
     correctAnswer: 1,
-    explanation: r'''Varela depura el lenguaje para encontrar la verdad poética; sus versos son secos, precisos y cuestionan duramente la realidad humana.''',
+    explanation:
+        r'''Varela depura el lenguaje para encontrar la verdad poética; sus versos son secos, precisos y cuestionan duramente la realidad humana.''',
   ),
   Question(
     id: 'com_q552',
     topicId: 'com_t4',
-    text: r"""En una lectura crítica y moderna de los 'Comentarios Reales', se evidencia que el Inca Garcilaso:""",
+    text:
+        r"""En una lectura crítica y moderna de los 'Comentarios Reales', se evidencia que el Inca Garcilaso:""",
     options: [
       r'''Describe objetivamente y sin ningún sesgo los sacrificios humanos incas''',
       r'''Edulcora y utopiza la historia del Tahuantinsuyo para justificar y prestigiar al imperio ante la corona española''',
@@ -5475,12 +6140,14 @@ final List<Question> comunicacionQuestions = [
       r'''Rechaza su ascendencia española y propone la destrucción del Virreinato''',
     ],
     correctAnswer: 1,
-    explanation: r'''Para dignificar su linaje materno, Garcilaso omite aspectos crueles (como los sacrificios) y presenta al incario como una civilización casi perfecta.''',
+    explanation:
+        r'''Para dignificar su linaje materno, Garcilaso omite aspectos crueles (como los sacrificios) y presenta al incario como una civilización casi perfecta.''',
   ),
   Question(
     id: 'com_q553',
     topicId: 'com_t4',
-    text: r"""El conflicto en la obra dramática 'Ollantay' entre el Inca Pachacútec y el general Ollanta refleja estructuralmente:""",
+    text:
+        r"""El conflicto en la obra dramática 'Ollantay' entre el Inca Pachacútec y el general Ollanta refleja estructuralmente:""",
     options: [
       r'''La tolerancia democrática de la nobleza de sangre''',
       r'''La rigidez del sistema de castas incaico y la imposibilidad de la movilidad social basada en méritos''',
@@ -5488,12 +6155,14 @@ final List<Question> comunicacionQuestions = [
       r'''La injerencia de las deidades solares en el gobierno humano''',
     ],
     correctAnswer: 1,
-    explanation: r'''A pesar de ser el mejor general, Ollanta no puede casarse con la princesa porque es plebeyo; el sistema inca es inflexible con la sangre.''',
+    explanation:
+        r'''A pesar de ser el mejor general, Ollanta no puede casarse con la princesa porque es plebeyo; el sistema inca es inflexible con la sangre.''',
   ),
   Question(
     id: 'com_q554',
     topicId: 'com_t4',
-    text: r"""En el análisis del artículo costumbrista 'El niño Goyito' de Pardo y Aliaga, la sátira se dirige sociológicamente a:""",
+    text:
+        r"""En el análisis del artículo costumbrista 'El niño Goyito' de Pardo y Aliaga, la sátira se dirige sociológicamente a:""",
     options: [
       r'''La rebeldía de los jóvenes universitarios de San Marcos''',
       r'''La inmadurez, dependencia e inoperancia de la aristocracia limeña, incapaz de asumir su rol en la República''',
@@ -5501,12 +6170,14 @@ final List<Question> comunicacionQuestions = [
       r'''El militarismo exacerbado de los próceres de la independencia''',
     ],
     correctAnswer: 1,
-    explanation: r'''El Niño Goyito, de 52 años, representa a la élite limeña engreída, pasiva y asustada ante el cambio, aferrada a sus viejos privilegios.''',
+    explanation:
+        r'''El Niño Goyito, de 52 años, representa a la élite limeña engreída, pasiva y asustada ante el cambio, aferrada a sus viejos privilegios.''',
   ),
   Question(
     id: 'com_q555',
     topicId: 'com_t4',
-    text: r"""Si comparamos 'Las Tradiciones peruanas' con la novela histórica convencional europea, la obra de Palma se diferencia fundamentalmente porque:""",
+    text:
+        r"""Si comparamos 'Las Tradiciones peruanas' con la novela histórica convencional europea, la obra de Palma se diferencia fundamentalmente porque:""",
     options: [
       r'''Es una copia exacta del modelo de Walter Scott sin aportes locales''',
       r'''Subordina la exactitud del rigor histórico a la anécdota, el humor y la consolidación de un imaginario nacional''',
@@ -5514,12 +6185,14 @@ final List<Question> comunicacionQuestions = [
       r'''Aborda exclusivamente la vida de los santos''',
     ],
     correctAnswer: 1,
-    explanation: r'''Palma no busca ser un historiador científico; usa la historia como pretexto para crear una identidad literaria amena y aglutinadora.''',
+    explanation:
+        r'''Palma no busca ser un historiador científico; usa la historia como pretexto para crear una identidad literaria amena y aglutinadora.''',
   ),
   Question(
     id: 'com_q556',
     topicId: 'com_t4',
-    text: r"""González Prada afirma: 'En el resumen de nuestras tristezas, donde se pone el dedo brota la pus'. Aplicado a la labor analítica policial, esta metáfora advierte sobre:""",
+    text:
+        r"""González Prada afirma: 'En el resumen de nuestras tristezas, donde se pone el dedo brota la pus'. Aplicado a la labor analítica policial, esta metáfora advierte sobre:""",
     options: [
       r'''La necesidad de mejorar la salubridad en los hospitales militares''',
       r'''La corrupción endémica y estructural que afecta y enferma a todas las instituciones del Estado''',
@@ -5527,12 +6200,14 @@ final List<Question> comunicacionQuestions = [
       r'''La violencia terrorista en el siglo XX''',
     ],
     correctAnswer: 1,
-    explanation: r"""La 'pus' simboliza la corrupción moral y política generalizada en el Perú de la posguerra, un problema sistémico que requiere renovación.""",
+    explanation:
+        r"""La 'pus' simboliza la corrupción moral y política generalizada en el Perú de la posguerra, un problema sistémico que requiere renovación.""",
   ),
   Question(
     id: 'com_q557',
     topicId: 'com_t4',
-    text: r"""Al estudiar 'Los ríos profundos' de Arguedas desde una perspectiva sociopolítica, la rebelión de las chicheras en Abancay demuestra:""",
+    text:
+        r"""Al estudiar 'Los ríos profundos' de Arguedas desde una perspectiva sociopolítica, la rebelión de las chicheras en Abancay demuestra:""",
     options: [
       r'''La capacidad de agencia, organización y resistencia de las mujeres mestizas frente al acaparamiento de recursos''',
       r'''La influencia del comunismo ruso en la sierra peruana''',
@@ -5540,12 +6215,14 @@ final List<Question> comunicacionQuestions = [
       r'''La sumisión voluntaria del campesinado ante la iglesia''',
     ],
     correctAnswer: 0,
-    explanation: r'''Lideradas por Doña Felipa, las chicheras se rebelan para exigir sal y justicia, rompiendo el mito del indígena o mestizo pasivo.''',
+    explanation:
+        r'''Lideradas por Doña Felipa, las chicheras se rebelan para exigir sal y justicia, rompiendo el mito del indígena o mestizo pasivo.''',
   ),
   Question(
     id: 'com_q558',
     topicId: 'com_t4',
-    text: r"""En 'Los nueve monstruos', Vallejo dice: 'jamás, hombres humanos, hubo tanto dolor en el pecho'. Desde el análisis literario, esto manifiesta una postura que:""",
+    text:
+        r"""En 'Los nueve monstruos', Vallejo dice: 'jamás, hombres humanos, hubo tanto dolor en el pecho'. Desde el análisis literario, esto manifiesta una postura que:""",
     options: [
       r'''Defiende la insensibilidad estoica como máxima virtud''',
       r"""Desmitifica la pureza del 'arte por el arte', abrazando el compromiso ético ante el sufrimiento ajeno y la injusticia""",
@@ -5553,12 +6230,14 @@ final List<Question> comunicacionQuestions = [
       r'''Promueve el individualismo egoísta del poeta''',
     ],
     correctAnswer: 1,
-    explanation: r'''Vallejo rompe con la idea de que la poesía es solo belleza formal; su arte asume la carga del dolor humano y la denuncia social.''',
+    explanation:
+        r'''Vallejo rompe con la idea de que la poesía es solo belleza formal; su arte asume la carga del dolor humano y la denuncia social.''',
   ),
   Question(
     id: 'com_q559',
     topicId: 'com_t4',
-    text: r"""El personaje del Fiero Vásquez en 'El mundo es ancho y ajeno' representa, dentro de la dinámica histórica y legal del indigenismo, a:""",
+    text:
+        r"""El personaje del Fiero Vásquez en 'El mundo es ancho y ajeno' representa, dentro de la dinámica histórica y legal del indigenismo, a:""",
     options: [
       r'''El juez probo que defiende a los campesinos en los tribunales''',
       r'''El bandolerismo social que surge como una vía marginal y violenta de resistencia frente al despojo de tierras''',
@@ -5566,12 +6245,14 @@ final List<Question> comunicacionQuestions = [
       r'''El sacerdote aliado con el gamonal''',
     ],
     correctAnswer: 1,
-    explanation: r'''Ante un sistema judicial corrupto, el Fiero Vásquez actúa fuera de la ley oficial, robando a los ricos y apoyando, a su modo, a los comuneros de Rumi.''',
+    explanation:
+        r'''Ante un sistema judicial corrupto, el Fiero Vásquez actúa fuera de la ley oficial, robando a los ricos y apoyando, a su modo, a los comuneros de Rumi.''',
   ),
   Question(
     id: 'com_q561',
     topicId: 'com_t4',
-    text: r"""Julio Ramón Ribeyro retrata en 'Los gallinazos sin plumas' a Don Santos (el abuelo) no como un familiar protector, sino como:""",
+    text:
+        r"""Julio Ramón Ribeyro retrata en 'Los gallinazos sin plumas' a Don Santos (el abuelo) no como un familiar protector, sino como:""",
     options: [
       r'''La encarnación de la tiranía explotadora capitalista, que cosifica a sus nietos para su beneficio económico exclusivo''',
       r'''Un hombre incomprendido que busca el bienestar de su familia''',
@@ -5579,12 +6260,14 @@ final List<Question> comunicacionQuestions = [
       r'''Una víctima de las mafias del basural''',
     ],
     correctAnswer: 0,
-    explanation: r'''Don Santos actúa como un patrón cruel (explotador) que sacrifica a sus propios nietos obligándolos a trabajar en la basura para engordar a su cerdo.''',
+    explanation:
+        r'''Don Santos actúa como un patrón cruel (explotador) que sacrifica a sus propios nietos obligándolos a trabajar en la basura para engordar a su cerdo.''',
   ),
   Question(
     id: 'com_q562',
     topicId: 'com_t4',
-    text: r"""En 'Un mundo para Julius', el uso del focalizador narrativo a través de la mirada infantil y solitaria de Julius permite al lector:""",
+    text:
+        r"""En 'Un mundo para Julius', el uso del focalizador narrativo a través de la mirada infantil y solitaria de Julius permite al lector:""",
     options: [
       r'''Conocer las tácticas militares de los colegios británicos''',
       r'''Desvelar por contraste la hipocresía, el clasismo, el racismo y la frivolidad que sostienen los privilegios de la clase alta''',
@@ -5592,12 +6275,14 @@ final List<Question> comunicacionQuestions = [
       r'''Admirar los valores de esfuerzo y trabajo duro de la burguesía''',
     ],
     correctAnswer: 1,
-    explanation: r'''La inocencia de Julius hace resaltar lo absurdo y cruel del comportamiento de los adultos de su clase frente a los sirvientes.''',
+    explanation:
+        r'''La inocencia de Julius hace resaltar lo absurdo y cruel del comportamiento de los adultos de su clase frente a los sirvientes.''',
   ),
   Question(
     id: 'com_q563',
     topicId: 'com_t4',
-    text: r"""Blanca Varela en su poema 'Valses y otras falsas confesiones' adopta una postura poética que, desde el análisis crítico, propone:""",
+    text:
+        r"""Blanca Varela en su poema 'Valses y otras falsas confesiones' adopta una postura poética que, desde el análisis crítico, propone:""",
     options: [
       r'''Una celebración tradicional de la belleza femenina limeña''',
       r'''Una desmitificación de los roles tradicionales y la cursilería, usando la crudeza del lenguaje para desnudar la realidad existencial''',
@@ -5605,12 +6290,14 @@ final List<Question> comunicacionQuestions = [
       r'''El retorno a la métrica de los sonetos barrocos''',
     ],
     correctAnswer: 1,
-    explanation: r"""Varela ironiza sobre el 'vals' (símbolo de lo sentimental limeño) para desmontar convenciones y exponer la amargura y la lucidez frente a la vida.""",
+    explanation:
+        r"""Varela ironiza sobre el 'vals' (símbolo de lo sentimental limeño) para desmontar convenciones y exponer la amargura y la lucidez frente a la vida.""",
   ),
   Question(
     id: 'com_q564',
     topicId: 'com_t4',
-    text: r'''En el marco de la formación del oficial de policía, la lectura crítica de la literatura realista, indigenista y urbana resulta fundamental analíticamente porque:''',
+    text:
+        r'''En el marco de la formación del oficial de policía, la lectura crítica de la literatura realista, indigenista y urbana resulta fundamental analíticamente porque:''',
     options: [
       r'''Proporciona plantillas exactas para redactar informes de inteligencia''',
       r'''Permite comprender las profundas desigualdades históricas, el racismo, la migración y los conflictos socioculturales que subyacen a los problemas de seguridad ciudadana''',
@@ -5618,12 +6305,14 @@ final List<Question> comunicacionQuestions = [
       r'''Adoctrina políticamente a los cadetes en la ideología de un partido''',
     ],
     correctAnswer: 1,
-    explanation: r'''La literatura peruana ofrece un diagnóstico sociológico profundo del país (fracturas sociales), indispensable para que el policía comprenda el contexto en el que opera.''',
+    explanation:
+        r'''La literatura peruana ofrece un diagnóstico sociológico profundo del país (fracturas sociales), indispensable para que el policía comprenda el contexto en el que opera.''',
   ),
   Question(
     id: 'com_q565',
     topicId: 'com_t4',
-    text: r"""¿Qué figura literaria predomina en el siguiente verso de César Vallejo?n'Hay golpes en la vida, tan fuertes... ¡Yo no sé!""",
+    text:
+        r"""¿Qué figura literaria predomina en el siguiente verso de César Vallejo?n'Hay golpes en la vida, tan fuertes... ¡Yo no sé!""",
     options: [
       r'''Epíteto''',
       r'''Metáfora''',
@@ -5632,12 +6321,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Retruécano''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (Metáfora). 'Golpes' no se refiere a impactos físicos, sino al dolor o desgracia existencial (una traslación de sentido). El distractor C (Hipérbaton) es una 'Falla por Eufonía', ya que la pausa dramática hace creer que el orden está alterado, pero la sintaxis es directa. D (Símil) requiere un nexo comparativo ('como') ausente aquí.""",
+    explanation:
+        r"""La respuesta correcta es B (Metáfora). 'Golpes' no se refiere a impactos físicos, sino al dolor o desgracia existencial (una traslación de sentido). El distractor C (Hipérbaton) es una 'Falla por Eufonía', ya que la pausa dramática hace creer que el orden está alterado, pero la sintaxis es directa. D (Símil) requiere un nexo comparativo ('como') ausente aquí.""",
   ),
   Question(
     id: 'com_q566',
     topicId: 'com_t4',
-    text: r"""Identifique el movimiento literario al que pertenece la obra 'Tradiciones Peruanas' de Ricardo Palma y su principal característica.""",
+    text:
+        r"""Identifique el movimiento literario al que pertenece la obra 'Tradiciones Peruanas' de Ricardo Palma y su principal característica.""",
     options: [
       r'''Realismo - Denuncia social y objetividad.''',
       r'''Romanticismo - Exaltación del pasado histórico y tono irónico.''',
@@ -5646,12 +6337,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Indigenismo - Reivindicación de la cultura andina.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (Romanticismo). Palma pertenece a la vertiente historicista del Romanticismo peruano, combinando historia con ficción e ironía (la 'tradición'). El distractor C (Costumbrismo) es un 'Distractor por Proximidad Temática', ya que Palma retrata costumbres, pero no pertenece a la corriente de Segura o Pardo.""",
+    explanation:
+        r"""La respuesta correcta es B (Romanticismo). Palma pertenece a la vertiente historicista del Romanticismo peruano, combinando historia con ficción e ironía (la 'tradición'). El distractor C (Costumbrismo) es un 'Distractor por Proximidad Temática', ya que Palma retrata costumbres, pero no pertenece a la corriente de Segura o Pardo.""",
   ),
   Question(
     id: 'com_q567',
     topicId: 'com_t4',
-    text: r'''¿Qué obra indigenista peruana expone el conflicto de tierras entre la comunidad de Rumi y el hacendado Álvaro Amenábar?''',
+    text:
+        r'''¿Qué obra indigenista peruana expone el conflicto de tierras entre la comunidad de Rumi y el hacendado Álvaro Amenábar?''',
     options: [
       r'''Los ríos profundos''',
       r'''Yawar Fiesta''',
@@ -5660,12 +6353,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Aves sin nido''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (El mundo es ancho y ajeno, de Ciro Alegría). El distractor A (Los ríos profundos) es una 'Asociación Contextual Errónea', aprovechando que Arguedas es el indigenista más famoso, induciendo a marcarlo por reflejo sin evaluar la trama específica.""",
+    explanation:
+        r"""La respuesta correcta es C (El mundo es ancho y ajeno, de Ciro Alegría). El distractor A (Los ríos profundos) es una 'Asociación Contextual Errónea', aprovechando que Arguedas es el indigenista más famoso, induciendo a marcarlo por reflejo sin evaluar la trama específica.""",
   ),
   Question(
     id: 'com_q568',
     topicId: 'com_t4',
-    text: r"""En la expresión literaria 'Tus ojos son dos luceros que iluminan mi noche', se evidencia claramente la figura literaria de:""",
+    text:
+        r"""En la expresión literaria 'Tus ojos son dos luceros que iluminan mi noche', se evidencia claramente la figura literaria de:""",
     options: [
       r'''Hipérbole''',
       r'''Metáfora''',
@@ -5674,12 +6369,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Personificación''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (Metáfora). Asocia directamente 'ojos' con 'luceros' eliminando el 'como'. El distractor A (Hipérbole) es 'Distractor por Interpretación Magnificada'; el alumno cree que como es una exageración romántica, debe ser hipérbole, ignorando la estructura de reemplazo A es B.""",
+    explanation:
+        r"""La respuesta correcta es B (Metáfora). Asocia directamente 'ojos' con 'luceros' eliminando el 'como'. El distractor A (Hipérbole) es 'Distractor por Interpretación Magnificada'; el alumno cree que como es una exageración romántica, debe ser hipérbole, ignorando la estructura de reemplazo A es B.""",
   ),
   Question(
     id: 'com_q570',
     topicId: 'com_t4',
-    text: r'''El primer movimiento literario del Perú independiente, caracterizado por retratar de forma satírica las costumbres y tipos sociales de Lima, se denomina:''',
+    text:
+        r'''El primer movimiento literario del Perú independiente, caracterizado por retratar de forma satírica las costumbres y tipos sociales de Lima, se denomina:''',
     options: [
       r'''El Costumbrismo''',
       r'''El Vanguardismo''',
@@ -5688,12 +6385,14 @@ final List<Question> comunicacionQuestions = [
       r'''El Realismo''',
     ],
     correctAnswer: 0,
-    explanation: r'''El Costumbrismo peruano confrontó la naciente república a través de la sátira social y política.''',
+    explanation:
+        r'''El Costumbrismo peruano confrontó la naciente república a través de la sátira social y política.''',
   ),
   Question(
     id: 'com_q572',
     topicId: 'com_t4',
-    text: r"""El escritor costumbrista de tendencia aristocrática que criticó los excesos de la democracia y la burocracia limeña en obras como 'Un viaje' (El niño Goyito) fue:""",
+    text:
+        r"""El escritor costumbrista de tendencia aristocrática que criticó los excesos de la democracia y la burocracia limeña en obras como 'Un viaje' (El niño Goyito) fue:""",
     options: [
       r'''Ricardo Palma''',
       r'''César Vallejo''',
@@ -5702,12 +6401,14 @@ final List<Question> comunicacionQuestions = [
       r'''González Prada''',
     ],
     correctAnswer: 2,
-    explanation: r'''Pardo y Aliaga usó el periodismo satírico y la prosa moralizante desde una postura conservadora y refinada.''',
+    explanation:
+        r'''Pardo y Aliaga usó el periodismo satírico y la prosa moralizante desde una postura conservadora y refinada.''',
   ),
   Question(
     id: 'com_q581',
     topicId: 'com_t4',
-    text: r"""El más grande poeta vanguardista peruano de trascendencia universal, autor de 'Los heraldos negros', 'Trilce' y 'Poemas humanos', fue:""",
+    text:
+        r"""El más grande poeta vanguardista peruano de trascendencia universal, autor de 'Los heraldos negros', 'Trilce' y 'Poemas humanos', fue:""",
     options: [
       r'''Martín Adán''',
       r'''José María Eguren''',
@@ -5716,12 +6417,14 @@ final List<Question> comunicacionQuestions = [
       r'''Chocano''',
     ],
     correctAnswer: 2,
-    explanation: r'''César Vallejo revolucionó el lenguaje poético en Trilce (1922) y expresó un profundo dolor existencial y humano.''',
+    explanation:
+        r'''César Vallejo revolucionó el lenguaje poético en Trilce (1922) y expresó un profundo dolor existencial y humano.''',
   ),
   Question(
     id: 'com_q582',
     topicId: 'com_t4',
-    text: r"""El escritor indigenista que retrató las luchas y la vida comunitaria de los campesinos del norte peruano frente a los abusos de los gamonales en 'El mundo es ancho y ajeno' fue:""",
+    text:
+        r"""El escritor indigenista que retrató las luchas y la vida comunitaria de los campesinos del norte peruano frente a los abusos de los gamonales en 'El mundo es ancho y ajeno' fue:""",
     options: [
       r'''Ciro Alegría''',
       r'''Vargas Llosa''',
@@ -5730,12 +6433,14 @@ final List<Question> comunicacionQuestions = [
       r'''Manuel Scorza''',
     ],
     correctAnswer: 0,
-    explanation: r'''Ciro Alegría narra con gran aliento épico y lírico la destrucción de la comunidad de Rumi en los Andes norteños.''',
+    explanation:
+        r'''Ciro Alegría narra con gran aliento épico y lírico la destrucción de la comunidad de Rumi en los Andes norteños.''',
   ),
   Question(
     id: 'com_q583',
     topicId: 'com_t4',
-    text: r"""El novelista indigenista apurimeño que plasmó el conflicto cultural entre el mundo andino y el occidental desde su propia vivencia en 'Los ríos profundos' y 'Yawar Fiesta' fue:""",
+    text:
+        r"""El novelista indigenista apurimeño que plasmó el conflicto cultural entre el mundo andino y el occidental desde su propia vivencia en 'Los ríos profundos' y 'Yawar Fiesta' fue:""",
     options: [
       r'''Manuel Scorza''',
       r'''Enrique Congrains''',
@@ -5744,12 +6449,14 @@ final List<Question> comunicacionQuestions = [
       r'''José María Arguedas''',
     ],
     correctAnswer: 4,
-    explanation: r'''Arguedas, bilingüe quechua-español, retrató la profundidad del pensamiento mítico indígena frente al opresor.''',
+    explanation:
+        r'''Arguedas, bilingüe quechua-español, retrató la profundidad del pensamiento mítico indígena frente al opresor.''',
   ),
   Question(
     id: 'com_q584',
     topicId: 'com_t4',
-    text: r"""El cuentista de la Generación del 50 que retrató la marginación urbana y la migración andina en Lima en cuentos magistrales como 'Los gallinazos sin plumas' fue:""",
+    text:
+        r"""El cuentista de la Generación del 50 que retrató la marginación urbana y la migración andina en Lima en cuentos magistrales como 'Los gallinazos sin plumas' fue:""",
     options: [
       r'''Oswaldo Reynoso''',
       r'''Julio Ramón Ribeyro''',
@@ -5758,12 +6465,14 @@ final List<Question> comunicacionQuestions = [
       r'''Sebastián Salazar Bondy''',
     ],
     correctAnswer: 1,
-    explanation: r"""Ribeyro es el maestro del cuento peruano, conocido por su visión escéptica de los desheredados urbanos en 'La palabra del mudo'.""",
+    explanation:
+        r"""Ribeyro es el maestro del cuento peruano, conocido por su visión escéptica de los desheredados urbanos en 'La palabra del mudo'.""",
   ),
   Question(
     id: 'com_q585',
     topicId: 'com_t4',
-    text: r"""El laureado escritor peruano (Premio Nobel de Literatura 2010) que denunció la rigidez del sistema militar autoritario en el Colegio Leoncio Prado en 'La ciudad y los perros' es:""",
+    text:
+        r"""El laureado escritor peruano (Premio Nobel de Literatura 2010) que denunció la rigidez del sistema militar autoritario en el Colegio Leoncio Prado en 'La ciudad y los perros' es:""",
     options: [
       r'''José María Arguedas''',
       r'''Mario Vargas Llosa''',
@@ -5772,12 +6481,14 @@ final List<Question> comunicacionQuestions = [
       r'''Alfredo Bryce Echenique''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ciudad y los perros (1963) marcó el inicio del Boom Latinoamericano mediante innovadoras técnicas estructurales y de punto de vista.''',
+    explanation:
+        r'''La ciudad y los perros (1963) marcó el inicio del Boom Latinoamericano mediante innovadoras técnicas estructurales y de punto de vista.''',
   ),
   Question(
     id: 'com_q586',
     topicId: 'com_t4',
-    text: r"""El escritor contemporáneo limeño que retrató con nostalgia, humor e ironía el ocaso de la oligarquía limeña en su novela 'Un mundo para Julius' es:""",
+    text:
+        r"""El escritor contemporáneo limeño que retrató con nostalgia, humor e ironía el ocaso de la oligarquía limeña en su novela 'Un mundo para Julius' es:""",
     options: [
       r'''José B. Adolph''',
       r'''Julio Ramón Ribeyro''',
@@ -5786,12 +6497,14 @@ final List<Question> comunicacionQuestions = [
       r'''Alfredo Bryce Echenique''',
     ],
     correctAnswer: 4,
-    explanation: r'''Bryce Echenique introdujo una oralidad peculiar y sentimental en la narrativa peruana contemporánea.''',
+    explanation:
+        r'''Bryce Echenique introdujo una oralidad peculiar y sentimental en la narrativa peruana contemporánea.''',
   ),
   Question(
     id: 'com_q587',
     topicId: 'com_t4',
-    text: r"""El poeta vanguardista limeño que escribió a los 19 años 'La casa de cartón', obra lírica en prosa de gran audacia verbal y descripción urbana de Barranco, fue:""",
+    text:
+        r"""El poeta vanguardista limeño que escribió a los 19 años 'La casa de cartón', obra lírica en prosa de gran audacia verbal y descripción urbana de Barranco, fue:""",
     options: [
       r'''Emilio Adolfo Westphalen''',
       r'''César Vallejo''',
@@ -5800,12 +6513,14 @@ final List<Question> comunicacionQuestions = [
       r'''Carlos Oquendo de Amat''',
     ],
     correctAnswer: 2,
-    explanation: r'''Martín Adán (Rafael de la Fuente Benavides) es uno de los mayores estilistas poéticos peruanos del siglo XX.''',
+    explanation:
+        r'''Martín Adán (Rafael de la Fuente Benavides) es uno de los mayores estilistas poéticos peruanos del siglo XX.''',
   ),
   Question(
     id: 'com_q588',
     topicId: 'com_t4',
-    text: r"""El poeta vanguardista puneño que publicó un único e influyente libro-objeto desplegable en forma de acordeón titulado '5 metros de poemas' en 1927 fue:""",
+    text:
+        r"""El poeta vanguardista puneño que publicó un único e influyente libro-objeto desplegable en forma de acordeón titulado '5 metros de poemas' en 1927 fue:""",
     options: [
       r'''Javier Sologuren''',
       r'''Carlos Oquendo de Amat''',
@@ -5814,12 +6529,14 @@ final List<Question> comunicacionQuestions = [
       r'''César Vallejo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Oquendo de Amat es figura clave de la vanguardia peruana al concebir su poemario como un rollo de película cinematográfica.''',
+    explanation:
+        r'''Oquendo de Amat es figura clave de la vanguardia peruana al concebir su poemario como un rollo de película cinematográfica.''',
   ),
   Question(
     id: 'com_new_ac0d2052',
     topicId: 'com_t1',
-    text: r'''¿Cómo se escribe correctamente el plural de una palabra que termina en la letra "Z", como por ejemplo "lápiz"?''',
+    text:
+        r'''¿Cómo se escribe correctamente el plural de una palabra que termina en la letra "Z", como por ejemplo "lápiz"?''',
     options: [
       r'''Lápizes''',
       r'''Lápices''',
@@ -5828,12 +6545,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Lapices''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las reglas ortográficas estipulan que en los plurales de las palabras terminadas en "Z", esta letra se reemplaza por la "C".''',
+    explanation:
+        r'''Las reglas ortográficas estipulan que en los plurales de las palabras terminadas en "Z", esta letra se reemplaza por la "C".''',
   ),
   Question(
     id: 'com_new_fb036c0f',
     topicId: 'com_t1',
-    text: r'''¿En qué caso es obligatorio colocar tilde a las palabras agudas?''',
+    text:
+        r'''¿En qué caso es obligatorio colocar tilde a las palabras agudas?''',
     options: [
       r'''Cuando terminan en cualquier consonante.''',
       r'''Cuando terminan en las consonantes n, s o en vocal.''',
@@ -5842,12 +6561,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Siempre llevan tilde ortográfica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las palabras agudas (con la mayor fuerza de voz en la última sílaba) se tildan siempre que terminen en "n", "s" o vocal.''',
+    explanation:
+        r'''Las palabras agudas (con la mayor fuerza de voz en la última sílaba) se tildan siempre que terminen en "n", "s" o vocal.''',
   ),
   Question(
     id: 'com_new_db5633ff',
     topicId: 'com_t2',
-    text: r'''¿Qué categoría gramatical funciona invariablemente como el núcleo del predicado en una oración bimembre?''',
+    text:
+        r'''¿Qué categoría gramatical funciona invariablemente como el núcleo del predicado en una oración bimembre?''',
     options: [
       r'''El sustantivo''',
       r'''El adjetivo''',
@@ -5856,12 +6577,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) La preposición''',
     ],
     correctAnswer: 2,
-    explanation: r'''El núcleo del predicado, o núcleo verbal, es un verbo conjugado que detalla la acción principal y concuerda con el sujeto.''',
+    explanation:
+        r'''El núcleo del predicado, o núcleo verbal, es un verbo conjugado que detalla la acción principal y concuerda con el sujeto.''',
   ),
   Question(
     id: 'com_new_a2df28fd',
     topicId: 'com_t2',
-    text: r'''Según la actitud del hablante, ¿qué tipo de oración expresa una orden, ruego o consejo, como en "Cierra la puerta, por favor"?''',
+    text:
+        r'''Según la actitud del hablante, ¿qué tipo de oración expresa una orden, ruego o consejo, como en "Cierra la puerta, por favor"?''',
     options: [
       r'''Desiderativa''',
       r'''Enunciativa''',
@@ -5870,12 +6593,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Exclamativa''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las oraciones imperativas (o exhortativas) son aquellas a través de las cuales el emisor transmite directamente un mandato al receptor.''',
+    explanation:
+        r'''Las oraciones imperativas (o exhortativas) son aquellas a través de las cuales el emisor transmite directamente un mandato al receptor.''',
   ),
   Question(
     id: 'com_new_354f482a',
     topicId: 'com_t2',
-    text: r'''La oración "Ojalá que llueva mañana" pertenece a la clasificación de oraciones:''',
+    text:
+        r'''La oración "Ojalá que llueva mañana" pertenece a la clasificación de oraciones:''',
     options: [
       r'''Interrogativas''',
       r'''Imperativas''',
@@ -5884,12 +6609,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Enunciativas''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las oraciones desiderativas manifiestan un deseo del hablante y suelen utilizar fórmulas introductorias como la palabra "ojalá".''',
+    explanation:
+        r'''Las oraciones desiderativas manifiestan un deseo del hablante y suelen utilizar fórmulas introductorias como la palabra "ojalá".''',
   ),
   Question(
     id: 'com_new_0d17fb09',
     topicId: 'com_t3',
-    text: r'''¿Cuál es la estructura básica tradicional en la que se organizan las acciones narrativas?''',
+    text:
+        r'''¿Cuál es la estructura básica tradicional en la que se organizan las acciones narrativas?''',
     options: [
       r'''Espacio, tiempo y personajes''',
       r'''Inicio (planteamiento), nudo y desenlace''',
@@ -5898,12 +6625,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Monólogo, diálogo y acción''',
     ],
     correctAnswer: 3,
-    explanation: r'''La trama se estructura organizando los acontecimientos en una situación inicial, la aparición de un conflicto y su posterior resolución.''',
+    explanation:
+        r'''La trama se estructura organizando los acontecimientos en una situación inicial, la aparición de un conflicto y su posterior resolución.''',
   ),
   Question(
     id: 'com_new_5acdac7f',
     topicId: 'com_t3',
-    text: r'''¿Cómo se denomina al narrador que conoce absolutamente todos los detalles, intenciones, pensamientos y sentimientos de los personajes?''',
+    text:
+        r'''¿Cómo se denomina al narrador que conoce absolutamente todos los detalles, intenciones, pensamientos y sentimientos de los personajes?''',
     options: [
       r'''Narrador testigo''',
       r'''Narrador protagonista''',
@@ -5912,12 +6641,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Narrador en segunda persona''',
     ],
     correctAnswer: 1,
-    explanation: r'''El narrador omnisciente narra desde fuera de la historia (tercera persona) sabiéndolo todo como si fuera una divinidad literaria.''',
+    explanation:
+        r'''El narrador omnisciente narra desde fuera de la historia (tercera persona) sabiéndolo todo como si fuera una divinidad literaria.''',
   ),
   Question(
     id: 'com_new_fb9b41c6',
     topicId: 'com_t3',
-    text: r'''¿Qué alteración del tiempo narrativo (anacronía) consiste en dar un salto temporal hacia atrás para relatar un hecho del pasado?''',
+    text:
+        r'''¿Qué alteración del tiempo narrativo (anacronía) consiste en dar un salto temporal hacia atrás para relatar un hecho del pasado?''',
     options: [
       r'''Prolepsis''',
       r'''Elipsis''',
@@ -5926,12 +6657,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Anticipación''',
     ],
     correctAnswer: 2,
-    explanation: r'''La analepsis, comúnmente llamada *flashback* o *racconto*, rompe el orden lineal para recordar hechos sucedidos antes del presente narrativo.''',
+    explanation:
+        r'''La analepsis, comúnmente llamada *flashback* o *racconto*, rompe el orden lineal para recordar hechos sucedidos antes del presente narrativo.''',
   ),
   Question(
     id: 'com_new_8733b1ad',
     topicId: 'com_t3',
-    text: r'''Dentro de los elementos de la narración, ¿cómo se llama al personaje que se opone de forma directa al protagonista y dificulta su meta?''',
+    text:
+        r'''Dentro de los elementos de la narración, ¿cómo se llama al personaje que se opone de forma directa al protagonista y dificulta su meta?''',
     options: [
       r'''Principal''',
       r'''Secundario''',
@@ -5940,12 +6673,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Testigo''',
     ],
     correctAnswer: 2,
-    explanation: r'''El antagonista es la figura fundamental cuya función dramática es oponerse activamente a las motivaciones y acciones del protagonista.''',
+    explanation:
+        r'''El antagonista es la figura fundamental cuya función dramática es oponerse activamente a las motivaciones y acciones del protagonista.''',
   ),
   Question(
     id: 'com_new_aab562e5',
     topicId: 'com_t4',
-    text: r'''¿Qué destacado cronista es conocido como el "primer mestizo biológico y espiritual de América" y es autor de los *Comentarios Reales*?''',
+    text:
+        r'''¿Qué destacado cronista es conocido como el "primer mestizo biológico y espiritual de América" y es autor de los *Comentarios Reales*?''',
     options: [
       r'''Guamán Poma de Ayala''',
       r'''Inca Garcilaso de la Vega''',
@@ -5954,12 +6689,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Titu Cusi Yupanqui''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Inca Garcilaso supo conciliar pacíficamente su doble herencia cultural (indígena y española) en su emblemática obra sobre el Imperio Incaico.''',
+    explanation:
+        r'''El Inca Garcilaso supo conciliar pacíficamente su doble herencia cultural (indígena y española) en su emblemática obra sobre el Imperio Incaico.''',
   ),
   Question(
     id: 'com_new_e68c7d92',
     topicId: 'com_t4',
-    text: r'''¿Qué poemario de César Vallejo, publicado en 1922, da inicio al vanguardismo en el Perú mediante la ruptura violenta de esquemas gramaticales?''',
+    text:
+        r'''¿Qué poemario de César Vallejo, publicado en 1922, da inicio al vanguardismo en el Perú mediante la ruptura violenta de esquemas gramaticales?''',
     options: [
       r'''Los heraldos negros''',
       r'''Poemas humanos''',
@@ -5968,12 +6705,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Fabla salvaje''',
     ],
     correctAnswer: 1,
-    explanation: r'''*Trilce* representa una innovación absoluta del lenguaje poético nacional, instalando definitivamente a Vallejo en la cima de la vanguardia.''',
+    explanation:
+        r'''*Trilce* representa una innovación absoluta del lenguaje poético nacional, instalando definitivamente a Vallejo en la cima de la vanguardia.''',
   ),
   Question(
     id: 'com_new_44c2cb0c',
     topicId: 'com_t4',
-    text: r'''¿Qué aclamada novela de Mario Vargas Llosa inició el realismo urbano en el Perú al criticar duramente el autoritarismo militar?''',
+    text:
+        r'''¿Qué aclamada novela de Mario Vargas Llosa inició el realismo urbano en el Perú al criticar duramente el autoritarismo militar?''',
     options: [
       r'''Conversación en La Catedral''',
       r'''La casa verde''',
@@ -5982,12 +6721,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El mundo es ancho y ajeno''',
     ],
     correctAnswer: 3,
-    explanation: r'''*La ciudad y los perros* retrata la áspera vida de cadetes en el Colegio Militar Leoncio Prado y lanzó a Vargas Llosa a la fama mundial.''',
+    explanation:
+        r'''*La ciudad y los perros* retrata la áspera vida de cadetes en el Colegio Militar Leoncio Prado y lanzó a Vargas Llosa a la fama mundial.''',
   ),
   Question(
     id: 'com_new_11869857',
     topicId: 'com_t4',
-    text: r'''¿Qué característica principal define a la narrativa de Julio Ramón Ribeyro en su célebre antología *La palabra del mudo*?''',
+    text:
+        r'''¿Qué característica principal define a la narrativa de Julio Ramón Ribeyro en su célebre antología *La palabra del mudo*?''',
     options: [
       r'''El enfoque en el indio andino.''',
       r'''El retrato del costumbrismo aristocrático.''',
@@ -5996,12 +6737,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El vanguardismo experimental poético.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Ribeyro, de la Generación del 50, se caracteriza por relatar con ironía y pesimismo la vida de los personajes marginados de la ciudad.''',
+    explanation:
+        r'''Ribeyro, de la Generación del 50, se caracteriza por relatar con ironía y pesimismo la vida de los personajes marginados de la ciudad.''',
   ),
   Question(
     id: 'com_new_a50aa356',
     topicId: 'com_t4',
-    text: r'''¿Qué obra literaria de Mario Vargas Llosa se ambienta en el Colegio Militar Leoncio Prado y marcó un hito en la novela urbana?''',
+    text:
+        r'''¿Qué obra literaria de Mario Vargas Llosa se ambienta en el Colegio Militar Leoncio Prado y marcó un hito en la novela urbana?''',
     options: [
       r'''*Conversación en La Catedral*''',
       r'''*La casa verde*''',
@@ -6010,12 +6753,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) *La ciudad y los perros*''',
     ],
     correctAnswer: 2,
-    explanation: r'''Esta compleja novela lanzó a Vargas Llosa a la fama denunciando el autoritarismo militar a través de cadetes como el Poeta y el Jaguar.''',
+    explanation:
+        r'''Esta compleja novela lanzó a Vargas Llosa a la fama denunciando el autoritarismo militar a través de cadetes como el Poeta y el Jaguar.''',
   ),
   Question(
     id: 'com_new_347b9744',
     topicId: 'com_t4',
-    text: r'''Dentro del vanguardismo literario peruano, ¿qué obra de César Vallejo es fundamental por su violenta ruptura de la estructura formal y gramatical?''',
+    text:
+        r'''Dentro del vanguardismo literario peruano, ¿qué obra de César Vallejo es fundamental por su violenta ruptura de la estructura formal y gramatical?''',
     options: [
       r'''*Los heraldos negros*''',
       r'''*Poemas humanos*''',
@@ -6024,12 +6769,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) *La casa de cartón*''',
     ],
     correctAnswer: 0,
-    explanation: r'''*Trilce* (1922) innovó radicalmente la poesía al romper con la métrica, creando un lenguaje hermético y muy personal.''',
+    explanation:
+        r'''*Trilce* (1922) innovó radicalmente la poesía al romper con la métrica, creando un lenguaje hermético y muy personal.''',
   ),
   Question(
     id: 'com_new_f9ba8488',
     topicId: 'com_t4',
-    text: r'''¿Qué obra peruana pertenece a la etapa de la Conquista y fue escrita para corregir a los españoles y mostrar la verdadera historia de los incas?''',
+    text:
+        r'''¿Qué obra peruana pertenece a la etapa de la Conquista y fue escrita para corregir a los españoles y mostrar la verdadera historia de los incas?''',
     options: [
       r'''*Nueva Crónica y Buen Gobierno*''',
       r'''*Comentarios Reales de los Incas*''',
@@ -6038,12 +6785,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) *Tradiciones peruanas*''',
     ],
     correctAnswer: 3,
-    explanation: r'''Fue escrita por el Inca Garcilaso de la Vega, el "primer mestizo biológico y espiritual de América", reconciliando sus dos herencias.''',
+    explanation:
+        r'''Fue escrita por el Inca Garcilaso de la Vega, el "primer mestizo biológico y espiritual de América", reconciliando sus dos herencias.''',
   ),
   Question(
     id: 'com_new_75458b6c',
     topicId: 'com_t4',
-    text: r'''¿Qué autor costumbrista es considerado el "padre del teatro nacional" y retrató la hipocresía de la clase media en *Ña Catita*?''',
+    text:
+        r'''¿Qué autor costumbrista es considerado el "padre del teatro nacional" y retrató la hipocresía de la clase media en *Ña Catita*?''',
     options: [
       r'''Felipe Pardo y Aliaga''',
       r'''Ricardo Palma''',
@@ -6052,12 +6801,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Leonidas Yerovi''',
     ],
     correctAnswer: 1,
-    explanation: r'''Segura representó el costumbrismo criollo (popular), usando la sátira y el humor para criticar los matrimonios por conveniencia.''',
+    explanation:
+        r'''Segura representó el costumbrismo criollo (popular), usando la sátira y el humor para criticar los matrimonios por conveniencia.''',
   ),
   Question(
     id: 'com_new_7c766b92',
     topicId: 'com_t4',
-    text: r'''Aunque su fama mundial se debe a la narrativa tradicionalista, Palma también cultivó el teatro y la poesía. ¿Cuál de los siguientes es uno de sus poemarios más destacados?''',
+    text:
+        r'''Aunque su fama mundial se debe a la narrativa tradicionalista, Palma también cultivó el teatro y la poesía. ¿Cuál de los siguientes es uno de sus poemarios más destacados?''',
     options: [
       r'''Diamantes y perlas''',
       r'''Cartas a un ángel''',
@@ -6066,12 +6817,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Alma América''',
     ],
     correctAnswer: 2,
-    explanation: r'''*Pasionarias* y *Verbos y gerundios* son importantes poemarios de Palma, donde expresa desde sus sentimientos románticos hasta actitudes marcadamente burlonas.''',
+    explanation:
+        r'''*Pasionarias* y *Verbos y gerundios* son importantes poemarios de Palma, donde expresa desde sus sentimientos románticos hasta actitudes marcadamente burlonas.''',
   ),
   Question(
     id: 'com_new_d4fcd3c8',
     topicId: 'com_t1',
-    text: r'''Según las últimas actualizaciones normativas de la Real Academia Española (RAE), ¿cuál de los siguientes grupos de palabras monosílabas NUNCA debe llevar tilde ortográfica?''',
+    text:
+        r'''Según las últimas actualizaciones normativas de la Real Academia Española (RAE), ¿cuál de los siguientes grupos de palabras monosílabas NUNCA debe llevar tilde ortográfica?''',
     options: [
       r'''él, tú, mí, sí, té''',
       r'''qué, cuál, quién, cuán, más''',
@@ -6080,12 +6833,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) vió, dió, fúe, fúi, ti''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "fue, fui, vio, dio, fe, ti, guion, truhan". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "fue, fui, vio, dio, fe, ti, guion, truhan". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_e05e0c4c',
     topicId: 'com_t1',
-    text: r'''Identifique la oración que presenta un uso correcto de las nuevas normativas de la RAE respecto a la tildación:''',
+    text:
+        r'''Identifique la oración que presenta un uso correcto de las nuevas normativas de la RAE respecto a la tildación:''',
     options: [
       r'''Me tomaré sólo un café esta mañana.''',
       r'''Asistirán a la reunión 5 ó 6 representantes.''',
@@ -6094,12 +6849,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Aquél joven aprobó el examen de admisión.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "El exministro declaró que asistieron 20 o 30 personas.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "El exministro declaró que asistieron 20 o 30 personas.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_ef12aac2',
     topicId: 'com_t1',
-    text: r'''En la oración "Ciertos perros anaranjados son muy comunes en China", ¿cuál es la palabra que cumple la función exacta de núcleo del sujeto?''',
+    text:
+        r'''En la oración "Ciertos perros anaranjados son muy comunes en China", ¿cuál es la palabra que cumple la función exacta de núcleo del sujeto?''',
     options: [
       r'''Ciertos''',
       r'''perros''',
@@ -6108,12 +6865,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) China''',
     ],
     correctAnswer: 1,
-    explanation: r'''La respuesta correcta es "perros". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "perros". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_75e7fef1',
     topicId: 'com_t1',
-    text: r'''Indique la alternativa que presenta una correcta tildación diacrítica según las reglas vigentes:''',
+    text:
+        r'''Indique la alternativa que presenta una correcta tildación diacrítica según las reglas vigentes:''',
     options: [
       r'''El té te lo sirvió a tí.''',
       r'''Él té te lo sirvió a ti.''',
@@ -6122,12 +6881,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El té te lo sirvió él a tí.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "Él te dio el té a ti.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Él te dio el té a ti.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_c67c42cf',
     topicId: 'com_t1',
-    text: r'''Seleccione la oración en la que el prefijo "ex" está correctamente escrito según la normativa actual:''',
+    text:
+        r'''Seleccione la oración en la que el prefijo "ex" está correctamente escrito según la normativa actual:''',
     options: [
       r'''El ex presidente llegó tarde a la ceremonia.''',
       r'''Su ex-novio la llamó ayer.''',
@@ -6136,12 +6897,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El ex general fue condecorado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "El ex primer ministro dio una conferencia.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "El ex primer ministro dio una conferencia.". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_f3af0117',
     topicId: 'com_t1',
-    text: r'''Según la actitud del hablante, ¿qué tipo de oración es "Cierra la puerta, por favor"?''',
+    text:
+        r'''Según la actitud del hablante, ¿qué tipo de oración es "Cierra la puerta, por favor"?''',
     options: [
       r'''Enunciativa''',
       r'''Desiderativa''',
@@ -6150,12 +6913,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Imperativa''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Imperativa". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Imperativa". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_29dd2f3a',
     topicId: 'com_t1',
-    text: r'''Las palabras que llevan la mayor fuerza de voz en la última sílaba y se tildan siempre que terminan en "n", "s" o vocal, se denominan:''',
+    text:
+        r'''Las palabras que llevan la mayor fuerza de voz en la última sílaba y se tildan siempre que terminan en "n", "s" o vocal, se denominan:''',
     options: [
       r'''Graves''',
       r'''Esdrújulas''',
@@ -6164,12 +6929,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Sobresdrújulas''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "Agudas". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Agudas". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_c8e67d65',
     topicId: 'com_t1',
-    text: r'''En la oración "El joven practica natación y juega al básquet en el club", los núcleos del predicado verbal son:''',
+    text:
+        r'''En la oración "El joven practica natación y juega al básquet en el club", los núcleos del predicado verbal son:''',
     options: [
       r'''joven, club''',
       r'''natación, básquet''',
@@ -6178,12 +6945,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) en, al''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "practica, juega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "practica, juega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_48f50c76',
     topicId: 'com_t4',
-    text: r'''¿Qué autor peruano es considerado el "primer mestizo biológico y espiritual de América" y narra en su obra cumbre la historia idealizada del Imperio Incaico?''',
+    text:
+        r'''¿Qué autor peruano es considerado el "primer mestizo biológico y espiritual de América" y narra en su obra cumbre la historia idealizada del Imperio Incaico?''',
     options: [
       r'''Felipe Guamán Poma de Ayala''',
       r'''Pedro Cieza de León''',
@@ -6192,12 +6961,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Blas Valera''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "Inca Garcilaso de la Vega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Inca Garcilaso de la Vega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_4e25bd1e',
     topicId: 'com_t4',
-    text: r'''¿Cuál es el poemario de César Vallejo, publicado en 1922, que rompe radicalmente con las normas gramaticales, la lógica tradicional y da inicio pleno al vanguardismo en el Perú?''',
+    text:
+        r'''¿Cuál es el poemario de César Vallejo, publicado en 1922, que rompe radicalmente con las normas gramaticales, la lógica tradicional y da inicio pleno al vanguardismo en el Perú?''',
     options: [
       r'''Los heraldos negros''',
       r'''Poemas humanos''',
@@ -6206,12 +6977,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Trilce''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Trilce". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Trilce". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new_b2eb33ee',
     topicId: 'com_t4',
-    text: r'''Perteneciente a la Generación del 50, es considerado el mejor cuentista peruano. En su obra Los gallinazos sin plumas, narra la cruda realidad de Efraín y Enrique:''',
+    text:
+        r'''Perteneciente a la Generación del 50, es considerado el mejor cuentista peruano. En su obra Los gallinazos sin plumas, narra la cruda realidad de Efraín y Enrique:''',
     options: [
       r'''Oswaldo Reynoso''',
       r'''Enrique Congrains''',
@@ -6220,12 +6993,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Julio Ramón Ribeyro''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Julio Ramón Ribeyro". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Julio Ramón Ribeyro". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new2_5be81ec7',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta correcta tildación según las normas de la RAE para los monosílabos:''',
+    text:
+        r'''Señale la oración que presenta correcta tildación según las normas de la RAE para los monosílabos:''',
     options: [
       r'''Él me vió patrullando por la zona norte.''',
       r'''El cadete dió un paso al frente con mucha fé.''',
@@ -6234,12 +7009,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) La obra de teatro tenía un excelente guión.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Es un error común creer que todos los verbos en pasado se tildan; "fuimos" es una palabra grave que termina en "s", por lo que no lleva tilde. Además, los monosílabos como fue, fui, dio, vio, fe, ti, guion y truhan jamás llevan tilde ortográfica en el español.''',
+    explanation:
+        r'''Es un error común creer que todos los verbos en pasado se tildan; "fuimos" es una palabra grave que termina en "s", por lo que no lleva tilde. Además, los monosílabos como fue, fui, dio, vio, fe, ti, guion y truhan jamás llevan tilde ortográfica en el español.''',
   ),
   Question(
     id: 'com_new2_54b128e9',
     topicId: 'com_t1',
-    text: r'''Respecto a las nuevas reglas de la RAE sobre prefijos y conjunciones, identifique la oración escrita correctamente:''',
+    text:
+        r'''Respecto a las nuevas reglas de la RAE sobre prefijos y conjunciones, identifique la oración escrita correctamente:''',
     options: [
       r'''El ex-ministro del Interior dio declaraciones a la prensa.''',
       r'''El batallón incautó 5 ó 6 cajas de contrabando.''',
@@ -6248,12 +7025,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Asistieron 20 ó 30 oficiales al relevo de guardia.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Según la RAE, el prefijo "ex" se escribe unido a la base léxica si es de una sola palabra, pero se escribe separado obligatoriamente si la base está compuesta por varias palabras, como ex primer ministro. Asimismo, la conjunción "o" entre números ya no debe tildarse bajo ninguna circunstancia.''',
+    explanation:
+        r'''Según la RAE, el prefijo "ex" se escribe unido a la base léxica si es de una sola palabra, pero se escribe separado obligatoriamente si la base está compuesta por varias palabras, como ex primer ministro. Asimismo, la conjunción "o" entre números ya no debe tildarse bajo ninguna circunstancia.''',
   ),
   Question(
     id: 'com_new2_50570ef9',
     topicId: 'com_t1',
-    text: r'''De acuerdo con las reglas para palabras terminadas en "s" precedida de consonante, señale la oración con correcta tildación:''',
+    text:
+        r'''De acuerdo con las reglas para palabras terminadas en "s" precedida de consonante, señale la oración con correcta tildación:''',
     options: [
       r'''Los robóts de vigilancia fueron activados en la frontera.''',
       r'''El jóven cadete mostró gran desarrollo en sus biceps.''',
@@ -6262,12 +7041,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Tuvimos que usar los fórceps y el bícep.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La normativa señala un caso excepcional: las palabras graves que terminan en "s" precedida de otra consonante (como cómics o bíceps) sí deben llevar tilde obligatoriamente. Por el contrario, las palabras agudas terminadas en "s" precedida de consonante (como robots o zigzags) se escriben sin tilde.''',
+    explanation:
+        r'''La normativa señala un caso excepcional: las palabras graves que terminan en "s" precedida de otra consonante (como cómics o bíceps) sí deben llevar tilde obligatoriamente. Por el contrario, las palabras agudas terminadas en "s" precedida de consonante (como robots o zigzags) se escriben sin tilde.''',
   ),
   Question(
     id: 'com_new2_24fddcc3',
     topicId: 'com_t1',
-    text: r'''Señale la oración que aplica correctamente las reglas de acentuación en palabras graves terminadas en "n":''',
+    text:
+        r'''Señale la oración que aplica correctamente las reglas de acentuación en palabras graves terminadas en "n":''',
     options: [
       r'''El exámen físico es determinante para el ingreso.''',
       r'''La imágen del sospechoso se difundió en los medios.''',
@@ -6276,12 +7057,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Se descubrió el crímen gracias a las cámaras.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Palabras como joven, imagen o examen son palabras graves que terminan en la letra "n", por lo tanto, no deben acentuarse ortográficamente en singular. Quienes les colocan tilde cometen uno de los errores ortográficos más frecuentes.''',
+    explanation:
+        r'''Palabras como joven, imagen o examen son palabras graves que terminan en la letra "n", por lo tanto, no deben acentuarse ortográficamente en singular. Quienes les colocan tilde cometen uno de los errores ortográficos más frecuentes.''',
   ),
   Question(
     id: 'com_new2_c86c819a',
     topicId: 'com_t1',
-    text: r'''Teniendo en cuenta la tildación de letras mayúsculas y las palabras que finalizan en "-ion", señale la oración correcta:''',
+    text:
+        r'''Teniendo en cuenta la tildación de letras mayúsculas y las palabras que finalizan en "-ion", señale la oración correcta:''',
     options: [
       r'''El ión de sodio es fundamental en esta reacción química.''',
       r'''ÉXITO FUE LA PALABRA QUE DEFINIÓ EL OPERATIVO.''',
@@ -6290,12 +7073,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) AFRICA ES UN CONTINENTE DE GRAN INTERÉS GEOPOLÍTICO.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las letras mayúsculas llevan acento de forma obligatoria si así lo exigen las reglas generales de acentuación. Además, la palabra ion es la única en el español finalizada en "-ion" que jamás lleva acento, pues es un monosílabo a efectos ortográficos.''',
+    explanation:
+        r'''Las letras mayúsculas llevan acento de forma obligatoria si así lo exigen las reglas generales de acentuación. Además, la palabra ion es la única en el español finalizada en "-ion" que jamás lleva acento, pues es un monosílabo a efectos ortográficos.''',
   ),
   Question(
     id: 'com_new2_f990e33c',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta correcta tildación en adverbios terminados en "-mente":''',
+    text:
+        r'''Señale la oración que presenta correcta tildación en adverbios terminados en "-mente":''',
     options: [
       r'''Se acercó a la escena del delito cautelosamente y friamente.''',
       r'''El escuadrón resolvió la crisis muy rapidamente.''',
@@ -6304,12 +7089,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Actuó docilmente ante la autoridad superior.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los adverbios terminados en "-mente" conservan la tilde únicamente si el adjetivo original la llevaba antes de agregar el sufijo. Como sutil y feliz no llevan tilde por regla general, sutilmente y felizmente tampoco la llevan.''',
+    explanation:
+        r'''Los adverbios terminados en "-mente" conservan la tilde únicamente si el adjetivo original la llevaba antes de agregar el sufijo. Como sutil y feliz no llevan tilde por regla general, sutilmente y felizmente tampoco la llevan.''',
   ),
   Question(
     id: 'com_new2_000edb4e',
     topicId: 'com_t1',
-    text: r'''Identifique la alternativa con el uso correcto de la tilde diacrítica en los monosílabos "mas/más" y "aun/aún":''',
+    text:
+        r'''Identifique la alternativa con el uso correcto de la tilde diacrítica en los monosílabos "mas/más" y "aun/aún":''',
     options: [
       r'''Aún los postulantes más rezagados lograron terminar la prueba.''',
       r'''Aun no llega el comandante a la base operativa.''',
@@ -6318,12 +7105,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Te daré más información cuándo el jefe lo autorice.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La palabra mas se escribe sin tilde cuando funciona como conjunción equivalente a "pero", mientras que más lleva tilde cuando expresa cantidad. Por otro lado, el término aún lleva tilde solo cuando significa "todavía", y se escribe sin tilde (aun) cuando equivale a "incluso" o "hasta".''',
+    explanation:
+        r'''La palabra mas se escribe sin tilde cuando funciona como conjunción equivalente a "pero", mientras que más lleva tilde cuando expresa cantidad. Por otro lado, el término aún lleva tilde solo cuando significa "todavía", y se escribe sin tilde (aun) cuando equivale a "incluso" o "hasta".''',
   ),
   Question(
     id: 'com_new2_95f560c4',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta el uso correcto de las tildes diacríticas en pronombres y preposiciones:''',
+    text:
+        r'''Señale la oración que presenta el uso correcto de las tildes diacríticas en pronombres y preposiciones:''',
     options: [
       r'''Quiero que el me de su número de placa.''',
       r'''Es necesario que él me dé un poco más de tiempo.''',
@@ -6332,12 +7121,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Si, me gustaría acompañarte a tí en la ronda.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La tilde diacrítica distingue palabras: él se tilda por ser pronombre personal, dé por ser la conjugación del verbo dar y té por ser la infusión. Los pronombres átonos te y ti nunca llevan tilde.''',
+    explanation:
+        r'''La tilde diacrítica distingue palabras: él se tilda por ser pronombre personal, dé por ser la conjugación del verbo dar y té por ser la infusión. Los pronombres átonos te y ti nunca llevan tilde.''',
   ),
   Question(
     id: 'com_new2_209f88b5',
     topicId: 'com_t1',
-    text: r'''Según las recomendaciones vigentes de la RAE sobre pronombres demostrativos y el adverbio "solo", ¿cuál oración es correcta?''',
+    text:
+        r'''Según las recomendaciones vigentes de la RAE sobre pronombres demostrativos y el adverbio "solo", ¿cuál oración es correcta?''',
     options: [
       r'''Ése oficial tiene un legajo intachable en la institución.''',
       r'''Sólo tú conoces la verdadera versión de los hechos.''',
@@ -6346,12 +7137,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Mí compañero se quedó solo en el puesto de control.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La RAE recomienda no tildar el adverbio solo (equivalente a solamente) ni los pronombres demostrativos (este, ese, aquel), eliminando la tilde incluso en casos donde pueda presentarse ambigüedad.''',
+    explanation:
+        r'''La RAE recomienda no tildar el adverbio solo (equivalente a solamente) ni los pronombres demostrativos (este, ese, aquel), eliminando la tilde incluso en casos donde pueda presentarse ambigüedad.''',
   ),
   Question(
     id: 'com_new2_a13580f7',
     topicId: 'com_t1',
-    text: r'''Identifique la oración que presenta una correcta tildación en verbos con pronombres enclíticos (palabras esdrújulas o sobresdrújulas):''',
+    text:
+        r'''Identifique la oración que presenta una correcta tildación en verbos con pronombres enclíticos (palabras esdrújulas o sobresdrújulas):''',
     options: [
       r'''Entregaselo al perito de criminalística inmediatamente.''',
       r'''Llevatelo rápido antes de que la prensa lo note.''',
@@ -6360,12 +7153,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Atiendemelo con prioridad en la ventanilla tres.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las palabras que se forman al unir un verbo con pronombres enclíticos (como me, te, lo) siguen las reglas generales de acentuación. Palabras como cómetelo, llévatelo y entrégaselo se convierten en sobresdrújulas y, por regla absoluta, todas las palabras esdrújulas y sobresdrújulas siempre se tildan sin excepción,''',
+    explanation:
+        r'''Las palabras que se forman al unir un verbo con pronombres enclíticos (como me, te, lo) siguen las reglas generales de acentuación. Palabras como cómetelo, llévatelo y entrégaselo se convierten en sobresdrújulas y, por regla absoluta, todas las palabras esdrújulas y sobresdrújulas siempre se tildan sin excepción,''',
   ),
   Question(
     id: 'com_new2_e0b2add4',
     topicId: 'com_t1',
-    text: r'''Señale la alternativa que presenta correcta tildación y uso ortográfico según las últimas actualizaciones de la RAE:''',
+    text:
+        r'''Señale la alternativa que presenta correcta tildación y uso ortográfico según las últimas actualizaciones de la RAE:''',
     options: [
       r'''Él tomó un té sólo en su casa.''',
       r'''Asistieron 15 ó 20 cadetes al patio.''',
@@ -6374,12 +7169,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Ninguna''',
     ],
     correctAnswer: 3,
-    explanation: r'''(Respuesta: D. "Aquellos" ya no se tilda, "fe" es monosílabo y nunca se tilda. La A falla en "sólo", la B en la "ó", la C en "ex-ministro" que debe ir junto y sin guion, y "guion" no se tilda).''',
+    explanation:
+        r'''(Respuesta: D. "Aquellos" ya no se tilda, "fe" es monosílabo y nunca se tilda. La A falla en "sólo", la B en la "ó", la C en "ex-ministro" que debe ir junto y sin guion, y "guion" no se tilda).''',
   ),
   Question(
     id: 'com_new2_1a41d9f0',
     topicId: 'com_t1',
-    text: r'''Narrador peruano de la Generación del 50, en la mayoría de sus cuentos muestra un marcado realismo urbano, autor de Los gallinazos sin plumas:''',
+    text:
+        r'''Narrador peruano de la Generación del 50, en la mayoría de sus cuentos muestra un marcado realismo urbano, autor de Los gallinazos sin plumas:''',
     options: [
       r'''Mario Vargas Llosa''',
       r'''José María Arguedas''',
@@ -6388,12 +7185,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Ninguna''',
     ],
     correctAnswer: 2,
-    explanation: r'''(Respuesta: C. Ribeyro es el maestro del cuento urbano de la Gen. del 50).''',
+    explanation:
+        r'''(Respuesta: C. Ribeyro es el maestro del cuento urbano de la Gen. del 50).''',
   ),
   Question(
     id: 'com_new2_6c8975b3',
     topicId: 'com_t3',
-    text: r'''¿Qué técnica narrativa consiste en dar un salto temporal hacia el futuro en medio de un relato?''',
+    text:
+        r'''¿Qué técnica narrativa consiste en dar un salto temporal hacia el futuro en medio de un relato?''',
     options: [
       r'''In media res''',
       r'''Analepsis''',
@@ -6407,7 +7206,8 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_new2_3b6acf3b',
     topicId: 'com_t2',
-    text: r'''En la oración "El valiente oficial de la policía, mi hermano, detuvo al ladrón", la estructura subrayada ("mi hermano") cumple la función de:''',
+    text:
+        r'''En la oración "El valiente oficial de la policía, mi hermano, detuvo al ladrón", la estructura subrayada ("mi hermano") cumple la función de:''',
     options: [
       r'''Modificador Indirecto''',
       r'''Aposición''',
@@ -6416,12 +7216,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Ninguna''',
     ],
     correctAnswer: 1,
-    explanation: r'''(Respuesta: B. Está entre comas y explica quién es el núcleo). 🎯 SECCIÓN 1: LENGUAJE Y NORMATIVA RAE (Las "Caza-Postulantes")''',
+    explanation:
+        r'''(Respuesta: B. Está entre comas y explica quién es el núcleo). 🎯 SECCIÓN 1: LENGUAJE Y NORMATIVA RAE (Las "Caza-Postulantes")''',
   ),
   Question(
     id: 'com_new2_02c855a2',
     topicId: 'com_t1',
-    text: r'''Señale la oración que presenta correcta tildación según las últimas normativas de la RAE:''',
+    text:
+        r'''Señale la oración que presenta correcta tildación según las últimas normativas de la RAE:''',
     options: [
       r'''Aquéllos cadetes llegaron tarde a la formación.''',
       r'''Él prefiere tomar un té sólo por las mañanas.''',
@@ -6430,12 +7232,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El ex-ministro dio una orden categórica.''',
     ],
     correctAnswer: 3,
-    explanation: r'''Respuesta: D. > El Hack: Los monosílabos truhan, guion, fe, fue, vio, dio NUNCA llevan tilde.''',
+    explanation:
+        r'''Respuesta: D. > El Hack: Los monosílabos truhan, guion, fe, fue, vio, dio NUNCA llevan tilde.''',
   ),
   Question(
     id: 'com_new2_417052e2',
     topicId: 'com_t2',
-    text: r'''En la siguiente oración: El valiente oficial de tránsito, mi instructor, detuvo al delincuente, la estructura subrayada "mi instructor" cumple la función sintáctica de:''',
+    text:
+        r'''En la siguiente oración: El valiente oficial de tránsito, mi instructor, detuvo al delincuente, la estructura subrayada "mi instructor" cumple la función sintáctica de:''',
     options: [
       r'''Núcleo del sujeto''',
       r'''Modificador directo''',
@@ -6444,12 +7248,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Aposición''',
     ],
     correctAnswer: 4,
-    explanation: r'''Respuesta: E. El Hack: Todo lo que va entre comas en el sujeto y explica o repite quién es el núcleo (oficial = instructor), se llama Aposición.''',
+    explanation:
+        r'''Respuesta: E. El Hack: Todo lo que va entre comas en el sujeto y explica o repite quién es el núcleo (oficial = instructor), se llama Aposición.''',
   ),
   Question(
     id: 'com_new2_30acd231',
     topicId: 'com_t2',
-    text: r'''(Actitud del Hablante) ¿Qué tipo de oración es "Ojalá apruebe el examen de admisión mañana"?''',
+    text:
+        r'''(Actitud del Hablante) ¿Qué tipo de oración es "Ojalá apruebe el examen de admisión mañana"?''',
     options: [
       r'''Imperativa''',
       r'''Enunciativa''',
@@ -6458,12 +7264,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Exclamativa''',
     ],
     correctAnswer: 2,
-    explanation: r'''Respuesta: C. El Hack: "Ojalá" siempre expresa deseo (Desiderativa). Si tuviera "Quizás", sería Duda (Dubitativa). Si fuera una orden ("¡Siéntate!"), sería Imperativa. 📚 SECCIÓN 2: LITERATURA PERUANA Y TEORÍA LITERARIA (La Carnecita Pura)''',
+    explanation:
+        r'''Respuesta: C. El Hack: "Ojalá" siempre expresa deseo (Desiderativa). Si tuviera "Quizás", sería Duda (Dubitativa). Si fuera una orden ("¡Siéntate!"), sería Imperativa. 📚 SECCIÓN 2: LITERATURA PERUANA Y TEORÍA LITERARIA (La Carnecita Pura)''',
   ),
   Question(
     id: 'com_new2_e09b7e3f',
     topicId: 'com_t1',
-    text: r'''(Generación del 50) Destacado narrador peruano, máximo representante del cuento urbano y de la Generación del 50, que en su obra Los gallinazos sin plumas expone la marginalidad y explotación infantil:''',
+    text:
+        r'''(Generación del 50) Destacado narrador peruano, máximo representante del cuento urbano y de la Generación del 50, que en su obra Los gallinazos sin plumas expone la marginalidad y explotación infantil:''',
     options: [
       r'''Mario Vargas Llosa''',
       r'''José María Arguedas''',
@@ -6472,12 +7280,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Julio Ramón Ribeyro''',
     ],
     correctAnswer: 4,
-    explanation: r'''Respuesta: E. El Hack: Generación del 50 + Cuentos + Realismo Urbano marginal = Julio Ramón Ribeyro (personajes Efraín, Enrique y el cerdo Pascual).''',
+    explanation:
+        r'''Respuesta: E. El Hack: Generación del 50 + Cuentos + Realismo Urbano marginal = Julio Ramón Ribeyro (personajes Efraín, Enrique y el cerdo Pascual).''',
   ),
   Question(
     id: 'com_new2_c158857e',
     topicId: 'com_t3',
-    text: r'''(Técnicas Narrativas) Cuando en un texto narrativo el autor da un salto temporal desde el presente hacia un suceso del pasado para explicar un acontecimiento, está empleando la técnica denominada:''',
+    text:
+        r'''(Técnicas Narrativas) Cuando en un texto narrativo el autor da un salto temporal desde el presente hacia un suceso del pasado para explicar un acontecimiento, está empleando la técnica denominada:''',
     options: [
       r'''Prolepsis''',
       r'''Analepsis''',
@@ -6486,12 +7296,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Flashforward''',
     ],
     correctAnswer: 1,
-    explanation: r'''Respuesta: B. El Hack: Memoriza esto: Analepsis (A de Antes = Pasado). Prolepsis (P de Próximo = Futuro). 💣 EL ÚLTIMO SIMULACRO "ROMPE-CRÁNEOS" (NIVEL DESTRUCTOR)''',
+    explanation:
+        r'''Respuesta: B. El Hack: Memoriza esto: Analepsis (A de Antes = Pasado). Prolepsis (P de Próximo = Futuro). 💣 EL ÚLTIMO SIMULACRO "ROMPE-CRÁNEOS" (NIVEL DESTRUCTOR)''',
   ),
   Question(
     id: 'com_new2_a205b3e0',
     topicId: 'com_t1',
-    text: r'''(Ortografía B/V y excepciones) Señale la alternativa que presenta un uso INCORRECTO de las grafías "B" y "V":''',
+    text:
+        r'''(Ortografía B/V y excepciones) Señale la alternativa que presenta un uso INCORRECTO de las grafías "B" y "V":''',
     options: [
       r'''El sospechoso logró sobrevivir al accidente.''',
       r'''El cadete debe escribir su informe antes de hervir el agua.''',
@@ -6500,12 +7312,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Es difícil concebir una estrategia sin información.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Respuesta: C. El Hack: La regla dice que todo lo que termina en "-bir" va con B (prohibir, concebir, escribir), excepto hervir, servir y vivir.''',
+    explanation:
+        r'''Respuesta: C. El Hack: La regla dice que todo lo que termina en "-bir" va con B (prohibir, concebir, escribir), excepto hervir, servir y vivir.''',
   ),
   Question(
     id: 'com_new2_4fa430f9',
     topicId: 'com_t1',
-    text: r'''(Tildación de Aún/Aun) Identifique la oración correctamente tildada según la RAE:''',
+    text:
+        r'''(Tildación de Aún/Aun) Identifique la oración correctamente tildada según la RAE:''',
     options: [
       r'''Aún los más fuertes cayeron en la prueba física.''',
       r'''El instructor aun no ha dado la orden de descanso.''',
@@ -6514,12 +7328,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) C y D son correctas.''',
     ],
     correctAnswer: 4,
-    explanation: r'''Respuesta: E. El Hack: En la C, "aun" equivale a "incluso" (sin tilde). En la D, "aún" equivale a "todavía" (con tilde).''',
+    explanation:
+        r'''Respuesta: E. El Hack: En la C, "aun" equivale a "incluso" (sin tilde). En la D, "aún" equivale a "todavía" (con tilde).''',
   ),
   Question(
     id: 'com_new2_e7461d5f',
     topicId: 'com_t4',
-    text: r'''(Literatura - Arguedas) Destacado escritor etnólogo peruano, autor de Los ríos profundos, novela en la que el protagonista Ernesto experimenta un choque cultural en un internado de Abancay, simbolizado a través del "Zumbayllu":''',
+    text:
+        r'''(Literatura - Arguedas) Destacado escritor etnólogo peruano, autor de Los ríos profundos, novela en la que el protagonista Ernesto experimenta un choque cultural en un internado de Abancay, simbolizado a través del "Zumbayllu":''',
     options: [
       r'''Ciro Alegría''',
       r'''José María Arguedas''',
@@ -6528,12 +7344,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Mario Vargas Llosa''',
     ],
     correctAnswer: 1,
-    explanation: r'''Respuesta: B. El Hack: Zumbayllu + Ernesto + Etnólogo = Arguedas al 100%.''',
+    explanation:
+        r'''Respuesta: B. El Hack: Zumbayllu + Ernesto + Etnólogo = Arguedas al 100%.''',
   ),
   Question(
     id: 'com_new2_d1f38a71',
     topicId: 'com_t3',
-    text: r'''(Teoría Literaria) Tipo de inicio narrativo en el que la historia no comienza de manera cronológica (situación inicial), sino que arranca directamente en el nudo de la acción o pleno desarrollo del conflicto:''',
+    text:
+        r'''(Teoría Literaria) Tipo de inicio narrativo en el que la historia no comienza de manera cronológica (situación inicial), sino que arranca directamente en el nudo de la acción o pleno desarrollo del conflicto:''',
     options: [
       r'''In extrema res''',
       r'''Analepsis''',
@@ -6542,12 +7360,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Racconto''',
     ],
     correctAnswer: 3,
-    explanation: r'''Respuesta: D. El Hack: "In media res" significa literalmente "hacia la mitad de las cosas".''',
+    explanation:
+        r'''Respuesta: D. El Hack: "In media res" significa literalmente "hacia la mitad de las cosas".''',
   ),
   Question(
     id: 'com_new3_ea2fbdf2',
     topicId: 'com_t1',
-    text: r'''Identifique la oración que presenta un uso correcto de la tildación diacrítica según la RAE:''',
+    text:
+        r'''Identifique la oración que presenta un uso correcto de la tildación diacrítica según la RAE:''',
     options: [
       r'''El te té lo sirvió él a tí.''',
       r'''Él te ofreció más té, mas tú no quisiste.''',
@@ -6556,12 +7376,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Tú y el son muy buenos amigos desde la escuela.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La tilde diacrítica diferencia significados: Él y tú llevan tilde por ser pronombres personales; té por ser infusión, y más por indicar cantidad. En cambio, te (pronombre) y mas (conjunción que equivale a 'pero') no se tildan.""",
+    explanation:
+        r"""La tilde diacrítica diferencia significados: Él y tú llevan tilde por ser pronombres personales; té por ser infusión, y más por indicar cantidad. En cambio, te (pronombre) y mas (conjunción que equivale a 'pero') no se tildan.""",
   ),
   Question(
     id: 'com_new3_92e524d1',
     topicId: 'com_t1',
-    text: r'''Teniendo en cuenta la normativa vigente sobre el uso de prefijos, señale la oración escrita correctamente:''',
+    text:
+        r'''Teniendo en cuenta la normativa vigente sobre el uso de prefijos, señale la oración escrita correctamente:''',
     options: [
       r'''El ex-ministro dio declaraciones polémicas a la prensa.''',
       r'''El expresidente, y el ex-alcalde se reunieron en secreto.''',
@@ -6570,12 +7392,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El ex primer ministro llegó tarde a la sesión del Congreso.''',
     ],
     correctAnswer: 4,
-    explanation: r'''Según las reglas vigentes, el prefijo "ex" se escribe unido a la palabra base si esta es simple (ej. exministro), pero debe escribirse separado si la base está formada por varias palabras, como primer ministro.''',
+    explanation:
+        r'''Según las reglas vigentes, el prefijo "ex" se escribe unido a la palabra base si esta es simple (ej. exministro), pero debe escribirse separado si la base está formada por varias palabras, como primer ministro.''',
   ),
   Question(
     id: 'com_new3_c8dceeeb',
     topicId: 'com_t1',
-    text: r'''Según la normativa de la RAE, existen monosílabos que no cumplen función diacrítica y, por tanto, NUNCA deben llevar tilde. Señale el grupo que contiene únicamente palabras de este tipo:''',
+    text:
+        r'''Según la normativa de la RAE, existen monosílabos que no cumplen función diacrítica y, por tanto, NUNCA deben llevar tilde. Señale el grupo que contiene únicamente palabras de este tipo:''',
     options: [
       r'''el, tu, mi, si, mas''',
       r'''o, u, y, e, a''',
@@ -6584,12 +7408,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) aun, solo, este, ese''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los monosílabos nunca se tildan a menos que cumplan función diacrítica. Casos como fue, fui, dio, vio, fe, ti jamás llevan acento gráfico. Asimismo, la RAE eliminó la tilde de guion y truhan al considerarlos monosílabos ortográficos.''',
+    explanation:
+        r'''Los monosílabos nunca se tildan a menos que cumplan función diacrítica. Casos como fue, fui, dio, vio, fe, ti jamás llevan acento gráfico. Asimismo, la RAE eliminó la tilde de guion y truhan al considerarlos monosílabos ortográficos.''',
   ),
   Question(
     id: 'com_new3_11f57140',
     topicId: 'com_t1',
-    text: r'''Respecto a la tildación de adverbios, conjunciones y pronombres, identifique la oración correcta:''',
+    text:
+        r'''Respecto a la tildación de adverbios, conjunciones y pronombres, identifique la oración correcta:''',
     options: [
       r'''Asistirán a la reunión 10 ó 12 representantes.''',
       r'''Tomaré sólo un café el día de hoy.''',
@@ -6598,12 +7424,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El examen de la escuela fué muy difícil.''',
     ],
     correctAnswer: 3,
-    explanation: r'''La RAE dictaminó que la palabra "solo" ya no se tilda en ningún caso, ni tampoco la conjunción o.''',
+    explanation:
+        r'''La RAE dictaminó que la palabra "solo" ya no se tilda en ningún caso, ni tampoco la conjunción o.''',
   ),
   Question(
     id: 'com_new3_c79b6121',
     topicId: 'com_t2',
-    text: r'''En la oración "Miguel Grau, el Caballero de los Mares, murió heroicamente en Angamos", la estructura sintáctica subrayada ("el Caballero de los Mares") cumple la función de:''',
+    text:
+        r'''En la oración "Miguel Grau, el Caballero de los Mares, murió heroicamente en Angamos", la estructura sintáctica subrayada ("el Caballero de los Mares") cumple la función de:''',
     options: [
       r'''Modificador Directo''',
       r'''Núcleo del Sujeto''',
@@ -6612,12 +7440,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Objeto Directo''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "Aposición". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Aposición". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_c4d2bf04',
     topicId: 'com_t2',
-    text: r'''"Los valientes trabajadores de la empresa telefónica hicieron una huelga ayer". En esta oración, la frase "de la empresa telefónica" funciona sintácticamente como:''',
+    text:
+        r'''"Los valientes trabajadores de la empresa telefónica hicieron una huelga ayer". En esta oración, la frase "de la empresa telefónica" funciona sintácticamente como:''',
     options: [
       r'''Modificador Directo''',
       r'''Aposición''',
@@ -6626,12 +7456,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Circunstancial de tiempo''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "Modificador Indirecto". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Modificador Indirecto". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_32f39ee7',
     topicId: 'com_t2',
-    text: r'''En una oración bimembre tradicional, ¿qué categoría gramatical funciona invariablemente como el núcleo del predicado (NP)?''',
+    text:
+        r'''En una oración bimembre tradicional, ¿qué categoría gramatical funciona invariablemente como el núcleo del predicado (NP)?''',
     options: [
       r'''El sustantivo''',
       r'''El pronombre''',
@@ -6640,12 +7472,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) El adjetivo''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "El verbo conjugado". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "El verbo conjugado". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_4e5e4b0f',
     topicId: 'com_t2',
-    text: r'''Lea la siguiente oración: "Ellos compraron pasteles para tu cumpleaños". ¿Cuál es el término que cumple la función de objeto directo?''',
+    text:
+        r'''Lea la siguiente oración: "Ellos compraron pasteles para tu cumpleaños". ¿Cuál es el término que cumple la función de objeto directo?''',
     options: [
       r'''Ellos''',
       r'''compraron''',
@@ -6654,12 +7488,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) cumpleaños''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "pasteles". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "pasteles". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_75f40562',
     topicId: 'com_t4',
-    text: r'''Cronista mestizo, autor de los Comentarios Reales de los Incas, quien es considerado el "primer mestizo biológico y espiritual de América":''',
+    text:
+        r'''Cronista mestizo, autor de los Comentarios Reales de los Incas, quien es considerado el "primer mestizo biológico y espiritual de América":''',
     options: [
       r'''Felipe Guamán Poma de Ayala''',
       r'''Pedro Cieza de León''',
@@ -6668,12 +7504,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Blas Valera''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "Inca Garcilaso de la Vega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Inca Garcilaso de la Vega". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_e02f689e',
     topicId: 'com_t4',
-    text: r'''En la aclamada novela indigenista El mundo es ancho y ajeno de Ciro Alegría, ¿cómo se llama el sabio alcalde que lidera a la comunidad de Rumi frente a los despojos del gamonal?''',
+    text:
+        r'''En la aclamada novela indigenista El mundo es ancho y ajeno de Ciro Alegría, ¿cómo se llama el sabio alcalde que lidera a la comunidad de Rumi frente a los despojos del gamonal?''',
     options: [
       r'''Cunce Maille''',
       r'''Benito Castro''',
@@ -6682,12 +7520,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Rosendo Maqui''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Rosendo Maqui". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Rosendo Maqui". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_f1afb5ec',
     topicId: 'com_t4',
-    text: r'''¿Qué novela, ambientada en el Colegio Militar Leoncio Prado, le otorgó fama mundial a Mario Vargas Llosa e inició la corriente del realismo urbano en la narrativa peruana?''',
+    text:
+        r'''¿Qué novela, ambientada en el Colegio Militar Leoncio Prado, le otorgó fama mundial a Mario Vargas Llosa e inició la corriente del realismo urbano en la narrativa peruana?''',
     options: [
       r'''Conversación en La Catedral''',
       r'''La casa verde''',
@@ -6696,12 +7536,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Los cachorros''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es "La ciudad y los perros". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "La ciudad y los perros". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_c95f6066',
     topicId: 'com_t4',
-    text: r'''Poemario de César Vallejo, publicado en 1922, que marca el inicio pleno del vanguardismo en el Perú mediante la ruptura de los esquemas gramaticales y sintácticos tradicionales:''',
+    text:
+        r'''Poemario de César Vallejo, publicado en 1922, que marca el inicio pleno del vanguardismo en el Perú mediante la ruptura de los esquemas gramaticales y sintácticos tradicionales:''',
     options: [
       r'''Los heraldos negros''',
       r'''Poemas humanos''',
@@ -6710,12 +7552,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Trilce''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Trilce". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Trilce". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_0671549f',
     topicId: 'com_t3',
-    text: r'''Dentro de la disposición de los acontecimientos de una historia, ¿cómo se denomina al tipo de relato cuyo punto de partida se ubica en un momento intermedio de la trama?''',
+    text:
+        r'''Dentro de la disposición de los acontecimientos de una historia, ¿cómo se denomina al tipo de relato cuyo punto de partida se ubica en un momento intermedio de la trama?''',
     options: [
       r'''Narración Ad Ovo''',
       r'''Narración In Media Res''',
@@ -6724,12 +7568,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Prolepsis''',
     ],
     correctAnswer: 1,
-    explanation: r'''La respuesta correcta es "Narración In Media Res". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Narración In Media Res". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_a7638772',
     topicId: 'com_t3',
-    text: r'''En la narrativa extensa, ¿cómo se llama la anacronía (salto temporal al pasado) que consiste en un retroceso prolongado en el tiempo y un posterior retorno al presente?''',
+    text:
+        r'''En la narrativa extensa, ¿cómo se llama la anacronía (salto temporal al pasado) que consiste en un retroceso prolongado en el tiempo y un posterior retorno al presente?''',
     options: [
       r'''Racconto''',
       r'''Flash-back''',
@@ -6738,12 +7584,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Flash-forward''',
     ],
     correctAnswer: 0,
-    explanation: r'''La respuesta correcta es "Racconto". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Racconto". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_e487d26d',
     topicId: 'com_t3',
-    text: r'''¿Cómo se clasifican los personajes que se definen por tener una profunda complejidad psicológica, que evolucionan, cambian a lo largo de la narración y pueden sorprender al lector?''',
+    text:
+        r'''¿Cómo se clasifican los personajes que se definen por tener una profunda complejidad psicológica, que evolucionan, cambian a lo largo de la narración y pueden sorprender al lector?''',
     options: [
       r'''Personajes principales''',
       r'''Personajes planos''',
@@ -6752,12 +7600,14 @@ final List<Question> comunicacionQuestions = [
       r'''E) Personajes redondos''',
     ],
     correctAnswer: 4,
-    explanation: r'''La respuesta correcta es "E) Personajes redondos". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "E) Personajes redondos". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
   Question(
     id: 'com_new3_38630f09',
     topicId: 'com_t3',
-    text: r'''En la estructura clásica de la trama narrativa, ¿cuál es la etapa donde se quiebra la "normalidad" inicial y se da a conocer el conflicto o problema que el protagonista deberá resolver?''',
+    text:
+        r'''En la estructura clásica de la trama narrativa, ¿cuál es la etapa donde se quiebra la "normalidad" inicial y se da a conocer el conflicto o problema que el protagonista deberá resolver?''',
     options: [
       r'''Introducción''',
       r'''Planteamiento''',
@@ -6766,6 +7616,7 @@ final List<Question> comunicacionQuestions = [
       r'''E) Clímax final''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respuesta correcta es "Nudo". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
+    explanation:
+        r'''La respuesta correcta es "Nudo". Esta es la opción que mejor responde a la pregunta según las normas de comunicación y lengua española.''',
   ),
 ];

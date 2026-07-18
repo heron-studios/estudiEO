@@ -8,7 +8,7 @@ class FloatingOrbs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-    
+
     return AnimatedBuilder(
       animation: orbAnimation,
       builder: (context, _) {
@@ -82,11 +82,7 @@ class _Orb extends StatelessWidget {
   final double size;
   final Color color;
   final double opacity;
-  const _Orb({
-    required this.size,
-    required this.color,
-    required this.opacity,
-  });
+  const _Orb({required this.size, required this.color, required this.opacity});
 
   @override
   Widget build(BuildContext context) {

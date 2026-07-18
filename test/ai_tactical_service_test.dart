@@ -39,15 +39,24 @@ void main() {
         'observaciones_tacticas': [
           'Se corrigió ortografía.',
           'Se cambió a tercera persona.',
-        ]
+        ],
       };
 
       final result = AuditMaestroResult.fromJson(jsonMap);
 
-      expect(result.textoAuditado, equals('El postulante se presentó a la hora indicada.'));
+      expect(
+        result.textoAuditado,
+        equals('El postulante se presentó a la hora indicada.'),
+      );
       expect(result.observacionesTacticas.length, equals(2));
-      expect(result.observacionesTacticas[0], equals('Se corrigió ortografía.'));
-      expect(result.observacionesTacticas[1], equals('Se cambió a tercera persona.'));
+      expect(
+        result.observacionesTacticas[0],
+        equals('Se corrigió ortografía.'),
+      );
+      expect(
+        result.observacionesTacticas[1],
+        equals('Se cambió a tercera persona.'),
+      );
     });
 
     test('Should handle null/missing fields gracefully', () {
@@ -61,13 +70,18 @@ void main() {
   });
 
   group('AiTacticalService Tests', () {
-    test('validarToken should return false on invalid token or exception', () async {
-      // Act
-      final isValid = await AiTacticalService.validarToken('invalid_token_xyz');
+    test(
+      'validarToken should return false on invalid token or exception',
+      () async {
+        // Act
+        final isValid = await AiTacticalService.validarToken(
+          'invalid_token_xyz',
+        );
 
-      // Assert
-      expect(isValid, isFalse);
-    });
+        // Assert
+        expect(isValid, isFalse);
+      },
+    );
 
     test('pulirTexto should return null if borrador is empty', () async {
       final result = await AiTacticalService.pulirTexto('');

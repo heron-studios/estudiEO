@@ -10,7 +10,7 @@ class BibleService {
       final box = Hive.box('estudieo_data');
       final lastShownDate = box.get('last_shown_daily_verse_date') as String?;
       if (lastShownDate == null) return false;
-      
+
       final todayStr = _getTodayDateString();
       return lastShownDate == todayStr;
     } catch (_) {
@@ -107,14 +107,14 @@ class BibleService {
     final dayIndex = (DateTime.now().day - 1).clamp(0, 30);
     try {
       final ref = _dailyVerses[dayIndex];
-      
+
       final url = Uri.parse('https://bible-api.deno.dev/api/read/rv1960/$ref');
       final response = await http.get(url).timeout(const Duration(seconds: 3));
-      
+
       if (response.statusCode == 200) {
         final dynamic data = jsonDecode(response.body);
         String versesText = '';
-        
+
         if (data is List) {
           if (data.isNotEmpty) {
             versesText = data.map((v) => v['verse']).join(' ');
@@ -128,7 +128,7 @@ class BibleService {
           final parts = ref.split('/');
           final bookName = parts[0].replaceAll('-', ' ').toUpperCase();
           final chapterVerse = parts.sublist(1).join(':');
-          
+
           _cachedVerse = '"$versesText" ($bookName $chapterVerse)';
           return _cachedVerse;
         }
@@ -145,4 +145,3 @@ class BibleService {
     return text;
   }
 }
-

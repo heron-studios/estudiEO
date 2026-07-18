@@ -131,63 +131,62 @@ class QuizResultsScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: NeuralDesignSystem.surfaceCard.withValues(
-                              alpha: 0.5,
-                            ),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.08),
-                            ),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: NeuralDesignSystem.surfaceCard.withValues(
+                            alpha: 0.5,
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Precisión',
-                                    style: TextStyle(
-                                      color: NeuralDesignSystem.textSecondary
-                                          .withValues(alpha: 0.7),
-                                      fontSize: 13,
-                                    ),
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.08),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Precisión',
+                                  style: TextStyle(
+                                    color: NeuralDesignSystem.textSecondary
+                                        .withValues(alpha: 0.7),
+                                    fontSize: 13,
                                   ),
-                                  Text(
-                                    '$correct/$total',
-                                    style: const TextStyle(
-                                      color: NeuralDesignSystem.textPrimary,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 13,
-                                      fontFamily: 'Outfit',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: LinearProgressIndicator(
-                                  value: pct / 100,
-                                  backgroundColor: NeuralDesignSystem.background
-                                      .withValues(alpha: 0.6),
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    isGood
-                                        ? const Color(0xFF4ADE80)
-                                        : const Color(0xFFFB923C),
-                                  ),
-                                  minHeight: 10,
                                 ),
+                                Text(
+                                  '$correct/$total',
+                                  style: const TextStyle(
+                                    color: NeuralDesignSystem.textPrimary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13,
+                                    fontFamily: 'Outfit',
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: LinearProgressIndicator(
+                                value: pct / 100,
+                                backgroundColor: NeuralDesignSystem.background
+                                    .withValues(alpha: 0.6),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  isGood
+                                      ? const Color(0xFF4ADE80)
+                                      : const Color(0xFFFB923C),
+                                ),
+                                minHeight: 10,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
+                  ),
 
                   const Spacer(),
 
@@ -203,19 +202,40 @@ class QuizResultsScreen extends StatelessWidget {
                                 height: 50,
                                 child: OutlinedButton.icon(
                                   onPressed: () async {
-                                    final subjectProvider = context.read<SubjectProvider>();
+                                    final subjectProvider = context
+                                        .read<SubjectProvider>();
                                     final questions = last.questionIds
-                                        .map((id) => subjectProvider.getQuestion(id))
+                                        .map(
+                                          (id) =>
+                                              subjectProvider.getQuestion(id),
+                                        )
                                         .whereType<Question>()
                                         .toList();
-                                    await ExportService.exportQuizToPdf(context, last, questions);
+                                    await ExportService.exportQuizToPdf(
+                                      context,
+                                      last,
+                                      questions,
+                                    );
                                   },
-                                  icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
-                                  label: const Text('Exportar PDF', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Outfit')),
+                                  icon: const Icon(
+                                    Icons.picture_as_pdf_rounded,
+                                    color: Colors.redAccent,
+                                  ),
+                                  label: const Text(
+                                    'Exportar PDF',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Outfit',
+                                    ),
+                                  ),
                                   style: OutlinedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    side: const BorderSide(color: Colors.white24),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                    side: const BorderSide(
+                                      color: Colors.white24,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -226,19 +246,40 @@ class QuizResultsScreen extends StatelessWidget {
                                 height: 50,
                                 child: OutlinedButton.icon(
                                   onPressed: () async {
-                                    final subjectProvider = context.read<SubjectProvider>();
+                                    final subjectProvider = context
+                                        .read<SubjectProvider>();
                                     final questions = last.questionIds
-                                        .map((id) => subjectProvider.getQuestion(id))
+                                        .map(
+                                          (id) =>
+                                              subjectProvider.getQuestion(id),
+                                        )
                                         .whereType<Question>()
                                         .toList();
-                                    await ExportService.exportQuizToWord(context, last, questions);
+                                    await ExportService.exportQuizToWord(
+                                      context,
+                                      last,
+                                      questions,
+                                    );
                                   },
-                                  icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
-                                  label: const Text('Exportar Word', style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Outfit')),
+                                  icon: const Icon(
+                                    Icons.description_rounded,
+                                    color: Colors.blueAccent,
+                                  ),
+                                  label: const Text(
+                                    'Exportar Word',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Outfit',
+                                    ),
+                                  ),
                                   style: OutlinedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    side: const BorderSide(color: Colors.white24),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                    side: const BorderSide(
+                                      color: Colors.white24,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -353,39 +394,39 @@ class _StatBox extends StatelessWidget {
     return Expanded(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 18),
-            decoration: BoxDecoration(
-              color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.55),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: color.withValues(alpha: 0.35)),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  value,
-                  style: TextStyle(
-                    color: color,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'Outfit',
-                  ),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          decoration: BoxDecoration(
+            color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.55),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: color.withValues(alpha: 0.35)),
+          ),
+          child: Column(
+            children: [
+              Text(
+                value,
+                style: TextStyle(
+                  color: color,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'Outfit',
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  label,
-                  style: TextStyle(
-                    color: NeuralDesignSystem.textSecondary.withValues(
-                      alpha: 0.7,
-                    ),
-                    fontSize: 12,
-                    fontFamily: 'Inter',
+              ),
+              const SizedBox(height: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  color: NeuralDesignSystem.textSecondary.withValues(
+                    alpha: 0.7,
                   ),
+                  fontSize: 12,
+                  fontFamily: 'Inter',
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-      );
+      ),
+    );
   }
 }

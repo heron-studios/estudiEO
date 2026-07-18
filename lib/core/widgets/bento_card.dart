@@ -58,17 +58,14 @@ class _BentoCardState extends State<BentoCard> {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: RadialGradient(
-                        colors: [
-                          widget.glowColor,
-                          Colors.transparent,
-                        ],
+                        colors: [widget.glowColor, Colors.transparent],
                         center: const Alignment(-0.6, -0.4),
                         radius: 0.8,
                       ),
                     ),
                   ),
                 ),
-              
+
               // Shimmer overlay
               Positioned.fill(
                 child: RepaintBoundary(
@@ -83,7 +80,7 @@ class _BentoCardState extends State<BentoCard> {
                       } else {
                         sweepPos = 1.2 - ((localT - 0.5) / 0.5) * 2.2;
                       }
-                      
+
                       return FractionallySizedBox(
                         widthFactor: 0.6,
                         alignment: Alignment(sweepPos, 0.0),
@@ -108,7 +105,10 @@ class _BentoCardState extends State<BentoCard> {
 
               // Content
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 22,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +155,10 @@ class _BentoCardState extends State<BentoCard> {
                     ),
                     const SizedBox(height: 12),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.white.withValues(alpha: 0.07),
                         borderRadius: BorderRadius.circular(6),

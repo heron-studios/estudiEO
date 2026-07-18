@@ -6,8 +6,11 @@ class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key});
 
   Future<void> _launchWhatsApp() async {
-    final String message = Uri.encodeComponent('Hola, quiero comprar la versión Premium de EDUPOL');
-    final String urlStr = 'https://wa.me/${AppConfig.whatsappNumber}?text=$message';
+    final String message = Uri.encodeComponent(
+      'Hola, quiero comprar la versión Premium de EDUPOL',
+    );
+    final String urlStr =
+        'https://wa.me/${AppConfig.whatsappNumber}?text=$message';
     final Uri url = Uri.parse(urlStr);
 
     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
@@ -32,92 +35,112 @@ class PremiumScreen extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 600),
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 20.0,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-              const Icon(
-                Icons.lock_person_rounded,
-                size: 80,
-                color: Color(0xFFFBBF24),
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                '¡Desbloquea tu potencial completo, Futuro Oficial o Suboficial!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  height: 1.2,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Estás usando la versión Demo. Adquiere Premium para asegurar tu vacante.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.7),
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 40),
-              
-              // Beneficios
-              _buildBenefitRow(Icons.library_books, 'Acceso a TODAS las materias y temas'),
-              const SizedBox(height: 16),
-              _buildBenefitRow(Icons.quiz, 'Simulacros reales de 100 preguntas'),
-              const SizedBox(height: 16),
-              _buildBenefitRow(Icons.psychology, 'Algoritmo de repaso espaciado ilimitado'),
-              const SizedBox(height: 16),
-              _buildBenefitRow(Icons.auto_awesome, 'Miles de preguntas actualizadas (Prospecto)'),
-              
-              const SizedBox(height: 50),
-              
-              // Botón de WhatsApp
-              ElevatedButton(
-                onPressed: _launchWhatsApp,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF25D366), // WhatsApp Green
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 24),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                  const Icon(
+                    Icons.lock_person_rounded,
+                    size: 80,
+                    color: Color(0xFFFBBF24),
                   ),
-                  elevation: 5,
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.message, size: 28),
-                    SizedBox(width: 12),
-                    Text(
-                      'Comprar Versión Completa',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    '¡Desbloquea tu potencial completo, Futuro Oficial o Suboficial!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      height: 1.2,
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Estás usando la versión Demo. Adquiere Premium para asegurar tu vacante.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.7),
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+
+                  // Beneficios
+                  _buildBenefitRow(
+                    Icons.library_books,
+                    'Acceso a TODAS las materias y temas',
+                  ),
+                  const SizedBox(height: 16),
+                  _buildBenefitRow(
+                    Icons.quiz,
+                    'Simulacros reales de 100 preguntas',
+                  ),
+                  const SizedBox(height: 16),
+                  _buildBenefitRow(
+                    Icons.psychology,
+                    'Algoritmo de repaso espaciado ilimitado',
+                  ),
+                  const SizedBox(height: 16),
+                  _buildBenefitRow(
+                    Icons.auto_awesome,
+                    'Miles de preguntas actualizadas (Prospecto)',
+                  ),
+
+                  const SizedBox(height: 50),
+
+                  // Botón de WhatsApp
+                  ElevatedButton(
+                    onPressed: _launchWhatsApp,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(
+                        0xFF25D366,
+                      ), // WhatsApp Green
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 18,
+                        horizontal: 24,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 5,
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.message, size: 28),
+                        SizedBox(width: 12),
+                        Text(
+                          'Comprar Versión Completa',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Te enviaremos a WhatsApp para gestionar tu acceso VIP mediante YAPE.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.5),
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
-              Text(
-                'Te enviaremos a WhatsApp para gestionar tu acceso VIP mediante YAPE.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.5),
-                  fontSize: 12,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
-    ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildBenefitRow(IconData icon, String text) {
     return Row(

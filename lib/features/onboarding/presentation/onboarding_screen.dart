@@ -20,19 +20,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<Map<String, String>> _slides = [
     {
       'title': 'Bienvenido a EDUPOL',
-      'body': 'Tu academia digital definitiva para ingresar a las Escuelas de Oficiales y Suboficiales de la PNP. Todo el temario en tu bolsillo.',
+      'body':
+          'Tu academia digital definitiva para ingresar a las Escuelas de Oficiales y Suboficiales de la PNP. Todo el temario en tu bolsillo.',
       'icon': '👮',
     },
     {
       'title': 'Repaso Espaciado (SRS)',
-      'body': 'Nuestro algoritmo inteligente calculará exactamente cuándo debes repasar cada tarjeta para que nunca la olvides.',
+      'body':
+          'Nuestro algoritmo inteligente calculará exactamente cuándo debes repasar cada tarjeta para que nunca la olvides.',
       'icon': '🧠',
     },
     {
       'title': 'Tutor IA a tu servicio',
-      'body': 'Tu tutor de IA personal que analiza tu progreso y te da consejos de estudio basados en tus estadísticas.',
+      'body':
+          'Tu tutor de IA personal que analiza tu progreso y te da consejos de estudio basados en tus estadísticas.',
       'icon': '🤖',
-    }
+    },
   ];
 
   void _showRegistrationDialog() {
@@ -49,13 +52,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             final nt = NeuralTheme.of(context);
             return AlertDialog(
               backgroundColor: nt.surfaceCard,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              title: Text('Último Paso', style: TextStyle(color: nt.textPrimary, fontFamily: 'Outfit', fontWeight: FontWeight.bold)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              title: Text(
+                'Último Paso',
+                style: TextStyle(
+                  color: nt.textPrimary,
+                  fontFamily: 'Outfit',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('¿Cuál es tu nombre o alias?', style: TextStyle(color: nt.textSecondary, fontSize: 14)),
+                  Text(
+                    '¿Cuál es tu nombre o alias?',
+                    style: TextStyle(color: nt.textSecondary, fontSize: 14),
+                  ),
                   const SizedBox(height: 8),
                   TextField(
                     controller: nameController,
@@ -63,13 +78,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.black26,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
                       hintText: 'Ej. aspirante007',
-                      hintStyle: TextStyle(color: nt.textSecondary.withValues(alpha: 0.5)),
+                      hintStyle: TextStyle(
+                        color: nt.textSecondary.withValues(alpha: 0.5),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text('¿A qué escuela postulas?', style: TextStyle(color: nt.textSecondary, fontSize: 14)),
+                  Text(
+                    '¿A qué escuela postulas?',
+                    style: TextStyle(color: nt.textSecondary, fontSize: 14),
+                  ),
                   const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
                     initialValue: selectedSchool,
@@ -78,7 +101,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.black26,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                     items: ['EO PNP', 'EETSPN'].map((String value) {
                       return DropdownMenuItem<String>(
@@ -105,14 +131,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () async {
                       if (nameController.text.trim().isEmpty) return;
                       setState(() => isLoading = true);
-                      
+
                       final storage = context.read<LocalStorageService>();
                       await storage.saveUserName(nameController.text.trim());
                       await storage.saveTargetSchool(selectedSchool);
                       storage.saveHasSeenOnboarding(true);
-                      
+
                       // Sincronizado posteriormente en HomeScreen
-                      
+
                       if (context.mounted) {
                         context.go('/home');
                       }
@@ -120,15 +146,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: nt.blueGoogle,
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                    child: const Text('Comenzar Misión', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'Comenzar Misión',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
               ],
             );
           },
         );
-      }
+      },
     );
   }
 
@@ -228,7 +259,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           height: 8,
                           width: _currentPage == index ? 24 : 8,
                           decoration: BoxDecoration(
-                            color: _currentPage == index ? nt.blueGoogle : nt.surfaceCard,
+                            color: _currentPage == index
+                                ? nt.blueGoogle
+                                : nt.surfaceCard,
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
@@ -248,14 +281,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: nt.blueGoogle,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: Text(
-                        _currentPage == _slides.length - 1 ? 'Empezar' : 'Siguiente',
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        _currentPage == _slides.length - 1
+                            ? 'Empezar'
+                            : 'Siguiente',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ],

@@ -11,7 +11,8 @@ final Map<String, Topic> cienciasSocialesTopics = {
     id: 'cs_t1',
     subjectId: 'ciencias-sociales',
     name: '1. Proceso de Hominizacion',
-    description: 'Evolucion biologica y cultural desde Australopithecus hasta Homo sapiens sapiens, poblamiento y sedentarizacion.',
+    description:
+        'Evolucion biologica y cultural desde Australopithecus hasta Homo sapiens sapiens, poblamiento y sedentarizacion.',
     questionCount: 190,
     theoryByLevel: {
       'easy': hominizacionTheoryEasy,
@@ -24,7 +25,8 @@ final Map<String, Topic> cienciasSocialesTopics = {
     id: 'cs_t2',
     subjectId: 'ciencias-sociales',
     name: '2. Tahuantinsuyo: Evolucion y Organizacion',
-    description: 'Expansion, organizacion politica, reciprocidad, redistribucion, mita, colcas y autoridades incas.',
+    description:
+        'Expansion, organizacion politica, reciprocidad, redistribucion, mita, colcas y autoridades incas.',
     questionCount: 190,
     theoryByLevel: {
       'easy': tahuantinsuyoTheoryEasy,
@@ -37,7 +39,8 @@ final Map<String, Topic> cienciasSocialesTopics = {
     id: 'cs_t3',
     subjectId: 'ciencias-sociales',
     name: '3. Areas Naturales Protegidas',
-    description: 'Parques, santuarios, reservas nacionales, SINANPE, SERNANP y uso directo o indirecto.',
+    description:
+        'Parques, santuarios, reservas nacionales, SINANPE, SERNANP y uso directo o indirecto.',
     questionCount: 220,
     theoryByLevel: {
       'easy': areasNaturalesTheoryEasy,
@@ -50,7 +53,8 @@ final Map<String, Topic> cienciasSocialesTopics = {
     id: 'cs_t4',
     subjectId: 'ciencias-sociales',
     name: '4. Ecosistemas, Tecnologia y Desarrollo Sostenible',
-    description: 'Cambio climatico, energia renovable, economia circular, huella hidrica y problematica ambiental peruana.',
+    description:
+        'Cambio climatico, energia renovable, economia circular, huella hidrica y problematica ambiental peruana.',
     questionCount: 190,
     theoryByLevel: {
       'easy': ecosistemasTecnologiaTheoryEasy,
@@ -63,7 +67,8 @@ final Map<String, Topic> cienciasSocialesTopics = {
     id: 'cs_t5',
     subjectId: 'ciencias-sociales',
     name: '5. Redes Viales: Caracteristicas, Tipos e Importancia',
-    description: 'Jerarquizacion vial, rutas del SINAC, vias nacionales, departamentales, vecinales y autoridades competentes.',
+    description:
+        'Jerarquizacion vial, rutas del SINAC, vias nacionales, departamentales, vecinales y autoridades competentes.',
     questionCount: 190,
     theoryByLevel: {
       'easy': redesVialesTheoryEasy,

@@ -1,6 +1,5 @@
 import 'package:learn/models/topic.dart';
 
-
 import 'reglas_ortograficas_ext_10q_theory.dart';
 import 'oracion_gramatical_ext_10q_theory.dart';
 import 'narracion_ext_10q_theory.dart';
@@ -13,7 +12,8 @@ final Map<String, Topic> comunicacionTopics = {
     id: 'eo_pnp_reglas_ortograficas_ext_10q',
     subjectId: 'comunicacion',
     name: 'Reglas Ortográficas y Normativas RAE (Teoría Completa 10Q)',
-    description: 'Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.',
+    description:
+        'Grafías, acentuación, mayúsculas, signos de puntuación y concurrencia vocálica.',
     questionCount: 40,
     theoryByLevel: {
       'easy': reglasOrtograficasExt10qTheoryEasy,
@@ -26,7 +26,8 @@ final Map<String, Topic> comunicacionTopics = {
     id: 'eo_pnp_narracion_ext_10q',
     subjectId: 'comunicacion',
     name: 'La Narración: Estructura y Elementos (Teoría Completa 10Q)',
-    description: 'Aprende los elementos fundamentales de la narración, tipos de narradores, personajes y alteraciones temporales.',
+    description:
+        'Aprende los elementos fundamentales de la narración, tipos de narradores, personajes y alteraciones temporales.',
     questionCount: 40,
     theoryByLevel: {
       'easy': narracionExt10qTheoryEasy,
@@ -39,7 +40,8 @@ final Map<String, Topic> comunicacionTopics = {
     id: 'eo_pnp_oracion_gramatical_ext_10q',
     subjectId: 'comunicacion',
     name: 'La Oración Gramatical (Teoría Completa 10Q)',
-    description: 'Estudio de la oración gramatical, unimembres, bimembres y estructura del sintagma nominal y verbal.',
+    description:
+        'Estudio de la oración gramatical, unimembres, bimembres y estructura del sintagma nominal y verbal.',
     questionCount: 40,
     theoryByLevel: {
       'easy': oracionGramaticalExt10qTheoryEasy,
@@ -52,7 +54,8 @@ final Map<String, Topic> comunicacionTopics = {
     id: 'eo_pnp_literatura_peruana_ext_10q',
     subjectId: 'comunicacion',
     name: 'Literatura Peruana (Teoría Completa 10Q)',
-    description: 'Estudio de la literatura peruana desde la época prehispánica hasta la Generación del 70.',
+    description:
+        'Estudio de la literatura peruana desde la época prehispánica hasta la Generación del 70.',
     questionCount: 40,
     theoryByLevel: {
       'easy': literaturaPeruanaExt10qTheoryEasy,
@@ -65,7 +68,8 @@ final Map<String, Topic> comunicacionTopics = {
     id: 'eo_pnp_literatura_peruana_rebuscada_ext_10q',
     subjectId: 'comunicacion',
     name: 'Literatura Peruana Rebuscada (Teoría Completa 10Q)',
-    description: 'Estudio detallado de la literatura peruana, crónicas, movimientos rupturistas y narrativa.',
+    description:
+        'Estudio detallado de la literatura peruana, crónicas, movimientos rupturistas y narrativa.',
     questionCount: 40,
     theoryByLevel: {
       'easy': literaturaPeruanaRebuscadaExt10qTheoryEasy,

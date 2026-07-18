@@ -81,7 +81,8 @@ class _SilogismosScreenState extends State<SilogismosScreen>
     final isCorrect = optionKey == question.correctAnswer;
 
     final dim = question.dimension;
-    final int score = question.puntosOpciones[optionKey] ??
+    final int score =
+        question.puntosOpciones[optionKey] ??
         (isCorrect ? question.puntajeMaximo : 0);
     _dimensionScores[dim] = (_dimensionScores[dim] ?? 0) + score;
     _dimensionMax[dim] = (_dimensionMax[dim] ?? 0) + question.puntajeMaximo;
@@ -149,8 +150,11 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.account_tree_rounded,
-                    color: Color(0xFF14B8A6), size: 16),
+                child: const Icon(
+                  Icons.account_tree_rounded,
+                  color: Color(0xFF14B8A6),
+                  size: 16,
+                ),
               ),
               const SizedBox(width: 8),
               const Text(
@@ -172,9 +176,10 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   child: Text(
                     '${_currentIndex + 1}/${_questions!.length}',
                     style: const TextStyle(
-                        color: Colors.white54,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13),
+                      color: Colors.white54,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                 ),
               ),
@@ -201,8 +206,10 @@ class _SilogismosScreenState extends State<SilogismosScreen>
           children: [
             CircularProgressIndicator(color: Color(0xFF14B8A6)),
             SizedBox(height: 16),
-            Text('Cargando silogismos...',
-                style: TextStyle(color: Colors.white70)),
+            Text(
+              'Cargando silogismos...',
+              style: TextStyle(color: Colors.white70),
+            ),
           ],
         ),
       );
@@ -216,17 +223,25 @@ class _SilogismosScreenState extends State<SilogismosScreen>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.info_outline_rounded,
-                  color: Colors.white54, size: 48),
+              const Icon(
+                Icons.info_outline_rounded,
+                color: Colors.white54,
+                size: 48,
+              ),
               const SizedBox(height: 16),
-              const Text('No hay silogismos disponibles',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold)),
+              const Text(
+                'No hay silogismos disponibles',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const SizedBox(height: 8),
-              const Text('El banco de preguntas de silogismos está vacío.',
-                  style: TextStyle(color: Colors.white54)),
+              const Text(
+                'El banco de preguntas de silogismos está vacío.',
+                style: TextStyle(color: Colors.white54),
+              ),
               const SizedBox(height: 24),
               ElevatedButton.icon(
                 onPressed: () => context.pop(),
@@ -236,7 +251,8 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   backgroundColor: const Color(0xFF14B8A6),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
             ],
@@ -262,7 +278,8 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   value: progress,
                   backgroundColor: Colors.white.withValues(alpha: 0.1),
                   valueColor: const AlwaysStoppedAnimation<Color>(
-                      Color(0xFF14B8A6)),
+                    Color(0xFF14B8A6),
+                  ),
                   minHeight: 8,
                 ),
               ),
@@ -273,18 +290,24 @@ class _SilogismosScreenState extends State<SilogismosScreen>
               ScaleTransition(
                 scale: _streakScale,
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                        colors: [Color(0xFF14B8A6), Color(0xFF0EA5E9)]),
+                      colors: [Color(0xFF14B8A6), Color(0xFF0EA5E9)],
+                    ),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.bolt_rounded,
-                          color: Colors.white, size: 14),
+                      const Icon(
+                        Icons.bolt_rounded,
+                        color: Colors.white,
+                        size: 14,
+                      ),
                       Text(
                         ' x$_correctStreak',
                         style: const TextStyle(
@@ -323,19 +346,24 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   // Header de lógica
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 6),
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF14B8A6).withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                          color:
-                              const Color(0xFF14B8A6).withValues(alpha: 0.3)),
+                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                      ),
                     ),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.lightbulb_outline_rounded,
-                            color: Color(0xFF14B8A6), size: 14),
+                        Icon(
+                          Icons.lightbulb_outline_rounded,
+                          color: Color(0xFF14B8A6),
+                          size: 14,
+                        ),
                         SizedBox(width: 6),
                         Text(
                           'SILOGISMO · RAZONAMIENTO LÓGICO',
@@ -355,8 +383,9 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   StaticGlassContainer(
                     padding: const EdgeInsets.all(22),
                     borderRadius: BorderRadius.circular(20),
-                    borderColor:
-                        const Color(0xFF14B8A6).withValues(alpha: 0.25),
+                    borderColor: const Color(
+                      0xFF14B8A6,
+                    ).withValues(alpha: 0.25),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -365,12 +394,16 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                             Container(
                               padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF14B8A6)
-                                    .withValues(alpha: 0.15),
+                                color: const Color(
+                                  0xFF14B8A6,
+                                ).withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: const Icon(Icons.format_quote_rounded,
-                                  color: Color(0xFF14B8A6), size: 16),
+                              child: const Icon(
+                                Icons.format_quote_rounded,
+                                color: Color(0xFF14B8A6),
+                                size: 16,
+                              ),
                             ),
                             const SizedBox(width: 8),
                             const Text(
@@ -412,122 +445,127 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   const SizedBox(height: 10),
 
                   // Opciones
-                  ...question.options.entries.toList().asMap().entries.map(
-                    (indexedEntry) {
-                      final idx = indexedEntry.key;
-                      final entry = indexedEntry.value;
-                      final labels = ['A', 'B', 'C', 'D', 'E'];
-                      final label =
-                          idx < labels.length ? labels[idx] : entry.key;
-                      final isSelected =
-                          _selectedOptionKey == entry.key;
-                      final isCorrectAnswer =
-                          entry.key == question.correctAnswer;
+                  ...question.options.entries.toList().asMap().entries.map((
+                    indexedEntry,
+                  ) {
+                    final idx = indexedEntry.key;
+                    final entry = indexedEntry.value;
+                    final labels = ['A', 'B', 'C', 'D', 'E'];
+                    final label = idx < labels.length ? labels[idx] : entry.key;
+                    final isSelected = _selectedOptionKey == entry.key;
+                    final isCorrectAnswer = entry.key == question.correctAnswer;
 
-                      Color borderColor = Colors.white.withValues(alpha: 0.1);
-                      Color bgColor =
-                          Colors.white.withValues(alpha: 0.04);
-                      Color circleColor = Colors.white10;
+                    Color borderColor = Colors.white.withValues(alpha: 0.1);
+                    Color bgColor = Colors.white.withValues(alpha: 0.04);
+                    Color circleColor = Colors.white10;
 
-                      if (_showingFeedback) {
-                        if (isCorrectAnswer) {
-                          borderColor = const Color(0xFF4ADE80);
-                          bgColor = const Color(0xFF4ADE80)
-                              .withValues(alpha: 0.08);
-                          circleColor = const Color(0xFF4ADE80);
-                        } else if (isSelected) {
-                          borderColor = const Color(0xFFEF4444);
-                          bgColor = const Color(0xFFEF4444)
-                              .withValues(alpha: 0.08);
-                          circleColor = const Color(0xFFEF4444);
-                        }
+                    if (_showingFeedback) {
+                      if (isCorrectAnswer) {
+                        borderColor = const Color(0xFF4ADE80);
+                        bgColor = const Color(
+                          0xFF4ADE80,
+                        ).withValues(alpha: 0.08);
+                        circleColor = const Color(0xFF4ADE80);
                       } else if (isSelected) {
-                        borderColor = const Color(0xFF14B8A6);
-                        bgColor =
-                            const Color(0xFF14B8A6).withValues(alpha: 0.1);
-                        circleColor = const Color(0xFF14B8A6);
+                        borderColor = const Color(0xFFEF4444);
+                        bgColor = const Color(
+                          0xFFEF4444,
+                        ).withValues(alpha: 0.08);
+                        circleColor = const Color(0xFFEF4444);
                       }
+                    } else if (isSelected) {
+                      borderColor = const Color(0xFF14B8A6);
+                      bgColor = const Color(0xFF14B8A6).withValues(alpha: 0.1);
+                      circleColor = const Color(0xFF14B8A6);
+                    }
 
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: HoverGlassCard(
-                          onTap: _showingFeedback
-                              ? null
-                              : () => _onOptionSelected(entry.key),
-                          hoverGradientBorder: !_showingFeedback,
-                          child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 260),
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 16, horizontal: 18),
-                            decoration: BoxDecoration(
-                              color: bgColor,
-                              borderRadius: BorderRadius.circular(14),
-                              border: Border.all(
-                                  color: borderColor,
-                                  width: _showingFeedback &&
-                                          (isCorrectAnswer || isSelected)
-                                      ? 1.5
-                                      : 1),
-                            ),
-                            child: Row(
-                              children: [
-                                AnimatedContainer(
-                                  duration:
-                                      const Duration(milliseconds: 260),
-                                  width: 32,
-                                  height: 32,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: circleColor
-                                        .withValues(alpha: 0.2),
-                                    border: Border.all(
-                                        color: circleColor, width: 1.5),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    label,
-                                    style: TextStyle(
-                                      color: _showingFeedback &&
-                                              (isCorrectAnswer || isSelected)
-                                          ? Colors.white
-                                          : (isSelected
-                                              ? Colors.white
-                                              : Colors.white54),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 14),
-                                Expanded(
-                                  child: Text(
-                                    entry.value,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.3,
-                                    ),
-                                  ),
-                                ),
-                                if (_showingFeedback &&
-                                    isCorrectAnswer)
-                                  const Icon(
-                                      Icons.check_circle_rounded,
-                                      color: Color(0xFF4ADE80),
-                                      size: 20),
-                                if (_showingFeedback &&
-                                    isSelected &&
-                                    !isCorrectAnswer)
-                                  const Icon(Icons.cancel_rounded,
-                                      color: Color(0xFFEF4444), size: 20),
-                              ],
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: HoverGlassCard(
+                        onTap: _showingFeedback
+                            ? null
+                            : () => _onOptionSelected(entry.key),
+                        hoverGradientBorder: !_showingFeedback,
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 260),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                            horizontal: 18,
+                          ),
+                          decoration: BoxDecoration(
+                            color: bgColor,
+                            borderRadius: BorderRadius.circular(14),
+                            border: Border.all(
+                              color: borderColor,
+                              width:
+                                  _showingFeedback &&
+                                      (isCorrectAnswer || isSelected)
+                                  ? 1.5
+                                  : 1,
                             ),
                           ),
+                          child: Row(
+                            children: [
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 260),
+                                width: 32,
+                                height: 32,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: circleColor.withValues(alpha: 0.2),
+                                  border: Border.all(
+                                    color: circleColor,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  label,
+                                  style: TextStyle(
+                                    color:
+                                        _showingFeedback &&
+                                            (isCorrectAnswer || isSelected)
+                                        ? Colors.white
+                                        : (isSelected
+                                              ? Colors.white
+                                              : Colors.white54),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 14),
+                              Expanded(
+                                child: Text(
+                                  entry.value,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ),
+                              if (_showingFeedback && isCorrectAnswer)
+                                const Icon(
+                                  Icons.check_circle_rounded,
+                                  color: Color(0xFF4ADE80),
+                                  size: 20,
+                                ),
+                              if (_showingFeedback &&
+                                  isSelected &&
+                                  !isCorrectAnswer)
+                                const Icon(
+                                  Icons.cancel_rounded,
+                                  color: Color(0xFFEF4444),
+                                  size: 20,
+                                ),
+                            ],
+                          ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
@@ -550,12 +588,16 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF14B8A6)
-                              .withValues(alpha: 0.15),
+                          color: const Color(
+                            0xFF14B8A6,
+                          ).withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Icon(Icons.school_rounded,
-                            color: Color(0xFF14B8A6), size: 18),
+                        child: const Icon(
+                          Icons.school_rounded,
+                          color: Color(0xFF14B8A6),
+                          size: 18,
+                        ),
                       ),
                       const SizedBox(width: 10),
                       const Expanded(
@@ -573,9 +615,10 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   const SizedBox(height: 12),
                   _buildFeedbackBlock(
                     title: 'Conclusión correcta',
-                    content: _questions![_currentIndex]
-                            .options[
-                                _questions![_currentIndex].correctAnswer] ??
+                    content:
+                        _questions![_currentIndex]
+                            .options[_questions![_currentIndex]
+                            .correctAnswer] ??
                         'N/A',
                     color: const Color(0xFF4ADE80),
                     icon: Icons.task_alt_rounded,
@@ -593,14 +636,17 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   ElevatedButton.icon(
                     onPressed: _nextQuestion,
                     icon: const Icon(Icons.arrow_forward_rounded, size: 18),
-                    label: const Text('Continuar',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    label: const Text(
+                      'Continuar',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF14B8A6),
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
                   ),
                 ],
@@ -688,7 +734,9 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                 shape: BoxShape.circle,
                 color: resultColor.withValues(alpha: 0.12),
                 border: Border.all(
-                    color: resultColor.withValues(alpha: 0.4), width: 2),
+                  color: resultColor.withValues(alpha: 0.4),
+                  width: 2,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: resultColor.withValues(alpha: 0.2),
@@ -697,8 +745,11 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                   ),
                 ],
               ),
-              child: Icon(Icons.account_tree_rounded,
-                  color: resultColor, size: 44),
+              child: Icon(
+                Icons.account_tree_rounded,
+                color: resultColor,
+                size: 44,
+              ),
             ),
             const SizedBox(height: 18),
             Text(
@@ -788,15 +839,21 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(e.key,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13)),
-                          Text('${(pct * 100).toInt()}%',
-                              style: TextStyle(
-                                  color: resultColor,
-                                  fontWeight: FontWeight.bold)),
+                          Text(
+                            e.key,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13,
+                            ),
+                          ),
+                          Text(
+                            '${(pct * 100).toInt()}%',
+                            style: TextStyle(
+                              color: resultColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 6),
@@ -807,7 +864,8 @@ class _SilogismosScreenState extends State<SilogismosScreen>
                           minHeight: 7,
                           backgroundColor: Colors.white12,
                           valueColor: const AlwaysStoppedAnimation<Color>(
-                              Color(0xFF14B8A6)),
+                            Color(0xFF14B8A6),
+                          ),
                         ),
                       ),
                     ],
@@ -822,14 +880,17 @@ class _SilogismosScreenState extends State<SilogismosScreen>
               child: ElevatedButton.icon(
                 onPressed: () => context.pop(),
                 icon: const Icon(Icons.arrow_back_rounded),
-                label: const Text('VOLVER',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
+                label: const Text(
+                  'VOLVER',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF14B8A6),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14)),
+                    borderRadius: BorderRadius.circular(14),
+                  ),
                 ),
               ),
             ),

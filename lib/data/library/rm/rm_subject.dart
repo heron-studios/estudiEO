@@ -5,10 +5,5 @@ final Subject razonamientoMatematicoSubject = Subject(
   name: 'Razonamiento Matemático',
   color: '#C1B5FE',
   icon: '🧩',
-  topicIds: [
-    'rm_sucesiones',
-    'rm_edades',
-    'rm_fracciones',
-    'rm_ecuaciones',
-  ],
+  topicIds: ['rm_sucesiones', 'rm_edades', 'rm_fracciones', 'rm_ecuaciones'],
 );

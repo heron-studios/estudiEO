@@ -14,12 +14,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El grupo de personas con las que se comparten vínculos consanguíneos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La identidad personal es el conjunto de características que definen a un individuo y le permiten reconocerse a sí mismo como un ente distinto y diferenciado de los demás, configurando su esencia.''',
+    explanation:
+        r'''La identidad personal es el conjunto de características que definen a un individuo y le permiten reconocerse a sí mismo como un ente distinto y diferenciado de los demás, configurando su esencia.''',
   ),
   Question(
     id: 'pfrh_pf_f2',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Cuál es el propósito de las normas de convivencia en un grupo social?''',
+    text:
+        r'''¿Cuál es el propósito de las normas de convivencia en un grupo social?''',
     options: [
       r'''Eliminar por completo los conflictos entre las personas mediante el uso de la fuerza.''',
       r'''Establecer jerarquías económicas y dividir a la población según sus ingresos.''',
@@ -28,12 +30,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Fomentar la competitividad individualista para alcanzar el éxito académico.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas de convivencia son pautas de conducta que especifican qué se puede hacer y qué no, fundamentadas en el respeto, la tolerancia y la empatía, buscando el bien común y la armonía.''',
+    explanation:
+        r'''Las normas de convivencia son pautas de conducta que especifican qué se puede hacer y qué no, fundamentadas en el respeto, la tolerancia y la empatía, buscando el bien común y la armonía.''',
   ),
   Question(
     id: 'pfrh_pf_f3',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Cuál de las siguientes opciones describe la "función biológica o reproductiva" de la familia?''',
+    text:
+        r'''¿Cuál de las siguientes opciones describe la "función biológica o reproductiva" de la familia?''',
     options: [
       r'''La administración de los ingresos para garantizar la estabilidad financiera.''',
       r'''La introducción de los hijos en la comunidad mediante la enseñanza de valores.''',
@@ -42,7 +46,8 @@ final List<Question> personaFamiliaQuestions = [
       r'''La formación de la identidad política y profesional de los adolescentes.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La función biológica de la familia garantiza la continuidad de la especie, la satisfacción de necesidades básicas de supervivencia y la preservación de la vida mediante la procreación.''',
+    explanation:
+        r'''La función biológica de la familia garantiza la continuidad de la especie, la satisfacción de necesidades básicas de supervivencia y la preservación de la vida mediante la procreación.''',
   ),
   Question(
     id: 'pfrh_pf_f4',
@@ -56,12 +61,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''En evadir los problemas diarios mediante el aislamiento y el sedentarismo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado se define como las acciones o prácticas que toma una persona para mantener su salud emocional, física y mental en niveles óptimos, siendo una "llave" para el bienestar general.''',
+    explanation:
+        r'''El autocuidado se define como las acciones o prácticas que toma una persona para mantener su salud emocional, física y mental en niveles óptimos, siendo una "llave" para el bienestar general.''',
   ),
   Question(
     id: 'pfrh_pf_f5',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué elemento es fundamental para definir la "identidad nacional" en un país como el Perú?''',
+    text:
+        r'''¿Qué elemento es fundamental para definir la "identidad nacional" en un país como el Perú?''',
     options: [
       r'''La negación absoluta de la diversidad étnica para imponer un solo pensamiento.''',
       r'''El desconocimiento de la historia para enfocarse únicamente en el futuro económico.''',
@@ -70,7 +77,8 @@ final List<Question> personaFamiliaQuestions = [
       r'''El rechazo a los héroes nacionales y la adopción de costumbres extranjeras.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La identidad nacional peruana se caracteriza por la pluriculturalidad, reconociendo una historia común, el respeto por la diversidad, el patrimonio y los símbolos patrios que generan un sentido de pertenencia y cohesión.''',
+    explanation:
+        r'''La identidad nacional peruana se caracteriza por la pluriculturalidad, reconociendo una historia común, el respeto por la diversidad, el patrimonio y los símbolos patrios que generan un sentido de pertenencia y cohesión.''',
   ),
   Question(
     id: 'pfrh_pf_f6',
@@ -84,7 +92,8 @@ final List<Question> personaFamiliaQuestions = [
       r'''La capacidad de memorizar datos históricos para demostrar inteligencia moral.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autoestima es la valoración emocional y psicológica que la persona hace de sí misma, la cual se nutre de la confianza, la identificación y el sentido de pertenencia en su entorno.''',
+    explanation:
+        r'''La autoestima es la valoración emocional y psicológica que la persona hace de sí misma, la cual se nutre de la confianza, la identificación y el sentido de pertenencia en su entorno.''',
   ),
   Question(
     id: 'pfrh_pf_f7',
@@ -98,12 +107,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El silencio absoluto frente a las injusticias para no alterar el status quo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Asamblea General de la ONU define la Cultura de Paz como valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos mediante el diálogo y la negociación.''',
+    explanation:
+        r'''La Asamblea General de la ONU define la Cultura de Paz como valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos mediante el diálogo y la negociación.''',
   ),
   Question(
     id: 'pfrh_pf_f8',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué aspecto caracteriza el desarrollo de una "convivencia positiva" en el entorno escolar?''',
+    text:
+        r'''¿Qué aspecto caracteriza el desarrollo de una "convivencia positiva" en el entorno escolar?''',
     options: [
       r'''La aplicación exclusiva de sanciones punitivas y castigos físicos.''',
       r'''La división de los estudiantes en grupos según su nivel socioeconómico.''',
@@ -112,7 +123,8 @@ final List<Question> personaFamiliaQuestions = [
       r'''El fomento de la competencia desleal para obtener las mejores calificaciones.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La convivencia positiva se construye día a día mediante acciones que mejoran las relaciones interpersonales, basándose en la empatía, los valores éticos y estableciendo medios pacíficos para gestionar los conflictos.''',
+    explanation:
+        r'''La convivencia positiva se construye día a día mediante acciones que mejoran las relaciones interpersonales, basándose en la empatía, los valores éticos y estableciendo medios pacíficos para gestionar los conflictos.''',
   ),
   Question(
     id: 'pfrh_pf_f9',
@@ -126,12 +138,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Exigirse al máximo en el estudio sin tomar descansos ni hidratarse.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado en su dimensión física incluye realizar ejercicio regular, alimentación sana, mantener rutinas de sueño e higiene personal, lo cual fortalece el sistema inmunológico y da vitalidad.''',
+    explanation:
+        r'''El autocuidado en su dimensión física incluye realizar ejercicio regular, alimentación sana, mantener rutinas de sueño e higiene personal, lo cual fortalece el sistema inmunológico y da vitalidad.''',
   ),
   Question(
     id: 'pfrh_pf_f10',
     topicId: 'pfrh_persona_familia',
-    text: r'''Según la teoría de los conflictos, ¿por qué se dice que el surgimiento de conflictos en la escuela es "natural"?''',
+    text:
+        r'''Según la teoría de los conflictos, ¿por qué se dice que el surgimiento de conflictos en la escuela es "natural"?''',
     options: [
       r'''Porque los estudiantes son inherentemente agresivos y violentos por naturaleza.''',
       r'''Porque los docentes promueven el desorden para evaluar el comportamiento.''',
@@ -140,14 +154,16 @@ final List<Question> personaFamiliaQuestions = [
       r'''Porque el conflicto es un requisito exigido por los ministerios de educación para el aprendizaje.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los conflictos son inherentes a toda comunidad humana y surgen naturalmente en la escuela debido a la diversidad de edades, caracteres, intereses y contextos culturales que confluyen en ella.''',
+    explanation:
+        r'''Los conflictos son inherentes a toda comunidad humana y surgen naturalmente en la escuela debido a la diversidad de edades, caracteres, intereses y contextos culturales que confluyen en ella.''',
   ),
 
   // Nivel Medio
   Question(
     id: 'pfrh_pf_m1',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿En qué consiste la técnica de "Mediación" para la resolución pacífica de conflictos escolares?''',
+    text:
+        r'''¿En qué consiste la técnica de "Mediación" para la resolución pacífica de conflictos escolares?''',
     options: [
       r'''En la imposición de una sanción severa por parte del director sin escuchar a los implicados.''',
       r'''En ignorar el problema hasta que las partes enfrentadas se olviden del conflicto.''',
@@ -156,12 +172,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''En el uso de la fuerza física para separar a los estudiantes y enviarlos a sus casas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La mediación escolar implica a un tercero neutral (muchas veces un par capacitado) que facilita el diálogo y la comunicación entre las partes en conflicto para que ellos mismos logren un consenso de manera pacífica.''',
+    explanation:
+        r'''La mediación escolar implica a un tercero neutral (muchas veces un par capacitado) que facilita el diálogo y la comunicación entre las partes en conflicto para que ellos mismos logren un consenso de manera pacífica.''',
   ),
   Question(
     id: 'pfrh_pf_m2',
     topicId: 'pfrh_persona_familia',
-    text: r'''Según la estructura y tipología familiar, ¿cómo se define una "familia nuclear"?''',
+    text:
+        r'''Según la estructura y tipología familiar, ¿cómo se define una "familia nuclear"?''',
     options: [
       r'''Un grupo compuesto por múltiples núcleos familiares, abuelos, tíos y nietos bajo un mismo techo.''',
       r'''Una familia que se basa en el liderazgo autoritario de un solo miembro que ejerce poder coercitivo.''',
@@ -170,12 +188,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Una comunidad que se encarga exclusivamente de la función lúdica y recreativa.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El tipo más común de estructura es la familia nuclear, que consiste en un par de cónyuges con o sin hijos, pudiendo ser completa o incompleta.''',
+    explanation:
+        r'''El tipo más común de estructura es la familia nuclear, que consiste en un par de cónyuges con o sin hijos, pudiendo ser completa o incompleta.''',
   ),
   Question(
     id: 'pfrh_pf_m3',
     topicId: 'pfrh_persona_familia',
-    text: r'''Dentro de los enfoques sobre la identidad personal, ¿qué plantea el "enfoque narrativo"?''',
+    text:
+        r'''Dentro de los enfoques sobre la identidad personal, ¿qué plantea el "enfoque narrativo"?''',
     options: [
       r'''Que la identidad está determinada exclusivamente por los rasgos genéticos y biológicos.''',
       r'''Que la identidad se basa únicamente en la nacionalidad y el lugar de nacimiento geográfico.''',
@@ -184,12 +204,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Que la mente y las emociones son ilusiones y solo existe la experiencia somática corporal.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El enfoque narrativo plantea que la identidad personal es un relato que se hace de uno mismo, enfatizando cómo las personas usan el lenguaje para construir un sentido de sí mismas y su lugar en el mundo.''',
+    explanation:
+        r'''El enfoque narrativo plantea que la identidad personal es un relato que se hace de uno mismo, enfatizando cómo las personas usan el lenguaje para construir un sentido de sí mismas y su lugar en el mundo.''',
   ),
   Question(
     id: 'pfrh_pf_m4',
     topicId: 'pfrh_persona_familia',
-    text: r'''En el modelo de Comunicación No Violenta (CNV) propuesto por Marshall Rosenberg, ¿cuáles son los cuatro componentes fundamentales?''',
+    text:
+        r'''En el modelo de Comunicación No Violenta (CNV) propuesto por Marshall Rosenberg, ¿cuáles son los cuatro componentes fundamentales?''',
     options: [
       r'''Grito, imposición, amenaza y sanción.''',
       r'''Evaluación, diagnóstico, juicio y castigo.''',
@@ -198,12 +220,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Empatía, lástima, indiferencia y olvido.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El modelo de CNV de Rosenberg se basa en cuatro componentes claros: observar sin evaluar, identificar el sentimiento, reconocer la necesidad insatisfecha y formular una petición clara y positiva.''',
+    explanation:
+        r'''El modelo de CNV de Rosenberg se basa en cuatro componentes claros: observar sin evaluar, identificar el sentimiento, reconocer la necesidad insatisfecha y formular una petición clara y positiva.''',
   ),
   Question(
     id: 'pfrh_pf_m5',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué diferencia a las "normas sociales" de las "normas morales"?''',
+    text:
+        r'''¿Qué diferencia a las "normas sociales" de las "normas morales"?''',
     options: [
       r'''Las sociales son leyes estatales con cárcel, y las morales son sugerencias sin importancia.''',
       r'''Las sociales se basan en la biología humana, y las morales en la política económica.''',
@@ -212,12 +236,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Las sociales son inmutables desde la prehistoria, y las morales cambian todos los años.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas sociales se derivan de las costumbres y expectativas del grupo (cuyo incumplimiento trae rechazo), mientras que las morales surgen de principios internos sobre lo correcto/incorrecto y su violación genera remordimiento.''',
+    explanation:
+        r'''Las normas sociales se derivan de las costumbres y expectativas del grupo (cuyo incumplimiento trae rechazo), mientras que las morales surgen de principios internos sobre lo correcto/incorrecto y su violación genera remordimiento.''',
   ),
   Question(
     id: 'pfrh_pf_m6',
     topicId: 'pfrh_persona_familia',
-    text: r'''La función "emancipadora" de la familia tiene como principal propósito:''',
+    text:
+        r'''La función "emancipadora" de la familia tiene como principal propósito:''',
     options: [
       r'''Retener a los hijos en el hogar de forma indefinida para garantizar la compañía de los padres en la vejez.''',
       r'''Obligar a los hijos a trabajar desde niños para sostener la economía familiar y abandonar la escuela.''',
@@ -226,12 +252,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Fomentar el aislamiento del individuo respecto a las normas y leyes de la sociedad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La función emancipadora busca orientar hacia la independencia y la autonomía, otorgando las herramientas necesarias para que los individuos maduren, se desarrollen en libertad y asuman los retos del futuro.''',
+    explanation:
+        r'''La función emancipadora busca orientar hacia la independencia y la autonomía, otorgando las herramientas necesarias para que los individuos maduren, se desarrollen en libertad y asuman los retos del futuro.''',
   ),
   Question(
     id: 'pfrh_pf_m7',
     topicId: 'pfrh_persona_familia',
-    text: r'''Al aplicar técnicas de "escucha activa", el acto de "parafrasear" consiste en:''',
+    text:
+        r'''Al aplicar técnicas de "escucha activa", el acto de "parafrasear" consiste en:''',
     options: [
       r'''Ignorar las palabras del interlocutor y pensar en la respuesta que se va a dar a continuación.''',
       r'''Corregir inmediatamente la gramática y el vocabulario de la persona que está hablando.''',
@@ -240,12 +268,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Interrumpir constantemente al hablante para dar consejos no solicitados.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Parafrasear en la escucha activa es decir con las propias palabras lo que el interlocutor ha dicho ("Entonces, lo que estás diciendo es..."), lo cual confirma la comprensión y permite corregir errores de interpretación.''',
+    explanation:
+        r'''Parafrasear en la escucha activa es decir con las propias palabras lo que el interlocutor ha dicho ("Entonces, lo que estás diciendo es..."), lo cual confirma la comprensión y permite corregir errores de interpretación.''',
   ),
   Question(
     id: 'pfrh_pf_m8',
     topicId: 'pfrh_persona_familia',
-    text: r'''En el ámbito de la salud mental, ¿por qué la "autocompasión" se considera una técnica válida de autocuidado emocional?''',
+    text:
+        r'''En el ámbito de la salud mental, ¿por qué la "autocompasión" se considera una técnica válida de autocuidado emocional?''',
     options: [
       r'''Porque fomenta el victimismo y la evasión constante de las responsabilidades diarias.''',
       r'''Porque permite a la persona culpar siempre a los demás de sus propios errores.''',
@@ -254,12 +284,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Porque anula la capacidad de sentir emociones, volviendo a la persona completamente fría.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autocompasión es el trato amable hacia uno mismo al enfrentar dificultades o errores, lo que aleja la autocrítica y el autojuicio destructivo, validando las emociones y promoviendo el bienestar.''',
+    explanation:
+        r'''La autocompasión es el trato amable hacia uno mismo al enfrentar dificultades o errores, lo que aleja la autocrítica y el autojuicio destructivo, validando las emociones y promoviendo el bienestar.''',
   ),
   Question(
     id: 'pfrh_pf_m9',
     topicId: 'pfrh_persona_familia',
-    text: r'''Johan Galtung diferencia tres tipos de violencia. ¿Cómo se define la "violencia cultural"?''',
+    text:
+        r'''Johan Galtung diferencia tres tipos de violencia. ¿Cómo se define la "violencia cultural"?''',
     options: [
       r'''Es la violencia física directa que se ejerce mediante golpes o guerras.''',
       r'''Es la desigualdad económica generada por leyes que distribuyen mal la riqueza.''',
@@ -268,12 +300,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Es el conjunto de discusiones acaloradas que ocurren diariamente en los hogares.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Para Galtung, la violencia cultural es simbólica (religión, ideología, lenguaje, etc.) y cumple la función de sostener y legitimar la violencia estructural (exclusión) y directa.''',
+    explanation:
+        r'''Para Galtung, la violencia cultural es simbólica (religión, ideología, lenguaje, etc.) y cumple la función de sostener y legitimar la violencia estructural (exclusión) y directa.''',
   ),
   Question(
     id: 'pfrh_pf_m10',
     topicId: 'pfrh_persona_familia',
-    text: r'''Dentro de las dimensiones de la identidad nacional en el Perú, ¿qué papel juegan los símbolos patrios (Bandera, Escudo, Himno)?''',
+    text:
+        r'''Dentro de las dimensiones de la identidad nacional en el Perú, ¿qué papel juegan los símbolos patrios (Bandera, Escudo, Himno)?''',
     options: [
       r'''Promueven el separatismo y la discriminación entre las diferentes regiones del país.''',
       r'''Son meras representaciones turísticas sin ningún significado histórico oficial.''',
@@ -282,14 +316,16 @@ final List<Question> personaFamiliaQuestions = [
       r'''Reemplazan la necesidad de respetar la diversidad cultural de los pueblos originarios.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los símbolos patrios (Escudo, Bandera e Himno) simbolizan la unidad del Estado, la soberanía política y actúan como elementos representativos de la historia y valores que amalgaman la peruanidad.''',
+    explanation:
+        r'''Los símbolos patrios (Escudo, Bandera e Himno) simbolizan la unidad del Estado, la soberanía política y actúan como elementos representativos de la historia y valores que amalgaman la peruanidad.''',
   ),
 
   // Nivel Difícil
   Question(
     id: 'pfrh_pf_d1',
     topicId: 'pfrh_persona_familia',
-    text: r'''De acuerdo con Benedict Anderson, ¿por qué la nación se considera una "comunidad imaginada"?''',
+    text:
+        r'''De acuerdo con Benedict Anderson, ¿por qué la nación se considera una "comunidad imaginada"?''',
     options: [
       r'''Porque la nación es una ficción falsa creada por los medios que no existe en la realidad material ni política.''',
       r'''Porque sus habitantes solo pueden comunicarse entre sí utilizando símbolos matemáticos universales.''',
@@ -298,12 +334,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Porque los ciudadanos tienen la ilusión de que el país geográficamente no tiene fronteras.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Benedict Anderson sostiene que las naciones son "comunidades imaginadas" porque, aunque sus miembros nunca se conocerán cara a cara en su totalidad, en la mente de cada uno vive la imagen de su comunión y pertenencia a un colectivo simbólico.''',
+    explanation:
+        r'''Benedict Anderson sostiene que las naciones son "comunidades imaginadas" porque, aunque sus miembros nunca se conocerán cara a cara en su totalidad, en la mente de cada uno vive la imagen de su comunión y pertenencia a un colectivo simbólico.''',
   ),
   Question(
     id: 'pfrh_pf_d2',
     topicId: 'pfrh_persona_familia',
-    text: r'''En el estudio sociológico del derecho a la identidad, ¿cómo se diferencia la dimensión "estática" de la "dinámica"?''',
+    text:
+        r'''En el estudio sociológico del derecho a la identidad, ¿cómo se diferencia la dimensión "estática" de la "dinámica"?''',
     options: [
       r'''La estática cambia diariamente según el estado de ánimo, y la dinámica permanece inmutable desde el nacimiento.''',
       r'''La estática se aplica solo a los adultos, mientras que la dinámica se aplica exclusivamente a los recién nacidos.''',
@@ -312,12 +350,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La estática es la nacionalidad adquirida por matrimonio, y la dinámica es la identidad de género impuesta.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En la doctrina legal, la identidad estática se refiere a los elementos fijos de identificación (nombre, apellido, datos genéticos/biológicos), y la dinámica engloba la personalidad, creencias y vínculos culturales construidos con el tiempo.''',
+    explanation:
+        r'''En la doctrina legal, la identidad estática se refiere a los elementos fijos de identificación (nombre, apellido, datos genéticos/biológicos), y la dinámica engloba la personalidad, creencias y vínculos culturales construidos con el tiempo.''',
   ),
   Question(
     id: 'pfrh_pf_d3',
     topicId: 'pfrh_persona_familia',
-    text: r'''Según la Ley y la Guía para Comisarías de Familia en Colombia (Ley 599/2000, art. 230), ¿qué sujetos se incluyen dentro de la "unidad doméstica" para efectos de violencia intrafamiliar?''',
+    text:
+        r'''Según la Ley y la Guía para Comisarías de Familia en Colombia (Ley 599/2000, art. 230), ¿qué sujetos se incluyen dentro de la "unidad doméstica" para efectos de violencia intrafamiliar?''',
     options: [
       r'''Únicamente los cónyuges legalmente casados que compartan vivienda y tengan hijos en común.''',
       r'''Solamente las mujeres y niños menores de 18 años, excluyendo a los varones adultos de la protección.''',
@@ -326,12 +366,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Toda persona que visite temporalmente la casa durante más de un fin de semana.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La norma amplía el grupo familiar a cónyuges, compañeros, ascendientes, descendientes, hijos adoptivos y todas aquellas personas integradas de manera permanente a la unidad doméstica, unidos o no por consanguinidad directa (afinidad).''',
+    explanation:
+        r'''La norma amplía el grupo familiar a cónyuges, compañeros, ascendientes, descendientes, hijos adoptivos y todas aquellas personas integradas de manera permanente a la unidad doméstica, unidos o no por consanguinidad directa (afinidad).''',
   ),
   Question(
     id: 'pfrh_pf_d4',
     topicId: 'pfrh_persona_familia',
-    text: r'''Según Vignoles y colaboradores (2006), existen varios motivos psicológicos que guían la construcción de la identidad. ¿Qué implica el motivo de la "distintividad"?''',
+    text:
+        r'''Según Vignoles y colaboradores (2006), existen varios motivos psicológicos que guían la construcción de la identidad. ¿Qué implica el motivo de la "distintividad"?''',
     options: [
       r'''La motivación para estar siempre de acuerdo con la mayoría y anular el pensamiento crítico.''',
       r'''La necesidad de mantener sentimientos de pertenencia ciegos hacia un líder autoritario.''',
@@ -340,12 +382,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La urgencia de incrementar la autoestima mediante la humillación sistemática de los pares.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el modelo de motivos identitarios de Vignoles, la "distintividad" (o distinción) es la motivación que impulsa al sujeto a establecer un sentido de ser único y diferenciarse del resto de los individuos o grupos.''',
+    explanation:
+        r'''En el modelo de motivos identitarios de Vignoles, la "distintividad" (o distinción) es la motivación que impulsa al sujeto a establecer un sentido de ser único y diferenciarse del resto de los individuos o grupos.''',
   ),
   Question(
     id: 'pfrh_pf_d5',
     topicId: 'pfrh_persona_familia',
-    text: r'''En la gestión de la convivencia escolar, ¿qué caracteriza a la perspectiva de la "paz positiva" frente a la "paz negativa" según los postulados de Carbajal y Galtung?''',
+    text:
+        r'''En la gestión de la convivencia escolar, ¿qué caracteriza a la perspectiva de la "paz positiva" frente a la "paz negativa" según los postulados de Carbajal y Galtung?''',
     options: [
       r'''La paz positiva se logra expulsando a todos los estudiantes problemáticos para dejar solo a los pacíficos.''',
       r'''La paz positiva es la mera ausencia de violencia directa lograda mediante castigos severos (paz negativa).''',
@@ -354,12 +398,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La paz positiva depende exclusivamente de tener instalaciones lujosas y tecnología avanzada en el colegio.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La paz negativa se centra solo en frenar o controlar la violencia directa (disciplina, castigos), mientras que la paz positiva implica abordar las violencias estructurales promoviendo activamente la inclusión, la justicia y relaciones de equidad y democracia.''',
+    explanation:
+        r'''La paz negativa se centra solo en frenar o controlar la violencia directa (disciplina, castigos), mientras que la paz positiva implica abordar las violencias estructurales promoviendo activamente la inclusión, la justicia y relaciones de equidad y democracia.''',
   ),
   Question(
     id: 'pfrh_pf_d6',
     topicId: 'pfrh_persona_familia',
-    text: r'''La herramienta "Análisis DAFO" (FODA) aplicada a la resolución de conflictos escolares permite:''',
+    text:
+        r'''La herramienta "Análisis DAFO" (FODA) aplicada a la resolución de conflictos escolares permite:''',
     options: [
       r'''Sancionar inmediatamente a los acosadores escolares midiendo su grado de culpa matemática.''',
       r'''Memorizar las normas cívicas mediante la repetición constante y el dictado de castigos.''',
@@ -368,12 +414,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Diagnosticar trastornos de personalidad graves que requieren medicación psiquiátrica.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Puzle de Análisis DAFO se utiliza como herramienta de autoconocimiento o análisis de proyectos de convivencia para identificar factores internos (Fortalezas, Debilidades) y externos (Oportunidades, Amenazas) con el fin de generar estrategias de cambio.''',
+    explanation:
+        r'''El Puzle de Análisis DAFO se utiliza como herramienta de autoconocimiento o análisis de proyectos de convivencia para identificar factores internos (Fortalezas, Debilidades) y externos (Oportunidades, Amenazas) con el fin de generar estrategias de cambio.''',
   ),
   Question(
     id: 'pfrh_pf_d7',
     topicId: 'pfrh_persona_familia',
-    text: r'''Desde la perspectiva semiótica tratada por Portocarrero (2014, 2015), ¿cuál es el principal obstáculo histórico para consolidar la "nación peruana"?''',
+    text:
+        r'''Desde la perspectiva semiótica tratada por Portocarrero (2014, 2015), ¿cuál es el principal obstáculo histórico para consolidar la "nación peruana"?''',
     options: [
       r'''La falta de un idioma oficial que permita la redacción de documentos estatales.''',
       r'''La excesiva industrialización que borró por completo las tradiciones precolombinas.''',
@@ -382,12 +430,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La ausencia total de fronteras geográficas definidas a lo largo de los siglos XIX y XX.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Portocarrero argumenta que el nacionalismo peruano enfrenta la precariedad de ser una "ficción" que aún no ha logrado plenamente su misión civilizatoria: crear un consenso de igualdad y humanidad compartida que supere las fracturas e inequidades sociales.''',
+    explanation:
+        r'''Portocarrero argumenta que el nacionalismo peruano enfrenta la precariedad de ser una "ficción" que aún no ha logrado plenamente su misión civilizatoria: crear un consenso de igualdad y humanidad compartida que supere las fracturas e inequidades sociales.''',
   ),
   Question(
     id: 'pfrh_pf_d8',
     topicId: 'pfrh_persona_familia',
-    text: r'''En la teoría de la inteligencia moral y la convivencia, el respeto se considera un pilar ético porque:''',
+    text:
+        r'''En la teoría de la inteligencia moral y la convivencia, el respeto se considera un pilar ético porque:''',
     options: [
       r'''Es una formalidad de cortesía y buenas costumbres dictada por manuales de urbanidad antiguos.''',
       r'''Garantiza que el estudiante obedezca a ciegas las órdenes de los docentes por temor al castigo.''',
@@ -396,12 +446,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Es un mandato genético ineludible que todos los mamíferos poseen instintivamente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La inteligencia moral y el respeto van más allá del mero cumplimiento normativo (cortesía); implican el reconocimiento ético profundo de la dignidad del otro para la construcción dinámica del bien común y la convivencia pacífica.''',
+    explanation:
+        r'''La inteligencia moral y el respeto van más allá del mero cumplimiento normativo (cortesía); implican el reconocimiento ético profundo de la dignidad del otro para la construcción dinámica del bien común y la convivencia pacífica.''',
   ),
   Question(
     id: 'pfrh_pf_d9',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué relación establece el concepto de "Estado-Nación" frente al debilitamiento identitario contemporáneo?''',
+    text:
+        r'''¿Qué relación establece el concepto de "Estado-Nación" frente al debilitamiento identitario contemporáneo?''',
     options: [
       r'''La globalización y la supranacionalidad han fortalecido el Estado-Nación de manera inquebrantable, haciéndolo más rígido.''',
       r'''El Estado-Nación ha sido reemplazado oficialmente en todo el mundo por corporaciones tecnológicas transnacionales.''',
@@ -410,12 +462,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El Estado de Bienestar prohíbe legalmente el fomento de la identidad nacional para evitar conflictos bélicos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La noción tradicional del Estado-Nación (que unía identidad cultural, territorio y soberanía) se ha vuelto compleja y se ha debilitado frente a la globalización y las organizaciones supranacionales, generando nuevas formas de identidad flexibles.''',
+    explanation:
+        r'''La noción tradicional del Estado-Nación (que unía identidad cultural, territorio y soberanía) se ha vuelto compleja y se ha debilitado frente a la globalización y las organizaciones supranacionales, generando nuevas formas de identidad flexibles.''',
   ),
   Question(
     id: 'pfrh_pf_d10',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué se entiende por "violencia estructural" en el análisis sistémico de los conflictos en la escuela?''',
+    text:
+        r'''¿Qué se entiende por "violencia estructural" en el análisis sistémico de los conflictos en la escuela?''',
     options: [
       r'''Un insulto directo en el pasillo entre dos estudiantes de diferentes grados.''',
       r'''El deterioro de los pupitres y las ventanas por falta de mantenimiento gubernamental.''',
@@ -424,14 +478,16 @@ final List<Question> personaFamiliaQuestions = [
       r'''El uso de redes sociales para difamar a un docente de manera anónima (ciberacoso).''',
     ],
     correctAnswer: 2,
-    explanation: r'''Aunque la violencia directa es el acto físico/verbal, la "violencia estructural" refiere a las injusticias, la desigualdad y la marginación que el mismo sistema o institución ejerce al negar oportunidades y derechos básicos, algo que la Cultura de Paz y la educación en DD.HH. buscan revertir.''',
+    explanation:
+        r'''Aunque la violencia directa es el acto físico/verbal, la "violencia estructural" refiere a las injusticias, la desigualdad y la marginación que el mismo sistema o institución ejerce al negar oportunidades y derechos básicos, algo que la Cultura de Paz y la educación en DD.HH. buscan revertir.''',
   ),
 
   // Nivel Extremo
   Question(
     id: 'pfrh_pf_e1',
     topicId: 'pfrh_persona_familia',
-    text: r'''De acuerdo con el modelo ecológico de Bronfenbrenner aplicado al desarrollo adolescente, ¿cómo interactúa el "mesosistema" en la conformación de la identidad?''',
+    text:
+        r'''De acuerdo con el modelo ecológico de Bronfenbrenner aplicado al desarrollo adolescente, ¿cómo interactúa el "mesosistema" en la conformación de la identidad?''',
     options: [
       r'''Representa las leyes y la economía global del país que afectan el presupuesto de la familia de manera distante.''',
       r'''Constituye el entorno físico directo donde el adolescente pasa todo el tiempo aislado, como su propia habitación.''',
@@ -440,12 +496,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Es el conjunto de características genéticas hereditarias que determinan el temperamento biológico sin influencia social.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el modelo ecológico, el microsistema es la familia inmediata; el mesosistema es la relación entre microsistemas (familia-escuela); el exosistema es el entorno laboral de los padres; y el macrosistema incluye la cultura y las leyes.''',
+    explanation:
+        r'''En el modelo ecológico, el microsistema es la familia inmediata; el mesosistema es la relación entre microsistemas (familia-escuela); el exosistema es el entorno laboral de los padres; y el macrosistema incluye la cultura y las leyes.''',
   ),
   Question(
     id: 'pfrh_pf_e2',
     topicId: 'pfrh_persona_familia',
-    text: r'''Al analizar las corrientes sobre gestión de convivencia (Fierro y Carbajal), el "tercer nivel de abordaje" (que supera el estructuralista y normativo) se caracteriza epistémicamente por:''',
+    text:
+        r'''Al analizar las corrientes sobre gestión de convivencia (Fierro y Carbajal), el "tercer nivel de abordaje" (que supera el estructuralista y normativo) se caracteriza epistémicamente por:''',
     options: [
       r'''La imposición vertical de la disciplina punitiva para asegurar el control biopolítico de las masas estudiantiles.''',
       r'''La centralización absoluta del manual de convivencia redactado exclusivamente por directivos sin consulta estudiantil.''',
@@ -454,12 +512,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La delegación de la seguridad escolar a la policía para instaurar un estado de paz negativa absoluta.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Fierro y Carbajal proponen un tercer nivel de convivencia escolar que trasciende las medidas disciplinarias y de simple normatividad; es un nivel incluyente, participativo, que abarca la equidad, la educación socioemocional y la modificación de factores estructurales de exclusión.''',
+    explanation:
+        r'''Fierro y Carbajal proponen un tercer nivel de convivencia escolar que trasciende las medidas disciplinarias y de simple normatividad; es un nivel incluyente, participativo, que abarca la equidad, la educación socioemocional y la modificación de factores estructurales de exclusión.''',
   ),
   Question(
     id: 'pfrh_pf_e3',
     topicId: 'pfrh_persona_familia',
-    text: r'''Desde el enfoque semiótico cultural peruano (Müller, 2014), el "mito de la fusión gastronómica" opera sociológicamente como:''',
+    text:
+        r'''Desde el enfoque semiótico cultural peruano (Müller, 2014), el "mito de la fusión gastronómica" opera sociológicamente como:''',
     options: [
       r'''Una herramienta para encubrir la dependencia económica externa exportando materias primas.''',
       r'''Un rechazo explícito al legado indígena, priorizando la herencia hispana en la alta cocina moderna.''',
@@ -468,12 +528,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Una reafirmación de la supremacía de la cultura costeña frente a las prácticas andinas y amazónicas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Müller analiza cómo la fusión gastronómica en Perú funciona como un nuevo mito fundacional que narra la utopía de una sociedad diversa conviviendo en armonía sin discriminación, revalorizando la identidad desde lo cotidiano.''',
+    explanation:
+        r'''Müller analiza cómo la fusión gastronómica en Perú funciona como un nuevo mito fundacional que narra la utopía de una sociedad diversa conviviendo en armonía sin discriminación, revalorizando la identidad desde lo cotidiano.''',
   ),
   Question(
     id: 'pfrh_pf_e4',
     topicId: 'pfrh_persona_familia',
-    text: r'''¿Qué establece el Diseño Curricular Nacional (DCN) respecto al ciclo VII sobre la competencia de "Construye su Identidad" ante un conflicto moral?''',
+    text:
+        r'''¿Qué establece el Diseño Curricular Nacional (DCN) respecto al ciclo VII sobre la competencia de "Construye su Identidad" ante un conflicto moral?''',
     options: [
       r'''El estudiante debe obedecer ciegamente la instrucción del docente sin cuestionar los dilemas éticos subyacentes.''',
       r'''El estudiante debe priorizar sus intereses económicos personales sobre el bienestar grupal.''',
@@ -482,12 +544,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El estudiante delega la toma de decisiones al comité de convivencia escolar para no asumir responsabilidades cívicas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el nivel esperado para el final del ciclo VII (secundaria), el DCN indica que el alumno argumenta su posición frente a conflictos morales sustentándose en principios éticos, los derechos humanos, la dignidad y el análisis de las consecuencias de sus decisiones.''',
+    explanation:
+        r'''En el nivel esperado para el final del ciclo VII (secundaria), el DCN indica que el alumno argumenta su posición frente a conflictos morales sustentándose en principios éticos, los derechos humanos, la dignidad y el análisis de las consecuencias de sus decisiones.''',
   ),
   Question(
     id: 'pfrh_pf_e5',
     topicId: 'pfrh_persona_familia',
-    text: r'''Psiconeurológicamente, ¿cuál es el mecanismo subyacente que valida la "Respiración Consciente" y la técnica de "Pausa" (mindfulness) como autocuidado?''',
+    text:
+        r'''Psiconeurológicamente, ¿cuál es el mecanismo subyacente que valida la "Respiración Consciente" y la técnica de "Pausa" (mindfulness) como autocuidado?''',
     options: [
       r'''Producen un estado de hiperactividad adrenérgica que prepara los músculos para la confrontación física (lucha o huida).''',
       r'''Incrementan la saturación de CO2 en la sangre para inducir alucinaciones que evadan el conflicto social.''',
@@ -496,12 +560,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Disminuyen las defensas del sistema inmunológico para crear dependencia hacia las terapias psicológicas externas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La respiración consciente y las prácticas de "pausa/mindfulness" regulan el ritmo respiratorio según la emoción, reduciendo el efecto del estrés (cortisol), promoviendo la atención al presente y calmando el sistema nervioso antes de reaccionar impulsivamente.''',
+    explanation:
+        r'''La respiración consciente y las prácticas de "pausa/mindfulness" regulan el ritmo respiratorio según la emoción, reduciendo el efecto del estrés (cortisol), promoviendo la atención al presente y calmando el sistema nervioso antes de reaccionar impulsivamente.''',
   ),
   Question(
     id: 'pfrh_pf_e6',
     topicId: 'pfrh_persona_familia',
-    text: r'''Analizando la estructura discursiva de la identidad (Appiah; Landowski), la identidad nacional se moldea como un texto o "ficción realizada" porque:''',
+    text:
+        r'''Analizando la estructura discursiva de la identidad (Appiah; Landowski), la identidad nacional se moldea como un texto o "ficción realizada" porque:''',
     options: [
       r'''Se basa en datos astronómicos y matemáticos comprobables mediante instrumentos ópticos precisos y objetivos.''',
       r'''Es un mito genético invariable implantado en el ADN que el cerebro decodifica automáticamente al nacer.''',
@@ -510,12 +576,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''Fue escrita literalmente en un solo libro constitucional inmodificable que todos los ciudadanos memorizan obligatoriamente desde el kínder.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La perspectiva semiótica y constructivista modela la identidad nacional no como esencia biológica previa, sino como una ficción cultural, un artefacto discursivo (relatos, actos, imaginarios) sostenido mediante la interacción social y anclajes históricos.''',
+    explanation:
+        r'''La perspectiva semiótica y constructivista modela la identidad nacional no como esencia biológica previa, sino como una ficción cultural, un artefacto discursivo (relatos, actos, imaginarios) sostenido mediante la interacción social y anclajes históricos.''',
   ),
   Question(
     id: 'pfrh_pf_e7',
     topicId: 'pfrh_persona_familia',
-    text: r'''En el estudio de Cueto, Espinosa y Robles (2017) sobre universitarios peruanos, la ambigüedad de la identidad nacional se atribuye epistemológicamente a:''',
+    text:
+        r'''En el estudio de Cueto, Espinosa y Robles (2017) sobre universitarios peruanos, la ambigüedad de la identidad nacional se atribuye epistemológicamente a:''',
     options: [
       r'''La excesiva homogenización de la riqueza económica que suprimió las clases sociales en las últimas décadas.''',
       r'''Un rechazo masivo de la juventud actual hacia las nuevas tecnologías de la información.''',
@@ -524,12 +592,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El desconocimiento absoluto de la geografía del país debido al fracaso de las asignaturas científicas en primaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estudio de Cueto et al. halla una identidad ambigua ligada al escepticismo, debido a que las relaciones entre grupos sociales peruanos se perciben fuertemente atravesadas por la inequidad, la exclusión y el desencuentro, dificultando la idea de un "Nosotros" unificado.''',
+    explanation:
+        r'''El estudio de Cueto et al. halla una identidad ambigua ligada al escepticismo, debido a que las relaciones entre grupos sociales peruanos se perciben fuertemente atravesadas por la inequidad, la exclusión y el desencuentro, dificultando la idea de un "Nosotros" unificado.''',
   ),
   Question(
     id: 'pfrh_pf_e8',
     topicId: 'pfrh_persona_familia',
-    text: r'''La "Inteligencia Emocional Intrapersonal" en el currículo de desarrollo socioemocional se diferencia de la interpersonal porque su eje teleológico radica en:''',
+    text:
+        r'''La "Inteligencia Emocional Intrapersonal" en el currículo de desarrollo socioemocional se diferencia de la interpersonal porque su eje teleológico radica en:''',
     options: [
       r'''La mediación en conflictos grupales y la capacidad de hablar en público con fluidez.''',
       r'''La empatía hacia los problemas del mundo exterior y el liderazgo en organizaciones no gubernamentales y políticas.''',
@@ -538,12 +608,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''El cumplimiento estricto de protocolos de urbanidad y reglas de etiqueta en reuniones sociales de alta jerarquía.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La dimensión intrapersonal de la inteligencia emocional se enfoca hacia el interior del sujeto e incluye la autoestima, la conciencia emocional propia y la autorregulación interna de los impulsos y motivaciones.''',
+    explanation:
+        r'''La dimensión intrapersonal de la inteligencia emocional se enfoca hacia el interior del sujeto e incluye la autoestima, la conciencia emocional propia y la autorregulación interna de los impulsos y motivaciones.''',
   ),
   Question(
     id: 'pfrh_pf_e9',
     topicId: 'pfrh_persona_familia',
-    text: r'''En relación con las "Competencias Ciudadanas" del Programa Curricular de Educación Secundaria, la "Deliberación sobre asuntos públicos" se sostiene ontológicamente sobre la base de:''',
+    text:
+        r'''En relación con las "Competencias Ciudadanas" del Programa Curricular de Educación Secundaria, la "Deliberación sobre asuntos públicos" se sostiene ontológicamente sobre la base de:''',
     options: [
       r'''El adoctrinamiento religioso obligatorio que dicte una única pauta moral a seguir sin cuestionamientos.''',
       r'''El conocimiento de datos estadísticos para cuantificar las votaciones en un referéndum.''',
@@ -552,12 +624,14 @@ final List<Question> personaFamiliaQuestions = [
       r'''La competitividad económica, para asegurar que los ciudadanos más ricos impongan sus soluciones políticas al resto del país.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El currículo vincula el Desarrollo Personal con la Ciudadanía Activa; la autonomía, la autorregulación emocional y el afianzamiento ético/identitario son las bases fundamentales (prerrequisitos) para que el sujeto pueda deliberar en lo público, pactar normas de convivencia y participar pacíficamente.''',
+    explanation:
+        r'''El currículo vincula el Desarrollo Personal con la Ciudadanía Activa; la autonomía, la autorregulación emocional y el afianzamiento ético/identitario son las bases fundamentales (prerrequisitos) para que el sujeto pueda deliberar en lo público, pactar normas de convivencia y participar pacíficamente.''',
   ),
   Question(
     id: 'pfrh_pf_e10',
     topicId: 'pfrh_persona_familia',
-    text: r'''Atendiendo al marco de los "Ciclos Biogeoquímicos" dentro de un currículo integral (Ecología), la justificación de que la destrucción de los bosques amenaza la "sostenibilidad y la paz planetaria" se explica porque:''',
+    text:
+        r'''Atendiendo al marco de los "Ciclos Biogeoquímicos" dentro de un currículo integral (Ecología), la justificación de que la destrucción de los bosques amenaza la "sostenibilidad y la paz planetaria" se explica porque:''',
     options: [
       r'''Incrementa los niveles de ozono, provocando un enfriamiento global que destruye las telecomunicaciones satelitales a corto plazo.''',
       r'''Disminuye la cantidad de metales pesados en la corteza terrestre, paralizando la producción de teléfonos móviles y computadoras.''',
@@ -566,6 +640,7 @@ final List<Question> personaFamiliaQuestions = [
       r'''Interrumpe la fotosíntesis nocturna de las coníferas, disminuyendo la gravedad terrestre en la zona ecuatorial.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Desde la competencia de comprensión científica en el DCN, se justifica que la biósfera depende de los ciclos (como el del carbono). Su alteración (ej. destrucción de bosques) aumenta el CO2, causa cambio climático, impacta la sostenibilidad y agrava desigualdades y conflictos estructurales.''',
+    explanation:
+        r'''Desde la competencia de comprensión científica en el DCN, se justifica que la biósfera depende de los ciclos (como el del carbono). Su alteración (ej. destrucción de bosques) aumenta el CO2, causa cambio climático, impacta la sostenibilidad y agrava desigualdades y conflictos estructurales.''',
   ),
 ];

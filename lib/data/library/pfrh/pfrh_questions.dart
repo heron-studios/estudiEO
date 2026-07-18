@@ -12,7 +12,8 @@ final List<Question> pfrhQuestions = [
   Question(
     id: 'pfrh_q1',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál de las siguientes afirmaciones define correctamente el diálogo en el contexto de la resolución de conflictos?''',
+    text:
+        r'''¿Cuál de las siguientes afirmaciones define correctamente el diálogo en el contexto de la resolución de conflictos?''',
     options: [
       r'''Un proceso bidireccional que busca la comprensión mutua y el intercambio de ideas sin la necesidad imperativa de un acuerdo formal inmediato.''',
       r'''Un debate formal donde cada parte expone argumentos para convencer a un jurado de que posee la razón.''',
@@ -20,12 +21,14 @@ final List<Question> pfrhQuestions = [
       r'''Un procedimiento legal ante un tercero imparcial que decide la solución definitiva al conflicto.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El diálogo es un intercambio comunicativo basado en la escucha activa y la expresión libre que busca el entendimiento mutuo y la comprensión de las perspectivas del otro, sin forzar un acuerdo formal obligatorio inmediato.''',
+    explanation:
+        r'''El diálogo es un intercambio comunicativo basado en la escucha activa y la expresión libre que busca el entendimiento mutuo y la comprensión de las perspectivas del otro, sin forzar un acuerdo formal obligatorio inmediato.''',
   ),
   Question(
     id: 'pfrh_q2',
     topicId: 'pfrh_t1',
-    text: r'''La negociación se diferencia de otros mecanismos de resolución de conflictos principalmente porque:''',
+    text:
+        r'''La negociación se diferencia de otros mecanismos de resolución de conflictos principalmente porque:''',
     options: [
       r'''Requires de la intervención obligatoria de un juez de paz.''',
       r'''Es un proceso directo entre las partes en conflicto, sin la participación de un tercero intermediario.''',
@@ -33,12 +36,14 @@ final List<Question> pfrhQuestions = [
       r'''Obliga a que una de las partes renuncie completamente a sus intereses en favor de la otra.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La negociación es un mecanismo de resolución de conflictos directo y voluntario en el cual las partes intentan llegar a un acuerdo por sí mismas, sin que intervenga un tercero (mediador, conciliador o árbitro).''',
+    explanation:
+        r'''La negociación es un mecanismo de resolución de conflictos directo y voluntario en el cual las partes intentan llegar a un acuerdo por sí mismas, sin que intervenga un tercero (mediador, conciliador o árbitro).''',
   ),
   Question(
     id: 'pfrh_q3',
     topicId: 'pfrh_t1',
-    text: r'''En el ámbito de la resolución de conflictos, ¿cuál es el rol principal de un mediador?''',
+    text:
+        r'''En el ámbito de la resolución de conflictos, ¿cuál es el rol principal de un mediador?''',
     options: [
       r'''Proponer fórmulas de solución obligatorias que las partes deben acatar para evitar la vía judicial.''',
       r'''Actuar como juez privado y dictar una resolución definitiva llamada laudo que ponga fin al conflicto.''',
@@ -46,12 +51,14 @@ final List<Question> pfrhQuestions = [
       r'''Asumir la defensa legal de la parte más vulnerable del conflicto para garantizar la equidad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El mediador es un tercero neutral e imparcial que facilita la comunicación entre las partes para que ellas mismas resuelvan su conflicto. El mediador no tiene la facultad de proponer soluciones ni de imponer decisiones.''',
+    explanation:
+        r'''El mediador es un tercero neutral e imparcial que facilita la comunicación entre las partes para que ellas mismas resuelvan su conflicto. El mediador no tiene la facultad de proponer soluciones ni de imponer decisiones.''',
   ),
   Question(
     id: 'pfrh_q4',
     topicId: 'pfrh_t1',
-    text: r'''¿Qué característica distingue conceptualmente a la conciliación de la mediación?''',
+    text:
+        r'''¿Qué característica distingue conceptualmente a la conciliación de la mediación?''',
     options: [
       r'''El conciliador está facultado para proponer fórmulas y alternativas de solución no vinculantes para las partes.''',
       r'''La conciliación no requiere la participación de un tercero neutral.''',
@@ -59,12 +66,14 @@ final List<Question> pfrhQuestions = [
       r'''La conciliación solo se aplica en el ámbito penal y para delitos graves.''',
     ],
     correctAnswer: 0,
-    explanation: r'''A diferencia del mediador, el conciliador tiene un rol más proactivo y está legalmente facultado para sugerir o proponer propuestas de solución (fórmulas conciliatorias) que las partes pueden aceptar, modificar o rechazar.''',
+    explanation:
+        r'''A diferencia del mediador, el conciliador tiene un rol más proactivo y está legalmente facultado para sugerir o proponer propuestas de solución (fórmulas conciliatorias) que las partes pueden aceptar, modificar o rechazar.''',
   ),
   Question(
     id: 'pfrh_q5',
     topicId: 'pfrh_t1',
-    text: r'''El arbitraje es un mecanismo heterocompositivo de resolución de conflictos que se caracteriza por:''',
+    text:
+        r'''El arbitraje es un mecanismo heterocompositivo de resolución de conflictos que se caracteriza por:''',
     options: [
       r'''Que las partes delegan la decisión final en un tercero neutral (árbitro), cuyo fallo (laudo) es de obligatorio cumplimiento.''',
       r'''Ser un diálogo libre donde no existen reglas ni procedimientos estructurados.''',
@@ -72,12 +81,14 @@ final List<Question> pfrhQuestions = [
       r'''Ser de uso exclusivo en conflictos familiares como el divorcio o la tenencia de hijos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El arbitraje es un mecanismo heterocompositivo porque la solución al conflicto es delegada en un tercero (el árbitro), quien decide mediante un laudo arbitral, el cual tiene fuerza vinculante similar a una sentencia judicial.''',
+    explanation:
+        r'''El arbitraje es un mecanismo heterocompositivo porque la solución al conflicto es delegada en un tercero (el árbitro), quien decide mediante un laudo arbitral, el cual tiene fuerza vinculante similar a una sentencia judicial.''',
   ),
   Question(
     id: 'pfrh_q6',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál es la diferencia fundamental en el poder de decisión del tercero neutral en la conciliación y en el arbitraje?''',
+    text:
+        r'''¿Cuál es la diferencia fundamental en el poder de decisión del tercero neutral en la conciliación y en el arbitraje?''',
     options: [
       r'''En la conciliación el tercero impone la solución, mientras que en el arbitraje solo la sugiere.''',
       r'''En la conciliación el tercero propone alternativas pero las partes deciden; en el arbitraje, el tercero impone la solución definitiva.''',
@@ -85,12 +96,14 @@ final List<Question> pfrhQuestions = [
       r'''El conciliador es un juez estatal y el árbitro es un psicólogo escolar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''En la conciliación, el conciliador facilita el diálogo y propone soluciones, pero la decisión final de adoptarlas queda en manos de las partes. En el arbitraje, las partes someten su disputa al árbitro, quien tiene la facultad exclusiva de imponer una decisión vinculante (laudo).''',
+    explanation:
+        r'''En la conciliación, el conciliador facilita el diálogo y propone soluciones, pero la decisión final de adoptarlas queda en manos de las partes. En el arbitraje, las partes someten su disputa al árbitro, quien tiene la facultad exclusiva de imponer una decisión vinculante (laudo).''',
   ),
   Question(
     id: 'pfrh_q7',
     topicId: 'pfrh_t1',
-    text: r'''Los mecanismos de resolución de conflictos se clasifican en autocompositivos y heterocompositivos. ¿Qué define a un mecanismo autocompositivo?''',
+    text:
+        r'''Los mecanismos de resolución de conflictos se clasifican en autocompositivos y heterocompositivos. ¿Qué define a un mecanismo autocompositivo?''',
     options: [
       r'''La solución del conflicto depende exclusivamente del poder de decisión de las propias partes involucradas.''',
       r'''La solución la determina un tercero ajeno a las partes de forma obligatoria.''',
@@ -98,12 +111,14 @@ final List<Question> pfrhQuestions = [
       r'''Son métodos donde no se permite el uso del diálogo bajo ninguna circunstancia.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En los métodos autocompositivos (negociación, mediación, conciliación), las propias partes en conflicto mantienen el control sobre la decisión final y resuelven su controversia de manera consensuada.''',
+    explanation:
+        r'''En los métodos autocompositivos (negociación, mediación, conciliación), las propias partes en conflicto mantienen el control sobre la decisión final y resuelven su controversia de manera consensuada.''',
   ),
   Question(
     id: 'pfrh_q8',
     topicId: 'pfrh_t1',
-    text: r'''Desde la perspectiva del desarrollo personal, ¿cómo se define correctamente la empatía?''',
+    text:
+        r'''Desde la perspectiva del desarrollo personal, ¿cómo se define correctamente la empatía?''',
     options: [
       r'''Sentir exactamente el mismo dolor que la otra persona hasta perder la objetividad sobre la situación.''',
       r'''La capacidad cognitiva y afectiva de ponerse en el lugar del otro, comprendiendo sus emociones y perspectivas sin juzgarlas.''',
@@ -111,12 +126,14 @@ final List<Question> pfrhQuestions = [
       r'''El acto de tolerar comportamientos agresivos de otros para no generar conflictos interpersonales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La empatía implica comprender el estado emocional y la perspectiva de la otra persona (componente cognitivo y afectivo) sin juzgarla ni perder la propia identidad u objetividad.''',
+    explanation:
+        r'''La empatía implica comprender el estado emocional y la perspectiva de la otra persona (componente cognitivo y afectivo) sin juzgarla ni perder la propia identidad u objetividad.''',
   ),
   Question(
     id: 'pfrh_q9',
     topicId: 'pfrh_t1',
-    text: r"""En la comunicación empática, ¿en qué consiste el error conocido como 'minimización emocional'?""",
+    text:
+        r"""En la comunicación empática, ¿en qué consiste el error conocido como 'minimización emocional'?""",
     options: [
       r'''En ignorar completamente la presencia física de la persona afectada.''',
       r'''En restar importancia o desvalorizar los sentimientos y preocupaciones de la otra persona, sugiriendo que exagera.''',
@@ -124,12 +141,14 @@ final List<Question> pfrhQuestions = [
       r'''En dar un consejo técnico muy complejo que confunde al interlocutor.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La minimización emocional consiste en descalificar, restar importancia o subestimar lo que la otra persona siente, utilizando frases que invalidan su experiencia emocional, como 'no es para tanto' o 'te ahogas en un vaso de agua'.""",
+    explanation:
+        r"""La minimización emocional consiste en descalificar, restar importancia o subestimar lo que la otra persona siente, utilizando frases que invalidan su experiencia emocional, como 'no es para tanto' o 'te ahogas en un vaso de agua'.""",
   ),
   Question(
     id: 'pfrh_q10',
     topicId: 'pfrh_t1',
-    text: r"""¿Por qué aconsejar prematuramente o dar un 'consejo no solicitado' atenta contra una escucha empática genuina?""",
+    text:
+        r"""¿Por qué aconsejar prematuramente o dar un 'consejo no solicitado' atenta contra una escucha empática genuina?""",
     options: [
       r'''Porque desvía el foco de atención de la vivencia emocional del otro hacia la perspectiva y soluciones del oyente.''',
       r'''Porque obliga legalmente a la otra persona a seguir el consejo recibido.''',
@@ -137,12 +156,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque prolonga innecesariamente el tiempo de la conversación.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Ofrecer consejos prematuros o no solicitados interrumpe la expresión emocional de la persona, asume que no sabe qué hacer e impone la visión del oyente, obstaculizando la validación y el desahogo emocional de quien habla.''',
+    explanation:
+        r'''Ofrecer consejos prematuros o no solicitados interrumpe la expresión emocional de la persona, asume que no sabe qué hacer e impone la visión del oyente, obstaculizando la validación y el desahogo emocional de quien habla.''',
   ),
   Question(
     id: 'pfrh_q11',
     topicId: 'pfrh_t1',
-    text: r'''La asertividad se describe comúnmente como un comportamiento comunicativo equilibrado que se sitúa entre:''',
+    text:
+        r'''La asertividad se describe comúnmente como un comportamiento comunicativo equilibrado que se sitúa entre:''',
     options: [
       r'''La simpatía y la indiferencia.''',
       r'''La pasividad y la agresividad.''',
@@ -150,12 +171,14 @@ final List<Question> pfrhQuestions = [
       r'''La racionalidad y el desborde emocional.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La asertividad es el punto de equilibrio entre la pasividad (someterse a los deseos de otros, no expresar derechos) y la agresividad (imponer los deseos propios vulnerando los derechos ajenos).''',
+    explanation:
+        r'''La asertividad es el punto de equilibrio entre la pasividad (someterse a los deseos de otros, no expresar derechos) y la agresividad (imponer los deseos propios vulnerando los derechos ajenos).''',
   ),
   Question(
     id: 'pfrh_q12',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál es la característica principal del estilo de comunicación pasivo?''',
+    text:
+        r'''¿Cuál es la característica principal del estilo de comunicación pasivo?''',
     options: [
       r'''La expresión franca pero ruidosa de los puntos de vista personales.''',
       r'''La incapacidad de expresar de manera clara y directa las propias necesidades, opiniones o sentimientos, cediendo ante los demás.''',
@@ -163,12 +186,14 @@ final List<Question> pfrhQuestions = [
       r'''La búsqueda constante de un mediador para resolver cualquier interacción cotidiana.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estilo pasivo o sumiso se caracteriza por evitar el conflicto a toda costa, callando las opiniones, necesidades o derechos propios, permitiendo que otros decidan o se aprovechen de la situación.''',
+    explanation:
+        r'''El estilo pasivo o sumiso se caracteriza por evitar el conflicto a toda costa, callando las opiniones, necesidades o derechos propios, permitiendo que otros decidan o se aprovechen de la situación.''',
   ),
   Question(
     id: 'pfrh_q13',
     topicId: 'pfrh_t1',
-    text: r'''El estilo de comunicación agresivo se define fundamentalmente por:''',
+    text:
+        r'''El estilo de comunicación agresivo se define fundamentalmente por:''',
     options: [
       r'''Expresar los pensamientos de forma honesta respetando siempre los derechos y opiniones de los demás.''',
       r'''Defender los derechos e intereses individuales de forma impositiva, hostil o descalificadora, vulnerando el respeto hacia el otro.''',
@@ -176,12 +201,14 @@ final List<Question> pfrhQuestions = [
       r'''Delegar la resolución de cualquier problema cotidiano a un árbitro formal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estilo agresivo prioriza las necesidades y derechos propios por encima de los de los demás, expresándolos con hostilidad, gritos, insultos o imposición, sin respetar al interlocutor.''',
+    explanation:
+        r'''El estilo agresivo prioriza las necesidades y derechos propios por encima de los de los demás, expresándolos con hostilidad, gritos, insultos o imposición, sin respetar al interlocutor.''',
   ),
   Question(
     id: 'pfrh_q14',
     topicId: 'pfrh_t1',
-    text: r'''¿Cómo se manifiesta típicamente la conducta pasivo-agresiva en las relaciones interpersonales?''',
+    text:
+        r'''¿Cómo se manifiesta típicamente la conducta pasivo-agresiva en las relaciones interpersonales?''',
     options: [
       r'''Mediante el enfrentamiento físico directo e inmediato ante un desacuerdo.''',
       r'''Expresando el enojo o malestar de forma indirecta, a través de sarcasmos, desidia, sabotajes silenciosos u hostilidad velada.''',
@@ -189,12 +216,14 @@ final List<Question> pfrhQuestions = [
       r'''Cediendo amablemente y olvidando el asunto sin guardar resentimientos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El comportamiento pasivo-agresivo es una forma indirecta de expresar la hostilidad o el resentimiento. La persona no confronta directamente (pasividad aparente) pero boicotea, usa el sarcasmo o deja de cumplir con sus responsabilidades (agresividad indirecta).''',
+    explanation:
+        r'''El comportamiento pasivo-agresivo es una forma indirecta de expresar la hostilidad o el resentimiento. La persona no confronta directamente (pasividad aparente) pero boicotea, usa el sarcasmo o deja de cumplir con sus responsabilidades (agresividad indirecta).''',
   ),
   Question(
     id: 'pfrh_q15',
     topicId: 'pfrh_t1',
-    text: r'''¿Qué componente es indispensable para que exista un verdadero diálogo en la resolución de conflictos?''',
+    text:
+        r'''¿Qué componente es indispensable para que exista un verdadero diálogo en la resolución de conflictos?''',
     options: [
       r'''La preparación de argumentos para refutar inmediatamente lo que diga el otro.''',
       r'''La escucha activa, que implica prestar atención plena, comprender el mensaje y validar al interlocutor.''',
@@ -202,12 +231,14 @@ final List<Question> pfrhQuestions = [
       r'''Mantener silencio absoluto sin dar ninguna respuesta gestual o verbal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La escucha activa es clave para el diálogo; permite entender no solo las palabras, sino también las emociones y las necesidades subyacentes del emisor, promoviendo un clima de confianza.''',
+    explanation:
+        r'''La escucha activa es clave para el diálogo; permite entender no solo las palabras, sino también las emociones y las necesidades subyacentes del emisor, promoviendo un clima de confianza.''',
   ),
   Question(
     id: 'pfrh_q16',
     topicId: 'pfrh_t1',
-    text: r'''De acuerdo con las Naciones Unidas, la Cultura de Paz es un conjunto de valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos:''',
+    text:
+        r'''De acuerdo con las Naciones Unidas, la Cultura de Paz es un conjunto de valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos:''',
     options: [
       r'''Mediante el uso de la fuerza policial y el castigo severo inmediato.''',
       r'''Atacando las causas de los conflictos a través del diálogo, la negociación y la educación.''',
@@ -215,12 +246,14 @@ final List<Question> pfrhQuestions = [
       r'''Eliminando las leyes para que los ciudadanos se autogobiernen de manera informal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Cultura de Paz busca solucionar los conflictos desde sus raíces mediante el diálogo, el entendimiento mutuo, la cooperación y el respeto a los derechos humanos, evitando el recurso de la violencia.''',
+    explanation:
+        r'''La Cultura de Paz busca solucionar los conflictos desde sus raíces mediante el diálogo, el entendimiento mutuo, la cooperación y el respeto a los derechos humanos, evitando el recurso de la violencia.''',
   ),
   Question(
     id: 'pfrh_q17',
     topicId: 'pfrh_t1',
-    text: r"""¿Cuál es la relación conceptual entre 'conflicto' y 'violencia'?""",
+    text:
+        r"""¿Cuál es la relación conceptual entre 'conflicto' y 'violencia'?""",
     options: [
       r'''El conflicto es natural e inevitable en la convivencia, mientras que la violencia es una respuesta destructiva y evitable ante el conflicto.''',
       r'''Son sinónimos exactos; donde hay un conflicto, necesariamente hay un acto de violencia física.''',
@@ -228,12 +261,14 @@ final List<Question> pfrhQuestions = [
       r'''La violencia es innata en el ser humano, mientras que el conflicto es un invento legal moderno.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El conflicto es una discrepancia de intereses o valores propia de la convivencia social y puede ser una oportunidad de aprendizaje. La violencia no es inherente al conflicto, sino una forma destructiva, dañina e inadecuada de abordarlo.''',
+    explanation:
+        r'''El conflicto es una discrepancia de intereses o valores propia de la convivencia social y puede ser una oportunidad de aprendizaje. La violencia no es inherente al conflicto, sino una forma destructiva, dañina e inadecuada de abordarlo.''',
   ),
   Question(
     id: 'pfrh_q18',
     topicId: 'pfrh_t1',
-    text: r"""¿Qué diferencia existe entre ser asertivo y cometer un 'sincericidio' (sinceridad sin empatía)?""",
+    text:
+        r"""¿Qué diferencia existe entre ser asertivo y cometer un 'sincericidio' (sinceridad sin empatía)?""",
     options: [
       r'''La asertividad busca expresar la verdad personal respetando el impacto emocional en el otro; el sincericidio expresa opiniones duras sin importar el daño causado.''',
       r'''La asertividad implica callar la verdad para no herir, mientras que el sincericidio es siempre el camino correcto.''',
@@ -241,12 +276,14 @@ final List<Question> pfrhQuestions = [
       r'''El sincericidio es un término legal para la difamación en juicios civiles.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Ser asertivo implica expresar los propios pensamientos y sentimientos honestamente, pero con empatía y tacto, cuidando no vulnerar la dignidad del otro. El 'sincericidio' consiste en escudarse en la verdad para criticar u ofender de manera hiriente y desconsiderada.""",
+    explanation:
+        r"""Ser asertivo implica expresar los propios pensamientos y sentimientos honestamente, pero con empatía y tacto, cuidando no vulnerar la dignidad del otro. El 'sincericidio' consiste en escudarse en la verdad para criticar u ofender de manera hiriente y desconsiderada.""",
   ),
   Question(
     id: 'pfrh_q19',
     topicId: 'pfrh_t1',
-    text: r'''Si dos vecinos asisten a un centro autorizado y el especialista a cargo redacta una serie de propuestas de solución para que ellos las evalúen y decidan si firman un acuerdo, ¿ante qué mecanismo de resolución de conflictos nos encontramos?''',
+    text:
+        r'''Si dos vecinos asisten a un centro autorizado y el especialista a cargo redacta una serie de propuestas de solución para que ellos las evalúen y decidan si firman un acuerdo, ¿ante qué mecanismo de resolución de conflictos nos encontramos?''',
     options: [
       r'''Mediación''',
       r'''Conciliación''',
@@ -254,12 +291,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación''',
     ],
     correctAnswer: 1,
-    explanation: r'''Dado que el tercero interviene proponiendo alternativas de solución específicas que las partes pueden aceptar o rechazar, el mecanismo corresponde a la conciliación. En la mediación pura, el tercero no propone soluciones.''',
+    explanation:
+        r'''Dado que el tercero interviene proponiendo alternativas de solución específicas que las partes pueden aceptar o rechazar, el mecanismo corresponde a la conciliación. En la mediación pura, el tercero no propone soluciones.''',
   ),
   Question(
     id: 'pfrh_q20',
     topicId: 'pfrh_t1',
-    text: r'''Si dos estudiantes conversan solos en el patio para resolver un desacuerdo sobre quién usará la laptop escolar, sin que intervenga ningún profesor o compañero, ¿qué mecanismo están aplicando?''',
+    text:
+        r'''Si dos estudiantes conversan solos en el patio para resolver un desacuerdo sobre quién usará la laptop escolar, sin que intervenga ningún profesor o compañero, ¿qué mecanismo están aplicando?''',
     options: [
       r'''Mediación escolar''',
       r'''Arbitraje informal''',
@@ -267,12 +306,14 @@ final List<Question> pfrhQuestions = [
       r'''Conciliación''',
     ],
     correctAnswer: 2,
-    explanation: r'''Al no contar con la presencia de un tercero que actúe como facilitador, árbitro o conciliador, el proceso de resolución se da de manera directa, lo que tipifica como una negociación.''',
+    explanation:
+        r'''Al no contar con la presencia de un tercero que actúe como facilitador, árbitro o conciliador, el proceso de resolución se da de manera directa, lo que tipifica como una negociación.''',
   ),
   Question(
     id: 'pfrh_q21',
     topicId: 'pfrh_t1',
-    text: r'''Cuando un compañero de clase le cuenta a otro que se siente frustrado por sus bajas calificaciones y este le responde de inmediato: «Lo que tienes que hacer es levantarte a las 5:00 a.m., hacer un horario estricto de estudio y apagar tu celular», esta respuesta se clasifica como:''',
+    text:
+        r'''Cuando un compañero de clase le cuenta a otro que se siente frustrado por sus bajas calificaciones y este le responde de inmediato: «Lo que tienes que hacer es levantarte a las 5:00 a.m., hacer un horario estricto de estudio y apagar tu celular», esta respuesta se clasifica como:''',
     options: [
       r'''Empatía cognitiva''',
       r'''Asertividad empática''',
@@ -280,12 +321,14 @@ final List<Question> pfrhQuestions = [
       r'''Minimización emocional''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta propone de inmediato un plan de acción ('lo que tienes que hacer...') sin antes validar el sentimiento de frustración ni indagar sobre las causas del problema, interrumpiendo la escucha empática con una recomendación no pedida.""",
+    explanation:
+        r"""La respuesta propone de inmediato un plan de acción ('lo que tienes que hacer...') sin antes validar el sentimiento de frustración ni indagar sobre las causas del problema, interrumpiendo la escucha empática con una recomendación no pedida.""",
   ),
   Question(
     id: 'pfrh_q22',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino le comenta a otro que está muy estresado por las constantes remodelaciones en la cuadra. El vecino le responde: «¡Uy, no te quejes! Eso no es nada, en otros distritos las pistas están rotas hace años y la gente no hace tanto drama». ¿Qué barrera a la empatía se evidencia aquí?''',
+    text:
+        r'''Un vecino le comenta a otro que está muy estresado por las constantes remodelaciones en la cuadra. El vecino le responde: «¡Uy, no te quejes! Eso no es nada, en otros distritos las pistas están rotas hace años y la gente no hace tanto drama». ¿Qué barrera a la empatía se evidencia aquí?''',
     options: [
       r'''Escucha asertiva''',
       r'''Minimización emocional''',
@@ -293,12 +336,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad pasiva''',
     ],
     correctAnswer: 1,
-    explanation: r"""El vecino invalida y resta importancia al malestar emocional de su interlocutor ('eso no es nada', 'no hagas tanto drama'), comparando su situación con problemas mayores para hacer que su queja parezca ridícula o exagerada.""",
+    explanation:
+        r"""El vecino invalida y resta importancia al malestar emocional de su interlocutor ('eso no es nada', 'no hagas tanto drama'), comparando su situación con problemas mayores para hacer que su queja parezca ridícula o exagerada.""",
   ),
   Question(
     id: 'pfrh_q23',
     topicId: 'pfrh_t1',
-    text: r'''Durante un trabajo grupal escolar, Lucía nota que sus compañeros han modificado su parte de la presentación sin consultarle. Aunque se siente molesta y desvalorizada, prefiere no decir nada y firma el trabajo con una sonrisa para evitar que el grupo se enoje con ella. ¿Qué estilo de comunicación adoptó Lucía?''',
+    text:
+        r'''Durante un trabajo grupal escolar, Lucía nota que sus compañeros han modificado su parte de la presentación sin consultarle. Aunque se siente molesta y desvalorizada, prefiere no decir nada y firma el trabajo con una sonrisa para evitar que el grupo se enoje con ella. ¿Qué estilo de comunicación adoptó Lucía?''',
     options: [
       r'''Pasivo''',
       r'''Asertivo''',
@@ -306,12 +351,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresivo''',
     ],
     correctAnswer: 0,
-    explanation: r'''Lucía experimenta un malestar pero decide reprimir sus sentimientos y opiniones, permitiendo que sus compañeros vulneren sus derechos (el derecho a ser consultada sobre su trabajo) con el fin de evitar la confrontación. Esto tipifica la conducta pasiva.''',
+    explanation:
+        r'''Lucía experimenta un malestar pero decide reprimir sus sentimientos y opiniones, permitiendo que sus compañeros vulneren sus derechos (el derecho a ser consultada sobre su trabajo) con el fin de evitar la confrontación. Esto tipifica la conducta pasiva.''',
   ),
   Question(
     id: 'pfrh_q24',
     topicId: 'pfrh_t1',
-    text: r'''En una reunión vecinal para discutir el mantenimiento del jardín común, Mario interrumpe a los gritos a una vecina diciendo: «¡Tu propuesta es una tontería y demuestra que no sabes nada de jardinería! Aquí se hace lo que yo digo porque soy el que más aporta». ¿Qué estilo de comunicación presenta Mario?''',
+    text:
+        r'''En una reunión vecinal para discutir el mantenimiento del jardín común, Mario interrumpe a los gritos a una vecina diciendo: «¡Tu propuesta es una tontería y demuestra que no sabes nada de jardinería! Aquí se hace lo que yo digo porque soy el que más aporta». ¿Qué estilo de comunicación presenta Mario?''',
     options: [
       r'''Asertivo''',
       r'''Pasivo-Agresivo''',
@@ -319,12 +366,14 @@ final List<Question> pfrhQuestions = [
       r'''Racionalizador''',
     ],
     correctAnswer: 2,
-    explanation: r'''Mario impone sus ideas mediante la descalificación personal, gritos y argumentos de superioridad económica, vulnerando el derecho al respeto de los demás participantes de la reunión, lo que caracteriza el estilo agresivo.''',
+    explanation:
+        r'''Mario impone sus ideas mediante la descalificación personal, gritos y argumentos de superioridad económica, vulnerando el derecho al respeto de los demás participantes de la reunión, lo que caracteriza el estilo agresivo.''',
   ),
   Question(
     id: 'pfrh_q25',
     topicId: 'pfrh_t1',
-    text: r'''Andrea está molesta con su compañero de banco por usar sus útiles sin pedir permiso. En lugar de decírselo de frente, cuando él le pide un lapicero, ella se lo lanza sobre la mesa con desdén y luego escribe en sus redes sociales: «Qué flojera la gente que se cree dueña de las cosas ajenas». Este comportamiento es:''',
+    text:
+        r'''Andrea está molesta con su compañero de banco por usar sus útiles sin pedir permiso. En lugar de decírselo de frente, cuando él le pide un lapicero, ella se lo lanza sobre la mesa con desdén y luego escribe en sus redes sociales: «Qué flojera la gente que se cree dueña de las cosas ajenas». Este comportamiento es:''',
     options: [
       r'''Asertivo de confrontación''',
       r'''Pasivo-Agresivo''',
@@ -332,12 +381,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía reactiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''Andrea no expresa su molestia de forma directa y constructiva (pasiva en la comunicación verbal directa), pero canaliza su ira mediante acciones hostiles indirectas (lanzar el lapicero, publicar indirectas en redes), lo que caracteriza el estilo pasivo-agresivo.''',
+    explanation:
+        r'''Andrea no expresa su molestia de forma directa y constructiva (pasiva en la comunicación verbal directa), pero canaliza su ira mediante acciones hostiles indirectas (lanzar el lapicero, publicar indirectas en redes), lo que caracteriza el estilo pasivo-agresivo.''',
   ),
   Question(
     id: 'pfrh_q26',
     topicId: 'pfrh_t1',
-    text: r'''Carlos no desea asistir a la fiesta de cumpleaños de su vecino porque prefiere descansar. Llama a su vecino y le dice: «Gracias por la invitación, valoro que me hayas tomado en cuenta, pero este fin de semana he decidido quedarme a descansar en casa. Espero que la pases genial». Esta respuesta refleja:''',
+    text:
+        r'''Carlos no desea asistir a la fiesta de cumpleaños de su vecino porque prefiere descansar. Llama a su vecino y le dice: «Gracias por la invitación, valoro que me hayas tomado en cuenta, pero este fin de semana he decidido quedarme a descansar en casa. Espero que la pases genial». Esta respuesta refleja:''',
     options: [
       r'''Asertividad''',
       r'''Pasividad sumisa''',
@@ -345,12 +396,14 @@ final List<Question> pfrhQuestions = [
       r'''Minimización afectiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''Carlos expresa sus propios deseos y decisiones con claridad, honestidad y respeto, sin agredir al vecino y sin inventar mentiras o ceder ante la presión social, lo cual define una respuesta asertiva.''',
+    explanation:
+        r'''Carlos expresa sus propios deseos y decisiones con claridad, honestidad y respeto, sin agredir al vecino y sin inventar mentiras o ceder ante la presión social, lo cual define una respuesta asertiva.''',
   ),
   Question(
     id: 'pfrh_q27',
     topicId: 'pfrh_t1',
-    text: r'''Si dos comerciantes del mercado distrital firman un acuerdo donde estipulan que, ante cualquier controversia sobre el uso de los puestos de venta, se someterán a la decisión inapelable de la junta directiva, y esta junta emite una resolución obligatoria para resolver un caso, el rol de la junta se asemeja al de:''',
+    text:
+        r'''Si dos comerciantes del mercado distrital firman un acuerdo donde estipulan que, ante cualquier controversia sobre el uso de los puestos de venta, se someterán a la decisión inapelable de la junta directiva, y esta junta emite una resolución obligatoria para resolver un caso, el rol de la junta se asemeja al de:''',
     options: [
       r'''Un mediador''',
       r'''Un conciliador''',
@@ -358,12 +411,14 @@ final List<Question> pfrhQuestions = [
       r'''Un negociador''',
     ],
     correctAnswer: 2,
-    explanation: r'''La junta directiva actúa como un árbitro en un proceso de arbitraje, puesto que tiene la autoridad (concedida voluntariamente por las partes) para emitir un fallo vinculante y definitivo (similar a un laudo) que resuelva la controversia.''',
+    explanation:
+        r'''La junta directiva actúa como un árbitro en un proceso de arbitraje, puesto que tiene la autoridad (concedida voluntariamente por las partes) para emitir un fallo vinculante y definitivo (similar a un laudo) que resuelva la controversia.''',
   ),
   Question(
     id: 'pfrh_q28',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál de las siguientes situaciones ejemplifica mejor la simpatía en contraste con la empatía?''',
+    text:
+        r'''¿Cuál de las siguientes situaciones ejemplifica mejor la simpatía en contraste con la empatía?''',
     options: [
       r'''Comprender los motivos de un amigo para estar enojado, aunque uno no comparta su enojo ni actúe con ira.''',
       r'''Sentir lástima por un compañero que reprobó el año escolar, diciéndole «qué pena por ti» y alejándose rápidamente sin profundizar en su perspectiva.''',
@@ -371,12 +426,14 @@ final List<Question> pfrhQuestions = [
       r'''Expresar con firmeza pero respeto los límites de espacio en un trabajo grupal escolar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La simpatía suele caracterizarse por una reacción afectiva superficial de compasión o lástima hacia el otro, sin que exista una verdadera inmersión cognitiva en su perspectiva o una comprensión profunda de sus motivos, a diferencia de la empatía.''',
+    explanation:
+        r'''La simpatía suele caracterizarse por una reacción afectiva superficial de compasión o lástima hacia el otro, sin que exista una verdadera inmersión cognitiva en su perspectiva o una comprensión profunda de sus motivos, a diferencia de la empatía.''',
   ),
   Question(
     id: 'pfrh_q29',
     topicId: 'pfrh_t1',
-    text: r'''Cuando un vendedor ambulante insiste repetidamente a un transeúnte para que compre un artículo y el ciudadano responde de manera calmada, con tono de voz firme y constante: «Le agradezco, pero no lo necesito... entiendo, pero no lo necesito... gracias, pero no lo necesito», está aplicando la técnica asertiva de:''',
+    text:
+        r'''Cuando un vendedor ambulante insiste repetidamente a un transeúnte para que compre un artículo y el ciudadano responde de manera calmada, con tono de voz firme y constante: «Le agradezco, pero no lo necesito... entiendo, pero no lo necesito... gracias, pero no lo necesito», está aplicando la técnica asertiva de:''',
     options: [
       r'''Banco de niebla''',
       r'''Pregunta asertiva''',
@@ -384,12 +441,14 @@ final List<Question> pfrhQuestions = [
       r'''Aplazamiento asertivo''',
     ],
     correctAnswer: 2,
-    explanation: r"""La técnica del 'disco rayado' consiste en repetir de manera constante, calmada y firme el propio punto de vista o decisión, sin dejarse desviar por las objeciones, insistencias o presiones del interlocutor.""",
+    explanation:
+        r"""La técnica del 'disco rayado' consiste en repetir de manera constante, calmada y firme el propio punto de vista o decisión, sin dejarse desviar por las objeciones, insistencias o presiones del interlocutor.""",
   ),
   Question(
     id: 'pfrh_q30',
     topicId: 'pfrh_t1',
-    text: r'''Ante la crítica de un vecino que le dice: «Siempre estás limpiando tu vereda tarde, eres un desorganizado», el aludido responde: «Es verdad que hoy limpié tarde, pero tengo mis razones». Esta técnica asertiva de aceptar la parte de verdad en la crítica sin confrontar directamente ni ceder en la defensa propia se llama:''',
+    text:
+        r'''Ante la crítica de un vecino que le dice: «Siempre estás limpiando tu vereda tarde, eres un desorganizado», el aludido responde: «Es verdad que hoy limpié tarde, pero tengo mis razones». Esta técnica asertiva de aceptar la parte de verdad en la crítica sin confrontar directamente ni ceder en la defensa propia se llama:''',
     options: [
       r'''Disco rayado''',
       r'''Banco de niebla''',
@@ -397,12 +456,14 @@ final List<Question> pfrhQuestions = [
       r'''Acuerdo asertivo''',
     ],
     correctAnswer: 1,
-    explanation: r"""El 'banco de niebla' consiste en dar la razón a la otra persona en lo que pueda haber de cierto en su crítica (ej. 'es verdad que limpié tarde'), pero sin aceptar el juicio de valor o insulto asociado (ej. 'eres un desorganizado'), evitando así una discusión inútil.""",
+    explanation:
+        r"""El 'banco de niebla' consiste en dar la razón a la otra persona en lo que pueda haber de cierto en su crítica (ej. 'es verdad que limpié tarde'), pero sin aceptar el juicio de valor o insulto asociado (ej. 'eres un desorganizado'), evitando así una discusión inútil.""",
   ),
   Question(
     id: 'pfrh_q31',
     topicId: 'pfrh_t1',
-    text: r'''En un conflicto vecinal por el lindero de un jardín, uno dice: «Exijo que retires ese cerco de madera de inmediato» (A) y el otro explica: «Necesito el cerco para evitar que los animales dañen mis plantas medicinales» (B). ¿Cómo se clasifican estas declaraciones?''',
+    text:
+        r'''En un conflicto vecinal por el lindero de un jardín, uno dice: «Exijo que retires ese cerco de madera de inmediato» (A) y el otro explica: «Necesito el cerco para evitar que los animales dañen mis plantas medicinales» (B). ¿Cómo se clasifican estas declaraciones?''',
     options: [
       r'''A es un interés y B es una posición.''',
       r'''Ambos son intereses comunes que facilitan la negociación directa.''',
@@ -410,12 +471,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambos son posiciones inflexibles que requieren arbitraje judicial.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las posiciones son las demandas concretas y superficiales de las partes (el qué exigen, en este caso retirar el cerco), mientras que los intereses son las necesidades, deseos o temores subyacentes que motivan esas demandas (el por qué lo quieren, en este caso proteger las plantas).''',
+    explanation:
+        r'''Las posiciones son las demandas concretas y superficiales de las partes (el qué exigen, en este caso retirar el cerco), mientras que los intereses son las necesidades, deseos o temores subyacentes que motivan esas demandas (el por qué lo quieren, en este caso proteger las plantas).''',
   ),
   Question(
     id: 'pfrh_q32',
     topicId: 'pfrh_t1',
-    text: r"""¿Cuál de las siguientes expresiones tipifica un 'Mensaje Yo' orientado a la comunicación asertiva y no violenta?""",
+    text:
+        r"""¿Cuál de las siguientes expresiones tipifica un 'Mensaje Yo' orientado a la comunicación asertiva y no violenta?""",
     options: [
       r'''«Tú siempre me interrumpes en las reuniones de vecinos porque eres un maleducado».''',
       r'''«Me siento frustrado cuando se interrumpe mi intervención antes de terminar, porque pierdo el hilo de mi propuesta».''',
@@ -423,12 +486,14 @@ final List<Question> pfrhQuestions = [
       r'''«Parece que disfrutas haciéndome enojar delante de toda la junta directiva».''',
     ],
     correctAnswer: 1,
-    explanation: r"""Los 'Mensajes Yo' se centran en describir los hechos objetivos sin juzgar, expresar el sentimiento personal generado y explicar la necesidad o impacto de dicha situación, asumiendo la responsabilidad de la propia emoción sin atacar al otro.""",
+    explanation:
+        r"""Los 'Mensajes Yo' se centran en describir los hechos objetivos sin juzgar, expresar el sentimiento personal generado y explicar la necesidad o impacto de dicha situación, asumiendo la responsabilidad de la propia emoción sin atacar al otro.""",
   ),
   Question(
     id: 'pfrh_q33',
     topicId: 'pfrh_t1',
-    text: r'''Un estudiante le confiesa a su tutora escolar que sufre de ansiedad antes de rendir exámenes. La tutora responde: «Eso es un proceso biológico estándar causado por el cortisol; solo debes respirar hondo y tu cerebro se equilibrará». ¿Qué tipo de barrera en la escucha empática cometió la tutora?''',
+    text:
+        r'''Un estudiante le confiesa a su tutora escolar que sufre de ansiedad antes de rendir exámenes. La tutora responde: «Eso es un proceso biológico estándar causado por el cortisol; solo debes respirar hondo y tu cerebro se equilibrará». ¿Qué tipo de barrera en la escucha empática cometió la tutora?''',
     options: [
       r'''Empatía afectiva''',
       r'''Racionalización/Intelectualización del dolor''',
@@ -436,12 +501,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad pasiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''La tutora intelectualiza o racionaliza la emoción del alumno explicándola desde un punto de vista científico y fisiológico, lo cual neutraliza y evade la conexión emocional directa y la validación del sufrimiento del estudiante.''',
+    explanation:
+        r'''La tutora intelectualiza o racionaliza la emoción del alumno explicándola desde un punto de vista científico y fisiológico, lo cual neutraliza y evade la conexión emocional directa y la validación del sufrimiento del estudiante.''',
   ),
   Question(
     id: 'pfrh_q34',
     topicId: 'pfrh_t1',
-    text: r'''En la comunicación no violenta, el paso previo fundamental antes de buscar soluciones a un conflicto interpersonal es:''',
+    text:
+        r'''En la comunicación no violenta, el paso previo fundamental antes de buscar soluciones a un conflicto interpersonal es:''',
     options: [
       r'''La imposición de una sanción moral.''',
       r'''La validación emocional, es decir, reconocer y legitimar los sentimientos del otro.''',
@@ -449,12 +516,14 @@ final List<Question> pfrhQuestions = [
       r'''El uso de la ironía para relajar el ambiente tenso.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Validar emocionalmente consiste en hacerle saber al otro que entendemos y respetamos sus sentimientos (ej. 'veo que estás muy molesto por esto'), lo cual reduce la resistencia psicológica de las partes y las predispone a colaborar.""",
+    explanation:
+        r"""Validar emocionalmente consiste en hacerle saber al otro que entendemos y respetamos sus sentimientos (ej. 'veo que estás muy molesto por esto'), lo cual reduce la resistencia psicológica de las partes y las predispone a colaborar.""",
   ),
   Question(
     id: 'pfrh_q35',
     topicId: 'pfrh_t1',
-    text: r'''Durante un proceso de mediación escolar entre dos alumnos de secundaria, uno de ellos exige que el mediador decida de una vez quién tiene la razón. El mediador, actuando de forma correcta, debe:''',
+    text:
+        r'''Durante un proceso de mediación escolar entre dos alumnos de secundaria, uno de ellos exige que el mediador decida de una vez quién tiene la razón. El mediador, actuando de forma correcta, debe:''',
     options: [
       r'''Darle la razón al alumno que tenga mejores calificaciones para mantener el orden.''',
       r'''Negarse a decidir, recordando a los alumnos que su función es ayudarlos a comunicarse y que la solución deben construirla ellos.''',
@@ -462,12 +531,14 @@ final List<Question> pfrhQuestions = [
       r'''Derivar de inmediato el caso a un árbitro judicial comercial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El mediador carece de poder de decisión o imposición. Su labor es facilitar el diálogo. Si decide o toma partido, rompe el principio de neutralidad y desnaturaliza el proceso de mediación.''',
+    explanation:
+        r'''El mediador carece de poder de decisión o imposición. Su labor es facilitar el diálogo. Si decide o toma partido, rompe el principio de neutralidad y desnaturaliza el proceso de mediación.''',
   ),
   Question(
     id: 'pfrh_q36',
     topicId: 'pfrh_t1',
-    text: r'''Un acuerdo firmado en un Centro de Conciliación Extrajudicial debidamente autorizado por el Ministerio de Justicia tiene el valor legal de:''',
+    text:
+        r'''Un acuerdo firmado en un Centro de Conciliación Extrajudicial debidamente autorizado por el Ministerio de Justicia tiene el valor legal de:''',
     options: [
       r'''Una simple promesa verbal sin consecuencias legales.''',
       r'''Una sentencia judicial firme de obligatorio cumplimiento (título de ejecución).''',
@@ -475,12 +546,14 @@ final List<Question> pfrhQuestions = [
       r'''Una sugerencia psicológica no vinculante para los firmantes.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El acta de conciliación con acuerdo total constituye un título de ejecución. Si una de las partes incumple lo pactado, la otra puede exigir su cumplimiento ante el Poder Judicial de manera directa y rápida, igual que si fuera una sentencia del juez.''',
+    explanation:
+        r'''El acta de conciliación con acuerdo total constituye un título de ejecución. Si una de las partes incumple lo pactado, la otra puede exigir su cumplimiento ante el Poder Judicial de manera directa y rápida, igual que si fuera una sentencia del juez.''',
   ),
   Question(
     id: 'pfrh_q37',
     topicId: 'pfrh_t1',
-    text: r'''Un conflicto que surge debido a rumores falsos, malentendidos en la comunicación o prejuicios infundados entre dos vecinos se tipifica como un conflicto:''',
+    text:
+        r'''Un conflicto que surge debido a rumores falsos, malentendidos en la comunicación o prejuicios infundados entre dos vecinos se tipifica como un conflicto:''',
     options: [
       r'''Conflicto de información o conflicto innecesario.''',
       r'''Conflicto de intereses reales de propiedad.''',
@@ -488,12 +561,14 @@ final List<Question> pfrhQuestions = [
       r'''Conflicto de valores religiosos incompatibles.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los conflictos de información o innecesarios se basan en una percepción errónea de la realidad o fallos comunicativos. Se resuelven aclarando los datos y mejorando los canales de diálogo, a diferencia de los conflictos reales que involucran intereses contrapuestos genuinos.''',
+    explanation:
+        r'''Los conflictos de información o innecesarios se basan en una percepción errónea de la realidad o fallos comunicativos. Se resuelven aclarando los datos y mejorando los canales de diálogo, a diferencia de los conflictos reales que involucran intereses contrapuestos genuinos.''',
   ),
   Question(
     id: 'pfrh_q38',
     topicId: 'pfrh_t1',
-    text: r'''En la teoría de resolución de conflictos de Thomas-Kilmann, el estilo que se caracteriza por una alta cooperación con el otro pero una baja asertividad en la defensa de los intereses propios se denomina:''',
+    text:
+        r'''En la teoría de resolución de conflictos de Thomas-Kilmann, el estilo que se caracteriza por una alta cooperación con el otro pero una baja asertividad en la defensa de los intereses propios se denomina:''',
     options: [
       r'''Competitivo''',
       r'''Colaborativo''',
@@ -501,12 +576,14 @@ final List<Question> pfrhQuestions = [
       r'''Evasivo''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estilo acomodador prioriza la relación y la satisfacción de las necesidades de la otra parte a expensas de las propias aspiraciones o derechos, cediendo para evitar tensiones o rupturas.''',
+    explanation:
+        r'''El estilo acomodador prioriza la relación y la satisfacción de las necesidades de la otra parte a expensas de las propias aspiraciones o derechos, cediendo para evitar tensiones o rupturas.''',
   ),
   Question(
     id: 'pfrh_q39',
     topicId: 'pfrh_t1',
-    text: r'''En un aula de secundaria, Carlos y Sofía discuten acaloradamente por el uso de los carteles de cartulina para el mural. La profesora nota que el ambiente está muy tenso y decide actuar como mediadora. ¿Cuál de las siguientes acciones de la profesora se alinea correctamente con el rol de mediación?''',
+    text:
+        r'''En un aula de secundaria, Carlos y Sofía discuten acaloradamente por el uso de los carteles de cartulina para el mural. La profesora nota que el ambiente está muy tenso y decide actuar como mediadora. ¿Cuál de las siguientes acciones de la profesora se alinea correctamente con el rol de mediación?''',
     options: [
       r'''Quitarles las cartulinas a ambos, guardarlas en su armario y suspenderlos del trabajo grupal por mala conducta.''',
       r'''Reunirse con ambos en un espacio tranquilo, pedirles que expresen sus intereses por turnos sin interrumpirse, y guiar el diálogo para que ellos mismos propongan una forma equitativa de distribuir el material.''',
@@ -514,12 +591,14 @@ final List<Question> pfrhQuestions = [
       r'''Aconsejar a Sofía que le ceda todo el material a Carlos para evitar peleas, ya que «los caballeros deben ser respetados».''',
     ],
     correctAnswer: 1,
-    explanation: r'''La mediación implica facilitar un espacio de diálogo neutral y respetuoso donde las partes expresen sus intereses y colaboren en la búsqueda de una solución propia consensuada, sin que el mediador imponga decisiones o castigos.''',
+    explanation:
+        r'''La mediación implica facilitar un espacio de diálogo neutral y respetuoso donde las partes expresen sus intereses y colaboren en la búsqueda de una solución propia consensuada, sin que el mediador imponga decisiones o castigos.''',
   ),
   Question(
     id: 'pfrh_q40',
     topicId: 'pfrh_t1',
-    text: r'''El perro de la familia Martínez suele ladrar por las mañanas, lo que molesta al señor Gómez, un vecino jubilado que vive al lado. En lugar de denunciarlo o insultarlo, el señor Gómez conversa con la señora Martínez. Ella explica que el perro ladra cuando se queda solo mientras ella va al mercado. ¿Qué alternativa muestra una negociación exitosa basada en intereses?''',
+    text:
+        r'''El perro de la familia Martínez suele ladrar por las mañanas, lo que molesta al señor Gómez, un vecino jubilado que vive al lado. En lugar de denunciarlo o insultarlo, el señor Gómez conversa con la señora Martínez. Ella explica que el perro ladra cuando se queda solo mientras ella va al mercado. ¿Qué alternativa muestra una negociación exitosa basada en intereses?''',
     options: [
       r'''La señora Martínez decide regalar su mascota a un albergue para no molestar más al vecino Gómez.''',
       r'''Acuerdan que la señora Martínez dejará un juguete interactivo al perro durante su hora de mercado y el señor Gómez avisa si el ruido disminuye, resolviendo el problema de forma conjunta.''',
@@ -527,12 +606,14 @@ final List<Question> pfrhQuestions = [
       r'''La junta de vecinos multa a la familia Martínez basándose en el estatuto interno de ruidos molestos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Una negociación basada en intereses busca soluciones creativas que satisfagan las necesidades subyacentes de ambas partes (el bienestar del perro/tranquilidad de la dueña y el descanso del vecino) sin perjudicar gravemente a ninguna.''',
+    explanation:
+        r'''Una negociación basada en intereses busca soluciones creativas que satisfagan las necesidades subyacentes de ambas partes (el bienestar del perro/tranquilidad de la dueña y el descanso del vecino) sin perjudicar gravemente a ninguna.''',
   ),
   Question(
     id: 'pfrh_q41',
     topicId: 'pfrh_t1',
-    text: r'''Un adolescente le cuenta a su hermana mayor que se siente sumamente triste y estresado porque no comprende los temas de álgebra y teme jalar el curso. ¿Cuál de las siguientes respuestas de la hermana refleja una verdadera escucha empática?''',
+    text:
+        r'''Un adolescente le cuenta a su hermana mayor que se siente sumamente triste y estresado porque no comprende los temas de álgebra y teme jalar el curso. ¿Cuál de las siguientes respuestas de la hermana refleja una verdadera escucha empática?''',
     options: [
       r'''«No te preocupes por eso, el álgebra no sirve para la vida real; además, estás exagerando, hay problemas más graves».''',
       r'''«Lo que tienes que hacer es sentarte a estudiar cuatro horas seguidas todas las tardes y contratar un profesor particular de inmediato».''',
@@ -540,12 +621,14 @@ final List<Question> pfrhQuestions = [
       r'''«Eso te pasa por pasar tanto tiempo jugando en la computadora en lugar de prestar atención a las clases del colegio».''',
     ],
     correctAnswer: 2,
-    explanation: r"""La opción C valida la emoción del adolescente ('veo que te sientes abrumado', 'debe ser estresante'), no juzga, no minimiza el problema y abre espacio para que él siga expresándose mediante una pregunta abierta, a diferencia de los distractores que minimizan, juzgan o dan consejos inmediatos.""",
+    explanation:
+        r"""La opción C valida la emoción del adolescente ('veo que te sientes abrumado', 'debe ser estresante'), no juzga, no minimiza el problema y abre espacio para que él siga expresándose mediante una pregunta abierta, a diferencia de los distractores que minimizan, juzgan o dan consejos inmediatos.""",
   ),
   Question(
     id: 'pfrh_q42',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino suele estacionar su automóvil bloqueando parcialmente la rampa de salida de la cochera de la señora Laura. Ella decide abordar el problema de forma asertiva. ¿Qué acción debe realizar Laura?''',
+    text:
+        r'''Un vecino suele estacionar su automóvil bloqueando parcialmente la rampa de salida de la cochera de la señora Laura. Ella decide abordar el problema de forma asertiva. ¿Qué acción debe realizar Laura?''',
     options: [
       r'''Rayar la pintura del auto del vecino por la noche para que entienda que no debe estacionarse en ese lugar.''',
       r'''Acercarse al vecino y decirle de forma calmada: «Buenas tardes. He notado que su auto bloquea la mitad de mi rampa. Se me dificulta salir para ir a trabajar y temo rozar su vehículo. Le pido, por favor, que estacione dejando libre el acceso».''',
@@ -553,12 +636,14 @@ final List<Question> pfrhQuestions = [
       r'''Salir gritando a la calle insultando al vecino y exigir a la junta que lo declare persona no grata de inmediato.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La respuesta asertiva (B) describe la conducta objetiva sin juicios de valor ofensivos, explica la consecuencia práctica y el temor personal, y formula una petición clara y respetuosa de cambio.''',
+    explanation:
+        r'''La respuesta asertiva (B) describe la conducta objetiva sin juicios de valor ofensivos, explica la consecuencia práctica y el temor personal, y formula una petición clara y respetuosa de cambio.''',
   ),
   Question(
     id: 'pfrh_q43',
     topicId: 'pfrh_t1',
-    text: r'''En un trabajo de investigación grupal en el colegio, Mateo siente que está asumiendo más del 80% de la redacción del informe escrito porque los otros dos integrantes no responden los mensajes. ¿Qué respuesta representa una comunicación asertiva por parte de Mateo hacia su grupo?''',
+    text:
+        r'''En un trabajo de investigación grupal en el colegio, Mateo siente que está asumiendo más del 80% de la redacción del informe escrito porque los otros dos integrantes no responden los mensajes. ¿Qué respuesta representa una comunicación asertiva por parte de Mateo hacia su grupo?''',
     options: [
       r'''Guardar silencio, terminar todo el trabajo solo y luego enviar un correo al profesor solicitando que les ponga nota cero a los demás sin avisarles.''',
       r'''Escribir al grupo de WhatsApp: «Hola chicos. He avanzado con la mayor parte del informe, pero me preocupa que no lleguemos a tiempo si no nos repartimos el análisis final. Les propongo reunirnos hoy a las 6:00 p.m. para definir las conclusiones de cada uno. ¿Qué opinan?».''',
@@ -566,12 +651,14 @@ final List<Question> pfrhQuestions = [
       r'''Dejar de escribirles, no avanzar nada del trabajo y esperar a que el profesor los jale a todos el día de la entrega.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La opción B expresa claramente el hecho objetivo (Mateo ha avanzado la mayor parte), el sentimiento y preocupación (no llegar a tiempo), propone una solución constructiva (reunirse y repartirse las conclusiones) y abre espacio al diálogo respetuoso.''',
+    explanation:
+        r'''La opción B expresa claramente el hecho objetivo (Mateo ha avanzado la mayor parte), el sentimiento y preocupación (no llegar a tiempo), propone una solución constructiva (reunirse y repartirse las conclusiones) y abre espacio al diálogo respetuoso.''',
   ),
   Question(
     id: 'pfrh_q44',
     topicId: 'pfrh_t1',
-    text: r'''Dos hermanos disputan la administración de la bodega familiar tras la jubilación de sus padres. Deciden buscar el apoyo de un tío respetado por ambos para que los ayude a resolver el problema. El tío escucha a ambos y les propone un esquema de turnos semanales y distribución de ganancias. Los hermanos aceptan con agrado la propuesta y firman un documento familiar. ¿Qué mecanismo se ha aplicado en esta situación?''',
+    text:
+        r'''Dos hermanos disputan la administración de la bodega familiar tras la jubilación de sus padres. Deciden buscar el apoyo de un tío respetado por ambos para que los ayude a resolver el problema. El tío escucha a ambos y les propone un esquema de turnos semanales y distribución de ganancias. Los hermanos aceptan con agrado la propuesta y firman un documento familiar. ¿Qué mecanismo se ha aplicado en esta situación?''',
     options: [
       r'''Mediación informal''',
       r'''Conciliación informal''',
@@ -579,12 +666,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación directa''',
     ],
     correctAnswer: 1,
-    explanation: r'''Dado que el tío intervino como tercero facilitando el diálogo y proponiendo activamente una fórmula de solución (esquema de turnos y ganancias) que las partes finalmente decidieron aceptar de forma voluntaria, se trata de una conciliación (en este caso, en el plano familiar/informal).''',
+    explanation:
+        r'''Dado que el tío intervino como tercero facilitando el diálogo y proponiendo activamente una fórmula de solución (esquema de turnos y ganancias) que las partes finalmente decidieron aceptar de forma voluntaria, se trata de una conciliación (en este caso, en el plano familiar/informal).''',
   ),
   Question(
     id: 'pfrh_q45',
     topicId: 'pfrh_t1',
-    text: r'''Julia acaba de terminar una relación sentimental de dos años y se encuentra llorando desconsoladamente. Su prima la visita y le dice: «¡Ay, prima, no llores por tonterías! Hay miles de personas en el mundo y ese chico no valía la pena. Además, agradece que no te casaste, eso sí sería un problema real». ¿Qué característica define la intervención de la prima?''',
+    text:
+        r'''Julia acaba de terminar una relación sentimental de dos años y se encuentra llorando desconsoladamente. Su prima la visita y le dice: «¡Ay, prima, no llores por tonterías! Hay miles de personas en el mundo y ese chico no valía la pena. Además, agradece que no te casaste, eso sí sería un problema real». ¿Qué característica define la intervención de la prima?''',
     options: [
       r'''Asertividad empática, porque le dice la verdad de manera directa para que reaccione.''',
       r'''Minimización emocional, porque desvaloriza y descalifica el dolor de Julia comparándolo con otros escenarios hipotéticos.''',
@@ -592,12 +681,14 @@ final List<Question> pfrhQuestions = [
       r'''Simpatía genuina, porque comparte el dolor y llora junto a ella para aliviar su pena.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La prima descalifica el sufrimiento de Julia llamándolo 'tonterías' y comparándolo con un problema mayor ('casarse'), lo que constituye una barrera comunicativa clásica de minimización emocional.""",
+    explanation:
+        r"""La prima descalifica el sufrimiento de Julia llamándolo 'tonterías' y comparándolo con un problema mayor ('casarse'), lo que constituye una barrera comunicativa clásica de minimización emocional.""",
   ),
   Question(
     id: 'pfrh_q46',
     topicId: 'pfrh_t1',
-    text: r'''El propietario de un inmueble desea que su inquilino desaloje la vivienda por falta de pago de cuatro meses. Para evitar un juicio largo, acuden a un Centro de Conciliación autorizado. El conciliador les propone un plan de pagos fraccionados y una fecha de entrega del inmueble en caso de incumplimiento, acuerdo que firman. Dos meses después, el inquilino incumple nuevamente. ¿Qué acción legal directa corresponde al propietario?''',
+    text:
+        r'''El propietario de un inmueble desea que su inquilino desaloje la vivienda por falta de pago de cuatro meses. Para evitar un juicio largo, acuden a un Centro de Conciliación autorizado. El conciliador les propone un plan de pagos fraccionados y una fecha de entrega del inmueble en caso de incumplimiento, acuerdo que firman. Dos meses después, el inquilino incumple nuevamente. ¿Qué acción legal directa corresponde al propietario?''',
     options: [
       r'''Contratar personal de seguridad privada para desalojar al inquilino por la fuerza de forma inmediata.''',
       r'''Solicitar judicialmente la ejecución del acta de conciliación, ya que esta tiene el valor de una sentencia judicial firme.''',
@@ -605,12 +696,14 @@ final List<Question> pfrhQuestions = [
       r'''Cortar los servicios de agua y luz de forma unilateral para obligar al inquilino a retirarse.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Al tener el acta de conciliación el valor de una sentencia judicial firme (título de ejecución), el propietario no necesita iniciar un juicio largo de desalojo desde cero, sino solicitar al juez de ejecución la ejecución inmediata de lo pactado.''',
+    explanation:
+        r'''Al tener el acta de conciliación el valor de una sentencia judicial firme (título de ejecución), el propietario no necesita iniciar un juicio largo de desalojo desde cero, sino solicitar al juez de ejecución la ejecución inmediata de lo pactado.''',
   ),
   Question(
     id: 'pfrh_q47',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino reclama a una vecina porque sus plantas del balcón gotean agua sobre su ventana al regarlas. La vecina responde cerrando la puerta en la cara del reclamante de forma violenta y, al día siguiente, riega las plantas con mayor cantidad de agua a la misma hora. ¿Qué estilos de comunicación se evidencian en la reacción de la vecina?''',
+    text:
+        r'''Un vecino reclama a una vecina porque sus plantas del balcón gotean agua sobre su ventana al regarlas. La vecina responde cerrando la puerta en la cara del reclamante de forma violenta y, al día siguiente, riega las plantas con mayor cantidad de agua a la misma hora. ¿Qué estilos de comunicación se evidencian en la reacción de la vecina?''',
     options: [
       r'''Agresivo directo y luego pasivo-agresivo''',
       r'''Pasivo puro y luego asertivo''',
@@ -618,12 +711,14 @@ final List<Question> pfrhQuestions = [
       r'''Racionalizador y luego empático''',
     ],
     correctAnswer: 0,
-    explanation: r'''Tirar la puerta en la cara es un acto de agresividad directa y física. Regar con más agua al día siguiente como sabotaje oculto o venganza indirecta tipifica la conducta pasivo-agresiva.''',
+    explanation:
+        r'''Tirar la puerta en la cara es un acto de agresividad directa y física. Regar con más agua al día siguiente como sabotaje oculto o venganza indirecta tipifica la conducta pasivo-agresiva.''',
   ),
   Question(
     id: 'pfrh_q48',
     topicId: 'pfrh_t1',
-    text: r'''Los delegados de dos sectores de una urbanización no logran ponerse de acuerdo sobre el uso de la cancha deportiva multiusos de la comunidad. Deciden firmar un acta de sometimiento donde acuerdan que un respetado profesor jubilado de la zona decida los horarios de uso de forma definitiva e inapelable. El profesor emite su decisión por escrito. ¿Qué mecanismo se ha empleado?''',
+    text:
+        r'''Los delegados de dos sectores de una urbanización no logran ponerse de acuerdo sobre el uso de la cancha deportiva multiusos de la comunidad. Deciden firmar un acta de sometimiento donde acuerdan que un respetado profesor jubilado de la zona decida los horarios de uso de forma definitiva e inapelable. El profesor emite su decisión por escrito. ¿Qué mecanismo se ha empleado?''',
     options: [
       r'''Negociación cooperativa''',
       r'''Mediación escolar''',
@@ -631,12 +726,14 @@ final List<Question> pfrhQuestions = [
       r'''Conciliación extrajudicial''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las partes acordaron voluntariamente someterse a la decisión final e inapelable de un tercero neutral (el profesor jubilado actuando como árbitro), cuyo fallo equivale a un laudo arbitral en el ámbito comunitario.''',
+    explanation:
+        r'''Las partes acordaron voluntariamente someterse a la decisión final e inapelable de un tercero neutral (el profesor jubilado actuando como árbitro), cuyo fallo equivale a un laudo arbitral en el ámbito comunitario.''',
   ),
   Question(
     id: 'pfrh_q49',
     topicId: 'pfrh_t1',
-    text: r'''Un joven le comenta a su padre que se siente muy estresado y triste porque no logra adaptarse al ritmo del primer ciclo en el instituto superior. El padre le responde: «Lo que te falta es disciplina. Deja de salir los fines de semana, duerme temprano y estudia el doble. Así de simple». Esta respuesta se tipifica como:''',
+    text:
+        r'''Un joven le comenta a su padre que se siente muy estresado y triste porque no logra adaptarse al ritmo del primer ciclo en el instituto superior. El padre le responde: «Lo que te falta es disciplina. Deja de salir los fines de semana, duerme temprano y estudia el doble. Así de simple». Esta respuesta se tipifica como:''',
     options: [
       r'''Un mensaje asertivo de confrontación constructiva.''',
       r'''Un consejo no solicitado que bloquea la empatía y la comprensión del estado emocional del joven.''',
@@ -644,12 +741,14 @@ final List<Question> pfrhQuestions = [
       r'''Un intento de mediación familiar formal entre padre e hijo.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El padre ofrece una receta simplista de conducta ('disciplina', 'estudia el doble') sin validar la tristeza o estrés de su hijo, lo que impide un diálogo empático real.""",
+    explanation:
+        r"""El padre ofrece una receta simplista de conducta ('disciplina', 'estudia el doble') sin validar la tristeza o estrés de su hijo, lo que impide un diálogo empático real.""",
   ),
   Question(
     id: 'pfrh_q50',
     topicId: 'pfrh_t1',
-    text: r'''Durante una clase de tutoría, la profesora asigna a Juan y a Pedro la organización del periódico mural del mes. Pedro desea hacer un mural sobre fútbol, pero Juan propone el cuidado del medio ambiente. Pedro insiste de forma hostil y Juan responde de manera asertiva. ¿Qué opción refleja la respuesta de Juan?''',
+    text:
+        r'''Durante una clase de tutoría, la profesora asigna a Juan y a Pedro la organización del periódico mural del mes. Pedro desea hacer un mural sobre fútbol, pero Juan propone el cuidado del medio ambiente. Pedro insiste de forma hostil y Juan responde de manera asertiva. ¿Qué opción refleja la respuesta de Juan?''',
     options: [
       r'''«Bueno, hagamos de fútbol si tanto insistes, no quiero pelear contigo».''',
       r'''«Tu idea del fútbol es una tontería y demuestra que no te importa nada serio. Se hará de medio ambiente».''',
@@ -657,12 +756,14 @@ final List<Question> pfrhQuestions = [
       r'''Guardar silencio en el aula, pero quejarse luego en redes sociales diciendo que Pedro es un tirano que arruina el trabajo.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta C es asertiva porque valida la perspectiva de Pedro ('entiendo que te entusiasme...'), expresa con firmeza la opinión propia, plantea una alternativa integradora (sección de deporte, tema central ambiental) y consulta de manera dialogante ('¿Qué te parece?').""",
+    explanation:
+        r"""La respuesta C es asertiva porque valida la perspectiva de Pedro ('entiendo que te entusiasme...'), expresa con firmeza la opinión propia, plantea una alternativa integradora (sección de deporte, tema central ambiental) y consulta de manera dialogante ('¿Qué te parece?').""",
   ),
   Question(
     id: 'pfrh_q51',
     topicId: 'pfrh_t1',
-    text: r'''En la teoría de negociación, el enfoque integrativo o cooperativo, comúnmente llamado «ganar-ganar», busca principalmente:''',
+    text:
+        r'''En la teoría de negociación, el enfoque integrativo o cooperativo, comúnmente llamado «ganar-ganar», busca principalmente:''',
     options: [
       r'''Que ambas partes cedan el 50% de sus pretensiones para firmar rápido un pacto.''',
       r'''Maximizar los beneficios de ambas partes identificando intereses comunes e integrando soluciones creativas.''',
@@ -670,12 +771,14 @@ final List<Question> pfrhQuestions = [
       r'''Someter la decisión al arbitraje de un juez superior para evitar discusiones directas.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El enfoque cooperativo o 'ganar-ganar' no consiste en ceder a medias (lo que sería distributivo), sino en agrandar la torta de beneficios mutuos satisfaciendo los intereses de ambas partes mediante la creatividad.""",
+    explanation:
+        r"""El enfoque cooperativo o 'ganar-ganar' no consiste en ceder a medias (lo que sería distributivo), sino en agrandar la torta de beneficios mutuos satisfaciendo los intereses de ambas partes mediante la creatividad.""",
   ),
   Question(
     id: 'pfrh_q52',
     topicId: 'pfrh_t1',
-    text: r'''¿Qué es el parafraseo y cuál es su objetivo en una sesión de mediación?''',
+    text:
+        r'''¿Qué es el parafraseo y cuál es su objetivo en una sesión de mediación?''',
     options: [
       r'''Repetir textualmente los insultos de las partes para que tomen conciencia de su mala educación.''',
       r'''Explicar científicamente los orígenes neuronales del enojo en los seres humanos.''',
@@ -683,12 +786,14 @@ final List<Question> pfrhQuestions = [
       r'''Dictaminar de manera formal cuál de las partes ha narrado la versión más verídica de los hechos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El parafraseo es una técnica de escucha activa donde el facilitador reformula el mensaje recibido de forma limpia y neutral, permitiendo que la persona se sienta escuchada y validada, y ayudando a la otra parte a oír el mensaje sin carga agresiva.''',
+    explanation:
+        r'''El parafraseo es una técnica de escucha activa donde el facilitador reformula el mensaje recibido de forma limpia y neutral, permitiendo que la persona se sienta escuchada y validada, y ayudando a la otra parte a oír el mensaje sin carga agresiva.''',
   ),
   Question(
     id: 'pfrh_q53',
     topicId: 'pfrh_t1',
-    text: r'''Un conflicto que se origina dentro del propio individuo, relacionado con dilemas éticos, contradicciones de valores o decisiones personales difíciles, se clasifica como:''',
+    text:
+        r'''Un conflicto que se origina dentro del propio individuo, relacionado con dilemas éticos, contradicciones de valores o decisiones personales difíciles, se clasifica como:''',
     options: [
       r'''Conflicto interpersonal''',
       r'''Conflicto intrapersonal''',
@@ -696,7 +801,8 @@ final List<Question> pfrhQuestions = [
       r'''Conflicto estructural''',
     ],
     correctAnswer: 1,
-    explanation: r'''El conflicto intrapersonal ocurre en el fuero interno de una persona, involucrando choques entre sus propios valores, deseos, temores o roles cotidianos.''',
+    explanation:
+        r'''El conflicto intrapersonal ocurre en el fuero interno de una persona, involucrando choques entre sus propios valores, deseos, temores o roles cotidianos.''',
   ),
   Question(
     id: 'pfrh_q54',
@@ -709,12 +815,14 @@ final List<Question> pfrhQuestions = [
       r'''Permitir que la contraparte tome todas las decisiones importantes del grupo.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La asertividad empática combina la firmeza al expresar los propios derechos, deseos o límites, con una frase de reconocimiento y validación hacia la realidad o sentimientos de la otra persona.''',
+    explanation:
+        r'''La asertividad empática combina la firmeza al expresar los propios derechos, deseos o límites, con una frase de reconocimiento y validación hacia la realidad o sentimientos de la otra persona.''',
   ),
   Question(
     id: 'pfrh_q55',
     topicId: 'pfrh_t1',
-    text: r'''La resolución final emitida por un árbitro o tribunal arbitral que pone fin a una controversia se denomina:''',
+    text:
+        r'''La resolución final emitida por un árbitro o tribunal arbitral que pone fin a una controversia se denomina:''',
     options: [
       r'''Sentencia de apelación''',
       r'''Laudo arbitral''',
@@ -722,12 +830,14 @@ final List<Question> pfrhQuestions = [
       r'''Dictamen pericial''',
     ],
     correctAnswer: 1,
-    explanation: r'''La resolución dictada por el árbitro se denomina laudo arbitral, el cual es inapelable y de obligatorio cumplimiento, teniendo carácter similar a una sentencia judicial firme.''',
+    explanation:
+        r'''La resolución dictada por el árbitro se denomina laudo arbitral, el cual es inapelable y de obligatorio cumplimiento, teniendo carácter similar a una sentencia judicial firme.''',
   ),
   Question(
     id: 'pfrh_q56',
     topicId: 'pfrh_t1',
-    text: r'''Desde un enfoque moderno de resolución de conflictos, ¿cómo se concibe al conflicto en las relaciones humanas?''',
+    text:
+        r'''Desde un enfoque moderno de resolución de conflictos, ¿cómo se concibe al conflicto en las relaciones humanas?''',
     options: [
       r'''Como una disfunción social que debe ser castigada de inmediato.''',
       r'''Como un fenómeno natural e inevitable que, abordado constructivamente, constituye una oportunidad de cambio y desarrollo personal.''',
@@ -735,12 +845,14 @@ final List<Question> pfrhQuestions = [
       r'''Como un delito menor que requiere obligatoriamente mediación judicial penal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La perspectiva moderna no ve al conflicto como algo negativo per se, sino como una señal de incompatibilidad que puede servir de catalizador para mejorar las relaciones y resolver problemas si se gestiona adecuadamente.''',
+    explanation:
+        r'''La perspectiva moderna no ve al conflicto como algo negativo per se, sino como una señal de incompatibilidad que puede servir de catalizador para mejorar las relaciones y resolver problemas si se gestiona adecuadamente.''',
   ),
   Question(
     id: 'pfrh_q57',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál es la diferencia primordial entre el rol de un mediador y el de un árbitro?''',
+    text:
+        r'''¿Cuál es la diferencia primordial entre el rol de un mediador y el de un árbitro?''',
     options: [
       r'''El mediador impone la solución y el árbitro facilita la comunicación.''',
       r'''El mediador ayuda a las partes a encontrar una solución conjunta; el árbitro decide la solución definitiva de forma obligatoria.''',
@@ -748,12 +860,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia; ambos términos significan lo mismo en el código civil peruano.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El mediador es un facilitador sin poder de decisión (autocompositivo). El árbitro es un decisor con poder delegado para dictar una solución de cumplimiento obligatorio (heterocompositivo).''',
+    explanation:
+        r'''El mediador es un facilitador sin poder de decisión (autocompositivo). El árbitro es un decisor con poder delegado para dictar una solución de cumplimiento obligatorio (heterocompositivo).''',
   ),
   Question(
     id: 'pfrh_q58',
     topicId: 'pfrh_t1',
-    text: r"""En la negociación basada en intereses, el concepto de 'Mejor Alternativa a un Acuerdo Negociado' (MAAN o BATNA) se define como:""",
+    text:
+        r"""En la negociación basada en intereses, el concepto de 'Mejor Alternativa a un Acuerdo Negociado' (MAAN o BATNA) se define como:""",
     options: [
       r'''La mejor oferta que la contraparte nos ha presentado durante la mesa de diálogo.''',
       r'''El curso de acción que tomaremos de forma unilateral si no logramos llegar a un acuerdo en la negociación.''',
@@ -761,12 +875,14 @@ final List<Question> pfrhQuestions = [
       r'''El acuerdo de conciliación ideal que redactará el mediador al final del día.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El MAAN (o BATNA) es el plan de respaldo, es decir, la mejor alternativa exterior que tiene una parte si la negociación fracasa y no se logra firmar un acuerdo.''',
+    explanation:
+        r'''El MAAN (o BATNA) es el plan de respaldo, es decir, la mejor alternativa exterior que tiene una parte si la negociación fracasa y no se logra firmar un acuerdo.''',
   ),
   Question(
     id: 'pfrh_q59',
     topicId: 'pfrh_t1',
-    text: r'''¿Cuál de las siguientes características corresponde a una comunicación no verbal asertiva?''',
+    text:
+        r'''¿Cuál de las siguientes características corresponde a una comunicación no verbal asertiva?''',
     options: [
       r'''Mirar al suelo, hablar en voz muy baja y mantener los hombros encogidos.''',
       r'''Señalar con el dedo índice, mantener una postura rígida e invadir el espacio personal del otro.''',
@@ -774,7 +890,8 @@ final List<Question> pfrhQuestions = [
       r'''Sonreír sarcásticamente, cruzar los brazos y mirar hacia otro lado cuando el otro habla.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La asertividad no verbal implica coherencia con el mensaje respetuoso y firme: mirada directa pero no desafiante, postura abierta que demuestre atención, y tono de voz seguro y moderado.''',
+    explanation:
+        r'''La asertividad no verbal implica coherencia con el mensaje respetuoso y firme: mirada directa pero no desafiante, postura abierta que demuestre atención, y tono de voz seguro y moderado.''',
   ),
   Question(
     id: 'pfrh_q60',
@@ -787,12 +904,14 @@ final List<Question> pfrhQuestions = [
       r'''Un psicólogo clínico realiza terapia familiar a los padres de los estudiantes con bajo rendimiento.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La mediación escolar (especialmente entre pares) capacita a los propios estudiantes para actuar como terceros neutrales que ayuden a otros compañeros a resolver sus discrepancias cotidianas mediante el diálogo.''',
+    explanation:
+        r'''La mediación escolar (especialmente entre pares) capacita a los propios estudiantes para actuar como terceros neutrales que ayuden a otros compañeros a resolver sus discrepancias cotidianas mediante el diálogo.''',
   ),
   Question(
     id: 'pfrh_q61',
     topicId: 'pfrh_t1',
-    text: r"""En resolución de conflictos, la 'posición' de una parte se define conceptualmente como:""",
+    text:
+        r"""En resolución de conflictos, la 'posición' de una parte se define conceptualmente como:""",
     options: [
       r'''El trasfondo de miedos y necesidades reales que ocultan las partes.''',
       r'''La solución ideal consensuada que beneficia a todos por igual.''',
@@ -800,7 +919,8 @@ final List<Question> pfrhQuestions = [
       r'''La ubicación geográfica de los predios en disputa.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La posición es la postura inicial, rígida y explícita que adopta una persona en un conflicto (ej. 'quiero que saques ese árbol de ahí'). Suele ocultar los verdaderos intereses subyacentes.""",
+    explanation:
+        r"""La posición es la postura inicial, rígida y explícita que adopta una persona en un conflicto (ej. 'quiero que saques ese árbol de ahí'). Suele ocultar los verdaderos intereses subyacentes.""",
   ),
   Question(
     id: 'pfrh_q62',
@@ -813,12 +933,14 @@ final List<Question> pfrhQuestions = [
       r'''El documento que redactan los árbitros comerciales para justificar su laudo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los intereses son las necesidades, motivaciones, deseos, temores y valores que subyacen a las posiciones de las partes y que deben ser satisfechos para lograr una solución sostenible.''',
+    explanation:
+        r'''Los intereses son las necesidades, motivaciones, deseos, temores y valores que subyacen a las posiciones de las partes y que deben ser satisfechos para lograr una solución sostenible.''',
   ),
   Question(
     id: 'pfrh_q63',
     topicId: 'pfrh_t1',
-    text: r'''¿Por qué la empatía, a diferencia de la simpatía, permite al mediador mantener la neutralidad en un conflicto?''',
+    text:
+        r'''¿Por qué la empatía, a diferencia de la simpatía, permite al mediador mantener la neutralidad en un conflicto?''',
     options: [
       r'''Porque la empatía evita que el mediador comprenda los motivos lógicos de las partes.''',
       r'''Porque la empatía implica comprender los sentimientos ajenos de forma cognitiva sin necesidad de adoptar o compartir su carga emocional.''',
@@ -826,12 +948,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque la simpatía genera indiferencia total y la empatía genera un rechazo activo.''',
     ],
     correctAnswer: 1,
-    explanation: r"""Al empatizar, el mediador entiende el dolor o molestia del participante sin 'contagiarse' ni tomar partido (que es común en la simpatía, donde uno se alinea emocionalmente con la persona por la que siente lástima o afinidad).""",
+    explanation:
+        r"""Al empatizar, el mediador entiende el dolor o molestia del participante sin 'contagiarse' ni tomar partido (que es común en la simpatía, donde uno se alinea emocionalmente con la persona por la que siente lástima o afinidad).""",
   ),
   Question(
     id: 'pfrh_q64',
     topicId: 'pfrh_t1',
-    text: r'''En los estudios sobre cultura de paz de Johan Galtung, la violencia que se manifiesta de forma física o verbal inmediata de una persona a otra se denomina:''',
+    text:
+        r'''En los estudios sobre cultura de paz de Johan Galtung, la violencia que se manifiesta de forma física o verbal inmediata de una persona a otra se denomina:''',
     options: [
       r'''Violencia estructural''',
       r'''Violencia cultural''',
@@ -839,12 +963,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia pasiva''',
     ],
     correctAnswer: 2,
-    explanation: r'''La violencia directa es visible y conductual, manifestándose en agresiones físicas, verbales o psicológicas concretas de un emisor a un receptor.''',
+    explanation:
+        r'''La violencia directa es visible y conductual, manifestándose en agresiones físicas, verbales o psicológicas concretas de un emisor a un receptor.''',
   ),
   Question(
     id: 'pfrh_q65',
     topicId: 'pfrh_t1',
-    text: r'''La violencia que se expresa a través de las desigualdades sociales, la pobreza extrema y la denegación sistemática de derechos fundamentales por el propio sistema social o político se denomina:''',
+    text:
+        r'''La violencia que se expresa a través de las desigualdades sociales, la pobreza extrema y la denegación sistemática de derechos fundamentales por el propio sistema social o político se denomina:''',
     options: [
       r'''Violencia directa''',
       r'''Violencia estructural''',
@@ -852,12 +978,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia verbal''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia estructural no es perpetrada por un individuo específico, sino que está integrada en las estructuras sociales, manifestándose como exclusión, desigualdad y privación de necesidades básicas.''',
+    explanation:
+        r'''La violencia estructural no es perpetrada por un individuo específico, sino que está integrada en las estructuras sociales, manifestándose como exclusión, desigualdad y privación de necesidades básicas.''',
   ),
   Question(
     id: 'pfrh_q66',
     topicId: 'pfrh_t1',
-    text: r'''De acuerdo con Marshall Rosenberg, creador de la Comunicación No Violenta (CNV), los cuatro componentes secuenciales del proceso son:''',
+    text:
+        r'''De acuerdo con Marshall Rosenberg, creador de la Comunicación No Violenta (CNV), los cuatro componentes secuenciales del proceso son:''',
     options: [
       r'''Juicio, castigo, queja y exigencia de disculpas.''',
       r'''Observación de hechos, identificación de sentimientos, expresión de necesidades y formulación de peticiones concretas.''',
@@ -865,7 +993,8 @@ final List<Question> pfrhQuestions = [
       r'''Denuncia pública, diálogo informal, conciliación formal y arbitraje final.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La CNV propone observar los hechos sin juzgar, conectar con lo que sentimos, identificar la necesidad insatisfecha detrás de esa emoción y pedir de manera clara y positiva acciones concretas para resolverlo.''',
+    explanation:
+        r'''La CNV propone observar los hechos sin juzgar, conectar con lo que sentimos, identificar la necesidad insatisfecha detrás de esa emoción y pedir de manera clara y positiva acciones concretas para resolverlo.''',
   ),
   Question(
     id: 'pfrh_q67',
@@ -878,12 +1007,14 @@ final List<Question> pfrhQuestions = [
       r'''Un árbitro debe redactar un laudo penal internacional.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La asertividad de confrontación sirve para contrastar de manera respetuosa y firme un compromiso previo frente al hecho real (ej. «Acordamos que enviarías tu parte el martes; es jueves y no la he recibido. ¿Qué ha ocurrido?»).''',
+    explanation:
+        r'''La asertividad de confrontación sirve para contrastar de manera respetuosa y firme un compromiso previo frente al hecho real (ej. «Acordamos que enviarías tu parte el martes; es jueves y no la he recibido. ¿Qué ha ocurrido?»).''',
   ),
   Question(
     id: 'pfrh_q68',
     topicId: 'pfrh_t1',
-    text: r'''En un conflicto por el cuidado de un jardín comunitario, un vecino dice: «No permitiré que planten flores rojas porque atraen abejas y mi hijo es alérgico a sus picaduras». La declaración «mi hijo es alérgico a las picaduras de abeja» se tipifica como:''',
+    text:
+        r'''En un conflicto por el cuidado de un jardín comunitario, un vecino dice: «No permitiré que planten flores rojas porque atraen abejas y mi hijo es alérgico a sus picaduras». La declaración «mi hijo es alérgico a las picaduras de abeja» se tipifica como:''',
     options: [
       r'''Una posición inflexible.''',
       r'''Un interés o necesidad subyacente.''',
@@ -891,12 +1022,14 @@ final List<Question> pfrhQuestions = [
       r'''Una minimización emocional.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La negativa a plantar flores rojas es la 'posición' (demanda superficial). El temor por la salud del hijo alérgico es el 'interés' (la necesidad/miedo que motiva la postura), el cual permite buscar alternativas seguras (flores que no atraigan abejas).""",
+    explanation:
+        r"""La negativa a plantar flores rojas es la 'posición' (demanda superficial). El temor por la salud del hijo alérgico es el 'interés' (la necesidad/miedo que motiva la postura), el cual permite buscar alternativas seguras (flores que no atraigan abejas).""",
   ),
   Question(
     id: 'pfrh_q69',
     topicId: 'pfrh_t1',
-    text: r'''Un integrante de un grupo escolar envía el siguiente mensaje: «Qué bueno que algunos tengan tiempo libre para pasear mientras los demás morimos haciendo el informe. No se preocupen, yo lo termino solo como siempre». Este mensaje se tipifica como:''',
+    text:
+        r'''Un integrante de un grupo escolar envía el siguiente mensaje: «Qué bueno que algunos tengan tiempo libre para pasear mientras los demás morimos haciendo el informe. No se preocupen, yo lo termino solo como siempre». Este mensaje se tipifica como:''',
     options: [
       r'''Asertivo empático''',
       r'''Agresivo directo''',
@@ -904,12 +1037,14 @@ final List<Question> pfrhQuestions = [
       r'''Pasivo sumiso''',
     ],
     correctAnswer: 2,
-    explanation: r"""El mensaje evita confrontar abiertamente el problema del reparto de tareas (pasividad verbal directa) pero lanza sarcasmo, victimización e indirectas hostiles ('yo lo termino solo como siempre'), lo que caracteriza el estilo pasivo-agresivo.""",
+    explanation:
+        r"""El mensaje evita confrontar abiertamente el problema del reparto de tareas (pasividad verbal directa) pero lanza sarcasmo, victimización e indirectas hostiles ('yo lo termino solo como siempre'), lo que caracteriza el estilo pasivo-agresivo.""",
   ),
   Question(
     id: 'pfrh_q70',
     topicId: 'pfrh_t1',
-    text: r"""En una asamblea vecinal, el moderador pide pasar de un 'debate' a un 'diálogo'. ¿Qué cambio actitudinal se espera de los vecinos al hacer esta transición?""",
+    text:
+        r"""En una asamblea vecinal, el moderador pide pasar de un 'debate' a un 'diálogo'. ¿Qué cambio actitudinal se espera de los vecinos al hacer esta transición?""",
     options: [
       r'''Que dejen de escucharse y comiencen a votar de forma secreta e individual.''',
       r"""Que abandonen la actitud de atacar las propuestas del otro para 'ganar' la discusión, y adopten una postura de escucha abierta para comprender e integrar las diferentes perspectivas.""",
@@ -917,12 +1052,14 @@ final List<Question> pfrhQuestions = [
       r'''Que guarden silencio absoluto y se retiren a sus casas sin conversar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El debate busca convencer a otros y ganar el argumento destruyendo las razones ajenas. El diálogo busca comprender, cooperar y crear puentes de entendimiento entre posiciones divergentes.''',
+    explanation:
+        r'''El debate busca convencer a otros y ganar el argumento destruyendo las razones ajenas. El diálogo busca comprender, cooperar y crear puentes de entendimiento entre posiciones divergentes.''',
   ),
   Question(
     id: 'pfrh_q71',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino acude a la junta de propietarios llorando porque envenenaron a su mascota. Un miembro de la junta le dice: «Bueno, ya pasó. Solo era un animal, puedes comprar otro este fin de semana. Hay que avanzar con el tema de la luz». Esta respuesta califica como:''',
+    text:
+        r'''Un vecino acude a la junta de propietarios llorando porque envenenaron a su mascota. Un miembro de la junta le dice: «Bueno, ya pasó. Solo era un animal, puedes comprar otro este fin de semana. Hay que avanzar con el tema de la luz». Esta respuesta califica como:''',
     options: [
       r'''Asertividad de confrontación''',
       r'''Minimización emocional''',
@@ -930,12 +1067,14 @@ final List<Question> pfrhQuestions = [
       r'''Racionalización empática''',
     ],
     correctAnswer: 1,
-    explanation: r"""El miembro de la junta subestima el valor de la mascota ('solo era un animal') y el dolor del dueño, instándolo a superarlo rápido, lo que desvaloriza severamente su estado emocional.""",
+    explanation:
+        r"""El miembro de la junta subestima el valor de la mascota ('solo era un animal') y el dolor del dueño, instándolo a superarlo rápido, lo que desvaloriza severamente su estado emocional.""",
   ),
   Question(
     id: 'pfrh_q72',
     topicId: 'pfrh_t1',
-    text: r'''Dos vecinos tienen un conflicto por el crecimiento de las raíces de un árbol. Acuerdan someter el caso a un abogado de confianza. El abogado escucha a ambos y les dice: «Ustedes tienen la opción de llegar a un acuerdo hoy redactando un cronograma de poda. Si no se ponen de acuerdo, yo decidiré el caso y mi fallo será obligatorio por contrato». ¿En qué orden se presentan las opciones ofrecidas por el abogado?''',
+    text:
+        r'''Dos vecinos tienen un conflicto por el crecimiento de las raíces de un árbol. Acuerdan someter el caso a un abogado de confianza. El abogado escucha a ambos y les dice: «Ustedes tienen la opción de llegar a un acuerdo hoy redactando un cronograma de poda. Si no se ponen de acuerdo, yo decidiré el caso y mi fallo será obligatorio por contrato». ¿En qué orden se presentan las opciones ofrecidas por el abogado?''',
     options: [
       r'''Primero conciliación y luego mediación.''',
       r'''Primero mediación/conciliación y luego arbitraje.''',
@@ -943,12 +1082,14 @@ final List<Question> pfrhQuestions = [
       r'''Primero arbitraje de derecho y luego proceso penal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La primera opción (llegar a un acuerdo consensuado guiados por él) describe la mediación o conciliación. La segunda opción (si no acuerdan, él decidirá de forma obligatoria) tipifica el arbitraje.''',
+    explanation:
+        r'''La primera opción (llegar a un acuerdo consensuado guiados por él) describe la mediación o conciliación. La segunda opción (si no acuerdan, él decidirá de forma obligatoria) tipifica el arbitraje.''',
   ),
   Question(
     id: 'pfrh_q73',
     topicId: 'pfrh_t1',
-    text: r'''Un estudiante es constantemente interrumpido y burlado por sus compañeros cuando intenta opinar en clase. Él decide bajar la cabeza, no quejarse ante el profesor y dejar de participar para que no se burlen más. ¿Qué tipo de comportamiento demuestra?''',
+    text:
+        r'''Un estudiante es constantemente interrumpido y burlado por sus compañeros cuando intenta opinar en clase. Él decide bajar la cabeza, no quejarse ante el profesor y dejar de participar para que no se burlen más. ¿Qué tipo de comportamiento demuestra?''',
     options: [
       r'''Evitación pasiva''',
       r'''Negociación cooperativa''',
@@ -956,12 +1097,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad encubierta''',
     ],
     correctAnswer: 0,
-    explanation: r'''Al retirarse del espacio de participación y reprimir sus derechos de expresión escolar frente al abuso de otros para evitar tensiones, el estudiante adopta un comportamiento de evitación pasiva.''',
+    explanation:
+        r'''Al retirarse del espacio de participación y reprimir sus derechos de expresión escolar frente al abuso de otros para evitar tensiones, el estudiante adopta un comportamiento de evitación pasiva.''',
   ),
   Question(
     id: 'pfrh_q74',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino le reclama a otro: «Siempre dejas la basura fuera de hora, eres insoportable». El interpelado responde calmado: «¿Qué aspecto de mi forma de dejar la basura te resulta molesto específicamente y cómo crees que podríamos organizarlo mejor?». Esta técnica se conoce como:''',
+    text:
+        r'''Un vecino le reclama a otro: «Siempre dejas la basura fuera de hora, eres insoportable». El interpelado responde calmado: «¿Qué aspecto de mi forma de dejar la basura te resulta molesto específicamente y cómo crees que podríamos organizarlo mejor?». Esta técnica se conoce como:''',
     options: [
       r'''Banco de niebla''',
       r'''Pregunta asertiva''',
@@ -969,12 +1112,14 @@ final List<Question> pfrhQuestions = [
       r'''Aplazamiento asertivo''',
     ],
     correctAnswer: 1,
-    explanation: r"""La 'pregunta asertiva' consiste en incitar a la otra persona a dar más detalles sobre su crítica o acusación, convirtiendo un ataque general e insultante en información útil y específica para resolver el problema.""",
+    explanation:
+        r"""La 'pregunta asertiva' consiste en incitar a la otra persona a dar más detalles sobre su crítica o acusación, convirtiendo un ataque general e insultante en información útil y específica para resolver el problema.""",
   ),
   Question(
     id: 'pfrh_q75',
     topicId: 'pfrh_t1',
-    text: r'''En un proyecto escolar de ciencias, dos alumnos tienen ideas diferentes para el experimento. Deciden reunirse tres horas para investigar cómo integrar los dos proyectos en uno solo que tenga el doble de alcance. En la teoría de Thomas-Kilmann, este enfoque se clasifica como:''',
+    text:
+        r'''En un proyecto escolar de ciencias, dos alumnos tienen ideas diferentes para el experimento. Deciden reunirse tres horas para investigar cómo integrar los dos proyectos en uno solo que tenga el doble de alcance. En la teoría de Thomas-Kilmann, este enfoque se clasifica como:''',
     options: [
       r'''Estilo Competitivo (ganar-perder)''',
       r'''Estilo Evasivo (perder-perder)''',
@@ -982,12 +1127,14 @@ final List<Question> pfrhQuestions = [
       r'''Estilo Acomodador (perder-ganar)''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estilo colaborativo busca satisfacer plenamente los intereses de ambas partes mediante un esfuerzo conjunto que integre y potencie ambas propuestas, logrando una solución óptima y sin renuncias sustanciales.''',
+    explanation:
+        r'''El estilo colaborativo busca satisfacer plenamente los intereses de ambas partes mediante un esfuerzo conjunto que integre y potencie ambas propuestas, logrando una solución óptima y sin renuncias sustanciales.''',
   ),
   Question(
     id: 'pfrh_q76',
     topicId: 'pfrh_t1',
-    text: r"""¿Cuál de las siguientes afirmaciones representa un 'Mensaje Tú' (característico de la comunicación agresiva o culpabilizadora)?""",
+    text:
+        r"""¿Cuál de las siguientes afirmaciones representa un 'Mensaje Tú' (característico de la comunicación agresiva o culpabilizadora)?""",
     options: [
       r'''«Me preocupa que no entreguemos el reporte a tiempo si no definimos hoy las tareas».''',
       r'''«Tú eres el culpable de que el grupo esté desorganizado porque siempre llegas tarde».''',
@@ -995,12 +1142,14 @@ final List<Question> pfrhQuestions = [
       r'''«Prefiero que conversemos este tema por la tarde con más calma».''',
     ],
     correctAnswer: 1,
-    explanation: r"""Los 'Mensajes Tú' juzgan, etiquetan o culpan directamente al receptor de la conducta o de la emoción del emisor, aumentando la actitud defensiva e impidiendo la resolución pacífica.""",
+    explanation:
+        r"""Los 'Mensajes Tú' juzgan, etiquetan o culpan directamente al receptor de la conducta o de la emoción del emisor, aumentando la actitud defensiva e impidiendo la resolución pacífica.""",
   ),
   Question(
     id: 'pfrh_q77',
     topicId: 'pfrh_t1',
-    text: r'''En la teoría de la mediación, si el mediador se limita estrictamente a facilitar los canales de comunicación y se niega por completo a proponer soluciones, orientaciones o juicios de valor sobre el fondo del asunto, está aplicando una:''',
+    text:
+        r'''En la teoría de la mediación, si el mediador se limita estrictamente a facilitar los canales de comunicación y se niega por completo a proponer soluciones, orientaciones o juicios de valor sobre el fondo del asunto, está aplicando una:''',
     options: [
       r'''Mediación evaluativa''',
       r'''Mediación facilitativa o tradicional''',
@@ -1008,12 +1157,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación distributiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''La mediación facilitativa (basada en el modelo de Harvard) sostiene que el mediador no debe evaluar las posiciones ni sugerir soluciones, sino empoderar a las partes para que ellas mismas estructuren y decidan el acuerdo.''',
+    explanation:
+        r'''La mediación facilitativa (basada en el modelo de Harvard) sostiene que el mediador no debe evaluar las posiciones ni sugerir soluciones, sino empoderar a las partes para que ellas mismas estructuren y decidan el acuerdo.''',
   ),
   Question(
     id: 'pfrh_q78',
     topicId: 'pfrh_t1',
-    text: r'''Cuando un árbitro comunitario decide un conflicto vecinal basándose en su leal saber y entender, apelando al sentido común, la moral y la justicia natural de la comunidad sin necesidad de aplicar normas jurídicas estrictas, se trata de un:''',
+    text:
+        r'''Cuando un árbitro comunitario decide un conflicto vecinal basándose en su leal saber y entender, apelando al sentido común, la moral y la justicia natural de la comunidad sin necesidad de aplicar normas jurídicas estrictas, se trata de un:''',
     options: [
       r'''Arbitraje de derecho''',
       r'''Arbitraje de equidad o de conciencia''',
@@ -1021,12 +1172,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación integrativa''',
     ],
     correctAnswer: 1,
-    explanation: r'''En el arbitraje de equidad (o de conciencia), el árbitro resuelve según su leal saber y entender, aplicando principios de justicia y equidad. En cambio, en el arbitraje de derecho debe resolver estrictamente según las leyes vigentes del país.''',
+    explanation:
+        r'''En el arbitraje de equidad (o de conciencia), el árbitro resuelve según su leal saber y entender, aplicando principios de justicia y equidad. En cambio, en el arbitraje de derecho debe resolver estrictamente según las leyes vigentes del país.''',
   ),
   Question(
     id: 'pfrh_q79',
     topicId: 'pfrh_t1',
-    text: r'''Una estudiante le confiesa a su amiga que tiene problemas de comunicación con sus padres. Su amiga interrumpe y le dice: «Fácil, lo que tienes que hacer es escribirles una carta larga expresando lo que sientes y dejarla en su mesa de noche». Esta respuesta se clasifica como:''',
+    text:
+        r'''Una estudiante le confiesa a su amiga que tiene problemas de comunicación con sus padres. Su amiga interrumpe y le dice: «Fácil, lo que tienes que hacer es escribirles una carta larga expresando lo que sientes y dejarla en su mesa de noche». Esta respuesta se clasifica como:''',
     options: [
       r'''Empatía cognitiva''',
       r'''Asertividad directa''',
@@ -1034,12 +1187,14 @@ final List<Question> pfrhQuestions = [
       r'''Escucha activa''',
     ],
     correctAnswer: 2,
-    explanation: r"""Dar una solución simplista o 'receta de acción' de forma inmediata impide que la persona termine de desahogarse y que se exploren a fondo sus emociones e intereses, lo que caracteriza al consejo no solicitado.""",
+    explanation:
+        r"""Dar una solución simplista o 'receta de acción' de forma inmediata impide que la persona termine de desahogarse y que se exploren a fondo sus emociones e intereses, lo que caracteriza al consejo no solicitado.""",
   ),
   Question(
     id: 'pfrh_q80',
     topicId: 'pfrh_t1',
-    text: r'''La frase: «Entiendo que estás cansado por haber trabajado todo el día, pero necesitamos limpiar la cocina ahora como acordamos la semana pasada», se tipifica como:''',
+    text:
+        r'''La frase: «Entiendo que estás cansado por haber trabajado todo el día, pero necesitamos limpiar la cocina ahora como acordamos la semana pasada», se tipifica como:''',
     options: [
       r'''Asertividad empática''',
       r'''Agresividad encubierta''',
@@ -1047,12 +1202,14 @@ final List<Question> pfrhQuestions = [
       r'''Minimización emocional''',
     ],
     correctAnswer: 0,
-    explanation: r"""Muestra asertividad empática porque la primera parte del mensaje valida la realidad de la contraparte ('Entiendo que estás cansado...'), mientras que la segunda parte sostiene con firmeza y respeto el propio derecho o acuerdo ('pero necesitamos limpiar la cocina...').""",
+    explanation:
+        r"""Muestra asertividad empática porque la primera parte del mensaje valida la realidad de la contraparte ('Entiendo que estás cansado...'), mientras que la segunda parte sostiene con firmeza y respeto el propio derecho o acuerdo ('pero necesitamos limpiar la cocina...').""",
   ),
   Question(
     id: 'pfrh_q81',
     topicId: 'pfrh_t1',
-    text: r'''Una negociación donde los recursos en disputa son limitados y fijos (juego de suma cero), de modo que lo que una parte gana necesariamente lo pierde la otra, se denomina:''',
+    text:
+        r'''Una negociación donde los recursos en disputa son limitados y fijos (juego de suma cero), de modo que lo que una parte gana necesariamente lo pierde la otra, se denomina:''',
     options: [
       r'''Negociación integrativa''',
       r'''Negociación distributiva o competitiva''',
@@ -1060,12 +1217,14 @@ final List<Question> pfrhQuestions = [
       r'''Diálogo empático''',
     ],
     correctAnswer: 1,
-    explanation: r'''La negociación distributiva o competitiva consiste en repartir una cantidad fija de recursos. El objetivo de las partes es maximizar su tajada personal, generando un escenario de ganar-perder.''',
+    explanation:
+        r'''La negociación distributiva o competitiva consiste en repartir una cantidad fija de recursos. El objetivo de las partes es maximizar su tajada personal, generando un escenario de ganar-perder.''',
   ),
   Question(
     id: 'pfrh_q82',
     topicId: 'pfrh_t1',
-    text: r'''Un vecino observa que otro saca a pasear a su mascota sin correa, lo cual le genera temor. Sin embargo, decide no salir a la calle cuando ve al perro para evitar encontrarse con el vecino y esquivar cualquier discusión. En el modelo Thomas-Kilmann, este estilo es:''',
+    text:
+        r'''Un vecino observa que otro saca a pasear a su mascota sin correa, lo cual le genera temor. Sin embargo, decide no salir a la calle cuando ve al perro para evitar encontrarse con el vecino y esquivar cualquier discusión. En el modelo Thomas-Kilmann, este estilo es:''',
     options: [
       r'''Competitivo''',
       r'''Evasivo''',
@@ -1073,12 +1232,14 @@ final List<Question> pfrhQuestions = [
       r'''Acomodador''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estilo evasivo se caracteriza por ignorar o esquivar el problema, posponiendo o eludiendo el enfrentamiento directo a costa de no resolver la situación que causa insatisfacción.''',
+    explanation:
+        r'''El estilo evasivo se caracteriza por ignorar o esquivar el problema, posponiendo o eludiendo el enfrentamiento directo a costa de no resolver la situación que causa insatisfacción.''',
   ),
   Question(
     id: 'pfrh_q83',
     topicId: 'pfrh_t1',
-    text: r'''Durante un diálogo interpersonal, expresiones como «Sí, entiendo lo que dices», «Ajá, continúa», o reformular diciendo «¿Quieres decir que te sentiste ignorado?» corresponden a la técnica de:''',
+    text:
+        r'''Durante un diálogo interpersonal, expresiones como «Sí, entiendo lo que dices», «Ajá, continúa», o reformular diciendo «¿Quieres decir que te sentiste ignorado?» corresponden a la técnica de:''',
     options: [
       r'''Negociación integrativa''',
       r'''Arbitraje informal''',
@@ -1086,12 +1247,14 @@ final List<Question> pfrhQuestions = [
       r'''Asertividad negativa''',
     ],
     correctAnswer: 2,
-    explanation: r'''Estas señales verbales y de reformulación demuestran que el receptor está prestando atención plena, procesando la información y verificando la comprensión del mensaje transmitido.''',
+    explanation:
+        r'''Estas señales verbales y de reformulación demuestran que el receptor está prestando atención plena, procesando la información y verificando la comprensión del mensaje transmitido.''',
   ),
   Question(
     id: 'pfrh_q84',
     topicId: 'pfrh_t1',
-    text: r'''Un miembro de un grupo familiar no está de acuerdo con el reparto de las tareas domésticas. En lugar de expresarlo, realiza las tareas de forma extremadamente lenta y defectuosa para que los demás se harten y decidan no pedirle nada más. Este comportamiento es:''',
+    text:
+        r'''Un miembro de un grupo familiar no está de acuerdo con el reparto de las tareas domésticas. En lugar de expresarlo, realiza las tareas de forma extremadamente lenta y defectuosa para que los demás se harten y decidan no pedirle nada más. Este comportamiento es:''',
     options: [
       r'''Asertivo de confrontación''',
       r'''Pasivo-Agresivo''',
@@ -1099,12 +1262,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación de intereses''',
     ],
     correctAnswer: 1,
-    explanation: r'''Se expresa el malestar y la resistencia de manera indirecta (boicot o cumplimiento defectuoso deliberado) en lugar de una confrontación honesta y directa, lo que caracteriza el comportamiento pasivo-agresivo.''',
+    explanation:
+        r'''Se expresa el malestar y la resistencia de manera indirecta (boicot o cumplimiento defectuoso deliberado) en lugar de una confrontación honesta y directa, lo que caracteriza el comportamiento pasivo-agresivo.''',
   ),
   Question(
     id: 'pfrh_q85',
     topicId: 'pfrh_t1',
-    text: r'''Para que un estudiante sea un mediador escolar eficaz ante un conflicto entre sus compañeros de clase, debe poseer principalmente las siguientes cualidades:''',
+    text:
+        r'''Para que un estudiante sea un mediador escolar eficaz ante un conflicto entre sus compañeros de clase, debe poseer principalmente las siguientes cualidades:''',
     options: [
       r'''Imparcialidad, capacidad de escucha activa, empatía y discreción.''',
       r'''Fuerza física para separar a los alumnos y autoridad para imponer sanciones.''',
@@ -1112,12 +1277,14 @@ final List<Question> pfrhQuestions = [
       r'''Habilidad para dar consejos rápidos y decidir quién es el culpable del problema.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La mediación requiere neutralidad/imparcialidad (no tomar partido), confidencialidad/discreción, empatía para entender a ambos y escucha activa para facilitar la comunicación constructiva.''',
+    explanation:
+        r'''La mediación requiere neutralidad/imparcialidad (no tomar partido), confidencialidad/discreción, empatía para entender a ambos y escucha activa para facilitar la comunicación constructiva.''',
   ),
   Question(
     id: 'pfrh_q86',
     topicId: 'pfrh_t1',
-    text: r'''En el ámbito del derecho familiar civil peruano, ¿cuál de los siguientes temas representa una materia conciliable que las partes pueden resolver en un centro de conciliación?''',
+    text:
+        r'''En el ámbito del derecho familiar civil peruano, ¿cuál de los siguientes temas representa una materia conciliable que las partes pueden resolver en un centro de conciliación?''',
     options: [
       r'''La declaración judicial de paternidad (ADN).''',
       r'''El régimen de visitas y la pensión de alimentos de los hijos menores de edad.''',
@@ -1125,12 +1292,14 @@ final List<Question> pfrhQuestions = [
       r'''La comisión de un delito de violencia familiar física grave.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las materias disponibles que versen sobre derechos de libre disposición (pensiones alimenticias, régimen de visitas, tenencia) son perfectamente conciliables por acuerdo mutuo en un centro autorizado. Asuntos penales o filiación escapan a la conciliación directa.''',
+    explanation:
+        r'''Las materias disponibles que versen sobre derechos de libre disposición (pensiones alimenticias, régimen de visitas, tenencia) son perfectamente conciliables por acuerdo mutuo en un centro autorizado. Asuntos penales o filiación escapan a la conciliación directa.''',
   ),
   Question(
     id: 'pfrh_q87',
     topicId: 'pfrh_t1',
-    text: r'''Durante una discusión vecinal que se ha tornado violenta e insultante, uno de los vecinos dice de forma pausada: «Veo que ambos estamos muy enojados ahora y nos estamos faltando al respeto. Prefiero que detengamos la conversación aquí y nos reunamos mañana a las 5:00 p.m. para hablar con más calma». Esta técnica se denomina:''',
+    text:
+        r'''Durante una discusión vecinal que se ha tornado violenta e insultante, uno de los vecinos dice de forma pausada: «Veo que ambos estamos muy enojados ahora y nos estamos faltando al respeto. Prefiero que detengamos la conversación aquí y nos reunamos mañana a las 5:00 p.m. para hablar con más calma». Esta técnica se denomina:''',
     options: [
       r'''Banco de niebla''',
       r'''Aplazamiento asertivo''',
@@ -1138,12 +1307,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación distributiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''El aplazamiento asertivo consiste en posponer la discusión de un problema cuando el nivel de tensión o enojo de las partes impide una comunicación constructiva, garantizando retomar el tema en un momento más propicio.''',
+    explanation:
+        r'''El aplazamiento asertivo consiste en posponer la discusión de un problema cuando el nivel de tensión o enojo de las partes impide una comunicación constructiva, garantizando retomar el tema en un momento más propicio.''',
   ),
   Question(
     id: 'pfrh_q88',
     topicId: 'pfrh_t1',
-    text: r'''Lucía comparte departamento con Clara. Lucía está harta de que Clara deje los platos sucios en el fregadero durante días. Si Lucía desea actuar de forma asertiva, ¿cuál de las siguientes acciones debe tomar?''',
+    text:
+        r'''Lucía comparte departamento con Clara. Lucía está harta de que Clara deje los platos sucios en el fregadero durante días. Si Lucía desea actuar de forma asertiva, ¿cuál de las siguientes acciones debe tomar?''',
     options: [
       r'''Dejar los platos sucios sobre la cama de Clara para que entienda el mensaje de forma directa.''',
       r'''Hablar con Clara y decirle: «Hola Clara. Me siento incómoda cuando los platos quedan acumulados en el fregadero varios días, porque genera mal olor y me dificulta cocinar. Te propongo que acordemos lavarlos dentro de las 12 horas siguientes a su uso. ¿Qué te parece?».''',
@@ -1151,12 +1322,14 @@ final List<Question> pfrhQuestions = [
       r'''Gritarle en la sala: «¡Eres una sucia e irresponsable, no sabes convivir con la gente!».''',
     ],
     correctAnswer: 1,
-    explanation: r'''La opción B representa una comunicación asertiva: expone el hecho objetivo sin etiquetas ofensivas, expresa su sentimiento y la razón de su molestia, propone un acuerdo específico y consulta la opinión de la otra parte.''',
+    explanation:
+        r'''La opción B representa una comunicación asertiva: expone el hecho objetivo sin etiquetas ofensivas, expresa su sentimiento y la razón de su molestia, propone un acuerdo específico y consulta la opinión de la otra parte.''',
   ),
   Question(
     id: 'pfrh_q89',
     topicId: 'pfrh_t1',
-    text: r'''Dos vecinos disputan el uso de un callejón colindante para estacionar sus motocicletas. Al no llegar a un acuerdo directo, deciden acudir a la jueza de paz no letrada de la comunidad. La jueza los escucha por separado, les explica las normas locales de tránsito y les presenta una propuesta detallada de horarios alternos de estacionamiento que ambos aceptan firmando un acta. ¿Qué mecanismo se ha desarrollado en esta casuística?''',
+    text:
+        r'''Dos vecinos disputan el uso de un callejón colindante para estacionar sus motocicletas. Al no llegar a un acuerdo directo, deciden acudir a la jueza de paz no letrada de la comunidad. La jueza los escucha por separado, les explica las normas locales de tránsito y les presenta una propuesta detallada de horarios alternos de estacionamiento que ambos aceptan firmando un acta. ¿Qué mecanismo se ha desarrollado en esta casuística?''',
     options: [
       r'''Negociación directa cooperativa''',
       r'''Mediación facilitativa escolar''',
@@ -1164,12 +1337,14 @@ final List<Question> pfrhQuestions = [
       r'''Arbitraje de derecho contractual''',
     ],
     correctAnswer: 2,
-    explanation: r'''La jueza de paz actúa como un tercero facilitador que propone activamente una alternativa de solución formal que las partes deciden firmar voluntariamente, lo cual caracteriza a la conciliación comunitaria.''',
+    explanation:
+        r'''La jueza de paz actúa como un tercero facilitador que propone activamente una alternativa de solución formal que las partes deciden firmar voluntariamente, lo cual caracteriza a la conciliación comunitaria.''',
   ),
   Question(
     id: 'pfrh_q90',
     topicId: 'pfrh_t1',
-    text: r'''Un estudiante de primaria llega al aula llorando porque sus compañeros del equipo de fútbol no le permitieron jugar durante el recreo diciéndole que era «malo en el deporte». Su tutor nota la situación y conversa con él. ¿Cuál de las siguientes respuestas del tutor refleja una escucha empática?''',
+    text:
+        r'''Un estudiante de primaria llega al aula llorando porque sus compañeros del equipo de fútbol no le permitieron jugar durante el recreo diciéndole que era «malo en el deporte». Su tutor nota la situación y conversa con él. ¿Cuál de las siguientes respuestas del tutor refleja una escucha empática?''',
     options: [
       r'''«Bueno, al menos tienes buenas notas en matemáticas. El fútbol no es para todos, no llores por eso».''',
       r'''«Lo que tienes que hacer es practicar más los fines de semana y demostrarles que eres el mejor del salón».''',
@@ -1177,12 +1352,14 @@ final List<Question> pfrhQuestions = [
       r'''«Eso te pasa por no entrenar. Deberías exigirles que te dejen jugar o si no, acusarlos con el director».''',
     ],
     correctAnswer: 2,
-    explanation: r"""El tutor valida los sentimientos del estudiante ('entiendo que te sientas triste y excluido', 'debe doler mucho'), muestra respeto y abre un espacio participativo de diálogo sin dar recetas instantáneas de comportamiento.""",
+    explanation:
+        r"""El tutor valida los sentimientos del estudiante ('entiendo que te sientas triste y excluido', 'debe doler mucho'), muestra respeto y abre un espacio participativo de diálogo sin dar recetas instantáneas de comportamiento.""",
   ),
   Question(
     id: 'pfrh_q91',
     topicId: 'pfrh_t1',
-    text: r'''La señora Inés se queja del ruido constante proveniente de la carpintería del señor Roberto en el piso inferior de su quinta. Tras discutir varias veces, acuerdan que Roberto solo usará las máquinas ruidosas de lunes a viernes entre las 9:00 a.m. y las 5:00 p.m., dejando los fines de semana libres de ruidos. Ambas partes sienten que ganaron algo y cedieron en algo. En el modelo Thomas-Kilmann, esta estrategia se tipifica como:''',
+    text:
+        r'''La señora Inés se queja del ruido constante proveniente de la carpintería del señor Roberto en el piso inferior de su quinta. Tras discutir varias veces, acuerdan que Roberto solo usará las máquinas ruidosas de lunes a viernes entre las 9:00 a.m. y las 5:00 p.m., dejando los fines de semana libres de ruidos. Ambas partes sienten que ganaron algo y cedieron en algo. En el modelo Thomas-Kilmann, esta estrategia se tipifica como:''',
     options: [
       r'''Evasión pura''',
       r'''Acomodación total''',
@@ -1190,12 +1367,14 @@ final List<Question> pfrhQuestions = [
       r'''Competencia forzada''',
     ],
     correctAnswer: 2,
-    explanation: r"""El estilo de 'compromiso' implica encontrar una solución intermedia donde ambas partes ceden parcialmente en sus pretensiones originales para alcanzar un punto medio aceptable para los dos.""",
+    explanation:
+        r"""El estilo de 'compromiso' implica encontrar una solución intermedia donde ambas partes ceden parcialmente en sus pretensiones originales para alcanzar un punto medio aceptable para los dos.""",
   ),
   Question(
     id: 'pfrh_q92',
     topicId: 'pfrh_t1',
-    text: r'''En una cena familiar, la señora Elena nota que su esposo toma decisiones sobre el presupuesto de las vacaciones sin consultarle a ella ni a sus hijos. Para expresar su malestar de forma asertiva delante de la familia, Elena debería decir:''',
+    text:
+        r'''En una cena familiar, la señora Elena nota que su esposo toma decisiones sobre el presupuesto de las vacaciones sin consultarle a ella ni a sus hijos. Para expresar su malestar de forma asertiva delante de la familia, Elena debería decir:''',
     options: [
       r'''«Elena, cállate y no arruines la cena; hablaremos de esto en privado cediendo a lo que él decida».''',
       r'''«Siempre quieres controlarlo todo y nos tratas como si no tuviéramos cerebro. Eres un autoritario».''',
@@ -1203,12 +1382,14 @@ final List<Question> pfrhQuestions = [
       r'''No decir nada durante la cena, pero gastar un dinero de la cuenta común al día siguiente en compras personales sin avisar.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La opción C combina el respeto, la expresión honesta de la emoción personal ('me siento excluida'), el reconocimiento de la intención ajena ('valoro que planifiques...'), plantea una propuesta clara de solución y abre el espacio al consenso familiar.""",
+    explanation:
+        r"""La opción C combina el respeto, la expresión honesta de la emoción personal ('me siento excluida'), el reconocimiento de la intención ajena ('valoro que planifiques...'), plantea una propuesta clara de solución y abre el espacio al consenso familiar.""",
   ),
   Question(
     id: 'pfrh_q93',
     topicId: 'pfrh_t1',
-    text: r'''Dos juntas vecinales vecinas reclaman el derecho de administrar una cochera comunal de 20 espacios. Tras varios meses de disputas infructuosas, acuerdan por escrito someterse a la decisión final que adopte el Decano del Colegio de Ingenieros de la provincia tras evaluar los planos originales de la urbanización. El Decano emite una resolución técnica final que otorga la administración a la Junta A. Ambas juntas acatan la resolución. ¿Qué mecanismo operó?''',
+    text:
+        r'''Dos juntas vecinales vecinas reclaman el derecho de administrar una cochera comunal de 20 espacios. Tras varios meses de disputas infructuosas, acuerdan por escrito someterse a la decisión final que adopte el Decano del Colegio de Ingenieros de la provincia tras evaluar los planos originales de la urbanización. El Decano emite una resolución técnica final que otorga la administración a la Junta A. Ambas juntas acatan la resolución. ¿Qué mecanismo operó?''',
     options: [
       r'''Arbitraje técnico de conciencia''',
       r'''Conciliación extrajudicial civil''',
@@ -1216,12 +1397,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación de intereses distributivos''',
     ],
     correctAnswer: 0,
-    explanation: r'''Dado que las partes acordaron someter la solución definitiva a un tercero neutral y calificado (el Decano) cuya resolución técnica tiene carácter definitivo y vinculante para ellos, la casuística describe un arbitraje.''',
+    explanation:
+        r'''Dado que las partes acordaron someter la solución definitiva a un tercero neutral y calificado (el Decano) cuya resolución técnica tiene carácter definitivo y vinculante para ellos, la casuística describe un arbitraje.''',
   ),
   Question(
     id: 'pfrh_q94',
     topicId: 'pfrh_t1',
-    text: r'''Un alumno de secundaria no fue seleccionado para formar parte del elenco de danza de la escuela y se encuentra visiblemente desanimado en el recreo. Su compañero de carpeta se acerca y le dice: «¡Oye, ya deja esa cara! Es una tontería de baile de todas formas, además, hay gente en el mundo que sufre de enfermedades graves y tú te quejas por un bailecito». ¿Qué tipo de intervención representa?''',
+    text:
+        r'''Un alumno de secundaria no fue seleccionado para formar parte del elenco de danza de la escuela y se encuentra visiblemente desanimado en el recreo. Su compañero de carpeta se acerca y le dice: «¡Oye, ya deja esa cara! Es una tontería de baile de todas formas, además, hay gente en el mundo que sufre de enfermedades graves y tú te quejas por un bailecito». ¿Qué tipo de intervención representa?''',
     options: [
       r'''Asertividad empática''',
       r'''Minimización emocional''',
@@ -1229,12 +1412,14 @@ final List<Question> pfrhQuestions = [
       r'''Racionalización científica''',
     ],
     correctAnswer: 1,
-    explanation: r"""El compañero descalifica el dolor del alumno llamando al baile 'tonterías' y minimizando su decepción personal al compararla de forma falaz con desgracias mayores de salud pública.""",
+    explanation:
+        r"""El compañero descalifica el dolor del alumno llamando al baile 'tonterías' y minimizando su decepción personal al compararla de forma falaz con desgracias mayores de salud pública.""",
   ),
   Question(
     id: 'pfrh_q95',
     topicId: 'pfrh_t1',
-    text: r'''Un conductor roza levemente el espejo lateral del auto de otro vecino mientras retrocedía. El dueño del auto afectado sale de su domicilio portando una varilla de metal, golpea el capó del auto del conductor y le grita: «¡O aprendes a manejar o te rompo los vidrios ahora mismo, imbécil!». ¿Qué estilo de comunicación presenta el afectado?''',
+    text:
+        r'''Un conductor roza levemente el espejo lateral del auto de otro vecino mientras retrocedía. El dueño del auto afectado sale de su domicilio portando una varilla de metal, golpea el capó del auto del conductor y le grita: «¡O aprendes a manejar o te rompo los vidrios ahora mismo, imbécil!». ¿Qué estilo de comunicación presenta el afectado?''',
     options: [
       r'''Pasivo-Agresivo''',
       r'''Asertivo de confrontación rápida''',
@@ -1242,12 +1427,14 @@ final List<Question> pfrhQuestions = [
       r'''Negociación competitiva''',
     ],
     correctAnswer: 2,
-    explanation: r'''La conducta del afectado es netamente violenta y agresiva: utiliza insultos, amenazas físicas directas y daño a la propiedad, vulnerando totalmente la integridad y respeto del otro conductor.''',
+    explanation:
+        r'''La conducta del afectado es netamente violenta y agresiva: utiliza insultos, amenazas físicas directas y daño a la propiedad, vulnerando totalmente la integridad y respeto del otro conductor.''',
   ),
   Question(
     id: 'pfrh_q96',
     topicId: 'pfrh_t1',
-    text: r'''Juan y Daniel, estudiantes de tercero de secundaria, se agredieron verbalmente debido a que Daniel acusó a Juan de dañar su tablet de forma deliberada. El tutor escolar decide derivar el caso a dos alumnos mediadores del salón de cuarto de secundaria. Los mediadores facilitan una reunión donde ambos estudiantes aclaran que fue un accidente y acuerdan que Daniel ayudará a Juan a reparar la pantalla los fines de semana. ¿Cuál es el rol de los alumnos de cuarto?''',
+    text:
+        r'''Juan y Daniel, estudiantes de tercero de secundaria, se agredieron verbalmente debido a que Daniel acusó a Juan de dañar su tablet de forma deliberada. El tutor escolar decide derivar el caso a dos alumnos mediadores del salón de cuarto de secundaria. Los mediadores facilitan una reunión donde ambos estudiantes aclaran que fue un accidente y acuerdan que Daniel ayudará a Juan a reparar la pantalla los fines de semana. ¿Cuál es el rol de los alumnos de cuarto?''',
     options: [
       r'''Jueces escolares con capacidad de suspender a los alumnos.''',
       r'''Conciliadores formales del Ministerio de Justicia.''',
@@ -1255,12 +1442,14 @@ final List<Question> pfrhQuestions = [
       r'''Árbitros con potestad sancionadora.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Se trata de la mediación escolar entre pares, donde alumnos formados en resolución pacífica de conflictos actúan de forma neutral para ayudar a sus compañeros a restablecer el diálogo y acordar soluciones conjuntas.''',
+    explanation:
+        r'''Se trata de la mediación escolar entre pares, donde alumnos formados en resolución pacífica de conflictos actúan de forma neutral para ayudar a sus compañeros a restablecer el diálogo y acordar soluciones conjuntas.''',
   ),
   Question(
     id: 'pfrh_q97',
     topicId: 'pfrh_t1',
-    text: r'''Un joven le comenta a su tía que se siente muy presionado y angustiado por elegir la carrera profesional que estudiará al terminar el colegio. La tía le responde de inmediato: «Deberías estudiar derecho en mi universidad, es lo que da más dinero y prestigio en el país, déjate de dudas». Esta intervención califica como:''',
+    text:
+        r'''Un joven le comenta a su tía que se siente muy presionado y angustiado por elegir la carrera profesional que estudiará al terminar el colegio. La tía le responde de inmediato: «Deberías estudiar derecho en mi universidad, es lo que da más dinero y prestigio en el país, déjate de dudas». Esta intervención califica como:''',
     options: [
       r'''Escucha activa y contención emocional.''',
       r'''Consejo no solicitado que obtura el diálogo y la autoexploración del adolescente.''',
@@ -1268,12 +1457,14 @@ final List<Question> pfrhQuestions = [
       r'''Mediación familiar de intereses profesionales.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La tía impone de inmediato su punto de vista personal ('deberías estudiar derecho...') sin validar la angustia o confusión de su sobrino ni propiciar preguntas que lo ayuden a reflexionar por sí mismo, constituyendo un bloqueo empático por consejo no solicitado.""",
+    explanation:
+        r"""La tía impone de inmediato su punto de vista personal ('deberías estudiar derecho...') sin validar la angustia o confusión de su sobrino ni propiciar preguntas que lo ayuden a reflexionar por sí mismo, constituyendo un bloqueo empático por consejo no solicitado.""",
   ),
   Question(
     id: 'pfrh_q98',
     topicId: 'pfrh_t1',
-    text: r'''Los dueños de dos tiendas del mercado vecinal discuten por el uso del pasadizo para colocar carteles publicitarios. Sin intervención de terceros, conversan y acuerdan usar un solo cartel publicitario compartido de doble cara colgado del techo que los beneficie a ambos y mantenga el pasillo libre para los compradores. ¿Qué mecanismo y estilo de manejo de conflictos se aplicó?''',
+    text:
+        r'''Los dueños de dos tiendas del mercado vecinal discuten por el uso del pasadizo para colocar carteles publicitarios. Sin intervención de terceros, conversan y acuerdan usar un solo cartel publicitario compartido de doble cara colgado del techo que los beneficie a ambos y mantenga el pasillo libre para los compradores. ¿Qué mecanismo y estilo de manejo de conflictos se aplicó?''',
     options: [
       r'''Negociación directa con estilo colaborativo (ganar-ganar).''',
       r'''Arbitraje de conciencia con estilo competitivo.''',
@@ -1281,12 +1472,14 @@ final List<Question> pfrhQuestions = [
       r'''Mediación formal con estilo acomodador.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Se resolvió directamente entre las partes (negociación directa) mediante un acuerdo creativo que satisface plenamente las necesidades de visibilidad comercial y paso libre de clientes de ambos sin pérdidas (estilo colaborativo ganar-ganar).''',
+    explanation:
+        r'''Se resolvió directamente entre las partes (negociación directa) mediante un acuerdo creativo que satisface plenamente las necesidades de visibilidad comercial y paso libre de clientes de ambos sin pérdidas (estilo colaborativo ganar-ganar).''',
   ),
   Question(
     id: 'pfrh_q99',
     topicId: 'pfrh_t1',
-    text: r'''Un joven está molesto porque su madre le pidió que ordenara su habitación antes de salir a jugar fútbol. Él no replica verbalmente, pero limpia la habitación arrojando los juguetes violentamente contra las cajas de plástico de forma ruidosa, y luego se va del domicilio dando un portazo. Este estilo es:''',
+    text:
+        r'''Un joven está molesto porque su madre le pidió que ordenara su habitación antes de salir a jugar fútbol. Él no replica verbalmente, pero limpia la habitación arrojando los juguetes violentamente contra las cajas de plástico de forma ruidosa, y luego se va del domicilio dando un portazo. Este estilo es:''',
     options: [
       r'''Asertivo indirecto''',
       r'''Pasivo-Agresivo''',
@@ -1294,12 +1487,14 @@ final List<Question> pfrhQuestions = [
       r'''Pasivo sumiso puro''',
     ],
     correctAnswer: 1,
-    explanation: r'''El joven no expresa su desacuerdo verbalmente de forma directa (pasividad), pero demuestra su hostilidad mediante conductas físicas ruidosas y destructivas indirectas (arrojar juguetes, portazo), lo que tipifica el estilo pasivo-agresivo.''',
+    explanation:
+        r'''El joven no expresa su desacuerdo verbalmente de forma directa (pasividad), pero demuestra su hostilidad mediante conductas físicas ruidosas y destructivas indirectas (arrojar juguetes, portazo), lo que tipifica el estilo pasivo-agresivo.''',
   ),
   Question(
     id: 'pfrh_q100',
     topicId: 'pfrh_t1',
-    text: r'''Durante una exposición de clase, un alumno olvida la mitad de su exposición y se queda paralizado. Al final de la clase, el docente habla con él a solas y le dice: «He visto que te preparaste mucho por el material visual que trajiste, pero sé que los nervios frente al grupo te jugaron una mala pasada hoy. Programemos tu exposición para la próxima sesión a solas en el recreo para que te sientas más tranquilo. ¿Estás de acuerdo?». Esta actitud docente es:''',
+    text:
+        r'''Durante una exposición de clase, un alumno olvida la mitad de su exposición y se queda paralizado. Al final de la clase, el docente habla con él a solas y le dice: «He visto que te preparaste mucho por el material visual que trajiste, pero sé que los nervios frente al grupo te jugaron una mala pasada hoy. Programemos tu exposición para la próxima sesión a solas en el recreo para que te sientas más tranquilo. ¿Estás de acuerdo?». Esta actitud docente es:''',
     options: [
       r'''Asertiva y empática, promoviendo un clima escolar de confianza y cultura de paz.''',
       r'''Pasivo-agresiva, porque expone la debilidad del estudiante ante el recreo.''',
@@ -1307,12 +1502,14 @@ final List<Question> pfrhQuestions = [
       r'''De consejo no solicitado, imponiendo una sanción disciplinaria severa de forma encubierta.''',
     ],
     correctAnswer: 0,
-    explanation: r"""El docente valida el esfuerzo previo del estudiante ('He visto que te preparaste mucho') e identifica empáticamente la causa de su paralización ('sé que los nervios... te jugaron una mala pasada'), y de forma asertiva y constructiva le ofrece una alternativa para evaluar su competencia respetando su ritmo emocional.""",
+    explanation:
+        r"""El docente valida el esfuerzo previo del estudiante ('He visto que te preparaste mucho') e identifica empáticamente la causa de su paralización ('sé que los nervios... te jugaron una mala pasada'), y de forma asertiva y constructiva le ofrece una alternativa para evaluar su competencia respetando su ritmo emocional.""",
   ),
   Question(
     id: 'pfrh_q101',
     topicId: 'pfrh_t1',
-    text: r'''Dos vecinos entran en conflicto por el límite de sus terrenos. Deciden acudir a un tercero imparcial que, tras escucharlos, propone fórmulas de arreglo y opciones de solución, aunque los vecinos tienen la última palabra. ¿Qué mecanismo alternativo de resolución de conflictos se está utilizando?''',
+    text:
+        r'''Dos vecinos entran en conflicto por el límite de sus terrenos. Deciden acudir a un tercero imparcial que, tras escucharlos, propone fórmulas de arreglo y opciones de solución, aunque los vecinos tienen la última palabra. ¿Qué mecanismo alternativo de resolución de conflictos se está utilizando?''',
     options: [
       r'''Negociación''',
       r'''Arbitraje''',
@@ -1321,12 +1518,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Diálogo''',
     ],
     correctAnswer: 3,
-    explanation: r"""La respuesta correcta es D (Conciliación). El conciliador no solo facilita el diálogo, sino que *propone fórmulas de solución*. El distractor C (Mediación) es la 'Trampa Operativa'; en la mediación, el tercero facilita la comunicación pero NO propone las soluciones, las partes deben llegar a ellas solas.""",
+    explanation:
+        r"""La respuesta correcta es D (Conciliación). El conciliador no solo facilita el diálogo, sino que *propone fórmulas de solución*. El distractor C (Mediación) es la 'Trampa Operativa'; en la mediación, el tercero facilita la comunicación pero NO propone las soluciones, las partes deben llegar a ellas solas.""",
   ),
   Question(
     id: 'pfrh_q102',
     topicId: 'pfrh_t1',
-    text: r'''Una persona se somete a un Mecanismo de Resolución de Conflictos donde el tercero interviniente tiene facultad resolutiva, es decir, su decisión es de obligatorio cumplimiento (Laudo) para ambas partes. Este mecanismo se conoce como:''',
+    text:
+        r'''Una persona se somete a un Mecanismo de Resolución de Conflictos donde el tercero interviniente tiene facultad resolutiva, es decir, su decisión es de obligatorio cumplimiento (Laudo) para ambas partes. Este mecanismo se conoce como:''',
     options: [
       r'''Mediación Vinculante''',
       r'''Arbitraje''',
@@ -1335,12 +1534,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Justicia Restaurativa''',
     ],
     correctAnswer: 1,
-    explanation: r'''La respuesta correcta es B (Arbitraje). El árbitro actúa como un juez privado y su laudo es obligatorio. En la conciliación y mediación, el tercero no puede imponer nada.''',
+    explanation:
+        r'''La respuesta correcta es B (Arbitraje). El árbitro actúa como un juez privado y su laudo es obligatorio. En la conciliación y mediación, el tercero no puede imponer nada.''',
   ),
   Question(
     id: 'pfrh_q103',
     topicId: 'pfrh_t1',
-    text: r'''Cuando un tercero neutral facilita la comunicación entre las partes en conflicto para que ellas mismas encuentren una solución, pero sin proponer alternativas ni decidir por ellas, se trata de una:''',
+    text:
+        r'''Cuando un tercero neutral facilita la comunicación entre las partes en conflicto para que ellas mismas encuentren una solución, pero sin proponer alternativas ni decidir por ellas, se trata de una:''',
     options: [
       r'''Conciliación''',
       r'''Negociación directa''',
@@ -1349,12 +1550,14 @@ final List<Question> pfrhQuestions = [
       r'''Juicio ordinario''',
     ],
     correctAnswer: 2,
-    explanation: r'''En la mediación, el tercero neutral actúa como facilitador del diálogo sin tener facultades para proponer soluciones ni emitir fallos.''',
+    explanation:
+        r'''En la mediación, el tercero neutral actúa como facilitador del diálogo sin tener facultades para proponer soluciones ni emitir fallos.''',
   ),
   Question(
     id: 'pfrh_q104',
     topicId: 'pfrh_t1',
-    text: r'''¿Cómo se denomina al mecanismo alternativo donde un tercero propone fórmulas de solución no vinculantes, facilitando un acuerdo voluntario que se plasma en un acta?''',
+    text:
+        r'''¿Cómo se denomina al mecanismo alternativo donde un tercero propone fórmulas de solución no vinculantes, facilitando un acuerdo voluntario que se plasma en un acta?''',
     options: [
       r'''Negociación''',
       r'''Arbitraje''',
@@ -1363,12 +1566,14 @@ final List<Question> pfrhQuestions = [
       r'''Conciliación''',
     ],
     correctAnswer: 4,
-    explanation: r'''En la conciliación, el conciliador está facultado por ley para proponer alternativas viables de solución que las partes pueden aceptar o rechazar.''',
+    explanation:
+        r'''En la conciliación, el conciliador está facultado por ley para proponer alternativas viables de solución que las partes pueden aceptar o rechazar.''',
   ),
   Question(
     id: 'pfrh_q105',
     topicId: 'pfrh_t1',
-    text: r'''El mecanismo donde las partes en conflicto someten la resolución del caso al dictamen definitivo y obligatorio de un tercero neutral (árbitro), cuyo fallo se denomina laudo, es el:''',
+    text:
+        r'''El mecanismo donde las partes en conflicto someten la resolución del caso al dictamen definitivo y obligatorio de un tercero neutral (árbitro), cuyo fallo se denomina laudo, es el:''',
     options: [
       r'''Negociación''',
       r'''Transacción''',
@@ -1377,12 +1582,14 @@ final List<Question> pfrhQuestions = [
       r'''Arbitraje''',
     ],
     correctAnswer: 4,
-    explanation: r'''El arbitraje es un proceso adversarial privado donde el laudo arbitral tiene el mismo carácter obligatorio y de cosa juzgada que una sentencia judicial.''',
+    explanation:
+        r'''El arbitraje es un proceso adversarial privado donde el laudo arbitral tiene el mismo carácter obligatorio y de cosa juzgada que una sentencia judicial.''',
   ),
   Question(
     id: 'pfrh_q106',
     topicId: 'pfrh_t1',
-    text: r'''¿Qué mecanismo de resolución se caracteriza por la comunicación directa y exclusiva entre las partes en conflicto, sin la intervención de ningún tercero intermediario?''',
+    text:
+        r'''¿Qué mecanismo de resolución se caracteriza por la comunicación directa y exclusiva entre las partes en conflicto, sin la intervención de ningún tercero intermediario?''',
     options: [
       r'''Negociación''',
       r'''Arbitraje''',
@@ -1391,12 +1598,14 @@ final List<Question> pfrhQuestions = [
       r'''Mediación''',
     ],
     correctAnswer: 0,
-    explanation: r'''La negociación es un proceso informal y bidireccional donde las partes buscan un acuerdo beneficioso mutuo por cuenta propia.''',
+    explanation:
+        r'''La negociación es un proceso informal y bidireccional donde las partes buscan un acuerdo beneficioso mutuo por cuenta propia.''',
   ),
   Question(
     id: 'pfrh_q107',
     topicId: 'pfrh_t1',
-    text: r'''La habilidad de expresar las opiniones, sentimientos e intereses de manera directa, honesta y respetuosa, defendiendo los propios derechos sin agredir ni someterse, es la:''',
+    text:
+        r'''La habilidad de expresar las opiniones, sentimientos e intereses de manera directa, honesta y respetuosa, defendiendo los propios derechos sin agredir ni someterse, es la:''',
     options: [
       r'''Resiliencia''',
       r'''Pasividad''',
@@ -1405,12 +1614,14 @@ final List<Question> pfrhQuestions = [
       r'''Asertividad''',
     ],
     correctAnswer: 4,
-    explanation: r'''La asertividad es la conducta comunicativa intermedia entre la sumisión pasiva y la hostilidad agresiva.''',
+    explanation:
+        r'''La asertividad es la conducta comunicativa intermedia entre la sumisión pasiva y la hostilidad agresiva.''',
   ),
   Question(
     id: 'pfrh_q108',
     topicId: 'pfrh_t1',
-    text: r"""¿Cómo se conoce a la capacidad cognitiva y afectiva de percibir, comprender y sintonizar con el estado emocional y la perspectiva del otro ('ponerse en sus zapatos')?""",
+    text:
+        r"""¿Cómo se conoce a la capacidad cognitiva y afectiva de percibir, comprender y sintonizar con el estado emocional y la perspectiva del otro ('ponerse en sus zapatos')?""",
     options: [
       r'''Tolerancia''',
       r'''Empatía''',
@@ -1419,12 +1630,14 @@ final List<Question> pfrhQuestions = [
       r'''Asertividad''',
     ],
     correctAnswer: 1,
-    explanation: r'''La empatía permite establecer conexiones interpersonales saludables al comprender la experiencia interna ajena sin juzgarla.''',
+    explanation:
+        r'''La empatía permite establecer conexiones interpersonales saludables al comprender la experiencia interna ajena sin juzgarla.''',
   ),
   Question(
     id: 'pfrh_q109',
     topicId: 'pfrh_t1',
-    text: r'''En los estilos de comportamiento frente al conflicto (según Thomas-Kilmann), aquel estilo enfocado en maximizar tanto los propios intereses como los de la otra parte se denomina:''',
+    text:
+        r'''En los estilos de comportamiento frente al conflicto (según Thomas-Kilmann), aquel estilo enfocado en maximizar tanto los propios intereses como los de la otra parte se denomina:''',
     options: [
       r'''Comprometido o de compromiso''',
       r'''Evasivo o elusivo''',
@@ -1433,12 +1646,14 @@ final List<Question> pfrhQuestions = [
       r'''Complaciente o acomodaticio''',
     ],
     correctAnswer: 2,
-    explanation: r"""El estilo colaborador busca una solución integradora de beneficio mutuo 'ganar-ganar', requiriendo alto nivel de asertividad y cooperación.""",
+    explanation:
+        r"""El estilo colaborador busca una solución integradora de beneficio mutuo 'ganar-ganar', requiriendo alto nivel de asertividad y cooperación.""",
   ),
   Question(
     id: 'pfrh_q110',
     topicId: 'pfrh_t1',
-    text: r'''El estilo frente al conflicto en el que la persona decide posponer o ignorar la situación conflictiva debido al temor al enfrentamiento o al poco interés en el asunto se llama:''',
+    text:
+        r'''El estilo frente al conflicto en el que la persona decide posponer o ignorar la situación conflictiva debido al temor al enfrentamiento o al poco interés en el asunto se llama:''',
     options: [
       r'''Evasivo''',
       r'''Asertivo''',
@@ -1447,12 +1662,14 @@ final List<Question> pfrhQuestions = [
       r'''Complaciente''',
     ],
     correctAnswer: 0,
-    explanation: r"""El estilo evasivo esquiva la confrontación ('perder-perder') al no atender sus propias necesidades ni las de los demás.""",
+    explanation:
+        r"""El estilo evasivo esquiva la confrontación ('perder-perder') al no atender sus propias necesidades ni las de los demás.""",
   ),
   Question(
     id: 'pfrh_q111',
     topicId: 'pfrh_t1',
-    text: r'''El conjunto de valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos abordando sus causas mediante el diálogo y la negociación se denomina:''',
+    text:
+        r'''El conjunto de valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos abordando sus causas mediante el diálogo y la negociación se denomina:''',
     options: [
       r'''Cohesión social''',
       r'''Seguridad ciudadana''',
@@ -1461,12 +1678,14 @@ final List<Question> pfrhQuestions = [
       r'''Cultura de Paz''',
     ],
     correctAnswer: 4,
-    explanation: r'''La cultura de paz, promovida por la ONU, busca erradicar la violencia promoviendo el respeto a la vida, los derechos humanos y la tolerancia.''',
+    explanation:
+        r'''La cultura de paz, promovida por la ONU, busca erradicar la violencia promoviendo el respeto a la vida, los derechos humanos y la tolerancia.''',
   ),
   Question(
     id: 'pfrh_q112',
     topicId: 'pfrh_t1',
-    text: r'''¿Qué valor ético promueve el respeto y aceptación de la diversidad de opiniones, creencias, culturas e identidades ajenas, evitando la discriminación y el fanatismo?''',
+    text:
+        r'''¿Qué valor ético promueve el respeto y aceptación de la diversidad de opiniones, creencias, culturas e identidades ajenas, evitando la discriminación y el fanatismo?''',
     options: [
       r'''Tolerancia''',
       r'''Libertad''',
@@ -1475,12 +1694,14 @@ final List<Question> pfrhQuestions = [
       r'''Solidaridad''',
     ],
     correctAnswer: 0,
-    explanation: r'''La tolerancia es el reconocimiento y aprecio del pluralismo humano, fundamental para la convivencia pacífica en una sociedad democrática.''',
+    explanation:
+        r'''La tolerancia es el reconocimiento y aprecio del pluralismo humano, fundamental para la convivencia pacífica en una sociedad democrática.''',
   ),
   Question(
     id: 'pfrh_q153',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el fundamento ontológico y ético de todos los derechos humanos, reconocido en la Declaración Universal de 1948?''',
+    text:
+        r'''¿Cuál es el fundamento ontológico y ético de todos los derechos humanos, reconocido en la Declaración Universal de 1948?''',
     options: [
       r'''La dignidad humana''',
       r'''La soberanía de las naciones''',
@@ -1488,12 +1709,14 @@ final List<Question> pfrhQuestions = [
       r'''El ordenamiento jurídico del Estado''',
     ],
     correctAnswer: 0,
-    explanation: r'''La dignidad humana es el fundamento intrínseco, ontológico y ético del cual emanan todos los derechos humanos.''',
+    explanation:
+        r'''La dignidad humana es el fundamento intrínseco, ontológico y ético del cual emanan todos los derechos humanos.''',
   ),
   Question(
     id: 'pfrh_q154',
     topicId: 'pfrh_t2',
-    text: r'''Según la filosofía kantiana, que influye directamente en el marco doctrinal de los derechos humanos, ¿cómo se define la dignidad humana?''',
+    text:
+        r'''Según la filosofía kantiana, que influye directamente en el marco doctrinal de los derechos humanos, ¿cómo se define la dignidad humana?''',
     options: [
       r'''El valor relativo de una persona según su utilidad social''',
       r'''La condición de que el ser humano es un fin en sí mismo y no un medio''',
@@ -1501,12 +1724,14 @@ final List<Question> pfrhQuestions = [
       r'''El reconocimiento legal que otorga el Estado a través de la Constitución''',
     ],
     correctAnswer: 1,
-    explanation: r'''Immanuel Kant formuló que la persona tiene dignidad porque es un fin en sí misma, lo que prohíbe instrumentalizarla como si fuera un objeto o un medio para conseguir otros fines.''',
+    explanation:
+        r'''Immanuel Kant formuló que la persona tiene dignidad porque es un fin en sí misma, lo que prohíbe instrumentalizarla como si fuera un objeto o un medio para conseguir otros fines.''',
   ),
   Question(
     id: 'pfrh_q155',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el significado preciso de la "Universalidad" como característica esencial de los derechos humanos?''',
+    text:
+        r'''¿Cuál es el significado preciso de la "Universalidad" como característica esencial de los derechos humanos?''',
     options: [
       r'''Que solo se aplican en los países afiliados a la Organización de las Naciones Unidas (ONU)''',
       r'''Que pertenecen a todos los seres vivos, incluidos los animales y el medio ambiente''',
@@ -1514,12 +1739,14 @@ final List<Question> pfrhQuestions = [
       r'''Que pueden ser modificados de forma democrática mediante plebiscitos globales''',
     ],
     correctAnswer: 2,
-    explanation: r'''La universalidad implica que toda persona, por el solo hecho de ser humana, posee estos derechos de forma igualitaria, independientemente de sus particularidades geográficas, culturales o sociales.''',
+    explanation:
+        r'''La universalidad implica que toda persona, por el solo hecho de ser humana, posee estos derechos de forma igualitaria, independientemente de sus particularidades geográficas, culturales o sociales.''',
   ),
   Question(
     id: 'pfrh_q156',
     topicId: 'pfrh_t2',
-    text: r'''El principio de "Inalienabilidad" de los derechos humanos establece que:''',
+    text:
+        r'''El principio de "Inalienabilidad" de los derechos humanos establece que:''',
     options: [
       r'''Los derechos no pueden perder su vigencia con el paso del tiempo''',
       r'''Los derechos no pueden ser legítimamente transmitidos, vendidos, cedidos ni renunciados por su titular''',
@@ -1527,12 +1754,14 @@ final List<Question> pfrhQuestions = [
       r'''Los derechos civiles tienen prioridad sobre los derechos económicos y sociales''',
     ],
     correctAnswer: 1,
-    explanation: r'''La inalienabilidad significa que los derechos humanos son intransferibles e irrenunciables; nadie puede despojarse de ellos ni venderlos, ni el Estado arrebatarlos legítimamente.''',
+    explanation:
+        r'''La inalienabilidad significa que los derechos humanos son intransferibles e irrenunciables; nadie puede despojarse de ellos ni venderlos, ni el Estado arrebatarlos legítimamente.''',
   ),
   Question(
     id: 'pfrh_q157',
     topicId: 'pfrh_t2',
-    text: r'''La característica de "Imprescriptibilidad" de los derechos humanos se define como:''',
+    text:
+        r'''La característica de "Imprescriptibilidad" de los derechos humanos se define como:''',
     options: [
       r'''La imposibilidad de limitar los derechos humanos en situaciones de emergencia nacional''',
       r'''La condición por la cual los derechos humanos no caducan ni se pierden por el transcurso del tiempo o por su no uso''',
@@ -1540,12 +1769,14 @@ final List<Question> pfrhQuestions = [
       r'''El carácter absoluto que impide que un derecho sea restringido bajo ninguna circunstancia''',
     ],
     correctAnswer: 1,
-    explanation: r'''La imprescriptibilidad asegura que el transcurso del tiempo no extingue la validez ni la exigibilidad de los derechos humanos, permaneciendo vigentes durante toda la vida de la persona y a lo largo de las generaciones.''',
+    explanation:
+        r'''La imprescriptibilidad asegura que el transcurso del tiempo no extingue la validez ni la exigibilidad de los derechos humanos, permaneciendo vigentes durante toda la vida de la persona y a lo largo de las generaciones.''',
   ),
   Question(
     id: 'pfrh_q158',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué postula el principio de "Indivisibilidad" de los derechos humanos?''',
+    text:
+        r'''¿Qué postula el principio de "Indivisibilidad" de los derechos humanos?''',
     options: [
       r'''Que los derechos solo se aplican de manera grupal o colectiva y no a nivel individual''',
       r'''Que los derechos humanos forman un todo unitario y no pueden jerarquizarse ni fragmentarse en detrimento de otros''',
@@ -1553,12 +1784,14 @@ final List<Question> pfrhQuestions = [
       r'''Que los derechos civiles deben ser garantizados de forma separada a los derechos económicos''',
     ],
     correctAnswer: 1,
-    explanation: r'''La indivisibilidad establece que todos los derechos humanos (civiles, políticos, económicos, sociales, culturales) tienen el mismo rango y valor, conformando un sistema integral donde no hay jerarquía de unos sobre otros.''',
+    explanation:
+        r'''La indivisibilidad establece que todos los derechos humanos (civiles, políticos, económicos, sociales, culturales) tienen el mismo rango y valor, conformando un sistema integral donde no hay jerarquía de unos sobre otros.''',
   ),
   Question(
     id: 'pfrh_q159',
     topicId: 'pfrh_t2',
-    text: r'''¿En qué consiste la relación de "Interdependencia" entre los derechos humanos?''',
+    text:
+        r'''¿En qué consiste la relación de "Interdependencia" entre los derechos humanos?''',
     options: [
       r'''En la dependencia que tienen los derechos humanos respecto a la aprobación previa del Congreso de la República''',
       r'''En que el goce y ejercicio de un derecho determinado depende de la realización de los demás derechos humanos''',
@@ -1566,12 +1799,14 @@ final List<Question> pfrhQuestions = [
       r'''En la sumisión voluntaria de los ciudadanos frente a las leyes y políticas de seguridad ciudadana''',
     ],
     correctAnswer: 1,
-    explanation: r'''La interdependencia señala que el avance de un derecho facilita el avance de los demás, mientras que la privación de uno afecta negativamente el ejercicio de los otros.''',
+    explanation:
+        r'''La interdependencia señala que el avance de un derecho facilita el avance de los demás, mientras que la privación de uno afecta negativamente el ejercicio de los otros.''',
   ),
   Question(
     id: 'pfrh_q160',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál de las siguientes premisas diferencia correctamente la dignidad ontológica de la dignidad moral o actuacional?''',
+    text:
+        r'''¿Cuál de las siguientes premisas diferencia correctamente la dignidad ontológica de la dignidad moral o actuacional?''',
     options: [
       r'''La dignidad ontológica depende de las acciones virtuosas de la persona, mientras que la dignidad moral es innata''',
       r'''La dignidad ontológica es inherente a todo ser humano por su existencia misma; la dignidad moral se asocia a la rectitud de sus actos''',
@@ -1579,12 +1814,14 @@ final List<Question> pfrhQuestions = [
       r'''La dignidad ontológica varía según la cultura, mientras que la dignidad moral es uniforme en todo el mundo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad ontológica es inalterable, absoluta y la posee todo ser humano desde su concepción, sin importar su conducta. La dignidad moral o actuacional refleja cómo actúa la persona en consonancia con el bien común.''',
+    explanation:
+        r'''La dignidad ontológica es inalterable, absoluta y la posee todo ser humano desde su concepción, sin importar su conducta. La dignidad moral o actuacional refleja cómo actúa la persona en consonancia con el bien común.''',
   ),
   Question(
     id: 'pfrh_q161',
     topicId: 'pfrh_t2',
-    text: r'''En el contexto doctrinal, ¿qué se entiende por la "indisponibilidad" de los derechos humanos?''',
+    text:
+        r'''En el contexto doctrinal, ¿qué se entiende por la "indisponibilidad" de los derechos humanos?''',
     options: [
       r'''La imposibilidad de ejercer los derechos humanos durante los estados de sitio o de emergencia''',
       r'''Que están fuera del comercio humano, de modo que no se puede negociar con ellos ni someterlos a transacciones mercantiles''',
@@ -1592,12 +1829,14 @@ final List<Question> pfrhQuestions = [
       r'''Que los derechos humanos solo están disponibles para los ciudadanos que cumplen con todos sus deberes tributarios''',
     ],
     correctAnswer: 1,
-    explanation: r'''La indisponibilidad significa que los derechos humanos no pertenecen al ámbito del mercado ni a la autonomía de la voluntad privatista; no se puede contratar sobre la propia libertad o integridad.''',
+    explanation:
+        r'''La indisponibilidad significa que los derechos humanos no pertenecen al ámbito del mercado ni a la autonomía de la voluntad privatista; no se puede contratar sobre la propia libertad o integridad.''',
   ),
   Question(
     id: 'pfrh_q162',
     topicId: 'pfrh_t2',
-    text: r'''La Conferencia Mundial de Derechos Humanos de Viena (1993) consolidó doctrinalmente que todos los derechos humanos son:''',
+    text:
+        r'''La Conferencia Mundial de Derechos Humanos de Viena (1993) consolidó doctrinalmente que todos los derechos humanos son:''',
     options: [
       r'''Flexibles, modificables según el nivel de desarrollo de cada país y subordinados al crecimiento económico''',
       r'''Universales, indivisibles, interdependientes y están relacionados entre sí''',
@@ -1605,12 +1844,14 @@ final List<Question> pfrhQuestions = [
       r'''Aplicables de manera progresiva únicamente en los países democráticos de occidente''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Declaración y Programa de Acción de Viena de 1993 reafirmó de manera solemne que los derechos humanos son universales, indivisibles, interdependientes y están interrelacionados, obligando a la comunidad internacional a tratarlos de forma justa y equitativa.''',
+    explanation:
+        r'''La Declaración y Programa de Acción de Viena de 1993 reafirmó de manera solemne que los derechos humanos son universales, indivisibles, interdependientes y están interrelacionados, obligando a la comunidad internacional a tratarlos de forma justa y equitativa.''',
   ),
   Question(
     id: 'pfrh_q163',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el núcleo central del principio "pro homine" (o pro persona) en el marco doctrinal de los derechos humanos?''',
+    text:
+        r'''¿Cuál es el núcleo central del principio "pro homine" (o pro persona) en el marco doctrinal de los derechos humanos?''',
     options: [
       r'''Buscar la interpretación legal que favorezca el fortalecimiento del poder estatal sobre el individuo''',
       r'''Aplicar siempre la norma o interpretación que resulte más favorable para la protección de la persona humana''',
@@ -1618,12 +1859,14 @@ final List<Question> pfrhQuestions = [
       r'''Garantizar que las empresas privadas tengan prioridad jurídica en los litigios de propiedad''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio pro homine es un criterio hermenéutico que obliga a acudir a la norma más protectora o a la interpretación más amplia cuando se trata de reconocer derechos protegidos, y a la norma o interpretación más restringida cuando se trata de limitar tales derechos.''',
+    explanation:
+        r'''El principio pro homine es un criterio hermenéutico que obliga a acudir a la norma más protectora o a la interpretación más amplia cuando se trata de reconocer derechos protegidos, y a la norma o interpretación más restringida cuando se trata de limitar tales derechos.''',
   ),
   Question(
     id: 'pfrh_q164',
     topicId: 'pfrh_t2',
-    text: r'''La doctrina sostiene que el reconocimiento de la dignidad humana prohíbe la "cosificación" del individuo. ¿Qué significa esto?''',
+    text:
+        r'''La doctrina sostiene que el reconocimiento de la dignidad humana prohíbe la "cosificación" del individuo. ¿Qué significa esto?''',
     options: [
       r'''Que las personas no pueden poseer bienes materiales o propiedades registradas a su nombre''',
       r'''Que el ser humano no puede ser tratado bajo ninguna circunstancia como una cosa, un objeto o una mera mercancía''',
@@ -1631,12 +1874,14 @@ final List<Question> pfrhQuestions = [
       r'''Que los ciudadanos están obligados a donar sus órganos al fallecer de manera obligatoria''',
     ],
     correctAnswer: 1,
-    explanation: r'''Evitar la cosificación o instrumentalización significa que las personas no pueden ser degradadas a la condición de objetos, herramientas de trabajo desechables o mercancías con un precio asignado.''',
+    explanation:
+        r'''Evitar la cosificación o instrumentalización significa que las personas no pueden ser degradadas a la condición de objetos, herramientas de trabajo desechables o mercancías con un precio asignado.''',
   ),
   Question(
     id: 'pfrh_q165',
     topicId: 'pfrh_t2',
-    text: r'''Desde una perspectiva doctrinal iusnaturalista, los derechos humanos se fundamentan en:''',
+    text:
+        r'''Desde una perspectiva doctrinal iusnaturalista, los derechos humanos se fundamentan en:''',
     options: [
       r'''La voluntad soberana del legislador expresada en las leyes del Congreso''',
       r'''El reconocimiento expreso de la Constitución del Estado peruano''',
@@ -1644,12 +1889,14 @@ final List<Question> pfrhQuestions = [
       r'''Las decisiones jurisprudenciales de los tribunales internacionales de justicia''',
     ],
     correctAnswer: 2,
-    explanation: r'''El iusnaturalismo sostiene que los derechos humanos derivan de la propia naturaleza humana y de la razón, por lo que existen con anterioridad e independencia del reconocimiento del legislador positivo.''',
+    explanation:
+        r'''El iusnaturalismo sostiene que los derechos humanos derivan de la propia naturaleza humana y de la razón, por lo que existen con anterioridad e independencia del reconocimiento del legislador positivo.''',
   ),
   Question(
     id: 'pfrh_q166',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué significa que un derecho humano sea considerado "absoluto" en la doctrina de los derechos humanos?''',
+    text:
+        r'''¿Qué significa que un derecho humano sea considerado "absoluto" en la doctrina de los derechos humanos?''',
     options: [
       r'''Que puede suspenderse temporalmente si la seguridad nacional está en grave peligro''',
       r'''Que no admite ninguna restricción ni excepción bajo ninguna circunstancia, como la prohibición de la tortura''',
@@ -1657,12 +1904,14 @@ final List<Question> pfrhQuestions = [
       r'''Que su vigencia depende exclusivamente de la voluntad soberana del Presidente''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aunque la mayoría de los derechos humanos admiten regulaciones o límites proporcionales, existen ciertos derechos absolutos (núcleo duro) que no admiten excepciones ni suspensiones bajo ninguna circunstancia, tales como la prohibición de la tortura y los tratos crueles, inhumanos o degradantes.''',
+    explanation:
+        r'''Aunque la mayoría de los derechos humanos admiten regulaciones o límites proporcionales, existen ciertos derechos absolutos (núcleo duro) que no admiten excepciones ni suspensiones bajo ninguna circunstancia, tales como la prohibición de la tortura y los tratos crueles, inhumanos o degradantes.''',
   ),
   Question(
     id: 'pfrh_q167',
     topicId: 'pfrh_t2',
-    text: r'''¿Cómo concibe el positivismo jurídico la validez de los derechos humanos?''',
+    text:
+        r'''¿Cómo concibe el positivismo jurídico la validez de los derechos humanos?''',
     options: [
       r'''Como derechos divinos que están por encima de cualquier voluntad humana''',
       r'''Como facultades cuya existencia real y validez dependen de su incorporación formal en el ordenamiento jurídico escrito''',
@@ -1670,12 +1919,14 @@ final List<Question> pfrhQuestions = [
       r'''Como privilegios que el gobernante otorga a los ciudadanos a cambio de lealtad política''',
     ],
     correctAnswer: 1,
-    explanation: r'''El positivismo jurídico argumenta que los derechos humanos solo son exigibles y plenamente válidos cuando han sido formalmente positivados (escritos y aprobados) en las leyes y la Constitución del Estado.''',
+    explanation:
+        r'''El positivismo jurídico argumenta que los derechos humanos solo son exigibles y plenamente válidos cuando han sido formalmente positivados (escritos y aprobados) en las leyes y la Constitución del Estado.''',
   ),
   Question(
     id: 'pfrh_q168',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué establece el principio doctrinal de "progresividad y no regresividad" de los derechos humanos?''',
+    text:
+        r'''¿Qué establece el principio doctrinal de "progresividad y no regresividad" de los derechos humanos?''',
     options: [
       r'''Que los derechos de las personas se reducen gradualmente conforme envejecen''',
       r'''Que los Estados deben ampliar constantemente el nivel de protección de los derechos y les está prohibido retroceder en las metas ya alcanzadas''',
@@ -1683,12 +1934,14 @@ final List<Question> pfrhQuestions = [
       r'''Que los derechos económicos deben desarrollarse antes de comenzar a aplicar los derechos civiles''',
     ],
     correctAnswer: 1,
-    explanation: r'''Este principio determina que los derechos humanos deben expandirse en cobertura y protección progresivamente a medida que pasa el tiempo, y prohíbe que el Estado adopte medidas legislativas o políticas que disminuyan injustificadamente el nivel de tutela ya consolidado.''',
+    explanation:
+        r'''Este principio determina que los derechos humanos deben expandirse en cobertura y protección progresivamente a medida que pasa el tiempo, y prohíbe que el Estado adopte medidas legislativas o políticas que disminuyan injustificadamente el nivel de tutela ya consolidado.''',
   ),
   Question(
     id: 'pfrh_q169',
     topicId: 'pfrh_t2',
-    text: r'''El concepto doctrinal de "sujeto de derecho" implica que el ser humano:''',
+    text:
+        r'''El concepto doctrinal de "sujeto de derecho" implica que el ser humano:''',
     options: [
       r'''Es únicamente un receptor pasivo de las órdenes emanadas de la autoridad estatal''',
       r'''Tiene capacidad jurídica para ser titular de derechos y contraer obligaciones, basándose en su dignidad inherente''',
@@ -1696,12 +1949,14 @@ final List<Question> pfrhQuestions = [
       r'''Puede renunciar libremente a sus derechos cívicos a cambio de beneficios económicos gubernamentales''',
     ],
     correctAnswer: 1,
-    explanation: r'''El sujeto de derecho es el centro de imputación de derechos y deberes. Deriva de la dignidad humana, que exige reconocer a toda persona como un agente con autonomía, derechos y responsabilidades.''',
+    explanation:
+        r'''El sujeto de derecho es el centro de imputación de derechos y deberes. Deriva de la dignidad humana, que exige reconocer a toda persona como un agente con autonomía, derechos y responsabilidades.''',
   ),
   Question(
     id: 'pfrh_q170',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué significa que los derechos humanos posean un carácter "transnacional"?''',
+    text:
+        r'''¿Qué significa que los derechos humanos posean un carácter "transnacional"?''',
     options: [
       r'''Que solo las multinacionales de gran escala pueden reclamar sus derechos''',
       r'''Que los derechos humanos están por encima de las fronteras estatales y su protección es un deudor legítimo de la comunidad internacional''',
@@ -1709,12 +1964,14 @@ final List<Question> pfrhQuestions = [
       r'''Que las leyes de derechos humanos solo se aplican en el comercio exterior entre naciones vecinas''',
     ],
     correctAnswer: 1,
-    explanation: r'''La transnacionalidad de los derechos humanos significa que su vigencia y defensa superan las fronteras nacionales de los Estados. Si un Estado viola los derechos humanos, la comunidad internacional tiene la facultad de intervenir y exigir responsabilidades a través de mecanismos internacionales.''',
+    explanation:
+        r'''La transnacionalidad de los derechos humanos significa que su vigencia y defensa superan las fronteras nacionales de los Estados. Si un Estado viola los derechos humanos, la comunidad internacional tiene la facultad de intervenir y exigir responsabilidades a través de mecanismos internacionales.''',
   ),
   Question(
     id: 'pfrh_q171',
     topicId: 'pfrh_t2',
-    text: r'''Un grupo de vecinos discute si una persona que ha cometido un delito grave sigue teniendo derecho a no ser sometida a torturas. Algunos vecinos afirman que «perdió todos sus derechos». Doctrinalmente, ¿cuál es el argumento correcto que desestima esta afirmación?''',
+    text:
+        r'''Un grupo de vecinos discute si una persona que ha cometido un delito grave sigue teniendo derecho a no ser sometida a torturas. Algunos vecinos afirman que «perdió todos sus derechos». Doctrinalmente, ¿cuál es el argumento correcto que desestima esta afirmación?''',
     options: [
       r'''Los derechos humanos son condicionales y dependen de la buena conducta del ciudadano''',
       r'''La dignidad humana y los derechos humanos son inalienables, por lo que ninguna persona puede perderlos o ser despojada de ellos, sin importar sus actos''',
@@ -1722,12 +1979,14 @@ final List<Question> pfrhQuestions = [
       r'''La tortura está permitida legalmente en el país bajo el principio de proporcionalidad de la pena''',
     ],
     correctAnswer: 1,
-    explanation: r'''Debido a la inalienabilidad e inherencia de los derechos humanos, incluso la persona que ha cometido el peor de los delitos sigue conservando su condición humana y, por tanto, la titularidad de sus derechos fundamentales, como la prohibición de la tortura.''',
+    explanation:
+        r'''Debido a la inalienabilidad e inherencia de los derechos humanos, incluso la persona que ha cometido el peor de los delitos sigue conservando su condición humana y, por tanto, la titularidad de sus derechos fundamentales, como la prohibición de la tortura.''',
   ),
   Question(
     id: 'pfrh_q172',
     topicId: 'pfrh_t2',
-    text: r'''Si una comunidad campesina argumenta que las niñas no deben asistir a la escuela porque en su tradición local el rol femenino se limita al hogar, ¿qué principio de los derechos humanos colisiona directamente con esta postura de relativismo cultural radical?''',
+    text:
+        r'''Si una comunidad campesina argumenta que las niñas no deben asistir a la escuela porque en su tradición local el rol femenino se limita al hogar, ¿qué principio de los derechos humanos colisiona directamente con esta postura de relativismo cultural radical?''',
     options: [
       r'''La Imprescriptibilidad''',
       r'''La Universalidad''',
@@ -1735,12 +1994,14 @@ final List<Question> pfrhQuestions = [
       r'''El Positivismo Jurídico''',
     ],
     correctAnswer: 1,
-    explanation: r'''La universalidad de los derechos humanos establece que estos se aplican a todas las personas en cualquier parte del mundo sin distinción de sexo. Ninguna costumbre cultural o tradición local puede justificar la privación del derecho humano a la educación de las niñas.''',
+    explanation:
+        r'''La universalidad de los derechos humanos establece que estos se aplican a todas las personas en cualquier parte del mundo sin distinción de sexo. Ninguna costumbre cultural o tradición local puede justificar la privación del derecho humano a la educación de las niñas.''',
   ),
   Question(
     id: 'pfrh_q173',
     topicId: 'pfrh_t2',
-    text: r'''Un ciudadano que atraviesa graves dificultades económicas decide firmar un contrato privado en el que vende formalmente uno de sus riñones a un centro médico privado. ¿Por qué este contrato es considerado nulo y sin validez en el marco doctrinal de los derechos humanos?''',
+    text:
+        r'''Un ciudadano que atraviesa graves dificultades económicas decide firmar un contrato privado en el que vende formalmente uno de sus riñones a un centro médico privado. ¿Por qué este contrato es considerado nulo y sin validez en el marco doctrinal de los derechos humanos?''',
     options: [
       r'''Porque el precio acordado en el mercado por el órgano es inferior al valor real estipulado por el Ministerio de Salud''',
       r'''Debido al principio de Inalienabilidad y a que el cuerpo humano y la integridad personal no son mercancías disponibles o transferibles''',
@@ -1748,12 +2009,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque la venta de órganos es un derecho exclusivo de los familiares directos de una persona fallecida''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio de inalienabilidad y el respeto a la dignidad humana prohíben la comercialización del cuerpo humano. Los derechos a la salud y a la integridad personal son indisponibles, por lo que cualquier renuncia o venta de los mismos carece de validez legal.''',
+    explanation:
+        r'''El principio de inalienabilidad y el respeto a la dignidad humana prohíben la comercialización del cuerpo humano. Los derechos a la salud y a la integridad personal son indisponibles, por lo que cualquier renuncia o venta de los mismos carece de validez legal.''',
   ),
   Question(
     id: 'pfrh_q174',
     topicId: 'pfrh_t2',
-    text: r'''Durante una crisis económica, un gobierno decide garantizar únicamente los derechos de propiedad y el derecho al voto de los ciudadanos, argumentando que el acceso al agua potable, a la educación y a la salud son «lujos opcionales» que el Estado no tiene obligación de proveer. ¿Qué principio doctrinal se está vulnerando con esta política pública?''',
+    text:
+        r'''Durante una crisis económica, un gobierno decide garantizar únicamente los derechos de propiedad y el derecho al voto de los ciudadanos, argumentando que el acceso al agua potable, a la educación y a la salud son «lujos opcionales» que el Estado no tiene obligación de proveer. ¿Qué principio doctrinal se está vulnerando con esta política pública?''',
     options: [
       r'''El relativismo cultural''',
       r'''La Indivisibilidad de los derechos humanos''',
@@ -1761,12 +2024,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad procesal''',
     ],
     correctAnswer: 1,
-    explanation: r'''Se vulnera el principio de indivisibilidad (e interdependencia), el cual sostiene que no existe jerarquía entre los derechos y que los derechos civiles y políticos no pueden garantizarse plenamente si se descuidan los derechos económicos, sociales y culturales.''',
+    explanation:
+        r'''Se vulnera el principio de indivisibilidad (e interdependencia), el cual sostiene que no existe jerarquía entre los derechos y que los derechos civiles y políticos no pueden garantizarse plenamente si se descuidan los derechos económicos, sociales y culturales.''',
   ),
   Question(
     id: 'pfrh_q175',
     topicId: 'pfrh_t2',
-    text: r'''Una persona fue detenida y torturada ilegalmente por agentes de un régimen civil totalitario en el año 1980. En el 2026, el afectado decide presentar una denuncia penal contra los perpetradores de la tortura. Los defensores del exfuncionario alegan que la acción legal ya caducó (prescribió) debido al transcurso de más de 40 años. Doctrinalmente, ¿cuál es el principio aplicable en este caso?''',
+    text:
+        r'''Una persona fue detenida y torturada ilegalmente por agentes de un régimen civil totalitario en el año 1980. En el 2026, el afectado decide presentar una denuncia penal contra los perpetradores de la tortura. Los defensores del exfuncionario alegan que la acción legal ya caducó (prescribió) debido al transcurso de más de 40 años. Doctrinalmente, ¿cuál es el principio aplicable en este caso?''',
     options: [
       r'''La inalienabilidad de la acción civil patrimonial''',
       r'''La imprescriptibilidad de las graves violaciones a los derechos humanos y crímenes de lesa humanidad''',
@@ -1774,12 +2039,14 @@ final List<Question> pfrhQuestions = [
       r'''El principio de retroactividad benigna para el infractor estatal''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las graves violaciones a los derechos humanos, como la tortura sistemática o crímenes de lesa humanidad, son imprescriptibles. Esto significa que el paso del tiempo no impide que los perpetradores sean juzgados y sancionados.''',
+    explanation:
+        r'''Las graves violaciones a los derechos humanos, como la tortura sistemática o crímenes de lesa humanidad, son imprescriptibles. Esto significa que el paso del tiempo no impide que los perpetradores sean juzgados y sancionados.''',
   ),
   Question(
     id: 'pfrh_q176',
     topicId: 'pfrh_t2',
-    text: r'''Identifique la diferencia fundamental entre los derechos constitucionales (o derechos fundamentales) y los derechos humanos desde la perspectiva de la doctrina jurídica:''',
+    text:
+        r'''Identifique la diferencia fundamental entre los derechos constitucionales (o derechos fundamentales) y los derechos humanos desde la perspectiva de la doctrina jurídica:''',
     options: [
       r'''Los derechos fundamentales son aplicados por organismos internacionales, mientras que los derechos humanos son exclusivos de cada país''',
       r'''Los derechos fundamentales son aquellos consagrados en la Constitución de un Estado específico; los derechos humanos son los atributos inherentes a la persona reconocidos por el derecho internacional''',
@@ -1787,12 +2054,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe ninguna diferencia formal, conceptual ni terminológica entre ambos conceptos en la teoría constitucional''',
     ],
     correctAnswer: 1,
-    explanation: r'''Doctrinalmente, los derechos fundamentales son la traducción de los derechos humanos en el ordenamiento constitucional de un Estado específico (positivados a nivel interno), mientras que los derechos humanos hacen referencia al marco doctrinal e internacional universal.''',
+    explanation:
+        r'''Doctrinalmente, los derechos fundamentales son la traducción de los derechos humanos en el ordenamiento constitucional de un Estado específico (positivados a nivel interno), mientras que los derechos humanos hacen referencia al marco doctrinal e internacional universal.''',
   ),
   Question(
     id: 'pfrh_q177',
     topicId: 'pfrh_t2',
-    text: r'''Un grupo de trabajadores de una fábrica textil firma un acuerdo con la gerencia donde «renuncian voluntariamente» a sus horas de descanso diarias y a la licencia por enfermedad a cambio de un bono único de fin de año. ¿Qué característica doctrinal de los derechos humanos determina la nulidad absoluta de dicha renuncia voluntaria?''',
+    text:
+        r'''Un grupo de trabajadores de una fábrica textil firma un acuerdo con la gerencia donde «renuncian voluntariamente» a sus horas de descanso diarias y a la licencia por enfermedad a cambio de un bono único de fin de año. ¿Qué característica doctrinal de los derechos humanos determina la nulidad absoluta de dicha renuncia voluntaria?''',
     options: [
       r'''La universalidad de aplicación territorial''',
       r'''La inalienabilidad (irrenunciabilidad) de los derechos humanos y laborales fundamentales''',
@@ -1800,12 +2069,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad del contrato de trabajo indefinido''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos humanos y los derechos laborales derivados de la dignidad humana son irrenunciables (inalienables). Cualquier convenio o contrato en el que un individuo acepte renunciar a estas garantías básicas es nulo de pleno derecho.''',
+    explanation:
+        r'''Los derechos humanos y los derechos laborales derivados de la dignidad humana son irrenunciables (inalienables). Cualquier convenio o contrato en el que un individuo acepte renunciar a estas garantías básicas es nulo de pleno derecho.''',
   ),
   Question(
     id: 'pfrh_q178',
     topicId: 'pfrh_t2',
-    text: r'''En un debate estudiantil, se discute el caso de las personas con discapacidad intelectual severa. Un participante argumenta que «como no pueden tomar decisiones autónomas ni razonar de forma compleja, tienen menos dignidad humana que las personas con facultades cognitivas plenas». ¿Qué concepto doctrinal se requiere para refutar esta afirmación?''',
+    text:
+        r'''En un debate estudiantil, se discute el caso de las personas con discapacidad intelectual severa. Un participante argumenta que «como no pueden tomar decisiones autónomas ni razonar de forma compleja, tienen menos dignidad humana que las personas con facultades cognitivas plenas». ¿Qué concepto doctrinal se requiere para refutar esta afirmación?''',
     options: [
       r'''La dignidad moral basada en las virtudes cívicas del individuo''',
       r'''La dignidad humana ontológica, la cual es innata, absoluta y no admite grados ni depende del nivel intelectual de la persona''',
@@ -1813,12 +2084,14 @@ final List<Question> pfrhQuestions = [
       r'''La inalienabilidad de la autonomía financiera de las familias con personas a cargo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad ontológica es la dignidad propia del ser humano por su simple existencia. No depende de la inteligencia, salud, edad o capacidad mental; todos los seres humanos poseen exactamente el mismo grado de dignidad ontológica.''',
+    explanation:
+        r'''La dignidad ontológica es la dignidad propia del ser humano por su simple existencia. No depende de la inteligencia, salud, edad o capacidad mental; todos los seres humanos poseen exactamente el mismo grado de dignidad ontológica.''',
   ),
   Question(
     id: 'pfrh_q179',
     topicId: 'pfrh_t2',
-    text: r'''Si una ley de un país establece que «los extranjeros indocumentados no tienen derecho a la integridad física y pueden ser sometidos a castigos corporales por cometer faltas menores», ¿qué principio de los derechos humanos está siendo directamente violado por esta legislación?''',
+    text:
+        r'''Si una ley de un país establece que «los extranjeros indocumentados no tienen derecho a la integridad física y pueden ser sometidos a castigos corporales por cometer faltas menores», ¿qué principio de los derechos humanos está siendo directamente violado por esta legislación?''',
     options: [
       r'''La Indivisibilidad''',
       r'''La Universalidad''',
@@ -1826,12 +2099,14 @@ final List<Question> pfrhQuestions = [
       r'''La Soberanía Territorial''',
     ],
     correctAnswer: 1,
-    explanation: r'''La universalidad prohíbe excluir a cualquier grupo de personas de la protección básica de los derechos humanos. El estatus migratorio de una persona no anula su condición humana ni su derecho a la integridad física.''',
+    explanation:
+        r'''La universalidad prohíbe excluir a cualquier grupo de personas de la protección básica de los derechos humanos. El estatus migratorio de una persona no anula su condición humana ni su derecho a la integridad física.''',
   ),
   Question(
     id: 'pfrh_q180',
     topicId: 'pfrh_t2',
-    text: r'''Un debate sobre salud pública aborda si el Estado puede suspender permanentemente la atención médica básica para las personas de la tercera edad argumentando que «su ciclo de vida productivo ha terminado». ¿Cuál es el sustento ético y legal que impide esta discriminación?''',
+    text:
+        r'''Un debate sobre salud pública aborda si el Estado puede suspender permanentemente la atención médica básica para las personas de la tercera edad argumentando que «su ciclo de vida productivo ha terminado». ¿Cuál es el sustento ético y legal que impide esta discriminación?''',
     options: [
       r'''El principio de eficiencia del gasto público en salud''',
       r'''La inalienabilidad del derecho a la salud y el valor inalterable de la dignidad humana en todas las etapas de la vida''',
@@ -1839,12 +2114,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad de los contratos de seguros privados de salud''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos humanos no dependen de la productividad económica o edad de la persona. La dignidad humana es inmutable a lo largo de toda la existencia del individuo, y el derecho a la salud es inalienable.''',
+    explanation:
+        r'''Los derechos humanos no dependen de la productividad económica o edad de la persona. La dignidad humana es inmutable a lo largo de toda la existencia del individuo, y el derecho a la salud es inalienable.''',
   ),
   Question(
     id: 'pfrh_q181',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué caracteriza al «relativismo cultural radical» frente al marco universal de los derechos humanos?''',
+    text:
+        r'''¿Qué caracteriza al «relativismo cultural radical» frente al marco universal de los derechos humanos?''',
     options: [
       r'''Sostiene que todos los derechos humanos se aplican por igual en todo el planeta sin importar el contexto histórico''',
       r'''Plantea que cada cultura posee sus propios valores éticos autónomos y, por ende, las costumbres locales prevalecen sobre cualquier estándar universal de derechos humanos''',
@@ -1852,12 +2129,14 @@ final List<Question> pfrhQuestions = [
       r'''Afirma que los tratados internacionales deben redactarse en todos los idiomas del mundo para ser válidos''',
     ],
     correctAnswer: 1,
-    explanation: r'''El relativismo cultural radical afirma que ningún juicio moral puede trascender las fronteras culturales, argumentando que las prácticas tradicionales locales (incluso las que lesionan la integridad de las personas) deben respetarse y no ser juzgadas por estándares universales.''',
+    explanation:
+        r'''El relativismo cultural radical afirma que ningún juicio moral puede trascender las fronteras culturales, argumentando que las prácticas tradicionales locales (incluso las que lesionan la integridad de las personas) deben respetarse y no ser juzgadas por estándares universales.''',
   ),
   Question(
     id: 'pfrh_q182',
     topicId: 'pfrh_t2',
-    text: r'''El concepto kantiano de que la persona humana «tiene dignidad y no precio» permite discriminar entre las cosas y las personas de la siguiente manera:''',
+    text:
+        r'''El concepto kantiano de que la persona humana «tiene dignidad y no precio» permite discriminar entre las cosas y las personas de la siguiente manera:''',
     options: [
       r'''Las cosas tienen valor instrumental y pueden ser reemplazadas por equivalentes; las personas tienen valor intrínseco y no pueden ser sustituidas ni tener un precio de mercado''',
       r'''Las personas pueden ser vendidas únicamente si ellas lo consienten libremente a cambio de un precio de mercado justo''',
@@ -1865,12 +2144,14 @@ final List<Question> pfrhQuestions = [
       r'''El Estado puede tasar económicamente la vida de una persona según sus ingresos fiscales anuales''',
     ],
     correctAnswer: 0,
-    explanation: r'''Lo que tiene precio puede ser sustituido por algo equivalente; en cambio, el ser humano, al poseer dignidad, está situado por encima de todo precio y no admite equivalente o intercambio comercial.''',
+    explanation:
+        r'''Lo que tiene precio puede ser sustituido por algo equivalente; en cambio, el ser humano, al poseer dignidad, está situado por encima de todo precio y no admite equivalente o intercambio comercial.''',
   ),
   Question(
     id: 'pfrh_q183',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál de las siguientes situaciones ejemplifica una colisión entre el «derecho subjetivo» de la persona y un enfoque puramente utilitarista del Estado?''',
+    text:
+        r'''¿Cuál de las siguientes situaciones ejemplifica una colisión entre el «derecho subjetivo» de la persona y un enfoque puramente utilitarista del Estado?''',
     options: [
       r'''Condenar a un inocente a cadena perpetua para calmar la ira de la población y evitar protestas callejeras violentas''',
       r'''Exigir que los ciudadanos utilicen mascarillas protectoras en el transporte público durante una epidemia declarada''',
@@ -1878,12 +2159,14 @@ final List<Question> pfrhQuestions = [
       r'''Restringir el tráfico de vehículos de carga pesada en zonas residenciales durante las noches''',
     ],
     correctAnswer: 0,
-    explanation: r'''Condenar a un inocente es un claro ejemplo de instrumentalización de la persona humana con fines utilitaristas (calmar a la turba), violando flagrantemente la dignidad humana individual como límite infranqueable para el poder del Estado.''',
+    explanation:
+        r'''Condenar a un inocente es un claro ejemplo de instrumentalización de la persona humana con fines utilitaristas (calmar a la turba), violando flagrantemente la dignidad humana individual como límite infranqueable para el poder del Estado.''',
   ),
   Question(
     id: 'pfrh_q184',
     topicId: 'pfrh_t2',
-    text: r'''Un ciudadano afirma que el derecho a la libertad de expresión no es realmente un derecho humano porque «en su país, las leyes prohíben criticar al gobierno local». ¿Qué error conceptual comete este ciudadano en su razonamiento?''',
+    text:
+        r'''Un ciudadano afirma que el derecho a la libertad de expresión no es realmente un derecho humano porque «en su país, las leyes prohíben criticar al gobierno local». ¿Qué error conceptual comete este ciudadano en su razonamiento?''',
     options: [
       r'''Confundir la vigencia doctrinal e inherencia de un derecho humano con su reconocimiento o respeto efectivo por parte del ordenamiento jurídico positivo de su Estado''',
       r'''Creer que la libertad de expresión solo corresponde a las personas con educación universitaria''',
@@ -1891,12 +2174,14 @@ final List<Question> pfrhQuestions = [
       r'''No comprender que la libertad de expresión es un derecho patrimonial que debe ser comprado mediante impuestos especiales''',
     ],
     correctAnswer: 0,
-    explanation: r'''La existencia e inherencia de los derechos humanos no depende del grado de cumplimiento o violación que muestren las leyes locales de un país. Aunque un gobierno prohíba o restrinja ilegítimamente la libertad de expresión, el derecho sigue existiendo en el plano doctrinal y ético internacional de la dignidad.''',
+    explanation:
+        r'''La existencia e inherencia de los derechos humanos no depende del grado de cumplimiento o violación que muestren las leyes locales de un país. Aunque un gobierno prohíba o restrinja ilegítimamente la libertad de expresión, el derecho sigue existiendo en el plano doctrinal y ético internacional de la dignidad.''',
   ),
   Question(
     id: 'pfrh_q185',
     topicId: 'pfrh_t2',
-    text: r'''Si un Estado promueve que «para lograr el desarrollo económico rápido se debe permitir el trabajo forzado e infantil temporalmente», ¿qué principio básico del marco doctrinal de los derechos humanos está ignorando?''',
+    text:
+        r'''Si un Estado promueve que «para lograr el desarrollo económico rápido se debe permitir el trabajo forzado e infantil temporalmente», ¿qué principio básico del marco doctrinal de los derechos humanos está ignorando?''',
     options: [
       r'''La soberanía nacional legislativa''',
       r'''La Indivisibilidad y la prohibición absoluta de la explotación humana fundada en la dignidad''',
@@ -1904,12 +2189,14 @@ final List<Question> pfrhQuestions = [
       r'''La jerarquía formal de la propiedad industrial''',
     ],
     correctAnswer: 1,
-    explanation: r'''La explotación infantil y el trabajo forzado violan de manera directa la dignidad humana e ignoran la indivisibilidad de los derechos: no se puede argumentar el progreso económico (segunda generación) sacrificando la libertad física y la integridad de los niños (primera generación).''',
+    explanation:
+        r'''La explotación infantil y el trabajo forzado violan de manera directa la dignidad humana e ignoran la indivisibilidad de los derechos: no se puede argumentar el progreso económico (segunda generación) sacrificando la libertad física y la integridad de los niños (primera generación).''',
   ),
   Question(
     id: 'pfrh_q186',
     topicId: 'pfrh_t2',
-    text: r'''Cuál es el fundamento conceptual de la «irrenunciabilidad» de los derechos humanos?''',
+    text:
+        r'''Cuál es el fundamento conceptual de la «irrenunciabilidad» de los derechos humanos?''',
     options: [
       r'''Que los ciudadanos carecen de capacidad civil para firmar actas notariales''',
       r'''Que al ser los derechos humanos parte inseparable de la existencia humana, renunciar a ellos equivaldría a renunciar a la propia condición de ser humano''',
@@ -1917,12 +2204,14 @@ final List<Question> pfrhQuestions = [
       r'''Que la Iglesia prohíbe formalmente a sus fieles abandonar los derechos civiles''',
     ],
     correctAnswer: 1,
-    explanation: r'''La irrenunciabilidad (derivada de la inalienabilidad) radica en que el titular de los derechos no puede desprenderse de lo que constituye su esencia como persona. Uno no puede auto-despojarse de su dignidad ni de los derechos que la protegen.''',
+    explanation:
+        r'''La irrenunciabilidad (derivada de la inalienabilidad) radica en que el titular de los derechos no puede desprenderse de lo que constituye su esencia como persona. Uno no puede auto-despojarse de su dignidad ni de los derechos que la protegen.''',
   ),
   Question(
     id: 'pfrh_q187',
     topicId: 'pfrh_t2',
-    text: r'''Cuando se afirma que la dignidad humana es «inviolable», doctrinalmente se quiere decir que:''',
+    text:
+        r'''Cuando se afirma que la dignidad humana es «inviolable», doctrinalmente se quiere decir que:''',
     options: [
       r'''Nadie tiene la capacidad física o material de cometer un delito contra otra persona''',
       r'''El valor intrínseco de la persona jamás debe ser menoscabado, dañado o instrumentalizado por el Estado o los particulares, y cualquier agresión es éticamente intolerable y jurídicamente ilícita''',
@@ -1930,12 +2219,14 @@ final List<Question> pfrhQuestions = [
       r'''Los delincuentes tienen inmunidad absoluta frente a las detenciones legales y las penas de cárcel''',
     ],
     correctAnswer: 1,
-    explanation: r'''La inviolabilidad de la dignidad humana significa que no existen motivos válidos (seguridad del Estado, bienestar común, crecimiento económico) que justifiquen su violación o vulneración, consagrándose como la norma fundamental del sistema de derechos.''',
+    explanation:
+        r'''La inviolabilidad de la dignidad humana significa que no existen motivos válidos (seguridad del Estado, bienestar común, crecimiento económico) que justifiquen su violación o vulneración, consagrándose como la norma fundamental del sistema de derechos.''',
   ),
   Question(
     id: 'pfrh_q188',
     topicId: 'pfrh_t2',
-    text: r'''En un litigio entre dos vecinos, uno argumenta que la tranquilidad de su hogar es prioritaria, mientras que el otro afirma su derecho a la libre expresión artística ensayando con su batería a altas horas de la noche. Para resolver este conflicto de derechos, la doctrina aplica:''',
+    text:
+        r'''En un litigio entre dos vecinos, uno argumenta que la tranquilidad de su hogar es prioritaria, mientras que el otro afirma su derecho a la libre expresión artística ensayando con su batería a altas horas de la noche. Para resolver este conflicto de derechos, la doctrina aplica:''',
     options: [
       r'''La anulación definitiva del derecho a la libre expresión artística en beneficio de la propiedad privada''',
       r'''El principio de ponderación o armonización, buscando optimizar ambos derechos sin anular la esencia de ninguno de ellos, respetando la dignidad de ambos vecinos''',
@@ -1943,12 +2234,14 @@ final List<Question> pfrhQuestions = [
       r'''La priorización del vecino con mayor capacidad adquisitiva y antigüedad en el barrio''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos humanos no son compartimentos estancos absolutos en su ejercicio diario; cuando entran en colisión, se aplica el principio de ponderación bajo criterios de razonabilidad, proporcionalidad y respeto mutuo, buscando preservar el contenido esencial de ambos derechos.''',
+    explanation:
+        r'''Los derechos humanos no son compartimentos estancos absolutos en su ejercicio diario; cuando entran en colisión, se aplica el principio de ponderación bajo criterios de razonabilidad, proporcionalidad y respeto mutuo, buscando preservar el contenido esencial de ambos derechos.''',
   ),
   Question(
     id: 'pfrh_q189',
     topicId: 'pfrh_t2',
-    text: r'''Si un ciudadano se niega a pagar impuestos alegando que el cobro forzoso del Estado viola su «dignidad humana y su libertad económica absoluta», ¿cuál es la tipificación doctrinal de este argumento?''',
+    text:
+        r'''Si un ciudadano se niega a pagar impuestos alegando que el cobro forzoso del Estado viola su «dignidad humana y su libertad económica absoluta», ¿cuál es la tipificación doctrinal de este argumento?''',
     options: [
       r'''Es correcto, porque los impuestos reducen el patrimonio privado, el cual forma parte de la dignidad ontológica''',
       r'''Es incorrecto, porque la dignidad humana convive con el deber de solidaridad social y el bien común, y los impuestos legítimos buscan financiar los derechos económicos de toda la comunidad''',
@@ -1956,12 +2249,14 @@ final List<Question> pfrhQuestions = [
       r'''Es incorrecto, porque los derechos humanos solo pertenecen a quienes no tienen propiedades ni rentas declaradas''',
     ],
     correctAnswer: 1,
-    explanation: r'''El ejercicio de los derechos humanos no es absoluto en términos de rechazo a los deberes sociales. El sostenimiento de las cargas públicas mediante impuestos justos es un deber ciudadano derivado del principio de solidaridad, indispensable para que el Estado pueda garantizar los derechos económicos, sociales y culturales de todos.''',
+    explanation:
+        r'''El ejercicio de los derechos humanos no es absoluto en términos de rechazo a los deberes sociales. El sostenimiento de las cargas públicas mediante impuestos justos es un deber ciudadano derivado del principio de solidaridad, indispensable para que el Estado pueda garantizar los derechos económicos, sociales y culturales de todos.''',
   ),
   Question(
     id: 'pfrh_q190',
     topicId: 'pfrh_t2',
-    text: r'''Identifique el caso en que se vulnera la característica de «Indivisibilidad e Interdependencia» de los derechos humanos:''',
+    text:
+        r'''Identifique el caso en que se vulnera la característica de «Indivisibilidad e Interdependencia» de los derechos humanos:''',
     options: [
       r'''Un Estado garantiza el derecho al sufragio pero mantiene un sistema de salud tan precario que la desnutrición infantil impide el desarrollo básico de la población''',
       r'''Una junta vecinal decide reparar las aceras rotas para facilitar el desplazamiento seguro de las personas ancianas''',
@@ -1969,12 +2264,14 @@ final List<Question> pfrhQuestions = [
       r'''Un municipio aprueba una ordenanza que prohíbe botar basura en las calles en horarios no establecidos''',
     ],
     correctAnswer: 0,
-    explanation: r'''La indivisibilidad se vulnera cuando el Estado prioriza falsamente los derechos políticos (votar) al tiempo que ignora los derechos económicos y sociales básicos (salud, nutrición), pues una población enferma y desnutrida no se encuentra en condiciones reales de ejercer plenamente su ciudadanía activa.''',
+    explanation:
+        r'''La indivisibilidad se vulnera cuando el Estado prioriza falsamente los derechos políticos (votar) al tiempo que ignora los derechos económicos y sociales básicos (salud, nutrición), pues una población enferma y desnutrida no se encuentra en condiciones reales de ejercer plenamente su ciudadanía activa.''',
   ),
   Question(
     id: 'pfrh_q191',
     topicId: 'pfrh_t2',
-    text: r'''Mateo, un estudiante de secundaria, es constantemente excluido y humillado por sus compañeros en los trabajos grupales debido a que padece de tartamudez. El tutor del aula minimiza la situación diciendo que «es solo una broma escolar y Mateo debe aprender a tener correa». ¿Qué principio fundamental del marco doctrinal se está vulnerando en el trato hacia Mateo?''',
+    text:
+        r'''Mateo, un estudiante de secundaria, es constantemente excluido y humillado por sus compañeros en los trabajos grupales debido a que padece de tartamudez. El tutor del aula minimiza la situación diciendo que «es solo una broma escolar y Mateo debe aprender a tener correa». ¿Qué principio fundamental del marco doctrinal se está vulnerando en el trato hacia Mateo?''',
     options: [
       r'''La Inalienabilidad del derecho a la libre asociación estudiantil''',
       r'''La dignidad humana ontológica de Mateo, la cual exige respeto absoluto a su integridad moral y proscribe la humillación en el ámbito educativo''',
@@ -1982,12 +2279,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo cultural que justifica las bromas entre adolescentes como parte de su desarrollo natural''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad de Mateo es vulnerada por el acoso sistemático (bullying) y por la inacción del tutor. La dignidad humana exige que todo estudiante reciba un trato respetuoso y que el entorno escolar proteja su integridad mental y moral.''',
+    explanation:
+        r'''La dignidad de Mateo es vulnerada por el acoso sistemático (bullying) y por la inacción del tutor. La dignidad humana exige que todo estudiante reciba un trato respetuoso y que el entorno escolar proteja su integridad mental y moral.''',
   ),
   Question(
     id: 'pfrh_q192',
     topicId: 'pfrh_t2',
-    text: r'''Elena trabaja en una panadería de su localidad. Su empleador, al enterarse de que está embarazada, le presenta un documento para firmar en el cual ella «acepta voluntariamente» trabajar horas extras nocturnas y renuncia a su descanso de maternidad pre y postnatal a cambio de no ser despedida. Preocupada por el sustento de su hogar, Elena firma. ¿Cómo califica doctrinalmente este acto?''',
+    text:
+        r'''Elena trabaja en una panadería de su localidad. Su empleador, al enterarse de que está embarazada, le presenta un documento para firmar en el cual ella «acepta voluntariamente» trabajar horas extras nocturnas y renuncia a su descanso de maternidad pre y postnatal a cambio de no ser despedida. Preocupada por el sustento de su hogar, Elena firma. ¿Cómo califica doctrinalmente este acto?''',
     options: [
       r'''Es un acuerdo válido bajo la libre autonomía de la voluntad y la libertad de contratación de las partes''',
       r'''Es nulo de pleno derecho porque los derechos a la salud y a la protección de la maternidad son inalienables e irrenunciables, y el empleador instrumentaliza a Elena violando su dignidad''',
@@ -1995,12 +2294,14 @@ final List<Question> pfrhQuestions = [
       r'''Es válido, pero únicamente si el contrato fue registrado y visado ante un juez de paz de la comunidad''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coacción implícita y la renuncia a derechos humanos laborales (como la protección a la maternidad) son nulas debido a la inalienabilidad de estos derechos. Además, el empleador utiliza la necesidad económica de Elena como un medio para su propio beneficio económico, vulnerando su dignidad humana.''',
+    explanation:
+        r'''La coacción implícita y la renuncia a derechos humanos laborales (como la protección a la maternidad) son nulas debido a la inalienabilidad de estos derechos. Además, el empleador utiliza la necesidad económica de Elena como un medio para su propio beneficio económico, vulnerando su dignidad humana.''',
   ),
   Question(
     id: 'pfrh_q193',
     topicId: 'pfrh_t2',
-    text: r'''Una urbanización residencial privada decide construir una muralla de concreto para cerrar el paso vecinal hacia un asentamiento humano colindante, alegando que el tránsito de los pobladores vecinos «perjudica la estética visual de la zona y disminuye el valor comercial de sus predios». ¿Qué principio de los derechos humanos se vulnera principalmente al restringir de este modo la dignidad de los pobladores del asentamiento?''',
+    text:
+        r'''Una urbanización residencial privada decide construir una muralla de concreto para cerrar el paso vecinal hacia un asentamiento humano colindante, alegando que el tránsito de los pobladores vecinos «perjudica la estética visual de la zona y disminuye el valor comercial de sus predios». ¿Qué principio de los derechos humanos se vulnera principalmente al restringir de este modo la dignidad de los pobladores del asentamiento?''',
     options: [
       r'''La imprescriptibilidad del libre tránsito de carga pesada''',
       r'''La universalidad de la dignidad humana, que prohíbe la segregación social y la discriminación basada en condiciones económicas o de vivienda''',
@@ -2008,12 +2309,14 @@ final List<Question> pfrhQuestions = [
       r'''La inalienabilidad de la seguridad patrimonial privada frente a terceros''',
     ],
     correctAnswer: 1,
-    explanation: r'''La construcción del muro de segregación vulnera la dignidad de los vecinos del asentamiento al excluirlos y discriminarlos con base en prejuicios económicos. Bajo la universalidad, todos los seres humanos merecen el mismo respeto a su dignidad, sin que el valor comercial de una propiedad justifique la humillación y el aislamiento de otros ciudadanos.''',
+    explanation:
+        r'''La construcción del muro de segregación vulnera la dignidad de los vecinos del asentamiento al excluirlos y discriminarlos con base en prejuicios económicos. Bajo la universalidad, todos los seres humanos merecen el mismo respeto a su dignidad, sin que el valor comercial de una propiedad justifique la humillación y el aislamiento de otros ciudadanos.''',
   ),
   Question(
     id: 'pfrh_q194',
     topicId: 'pfrh_t2',
-    text: r'''En un colegio, el director prohíbe el ingreso de un niño de ocho años porque sus padres adeudan tres meses de la pensión escolar. El director sostiene que «la educación privada es un negocio y si no pagan, el servicio se suspende de inmediato». Evaluando la situación desde la interdependencia e indivisibilidad de los derechos, ¿qué argumento es correcto?''',
+    text:
+        r'''En un colegio, el director prohíbe el ingreso de un niño de ocho años porque sus padres adeudan tres meses de la pensión escolar. El director sostiene que «la educación privada es un negocio y si no pagan, el servicio se suspende de inmediato». Evaluando la situación desde la interdependencia e indivisibilidad de los derechos, ¿qué argumento es correcto?''',
     options: [
       r'''El director actúa correctamente porque el derecho contractual de la empresa educativa es superior a la educación del menor''',
       r'''Se vulnera el derecho a la educación del niño, el cual es indivisible de su desarrollo personal y no debe ser suspendido abruptamente usando la educación como mecanismo de coacción económica contra los padres''',
@@ -2021,12 +2324,14 @@ final List<Question> pfrhQuestions = [
       r'''El niño pierde su dignidad humana como estudiante en el momento en que sus padres incurren en mora financiera''',
     ],
     correctAnswer: 1,
-    explanation: r'''La educación es un derecho fundamental indispensable para el libre desarrollo de la personalidad del menor. Utilizar la exclusión del menor del sistema escolar como mecanismo de presión económica vulnera la indivisibilidad de los derechos y afecta directamente su desarrollo emocional y cognitivo.''',
+    explanation:
+        r'''La educación es un derecho fundamental indispensable para el libre desarrollo de la personalidad del menor. Utilizar la exclusión del menor del sistema escolar como mecanismo de presión económica vulnera la indivisibilidad de los derechos y afecta directamente su desarrollo emocional y cognitivo.''',
   ),
   Question(
     id: 'pfrh_q195',
     topicId: 'pfrh_t2',
-    text: r'''Don Manuel, un anciano de 82 años que vive en situación de abandono social, acude a un centro de salud del Estado debido a fuertes dolores en el pecho. El personal administrativo le niega la atención de emergencia porque no porta su Documento Nacional de Identidad (DNI) físico. ¿Qué principio doctrinal de los derechos humanos se ha quebrantado en esta situación?''',
+    text:
+        r'''Don Manuel, un anciano de 82 años que vive en situación de abandono social, acude a un centro de salud del Estado debido a fuertes dolores en el pecho. El personal administrativo le niega la atención de emergencia porque no porta su Documento Nacional de Identidad (DNI) físico. ¿Qué principio doctrinal de los derechos humanos se ha quebrantado en esta situación?''',
     options: [
       r'''La imprescriptibilidad del trámite de identificación ciudadana ante el Registro Civil''',
       r'''La universalidad del derecho a la salud y a la vida, los cuales dependen de la condición humana de Don Manuel y no del cumplimiento de un trámite administrativo''',
@@ -2034,12 +2339,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo administrativo que prioriza las reglas burocráticas del hospital sobre los derechos de los pacientes''',
     ],
     correctAnswer: 1,
-    explanation: r'''La titularidad de los derechos a la vida y a la salud física se funda en la condición humana de Don Manuel (Universalidad), no en la posesión de un DNI o en formalidades burocráticas, sobre todo en casos de emergencia donde está en riesgo su integridad.''',
+    explanation:
+        r'''La titularidad de los derechos a la vida y a la salud física se funda en la condición humana de Don Manuel (Universalidad), no en la posesión de un DNI o en formalidades burocráticas, sobre todo en casos de emergencia donde está en riesgo su integridad.''',
   ),
   Question(
     id: 'pfrh_q196',
     topicId: 'pfrh_t2',
-    text: r'''Una joven de una pequeña comunidad agrícola desea postular a una beca universitaria en el extranjero. Sus padres y los líderes locales le prohíben viajar bajo el argumento de que «en nuestra comunidad, la tradición manda que las mujeres jóvenes permanezcan en el campo ayudando a la familia y preparándose para el matrimonio». Si analizamos este caso desde la universalidad de los derechos humanos, ¿cuál de los siguientes enunciados es el correcto?''',
+    text:
+        r'''Una joven de una pequeña comunidad agrícola desea postular a una beca universitaria en el extranjero. Sus padres y los líderes locales le prohíben viajar bajo el argumento de que «en nuestra comunidad, la tradición manda que las mujeres jóvenes permanezcan en el campo ayudando a la familia y preparándose para el matrimonio». Si analizamos este caso desde la universalidad de los derechos humanos, ¿cuál de los siguientes enunciados es el correcto?''',
     options: [
       r'''La tradición local de la comunidad es autónoma y legítimamente puede anular los deseos individuales de la joven''',
       r'''El derecho de la joven a la educación y a decidir su proyecto de vida es universal e inalienable, y ninguna costumbre comunitaria puede recortar sus derechos fundamentales''',
@@ -2047,12 +2354,14 @@ final List<Question> pfrhQuestions = [
       r'''La educación superior solo es un derecho para los hombres según los convenios internacionales agrarios''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las tradiciones culturales no pueden ser utilizadas para violar la dignidad y limitar los derechos individuales al desarrollo personal, la autonomía y la educación de las personas, los cuales son de alcance universal.''',
+    explanation:
+        r'''Las tradiciones culturales no pueden ser utilizadas para violar la dignidad y limitar los derechos individuales al desarrollo personal, la autonomía y la educación de las personas, los cuales son de alcance universal.''',
   ),
   Question(
     id: 'pfrh_q197',
     topicId: 'pfrh_t2',
-    text: r'''Un ayuntamiento local decide que los parques infantiles del distrito serán cerrados y de uso exclusivo para las familias que residan en las zonas de mayor recaudación tributaria, restringiendo el ingreso a los niños que provienen de los barrios más pobres de la periferia. ¿Cómo se tipifica esta medida respecto a los principios de los derechos humanos?''',
+    text:
+        r'''Un ayuntamiento local decide que los parques infantiles del distrito serán cerrados y de uso exclusivo para las familias que residan en las zonas de mayor recaudación tributaria, restringiendo el ingreso a los niños que provienen de los barrios más pobres de la periferia. ¿Cómo se tipifica esta medida respecto a los principios de los derechos humanos?''',
     options: [
       r'''Es una medida justa basada en el principio de reciprocidad tributaria entre el ciudadano y la municipalidad''',
       r'''Es una flagrante violación del principio de universalidad y de la dignidad humana, al discriminar a los niños por la situación económica de sus familias e impedirles el derecho a la recreación''',
@@ -2060,12 +2369,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un acto de soberanía local que no afecta los derechos fundamentales porque el acceso al juego es opcional y no vital''',
     ],
     correctAnswer: 1,
-    explanation: r'''Discriminar en el acceso a espacios públicos recreativos basándose en criterios socioeconómicos vulnera la universalidad de los derechos humanos y atenta contra el derecho al juego y esparcimiento de los niños, afectando su desarrollo integral y dignidad.''',
+    explanation:
+        r'''Discriminar en el acceso a espacios públicos recreativos basándose en criterios socioeconómicos vulnera la universalidad de los derechos humanos y atenta contra el derecho al juego y esparcimiento de los niños, afectando su desarrollo integral y dignidad.''',
   ),
   Question(
     id: 'pfrh_q198',
     topicId: 'pfrh_t2',
-    text: r'''Don Alberto, de 75 años, fue desalojado arbitrariamente de la vivienda que ocupó de buena fe durante 40 años por una inmobiliaria que compró el terreno de forma fraudulenta. Cuando acude a reclamar ante las instancias civiles, le informan que su derecho a reclamar la vivienda «ha prescrito» porque la ley local da un plazo muy corto para las demandas de desalojo, dejándolo en la calle sin recursos. Desde la doctrina de derechos humanos, ¿qué se puede sostener?''',
+    text:
+        r'''Don Alberto, de 75 años, fue desalojado arbitrariamente de la vivienda que ocupó de buena fe durante 40 años por una inmobiliaria que compró el terreno de forma fraudulenta. Cuando acude a reclamar ante las instancias civiles, le informan que su derecho a reclamar la vivienda «ha prescrito» porque la ley local da un plazo muy corto para las demandas de desalojo, dejándolo en la calle sin recursos. Desde la doctrina de derechos humanos, ¿qué se puede sostener?''',
     options: [
       r'''Que las normas procesales locales siempre tienen supremacía moral sobre la vida de los adultos mayores''',
       r'''Que el derecho de Don Alberto a una vivienda digna y a una subsistencia mínima es inalienable, y el Estado tiene el deber de evitar que las formalidades de prescripción lo dejen en desamparo total''',
@@ -2073,12 +2384,14 @@ final List<Question> pfrhQuestions = [
       r'''Que la imprescriptibilidad solo protege a las empresas inmobiliarias y sus inversiones urbanísticas''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho a la vivienda y a la dignidad en la vejez impone obligaciones de protección al Estado. Si bien las normas procesales tienen plazos, el desamparo absoluto de un adulto mayor debido a formalismos legales entra en conflicto con las obligaciones estatales de garantizar el mínimo vital y la protección social de forma progresiva.''',
+    explanation:
+        r'''El derecho a la vivienda y a la dignidad en la vejez impone obligaciones de protección al Estado. Si bien las normas procesales tienen plazos, el desamparo absoluto de un adulto mayor debido a formalismos legales entra en conflicto con las obligaciones estatales de garantizar el mínimo vital y la protección social de forma progresiva.''',
   ),
   Question(
     id: 'pfrh_q199',
     topicId: 'pfrh_t2',
-    text: r'''Un reality show de señal abierta ofrece un premio de 10,000 soles a un participante humilde a cambio de que se deje afeitar la cabeza en vivo mientras es insultado por los conductores del programa para elevar el rating del canal. El productor señala que «no hay abuso porque el participante firmó un acuerdo de consentimiento». Desde la doctrina de la dignidad humana, ¿cuál es la valoración correcta?''',
+    text:
+        r'''Un reality show de señal abierta ofrece un premio de 10,000 soles a un participante humilde a cambio de que se deje afeitar la cabeza en vivo mientras es insultado por los conductores del programa para elevar el rating del canal. El productor señala que «no hay abuso porque el participante firmó un acuerdo de consentimiento». Desde la doctrina de la dignidad humana, ¿cuál es la valoración correcta?''',
     options: [
       r'''El acuerdo es plenamente válido ya que el participante aceptó la compensación económica de forma voluntaria''',
       r'''Se viola la dignidad humana del participante, la cual es inviolable e inalienable; el consentimiento no justifica la humillación pública ni la instrumentalización comercial de una persona necesitada''',
@@ -2086,12 +2399,14 @@ final List<Question> pfrhQuestions = [
       r'''La dignidad humana se recupera automáticamente una vez depositado el dinero en la cuenta del participante''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad ontológica es indisponible. Una persona no puede «alquilar» o «vender» su derecho a no ser humillada ni sometida a tratos degradantes, pues la dignidad humana constituye un límite ético que los contratos comerciales privados no pueden rebasar.''',
+    explanation:
+        r'''La dignidad ontológica es indisponible. Una persona no puede «alquilar» o «vender» su derecho a no ser humillada ni sometida a tratos degradantes, pues la dignidad humana constituye un límite ético que los contratos comerciales privados no pueden rebasar.''',
   ),
   Question(
     id: 'pfrh_q200',
     topicId: 'pfrh_t2',
-    text: r'''Una empresa privada de transportes exige a sus choferes trabajar turnos seguidos de 16 horas diarias sin descansos semanales. Cuando uno de los choferes reclama por el cansancio extremo, el administrador responde: «Nadie los obliga a estar aquí; si no les gusta, firmen su renuncia. Hay miles de personas afuera esperando este empleo». Evaluando la situación, ¿qué principio de derechos humanos se transgrede?''',
+    text:
+        r'''Una empresa privada de transportes exige a sus choferes trabajar turnos seguidos de 16 horas diarias sin descansos semanales. Cuando uno de los choferes reclama por el cansancio extremo, el administrador responde: «Nadie los obliga a estar aquí; si no les gusta, firmen su renuncia. Hay miles de personas afuera esperando este empleo». Evaluando la situación, ¿qué principio de derechos humanos se transgrede?''',
     options: [
       r'''La imprescriptibilidad del contrato de prestación de servicios autónomos''',
       r'''El derecho a condiciones de trabajo equitativas y satisfactorias, derivado de la dignidad humana, que prohíbe tratar la mano de obra del trabajador como un simple recurso explotable sin límites físicos''',
@@ -2099,12 +2414,14 @@ final List<Question> pfrhQuestions = [
       r'''La inalienabilidad de la ganancia corporativa en situaciones de libre mercado''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad laboral prohíbe la explotación física del trabajador. La necesidad económica extrema del empleado no convalida la violación de sus derechos fundamentales a la salud y a jornadas de trabajo justas.''',
+    explanation:
+        r'''La dignidad laboral prohíbe la explotación física del trabajador. La necesidad económica extrema del empleado no convalida la violación de sus derechos fundamentales a la salud y a jornadas de trabajo justas.''',
   ),
   Question(
     id: 'pfrh_q201',
     topicId: 'pfrh_t2',
-    text: r'''Una junta de propietarios de un edificio decide prohibir a la trabajadora del hogar de uno de los departamentos utilizar el ascensor principal, obligándola a subir únicamente por la escalera de servicio o el ascensor de carga. La junta argumenta que «los propietarios pagan el mantenimiento del ascensor y tienen derecho a decidir quién viaja en él». ¿Qué principio fundamental se está violando en este caso?''',
+    text:
+        r'''Una junta de propietarios de un edificio decide prohibir a la trabajadora del hogar de uno de los departamentos utilizar el ascensor principal, obligándola a subir únicamente por la escalera de servicio o el ascensor de carga. La junta argumenta que «los propietarios pagan el mantenimiento del ascensor y tienen derecho a decidir quién viaja en él». ¿Qué principio fundamental se está violando en este caso?''',
     options: [
       r'''La inalienabilidad de las decisiones de las juntas de copropiedad privada''',
       r'''La dignidad humana y la universalidad, al imponer un trato discriminatorio, segregador y denigrante a una persona en función de su ocupación y condición socioeconómica''',
@@ -2112,12 +2429,14 @@ final List<Question> pfrhQuestions = [
       r'''El principio pro homine que favorece la libertad de las empresas administradoras de edificios''',
     ],
     correctAnswer: 1,
-    explanation: r'''Al segregar a la trabajadora del hogar y prohibirle usar el ascensor común, se comete un acto de discriminación socioeconómica que atenta directamente contra su dignidad humana, enviándole un mensaje de inferioridad social incompatible con la universalidad de los derechos.''',
+    explanation:
+        r'''Al segregar a la trabajadora del hogar y prohibirle usar el ascensor común, se comete un acto de discriminación socioeconómica que atenta directamente contra su dignidad humana, enviándole un mensaje de inferioridad social incompatible con la universalidad de los derechos.''',
   ),
   Question(
     id: 'pfrh_q202',
     topicId: 'pfrh_t2',
-    text: r'''Los miembros de una asociación de vecinos impiden físicamente que una familia de origen extranjero acceda a los pozos de agua comunitarios del barrio, alegando que «el agua del pozo fue excavada por los fundadores nativos del barrio y solo los nacidos en el país tienen derecho a usarla». ¿Qué principio de los derechos humanos resulta vulnerado por esta acción de los vecinos?''',
+    text:
+        r'''Los miembros de una asociación de vecinos impiden físicamente que una familia de origen extranjero acceda a los pozos de agua comunitarios del barrio, alegando que «el agua del pozo fue excavada por los fundadores nativos del barrio y solo los nacidos en el país tienen derecho a usarla». ¿Qué principio de los derechos humanos resulta vulnerado por esta acción de los vecinos?''',
     options: [
       r'''La indivisibilidad de las tradiciones históricas vecinales''',
       r'''La universalidad del derecho humano al agua y a la vida, el cual pertenece a toda persona independientemente de su nacionalidad u origen geográfico''',
@@ -2125,12 +2444,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad del título de propiedad del pozo de agua comunal''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho al agua potable es un recurso vital indispensable para la vida digna de toda persona (Universalidad). La nacionalidad u origen geográfico de la familia no puede ser un criterio para denegarles el acceso a un elemento de subsistencia básica.''',
+    explanation:
+        r'''El derecho al agua potable es un recurso vital indispensable para la vida digna de toda persona (Universalidad). La nacionalidad u origen geográfico de la familia no puede ser un criterio para denegarles el acceso a un elemento de subsistencia básica.''',
   ),
   Question(
     id: 'pfrh_q203',
     topicId: 'pfrh_t2',
-    text: r'''De acuerdo con Immanuel Kant, ¿cuál es la diferencia conceptual fundamental entre las cosas que tienen «precio» y el ser humano que tiene «dignidad»?''',
+    text:
+        r'''De acuerdo con Immanuel Kant, ¿cuál es la diferencia conceptual fundamental entre las cosas que tienen «precio» y el ser humano que tiene «dignidad»?''',
     options: [
       r'''Las cosas tienen valor moral absoluto; los seres humanos tienen valor relativo de intercambio''',
       r'''Lo que tiene precio puede ser sustituido por algo equivalente; lo que está por encima de todo precio y no admite equivalente posee dignidad''',
@@ -2138,12 +2459,14 @@ final List<Question> pfrhQuestions = [
       r'''La dignidad humana se puede cuantificar en dinero mediante pólizas de seguros, mientras que las cosas no''',
     ],
     correctAnswer: 1,
-    explanation: r'''En la formulación kantiana, las cosas son instrumentales y sustituibles (tienen precio); las personas son insustituibles y poseen un valor intrínseco absoluto (dignidad).''',
+    explanation:
+        r'''En la formulación kantiana, las cosas son instrumentales y sustituibles (tienen precio); las personas son insustituibles y poseen un valor intrínseco absoluto (dignidad).''',
   ),
   Question(
     id: 'pfrh_q204',
     topicId: 'pfrh_t2',
-    text: r'''¿Por qué la dignidad humana es considerada el «límite infranqueable» al poder político del Estado?''',
+    text:
+        r'''¿Por qué la dignidad humana es considerada el «límite infranqueable» al poder político del Estado?''',
     options: [
       r'''Porque el Estado no tiene permitido cobrar impuestos a los ciudadanos sin su consentimiento unánime''',
       r'''Porque ninguna política pública, ley o decisión estatal puede instrumentalizar o menoscabar a la persona en nombre del bien común o del interés general''',
@@ -2151,12 +2474,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque los derechos patrimoniales privados no pueden ser regulados de ninguna manera por el Congreso''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad humana actúa como un límite absoluto para el poder del Estado; el bienestar de la mayoría o la seguridad nacional no pueden utilizarse para justificar abusos sistemáticos contra los derechos de los individuos.''',
+    explanation:
+        r'''La dignidad humana actúa como un límite absoluto para el poder del Estado; el bienestar de la mayoría o la seguridad nacional no pueden utilizarse para justificar abusos sistemáticos contra los derechos de los individuos.''',
   ),
   Question(
     id: 'pfrh_q205',
     topicId: 'pfrh_t2',
-    text: r'''¿Cómo define la doctrina de los derechos humanos el concepto de «prohibición de regresividad»?''',
+    text:
+        r'''¿Cómo define la doctrina de los derechos humanos el concepto de «prohibición de regresividad»?''',
     options: [
       r'''Como la prohibición de que las leyes penales se apliquen de forma retroactiva a favor de los delincuentes''',
       r'''Como la imposibilidad jurídica de que un Estado reduzca o derogue las garantías de protección de derechos humanos que ya han sido alcanzadas previamente''',
@@ -2164,12 +2489,14 @@ final List<Question> pfrhQuestions = [
       r'''Como la prohibición de apelar las sentencias dictadas por el Tribunal Constitucional''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio de no regresividad impide que los Estados retrocedan en los niveles de protección y disfrute de los derechos ya reconocidos en leyes o tratados internacionales, salvo circunstancias excepcionales debidamente justificadas.''',
+    explanation:
+        r'''El principio de no regresividad impide que los Estados retrocedan en los niveles de protección y disfrute de los derechos ya reconocidos en leyes o tratados internacionales, salvo circunstancias excepcionales debidamente justificadas.''',
   ),
   Question(
     id: 'pfrh_q206',
     topicId: 'pfrh_t2',
-    text: r'''En la doctrina, ¿qué relación existe entre la «Dignidad Humana» y el libre desarrollo de la personalidad?''',
+    text:
+        r'''En la doctrina, ¿qué relación existe entre la «Dignidad Humana» y el libre desarrollo de la personalidad?''',
     options: [
       r'''Son conceptos opuestos, ya que el libre desarrollo de la personalidad se opone a las normas morales de la dignidad''',
       r'''El libre desarrollo de la personalidad es una consecuencia directa de la dignidad, facultando al individuo a elegir su propio plan de vida sin interferencias autoritarias''',
@@ -2177,12 +2504,14 @@ final List<Question> pfrhQuestions = [
       r'''La dignidad humana restringe el libre desarrollo de la personalidad a lo aprobado por las juntas locales de vecinos''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad humana exige el respeto a la autonomía moral del individuo. Esto incluye la libertad de elegir su propio proyecto de vida, identidad, profesión y valores (libre desarrollo de la personalidad), siempre que no afecte el derecho de otros.''',
+    explanation:
+        r'''La dignidad humana exige el respeto a la autonomía moral del individuo. Esto incluye la libertad de elegir su propio proyecto de vida, identidad, profesión y valores (libre desarrollo de la personalidad), siempre que no afecte el derecho de otros.''',
   ),
   Question(
     id: 'pfrh_q207',
     topicId: 'pfrh_t2',
-    text: r'''El principio de «Universalidad» de los derechos humanos fue formalmente proclamado a nivel global en:''',
+    text:
+        r'''El principio de «Universalidad» de los derechos humanos fue formalmente proclamado a nivel global en:''',
     options: [
       r'''La Declaración de Derechos de Virginia de 1776''',
       r'''La Declaración Universal de los Derechos Humanos aprobada por la Asamblea General de la ONU en 1948''',
@@ -2190,12 +2519,14 @@ final List<Question> pfrhQuestions = [
       r'''El Código de Hammurabi en la antigua Mesopotamia''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Declaración Universal de los Derechos Humanos (1948) es el primer documento internacional de carácter global que proclama formalmente la dignidad e igualdad de derechos para todos los miembros de la familia humana.''',
+    explanation:
+        r'''La Declaración Universal de los Derechos Humanos (1948) es el primer documento internacional de carácter global que proclama formalmente la dignidad e igualdad de derechos para todos los miembros de la familia humana.''',
   ),
   Question(
     id: 'pfrh_q208',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué significa que los derechos humanos sean «indivisibles» en relación con los derechos de primera (civiles/políticos) y segunda generación (económicos/sociales/culturales)?''',
+    text:
+        r'''¿Qué significa que los derechos humanos sean «indivisibles» en relación con los derechos de primera (civiles/políticos) y segunda generación (económicos/sociales/culturales)?''',
     options: [
       r'''Que los derechos de primera generación son superiores y obligatorios, mientras que los de segunda son opcionales''',
       r'''Que ambos tipos de derechos forman un solo cuerpo protector y deben ser garantizados simultáneamente, pues la falta de unos anula el ejercicio de los otros''',
@@ -2203,12 +2534,14 @@ final List<Question> pfrhQuestions = [
       r'''Que solo los derechos civiles y políticos son exigibles ante los tribunales de justicia nacionales''',
     ],
     correctAnswer: 1,
-    explanation: r'''La indivisibilidad rechaza cualquier separación jerárquica de los derechos. Un ciudadano no puede gozar plenamente de su libertad de expresión o derecho al voto (derechos civiles/políticos) si carece de salud, educación o alimentación adecuada (derechos económicos/sociales).''',
+    explanation:
+        r'''La indivisibilidad rechaza cualquier separación jerárquica de los derechos. Un ciudadano no puede gozar plenamente de su libertad de expresión o derecho al voto (derechos civiles/políticos) si carece de salud, educación o alimentación adecuada (derechos económicos/sociales).''',
   ),
   Question(
     id: 'pfrh_q209',
     topicId: 'pfrh_t2',
-    text: r'''La doctrina internacional señala que los derechos humanos son «irrenunciables». ¿Qué diferencia existe entre renunciar a un derecho humano y renunciar a un derecho patrimonial privado?''',
+    text:
+        r'''La doctrina internacional señala que los derechos humanos son «irrenunciables». ¿Qué diferencia existe entre renunciar a un derecho humano y renunciar a un derecho patrimonial privado?''',
     options: [
       r'''Los derechos humanos pueden ser vendidos en subastas públicas autorizadas por el Estado; los patrimoniales no''',
       r'''El titular de un derecho patrimonial (como una casa) puede venderlo o regalarlo libremente; en cambio, nadie puede renunciar legalmente a su libertad, vida o salud, siendo cualquier intento nulo''',
@@ -2216,12 +2549,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe ninguna diferencia, ambos son libremente disponibles bajo el principio de libre mercado''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos patrimoniales pertenecen al comercio humano y son disponibles por su titular. Los derechos humanos son inherentes y forman parte de la identidad de la persona, por lo que son inalienables e irrenunciables.''',
+    explanation:
+        r'''Los derechos patrimoniales pertenecen al comercio humano y son disponibles por su titular. Los derechos humanos son inherentes y forman parte de la identidad de la persona, por lo que son inalienables e irrenunciables.''',
   ),
   Question(
     id: 'pfrh_q210',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el significado del carácter «imprescriptible» de las acciones para perseguir judicialmente las graves violaciones a los derechos humanos?''',
+    text:
+        r'''¿Cuál es el significado del carácter «imprescriptible» de las acciones para perseguir judicialmente las graves violaciones a los derechos humanos?''',
     options: [
       r'''Que las demandas civiles de cobro de deudas nunca prescriben ante los bancos''',
       r'''Que la justicia puede investigar, procesar y sancionar a los responsables de tortura o exterminio sin importar cuántos años hayan pasado desde el delito''',
@@ -2229,12 +2564,14 @@ final List<Question> pfrhQuestions = [
       r'''Que el plazo para denunciar delitos menores prescribe a las 48 horas de cometido el hecho''',
     ],
     correctAnswer: 1,
-    explanation: r'''La imprescriptibilidad procesal penal en materia de derechos humanos significa que el paso del tiempo no exime de responsabilidad a los autores de violaciones graves (como lesa humanidad o genocidio), prohibiendo la impunidad por el transcurso de los años.''',
+    explanation:
+        r'''La imprescriptibilidad procesal penal en materia de derechos humanos significa que el paso del tiempo no exime de responsabilidad a los autores de violaciones graves (como lesa humanidad o genocidio), prohibiendo la impunidad por el transcurso de los años.''',
   ),
   Question(
     id: 'pfrh_q211',
     topicId: 'pfrh_t2',
-    text: r'''El principio doctrinal de «interdependencia» de los derechos humanos se manifiesta cuando:''',
+    text:
+        r'''El principio doctrinal de «interdependencia» de los derechos humanos se manifiesta cuando:''',
     options: [
       r'''Los ciudadanos peruanos dependen de las remesas de sus familiares en el extranjero para sobrevivir''',
       r'''La mejora en el ejercicio de un derecho (como la educación) repercute positivamente en el ejercicio de otros derechos (como el empleo y la participación política)''',
@@ -2242,12 +2579,14 @@ final List<Question> pfrhQuestions = [
       r'''Cada derecho humano funciona de manera autónoma sin tener relación con las demás garantías''',
     ],
     correctAnswer: 1,
-    explanation: r'''La interdependencia resalta la vinculación mutua de los derechos. El acceso a la educación (derecho social) fortalece la capacidad de la persona para defender su libertad (derecho civil) y conseguir un trabajo digno (derecho económico).''',
+    explanation:
+        r'''La interdependencia resalta la vinculación mutua de los derechos. El acceso a la educación (derecho social) fortalece la capacidad de la persona para defender su libertad (derecho civil) y conseguir un trabajo digno (derecho económico).''',
   ),
   Question(
     id: 'pfrh_q212',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué se entiende por «mínimo vital» (o vida digna) en el marco de la doctrina de los derechos humanos?''',
+    text:
+        r'''¿Qué se entiende por «mínimo vital» (o vida digna) en el marco de la doctrina de los derechos humanos?''',
     options: [
       r'''El límite mínimo de calorías que una persona necesita para no fallecer de inanición inmediata''',
       r'''El conjunto de condiciones materiales básicas e indispensables (alimentación, vivienda, agua, salud) que permiten a una persona desarrollarse con dignidad''',
@@ -2255,12 +2594,14 @@ final List<Question> pfrhQuestions = [
       r'''El porcentaje mínimo de derechos civiles que el Estado puede recortar en situaciones de crisis fiscal''',
     ],
     correctAnswer: 1,
-    explanation: r'''El mínimo vital es un concepto ligado a la dignidad humana que exige que el Estado garantice un umbral básico de recursos materiales indispensables para que la persona no solo sobreviva biológicamente, sino que viva con dignidad.''',
+    explanation:
+        r'''El mínimo vital es un concepto ligado a la dignidad humana que exige que el Estado garantice un umbral básico de recursos materiales indispensables para que la persona no solo sobreviva biológicamente, sino que viva con dignidad.''',
   ),
   Question(
     id: 'pfrh_q213',
     topicId: 'pfrh_t2',
-    text: r'''La doctrina sostiene que el reconocimiento de la dignidad humana otorga al individuo un «valor inherente». ¿Qué significa el término «inherente» en este contexto?''',
+    text:
+        r'''La doctrina sostiene que el reconocimiento de la dignidad humana otorga al individuo un «valor inherente». ¿Qué significa el término «inherente» en este contexto?''',
     options: [
       r'''Que es un valor que se adquiere progresivamente a través del pago de impuestos y de la buena conducta cívica''',
       r'''Que nace con el ser humano, es inseparable de su existencia y no requiere de títulos, méritos o concesión estatal para existir''',
@@ -2268,12 +2609,14 @@ final List<Question> pfrhQuestions = [
       r'''Que puede ser retirado temporalmente por los jueces de paz en casos de reincidencia delictiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''Lo inherente es aquello que está unido a la naturaleza de algo de forma inseparable. En los derechos humanos, la dignidad es inherente porque pertenece al ser humano por su sola existencia física y ontológica.''',
+    explanation:
+        r'''Lo inherente es aquello que está unido a la naturaleza de algo de forma inseparable. En los derechos humanos, la dignidad es inherente porque pertenece al ser humano por su sola existencia física y ontológica.''',
   ),
   Question(
     id: 'pfrh_q214',
     topicId: 'pfrh_t2',
-    text: r'''En el marco doctrinal de la dignidad humana, ¿qué es la «autonomía moral»?''',
+    text:
+        r'''En el marco doctrinal de la dignidad humana, ¿qué es la «autonomía moral»?''',
     options: [
       r'''La capacidad del Estado para dictar leyes morales obligatorias para todos los ciudadanos''',
       r'''La libertad y capacidad de cada persona para autogobernarse, discernir el bien y el mal, y decidir sus propias metas de vida sin coacción externa''',
@@ -2281,12 +2624,14 @@ final List<Question> pfrhQuestions = [
       r'''El derecho de los ciudadanos a ignorar las leyes penales si colisionan con sus creencias personales''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autonomía moral es la facultad humana de autodeterminación ética. Respetar la dignidad de una persona implica reconocer su libertad para decidir sus propias acciones y convicciones morales sin interferencias autoritarias del Estado o de la sociedad.''',
+    explanation:
+        r'''La autonomía moral es la facultad humana de autodeterminación ética. Respetar la dignidad de una persona implica reconocer su libertad para decidir sus propias acciones y convicciones morales sin interferencias autoritarias del Estado o de la sociedad.''',
   ),
   Question(
     id: 'pfrh_q215',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué diferencia sustancial existe entre el «relativismo cultural moderado» y el «relativismo cultural radical» ante los derechos humanos?''',
+    text:
+        r'''¿Qué diferencia sustancial existe entre el «relativismo cultural moderado» y el «relativismo cultural radical» ante los derechos humanos?''',
     options: [
       r'''El moderado acepta el estándar universal pero busca adaptarlo respetando las formas locales no dañinas; el radical rechaza cualquier estándar universal en nombre de las costumbres locales''',
       r'''El radical promueve que los derechos humanos son universales; el moderado sostiene que no existen los derechos humanos''',
@@ -2294,12 +2639,14 @@ final List<Question> pfrhQuestions = [
       r'''El moderado solo se aplica a los países europeos y el radical a los países de América Latina''',
     ],
     correctAnswer: 0,
-    explanation: r'''El relativismo moderado reconoce la universalidad de los derechos pero aboga por el respeto a las particularidades culturales que no lesionen la integridad humana. El radical niega toda posibilidad de valores éticos transculturales universales, justificando abusos en aras de la tradición.''',
+    explanation:
+        r'''El relativismo moderado reconoce la universalidad de los derechos pero aboga por el respeto a las particularidades culturales que no lesionen la integridad humana. El radical niega toda posibilidad de valores éticos transculturales universales, justificando abusos en aras de la tradición.''',
   ),
   Question(
     id: 'pfrh_q216',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el significado del principio de «no discriminación» en la doctrina de los derechos humanos?''',
+    text:
+        r'''¿Cuál es el significado del principio de «no discriminación» en la doctrina de los derechos humanos?''',
     options: [
       r'''Tratar a todas las personas de forma idéntica sin considerar sus necesidades particulares o discapacidades''',
       r'''La prohibición de realizar distinciones basadas en motivos prohibidos (raza, sexo, religión, etc.) que anulen o menoscaben el ejercicio de los derechos''',
@@ -2307,12 +2654,14 @@ final List<Question> pfrhQuestions = [
       r'''Permitir tratos diferenciados basados en el poder adquisitivo de los usuarios de servicios públicos''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio de no discriminación, derivado directo de la universalidad y la igualdad en dignidad, proscribe cualquier exclusión, restricción o preferencia injustificada que tenga por objeto o resultado anular el goce de los derechos fundamentales.''',
+    explanation:
+        r'''El principio de no discriminación, derivado directo de la universalidad y la igualdad en dignidad, proscribe cualquier exclusión, restricción o preferencia injustificada que tenga por objeto o resultado anular el goce de los derechos fundamentales.''',
   ),
   Question(
     id: 'pfrh_q217',
     topicId: 'pfrh_t2',
-    text: r'''En la teoría de los derechos humanos, ¿qué son los «deberes de respeto y garantía» del Estado?''',
+    text:
+        r'''En la teoría de los derechos humanos, ¿qué son los «deberes de respeto y garantía» del Estado?''',
     options: [
       r'''El deber del Estado de exigir que los ciudadanos respeten al gobierno y garanticen la seguridad de las instalaciones públicas''',
       r'''El deber del Estado de no interferir en el disfrute de los derechos (respetar) y de organizar el aparato público para asegurar que todas las personas puedan ejercerlos (garantizar)''',
@@ -2320,7 +2669,8 @@ final List<Question> pfrhQuestions = [
       r'''Las directrices morales que los colegios deben enseñar en los cursos de educación cívica los fines de semana''',
     ],
     correctAnswer: 1,
-    explanation: r'''El deber de «respetar» exige que el propio Estado y sus agentes no vulneren los derechos de las personas. El deber de «garantizar» obliga al Estado a prevenir violaciones por parte de terceros, investigar abusos, sancionar a los culpables y reparar a las víctimas.''',
+    explanation:
+        r'''El deber de «respetar» exige que el propio Estado y sus agentes no vulneren los derechos de las personas. El deber de «garantizar» obliga al Estado a prevenir violaciones por parte de terceros, investigar abusos, sancionar a los culpables y reparar a las víctimas.''',
   ),
   Question(
     id: 'pfrh_q218',
@@ -2333,12 +2683,14 @@ final List<Question> pfrhQuestions = [
       r'''Los derechos políticos que se suspenden únicamente durante los procesos electorales nacionales''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos indisponibles son aquellos sustraídos al mercado y al poder de disposición del propio sujeto. Al estar fundados en la dignidad (como la vida o la libertad personal), el individuo no puede decidir válidamente destruirlos, venderlos o someterse a la servidumbre.''',
+    explanation:
+        r'''Los derechos indisponibles son aquellos sustraídos al mercado y al poder de disposición del propio sujeto. Al estar fundados en la dignidad (como la vida o la libertad personal), el individuo no puede decidir válidamente destruirlos, venderlos o someterse a la servidumbre.''',
   ),
   Question(
     id: 'pfrh_q219',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál de las siguientes afirmaciones define mejor el concepto de «dignidad moral o adquirida»?''',
+    text:
+        r'''¿Cuál de las siguientes afirmaciones define mejor el concepto de «dignidad moral o adquirida»?''',
     options: [
       r'''El valor innato que posee todo ser humano por el solo hecho de pertenecer a la especie humana''',
       r'''La valoración que la persona gana o pierde ante la sociedad en función de su comportamiento ético, el respeto a las leyes y su contribución al bien común''',
@@ -2346,12 +2698,14 @@ final List<Question> pfrhQuestions = [
       r'''El derecho civil a votar y postular a cargos públicos en las elecciones de su localidad''',
     ],
     correctAnswer: 1,
-    explanation: r'''A diferencia de la dignidad ontológica (que es innata y no se pierde nunca), la dignidad moral o adquirida está vinculada al comportamiento ético de la persona y a la coherencia de sus actos con los valores fundamentales de la sociedad.''',
+    explanation:
+        r'''A diferencia de la dignidad ontológica (que es innata y no se pierde nunca), la dignidad moral o adquirida está vinculada al comportamiento ético de la persona y a la coherencia de sus actos con los valores fundamentales de la sociedad.''',
   ),
   Question(
     id: 'pfrh_q220',
     topicId: 'pfrh_t2',
-    text: r'''Un ciudadano afirma que si una persona comete homicidio calificado, pierde automáticamente su dignidad humana ontológica y, por ende, el Estado puede someterla legalmente a trabajos forzados o mutilación. Doctrinalmente, ¿cuál es la tipificación correcta del error en esta afirmación?''',
+    text:
+        r'''Un ciudadano afirma que si una persona comete homicidio calificado, pierde automáticamente su dignidad humana ontológica y, por ende, el Estado puede someterla legalmente a trabajos forzados o mutilación. Doctrinalmente, ¿cuál es la tipificación correcta del error en esta afirmación?''',
     options: [
       r'''No hay error, ya que la dignidad ontológica depende directamente de la conducta penal de los individuos''',
       r'''Confundir la dignidad ontológica (que es inalienable y pertenece a todo ser humano sin importar sus crímenes) con la dignidad moral o el castigo penal legítimo''',
@@ -2359,12 +2713,14 @@ final List<Question> pfrhQuestions = [
       r'''Creer que los homicidas solo pierden sus derechos políticos pero conservan el derecho a la herencia privada''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad ontológica es inalienable, absoluta e independiente de la conducta del sujeto. Incluso el delincuente más peligroso conserva su condición humana y el derecho a no ser torturado o mutilado físicamente, aplicándose penas proporcionales que respeten su dignidad.''',
+    explanation:
+        r'''La dignidad ontológica es inalienable, absoluta e independiente de la conducta del sujeto. Incluso el delincuente más peligroso conserva su condición humana y el derecho a no ser torturado o mutilado físicamente, aplicándose penas proporcionales que respeten su dignidad.''',
   ),
   Question(
     id: 'pfrh_q221',
     topicId: 'pfrh_t2',
-    text: r'''Un municipio decide pavimentar todas las vías del distrito pero cancela las rampas de acceso para sillas de ruedas bajo el argumento de que «las personas con discapacidad motora son una minoría y no justifican el gasto presupuestario». ¿Qué discriminación doctrinal se está configurando en este caso?''',
+    text:
+        r'''Un municipio decide pavimentar todas las vías del distrito pero cancela las rampas de acceso para sillas de ruedas bajo el argumento de que «las personas con discapacidad motora son una minoría y no justifican el gasto presupuestario». ¿Qué discriminación doctrinal se está configurando en este caso?''',
     options: [
       r'''Una discriminación positiva que busca beneficiar el presupuesto general de la comuna''',
       r'''Una violación del principio de universalidad de los derechos al excluir del entorno urbano accesible a un grupo vulnerable basándose en un criterio utilitarista''',
@@ -2372,12 +2728,14 @@ final List<Question> pfrhQuestions = [
       r'''Una colisión de derechos donde la propiedad privada de las aceras es prioritaria''',
     ],
     correctAnswer: 1,
-    explanation: r'''La universalidad exige el diseño de entornos accesibles para todas las personas. Excluir a las personas con discapacidad de las vías públicas para ahorrar presupuesto municipal es una discriminación indirecta que atenta contra su dignidad y derecho al libre desplazamiento.''',
+    explanation:
+        r'''La universalidad exige el diseño de entornos accesibles para todas las personas. Excluir a las personas con discapacidad de las vías públicas para ahorrar presupuesto municipal es una discriminación indirecta que atenta contra su dignidad y derecho al libre desplazamiento.''',
   ),
   Question(
     id: 'pfrh_q222',
     topicId: 'pfrh_t2',
-    text: r'''Si un artista firma de manera voluntaria un contrato civil donde acepta ser azotado públicamente en una galería de arte a cambio de una suma de dinero, y luego se arrepiente y cancela el acto, la galería lo demanda por incumplimiento contractual. Doctrinalmente, ¿cómo se tipifica la validez de este contrato?''',
+    text:
+        r'''Si un artista firma de manera voluntaria un contrato civil donde acepta ser azotado públicamente en una galería de arte a cambio de una suma de dinero, y luego se arrepiente y cancela el acto, la galería lo demanda por incumplimiento contractual. Doctrinalmente, ¿cómo se tipifica la validez de este contrato?''',
     options: [
       r'''Es plenamente válido, ya que la libertad contractual privada faculta a las personas a vender su integridad a cambio de un pago pactado''',
       r'''Es nulo porque el derecho a no ser sometido a tratos crueles o degradantes es inalienable, indisponible e irrenunciable, por lo que el contrato carece de objeto lícito''',
@@ -2385,12 +2743,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un contrato nulo porque los artistas de galerías privadas están exentos del pago del impuesto general a las ventas''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos a la integridad física y moral y a la dignidad son inalienables e indisponibles. Nadie puede obligar a otra persona a cumplir un contrato que vulnere su integridad corporal o dignidad, siendo este tipo de acuerdos nulos ante los derechos humanos y civiles.''',
+    explanation:
+        r'''Los derechos a la integridad física y moral y a la dignidad son inalienables e indisponibles. Nadie puede obligar a otra persona a cumplir un contrato que vulnere su integridad corporal o dignidad, siendo este tipo de acuerdos nulos ante los derechos humanos y civiles.''',
   ),
   Question(
     id: 'pfrh_q223',
     topicId: 'pfrh_t2',
-    text: r'''Para combatir la delincuencia en un sector comercial, una junta vecinal propone colgar carteles con fotos de sospechosos locales acompañadas del texto: «Ratero que capturemos será linchado y quemado». ¿Qué principio fundamental del marco doctrinal se violaría de ejecutarse esta propuesta?''',
+    text:
+        r'''Para combatir la delincuencia en un sector comercial, una junta vecinal propone colgar carteles con fotos de sospechosos locales acompañadas del texto: «Ratero que capturemos será linchado y quemado». ¿Qué principio fundamental del marco doctrinal se violaría de ejecutarse esta propuesta?''',
     options: [
       r'''La imprescriptibilidad del derecho a la seguridad pública barrial''',
       r'''La inalienabilidad de la dignidad humana y la prohibición absoluta de la tortura y la justicia por propia mano''',
@@ -2398,12 +2758,14 @@ final List<Question> pfrhQuestions = [
       r'''La indivisibilidad de las normas de convivencia vecinal y de propiedad privada comercial''',
     ],
     correctAnswer: 1,
-    explanation: r'''El linchamiento constituye una violación de los derechos humanos (integridad, vida, debido proceso). La dignidad humana es inalienable, por lo que incluso los sospechosos de delitos tienen derecho a un juicio justo y a no ser torturados o ejecutados al margen de la ley.''',
+    explanation:
+        r'''El linchamiento constituye una violación de los derechos humanos (integridad, vida, debido proceso). La dignidad humana es inalienable, por lo que incluso los sospechosos de delitos tienen derecho a un juicio justo y a no ser torturados o ejecutados al margen de la ley.''',
   ),
   Question(
     id: 'pfrh_q224',
     topicId: 'pfrh_t2',
-    text: r'''Un hospital público niega la atención de parto a una mujer extranjera indocumentada, señalando que los recursos del hospital están reservados para los ciudadanos que pagan impuestos en la localidad. ¿Qué característica doctrinal de los derechos humanos está siendo ignorada por el hospital?''',
+    text:
+        r'''Un hospital público niega la atención de parto a una mujer extranjera indocumentada, señalando que los recursos del hospital están reservados para los ciudadanos que pagan impuestos en la localidad. ¿Qué característica doctrinal de los derechos humanos está siendo ignorada por el hospital?''',
     options: [
       r'''La Imprescriptibilidad del servicio de obstetricia de emergencia''',
       r'''La Universalidad de los derechos humanos, que protege a todo ser humano en su integridad física sin importar su estatus migratorio o nacionalidad''',
@@ -2411,12 +2773,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo administrativo que faculta a los hospitales a seleccionar a sus pacientes según su origen''',
     ],
     correctAnswer: 1,
-    explanation: r'''La universalidad de los derechos humanos impide restringir la atención médica de emergencia y el parto basándose en la nacionalidad o la situación migratoria del paciente. Toda persona posee el derecho a la salud e integridad física por su condición humana.''',
+    explanation:
+        r'''La universalidad de los derechos humanos impide restringir la atención médica de emergencia y el parto basándose en la nacionalidad o la situación migratoria del paciente. Toda persona posee el derecho a la salud e integridad física por su condición humana.''',
   ),
   Question(
     id: 'pfrh_q225',
     topicId: 'pfrh_t2',
-    text: r'''Una persona fue despedida arbitrariamente de su trabajo hace 30 años sin recibir sus beneficios sociales de jubilación. Cuando acude a reclamar su pensión de vejez básica, la empresa le responde que «su derecho a solicitar la pensión ya caducó hace décadas». Doctrinalmente, ¿cuál es el argumento correcto frente a este derecho de seguridad social?''',
+    text:
+        r'''Una persona fue despedida arbitrariamente de su trabajo hace 30 años sin recibir sus beneficios sociales de jubilación. Cuando acude a reclamar su pensión de vejez básica, la empresa le responde que «su derecho a solicitar la pensión ya caducó hace décadas». Doctrinalmente, ¿cuál es el argumento correcto frente a este derecho de seguridad social?''',
     options: [
       r'''La empresa tiene razón, porque las deudas laborales prescriben siempre al año del cese laboral''',
       r'''El derecho a la seguridad social y a una pensión de vejez digna es imprescriptible e inalienable por estar ligado a la subsistencia y dignidad de la persona en su vejez''',
@@ -2424,12 +2788,14 @@ final List<Question> pfrhQuestions = [
       r'''El transcurso del tiempo anula la dignidad ontológica del trabajador jubilado''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos vinculados a la seguridad social y a la subsistencia digna de los ancianos (derechos humanos económicos y sociales) participan de la imprescriptibilidad en su núcleo esencial de protección, impidiendo que el paso del tiempo despoje al adulto mayor del acceso al mínimo vital.''',
+    explanation:
+        r'''Los derechos vinculados a la seguridad social y a la subsistencia digna de los ancianos (derechos humanos económicos y sociales) participan de la imprescriptibilidad en su núcleo esencial de protección, impidiendo que el paso del tiempo despoje al adulto mayor del acceso al mínimo vital.''',
   ),
   Question(
     id: 'pfrh_q226',
     topicId: 'pfrh_t2',
-    text: r'''Un grupo de padres de familia exige que se expulse de un colegio secundario a una alumna de 15 años por haberse difundido en redes sociales fotos íntimas tomadas sin su consentimiento. Los padres argumentan que «su presencia daña la reputación moral del colegio y de nuestros hijos». ¿Qué principio fundamental se vulneraría de concretarse la expulsión de la alumna?''',
+    text:
+        r'''Un grupo de padres de familia exige que se expulse de un colegio secundario a una alumna de 15 años por haberse difundido en redes sociales fotos íntimas tomadas sin su consentimiento. Los padres argumentan que «su presencia daña la reputación moral del colegio y de nuestros hijos». ¿Qué principio fundamental se vulneraría de concretarse la expulsión de la alumna?''',
     options: [
       r'''La indivisibilidad de las normas de convivencia interna del plantel''',
       r'''La dignidad humana y el derecho a la educación de la menor, quien es víctima y no debe ser sancionada ni instrumentalizada para proteger una falsa reputación moral del plantel''',
@@ -2437,12 +2803,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo moral que da prioridad a la opinión mayoritaria de los padres sobre el acceso a las clases''',
     ],
     correctAnswer: 1,
-    explanation: r'''La expulsión de la alumna víctima de violencia digital atenta contra su dignidad humana y su derecho a la educación. La alumna no puede ser convertida en chivo expiatorio para salvaguardar una «reputación moral», ya que se la estaría tratando como un medio y no como un fin en sí misma.''',
+    explanation:
+        r'''La expulsión de la alumna víctima de violencia digital atenta contra su dignidad humana y su derecho a la educación. La alumna no puede ser convertida en chivo expiatorio para salvaguardar una «reputación moral», ya que se la estaría tratando como un medio y no como un fin en sí misma.''',
   ),
   Question(
     id: 'pfrh_q227',
     topicId: 'pfrh_t2',
-    text: r'''En una tienda por departamentos, un vigilante privado sospecha que un joven cliente ha ocultado un producto entre su ropa. El vigilante lo detiene a golpes y lo hace caminar de rodillas frente a los demás clientes para que confiese. ¿Cómo se tipifica la conducta del vigilante desde la doctrina de la dignidad humana?''',
+    text:
+        r'''En una tienda por departamentos, un vigilante privado sospecha que un joven cliente ha ocultado un producto entre su ropa. El vigilante lo detiene a golpes y lo hace caminar de rodillas frente a los demás clientes para que confiese. ¿Cómo se tipifica la conducta del vigilante desde la doctrina de la dignidad humana?''',
     options: [
       r'''Es una medida de seguridad comercial proporcionada y preventiva de pérdidas económicas''',
       r'''Es una violación directa de la dignidad humana y de la integridad moral del joven, al someterlo a un trato humillante, degradante y violento al margen de los procedimientos legales''',
@@ -2450,12 +2818,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un acto justificado por la sospecha de flagrancia delictiva dentro de la propiedad privada''',
     ],
     correctAnswer: 1,
-    explanation: r'''Ninguna sospecha de hurto o flagrancia delictiva autoriza a los particulares (ni a las autoridades) a infligir violencia física, humillación o tratos degradantes, pues la integridad moral y física de toda persona es inviolable e inalienable.''',
+    explanation:
+        r'''Ninguna sospecha de hurto o flagrancia delictiva autoriza a los particulares (ni a las autoridades) a infligir violencia física, humillación o tratos degradantes, pues la integridad moral y física de toda persona es inviolable e inalienable.''',
   ),
   Question(
     id: 'pfrh_q228',
     topicId: 'pfrh_t2',
-    text: r'''Una ley nacional reduce drásticamente el presupuesto para la educación pública escolar rural a fin de destinar esos fondos al pago de los intereses de la deuda externa del país. El Estado argumenta que la educación «puede esperar» mientras que los compromisos financieros de la nación son absolutos. ¿Qué principio se vulnera en este caso?''',
+    text:
+        r'''Una ley nacional reduce drásticamente el presupuesto para la educación pública escolar rural a fin de destinar esos fondos al pago de los intereses de la deuda externa del país. El Estado argumenta que la educación «puede esperar» mientras que los compromisos financieros de la nación son absolutos. ¿Qué principio se vulnera en este caso?''',
     options: [
       r'''La inalienabilidad del superávit comercial exterior''',
       r'''La Indivisibilidad e interdependencia de los derechos, que prohíbe sacrificar derechos sociales fundamentales de grupos vulnerables para priorizar políticas macroeconómicas''',
@@ -2463,12 +2833,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad del pago puntual de las obligaciones bancarias estatales''',
     ],
     correctAnswer: 1,
-    explanation: r'''De acuerdo con la indivisibilidad y progresividad de los derechos, el Estado no puede recortar de manera arbitraria o regresiva el presupuesto de derechos sociales básicos como la educación de las poblaciones rurales desfavorecidas para priorizar pagos financieros, ya que el desarrollo humano es integral y prioritario.''',
+    explanation:
+        r'''De acuerdo con la indivisibilidad y progresividad de los derechos, el Estado no puede recortar de manera arbitraria o regresiva el presupuesto de derechos sociales básicos como la educación de las poblaciones rurales desfavorecidas para priorizar pagos financieros, ya que el desarrollo humano es integral y prioritario.''',
   ),
   Question(
     id: 'pfrh_q229',
     topicId: 'pfrh_t2',
-    text: r'''En una asamblea vecinal, se propone cobrar una tarifa especial y obligatoria de ingreso al parque público de la comunidad solo a las familias extranjeras que residan en la zona, argumentando que «ellos no contribuyeron históricamente a la construcción del barrio». ¿Qué principio fundamental se opone a esta propuesta discriminatoria?''',
+    text:
+        r'''En una asamblea vecinal, se propone cobrar una tarifa especial y obligatoria de ingreso al parque público de la comunidad solo a las familias extranjeras que residan en la zona, argumentando que «ellos no contribuyeron históricamente a la construcción del barrio». ¿Qué principio fundamental se opone a esta propuesta discriminatoria?''',
     options: [
       r'''La imprescriptibilidad del dominio público del parque''',
       r'''La Universalidad de los derechos humanos y el principio de igualdad y no discriminación por motivos de nacionalidad u origen geográfico''',
@@ -2476,12 +2848,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo geográfico que autoriza tratos diferenciales hacia las minorías residentes''',
     ],
     correctAnswer: 1,
-    explanation: r'''La universalidad de los derechos humanos establece que la igualdad ante la ley y la no discriminación protegen a todas las personas en el territorio, independientemente de su nacionalidad. Los espacios públicos comunales no pueden ser restringidos basándose en criterios xenófobos o de origen nacional.''',
+    explanation:
+        r'''La universalidad de los derechos humanos establece que la igualdad ante la ley y la no discriminación protegen a todas las personas en el territorio, independientemente de su nacionalidad. Los espacios públicos comunales no pueden ser restringidos basándose en criterios xenófobos o de origen nacional.''',
   ),
   Question(
     id: 'pfrh_q230',
     topicId: 'pfrh_t2',
-    text: r'''Un propietario se niega a alquilar su departamento a una pareja de diferente origen étnico, señalando en el anuncio publicitario: «Solo alquilo a familias de mi mismo origen, la diversidad no va con mis valores morales». ¿Cómo se analiza este caso a la luz de los derechos humanos?''',
+    text:
+        r'''Un propietario se niega a alquilar su departamento a una pareja de diferente origen étnico, señalando en el anuncio publicitario: «Solo alquilo a familias de mi mismo origen, la diversidad no va con mis valores morales». ¿Cómo se analiza este caso a la luz de los derechos humanos?''',
     options: [
       r'''El propietario ejerce de manera absoluta su derecho a la propiedad privada y su libertad contractual sin límites éticos''',
       r'''Se configura un acto de discriminación por razones étnicas que vulnera la dignidad de la pareja y atenta contra la universalidad del acceso a bienes y servicios públicos esenciales''',
@@ -2489,12 +2863,14 @@ final List<Question> pfrhQuestions = [
       r'''El derecho a la diversidad cultural está subordinado doctrinalmente a la libertad de publicidad comercial de los propietarios''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aunque el propietario posee el derecho a la propiedad, el ejercicio de sus facultades contractuales comerciales no puede ser un pretexto para discriminar a las personas por su etnicidad, lo cual viola la dignidad y el principio de universalidad e igualdad de trato.''',
+    explanation:
+        r'''Aunque el propietario posee el derecho a la propiedad, el ejercicio de sus facultades contractuales comerciales no puede ser un pretexto para discriminar a las personas por su etnicidad, lo cual viola la dignidad y el principio de universalidad e igualdad de trato.''',
   ),
   Question(
     id: 'pfrh_q231',
     topicId: 'pfrh_t2',
-    text: r'''Si un ciudadano cae en estado de coma permanente debido a un accidente, algunos de sus deudores intentan apropiarse de todos sus bienes alegando que «al perder sus funciones cerebrales, ya no posee dignidad humana ni personalidad jurídica». ¿Cuál es el error doctrinal de este planteamiento?''',
+    text:
+        r'''Si un ciudadano cae en estado de coma permanente debido a un accidente, algunos de sus deudores intentan apropiarse de todos sus bienes alegando que «al perder sus funciones cerebrales, ya no posee dignidad humana ni personalidad jurídica». ¿Cuál es el error doctrinal de este planteamiento?''',
     options: [
       r'''La personalidad jurídica de una persona se pierde temporalmente cuando es hospitalizada''',
       r'''Confundir la capacidad de ejercicio físico con la dignidad humana ontológica y la capacidad de goce, las cuales subsisten plenamente mientras la persona esté con vida''',
@@ -2502,12 +2878,14 @@ final List<Question> pfrhQuestions = [
       r'''Considerar que los deudores tienen el derecho legal de administrar el patrimonio de sus clientes enfermos''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad ontológica e inherente y la personalidad jurídica (capacidad de goce) de un individuo no dependen de su estado de conciencia, inteligencia o salud física. Mientras la persona viva, sigue siendo titular de derechos fundamentales y su patrimonio no puede ser expropiado ilegalmente.''',
+    explanation:
+        r'''La dignidad ontológica e inherente y la personalidad jurídica (capacidad de goce) de un individuo no dependen de su estado de conciencia, inteligencia o salud física. Mientras la persona viva, sigue siendo titular de derechos fundamentales y su patrimonio no puede ser expropiado ilegalmente.''',
   ),
   Question(
     id: 'pfrh_q232',
     topicId: 'pfrh_t2',
-    text: r'''Una empresa minera instala sus operaciones cerca de una fuente de agua dulce utilizada por agricultores locales y contamina el río con metales pesados. La empresa afirma que «sus permisos ambientales del Estado son válidos y la rentabilidad comercial es prioritaria para el desarrollo nacional». ¿Qué colisión doctrinal de principios se presenta en este caso?''',
+    text:
+        r'''Una empresa minera instala sus operaciones cerca de una fuente de agua dulce utilizada por agricultores locales y contamina el río con metales pesados. La empresa afirma que «sus permisos ambientales del Estado son válidos y la rentabilidad comercial es prioritaria para el desarrollo nacional». ¿Qué colisión doctrinal de principios se presenta en este caso?''',
     options: [
       r'''Una colisión entre el derecho patrimonial minero y el derecho a la propiedad de los camiones de transporte''',
       r'''El conflicto entre el derecho humano al agua y a la vida digna frente a intereses económicos privados corporativos, debiendo prevalecer los derechos humanos por encima de la rentabilidad''',
@@ -2515,12 +2893,14 @@ final List<Question> pfrhQuestions = [
       r'''La imprescriptibilidad del libre comercio de minerales sobre las fuentes de agua dulce naturales''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho humano al agua, a la salud y a la vida digna de la población es superior a cualquier interés comercial o industrial. Las licencias del Estado no facultan a una empresa a envenenar recursos naturales vitales, violando la integridad de los ciudadanos locales.''',
+    explanation:
+        r'''El derecho humano al agua, a la salud y a la vida digna de la población es superior a cualquier interés comercial o industrial. Las licencias del Estado no facultan a una empresa a envenenar recursos naturales vitales, violando la integridad de los ciudadanos locales.''',
   ),
   Question(
     id: 'pfrh_q233',
     topicId: 'pfrh_t2',
-    text: r'''Para acceder a un programa social de alimentación gratuita, un municipio exige a las madres beneficiarias firmar un compromiso político de apoyo electoral al partido del alcalde de turno. ¿Qué principio de los derechos humanos se vulnera principalmente con esta exigencia?''',
+    text:
+        r'''Para acceder a un programa social de alimentación gratuita, un municipio exige a las madres beneficiarias firmar un compromiso político de apoyo electoral al partido del alcalde de turno. ¿Qué principio de los derechos humanos se vulnera principalmente con esta exigencia?''',
     options: [
       r'''La imprescriptibilidad del derecho a la afiliación partidaria opcional''',
       r'''La dignidad humana e indivisibilidad, al condicionar un derecho social básico (alimentación) al sometimiento político de las personas vulnerables, instrumentalizando su pobreza''',
@@ -2528,12 +2908,14 @@ final List<Question> pfrhQuestions = [
       r'''La universalidad del derecho al voto electrónico en los distritos periféricos del país''',
     ],
     correctAnswer: 1,
-    explanation: r'''Condicionar la alimentación de las familias de escasos recursos a su filiación o apoyo político es una forma de coacción que atenta contra su dignidad humana (las trata como clientela política e instrumentos) y viola la indivisibilidad de sus derechos civiles y sociales.''',
+    explanation:
+        r'''Condicionar la alimentación de las familias de escasos recursos a su filiación o apoyo político es una forma de coacción que atenta contra su dignidad humana (las trata como clientela política e instrumentos) y viola la indivisibilidad de sus derechos civiles y sociales.''',
   ),
   Question(
     id: 'pfrh_q234',
     topicId: 'pfrh_t2',
-    text: r'''Un juez de paz decide no tramitar la denuncia por violencia familiar de una vecina, recomendándole que «vuelva con su esposo y resuelva sus asuntos en la intimidad del hogar para no destruir la institución del matrimonio». ¿Cómo tipifica la doctrina la conducta del juez de paz?''',
+    text:
+        r'''Un juez de paz decide no tramitar la denuncia por violencia familiar de una vecina, recomendándole que «vuelva con su esposo y resuelva sus asuntos en la intimidad del hogar para no destruir la institución del matrimonio». ¿Cómo tipifica la doctrina la conducta del juez de paz?''',
     options: [
       r'''Es una actuación prudente que protege el interés superior de la familia tradicional unida''',
       r'''Es una grave omisión del deber de garantía del Estado, al dejar desprotegida a la mujer y tolerar una vulneración a su integridad física y mental bajo prejuicios morales personales''',
@@ -2541,12 +2923,14 @@ final List<Question> pfrhQuestions = [
       r'''Un acto ordinario que no afecta los derechos humanos puesto que la denunciante puede buscar ayuda religiosa''',
     ],
     correctAnswer: 1,
-    explanation: r'''El Estado, a través de sus jueces, tiene la obligación de proteger y garantizar la integridad personal y la vida de las personas frente a la violencia. Minimizar la violencia familiar para salvaguardar una apariencia de armonía institucional viola la dignidad de la víctima y el deber estatal de garantía.''',
+    explanation:
+        r'''El Estado, a través de sus jueces, tiene la obligación de proteger y garantizar la integridad personal y la vida de las personas frente a la violencia. Minimizar la violencia familiar para salvaguardar una apariencia de armonía institucional viola la dignidad de la víctima y el deber estatal de garantía.''',
   ),
   Question(
     id: 'pfrh_q235',
     topicId: 'pfrh_t2',
-    text: r'''En una pequeña empresa comercial, el dueño decide instalar cámaras de seguridad enfocando directamente hacia el interior de los baños de los empleados bajo el argumento de que «algunos trabajadores pasan mucho tiempo en el baño y podrían estar robando mercadería». ¿Cómo se analiza esta medida patronal?''',
+    text:
+        r'''En una pequeña empresa comercial, el dueño decide instalar cámaras de seguridad enfocando directamente hacia el interior de los baños de los empleados bajo el argumento de que «algunos trabajadores pasan mucho tiempo en el baño y podrían estar robando mercadería». ¿Cómo se analiza esta medida patronal?''',
     options: [
       r'''Es una medida de control de personal legítima basada en el derecho a la propiedad de los productos de la tienda''',
       r'''Constituye una flagrante violación del derecho a la intimidad y a la dignidad de los empleados, al someterlos a una vigilancia humillante e intrusiva incompatible con el respeto básico a la persona humana''',
@@ -2554,12 +2938,14 @@ final List<Question> pfrhQuestions = [
       r'''El derecho al trabajo faculta al empleador a filmar cualquier área de su negocio privado sin restricciones''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho a la intimidad y a la privacidad corporal en espacios de aseo personal es un componente de la dignidad humana. El control de inventarios de una empresa no puede violar este núcleo íntimo y degradar a los trabajadores a ser observados en sus necesidades biológicas.''',
+    explanation:
+        r'''El derecho a la intimidad y a la privacidad corporal en espacios de aseo personal es un componente de la dignidad humana. El control de inventarios de una empresa no puede violar este núcleo íntimo y degradar a los trabajadores a ser observados en sus necesidades biológicas.''',
   ),
   Question(
     id: 'pfrh_q236',
     topicId: 'pfrh_t2',
-    text: r'''Un grupo de vecinos se opone a que una pareja de minorías étnicas camine de la mano por el parque infantil del vecindario, argumentando que «su presencia altera la moral local tradicional y el orden público de la zona». ¿Qué criterio doctrinal define la validez del reclamo de los vecinos?''',
+    text:
+        r'''Un grupo de vecinos se opone a que una pareja de minorías étnicas camine de la mano por el parque infantil del vecindario, argumentando que «su presencia altera la moral local tradicional y el orden público de la zona». ¿Qué criterio doctrinal define la validez del reclamo de los vecinos?''',
     options: [
       r'''Es válido, porque las juntas de vecinos tienen soberanía para regular las costumbres permitidas en las áreas verdes públicas''',
       r'''Es inválido, pues el afecto público lícito de una pareja no viola ningún derecho ajeno, y prohibirlo constituiría un trato discriminatorio que atenta contra su libre desarrollo y dignidad''',
@@ -2567,12 +2953,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un conflicto de derechos donde la tranquilidad de los vecinos de la zona siempre es absoluta y preferente''',
     ],
     correctAnswer: 1,
-    explanation: r'''El prejuicio de los vecinos no puede pasar por encima del derecho a la igualdad, a la identidad y al libre desarrollo de la personalidad de los ciudadanos (Universalidad). Pasear de la mano no lesiona los derechos de terceros, por lo que la prohibición es discriminatoria e ilícita.''',
+    explanation:
+        r'''El prejuicio de los vecinos no puede pasar por encima del derecho a la igualdad, a la identidad y al libre desarrollo de la personalidad de los ciudadanos (Universalidad). Pasear de la mano no lesiona los derechos de terceros, por lo que la prohibición es discriminatoria e ilícita.''',
   ),
   Question(
     id: 'pfrh_q237',
     topicId: 'pfrh_t2',
-    text: r'''En el reglamento interno de un edificio de departamentos se establece la siguiente norma: «Queda estrictamente prohibido el ingreso de repartidores de comida rápida y cobradores al ascensor principal». ¿Cómo se tipifica doctrinalmente esta restricción reglamentaria?''',
+    text:
+        r'''En el reglamento interno de un edificio de departamentos se establece la siguiente norma: «Queda estrictamente prohibido el ingreso de repartidores de comida rápida y cobradores al ascensor principal». ¿Cómo se tipifica doctrinalmente esta restricción reglamentaria?''',
     options: [
       r'''Es un ejercicio legal de la copropiedad privada destinada a mantener la limpieza de los bienes comunes''',
       r'''Es un acto de discriminación fundado en la ocupación y condición socioeconómica que lesiona la dignidad de estos trabajadores y viola el principio de igualdad''',
@@ -2580,12 +2968,14 @@ final List<Question> pfrhQuestions = [
       r'''La indivisibilidad de las normas vecinales permite excluir a las personas ajenas al edificio de todos los servicios comunes''',
     ],
     correctAnswer: 1,
-    explanation: r'''Clasificar y excluir a las personas de los servicios comunes (como un ascensor de uso compartido) basándose en su ocupación o nivel social (repartidores, cobradores) es una discriminación clasista que atenta contra su dignidad básica.''',
+    explanation:
+        r'''Clasificar y excluir a las personas de los servicios comunes (como un ascensor de uso compartido) basándose en su ocupación o nivel social (repartidores, cobradores) es una discriminación clasista que atenta contra su dignidad básica.''',
   ),
   Question(
     id: 'pfrh_q238',
     topicId: 'pfrh_t2',
-    text: r'''Para convencer a una comunidad rural de ceder sus tierras comunales para un vertedero de basura municipal, la alcaldía ofrece a los líderes comunales dinero en efectivo y puestos de trabajo vitalicios para sus hijos. ¿Cómo se tipifica doctrinalmente este acto de negociación estatal?''',
+    text:
+        r'''Para convencer a una comunidad rural de ceder sus tierras comunales para un vertedero de basura municipal, la alcaldía ofrece a los líderes comunales dinero en efectivo y puestos de trabajo vitalicios para sus hijos. ¿Cómo se tipifica doctrinalmente este acto de negociación estatal?''',
     options: [
       r'''Como un acuerdo contractual lícito bajo las reglas de la compensación social voluntaria en el ámbito agrario''',
       r'''Como una vulneración del derecho al consentimiento libre, previo e informado de la comunidad, usando el soborno y el clientelismo para instrumentalizar la necesidad de las familias vulnerables''',
@@ -2593,12 +2983,14 @@ final List<Question> pfrhQuestions = [
       r'''Como una muestra del ejercicio del relativismo cultural agrario que prefiere los pagos en efectivo a los trámites notariales''',
     ],
     correctAnswer: 1,
-    explanation: r'''La cesión de tierras comunales exige un proceso transparente de consulta libre, previa e informada conforme a los estándares de derechos humanos. Utilizar prebendas individuales (sobornos y clientelismo) para dividir a la comunidad e imponer el proyecto atenta contra la dignidad colectiva y la autodeterminación del pueblo.''',
+    explanation:
+        r'''La cesión de tierras comunales exige un proceso transparente de consulta libre, previa e informada conforme a los estándares de derechos humanos. Utilizar prebendas individuales (sobornos y clientelismo) para dividir a la comunidad e imponer el proyecto atenta contra la dignidad colectiva y la autodeterminación del pueblo.''',
   ),
   Question(
     id: 'pfrh_q239',
     topicId: 'pfrh_t2',
-    text: r'''Un joven estudiante de secundaria acude al director de su colegio público para solicitar el cambio de su nombre y género en las listas internas de asistencia escolar, de acuerdo con su identidad autopercibida. El director se niega, señalando que «hasta que no cumpla 18 años y traiga una sentencia judicial, en el colegio se le llamará conforme a su partida de nacimiento original». Evaluando desde la dignidad y el libre desarrollo de la personalidad:''',
+    text:
+        r'''Un joven estudiante de secundaria acude al director de su colegio público para solicitar el cambio de su nombre y género en las listas internas de asistencia escolar, de acuerdo con su identidad autopercibida. El director se niega, señalando que «hasta que no cumpla 18 años y traiga una sentencia judicial, en el colegio se le llamará conforme a su partida de nacimiento original». Evaluando desde la dignidad y el libre desarrollo de la personalidad:''',
     options: [
       r'''El director actúa correctamente, porque la identidad de género solo se reconoce a los ciudadanos con plena capacidad de ejercicio civil''',
       r'''Se vulnera el derecho al libre desarrollo de la personalidad y a la identidad del menor, puesto que la dignidad y autoidentificación de los adolescentes debe respetarse internamente sin exigir trabas burocráticas''',
@@ -2606,12 +2998,14 @@ final List<Question> pfrhQuestions = [
       r'''El estudiante debe ser expulsado temporalmente hasta que defina su situación legal ante el Registro Nacional de Identificación''',
     ],
     correctAnswer: 1,
-    explanation: r'''La identidad de género autopercibida es una manifestación del libre desarrollo de la personalidad y está unida a la dignidad intrínseca de la persona. En el ámbito educativo, los colegios tienen el deudor de acoger y respetar la identidad social de los menores para evitar la discriminación y la afectación a su salud socioemocional.''',
+    explanation:
+        r'''La identidad de género autopercibida es una manifestación del libre desarrollo de la personalidad y está unida a la dignidad intrínseca de la persona. En el ámbito educativo, los colegios tienen el deudor de acoger y respetar la identidad social de los menores para evitar la discriminación y la afectación a su salud socioemocional.''',
   ),
   Question(
     id: 'pfrh_q240',
     topicId: 'pfrh_t2',
-    text: r'''Lucas, un estudiante de secundaria, proviene de una familia de escasos recursos y asiste al colegio con el uniforme desgastado y zapatos rotos. El profesor de educación física le prohíbe participar en los partidos del campeonato escolar y lo obliga a quedarse sentado a un lado, diciéndole frente al grupo: «Das mal aspecto al equipo; cuando tus padres te compren ropa decente, volverás a jugar». ¿Qué principio fundamental se ha vulnerado en el trato hacia Lucas?''',
+    text:
+        r'''Lucas, un estudiante de secundaria, proviene de una familia de escasos recursos y asiste al colegio con el uniforme desgastado y zapatos rotos. El profesor de educación física le prohíbe participar en los partidos del campeonato escolar y lo obliga a quedarse sentado a un lado, diciéndole frente al grupo: «Das mal aspecto al equipo; cuando tus padres te compren ropa decente, volverás a jugar». ¿Qué principio fundamental se ha vulnerado en el trato hacia Lucas?''',
     options: [
       r'''La inalienabilidad de la indumentaria deportiva obligatoria para la competencia escolar''',
       r'''La dignidad humana intrínseca de Lucas, al ser discriminado y humillado públicamente por su condición de pobreza, afectando su autoestima e integridad''',
@@ -2619,12 +3013,14 @@ final List<Question> pfrhQuestions = [
       r'''El derecho a la propiedad de los uniformes escolares del colegio''',
     ],
     correctAnswer: 1,
-    explanation: r'''Humillar a Lucas por su situación socioeconómica es una violación directa de su dignidad humana. La educación física y la recreación son derechos de todos los estudiantes, y su exclusión basándose en la vestimenta deteriorada por la pobreza constituye un trato denigrante e inadmisible.''',
+    explanation:
+        r'''Humillar a Lucas por su situación socioeconómica es una violación directa de su dignidad humana. La educación física y la recreación son derechos de todos los estudiantes, y su exclusión basándose en la vestimenta deteriorada por la pobreza constituye un trato denigrante e inadmisible.''',
   ),
   Question(
     id: 'pfrh_q241',
     topicId: 'pfrh_t2',
-    text: r'''Lucía, una estudiante de una comunidad andina, se traslada a la capital para continuar sus estudios escolares. Sus nuevos compañeros de aula la imitan burlonamente cuando habla castellano con acento quechua y le exigen que «hable de forma normal». El profesor de aula presencia la escena y ríe junto con los estudiantes. ¿Cómo se tipifica la conducta del profesor?''',
+    text:
+        r'''Lucía, una estudiante de una comunidad andina, se traslada a la capital para continuar sus estudios escolares. Sus nuevos compañeros de aula la imitan burlonamente cuando habla castellano con acento quechua y le exigen que «hable de forma normal». El profesor de aula presencia la escena y ríe junto con los estudiantes. ¿Cómo se tipifica la conducta del profesor?''',
     options: [
       r'''Como una técnica pedagógica humorística para facilitar la integración lingüística de la estudiante''',
       r'''Como una violación del deudor de respeto a la dignidad y a la identidad cultural de la alumna, al tolerar e incentivar el acoso escolar de corte racista y etnocentrista''',
@@ -2632,12 +3028,14 @@ final List<Question> pfrhQuestions = [
       r'''Como una falta administrativa menor que no afecta el derecho humano a la educación de Lucía''',
     ],
     correctAnswer: 1,
-    explanation: r'''El profesor, como garante de los derechos de sus estudiantes dentro del aula, tiene la obligación de evitar la discriminación. Al participar del acoso (bullying) y la burla hacia el origen étnico y lingüístico de Lucía, vulnera su dignidad e identidad cultural.''',
+    explanation:
+        r'''El profesor, como garante de los derechos de sus estudiantes dentro del aula, tiene la obligación de evitar la discriminación. Al participar del acoso (bullying) y la burla hacia el origen étnico y lingüístico de Lucía, vulnera su dignidad e identidad cultural.''',
   ),
   Question(
     id: 'pfrh_q242',
     topicId: 'pfrh_t2',
-    text: r'''Una joven madre que trabaja en una oficina de cobranzas solicita permiso para ausentarse una hora al día a fin de amamantar a su bebé, conforme lo establece la ley de lactancia. Su jefe inmediato le niega el permiso argumentando que «en esta oficina la productividad es lo primero y si no puede cumplir el horario completo, debería dedicarse a ser ama de casa a tiempo completo». ¿Qué principio doctrinal se vulnera en este caso?''',
+    text:
+        r'''Una joven madre que trabaja en una oficina de cobranzas solicita permiso para ausentarse una hora al día a fin de amamantar a su bebé, conforme lo establece la ley de lactancia. Su jefe inmediato le niega el permiso argumentando que «en esta oficina la productividad es lo primero y si no puede cumplir el horario completo, debería dedicarse a ser ama de casa a tiempo completo». ¿Qué principio doctrinal se vulnera en este caso?''',
     options: [
       r'''La imprescriptibilidad de la jornada laboral ordinaria''',
       r'''La indivisibilidad e interdependencia de los derechos de la madre y del niño (alimentación, salud y trabajo digno), vinculados directamente a la dignidad familiar''',
@@ -2645,12 +3043,14 @@ final List<Question> pfrhQuestions = [
       r'''El relativismo laboral que faculta a las empresas a suspender los derechos maternales durante temporadas de baja recaudación''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los derechos de la madre trabajadora y del niño lactante son interdependientes. La alimentación del bebé y el derecho de la madre a no ser discriminada por su rol reproductivo son indispensables para el desarrollo digno de ambos, no pudiendo ser sacrificados por criterios exclusivos de rentabilidad empresarial.''',
+    explanation:
+        r'''Los derechos de la madre trabajadora y del niño lactante son interdependientes. La alimentación del bebé y el derecho de la madre a no ser discriminada por su rol reproductivo son indispensables para el desarrollo digno de ambos, no pudiendo ser sacrificados por criterios exclusivos de rentabilidad empresarial.''',
   ),
   Question(
     id: 'pfrh_q243',
     topicId: 'pfrh_t2',
-    text: r'''Un centro comercial de un distrito coloca un cartel en sus puertas de acceso que dice: «Nos reservamos el derecho de admisión de personas con ropa de trabajo, vendedores ambulantes y personas que no cumplan con un estándar de presencia adecuado». ¿Qué infracción a los principios de los derechos humanos se está cometiendo en este caso?''',
+    text:
+        r'''Un centro comercial de un distrito coloca un cartel en sus puertas de acceso que dice: «Nos reservamos el derecho de admisión de personas con ropa de trabajo, vendedores ambulantes y personas que no cumplan con un estándar de presencia adecuado». ¿Qué infracción a los principios de los derechos humanos se está cometiendo en este caso?''',
     options: [
       r'''Es un ejercicio regular del derecho constitucional de admisión que asiste a toda empresa privada''',
       r'''Es una violación directa de la universalidad de los derechos y de la dignidad humana, al imponer barreras discriminatorias basadas en la clase social, apariencia física y tipo de empleo''',
@@ -2658,12 +3058,14 @@ final List<Question> pfrhQuestions = [
       r'''Una colisión de derechos donde la libertad comercial de los propietarios de los locales del mall es preferente''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho de admisión de un establecimiento privado abierto al público no puede ejercerse de forma discriminatoria o humillante. Restringir el ingreso a personas por su vestimenta de trabajo o clase socioeconómica atenta contra el principio de universalidad e igualdad en dignidad de todas las personas.''',
+    explanation:
+        r'''El derecho de admisión de un establecimiento privado abierto al público no puede ejercerse de forma discriminatoria o humillante. Restringir el ingreso a personas por su vestimenta de trabajo o clase socioeconómica atenta contra el principio de universalidad e igualdad en dignidad de todas las personas.''',
   ),
   Question(
     id: 'pfrh_q244',
     topicId: 'pfrh_t2',
-    text: r'''A un anciano analfabeto de 85 años, sus familiares directos lo obligan a estampar su huella digital en un contrato de donación donde transfiere la propiedad de su único hogar a favor de su nieto mayor, a cambio de que no lo internen en un asilo público. El anciano firma temeroso de quedarse solo en la calle. ¿Cómo califica la doctrina este acto privado?''',
+    text:
+        r'''A un anciano analfabeto de 85 años, sus familiares directos lo obligan a estampar su huella digital en un contrato de donación donde transfiere la propiedad de su único hogar a favor de su nieto mayor, a cambio de que no lo internen en un asilo público. El anciano firma temeroso de quedarse solo en la calle. ¿Cómo califica la doctrina este acto privado?''',
     options: [
       r'''Es un acto civil válido basado en la autonomía de la voluntad familiar y el respeto mutuo entre parientes''',
       r'''Es nulo porque el acto fue obtenido mediante coacción psicológica, instrumentalizando la vulnerabilidad extrema del anciano y atentando contra su derecho a una vejez digna y vivienda''',
@@ -2671,12 +3073,14 @@ final List<Question> pfrhQuestions = [
       r'''El anciano renunció libremente a su dignidad inmobiliaria a cambio de la promesa afectiva de su nieto''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coacción moral sobre una persona anciana e indefensa anula la validez de cualquier acto de transferencia de su único patrimonio habitacional. La dignidad de las personas de la tercera edad exige que sus decisiones sean libres y no obtenidas mediante amenazas de abandono, lo cual atenta contra su mínimo vital.''',
+    explanation:
+        r'''La coacción moral sobre una persona anciana e indefensa anula la validez de cualquier acto de transferencia de su único patrimonio habitacional. La dignidad de las personas de la tercera edad exige que sus decisiones sean libres y no obtenidas mediante amenazas de abandono, lo cual atenta contra su mínimo vital.''',
   ),
   Question(
     id: 'pfrh_q245',
     topicId: 'pfrh_t2',
-    text: r'''Una comunidad decide sancionar a una vecina sospechosa de robo cortándole el cabello públicamente en la plaza principal y obligándola a pasear semidesnuda mientras es insultada por la población. Los dirigentes locales defienden la sanción alegando que «es parte de nuestra justicia comunitaria ancestral y debe ser respetada». Desde el enfoque universal de los derechos humanos, ¿cómo se valora esta situación?''',
+    text:
+        r'''Una comunidad decide sancionar a una vecina sospechosa de robo cortándole el cabello públicamente en la plaza principal y obligándola a pasear semidesnuda mientras es insultada por la población. Los dirigentes locales defienden la sanción alegando que «es parte de nuestra justicia comunitaria ancestral y debe ser respetada». Desde el enfoque universal de los derechos humanos, ¿cómo se valora esta situación?''',
     options: [
       r'''La autonomía de las comunidades locales es absoluta y prevalece sobre la integridad física de los comuneros''',
       r'''Aunque se respeta la justicia comunitaria, esta tiene como límite absoluto el respeto a la dignidad humana e integridad física y moral de la persona, siendo nulo cualquier castigo humillante o denigrante''',
@@ -2684,12 +3088,14 @@ final List<Question> pfrhQuestions = [
       r'''Cortar el cabello es una medida de saneamiento higiénico que no entra en el ámbito de los derechos humanos''',
     ],
     correctAnswer: 1,
-    explanation: r'''El pluralismo jurídico y la jurisdicción especial comunal están reconocidos, pero tienen como límite infranqueable el respeto a los derechos humanos y la dignidad de la persona. Sanciones que involucren tortura, tratos crueles o humillaciones públicas violan el núcleo esencial de la dignidad.''',
+    explanation:
+        r'''El pluralismo jurídico y la jurisdicción especial comunal están reconocidos, pero tienen como límite infranqueable el respeto a los derechos humanos y la dignidad de la persona. Sanciones que involucren tortura, tratos crueles o humillaciones públicas violan el núcleo esencial de la dignidad.''',
   ),
   Question(
     id: 'pfrh_q246',
     topicId: 'pfrh_t2',
-    text: r'''Un trabajador de construcción acepta laborar en una obra de edificación a gran altura sin arnés de seguridad ni casco protector, debido a que el contratista le advirtió: «Si pides implementos de seguridad, te descuento del sueldo diario o contrato a otro que no sea tan exigente». El trabajador firma una carta deslindando de responsabilidad a la constructora. ¿Cuál es el valor legal de esta carta de deslinde?''',
+    text:
+        r'''Un trabajador de construcción acepta laborar en una obra de edificación a gran altura sin arnés de seguridad ni casco protector, debido a que el contratista le advirtió: «Si pides implementos de seguridad, te descuento del sueldo diario o contrato a otro que no sea tan exigente». El trabajador firma una carta deslindando de responsabilidad a la constructora. ¿Cuál es el valor legal de esta carta de deslinde?''',
     options: [
       r'''Es plenamente válida, ya que el obrero aceptó voluntariamente los riesgos de su trabajo a cambio de su remuneración diaria''',
       r'''Es nula porque la vida y la integridad física en el trabajo son derechos inalienables e irrenunciables, y el consentimiento bajo coacción laboral carece de validez legal''',
@@ -2697,12 +3103,14 @@ final List<Question> pfrhQuestions = [
       r'''La empresa constructora queda libre de toda responsabilidad penal porque el obrero prefirió el dinero al equipo protector''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho a la seguridad y salud en el trabajo es inalienable. Un trabajador no puede autorizar válidamente a su empleador a arriesgar su vida por negligencia en las medidas de seguridad, siendo nulo cualquier documento que pretenda exonerar a la empresa de su responsabilidad por accidentes.''',
+    explanation:
+        r'''El derecho a la seguridad y salud en el trabajo es inalienable. Un trabajador no puede autorizar válidamente a su empleador a arriesgar su vida por negligencia en las medidas de seguridad, siendo nulo cualquier documento que pretenda exonerar a la empresa de su responsabilidad por accidentes.''',
   ),
   Question(
     id: 'pfrh_q247',
     topicId: 'pfrh_t2',
-    text: r'''En una asamblea de vecinos, un propietario propone prohibir que las personas que alquilan habitaciones compartidas en la zona urbana tengan acceso al parque central los fines de semana, señalando que «esas personas no pagan las cuotas del parque y además afean el vecindario con su presencia». ¿Cómo se tipifica esta propuesta respecto a la doctrina de derechos humanos?''',
+    text:
+        r'''En una asamblea de vecinos, un propietario propone prohibir que las personas que alquilan habitaciones compartidas en la zona urbana tengan acceso al parque central los fines de semana, señalando que «esas personas no pagan las cuotas del parque y además afean el vecindario con su presencia». ¿Cómo se tipifica esta propuesta respecto a la doctrina de derechos humanos?''',
     options: [
       r'''Como una propuesta justa orientada al ordenamiento urbano y la buena vecindad residencial''',
       r'''Como una violación del principio de universalidad y de la dignidad humana, al imponer restricciones discriminatorias sobre el uso de espacios públicos con base en prejuicios clasistas''',
@@ -2710,12 +3118,14 @@ final List<Question> pfrhQuestions = [
       r'''Una colisión de derechos donde la paz visual de los propietarios permanentes tiene prioridad absoluta''',
     ],
     correctAnswer: 1,
-    explanation: r'''Excluir del disfrute de espacios públicos recreativos a las personas inquilinas basándose en prejuicios socioeconómicos es un acto de discriminación clasista intolerable. Atenta contra la universalidad e igualdad de derechos fundamentales.''',
+    explanation:
+        r'''Excluir del disfrute de espacios públicos recreativos a las personas inquilinas basándose en prejuicios socioeconómicos es un acto de discriminación clasista intolerable. Atenta contra la universalidad e igualdad de derechos fundamentales.''',
   ),
   Question(
     id: 'pfrh_q248',
     topicId: 'pfrh_t2',
-    text: r'''Un colegio público carece de servicios higiénicos adecuados y agua corriente desde hace tres años. Los profesores continúan dictando clases pidiendo a los niños que carguen baldes de agua desde un río cercano y que utilicen el campo abierto para hacer sus necesidades. El director señala que «el colegio cumple con educar, el agua es responsabilidad de las familias». Desde los principios de indivisibilidad e interdependencia de los derechos:''',
+    text:
+        r'''Un colegio público carece de servicios higiénicos adecuados y agua corriente desde hace tres años. Los profesores continúan dictando clases pidiendo a los niños que carguen baldes de agua desde un río cercano y que utilicen el campo abierto para hacer sus necesidades. El director señala que «el colegio cumple con educar, el agua es responsabilidad de las familias». Desde los principios de indivisibilidad e interdependencia de los derechos:''',
     options: [
       r'''El director tiene razón, pues el derecho a la educación es autónomo y no guarda relación alguna con los servicios de agua y saneamiento''',
       r'''La falta de agua y saneamiento adecuado en la escuela vulnera la dignidad de los estudiantes y el derecho a la salud, haciendo inviable el ejercicio pleno y de calidad del derecho a la educación''',
@@ -2723,12 +3133,14 @@ final List<Question> pfrhQuestions = [
       r'''El Estado cumple plenamente su rol con solo abrir las puertas del aula, siendo la salud un asunto de responsabilidad familiar exclusiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''El derecho a la educación está indisolublemente ligado (interdependencia) al derecho a la salud, al agua potable y al saneamiento digno. Un entorno escolar insalubre vulnera la dignidad de los niños y atenta contra la eficacia del proceso educativo.''',
+    explanation:
+        r'''El derecho a la educación está indisolublemente ligado (interdependencia) al derecho a la salud, al agua potable y al saneamiento digno. Un entorno escolar insalubre vulnera la dignidad de los niños y atenta contra la eficacia del proceso educativo.''',
   ),
   Question(
     id: 'pfrh_q249',
     topicId: 'pfrh_t2',
-    text: r'''En una red social escolar, un grupo de alumnos publica memes burlones editando el rostro de una compañera con fotos de animales y lanzando insultos denigrantes sobre su condición socioeconómica. Al ser citados los padres de los infractores, estos señalan que «es solo diversión cibernética propia de la generación digital y no se debe hacer un escándalo por bromas en internet». ¿Cómo se analiza esta postura familiar?''',
+    text:
+        r'''En una red social escolar, un grupo de alumnos publica memes burlones editando el rostro de una compañera con fotos de animales y lanzando insultos denigrantes sobre su condición socioeconómica. Al ser citados los padres de los infractores, estos señalan que «es solo diversión cibernética propia de la generación digital y no se debe hacer un escándalo por bromas en internet». ¿Cómo se analiza esta postura familiar?''',
     options: [
       r'''Es correcta, pues la libertad de expresión en redes sociales es absoluta e inmune a las reglas disciplinarias escolares''',
       r'''Es errónea, ya que el acoso cibernético racista y clasista vulnera gravemente la dignidad humana y la integridad moral de la menor, debiendo ser sancionado independientemente del canal utilizado''',
@@ -2736,12 +3148,14 @@ final List<Question> pfrhQuestions = [
       r'''Las bromas virtuales en internet están protegidas por el principio de relativismo digital de la juventud contemporánea''',
     ],
     correctAnswer: 1,
-    explanation: r'''El ciberacoso de carácter discriminatorio daña la integridad psicológica y moral de la estudiante, vulnerando su derecho a ser tratada con respeto y dignidad. El uso de plataformas virtuales no atenúa la gravedad de la discriminación, obligando a la institución educativa a intervenir.''',
+    explanation:
+        r'''El ciberacoso de carácter discriminatorio daña la integridad psicológica y moral de la estudiante, vulnerando su derecho a ser tratada con respeto y dignidad. El uso de plataformas virtuales no atenúa la gravedad de la discriminación, obligando a la institución educativa a intervenir.''',
   ),
   Question(
     id: 'pfrh_q250',
     topicId: 'pfrh_t2',
-    text: r'''Una clínica realiza un ensayo clínico experimental para probar un nuevo fármaco psiquiátrico en adultos mayores que padecen de demencia avanzada y viven en un albergue público. Los ancianos firman el consentimiento con su huella digital a cambio de un almuerzo especial semanal, sin contar con la autorización o asesoría de un tutor legal o familiar. ¿Cómo califica la doctrina de derechos humanos esta práctica?''',
+    text:
+        r'''Una clínica realiza un ensayo clínico experimental para probar un nuevo fármaco psiquiátrico en adultos mayores que padecen de demencia avanzada y viven en un albergue público. Los ancianos firman el consentimiento con su huella digital a cambio de un almuerzo especial semanal, sin contar con la autorización o asesoría de un tutor legal o familiar. ¿Cómo califica la doctrina de derechos humanos esta práctica?''',
     options: [
       r'''Es una contribución científica loable que beneficia al desarrollo médico general de la población nacional''',
       r'''Es una flagrante violación de la dignidad humana y del derecho a la integridad personal, al instrumentalizar y experimentar con personas en extrema vulnerabilidad sin el debido consentimiento informado legal''',
@@ -2749,12 +3163,14 @@ final List<Question> pfrhQuestions = [
       r'''Un acto válido bajo el amparo de la libertad de investigación científica de las clínicas psiquiátricas''',
     ],
     correctAnswer: 1,
-    explanation: r'''Experimentar con personas sin capacidad de discernimiento (demencia avanzada) y sin representación legal adecuada vulnera de manera grave la dignidad humana, reduciendo a estos pacientes a la condición de objetos de ensayo a cambio de dádivas alimenticias, lo cual viola su integridad moral y física de forma inalienable.''',
+    explanation:
+        r'''Experimentar con personas sin capacidad de discernimiento (demencia avanzada) y sin representación legal adecuada vulnera de manera grave la dignidad humana, reduciendo a estos pacientes a la condición de objetos de ensayo a cambio de dádivas alimenticias, lo cual viola su integridad moral y física de forma inalienable.''',
   ),
   Question(
     id: 'pfrh_q251',
     topicId: 'pfrh_t2',
-    text: r'''Un vecino de 80 años vive en condiciones de abandono total y acumulación compulsiva de residuos en su domicilio, lo que genera mal olor e infestación de plagas que afecta a las viviendas aledañas. Los vecinos del barrio prohíben su ingreso a la tienda local y exigen al municipio que lo desaloje físicamente de su casa de inmediato y lo deje en la calle. ¿Cómo debe resolverse esta situación bajo un enfoque de derechos humanos?''',
+    text:
+        r'''Un vecino de 80 años vive en condiciones de abandono total y acumulación compulsiva de residuos en su domicilio, lo que genera mal olor e infestación de plagas que afecta a las viviendas aledañas. Los vecinos del barrio prohíben su ingreso a la tienda local y exigen al municipio que lo desaloje físicamente de su casa de inmediato y lo deje en la calle. ¿Cómo debe resolverse esta situación bajo un enfoque de derechos humanos?''',
     options: [
       r'''El desalojo físico inmediato y abandono en la calle es lícito porque la tranquilidad de la mayoría de vecinos es absoluta''',
       r'''Se debe intervenir de manera integral a través de servicios de asistencia social y salud mental del municipio, respetando la dignidad del anciano y buscando soluciones de limpieza sin dejarlo en desamparo absoluto''',
@@ -2762,12 +3178,14 @@ final List<Question> pfrhQuestions = [
       r'''Las juntas de vecinos pueden expropiar la casa del anciano para venderla y pagar la fumigación de la calle''',
     ],
     correctAnswer: 1,
-    explanation: r'''La dignidad humana obliga al Estado (a través del municipio) a tratar al adulto mayor vulnerable con respeto, brindándole asistencia social y de salud mental. El desalojo forzoso que lo deje en desamparo total en la calle violaría sus derechos fundamentales a la integridad y al mínimo vital, debiendo buscarse una solución proporcional que armonice el derecho de los vecinos a un ambiente sano y la integridad del anciano.''',
+    explanation:
+        r'''La dignidad humana obliga al Estado (a través del municipio) a tratar al adulto mayor vulnerable con respeto, brindándole asistencia social y de salud mental. El desalojo forzoso que lo deje en desamparo total en la calle violaría sus derechos fundamentales a la integridad y al mínimo vital, debiendo buscarse una solución proporcional que armonice el derecho de los vecinos a un ambiente sano y la integridad del anciano.''',
   ),
   Question(
     id: 'pfrh_q252',
     topicId: 'pfrh_t2',
-    text: r'''Un joven de origen indígena asiste a una entrevista de selección de personal para laborar como cajero en un supermercado de la capital. El entrevistador le indica que para obtener el puesto debe cortarse el cabello largo que tradicionalmente lleva según sus costumbres ancestrales, argumentando que «las normas de imagen de la empresa exigen cabello corto en el personal masculino para proyectar formalidad». ¿Cómo se analiza esta exigencia empresarial?''',
+    text:
+        r'''Un joven de origen indígena asiste a una entrevista de selección de personal para laborar como cajero en un supermercado de la capital. El entrevistador le indica que para obtener el puesto debe cortarse el cabello largo que tradicionalmente lleva según sus costumbres ancestrales, argumentando que «las normas de imagen de la empresa exigen cabello corto en el personal masculino para proyectar formalidad». ¿Cómo se analiza esta exigencia empresarial?''',
     options: [
       r'''Es una norma de imagen corporativa legítima y de cumplimiento obligatorio para los trabajadores del sector privado''',
       r'''Constituye una vulneración del derecho a la identidad cultural y a la dignidad del postulante, al imponerle una restricción injustificada sobre sus costumbres tradicionales para acceder a un puesto de trabajo''',
@@ -2775,12 +3193,14 @@ final List<Question> pfrhQuestions = [
       r'''El postulante debe acatar la norma ya que las costumbres indígenas solo tienen validez jurídica dentro del territorio comunal nativo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Exigir a una persona indígena que renuncie a un aspecto esencial de su identidad cultural (como el cabello largo tradicional) como condición para acceder al empleo es un acto de discriminación cultural que atenta contra su dignidad e igualdad de oportunidades, no existiendo justificación objetiva ni proporcional en la exigencia de la imagen corporativa del supermercado.''',
+    explanation:
+        r'''Exigir a una persona indígena que renuncie a un aspecto esencial de su identidad cultural (como el cabello largo tradicional) como condición para acceder al empleo es un acto de discriminación cultural que atenta contra su dignidad e igualdad de oportunidades, no existiendo justificación objetiva ni proporcional en la exigencia de la imagen corporativa del supermercado.''',
   ),
   Question(
     id: 'pfrh_q253',
     topicId: 'pfrh_t2',
-    text: r'''En una manifestación, un efectivo policial observa que un ciudadano extranjero es agredido injustificadamente por su nacionalidad. El policía interviene protegiendo al ciudadano basándose en que los Derechos Humanos protegen a toda persona sin distinción alguna. ¿Qué característica doctrinal de los DD.HH. se evidencia principalmente?''',
+    text:
+        r'''En una manifestación, un efectivo policial observa que un ciudadano extranjero es agredido injustificadamente por su nacionalidad. El policía interviene protegiendo al ciudadano basándose en que los Derechos Humanos protegen a toda persona sin distinción alguna. ¿Qué característica doctrinal de los DD.HH. se evidencia principalmente?''',
     options: [
       r'''Imprescriptibilidad''',
       r'''Inalienabilidad''',
@@ -2789,12 +3209,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Irrenunciabilidad''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es D (Universalidad), porque protegen a todos por igual, sean nacionales o extranjeros. El distractor B (Inalienabilidad) es un concepto clave de los DD.HH., pero se refiere a que no se pueden quitar ni transferir, no al hecho de que abarquen a toda la humanidad sin importar su origen.''',
+    explanation:
+        r'''La respuesta correcta es D (Universalidad), porque protegen a todos por igual, sean nacionales o extranjeros. El distractor B (Inalienabilidad) es un concepto clave de los DD.HH., pero se refiere a que no se pueden quitar ni transferir, no al hecho de que abarquen a toda la humanidad sin importar su origen.''',
   ),
   Question(
     id: 'pfrh_q254',
     topicId: 'pfrh_t2',
-    text: r"""Dentro del estudio de los Derechos Humanos, la característica de 'Inalienabilidad' significa jurídicamente que:""",
+    text:
+        r"""Dentro del estudio de los Derechos Humanos, la característica de 'Inalienabilidad' significa jurídicamente que:""",
     options: [
       r'''Ninguna autoridad ni el propio individuo puede renunciar, ceder o vender sus derechos.''',
       r'''Tienen vigencia indefinida y no se pierden por el transcurso del tiempo.''',
@@ -2803,12 +3225,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Son inherentes a la condición humana desde el momento de su concepción legal.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A. Inalienable significa que no se puede enajenar (transferir/renunciar). El distractor B corresponde a la 'Imprescriptibilidad'. El distractor C corresponde a la 'Indivisibilidad'. El distractor D corresponde a la 'Universalidad'.""",
+    explanation:
+        r"""La respuesta correcta es A. Inalienable significa que no se puede enajenar (transferir/renunciar). El distractor B corresponde a la 'Imprescriptibilidad'. El distractor C corresponde a la 'Indivisibilidad'. El distractor D corresponde a la 'Universalidad'.""",
   ),
   Question(
     id: 'pfrh_q255',
     topicId: 'pfrh_t2',
-    text: r'''La característica de los Derechos Humanos que sostiene que corresponden a todos los seres humanos por igual, en cualquier lugar y sin distinción alguna, es la:''',
+    text:
+        r'''La característica de los Derechos Humanos que sostiene que corresponden a todos los seres humanos por igual, en cualquier lugar y sin distinción alguna, es la:''',
     options: [
       r'''Inalienabilidad''',
       r'''Imprescriptibilidad''',
@@ -2817,12 +3241,14 @@ final List<Question> pfrhQuestions = [
       r'''Indivisibilidad''',
     ],
     correctAnswer: 3,
-    explanation: r'''La universalidad fundamenta que no existen excepciones étnicas, culturales, de género o nacionales para gozar de los DDHH.''',
+    explanation:
+        r'''La universalidad fundamenta que no existen excepciones étnicas, culturales, de género o nacionales para gozar de los DDHH.''',
   ),
   Question(
     id: 'pfrh_q256',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué propiedad de los Derechos Humanos indica que no se pueden transferir, vender, ceder o renunciar a ellos bajo ningún concepto, ya que son inherentes a la persona?''',
+    text:
+        r'''¿Qué propiedad de los Derechos Humanos indica que no se pueden transferir, vender, ceder o renunciar a ellos bajo ningún concepto, ya que son inherentes a la persona?''',
     options: [
       r'''Universalidad''',
       r'''Interdependencia''',
@@ -2831,12 +3257,14 @@ final List<Question> pfrhQuestions = [
       r'''Inalienabilidad''',
     ],
     correctAnswer: 4,
-    explanation: r'''Los DDHH son inalienables; ninguna persona puede ser privada de ellos legalmente, ni puede renunciar voluntariamente a su propia dignidad.''',
+    explanation:
+        r'''Los DDHH son inalienables; ninguna persona puede ser privada de ellos legalmente, ni puede renunciar voluntariamente a su propia dignidad.''',
   ),
   Question(
     id: 'pfrh_q257',
     topicId: 'pfrh_t2',
-    text: r'''La característica que establece que los Derechos Humanos no se pierden ni vencen con el transcurso del tiempo, independientemente de su falta de ejercicio, se denomina:''',
+    text:
+        r'''La característica que establece que los Derechos Humanos no se pierden ni vencen con el transcurso del tiempo, independientemente de su falta de ejercicio, se denomina:''',
     options: [
       r'''Inalienabilidad''',
       r'''Inviolabilidad''',
@@ -2845,12 +3273,14 @@ final List<Question> pfrhQuestions = [
       r'''Indivisibilidad''',
     ],
     correctAnswer: 2,
-    explanation: r'''La imprescriptibilidad garantiza que la facultad de exigir la protección y respeto de los DDHH permanece vigente para toda la vida.''',
+    explanation:
+        r'''La imprescriptibilidad garantiza que la facultad de exigir la protección y respeto de los DDHH permanece vigente para toda la vida.''',
   ),
   Question(
     id: 'pfrh_q258',
     topicId: 'pfrh_t2',
-    text: r'''Señale la propiedad que sostiene que todos los DDHH tienen el mismo rango y valor, de modo que ningún derecho puede ser priorizado o separado a costa de otros:''',
+    text:
+        r'''Señale la propiedad que sostiene que todos los DDHH tienen el mismo rango y valor, de modo que ningún derecho puede ser priorizado o separado a costa de otros:''',
     options: [
       r'''Indivisibilidad''',
       r'''Transicionalidad''',
@@ -2859,12 +3289,14 @@ final List<Question> pfrhQuestions = [
       r'''Inalienabilidad''',
     ],
     correctAnswer: 0,
-    explanation: r'''La indivisibilidad e interdependencia afirman que el desarrollo pleno del ser humano requiere el respeto armónico de todos sus derechos (civiles, económicos, etc.).''',
+    explanation:
+        r'''La indivisibilidad e interdependencia afirman que el desarrollo pleno del ser humano requiere el respeto armónico de todos sus derechos (civiles, económicos, etc.).''',
   ),
   Question(
     id: 'pfrh_q259',
     topicId: 'pfrh_t2',
-    text: r'''¿En qué fecha histórica la Asamblea General de las Naciones Unidas adoptó la Declaración Universal de los Derechos Humanos en París?''',
+    text:
+        r'''¿En qué fecha histórica la Asamblea General de las Naciones Unidas adoptó la Declaración Universal de los Derechos Humanos en París?''',
     options: [
       r'''28 de julio de 1821''',
       r'''11 de septiembre de 2001''',
@@ -2873,12 +3305,14 @@ final List<Question> pfrhQuestions = [
       r'''24 de octubre de 1945''',
     ],
     correctAnswer: 3,
-    explanation: r'''La DUDH fue proclamada como un ideal común para todos los pueblos tras los horrores de la Segunda Guerra Mundial.''',
+    explanation:
+        r'''La DUDH fue proclamada como un ideal común para todos los pueblos tras los horrores de la Segunda Guerra Mundial.''',
   ),
   Question(
     id: 'pfrh_q260',
     topicId: 'pfrh_t2',
-    text: r'''¿Cuál es el valor filosófico y jurídico fundamental sobre el cual se erigen e interpretan todos los Derechos Humanos?''',
+    text:
+        r'''¿Cuál es el valor filosófico y jurídico fundamental sobre el cual se erigen e interpretan todos los Derechos Humanos?''',
     options: [
       r'''Seguridad del Estado''',
       r'''Libertad individual''',
@@ -2887,12 +3321,14 @@ final List<Question> pfrhQuestions = [
       r'''Dignidad humana''',
     ],
     correctAnswer: 4,
-    explanation: r'''La dignidad humana es el valor intrínseco de cada persona por el solo hecho de serlo, constituyendo el núcleo de los DDHH.''',
+    explanation:
+        r'''La dignidad humana es el valor intrínseco de cada persona por el solo hecho de serlo, constituyendo el núcleo de los DDHH.''',
   ),
   Question(
     id: 'pfrh_q261',
     topicId: 'pfrh_t2',
-    text: r'''Los derechos orientados a proteger la libertad y la integridad individual frente a los abusos del poder (como la vida, el voto y la propiedad) pertenecen a la:''',
+    text:
+        r'''Los derechos orientados a proteger la libertad y la integridad individual frente a los abusos del poder (como la vida, el voto y la propiedad) pertenecen a la:''',
     options: [
       r'''Primera generación (Civiles y políticos)''',
       r'''Segunda generación (Económicos y sociales)''',
@@ -2901,12 +3337,14 @@ final List<Question> pfrhQuestions = [
       r'''Tercera generación (Derechos colectivos)''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los derechos de primera generación surgieron con las revoluciones liberales (siglo XVIII) y demandan del Estado una conducta de abstención para proteger la libertad ciudadana.''',
+    explanation:
+        r'''Los derechos de primera generación surgieron con las revoluciones liberales (siglo XVIII) y demandan del Estado una conducta de abstención para proteger la libertad ciudadana.''',
   ),
   Question(
     id: 'pfrh_q262',
     topicId: 'pfrh_t2',
-    text: r'''Los derechos que exigen una intervención activa del Estado para garantizar el bienestar material y social de la población (como salud, educación y trabajo) pertenecen a la:''',
+    text:
+        r'''Los derechos que exigen una intervención activa del Estado para garantizar el bienestar material y social de la población (como salud, educación y trabajo) pertenecen a la:''',
     options: [
       r'''Quinta generación (Cibernéticos)''',
       r'''Cuarta generación (De comunicación)''',
@@ -2915,12 +3353,14 @@ final List<Question> pfrhQuestions = [
       r'''Primera generación (Civiles y políticos)''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los derechos de segunda generación (derechos sociales) se consolidaron en el siglo XX para asegurar la igualdad material de oportunidades.''',
+    explanation:
+        r'''Los derechos de segunda generación (derechos sociales) se consolidaron en el siglo XX para asegurar la igualdad material de oportunidades.''',
   ),
   Question(
     id: 'pfrh_q263',
     topicId: 'pfrh_t2',
-    text: r'''El derecho a gozar de un medio ambiente sano, a la paz y al desarrollo sostenible, que requieren la cooperación y solidaridad internacional, corresponde a la:''',
+    text:
+        r'''El derecho a gozar de un medio ambiente sano, a la paz y al desarrollo sostenible, que requieren la cooperación y solidaridad internacional, corresponde a la:''',
     options: [
       r'''Cuarta generación (Derechos digitales)''',
       r'''Primera generación (Civiles y políticos)''',
@@ -2929,12 +3369,14 @@ final List<Question> pfrhQuestions = [
       r'''Quinta generación (Derechos genéticos)''',
     ],
     correctAnswer: 3,
-    explanation: r'''Los derechos de tercera generación (derechos de los pueblos) exigen esfuerzos colectivos a escala global para ser efectivos.''',
+    explanation:
+        r'''Los derechos de tercera generación (derechos de los pueblos) exigen esfuerzos colectivos a escala global para ser efectivos.''',
   ),
   Question(
     id: 'pfrh_q264',
     topicId: 'pfrh_t2',
-    text: r'''¿Qué tratado internacional de 1989 consagra los derechos de los menores a la vida, salud, educación, juego y a ser protegidos contra la explotación?''',
+    text:
+        r'''¿Qué tratado internacional de 1989 consagra los derechos de los menores a la vida, salud, educación, juego y a ser protegidos contra la explotación?''',
     options: [
       r'''La Declaración Universal de los Derechos Humanos''',
       r'''El Convenio 169 de la OIT''',
@@ -2943,12 +3385,14 @@ final List<Question> pfrhQuestions = [
       r'''La Declaración de Ginebra de 1924''',
     ],
     correctAnswer: 3,
-    explanation: r'''La Convención sobre los Derechos del Niño reconoce a los menores de edad como sujetos plenos de derecho y establece el principio del interés superior del niño.''',
+    explanation:
+        r'''La Convención sobre los Derechos del Niño reconoce a los menores de edad como sujetos plenos de derecho y establece el principio del interés superior del niño.''',
   ),
   Question(
     id: 'pfrh_q305',
     topicId: 'pfrh_t3',
-    text: r'''¿A qué se refiere la autonomía moral en el desarrollo de la identidad personal y moral del individuo?''',
+    text:
+        r'''¿A qué se refiere la autonomía moral en el desarrollo de la identidad personal y moral del individuo?''',
     options: [
       r'''A la capacidad de formular y actuar según principios éticos propios, evaluados críticamente por la conciencia y libres de coacciones o castigos externos.''',
       r'''Al acatamiento estricto de los reglamentos del Estado motivado exclusivamente por el temor a las sanciones pecuniarias o penales.''',
@@ -2956,12 +3400,14 @@ final List<Question> pfrhQuestions = [
       r'''A la adopción rígida de convencionalismos sociales con la finalidad de obtener aprobación del grupo de pertenencia social.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La autonomía moral (según Piaget y Kohlberg) es la madurez ética donde el sujeto sigue normas autoimpuestas y racionalizadas a través del juicio y la conciencia, no por presiones o castigos externos.''',
+    explanation:
+        r'''La autonomía moral (según Piaget y Kohlberg) es la madurez ética donde el sujeto sigue normas autoimpuestas y racionalizadas a través del juicio y la conciencia, no por presiones o castigos externos.''',
   ),
   Question(
     id: 'pfrh_q306',
     topicId: 'pfrh_t3',
-    text: r'''Según la psicología del desarrollo cognitivo y moral de Jean Piaget, la heteronomía moral infantil se define por:''',
+    text:
+        r'''Según la psicología del desarrollo cognitivo y moral de Jean Piaget, la heteronomía moral infantil se define por:''',
     options: [
       r'''Considerar que las reglas son absolutas, eternas e inmutables dictadas por una autoridad, juzgando los actos solo por sus efectos materiales.''',
       r'''Ver las normas como acuerdos negociables entre pares que pueden reformularse buscando el beneficio mutuo y la equidad social.''',
@@ -2969,12 +3415,14 @@ final List<Question> pfrhQuestions = [
       r'''Cuestionar las directrices familiares apelando a principios universales de justicia, derechos humanos y equidad de género.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En la fase de heteronomía moral o realismo moral, las normas se perciben como absolutas impuestas desde el exterior, y la gravedad de un acto se mide por su resultado físico (daño objetivo) y no por la intención.''',
+    explanation:
+        r'''En la fase de heteronomía moral o realismo moral, las normas se perciben como absolutas impuestas desde el exterior, y la gravedad de un acto se mide por su resultado físico (daño objetivo) y no por la intención.''',
   ),
   Question(
     id: 'pfrh_q307',
     topicId: 'pfrh_t3',
-    text: r'''De acuerdo con el artículo 49 de la Constitución Política del Perú, ¿cuáles son los únicos símbolos oficiales de la Patria?''',
+    text:
+        r'''De acuerdo con el artículo 49 de la Constitución Política del Perú, ¿cuáles son los únicos símbolos oficiales de la Patria?''',
     options: [
       r'''La Bandera de tres franjas verticales, el Escudo Nacional y el Himno Nacional.''',
       r'''La Bandera, el Escudo Nacional, el Himno Nacional y la Escarapela bicolor.''',
@@ -2982,12 +3430,14 @@ final List<Question> pfrhQuestions = [
       r'''La Bandera Nacional, el Estandarte Oficial y la Escarapela Escolar.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La Constitución de 1993 establece textualmente en su artículo 49 que los símbolos de la Patria son la bandera, el escudo y el himno nacional. La escarapela no posee rango constitucional como símbolo patrio.''',
+    explanation:
+        r'''La Constitución de 1993 establece textualmente en su artículo 49 que los símbolos de la Patria son la bandera, el escudo y el himno nacional. La escarapela no posee rango constitucional como símbolo patrio.''',
   ),
   Question(
     id: 'pfrh_q308',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es la naturaleza cívica y legal de la escarapela en el Perú?''',
+    text:
+        r'''¿Cuál es la naturaleza cívica y legal de la escarapela en el Perú?''',
     options: [
       r'''Es un distintivo nacional de uso cívico instaurado por costumbre y tradición, que carece de rango constitucional como símbolo patrio.''',
       r'''Es el cuarto símbolo patrio oficial regulado por la Constitución Política del Perú con las mismas jerarquías de la Bandera.''',
@@ -2995,12 +3445,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una norma de carácter jurídico bilateral que sanciona penalmente a los ciudadanos civiles que omitan lucirla en julio.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La escarapela peruana es un distintivo bicolor tradicional usado para manifestar fervor patriótico (principalmente en julio), pero formalmente no es un símbolo de la patria según el marco constitucional peruano.''',
+    explanation:
+        r'''La escarapela peruana es un distintivo bicolor tradicional usado para manifestar fervor patriótico (principalmente en julio), pero formalmente no es un símbolo de la patria según el marco constitucional peruano.''',
   ),
   Question(
     id: 'pfrh_q309',
     topicId: 'pfrh_t3',
-    text: r"""¿Qué propiedad de las normas morales define e ilustra su característica de 'incoercibilidad'?""",
+    text:
+        r"""¿Qué propiedad de las normas morales define e ilustra su característica de 'incoercibilidad'?""",
     options: [
       r'''Que no pueden ser impuestas mediante el uso legítimo de la fuerza física o el aparato penal del Estado para obligar a su ejecución.''',
       r'''Que son elaboradas de manera autónoma por una autoridad externa y legislativa distinta a la propia conciencia del sujeto.''',
@@ -3008,12 +3460,14 @@ final List<Question> pfrhQuestions = [
       r'''Que otorgan facultades jurídicas directas al afectado para demandar compensación material ante los juzgados civiles.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La incoercibilidad significa que el cumplimiento de las normas morales debe nacer de la voluntad libre del individuo; no existe un mecanismo coercitivo estatal (fuerza pública) para obligar a alguien a actuar con moralidad.''',
+    explanation:
+        r'''La incoercibilidad significa que el cumplimiento de las normas morales debe nacer de la voluntad libre del individuo; no existe un mecanismo coercitivo estatal (fuerza pública) para obligar a alguien a actuar con moralidad.''',
   ),
   Question(
     id: 'pfrh_q310',
     topicId: 'pfrh_t3',
-    text: r'''Las normas de trato social, denominadas convencionalismos sociales o reglas de decoro, se definen doctrinariamente por ser:''',
+    text:
+        r'''Las normas de trato social, denominadas convencionalismos sociales o reglas de decoro, se definen doctrinariamente por ser:''',
     options: [
       r'''Heterónomas, unilaterales, externas e incoercibles.''',
       r'''Autónomas, bilaterales, internas y coercibles.''',
@@ -3021,12 +3475,14 @@ final List<Question> pfrhQuestions = [
       r'''Autónomas, unilaterales, internas e incoercibles.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Son heterónomas (creadas por la sociedad), unilaterales (obligan al sujeto pero nadie puede demandarle judicialmente el cumplimiento), externas (regulan la conducta visible) e incoercibles (no se imponen por fuerza estatal).''',
+    explanation:
+        r'''Son heterónomas (creadas por la sociedad), unilaterales (obligan al sujeto pero nadie puede demandarle judicialmente el cumplimiento), externas (regulan la conducta visible) e incoercibles (no se imponen por fuerza estatal).''',
   ),
   Question(
     id: 'pfrh_q311',
     topicId: 'pfrh_t3',
-    text: r"""¿Qué postula el concepto de 'bilateralidad' en el marco del estudio de las normas jurídicas?""",
+    text:
+        r"""¿Qué postula el concepto de 'bilateralidad' en el marco del estudio de las normas jurídicas?""",
     options: [
       r'''Que imponen deberes correlativos de derechos, es decir, que otorgan facultades a un sujeto para exigir legalmente la conducta prescrita en el obligado.''',
       r'''Que la norma obliga tanto a quien la promulga como a los sectores más vulnerables de la población civil por igual.''',
@@ -3034,12 +3490,14 @@ final List<Question> pfrhQuestions = [
       r'''Que regula tanto el aspecto psicológico interno del individuo como sus intenciones de ayuda social filantrópica.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La bilateralidad significa que ante el deber de un individuo (ej. pagar una deuda), hay un derecho correlativo de otro (ej. cobrarla) amparado por el ordenamiento legal, a diferencia de la unilateralidad moral o social.''',
+    explanation:
+        r'''La bilateralidad significa que ante el deber de un individuo (ej. pagar una deuda), hay un derecho correlativo de otro (ej. cobrarla) amparado por el ordenamiento legal, a diferencia de la unilateralidad moral o social.''',
   ),
   Question(
     id: 'pfrh_q312',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es la diferencia fundamental en la sanción que acarrea la infracción de una norma moral frente a una de trato social?''',
+    text:
+        r'''¿Cuál es la diferencia fundamental en la sanción que acarrea la infracción de una norma moral frente a una de trato social?''',
     options: [
       r'''La infracción moral produce remordimiento o sanción de conciencia; la de trato social provoca reprobación, censura o aislamiento del grupo.''',
       r'''La infracción moral conlleva multas económicas estatales; la de trato social produce la privación de libertad efectiva.''',
@@ -3047,12 +3505,14 @@ final List<Question> pfrhQuestions = [
       r'''La de trato social es interna y carece de consecuencias; la moral es externa y regulada por un contrato de arrendamiento.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El incumplimiento moral tiene una sanción interna del propio sujeto (sentimiento de culpa, crisis de conciencia). Los convencionalismos sociales violados reciben sanción social externa (exclusión, ridículo, reproche de los demás).''',
+    explanation:
+        r'''El incumplimiento moral tiene una sanción interna del propio sujeto (sentimiento de culpa, crisis de conciencia). Los convencionalismos sociales violados reciben sanción social externa (exclusión, ridículo, reproche de los demás).''',
   ),
   Question(
     id: 'pfrh_q313',
     topicId: 'pfrh_t3',
-    text: r"""En la teoría del desarrollo moral de Lawrence Kohlberg, ¿cuál es el rasgo distintivo de la etapa de 'orientación a la obediencia y al castigo'?""",
+    text:
+        r"""En la teoría del desarrollo moral de Lawrence Kohlberg, ¿cuál es el rasgo distintivo de la etapa de 'orientación a la obediencia y al castigo'?""",
     options: [
       r'''Las consecuencias físicas directas de una acción determinan su bondad o maldad, buscando evitar el castigo de la autoridad.''',
       r'''La conducta se guía por la necesidad de encajar en el grupo de pares y obtener una imagen personal favorable.''',
@@ -3060,12 +3520,14 @@ final List<Question> pfrhQuestions = [
       r'''Se actúa sobre la base de principios racionales autónomos que priman sobre cualquier código civil legal existente.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Esta es la primera etapa del nivel preconvencional. El juicio moral del niño o adulto inmaduro se limita a evitar el dolor o el castigo físico impuesto por la autoridad superior, sin asimilar el valor ético subyacente.''',
+    explanation:
+        r'''Esta es la primera etapa del nivel preconvencional. El juicio moral del niño o adulto inmaduro se limita a evitar el dolor o el castigo físico impuesto por la autoridad superior, sin asimilar el valor ético subyacente.''',
   ),
   Question(
     id: 'pfrh_q314',
     topicId: 'pfrh_t3',
-    text: r'''¿Qué dimensión define principalmente al autoconcepto en el proceso de estructuración de la identidad personal?''',
+    text:
+        r'''¿Qué dimensión define principalmente al autoconcepto en el proceso de estructuración de la identidad personal?''',
     options: [
       r'''La representación descriptiva e intelectual que el individuo posee sobre sus propias características físicas, cognitivas y sociales.''',
       r'''La valoración de carácter afectivo y emocional que la persona asigna a su valía personal en relación con los demás.''',
@@ -3073,12 +3535,14 @@ final List<Question> pfrhQuestions = [
       r'''El grado de acatamiento mecánico de los convencionalismos de etiqueta en eventos públicos y ceremonias estatales.''',
     ],
     correctAnswer: 0,
-    explanation: r"""El autoconcepto es la imagen cognitiva de uno mismo ('¿quién soy yo?'). Es descriptivo (ej. 'soy paciente', 'soy alto'), mientras que la autoestima es el componente valorativo y emocional de dicha descripción ('¿cuánto me valoro?').""",
+    explanation:
+        r"""El autoconcepto es la imagen cognitiva de uno mismo ('¿quién soy yo?'). Es descriptivo (ej. 'soy paciente', 'soy alto'), mientras que la autoestima es el componente valorativo y emocional de dicha descripción ('¿cuánto me valoro?').""",
   ),
   Question(
     id: 'pfrh_q315',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es la definición psicosocial más adecuada para el concepto de autoestima?''',
+    text:
+        r'''¿Cuál es la definición psicosocial más adecuada para el concepto de autoestima?''',
     options: [
       r'''La valoración emocional y afectiva, de carácter positivo o negativo, que el individuo realiza sobre sus cualidades y autoconcepto.''',
       r'''El conjunto de conocimientos objetivos y habilidades técnicas que una persona acumula a lo largo de su educación formal.''',
@@ -3086,12 +3550,14 @@ final List<Question> pfrhQuestions = [
       r'''La capacidad jurídica de goce y ejercicio que el Estado peruano reconoce a los ciudadanos al cumplir la mayoría de edad.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La autoestima es la autoevaluación subjetiva del individuo. Es el sentimiento y afecto asociado a la propia persona, derivado del autoconcepto.''',
+    explanation:
+        r'''La autoestima es la autoevaluación subjetiva del individuo. Es el sentimiento y afecto asociado a la propia persona, derivado del autoconcepto.''',
   ),
   Question(
     id: 'pfrh_q316',
     topicId: 'pfrh_t3',
-    text: r"""En el marco jurídico, ¿qué implica que una norma jurídica posea la propiedad de la 'coercibilidad'?""",
+    text:
+        r"""En el marco jurídico, ¿qué implica que una norma jurídica posea la propiedad de la 'coercibilidad'?""",
     options: [
       r'''La posibilidad de emplear el uso legítimo de la coacción y la fuerza del Estado para garantizar su cumplimiento u aplicar una sanción.''',
       r'''La facultad de cada ciudadano de decidir de forma voluntaria y libre si acata o no los reglamentos dictados por el Gobierno.''',
@@ -3099,12 +3565,14 @@ final List<Question> pfrhQuestions = [
       r'''El carácter cambiante de las leyes ordinarias de acuerdo con las tendencias y modas de comportamiento de la juventud.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coercibilidad es el sello distintivo de la norma jurídica: si el sujeto obligado se niega a cumplirla, el Estado puede forzarlo mediante la fuerza pública, multas, embargos o prisión.''',
+    explanation:
+        r'''La coercibilidad es el sello distintivo de la norma jurídica: si el sujeto obligado se niega a cumplirla, el Estado puede forzarlo mediante la fuerza pública, multas, embargos o prisión.''',
   ),
   Question(
     id: 'pfrh_q317',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es la diferencia sustancial en la procedencia (origen) entre las normas morales y las normas jurídicas?''',
+    text:
+        r'''¿Cuál es la diferencia sustancial en la procedencia (origen) entre las normas morales y las normas jurídicas?''',
     options: [
       r'''Las morales nacen de la conciencia autónoma del sujeto; las jurídicas proceden de órganos estatales específicos facultados legalmente.''',
       r'''Las morales son redactadas por los vecinos del distrito; las jurídicas son establecidas de manera exclusiva por los concilios religiosos.''',
@@ -3112,12 +3580,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambos tipos de normas tienen idéntico origen y son redactadas por los congresistas en asambleas escolares obligatorias.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las normas morales tienen una fuente autónoma (autoimposición del sujeto libre tras reflexionar), mientras que las normas jurídicas tienen una fuente heterónoma (impuestas por el Estado mediante procesos legislativos formales).''',
+    explanation:
+        r'''Las normas morales tienen una fuente autónoma (autoimposición del sujeto libre tras reflexionar), mientras que las normas jurídicas tienen una fuente heterónoma (impuestas por el Estado mediante procesos legislativos formales).''',
   ),
   Question(
     id: 'pfrh_q318',
     topicId: 'pfrh_t3',
-    text: r"""Señale la afirmación que describe de manera correcta la 'exterioridad' como característica de las normas de trato social:""",
+    text:
+        r"""Señale la afirmación que describe de manera correcta la 'exterioridad' como característica de las normas de trato social:""",
     options: [
       r'''Regulan únicamente la conducta externa y visible del sujeto en sociedad, sin indagar sobre la pureza de sus intenciones internas.''',
       r'''Se fundan exclusivamente en las motivaciones de la conciencia íntima y los remordimientos morales de la persona.''',
@@ -3125,12 +3595,14 @@ final List<Question> pfrhQuestions = [
       r'''Otorgan derechos legales exigibles a cualquier persona fuera del entorno en que se comete una falta moral.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La exterioridad significa que a la sociedad le interesa que el convencionalismo se cumpla visiblemente (ej. saludar educadamente, vestir apropiadamente). No importa si el sujeto lo hace de mala gana o con hipocresía.''',
+    explanation:
+        r'''La exterioridad significa que a la sociedad le interesa que el convencionalismo se cumpla visiblemente (ej. saludar educadamente, vestir apropiadamente). No importa si el sujeto lo hace de mala gana o con hipocresía.''',
   ),
   Question(
     id: 'pfrh_q319',
     topicId: 'pfrh_t3',
-    text: r"""Dentro de la doctrina de las normas morales, ¿qué representa la cualidad de la 'unilateralidad'?""",
+    text:
+        r"""Dentro de la doctrina de las normas morales, ¿qué representa la cualidad de la 'unilateralidad'?""",
     options: [
       r'''Que prescriben únicamente deberes u obligaciones para el sujeto, sin que exista una persona autorizada legalmente para exigir su cumplimiento.''',
       r'''Que son elaboradas de manera unánime y absoluta por el Congreso de la República sin derecho a referéndum ciudadano.''',
@@ -3138,12 +3610,14 @@ final List<Question> pfrhQuestions = [
       r'''Que regulan una sola de las partes de la conducta humana, dejando de lado los actos externos de los infractores cívicos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La unilateralidad moral implica que la norma impone deberes éticos al individuo, pero no concede a terceros una acción legal o derecho de reclamo coactivo ante un juez si la persona decide no cumplir su deber de conciencia.''',
+    explanation:
+        r'''La unilateralidad moral implica que la norma impone deberes éticos al individuo, pero no concede a terceros una acción legal o derecho de reclamo coactivo ante un juez si la persona decide no cumplir su deber de conciencia.''',
   ),
   Question(
     id: 'pfrh_q320',
     topicId: 'pfrh_t3',
-    text: r"""De acuerdo con el modelo de desarrollo moral de Lawrence Kohlberg, la etapa de 'contrato social y derechos individuales' pertenece al nivel:""",
+    text:
+        r"""De acuerdo con el modelo de desarrollo moral de Lawrence Kohlberg, la etapa de 'contrato social y derechos individuales' pertenece al nivel:""",
     options: [
       r'''Posconvencional, en el que el individuo evalúa las leyes sobre la base de la utilidad social y la protección de los derechos fundamentales.''',
       r'''Preconvencional, donde las leyes se respetan solo por las ventajas económicas y premios que la autoridad escolar promete.''',
@@ -3151,12 +3625,14 @@ final List<Question> pfrhQuestions = [
       r'''Heterónomo, donde las normas se definen por la revelación mística de dogmas tradicionales y no por la razón cívica.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En la etapa 5 (contrato social, nivel posconvencional), las leyes no son dogmas inmutables, sino acuerdos racionales para el bienestar general. Si una ley viola derechos humanos, se aboga por cambiarla.''',
+    explanation:
+        r'''En la etapa 5 (contrato social, nivel posconvencional), las leyes no son dogmas inmutables, sino acuerdos racionales para el bienestar general. Si una ley viola derechos humanos, se aboga por cambiarla.''',
   ),
   Question(
     id: 'pfrh_q321',
     topicId: 'pfrh_t3',
-    text: r'''En el marco de la legislación peruana sobre símbolos patrios, ¿qué diferencia al Escudo Nacional del Escudo de Armas?''',
+    text:
+        r'''En el marco de la legislación peruana sobre símbolos patrios, ¿qué diferencia al Escudo Nacional del Escudo de Armas?''',
     options: [
       r'''El Escudo Nacional lleva en su cúspide una corona cívica de encina y a los lados una bandera y un estandarte; el Escudo de Armas lleva palmas y laureles.''',
       r'''El Escudo de Armas lleva una vicuña y una cornucopia; el Escudo Nacional carece de la representación de la quina por ley civil.''',
@@ -3164,12 +3640,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia alguna entre ambos escudos, siendo sus nombres meros sinónimos sin relevancia legal.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El Escudo de Armas lleva en su parte superior una corona cívica de encina y a sus lados una rama de palma (derecha) y otra de laurel (izquierda) entrelazadas. El Escudo Nacional lleva a los lados la bandera y el estandarte nacional.''',
+    explanation:
+        r'''El Escudo de Armas lleva en su parte superior una corona cívica de encina y a sus lados una rama de palma (derecha) y otra de laurel (izquierda) entrelazadas. El Escudo Nacional lleva a los lados la bandera y el estandarte nacional.''',
   ),
   Question(
     id: 'pfrh_q322',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es el rol fundamental de los símbolos de la Patria en la construcción de la identidad nacional?''',
+    text:
+        r'''¿Cuál es el rol fundamental de los símbolos de la Patria en la construcción de la identidad nacional?''',
     options: [
       r'''Actuar como representaciones visuales y sonoras que unifican a la población en torno a una historia común, valores republicanos y soberanía nacional.''',
       r'''Funcionar como distintivos de uso meramente escolar para clasificar a los estudiantes por su nivel de rendimiento académico.''',
@@ -3177,12 +3655,14 @@ final List<Question> pfrhQuestions = [
       r'''Reemplazar las leyes penales vigentes mediante alegorías artísticas que suprimen los derechos de las comunidades rurales.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los símbolos de la patria (Bandera, Escudo e Himno Nacional) son representaciones oficiales consagradas constitucionalmente que simbolizan la soberanía, la historia compartida y la cohesión de los ciudadanos como nación.''',
+    explanation:
+        r'''Los símbolos de la patria (Bandera, Escudo e Himno Nacional) son representaciones oficiales consagradas constitucionalmente que simbolizan la soberanía, la historia compartida y la cohesión de los ciudadanos como nación.''',
   ),
   Question(
     id: 'pfrh_q323',
     topicId: 'pfrh_t3',
-    text: r'''Un conductor de transporte público reduce la velocidad y respeta el semáforo únicamente cuando observa un inspector de la ATU en la esquina. Si no hay control, ignora las señales. ¿Qué tipo de razonamiento moral tipifica esta conducta según Kohlberg?''',
+    text:
+        r'''Un conductor de transporte público reduce la velocidad y respeta el semáforo únicamente cuando observa un inspector de la ATU en la esquina. Si no hay control, ignora las señales. ¿Qué tipo de razonamiento moral tipifica esta conducta según Kohlberg?''',
     options: [
       r'''Razonamiento moral preconvencional (orientación al castigo y obediencia).''',
       r'''Razonamiento moral convencional (orientación de la ley y el orden social).''',
@@ -3190,12 +3670,14 @@ final List<Question> pfrhQuestions = [
       r'''Autonomía moral regulada por minimización de la culpa individual.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El conductor ajusta su comportamiento solo ante la presencia directa de la sanción (castigo/multa) y el inspector (autoridad). Esto corresponde a la etapa preconvencional, careciendo de internalización de la norma cívica.''',
+    explanation:
+        r'''El conductor ajusta su comportamiento solo ante la presencia directa de la sanción (castigo/multa) y el inspector (autoridad). Esto corresponde a la etapa preconvencional, careciendo de internalización de la norma cívica.''',
   ),
   Question(
     id: 'pfrh_q324',
     topicId: 'pfrh_t3',
-    text: r'''En un transporte público limeño, un joven decide cederle el asiento a un ciudadano de la tercera edad por mera cortesía y amabilidad. ¿Cómo se clasifica esta acción y bajo qué tipo de norma opera?''',
+    text:
+        r'''En un transporte público limeño, un joven decide cederle el asiento a un ciudadano de la tercera edad por mera cortesía y amabilidad. ¿Cómo se clasifica esta acción y bajo qué tipo de norma opera?''',
     options: [
       r'''Es el cumplimiento de una norma de trato social (convencionalismo), pues responde a la cortesía y no a una sanción carcelaria directa.''',
       r'''Es la violación de una norma jurídica bilateral que impone prisión forzosa a los jóvenes que se sientan en el micro público.''',
@@ -3203,12 +3685,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un acto de heteronomía jurídica escolar libre de repercusión social o familiar.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Ceder el asiento por cortesía cívica o caballerosidad (salvo que sea el asiento reservado legalmente) es una norma de trato social o convencionalismo social, cuya infracción genera censura o reprobación del grupo, pero no arresto.''',
+    explanation:
+        r'''Ceder el asiento por cortesía cívica o caballerosidad (salvo que sea el asiento reservado legalmente) es una norma de trato social o convencionalismo social, cuya infracción genera censura o reprobación del grupo, pero no arresto.''',
   ),
   Question(
     id: 'pfrh_q325',
     topicId: 'pfrh_t3',
-    text: r'''Un ciudadano estaciona su vehículo obstruyendo una rampa de acceso para personas con discapacidad en una avenida comercial. ¿Qué normas está transgrediendo de manera simultánea?''',
+    text:
+        r'''Un ciudadano estaciona su vehículo obstruyendo una rampa de acceso para personas con discapacidad en una avenida comercial. ¿Qué normas está transgrediendo de manera simultánea?''',
     options: [
       r'''Una norma jurídica (infracción de tránsito sancionable) y una norma moral (falta de empatía y respeto ético).''',
       r'''Únicamente una norma de trato social, pues el estacionamiento no está tipificado en la ley de tránsito peruana.''',
@@ -3216,12 +3700,14 @@ final List<Question> pfrhQuestions = [
       r'''Una norma jurídica unilateral de coerción escolar indirecta e incoercible.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Al obstruir la rampa infringe una norma jurídica (Código de Tránsito, sujeta a multa y grúa) y una norma moral (viola el deber ético de solidaridad y respeto hacia los derechos y facilidades de las personas con discapacidad).''',
+    explanation:
+        r'''Al obstruir la rampa infringe una norma jurídica (Código de Tránsito, sujeta a multa y grúa) y una norma moral (viola el deber ético de solidaridad y respeto hacia los derechos y facilidades de las personas con discapacidad).''',
   ),
   Question(
     id: 'pfrh_q326',
     topicId: 'pfrh_t3',
-    text: r'''Un joven encuentra un teléfono de alta gama olvidado sobre una mesa en la biblioteca de su instituto educativo y decide buscar al dueño para devolvérselo, motivado por su convicción personal de honestidad. Tipifique esta conducta:''',
+    text:
+        r'''Un joven encuentra un teléfono de alta gama olvidado sobre una mesa en la biblioteca de su instituto educativo y decide buscar al dueño para devolvérselo, motivado por su convicción personal de honestidad. Tipifique esta conducta:''',
     options: [
       r'''Acción guiada por autonomía moral, donde el sujeto obra guiado por principios internos de justicia y honestidad.''',
       r'''Cumplimiento de una norma de trato social motivado por el sesgo de reciprocidad interesada de grupo.''',
@@ -3229,12 +3715,14 @@ final List<Question> pfrhQuestions = [
       r'''Acción típica de sentido común no legal derivada del miedo a la exclusión social del salón.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El joven actúa de acuerdo a sus convicciones de honestidad sin que nadie lo presione. Esto califica como una conducta moral autónoma, donde el valor de la honradez está interiorizado.''',
+    explanation:
+        r'''El joven actúa de acuerdo a sus convicciones de honestidad sin que nadie lo presione. Esto califica como una conducta moral autónoma, donde el valor de la honradez está interiorizado.''',
   ),
   Question(
     id: 'pfrh_q327',
     topicId: 'pfrh_t3',
-    text: r'''Durante una ceremonia cívico-escolar en Lima, se realiza el izamiento de las banderas. Un docente recuerda a los alumnos que deben cantar el Himno Nacional con respeto por su condición legal de símbolo patrio, mientras que la escarapela se porta en el pecho como distintivo. ¿Es correcta la distinción del docente?''',
+    text:
+        r'''Durante una ceremonia cívico-escolar en Lima, se realiza el izamiento de las banderas. Un docente recuerda a los alumnos que deben cantar el Himno Nacional con respeto por su condición legal de símbolo patrio, mientras que la escarapela se porta en el pecho como distintivo. ¿Es correcta la distinción del docente?''',
     options: [
       r'''Sí, porque la escarapela es un distintivo cívico y tradicional de peruanidad, mientras que el Himno es un símbolo patrio oficial según la Constitución.''',
       r'''No, porque la escarapela nacional fue abolida por ley y su uso es una infracción cívica que acarrea arresto militar.''',
@@ -3242,12 +3730,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, porque el Himno es una norma moral incoercible y la escarapela es una norma jurídica bilateral.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El docente es preciso: la Constitución reconoce al Himno Nacional como símbolo de la patria oficial (Art. 49). La escarapela es un distintivo cívico tradicional arraigado pero no es símbolo patrio oficial de la república.''',
+    explanation:
+        r'''El docente es preciso: la Constitución reconoce al Himno Nacional como símbolo de la patria oficial (Art. 49). La escarapela es un distintivo cívico tradicional arraigado pero no es símbolo patrio oficial de la república.''',
   ),
   Question(
     id: 'pfrh_q328',
     topicId: 'pfrh_t3',
-    text: r'''Un hombre asiste a un velorio formal vistiendo ropa deportiva de colores fluorescentes y reproduciendo música en su celular. Aunque la ley no lo prohíbe explícitamente, los familiares lo censuran y le piden retirarse. ¿Qué norma se ha vulnerado y qué sanción se observa?''',
+    text:
+        r'''Un hombre asiste a un velorio formal vistiendo ropa deportiva de colores fluorescentes y reproduciendo música en su celular. Aunque la ley no lo prohíbe explícitamente, los familiares lo censuran y le piden retirarse. ¿Qué norma se ha vulnerado y qué sanción se observa?''',
     options: [
       r'''Se ha transgredido una norma de trato social; la sanción es el reproche grupal y la exclusión de la ceremonia.''',
       r'''Se ha cometido una infracción jurídica penal; la sanción es el encarcelamiento por atentar contra la moral vecinal.''',
@@ -3255,12 +3745,14 @@ final List<Question> pfrhQuestions = [
       r'''Se ha manifestado un sesgo de reciprocidad regulado por autonomía moral posconvencional.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La conducta infringe una norma de trato social (el decoro y respeto debidos en un velorio, expresados en la vestimenta y silencio). Dado que es incoercible, el castigo no es la cárcel ni multa, sino la desaprobación social.''',
+    explanation:
+        r'''La conducta infringe una norma de trato social (el decoro y respeto debidos en un velorio, expresados en la vestimenta y silencio). Dado que es incoercible, el castigo no es la cárcel ni multa, sino la desaprobación social.''',
   ),
   Question(
     id: 'pfrh_q329',
     topicId: 'pfrh_t3',
-    text: r'''Una joven le miente a su abuela para evitar realizar un encargo y salir con sus amigos. Días después, experimenta una profunda insatisfacción interna y desvelo. ¿Qué tipo de norma y de sanción se manifiestan en esta situación?''',
+    text:
+        r'''Una joven le miente a su abuela para evitar realizar un encargo y salir con sus amigos. Días después, experimenta una profunda insatisfacción interna y desvelo. ¿Qué tipo de norma y de sanción se manifiestan en esta situación?''',
     options: [
       r'''Norma moral de carácter interno; la sanción se experimenta a nivel subjetivo bajo la forma de remordimiento y culpa.''',
       r'''Norma jurídica de carácter bilateral; la sanción es penal por fraude intrafamiliar sin atenuantes.''',
@@ -3268,12 +3760,14 @@ final List<Question> pfrhQuestions = [
       r'''Autonomía moral posconvencional; la sanción es una multa municipal por desacato filial.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El remordimiento y la intranquilidad interior tras actuar con falsedad evidencian la vulneración de una norma moral interna. La sanción moral es autónoma e íntima, procesada por la propia conciencia.''',
+    explanation:
+        r'''El remordimiento y la intranquilidad interior tras actuar con falsedad evidencian la vulneración de una norma moral interna. La sanción moral es autónoma e íntima, procesada por la propia conciencia.''',
   ),
   Question(
     id: 'pfrh_q330',
     topicId: 'pfrh_t3',
-    text: r'''Los vecinos de una calle se organizan para barrer sus veredas todas las mañanas. Don Ramiro ignora esta práctica y deja acumular basura. Los vecinos deciden dejar de saludarlo y no invitarlo a las reuniones del barrio. ¿Cómo se clasifica la norma omitida por Ramiro?''',
+    text:
+        r'''Los vecinos de una calle se organizan para barrer sus veredas todas las mañanas. Don Ramiro ignora esta práctica y deja acumular basura. Los vecinos deciden dejar de saludarlo y no invitarlo a las reuniones del barrio. ¿Cómo se clasifica la norma omitida por Ramiro?''',
     options: [
       r'''Es una norma de trato social basada en la convivencia comunitaria, cuya vulneración genera una sanción informal de exclusión social.''',
       r'''Es una norma jurídica bilateral cuyo incumplimiento forzoso amerita la intervención del serenazgo y el arresto.''',
@@ -3281,12 +3775,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una regla de heteronomía moral posconvencional orientada a la evitación de multas del congreso.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La limpieza vecinal y la armonía comunitaria se rigen por convencionalismos sociales. Al no respetarlos, el infractor sufre el rechazo informal de la comunidad (marginación de actividades, retiro del saludo).''',
+    explanation:
+        r'''La limpieza vecinal y la armonía comunitaria se rigen por convencionalismos sociales. Al no respetarlos, el infractor sufre el rechazo informal de la comunidad (marginación de actividades, retiro del saludo).''',
   ),
   Question(
     id: 'pfrh_q331',
     topicId: 'pfrh_t3',
-    text: r'''Un grupo de estudiantes de secundaria acuerdan cambiar las reglas de un juego de mesa clásico para hacerlo más ágil. A partir de ese momento, todos respetan la nueva versión del juego. Según Piaget, ¿en qué fase del desarrollo moral se sitúan estos estudiantes?''',
+    text:
+        r'''Un grupo de estudiantes de secundaria acuerdan cambiar las reglas de un juego de mesa clásico para hacerlo más ágil. A partir de ese momento, todos respetan la nueva versión del juego. Según Piaget, ¿en qué fase del desarrollo moral se sitúan estos estudiantes?''',
     options: [
       r'''Autonomía moral (relativismo moral), pues entienden que las reglas surgen del acuerdo entre participantes y pueden ser modificadas por consenso.''',
       r'''Heteronomía moral (realismo moral), pues consideran que las reglas originales son sagradas e inmutables y cambiarlas es un pecado moral.''',
@@ -3294,12 +3790,14 @@ final List<Question> pfrhQuestions = [
       r'''Anomia moral e inconducta social orientada al quebrantamiento deliberado de las leyes civiles.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Cuando los sujetos comprenden que las reglas de convivencia o de juego no están grabadas en piedra por una autoridad suprema, sino que son resultado del acuerdo mutuo y pueden alterarse por consenso, demuestran autonomía moral.''',
+    explanation:
+        r'''Cuando los sujetos comprenden que las reglas de convivencia o de juego no están grabadas en piedra por una autoridad suprema, sino que son resultado del acuerdo mutuo y pueden alterarse por consenso, demuestran autonomía moral.''',
   ),
   Question(
     id: 'pfrh_q332',
     topicId: 'pfrh_t3',
-    text: r'''Un comerciante de abarrotes decide no vender productos vencidos ni adulterados porque comprende que su negocio debe regirse por la honestidad hacia las familias del barrio, priorizando el bienestar ajeno sobre su ganancia personal inmediata. ¿Qué tipo de autonomía demuestra el comerciante?''',
+    text:
+        r'''Un comerciante de abarrotes decide no vender productos vencidos ni adulterados porque comprende que su negocio debe regirse por la honestidad hacia las familias del barrio, priorizando el bienestar ajeno sobre su ganancia personal inmediata. ¿Qué tipo de autonomía demuestra el comerciante?''',
     options: [
       r'''Autonomía moral, pues su decisión proviene de principios morales internos e incondicionales de honestidad y protección de la vida humana.''',
       r'''Heteronomía social, porque actúa de esa forma motivado únicamente por el temor a que la policía clausure su local.''',
@@ -3307,12 +3805,14 @@ final List<Question> pfrhQuestions = [
       r'''Sentido común no legal, puesto que no existe ninguna norma jurídica en el Perú que fiscalice la venta de alimentos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El comerciante actúa impulsado por principios éticos internalizados (el respeto a la salud ajena y la honradez comercial). Esto tipifica la autonomía moral, donde la conducta correcta se decide por convicción íntima de justicia.''',
+    explanation:
+        r'''El comerciante actúa impulsado por principios éticos internalizados (el respeto a la salud ajena y la honradez comercial). Esto tipifica la autonomía moral, donde la conducta correcta se decide por convicción íntima de justicia.''',
   ),
   Question(
     id: 'pfrh_q333',
     topicId: 'pfrh_t3',
-    text: r"""Un estudiante universitario rinde un examen parcial sin intentar copiar las respuestas del compañero de al lado. Al ser consultado por qué no copió, responde: 'Si copio y el profesor me detecta, me anularán la prueba y suspenderán mi matrícula'. Tipifique este juicio según Kohlberg:""",
+    text:
+        r"""Un estudiante universitario rinde un examen parcial sin intentar copiar las respuestas del compañero de al lado. Al ser consultado por qué no copió, responde: 'Si copio y el profesor me detecta, me anularán la prueba y suspenderán mi matrícula'. Tipifique este juicio según Kohlberg:""",
     options: [
       r'''Razonamiento moral preconvencional (etapa de orientación al castigo y la obediencia).''',
       r'''Razonamiento moral convencional (etapa de mantenimiento del orden social).''',
@@ -3320,12 +3820,14 @@ final List<Question> pfrhQuestions = [
       r'''Autonomía moral fundamentada en la minimización del esfuerzo intelectual.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estudiante se abstiene de realizar una conducta deshonesta (copiar) solo por miedo a la sanción administrativa (anulación de examen y suspensión). No reflexiona sobre la ética académica de la honestidad.''',
+    explanation:
+        r'''El estudiante se abstiene de realizar una conducta deshonesta (copiar) solo por miedo a la sanción administrativa (anulación de examen y suspensión). No reflexiona sobre la ética académica de la honestidad.''',
   ),
   Question(
     id: 'pfrh_q334',
     topicId: 'pfrh_t3',
-    text: r"""Una ciudadana maneja respetando rigurosamente los límites de velocidad permitidos en las zonas escolares del distrito. Cuando le preguntan el motivo, señala: 'El límite vial se ha establecido para proteger la integridad física de los escolares; sin reglas ordenadas de tránsito, la convivencia social colapsaría'. ¿Bajo qué nivel de razonamiento moral opera?""",
+    text:
+        r"""Una ciudadana maneja respetando rigurosamente los límites de velocidad permitidos en las zonas escolares del distrito. Cuando le preguntan el motivo, señala: 'El límite vial se ha establecido para proteger la integridad física de los escolares; sin reglas ordenadas de tránsito, la convivencia social colapsaría'. ¿Bajo qué nivel de razonamiento moral opera?""",
     options: [
       r'''Nivel convencional, porque el sujeto busca mantener el orden social y respeta la ley valorando su utilidad para la coexistencia de la sociedad.''',
       r'''Nivel preconvencional, ya que la conductora busca exclusivamente evitar que un policía de tránsito la multe.''',
@@ -3333,12 +3835,14 @@ final List<Question> pfrhQuestions = [
       r'''Moralidad utilitarista basada en el sesgo de impunidad individual y beneficio personal.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El razonamiento convencional (etapa 4 de Kohlberg) se orienta a preservar las instituciones y el orden social global. La persona comprende el propósito de las leyes de tránsito y las acata para proteger la vida colectiva.''',
+    explanation:
+        r'''El razonamiento convencional (etapa 4 de Kohlberg) se orienta a preservar las instituciones y el orden social global. La persona comprende el propósito de las leyes de tránsito y las acata para proteger la vida colectiva.''',
   ),
   Question(
     id: 'pfrh_q335',
     topicId: 'pfrh_t3',
-    text: r'''Un niño de 7 años insiste en que su hermano es muy malo y merece un castigo severo porque rompió accidentalmente un televisor nuevo mientras limpiaba el polvo, pero sostiene que un niño que robó un dulce de la cocina no merece castigo porque el dulce era pequeño. ¿Qué etapa moral de Piaget se evidencia?''',
+    text:
+        r'''Un niño de 7 años insiste en que su hermano es muy malo y merece un castigo severo porque rompió accidentalmente un televisor nuevo mientras limpiaba el polvo, pero sostiene que un niño que robó un dulce de la cocina no merece castigo porque el dulce era pequeño. ¿Qué etapa moral de Piaget se evidencia?''',
     options: [
       r'''Heteronomía moral (realismo moral), donde la gravedad del acto se juzga por la magnitud del daño físico sin evaluar las intenciones.''',
       r'''Autonomía moral (moral de cooperación), puesto que prioriza la intención subjetiva de los actores del dilema familiar.''',
@@ -3346,12 +3850,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad justificada derivada de la interiorización del código civil penal de menores.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El realismo moral o heteronomía juzga la acción con base en el daño material resultante (televisor roto versus un simple dulce), ignorando que el primero fue un accidente cooperativo y el segundo fue un hurto intencional.''',
+    explanation:
+        r'''El realismo moral o heteronomía juzga la acción con base en el daño material resultante (televisor roto versus un simple dulce), ignorando que el primero fue un accidente cooperativo y el segundo fue un hurto intencional.''',
   ),
   Question(
     id: 'pfrh_q336',
     topicId: 'pfrh_t3',
-    text: r'''Una ordenanza municipal prohíbe ruidos molestos después de las 11:00 p.m. en un distrito urbano. Si un vecino realiza una fiesta a alto volumen pasada la medianoche, ¿qué tipo de norma está quebrantando y qué atributos constitucionales posee esta norma?''',
+    text:
+        r'''Una ordenanza municipal prohíbe ruidos molestos después de las 11:00 p.m. en un distrito urbano. Si un vecino realiza una fiesta a alto volumen pasada la medianoche, ¿qué tipo de norma está quebrantando y qué atributos constitucionales posee esta norma?''',
     options: [
       r'''Una norma jurídica; es de carácter heterónomo, bilateral, externo y coercible.''',
       r'''Una norma moral; es de carácter autónomo, unilateral, interno e incoercible.''',
@@ -3359,12 +3865,14 @@ final List<Question> pfrhQuestions = [
       r'''Una norma de etiqueta cívica; es unilateral, interna, autónoma y coercible.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las ordenanzas municipales son normas jurídicas válidas del Estado peruano. Sus atributos son la heteronomía (impuesta por el municipio), bilateralidad (el vecino tiene derecho al silencio del otro), exterioridad (se castiga el ruido audible) y coercibilidad (intervención del serenazgo y multa).''',
+    explanation:
+        r'''Las ordenanzas municipales son normas jurídicas válidas del Estado peruano. Sus atributos son la heteronomía (impuesta por el municipio), bilateralidad (el vecino tiene derecho al silencio del otro), exterioridad (se castiga el ruido audible) y coercibilidad (intervención del serenazgo y multa).''',
   ),
   Question(
     id: 'pfrh_q337',
     topicId: 'pfrh_t3',
-    text: r'''Identifique cuál de los siguientes supuestos define y diferencia correctamente la coercibilidad de la incoercibilidad en las normas de convivencia peruana:''',
+    text:
+        r'''Identifique cuál de los siguientes supuestos define y diferencia correctamente la coercibilidad de la incoercibilidad en las normas de convivencia peruana:''',
     options: [
       r'''La coercibilidad implica la posibilidad del uso de la fuerza pública estatal; la incoercibilidad descarta cualquier coacción física externa.''',
       r'''La coercibilidad es exclusiva de las normas morales familiares; la incoercibilidad define al Código Penal del Perú.''',
@@ -3372,12 +3880,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambas propiedades se refieren al cobro forzado de tributos escolares por parte de las juntas directivas de padres de familia.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coercibilidad permite el uso legítimo de la fuerza estatal para forzar el cumplimiento normativo. La incoercibilidad (propia de normas morales y sociales) significa que la conducta no puede imponerse por la fuerza policial o judicial.''',
+    explanation:
+        r'''La coercibilidad permite el uso legítimo de la fuerza estatal para forzar el cumplimiento normativo. La incoercibilidad (propia de normas morales y sociales) significa que la conducta no puede imponerse por la fuerza policial o judicial.''',
   ),
   Question(
     id: 'pfrh_q338',
     topicId: 'pfrh_t3',
-    text: r'''Determine la correspondencia entre los símbolos patrios oficiales del Perú y su marco regulatorio nacional:''',
+    text:
+        r'''Determine la correspondencia entre los símbolos patrios oficiales del Perú y su marco regulatorio nacional:''',
     options: [
       r'''Están declarados taxativamente en la Constitución y su ultraje o menosprecio público constituye un delito sancionado por el Código Penal peruano.''',
       r'''Son de uso libre e informal, pudiendo modificarse sus colores y figuras según el criterio estético de cada institución escolar.''',
@@ -3385,12 +3895,14 @@ final List<Question> pfrhQuestions = [
       r'''Están subordinados legalmente a las normas de uso de los distintivos tradicionales como la escarapela y el escudo de armas local.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los símbolos patrios oficiales tienen protección jurídica en el Perú. El artículo 344 del Código Penal tipifica como delito el ultraje público a los símbolos patrios, reflejando el carácter coercible y bilateral de la norma jurídica que los ampara.''',
+    explanation:
+        r'''Los símbolos patrios oficiales tienen protección jurídica en el Perú. El artículo 344 del Código Penal tipifica como delito el ultraje público a los símbolos patrios, reflejando el carácter coercible y bilateral de la norma jurídica que los ampara.''',
   ),
   Question(
     id: 'pfrh_q339',
     topicId: 'pfrh_t3',
-    text: r'''El Escudo de la Patria peruana exhibe tres campos que representan los recursos naturales de los reinos del país. Identifique la asociación correcta entre el campo del escudo y su recurso:''',
+    text:
+        r'''El Escudo de la Patria peruana exhibe tres campos que representan los recursos naturales de los reinos del país. Identifique la asociación correcta entre el campo del escudo y su recurso:''',
     options: [
       r'''Fondo azul con una vicuña (reino animal), fondo blanco con un árbol de la quina (reino vegetal) y fondo rojo con una cornucopia derramando monedas (reino mineral).''',
       r'''Fondo rojo con una llama (reino animal), fondo verde con una planta de coca (reino vegetal) y fondo amarillo con un lingote de oro (reino mineral).''',
@@ -3398,12 +3910,14 @@ final List<Question> pfrhQuestions = [
       r'''Fondo blanco con un jaguar (reino animal), fondo celeste con una flor de cantuta (reino vegetal) y fondo rojo con una mina de plata (reino mineral).''',
     ],
     correctAnswer: 0,
-    explanation: r'''La vicuña (sobre fondo azul), el árbol de la quina (sobre fondo blanco) y la cornucopia derramando monedas de oro (sobre fondo rojo) representan los tres reinos de la naturaleza peruana (animal, vegetal y mineral).''',
+    explanation:
+        r'''La vicuña (sobre fondo azul), el árbol de la quina (sobre fondo blanco) y la cornucopia derramando monedas de oro (sobre fondo rojo) representan los tres reinos de la naturaleza peruana (animal, vegetal y mineral).''',
   ),
   Question(
     id: 'pfrh_q340',
     topicId: 'pfrh_t3',
-    text: r"""Un ciudadano no asiste a votar en las elecciones generales en el Perú y argumenta: 'La política me aburre y no me siento representado, por lo que decido no participar'. De acuerdo con la normatividad del Estado peruano, su decisión constituye:""",
+    text:
+        r"""Un ciudadano no asiste a votar en las elecciones generales en el Perú y argumenta: 'La política me aburre y no me siento representado, por lo que decido no participar'. De acuerdo con la normatividad del Estado peruano, su decisión constituye:""",
     options: [
       r'''Una infracción a una norma jurídica bilateral y obligatoria, sujeta a una multa pecuniaria establecida por ley.''',
       r'''Un acto de estricta autonomía moral que exime legalmente al ciudadano de cualquier sanción pecuniaria municipal.''',
@@ -3411,12 +3925,14 @@ final List<Question> pfrhQuestions = [
       r'''Un derecho constitucional protegido que impide al Estado aplicar multas o restricciones de trámites bancarios.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El voto en el Perú es obligatorio para todos los ciudadanos aptos (hasta los 70 años). Esta es una norma jurídica coercible y bilateral; la omisión genera una multa oficial que restringe trámites notariales o bancarios si no se paga.''',
+    explanation:
+        r'''El voto en el Perú es obligatorio para todos los ciudadanos aptos (hasta los 70 años). Esta es una norma jurídica coercible y bilateral; la omisión genera una multa oficial que restringe trámites notariales o bancarios si no se paga.''',
   ),
   Question(
     id: 'pfrh_q341',
     topicId: 'pfrh_t3',
-    text: r'''En una empresa textil, el empleador abona puntualmente los salarios de sus trabajadores al fin de mes no por generosidad personal, sino porque existe un contrato de trabajo firmado y leyes laborales vigentes que le obligan a hacerlo bajo pena de sanción de la SUNAFIL. ¿Qué atributo de la norma jurídica se destaca?''',
+    text:
+        r'''En una empresa textil, el empleador abona puntualmente los salarios de sus trabajadores al fin de mes no por generosidad personal, sino porque existe un contrato de trabajo firmado y leyes laborales vigentes que le obligan a hacerlo bajo pena de sanción de la SUNAFIL. ¿Qué atributo de la norma jurídica se destaca?''',
     options: [
       r'''La bilateralidad de la norma jurídica, puesto que otorga a los trabajadores la facultad legal de exigir judicialmente el cobro de sus salarios.''',
       r'''La unilateralidad de las normas de trato social, las cuales limitan los derechos patrimoniales de las juntas directivas.''',
@@ -3424,12 +3940,14 @@ final List<Question> pfrhQuestions = [
       r'''La incoercibilidad del contrato laboral privado frente a las facultades reguladoras de la municipalidad distrital.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La bilateralidad de la norma jurídica laboral faculta a los empleados a demandar el pago ante el empleador. Si éste se niega, se activan los mecanismos coercitivos del Estado para forzar el pago.''',
+    explanation:
+        r'''La bilateralidad de la norma jurídica laboral faculta a los empleados a demandar el pago ante el empleador. Si éste se niega, se activan los mecanismos coercitivos del Estado para forzar el pago.''',
   ),
   Question(
     id: 'pfrh_q342',
     topicId: 'pfrh_t3',
-    text: r"""Lawrence Kohlberg describe el nivel 'posconvencional' del desarrollo moral como aquel donde las personas razonan basándose en principios éticos autoescogidos y universales de justicia. ¿Cuál de los siguientes es un ejemplo de este nivel?""",
+    text:
+        r"""Lawrence Kohlberg describe el nivel 'posconvencional' del desarrollo moral como aquel donde las personas razonan basándose en principios éticos autoescogidos y universales de justicia. ¿Cuál de los siguientes es un ejemplo de este nivel?""",
     options: [
       r'''Una persona se une a una protesta cívica pacífica en defensa de los derechos territoriales de una comunidad nativa, aun sabiendo que hay leyes locales que favorecen a la empresa extractiva y que podría ser detenida.''',
       r'''Un vecino limpia el frontis de su vivienda únicamente para recibir un descuento tributario cívico prometido por el alcalde del distrito.''',
@@ -3437,12 +3955,14 @@ final List<Question> pfrhQuestions = [
       r'''Un ciudadano entona el himno patrio con fuerza en una plaza pública para ganarse los aplausos y la admiración de los transeúntes del lugar.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En el nivel posconvencional (etapa de principios universales), el individuo orienta sus actos a principios de justicia humana y derechos que considera moralmente prioritarios sobre leyes positivas escritas que considere injustas.''',
+    explanation:
+        r'''En el nivel posconvencional (etapa de principios universales), el individuo orienta sus actos a principios de justicia humana y derechos que considera moralmente prioritarios sobre leyes positivas escritas que considere injustas.''',
   ),
   Question(
     id: 'pfrh_q343',
     topicId: 'pfrh_t3',
-    text: r'''Andrea, una estudiante de quinto de secundaria, descubre que su mejor amiga, con quien comparte pupitre, tiene las respuestas de la prueba bimestral anotadas en su celular. Aunque teme que la delación destruya una amistad de años, Andrea decide conversar seriamente con su amiga y convencerla de apagar el celular y dar la prueba con honestidad, explicándole que el engaño perjudica el esfuerzo de todo el salón. Si su amiga se niega, Andrea planea alertar al profesor. ¿Qué desarrollo ético y distractor se evidencian en la postura de Andrea?''',
+    text:
+        r'''Andrea, una estudiante de quinto de secundaria, descubre que su mejor amiga, con quien comparte pupitre, tiene las respuestas de la prueba bimestral anotadas en su celular. Aunque teme que la delación destruya una amistad de años, Andrea decide conversar seriamente con su amiga y convencerla de apagar el celular y dar la prueba con honestidad, explicándole que el engaño perjudica el esfuerzo de todo el salón. Si su amiga se niega, Andrea planea alertar al profesor. ¿Qué desarrollo ético y distractor se evidencian en la postura de Andrea?''',
     options: [
       r"""Autonomía moral orientada a la justicia colectiva; supera la 'Solidaridad Cómplice' y la presión del grupo de pares.""",
       r"""Heteronomía moral severa; muestra 'Agresividad Justificada' motivada por el rencor personal hacia su amiga de carpeta.""",
@@ -3450,12 +3970,14 @@ final List<Question> pfrhQuestions = [
       r"""Anomia moral escolar; evidencia 'Sentido Común no Legal' al desacatar las normas implícitas de lealtad entre compañeros.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Andrea demuestra autonomía moral: prioriza los principios universales de justicia, honestidad e igualdad para sus compañeros sobre el interés corporativo o afectivo de encubrir el fraude. Supera el distractor de la 'Solidaridad Cómplice' (lealtad ciega al cómplice).""",
+    explanation:
+        r"""Andrea demuestra autonomía moral: prioriza los principios universales de justicia, honestidad e igualdad para sus compañeros sobre el interés corporativo o afectivo de encubrir el fraude. Supera el distractor de la 'Solidaridad Cómplice' (lealtad ciega al cómplice).""",
   ),
   Question(
     id: 'pfrh_q344',
     topicId: 'pfrh_t3',
-    text: r"""Roberto viaja parado en el metro de Lima. En la estación siguiente sube un anciano que avanza con dificultad apoyado en un bastón. Roberto, cansado tras una jornada de trabajo, nota que ningún otro pasajero le ofrece el asiento al anciano y que tampoco están sentados en el área señalizada como 'asiento reservado'. Roberto piensa: 'Es una pena que nadie le dé el asiento, pero yo tampoco tengo la obligación legal de pararme puesto que no ocupo el asiento reservado por ley'. ¿Qué conflicto normativo y qué distractor psicológico se aprecian en el razonamiento de Roberto?""",
+    text:
+        r"""Roberto viaja parado en el metro de Lima. En la estación siguiente sube un anciano que avanza con dificultad apoyado en un bastón. Roberto, cansado tras una jornada de trabajo, nota que ningún otro pasajero le ofrece el asiento al anciano y que tampoco están sentados en el área señalizada como 'asiento reservado'. Roberto piensa: 'Es una pena que nadie le dé el asiento, pero yo tampoco tengo la obligación legal de pararme puesto que no ocupo el asiento reservado por ley'. ¿Qué conflicto normativo y qué distractor psicológico se aprecian en el razonamiento de Roberto?""",
     options: [
       r"""Conflicto entre una norma moral de cortesía (solidaridad) y el cumplimiento estricto de la norma jurídica; Roberto cae en el distractor de 'Sentido Común no Legal' para autojustificar su pasividad cívica.""",
       r"""Conflicto entre normas jurídicas de idéntica jerarquía; Roberto actúa con 'Agresividad Justificada' al defender sus derechos laborales.""",
@@ -3463,12 +3985,14 @@ final List<Question> pfrhQuestions = [
       r"""Predominio absoluto de la heteronomía del Estado; Roberto cae en la 'Minimización Emocional' porque el anciano no le exigió el asiento a gritos.""",
     ],
     correctAnswer: 0,
-    explanation: r"""El caso muestra la tensión entre la norma moral de solidaridad y empatía (dar el asiento a quien lo necesita) y la norma jurídica que solo obliga a ceder el asiento en el área roja reservada. Roberto se ampara en la literalidad jurídica ('no es mi asiento reservado') mediante el autoengaño de que lo no prohibido u obligatorio por ley exime de responsabilidad moral (Sentido Común no Legal).""",
+    explanation:
+        r"""El caso muestra la tensión entre la norma moral de solidaridad y empatía (dar el asiento a quien lo necesita) y la norma jurídica que solo obliga a ceder el asiento en el área roja reservada. Roberto se ampara en la literalidad jurídica ('no es mi asiento reservado') mediante el autoengaño de que lo no prohibido u obligatorio por ley exime de responsabilidad moral (Sentido Común no Legal).""",
   ),
   Question(
     id: 'pfrh_q345',
     topicId: 'pfrh_t3',
-    text: r"""Durante una asamblea vecinal, Carlos propone imponer una multa económica de 50 soles a todos los propietarios que no coloquen la escarapela nacional en sus balcones durante las Fiestas Patrias de julio, alegando que es un 'símbolo patrio constitucional obligatorio'. Mariana interviene explicándole que la escarapela no es un símbolo de la Patria según el artículo 49 de la Constitución y que no se puede multar a un ciudadano por no usarla. ¿Quién tiene la razón legal y qué distractor psicológico se identifica en Carlos?""",
+    text:
+        r"""Durante una asamblea vecinal, Carlos propone imponer una multa económica de 50 soles a todos los propietarios que no coloquen la escarapela nacional en sus balcones durante las Fiestas Patrias de julio, alegando que es un 'símbolo patrio constitucional obligatorio'. Mariana interviene explicándole que la escarapela no es un símbolo de la Patria según el artículo 49 de la Constitución y que no se puede multar a un ciudadano por no usarla. ¿Quién tiene la razón legal y qué distractor psicológico se identifica en Carlos?""",
     options: [
       r"""Mariana tiene la razón legal; Carlos manifiesta el distractor de 'Deber Cívico Malentendido', confundiendo un distintivo cívico tradicional con un símbolo oficial amparado por leyes estatales.""",
       r"""Carlos tiene la razón legal; Mariana muestra 'Minimización Emocional' al restarle valor a las normas jurídicas del Congreso de la República.""",
@@ -3476,12 +4000,14 @@ final List<Question> pfrhQuestions = [
       r'''Carlos tiene la razón legal; el uso de distintivos militares como la escarapela es obligatorio para todos los predios urbanos según el Código Penal.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Mariana tiene la razón legal: la escarapela no es un símbolo patrio oficial constitucional. Carlos incurre en 'Deber Cívico Malentendido', al pretender forzar mediante sanciones pecuniarias y coercitivas el uso de un distintivo tradicional de carácter netamente cívico y voluntario.""",
+    explanation:
+        r"""Mariana tiene la razón legal: la escarapela no es un símbolo patrio oficial constitucional. Carlos incurre en 'Deber Cívico Malentendido', al pretender forzar mediante sanciones pecuniarias y coercitivas el uso de un distintivo tradicional de carácter netamente cívico y voluntario.""",
   ),
   Question(
     id: 'pfrh_q346',
     topicId: 'pfrh_t3',
-    text: r'''Sergio insulta gravemente a su vecino Julián durante una acalorada discusión vecinal por el espacio de parqueo de bicicletas. Al día siguiente, Sergio reflexiona en la tranquilidad de su casa, siente vergüenza e incomodidad interior por su falta de control y decide ir a la vivienda de Julián a pedirle disculpas sinceras a solas. Julián acepta las disculpas. En este caso, ¿qué tipo de norma impulsó la rectificación de Sergio y qué distractor fue superado?''',
+    text:
+        r'''Sergio insulta gravemente a su vecino Julián durante una acalorada discusión vecinal por el espacio de parqueo de bicicletas. Al día siguiente, Sergio reflexiona en la tranquilidad de su casa, siente vergüenza e incomodidad interior por su falta de control y decide ir a la vivienda de Julián a pedirle disculpas sinceras a solas. Julián acepta las disculpas. En este caso, ¿qué tipo de norma impulsó la rectificación de Sergio y qué distractor fue superado?''',
     options: [
       r"""La norma moral interna e incoercible impulsó la disculpa; Sergio superó el distractor de la 'Agresividad Justificada' (el pensar que su insulto era correcto porque el vecino ocupó su espacio).""",
       r'''La norma jurídica coercible motivó la rectificación; Sergio evitó una demanda penal por injuria grave con sanción carcelaria.''',
@@ -3489,12 +4015,14 @@ final List<Question> pfrhQuestions = [
       r"""La heteronomía moral escolar guió su decisión; Sergio superó la 'Solidaridad Cómplice' de sus amigos del barrio.""",
     ],
     correctAnswer: 0,
-    explanation: r"""La disculpa voluntaria nace de la norma moral interna de Sergio (su propia conciencia y remordimiento). Supera el distractor de la 'Agresividad Justificada', es decir, la tendencia psicológica de creer que la violencia verbal es legítima si el otro cometió una falta previa.""",
+    explanation:
+        r"""La disculpa voluntaria nace de la norma moral interna de Sergio (su propia conciencia y remordimiento). Supera el distractor de la 'Agresividad Justificada', es decir, la tendencia psicológica de creer que la violencia verbal es legítima si el otro cometió una falta previa.""",
   ),
   Question(
     id: 'pfrh_q347',
     topicId: 'pfrh_t3',
-    text: r'''Lucía, dueña de una pequeña bodega, nota que su balanza electrónica digital tiene un desperfecto de calibración que marca 50 gramos adicionales a su favor por cada kilogramo de arroz despachado. Ella sabe que ningún cliente se dará cuenta del mínimo error y que los inspectores de la municipalidad no fiscalizan ese sector. Sin embargo, decide llamar a un técnico para reparar la balanza de inmediato. ¿Qué dimensión de su identidad moral se destaca y qué distractor psicológico rechaza Lucía?''',
+    text:
+        r'''Lucía, dueña de una pequeña bodega, nota que su balanza electrónica digital tiene un desperfecto de calibración que marca 50 gramos adicionales a su favor por cada kilogramo de arroz despachado. Ella sabe que ningún cliente se dará cuenta del mínimo error y que los inspectores de la municipalidad no fiscalizan ese sector. Sin embargo, decide llamar a un técnico para reparar la balanza de inmediato. ¿Qué dimensión de su identidad moral se destaca y qué distractor psicológico rechaza Lucía?''',
     options: [
       r"""Identidad moral autónoma; rechaza la 'Racionalización del Beneficio' (minimizar un engaño pequeño porque los demás no lo notan y el lucro es provechoso).""",
       r'''Identidad colectiva heterónoma; se somete al castigo legal de la municipalidad del distrito para evitar ir a prisión.''',
@@ -3502,12 +4030,14 @@ final List<Question> pfrhQuestions = [
       r'''Etiqueta de trato social; evita el chisme vecinal que arruinaría su prestigio de etiqueta formal en el mercado.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Lucía demuestra autonomía e identidad moral al actuar de forma correcta por autorrespeto y ética, rechazando la 'Racionalización del Beneficio' (o autojustificación para cometer una pequeña falta ética para lucrar alegando insignificancia o falta de control).""",
+    explanation:
+        r"""Lucía demuestra autonomía e identidad moral al actuar de forma correcta por autorrespeto y ética, rechazando la 'Racionalización del Beneficio' (o autojustificación para cometer una pequeña falta ética para lucrar alegando insignificancia o falta de control).""",
   ),
   Question(
     id: 'pfrh_q348',
     topicId: 'pfrh_t3',
-    text: r"""Durante una crisis de salud pública, la municipalidad distrital impone el uso de mascarillas en locales comerciales cerrados. El dueño de una tienda pequeña se niega a usarla dentro de su local, argumentando: 'Mi tienda es mi propiedad privada, yo compré el inmueble con mi dinero y nadie, ni el alcalde, puede decirme cómo vestirme aquí adentro'. ¿Qué colisión normativa se evidencia en este argumento y qué distractor psicológico comete el dueño?""",
+    text:
+        r"""Durante una crisis de salud pública, la municipalidad distrital impone el uso de mascarillas en locales comerciales cerrados. El dueño de una tienda pequeña se niega a usarla dentro de su local, argumentando: 'Mi tienda es mi propiedad privada, yo compré el inmueble con mi dinero y nadie, ni el alcalde, puede decirme cómo vestirme aquí adentro'. ¿Qué colisión normativa se evidencia en este argumento y qué distractor psicológico comete el dueño?""",
     options: [
       r"""Colisión entre la norma jurídica colectiva de salud pública frente al interés de propiedad privada; el dueño comete el distractor de 'Sesgo de Impunidad Individual' al creer que el derecho de propiedad lo exime del orden legal sanitario.""",
       r"""Colisión entre convencionalismos de trato social mutuo; el dueño comete el distractor de 'Agresividad Justificada' al agredir físicamente al inspector de serenazgo.""",
@@ -3515,12 +4045,14 @@ final List<Question> pfrhQuestions = [
       r"""Supremacía de las normas de decoro vecinal; el dueño es víctima de 'Minimización Emocional' de sus derechos constitucionales de libre comercio.""",
     ],
     correctAnswer: 0,
-    explanation: r"""El derecho a la propiedad privada no está por encima de las leyes de orden público e interés sanitario del Estado. El dueño cae en el 'Sesgo de Impunidad Individual' al suponer erróneamente que los límites físicos de su propiedad anulan la soberanía de las normas jurídicas dictadas por la autoridad de salud.""",
+    explanation:
+        r"""El derecho a la propiedad privada no está por encima de las leyes de orden público e interés sanitario del Estado. El dueño cae en el 'Sesgo de Impunidad Individual' al suponer erróneamente que los límites físicos de su propiedad anulan la soberanía de las normas jurídicas dictadas por la autoridad de salud.""",
   ),
   Question(
     id: 'pfrh_q349',
     topicId: 'pfrh_t3',
-    text: r"""En una sala de cine, Julián, de 19 años, mantiene una conversación telefónica en voz alta y ríe ruidosamente durante la proyección de una película dramática. Los espectadores de las filas contiguas le reclaman silencio en reiteradas oportunidades. Julián responde en tono desafiante: 'La Constitución peruana garantiza la libertad de expresión y de hablar libremente en cualquier lugar público. Si no les gusta el ruido, tápense los oídos'. ¿Qué distorsión conceptual de normas y qué distractor psicológico se evidencian en la reacción de Julián?""",
+    text:
+        r"""En una sala de cine, Julián, de 19 años, mantiene una conversación telefónica en voz alta y ríe ruidosamente durante la proyección de una película dramática. Los espectadores de las filas contiguas le reclaman silencio en reiteradas oportunidades. Julián responde en tono desafiante: 'La Constitución peruana garantiza la libertad de expresión y de hablar libremente en cualquier lugar público. Si no les gusta el ruido, tápense los oídos'. ¿Qué distorsión conceptual de normas y qué distractor psicológico se evidencian en la reacción de Julián?""",
     options: [
       r"""Confunde una norma jurídica de libertad fundamental con el respeto obligatorio a las normas de trato social y convivencia común; manifiesta el distractor de 'Sentido Común no Legal' al desnaturalizar un derecho constitucional para amparar su mala educación.""",
       r"""Aplica correctamente su autonomía moral posconvencional; supera el distractor de la 'Solidaridad Cómplice' de los demás espectadores.""",
@@ -3528,12 +4060,14 @@ final List<Question> pfrhQuestions = [
       r"""Cumple rigurosamente las normas de etiqueta social; manifiesta la 'Minimización Emocional' frente al llanto de los personajes de la pantalla.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Julián malinterpreta un principio constitucional (libertad de expresión) para justificar la transgresión de convencionalismos de decoro y convivencia colectiva en el cine. Su defensa es un ejemplo de 'Sentido Común no Legal' (o 'Rábula cívico'), pretendiendo que el amparo jurídico del derecho a la comunicación ampare su descortesía social.""",
+    explanation:
+        r"""Julián malinterpreta un principio constitucional (libertad de expresión) para justificar la transgresión de convencionalismos de decoro y convivencia colectiva en el cine. Su defensa es un ejemplo de 'Sentido Común no Legal' (o 'Rábula cívico'), pretendiendo que el amparo jurídico del derecho a la comunicación ampare su descortesía social.""",
   ),
   Question(
     id: 'pfrh_q350',
     topicId: 'pfrh_t3',
-    text: r"""Camila quiere incorporarse a un grupo de amigas de su salón de clases. Sin embargo, la líder del grupo le pone como condición para entrar que ignore, se burle e impida sentarse en su mesa a una alumna nueva del salón por considerarla 'rara'. Camila, a pesar de su gran deseo de integrarse y no quedarse sola en los recreos, decide rechazar la propuesta del grupo y prefiere sentarse con la alumna nueva. ¿Qué logro en su identidad demuestra Camila y qué distractor psicológico de grupo logra superar?""",
+    text:
+        r"""Camila quiere incorporarse a un grupo de amigas de su salón de clases. Sin embargo, la líder del grupo le pone como condición para entrar que ignore, se burle e impida sentarse en su mesa a una alumna nueva del salón por considerarla 'rara'. Camila, a pesar de su gran deseo de integrarse y no quedarse sola en los recreos, decide rechazar la propuesta del grupo y prefiere sentarse con la alumna nueva. ¿Qué logro en su identidad demuestra Camila y qué distractor psicológico de grupo logra superar?""",
     options: [
       r"""Demuestra autonomía moral basada en la dignidad de la persona; supera el distractor de la 'Presión Grupal Aceptada' (someter los valores individuales al deseo de pertenencia).""",
       r"""Demuestra heteronomía moral rígida; supera la 'Agresividad Justificada' porque prefiere castigar físicamente a la líder del grupo escolar.""",
@@ -3541,12 +4075,14 @@ final List<Question> pfrhQuestions = [
       r"""Demuestra sumisión a los convencionalismos de trato social; supera la 'Solidaridad Cómplice' con la tutora del aula.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Camila muestra una sólida identidad personal y autonomía moral al negarse a realizar un acto injusto (bullying/exclusión) por conveniencia personal (entrar al grupo). Supera la 'Presión Grupal Aceptada' que empuja a los adolescentes a violar sus principios con tal de no ser aislados.""",
+    explanation:
+        r"""Camila muestra una sólida identidad personal y autonomía moral al negarse a realizar un acto injusto (bullying/exclusión) por conveniencia personal (entrar al grupo). Supera la 'Presión Grupal Aceptada' que empuja a los adolescentes a violar sus principios con tal de no ser aislados.""",
   ),
   Question(
     id: 'pfrh_q351',
     topicId: 'pfrh_t3',
-    text: r"""Don José, dueño de un puesto de golosinas, recibe por error un billete de 50 soles falso de parte de un comprador apresurado. Al percatarse del engaño, su hijo adolescente le aconseja: 'Papá, espérate a que oscurezca y dáselo de vuelto a algún vecino distraído para que no pierdas esa plata, total, a ti te engañaron primero'. Don José rechaza el consejo del hijo y rompe el billete frente a él. ¿Qué razonamiento moral y qué distractor psicológico se ilustran en esta casuística?""",
+    text:
+        r"""Don José, dueño de un puesto de golosinas, recibe por error un billete de 50 soles falso de parte de un comprador apresurado. Al percatarse del engaño, su hijo adolescente le aconseja: 'Papá, espérate a que oscurezca y dáselo de vuelto a algún vecino distraído para que no pierdas esa plata, total, a ti te engañaron primero'. Don José rechaza el consejo del hijo y rompe el billete frente a él. ¿Qué razonamiento moral y qué distractor psicológico se ilustran en esta casuística?""",
     options: [
       r"""Don José actúa bajo autonomía moral; rechaza el distractor de 'Sesgo de Reciprocidad Vengativa' (justificar una acción deshonesta alegando haber sido víctima de la misma conducta previamente).""",
       r"""El hijo actúa bajo moralidad posconvencional; rechaza el distractor de 'Solidaridad Cómplice' con las familias vulnerables de la localidad.""",
@@ -3554,12 +4090,14 @@ final List<Question> pfrhQuestions = [
       r"""El hijo actúa bajo realismo moral de Piaget; rechaza la 'Minimización Emocional' al llorar por el billete destruido.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Don José aplica sus convicciones éticas de no dañar a terceros inocentes con dinero falso. Rechaza el 'Sesgo de Reciprocidad Vengativa' (o 'Racionalización del desquite'), que es la tendencia de autojustificar el engaño diciendo 'si me estafaron a mí, yo tengo derecho a estafar a otro para recuperar mi dinero'.""",
+    explanation:
+        r"""Don José aplica sus convicciones éticas de no dañar a terceros inocentes con dinero falso. Rechaza el 'Sesgo de Reciprocidad Vengativa' (o 'Racionalización del desquite'), que es la tendencia de autojustificar el engaño diciendo 'si me estafaron a mí, yo tengo derecho a estafar a otro para recuperar mi dinero'.""",
   ),
   Question(
     id: 'pfrh_q352',
     topicId: 'pfrh_t3',
-    text: r"""Los vecinos de una calle deciden instalar maceteros gigantes de concreto a mitad de la calzada pública para bloquear el tránsito vehicular de extraños, alegando motivos de seguridad. La municipalidad les notifica que deben retirarlos de inmediato por obstruir la vía pública de libre tránsito nacional. Los vecinos se amotinan y argumentan que 'su seguridad vecinal vale más que cualquier reglamento municipal y que la calle les pertenece'. ¿Cómo se analiza este conflicto de normas y qué distractor cometen los vecinos?""",
+    text:
+        r"""Los vecinos de una calle deciden instalar maceteros gigantes de concreto a mitad de la calzada pública para bloquear el tránsito vehicular de extraños, alegando motivos de seguridad. La municipalidad les notifica que deben retirarlos de inmediato por obstruir la vía pública de libre tránsito nacional. Los vecinos se amotinan y argumentan que 'su seguridad vecinal vale más que cualquier reglamento municipal y que la calle les pertenece'. ¿Cómo se analiza este conflicto de normas y qué distractor cometen los vecinos?""",
     options: [
       r"""El derecho a la libre circulación (norma jurídica estatal) prima sobre el acuerdo informal de seguridad privada vecinal; los vecinos cometen el distractor de 'Autotutela Ilícita Justificada' al usurpar atribuciones públicas.""",
       r"""El acuerdo de la junta de vecinos (norma de trato social) tiene mayor jerarquía jurídica que las ordenanzas viales del Estado peruano; los vecinos evitan la 'Minimización Emocional'.""",
@@ -3567,12 +4105,14 @@ final List<Question> pfrhQuestions = [
       r"""Existe un vacío constitucional absoluto respecto al libre tránsito en el país; los vecinos cometen un error de 'Deber Cívico Malentendido' sobre la escarapela.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Las calles públicas pertenecen a la nación y están sujetas a normas jurídicas estatales que garantizan la libre circulación (Constitución, Ley Orgánica de Municipalidades). Los vecinos caen en la 'Autotutela Ilícita Justificada' (o 'Justicia por mano propia cívica'), creyendo erróneamente que una necesidad particular (seguridad) los autoriza a bloquear la vía pública violando la ley.""",
+    explanation:
+        r"""Las calles públicas pertenecen a la nación y están sujetas a normas jurídicas estatales que garantizan la libre circulación (Constitución, Ley Orgánica de Municipalidades). Los vecinos caen en la 'Autotutela Ilícita Justificada' (o 'Justicia por mano propia cívica'), creyendo erróneamente que una necesidad particular (seguridad) los autoriza a bloquear la vía pública violando la ley.""",
   ),
   Question(
     id: 'pfrh_q353',
     topicId: 'pfrh_t3',
-    text: r'''Sofía encuentra una laptop último modelo olvidada en un aula de la universidad durante la noche. Al ver que no hay nadie en los pasillos y que en esa aula específica no hay cámaras de vigilancia, Sofía decide recoger el equipo y llevarlo a la oficina de bienestar universitario para que ubiquen al estudiante que lo perdió. Al hacerlo, Sofía demuestra actuar bajo:''',
+    text:
+        r'''Sofía encuentra una laptop último modelo olvidada en un aula de la universidad durante la noche. Al ver que no hay nadie en los pasillos y que en esa aula específica no hay cámaras de vigilancia, Sofía decide recoger el equipo y llevarlo a la oficina de bienestar universitario para que ubiquen al estudiante que lo perdió. Al hacerlo, Sofía demuestra actuar bajo:''',
     options: [
       r'''Una sólida autonomía moral (razonamiento posconvencional), donde el respeto a la propiedad ajena y la honestidad se imponen por encima de la conveniencia personal y la falta de vigilancia.''',
       r'''Heteronomía social escolar, debido al temor de que la universidad le aplique una multa económica o la expulse del local.''',
@@ -3580,12 +4120,14 @@ final List<Question> pfrhQuestions = [
       r'''Una norma de trato social coercible que la obliga judicialmente a devolver objetos de valor bajo apercibimiento de arresto militar.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La conducta de Sofía es un claro ejemplo de autonomía moral. Devuelve el objeto por valores internos de justicia y empatía, sabiendo que no hay cámaras ni castigo externo posible si decidiera quedárselo. Supera la tentación del oportunismo situacional.''',
+    explanation:
+        r'''La conducta de Sofía es un claro ejemplo de autonomía moral. Devuelve el objeto por valores internos de justicia y empatía, sabiendo que no hay cámaras ni castigo externo posible si decidiera quedárselo. Supera la tentación del oportunismo situacional.''',
   ),
   Question(
     id: 'pfrh_q354',
     topicId: 'pfrh_t3',
-    text: r"""Un ciudadano se niega a pararse y cantar el Himno Nacional en una ceremonia vecinal, manifestando a viva voz: 'No cantaré el himno porque no estoy de acuerdo con el alcalde ni con los congresistas corruptos'. Un vecino le explica que el Himno representa a la patria y a la historia colectiva, no a los gobernantes de turno. ¿Qué error conceptual y qué distractor se identifican en la postura del ciudadano?""",
+    text:
+        r"""Un ciudadano se niega a pararse y cantar el Himno Nacional en una ceremonia vecinal, manifestando a viva voz: 'No cantaré el himno porque no estoy de acuerdo con el alcalde ni con los congresistas corruptos'. Un vecino le explica que el Himno representa a la patria y a la historia colectiva, no a los gobernantes de turno. ¿Qué error conceptual y qué distractor se identifican en la postura del ciudadano?""",
     options: [
       r"""Confunde la identidad nacional y el respeto a sus símbolos patrios oficiales con el desacuerdo político temporal hacia los gobernantes; manifiesta el distractor de 'Sesgo de Identificación Partidaria' que nubla su civismo.""",
       r'''Aplica una correcta autonomía moral posconvencional que anula los símbolos nacionales del artículo 49 de la Constitución.''',
@@ -3593,12 +4135,14 @@ final List<Question> pfrhQuestions = [
       r'''Muestra un acertado sentido común no legal que invalida la soberanía de la bandera nacional por decreto del municipio.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El ciudadano comete el error de asociar los símbolos patrios (que representan la historia, cultura y soberanía permanente de la nación peruana) con los gobernantes transitorios de turno. Su rechazo está sesgado por la identificación político-partidaria o coyuntural, perdiendo la perspectiva de los símbolos patrios como elementos unificadores cívicos de la nación.''',
+    explanation:
+        r'''El ciudadano comete el error de asociar los símbolos patrios (que representan la historia, cultura y soberanía permanente de la nación peruana) con los gobernantes transitorios de turno. Su rechazo está sesgado por la identificación político-partidaria o coyuntural, perdiendo la perspectiva de los símbolos patrios como elementos unificadores cívicos de la nación.''',
   ),
   Question(
     id: 'pfrh_q355',
     topicId: 'pfrh_t3',
-    text: r"""En la teoría de Lawrence Kohlberg, la etapa de 'orientación de concordancia interpersonal' (también conocida como del 'buen chico-buena chica') se caracteriza por:""",
+    text:
+        r"""En la teoría de Lawrence Kohlberg, la etapa de 'orientación de concordancia interpersonal' (también conocida como del 'buen chico-buena chica') se caracteriza por:""",
     options: [
       r'''Buscar la aprobación del entorno social inmediato, orientando las decisiones morales para complacer y ayudar a los demás.''',
       r'''Respetar las leyes de forma incondicional únicamente para evitar el caos y mantener el orden del Estado.''',
@@ -3606,12 +4150,14 @@ final List<Question> pfrhQuestions = [
       r'''Guiarse de manera autónoma por principios lógicos y universales de justicia humana abstracta.''',
     ],
     correctAnswer: 0,
-    explanation: r"""En la etapa 3 (nivel convencional), el comportamiento moral se define por las expectativas interpersonales. El sujeto busca la aceptación de su grupo cercano (familia, compañeros) actuando de acuerdo a lo que el grupo define como 'bueno'.""",
+    explanation:
+        r"""En la etapa 3 (nivel convencional), el comportamiento moral se define por las expectativas interpersonales. El sujeto busca la aceptación de su grupo cercano (familia, compañeros) actuando de acuerdo a lo que el grupo define como 'bueno'.""",
   ),
   Question(
     id: 'pfrh_q356',
     topicId: 'pfrh_t3',
-    text: r"""¿Qué implica la propiedad de la 'exterioridad' en el análisis de las normas jurídicas?""",
+    text:
+        r"""¿Qué implica la propiedad de la 'exterioridad' en el análisis de las normas jurídicas?""",
     options: [
       r'''Que el derecho regula principalmente la conducta externa y los actos observables del individuo, sin requerir la pureza o adhesión íntima de su conciencia.''',
       r'''Que la norma proviene de un territorio extranjero y se impone de manera violenta a los ciudadanos nacionales.''',
@@ -3619,12 +4165,14 @@ final List<Question> pfrhQuestions = [
       r'''Que el castigo consiste de forma obligatoria en la expulsión o destierro físico del infractor fuera del territorio nacional.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La exterioridad de la norma jurídica significa que el ordenamiento legal sanciona los actos consumados externamente. A diferencia de la moral, al derecho no le interesa si la persona cumple la ley con agrado o desagrado, sino que la cumpla físicamente.''',
+    explanation:
+        r'''La exterioridad de la norma jurídica significa que el ordenamiento legal sanciona los actos consumados externamente. A diferencia de la moral, al derecho no le interesa si la persona cumple la ley con agrado o desagrado, sino que la cumpla físicamente.''',
   ),
   Question(
     id: 'pfrh_q357',
     topicId: 'pfrh_t3',
-    text: r'''Con relación al Escudo de Armas del Perú, ¿cuál de las siguientes opciones describe correctamente su composición heráldica oficial?''',
+    text:
+        r'''Con relación al Escudo de Armas del Perú, ¿cuál de las siguientes opciones describe correctamente su composición heráldica oficial?''',
     options: [
       r'''Está timbrado por una corona cívica de encina y abrazado en sus laterales por una palma y una rama de laurel entrelazadas.''',
       r'''Lleva en su parte exterior una bandera nacional y un estandarte cruzados, timbrados por una corona de oro.''',
@@ -3632,12 +4180,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una representación artística bicolor que carece de campos internos y se usa exclusivamente en uniformes de la marina.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El Escudo de Armas del Perú (utilizado en monedas, billetes y documentos oficiales del Estado) lleva como timbre la corona cívica de encina y a sus lados una rama de palma y otra de laurel.''',
+    explanation:
+        r'''El Escudo de Armas del Perú (utilizado en monedas, billetes y documentos oficiales del Estado) lleva como timbre la corona cívica de encina y a sus lados una rama de palma y otra de laurel.''',
   ),
   Question(
     id: 'pfrh_q358',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es el simbolismo histórico y botánico del árbol de la quina representado en el Escudo del Perú?''',
+    text:
+        r'''¿Cuál es el simbolismo histórico y botánico del árbol de la quina representado en el Escudo del Perú?''',
     options: [
       r'''Representa la riqueza del reino vegetal y conmemora su valor curativo en la lucha histórica contra epidemias de malaria (paludismo).''',
       r'''Simboliza la soberanía alimentaria de las comunidades agrícolas y la domesticación de cultivos en los andes.''',
@@ -3645,12 +4195,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un árbol sagrado preincaico que simboliza la unidad de las religiones tradicionales de la Amazonía.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El árbol de la quina (Cinchona officinalis) figura en el escudo peruano como símbolo del reino vegetal, destacando también su trascendencia médica mundial por la extracción de la quinina para curar la malaria.''',
+    explanation:
+        r'''El árbol de la quina (Cinchona officinalis) figura en el escudo peruano como símbolo del reino vegetal, destacando también su trascendencia médica mundial por la extracción de la quinina para curar la malaria.''',
   ),
   Question(
     id: 'pfrh_q359',
     topicId: 'pfrh_t3',
-    text: r'''¿Qué diferencia conceptual define a la autonomía frente a la heteronomía en el desarrollo del juicio moral?''',
+    text:
+        r'''¿Qué diferencia conceptual define a la autonomía frente a la heteronomía en el desarrollo del juicio moral?''',
     options: [
       r'''La autonomía moral se basa en principios internos racionalizados; la heteronomía depende de mandatos impuestos por una autoridad exterior.''',
       r'''La autonomía es obligatoria ante el código penal; la heteronomía moral es opcional para los ciudadanos de las regiones rurales.''',
@@ -3658,12 +4210,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambas son idénticas en la práctica cívica y corresponden a la obediencia estricta de las directivas presidenciales.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La autonomía moral representa la autodeterminación del sujeto que actúa de acuerdo a su propia conciencia de justicia. La heteronomía implica someterse a reglas formuladas por otros (padres, leyes, dogmas) sin cuestionamiento crítico.''',
+    explanation:
+        r'''La autonomía moral representa la autodeterminación del sujeto que actúa de acuerdo a su propia conciencia de justicia. La heteronomía implica someterse a reglas formuladas por otros (padres, leyes, dogmas) sin cuestionamiento crítico.''',
   ),
   Question(
     id: 'pfrh_q360',
     topicId: 'pfrh_t3',
-    text: r"""Si se define que las normas morales son 'unilaterales' y las normas jurídicas son 'bilaterales', se entiende que:""",
+    text:
+        r"""Si se define que las normas morales son 'unilaterales' y las normas jurídicas son 'bilaterales', se entiende que:""",
     options: [
       r'''Las morales obligan al sujeto sin facultar a un tercero a exigir su cumplimiento; las jurídicas conceden a otros la facultad de exigir lo prescrito.''',
       r'''Las morales tienen validez en un solo hemisferio; las jurídicas rigen para dos o más repúblicas aliadas por tratados.''',
@@ -3671,12 +4225,14 @@ final List<Question> pfrhQuestions = [
       r'''Las morales regulan actos externos; las jurídicas regulan de forma exclusiva las intenciones internas del infractor.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La unilateralidad moral significa que la norma impone un deber de conciencia pero ningún tercero puede entablar una demanda legal ante un juez por su incumplimiento. La bilateralidad jurídica implica que los deberes de un sujeto son derechos exigibles de otro.''',
+    explanation:
+        r'''La unilateralidad moral significa que la norma impone un deber de conciencia pero ningún tercero puede entablar una demanda legal ante un juez por su incumplimiento. La bilateralidad jurídica implica que los deberes de un sujeto son derechos exigibles de otro.''',
   ),
   Question(
     id: 'pfrh_q361',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es el protocolo oficial y cívico respecto al uso de la escarapela en el Perú durante el mes de julio?''',
+    text:
+        r'''¿Cuál es el protocolo oficial y cívico respecto al uso de la escarapela en el Perú durante el mes de julio?''',
     options: [
       r'''Se porta prendida en el pecho, al lado izquierdo, como distintivo cívico voluntario que manifiesta fervor patriótico.''',
       r'''Debe izarse obligatoriamente en el asta principal de las plazas públicas al igual que el Pabellón Nacional.''',
@@ -3684,12 +4240,14 @@ final List<Question> pfrhQuestions = [
       r'''Se debe pintar de forma permanente en las fachadas de las viviendas para evitar multas del Ministerio de Cultura.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La escarapela se usa prendida en el pecho del lado izquierdo (cerca del corazón) como un distintivo cívico de identidad nacional. Es un uso tradicional voluntario y escolar, no un símbolo patrio de izamiento.''',
+    explanation:
+        r'''La escarapela se usa prendida en el pecho del lado izquierdo (cerca del corazón) como un distintivo cívico de identidad nacional. Es un uso tradicional voluntario y escolar, no un símbolo patrio de izamiento.''',
   ),
   Question(
     id: 'pfrh_q362',
     topicId: 'pfrh_t3',
-    text: r'''En psicología, la autovaloración del sujeto basada en el análisis y aceptación de sus virtudes y debilidades corresponde al proceso de:''',
+    text:
+        r'''En psicología, la autovaloración del sujeto basada en el análisis y aceptación de sus virtudes y debilidades corresponde al proceso de:''',
     options: [
       r'''Construcción de la autoestima e identidad personal.''',
       r'''Heteronomía moral impuesta por convencionalismos sociales.''',
@@ -3697,12 +4255,14 @@ final List<Question> pfrhQuestions = [
       r'''Mantenimiento del orden social preconvencional.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La autoestima y la identidad personal se desarrollan mediante el autoconcepto, que incluye la autovaloración (evaluación crítica del sujeto sobre sus capacidades y limitaciones) y la autoaceptación.''',
+    explanation:
+        r'''La autoestima y la identidad personal se desarrollan mediante el autoconcepto, que incluye la autovaloración (evaluación crítica del sujeto sobre sus capacidades y limitaciones) y la autoaceptación.''',
   ),
   Question(
     id: 'pfrh_q363',
     topicId: 'pfrh_t3',
-    text: r'''Según Lawrence Kohlberg, la etapa 6 (de orientación a principios éticos universales) se diferencia de la etapa 5 (de contrato social) porque en la etapa 6:''',
+    text:
+        r'''Según Lawrence Kohlberg, la etapa 6 (de orientación a principios éticos universales) se diferencia de la etapa 5 (de contrato social) porque en la etapa 6:''',
     options: [
       r'''El juicio moral se basa en principios éticos abstractos y universales que priman sobre las leyes escritas si estas atentan contra la dignidad humana.''',
       r'''Las decisiones morales se ajustan rigurosamente a las normas jurídicas aprobadas por mayoría electoral de manera incondicional.''',
@@ -3710,12 +4270,14 @@ final List<Question> pfrhQuestions = [
       r'''Se actúa por temor a la sanción penal inmediata impuesta por el Ministerio Público.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La etapa 6 (nivel posconvencional) sitúa los principios de justicia, igualdad y respeto a la dignidad humana por encima de cualquier ley civil o acuerdo mayoritario si la ley resulta injusta o viola los derechos fundamentales.''',
+    explanation:
+        r'''La etapa 6 (nivel posconvencional) sitúa los principios de justicia, igualdad y respeto a la dignidad humana por encima de cualquier ley civil o acuerdo mayoritario si la ley resulta injusta o viola los derechos fundamentales.''',
   ),
   Question(
     id: 'pfrh_q364',
     topicId: 'pfrh_t3',
-    text: r'''El origen de las normas de trato social (convencionalismos) radica en:''',
+    text:
+        r'''El origen de las normas de trato social (convencionalismos) radica en:''',
     options: [
       r'''La costumbre social repetida a lo largo del tiempo por un grupo, comunidad o clase social determinada.''',
       r'''La dación de leyes orgánicas aprobadas por el Congreso de la República y publicadas en el diario oficial.''',
@@ -3723,12 +4285,14 @@ final List<Question> pfrhQuestions = [
       r'''Los tratados internacionales sobre derechos humanos suscritos por el Poder Ejecutivo.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los convencionalismos sociales (cortesía, etiqueta, modales) nacen de las costumbres, hábitos colectivos y tradiciones compartidas por un grupo social en el tiempo, sin tener un legislador estatal formal.''',
+    explanation:
+        r'''Los convencionalismos sociales (cortesía, etiqueta, modales) nacen de las costumbres, hábitos colectivos y tradiciones compartidas por un grupo social en el tiempo, sin tener un legislador estatal formal.''',
   ),
   Question(
     id: 'pfrh_q365',
     topicId: 'pfrh_t3',
-    text: r'''¿Cuál es la sanción característica ante la transgresión de una norma de trato social (convencionalismo)?''',
+    text:
+        r'''¿Cuál es la sanción característica ante la transgresión de una norma de trato social (convencionalismo)?''',
     options: [
       r'''La reprobación, la murmuración, el ridículo o la exclusión del infractor por parte del entorno social.''',
       r'''La imposición de una pena privativa de libertad efectiva ejecutada por la policía del país.''',
@@ -3736,12 +4300,14 @@ final List<Question> pfrhQuestions = [
       r'''El remordimiento interno y la crisis de fe del sujeto en su ámbito íntimo y espiritual.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Dado que las normas de trato social son incoercibles, no conllevan castigos físicos estatales. Su sanción es informal y de carácter social: la censura, el rechazo, la burla o la pérdida del prestigio ante el grupo.''',
+    explanation:
+        r'''Dado que las normas de trato social son incoercibles, no conllevan castigos físicos estatales. Su sanción es informal y de carácter social: la censura, el rechazo, la burla o la pérdida del prestigio ante el grupo.''',
   ),
   Question(
     id: 'pfrh_q366',
     topicId: 'pfrh_t3',
-    text: r'''El Himno Nacional del Perú es un símbolo patrio intangible. ¿Cuál de las siguientes afirmaciones sobre su intangibilidad es correcta?''',
+    text:
+        r'''El Himno Nacional del Perú es un símbolo patrio intangible. ¿Cuál de las siguientes afirmaciones sobre su intangibilidad es correcta?''',
     options: [
       r'''Su letra y música oficiales están protegidas por ley, no pudiendo ser alteradas ni modificadas por decisiones particulares o modas artísticas.''',
       r'''Es de libre modificación, permitiéndose que cada gobierno de turno cambie sus estrofas según su línea ideológica.''',
@@ -3749,12 +4315,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una norma de trato social unilateral que carece de protección legal ante ultrajes públicos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La intangibilidad del Himno Nacional (consagrada tras fallos del Tribunal Constitucional) protege su estructura histórica y musical (letra de De la Torre Ugarte y música de Alcedo) frente a alteraciones arbitrarias, resguardando la identidad nacional.''',
+    explanation:
+        r'''La intangibilidad del Himno Nacional (consagrada tras fallos del Tribunal Constitucional) protege su estructura histórica y musical (letra de De la Torre Ugarte y música de Alcedo) frente a alteraciones arbitrarias, resguardando la identidad nacional.''',
   ),
   Question(
     id: 'pfrh_q367',
     topicId: 'pfrh_t3',
-    text: r'''En comparación con las normas morales y de trato social, ¿cuál es el atributo exclusivo de las normas jurídicas?''',
+    text:
+        r'''En comparación con las normas morales y de trato social, ¿cuál es el atributo exclusivo de las normas jurídicas?''',
     options: [
       r'''La coercibilidad institucionalizada ejercida por el poder del Estado peruano.''',
       r'''La unilateralidad de los deberes de conducta del sujeto en el hogar.''',
@@ -3762,12 +4330,14 @@ final List<Question> pfrhQuestions = [
       r'''La autonomía absoluta del sujeto en la selección de las reglas a cumplir.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coercibilidad es exclusiva de la norma jurídica. Mientras las normas morales y sociales dependen del fuero interno o la presión social voluntaria, el derecho cuenta con el respaldo del monopolio de la fuerza estatal para obligar a su acatamiento.''',
+    explanation:
+        r'''La coercibilidad es exclusiva de la norma jurídica. Mientras las normas morales y sociales dependen del fuero interno o la presión social voluntaria, el derecho cuenta con el respaldo del monopolio de la fuerza estatal para obligar a su acatamiento.''',
   ),
   Question(
     id: 'pfrh_q368',
     topicId: 'pfrh_t3',
-    text: r"""¿Qué postula la cualidad de 'unilateralidad' en las normas morales?""",
+    text:
+        r"""¿Qué postula la cualidad de 'unilateralidad' en las normas morales?""",
     options: [
       r'''Que imponen un deber a la persona, pero no facultan a ningún tercero a exigir judicialmente su cumplimiento.''',
       r'''Que obligan a un solo miembro de la comunidad a realizar trabajos forzosos para el municipio.''',
@@ -3775,12 +4345,14 @@ final List<Question> pfrhQuestions = [
       r'''Que son elaboradas de forma individual y secreta por el Presidente del Congreso peruano.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La unilateralidad moral significa que la norma prescribe un deber de conciencia (ej. ayudar al prójimo), pero el beneficiario de esa ayuda no tiene una ley o acción legal para reclamar ante los tribunales si el sujeto decide no cumplir.''',
+    explanation:
+        r'''La unilateralidad moral significa que la norma prescribe un deber de conciencia (ej. ayudar al prójimo), pero el beneficiario de esa ayuda no tiene una ley o acción legal para reclamar ante los tribunales si el sujeto decide no cumplir.''',
   ),
   Question(
     id: 'pfrh_q369',
     topicId: 'pfrh_t3',
-    text: r'''¿Qué riqueza natural representa la cornucopia representada en el Escudo Nacional del Perú?''',
+    text:
+        r'''¿Qué riqueza natural representa la cornucopia representada en el Escudo Nacional del Perú?''',
     options: [
       r'''La abundancia y potencialidad de los recursos del reino mineral en el territorio peruano.''',
       r'''La fertilidad de las tierras agrícolas de la cuenca amazónica nacional.''',
@@ -3788,12 +4360,14 @@ final List<Question> pfrhQuestions = [
       r'''El desarrollo tecnológico de la industria manufacturera de las ciudades de la costa.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La cornucopia de oro derramando monedas simboliza la inmensa riqueza y abundancia del reino mineral peruano.''',
+    explanation:
+        r'''La cornucopia de oro derramando monedas simboliza la inmensa riqueza y abundancia del reino mineral peruano.''',
   ),
   Question(
     id: 'pfrh_q370',
     topicId: 'pfrh_t3',
-    text: r'''De acuerdo con el protocolo oficial peruano, ¿qué elemento diferencia visualmente al Pabellón Nacional de la Bandera Nacional?''',
+    text:
+        r'''De acuerdo con el protocolo oficial peruano, ¿qué elemento diferencia visualmente al Pabellón Nacional de la Bandera Nacional?''',
     options: [
       r'''El Pabellón Nacional lleva incorporado el Escudo de Armas en el centro de la franja blanca; la Bandera Nacional es simple, sin escudo.''',
       r'''La Bandera Nacional lleva bordada la escarapela en el centro; el Pabellón Nacional lleva un sol incaico de oro.''',
@@ -3801,12 +4375,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe ninguna diferencia visual, siendo ambos términos sinónimos absolutos ante la Constitución de 1993.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La Bandera Nacional es el símbolo patrio bicolor de tres franjas verticales sin escudo, usada por particulares. El Pabellón Nacional lleva el Escudo de Armas en la franja blanca central y es de uso obligatorio en las instituciones del Estado.''',
+    explanation:
+        r'''La Bandera Nacional es el símbolo patrio bicolor de tres franjas verticales sin escudo, usada por particulares. El Pabellón Nacional lleva el Escudo de Armas en la franja blanca central y es de uso obligatorio en las instituciones del Estado.''',
   ),
   Question(
     id: 'pfrh_q371',
     topicId: 'pfrh_t3',
-    text: r'''¿Cómo se define el concepto de identidad cultural en el contexto de una nación soberana?''',
+    text:
+        r'''¿Cómo se define el concepto de identidad cultural en el contexto de una nación soberana?''',
     options: [
       r'''Como el sentido de pertenencia a un grupo social que comparte una misma herencia histórica, tradiciones, valores cívicos, lenguas y cosmovisiones.''',
       r'''Como el conjunto de multas pecuniarias que el Estado impone a los ciudadanos que no portan la escarapela.''',
@@ -3814,12 +4390,14 @@ final List<Question> pfrhQuestions = [
       r'''Como el autoconcepto físico que adquieren los cadetes y oficiales durante sus entrenamientos de gimnasia.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La identidad cultural es la conciencia colectiva e individual de pertenecer a una tradición histórica y social compartida, lo que otorga arraigo e identificación a los ciudadanos dentro de la diversidad de la nación.''',
+    explanation:
+        r'''La identidad cultural es la conciencia colectiva e individual de pertenecer a una tradición histórica y social compartida, lo que otorga arraigo e identificación a los ciudadanos dentro de la diversidad de la nación.''',
   ),
   Question(
     id: 'pfrh_q372',
     topicId: 'pfrh_t3',
-    text: r'''Un escolar se abstiene de lanzar papeles en el aula porque el reglamento interno del colegio prescribe que dicha conducta conlleva una amonestación escrita y la pérdida del recreo. Tipifique esta actitud según las etapas morales de Piaget y Kohlberg:''',
+    text:
+        r'''Un escolar se abstiene de lanzar papeles en el aula porque el reglamento interno del colegio prescribe que dicha conducta conlleva una amonestación escrita y la pérdida del recreo. Tipifique esta actitud según las etapas morales de Piaget y Kohlberg:''',
     options: [
       r'''Conducta de heteronomía moral ( Piaget) y razonamiento preconvencional orientado a evitar el castigo (Kohlberg).''',
       r'''Conducta de autonomía moral (Piaget) y razonamiento convencional orientado a la utilidad social (Kohlberg).''',
@@ -3827,12 +4405,14 @@ final List<Question> pfrhQuestions = [
       r'''Transgresión del convencionalismo de trato social basado en la minimización de la culpa individual.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El escolar actúa guiado por el temor al castigo inmediato y la imposición de una norma externa dictada por la autoridad (colegio). Esto tipifica la heteronomía moral y la etapa preconvencional de obediencia-castigo.''',
+    explanation:
+        r'''El escolar actúa guiado por el temor al castigo inmediato y la imposición de una norma externa dictada por la autoridad (colegio). Esto tipifica la heteronomía moral y la etapa preconvencional de obediencia-castigo.''',
   ),
   Question(
     id: 'pfrh_q373',
     topicId: 'pfrh_t3',
-    text: r'''Un transeúnte observa a un niño llorando porque se ha extraviado en un centro comercial limeño. El ciudadano decide detenerse, calmar al niño y llevarlo a la oficina de informes para que llamen a sus padres por el megáfono, motivado por un deber ético de protección a la infancia. Esta acción es un ejemplo de:''',
+    text:
+        r'''Un transeúnte observa a un niño llorando porque se ha extraviado en un centro comercial limeño. El ciudadano decide detenerse, calmar al niño y llevarlo a la oficina de informes para que llamen a sus padres por el megáfono, motivado por un deber ético de protección a la infancia. Esta acción es un ejemplo de:''',
     options: [
       r'''Cumplimiento de una norma moral de carácter autónomo, unilateral e interno.''',
       r'''Cumplimiento de una norma jurídica bilateral sancionable con arresto inmediato.''',
@@ -3840,12 +4420,14 @@ final List<Question> pfrhQuestions = [
       r'''Acción de heteronomía jurídica obligatoria regulada por el Ministerio de Cultura.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La ayuda humanitaria y el cuidado de un menor desamparado de forma voluntaria responden a una norma moral. Nace del fuero interno (empatía, solidaridad) y es unilateral porque nadie obliga legalmente con cárcel al peatón a detenerse a consolar a un extraño.''',
+    explanation:
+        r'''La ayuda humanitaria y el cuidado de un menor desamparado de forma voluntaria responden a una norma moral. Nace del fuero interno (empatía, solidaridad) y es unilateral porque nadie obliga legalmente con cárcel al peatón a detenerse a consolar a un extraño.''',
   ),
   Question(
     id: 'pfrh_q374',
     topicId: 'pfrh_t3',
-    text: r'''Un ciudadano acude a una cena de gala formal utilizando bermudas de baño y calzado de playa. Los organizadores del evento y los invitados lo miran con desagrado y evitan conversar con él durante la noche. ¿Qué tipo de norma se ha infringido y qué tipo de sanción se evidencia?''',
+    text:
+        r'''Un ciudadano acude a una cena de gala formal utilizando bermudas de baño y calzado de playa. Los organizadores del evento y los invitados lo miran con desagrado y evitan conversar con él durante la noche. ¿Qué tipo de norma se ha infringido y qué tipo de sanción se evidencia?''',
     options: [
       r'''Se ha infringido una norma de trato social (decoro y etiqueta); la sanción es el reproche y la exclusión del grupo.''',
       r'''Se ha cometido una infracción de norma jurídica bilateral; la sanción es de carácter penal ejecutada por la municipalidad.''',
@@ -3853,12 +4435,14 @@ final List<Question> pfrhQuestions = [
       r'''Se ha manifestado un desprecio a los símbolos patrios oficiales; la sanción es una multa del diario del Estado.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La vestimenta adecuada para eventos sociales se rige por convencionalismos sociales. Al violarlos, la persona no recibe una multa del Estado ni va a prisión (incoercibilidad), sino que sufre la sanción social del grupo (rechazo, marginación).''',
+    explanation:
+        r'''La vestimenta adecuada para eventos sociales se rige por convencionalismos sociales. Al violarlos, la persona no recibe una multa del Estado ni va a prisión (incoercibilidad), sino que sufre la sanción social del grupo (rechazo, marginación).''',
   ),
   Question(
     id: 'pfrh_q375',
     topicId: 'pfrh_t3',
-    text: r'''En una autopista, un chofer es intervenido por un control vial y se detecta que conduce con exceso de velocidad. Se le impone una multa y se le retiene la licencia. Clasifique el tipo de norma vulnerada y el carácter de la sanción aplicada:''',
+    text:
+        r'''En una autopista, un chofer es intervenido por un control vial y se detecta que conduce con exceso de velocidad. Se le impone una multa y se le retiene la licencia. Clasifique el tipo de norma vulnerada y el carácter de la sanción aplicada:''',
     options: [
       r'''Norma jurídica de carácter heterónomo y coercible; la sanción es externa y pecuniaria impuesta por el Estado.''',
       r'''Norma moral de carácter autónomo e interno; la sanción es de conciencia por poner en peligro a los vecinos.''',
@@ -3866,12 +4450,14 @@ final List<Question> pfrhQuestions = [
       r'''Regla cívica unilateral e incoercible; la sanción es el remordimiento moral del infractor de tránsito.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las normas de tránsito y límites de velocidad son normas jurídicas: heterónomas (impuestas por el Estado), externas (sancionan el acto de correr) y coercibles (se aplican multas y retención de licencia mediante el uso de la fuerza pública si es necesario).''',
+    explanation:
+        r'''Las normas de tránsito y límites de velocidad son normas jurídicas: heterónomas (impuestas por el Estado), externas (sancionan el acto de correr) y coercibles (se aplican multas y retención de licencia mediante el uso de la fuerza pública si es necesario).''',
   ),
   Question(
     id: 'pfrh_q376',
     topicId: 'pfrh_t3',
-    text: r'''Un ciudadano pasea a su mascota por un parque público y decide recoger los excrementos del animal colocándolos en una bolsa para arrojarlos al basurero, incluso sabiendo que no hay cámaras ni vigilantes de serenazgo cerca. Tipifique esta conducta cívica:''',
+    text:
+        r'''Un ciudadano pasea a su mascota por un parque público y decide recoger los excrementos del animal colocándolos en una bolsa para arrojarlos al basurero, incluso sabiendo que no hay cámaras ni vigilantes de serenazgo cerca. Tipifique esta conducta cívica:''',
     options: [
       r'''Acción moral autónoma cívica, donde el sujeto actúa guiado por el respeto mutuo e interiorización del bienestar común.''',
       r'''Acatamiento instrumental preconvencional motivado por el temor al castigo directo del alcalde del distrito.''',
@@ -3879,12 +4465,14 @@ final List<Question> pfrhQuestions = [
       r'''Vulneración de una norma jurídica municipal incoercible basada en la minimización de la culpa.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Recoger la suciedad de la mascota por convicción cívica e íntimo respeto hacia los demás usuarios del parque público (y no por miedo a una multa) constituye un acto de autonomía moral y responsabilidad cívica internalizada.''',
+    explanation:
+        r'''Recoger la suciedad de la mascota por convicción cívica e íntimo respeto hacia los demás usuarios del parque público (y no por miedo a una multa) constituye un acto de autonomía moral y responsabilidad cívica internalizada.''',
   ),
   Question(
     id: 'pfrh_q377',
     topicId: 'pfrh_t3',
-    text: r'''Una profesora dedica horas extra de su tiempo libre a preparar material didáctico adaptado para un alumno con dificultades de aprendizaje, sin percibir pago adicional alguno, motivada por su compromiso ético profesional con la inclusión educativa. ¿Qué tipo de norma rige su conducta?''',
+    text:
+        r'''Una profesora dedica horas extra de su tiempo libre a preparar material didáctico adaptado para un alumno con dificultades de aprendizaje, sin percibir pago adicional alguno, motivada por su compromiso ético profesional con la inclusión educativa. ¿Qué tipo de norma rige su conducta?''',
     options: [
       r'''Una norma moral autónoma y unilateral, pues su motivación proviene del deber ético y solidaridad interna.''',
       r'''Una norma jurídica bilateral coercible que la obliga judicialmente a trabajar sin salario en el Perú.''',
@@ -3892,12 +4480,14 @@ final List<Question> pfrhQuestions = [
       r'''Una regla de heteronomía moral orientada al sesgo de reciprocidad material de las juntas vecinales.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El trabajo solidario adicional por amor a la enseñanza y respeto al derecho de educación de su alumno responde a una norma moral: nace de sus convicciones íntimas (autónoma) y no hay ley que pueda coaccionarla legalmente a regalar sus horas libres (unilateral e incoercible).''',
+    explanation:
+        r'''El trabajo solidario adicional por amor a la enseñanza y respeto al derecho de educación de su alumno responde a una norma moral: nace de sus convicciones íntimas (autónoma) y no hay ley que pueda coaccionarla legalmente a regalar sus horas libres (unilateral e incoercible).''',
   ),
   Question(
     id: 'pfrh_q378',
     topicId: 'pfrh_t3',
-    text: r'''Una municipalidad distrital emite una ordenanza que dispone el embanderamiento general obligatorio de todas las viviendas del distrito del 15 al 31 de julio con motivo de Fiestas Patrias, bajo sanción de multa económica a los infractores. Clasifique esta disposición municipal:''',
+    text:
+        r'''Una municipalidad distrital emite una ordenanza que dispone el embanderamiento general obligatorio de todas las viviendas del distrito del 15 al 31 de julio con motivo de Fiestas Patrias, bajo sanción de multa económica a los infractores. Clasifique esta disposición municipal:''',
     options: [
       r'''Es una norma jurídica de carácter heterónomo, bilateral y coercible con vigencia territorial en el distrito.''',
       r'''Es una norma moral autónoma e incoercible que apela únicamente al remordimiento íntimo de los propietarios.''',
@@ -3905,12 +4495,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un símbolo de la patria oficial que anula la vigencia del Código Penal del Perú durante las fiestas.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Aunque se relaciona con el respeto a los símbolos patrios, la obligatoriedad y la sanción de multa por no colocar la bandera es una norma jurídica (ordenanza municipal) que el Estado impone de manera coercitiva a través de los inspectores de fiscalización municipal.''',
+    explanation:
+        r'''Aunque se relaciona con el respeto a los símbolos patrios, la obligatoriedad y la sanción de multa por no colocar la bandera es una norma jurídica (ordenanza municipal) que el Estado impone de manera coercitiva a través de los inspectores de fiscalización municipal.''',
   ),
   Question(
     id: 'pfrh_q379',
     topicId: 'pfrh_t3',
-    text: r"""En una bodega vecinal, don Carlos recibe un billete de 100 soles por la compra de un tarro de leche de 5 soles. Por distracción, Carlos le entrega al cliente 105 soles de vuelto (más de lo recibido). El cliente se percata del error al llegar a su casa, pero regresa de inmediato a devolvérselos diciendo: 'No puedo quedarme con dinero que no es mío; mi tranquilidad ética vale más que 100 soles'. ¿A qué nivel de desarrollo moral corresponde este juicio?""",
+    text:
+        r"""En una bodega vecinal, don Carlos recibe un billete de 100 soles por la compra de un tarro de leche de 5 soles. Por distracción, Carlos le entrega al cliente 105 soles de vuelto (más de lo recibido). El cliente se percata del error al llegar a su casa, pero regresa de inmediato a devolvérselos diciendo: 'No puedo quedarme con dinero que no es mío; mi tranquilidad ética vale más que 100 soles'. ¿A qué nivel de desarrollo moral corresponde este juicio?""",
     options: [
       r'''Nivel posconvencional (o de principios éticos universales), donde los principios de honestidad y justicia prevalecen sobre el lucro individual.''',
       r'''Nivel preconvencional de Kohlberg, orientado al intercambio de favores instrumentales y lucro inmediato.''',
@@ -3918,12 +4510,14 @@ final List<Question> pfrhQuestions = [
       r'''Norma de trato social de etiqueta formal orientada al lucimiento público vecinal.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El cliente devuelve el dinero movido por principios éticos internalizados de rectitud e integridad personal, priorizando su tranquilidad espiritual y la honestidad sobre el beneficio material fácil. Esto es típico de la moralidad posconvencional autónoma.''',
+    explanation:
+        r'''El cliente devuelve el dinero movido por principios éticos internalizados de rectitud e integridad personal, priorizando su tranquilidad espiritual y la honestidad sobre el beneficio material fácil. Esto es típico de la moralidad posconvencional autónoma.''',
   ),
   Question(
     id: 'pfrh_q380',
     topicId: 'pfrh_t3',
-    text: r'''Un peatón cruza corriendo la Vía Expresa del Paseo de la República en Lima esquivando los vehículos en marcha, omitiendo utilizar el puente peatonal ubicado a 20 metros de distancia. Esta conducta representa la infracción de una:''',
+    text:
+        r'''Un peatón cruza corriendo la Vía Expresa del Paseo de la República en Lima esquivando los vehículos en marcha, omitiendo utilizar el puente peatonal ubicado a 20 metros de distancia. Esta conducta representa la infracción de una:''',
     options: [
       r'''Norma jurídica de tránsito y seguridad vial que pone en riesgo su vida y la seguridad pública de los conductores.''',
       r'''Norma moral unilateral basada de forma exclusiva en el remordimiento íntimo de los choferes del metropolitano.''',
@@ -3931,12 +4525,14 @@ final List<Question> pfrhQuestions = [
       r'''Norma constitucional sobre la intangibilidad de la escarapela nacional peruana.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Ignorar los cruces autorizados y los puentes peatonales es una transgresión de las normas jurídicas viales establecidas en el Reglamento Nacional de Tránsito, conllevando sanciones y multas peatonales, además de configurar una falta de cultura cívica básica.''',
+    explanation:
+        r'''Ignorar los cruces autorizados y los puentes peatonales es una transgresión de las normas jurídicas viales establecidas en el Reglamento Nacional de Tránsito, conllevando sanciones y multas peatonales, además de configurar una falta de cultura cívica básica.''',
   ),
   Question(
     id: 'pfrh_q381',
     topicId: 'pfrh_t3',
-    text: r"""Un ciudadano decide declarar con veracidad todos sus ingresos y pagar sus impuestos al Estado porque reflexiona: 'Los tributos financian los hospitales públicos, colegios y obras del país; si todos evadimos, la infraestructura nacional colapsará y perjudicaremos a los más pobres'. Según Kohlberg, este razonamiento corresponde a:""",
+    text:
+        r"""Un ciudadano decide declarar con veracidad todos sus ingresos y pagar sus impuestos al Estado porque reflexiona: 'Los tributos financian los hospitales públicos, colegios y obras del país; si todos evadimos, la infraestructura nacional colapsará y perjudicaremos a los más pobres'. Según Kohlberg, este razonamiento corresponde a:""",
     options: [
       r'''Nivel convencional (etapa de mantenimiento del orden social y civismo colectivo).''',
       r'''Nivel preconvencional (etapa de evitación del castigo físico de la SUNAT).''',
@@ -3944,12 +4540,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad justificada derivada de la minimización del beneficio económico personal.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El razonamiento del ciudadano se centra en la responsabilidad social y en la utilidad colectiva del sistema de leyes y tributos para el sostén de la sociedad. Esto tipifica el nivel convencional de desarrollo moral (orientación al sistema social y deber cívico).''',
+    explanation:
+        r'''El razonamiento del ciudadano se centra en la responsabilidad social y en la utilidad colectiva del sistema de leyes y tributos para el sostén de la sociedad. Esto tipifica el nivel convencional de desarrollo moral (orientación al sistema social y deber cívico).''',
   ),
   Question(
     id: 'pfrh_q382',
     topicId: 'pfrh_t3',
-    text: r'''Clasifique la representación de la vicuña que figura en el campo superior izquierdo (fondo azul) del Escudo de la Patria del Perú:''',
+    text:
+        r'''Clasifique la representación de la vicuña que figura en el campo superior izquierdo (fondo azul) del Escudo de la Patria del Perú:''',
     options: [
       r'''Es el símbolo heráldico que representa al reino animal y a la fauna autóctona y silvestre del territorio peruano.''',
       r'''Es una representación artística que alude a las fuerzas del orden y al combate contra el abigeato rural.''',
@@ -3957,12 +4555,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una alegoría de la escarapela nacional que carece de validez legal en la Constitución de 1993.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La vicuña (Vicugna vicugna) representa oficialmente en el escudo peruano la fauna silvestre y la riqueza del reino animal del país.''',
+    explanation:
+        r'''La vicuña (Vicugna vicugna) representa oficialmente en el escudo peruano la fauna silvestre y la riqueza del reino animal del país.''',
   ),
   Question(
     id: 'pfrh_q383',
     topicId: 'pfrh_t3',
-    text: r'''Un estudiante de secundaria nota que sus compañeros de aula se burlan de un alumno nuevo que tiene acento de la sierra. El estudiante decide no participar de la burla, se acerca al nuevo compañero y lo invita a integrarse a su grupo de trabajo de ciencias. ¿Qué razonamiento moral y actitud demuestra?''',
+    text:
+        r'''Un estudiante de secundaria nota que sus compañeros de aula se burlan de un alumno nuevo que tiene acento de la sierra. El estudiante decide no participar de la burla, se acerca al nuevo compañero y lo invita a integrarse a su grupo de trabajo de ciencias. ¿Qué razonamiento moral y actitud demuestra?''',
     options: [
       r'''Razonamiento moral autónomo, basado en el respeto a la dignidad y diversidad humana, superando la presión del grupo de pares.''',
       r'''Acatamiento heterónomo por temor a recibir una sanción de expulsión por parte del auxiliar de disciplina.''',
@@ -3970,12 +4570,14 @@ final List<Question> pfrhQuestions = [
       r'''Transgresión del orden convencional del aula motivado por el sesgo de reciprocidad interesada.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estudiante demuestra autonomía moral y empatía al rechazar la discriminación (bullying) y acoger al compañero nuevo por respeto a sus derechos individuales, actuando de forma correcta con independencia del comportamiento prejuicioso de su grupo.''',
+    explanation:
+        r'''El estudiante demuestra autonomía moral y empatía al rechazar la discriminación (bullying) y acoger al compañero nuevo por respeto a sus derechos individuales, actuando de forma correcta con independencia del comportamiento prejuicioso de su grupo.''',
   ),
   Question(
     id: 'pfrh_q384',
     topicId: 'pfrh_t3',
-    text: r'''En una urbanización de Lima, los vecinos mantienen la costumbre tradicional de saludarse amablemente por las mañanas al cruzarse en las veredas, ayudando de forma voluntaria a cargar las compras a los residentes de la tercera edad de la cuadra. Estas prácticas colectivas corresponden a:''',
+    text:
+        r'''En una urbanización de Lima, los vecinos mantienen la costumbre tradicional de saludarse amablemente por las mañanas al cruzarse en las veredas, ayudando de forma voluntaria a cargar las compras a los residentes de la tercera edad de la cuadra. Estas prácticas colectivas corresponden a:''',
     options: [
       r'''Normas de trato social (convencionalismos de cortesía y vecindad) que facilitan la convivencia pacífica.''',
       r'''Normas jurídicas bilaterales obligatorias cuyo incumplimiento acarrea prisión dictada por la comisaría local.''',
@@ -3983,12 +4585,14 @@ final List<Question> pfrhQuestions = [
       r'''Símbolos de la patria consagrados en el artículo 49 de la Constitución Política del Perú.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El saludo y la cortesía vecinal voluntaria son normas de trato social. No están prescritas en códigos legales pero son indispensables para el respeto mutuo y la cohesión comunitaria del vecindario.''',
+    explanation:
+        r'''El saludo y la cortesía vecinal voluntaria son normas de trato social. No están prescritas en códigos legales pero son indispensables para el respeto mutuo y la cohesión comunitaria del vecindario.''',
   ),
   Question(
     id: 'pfrh_q385',
     topicId: 'pfrh_t3',
-    text: r'''El pago oportuno de los arbitrios municipales por concepto de recojo de basura y seguridad ciudadana es una obligación que se rige por:''',
+    text:
+        r'''El pago oportuno de los arbitrios municipales por concepto de recojo de basura y seguridad ciudadana es una obligación que se rige por:''',
     options: [
       r'''Normas jurídicas estatales de carácter tributario y cumplimiento coercible.''',
       r'''Normas de trato social de decoro escolar e incoercibles por el serenazgo.''',
@@ -3996,12 +4600,14 @@ final List<Question> pfrhQuestions = [
       r'''Conventionalismos tradicionales de etiqueta formal del club de vecinos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El pago de tributos municipales (arbitrios) está normado por ley. Constituye una norma jurídica coercible; si el contribuyente no paga, el municipio puede aplicar cobranzas coactivas o multas legales.''',
+    explanation:
+        r'''El pago de tributos municipales (arbitrios) está normado por ley. Constituye una norma jurídica coercible; si el contribuyente no paga, el municipio puede aplicar cobranzas coactivas o multas legales.''',
   ),
   Question(
     id: 'pfrh_q386',
     topicId: 'pfrh_t3',
-    text: r'''Al ingresar a una sala de conferencias de una biblioteca pública nacional, los letreros solicitan apagar los teléfonos celulares o ponerlos en vibrador para no perturbar al ponente y a los asistentes. Si un joven atiende una llamada en voz alta a mitad de la charla, ¿qué normas infringe y qué sanción social experimentará?''',
+    text:
+        r'''Al ingresar a una sala de conferencias de una biblioteca pública nacional, los letreros solicitan apagar los teléfonos celulares o ponerlos en vibrador para no perturbar al ponente y a los asistentes. Si un joven atiende una llamada en voz alta a mitad de la charla, ¿qué normas infringe y qué sanción social experimentará?''',
     options: [
       r'''Infringe normas de trato social y convivencia común; la sanción será la reprobación visual y el pedido de silencio de la audiencia.''',
       r'''Infringe una norma jurídica de rango constitucional penal; la sanción es de arresto efectivo por parte de serenazgo.''',
@@ -4009,12 +4615,14 @@ final List<Question> pfrhQuestions = [
       r'''Infringe la intangibilidad del himno nacional; la sanción consiste en el decomiso de su celular por ley civil.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Mantener el silencio en una biblioteca o conferencia es una norma de cortesía y trato social. Su infracción molesta a los demás, quienes aplican sanciones sociales informales (miradas de desaprobación, reclamo verbal de silencio).''',
+    explanation:
+        r'''Mantener el silencio en una biblioteca o conferencia es una norma de cortesía y trato social. Su infracción molesta a los demás, quienes aplican sanciones sociales informales (miradas de desaprobación, reclamo verbal de silencio).''',
   ),
   Question(
     id: 'pfrh_q387',
     topicId: 'pfrh_t3',
-    text: r'''Un conductor colisiona su vehículo contra la vereda y destruye una baranda peatonal de seguridad instalada por la municipalidad. El municipio entabla una demanda administrativa para exigirle el pago del costo de reparación de la baranda. ¿Qué característica de la norma jurídica se evidencia?''',
+    text:
+        r'''Un conductor colisiona su vehículo contra la vereda y destruye una baranda peatonal de seguridad instalada por la municipalidad. El municipio entabla una demanda administrativa para exigirle el pago del costo de reparación de la baranda. ¿Qué característica de la norma jurídica se evidencia?''',
     options: [
       r'''La bilateralidad de la norma jurídica, la cual faculta al Estado (acreedor) a exigir la reparación económica al infractor (deudor).''',
       r'''La unilateralidad de los convencionalismos sociales que impiden sancionar pecuniariamente los daños materiales.''',
@@ -4022,12 +4630,14 @@ final List<Question> pfrhQuestions = [
       r'''La incoercibilidad del reglamento nacional de tránsito frente a los accidentes de tránsito civiles.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La bilateralidad jurídica se manifiesta aquí: el causante del daño tiene la obligación legal de resarcir el perjuicio, y la entidad pública posee el derecho e instrumentos legales para exigir coactivamente dicha indemnización.''',
+    explanation:
+        r'''La bilateralidad jurídica se manifiesta aquí: el causante del daño tiene la obligación legal de resarcir el perjuicio, y la entidad pública posee el derecho e instrumentos legales para exigir coactivamente dicha indemnización.''',
   ),
   Question(
     id: 'pfrh_q388',
     topicId: 'pfrh_t3',
-    text: r"""Según el desarrollo moral planteado por Jean Piaget, la fase de 'moral de cooperación' o 'autonomía moral' se caracteriza por el hecho de que el adolescente comprende que las reglas del juego o de la sociedad:""",
+    text:
+        r"""Según el desarrollo moral planteado por Jean Piaget, la fase de 'moral de cooperación' o 'autonomía moral' se caracteriza por el hecho de que el adolescente comprende que las reglas del juego o de la sociedad:""",
     options: [
       r'''Son convenciones racionales creadas por acuerdo mutuo entre las personas, las cuales pueden ser modificadas por consenso.''',
       r'''Son leyes de origen sagrado e inmutable dictadas por la autoridad de los padres que jamás deben alterarse.''',
@@ -4035,12 +4645,14 @@ final List<Question> pfrhQuestions = [
       r'''Carecen de utilidad práctica y deben ser desobedecidas sistemáticamente para afirmar la identidad individual.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En la fase autónoma (moral de cooperación, típica a partir de los 10-11 años), las reglas se entienden como productos de la voluntad humana y el consenso social dirigidos a facilitar la convivencia, pudiendo modificarse para buscar justicia.''',
+    explanation:
+        r'''En la fase autónoma (moral de cooperación, típica a partir de los 10-11 años), las reglas se entienden como productos de la voluntad humana y el consenso social dirigidos a facilitar la convivencia, pudiendo modificarse para buscar justicia.''',
   ),
   Question(
     id: 'pfrh_q389',
     topicId: 'pfrh_t3',
-    text: r'''Un ciudadano entona las estrofas del Himno Nacional del Perú de pie, descubierto y en actitud de respeto durante la ceremonia cívica de su comunidad. Su actitud es un ejemplo de:''',
+    text:
+        r'''Un ciudadano entona las estrofas del Himno Nacional del Perú de pie, descubierto y en actitud de respeto durante la ceremonia cívica de su comunidad. Su actitud es un ejemplo de:''',
     options: [
       r'''Comportamiento guiado por valores de identidad nacional y normas de decoro cívico en ceremonias colectivas.''',
       r'''Sumisión heterónoma preconvencional ante el temor a recibir una amonestación penal carcelaria del alcalde.''',
@@ -4048,12 +4660,14 @@ final List<Question> pfrhQuestions = [
       r'''Cumplimiento obligatorio de una norma moral unilateral que prohíbe el uso de short en espacios públicos.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Cantar el Himno Nacional con respeto en ceremonias cívicas refleja una identidad nacional consolidada y el cumplimiento de las normas de decoro cívico que fomentan el civismo y respeto por la soberanía de la patria.''',
+    explanation:
+        r'''Cantar el Himno Nacional con respeto en ceremonias cívicas refleja una identidad nacional consolidada y el cumplimiento de las normas de decoro cívico que fomentan el civismo y respeto por la soberanía de la patria.''',
   ),
   Question(
     id: 'pfrh_q390',
     topicId: 'pfrh_t3',
-    text: r"""Un ingeniero civil decide no emplear materiales de baja calidad en la construcción de un condominio de viviendas, a pesar de que el contratista le sugiere hacerlo para ahorrar costos y que la supervisión técnica es deficiente. El ingeniero sostiene: 'Mi ética profesional y el valor de la seguridad de las familias valen más que el lucro fácil'. Tipifique esta conducta:""",
+    text:
+        r"""Un ingeniero civil decide no emplear materiales de baja calidad en la construcción de un condominio de viviendas, a pesar de que el contratista le sugiere hacerlo para ahorrar costos y que la supervisión técnica es deficiente. El ingeniero sostiene: 'Mi ética profesional y el valor de la seguridad de las familias valen más que el lucro fácil'. Tipifique esta conducta:""",
     options: [
       r'''Acción guiada por autonomía moral basada en principios universales de honestidad, responsabilidad y protección de la vida humana.''',
       r'''Conducta heterónoma dictada por el miedo al castigo físico inmediato de la junta directiva de propietarios.''',
@@ -4061,12 +4675,14 @@ final List<Question> pfrhQuestions = [
       r'''Acción típica de sentido común no legal motivada por la evitación activa del impuesto general a las ventas.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El ingeniero actúa guiado por sus principios morales autónomos e internalizados (respeto a la vida de los futuros inquilinos y honestidad profesional), rechazando el enriquecimiento deshonesto a pesar de la falta de fiscalización externa.''',
+    explanation:
+        r'''El ingeniero actúa guiado por sus principios morales autónomos e internalizados (respeto a la vida de los futuros inquilinos y honestidad profesional), rechazando el enriquecimiento deshonesto a pesar de la falta de fiscalización externa.''',
   ),
   Question(
     id: 'pfrh_q391',
     topicId: 'pfrh_t3',
-    text: r'''Una persona es suspendida temporalmente de la asociación cultural del distrito por proferir constantes insultos y utilizar lenguaje vulgar durante las reuniones ordinarias de la asamblea. Identifique qué norma vulneró y qué sanción recibió:''',
+    text:
+        r'''Una persona es suspendida temporalmente de la asociación cultural del distrito por proferir constantes insultos y utilizar lenguaje vulgar durante las reuniones ordinarias de la asamblea. Identifique qué norma vulneró y qué sanción recibió:''',
     options: [
       r'''Vulneró una norma de trato social y convivencia grupal; recibió la sanción institucional informal de suspensión del grupo.''',
       r'''Vulneró una norma jurídica de rango constitucional penal; recibió una sanción de privación de libertad en la cárcel.''',
@@ -4074,12 +4690,14 @@ final List<Question> pfrhQuestions = [
       r'''Vulneró la intangibilidad de la escarapela nacional; recibió una multa económica del Tribunal del Poder Judicial.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El lenguaje grosero e insultante atenta contra las reglas de trato social, respeto y decoro del grupo. La asociación cultural, en ejercicio de sus reglamentos y convivencia, sanciona al infractor suspendiéndolo (exclusión social).''',
+    explanation:
+        r'''El lenguaje grosero e insultante atenta contra las reglas de trato social, respeto y decoro del grupo. La asociación cultural, en ejercicio de sus reglamentos y convivencia, sanciona al infractor suspendiéndolo (exclusión social).''',
   ),
   Question(
     id: 'pfrh_q392',
     topicId: 'pfrh_t3',
-    text: r"""Lucas, de 15 años, asiste a una reunión en casa de un compañero del colegio. Durante la fiesta, un grupo de amigos empieza a consumir bebidas alcohólicas y presionan a Lucas para que beba con ellos, tildándolo de 'cobarde' y 'antisocial' por rehusarse. Lucas, a pesar del fuerte deseo de encajar en el grupo de pares, mantiene firme su decisión de no beber porque valora su salud y considera que no necesita del alcohol para divertirse. ¿Qué logro en su identidad demuestra Lucas y qué distractor social supera?""",
+    text:
+        r"""Lucas, de 15 años, asiste a una reunión en casa de un compañero del colegio. Durante la fiesta, un grupo de amigos empieza a consumir bebidas alcohólicas y presionan a Lucas para que beba con ellos, tildándolo de 'cobarde' y 'antisocial' por rehusarse. Lucas, a pesar del fuerte deseo de encajar en el grupo de pares, mantiene firme su decisión de no beber porque valora su salud y considera que no necesita del alcohol para divertirse. ¿Qué logro en su identidad demuestra Lucas y qué distractor social supera?""",
     options: [
       r"""Autonomía moral basada en el autocontrol y autorrespeto; supera el distractor de la 'Presión Grupal Aceptada'.""",
       r"""Heteronomía moral rígida por temor al castigo corporal de su tutor escolar; supera la 'Solidaridad Cómplice'.""",
@@ -4087,12 +4705,14 @@ final List<Question> pfrhQuestions = [
       r"""Sentido común no legal regulado por la escarapela peruana; supera la 'Agresividad Justificada' del grupo.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Lucas muestra autonomía moral e identidad personal sólida. Al resistir la presión social directa de sus pares para realizar un acto que atenta contra su salud y convicciones, supera la 'Presión Grupal Aceptada' (o deseo ciego de complacencia grupal).""",
+    explanation:
+        r"""Lucas muestra autonomía moral e identidad personal sólida. Al resistir la presión social directa de sus pares para realizar un acto que atenta contra su salud y convicciones, supera la 'Presión Grupal Aceptada' (o deseo ciego de complacencia grupal).""",
   ),
   Question(
     id: 'pfrh_q393',
     topicId: 'pfrh_t3',
-    text: r"""En un edificio multifamiliar en San Borja, el perro de una inquilina del tercer piso ladra de forma ininterrumpida durante las madrugadas debido a que lo dejan solo en el balcón. Un vecino del segundo piso, afectado por la falta de sueño, le reclama amablemente. La propietaria del can le responde en tono áspero: 'Mi departamento es mi propiedad privada, yo pago mi alquiler y tengo la total libertad de tener a mi mascota donde me plazca'. ¿Cómo se tipifica el argumento de la dueña y qué distractor psicológico comete?""",
+    text:
+        r"""En un edificio multifamiliar en San Borja, el perro de una inquilina del tercer piso ladra de forma ininterrumpida durante las madrugadas debido a que lo dejan solo en el balcón. Un vecino del segundo piso, afectado por la falta de sueño, le reclama amablemente. La propietaria del can le responde en tono áspero: 'Mi departamento es mi propiedad privada, yo pago mi alquiler y tengo la total libertad de tener a mi mascota donde me plazca'. ¿Cómo se tipifica el argumento de la dueña y qué distractor psicológico comete?""",
     options: [
       r"""Incurre en el distractor de 'Sesgo de Impunidad Individual' al pretender que sus derechos de propiedad y libertad privada anulan las normas jurídicas y de trato social sobre la tranquilidad vecinal.""",
       r"""Muestra una conducta guiada por autonomía moral posconvencional, superando la 'Solidaridad Cómplice' de la junta de vecinos del edificio.""",
@@ -4100,12 +4720,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una transgresión inocua que carece de regulación en las normas de convivencia cívica y municipal de la capital.''',
     ],
     correctAnswer: 0,
-    explanation: r"""La dueña del can comete el 'Sesgo de Impunidad Individual' (o 'Falsa autonomía de propiedad'), asumiendo que los límites físicos de su departamento le otorgan carta blanca para perturbar la paz y descanso de la vecindad. El derecho de propiedad privada está condicionado al respeto a las leyes de convivencia y orden municipal.""",
+    explanation:
+        r"""La dueña del can comete el 'Sesgo de Impunidad Individual' (o 'Falsa autonomía de propiedad'), asumiendo que los límites físicos de su departamento le otorgan carta blanca para perturbar la paz y descanso de la vecindad. El derecho de propiedad privada está condicionado al respeto a las leyes de convivencia y orden municipal.""",
   ),
   Question(
     id: 'pfrh_q394',
     topicId: 'pfrh_t3',
-    text: r"""Durante la elaboración de un informe grupal escolar de historia, Sofía detecta que Martín ha copiado y pegado páginas enteras de internet sin citar a los autores. Sofía le pide corregirlo de inmediato, pero Martín se defiende diciendo: 'Todos en el salón plagian de internet y los profesores nunca revisan; además, si nos sacamos buena nota, nos beneficiamos todos en el grupo'. ¿Qué nivel ético muestra Sofía y qué distractor de Martín se evidencia?""",
+    text:
+        r"""Durante la elaboración de un informe grupal escolar de historia, Sofía detecta que Martín ha copiado y pegado páginas enteras de internet sin citar a los autores. Sofía le pide corregirlo de inmediato, pero Martín se defiende diciendo: 'Todos en el salón plagian de internet y los profesores nunca revisan; además, si nos sacamos buena nota, nos beneficiamos todos en el grupo'. ¿Qué nivel ético muestra Sofía y qué distractor de Martín se evidencia?""",
     options: [
       r"""Sofía actúa con autonomía moral basada en la honestidad académica; Martín comete el distractor de 'Racionalización del Beneficio' (justificar la deshonestidad alegando impunidad y utilidad grupal).""",
       r"""Sofía muestra heteronomía moral infantil por envidia personal; Martín muestra moralidad posconvencional basada en la 'Solidaridad Cómplice'.""",
@@ -4113,12 +4735,14 @@ final List<Question> pfrhQuestions = [
       r"""Martín actúa con autonomía cívica madura; Sofía muestra el sesgo de 'Deber Cívico Malentendido' sobre los símbolos de la patria.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Sofía prioriza la honestidad intelectual (autonomía moral). Martín cae en la 'Racionalización del Beneficio' (o 'Falacia de la práctica común'), pretendiendo justificar una acción incorrecta (plagio) sobre la base de que 'todos lo hacen' y de que produce un provecho material (buena nota) para el grupo.""",
+    explanation:
+        r"""Sofía prioriza la honestidad intelectual (autonomía moral). Martín cae en la 'Racionalización del Beneficio' (o 'Falacia de la práctica común'), pretendiendo justificar una acción incorrecta (plagio) sobre la base de que 'todos lo hacen' y de que produce un provecho material (buena nota) para el grupo.""",
   ),
   Question(
     id: 'pfrh_q395',
     topicId: 'pfrh_t3',
-    text: r'''Un conductor en el distrito de San Miguel observa a un anciano no vidente con bastón parado al borde de un crucero peatonal intentando cruzar la calzada. El semáforo peatonal está en rojo, pero no circulan autos en ese sentido. El conductor frena a mitad de cuadra para cederle el paso de forma segura, a pesar de que los choferes de los vehículos traseros le tocan la bocina con insistencia y le gritan insultos por detener la marcha. ¿Qué prioridad normativa y qué distractor se superan en la casuística?''',
+    text:
+        r'''Un conductor en el distrito de San Miguel observa a un anciano no vidente con bastón parado al borde de un crucero peatonal intentando cruzar la calzada. El semáforo peatonal está en rojo, pero no circulan autos en ese sentido. El conductor frena a mitad de cuadra para cederle el paso de forma segura, a pesar de que los choferes de los vehículos traseros le tocan la bocina con insistencia y le gritan insultos por detener la marcha. ¿Qué prioridad normativa y qué distractor se superan en la casuística?''',
     options: [
       r"""La norma moral de solidaridad y cuidado de la persona prima sobre el apuro vehicular; el conductor supera la 'Presión Colectiva de Terceros' y el egoísmo vial.""",
       r"""La norma jurídica municipal del semáforo en rojo prima de forma absoluta; el conductor incurre en 'Agresividad Justificada' hacia el anciano.""",
@@ -4126,12 +4750,14 @@ final List<Question> pfrhQuestions = [
       r"""Se vulnera de forma delictiva el Código Penal de la República; el conductor comete el sesgo de 'Deber Cívico Malentendido' sobre la bandera nacional.""",
     ],
     correctAnswer: 0,
-    explanation: r"""El conductor prioriza el valor ético y humano de proteger la vida y facilitar el cruce de una persona vulnerable sobre el convencionalismo del apuro del tráfico y la presión de otros conductores. Supera la 'Presión Colectiva de Terceros' que suele forzar a los ciudadanos a actuar con insensibilidad cívica.""",
+    explanation:
+        r"""El conductor prioriza el valor ético y humano de proteger la vida y facilitar el cruce de una persona vulnerable sobre el convencionalismo del apuro del tráfico y la presión de otros conductores. Supera la 'Presión Colectiva de Terceros' que suele forzar a los ciudadanos a actuar con insensibilidad cívica.""",
   ),
   Question(
     id: 'pfrh_q396',
     topicId: 'pfrh_t3',
-    text: r"""En una oficina bancaria vecinal en Chiclayo, don Pedro discute fuertemente e intenta saltarse la cola de atención preferencial, empujando a un usuario que le reclama respeto. Cuando el personal de seguridad le pide guardar el orden, Pedro grita: 'Yo soy cliente VIP del banco, tengo más dinero ahorrado que todos ustedes y por ende exijo que me atiendan primero sin hacer cola'. ¿Qué confusión de normas y qué distractor psicológico se aprecian en Pedro?""",
+    text:
+        r"""En una oficina bancaria vecinal en Chiclayo, don Pedro discute fuertemente e intenta saltarse la cola de atención preferencial, empujando a un usuario que le reclama respeto. Cuando el personal de seguridad le pide guardar el orden, Pedro grita: 'Yo soy cliente VIP del banco, tengo más dinero ahorrado que todos ustedes y por ende exijo que me atiendan primero sin hacer cola'. ¿Qué confusión de normas y qué distractor psicológico se aprecian en Pedro?""",
     options: [
       r"""Confunde su estatus comercial o económico con una licencia para violar las normas de trato social y respeto mutuo; comete el distractor de 'Soberbia de Consumo' (creer que el dinero anula la igualdad de trato cívico).""",
       r"""Aplica correctamente su autonomía moral posconvencional; supera el distractor de 'Solidaridad Cómplice' de los demás clientes.""",
@@ -4139,12 +4765,14 @@ final List<Question> pfrhQuestions = [
       r"""Acatamiento de un convencionalismo cívico de etiqueta escolar; Pedro evita la 'Minimización Emocional' del personal bancario.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Pedro malinterpreta su poder adquisitivo (estatus de cliente VIP) pretendiendo que le otorga el derecho de vulnerar normas básicas de cortesía, trato equitativo y respeto a las colas preferenciales de ley. Cae en la 'Soberbia de Consumo' o autoengaño de privilegio social.""",
+    explanation:
+        r"""Pedro malinterpreta su poder adquisitivo (estatus de cliente VIP) pretendiendo que le otorga el derecho de vulnerar normas básicas de cortesía, trato equitativo y respeto a las colas preferenciales de ley. Cae en la 'Soberbia de Consumo' o autoengaño de privilegio social.""",
   ),
   Question(
     id: 'pfrh_q397',
     topicId: 'pfrh_t3',
-    text: r"""Clara descubre que su hermano David sacó 50 soles de la cartera de su madre sin permiso para ir a los juegos electrónicos con sus amigos del barrio. David le implora a Clara que guarde el secreto apelando a la lealtad familiar: 'Los hermanos debemos defendernos entre nosotros, si le cuentas a mamá, eres una traidora a la familia'. Clara reflexiona y decide contarle la verdad a su madre. ¿Qué conflicto y qué distractor supera Clara?""",
+    text:
+        r"""Clara descubre que su hermano David sacó 50 soles de la cartera de su madre sin permiso para ir a los juegos electrónicos con sus amigos del barrio. David le implora a Clara que guarde el secreto apelando a la lealtad familiar: 'Los hermanos debemos defendernos entre nosotros, si le cuentas a mamá, eres una traidora a la familia'. Clara reflexiona y decide contarle la verdad a su madre. ¿Qué conflicto y qué distractor supera Clara?""",
     options: [
       r"""Conflicto entre la lealtad familiar malentendida frente al principio ético de honestidad; Clara supera el distractor de 'Solidaridad Cómplice' (encubrir una falta con pretexto de lealtad afectiva).""",
       r"""Conflicto entre normas jurídicas penales obligatorias; Clara incurre en 'Agresividad Justificada' motivada por la envidia al videojuego de su hermano.""",
@@ -4152,12 +4780,14 @@ final List<Question> pfrhQuestions = [
       r"""Aplicación de una heteronomía moral rígida impuesta por el Ministerio de la Mujer peruana; Clara evita la 'Minimización Emocional'.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Clara supera la 'Solidaridad Cómplice' (o falso espíritu de cuerpo familiar). Ella comprende que encubrir un robo o mentira no beneficia moralmente a su hermano a largo plazo y que el valor ético de la verdad y el respeto al patrimonio materno deben primar sobre la complicidad.""",
+    explanation:
+        r"""Clara supera la 'Solidaridad Cómplice' (o falso espíritu de cuerpo familiar). Ella comprende que encubrir un robo o mentira no beneficia moralmente a su hermano a largo plazo y que el valor ético de la verdad y el respeto al patrimonio materno deben primar sobre la complicidad.""",
   ),
   Question(
     id: 'pfrh_q398',
     topicId: 'pfrh_t3',
-    text: r"""Un residente de una zona urbana acumula hojas secas y envases plásticos en la vereda frente a su casa y les prende fuego, generando una humareda tóxica que ingresa a las viviendas de los vecinos. Al ser increpado por el humo perjudicial, responde: 'Quemar hojas secas en el frontis es una costumbre tradicional de mi familia de origen del campo y en mi vereda yo soy libre de hacerlo'. ¿Cómo se dirime este conflicto y qué distractor comete el vecino?""",
+    text:
+        r"""Un residente de una zona urbana acumula hojas secas y envases plásticos en la vereda frente a su casa y les prende fuego, generando una humareda tóxica que ingresa a las viviendas de los vecinos. Al ser increpado por el humo perjudicial, responde: 'Quemar hojas secas en el frontis es una costumbre tradicional de mi familia de origen del campo y en mi vereda yo soy libre de hacerlo'. ¿Cómo se dirime este conflicto y qué distractor comete el vecino?""",
     options: [
       r"""La norma jurídica municipal y de salud ambiental prohíbe la quema de basura y prevalece sobre la costumbre familiar; el vecino comete el distractor de 'Costumbre Tradicional Justificada' al pretender que una tradición desactualizada anula la ley ecológica de la ciudad.""",
       r"""La costumbre rural tiene mayor rango constitucional que los símbolos patrios; el vecino comete el distractor de 'Deber Cívico Malentendido' sobre el himno.""",
@@ -4165,12 +4795,14 @@ final List<Question> pfrhQuestions = [
       r'''La junta de vecinos debe disculparse formalmente por atentar contra la autonomía moral posconvencional de la familia del infractor.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Las normas jurídicas del Estado (leyes ambientales, ordenanzas municipales) y el derecho a un ambiente sano son imperativos de cumplimiento obligatorio que se imponen a costumbres particulares nocivas. El vecino comete el error de 'Costumbre Tradicional Justificada', creyendo que el arraigo familiar legitima la contaminación vecinal.""",
+    explanation:
+        r"""Las normas jurídicas del Estado (leyes ambientales, ordenanzas municipales) y el derecho a un ambiente sano son imperativos de cumplimiento obligatorio que se imponen a costumbres particulares nocivas. El vecino comete el error de 'Costumbre Tradicional Justificada', creyendo que el arraigo familiar legitima la contaminación vecinal.""",
   ),
   Question(
     id: 'pfrh_q399',
     topicId: 'pfrh_t3',
-    text: r"""En un debate en clase sobre los símbolos de la Patria, un estudiante propone pintar un diseño artístico de la escarapela sobre la franja blanca de la Bandera Nacional que el colegio usa para las ceremonias de los lunes, argumentando que 'se vería más decorativo y patriótico'. El docente desestima la propuesta del alumno. ¿Cuál es el sustento cívico e histórico de la decisión del docente?""",
+    text:
+        r"""En un debate en clase sobre los símbolos de la Patria, un estudiante propone pintar un diseño artístico de la escarapela sobre la franja blanca de la Bandera Nacional que el colegio usa para las ceremonias de los lunes, argumentando que 'se vería más decorativo y patriótico'. El docente desestima la propuesta del alumno. ¿Cuál es el sustento cívico e histórico de la decisión del docente?""",
     options: [
       r'''La Bandera Nacional es un símbolo patrio oficial intangible establecido en la Constitución, y no debe alterarse ni combinarse con distintivos cívicos tradicionales por respeto a la normatividad cívica nacional.''',
       r'''La propuesta es desestimada porque la escarapela cívica está prohibida por ley para menores de edad en el Perú.''',
@@ -4178,12 +4810,14 @@ final List<Question> pfrhQuestions = [
       r'''La propuesta es correcta legalmente, pero se desestima por falta de presupuesto de las juntas directivas del aula de clases.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El docente actúa conforme a la norma de respeto y protección a los símbolos nacionales. La Bandera Nacional es intangible constitucionalmente. Superponerle elementos externos como la escarapela desnaturaliza el símbolo oficial y contraviene las normas de protocolo del Estado peruano.''',
+    explanation:
+        r'''El docente actúa conforme a la norma de respeto y protección a los símbolos nacionales. La Bandera Nacional es intangible constitucionalmente. Superponerle elementos externos como la escarapela desnaturaliza el símbolo oficial y contraviene las normas de protocolo del Estado peruano.''',
   ),
   Question(
     id: 'pfrh_q400',
     topicId: 'pfrh_t3',
-    text: r'''Rodrigo, un estudiante universitario, camina hacia el paradero y observa que a una señora que va delante de ella se le cae un billete de 100 soles del bolsillo de su abrigo. Rodrigo no cuenta con dinero para sus fotocopias de la semana y sabe que en el lugar no hay testigos ni cámaras de seguridad. A pesar de la necesidad económica, apresura el paso, alcanza a la señora y le devuelve el billete. ¿Qué razonamiento moral y qué distractor de conveniencia se observan en Rodrigo?''',
+    text:
+        r'''Rodrigo, un estudiante universitario, camina hacia el paradero y observa que a una señora que va delante de ella se le cae un billete de 100 soles del bolsillo de su abrigo. Rodrigo no cuenta con dinero para sus fotocopias de la semana y sabe que en el lugar no hay testigos ni cámaras de seguridad. A pesar de la necesidad económica, apresura el paso, alcanza a la señora y le devuelve el billete. ¿Qué razonamiento moral y qué distractor de conveniencia se observan en Rodrigo?''',
     options: [
       r"""Actúa bajo una sólida autonomía moral; supera la 'Racionalización del Beneficio' (autojustificar quedarse con lo ajeno alegando necesidad material e invisibilidad del acto).""",
       r"""Actúa bajo heteronomía moral severa; supera la 'Solidaridad Cómplice' de los taxistas del paradero del micro.""",
@@ -4191,12 +4825,14 @@ final List<Question> pfrhQuestions = [
       r"""Demuestra un sesgo de 'Sentido Común no Legal' orientado a la evasión de tributos al diario oficial del Estado.""",
     ],
     correctAnswer: 0,
-    explanation: r"""Rodrigo demuestra autonomía moral posconvencional de acuerdo con Kohlberg. Devuelve el dinero por el valor intrínseco de la honradez y la empatía, superando el distractor de 'Racionalización del Beneficio' (justificar el hurto por hallazgo bajo premisas de 'nadie me vio' o 'yo lo necesito más').""",
+    explanation:
+        r"""Rodrigo demuestra autonomía moral posconvencional de acuerdo con Kohlberg. Devuelve el dinero por el valor intrínseco de la honradez y la empatía, superando el distractor de 'Racionalización del Beneficio' (justificar el hurto por hallazgo bajo premisas de 'nadie me vio' o 'yo lo necesito más').""",
   ),
   Question(
     id: 'pfrh_q401',
     topicId: 'pfrh_t3',
-    text: r"""Una vecina le exige a su vecina de vereda que barra y mantenga limpia la parte de la acera pública que da al frontis de su casa, apelando a la cortesía y normas de convivencia del barrio. La aludida le responde: 'La vereda es espacio público del Estado y el recolector de basura municipal es quien cobra por limpiar. Yo no tengo por qué barrer la calle'. ¿Cómo se analiza esta casuística en el plano cívico?""",
+    text:
+        r"""Una vecina le exige a su vecina de vereda que barra y mantenga limpia la parte de la acera pública que da al frontis de su casa, apelando a la cortesía y normas de convivencia del barrio. La aludida le responde: 'La vereda es espacio público del Estado y el recolector de basura municipal es quien cobra por limpiar. Yo no tengo por qué barrer la calle'. ¿Cómo se analiza esta casuística en el plano cívico?""",
     options: [
       r"""La vecina interpelada evade una norma de trato social y civismo vecinal amparándose en un pretexto burocrático; cae en el distractor de 'Desapego Cívico Ciudadano' que destruye la convivencia armónica del barrio.""",
       r'''La vecina de vereda tiene la total razón jurídica; las normas morales obligan al serenazgo a barrer las fachadas familiares.''',
@@ -4204,12 +4840,14 @@ final List<Question> pfrhQuestions = [
       r'''La exigencia de barrer la vereda constituye una violación a la libertad constitucional de transitar descalzo por el distrito.''',
     ],
     correctAnswer: 0,
-    explanation: r"""Barrer el frontis de la vereda es un convencionalismo social y un deber cívico vecinal que facilita la salubridad y buena imagen de la comunidad. Negarse a cooperar alegando que 'el Estado debe hacerlo todo' es una manifestación de 'Desapego Cívico Ciudadano' y falta de civismo.""",
+    explanation:
+        r"""Barrer el frontis de la vereda es un convencionalismo social y un deber cívico vecinal que facilita la salubridad y buena imagen de la comunidad. Negarse a cooperar alegando que 'el Estado debe hacerlo todo' es una manifestación de 'Desapego Cívico Ciudadano' y falta de civismo.""",
   ),
   Question(
     id: 'pfrh_q402',
     topicId: 'pfrh_t3',
-    text: r'''Joaquín, un escolar de cuarto de secundaria, asiste como espectador a la final del campeonato de fútbol de su institución educativa. Su sección pierde el partido ante el equipo de la sección rival. Los compañeros de aula de Joaquín empiezan a insultar y lanzar botellas de agua plásticas a los jugadores ganadores. Joaquín, lejos de unirse a la hostilidad, aplaude el desempeño del rival y se acerca a felicitar a su capitán de juego. ¿Qué cualidad cívica y moral demuestra Joaquín?''',
+    text:
+        r'''Joaquín, un escolar de cuarto de secundaria, asiste como espectador a la final del campeonato de fútbol de su institución educativa. Su sección pierde el partido ante el equipo de la sección rival. Los compañeros de aula de Joaquín empiezan a insultar y lanzar botellas de agua plásticas a los jugadores ganadores. Joaquín, lejos de unirse a la hostilidad, aplaude el desempeño del rival y se acerca a felicitar a su capitán de juego. ¿Qué cualidad cívica y moral demuestra Joaquín?''',
     options: [
       r"""Muestra autonomía moral y madurez personal basada en el juego limpio y autorrespeto; supera la 'Presión del Grupo y el Sesgo de Revancha'.""",
       r'''Demuestra heteronomía moral basada en el miedo ciego al castigo del auxiliar de educación del pabellón escolar.''',
@@ -4217,12 +4855,14 @@ final List<Question> pfrhQuestions = [
       r"""Comete el distractor de 'Deber Cívico Malentendido' sobre el Escudo de Armas y símbolos patrios de su región.""",
     ],
     correctAnswer: 0,
-    explanation: r'''Joaquín demuestra autonomía moral y comportamiento ético independiente. Rechaza la violencia física y verbal de su grupo, priorizando el valor deportivo de la deportividad y el respeto al contrincante sobre el revanchismo de grupo (supera el Sesgo de Revancha o tribalismo escolar).''',
+    explanation:
+        r'''Joaquín demuestra autonomía moral y comportamiento ético independiente. Rechaza la violencia física y verbal de su grupo, priorizando el valor deportivo de la deportividad y el respeto al contrincante sobre el revanchismo de grupo (supera el Sesgo de Revancha o tribalismo escolar).''',
   ),
   Question(
     id: 'pfrh_q403',
     topicId: 'pfrh_t3',
-    text: r"""Una microempresaria textil en Gamarra vende una prenda que un cliente reclama una semana después por presentar fallas de costura. El cliente no tiene la boleta de venta física. Legalmente, al no haber comprobante de pago, la empresaria no está obligada por el código de consumo a realizar el cambio. No obstante, decide cambiarle la prenda por una nueva argumentando: 'Sé que no estoy obligada por ley, pero mi palabra, la satisfacción de mi cliente y mi honestidad como negociante están primero'. ¿Bajo qué norma actúa la empresaria?""",
+    text:
+        r"""Una microempresaria textil en Gamarra vende una prenda que un cliente reclama una semana después por presentar fallas de costura. El cliente no tiene la boleta de venta física. Legalmente, al no haber comprobante de pago, la empresaria no está obligada por el código de consumo a realizar el cambio. No obstante, decide cambiarle la prenda por una nueva argumentando: 'Sé que no estoy obligada por ley, pero mi palabra, la satisfacción de mi cliente y mi honestidad como negociante están primero'. ¿Bajo qué norma actúa la empresaria?""",
     options: [
       r'''Actúa bajo una norma moral autónoma e internalizada que prima sobre las limitaciones del marco jurídico comercial.''',
       r'''Actúa bajo heteronomía moral obligada por la intervención coercitiva directa del Indecopi con sanción penal.''',
@@ -4230,12 +4870,14 @@ final List<Question> pfrhQuestions = [
       r"""Comete el distractor de 'Sesgo de Impunidad Individual' al desobedecer las reglas de cobranza del IGV.""",
     ],
     correctAnswer: 0,
-    explanation: r'''La empresaria actúa movida por su moral autónoma y valores de honestidad comercial. Al no haber obligación jurídica (por falta de boleta), la decisión recae plenamente en su fuero interno y autorregulación ética del negocio.''',
+    explanation:
+        r'''La empresaria actúa movida por su moral autónoma y valores de honestidad comercial. Al no haber obligación jurídica (por falta de boleta), la decisión recae plenamente en su fuero interno y autorregulación ética del negocio.''',
   ),
   Question(
     id: 'pfrh_q404',
     topicId: 'pfrh_t3',
-    text: r"""Un propietario de un condominio se niega sistemáticamente a pagar la cuota de mantenimiento de 100 soles mensuales destinada a conservar los jardines, las luminarias y la pintura exterior de los bloques comunes del edificio, aduciendo: 'Yo vivo en el primer piso, no uso el ascensor, no me gustan las plantas del jardín y por ende no me corresponde financiar la estética del condominio'. ¿Qué falta cívica y qué distractor de convivencia comete este vecino?""",
+    text:
+        r"""Un propietario de un condominio se niega sistemáticamente a pagar la cuota de mantenimiento de 100 soles mensuales destinada a conservar los jardines, las luminarias y la pintura exterior de los bloques comunes del edificio, aduciendo: 'Yo vivo en el primer piso, no uso el ascensor, no me gustan las plantas del jardín y por ende no me corresponde financiar la estética del condominio'. ¿Qué falta cívica y qué distractor de convivencia comete este vecino?""",
     options: [
       r"""Falta de responsabilidad civil y cooperación en copropiedad; comete el distractor de 'Egoísmo Ético e Individualismo' al pretender beneficiarse del valor del condominio sin aportar al fondo común.""",
       r"""Acción moralmente correcta fundamentada en la autonomía moral del fuero interno familiar; supera la 'Solidaridad Cómplice'.""",
@@ -4243,12 +4885,14 @@ final List<Question> pfrhQuestions = [
       r"""Cumplimiento acertado de un 'Sentido Común no Legal' cívico que anula las atribuciones de la SUNAT sobre las áreas de esparcimiento.""",
     ],
     correctAnswer: 0,
-    explanation: r"""El vecino infringe las normas jurídicas y de convivencia que rigen la copropiedad inmobiliaria (donde las áreas comunes son responsabilidad compartida de todos los copropietarios). Cae en el 'Egoísmo Ético' e individualismo antisocial, al gozar indirectamente de los beneficios del mantenimiento general (valorización de su propiedad, luz en accesos, limpieza) sin asumir el costo proporcional que la ley y la ética vecinal exigen.""",
+    explanation:
+        r"""El vecino infringe las normas jurídicas y de convivencia que rigen la copropiedad inmobiliaria (donde las áreas comunes son responsabilidad compartida de todos los copropietarios). Cae en el 'Egoísmo Ético' e individualismo antisocial, al gozar indirectamente de los beneficios del mantenimiento general (valorización de su propiedad, luz en accesos, limpieza) sin asumir el costo proporcional que la ley y la ética vecinal exigen.""",
   ),
   Question(
     id: 'pfrh_q405',
     topicId: 'pfrh_t3',
-    text: r'''Las normas que regulan la conducta humana en sociedad tienen diferentes características. Si un individuo llega sistemáticamente impuntual a las reuniones con sus amigos, será sujeto a rechazo social, pero no a cárcel. Este tipo de norma se clasifica como:''',
+    text:
+        r'''Las normas que regulan la conducta humana en sociedad tienen diferentes características. Si un individuo llega sistemáticamente impuntual a las reuniones con sus amigos, será sujeto a rechazo social, pero no a cárcel. Este tipo de norma se clasifica como:''',
     options: [
       r'''Norma Jurídica''',
       r'''Norma Moral''',
@@ -4257,12 +4901,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Norma Consuetudinaria Obligatoria''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (Norma de Trato Social). El distractor B (Norma Moral) es una 'Confusión Subjetiva'; lo moral atañe a la conciencia interna y la culpa, mientras que el 'trato social' (convencionalismos) tiene como sanción el rechazo del grupo (etiqueta, puntualidad, cortesía).""",
+    explanation:
+        r"""La respuesta correcta es C (Norma de Trato Social). El distractor B (Norma Moral) es una 'Confusión Subjetiva'; lo moral atañe a la conciencia interna y la culpa, mientras que el 'trato social' (convencionalismos) tiene como sanción el rechazo del grupo (etiqueta, puntualidad, cortesía).""",
   ),
   Question(
     id: 'pfrh_q406',
     topicId: 'pfrh_t3',
-    text: r"""¿Cuál de los siguientes NO es considerado oficialmente un Símbolo de la Patria según la Constitución Política del Perú, sino un 'distintivo nacional'?""",
+    text:
+        r"""¿Cuál de los siguientes NO es considerado oficialmente un Símbolo de la Patria según la Constitución Política del Perú, sino un 'distintivo nacional'?""",
     options: [
       r'''El Escudo Nacional''',
       r'''La Bandera de tres franjas''',
@@ -4271,12 +4917,14 @@ final List<Question> pfrhQuestions = [
       r'''E) El Estandarte Nacional''',
     ],
     correctAnswer: 3,
-    explanation: r"""La respuesta correcta es D (La Escarapela). Es solo un distintivo que se usa en el pecho. Los distractores A, B y C son los 3 únicos símbolos patrios constitucionales. Esta es una 'Trampa de Costumbre'; nos enseñan desde niños a usarla en julio como si fuera un símbolo oficial.""",
+    explanation:
+        r"""La respuesta correcta es D (La Escarapela). Es solo un distintivo que se usa en el pecho. Los distractores A, B y C son los 3 únicos símbolos patrios constitucionales. Esta es una 'Trampa de Costumbre'; nos enseñan desde niños a usarla en julio como si fuera un símbolo oficial.""",
   ),
   Question(
     id: 'pfrh_q407',
     topicId: 'pfrh_t3',
-    text: r'''Cuando el Estado, mediante sus instituciones como la Policía Nacional y la escuela, transmite valores, pautas culturales y normas de convivencia a un niño, está cumpliendo un proceso complementario a la función familiar. Este proceso, sociológicamente, se denomina:''',
+    text:
+        r'''Cuando el Estado, mediante sus instituciones como la Policía Nacional y la escuela, transmite valores, pautas culturales y normas de convivencia a un niño, está cumpliendo un proceso complementario a la función familiar. Este proceso, sociológicamente, se denomina:''',
     options: [
       r'''Socialización Secundaria''',
       r'''Socialización Primaria''',
@@ -4285,12 +4933,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Integración Empática Nacional''',
     ],
     correctAnswer: 0,
-    explanation: r'''La respuesta correcta es A (Socialización Secundaria). La socialización primaria ocurre exclusivamente en la familia (los primeros años). Cuando intervienen la escuela, la policía, los medios y el grupo de pares, se le llama secundaria.''',
+    explanation:
+        r'''La respuesta correcta es A (Socialización Secundaria). La socialización primaria ocurre exclusivamente en la familia (los primeros años). Cuando intervienen la escuela, la policía, los medios y el grupo de pares, se le llama secundaria.''',
   ),
   Question(
     id: 'pfrh_q408',
     topicId: 'pfrh_t3',
-    text: r'''La autodefinición dinámica de un individuo, constituida por sus rasgos psicológicos, físicos, valores y su historia biográfica singular, se denomina:''',
+    text:
+        r'''La autodefinición dinámica de un individuo, constituida por sus rasgos psicológicos, físicos, valores y su historia biográfica singular, se denomina:''',
     options: [
       r'''Autoconcepto social''',
       r'''Autoeficacia''',
@@ -4299,12 +4949,14 @@ final List<Question> pfrhQuestions = [
       r'''Identidad personal''',
     ],
     correctAnswer: 4,
-    explanation: r'''La identidad personal responde a la pregunta ¿quién soy yo?, distinguiendo al individuo como un ser único e irrepetible.''',
+    explanation:
+        r'''La identidad personal responde a la pregunta ¿quién soy yo?, distinguiendo al individuo como un ser único e irrepetible.''',
   ),
   Question(
     id: 'pfrh_q409',
     topicId: 'pfrh_t3',
-    text: r'''El sentimiento de pertenencia e identificación de un individuo con una patria común, sustentado en la historia, geografía, símbolos y cultura compartida, es la:''',
+    text:
+        r'''El sentimiento de pertenencia e identificación de un individuo con una patria común, sustentado en la historia, geografía, símbolos y cultura compartida, es la:''',
     options: [
       r'''Globalización cultural''',
       r'''Identidad personal''',
@@ -4313,12 +4965,14 @@ final List<Question> pfrhQuestions = [
       r'''Identidad nacional''',
     ],
     correctAnswer: 4,
-    explanation: r'''La identidad nacional une a los ciudadanos mediante vínculos históricos, tradiciones y valores cívicos republicanos.''',
+    explanation:
+        r'''La identidad nacional une a los ciudadanos mediante vínculos históricos, tradiciones y valores cívicos republicanos.''',
   ),
   Question(
     id: 'pfrh_q410',
     topicId: 'pfrh_t3',
-    text: r'''Según el artículo 49 de la Constitución Política del Perú, ¿cuáles son los únicos símbolos de la Patria oficialmente consagrados?''',
+    text:
+        r'''Según el artículo 49 de la Constitución Política del Perú, ¿cuáles son los únicos símbolos de la Patria oficialmente consagrados?''',
     options: [
       r'''Escudo de Armas, Estandarte y Escarapela''',
       r'''Bandera, Escudo y Himno Nacional''',
@@ -4327,12 +4981,14 @@ final List<Question> pfrhQuestions = [
       r'''La Bandera bicolor y la Escarapela''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Constitución peruana señala taxativamente que los símbolos de la Patria son la Bandera, el Escudo y el Himno Nacional. La escarapela es un distintivo cívico oficial, mas no un símbolo patrio constitucional.''',
+    explanation:
+        r'''La Constitución peruana señala taxativamente que los símbolos de la Patria son la Bandera, el Escudo y el Himno Nacional. La escarapela es un distintivo cívico oficial, mas no un símbolo patrio constitucional.''',
   ),
   Question(
     id: 'pfrh_q411',
     topicId: 'pfrh_t3',
-    text: r'''Las reglas de conducta dictadas por la propia conciencia del individuo, fundamentadas en el bien y el mal, cuya infracción genera remordimiento interno, son las:''',
+    text:
+        r'''Las reglas de conducta dictadas por la propia conciencia del individuo, fundamentadas en el bien y el mal, cuya infracción genera remordimiento interno, son las:''',
     options: [
       r'''Normas jurídicas''',
       r'''Normas sociales''',
@@ -4341,12 +4997,14 @@ final List<Question> pfrhQuestions = [
       r'''Leyes orgánicas''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas morales son autónomas e incoercibles; su cumplimiento depende de la convicción interior y no de la coacción externa.''',
+    explanation:
+        r'''Las normas morales son autónomas e incoercibles; su cumplimiento depende de la convicción interior y no de la coacción externa.''',
   ),
   Question(
     id: 'pfrh_q412',
     topicId: 'pfrh_t3',
-    text: r'''¿Qué tipo de normas son dictadas por el Estado de forma obligatoria y heterónoma, regulan la convivencia externa y cuentan con el respaldo de la fuerza pública para aplicar sanciones?''',
+    text:
+        r'''¿Qué tipo de normas son dictadas por el Estado de forma obligatoria y heterónoma, regulan la convivencia externa y cuentan con el respaldo de la fuerza pública para aplicar sanciones?''',
     options: [
       r'''Normas religiosas''',
       r'''Normas morales''',
@@ -4355,12 +5013,14 @@ final List<Question> pfrhQuestions = [
       r'''Normas sociales o de trato social''',
     ],
     correctAnswer: 3,
-    explanation: r'''Las normas jurídicas son coercibles, pues su incumplimiento faculta al Estado a aplicar sanciones penales o civiles mediante la fuerza.''',
+    explanation:
+        r'''Las normas jurídicas son coercibles, pues su incumplimiento faculta al Estado a aplicar sanciones penales o civiles mediante la fuerza.''',
   ),
   Question(
     id: 'pfrh_q413',
     topicId: 'pfrh_t3',
-    text: r'''Las reglas de comportamiento impuestas por la costumbre o cortesía dentro de un grupo social, cuyo incumplimiento acarrea el rechazo o la marginación del grupo, son:''',
+    text:
+        r'''Las reglas de comportamiento impuestas por la costumbre o cortesía dentro de un grupo social, cuyo incumplimiento acarrea el rechazo o la marginación del grupo, son:''',
     options: [
       r'''Normas jurídicas''',
       r'''Leyes constitucionales''',
@@ -4369,12 +5029,14 @@ final List<Question> pfrhQuestions = [
       r'''Normas de seguridad ciudadana''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las normas sociales o de trato social (decoro, etiqueta, urbanidad) son unilaterales y no coercibles legalmente; la sanción es de carácter social.''',
+    explanation:
+        r'''Las normas sociales o de trato social (decoro, etiqueta, urbanidad) son unilaterales y no coercibles legalmente; la sanción es de carácter social.''',
   ),
   Question(
     id: 'pfrh_q414',
     topicId: 'pfrh_t3',
-    text: r'''La posibilidad legal y material de aplicar la fuerza pública para exigir el cumplimiento de una norma o imponer su castigo se define como:''',
+    text:
+        r'''La posibilidad legal y material de aplicar la fuerza pública para exigir el cumplimiento de una norma o imponer su castigo se define como:''',
     options: [
       r'''Coercibilidad''',
       r'''Heteronomía''',
@@ -4383,12 +5045,14 @@ final List<Question> pfrhQuestions = [
       r'''Imprescriptibilidad''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coercibilidad es una característica exclusiva de las normas jurídicas, asegurando la efectividad del ordenamiento legal.''',
+    explanation:
+        r'''La coercibilidad es una característica exclusiva de las normas jurídicas, asegurando la efectividad del ordenamiento legal.''',
   ),
   Question(
     id: 'pfrh_q415',
     topicId: 'pfrh_t3',
-    text: r'''Cuando una persona debe cumplir con normas y leyes creadas por una entidad externa (como el Congreso) sin considerar su opinión o aceptación interna, se manifiesta la:''',
+    text:
+        r'''Cuando una persona debe cumplir con normas y leyes creadas por una entidad externa (como el Congreso) sin considerar su opinión o aceptación interna, se manifiesta la:''',
     options: [
       r'''Moralidad interna''',
       r'''Heteronomía''',
@@ -4397,12 +5061,14 @@ final List<Question> pfrhQuestions = [
       r'''Autonomía''',
     ],
     correctAnswer: 1,
-    explanation: r'''La heteronomía significa estar sometido a la voluntad de un tercero, a diferencia de la autonomía de las normas morales.''',
+    explanation:
+        r'''La heteronomía significa estar sometido a la voluntad de un tercero, a diferencia de la autonomía de las normas morales.''',
   ),
   Question(
     id: 'pfrh_q416',
     topicId: 'pfrh_t3',
-    text: r'''¿Qué símbolo patrio fue compuesto musicalmente por José Bernardo Alcedo, con letra de José de la Torre Ugarte y cantado originalmente por Rosa Merino en 1821?''',
+    text:
+        r'''¿Qué símbolo patrio fue compuesto musicalmente por José Bernardo Alcedo, con letra de José de la Torre Ugarte y cantado originalmente por Rosa Merino en 1821?''',
     options: [
       r'''El Escudo de Armas''',
       r'''La Escarapela''',
@@ -4411,12 +5077,14 @@ final List<Question> pfrhQuestions = [
       r'''La Bandera Nacional''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Himno Nacional fue seleccionado por el general José de San Martín mediante un concurso público para simbolizar la naciente república.''',
+    explanation:
+        r'''El Himno Nacional fue seleccionado por el general José de San Martín mediante un concurso público para simbolizar la naciente república.''',
   ),
   Question(
     id: 'pfrh_q417',
     topicId: 'pfrh_t3',
-    text: r'''Los tres reinos de la naturaleza de la riqueza patria representados oficialmente en los campos del Escudo Nacional del Perú son:''',
+    text:
+        r'''Los tres reinos de la naturaleza de la riqueza patria representados oficialmente en los campos del Escudo Nacional del Perú son:''',
     options: [
       r'''La llama, la cantuta y la cornucopia''',
       r'''La llama, el algodón y las monedas de oro''',
@@ -4425,12 +5093,14 @@ final List<Question> pfrhQuestions = [
       r'''La vicuña, el algarrobo y el cofre de plata''',
     ],
     correctAnswer: 3,
-    explanation: r'''La vicuña representa al reino animal; el árbol de la quina, al reino vegetal; y la cornucopia derramando monedas, al reino mineral.''',
+    explanation:
+        r'''La vicuña representa al reino animal; el árbol de la quina, al reino vegetal; y la cornucopia derramando monedas, al reino mineral.''',
   ),
   Question(
     id: 'pfrh_q458',
     topicId: 'pfrh_t4',
-    text: r'''¿Cuál de las dimensiones de la autoestima se define como el conjunto de representaciones, percepciones y descripciones que un individuo hace de sí mismo, abarcando sus características físicas, sociales, académicas y afectivas?''',
+    text:
+        r'''¿Cuál de las dimensiones de la autoestima se define como el conjunto de representaciones, percepciones y descripciones que un individuo hace de sí mismo, abarcando sus características físicas, sociales, académicas y afectivas?''',
     options: [
       r'''Autoconcepto''',
       r'''Autoeficacia''',
@@ -4438,12 +5108,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconocimiento''',
     ],
     correctAnswer: 0,
-    explanation: r'''El autoconcepto es la dimensión cognitiva de la autoestima. Corresponde a la descripción y representación mental que la persona tiene de sí misma en diversos aspectos.''',
+    explanation:
+        r'''El autoconcepto es la dimensión cognitiva de la autoestima. Corresponde a la descripción y representación mental que la persona tiene de sí misma en diversos aspectos.''',
   ),
   Question(
     id: 'pfrh_q459',
     topicId: 'pfrh_t4',
-    text: r'''De acuerdo con la teoría del aprendizaje social de Albert Bandura, ¿cómo se denomina a la creencia que tiene un individuo en sus propias capacidades para organizar y ejecutar las acciones necesarias para alcanzar determinados logros?''',
+    text:
+        r'''De acuerdo con la teoría del aprendizaje social de Albert Bandura, ¿cómo se denomina a la creencia que tiene un individuo en sus propias capacidades para organizar y ejecutar las acciones necesarias para alcanzar determinados logros?''',
     options: [
       r'''Autorrespeto''',
       r'''Autoeficacia''',
@@ -4451,12 +5123,14 @@ final List<Question> pfrhQuestions = [
       r'''Autovaloración''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autoeficacia es la creencia en las propias habilidades y capacidades para tener éxito en una tarea o situación específica, un concepto clave desarrollado por Albert Bandura.''',
+    explanation:
+        r'''La autoeficacia es la creencia en las propias habilidades y capacidades para tener éxito en una tarea o situación específica, un concepto clave desarrollado por Albert Bandura.''',
   ),
   Question(
     id: 'pfrh_q460',
     topicId: 'pfrh_t4',
-    text: r"""En el modelo jerárquico de la 'escalera de la autoestima', ¿qué peldaño implica la capacidad del sujeto de admitir y reconocer todas las partes de sí mismo, tanto sus virtudes como sus defectos, sin juzgarse severamente?""",
+    text:
+        r"""En el modelo jerárquico de la 'escalera de la autoestima', ¿qué peldaño implica la capacidad del sujeto de admitir y reconocer todas las partes de sí mismo, tanto sus virtudes como sus defectos, sin juzgarse severamente?""",
     options: [
       r'''Autoconcepto''',
       r'''Autoaceptación''',
@@ -4464,12 +5138,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoevaluación''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autoaceptación es el peldaño de la escalera de la autoestima que consiste en admitir todas las facetas de nuestra personalidad y físico de manera realista y amorosa, sin reproches.''',
+    explanation:
+        r'''La autoaceptación es el peldaño de la escalera de la autoestima que consiste en admitir todas las facetas de nuestra personalidad y físico de manera realista y amorosa, sin reproches.''',
   ),
   Question(
     id: 'pfrh_q461',
     topicId: 'pfrh_t4',
-    text: r'''Consiste en el primer peldaño del desarrollo de la autoestima y se define como la capacidad del individuo de explorar, identificar y comprender sus propias emociones, necesidades, motivaciones, fortalezas y limitaciones:''',
+    text:
+        r'''Consiste en el primer peldaño del desarrollo de la autoestima y se define como la capacidad del individuo de explorar, identificar y comprender sus propias emociones, necesidades, motivaciones, fortalezas y limitaciones:''',
     options: [
       r'''Autovaloración''',
       r'''Autoeficacia''',
@@ -4477,12 +5153,14 @@ final List<Question> pfrhQuestions = [
       r'''Autorregulación''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autoconocimiento es la base de la autoestima. Es el proceso reflexivo mediante el cual la persona adquiere noción de su propio yo, de sus características y cualidades emocionales y cognitivas.''',
+    explanation:
+        r'''El autoconocimiento es la base de la autoestima. Es el proceso reflexivo mediante el cual la persona adquiere noción de su propio yo, de sus características y cualidades emocionales y cognitivas.''',
   ),
   Question(
     id: 'pfrh_q462',
     topicId: 'pfrh_t4',
-    text: r'''Daniel Goleman señala que la inteligencia emocional se compone de cinco dimensiones básicas. ¿Cuál de ellas define la habilidad de controlar o redirigir impulsos y estados de ánimo conflictivos, así como de postergar la gratificación inmediata?''',
+    text:
+        r'''Daniel Goleman señala que la inteligencia emocional se compone de cinco dimensiones básicas. ¿Cuál de ellas define la habilidad de controlar o redirigir impulsos y estados de ánimo conflictivos, así como de postergar la gratificación inmediata?''',
     options: [
       r'''Autoconciencia''',
       r'''Empatía''',
@@ -4490,12 +5168,14 @@ final List<Question> pfrhQuestions = [
       r'''Autorregulación''',
     ],
     correctAnswer: 3,
-    explanation: r'''La autorregulación emocional es la capacidad de manejar y modular de forma adaptativa nuestros estados emocionales, impulsos y recursos internos, impidiendo que desborden nuestra conducta.''',
+    explanation:
+        r'''La autorregulación emocional es la capacidad de manejar y modular de forma adaptativa nuestros estados emocionales, impulsos y recursos internos, impidiendo que desborden nuestra conducta.''',
   ),
   Question(
     id: 'pfrh_q463',
     topicId: 'pfrh_t4',
-    text: r"""Según psicoterapeutas y teóricos de la autoestima como Nathaniel Branden, ¿cómo se define el pilar de la autoestima denominado 'autorrespeto'?""",
+    text:
+        r"""Según psicoterapeutas y teóricos de la autoestima como Nathaniel Branden, ¿cómo se define el pilar de la autoestima denominado 'autorrespeto'?""",
     options: [
       r'''Como el conocimiento exacto de las habilidades de razonamiento lógico y académico del sujeto.''',
       r'''Como la convicción de que los demás son inferiores y de que las normas sociales no aplican a la propia conducta.''',
@@ -4503,12 +5183,14 @@ final List<Question> pfrhQuestions = [
       r'''Como la sumisión voluntaria ante los deseos de los demás para evitar el conflicto interpersonal.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autorrespeto implica considerarse digno de la felicidad, de la vida y de expresar de forma constructiva las propias necesidades y valores, defendiéndolos sin agredir a otros.''',
+    explanation:
+        r'''El autorrespeto implica considerarse digno de la felicidad, de la vida y de expresar de forma constructiva las propias necesidades y valores, defendiéndolos sin agredir a otros.''',
   ),
   Question(
     id: 'pfrh_q464',
     topicId: 'pfrh_t4',
-    text: r"""En el contexto de la inteligencia emocional descrito por Daniel Goleman, ¿a qué hace referencia el término 'secuestro amigdalino' (amygdala hijack)?""",
+    text:
+        r"""En el contexto de la inteligencia emocional descrito por Daniel Goleman, ¿a qué hace referencia el término 'secuestro amigdalino' (amygdala hijack)?""",
     options: [
       r'''A la pérdida temporal de la memoria de corto plazo debido a un evento traumático físico.''',
       r'''A una respuesta emocional automática, súbita e intensa que supera y anula el control racional ejercido por la corteza prefrontal.''',
@@ -4516,12 +5198,14 @@ final List<Question> pfrhQuestions = [
       r'''A la supresión voluntaria y consciente de la ira para mantener la compostura en un evento social.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El secuestro amigdalino ocurre cuando la amígdala cerebral percibe una amenaza y reacciona de forma inmediata e impulsiva, 'secuestrando' el control racional antes de que el neocórtex pueda analizar la situación.""",
+    explanation:
+        r"""El secuestro amigdalino ocurre cuando la amígdala cerebral percibe una amenaza y reacciona de forma inmediata e impulsiva, 'secuestrando' el control racional antes de que el neocórtex pueda analizar la situación.""",
   ),
   Question(
     id: 'pfrh_q465',
     topicId: 'pfrh_t4',
-    text: r"""Dentro del modelo de regulación emocional de James Gross, ¿en qué consiste el mecanismo de 'reevaluación cognitiva' (cognitive reappraisal)?""",
+    text:
+        r"""Dentro del modelo de regulación emocional de James Gross, ¿en qué consiste el mecanismo de 'reevaluación cognitiva' (cognitive reappraisal)?""",
     options: [
       r'''En reprimir e inhibir la expresión conductual externa de una emoción que ya ha sido completamente generada.''',
       r'''En cambiar la interpretación mental o el significado atribuido a un evento estresante para modificar su impacto emocional inicial.''',
@@ -4529,12 +5213,14 @@ final List<Question> pfrhQuestions = [
       r'''En culpar a terceros por las propias dificultades emocionales a fin de reducir el estrés.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La reevaluación cognitiva es una estrategia de regulación emocional enfocada en el antecedente, donde el individuo cambia conscientemente la forma en que percibe y piensa sobre una situación para modular su respuesta emocional.''',
+    explanation:
+        r'''La reevaluación cognitiva es una estrategia de regulación emocional enfocada en el antecedente, donde el individuo cambia conscientemente la forma en que percibe y piensa sobre una situación para modular su respuesta emocional.''',
   ),
   Question(
     id: 'pfrh_q466',
     topicId: 'pfrh_t4',
-    text: r'''¿Cuál es el concepto que define la capacidad psicológica de un individuo para hacer frente a las adversidades de la vida, superar traumas y salir fortalecido o transformado positivamente por la experiencia?''',
+    text:
+        r'''¿Cuál es el concepto que define la capacidad psicológica de un individuo para hacer frente a las adversidades de la vida, superar traumas y salir fortalecido o transformado positivamente por la experiencia?''',
     options: [
       r'''Autoeficacia''',
       r'''Resiliencia''',
@@ -4542,12 +5228,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconcepto''',
     ],
     correctAnswer: 1,
-    explanation: r'''La resiliencia es la capacidad humana para adaptarse positivamente a situaciones adversas, aprender de las crisis y reconstruirse emocionalmente.''',
+    explanation:
+        r'''La resiliencia es la capacidad humana para adaptarse positivamente a situaciones adversas, aprender de las crisis y reconstruirse emocionalmente.''',
   ),
   Question(
     id: 'pfrh_q467',
     topicId: 'pfrh_t4',
-    text: r"""La empatía se divide clásicamente en dos dimensiones fundamentales. ¿Cómo se define el concepto de 'empatía cognitiva'?""",
+    text:
+        r"""La empatía se divide clásicamente en dos dimensiones fundamentales. ¿Cómo se define el concepto de 'empatía cognitiva'?""",
     options: [
       r'''Como el contagio emocional directo que hace que una persona experimente físicamente el dolor del otro de forma refleja.''',
       r'''Como la capacidad intelectual y mental de adoptar la perspectiva del otro, comprendiendo sus puntos de vista, intenciones y estados mentales.''',
@@ -4555,12 +5243,14 @@ final List<Question> pfrhQuestions = [
       r'''Como el juicio de valor racional que evalúa si las decisiones de otra persona son correctas o incorrectas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La empatía cognitiva es la capacidad de ponerse mentalmente en el lugar del otro, entender su perspectiva y comprender cómo piensa y por qué se siente así, sin necesidad de experimentar su dolor en carne propia.''',
+    explanation:
+        r'''La empatía cognitiva es la capacidad de ponerse mentalmente en el lugar del otro, entender su perspectiva y comprender cómo piensa y por qué se siente así, sin necesidad de experimentar su dolor en carne propia.''',
   ),
   Question(
     id: 'pfrh_q468',
     topicId: 'pfrh_t4',
-    text: r'''¿Cuál de las siguientes situaciones se tipifica conceptualmente como una conducta de riesgo directamente asociada al déficit de autocuidado en la adolescencia?''',
+    text:
+        r'''¿Cuál de las siguientes situaciones se tipifica conceptualmente como una conducta de riesgo directamente asociada al déficit de autocuidado en la adolescencia?''',
     options: [
       r'''La participación voluntaria en talleres extracurriculares de arte o deportes colectivos.''',
       r'''El consumo frecuente de sustancias psicoactivas debido a la búsqueda de aceptación o evasión de la realidad.''',
@@ -4568,12 +5258,14 @@ final List<Question> pfrhQuestions = [
       r'''La búsqueda espontánea de apoyo en psicólogos escolares ante crisis emocionales familiares.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El consumo de drogas, alcohol y tabaco son conductas de riesgo que atentan directamente contra la salud y el bienestar integral (autocuidado), comunes en la adolescencia por inmadurez en la evaluación del peligro.''',
+    explanation:
+        r'''El consumo de drogas, alcohol y tabaco son conductas de riesgo que atentan directamente contra la salud y el bienestar integral (autocuidado), comunes en la adolescencia por inmadurez en la evaluación del peligro.''',
   ),
   Question(
     id: 'pfrh_q469',
     topicId: 'pfrh_t4',
-    text: r"""Según la teoría del aprendizaje social y de la personalidad de Julian Rotter, ¿qué define al 'locus de control interno'?""",
+    text:
+        r"""Según la teoría del aprendizaje social y de la personalidad de Julian Rotter, ¿qué define al 'locus de control interno'?""",
     options: [
       r'''La creencia de que la suerte, el destino y los factores externos rigen de forma exclusiva el éxito personal.''',
       r'''La percepción de que las acciones individuales carecen de impacto frente a las decisiones gubernamentales o del entorno social.''',
@@ -4581,12 +5273,14 @@ final List<Question> pfrhQuestions = [
       r'''La tendencia psicológica a atribuir los fracasos personales a las debilidades de las figuras de autoridad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El locus de control interno es la convicción de que uno tiene el control sobre su propia vida y que los éxitos y fracasos son el resultado del esfuerzo y las decisiones personales, no de causas ajenas.''',
+    explanation:
+        r'''El locus de control interno es la convicción de que uno tiene el control sobre su propia vida y que los éxitos y fracasos son el resultado del esfuerzo y las decisiones personales, no de causas ajenas.''',
   ),
   Question(
     id: 'pfrh_q470',
     topicId: 'pfrh_t4',
-    text: r'''En el ámbito del desarrollo socioemocional, la asertividad se conceptualiza como:''',
+    text:
+        r'''En el ámbito del desarrollo socioemocional, la asertividad se conceptualiza como:''',
     options: [
       r'''La imposición defensiva e inflexible de los propios puntos de vista sin escuchar a los demás.''',
       r'''La evitación sistemática de los conflictos interpersonales mediante el silencio y la sumisión pasiva.''',
@@ -4594,12 +5288,14 @@ final List<Question> pfrhQuestions = [
       r'''La habilidad para manipular de manera sutil el comportamiento de las personas en beneficio propio.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La asertividad es un estilo de comunicación maduro que equilibra la defensa de los propios derechos y emociones con el respeto a los derechos y emociones de los demás.''',
+    explanation:
+        r'''La asertividad es un estilo de comunicación maduro que equilibra la defensa de los propios derechos y emociones con el respeto a los derechos y emociones de los demás.''',
   ),
   Question(
     id: 'pfrh_q471',
     topicId: 'pfrh_t4',
-    text: r'''¿A qué dimensión del autocuidado corresponde la adopción de rutinas de descanso reparador, una nutrición balanceada, chequeos médicos preventivos y la realización de actividad física?''',
+    text:
+        r'''¿A qué dimensión del autocuidado corresponde la adopción de rutinas de descanso reparador, una nutrición balanceada, chequeos médicos preventivos y la realización de actividad física?''',
     options: [
       r'''Autocuidado social''',
       r'''Autocuidado físico''',
@@ -4607,12 +5303,14 @@ final List<Question> pfrhQuestions = [
       r'''Autocuidado emocional''',
     ],
     correctAnswer: 1,
-    explanation: r'''El autocuidado físico se centra en las acciones biológicas dirigidas a mantener el cuerpo en óptimas condiciones de salud, energía y funcionamiento fisiológico.''',
+    explanation:
+        r'''El autocuidado físico se centra en las acciones biológicas dirigidas a mantener el cuerpo en óptimas condiciones de salud, energía y funcionamiento fisiológico.''',
   ),
   Question(
     id: 'pfrh_q472',
     topicId: 'pfrh_t4',
-    text: r'''¿Qué autor formuló la teoría de las inteligencias múltiples, definiendo la inteligencia intrapersonal como la capacidad de acceder a la propia vida emocional y orientar la propia conducta de manera eficaz?''',
+    text:
+        r'''¿Qué autor formuló la teoría de las inteligencias múltiples, definiendo la inteligencia intrapersonal como la capacidad de acceder a la propia vida emocional y orientar la propia conducta de manera eficaz?''',
     options: [
       r'''Daniel Goleman''',
       r'''Albert Bandura''',
@@ -4620,12 +5318,14 @@ final List<Question> pfrhQuestions = [
       r'''Jean Piaget''',
     ],
     correctAnswer: 2,
-    explanation: r'''Howard Gardner propuso la teoría de las inteligencias múltiples en 1983, incluyendo la inteligencia intrapersonal (conocerse e interactuar con uno mismo) y la interpersonal (interactuar con otros).''',
+    explanation:
+        r'''Howard Gardner propuso la teoría de las inteligencias múltiples en 1983, incluyendo la inteligencia intrapersonal (conocerse e interactuar con uno mismo) y la interpersonal (interactuar con otros).''',
   ),
   Question(
     id: 'pfrh_q473',
     topicId: 'pfrh_t4',
-    text: r"""En el análisis de las conductas de riesgo en adolescentes, ¿cómo se conceptualiza a los 'factores de protección'?""",
+    text:
+        r"""En el análisis de las conductas de riesgo en adolescentes, ¿cómo se conceptualiza a los 'factores de protección'?""",
     options: [
       r'''A las leyes locales que prohíben la venta de productos nocivos a menores de edad.''',
       r'''A las variables individuales, familiares o del entorno que disminuyen la probabilidad de involucrarse en conductas de riesgo o atenúan su impacto.''',
@@ -4633,7 +5333,8 @@ final List<Question> pfrhQuestions = [
       r'''A las técnicas de defensa física que los jóvenes emplean ante agresiones externas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los factores de protección son recursos biológicos, psicológicos o sociales (como buena autoestima, redes de apoyo, comunicación familiar) que reducen la vulnerabilidad ante factores de riesgo.''',
+    explanation:
+        r'''Los factores de protección son recursos biológicos, psicológicos o sociales (como buena autoestima, redes de apoyo, comunicación familiar) que reducen la vulnerabilidad ante factores de riesgo.''',
   ),
   Question(
     id: 'pfrh_q474',
@@ -4646,12 +5347,14 @@ final List<Question> pfrhQuestions = [
       r'''La cantidad de horas semanales que los padres imponen al estudiante para hacer sus deberes.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autoconcepto académico es la percepción que el estudiante tiene de sí mismo en relación con sus capacidades escolares. Influye decisivamente en su motivación y rendimiento.''',
+    explanation:
+        r'''El autoconcepto académico es la percepción que el estudiante tiene de sí mismo en relación con sus capacidades escolares. Influye decisivamente en su motivación y rendimiento.''',
   ),
   Question(
     id: 'pfrh_q475',
     topicId: 'pfrh_t4',
-    text: r"""¿En qué consiste la técnica de regulación emocional conocida como 'distracción cognitiva'?""",
+    text:
+        r"""¿En qué consiste la técnica de regulación emocional conocida como 'distracción cognitiva'?""",
     options: [
       r'''En negar de forma inconsciente la existencia de problemas reales para evitar sufrir.''',
       r'''En dirigir de forma voluntaria y consciente la atención hacia pensamientos, recuerdos o actividades neutras o gratificantes para mitigar el malestar emocional inmediato.''',
@@ -4659,12 +5362,14 @@ final List<Question> pfrhQuestions = [
       r'''En atribuir la causa de las propias emociones negativas al comportamiento de terceras personas.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La distracción cognitiva es un mecanismo de regulación voluntaria mediante el cual desviamos el foco atencional de los pensamientos negativos hacia contenidos que no generen malestar, disminuyendo la intensidad de la emoción.''',
+    explanation:
+        r'''La distracción cognitiva es un mecanismo de regulación voluntaria mediante el cual desviamos el foco atencional de los pensamientos negativos hacia contenidos que no generen malestar, disminuyendo la intensidad de la emoción.''',
   ),
   Question(
     id: 'pfrh_q476',
     topicId: 'pfrh_t4',
-    text: r"""Si un alumno afirma: 'Soy una persona a la que le cuestan mucho las ciencias experimentales' frente a 'No creo que pueda aprobar este examen de química orgánica mañana', ¿qué constructos psicológicos está expresando respectivamente?""",
+    text:
+        r"""Si un alumno afirma: 'Soy una persona a la que le cuestan mucho las ciencias experimentales' frente a 'No creo que pueda aprobar este examen de química orgánica mañana', ¿qué constructos psicológicos está expresando respectivamente?""",
     options: [
       r'''Autovaloración vs. Autoconocimiento''',
       r'''Autoconcepto vs. Autoeficacia''',
@@ -4672,12 +5377,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoaceptación vs. Autoevaluación''',
     ],
     correctAnswer: 1,
-    explanation: r'''La primera afirmación describe una percepción general y descriptiva de sí mismo en una materia (autoconcepto académico), mientras que la segunda es la expectativa específica sobre su desempeño ante una tarea concreta en el futuro cercano (autoeficacia).''',
+    explanation:
+        r'''La primera afirmación describe una percepción general y descriptiva de sí mismo en una materia (autoconcepto académico), mientras que la segunda es la expectativa específica sobre su desempeño ante una tarea concreta en el futuro cercano (autoeficacia).''',
   ),
   Question(
     id: 'pfrh_q477',
     topicId: 'pfrh_t4',
-    text: r"""Identifique la diferencia fundamental entre el 'autoconcepto' y la 'autovaloración/autoestima':""",
+    text:
+        r"""Identifique la diferencia fundamental entre el 'autoconcepto' y la 'autovaloración/autoestima':""",
     options: [
       r'''El autoconcepto es innato e invariable, mientras que la autovaloración se desarrolla únicamente en la etapa adulta.''',
       r'''El autoconcepto posee un carácter principalmente descriptivo y cognitivo, mientras que la autovaloración incluye el componente evaluativo y afectivo del sujeto sobre sí mismo.''',
@@ -4685,12 +5392,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia conceptual; la psicología contemporánea utiliza ambos términos como sinónimos absolutos.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El autoconcepto responde a la pregunta '¿quién soy yo?' (cognitivo/descriptivo). La autovaloración o autoestima responde a '¿cómo me valoro o cuánto me quiero?' (afectivo/evaluativo).""",
+    explanation:
+        r"""El autoconcepto responde a la pregunta '¿quién soy yo?' (cognitivo/descriptivo). La autovaloración o autoestima responde a '¿cómo me valoro o cuánto me quiero?' (afectivo/evaluativo).""",
   ),
   Question(
     id: 'pfrh_q478',
     topicId: 'pfrh_t4',
-    text: r'''Cuando un adolescente decide rechazar de forma clara y respetuosa la invitación de sus amigos a consumir marihuana, sabiendo que esto compromete su salud física e intelectual, esta conducta se tipifica como:''',
+    text:
+        r'''Cuando un adolescente decide rechazar de forma clara y respetuosa la invitación de sus amigos a consumir marihuana, sabiendo que esto compromete su salud física e intelectual, esta conducta se tipifica como:''',
     options: [
       r'''Sumisión ante los mandatos morales rígidos de su familia.''',
       r'''Conducta de autocuidado basada en un factor de protección interno y resistencia asertiva a la presión de grupo.''',
@@ -4698,12 +5407,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión emocional inconsciente para evitar conflictos físicos con sus iguales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La resistencia asertiva y el cuidado de la salud integral frente al consumo de sustancias representan una conducta de autocuidado impulsada por factores de protección intrapsíquicos.''',
+    explanation:
+        r'''La resistencia asertiva y el cuidado de la salud integral frente al consumo de sustancias representan una conducta de autocuidado impulsada por factores de protección intrapsíquicos.''',
   ),
   Question(
     id: 'pfrh_q479',
     topicId: 'pfrh_t4',
-    text: r"""Considere los enunciados: I) 'Sé que suelo postergar las tareas académicas complejas'; II) 'Me molesta ser procastinador y considero que debo mejorar mi disciplina por mí mismo'. ¿Qué peldaños de la escalera de la autoestima se representan en cada caso?""",
+    text:
+        r"""Considere los enunciados: I) 'Sé que suelo postergar las tareas académicas complejas'; II) 'Me molesta ser procastinador y considero que debo mejorar mi disciplina por mí mismo'. ¿Qué peldaños de la escalera de la autoestima se representan en cada caso?""",
     options: [
       r'''I: Autoconocimiento / II: Autoevaluación y autorrespeto''',
       r'''I: Autoaceptación / II: Autoeficacia situacional''',
@@ -4711,12 +5422,14 @@ final List<Question> pfrhQuestions = [
       r'''I: Autovaloración afectiva / II: Empatía intrapersonal''',
     ],
     correctAnswer: 0,
-    explanation: r'''El enunciado I muestra un conocimiento descriptivo de un comportamiento propio (autoconocimiento/autoconcepto). El enunciado II introduce un juicio de valor sobre dicha conducta (autoevaluación) y la voluntad de cambio para su bienestar (autorrespeto).''',
+    explanation:
+        r'''El enunciado I muestra un conocimiento descriptivo de un comportamiento propio (autoconocimiento/autoconcepto). El enunciado II introduce un juicio de valor sobre dicha conducta (autoevaluación) y la voluntad de cambio para su bienestar (autorrespeto).''',
   ),
   Question(
     id: 'pfrh_q480',
     topicId: 'pfrh_t4',
-    text: r"""Según el modelo cognitivo de estrés de Lazarus y Folkman, ¿cuál de las siguientes opciones tipifica un 'afrontamiento centrado en el problema'?""",
+    text:
+        r"""Según el modelo cognitivo de estrés de Lazarus y Folkman, ¿cuál de las siguientes opciones tipifica un 'afrontamiento centrado en el problema'?""",
     options: [
       r'''Buscar el desahogo emocional llorando y buscando que otras personas compadezcan la situación.''',
       r'''Consumir bebidas alcohólicas el fin de semana para olvidar una pésima nota académica.''',
@@ -4724,12 +5437,14 @@ final List<Question> pfrhQuestions = [
       r'''Distraerse viendo películas cómicas para reducir los niveles de preocupación física y nerviosismo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El afrontamiento centrado en el problema se dirige a modificar directamente el estresor mediante acciones concretas de resolución de problemas, planificación o búsqueda de información, a diferencia del centrado en la emoción.''',
+    explanation:
+        r'''El afrontamiento centrado en el problema se dirige a modificar directamente el estresor mediante acciones concretas de resolución de problemas, planificación o búsqueda de información, a diferencia del centrado en la emoción.''',
   ),
   Question(
     id: 'pfrh_q481',
     topicId: 'pfrh_t4',
-    text: r'''Un ciudadano acude a la casa de su vecino y, manteniendo un volumen de voz moderado y postura corporal relajada, le explica que el ladrido constante de su mascota por las noches interrumpe su descanso, proponiéndole buscar juntos una solución para el bienestar de ambos. ¿Qué estilo de comunicación y resolución de conflictos se tipifica aquí?''',
+    text:
+        r'''Un ciudadano acude a la casa de su vecino y, manteniendo un volumen de voz moderado y postura corporal relajada, le explica que el ladrido constante de su mascota por las noches interrumpe su descanso, proponiéndole buscar juntos una solución para el bienestar de ambos. ¿Qué estilo de comunicación y resolución de conflictos se tipifica aquí?''',
     options: [
       r'''Estilo pasivo''',
       r'''Estilo agresivo''',
@@ -4737,12 +5452,14 @@ final List<Question> pfrhQuestions = [
       r'''Estilo asertivo''',
     ],
     correctAnswer: 3,
-    explanation: r'''El vecino actúa con asertividad: expone sus derechos y necesidades de forma clara, serena y directa, respetando al interlocutor y orientándose a una solución colaborativa.''',
+    explanation:
+        r'''El vecino actúa con asertividad: expone sus derechos y necesidades de forma clara, serena y directa, respetando al interlocutor y orientándose a una solución colaborativa.''',
   ),
   Question(
     id: 'pfrh_q482',
     topicId: 'pfrh_t4',
-    text: r"""Un estudiante que al reprobar una prueba argumenta: 'El profesor tiene favoritismo, el examen fue diseñado para hacerme jalar y la mala suerte me persigue', muestra una clara tendencia tipificada como:""",
+    text:
+        r"""Un estudiante que al reprobar una prueba argumenta: 'El profesor tiene favoritismo, el examen fue diseñado para hacerme jalar y la mala suerte me persigue', muestra una clara tendencia tipificada como:""",
     options: [
       r'''Locus de control interno con alta resiliencia.''',
       r'''Locus de control externo con sesgo de atribución defensivo.''',
@@ -4750,12 +5467,14 @@ final List<Question> pfrhQuestions = [
       r'''Inteligencia interpersonal defensiva.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El alumno atribuye la causa de su fracaso a factores ajenos a su control y esfuerzo (profesor, suerte, examen), lo que tipifica un locus de control externo y un sesgo defensivo para proteger su autoestima del fracaso.''',
+    explanation:
+        r'''El alumno atribuye la causa de su fracaso a factores ajenos a su control y esfuerzo (profesor, suerte, examen), lo que tipifica un locus de control externo y un sesgo defensivo para proteger su autoestima del fracaso.''',
   ),
   Question(
     id: 'pfrh_q483',
     topicId: 'pfrh_t4',
-    text: r"""¿Cuál es la diferencia fisiológica y adaptativa entre la 'supresión expresiva' y la 'reevaluación cognitiva' como estrategias de regulación emocional?""",
+    text:
+        r"""¿Cuál es la diferencia fisiológica y adaptativa entre la 'supresión expresiva' y la 'reevaluación cognitiva' como estrategias de regulación emocional?""",
     options: [
       r'''La supresión expresiva reduce el impacto cardíaco del estrés, mientras que la reevaluación cognitiva genera taquicardia severa.''',
       r'''La supresión expresiva anula de raíz la emoción, mientras que la reevaluación cognitiva solo es útil para las emociones positivas.''',
@@ -4763,12 +5482,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambas estrategias tienen idéntico impacto adaptativo y previenen por igual los trastornos somáticos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La supresión expresiva es un mecanismo posterior a la emoción que busca esconderla, lo que genera tensión interna y desgaste somático. La reevaluación cognitiva es una estrategia temprana que cambia la emoción misma, reduciendo el malestar biológico.''',
+    explanation:
+        r'''La supresión expresiva es un mecanismo posterior a la emoción que busca esconderla, lo que genera tensión interna y desgaste somático. La reevaluación cognitiva es una estrategia temprana que cambia la emoción misma, reduciendo el malestar biológico.''',
   ),
   Question(
     id: 'pfrh_q484',
     topicId: 'pfrh_t4',
-    text: r'''Identifique el tipo de empatía que se manifiesta en la siguiente situación: Un transeúnte observa a un anciano desorientado e incapaz de cruzar una avenida muy transitada. De inmediato, el transeúnte se pone en su lugar mentalmente y deduce la angustia que debe sentir el anciano por su dificultad motriz y el ruido del tráfico, decidiendo ir a ayudarlo.''',
+    text:
+        r'''Identifique el tipo de empatía que se manifiesta en la siguiente situación: Un transeúnte observa a un anciano desorientado e incapaz de cruzar una avenida muy transitada. De inmediato, el transeúnte se pone en su lugar mentalmente y deduce la angustia que debe sentir el anciano por su dificultad motriz y el ruido del tráfico, decidiendo ir a ayudarlo.''',
     options: [
       r'''Empatía cognitiva''',
       r'''Empatía afectiva o contagio emocional''',
@@ -4776,12 +5497,14 @@ final List<Question> pfrhQuestions = [
       r'''Resonancia moral automática''',
     ],
     correctAnswer: 0,
-    explanation: r'''El transeúnte deduce y comprende mentalmente el estado interno y la perspectiva de la otra persona sin necesidad de experimentar él mismo angustia fisiológica severa, lo cual es propio de la empatía cognitiva (teoría de la mente aplicada).''',
+    explanation:
+        r'''El transeúnte deduce y comprende mentalmente el estado interno y la perspectiva de la otra persona sin necesidad de experimentar él mismo angustia fisiológica severa, lo cual es propio de la empatía cognitiva (teoría de la mente aplicada).''',
   ),
   Question(
     id: 'pfrh_q485',
     topicId: 'pfrh_t4',
-    text: r"""¿Cuál de las siguientes premisas discrimina correctamente entre una 'autoestima alta y sana' y una 'autoestima inflada o narcisista'?""",
+    text:
+        r"""¿Cuál de las siguientes premisas discrimina correctamente entre una 'autoestima alta y sana' y una 'autoestima inflada o narcisista'?""",
     options: [
       r'''La autoestima sana busca constantemente el reconocimiento público y reacciona de forma agresiva ante cualquier crítica constructiva.''',
       r'''La autoestima inflada tolera con facilidad las debilidades personales y promueve la empatía genuina con el prójimo.''',
@@ -4789,12 +5512,14 @@ final List<Question> pfrhQuestions = [
       r'''La autoestima inflada es la manifestación óptima y más adaptativa de la personalidad en entornos de alta competencia escolar.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autoestima alta y sana es estable y realista. El narcisismo (autoestima inflada) es una máscara frágil que encubre inseguridad profunda, necesitando rebajar a los demás y recibir elogios constantes para validarse.''',
+    explanation:
+        r'''La autoestima alta y sana es estable y realista. El narcisismo (autoestima inflada) es una máscara frágil que encubre inseguridad profunda, necesitando rebajar a los demás y recibir elogios constantes para validarse.''',
   ),
   Question(
     id: 'pfrh_q486',
     topicId: 'pfrh_t4',
-    text: r'''En la categorización de las conductas de riesgo en la adolescencia, ¿cómo se tipifican acciones tales como correr a gran velocidad en bicicleta sin frenos o saltar desde puentes peatonales por diversión?''',
+    text:
+        r'''En la categorización de las conductas de riesgo en la adolescencia, ¿cómo se tipifican acciones tales como correr a gran velocidad en bicicleta sin frenos o saltar desde puentes peatonales por diversión?''',
     options: [
       r'''Conductas delictivas organizadas.''',
       r'''Conductas temerarias motivadas por la búsqueda de sensaciones.''',
@@ -4802,12 +5527,14 @@ final List<Question> pfrhQuestions = [
       r'''Mecanismos de defensa pasivos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las conductas temerarias implican ignorar conscientemente las medidas básicas de seguridad y buscar el riesgo físico para experimentar emociones intensas o estatus grupal, estimuladas por la inmadurez prefrontal.''',
+    explanation:
+        r'''Las conductas temerarias implican ignorar conscientemente las medidas básicas de seguridad y buscar el riesgo físico para experimentar emociones intensas o estatus grupal, estimuladas por la inmadurez prefrontal.''',
   ),
   Question(
     id: 'pfrh_q487',
     topicId: 'pfrh_t4',
-    text: r'''Identifique el factor de protección de origen familiar que se asocia fuertemente con el desarrollo de una autoestima saludable y una adecuada autorregulación emocional en los hijos adolescentes:''',
+    text:
+        r'''Identifique el factor de protección de origen familiar que se asocia fuertemente con el desarrollo de una autoestima saludable y una adecuada autorregulación emocional en los hijos adolescentes:''',
     options: [
       r'''El estilo de crianza autoritario enfocado en la obediencia estricta y el castigo físico preventivo.''',
       r'''El estilo de crianza permisivo en el cual el menor no cuenta con horarios, límites ni responsabilidades en el hogar.''',
@@ -4815,12 +5542,14 @@ final List<Question> pfrhQuestions = [
       r'''El estilo de crianza negligente que promueve la supervivencia independiente y la desconexión afectiva mutua.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estilo democrático proporciona el equilibrio perfecto entre apoyo emocional (afecto) y estructura de comportamiento (límites), promoviendo la autoestima y el autocontrol.''',
+    explanation:
+        r'''El estilo democrático proporciona el equilibrio perfecto entre apoyo emocional (afecto) y estructura de comportamiento (límites), promoviendo la autoestima y el autocontrol.''',
   ),
   Question(
     id: 'pfrh_q488',
     topicId: 'pfrh_t4',
-    text: r'''Un estudiante de secundaria, frustrado por perder un concurso escolar de debate, rompe sus apuntes, insulta verbalmente al jurado y afirma que sus compañeros de equipo son incompetentes. Este comportamiento denota una deficiencia crítica en:''',
+    text:
+        r'''Un estudiante de secundaria, frustrado por perder un concurso escolar de debate, rompe sus apuntes, insulta verbalmente al jurado y afirma que sus compañeros de equipo son incompetentes. Este comportamiento denota una deficiencia crítica en:''',
     options: [
       r'''El autoconcepto físico y las habilidades motrices básicas.''',
       r'''La autoeficacia académica e inteligencias múltiples.''',
@@ -4828,12 +5557,14 @@ final List<Question> pfrhQuestions = [
       r'''La empatía afectiva y el locus de control externo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La reacción desmedida y agresiva ante la derrota refleja la incapacidad para gestionar emociones negativas y tolerar la frustración de manera constructiva (falta de autorregulación).''',
+    explanation:
+        r'''La reacción desmedida y agresiva ante la derrota refleja la incapacidad para gestionar emociones negativas y tolerar la frustración de manera constructiva (falta de autorregulación).''',
   ),
   Question(
     id: 'pfrh_q489',
     topicId: 'pfrh_t4',
-    text: r'''Según el modelo de Daniel Goleman, ¿qué componente de la inteligencia emocional se manifiesta cuando un estudiante identifica que la tensión que siente en los hombros y su respiración acelerada se deben a la ansiedad antes de un examen?''',
+    text:
+        r'''Según el modelo de Daniel Goleman, ¿qué componente de la inteligencia emocional se manifiesta cuando un estudiante identifica que la tensión que siente en los hombros y su respiración acelerada se deben a la ansiedad antes de un examen?''',
     options: [
       r'''Automotivación''',
       r'''Empatía''',
@@ -4841,12 +5572,14 @@ final List<Question> pfrhQuestions = [
       r'''Habilidades sociales''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autoconciencia (o autoconocimiento) emocional consiste en registrar e identificar las señales físicas propias y etiquetarlas correctamente con la emoción correspondiente.''',
+    explanation:
+        r'''La autoconciencia (o autoconocimiento) emocional consiste en registrar e identificar las señales físicas propias y etiquetarlas correctamente con la emoción correspondiente.''',
   ),
   Question(
     id: 'pfrh_q490',
     topicId: 'pfrh_t4',
-    text: r"""Un joven antes de postular a un puesto de trabajo se dice a sí mismo: 'He entrenado mis habilidades comunicativas en la escuela, sé cómo presentar mis ideas y confío en mi capacidad para tener una buena entrevista'. ¿Qué constructo de la personalidad está expresando?""",
+    text:
+        r"""Un joven antes de postular a un puesto de trabajo se dice a sí mismo: 'He entrenado mis habilidades comunicativas en la escuela, sé cómo presentar mis ideas y confío en mi capacidad para tener una buena entrevista'. ¿Qué constructo de la personalidad está expresando?""",
     options: [
       r'''Locus de control externo instrumental.''',
       r'''Expectativa de autoeficacia.''',
@@ -4854,12 +5587,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión expresiva de la ansiedad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Expresa una autoconfianza y convicción sobre su capacidad para realizar eficazmente una tarea futura (entrevista laboral), lo que equivale al constructo de expectativa de autoeficacia de Bandura.''',
+    explanation:
+        r'''Expresa una autoconfianza y convicción sobre su capacidad para realizar eficazmente una tarea futura (entrevista laboral), lo que equivale al constructo de expectativa de autoeficacia de Bandura.''',
   ),
   Question(
     id: 'pfrh_q491',
     topicId: 'pfrh_t4',
-    text: r"""¿Cómo se distingue conceptualmente la 'presión de grupo indirecta o implícita' de la 'presión de grupo directa o explícita' en las interacciones escolares?""",
+    text:
+        r"""¿Cómo se distingue conceptualmente la 'presión de grupo indirecta o implícita' de la 'presión de grupo directa o explícita' en las interacciones escolares?""",
     options: [
       r'''La indirecta implica una agresión o amenaza física manifiesta hacia el estudiante.''',
       r'''La indirecta se da mediante la internalización inconsciente de modas y conductas de riesgo para obtener pertenencia, sin que medie una invitación u orden verbal del grupo.''',
@@ -4867,12 +5602,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia; ambas formas de presión requieren el uso de la violencia física.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La presión implícita u indirecta no requiere que los pares exijan verbalmente al adolescente realizar una acción; se activa por la necesidad de imitar conductas para sentirse aceptado e integrado.''',
+    explanation:
+        r'''La presión implícita u indirecta no requiere que los pares exijan verbalmente al adolescente realizar una acción; se activa por la necesidad de imitar conductas para sentirse aceptado e integrado.''',
   ),
   Question(
     id: 'pfrh_q492',
     topicId: 'pfrh_t4',
-    text: r"""Una joven se mira en el espejo y piensa: 'No tengo la estatura de una modelo ni un cutis perfecto, pero me quiero y me acepto tal como soy, reconociendo mi valor como persona inteligente y solidaria'. ¿Qué escalón de la autoestima se destaca?""",
+    text:
+        r"""Una joven se mira en el espejo y piensa: 'No tengo la estatura de una modelo ni un cutis perfecto, pero me quiero y me acepto tal como soy, reconociendo mi valor como persona inteligente y solidaria'. ¿Qué escalón de la autoestima se destaca?""",
     options: [
       r'''Autoconocimiento simple''',
       r'''Autoaceptación y autovaloración''',
@@ -4880,12 +5617,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control externo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La joven evalúa sus características realistas y, a pesar de no cumplir con estereotipos ideales, se acepta y se valora positivamente, consolidando la autoaceptación y autovaloración.''',
+    explanation:
+        r'''La joven evalúa sus características realistas y, a pesar de no cumplir con estereotipos ideales, se acepta y se valora positivamente, consolidando la autoaceptación y autovaloración.''',
   ),
   Question(
     id: 'pfrh_q493',
     topicId: 'pfrh_t4',
-    text: r"""En la teoría cognitiva de Aaron Beck, un estudiante que tras recibir comentarios correctivos en un párrafo de su informe concluye: 'Todo mi esfuerzo no vale nada, soy un fracaso escolar total', está manifestando las distorsiones de:""",
+    text:
+        r"""En la teoría cognitiva de Aaron Beck, un estudiante que tras recibir comentarios correctivos en un párrafo de su informe concluye: 'Todo mi esfuerzo no vale nada, soy un fracaso escolar total', está manifestando las distorsiones de:""",
     options: [
       r'''Personalización y lectura del pensamiento.''',
       r'''Pensamiento dicotómico (todo o nada) y abstracción selectiva (filtro mental).''',
@@ -4893,12 +5632,14 @@ final List<Question> pfrhQuestions = [
       r'''Razonamiento emocional e indefensión adquirida.''',
     ],
     correctAnswer: 1,
-    explanation: r"""El pensamiento de 'todo o nada' (fracaso total por un error) y la abstracción selectiva (enfocarse únicamente en el detalle correctivo ignorando el resto del trabajo aprobado) son distorsiones cognitivas clásicas que afectan la autoestima.""",
+    explanation:
+        r"""El pensamiento de 'todo o nada' (fracaso total por un error) y la abstracción selectiva (enfocarse únicamente en el detalle correctivo ignorando el resto del trabajo aprobado) son distorsiones cognitivas clásicas que afectan la autoestima.""",
   ),
   Question(
     id: 'pfrh_q494',
     topicId: 'pfrh_t4',
-    text: r"""Al discriminar entre una 'emoción' y un 'sentimiento', ¿cuál de los siguientes enunciados define adecuadamente la naturaleza del 'sentimiento'?""",
+    text:
+        r"""Al discriminar entre una 'emoción' y un 'sentimiento', ¿cuál de los siguientes enunciados define adecuadamente la naturaleza del 'sentimiento'?""",
     options: [
       r'''Es una reacción psicofisiológica súbita, de muy corta duración y desencadenada por estímulos sensoriales.''',
       r'''Es un estado afectivo estable, más duradero en el tiempo, de menor activación fisiológica aguda y con un componente cognitivo y reflexivo predominante.''',
@@ -4906,12 +5647,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un impulso instintivo asociado exclusivamente a la supervivencia biológica inmediata.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los sentimientos son estados afectivos estructurados por la razón, consolidados por la experiencia cognitiva y más estables que las emociones (que son inmediatas y transitorias).''',
+    explanation:
+        r'''Los sentimientos son estados afectivos estructurados por la razón, consolidados por la experiencia cognitiva y más estables que las emociones (que son inmediatas y transitorias).''',
   ),
   Question(
     id: 'pfrh_q495',
     topicId: 'pfrh_t4',
-    text: r"""Identifique la técnica de asertividad aplicada en este caso: Ante las burlas reiteradas de un grupo de vecinos para que un joven compre bebidas alcohólicas en contra de su voluntad, este responde con calma y firmeza: 'Entiendo lo que dicen, pero no voy a comprar alcohol', repitiendo la frase idéntica tres veces con calma y sin justificaciones complejas.""",
+    text:
+        r"""Identifique la técnica de asertividad aplicada en este caso: Ante las burlas reiteradas de un grupo de vecinos para que un joven compre bebidas alcohólicas en contra de su voluntad, este responde con calma y firmeza: 'Entiendo lo que dicen, pero no voy a comprar alcohol', repitiendo la frase idéntica tres veces con calma y sin justificaciones complejas.""",
     options: [
       r'''Banco de niebla''',
       r'''Asertividad empática''',
@@ -4919,12 +5662,14 @@ final List<Question> pfrhQuestions = [
       r'''Pregunta asertiva''',
     ],
     correctAnswer: 2,
-    explanation: r'''La técnica del disco rayado consiste en la repetición serena de nuestra postura y negativa, sin alterarnos emocionalmente ni caer en explicaciones justificativas que den pie a que el otro continúe presionando.''',
+    explanation:
+        r'''La técnica del disco rayado consiste en la repetición serena de nuestra postura y negativa, sin alterarnos emocionalmente ni caer en explicaciones justificativas que den pie a que el otro continúe presionando.''',
   ),
   Question(
     id: 'pfrh_q496',
     topicId: 'pfrh_t4',
-    text: r"""Carlos desaprobó el examen de admisión a una escuela técnica por segunda vez. Se siente muy frustrado y piensa: 'Nunca seré un profesional, me falta capacidad intelectual'. Su tutor le ayuda a analizar que ha estado estudiando de forma desorganizada y sin horarios fijos, y le diseña un método de estudio estructurado. Si Carlos adopta este plan y recupera la confianza en que con orden podrá aprobar en el siguiente proceso, ¿qué dimensión psicológica ha reestructurado favorablemente?""",
+    text:
+        r"""Carlos desaprobó el examen de admisión a una escuela técnica por segunda vez. Se siente muy frustrado y piensa: 'Nunca seré un profesional, me falta capacidad intelectual'. Su tutor le ayuda a analizar que ha estado estudiando de forma desorganizada y sin horarios fijos, y le diseña un método de estudio estructurado. Si Carlos adopta este plan y recupera la confianza en que con orden podrá aprobar en el siguiente proceso, ¿qué dimensión psicológica ha reestructurado favorablemente?""",
     options: [
       r'''El autoconcepto físico''',
       r'''La autoeficacia percibida y el locus de control''',
@@ -4932,12 +5677,14 @@ final List<Question> pfrhQuestions = [
       r'''La supresión expresiva defensiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''Carlos pasó de culpar a una supuesta incapacidad intelectual inalterable (locus de control externo/desesperanza) a enfocarse en sus estrategias de aprendizaje y en su capacidad para lograr el objetivo con el método correcto (autoeficacia y locus de control interno).''',
+    explanation:
+        r'''Carlos pasó de culpar a una supuesta incapacidad intelectual inalterable (locus de control externo/desesperanza) a enfocarse en sus estrategias de aprendizaje y en su capacidad para lograr el objetivo con el método correcto (autoeficacia y locus de control interno).''',
   ),
   Question(
     id: 'pfrh_q497',
     topicId: 'pfrh_t4',
-    text: r"""Durante una reunión estudiantil de fin de año, varios jóvenes insisten a Mateo para que beba licor diciendo: 'Toma un vaso completo, no seas aburrido, todos lo hacemos'. Mateo sabe que debe regresar en bicicleta y que desea mantener su mente despejada, por lo que responde de manera calmada: 'Sé que ustedes quieren divertirse tomando y lo respeto, pero yo prefiero tomar una bebida gaseosa porque voy a volver en bicicleta a casa y necesito estar muy alerta'. ¿Qué herramientas psicológicas empleó Mateo?""",
+    text:
+        r"""Durante una reunión estudiantil de fin de año, varios jóvenes insisten a Mateo para que beba licor diciendo: 'Toma un vaso completo, no seas aburrido, todos lo hacemos'. Mateo sabe que debe regresar en bicicleta y que desea mantener su mente despejada, por lo que responde de manera calmada: 'Sé que ustedes quieren divertirse tomando y lo respeto, pero yo prefiero tomar una bebida gaseosa porque voy a volver en bicicleta a casa y necesito estar muy alerta'. ¿Qué herramientas psicológicas empleó Mateo?""",
     options: [
       r'''Supresión expresiva e indefensión aprendida.''',
       r'''Asertividad empática y conducta de autocuidado racional.''',
@@ -4945,12 +5692,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control externo e impulsividad regulada.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Mateo ejerce la asertividad empática al validar la perspectiva de los demás sin dejar de defender firmemente su postura personal, y practica el autocuidado al proteger su integridad física en la bicicleta.''',
+    explanation:
+        r'''Mateo ejerce la asertividad empática al validar la perspectiva de los demás sin dejar de defender firmemente su postura personal, y practica el autocuidado al proteger su integridad física en la bicicleta.''',
   ),
   Question(
     id: 'pfrh_q498',
     topicId: 'pfrh_t4',
-    text: r'''Don Manuel y su vecino Don José tienen un conflicto vecinal: las hojas secas de un gran árbol en el jardín de Don Manuel caen constantemente en el patio recién limpiado de Don José. En lugar de reaccionar arrojando la basura de vuelta o insultando a su vecino, Don José acude a conversar de manera calmada con Don Manuel, exponiendo la molestia y sugiriendo colocar una malla protectora fina compartiendo los gastos. Don Manuel acepta con agrado. ¿Qué destaca en esta resolución?''',
+    text:
+        r'''Don Manuel y su vecino Don José tienen un conflicto vecinal: las hojas secas de un gran árbol en el jardín de Don Manuel caen constantemente en el patio recién limpiado de Don José. En lugar de reaccionar arrojando la basura de vuelta o insultando a su vecino, Don José acude a conversar de manera calmada con Don Manuel, exponiendo la molestia y sugiriendo colocar una malla protectora fina compartiendo los gastos. Don Manuel acepta con agrado. ¿Qué destaca en esta resolución?''',
     options: [
       r'''Pasividad y sometimiento por temor al conflicto legal de Don José.''',
       r'''Agresividad pasiva de Don Manuel al postergar la limpieza de sus hojas.''',
@@ -4958,12 +5707,14 @@ final List<Question> pfrhQuestions = [
       r'''Secuestro amigdalino y defensa de la propiedad privada.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La situación se resuelve de forma pacífica y cooperativa gracias a que Don José actúa asertivamente y Don Manuel muestra empatía y apertura, evitando la escalada de la agresividad.''',
+    explanation:
+        r'''La situación se resuelve de forma pacífica y cooperativa gracias a que Don José actúa asertivamente y Don Manuel muestra empatía y apertura, evitando la escalada de la agresividad.''',
   ),
   Question(
     id: 'pfrh_q499',
     topicId: 'pfrh_t4',
-    text: r'''Mariana, estudiante de cuarto de secundaria, se entera de que una compañera del salón ha compartido capturas de pantalla editadas en un grupo de chat escolar para burlarse de ella. Siente una intensa ira y deseos de confrontarla a gritos. Mariana decide detenerse, respirar profundamente varias veces, retirarse al baño a mojarse la cara y, una vez calmada, acude con el tutor para reportar formalmente el caso de ciberacoso. ¿Qué procesos de la inteligencia emocional se evidencian?''',
+    text:
+        r'''Mariana, estudiante de cuarto de secundaria, se entera de que una compañera del salón ha compartido capturas de pantalla editadas en un grupo de chat escolar para burlarse de ella. Siente una intensa ira y deseos de confrontarla a gritos. Mariana decide detenerse, respirar profundamente varias veces, retirarse al baño a mojarse la cara y, una vez calmada, acude con el tutor para reportar formalmente el caso de ciberacoso. ¿Qué procesos de la inteligencia emocional se evidencian?''',
     options: [
       r'''Evitación desadaptativa e indefensión emocional reactiva.''',
       r'''Autoconciencia de la ira, autorregulación emocional y canalización asertiva del problema.''',
@@ -4971,12 +5722,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía afectiva hacia la agresora para justificar su comportamiento hostil.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Mariana detecta su ira (autoconciencia), maneja sus impulsos agresivos en lugar de dejarse secuestrar emocionalmente (autorregulación) y elige una vía constructiva para denunciar el problema (asertividad/afrontamiento adaptativo).''',
+    explanation:
+        r'''Mariana detecta su ira (autoconciencia), maneja sus impulsos agresivos en lugar de dejarse secuestrar emocionalmente (autorregulación) y elige una vía constructiva para denunciar el problema (asertividad/afrontamiento adaptativo).''',
   ),
   Question(
     id: 'pfrh_q500',
     topicId: 'pfrh_t4',
-    text: r'''Un padre de familia nota que su hijo de 14 años, Sergio, pasa demasiadas horas jugando videojuegos en línea, descuidando sus estudios escolares y respondiendo con tono áspero cuando se le pide apagar la consola. En lugar de gritarle o decomisar el aparato violentamente, el padre conversa a solas con Sergio, escucha sus intereses en el juego, le explica con afecto el impacto en sus notas y acuerdan juntos un horario diario regulado. Este abordaje familiar fomenta:''',
+    text:
+        r'''Un padre de familia nota que su hijo de 14 años, Sergio, pasa demasiadas horas jugando videojuegos en línea, descuidando sus estudios escolares y respondiendo con tono áspero cuando se le pide apagar la consola. En lugar de gritarle o decomisar el aparato violentamente, el padre conversa a solas con Sergio, escucha sus intereses en el juego, le explica con afecto el impacto en sus notas y acuerdan juntos un horario diario regulado. Este abordaje familiar fomenta:''',
     options: [
       r'''La dependencia emocional del adolescente frente al criterio del padre.''',
       r'''La autonomía, autorregulación y autoestima del hijo mediante un estilo de crianza democrático.''',
@@ -4984,12 +5737,14 @@ final List<Question> pfrhQuestions = [
       r'''La rebeldía conductual y la baja autoeficacia social del menor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estilo democrático o autoritativo promueve la autorregulación y autonomía del menor al involucrarlo en el establecimiento de límites racionales respaldados por el afecto y la explicación reflexiva.''',
+    explanation:
+        r'''El estilo democrático o autoritativo promueve la autorregulación y autonomía del menor al involucrarlo en el establecimiento de límites racionales respaldados por el afecto y la explicación reflexiva.''',
   ),
   Question(
     id: 'pfrh_q501',
     topicId: 'pfrh_t4',
-    text: r"""Carmen se encuentra realizando trámites municipales y, tras dos horas en la cola, el funcionario público a cargo cierra su ventanilla aduciendo que su horario laboral ha concluido. Mientras las personas a su alrededor comienzan a gritar e insultar al funcionario, Carmen siente rabia, pero realiza respiraciones lentas y piensa: 'Gritar no abrirá la ventanilla y solo elevará mi presión; mejor hablaré con el supervisor para buscar una alternativa'. Carmen utilizó:""",
+    text:
+        r"""Carmen se encuentra realizando trámites municipales y, tras dos horas en la cola, el funcionario público a cargo cierra su ventanilla aduciendo que su horario laboral ha concluido. Mientras las personas a su alrededor comienzan a gritar e insultar al funcionario, Carmen siente rabia, pero realiza respiraciones lentas y piensa: 'Gritar no abrirá la ventanilla y solo elevará mi presión; mejor hablaré con el supervisor para buscar una alternativa'. Carmen utilizó:""",
     options: [
       r'''Supresión expresiva nociva con somatización afectiva.''',
       r'''Reevaluación cognitiva y afrontamiento activo centrado en el problema.''',
@@ -4997,12 +5752,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control externo condicionado e indefensión.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Carmen regula su emoción modificando su interpretación de la situación estresante (reevaluación cognitiva) para evitar la conducta violenta ineficaz y orientarse a la solución de su problema (afrontamiento activo).''',
+    explanation:
+        r'''Carmen regula su emoción modificando su interpretación de la situación estresante (reevaluación cognitiva) para evitar la conducta violenta ineficaz y orientarse a la solución de su problema (afrontamiento activo).''',
   ),
   Question(
     id: 'pfrh_q502',
     topicId: 'pfrh_t4',
-    text: r"""Gabriel es un estudiante de secundaria sumamente tímido que experimenta sudoración en las manos, taquicardia y pensamientos catastrofistas como 'me voy a olvidar de todo y se reirán' antes de exponer. Su psicólogo escolar le enseña a utilizar autoinstrucciones positivas de calma y a realizar respiraciones diafragmáticas previas. Al aplicarlo en su siguiente exposición, Gabriel logra modular su nerviosismo y culmina con éxito. Esta casuística ilustra:""",
+    text:
+        r"""Gabriel es un estudiante de secundaria sumamente tímido que experimenta sudoración en las manos, taquicardia y pensamientos catastrofistas como 'me voy a olvidar de todo y se reirán' antes de exponer. Su psicólogo escolar le enseña a utilizar autoinstrucciones positivas de calma y a realizar respiraciones diafragmáticas previas. Al aplicarlo en su siguiente exposición, Gabriel logra modular su nerviosismo y culmina con éxito. Esta casuística ilustra:""",
     options: [
       r'''El desarrollo de la resiliencia en un caso de trastorno de personalidad antisocial.''',
       r'''La aplicación de estrategias de autoconocimiento psicofisiológico y autorregulación emocional para manejar la ansiedad social.''',
@@ -5010,12 +5767,14 @@ final List<Question> pfrhQuestions = [
       r'''La dependencia del alumno a la supervisión psicológica externa.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Gabriel reconoce su estado físico y mental (autoconocimiento) y emplea técnicas conductuales (respiración) y cognitivas (autoinstrucciones) para autorregular su ansiedad social de forma exitosa.''',
+    explanation:
+        r'''Gabriel reconoce su estado físico y mental (autoconocimiento) y emplea técnicas conductuales (respiración) y cognitivas (autoinstrucciones) para autorregular su ansiedad social de forma exitosa.''',
   ),
   Question(
     id: 'pfrh_q503',
     topicId: 'pfrh_t4',
-    text: r'''Sofía nota que tras pasar varias horas diarias en redes sociales observando los perfiles de celebridades e influencers, termina sintiendo insatisfacción con su cuerpo, celos de los estilos de vida ajenos y una profunda tristeza. Tras reflexionar, Sofía decide limitar el uso de estas aplicaciones a solo 30 minutos al día, inscribirse en un taller de cerámica e interactuar más con sus amigos reales en el parque. ¿Qué denota la actitud de Sofía?''',
+    text:
+        r'''Sofía nota que tras pasar varias horas diarias en redes sociales observando los perfiles de celebridades e influencers, termina sintiendo insatisfacción con su cuerpo, celos de los estilos de vida ajenos y una profunda tristeza. Tras reflexionar, Sofía decide limitar el uso de estas aplicaciones a solo 30 minutos al día, inscribirse en un taller de cerámica e interactuar más con sus amigos reales en el parque. ¿Qué denota la actitud de Sofía?''',
     options: [
       r'''Evasión cobarde y rechazo patológico al avance de la sociedad digital contemporánea.''',
       r'''Autocuidado emocional, toma de decisiones reflexiva y fortalecimiento de su autovaloración basado en metas reales.''',
@@ -5023,12 +5782,14 @@ final List<Question> pfrhQuestions = [
       r'''Incapacidad para desarrollar empatía cognitiva con las celebridades de internet.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Al identificar el impacto perjudicial de las redes sociales en su bienestar psicológico (autoconocimiento), Sofía actúa activamente en su beneficio limitando su exposición y fomentando actividades saludables en el plano real (autocuidado y autovaloración).''',
+    explanation:
+        r'''Al identificar el impacto perjudicial de las redes sociales en su bienestar psicológico (autoconocimiento), Sofía actúa activamente en su beneficio limitando su exposición y fomentando actividades saludables en el plano real (autocuidado y autovaloración).''',
   ),
   Question(
     id: 'pfrh_q504',
     topicId: 'pfrh_t4',
-    text: r'''En una urbanización, dos vecinos tienen una discusión agresiva debido a que las mascotas de uno defecan en el jardín del otro y el dueño no limpia los desechos. Un miembro de la junta vecinal interviene calmando los ánimos, instando al dueño de las mascotas a usar bolsas sanitarias y proponiendo la instalación de un letrero recordatorio en el parque común. Ambos vecinos aceptan estrechándose la mano. ¿Qué competencias socioemocionales se evidencian en el mediador?''',
+    text:
+        r'''En una urbanización, dos vecinos tienen una discusión agresiva debido a que las mascotas de uno defecan en el jardín del otro y el dueño no limpia los desechos. Un miembro de la junta vecinal interviene calmando los ánimos, instando al dueño de las mascotas a usar bolsas sanitarias y proponiendo la instalación de un letrero recordatorio en el parque común. Ambos vecinos aceptan estrechándose la mano. ¿Qué competencias socioemocionales se evidencian en el mediador?''',
     options: [
       r'''Uso de coerción social pasiva y anulación de la autonomía de los vecinos.''',
       r'''Habilidades sociales, empatía cognitiva y orientación cooperativa para la resolución de conflictos vecinales.''',
@@ -5036,12 +5797,14 @@ final List<Question> pfrhQuestions = [
       r'''Negación cognitiva del conflicto para evitar multas municipales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El mediador exhibe habilidades sociales y empatía al escuchar a ambas partes, calmar la tensión y proponer una solución mutuamente aceptable y orientada a la convivencia pacífica.''',
+    explanation:
+        r'''El mediador exhibe habilidades sociales y empatía al escuchar a ambas partes, calmar la tensión y proponer una solución mutuamente aceptable y orientada a la convivencia pacífica.''',
   ),
   Question(
     id: 'pfrh_q505',
     topicId: 'pfrh_t4',
-    text: r"""Mateo, un adolescente de 15 años, es desafiado por un grupo de chicos de su aula a saltar la tapia de un almacén abandonado para demostrar que 'no es un gallina'. Mateo siente el deseo de agradarles y pertenecer, pero evalúa los riesgos de cortarse con vidrios o ser denunciado, y les responde tranquilamente: 'No lo haré, me parece peligroso y absurdo lesionarme solo para entrar a un sitio vacío; si quieren hacemos otra cosa'. ¿Qué demostró Mateo?""",
+    text:
+        r"""Mateo, un adolescente de 15 años, es desafiado por un grupo de chicos de su aula a saltar la tapia de un almacén abandonado para demostrar que 'no es un gallina'. Mateo siente el deseo de agradarles y pertenecer, pero evalúa los riesgos de cortarse con vidrios o ser denunciado, y les responde tranquilamente: 'No lo haré, me parece peligroso y absurdo lesionarme solo para entrar a un sitio vacío; si quieren hacemos otra cosa'. ¿Qué demostró Mateo?""",
     options: [
       r'''Falta de iniciativa grupal y timidez de carácter pasivo.''',
       r'''Autocuidado, toma de decisiones reflexiva y resistencia asertiva frente a la presión de grupo.''',
@@ -5049,12 +5812,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión emocional rígida de la necesidad social de pertenencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Mateo demuestra autocuidado al valorar su integridad física y legal por encima de la necesidad de aprobación. Muestra resistencia asertiva a la presión de pares, comunicando su negativa con seguridad y sin agredir.''',
+    explanation:
+        r'''Mateo demuestra autocuidado al valorar su integridad física y legal por encima de la necesidad de aprobación. Muestra resistencia asertiva a la presión de pares, comunicando su negativa con seguridad y sin agredir.''',
   ),
   Question(
     id: 'pfrh_q506',
     topicId: 'pfrh_t4',
-    text: r'''Julia pierde su bolso con sus documentos de identidad y dinero justo un día antes de viajar para rendir un examen académico decisivo. En lugar de sumirse en el pánico o el llanto improductivo en la calle, Julia respira hondo, acude a una central telefónica para bloquear sus cuentas bancarias, se dirige a una plataforma pública digital a registrar la pérdida de documentos y reprograma su pasaje de transporte. ¿Qué tipo de afrontamiento y regulación emocional aplicó?''',
+    text:
+        r'''Julia pierde su bolso con sus documentos de identidad y dinero justo un día antes de viajar para rendir un examen académico decisivo. En lugar de sumirse en el pánico o el llanto improductivo en la calle, Julia respira hondo, acude a una central telefónica para bloquear sus cuentas bancarias, se dirige a una plataforma pública digital a registrar la pérdida de documentos y reprograma su pasaje de transporte. ¿Qué tipo de afrontamiento y regulación emocional aplicó?''',
     options: [
       r'''Afrontamiento centrado en la emoción mediante llanto reprimido.''',
       r'''Regulación fisiológica inicial y afrontamiento activo centrado en la resolución del problema.''',
@@ -5062,12 +5827,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión expresiva de la tristeza para postergar el duelo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Julia maneja su reacción de pánico inicial (regulación fisiológica) y ejecuta de inmediato un plan de acciones directas para solucionar y mitigar los efectos de la pérdida (afrontamiento centrado en el problema).''',
+    explanation:
+        r'''Julia maneja su reacción de pánico inicial (regulación fisiológica) y ejecuta de inmediato un plan de acciones directas para solucionar y mitigar los efectos de la pérdida (afrontamiento centrado en el problema).''',
   ),
   Question(
     id: 'pfrh_q507',
     topicId: 'pfrh_t4',
-    text: r'''El adolescente Javier se culpa de la separación y divorcio de sus padres, creyendo que si él hubiese tenido mejores calificaciones y hubiera sido más obediente, ellos no pelearían. Un consejero escolar trabaja con él, ayudándolo a entender que la separación es una decisión de adultos fundamentada en la relación de pareja y no en su desempeño escolar. Al procesar esto, Javier alivia su culpa e incrementa su autovaloración. ¿Qué distorsión cognitiva se corrigió en Javier?''',
+    text:
+        r'''El adolescente Javier se culpa de la separación y divorcio de sus padres, creyendo que si él hubiese tenido mejores calificaciones y hubiera sido más obediente, ellos no pelearían. Un consejero escolar trabaja con él, ayudándolo a entender que la separación es una decisión de adultos fundamentada en la relación de pareja y no en su desempeño escolar. Al procesar esto, Javier alivia su culpa e incrementa su autovaloración. ¿Qué distorsión cognitiva se corrigió en Javier?''',
     options: [
       r'''Lectura del pensamiento''',
       r'''Personalización''',
@@ -5075,12 +5842,14 @@ final List<Question> pfrhQuestions = [
       r'''Pensamiento dicotómico''',
     ],
     correctAnswer: 1,
-    explanation: r'''La personalización es la distorsión cognitiva mediante la cual una persona se atribuye la responsabilidad total de eventos externos negativos sobre los cuales no tiene control real, como el divorcio de sus padres.''',
+    explanation:
+        r'''La personalización es la distorsión cognitiva mediante la cual una persona se atribuye la responsabilidad total de eventos externos negativos sobre los cuales no tiene control real, como el divorcio de sus padres.''',
   ),
   Question(
     id: 'pfrh_q508',
     topicId: 'pfrh_t4',
-    text: r'''¿A qué concepto corresponde la valoración global, afectiva y emocional que realiza una persona de su propio ser, que se traduce en el grado de aceptación, amor propio y aprecio que tiene hacia sí misma?''',
+    text:
+        r'''¿A qué concepto corresponde la valoración global, afectiva y emocional que realiza una persona de su propio ser, que se traduce en el grado de aceptación, amor propio y aprecio que tiene hacia sí misma?''',
     options: [
       r'''Autoestima o Autovaloración''',
       r'''Autoeficacia''',
@@ -5088,12 +5857,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconocimiento''',
     ],
     correctAnswer: 0,
-    explanation: r'''La autoestima o autovaloración es la dimensión afectiva y evaluativa de la persona sobre sí misma, diferenciada del autoconcepto, que es puramente descriptivo y cognitivo.''',
+    explanation:
+        r'''La autoestima o autovaloración es la dimensión afectiva y evaluativa de la persona sobre sí misma, diferenciada del autoconcepto, que es puramente descriptivo y cognitivo.''',
   ),
   Question(
     id: 'pfrh_q509',
     topicId: 'pfrh_t4',
-    text: r'''En la teoría del desarrollo moral de Lawrence Kohlberg, la capacidad de actuar de acuerdo con principios éticos autoformulados y universales, en lugar de hacerlo por aprobación social o para evitar castigos, está íntimamente vinculada a:''',
+    text:
+        r'''En la teoría del desarrollo moral de Lawrence Kohlberg, la capacidad de actuar de acuerdo con principios éticos autoformulados y universales, en lugar de hacerlo por aprobación social o para evitar castigos, está íntimamente vinculada a:''',
     options: [
       r'''La heteronomía moral pasiva.''',
       r'''La autonomía personal y la autorregulación moral del sujeto.''',
@@ -5101,12 +5872,14 @@ final List<Question> pfrhQuestions = [
       r'''El locus de control externo dependiente.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autonomía moral y la autorregulación permiten al sujeto guiar sus propias acciones según convicciones y valores internos, lo cual constituye el nivel postconvencional del desarrollo moral de Kohlberg.''',
+    explanation:
+        r'''La autonomía moral y la autorregulación permiten al sujeto guiar sus propias acciones según convicciones y valores internos, lo cual constituye el nivel postconvencional del desarrollo moral de Kohlberg.''',
   ),
   Question(
     id: 'pfrh_q510',
     topicId: 'pfrh_t4',
-    text: r"""De acuerdo con los modelos de inteligencia emocional, ¿cómo se conceptualiza la 'empatía afectiva o emocional'?""",
+    text:
+        r"""De acuerdo con los modelos de inteligencia emocional, ¿cómo se conceptualiza la 'empatía afectiva o emocional'?""",
     options: [
       r'''Como el análisis lógico de las contradicciones argumentativas en el discurso de otra persona.''',
       r'''Como la capacidad de experimentar vicariamente las emociones y sentimientos de otra persona, sintonizando con su estado afectivo y compartiendo su sentir.''',
@@ -5114,12 +5887,14 @@ final List<Question> pfrhQuestions = [
       r'''Como el uso de habilidades sociales para convencer a un grupo de adoptar una decisión colectiva.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La empatía afectiva o emocional es la resonancia emocional interna que nos permite sentir y experimentar el estado emocional de otro sujeto de forma vicaria.''',
+    explanation:
+        r'''La empatía afectiva o emocional es la resonancia emocional interna que nos permite sentir y experimentar el estado emocional de otro sujeto de forma vicaria.''',
   ),
   Question(
     id: 'pfrh_q511',
     topicId: 'pfrh_t4',
-    text: r'''En el marco de la salud integral y el autocuidado del adolescente, ¿cómo se tipifican aquellas conductas asociadas al inicio de relaciones sexuales sin el uso de métodos de prevención contra embarazos no planificados e infecciones de transmisión sexual (ITS)?''',
+    text:
+        r'''En el marco de la salud integral y el autocuidado del adolescente, ¿cómo se tipifican aquellas conductas asociadas al inicio de relaciones sexuales sin el uso de métodos de prevención contra embarazos no planificados e infecciones de transmisión sexual (ITS)?''',
     options: [
       r'''Conductas temerarias motoras.''',
       r'''Conductas de desprotección o riesgo sexual.''',
@@ -5127,12 +5902,14 @@ final List<Question> pfrhQuestions = [
       r'''Factores de riesgo de protección externa.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las conductas de desprotección sexual son comportamientos de riesgo comunes en la adolescencia que atentan contra la salud física y reproductiva, requiriendo intervenciones de autocuidado y educación sexual.''',
+    explanation:
+        r'''Las conductas de desprotección sexual son comportamientos de riesgo comunes en la adolescencia que atentan contra la salud física y reproductiva, requiriendo intervenciones de autocuidado y educación sexual.''',
   ),
   Question(
     id: 'pfrh_q512',
     topicId: 'pfrh_t4',
-    text: r'''¿Qué término acuñado por Aaron Beck y la psicología cognitiva define a las distorsiones del pensamiento automático que surgen de forma involuntaria ante eventos y que sesgan negativamente la percepción de uno mismo y la autoestima?''',
+    text:
+        r'''¿Qué término acuñado por Aaron Beck y la psicología cognitiva define a las distorsiones del pensamiento automático que surgen de forma involuntaria ante eventos y que sesgan negativamente la percepción de uno mismo y la autoestima?''',
     options: [
       r'''Sesgos de confirmación empírica''',
       r'''Distorsiones cognitivas''',
@@ -5140,12 +5917,14 @@ final List<Question> pfrhQuestions = [
       r'''Arquetipos del inconsciente colectivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las distorsiones cognitivas son esquemas de pensamiento disfuncionales o errores en el procesamiento de la información que distorsionan la realidad y alimentan la baja autoestima y los estados depresivos.''',
+    explanation:
+        r'''Las distorsiones cognitivas son esquemas de pensamiento disfuncionales o errores en el procesamiento de la información que distorsionan la realidad y alimentan la baja autoestima y los estados depresivos.''',
   ),
   Question(
     id: 'pfrh_q513',
     topicId: 'pfrh_t4',
-    text: r'''¿Cuál de las dimensiones del autoconcepto abarca la percepción individual de las aptitudes físicas, el rendimiento deportivo, la destreza motriz y la apreciación estética del propio cuerpo?''',
+    text:
+        r'''¿Cuál de las dimensiones del autoconcepto abarca la percepción individual de las aptitudes físicas, el rendimiento deportivo, la destreza motriz y la apreciación estética del propio cuerpo?''',
     options: [
       r'''Autoconcepto físico''',
       r'''Autoconcepto académico''',
@@ -5153,12 +5932,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconcepto emocional''',
     ],
     correctAnswer: 0,
-    explanation: r'''El autoconcepto físico es la representación cognitiva que una persona tiene de su propio cuerpo en términos de apariencia y capacidades físicas.''',
+    explanation:
+        r'''El autoconcepto físico es la representación cognitiva que una persona tiene de su propio cuerpo en términos de apariencia y capacidades físicas.''',
   ),
   Question(
     id: 'pfrh_q514',
     topicId: 'pfrh_t4',
-    text: r"""Dentro del modelo original de Inteligencia Emocional de Peter Salovey y John Mayer, ¿qué habilidad compone la rama de 'percepción emocional'?""",
+    text:
+        r"""Dentro del modelo original de Inteligencia Emocional de Peter Salovey y John Mayer, ¿qué habilidad compone la rama de 'percepción emocional'?""",
     options: [
       r'''La capacidad de identificar y decodificar con precisión las emociones propias y ajenas a través de señales físicas, expresiones faciales e imágenes.''',
       r'''La habilidad para generar de forma voluntaria emociones que ayuden a resolver problemas cognitivos.''',
@@ -5166,12 +5947,14 @@ final List<Question> pfrhQuestions = [
       r'''La capacidad de distanciarse conscientemente de las emociones nocivas del entorno.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La percepción emocional es la capacidad inicial de registrar, percibir y etiquetar los estados emocionales propios y de los demás expresados en el rostro, el tono de voz o el lenguaje corporal.''',
+    explanation:
+        r'''La percepción emocional es la capacidad inicial de registrar, percibir y etiquetar los estados emocionales propios y de los demás expresados en el rostro, el tono de voz o el lenguaje corporal.''',
   ),
   Question(
     id: 'pfrh_q515',
     topicId: 'pfrh_t4',
-    text: r"""¿Cuál de las siguientes variables se tipifica conceptualmente como un 'factor de riesgo a nivel individual' que predispone al adolescente a incurrir en conductas de riesgo?""",
+    text:
+        r"""¿Cuál de las siguientes variables se tipifica conceptualmente como un 'factor de riesgo a nivel individual' que predispone al adolescente a incurrir en conductas de riesgo?""",
     options: [
       r'''La existencia de un tutor escolar que brinda tutoría y orientación constante.''',
       r'''La alta impulsividad, la baja tolerancia a la frustración y la debilidad en la autoestima.''',
@@ -5179,12 +5962,14 @@ final List<Question> pfrhQuestions = [
       r'''La disponibilidad de espacios deportivos y recreativos en la comunidad vecinal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La baja autoestima, la impulsividad elevada y la incapacidad para demorar la gratificación o tolerar frustraciones son factores de riesgo individuales o psicológicos que facilitan conductas adictivas o temerarias.''',
+    explanation:
+        r'''La baja autoestima, la impulsividad elevada y la incapacidad para demorar la gratificación o tolerar frustraciones son factores de riesgo individuales o psicológicos que facilitan conductas adictivas o temerarias.''',
   ),
   Question(
     id: 'pfrh_q516',
     topicId: 'pfrh_t4',
-    text: r"""¿A qué se denomina 'asertividad positiva' en la psicología de la comunicación?""",
+    text:
+        r"""¿A qué se denomina 'asertividad positiva' en la psicología de la comunicación?""",
     options: [
       r'''A la destreza de criticar destructivamente los defectos de los demás manteniendo un tono de voz bajo y amigable.''',
       r'''A la expresión sincera, oportuna y espontánea de sentimientos de afecto, aprecio, elogios y felicitaciones legítimas hacia otras personas.''',
@@ -5192,12 +5977,14 @@ final List<Question> pfrhQuestions = [
       r'''A la capacidad de ocultar emociones de incomodidad y enojo para proyectar una imagen de bondad y simpatía.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La asertividad positiva es la expresión honesta y directa de afecto, elogio y reconocimiento hacia los demás, fortaleciendo el vínculo afectivo y la retroalimentación positiva mutua.''',
+    explanation:
+        r'''La asertividad positiva es la expresión honesta y directa de afecto, elogio y reconocimiento hacia los demás, fortaleciendo el vínculo afectivo y la retroalimentación positiva mutua.''',
   ),
   Question(
     id: 'pfrh_q517',
     topicId: 'pfrh_t4',
-    text: r"""En el marco del bienestar de la persona, ¿qué es el 'autocuidado mental o cognitivo'?""",
+    text:
+        r"""En el marco del bienestar de la persona, ¿qué es el 'autocuidado mental o cognitivo'?""",
     options: [
       r'''La adopción de rutinas de alimentación e hidratación basadas en la reducción calórica estricta.''',
       r'''El conjunto de prácticas dirigidas a mantener la estimulación intelectual, el pensamiento reflexivo y crítico, el descanso cognitivo y el consumo responsable de información.''',
@@ -5205,12 +5992,14 @@ final List<Question> pfrhQuestions = [
       r'''La automedicación con nootrópicos o estimulantes para incrementar artificialmente la concentración escolar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El autocuidado cognitivo consiste en realizar actividades que estimulen positivamente el cerebro y la salud mental, tales como leer, aprender cosas nuevas, descansar mentalmente y evitar la sobrecarga informativa digital.''',
+    explanation:
+        r'''El autocuidado cognitivo consiste en realizar actividades que estimulen positivamente el cerebro y la salud mental, tales como leer, aprender cosas nuevas, descansar mentalmente y evitar la sobrecarga informativa digital.''',
   ),
   Question(
     id: 'pfrh_q518',
     topicId: 'pfrh_t4',
-    text: r"""¿Cómo influye por lo general un 'estilo de crianza autoritario' en el desarrollo de la autoestima e identidad del adolescente?""",
+    text:
+        r"""¿Cómo influye por lo general un 'estilo de crianza autoritario' en el desarrollo de la autoestima e identidad del adolescente?""",
     options: [
       r'''Estimula una alta autoeficacia general y una óptima capacidad de asertividad frente a la presión de grupo.''',
       r'''Fomenta el desarrollo de un locus de control interno y liderazgo cooperativo con sus pares.''',
@@ -5218,12 +6007,14 @@ final List<Question> pfrhQuestions = [
       r'''No ejerce influencia significativa; las dimensiones de la autoestima dependen exclusivamente de factores biológicos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La crianza autoritaria (alta exigencia y bajo afecto/comunicación) genera adolescentes inseguros de sus propias capacidades, con baja autoestima e inclinados a la sumisión ante la autoridad o a la rebeldía incontrolada.''',
+    explanation:
+        r'''La crianza autoritaria (alta exigencia y bajo afecto/comunicación) genera adolescentes inseguros de sus propias capacidades, con baja autoestima e inclinados a la sumisión ante la autoridad o a la rebeldía incontrolada.''',
   ),
   Question(
     id: 'pfrh_q519',
     topicId: 'pfrh_t4',
-    text: r"""¿En qué consiste la estrategia adaptativa de regulación emocional denominada 'expresión emocional regulada' o 'ventilación adaptativa'?""",
+    text:
+        r"""¿En qué consiste la estrategia adaptativa de regulación emocional denominada 'expresión emocional regulada' o 'ventilación adaptativa'?""",
     options: [
       r'''En gritar e insultar a las personas del entorno inmediato para evitar acumular tensión y estrés interno.''',
       r'''En expresar de manera asertiva, verbal, escrita o artística los estados emocionales experimentados, sin recurrir a la violencia ni dañar las relaciones interpersonales.''',
@@ -5231,12 +6022,14 @@ final List<Question> pfrhQuestions = [
       r'''En negar de forma deliberada el sufrimiento personal ante familiares y amigos para mostrar fortaleza.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La expresión emocional regulada permite exteriorizar de forma saludable y no destructiva lo que sentimos, usando la palabra, la escritura o el arte, favoreciendo la homeostasis emocional sin agredir.''',
+    explanation:
+        r'''La expresión emocional regulada permite exteriorizar de forma saludable y no destructiva lo que sentimos, usando la palabra, la escritura o el arte, favoreciendo la homeostasis emocional sin agredir.''',
   ),
   Question(
     id: 'pfrh_q520',
     topicId: 'pfrh_t4',
-    text: r'''¿A qué concepto propuesto por Carol Dweck corresponde la creencia rígida de que la inteligencia y las habilidades personales son rasgos fijos y predeterminados genéticamente que no se pueden modificar con el esfuerzo y la práctica?''',
+    text:
+        r'''¿A qué concepto propuesto por Carol Dweck corresponde la creencia rígida de que la inteligencia y las habilidades personales son rasgos fijos y predeterminados genéticamente que no se pueden modificar con el esfuerzo y la práctica?''',
     options: [
       r'''Autoeficacia flexible''',
       r'''Mentalidad fija (fixed mindset)''',
@@ -5244,12 +6037,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconcepto dinámico o maleable''',
     ],
     correctAnswer: 1,
-    explanation: r'''La mentalidad fija es la creencia de que nuestras cualidades son inmutables, lo cual limita la resiliencia y la autoeficacia ante los fracasos escolares. Su contraparte es la mentalidad de crecimiento (growth mindset).''',
+    explanation:
+        r'''La mentalidad fija es la creencia de que nuestras cualidades son inmutables, lo cual limita la resiliencia y la autoeficacia ante los fracasos escolares. Su contraparte es la mentalidad de crecimiento (growth mindset).''',
   ),
   Question(
     id: 'pfrh_q521',
     topicId: 'pfrh_t4',
-    text: r"""En el análisis de Nathaniel Branden sobre la autoestima, ¿qué implica la práctica de 'vivir conscientemente'?""",
+    text:
+        r"""En el análisis de Nathaniel Branden sobre la autoestima, ¿qué implica la práctica de 'vivir conscientemente'?""",
     options: [
       r'''La desconexión absoluta de la realidad cotidiana a través de retiros espirituales y meditación silenciosa permanente.''',
       r'''Estar mentalmente presente en las actividades y decisiones cotidianas, reconociendo de forma realista nuestras emociones, necesidades, conductas e impacto en el entorno.''',
@@ -5257,12 +6052,14 @@ final List<Question> pfrhQuestions = [
       r'''Evitar tomar decisiones autónomas para no incurrir en errores que afecten nuestra imagen personal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Vivir conscientemente significa actuar con atención plena, buscar la verdad de los hechos externos y de nuestra realidad emocional interna, y asumir la responsabilidad de lo que hacemos y pensamos.''',
+    explanation:
+        r'''Vivir conscientemente significa actuar con atención plena, buscar la verdad de los hechos externos y de nuestra realidad emocional interna, y asumir la responsabilidad de lo que hacemos y pensamos.''',
   ),
   Question(
     id: 'pfrh_q522',
     topicId: 'pfrh_t4',
-    text: r"""En la psicología del desarrollo adolescente, ¿cómo se conceptualiza el rasgo de personalidad conocido como 'búsqueda de sensaciones'?""",
+    text:
+        r"""En la psicología del desarrollo adolescente, ¿cómo se conceptualiza el rasgo de personalidad conocido como 'búsqueda de sensaciones'?""",
     options: [
       r'''Como la necesidad física de dormir más de ocho horas debido a los cambios hormonales de la pubertad.''',
       r'''Como la necesidad biológica e interpersonal de experimentar sensaciones y experiencias novedosas, intensas y complejas, y la disposición a asumir riesgos físicos, sociales y financieros para obtenerlas.''',
@@ -5270,12 +6067,14 @@ final List<Question> pfrhQuestions = [
       r'''Como el aislamiento social voluntario motivado por la búsqueda de autonomía espiritual.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La búsqueda de sensaciones, muy común en la adolescencia debido al desfase en la maduración del sistema límbico frente al córtex prefrontal, empuja a los jóvenes a buscar emociones fuertes y asumir riesgos.''',
+    explanation:
+        r'''La búsqueda de sensaciones, muy común en la adolescencia debido al desfase en la maduración del sistema límbico frente al córtex prefrontal, empuja a los jóvenes a buscar emociones fuertes y asumir riesgos.''',
   ),
   Question(
     id: 'pfrh_q523',
     topicId: 'pfrh_t4',
-    text: r'''¿A qué dimensión de la inteligencia emocional descrita por Daniel Goleman se asocia la capacidad de persistir y dirigir la energía hacia objetivos personales desafiantes a pesar de la frustración, el cansancio y las dificultades temporales?''',
+    text:
+        r'''¿A qué dimensión de la inteligencia emocional descrita por Daniel Goleman se asocia la capacidad de persistir y dirigir la energía hacia objetivos personales desafiantes a pesar de la frustración, el cansancio y las dificultades temporales?''',
     options: [
       r'''Empatía intrapersonal''',
       r'''Automotivación''',
@@ -5283,12 +6082,14 @@ final List<Question> pfrhQuestions = [
       r'''Asertividad integradora''',
     ],
     correctAnswer: 1,
-    explanation: r'''La automotivación es la capacidad de enfocar las emociones hacia metas importantes, manteniendo el optimismo, la iniciativa y el compromiso por encima de los contratiempos inmediatos.''',
+    explanation:
+        r'''La automotivación es la capacidad de enfocar las emociones hacia metas importantes, manteniendo el optimismo, la iniciativa y el compromiso por encima de los contratiempos inmediatos.''',
   ),
   Question(
     id: 'pfrh_q524',
     topicId: 'pfrh_t4',
-    text: r"""¿Qué comprende el concepto de 'autocuidado digital' en el entorno social actual?""",
+    text:
+        r"""¿Qué comprende el concepto de 'autocuidado digital' en el entorno social actual?""",
     options: [
       r'''La adquisición de equipos y dispositivos informáticos con el fin exclusivo de aumentar el estatus social en la escuela.''',
       r'''La gestión consciente del tiempo de conexión a internet, la protección de la privacidad de los datos personales y el consumo crítico y saludable de contenidos y redes sociales.''',
@@ -5296,12 +6097,14 @@ final List<Question> pfrhQuestions = [
       r'''El uso indiscriminado de múltiples redes sociales para proyectar una imagen idealizada del yo que eleve la autoestima superficial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El autocuidado digital consiste en poner límites saludables al uso de dispositivos y redes sociales, evitando la infoxicación, la comparación constante y el ciberacoso, protegiendo así la salud mental.''',
+    explanation:
+        r'''El autocuidado digital consiste en poner límites saludables al uso de dispositivos y redes sociales, evitando la infoxicación, la comparación constante y el ciberacoso, protegiendo así la salud mental.''',
   ),
   Question(
     id: 'pfrh_q525',
     topicId: 'pfrh_t4',
-    text: r"""Identifique la opción que discrimina adecuadamente entre un 'límite personal saludable' y un 'límite rígido':""",
+    text:
+        r"""Identifique la opción que discrimina adecuadamente entre un 'límite personal saludable' y un 'límite rígido':""",
     options: [
       r'''El límite saludable impide toda interacción física externa y el límite rígido permite la manipulación del entorno sin reclamar.''',
       r'''El límite saludable protege la individualidad e integridad de la persona al tiempo que permite flexibilidad y conexión afectiva íntima; el límite rígido aísla al sujeto e impide el apego saludable por miedo o desconfianza crónicos.''',
@@ -5309,12 +6112,14 @@ final List<Question> pfrhQuestions = [
       r'''El límite saludable se restringe al plano físico-territorial, mientras que el límite rígido se limita al plano escolar y de estudio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los límites saludables son firmes pero flexibles según la situación y la confianza; nos protegen sin aislarnos. Los límites rígidos actúan como murallas que bloquean la comunicación y la intimidad emocional por miedo a ser herido.''',
+    explanation:
+        r'''Los límites saludables son firmes pero flexibles según la situación y la confianza; nos protegen sin aislarnos. Los límites rígidos actúan como murallas que bloquean la comunicación y la intimidad emocional por miedo a ser herido.''',
   ),
   Question(
     id: 'pfrh_q526',
     topicId: 'pfrh_t4',
-    text: r"""Diferencie los constructos de 'simpatía' y 'empatía'. ¿Cuál de las siguientes afirmaciones describe con precisión la simpatía?""",
+    text:
+        r"""Diferencie los constructos de 'simpatía' y 'empatía'. ¿Cuál de las siguientes afirmaciones describe con precisión la simpatía?""",
     options: [
       r'''La adopción analítica y racional de la perspectiva interna y el punto de vista del prójimo.''',
       r'''El contagio fisiológico inmediato del llanto de otra persona sintiendo su mismo sufrimiento físico.''',
@@ -5322,12 +6127,14 @@ final List<Question> pfrhQuestions = [
       r'''El agrado y la atracción interpersonal mutua orientados al cortejo amoroso adolescente.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La simpatía es una inclinación afectiva de preocupación o lástima hacia otro ('lo siento por ti'), pero no implica ponerse en su lugar para comprender su estado emocional o perspectiva mental como sí lo exige la empatía ('siento contigo').""",
+    explanation:
+        r"""La simpatía es una inclinación afectiva de preocupación o lástima hacia otro ('lo siento por ti'), pero no implica ponerse en su lugar para comprender su estado emocional o perspectiva mental como sí lo exige la empatía ('siento contigo').""",
   ),
   Question(
     id: 'pfrh_q527',
     topicId: 'pfrh_t4',
-    text: r"""Si un alumno suele decir antes de una tarea compleja: 'Sé que no podré hacerlo bien, así que mejor no me esfuerzo', y decide postergar su estudio o no entregar el trabajo completo alegando falta de tiempo para justificar su nota reprobatoria, ¿qué fenómeno está manifestando?""",
+    text:
+        r"""Si un alumno suele decir antes de una tarea compleja: 'Sé que no podré hacerlo bien, así que mejor no me esfuerzo', y decide postergar su estudio o no entregar el trabajo completo alegando falta de tiempo para justificar su nota reprobatoria, ¿qué fenómeno está manifestando?""",
     options: [
       r'''Autoeficacia adaptativa''',
       r'''Autoobstaculización (self-handicapping) como defensa del autoconcepto''',
@@ -5335,12 +6142,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control interno proactivo''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autoobstaculización (self-handicapping) es una estrategia de autodefensa donde el sujeto crea obstáculos reales o imaginados para tener una excusa externa ante el fracaso, protegiendo así su autoconcepto de valor propio.''',
+    explanation:
+        r'''La autoobstaculización (self-handicapping) es una estrategia de autodefensa donde el sujeto crea obstáculos reales o imaginados para tener una excusa externa ante el fracaso, protegiendo así su autoconcepto de valor propio.''',
   ),
   Question(
     id: 'pfrh_q528',
     topicId: 'pfrh_t4',
-    text: r'''Clasifique el siguiente comportamiento: Ante una llamada de atención de su madre por haber llegado tarde a cenar, una adolescente grita que nadie la comprende, destruye un adorno de su habitación y amenaza con escapar del hogar si continúan criticándola. Este patrón de conducta se tipifica como:''',
+    text:
+        r'''Clasifique el siguiente comportamiento: Ante una llamada de atención de su madre por haber llegado tarde a cenar, una adolescente grita que nadie la comprende, destruye un adorno de su habitación y amenaza con escapar del hogar si continúan criticándola. Este patrón de conducta se tipifica como:''',
     options: [
       r'''Ventilación asertiva y saludable de emociones negativas de la pubertad.''',
       r'''Desregulación emocional y escasa tolerancia a la frustración familiar.''',
@@ -5348,12 +6157,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía afectiva distorsionada y manipulación prosocial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La conducta de la adolescente representa una desregulación emocional severa: incapacidad para frenar una respuesta de ira intensa y canalizarla de forma constructiva ante un estresor cotidiano menor.''',
+    explanation:
+        r'''La conducta de la adolescente representa una desregulación emocional severa: incapacidad para frenar una respuesta de ira intensa y canalizarla de forma constructiva ante un estresor cotidiano menor.''',
   ),
   Question(
     id: 'pfrh_q529',
     topicId: 'pfrh_t4',
-    text: r'''Un joven asiste a una fiesta y declina consumir bebidas alcohólicas a pesar de que el grupo lo presiona e insinúa que es inmaduro. Él responde que prefiere no beber porque le gusta estar sobrio y que no requiere beber para pasarla bien. Esta conducta discrimina:''',
+    text:
+        r'''Un joven asiste a una fiesta y declina consumir bebidas alcohólicas a pesar de que el grupo lo presiona e insinúa que es inmaduro. Él responde que prefiere no beber porque le gusta estar sobrio y que no requiere beber para pasarla bien. Esta conducta discrimina:''',
     options: [
       r'''Indefensión aprendida por un estilo de crianza autoritario.''',
       r'''Autonomía personal, identidad estructurada y capacidad de resistencia asertiva frente a la conformidad del grupo de pares.''',
@@ -5361,12 +6172,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoeficacia física debilitada debido a introversión patológica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El joven posee autonomía (guía su conducta por sus propias normas internas) y asertividad, lo que le permite rechazar la conformidad ciega con las presiones y modas de sus iguales.''',
+    explanation:
+        r'''El joven posee autonomía (guía su conducta por sus propias normas internas) y asertividad, lo que le permite rechazar la conformidad ciega con las presiones y modas de sus iguales.''',
   ),
   Question(
     id: 'pfrh_q530',
     topicId: 'pfrh_t4',
-    text: r'''Tipifique el siguiente patrón de comunicación vecinal: Un vecino está descontento porque las hojas del árbol de su vecina ensucian su acera, pero en lugar de decírselo directamente, decide arrojar a escondidas basura pequeña en la entrada de su cochera y hacer indirectas sarcásticas cuando se cruzan en la calle. Este estilo se clasifica como:''',
+    text:
+        r'''Tipifique el siguiente patrón de comunicación vecinal: Un vecino está descontento porque las hojas del árbol de su vecina ensucian su acera, pero en lugar de decírselo directamente, decide arrojar a escondidas basura pequeña en la entrada de su cochera y hacer indirectas sarcásticas cuando se cruzan en la calle. Este estilo se clasifica como:''',
     options: [
       r'''Estilo pasivo''',
       r'''Estilo agresivo directo''',
@@ -5374,12 +6187,14 @@ final List<Question> pfrhQuestions = [
       r'''Estilo asertivo''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estilo pasivo-agresivo se caracteriza por expresar el enojo u hostilidad de manera encubierta, indirecta y evasiva (sarcasmo, sabotajes), en lugar de abordar el conflicto de forma abierta y asertiva.''',
+    explanation:
+        r'''El estilo pasivo-agresivo se caracteriza por expresar el enojo u hostilidad de manera encubierta, indirecta y evasiva (sarcasmo, sabotajes), en lugar de abordar el conflicto de forma abierta y asertiva.''',
   ),
   Question(
     id: 'pfrh_q531',
     topicId: 'pfrh_t4',
-    text: r"""¿Cuál es la diferencia entre los 'factores de riesgo individuales o biopsicosociales' y los 'factores de riesgo socioambientales' en relación con las conductas de riesgo en adolescentes?""",
+    text:
+        r"""¿Cuál es la diferencia entre los 'factores de riesgo individuales o biopsicosociales' y los 'factores de riesgo socioambientales' en relación con las conductas de riesgo en adolescentes?""",
     options: [
       r'''Los individuales dependen exclusivamente del clima y los socioambientales del entorno del salón de clase.''',
       r'''Los individuales involucran variables personales como la impulsividad, la baja autoestima y la predisposición genética; los socioambientales se asocian al grupo de pares desviados, disfunción familiar y disponibilidad de drogas en la comunidad.''',
@@ -5387,12 +6202,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia operativa; ambos términos son equivalentes en el diagnóstico del desarrollo personal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los factores individuales pertenecen a la estructura interna del sujeto (rasgos de personalidad, autovaloración). Los socioambientales pertenecen al entorno relacional, escolar, familiar y comunitario en el que se desenvuelve.''',
+    explanation:
+        r'''Los factores individuales pertenecen a la estructura interna del sujeto (rasgos de personalidad, autovaloración). Los socioambientales pertenecen al entorno relacional, escolar, familiar y comunitario en el que se desenvuelve.''',
   ),
   Question(
     id: 'pfrh_q532',
     topicId: 'pfrh_t4',
-    text: r"""Discrimine qué distorsión cognitiva se manifiesta cuando un adolescente piensa: 'Hoy mi hermano no quiso prestarme su casaca favorita, eso demuestra que me odia profundamente, que soy un estorbo en esta casa y que nadie me va a querer nunca'.""",
+    text:
+        r"""Discrimine qué distorsión cognitiva se manifiesta cuando un adolescente piensa: 'Hoy mi hermano no quiso prestarme su casaca favorita, eso demuestra que me odia profundamente, que soy un estorbo en esta casa y que nadie me va a querer nunca'.""",
     options: [
       r'''Catastrofismo y lectura mental.''',
       r'''Personalización, sobregeneralización y razonamiento emocional.''',
@@ -5400,12 +6217,14 @@ final List<Question> pfrhQuestions = [
       r'''Minimización cognitiva e indefensión adaptativa.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El joven atribuye el hecho a sí mismo (personalización), asume que un evento único se repetirá en todo aspecto de su vida (sobregeneralización) y asume su tristeza como una verdad absoluta de desamor (razonamiento emocional).''',
+    explanation:
+        r'''El joven atribuye el hecho a sí mismo (personalización), asume que un evento único se repetirá en todo aspecto de su vida (sobregeneralización) y asume su tristeza como una verdad absoluta de desamor (razonamiento emocional).''',
   ),
   Question(
     id: 'pfrh_q533',
     topicId: 'pfrh_t4',
-    text: r"""Un estudiante de secundaria nota que ante exámenes difíciles experimenta nudos en el estómago y taquicardia. Para controlarlo, realiza ejercicios de respiración pausada y se repite a sí mismo: 'He estudiado a conciencia y cometer errores es parte del aprendizaje'. Esta estrategia integrada de autorregulación combina:""",
+    text:
+        r"""Un estudiante de secundaria nota que ante exámenes difíciles experimenta nudos en el estómago y taquicardia. Para controlarlo, realiza ejercicios de respiración pausada y se repite a sí mismo: 'He estudiado a conciencia y cometer errores es parte del aprendizaje'. Esta estrategia integrada de autorregulación combina:""",
     options: [
       r'''Supresión expresiva defensiva y locus de control externo.''',
       r'''Técnicas de regulación fisiológica (respiración) y reestructuración cognitiva (reevaluación).''',
@@ -5413,12 +6232,14 @@ final List<Question> pfrhQuestions = [
       r'''Expectativas de autoeficacia de carácter narcisista.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estudiante reduce la activación autonómica con la respiración y reestructura sus pensamientos distorsionados mediante el cambio en la interpretación del examen (reevaluación cognitiva).''',
+    explanation:
+        r'''El estudiante reduce la activación autonómica con la respiración y reestructura sus pensamientos distorsionados mediante el cambio en la interpretación del examen (reevaluación cognitiva).''',
   ),
   Question(
     id: 'pfrh_q534',
     topicId: 'pfrh_t4',
-    text: r"""Identifique la premisa que diferencia correctamente el 'autoconcepto social' del 'autoconcepto emocional':""",
+    text:
+        r"""Identifique la premisa que diferencia correctamente el 'autoconcepto social' del 'autoconcepto emocional':""",
     options: [
       r'''El social es cuantificable de forma objetiva y el emocional es de carácter puramente genético y heredado.''',
       r'''El social alude a la autopercepción de las habilidades de comunicación interpersonales y la integración en grupos; el emocional refiere a la autopercepción de la estabilidad afectiva y el control sobre las respuestas de estrés.''',
@@ -5426,12 +6247,14 @@ final List<Question> pfrhQuestions = [
       r'''El social es siempre positivo en personas extrovertidas y el emocional es negativo por definición en la adolescencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El autoconcepto social evalúa la autoimagen en el rol relacional (amigos, redes de apoyo), mientras que el emocional evalúa la percepción de la propia resiliencia, salud mental y manejo del mundo sentimental.''',
+    explanation:
+        r'''El autoconcepto social evalúa la autoimagen en el rol relacional (amigos, redes de apoyo), mientras que el emocional evalúa la percepción de la propia resiliencia, salud mental y manejo del mundo sentimental.''',
   ),
   Question(
     id: 'pfrh_q535',
     topicId: 'pfrh_t4',
-    text: r"""En el campo del consumo de sustancias y conductas de riesgo, discrimine entre 'uso', 'abuso' y 'dependencia'. ¿Qué opción describe la situación de 'abuso'?""",
+    text:
+        r"""En el campo del consumo de sustancias y conductas de riesgo, discrimine entre 'uso', 'abuso' y 'dependencia'. ¿Qué opción describe la situación de 'abuso'?""",
     options: [
       r'''El consumo infrecuente o experimental de una sustancia en el cual no se presentan consecuencias negativas en la vida del sujeto.''',
       r'''El consumo periódico de la sustancia que genera daños físicos, deterioro del rendimiento académico y conflictos relacionales significativos, sin que aún exista una compulsión incontrolable o síndrome de abstinencia.''',
@@ -5439,12 +6262,14 @@ final List<Question> pfrhQuestions = [
       r'''La venta ocasional de sustancias para financiar actividades escolares grupales de recreación.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El abuso implica un patrón nocivo de consumo que afecta áreas vitales del sujeto (familia, estudios, salud) pero que aún no presenta la adicción fisiológica compulsiva y pérdida de control propia de la dependencia.''',
+    explanation:
+        r'''El abuso implica un patrón nocivo de consumo que afecta áreas vitales del sujeto (familia, estudios, salud) pero que aún no presenta la adicción fisiológica compulsiva y pérdida de control propia de la dependencia.''',
   ),
   Question(
     id: 'pfrh_q536',
     topicId: 'pfrh_t4',
-    text: r"""Clasifique la siguiente técnica de comunicación asertiva: Ante la insistencia hostil de un compañero de clase para que le dicte las respuestas en un examen bajo amenaza de llamarlo 'soplón', el estudiante responde con tranquilidad: 'Entiendo que estés preocupado por el examen y que te moleste mi decisión, pero yo no te voy a dictar las respuestas porque no es honesto'.""",
+    text:
+        r"""Clasifique la siguiente técnica de comunicación asertiva: Ante la insistencia hostil de un compañero de clase para que le dicte las respuestas en un examen bajo amenaza de llamarlo 'soplón', el estudiante responde con tranquilidad: 'Entiendo que estés preocupado por el examen y que te moleste mi decisión, pero yo no te voy a dictar las respuestas porque no es honesto'.""",
     options: [
       r'''Técnica del disco rayado''',
       r'''Técnica del banco de niebla con asertividad empática''',
@@ -5452,12 +6277,14 @@ final List<Question> pfrhQuestions = [
       r'''Interrogación asertiva defensiva''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estudiante valida el sentir del compañero (asertividad empática) y acepta parte del descontento del otro (banco de niebla) sin ceder en su negativa ética firme.''',
+    explanation:
+        r'''El estudiante valida el sentir del compañero (asertividad empática) y acepta parte del descontento del otro (banco de niebla) sin ceder en su negativa ética firme.''',
   ),
   Question(
     id: 'pfrh_q537',
     topicId: 'pfrh_t4',
-    text: r'''Cuando un adolescente experimenta de forma recurrente emociones de culpa, orgullo, vergüenza y envidia en su vida escolar, ¿cómo se clasifican estas emociones en comparación con el miedo, la sorpresa o la ira?''',
+    text:
+        r'''Cuando un adolescente experimenta de forma recurrente emociones de culpa, orgullo, vergüenza y envidia en su vida escolar, ¿cómo se clasifican estas emociones en comparación con el miedo, la sorpresa o la ira?''',
     options: [
       r'''Emociones primarias, biológicas o básicas.''',
       r'''Emociones secundarias, complejas, autoevaluativas o sociomorales.''',
@@ -5465,12 +6292,14 @@ final List<Question> pfrhQuestions = [
       r'''Mecanismos neurológicos de la autoeficacia intrapersonal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las emociones secundarias (o sociomorales) requieren de la autoconciencia, la internalización de normas sociales y la evaluación del propio comportamiento frente a estándares externos, manifestándose después del primer año y medio de vida.''',
+    explanation:
+        r'''Las emociones secundarias (o sociomorales) requieren de la autoconciencia, la internalización de normas sociales y la evaluación del propio comportamiento frente a estándares externos, manifestándose después del primer año y medio de vida.''',
   ),
   Question(
     id: 'pfrh_q538',
     topicId: 'pfrh_t4',
-    text: r'''Identifique el elemento central que diferencia a la resiliencia del concepto básico de resistencia pasiva ante las dificultades:''',
+    text:
+        r'''Identifique el elemento central que diferencia a la resiliencia del concepto básico de resistencia pasiva ante las dificultades:''',
     options: [
       r'''La resistencia pasiva es de carácter intelectual y la resiliencia es puramente biológica y motora.''',
       r'''La resiliencia implica un proceso dinámico de aprendizaje y adaptación que transforma positivamente al sujeto tras la crisis; la resistencia pasiva es solo soportar el dolor sin cambios en la personalidad.''',
@@ -5478,12 +6307,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe distinción conceptual en la psicología evolutiva contemporánea.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La resistencia pasiva consiste en soportar un embate estresante sin quebrarse. La resiliencia va más allá: implica adaptabilidad, recuperación, aprendizaje de la crisis y desarrollo de nuevas fortalezas.''',
+    explanation:
+        r'''La resistencia pasiva consiste en soportar un embate estresante sin quebrarse. La resiliencia va más allá: implica adaptabilidad, recuperación, aprendizaje de la crisis y desarrollo de nuevas fortalezas.''',
   ),
   Question(
     id: 'pfrh_q539',
     topicId: 'pfrh_t4',
-    text: r"""Un estudiante decide programar alarmas en su celular para tomar descansos de 10 minutos por cada hora de estudio, asegurando: 'Quiero evitar la fatiga mental, estirar las piernas y tomar agua para no estresarme'. ¿Qué tipo de autocuidado está priorizando?""",
+    text:
+        r"""Un estudiante decide programar alarmas en su celular para tomar descansos de 10 minutos por cada hora de estudio, asegurando: 'Quiero evitar la fatiga mental, estirar las piernas y tomar agua para no estresarme'. ¿Qué tipo de autocuidado está priorizando?""",
     options: [
       r'''Autocuidado estético e interpersonal.''',
       r'''Autocuidado físico, cognitivo y autorregulación del estrés.''',
@@ -5491,12 +6322,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control externo guiado por tecnología.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El estudiante atiende su bienestar cerebral (evita fatiga mental), corporal (estirar piernas, hidratarse) y gestiona de manera adaptativa el estrés académico, denotando un autocuidado integral.''',
+    explanation:
+        r'''El estudiante atiende su bienestar cerebral (evita fatiga mental), corporal (estirar piernas, hidratarse) y gestiona de manera adaptativa el estrés académico, denotando un autocuidado integral.''',
   ),
   Question(
     id: 'pfrh_q540',
     topicId: 'pfrh_t4',
-    text: r"""Clasifique la siguiente distorsión cognitiva: Un estudiante de secundaria obtiene un diploma de reconocimiento por su buen rendimiento en matemáticas. Sin embargo, se dice a sí mismo: 'El colegio da estos diplomas a cualquiera, no significa nada; sigo siendo malo para estudiar y me irá mal en la universidad'.""",
+    text:
+        r"""Clasifique la siguiente distorsión cognitiva: Un estudiante de secundaria obtiene un diploma de reconocimiento por su buen rendimiento en matemáticas. Sin embargo, se dice a sí mismo: 'El colegio da estos diplomas a cualquiera, no significa nada; sigo siendo malo para estudiar y me irá mal en la universidad'.""",
     options: [
       r'''Lectura del pensamiento y catastrofismo.''',
       r'''Descalificación de lo positivo (o minimización) y filtro mental.''',
@@ -5504,12 +6337,14 @@ final List<Question> pfrhQuestions = [
       r'''Indefensión adquirida basada en la autoeficacia física.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Descalificar lo positivo consiste en rechazar o invalidar las experiencias o logros positivos propios de forma irrazonable, manteniendo una autoimagen negativa de manera artificial.''',
+    explanation:
+        r'''Descalificar lo positivo consiste en rechazar o invalidar las experiencias o logros positivos propios de forma irrazonable, manteniendo una autoimagen negativa de manera artificial.''',
   ),
   Question(
     id: 'pfrh_q541',
     topicId: 'pfrh_t4',
-    text: r"""Un estudiante de secundaria consume cigarrillos electrónicos (vapeadores) porque sus compañeros de grupo lo hacen detrás de los talleres y teme que lo excluyan o cataloguen como 'aburrido' o 'cobarde'. Este comportamiento de riesgo está motivado por:""",
+    text:
+        r"""Un estudiante de secundaria consume cigarrillos electrónicos (vapeadores) porque sus compañeros de grupo lo hacen detrás de los talleres y teme que lo excluyan o cataloguen como 'aburrido' o 'cobarde'. Este comportamiento de riesgo está motivado por:""",
     options: [
       r'''Un elevado sentido de autoeficacia física e independencia moral.''',
       r'''Conformidad social, debilidad en la asertividad y necesidad de aprobación debido a una baja autovaloración.''',
@@ -5517,12 +6352,14 @@ final List<Question> pfrhQuestions = [
       r'''Autocuidado digital e interpersonal de carácter democrático.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El consumo por presión social indirecta e imitación surge de la necesidad de filiación, el miedo al rechazo del grupo de iguales y la falta de asertividad para defender el autocuidado propio.''',
+    explanation:
+        r'''El consumo por presión social indirecta e imitación surge de la necesidad de filiación, el miedo al rechazo del grupo de iguales y la falta de asertividad para defender el autocuidado propio.''',
   ),
   Question(
     id: 'pfrh_q542',
     topicId: 'pfrh_t4',
-    text: r"""¿Cómo se define conceptualmente la presencia de 'límites difusos o permeables' en las relaciones interpersonales de un adolescente?""",
+    text:
+        r"""¿Cómo se define conceptualmente la presencia de 'límites difusos o permeables' en las relaciones interpersonales de un adolescente?""",
     options: [
       r'''Como límites claros y flexibles que permiten la asertividad y el respeto mutuo en el aula.''',
       r"""Como límites débiles o ausentes en los que el sujeto es incapaz de decir 'no' ante las exigencias de otros, tolerando invasiones a su espacio personal y asumiendo culpas o responsabilidades ajenas.""",
@@ -5530,12 +6367,14 @@ final List<Question> pfrhQuestions = [
       r'''Como la destreza de delegar todas las responsabilidades grupales en los compañeros de trabajo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los límites difusos reflejan una pobre asertividad y autoaceptación; el sujeto prioriza las necesidades y deseos de los demás sobre los propios para evitar el rechazo, facilitando la manipulación.''',
+    explanation:
+        r'''Los límites difusos reflejan una pobre asertividad y autoaceptación; el sujeto prioriza las necesidades y deseos de los demás sobre los propios para evitar el rechazo, facilitando la manipulación.''',
   ),
   Question(
     id: 'pfrh_q543',
     topicId: 'pfrh_t4',
-    text: r"""En una conversación, un estudiante dice: 'Me siento frustrado cuando gritan en el grupo porque no logro concentrarme en la redacción del trabajo'. Este estilo de comunicación se tipifica como asertivo porque utiliza la estructura de 'mensaje-yo' debido a que:""",
+    text:
+        r"""En una conversación, un estudiante dice: 'Me siento frustrado cuando gritan en el grupo porque no logro concentrarme en la redacción del trabajo'. Este estilo de comunicación se tipifica como asertivo porque utiliza la estructura de 'mensaje-yo' debido a que:""",
     options: [
       r'''Intimida verbalmente a los compañeros al usar un tono imperativo.''',
       r'''Asume de forma pasiva la culpa de la desorganización general del equipo.''',
@@ -5543,12 +6382,14 @@ final List<Question> pfrhQuestions = [
       r'''Evita de forma sistemática el abordaje directo del conflicto para mantener la calma.''',
     ],
     correctAnswer: 2,
-    explanation: r"""El 'mensaje-yo' es asertivo porque se enfoca en comunicar cómo se siente uno mismo frente a un hecho específico, sin etiquetar negativamente a los demás ni generar respuestas defensivas u hostiles.""",
+    explanation:
+        r"""El 'mensaje-yo' es asertivo porque se enfoca en comunicar cómo se siente uno mismo frente a un hecho específico, sin etiquetar negativamente a los demás ni generar respuestas defensivas u hostiles.""",
   ),
   Question(
     id: 'pfrh_q544',
     topicId: 'pfrh_t4',
-    text: r'''Un estudiante que planifica de forma sistemática sus métodos de estudio, organiza sus horarios de recreación de forma independiente y evalúa de manera crítica sus propios aciertos y errores en los exámenes, demuestra una alta competencia en:''',
+    text:
+        r'''Un estudiante que planifica de forma sistemática sus métodos de estudio, organiza sus horarios de recreación de forma independiente y evalúa de manera crítica sus propios aciertos y errores en los exámenes, demuestra una alta competencia en:''',
     options: [
       r'''Dependencia social y heteronomía del aprendizaje familiar.''',
       r'''Autorregulación del aprendizaje, autonomía cognitiva y autoeficacia percibida.''',
@@ -5556,12 +6397,14 @@ final List<Question> pfrhQuestions = [
       r'''Inteligencia emocional orientada exclusivamente al plano afectivo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autorregulación del aprendizaje implica que el alumno participa activamente en su propio proceso de aprendizaje a nivel metacognitivo, motivacional y conductual, lo que refuerza su autonomía y autoeficacia.''',
+    explanation:
+        r'''La autorregulación del aprendizaje implica que el alumno participa activamente en su propio proceso de aprendizaje a nivel metacognitivo, motivacional y conductual, lo que refuerza su autonomía y autoeficacia.''',
   ),
   Question(
     id: 'pfrh_q545',
     topicId: 'pfrh_t4',
-    text: r'''Valeria se siente sumamente abrumada por los exámenes finales de su escuela. Nota que le cuesta dormir, experimenta acidez estomacal y responde con enojo ante cualquier pregunta de sus hermanos menores. Tras reflexionar sobre esto, Valeria decide organizar un horario de estudio diario equilibrado, realizar caminatas cortas por el parque por la tarde, practicar técnicas de respiración diafragmática antes de dormir y reducir el consumo de cafeína. Las decisiones de Valeria representan:''',
+    text:
+        r'''Valeria se siente sumamente abrumada por los exámenes finales de su escuela. Nota que le cuesta dormir, experimenta acidez estomacal y responde con enojo ante cualquier pregunta de sus hermanos menores. Tras reflexionar sobre esto, Valeria decide organizar un horario de estudio diario equilibrado, realizar caminatas cortas por el parque por la tarde, practicar técnicas de respiración diafragmática antes de dormir y reducir el consumo de cafeína. Las decisiones de Valeria representan:''',
     options: [
       r'''Evitación escolar inmadura del rendimiento académico.''',
       r'''Acciones de autocuidado integral (físico y mental) orientadas a la autorregulación y manejo del estrés.''',
@@ -5569,12 +6412,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión expresiva disfuncional de la ansiedad ante sus hermanos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Valeria identifica las señales psicofisiológicas del estrés (autoconocimiento) y asume un rol activo de autocuidado, cambiando hábitos biológicos y conductuales para autorregular su organismo ante las demandas escolares de forma adaptativa.''',
+    explanation:
+        r'''Valeria identifica las señales psicofisiológicas del estrés (autoconocimiento) y asume un rol activo de autocuidado, cambiando hábitos biológicos y conductuales para autorregular su organismo ante las demandas escolares de forma adaptativa.''',
   ),
   Question(
     id: 'pfrh_q546',
     topicId: 'pfrh_t4',
-    text: r"""Diego desea postularse al cargo de delegado estudiantil de su salón, pero duda al pensar: 'Tal vez no tenga la simpatía de todos y no logre representarlos bien'. Sin embargo, recuerda que el año pasado organizó con gran éxito una feria de ciencias vecinal y que sus amigos valoran su paciencia para resolver disputas. Al sopesar esto, decide inscribirse y planifica su campaña con seguridad. ¿Qué dimensión de la autoestima influyó directamente en la conducta final de Diego?""",
+    text:
+        r"""Diego desea postularse al cargo de delegado estudiantil de su salón, pero duda al pensar: 'Tal vez no tenga la simpatía de todos y no logre representarlos bien'. Sin embargo, recuerda que el año pasado organizó con gran éxito una feria de ciencias vecinal y que sus amigos valoran su paciencia para resolver disputas. Al sopesar esto, decide inscribirse y planifica su campaña con seguridad. ¿Qué dimensión de la autoestima influyó directamente en la conducta final de Diego?""",
     options: [
       r'''La empatía afectiva vicaria.''',
       r'''La autoeficacia percibida reforzada por la memoria de logros de desempeño previos.''',
@@ -5582,12 +6427,14 @@ final List<Question> pfrhQuestions = [
       r'''El locus de control externo situacional.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La autoeficacia se alimenta fuertemente de la experiencia de éxito previa. Diego recuerda sus logros del pasado para contrarrestar su duda inicial, incrementando su autoeficacia percibida para postular al cargo.''',
+    explanation:
+        r'''La autoeficacia se alimenta fuertemente de la experiencia de éxito previa. Diego recuerda sus logros del pasado para contrarrestar su duda inicial, incrementando su autoeficacia percibida para postular al cargo.''',
   ),
   Question(
     id: 'pfrh_q547',
     topicId: 'pfrh_t4',
-    text: r"""Elena y su hermana Clara comparten el dormitorio. Elena se siente molesta debido a que Clara suele dejar sus prendas de ropa y cuadernos tirados sobre el escritorio de Elena. En lugar de gritarle a su hermana o arrojar sus pertenencias al suelo de forma violenta, Elena conversa con Clara y le dice: 'Clara, me incomoda que tus cosas estén en mi escritorio porque no puedo estudiar con comodidad; ¿podríamos acordar un espacio específico para que cada una ordene lo suyo?'. Clara acepta y se disculpa. ¿Qué se evidencia en este conflicto familiar?""",
+    text:
+        r"""Elena y su hermana Clara comparten el dormitorio. Elena se siente molesta debido a que Clara suele dejar sus prendas de ropa y cuadernos tirados sobre el escritorio de Elena. En lugar de gritarle a su hermana o arrojar sus pertenencias al suelo de forma violenta, Elena conversa con Clara y le dice: 'Clara, me incomoda que tus cosas estén en mi escritorio porque no puedo estudiar con comodidad; ¿podríamos acordar un espacio específico para que cada una ordene lo suyo?'. Clara acepta y se disculpa. ¿Qué se evidencia en este conflicto familiar?""",
     options: [
       r'''Pasividad e indefensión por parte de Elena frente a la conducta invasiva de Clara.''',
       r'''Agresividad indirecta orientada a la manipulación familiar afectiva.''',
@@ -5595,12 +6442,14 @@ final List<Question> pfrhQuestions = [
       r'''Secuestro amigdalino colectivo en el subsistema de hermanos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Elena expresa su incomodidad de forma honesta, calmada y propositiva (asertividad), sin insultar a Clara (respeto), orientando la interacción hacia una solución pacífica del conflicto.''',
+    explanation:
+        r'''Elena expresa su incomodidad de forma honesta, calmada y propositiva (asertividad), sin insultar a Clara (respeto), orientando la interacción hacia una solución pacífica del conflicto.''',
   ),
   Question(
     id: 'pfrh_q548',
     topicId: 'pfrh_t4',
-    text: r"""Don Tomás se encuentra conduciendo su automóvil de regreso a casa tras su jornada laboral cuando se ve atrapado en un embotellamiento vehicular masivo que le impedirá avanzar por más de una hora. Al sentir que el corazón le late aceleradamente y que tiene deseos de tocar la bocina ruidosamente, Tomás respira hondo, apaga la radio y se dice a sí mismo: 'Hacer ruido con la bocina no abrirá el tránsito y solo me estresará más; aprovecharé para respirar despacio y avanzar con calma'. Tomás ha empleado:""",
+    text:
+        r"""Don Tomás se encuentra conduciendo su automóvil de regreso a casa tras su jornada laboral cuando se ve atrapado en un embotellamiento vehicular masivo que le impedirá avanzar por más de una hora. Al sentir que el corazón le late aceleradamente y que tiene deseos de tocar la bocina ruidosamente, Tomás respira hondo, apaga la radio y se dice a sí mismo: 'Hacer ruido con la bocina no abrirá el tránsito y solo me estresará más; aprovecharé para respirar despacio y avanzar con calma'. Tomás ha empleado:""",
     options: [
       r'''Supresión expresiva ineficaz con alta probabilidad de somatización posterior.''',
       r'''Autorregulación fisiológica e introspección adaptativa mediante reevaluación cognitiva.''',
@@ -5608,12 +6457,14 @@ final List<Question> pfrhQuestions = [
       r'''Negación disociativa de la realidad vial circundante.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Tomás percibe sus señales corporales (autoconocimiento), aplica respiración profunda para disminuir la respuesta simpática (regulación fisiológica) y cambia su perspectiva sobre el estresor (reevaluación cognitiva), evitando una conducta agresiva inútil.''',
+    explanation:
+        r'''Tomás percibe sus señales corporales (autoconocimiento), aplica respiración profunda para disminuir la respuesta simpática (regulación fisiológica) y cambia su perspectiva sobre el estresor (reevaluación cognitiva), evitando una conducta agresiva inútil.''',
   ),
   Question(
     id: 'pfrh_q549',
     topicId: 'pfrh_t4',
-    text: r"""En un grupo de chat estudiantil de secundaria, un alumno comparte una fotografía comprometedora de una compañera de otro grado obtenida sin su consentimiento. Varios miembros del grupo reaccionan con burlas y comentarios despectivos. Sofía, una de las participantes, siente indignación y tristeza por la compañera. En lugar de callarse para no perder la aprobación de sus amigos, escribe en el chat: 'Compartir esa foto es una falta de respeto grave y está mal; por favor, bórrenla y no la difundan', reportando luego el hecho al tutor de aula. ¿Qué demostró Sofía?""",
+    text:
+        r"""En un grupo de chat estudiantil de secundaria, un alumno comparte una fotografía comprometedora de una compañera de otro grado obtenida sin su consentimiento. Varios miembros del grupo reaccionan con burlas y comentarios despectivos. Sofía, una de las participantes, siente indignación y tristeza por la compañera. En lugar de callarse para no perder la aprobación de sus amigos, escribe en el chat: 'Compartir esa foto es una falta de respeto grave y está mal; por favor, bórrenla y no la difundan', reportando luego el hecho al tutor de aula. ¿Qué demostró Sofía?""",
     options: [
       r'''Conducta prosocial, empatía cognitiva-afectiva y asertividad frente a la presión de grupo pasiva.''',
       r'''Sumisión afectiva y locus de control externo condicionado por las reglas de la escuela.''',
@@ -5621,12 +6472,14 @@ final List<Question> pfrhQuestions = [
       r'''Autocuidado digital de carácter restrictivo y evitación social.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Sofía siente empatía por la víctima, actúa de forma asertiva al fijar un límite ético frente a la complicidad silenciosa de sus pares (resistencia a la presión de grupo) y promueve una acción prosocial de protección a la víctima.''',
+    explanation:
+        r'''Sofía siente empatía por la víctima, actúa de forma asertiva al fijar un límite ético frente a la complicidad silenciosa de sus pares (resistencia a la presión de grupo) y promueve una acción prosocial de protección a la víctima.''',
   ),
   Question(
     id: 'pfrh_q550',
     topicId: 'pfrh_t4',
-    text: r"""Juan es un adolescente de 16 años que asiste a una fiesta vecinal de cumpleaños. Un conocido de su cuadra le ofrece una pastilla asegurándole que 'le dará una energía increíble para bailar toda la noche y que no le pasará nada malo'. Aunque siente curiosidad, Juan recuerda que tiene un campeonato escolar de atletismo en pocos días y que ingerir sustancias desconocidas pone en riesgo su salud, por lo que responde: 'No, gracias, prefiero no tomar cosas extrañas; paso' y se aleja del lugar. ¿Qué se destaca en la conducta de Juan?""",
+    text:
+        r"""Juan es un adolescente de 16 años que asiste a una fiesta vecinal de cumpleaños. Un conocido de su cuadra le ofrece una pastilla asegurándole que 'le dará una energía increíble para bailar toda la noche y que no le pasará nada malo'. Aunque siente curiosidad, Juan recuerda que tiene un campeonato escolar de atletismo en pocos días y que ingerir sustancias desconocidas pone en riesgo su salud, por lo que responde: 'No, gracias, prefiero no tomar cosas extrañas; paso' y se aleja del lugar. ¿Qué se destaca en la conducta de Juan?""",
     options: [
       r'''Timidez social patológica debida a una baja autoestima relacional.''',
       r'''Autocuidado y toma de decisiones racional basada en la prevención de riesgos biológicos.''',
@@ -5634,12 +6487,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión del autoconcepto social para evitar interacciones interpersonales en su vecindario.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Juan actúa con autocuidado al priorizar su salud y rendimiento deportivo por encima de la gratificación inmediata y la imitación social. Realiza una toma de decisiones reflexiva al evaluar las consecuencias negativas del consumo de riesgo.''',
+    explanation:
+        r'''Juan actúa con autocuidado al priorizar su salud y rendimiento deportivo por encima de la gratificación inmediata y la imitación social. Realiza una toma de decisiones reflexiva al evaluar las consecuencias negativas del consumo de riesgo.''',
   ),
   Question(
     id: 'pfrh_q551',
     topicId: 'pfrh_t4',
-    text: r'''Dos vecinos de un edificio de departamentos tienen un conflicto porque uno de ellos suele regar las plantas de su balcón por la mañana, provocando que el agua sucia con tierra caiga directamente sobre la ropa recién colgada y limpia del vecino del piso inferior. Tras conversar de forma asertiva sobre el problema, el vecino del piso superior acuerda regar únicamente en horarios nocturnos y colocar platos debajo de las macetas para retener el exceso de agua. ¿Qué representa esta casuística vecinal?''',
+    text:
+        r'''Dos vecinos de un edificio de departamentos tienen un conflicto porque uno de ellos suele regar las plantas de su balcón por la mañana, provocando que el agua sucia con tierra caiga directamente sobre la ropa recién colgada y limpia del vecino del piso inferior. Tras conversar de forma asertiva sobre el problema, el vecino del piso superior acuerda regar únicamente en horarios nocturnos y colocar platos debajo de las macetas para retener el exceso de agua. ¿Qué representa esta casuística vecinal?''',
     options: [
       r'''Pasividad e indefensión aprendida del vecino afectado por el riego.''',
       r'''Comportamiento asertivo y búsqueda de soluciones colaborativas en el ámbito de la convivencia vecinal.''',
@@ -5647,12 +6502,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad reprimida con propensión a conflictos futuros.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La situación se resuelve constructivamente gracias a la comunicación asertiva del vecino del piso inferior, que expresa su incomodidad sin agredir, y a la empatía y actitud cooperativa del vecino del piso superior.''',
+    explanation:
+        r'''La situación se resuelve constructivamente gracias a la comunicación asertiva del vecino del piso inferior, que expresa su incomodidad sin agredir, y a la empatía y actitud cooperativa del vecino del piso superior.''',
   ),
   Question(
     id: 'pfrh_q552',
     topicId: 'pfrh_t4',
-    text: r'''Ana es una adolescente de 16 años que se siente insatisfecha con su contextura física, comparándose constantemente con las imágenes de modelos que observa en redes sociales. Su amiga Laura la invita a entrenar voleibol en el parque vecinal y le hace notar lo ágil que es y la fuerza que tiene para el saque. Ana se da cuenta de que su cuerpo es fuerte, saludable y muy capaz de realizar actividades valiosas, comenzando a centrarse en su salud física en lugar de en estereotipos estéticos. Ana ha logrado reestructurar su:''',
+    text:
+        r'''Ana es una adolescente de 16 años que se siente insatisfecha con su contextura física, comparándose constantemente con las imágenes de modelos que observa en redes sociales. Su amiga Laura la invita a entrenar voleibol en el parque vecinal y le hace notar lo ágil que es y la fuerza que tiene para el saque. Ana se da cuenta de que su cuerpo es fuerte, saludable y muy capaz de realizar actividades valiosas, comenzando a centrarse en su salud física en lugar de en estereotipos estéticos. Ana ha logrado reestructurar su:''',
     options: [
       r'''Autoconcepto académico e intelectual.''',
       r'''Autovaloración corporal y autoconcepto físico de manera saludable y realista.''',
@@ -5660,12 +6517,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión de emociones desagradables mediante ejercicio físico intenso.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Ana logra pasar de una autoevaluación corporal destructiva basada en ideales poco realistas a una autovaloración corporal sana y realista que reconoce la salud, el vigor y la funcionalidad de su propio cuerpo.''',
+    explanation:
+        r'''Ana logra pasar de una autoevaluación corporal destructiva basada en ideales poco realistas a una autovaloración corporal sana y realista que reconoce la salud, el vigor y la funcionalidad de su propio cuerpo.''',
   ),
   Question(
     id: 'pfrh_q553',
     topicId: 'pfrh_t4',
-    text: r'''Roberto, un estudiante de secundaria, suele postergar la realización de sus proyectos escolares porque siente miedo de que no salgan perfectos y le pongan una nota deficiente. Al comprender que su procrastinación es una forma de autoboicot por miedo al fracaso, decide aplicar la técnica de dividir sus tareas en partes pequeñas y celebrar cada avance. Al hacerlo, aumenta su sensación de competencia y disminuye su ansiedad. Roberto ha mejorado su:''',
+    text:
+        r'''Roberto, un estudiante de secundaria, suele postergar la realización de sus proyectos escolares porque siente miedo de que no salgan perfectos y le pongan una nota deficiente. Al comprender que su procrastinación es una forma de autoboicot por miedo al fracaso, decide aplicar la técnica de dividir sus tareas en partes pequeñas y celebrar cada avance. Al hacerlo, aumenta su sensación de competencia y disminuye su ansiedad. Roberto ha mejorado su:''',
     options: [
       r'''Autoconcepto físico e interpersonal.''',
       r'''Autoeficacia y autorregulación del aprendizaje para superar el autoboicot académico.''',
@@ -5673,12 +6532,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía afectiva hacia los docentes de su colegio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Roberto identifica que su procrastinación es un mecanismo de autodefensa del autoconcepto (autoboicot) provocado por su baja autoeficacia. Al segmentar sus tareas y experimentar pequeños éxitos, eleva su autoeficacia percibida y su autorregulación de forma adaptativa.''',
+    explanation:
+        r'''Roberto identifica que su procrastinación es un mecanismo de autodefensa del autoconcepto (autoboicot) provocado por su baja autoeficacia. Al segmentar sus tareas y experimentar pequeños éxitos, eleva su autoeficacia percibida y su autorregulación de forma adaptativa.''',
   ),
   Question(
     id: 'pfrh_q554',
     topicId: 'pfrh_t4',
-    text: r"""Camila es una adolescente que sufre la pérdida de su mascota por enfermedad. Siente una profunda tristeza y deseos de llorar de forma recurrente. Sus amigas le aconsejan ir de fiesta y consumir alcohol para 'olvidar la pena y alegrarse'. Camila, en cambio, decide conversar con sus padres sobre su dolor, escribir una carta de despedida a su mascota y permitirse llorar en su habitación cuando lo siente necesario. ¿Qué demuestra la actitud de Camila?""",
+    text:
+        r"""Camila es una adolescente que sufre la pérdida de su mascota por enfermedad. Siente una profunda tristeza y deseos de llorar de forma recurrente. Sus amigas le aconsejan ir de fiesta y consumir alcohol para 'olvidar la pena y alegrarse'. Camila, en cambio, decide conversar con sus padres sobre su dolor, escribir una carta de despedida a su mascota y permitirse llorar en su habitación cuando lo siente necesario. ¿Qué demuestra la actitud de Camila?""",
     options: [
       r'''Evasión inmadura de la realidad social y baja tolerancia a la frustración grupal.''',
       r'''Afrontamiento adaptativo de las pérdidas (duelo) y autocuidado emocional frente al consumo de riesgo.''',
@@ -5686,12 +6547,14 @@ final List<Question> pfrhQuestions = [
       r'''Supresión expresiva rígida que bloquea el desarrollo de la resiliencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Camila afronta de manera saludable su duelo, permitiéndose sentir y canalizar la tristeza (afrontamiento centrado en la emoción adaptativo) y rechaza una conducta de riesgo (consumo de alcohol) como vía de escape, priorizando su autocuidado emocional.''',
+    explanation:
+        r'''Camila afronta de manera saludable su duelo, permitiéndose sentir y canalizar la tristeza (afrontamiento centrado en la emoción adaptativo) y rechaza una conducta de riesgo (consumo de alcohol) como vía de escape, priorizando su autocuidado emocional.''',
   ),
   Question(
     id: 'pfrh_q555',
     topicId: 'pfrh_t4',
-    text: r"""En una asamblea vecinal convocada para resolver el problema de la basura acumulada en las esquinas, un vecino interrumpe de forma agresiva, gritando e insultando a la junta directiva y acusándolos de no hacer nada. El presidente de la junta directiva, en lugar de responder con gritos o retirarse de la asamblea, respira con calma, espera a que el vecino termine y responde con tono firme y educado: 'Entiendo que la suciedad en las esquinas nos cause molestia a todos, pero le pido que nos expresemos con respeto. Las cuentas están claras y publicadas; propongo que nos enfoquemos en organizar los horarios de recojo con la municipalidad'. ¿Qué demostró el presidente de la junta?""",
+    text:
+        r"""En una asamblea vecinal convocada para resolver el problema de la basura acumulada en las esquinas, un vecino interrumpe de forma agresiva, gritando e insultando a la junta directiva y acusándolos de no hacer nada. El presidente de la junta directiva, en lugar de responder con gritos o retirarse de la asamblea, respira con calma, espera a que el vecino termine y responde con tono firme y educado: 'Entiendo que la suciedad en las esquinas nos cause molestia a todos, pero le pido que nos expresemos con respeto. Las cuentas están claras y publicadas; propongo que nos enfoquemos en organizar los horarios de recojo con la municipalidad'. ¿Qué demostró el presidente de la junta?""",
     options: [
       r'''Sumisión y pasividad frente a las acusaciones infundadas de los vecinos.''',
       r'''Inteligencia emocional, comunicación asertiva y autorregulación frente a agresiones verbales en el plano cívico.''',
@@ -5699,12 +6562,14 @@ final List<Question> pfrhQuestions = [
       r'''Locus de control externo con anulación de su rol de liderazgo comunitario.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El presidente regula su respuesta instintiva de ira ante el ataque verbal (autorregulación emocional) y utiliza la comunicación asertiva para reconducir la reunión hacia la solución cooperativa del problema sin engancharse en una disputa violenta.''',
+    explanation:
+        r'''El presidente regula su respuesta instintiva de ira ante el ataque verbal (autorregulación emocional) y utiliza la comunicación asertiva para reconducir la reunión hacia la solución cooperativa del problema sin engancharse en una disputa violenta.''',
   ),
   Question(
     id: 'pfrh_q556',
     topicId: 'pfrh_t4',
-    text: r"""Un adulto mayor se demora visiblemente en la caja de un supermercado al contar sus monedas para pagar. La persona que está detrás en la fila siente impaciencia e irritación, pero reflexiona: 'Es una persona anciana, sus manos son menos ágiles y no lo hace por molestar; yo también llegaré a esa edad y desearé paciencia de los demás'. La persona respira hondo, calma su malestar y ayuda amablemente al anciano a guardar sus compras. Esta persona ha utilizado:""",
+    text:
+        r"""Un adulto mayor se demora visiblemente en la caja de un supermercado al contar sus monedas para pagar. La persona que está detrás en la fila siente impaciencia e irritación, pero reflexiona: 'Es una persona anciana, sus manos son menos ágiles y no lo hace por molestar; yo también llegaré a esa edad y desearé paciencia de los demás'. La persona respira hondo, calma su malestar y ayuda amablemente al anciano a guardar sus compras. Esta persona ha utilizado:""",
     options: [
       r'''Supresión expresiva perjudicial y anulación de sus derechos de consumidor.''',
       r'''Empatía cognitiva y autorregulación emocional adaptativa en un contexto civil de la vida cotidiana.''',
@@ -5712,12 +6577,14 @@ final List<Question> pfrhQuestions = [
       r'''Habilidades sociales de manipulación conductual para acelerar el cobro de la caja.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La persona utiliza la empatía cognitiva al adoptar la perspectiva de las limitaciones del adulto mayor, lo que le permite reevaluar su irritación inicial y regular su conducta de forma solidaria y cívica.''',
+    explanation:
+        r'''La persona utiliza la empatía cognitiva al adoptar la perspectiva de las limitaciones del adulto mayor, lo que le permite reevaluar su irritación inicial y regular su conducta de forma solidaria y cívica.''',
   ),
   Question(
     id: 'pfrh_q557',
     topicId: 'pfrh_t4',
-    text: r"""Julio y su abuelo sostienen una discusión sobre las vestimentas y peinados juveniles contemporáneos, que el abuelo califica de 'inmorales'. Julio, en lugar de gritarle a su abuelo o dar un portazo, le dice con tono calmado y respetuoso: 'Abuelo, comprendo que en tu época las modas eran diferentes y respeto tu opinión, pero la forma en que nos vestimos ahora no disminuye nuestros valores ni el cariño que te tenemos. Agradezco que te preocupes por mí'. Julio ha demostrado:""",
+    text:
+        r"""Julio y su abuelo sostienen una discusión sobre las vestimentas y peinados juveniles contemporáneos, que el abuelo califica de 'inmorales'. Julio, en lugar de gritarle a su abuelo o dar un portazo, le dice con tono calmado y respetuoso: 'Abuelo, comprendo que en tu época las modas eran diferentes y respeto tu opinión, pero la forma en que nos vestimos ahora no disminuye nuestros valores ni el cariño que te tenemos. Agradezco que te preocupes por mí'. Julio ha demostrado:""",
     options: [
       r'''Sumisión incondicional ante la autoridad heterónoma familiar tradicional.''',
       r'''Habilidades de comunicación asertiva intergeneracional, empatía y autorregulación para preservar el vínculo afectivo familiar.''',
@@ -5725,12 +6592,14 @@ final List<Question> pfrhQuestions = [
       r'''Agresividad pasiva encubierta con modales educados de forma irónica.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Julio demuestra una alta inteligencia emocional familiar: respeta la perspectiva de su abuelo (empatía cognitiva), controla su reacción de enojo (autorregulación) e interactúa comunicando su postura con absoluto respeto y asertividad (asertividad intergeneracional).''',
+    explanation:
+        r'''Julio demuestra una alta inteligencia emocional familiar: respeta la perspectiva de su abuelo (empatía cognitiva), controla su reacción de enojo (autorregulación) e interactúa comunicando su postura con absoluto respeto y asertividad (asertividad intergeneracional).''',
   ),
   Question(
     id: 'pfrh_q558',
     topicId: 'pfrh_t4',
-    text: r'''Un aspirante a la EO PNP se prepara arduamente para el examen. Reconoce sus debilidades en matemáticas, pero confía plenamente en su capacidad para superarlas estudiando. Esta certeza íntima sobre sus propias habilidades para lograr un objetivo específico define su:''',
+    text:
+        r'''Un aspirante a la EO PNP se prepara arduamente para el examen. Reconoce sus debilidades en matemáticas, pero confía plenamente en su capacidad para superarlas estudiando. Esta certeza íntima sobre sus propias habilidades para lograr un objetivo específico define su:''',
     options: [
       r'''Autoconcepto''',
       r'''Autoeficacia''',
@@ -5739,12 +6608,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Autonomía emocional''',
     ],
     correctAnswer: 1,
-    explanation: r"""La respuesta correcta es B (Autoeficacia). Es la creencia en las propias capacidades para lograr una meta. El distractor A (Autoconcepto) es la imagen global de uno mismo; el distractor D (Autoconocimiento) es el simple hecho de saber sus debilidades, pero la 'certeza de poder lograr el objetivo' es netamente autoeficacia.""",
+    explanation:
+        r"""La respuesta correcta es B (Autoeficacia). Es la creencia en las propias capacidades para lograr una meta. El distractor A (Autoconcepto) es la imagen global de uno mismo; el distractor D (Autoconocimiento) es el simple hecho de saber sus debilidades, pero la 'certeza de poder lograr el objetivo' es netamente autoeficacia.""",
   ),
   Question(
     id: 'pfrh_q559',
     topicId: 'pfrh_t4',
-    text: r'''Según la Ley N° 30364 para prevenir y sancionar la violencia contra la mujer y los integrantes del grupo familiar, si un esposo controla los ingresos de su esposa, impidiéndole administrar su propio sueldo, se tipifica como:''',
+    text:
+        r'''Según la Ley N° 30364 para prevenir y sancionar la violencia contra la mujer y los integrantes del grupo familiar, si un esposo controla los ingresos de su esposa, impidiéndole administrar su propio sueldo, se tipifica como:''',
     options: [
       r'''Violencia Psicológica''',
       r'''Violencia Doméstica Pasiva''',
@@ -5753,12 +6624,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Violencia Social Institucional''',
     ],
     correctAnswer: 3,
-    explanation: r"""La respuesta correcta es D. El control del dinero y patrimonio propio es violencia económica. El distractor A (Psicológica) es una 'Trampa Psicológica Lógica', ya que esto genera daño emocional, pero la ley lo tipifica específicamente y de forma separada como violencia económica.""",
+    explanation:
+        r"""La respuesta correcta es D. El control del dinero y patrimonio propio es violencia económica. El distractor A (Psicológica) es una 'Trampa Psicológica Lógica', ya que esto genera daño emocional, pero la ley lo tipifica específicamente y de forma separada como violencia económica.""",
   ),
   Question(
     id: 'pfrh_q560',
     topicId: 'pfrh_t4',
-    text: r"""En la gestión de las emociones, la 'Asertividad' se define técnicamente como:""",
+    text:
+        r"""En la gestión de las emociones, la 'Asertividad' se define técnicamente como:""",
     options: [
       r'''La capacidad de ponerse en el lugar del otro y sentir sus emociones.''',
       r'''La habilidad para evitar conflictos cediendo a las peticiones del grupo.''',
@@ -5767,12 +6640,14 @@ final List<Question> pfrhQuestions = [
       r'''E) La imposición sutil de las ideas propias sobre los demás mediante argumentos lógicos.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C. El distractor A es la 'Empatía'. El distractor B es la 'Pasividad o Sumisión'. El distractor E es 'Agresividad Intelectual'. La asertividad es el punto medio exacto entre agresividad y pasividad.""",
+    explanation:
+        r"""La respuesta correcta es C. El distractor A es la 'Empatía'. El distractor B es la 'Pasividad o Sumisión'. El distractor E es 'Agresividad Intelectual'. La asertividad es el punto medio exacto entre agresividad y pasividad.""",
   ),
   Question(
     id: 'pfrh_q561',
     topicId: 'pfrh_t4',
-    text: r'''La Inteligencia Emocional, según Daniel Goleman, comprende diversas dimensiones. ¿Cuál de las siguientes pertenece a la dimensión INTERPERSONAL (gestión con los demás)?''',
+    text:
+        r'''La Inteligencia Emocional, según Daniel Goleman, comprende diversas dimensiones. ¿Cuál de las siguientes pertenece a la dimensión INTERPERSONAL (gestión con los demás)?''',
     options: [
       r'''Autoconciencia''',
       r'''Autorregulación''',
@@ -5781,12 +6656,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Autoconcepto''',
     ],
     correctAnswer: 3,
-    explanation: r'''La respuesta correcta es D (Empatía), que junto con las Habilidades Sociales conforman la dimensión interpersonal. A, B y C son componentes INTRAPERSONALES (con uno mismo).''',
+    explanation:
+        r'''La respuesta correcta es D (Empatía), que junto con las Habilidades Sociales conforman la dimensión interpersonal. A, B y C son componentes INTRAPERSONALES (con uno mismo).''',
   ),
   Question(
     id: 'pfrh_q562',
     topicId: 'pfrh_t4',
-    text: r'''Un joven es criticado constructivamente por su superior en la Escuela de Oficiales. Lejos de deprimirse o molestarse, analiza la crítica y ajusta su conducta porque sabe cuál es su verdadero valor y sus áreas de mejora. Esto demuestra un alto nivel de:''',
+    text:
+        r'''Un joven es criticado constructivamente por su superior en la Escuela de Oficiales. Lejos de deprimirse o molestarse, analiza la crítica y ajusta su conducta porque sabe cuál es su verdadero valor y sus áreas de mejora. Esto demuestra un alto nivel de:''',
     options: [
       r'''Autovaloración (Autoestima)''',
       r'''Pasividad Institucional''',
@@ -5795,12 +6672,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Condicionamiento Social''',
     ],
     correctAnswer: 0,
-    explanation: r'''La respuesta correcta es A. Es la manifestación de una autoestima sana y alta: aceptar críticas sin sentir que tu valor personal ha sido destruido.''',
+    explanation:
+        r'''La respuesta correcta es A. Es la manifestación de una autoestima sana y alta: aceptar críticas sin sentir que tu valor personal ha sido destruido.''',
   ),
   Question(
     id: 'pfrh_q563',
     topicId: 'pfrh_t4',
-    text: r'''El primer peldaño de la escalera de la autoestima, consistente en la indagación introspectiva de las propias virtudes, defectos, valores y limitaciones, es el:''',
+    text:
+        r'''El primer peldaño de la escalera de la autoestima, consistente en la indagación introspectiva de las propias virtudes, defectos, valores y limitaciones, es el:''',
     options: [
       r'''Autorrespeto''',
       r'''Autoaceptación''',
@@ -5809,12 +6688,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconcepto''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autoconocimiento es la base para edificar una personalidad madura y un desarrollo personal armonioso.''',
+    explanation:
+        r'''El autoconocimiento es la base para edificar una personalidad madura y un desarrollo personal armonioso.''',
   ),
   Question(
     id: 'pfrh_q564',
     topicId: 'pfrh_t4',
-    text: r'''¿Qué componente de la autoestima constituye la representación cognitiva e imagen mental que elaboramos sobre nosotros mismos (cómo nos describimos)?''',
+    text:
+        r'''¿Qué componente de la autoestima constituye la representación cognitiva e imagen mental que elaboramos sobre nosotros mismos (cómo nos describimos)?''',
     options: [
       r'''Autoconocimiento''',
       r'''Autorrespeto''',
@@ -5823,12 +6704,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoeficacia''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autoconcepto es racional y descriptivo, diferenciándose de la valoración afectiva de la autoestima.''',
+    explanation:
+        r'''El autoconcepto es racional y descriptivo, diferenciándose de la valoración afectiva de la autoestima.''',
   ),
   Question(
     id: 'pfrh_q565',
     topicId: 'pfrh_t4',
-    text: r'''La creencia y confianza que tiene una persona en sus propias capacidades para organizar y ejecutar con éxito las acciones necesarias para alcanzar metas específicas se denomina:''',
+    text:
+        r'''La creencia y confianza que tiene una persona en sus propias capacidades para organizar y ejecutar con éxito las acciones necesarias para alcanzar metas específicas se denomina:''',
     options: [
       r'''Autorrespeto''',
       r'''Autoconcepto''',
@@ -5837,12 +6720,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoengaño''',
     ],
     correctAnswer: 3,
-    explanation: r'''La autoeficacia (teorizada por Albert Bandura) condiciona la motivación, el esfuerzo y la persistencia ante los desafíos académicos y laborales.''',
+    explanation:
+        r'''La autoeficacia (teorizada por Albert Bandura) condiciona la motivación, el esfuerzo y la persistencia ante los desafíos académicos y laborales.''',
   ),
   Question(
     id: 'pfrh_q566',
     topicId: 'pfrh_t4',
-    text: r'''Admitir y reconocer todas las partes de uno mismo, tanto las virtudes como las debilidades o errores, sin juzgarse duramente ni rechazarse, se define como:''',
+    text:
+        r'''Admitir y reconocer todas las partes de uno mismo, tanto las virtudes como las debilidades o errores, sin juzgarse duramente ni rechazarse, se define como:''',
     options: [
       r'''Autorrespeto''',
       r'''Autocomplacencia''',
@@ -5851,12 +6736,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoaceptación''',
     ],
     correctAnswer: 4,
-    explanation: r'''La autoaceptación permite vivir de forma verídica y en armonía interna al no negar los aspectos vulnerables de la personalidad.''',
+    explanation:
+        r'''La autoaceptación permite vivir de forma verídica y en armonía interna al no negar los aspectos vulnerables de la personalidad.''',
   ),
   Question(
     id: 'pfrh_q567',
     topicId: 'pfrh_t4',
-    text: r'''La capacidad formulada por Daniel Goleman para reconocer, comprender y regular las emociones propias y ajenas, facilitando el éxito personal y social, es la:''',
+    text:
+        r'''La capacidad formulada por Daniel Goleman para reconocer, comprender y regular las emociones propias y ajenas, facilitando el éxito personal y social, es la:''',
     options: [
       r'''Inteligencia lingüística''',
       r'''Inteligencia lógica-matemática''',
@@ -5865,12 +6752,14 @@ final List<Question> pfrhQuestions = [
       r'''Resiliencia cívica''',
     ],
     correctAnswer: 3,
-    explanation: r'''La inteligencia emocional integra la autoconciencia, el autocontrol, la motivación, la empatía y el manejo de habilidades sociales.''',
+    explanation:
+        r'''La inteligencia emocional integra la autoconciencia, el autocontrol, la motivación, la empatía y el manejo de habilidades sociales.''',
   ),
   Question(
     id: 'pfrh_q568',
     topicId: 'pfrh_t4',
-    text: r'''El componente de la inteligencia emocional que permite gestionar de forma adecuada los impulsos perturbadores y adaptarse a circunstancias cambiantes es la:''',
+    text:
+        r'''El componente de la inteligencia emocional que permite gestionar de forma adecuada los impulsos perturbadores y adaptarse a circunstancias cambiantes es la:''',
     options: [
       r'''Automotivación''',
       r'''Habilidad social''',
@@ -5879,12 +6768,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoconciencia emocional''',
     ],
     correctAnswer: 3,
-    explanation: r'''La autorregulación emocional impide ser víctimas de secuestros emocionales o arrebatos descontrolados de ira.''',
+    explanation:
+        r'''La autorregulación emocional impide ser víctimas de secuestros emocionales o arrebatos descontrolados de ira.''',
   ),
   Question(
     id: 'pfrh_q569',
     topicId: 'pfrh_t4',
-    text: r'''La destreza emocional que impulsa a enfocar la energía y las acciones hacia objetivos personales significativos, superando la frustración y el desgano, se llama:''',
+    text:
+        r'''La destreza emocional que impulsa a enfocar la energía y las acciones hacia objetivos personales significativos, superando la frustración y el desgano, se llama:''',
     options: [
       r'''Resiliencia reactiva''',
       r'''Habilidad social''',
@@ -5893,12 +6784,14 @@ final List<Question> pfrhQuestions = [
       r'''Autoestima pasiva''',
     ],
     correctAnswer: 2,
-    explanation: r'''La automotivación sostiene el optimismo y el compromiso con los proyectos a largo plazo a pesar de los fracasos intermedios.''',
+    explanation:
+        r'''La automotivación sostiene el optimismo y el compromiso con los proyectos a largo plazo a pesar de los fracasos intermedios.''',
   ),
   Question(
     id: 'pfrh_q570',
     topicId: 'pfrh_t4',
-    text: r'''En el marco de la inteligencia emocional de Daniel Goleman, la dimensión orientada a reconocer y comprender las necesidades y sentimientos de las demás personas es la:''',
+    text:
+        r'''En el marco de la inteligencia emocional de Daniel Goleman, la dimensión orientada a reconocer y comprender las necesidades y sentimientos de las demás personas es la:''',
     options: [
       r'''Autorregulación''',
       r'''Automotivación''',
@@ -5907,12 +6800,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía''',
     ],
     correctAnswer: 4,
-    explanation: r'''La empatía es la base para un adecuado desarrollo social y liderazgo cívico dentro y fuera de la función policial.''',
+    explanation:
+        r'''La empatía es la base para un adecuado desarrollo social y liderazgo cívico dentro y fuera de la función policial.''',
   ),
   Question(
     id: 'pfrh_q571',
     topicId: 'pfrh_t4',
-    text: r'''La competencia para interactuar, persuadir, resolver disputas y liderar equipos de forma asertiva corresponde, en la inteligencia emocional, a las:''',
+    text:
+        r'''La competencia para interactuar, persuadir, resolver disputas y liderar equipos de forma asertiva corresponde, en la inteligencia emocional, a las:''',
     options: [
       r'''Autoconciencias morales''',
       r'''Automotivaciones extrínsecas''',
@@ -5921,12 +6816,14 @@ final List<Question> pfrhQuestions = [
       r'''Habilidades sociales''',
     ],
     correctAnswer: 4,
-    explanation: r'''Las habilidades sociales permiten una comunicación persuasiva y la gestión constructiva de las relaciones interpersonales.''',
+    explanation:
+        r'''Las habilidades sociales permiten una comunicación persuasiva y la gestión constructiva de las relaciones interpersonales.''',
   ),
   Question(
     id: 'pfrh_q572',
     topicId: 'pfrh_t4',
-    text: r'''La capacidad humana para sobreponerse a situaciones de dolor emocional o grandes adversidades, saliendo fortalecido y transformado positivamente de ellas, se denomina:''',
+    text:
+        r'''La capacidad humana para sobreponerse a situaciones de dolor emocional o grandes adversidades, saliendo fortalecido y transformado positivamente de ellas, se denomina:''',
     options: [
       r'''Autocontrol''',
       r'''Autoeficacia''',
@@ -5935,12 +6832,14 @@ final List<Question> pfrhQuestions = [
       r'''Empatía''',
     ],
     correctAnswer: 3,
-    explanation: r'''La resiliencia permite afrontar crisis vitales y traumas transformando la experiencia adversa en una oportunidad de crecimiento.''',
+    explanation:
+        r'''La resiliencia permite afrontar crisis vitales y traumas transformando la experiencia adversa en una oportunidad de crecimiento.''',
   ),
   Question(
     id: 'pfrh_q613',
     topicId: 'pfrh_t5',
-    text: r'''¿Cómo se define conceptualmente a la familia nuclear en la tipología familiar contemporánea?''',
+    text:
+        r'''¿Cómo se define conceptualmente a la familia nuclear en la tipología familiar contemporánea?''',
     options: [
       r'''La integrada exclusivamente por el padre, la madre y los hijos (biológicos o adoptados) que cohabitan en un mismo hogar''',
       r'''La agrupación de parientes colaterales y consanguíneos de hasta cuarto grado que comparten gastos comunes''',
@@ -5948,12 +6847,14 @@ final List<Question> pfrhQuestions = [
       r'''La unión de dos personas con hijos previos de relaciones anteriores que conviven bajo un régimen de cohabitación afectiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia nuclear es el modelo clásico integrado por ambos progenitores (padre y madre) y sus hijos directos, conviviendo bajo el mismo techo.''',
+    explanation:
+        r'''La familia nuclear es el modelo clásico integrado por ambos progenitores (padre y madre) y sus hijos directos, conviviendo bajo el mismo techo.''',
   ),
   Question(
     id: 'pfrh_q614',
     topicId: 'pfrh_t5',
-    text: r'''En el marco de las tipologías familiares, ¿qué caracteriza fundamentalmente a una familia extensa?''',
+    text:
+        r'''En el marco de las tipologías familiares, ¿qué caracteriza fundamentalmente a una familia extensa?''',
     options: [
       r'''La convivencia bajo el mismo techo de varios miembros de distintas generaciones (abuelos, tíos, primos) junto al núcleo básico''',
       r'''La convivencia de parejas del mismo sexo con hijos adoptivos bajo un acuerdo de corresponsabilidad civil''',
@@ -5961,7 +6862,8 @@ final List<Question> pfrhQuestions = [
       r'''El hogar conformado por un progenitor soltero y la red vecinal de apoyo que colabora de manera informal en la crianza''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia extensa se define por la cohabitación de la familia nuclear con otros parientes de consanguinidad colateral o de distintas generaciones.''',
+    explanation:
+        r'''La familia extensa se define por la cohabitación de la familia nuclear con otros parientes de consanguinidad colateral o de distintas generaciones.''',
   ),
   Question(
     id: 'pfrh_q615',
@@ -5974,12 +6876,14 @@ final List<Question> pfrhQuestions = [
       r'''La estructura donde un tutor legal no consanguíneo cría a un menor de edad sin ayuda del Estado''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia monoparental está conformada por un único progenitor (sea padre o madre) y sus hijos a cargo, conviviendo de manera independiente.''',
+    explanation:
+        r'''La familia monoparental está conformada por un único progenitor (sea padre o madre) y sus hijos a cargo, conviviendo de manera independiente.''',
   ),
   Question(
     id: 'pfrh_q616',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué opción define con precisión el concepto de familia reconstituida o ensamblada?''',
+    text:
+        r'''¿Qué opción define con precisión el concepto de familia reconstituida o ensamblada?''',
     options: [
       r'''La conformada por una nueva pareja donde al menos uno de los miembros aporta hijos de una relación sentimental previa''',
       r'''La familia que vuelve a unirse bajo el mismo techo tras superar un proceso legal de divorcio o separación temporal''',
@@ -5987,12 +6891,14 @@ final List<Question> pfrhQuestions = [
       r'''La unión de hermanos huérfanos que asumen conjuntamente la jefatura del hogar ante la ausencia de figuras adultas''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia reconstituida o ensamblada se caracteriza por la unión de una nueva pareja donde uno o ambos miembros tienen hijos de relaciones anteriores.''',
+    explanation:
+        r'''La familia reconstituida o ensamblada se caracteriza por la unión de una nueva pareja donde uno o ambos miembros tienen hijos de relaciones anteriores.''',
   ),
   Question(
     id: 'pfrh_q617',
     topicId: 'pfrh_t5',
-    text: r'''¿En qué consiste la función afectiva de la familia dentro del desarrollo psicológico infantil?''',
+    text:
+        r'''¿En qué consiste la función afectiva de la familia dentro del desarrollo psicológico infantil?''',
     options: [
       r'''En proveer amor, aceptación incondicional, apego seguro y contención emocional para lograr la estabilidad psicológica''',
       r'''En la transferencia sistemática de modales, pautas de comportamiento urbano e instrucción moral cívica''',
@@ -6000,12 +6906,14 @@ final List<Question> pfrhQuestions = [
       r'''En la provisión de recursos materiales indispensables para el consumo básico y la recreación activa del menor''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función afectiva implica la provisión de afecto, soporte emocional y apego seguro, constituyendo la base del autoconcepto y la salud mental del individuo.''',
+    explanation:
+        r'''La función afectiva implica la provisión de afecto, soporte emocional y apego seguro, constituyendo la base del autoconcepto y la salud mental del individuo.''',
   ),
   Question(
     id: 'pfrh_q618',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es el objetivo principal de la función socializadora de la familia?''',
+    text:
+        r'''¿Cuál es el objetivo principal de la función socializadora de la familia?''',
     options: [
       r'''Transmitir valores, normas de convivencia, hábitos y modales que permitan la integración adecuada del individuo en la sociedad''',
       r'''Brindar el financiamiento de los estudios universitarios y la capacitación técnica reglada por el Estado''',
@@ -6013,12 +6921,14 @@ final List<Question> pfrhQuestions = [
       r'''Organizar espacios de esparcimiento colectivo que reduzcan los niveles de estrés causados por la rutina laboral''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función socializadora introduce al menor al mundo social, transmitiendo las pautas cívicas, modales y morales necesarias para la convivencia comunitaria.''',
+    explanation:
+        r'''La función socializadora introduce al menor al mundo social, transmitiendo las pautas cívicas, modales y morales necesarias para la convivencia comunitaria.''',
   ),
   Question(
     id: 'pfrh_q619',
     topicId: 'pfrh_t5',
-    text: r'''¿Cómo se define operativamente la función protectora de la familia?''',
+    text:
+        r'''¿Cómo se define operativamente la función protectora de la familia?''',
     options: [
       r'''Es el cuidado integral que garantiza la seguridad física, el resguardo ante el peligro y la atención oportuna de la salud de sus miembros''',
       r'''Es la asignación de responsabilidades domésticas equitativas según el sexo y la edad de los hijos''',
@@ -6026,12 +6936,14 @@ final List<Question> pfrhQuestions = [
       r'''Es el conjunto de actividades destinadas al desarrollo físico mediante la práctica deportiva comunitaria''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función protectora se enfoca en asegurar la integridad física, brindar un refugio seguro y proveer los cuidados médicos indispensables ante vulnerabilidades.''',
+    explanation:
+        r'''La función protectora se enfoca en asegurar la integridad física, brindar un refugio seguro y proveer los cuidados médicos indispensables ante vulnerabilidades.''',
   ),
   Question(
     id: 'pfrh_q620',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué abarca primordialmente la función económica de la familia?''',
+    text:
+        r'''¿Qué abarca primordialmente la función económica de la familia?''',
     options: [
       r'''La satisfacción de las necesidades materiales básicas como alimentación, vivienda, vestimenta y mantenimiento general''',
       r'''La administración exclusiva de fondos destinados a la jubilación y los seguros de vida de los miembros adultos''',
@@ -6039,12 +6951,14 @@ final List<Question> pfrhQuestions = [
       r'''La inserción activa de los hijos en el mercado laboral formal para incrementar el ingreso del presupuesto común''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función económica cubre el sustento material del hogar, asegurando que las necesidades de alimentación, vivienda y servicios básicos estén cubiertas.''',
+    explanation:
+        r'''La función económica cubre el sustento material del hogar, asegurando que las necesidades de alimentación, vivienda y servicios básicos estén cubiertas.''',
   ),
   Question(
     id: 'pfrh_q621',
     topicId: 'pfrh_t5',
-    text: r'''En el contexto escolar y de formación cívica, ¿qué caracteriza a la función educativa de la familia?''',
+    text:
+        r'''En el contexto escolar y de formación cívica, ¿qué caracteriza a la función educativa de la familia?''',
     options: [
       r'''El acompañamiento y apoyo en el proceso de escolaridad formal, reforzando las tareas y hábitos de estudio en casa''',
       r'''La enseñanza de modales de mesa y el saludo respetuoso a las autoridades comunales de la localidad''',
@@ -6052,7 +6966,8 @@ final List<Question> pfrhQuestions = [
       r'''El control disciplinario rígido a través del castigo conductual ante las calificaciones deficientes''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función educativa familiar se orienta al soporte del aprendizaje formal, fomentando hábitos de estudio y cooperando activamente con la escuela.''',
+    explanation:
+        r'''La función educativa familiar se orienta al soporte del aprendizaje formal, fomentando hábitos de estudio y cooperando activamente con la escuela.''',
   ),
   Question(
     id: 'pfrh_q622',
@@ -6065,12 +6980,14 @@ final List<Question> pfrhQuestions = [
       r'''La obligación de asistir a eventos deportivos institucionales sin importar los intereses de los menores''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función recreativa se centra en el esparcimiento mutuo, permitiendo la distensión del estrés diario y reforzando los vínculos afectivos mediante el juego.''',
+    explanation:
+        r'''La función recreativa se centra en el esparcimiento mutuo, permitiendo la distensión del estrés diario y reforzando los vínculos afectivos mediante el juego.''',
   ),
   Question(
     id: 'pfrh_q623',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es el núcleo central de la función reproductiva o demográfica de la familia?''',
+    text:
+        r'''¿Cuál es el núcleo central de la función reproductiva o demográfica de la familia?''',
     options: [
       r'''Asegurar la continuidad biológica de la sociedad mediante la procreación y la acogida responsable del neonato''',
       r'''Regular el comportamiento de emparejamiento juvenil mediante normas morales de carácter prohibitivo''',
@@ -6078,12 +6995,14 @@ final List<Question> pfrhQuestions = [
       r'''Garantizar que todos los hijos hereden el mismo apellido de manera legal ante los registros civiles''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función reproductiva garantiza la renovación generacional de la sociedad y la provisión de las condiciones de supervivencia iniciales para los descendientes.''',
+    explanation:
+        r'''La función reproductiva garantiza la renovación generacional de la sociedad y la provisión de las condiciones de supervivencia iniciales para los descendientes.''',
   ),
   Question(
     id: 'pfrh_q624',
     topicId: 'pfrh_t5',
-    text: r"""En la teoría del apego integrada en la función afectiva, ¿qué define a un 'apego seguro'?""",
+    text:
+        r"""En la teoría del apego integrada en la función afectiva, ¿qué define a un 'apego seguro'?""",
     options: [
       r'''La confianza del menor en que su cuidador estará disponible, responderá con sensibilidad y le brindará protección ante el estrés''',
       r'''La dependencia emocional del niño que le impide separarse de sus progenitores para explorar entornos desconocidos''',
@@ -6091,7 +7010,8 @@ final List<Question> pfrhQuestions = [
       r'''El desinterés mutuo entre padres e hijos que fomenta una independencia prematura basada en la autogestión''',
     ],
     correctAnswer: 0,
-    explanation: r'''El apego seguro surge cuando los cuidadores responden con sensibilidad y consistencia a las necesidades infantiles, creando una base segura para la exploración.''',
+    explanation:
+        r'''El apego seguro surge cuando los cuidadores responden con sensibilidad y consistencia a las necesidades infantiles, creando una base segura para la exploración.''',
   ),
   Question(
     id: 'pfrh_q625',
@@ -6104,12 +7024,14 @@ final List<Question> pfrhQuestions = [
       r'''Que las familias disfuncionales están predeterminadas genéticamente a repetir patrones delictivos sin opción al cambio''',
     ],
     correctAnswer: 0,
-    explanation: r'''La teoría de sistemas familiares define a la familia como un todo interconectado, donde el cambio en un integrante afecta inevitablemente al resto del sistema.''',
+    explanation:
+        r'''La teoría de sistemas familiares define a la familia como un todo interconectado, donde el cambio en un integrante afecta inevitablemente al resto del sistema.''',
   ),
   Question(
     id: 'pfrh_q626',
     topicId: 'pfrh_t5',
-    text: r'''Según el artículo 4 de la Constitución Política del Perú, ¿cuál es el rol del Estado frente a la familia?''',
+    text:
+        r'''Según el artículo 4 de la Constitución Política del Perú, ¿cuál es el rol del Estado frente a la familia?''',
     options: [
       r'''Proteger a la familia y promover el matrimonio, reconociéndolos como instituciones fundamentales de la sociedad''',
       r'''Intervenir directamente en la economía familiar expropiando bienes para garantizar el sustento de los hijos''',
@@ -6117,12 +7039,14 @@ final List<Question> pfrhQuestions = [
       r'''Sancionar penalmente a los padres cuyos hijos no alcancen el rendimiento académico escolar mínimo''',
     ],
     correctAnswer: 0,
-    explanation: r'''La Constitución del Perú en su artículo 4 establece la protección de la familia y la promoción del matrimonio, viéndolos como pilares sociales fundamentales.''',
+    explanation:
+        r'''La Constitución del Perú en su artículo 4 establece la protección de la familia y la promoción del matrimonio, viéndolos como pilares sociales fundamentales.''',
   ),
   Question(
     id: 'pfrh_q627',
     topicId: 'pfrh_t5',
-    text: r'''En el enfoque de la terapia sistémica de Salvador Minuchin, ¿qué son los límites familiares?''',
+    text:
+        r'''En el enfoque de la terapia sistémica de Salvador Minuchin, ¿qué son los límites familiares?''',
     options: [
       r'''Las reglas que definen quiénes participan en cada subsistema familiar y cómo interactúan, pudiendo ser claros, rígidos o difusos''',
       r'''Las barreras geográficas que impiden que los familiares colaterales intervengan en las finanzas de la pareja''',
@@ -6130,12 +7054,14 @@ final List<Question> pfrhQuestions = [
       r'''El número máximo de hijos que una pareja puede procrear de acuerdo con sus ingresos económicos mensuales''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los límites en la estructura familiar delimitan los roles y dinámicas de interacción entre subsistemas, garantizando el orden y la autonomía de sus miembros.''',
+    explanation:
+        r'''Los límites en la estructura familiar delimitan los roles y dinámicas de interacción entre subsistemas, garantizando el orden y la autonomía de sus miembros.''',
   ),
   Question(
     id: 'pfrh_q628',
     topicId: 'pfrh_t5',
-    text: r"""¿Qué define al concepto de 'parentalidad positiva' en la psicología del desarrollo?""",
+    text:
+        r"""¿Qué define al concepto de 'parentalidad positiva' en la psicología del desarrollo?""",
     options: [
       r'''El comportamiento de los padres basado en el interés superior del niño, que cuida, desarrolla capacidades y no es violento''',
       r'''Un estilo de crianza que elimina cualquier norma o límite para evitar frustraciones y traumas emocionales en el hijo''',
@@ -6143,12 +7069,14 @@ final List<Question> pfrhQuestions = [
       r'''La concesión sistemática de recompensas materiales ante cualquier demanda filial con el fin de evitar berrinches''',
     ],
     correctAnswer: 0,
-    explanation: r'''La parentalidad positiva promueve vínculos sanos, límites asertivos y no violentos, respetando los derechos y la evolución del niño.''',
+    explanation:
+        r'''La parentalidad positiva promueve vínculos sanos, límites asertivos y no violentos, respetando los derechos y la evolución del niño.''',
   ),
   Question(
     id: 'pfrh_q629',
     topicId: 'pfrh_t5',
-    text: r'''¿Cómo se definen los subsistemas familiares en la teoría estructural de la familia?''',
+    text:
+        r'''¿Cómo se definen los subsistemas familiares en la teoría estructural de la familia?''',
     options: [
       r'''Agrupaciones de miembros según sus funciones y niveles de autoridad, como el conyugal, parental, filial y fraternal''',
       r'''Los grupos de amigos y redes comunitarias que reemplazan temporalmente las funciones afectivas de los padres''',
@@ -6156,7 +7084,8 @@ final List<Question> pfrhQuestions = [
       r'''Las etapas temporales de transición que atraviesa la familia desde la soltería hasta el fallecimiento de la pareja''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los subsistemas (conyugal, parental, filial, fraternal) organizan la estructura familiar para el cumplimiento de tareas específicas en distintas dimensiones relacionales.''',
+    explanation:
+        r'''Los subsistemas (conyugal, parental, filial, fraternal) organizan la estructura familiar para el cumplimiento de tareas específicas en distintas dimensiones relacionales.''',
   ),
   Question(
     id: 'pfrh_q630',
@@ -6169,12 +7098,14 @@ final List<Question> pfrhQuestions = [
       r'''El proceso de aprendizaje acelerado mediante el cual la familia adopta tecnologías digitales avanzadas''',
     ],
     correctAnswer: 0,
-    explanation: r'''La homeostasis familiar es el mecanismo autorregulador que busca conservar el equilibrio y la constancia de las dinámicas familiares, a menudo oponiéndose al cambio.''',
+    explanation:
+        r'''La homeostasis familiar es el mecanismo autorregulador que busca conservar el equilibrio y la constancia de las dinámicas familiares, a menudo oponiéndose al cambio.''',
   ),
   Question(
     id: 'pfrh_q631',
     topicId: 'pfrh_t5',
-    text: r'''En un hogar conviven una madre, su hijo adolescente, los abuelos maternos y un tío soltero. Todos aportan económicamente y participan activamente en las decisiones del hogar. ¿A qué tipología corresponde este grupo?''',
+    text:
+        r'''En un hogar conviven una madre, su hijo adolescente, los abuelos maternos y un tío soltero. Todos aportan económicamente y participan activamente en las decisiones del hogar. ¿A qué tipología corresponde este grupo?''',
     options: [
       r'''Familia extensa''',
       r'''Familia nuclear''',
@@ -6182,12 +7113,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia monoparental''',
     ],
     correctAnswer: 0,
-    explanation: r'''La presencia activa de abuelos y un tío conviviendo e interactuando bajo el mismo techo tipifica a este grupo como una familia extensa.''',
+    explanation:
+        r'''La presencia activa de abuelos y un tío conviviendo e interactuando bajo el mismo techo tipifica a este grupo como una familia extensa.''',
   ),
   Question(
     id: 'pfrh_q632',
     topicId: 'pfrh_t5',
-    text: r'''Tras un proceso judicial de divorcio, la madre obtiene la tenencia exclusiva de sus dos menores hijos y se muda a un departamento independiente. El padre cumple con una pensión, pero no vive con ellos. ¿Qué tipo de familia conforman la madre y sus hijos?''',
+    text:
+        r'''Tras un proceso judicial de divorcio, la madre obtiene la tenencia exclusiva de sus dos menores hijos y se muda a un departamento independiente. El padre cumple con una pensión, pero no vive con ellos. ¿Qué tipo de familia conforman la madre y sus hijos?''',
     options: [
       r'''Familia monoparental''',
       r'''Familia nuclear''',
@@ -6195,12 +7128,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia extensa''',
     ],
     correctAnswer: 0,
-    explanation: r'''Aunque exista pensión alimentaria, la estructura de convivencia diaria está compuesta por un solo progenitor con sus hijos, lo que define a la familia monoparental.''',
+    explanation:
+        r'''Aunque exista pensión alimentaria, la estructura de convivencia diaria está compuesta por un solo progenitor con sus hijos, lo que define a la familia monoparental.''',
   ),
   Question(
     id: 'pfrh_q633',
     topicId: 'pfrh_t5',
-    text: r'''Sofía, madre divorciada con una hija de 8 años, contrae matrimonio con Manuel, quien es soltero y no tiene hijos. Todos se mudan a una nueva vivienda compartida. ¿Qué tipología familiar describe esta nueva organización?''',
+    text:
+        r'''Sofía, madre divorciada con una hija de 8 años, contrae matrimonio con Manuel, quien es soltero y no tiene hijos. Todos se mudan a una nueva vivienda compartida. ¿Qué tipología familiar describe esta nueva organización?''',
     options: [
       r'''Familia reconstituida''',
       r'''Familia nuclear ampliada''',
@@ -6208,12 +7143,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia de acogida temporal''',
     ],
     correctAnswer: 0,
-    explanation: r'''La integración de un nuevo cónyuge que convive con la hija del matrimonio previo de su pareja constituye una familia reconstituida o ensamblada.''',
+    explanation:
+        r'''La integración de un nuevo cónyuge que convive con la hija del matrimonio previo de su pareja constituye una familia reconstituida o ensamblada.''',
   ),
   Question(
     id: 'pfrh_q634',
     topicId: 'pfrh_t5',
-    text: r'''Un padre enseña a sus hijos a dar las gracias, saludar al ingresar a un lugar público y respetar el turno en una fila. ¿A qué función familiar específica corresponden estas acciones?''',
+    text:
+        r'''Un padre enseña a sus hijos a dar las gracias, saludar al ingresar a un lugar público y respetar el turno en una fila. ¿A qué función familiar específica corresponden estas acciones?''',
     options: [
       r'''Función socializadora''',
       r'''Función educativa''',
@@ -6221,12 +7158,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa''',
     ],
     correctAnswer: 0,
-    explanation: r'''Estas acciones corresponden a la función socializadora, ya que transmiten modales y pautas básicas para la convivencia armoniosa en la sociedad civil.''',
+    explanation:
+        r'''Estas acciones corresponden a la función socializadora, ya que transmiten modales y pautas básicas para la convivencia armoniosa en la sociedad civil.''',
   ),
   Question(
     id: 'pfrh_q635',
     topicId: 'pfrh_t5',
-    text: r'''Una madre lleva a su hijo de 3 años a su control de vacunas obligatorio y acondiciona protectores en los tomacorrientes de la casa para evitar accidentes. Estas acciones corresponden a la:''',
+    text:
+        r'''Una madre lleva a su hijo de 3 años a su control de vacunas obligatorio y acondiciona protectores en los tomacorrientes de la casa para evitar accidentes. Estas acciones corresponden a la:''',
     options: [
       r'''Función protectora''',
       r'''Función económica''',
@@ -6234,12 +7173,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa''',
     ],
     correctAnswer: 0,
-    explanation: r'''Se prioriza la integridad física, prevención de peligros domésticos y cuidado de la salud infantil, lo que define típicamente a la función protectora.''',
+    explanation:
+        r'''Se prioriza la integridad física, prevención de peligros domésticos y cuidado de la salud infantil, lo que define típicamente a la función protectora.''',
   ),
   Question(
     id: 'pfrh_q636',
     topicId: 'pfrh_t5',
-    text: r'''Cuando un hijo adolescente llora por la pérdida de una mascota y su madre lo abraza, valida su tristeza y lo escucha sin juzgarlo, la familia está cumpliendo prioritariamente la:''',
+    text:
+        r'''Cuando un hijo adolescente llora por la pérdida de una mascota y su madre lo abraza, valida su tristeza y lo escucha sin juzgarlo, la familia está cumpliendo prioritariamente la:''',
     options: [
       r'''Función afectiva''',
       r'''Función socializadora''',
@@ -6247,12 +7188,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora''',
     ],
     correctAnswer: 0,
-    explanation: r'''El soporte emocional directo, la empatía y la contención psicológica frente a la tristeza son expresiones nucleares de la función afectiva.''',
+    explanation:
+        r'''El soporte emocional directo, la empatía y la contención psicológica frente a la tristeza son expresiones nucleares de la función afectiva.''',
   ),
   Question(
     id: 'pfrh_q637',
     topicId: 'pfrh_t5',
-    text: r'''Unos padres matriculan a su hija en el colegio, le compran los textos escolares y revisan diariamente que cumpla con sus proyectos de ciencias y tareas de matemáticas. ¿Qué función familiar prevalece aquí?''',
+    text:
+        r'''Unos padres matriculan a su hija en el colegio, le compran los textos escolares y revisan diariamente que cumpla con sus proyectos de ciencias y tareas de matemáticas. ¿Qué función familiar prevalece aquí?''',
     options: [
       r'''Función educativa''',
       r'''Función socializadora''',
@@ -6260,12 +7203,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora''',
     ],
     correctAnswer: 0,
-    explanation: r'''El apoyo directo en la escolaridad formal, tareas del colegio y hábitos académicos formales caracteriza a la función educativa de la familia.''',
+    explanation:
+        r'''El apoyo directo en la escolaridad formal, tareas del colegio y hábitos académicos formales caracteriza a la función educativa de la familia.''',
   ),
   Question(
     id: 'pfrh_q638',
     topicId: 'pfrh_t5',
-    text: r'''Si los padres deciden asegurar las escaleras de la casa con barandas y guardar bajo llave los productos de limpieza corrosivos, ¿qué función están priorizando?''',
+    text:
+        r'''Si los padres deciden asegurar las escaleras de la casa con barandas y guardar bajo llave los productos de limpieza corrosivos, ¿qué función están priorizando?''',
     options: [
       r'''Función protectora''',
       r'''Función afectiva''',
@@ -6273,12 +7218,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa''',
     ],
     correctAnswer: 0,
-    explanation: r'''La prevención de daños físicos y accidentes caseros mediante medidas de seguridad física corresponde directamente a la función protectora.''',
+    explanation:
+        r'''La prevención de daños físicos y accidentes caseros mediante medidas de seguridad física corresponde directamente a la función protectora.''',
   ),
   Question(
     id: 'pfrh_q639',
     topicId: 'pfrh_t5',
-    text: r'''Dos hermanos deciden de mutuo acuerdo dividirse el uso de una consola de videojuegos estableciendo turnos de una hora. ¿A qué subsistema familiar corresponde esta interacción directa?''',
+    text:
+        r'''Dos hermanos deciden de mutuo acuerdo dividirse el uso de una consola de videojuegos estableciendo turnos de una hora. ¿A qué subsistema familiar corresponde esta interacción directa?''',
     options: [
       r'''Subsistema fraternal''',
       r'''Subsistema conyugal''',
@@ -6286,12 +7233,14 @@ final List<Question> pfrhQuestions = [
       r'''Subsistema filial''',
     ],
     correctAnswer: 0,
-    explanation: r'''La relación, negociación y resolución de conflictos entre hermanos se desarrolla dentro del subsistema fraternal.''',
+    explanation:
+        r'''La relación, negociación y resolución de conflictos entre hermanos se desarrolla dentro del subsistema fraternal.''',
   ),
   Question(
     id: 'pfrh_q640',
     topicId: 'pfrh_t5',
-    text: r'''En un hogar, los padres imponen normas estrictas de vestimenta y horarios sin dar explicaciones, prohibiendo tajantemente que sus hijos opinen o negocien las reglas. ¿Qué tipo de límites y estilo de crianza se evidencia?''',
+    text:
+        r'''En un hogar, los padres imponen normas estrictas de vestimenta y horarios sin dar explicaciones, prohibiendo tajantemente que sus hijos opinen o negocien las reglas. ¿Qué tipo de límites y estilo de crianza se evidencia?''',
     options: [
       r'''Límites rígidos y estilo autoritario''',
       r'''Límites claros y estilo autoritativo''',
@@ -6299,12 +7248,14 @@ final List<Question> pfrhQuestions = [
       r'''Límites flexibles y estilo negligente''',
     ],
     correctAnswer: 0,
-    explanation: r'''El rechazo a la negociación, la imposición absoluta y la falta de flexibilidad relacional configuran límites rígidos combinados con un estilo de crianza autoritario.''',
+    explanation:
+        r'''El rechazo a la negociación, la imposición absoluta y la falta de flexibilidad relacional configuran límites rígidos combinados con un estilo de crianza autoritario.''',
   ),
   Question(
     id: 'pfrh_q641',
     topicId: 'pfrh_t5',
-    text: r'''Una madre suele desahogarse detalladamente con su hijo de 11 años sobre sus deudas bancarias, pidiéndole consejos y llorando frente a él por la falta de dinero. En este caso se evidencian:''',
+    text:
+        r'''Una madre suele desahogarse detalladamente con su hijo de 11 años sobre sus deudas bancarias, pidiéndole consejos y llorando frente a él por la falta de dinero. En este caso se evidencian:''',
     options: [
       r'''Límites difusos que generan parentalización en el menor''',
       r'''Límites rígidos orientados a la madurez económica temprana''',
@@ -6312,12 +7263,14 @@ final List<Question> pfrhQuestions = [
       r'''Límites flexibles propios de una comunicación asertiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los límites difusos desdibujan la barrera generacional, provocando que el menor asuma responsabilidades y preocupaciones de adultos (parentalización).''',
+    explanation:
+        r'''Los límites difusos desdibujan la barrera generacional, provocando que el menor asuma responsabilidades y preocupaciones de adultos (parentalización).''',
   ),
   Question(
     id: 'pfrh_q642',
     topicId: 'pfrh_t5',
-    text: r'''Una joven pareja asiste a citas médicas prenatales periódicas, organiza la habitación del bebé y planea los recursos económicos necesarios para el nacimiento de su primer hijo. ¿Qué función familiar ejecutan?''',
+    text:
+        r'''Una joven pareja asiste a citas médicas prenatales periódicas, organiza la habitación del bebé y planea los recursos económicos necesarios para el nacimiento de su primer hijo. ¿Qué función familiar ejecutan?''',
     options: [
       r'''Función reproductiva''',
       r'''Función socializadora''',
@@ -6325,12 +7278,14 @@ final List<Question> pfrhQuestions = [
       r'''Función afectiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''La planificación del embarazo, cuidados prenatales y acondicionamiento para la llegada del nuevo integrante son propios de la función reproductiva.''',
+    explanation:
+        r'''La planificación del embarazo, cuidados prenatales y acondicionamiento para la llegada del nuevo integrante son propios de la función reproductiva.''',
   ),
   Question(
     id: 'pfrh_q643',
     topicId: 'pfrh_t5',
-    text: r'''El padre de un menor trabaja en el extranjero y envía remesas mensuales constantes. La madre cría al menor en Lima y mantiene comunicación diaria por videollamada con el cónyuge, compartiendo la toma de decisiones. ¿Por qué NO es una familia monoparental?''',
+    text:
+        r'''El padre de un menor trabaja en el extranjero y envía remesas mensuales constantes. La madre cría al menor en Lima y mantiene comunicación diaria por videollamada con el cónyuge, compartiendo la toma de decisiones. ¿Por qué NO es una familia monoparental?''',
     options: [
       r'''Porque ambos cónyuges mantienen activo el vínculo conyugal, parental y la toma de decisiones conjuntas''',
       r'''Porque el envío de dinero exime de evaluar la estructura del hogar real del menor''',
@@ -6338,12 +7293,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque una familia monoparental solo existe cuando la madre fallece o no se conoce al padre''',
     ],
     correctAnswer: 0,
-    explanation: r'''A pesar de la distancia física, el subsistema parental sigue activo y compartido en la toma de decisiones, diferenciándose de un hogar monoparental real.''',
+    explanation:
+        r'''A pesar de la distancia física, el subsistema parental sigue activo y compartido en la toma de decisiones, diferenciándose de un hogar monoparental real.''',
   ),
   Question(
     id: 'pfrh_q644',
     topicId: 'pfrh_t5',
-    text: r'''Arturo se casa con Elena. Ambos tienen hijos de sus matrimonios anteriores y, tras dos años de convivencia, tienen un hijo en común. ¿Qué tipo de configuración familiar presentan?''',
+    text:
+        r'''Arturo se casa con Elena. Ambos tienen hijos de sus matrimonios anteriores y, tras dos años de convivencia, tienen un hijo en común. ¿Qué tipo de configuración familiar presentan?''',
     options: [
       r'''Familia reconstituida''',
       r'''Familia extensa''',
@@ -6351,12 +7308,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia de acogimiento''',
     ],
     correctAnswer: 0,
-    explanation: r'''La unión de una pareja con hijos previos (hijastros/hermanastros) más hijos comunes constituye una variante de la familia reconstituida o ensamblada.''',
+    explanation:
+        r'''La unión de una pareja con hijos previos (hijastros/hermanastros) más hijos comunes constituye una variante de la familia reconstituida o ensamblada.''',
   ),
   Question(
     id: 'pfrh_q645',
     topicId: 'pfrh_t5',
-    text: r'''Un padre paga mensualmente las pensiones escolares y compra los uniformes para el inicio de clases. ¿Qué función se ejecuta al costear estos implementos?''',
+    text:
+        r'''Un padre paga mensualmente las pensiones escolares y compra los uniformes para el inicio de clases. ¿Qué función se ejecuta al costear estos implementos?''',
     options: [
       r'''Función económica''',
       r'''Función educativa''',
@@ -6364,12 +7323,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa''',
     ],
     correctAnswer: 0,
-    explanation: r'''Costear las pensiones y comprar uniformes implica una cobertura material y monetaria del presupuesto familiar, correspondiente a la función económica.''',
+    explanation:
+        r'''Costear las pensiones y comprar uniformes implica una cobertura material y monetaria del presupuesto familiar, correspondiente a la función económica.''',
   ),
   Question(
     id: 'pfrh_q646',
     topicId: 'pfrh_t5',
-    text: r'''Cuando un hijo decide independizarse para estudiar en otra ciudad, la familia reacciona con discusiones y reclamos emocionales constantes para obligarlo a quedarse en casa. Desde la sistémica familiar, esta resistencia al cambio ilustra:''',
+    text:
+        r'''Cuando un hijo decide independizarse para estudiar en otra ciudad, la familia reacciona con discusiones y reclamos emocionales constantes para obligarlo a quedarse en casa. Desde la sistémica familiar, esta resistencia al cambio ilustra:''',
     options: [
       r'''La homeostasis familiar disfuncional ante la diferenciación de un miembro''',
       r'''La resiliencia familiar frente a la crisis del nido vacío''',
@@ -6377,12 +7338,14 @@ final List<Question> pfrhQuestions = [
       r'''La función socializadora aplicada a las decisiones profesionales''',
     ],
     correctAnswer: 0,
-    explanation: r'''La resistencia grupal al cambio individual, buscando retener el antiguo equilibrio, ejemplifica un intento homeostático rígido de la familia.''',
+    explanation:
+        r'''La resistencia grupal al cambio individual, buscando retener el antiguo equilibrio, ejemplifica un intento homeostático rígido de la familia.''',
   ),
   Question(
     id: 'pfrh_q647',
     topicId: 'pfrh_t5',
-    text: r'''Un estilo de crianza donde los padres explican el sentido de las reglas, promueven el diálogo, pero mantienen firmemente el orden y las consecuencias conductuales se clasifica como:''',
+    text:
+        r'''Un estilo de crianza donde los padres explican el sentido de las reglas, promueven el diálogo, pero mantienen firmemente el orden y las consecuencias conductuales se clasifica como:''',
     options: [
       r'''Autoritativo o democrático''',
       r'''Permisivo o condescendiente''',
@@ -6390,12 +7353,14 @@ final List<Question> pfrhQuestions = [
       r'''Negligente o desapegado''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estilo autoritativo balancea el afecto y la comunicación con normas firmes y coherentes, promoviendo la autonomía del menor.''',
+    explanation:
+        r'''El estilo autoritativo balancea el afecto y la comunicación con normas firmes y coherentes, promoviendo la autonomía del menor.''',
   ),
   Question(
     id: 'pfrh_q648',
     topicId: 'pfrh_t5',
-    text: r'''En una familia, los miembros no tienen privacidad, los padres controlan todos los pensamientos de los hijos y se asume que cualquier secreto individual es una traición al grupo. Esto denota una:''',
+    text:
+        r'''En una familia, los miembros no tienen privacidad, los padres controlan todos los pensamientos de los hijos y se asume que cualquier secreto individual es una traición al grupo. Esto denota una:''',
     options: [
       r'''Cohesión familiar aglutinada''',
       r'''Cohesión familiar desligada''',
@@ -6403,12 +7368,14 @@ final List<Question> pfrhQuestions = [
       r'''Parentalidad asertiva equilibrada''',
     ],
     correctAnswer: 0,
-    explanation: r'''La cohesión aglutinada (o enredada) anula las fronteras individuales de los miembros, impidiendo el desarrollo de la autonomía personal.''',
+    explanation:
+        r'''La cohesión aglutinada (o enredada) anula las fronteras individuales de los miembros, impidiendo el desarrollo de la autonomía personal.''',
   ),
   Question(
     id: 'pfrh_q649',
     topicId: 'pfrh_t5',
-    text: r'''Una pareja de esposos decide salir a cenar a solas una vez a la semana, aclarando a sus hijos que ese espacio es exclusivo para ellos dos. Esta conducta busca fortalecer el:''',
+    text:
+        r'''Una pareja de esposos decide salir a cenar a solas una vez a la semana, aclarando a sus hijos que ese espacio es exclusivo para ellos dos. Esta conducta busca fortalecer el:''',
     options: [
       r'''Subsistema conyugal''',
       r'''Subsistema parental''',
@@ -6416,12 +7383,14 @@ final List<Question> pfrhQuestions = [
       r'''Subsistema filial''',
     ],
     correctAnswer: 0,
-    explanation: r'''Establecer momentos propios de la pareja de esposos ayuda a consolidar el subsistema conyugal, diferenciándolo del rol de padres (parental).''',
+    explanation:
+        r'''Establecer momentos propios de la pareja de esposos ayuda a consolidar el subsistema conyugal, diferenciándolo del rol de padres (parental).''',
   ),
   Question(
     id: 'pfrh_q650',
     topicId: 'pfrh_t5',
-    text: r'''Una familia prefiere organizar caminatas al aire libre y juegos de mesa grupales en lugar de que cada miembro use pantallas individuales en sus habitaciones. Esto responde directamente a la optimización de la:''',
+    text:
+        r'''Una familia prefiere organizar caminatas al aire libre y juegos de mesa grupales en lugar de que cada miembro use pantallas individuales en sus habitaciones. Esto responde directamente a la optimización de la:''',
     options: [
       r'''Función recreativa''',
       r'''Función socializadora''',
@@ -6429,12 +7398,14 @@ final List<Question> pfrhQuestions = [
       r'''Función reproductiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función recreativa busca compartir actividades de ocio activo y grupal para fomentar la interacción y aliviar el estrés.''',
+    explanation:
+        r'''La función recreativa busca compartir actividades de ocio activo y grupal para fomentar la interacción y aliviar el estrés.''',
   ),
   Question(
     id: 'pfrh_q651',
     topicId: 'pfrh_t5',
-    text: r'''Renato, un adolescente de 15 años, llega llorando de la escuela porque fue excluido de un equipo de trabajo. Su madre detiene sus labores domésticas, lo abraza, escucha su malestar y le dice que entiende su dolor, ayudándole a calmarse. ¿Qué concepto de la función afectiva se aplica?''',
+    text:
+        r'''Renato, un adolescente de 15 años, llega llorando de la escuela porque fue excluido de un equipo de trabajo. Su madre detiene sus labores domésticas, lo abraza, escucha su malestar y le dice que entiende su dolor, ayudándole a calmarse. ¿Qué concepto de la función afectiva se aplica?''',
     options: [
       r'''Apego seguro mediante la sintonía emocional y validación''',
       r'''Sobreprotección invalidadora para evitar la frustración''',
@@ -6442,12 +7413,14 @@ final List<Question> pfrhQuestions = [
       r'''Alianza parental con fines disciplinarios indirectos''',
     ],
     correctAnswer: 0,
-    explanation: r'''La madre provee contención y validación emocional, actuando como una base segura que promueve un apego sano en el menor.''',
+    explanation:
+        r'''La madre provee contención y validación emocional, actuando como una base segura que promueve un apego sano en el menor.''',
   ),
   Question(
     id: 'pfrh_q652',
     topicId: 'pfrh_t5',
-    text: r'''Un vecino reclama airadamente a la señora Gloria porque sus hijos pintaron con tizas la fachada de su casa. La señora Gloria, en vez de justificar a los niños, conversa con ellos en privado, les explica el perjuicio al vecino, los hace limpiar la pared y pedir disculpas. ¿Qué función familiar y criterio cívico se evidencia?''',
+    text:
+        r'''Un vecino reclama airadamente a la señora Gloria porque sus hijos pintaron con tizas la fachada de su casa. La señora Gloria, en vez de justificar a los niños, conversa con ellos en privado, les explica el perjuicio al vecino, los hace limpiar la pared y pedir disculpas. ¿Qué función familiar y criterio cívico se evidencia?''',
     options: [
       r'''Función socializadora mediante la enseñanza del respeto a la propiedad ajena y asunción de consecuencias''',
       r'''Autoritarismo punitivo para evitar una denuncia vecinal o multa civil''',
@@ -6455,12 +7428,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora enfocada en aislar a los menores de una confrontación vecinal''',
     ],
     correctAnswer: 0,
-    explanation: r'''La madre utiliza el incidente para formar cívicamente a sus hijos, enseñándoles la responsabilidad social y el respeto al derecho ajeno.''',
+    explanation:
+        r'''La madre utiliza el incidente para formar cívicamente a sus hijos, enseñándoles la responsabilidad social y el respeto al derecho ajeno.''',
   ),
   Question(
     id: 'pfrh_q653',
     topicId: 'pfrh_t5',
-    text: r'''Durante la temporada de heladas y friaje en una zona andina, el señor Mateo refuerza las rendijas de las puertas de su vivienda con mantas, prepara bebidas calientes y asegura ropa de abrigo gruesa para proteger a sus hijos menores de neumonías. ¿Qué función familiar realiza prioritariamente?''',
+    text:
+        r'''Durante la temporada de heladas y friaje en una zona andina, el señor Mateo refuerza las rendijas de las puertas de su vivienda con mantas, prepara bebidas calientes y asegura ropa de abrigo gruesa para proteger a sus hijos menores de neumonías. ¿Qué función familiar realiza prioritariamente?''',
     options: [
       r'''Función protectora''',
       r'''Función económica''',
@@ -6468,12 +7443,14 @@ final List<Question> pfrhQuestions = [
       r'''Función educativa''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las acciones están orientadas de forma directa a salvaguardar la salud y la integridad física de los menores frente al clima adverso, cumpliendo la función protectora.''',
+    explanation:
+        r'''Las acciones están orientadas de forma directa a salvaguardar la salud y la integridad física de los menores frente al clima adverso, cumpliendo la función protectora.''',
   ),
   Question(
     id: 'pfrh_q654',
     topicId: 'pfrh_t5',
-    text: r'''Tras el fallecimiento de su cónyuge, Carlos trabaja en dos empleos para pagar el alquiler de la casa, comprar alimentos y cubrir las pensiones de sus dos hijas en edad escolar, a pesar de contar con muy poco tiempo libre para conversar con ellas. ¿Qué función está ejecutando con mayor esfuerzo?''',
+    text:
+        r'''Tras el fallecimiento de su cónyuge, Carlos trabaja en dos empleos para pagar el alquiler de la casa, comprar alimentos y cubrir las pensiones de sus dos hijas en edad escolar, a pesar de contar con muy poco tiempo libre para conversar con ellas. ¿Qué función está ejecutando con mayor esfuerzo?''',
     options: [
       r'''Función económica''',
       r'''Función afectiva''',
@@ -6481,12 +7458,14 @@ final List<Question> pfrhQuestions = [
       r'''Función socializadora''',
     ],
     correctAnswer: 0,
-    explanation: r'''Carlos orienta sus esfuerzos a la manutención física y el sostenimiento material de la familia mediante el trabajo, cumpliendo la función económica.''',
+    explanation:
+        r'''Carlos orienta sus esfuerzos a la manutención física y el sostenimiento material de la familia mediante el trabajo, cumpliendo la función económica.''',
   ),
   Question(
     id: 'pfrh_q655',
     topicId: 'pfrh_t5',
-    text: r'''Daniela, una estudiante de primaria, presenta dificultades con la lectura. Sus padres organizan un horario diario para leer cuentos con ella, le ayudan a buscar palabras en el diccionario y se coordinan semanalmente con la docente de aula para evaluar sus avances. Esto ejemplifica la:''',
+    text:
+        r'''Daniela, una estudiante de primaria, presenta dificultades con la lectura. Sus padres organizan un horario diario para leer cuentos con ella, le ayudan a buscar palabras en el diccionario y se coordinan semanalmente con la docente de aula para evaluar sus avances. Esto ejemplifica la:''',
     options: [
       r'''Función educativa''',
       r'''Función socializadora''',
@@ -6494,12 +7473,14 @@ final List<Question> pfrhQuestions = [
       r'''Función económica''',
     ],
     correctAnswer: 0,
-    explanation: r'''El involucramiento activo en el aprendizaje, el desarrollo de hábitos de estudio y la coordinación escolar configuran la función educativa.''',
+    explanation:
+        r'''El involucramiento activo en el aprendizaje, el desarrollo de hábitos de estudio y la coordinación escolar configuran la función educativa.''',
   ),
   Question(
     id: 'pfrh_q656',
     topicId: 'pfrh_t5',
-    text: r'''Todos los sábados por la tarde, los miembros de la familia Quispe suspenden el uso de celulares y computadoras durante tres horas para cocinar juntos una receta nueva, jugar Monopolio y compartir anécdotas de su infancia. Este espacio familiar prioriza la:''',
+    text:
+        r'''Todos los sábados por la tarde, los miembros de la familia Quispe suspenden el uso de celulares y computadoras durante tres horas para cocinar juntos una receta nueva, jugar Monopolio y compartir anécdotas de su infancia. Este espacio familiar prioriza la:''',
     options: [
       r'''Función recreativa''',
       r'''Función económica''',
@@ -6507,12 +7488,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora''',
     ],
     correctAnswer: 0,
-    explanation: r'''El diseño de un espacio sistemático de esparcimiento, juego y convivencia grupal representa la función recreativa de la familia.''',
+    explanation:
+        r'''El diseño de un espacio sistemático de esparcimiento, juego y convivencia grupal representa la función recreativa de la familia.''',
   ),
   Question(
     id: 'pfrh_q657',
     topicId: 'pfrh_t5',
-    text: r"""Una adolescente de 16 años se queja porque sus padres le exigen dejar abierta la puerta de su habitación, revisan sus correos electrónicos sin permiso y no le permiten elegir su ropa para salir. Ante sus quejas, le responden: 'En esta casa tú no tienes secretos ni opiniones'. ¿Qué tipo de límites y estilo de crianza se aplica?""",
+    text:
+        r"""Una adolescente de 16 años se queja porque sus padres le exigen dejar abierta la puerta de su habitación, revisan sus correos electrónicos sin permiso y no le permiten elegir su ropa para salir. Ante sus quejas, le responden: 'En esta casa tú no tienes secretos ni opiniones'. ¿Qué tipo de límites y estilo de crianza se aplica?""",
     options: [
       r'''Límites rígidos y estilo de crianza autoritario''',
       r'''Límites claros y estilo de crianza autoritativo''',
@@ -6520,12 +7503,14 @@ final List<Question> pfrhQuestions = [
       r'''Límites caóticos y estilo de crianza permisivo''',
     ],
     correctAnswer: 0,
-    explanation: r'''La intromisión absoluta en la privacidad del menor y la imposición unidireccional de normas sin diálogo definen límites rígidos y un estilo autoritario.''',
+    explanation:
+        r'''La intromisión absoluta en la privacidad del menor y la imposición unidireccional de normas sin diálogo definen límites rígidos y un estilo autoritario.''',
   ),
   Question(
     id: 'pfrh_q658',
     topicId: 'pfrh_t5',
-    text: r'''En un hogar, los padres discuten intensamente sobre sus deudas frente a su hija de 10 años, pidiéndole que decida a cuál de los dos le cree en sus argumentos y exigiéndole que no le cuente nada a sus tíos. Este escenario evidencia una:''',
+    text:
+        r'''En un hogar, los padres discuten intensamente sobre sus deudas frente a su hija de 10 años, pidiéndole que decida a cuál de los dos le cree en sus argumentos y exigiéndole que no le cuente nada a sus tíos. Este escenario evidencia una:''',
     options: [
       r'''Triangulación disfuncional y límites difusos en el subsistema parental''',
       r'''Estrategia de socialización basada en la transparencia financiera''',
@@ -6533,12 +7518,14 @@ final List<Question> pfrhQuestions = [
       r'''Parentalidad asertiva basada en la resolución conjunta de problemas''',
     ],
     correctAnswer: 0,
-    explanation: r"""Involucrar a los hijos en los conflictos conyugales para que tomen partido ('triangulación') desdibuja los límites generacionales correctos.""",
+    explanation:
+        r"""Involucrar a los hijos en los conflictos conyugales para que tomen partido ('triangulación') desdibuja los límites generacionales correctos.""",
   ),
   Question(
     id: 'pfrh_q659',
     topicId: 'pfrh_t5',
-    text: r'''Mario y Julia iniciaron una convivencia. Mario aporta a la casa a su hijo de 9 años y Julia a su hija de 12. Al principio, los niños discutían frecuentemente por el espacio y la autoridad de los nuevos adultos. ¿A qué se deben estos conflictos?''',
+    text:
+        r'''Mario y Julia iniciaron una convivencia. Mario aporta a la casa a su hijo de 9 años y Julia a su hija de 12. Al principio, los niños discutían frecuentemente por el espacio y la autoridad de los nuevos adultos. ¿A qué se deben estos conflictos?''',
     options: [
       r'''A las dificultades habituales de acoplamiento y redefinición de roles en una familia reconstituida''',
       r'''A una incompatibilidad de caracteres de origen genético entre hermanastros''',
@@ -6546,12 +7533,14 @@ final List<Question> pfrhQuestions = [
       r'''A que una familia ensamblada carece legalmente de la función socializadora''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las familias reconstituidas atraviesan una fase compleja de integración donde se deben negociar nuevos límites, normas y roles de autoridad.''',
+    explanation:
+        r'''Las familias reconstituidas atraviesan una fase compleja de integración donde se deben negociar nuevos límites, normas y roles de autoridad.''',
   ),
   Question(
     id: 'pfrh_q660',
     topicId: 'pfrh_t5',
-    text: r"""El docente de secundaria cita a los padres de Mateo porque este insulta constantemente a sus compañeras de aula. Los padres minimizan la situación diciendo: 'Son cosas de chicos, las chicas de ahora son muy sensibles y mi hijo debe aprender a defenderse'. ¿Qué falla familiar se evidencia?""",
+    text:
+        r"""El docente de secundaria cita a los padres de Mateo porque este insulta constantemente a sus compañeras de aula. Los padres minimizan la situación diciendo: 'Son cosas de chicos, las chicas de ahora son muy sensibles y mi hijo debe aprender a defenderse'. ¿Qué falla familiar se evidencia?""",
     options: [
       r'''Una deficiencia en la función socializadora que normaliza y justifica la agresividad''',
       r'''Una correcta función protectora que prioriza la autoestima del menor''',
@@ -6559,12 +7548,14 @@ final List<Question> pfrhQuestions = [
       r'''Un conflicto derivado del estilo de crianza autoritativo de los padres''',
     ],
     correctAnswer: 0,
-    explanation: r"""Al justificar el hostigamiento escolar bajo el sesgo de 'defensa', los padres fallan en su función socializadora de transmitir respeto y normas de convivencia.""",
+    explanation:
+        r"""Al justificar el hostigamiento escolar bajo el sesgo de 'defensa', los padres fallan en su función socializadora de transmitir respeto y normas de convivencia.""",
   ),
   Question(
     id: 'pfrh_q661',
     topicId: 'pfrh_t5',
-    text: r'''Teresa vive con su esposo, sus tres hijos menores, su abuela de 85 años y un primo hermano que trabaja en el mercado local. Todos comparten los gastos de la comida y se organizan para cuidar a la anciana. ¿Cómo se tipifica esta familia?''',
+    text:
+        r'''Teresa vive con su esposo, sus tres hijos menores, su abuela de 85 años y un primo hermano que trabaja en el mercado local. Todos comparten los gastos de la comida y se organizan para cuidar a la anciana. ¿Cómo se tipifica esta familia?''',
     options: [
       r'''Familia extensa''',
       r'''Familia nuclear''',
@@ -6572,12 +7563,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia de cohabitación temporal''',
     ],
     correctAnswer: 0,
-    explanation: r'''La convivencia de miembros colaterales (primo) e intergeneracionales (abuela) aportando al hogar común tipifica a la familia extensa.''',
+    explanation:
+        r'''La convivencia de miembros colaterales (primo) e intergeneracionales (abuela) aportando al hogar común tipifica a la familia extensa.''',
   ),
   Question(
     id: 'pfrh_q662',
     topicId: 'pfrh_t5',
-    text: r"""Julio quiere postular a la carrera de Artes Escénicas. Sus padres, que son ingenieros, le advierten que si no estudia Ingeniería Civil no pagarán sus estudios, dejarán de hablarle y le retirarán su afecto por 'defraudar el honor de la familia'. Este condicionamiento representa una:""",
+    text:
+        r"""Julio quiere postular a la carrera de Artes Escénicas. Sus padres, que son ingenieros, le advierten que si no estudia Ingeniería Civil no pagarán sus estudios, dejarán de hablarle y le retirarán su afecto por 'defraudar el honor de la familia'. Este condicionamiento representa una:""",
     options: [
       r'''Vulneración de la función afectiva a través del chantaje emocional y afectividad condicionada''',
       r'''Aplicación legítima de la función socializadora para asegurar el éxito financiero''',
@@ -6585,12 +7578,14 @@ final List<Question> pfrhQuestions = [
       r'''Estrategia de resiliencia familiar ante decisiones individuales irresponsables''',
     ],
     correctAnswer: 0,
-    explanation: r'''Retirar el afecto o usar el silencio como castigo ante decisiones personales válidas quebranta la función afectiva, que exige aceptación y soporte.''',
+    explanation:
+        r'''Retirar el afecto o usar el silencio como castigo ante decisiones personales válidas quebranta la función afectiva, que exige aceptación y soporte.''',
   ),
   Question(
     id: 'pfrh_q663',
     topicId: 'pfrh_t5',
-    text: r"""¿A qué se refiere el concepto de 'Ciclo Vital de la Familia' en la sociología familiar?""",
+    text:
+        r"""¿A qué se refiere el concepto de 'Ciclo Vital de la Familia' en la sociología familiar?""",
     options: [
       r'''A la secuencia de etapas evolutivas y transiciones que atraviesa una familia desde su formación hasta su disolución''',
       r'''Al promedio de esperanza de vida biológica que tienen los integrantes que viven en un mismo territorio rural''',
@@ -6598,7 +7593,8 @@ final List<Question> pfrhQuestions = [
       r'''Al período de fertilidad reproductiva activa que posee la pareja antes de la etapa de la menopausia''',
     ],
     correctAnswer: 0,
-    explanation: r'''El Ciclo Vital de la Familia describe el desarrollo evolutivo del sistema familiar a través de etapas (noviazgo, nido con hijos pequeños, nido vacío, vejez), cada una con tareas específicas.''',
+    explanation:
+        r'''El Ciclo Vital de la Familia describe el desarrollo evolutivo del sistema familiar a través de etapas (noviazgo, nido con hijos pequeños, nido vacío, vejez), cada una con tareas específicas.''',
   ),
   Question(
     id: 'pfrh_q664',
@@ -6611,12 +7607,14 @@ final List<Question> pfrhQuestions = [
       r'''El apoyo económico externo que recibe una familia en situación de pobreza por parte de organizaciones civiles''',
     ],
     correctAnswer: 0,
-    explanation: r'''La resiliencia familiar es la capacidad colectiva del sistema para hacer frente a crisis severas, adaptándose constructivamente y recuperando el equilibrio.''',
+    explanation:
+        r'''La resiliencia familiar es la capacidad colectiva del sistema para hacer frente a crisis severas, adaptándose constructivamente y recuperando el equilibrio.''',
   ),
   Question(
     id: 'pfrh_q665',
     topicId: 'pfrh_t5',
-    text: r'''De acuerdo con la legislación peruana vigente (Ley Nº 30364), ¿qué abarca el concepto de violencia familiar?''',
+    text:
+        r'''De acuerdo con la legislación peruana vigente (Ley Nº 30364), ¿qué abarca el concepto de violencia familiar?''',
     options: [
       r'''Cualquier acción u omisión que cause daño físico, psicológico, sexual o patrimonial a los miembros del grupo familiar''',
       r'''Únicamente las agresiones físicas graves que requieran más de diez días de asistencia médica legal''',
@@ -6624,12 +7622,14 @@ final List<Question> pfrhQuestions = [
       r'''La imposición justificada de castigos físicos moderados como método formativo y de corrección disciplinaria''',
     ],
     correctAnswer: 0,
-    explanation: r'''La Ley 30364 define la violencia familiar como cualquier conducta u omisión que cause daño físico, psicológico, sexual o económico a los integrantes del núcleo familiar.''',
+    explanation:
+        r'''La Ley 30364 define la violencia familiar como cualquier conducta u omisión que cause daño físico, psicológico, sexual o económico a los integrantes del núcleo familiar.''',
   ),
   Question(
     id: 'pfrh_q666',
     topicId: 'pfrh_t5',
-    text: r"""En la estructura de la sistémica familiar, ¿cómo se definen los 'límites claros o saludables'?""",
+    text:
+        r"""En la estructura de la sistémica familiar, ¿cómo se definen los 'límites claros o saludables'?""",
     options: [
       r'''Reglas de interacción que protegen la autonomía de cada miembro y permiten la cercanía y el apoyo emocional mutuo''',
       r'''Normas prohibitivas estrictas que impiden cualquier contacto de los hijos con personas ajenas al hogar''',
@@ -6637,12 +7637,14 @@ final List<Question> pfrhQuestions = [
       r'''Acuerdos flexibles donde los menores de edad asumen las decisiones financieras para aliviar la carga de los padres''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los límites claros definen roles de forma comprensible, permitiendo la comunicación afectiva al tiempo que respetan la individualidad y autonomía de cada integrante.''',
+    explanation:
+        r'''Los límites claros definen roles de forma comprensible, permitiendo la comunicación afectiva al tiempo que respetan la individualidad y autonomía de cada integrante.''',
   ),
   Question(
     id: 'pfrh_q667',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué caracteriza al estilo de crianza democrático o autoritativo?''',
+    text:
+        r'''¿Qué caracteriza al estilo de crianza democrático o autoritativo?''',
     options: [
       r'''Alta exigencia basada en normas claras y alto nivel de afecto, apoyo emocional y comunicación bidireccional''',
       r'''Baja exigencia disciplinaria combinada con un desinterés afectivo general por las necesidades del menor''',
@@ -6650,12 +7652,14 @@ final List<Question> pfrhQuestions = [
       r'''Consensuar de manera absoluta todas las decisiones del hogar mediante el voto mayoritario de los menores de edad''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estilo autoritativo o democrático se basa en el equilibrio: exige el cumplimiento de normas coherentes a la vez que brinda contención emocional y fomenta el diálogo.''',
+    explanation:
+        r'''El estilo autoritativo o democrático se basa en el equilibrio: exige el cumplimiento de normas coherentes a la vez que brinda contención emocional y fomenta el diálogo.''',
   ),
   Question(
     id: 'pfrh_q668',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la definición conceptual del estilo de crianza permisivo?''',
+    text:
+        r'''¿Cuál es la definición conceptual del estilo de crianza permisivo?''',
     options: [
       r'''Alto afecto y calidez emocional pero baja exigencia, ausencia de límites claros y escaso control conductual''',
       r'''Baja calidez afectiva combinada con un control represivo ante cualquier conducta de autonomía''',
@@ -6663,7 +7667,8 @@ final List<Question> pfrhQuestions = [
       r'''Establecer castigos físicos aleatorios en función del estado de ánimo diario de los cuidadores principales''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estilo permisivo destaca por altos niveles de afecto y receptividad, pero carece de la imposición de normas y límites estructurados, tolerando conductas inapropiadas.''',
+    explanation:
+        r'''El estilo permisivo destaca por altos niveles de afecto y receptividad, pero carece de la imposición de normas y límites estructurados, tolerando conductas inapropiadas.''',
   ),
   Question(
     id: 'pfrh_q669',
@@ -6676,12 +7681,14 @@ final List<Question> pfrhQuestions = [
       r'''Establecer normas rígidas y castigos severos ante fallas leves en la conducta socializadora del niño''',
     ],
     correctAnswer: 0,
-    explanation: r'''La crianza negligente se caracteriza por la omisión del rol de cuidado: los padres desatienden tanto las demandas de afecto como el control disciplinario del menor.''',
+    explanation:
+        r'''La crianza negligente se caracteriza por la omisión del rol de cuidado: los padres desatienden tanto las demandas de afecto como el control disciplinario del menor.''',
   ),
   Question(
     id: 'pfrh_q670',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la definición académica del estilo de crianza autoritario?''',
+    text:
+        r'''¿Cuál es la definición académica del estilo de crianza autoritario?''',
     options: [
       r'''Alta exigencia y bajo nivel de afecto y receptividad; se prioriza la obediencia ciega y el control punitivo''',
       r'''Establecer normas mediante el diálogo constante y el consenso mutuo con el subsistema fraternal''',
@@ -6689,12 +7696,14 @@ final List<Question> pfrhQuestions = [
       r'''Un modelo de crianza caracterizado por la ausencia absoluta de figuras parentales en el hogar''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estilo autoritario ejerce un alto control y exigencia, pero carece de calidez afectiva y diálogo, exigiendo obediencia incondicional y aplicando sanciones arbitrarias.''',
+    explanation:
+        r'''El estilo autoritario ejerce un alto control y exigencia, pero carece de calidez afectiva y diálogo, exigiendo obediencia incondicional y aplicando sanciones arbitrarias.''',
   ),
   Question(
     id: 'pfrh_q671',
     topicId: 'pfrh_t5',
-    text: r"""En la psicología familiar, ¿cómo se conceptualiza la 'codependencia familiar'?""",
+    text:
+        r"""En la psicología familiar, ¿cómo se conceptualiza la 'codependencia familiar'?""",
     options: [
       r'''Un patrón relacional donde un miembro de la familia asume la responsabilidad de salvar o resolver la vida de otro que presenta conductas adictivas o problemáticas, anulando sus propias necesidades''',
       r'''El apoyo financiero mutuo y obligatorio que se brindan los hermanos adultos ante situaciones de desempleo''',
@@ -6702,12 +7711,14 @@ final List<Question> pfrhQuestions = [
       r'''La colaboración conjunta de los progenitores en las tareas domésticas para asegurar la equidad de género''',
     ],
     correctAnswer: 0,
-    explanation: r'''La codependencia implica una obsesión por el control y cuidado de un familiar con conductas destructivas, descuidando el propio bienestar y perpetuando la disfunción.''',
+    explanation:
+        r'''La codependencia implica una obsesión por el control y cuidado de un familiar con conductas destructivas, descuidando el propio bienestar y perpetuando la disfunción.''',
   ),
   Question(
     id: 'pfrh_q672',
     topicId: 'pfrh_t5',
-    text: r"""En la teoría de sistemas familiares de Murray Bowen, ¿qué es la 'triangulación'?""",
+    text:
+        r"""En la teoría de sistemas familiares de Murray Bowen, ¿qué es la 'triangulación'?""",
     options: [
       r'''La incorporación de un tercero (hijo, pariente) para desviar la tensión o conflicto existente entre dos miembros (usualmente los padres)''',
       r'''La división equitativa de los bienes del hogar entre el padre, la madre y el hijo primogénito''',
@@ -6715,12 +7726,14 @@ final List<Question> pfrhQuestions = [
       r'''La alianza afectiva de los tres hermanos menores para exigir mayor libertad recreativa a sus cuidadores''',
     ],
     correctAnswer: 0,
-    explanation: r'''La triangulación ocurre cuando una díada en conflicto (ej. la pareja) involucra a un tercero para reducir la ansiedad relacional directa, impidiendo resolver el problema de fondo.''',
+    explanation:
+        r'''La triangulación ocurre cuando una díada en conflicto (ej. la pareja) involucra a un tercero para reducir la ansiedad relacional directa, impidiendo resolver el problema de fondo.''',
   ),
   Question(
     id: 'pfrh_q673',
     topicId: 'pfrh_t5',
-    text: r"""Dentro de la dinámica de una familia disfuncional, ¿qué rol cumple el 'chivo expiatorio'?""",
+    text:
+        r"""Dentro de la dinámica de una familia disfuncional, ¿qué rol cumple el 'chivo expiatorio'?""",
     options: [
       r'''El miembro del sistema al que se le atribuyen de manera inconsciente todas las culpas, tensiones e inestabilidades del grupo''',
       r'''El hijo que obtiene los mayores logros académicos y es usado como ejemplo de conducta por sus padres''',
@@ -6728,12 +7741,14 @@ final List<Question> pfrhQuestions = [
       r'''El mediador neutral del subsistema fraternal que soluciona los desacuerdos entre sus hermanos''',
     ],
     correctAnswer: 0,
-    explanation: r'''El chivo expiatorio es el integrante en quien la familia deposita la culpa de la disfunción general, desviando la atención de las fallas de los padres.''',
+    explanation:
+        r'''El chivo expiatorio es el integrante en quien la familia deposita la culpa de la disfunción general, desviando la atención de las fallas de los padres.''',
   ),
   Question(
     id: 'pfrh_q674',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la diferencia conceptual entre reglas explícitas y reglas implícitas en la familia?''',
+    text:
+        r'''¿Cuál es la diferencia conceptual entre reglas explícitas y reglas implícitas en la familia?''',
     options: [
       r'''Las explícitas están formuladas de manera clara y verbal, mientras que las implícitas son normas no habladas que gobiernan el comportamiento de forma inconsciente''',
       r'''Las explícitas son de carácter legal y penal, mientras que las implícitas corresponden solo al ámbito recreativo''',
@@ -6741,12 +7756,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia; ambos conceptos describen las leyes del Código de los Niños y Adolescentes''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las reglas explícitas se discuten abiertamente (ej. horario de llegada); las implícitas se asumen tácitamente (ej. no hablar de las emociones del padre) y guían la dinámica interna.''',
+    explanation:
+        r'''Las reglas explícitas se discuten abiertamente (ej. horario de llegada); las implícitas se asumen tácitamente (ej. no hablar de las emociones del padre) y guían la dinámica interna.''',
   ),
   Question(
     id: 'pfrh_q675',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué define a la comunicación asertiva dentro del entorno familiar?''',
+    text:
+        r'''¿Qué define a la comunicación asertiva dentro del entorno familiar?''',
     options: [
       r'''La expresión clara, honesta y respetuosa de las propias necesidades y emociones, respetando los derechos de los demás miembros''',
       r'''El uso del silencio para evitar confrontaciones y mantener una aparente armonía familiar''',
@@ -6754,12 +7771,14 @@ final List<Question> pfrhQuestions = [
       r'''La manifestación pasiva de quejas indirectas para no generar incomodidad emocional en los abuelos''',
     ],
     correctAnswer: 0,
-    explanation: r'''La comunicación asertiva promueve la expresión de ideas y sentimientos con honestidad y respeto mutuo, previniendo estilos agresivos o pasivos destructivos.''',
+    explanation:
+        r'''La comunicación asertiva promueve la expresión de ideas y sentimientos con honestidad y respeto mutuo, previniendo estilos agresivos o pasivos destructivos.''',
   ),
   Question(
     id: 'pfrh_q676',
     topicId: 'pfrh_t5',
-    text: r'''En el marco de la terapia familiar estructural, ¿qué es la estructura familiar?''',
+    text:
+        r'''En el marco de la terapia familiar estructural, ¿qué es la estructura familiar?''',
     options: [
       r'''El conjunto invisible de demandas funcionales que organizan los modos en que interactúan los miembros de la familia''',
       r'''El material de construcción física y los planos de distribución de la vivienda que habita el núcleo familiar''',
@@ -6767,12 +7786,14 @@ final List<Question> pfrhQuestions = [
       r'''El árbol genealógico documentado que registra los ancestros de la familia hasta la cuarta generación''',
     ],
     correctAnswer: 0,
-    explanation: r'''La estructura familiar describe las pautas repetitivas de interacción que definen las jerarquías, los subsistemas y los límites entre sus integrantes.''',
+    explanation:
+        r'''La estructura familiar describe las pautas repetitivas de interacción que definen las jerarquías, los subsistemas y los límites entre sus integrantes.''',
   ),
   Question(
     id: 'pfrh_q677',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es el rol fundamental del subsistema parental en la organización familiar?''',
+    text:
+        r'''¿Cuál es el rol fundamental del subsistema parental en la organización familiar?''',
     options: [
       r'''Guiar, proteger, alimentar y socializar a los hijos menores de edad, asumiendo la autoridad de manera responsable''',
       r'''Resolver de manera exclusiva las necesidades de intimidad y afecto de la pareja sentimental''',
@@ -6780,12 +7801,14 @@ final List<Question> pfrhQuestions = [
       r'''Asegurar que los hermanos menores obedezcan ciegamente las directrices del hermano mayor del hogar''',
     ],
     correctAnswer: 0,
-    explanation: r'''El subsistema parental (padres en su rol de criadores) tiene la función de nutrir, proteger y educar a los descendientes, estableciendo jerarquías claras.''',
+    explanation:
+        r'''El subsistema parental (padres en su rol de criadores) tiene la función de nutrir, proteger y educar a los descendientes, estableciendo jerarquías claras.''',
   ),
   Question(
     id: 'pfrh_q678',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué describe la adaptabilidad o flexibilidad en el funcionamiento de un sistema familiar?''',
+    text:
+        r'''¿Qué describe la adaptabilidad o flexibilidad en el funcionamiento de un sistema familiar?''',
     options: [
       r'''La capacidad del sistema para modificar sus reglas, roles y estructura de poder en respuesta al estrés ambiental o del desarrollo''',
       r'''La rigidez del reglamento familiar para resistir los cambios culturales externos impuestos por los medios de comunicación''',
@@ -6793,12 +7816,14 @@ final List<Question> pfrhQuestions = [
       r'''La facilidad para cambiar de domicilio geográfico de forma constante según la oferta de alquileres del mercado''',
     ],
     correctAnswer: 0,
-    explanation: r'''La flexibilidad familiar es la plasticidad para reestructurar normas y roles frente a las demandas de las transiciones vitales o crisis externas sin perder la cohesión.''',
+    explanation:
+        r'''La flexibilidad familiar es la plasticidad para reestructurar normas y roles frente a las demandas de las transiciones vitales o crisis externas sin perder la cohesión.''',
   ),
   Question(
     id: 'pfrh_q679',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué son los rituales familiares y qué función cumplen en la identidad del sistema?''',
+    text:
+        r'''¿Qué son los rituales familiares y qué función cumplen en la identidad del sistema?''',
     options: [
       r'''Prácticas repetitivas con significado simbólico que fortalecen el sentido de pertenencia y continuidad temporal de la familia''',
       r'''Normas prohibitivas orientadas a sancionar económicamente a los miembros que lleguen tarde a cenar''',
@@ -6806,12 +7831,14 @@ final List<Question> pfrhQuestions = [
       r'''Actividades de ocio individualizado que permiten a cada miembro distanciarse afectivamente de los demás''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los rituales (ej. cenas dominicales, celebraciones) consolidan los lazos afectivos, transmiten valores y crean una identidad familiar compartida.''',
+    explanation:
+        r'''Los rituales (ej. cenas dominicales, celebraciones) consolidan los lazos afectivos, transmiten valores y crean una identidad familiar compartida.''',
   ),
   Question(
     id: 'pfrh_q680',
     topicId: 'pfrh_t5',
-    text: r'''En un hogar, la madre expresa palabras de afecto constantes y es muy atenta a las demandas de sus hijos, pero carece de normas de conducta, tolera la indisciplina y permite que falten a clase si no desean levantarse. ¿Cómo se tipifica este estilo de crianza frente al negligente?''',
+    text:
+        r'''En un hogar, la madre expresa palabras de afecto constantes y es muy atenta a las demandas de sus hijos, pero carece de normas de conducta, tolera la indisciplina y permite que falten a clase si no desean levantarse. ¿Cómo se tipifica este estilo de crianza frente al negligente?''',
     options: [
       r'''Es un estilo permisivo, porque existe afecto pero no exigencia; a diferencia del negligente, donde hay ausencia de afecto y de límites''',
       r'''Es un estilo negligente, ya que la falta de control escolar califica legalmente como abandono material''',
@@ -6819,12 +7846,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un estilo de afectividad condicionada, pues el afecto se intercambia por la tranquilidad momentánea del hogar''',
     ],
     correctAnswer: 0,
-    explanation: r'''La calidez emocional diferencia al estilo permisivo del negligente (o indiferente), el cual carece tanto de afecto como de normas básicas de supervisión.''',
+    explanation:
+        r'''La calidez emocional diferencia al estilo permisivo del negligente (o indiferente), el cual carece tanto de afecto como de normas básicas de supervisión.''',
   ),
   Question(
     id: 'pfrh_q681',
     topicId: 'pfrh_t5',
-    text: r'''Identifique la diferencia fundamental entre el estilo de crianza autoritario y el estilo democrático o autoritativo:''',
+    text:
+        r'''Identifique la diferencia fundamental entre el estilo de crianza autoritario y el estilo democrático o autoritativo:''',
     options: [
       r'''El autoritario impone normas sin afecto ni explicación; el democrático combina exigencias firmes con calidez, diálogo y razones para las reglas''',
       r'''El autoritario usa castigo físico leve; el democrático prohíbe cualquier tipo de sanción o consecuencia conductual''',
@@ -6832,12 +7861,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia operativa; ambos términos describen la imposición jerárquica de la autoridad parental''',
     ],
     correctAnswer: 0,
-    explanation: r'''El estilo democrático/autoritativo promueve la asimilación razonada de las normas y valida los sentimientos del menor, a diferencia de la imposición ciega del autoritario.''',
+    explanation:
+        r'''El estilo democrático/autoritativo promueve la asimilación razonada de las normas y valida los sentimientos del menor, a diferencia de la imposición ciega del autoritario.''',
   ),
   Question(
     id: 'pfrh_q682',
     topicId: 'pfrh_t5',
-    text: r'''Durante una discusión familiar, el padre y el hijo mayor se alían constantemente para descalificar las decisiones de la madre en las finanzas de la casa. ¿Cómo se diferencia esta dinámica relacional del concepto de triangulación?''',
+    text:
+        r'''Durante una discusión familiar, el padre y el hijo mayor se alían constantemente para descalificar las decisiones de la madre en las finanzas de la casa. ¿Cómo se diferencia esta dinámica relacional del concepto de triangulación?''',
     options: [
       r'''Se trata de una coalición (unión de dos contra un tercero); en la triangulación, el tercero es usado para desviar la tensión sin aliarse permanentemente''',
       r'''Es una muestra de limites claros dentro del subsistema fraternal''',
@@ -6845,12 +7876,14 @@ final List<Question> pfrhQuestions = [
       r'''Es una triangulación pura, porque intervienen tres personas en un conflicto monetario''',
     ],
     correctAnswer: 0,
-    explanation: r'''La coalición es una alianza estable de dos miembros contra un tercero. La triangulación implica que dos miembros en tensión involucran a un tercero para reducir la ansiedad directa.''',
+    explanation:
+        r'''La coalición es una alianza estable de dos miembros contra un tercero. La triangulación implica que dos miembros en tensión involucran a un tercero para reducir la ansiedad directa.''',
   ),
   Question(
     id: 'pfrh_q683',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la característica clave que distingue a un conflicto familiar funcional de uno disfuncional?''',
+    text:
+        r'''¿Cuál es la característica clave que distingue a un conflicto familiar funcional de uno disfuncional?''',
     options: [
       r'''El funcional se aborda de forma asertiva para resolver problemas y fortalecer vínculos; el disfuncional recurre a la agresión y cronifica la tensión''',
       r'''El funcional ocurre únicamente entre hermanos menores; el disfuncional se produce entre los abuelos y los nietos''',
@@ -6858,12 +7891,14 @@ final List<Question> pfrhQuestions = [
       r'''El funcional se soluciona mediante recompensas económicas; el disfuncional requiere la disolución del matrimonio''',
     ],
     correctAnswer: 0,
-    explanation: r'''El conflicto es funcional cuando sirve de catalizador para el cambio adaptativo mediante el diálogo; es disfuncional si daña la autoestima y escala a la violencia.''',
+    explanation:
+        r'''El conflicto es funcional cuando sirve de catalizador para el cambio adaptativo mediante el diálogo; es disfuncional si daña la autoestima y escala a la violencia.''',
   ),
   Question(
     id: 'pfrh_q684',
     topicId: 'pfrh_t5',
-    text: r'''Un adolescente vive solo con su madre debido al divorcio de sus padres. Ella trabaja y asume todas las responsabilidades del hogar. El padre biológico no mantiene contacto con ellos. ¿Cómo se discrimina esta situación frente al desamparo familiar?''',
+    text:
+        r'''Un adolescente vive solo con su madre debido al divorcio de sus padres. Ella trabaja y asume todas las responsabilidades del hogar. El padre biológico no mantiene contacto con ellos. ¿Cómo se discrimina esta situación frente al desamparo familiar?''',
     options: [
       r'''Es una familia monoparental funcional, pues las necesidades del menor están cubiertas por la madre; el desamparo implica ausencia total de protección''',
       r'''Es una situación de desamparo legal por la ausencia del padre biológico en el hogar''',
@@ -6871,12 +7906,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un núcleo familiar de acogimiento temporal debido al régimen de tenencia exclusiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia monoparental es una estructura familiar válida y protegida donde el menor cuenta con su cuidador principal, a diferencia del desamparo o abandono absoluto.''',
+    explanation:
+        r'''La familia monoparental es una estructura familiar válida y protegida donde el menor cuenta con su cuidador principal, a diferencia del desamparo o abandono absoluto.''',
   ),
   Question(
     id: 'pfrh_q685',
     topicId: 'pfrh_t5',
-    text: r'''En una casa se establece verbalmente que los platos se lavan por turnos (norma acordada en la cena), pero existe la regla tácita de que nadie contradice al padre cuando está de mal humor. ¿Cómo se clasifican estas pautas?''',
+    text:
+        r'''En una casa se establece verbalmente que los platos se lavan por turnos (norma acordada en la cena), pero existe la regla tácita de que nadie contradice al padre cuando está de mal humor. ¿Cómo se clasifican estas pautas?''',
     options: [
       r'''La primera es una regla explícita y la segunda es una regla implícita''',
       r'''Ambas corresponden a normas explícitas de la función socializadora''',
@@ -6884,12 +7921,14 @@ final List<Question> pfrhQuestions = [
       r'''Ambas son reglas implícitas destinadas a preservar la homeostasis defensiva''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las explícitas son formuladas y declaradas abiertamente; las implícitas operan de forma silenciosa y automática en las interacciones cotidianas.''',
+    explanation:
+        r'''Las explícitas son formuladas y declaradas abiertamente; las implícitas operan de forma silenciosa y automática en las interacciones cotidianas.''',
   ),
   Question(
     id: 'pfrh_q686',
     topicId: 'pfrh_t5',
-    text: r'''Una pareja de esposos mayores de 60 años experimenta tristeza, sensación de vacío y soledad en la casa luego de que su último hijo se mudara de ciudad para estudiar en la universidad. ¿En qué etapa del ciclo vital familiar se encuentran?''',
+    text:
+        r'''Una pareja de esposos mayores de 60 años experimenta tristeza, sensación de vacío y soledad en la casa luego de que su último hijo se mudara de ciudad para estudiar en la universidad. ¿En qué etapa del ciclo vital familiar se encuentran?''',
     options: [
       r'''Nido vacío''',
       r'''Constitución de la pareja''',
@@ -6897,12 +7936,14 @@ final List<Question> pfrhQuestions = [
       r'''Disolución del sistema''',
     ],
     correctAnswer: 0,
-    explanation: r"""La etapa del 'nido vacío' sobreviene cuando todos los hijos se emancipan del hogar, exigiendo a los padres readaptar su convivencia de pareja.""",
+    explanation:
+        r"""La etapa del 'nido vacío' sobreviene cuando todos los hijos se emancipan del hogar, exigiendo a los padres readaptar su convivencia de pareja.""",
   ),
   Question(
     id: 'pfrh_q687',
     topicId: 'pfrh_t5',
-    text: r"""¿Cuál es la diferencia en las tareas de desarrollo entre la etapa de 'Constitución de la pareja' y la etapa de 'Familia con hijos pequeños'?""",
+    text:
+        r"""¿Cuál es la diferencia en las tareas de desarrollo entre la etapa de 'Constitución de la pareja' y la etapa de 'Familia con hijos pequeños'?""",
     options: [
       r'''La primera requiere negociar la convivencia y límites con familias de origen; la segunda demanda asumir roles parentales y reorganizar el tiempo''',
       r'''La primera se enfoca en el rendimiento académico escolar; la segunda se centra en la jubilación de los abuelos''',
@@ -6910,12 +7951,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia; ambas etapas comparten las mismas metas afectivas y reproductivas del sistema''',
     ],
     correctAnswer: 0,
-    explanation: r'''La constitución de la pareja exige acoplamiento y límites con los padres de origen. El nacimiento del primer hijo traslada el foco al cuidado y crianza directa.''',
+    explanation:
+        r'''La constitución de la pareja exige acoplamiento y límites con los padres de origen. El nacimiento del primer hijo traslada el foco al cuidado y crianza directa.''',
   ),
   Question(
     id: 'pfrh_q688',
     topicId: 'pfrh_t5',
-    text: r'''Unos padres llevan a su bebé al centro de salud para que reciba sus vacunas de la cartilla nacional. Si bien esta acción previene enfermedades (función protectora), ¿por qué NO se tipifica principalmente como función socializadora?''',
+    text:
+        r'''Unos padres llevan a su bebé al centro de salud para que reciba sus vacunas de la cartilla nacional. Si bien esta acción previene enfermedades (función protectora), ¿por qué NO se tipifica principalmente como función socializadora?''',
     options: [
       r'''Porque su objetivo directo es salvaguardar la salud e integridad física (prevención biológica), mientras que la socializadora busca la internalización de normas cívicas''',
       r'''Porque las vacunas son gratuitas y no representan un gasto del presupuesto familiar de la función económica''',
@@ -6923,12 +7966,14 @@ final List<Question> pfrhQuestions = [
       r'''Porque la función socializadora solo se ejecuta a través de la instrucción verbal formal''',
     ],
     correctAnswer: 0,
-    explanation: r'''La prevención médica atiende a la supervivencia y seguridad corporal (función protectora); la socialización capacita para la convivencia en sociedad.''',
+    explanation:
+        r'''La prevención médica atiende a la supervivencia y seguridad corporal (función protectora); la socialización capacita para la convivencia en sociedad.''',
   ),
   Question(
     id: 'pfrh_q689',
     topicId: 'pfrh_t5',
-    text: r'''¿Cómo se diferencia conceptualmente una familia extensa de una familia reconstituida o ensamblada?''',
+    text:
+        r'''¿Cómo se diferencia conceptualmente una familia extensa de una familia reconstituida o ensamblada?''',
     options: [
       r'''La extensa incluye parientes consanguíneos colaterales o abuelos; la reconstituida implica la presencia de hijos de un vínculo de pareja anterior''',
       r'''La extensa cohabita en zonas rurales; la reconstituida es exclusiva de las grandes ciudades''',
@@ -6936,12 +7981,14 @@ final List<Question> pfrhQuestions = [
       r'''No hay diferencia; ambos términos se refieren a hogares con alta densidad habitacional''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia extensa se basa en la cohabitación con parientes biológicos de otras generaciones; la reconstituida se genera por segundas nupcias con hijos previos.''',
+    explanation:
+        r'''La familia extensa se basa en la cohabitación con parientes biológicos de otras generaciones; la reconstituida se genera por segundas nupcias con hijos previos.''',
   ),
   Question(
     id: 'pfrh_q690',
     topicId: 'pfrh_t5',
-    text: r'''Debido a la depresión grave de su madre y la ausencia de su padre, una niña de 12 años se encarga de cocinar, administrar el dinero del hogar y cuidar a sus hermanos menores de 5 y 3 años. Este fenómeno relacional se define como:''',
+    text:
+        r'''Debido a la depresión grave de su madre y la ausencia de su padre, una niña de 12 años se encarga de cocinar, administrar el dinero del hogar y cuidar a sus hermanos menores de 5 y 3 años. Este fenómeno relacional se define como:''',
     options: [
       r'''Parentalización, donde el menor asume el rol del adulto protector''',
       r'''Parentalidad asertiva orientada a la autonomía del menor''',
@@ -6949,12 +7996,14 @@ final List<Question> pfrhQuestions = [
       r'''Homeostasis funcional basada en la división del trabajo''',
     ],
     correctAnswer: 0,
-    explanation: r'''La parentalización es la inversión disfuncional de roles donde un hijo asume la responsabilidad de cuidado físico o emocional de sus progenitores o hermanos.''',
+    explanation:
+        r'''La parentalización es la inversión disfuncional de roles donde un hijo asume la responsabilidad de cuidado físico o emocional de sus progenitores o hermanos.''',
   ),
   Question(
     id: 'pfrh_q691',
     topicId: 'pfrh_t5',
-    text: r'''Un niño busca constantemente la atención de su madre llorando de forma exagerada, pero cuando ella lo abraza, el menor se muestra irritable, la golpea y la rechaza, sintiendo ansiedad de volver a ser ignorado. ¿Qué tipo de apego se evidencia?''',
+    text:
+        r'''Un niño busca constantemente la atención de su madre llorando de forma exagerada, pero cuando ella lo abraza, el menor se muestra irritable, la golpea y la rechaza, sintiendo ansiedad de volver a ser ignorado. ¿Qué tipo de apego se evidencia?''',
     options: [
       r'''Apego ansioso-ambivalente''',
       r'''Apego seguro''',
@@ -6962,12 +8011,14 @@ final List<Question> pfrhQuestions = [
       r'''Apego desorganizado''',
     ],
     correctAnswer: 0,
-    explanation: r'''El apego ansioso-ambivalente (o resistente) se caracteriza por la búsqueda desesperada de afecto mezclada con rabia y resistencia al consuelo de la figura de apego.''',
+    explanation:
+        r'''El apego ansioso-ambivalente (o resistente) se caracteriza por la búsqueda desesperada de afecto mezclada con rabia y resistencia al consuelo de la figura de apego.''',
   ),
   Question(
     id: 'pfrh_q692',
     topicId: 'pfrh_t5',
-    text: r'''Cuando una menor de 4 años se cae y se golpea levemente, no busca el consuelo de su padre; prefiere quedarse en silencio, apartar la mirada e ignorar las preguntas de afecto del adulto. En la teoría del apego, esto tipifica un:''',
+    text:
+        r'''Cuando una menor de 4 años se cae y se golpea levemente, no busca el consuelo de su padre; prefiere quedarse en silencio, apartar la mirada e ignorar las preguntas de afecto del adulto. En la teoría del apego, esto tipifica un:''',
     options: [
       r'''Apego evitativo''',
       r'''Apego seguro''',
@@ -6975,12 +8026,14 @@ final List<Question> pfrhQuestions = [
       r'''Apego desorganizado-caótico''',
     ],
     correctAnswer: 0,
-    explanation: r'''El apego evitativo ocurre cuando el menor aprende a inhibir sus expresiones de malestar porque sus cuidadores suelen rechazar o ignorar sus demandas de consuelo.''',
+    explanation:
+        r'''El apego evitativo ocurre cuando el menor aprende a inhibir sus expresiones de malestar porque sus cuidadores suelen rechazar o ignorar sus demandas de consuelo.''',
   ),
   Question(
     id: 'pfrh_q693',
     topicId: 'pfrh_t5',
-    text: r'''Unos padres compran una computadora y contratan internet de alta velocidad para que sus hijos hagan sus deberes del colegio. El padre paga el servicio (función económica) y la madre les enseña a usar programas educativos (función educativa). ¿Qué opción discrimina correctamente estas funciones?''',
+    text:
+        r'''Unos padres compran una computadora y contratan internet de alta velocidad para que sus hijos hagan sus deberes del colegio. El padre paga el servicio (función económica) y la madre les enseña a usar programas educativos (función educativa). ¿Qué opción discrimina correctamente estas funciones?''',
     options: [
       r'''La económica provee el soporte material del recurso; la educativa orienta su uso para el aprendizaje y desarrollo cognitivo''',
       r'''La educativa consiste únicamente en matricular al menor; la económica abarca la supervisión de las tareas escolares''',
@@ -6988,12 +8041,14 @@ final List<Question> pfrhQuestions = [
       r'''La económica es obligatoria para el Estado; la educativa es de carácter opcional para los progenitores''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función económica provee los recursos y la infraestructura material, mientras que la función educativa guía el desarrollo escolar directo.''',
+    explanation:
+        r'''La función económica provee los recursos y la infraestructura material, mientras que la función educativa guía el desarrollo escolar directo.''',
   ),
   Question(
     id: 'pfrh_q694',
     topicId: 'pfrh_t5',
-    text: r'''En una familia de tres hijos, cuando los padres discuten por deudas, culpan al hijo del medio argumentando que él gasta demasiada electricidad por quedarse estudiando hasta tarde. Los hermanos se unen a este reclamo. ¿Qué rol disfuncional cumple este hijo?''',
+    text:
+        r'''En una familia de tres hijos, cuando los padres discuten por deudas, culpan al hijo del medio argumentando que él gasta demasiada electricidad por quedarse estudiando hasta tarde. Los hermanos se unen a este reclamo. ¿Qué rol disfuncional cumple este hijo?''',
     options: [
       r'''Chivo expiatorio''',
       r'''Hijo parentalizado''',
@@ -7001,12 +8056,14 @@ final List<Question> pfrhQuestions = [
       r'''Mediador del sistema''',
     ],
     correctAnswer: 0,
-    explanation: r'''Al concentrar de manera injustificada e irracional la hostilidad y culpa de un problema que pertenece al subsistema parental, el menor funge de chivo expiatorio.''',
+    explanation:
+        r'''Al concentrar de manera injustificada e irracional la hostilidad y culpa de un problema que pertenece al subsistema parental, el menor funge de chivo expiatorio.''',
   ),
   Question(
     id: 'pfrh_q695',
     topicId: 'pfrh_t5',
-    text: r'''Unos padres acuerdan con su hijo adolescente que puede ir a una fiesta el sábado hasta la medianoche, pero si incumple la hora establecida perderá el derecho a salir el siguiente fin de semana. El joven llega a la 1 a.m. y los padres aplican la consecuencia acordada sin gritar. Esto denota:''',
+    text:
+        r'''Unos padres acuerdan con su hijo adolescente que puede ir a una fiesta el sábado hasta la medianoche, pero si incumple la hora establecida perderá el derecho a salir el siguiente fin de semana. El joven llega a la 1 a.m. y los padres aplican la consecuencia acordada sin gritar. Esto denota:''',
     options: [
       r'''Establecimiento de límites claros y firmes con estilo democrático''',
       r'''Límites rígidos aplicados mediante autoritarismo punitivo''',
@@ -7014,12 +8071,14 @@ final List<Question> pfrhQuestions = [
       r'''Una falla grave en la función protectora del menor de edad''',
     ],
     correctAnswer: 0,
-    explanation: r'''Negociar previamente, fijar límites razonables y aplicar las consecuencias con respeto y sin violencia caracteriza al estilo democrático/autoritativo.''',
+    explanation:
+        r'''Negociar previamente, fijar límites razonables y aplicar las consecuencias con respeto y sin violencia caracteriza al estilo democrático/autoritativo.''',
   ),
   Question(
     id: 'pfrh_q696',
     topicId: 'pfrh_t5',
-    text: r'''Tras perder su vivienda a causa de un huaico, la familia Ramos se aloja temporalmente en una carpa comunitaria. Entre todos se organizan para preparar alimentos, contener el llanto de los niños menores y diseñar un plan para reconstruir su casa. Este comportamiento ilustra:''',
+    text:
+        r'''Tras perder su vivienda a causa de un huaico, la familia Ramos se aloja temporalmente en una carpa comunitaria. Entre todos se organizan para preparar alimentos, contener el llanto de los niños menores y diseñar un plan para reconstruir su casa. Este comportamiento ilustra:''',
     options: [
       r'''La resiliencia familiar ante la adversidad''',
       r'''El fracaso de la función protectora del hogar''',
@@ -7027,12 +8086,14 @@ final List<Question> pfrhQuestions = [
       r'''Un estilo de crianza negligente provocado por el desastre''',
     ],
     correctAnswer: 0,
-    explanation: r'''La respuesta de apoyo mutuo, reorganización y afrontamiento proactivo frente a la pérdida total de la vivienda ejemplifica la resiliencia familiar.''',
+    explanation:
+        r'''La respuesta de apoyo mutuo, reorganización y afrontamiento proactivo frente a la pérdida total de la vivienda ejemplifica la resiliencia familiar.''',
   ),
   Question(
     id: 'pfrh_q697',
     topicId: 'pfrh_t5',
-    text: r"""Un padre repite diariamente a su hijo de 8 años frases como: 'Eres un inútil', 'No sirves para nada' y 'Ojalá no hubieras nacido', argumentando que lo hace para forjarle un carácter fuerte y evitar que sea blando en la escuela. ¿Cómo se tipifica esta conducta?""",
+    text:
+        r"""Un padre repite diariamente a su hijo de 8 años frases como: 'Eres un inútil', 'No sirves para nada' y 'Ojalá no hubieras nacido', argumentando que lo hace para forjarle un carácter fuerte y evitar que sea blando en la escuela. ¿Cómo se tipifica esta conducta?""",
     options: [
       r'''Es maltrato psicológico bajo un sesgo de autoritarismo formativo desvirtuado''',
       r'''Es una forma aceptable de corregir la conducta según el criterio formativo familiar''',
@@ -7040,12 +8101,14 @@ final List<Question> pfrhQuestions = [
       r'''Es un estilo de crianza democrático enfocado en la superación personal''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las descalificaciones verbales humillantes constituyen maltrato psicológico y no representan una disciplina legítima, sino una seria disfunción afectiva.''',
+    explanation:
+        r'''Las descalificaciones verbales humillantes constituyen maltrato psicológico y no representan una disciplina legítima, sino una seria disfunción afectiva.''',
   ),
   Question(
     id: 'pfrh_q698',
     topicId: 'pfrh_t5',
-    text: r'''En una familia, los miembros nunca conversan entre sí, cada uno come a diferentes horas en su habitación y los padres desconocen dónde o con quiénes pasan el fin de semana sus hijos adolescentes. Esto denota una:''',
+    text:
+        r'''En una familia, los miembros nunca conversan entre sí, cada uno come a diferentes horas en su habitación y los padres desconocen dónde o con quiénes pasan el fin de semana sus hijos adolescentes. Esto denota una:''',
     options: [
       r'''Cohesión familiar desligada''',
       r'''Cohesión familiar aglutinada''',
@@ -7053,12 +8116,14 @@ final List<Question> pfrhQuestions = [
       r'''Parentalidad asertiva basada en la confianza''',
     ],
     correctAnswer: 0,
-    explanation: r'''La cohesión desligada (o descomprometida) se caracteriza por la distancia afectiva extrema, la falta de límites claros y la ausencia de apoyo mutuo en el hogar.''',
+    explanation:
+        r'''La cohesión desligada (o descomprometida) se caracteriza por la distancia afectiva extrema, la falta de límites claros y la ausencia de apoyo mutuo en el hogar.''',
   ),
   Question(
     id: 'pfrh_q699',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la diferencia entre el cumplimiento de la función recreativa y el simple aislamiento tecnológico individual dentro del hogar?''',
+    text:
+        r'''¿Cuál es la diferencia entre el cumplimiento de la función recreativa y el simple aislamiento tecnológico individual dentro del hogar?''',
     options: [
       r'''La recreativa promueve actividades compartidas que afianzan el vínculo; el aislamiento tecnológico fomenta la desconexión emocional''',
       r'''La recreativa requiere financiamiento estatal; el aislamiento tecnológico es un derecho del menor de edad''',
@@ -7066,12 +8131,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia, dado que ambos buscan la relajación mental del miembro de la familia''',
     ],
     correctAnswer: 0,
-    explanation: r'''La función recreativa tiene como fin secundario la cohesión y el apego mediante dinámicas conjuntas, a diferencia del ocio individualizante y evasivo.''',
+    explanation:
+        r'''La función recreativa tiene como fin secundario la cohesión y el apego mediante dinámicas conjuntas, a diferencia del ocio individualizante y evasivo.''',
   ),
   Question(
     id: 'pfrh_q700',
     topicId: 'pfrh_t5',
-    text: r'''El padre de la familia Vargas pierde su empleo debido a un recorte de personal. En lugar de ocultar la situación, los padres reúnen a sus hijos adolescentes, les explican con calma la situación financiera actual, acuerdan recortar gastos no esenciales y deciden que todos colaborarán más con las tareas de la casa para ahorrar. ¿Qué se evidencia?''',
+    text:
+        r'''El padre de la familia Vargas pierde su empleo debido a un recorte de personal. En lugar de ocultar la situación, los padres reúnen a sus hijos adolescentes, les explican con calma la situación financiera actual, acuerdan recortar gastos no esenciales y deciden que todos colaborarán más con las tareas de la casa para ahorrar. ¿Qué se evidencia?''',
     options: [
       r'''Una dinámica de adaptabilidad familiar y resiliencia para afrontar una crisis económica''',
       r'''Una falla grave en la función protectora por trasladar preocupaciones de adultos a menores''',
@@ -7079,12 +8146,14 @@ final List<Question> pfrhQuestions = [
       r'''El inicio de un proceso de parentalización forzada del subsistema filial''',
     ],
     correctAnswer: 0,
-    explanation: r'''La comunicación asertiva, el reparto equitativo de tareas y la flexibilidad familiar para reorganizar los recursos son rasgos clave de resiliencia y adaptabilidad.''',
+    explanation:
+        r'''La comunicación asertiva, el reparto equitativo de tareas y la flexibilidad familiar para reorganizar los recursos son rasgos clave de resiliencia y adaptabilidad.''',
   ),
   Question(
     id: 'pfrh_q701',
     topicId: 'pfrh_t5',
-    text: r'''Los vecinos de un edificio notan que un niño de 6 años se queda solo en su departamento hasta la medianoche de forma recurrente, no asiste a la escuela y suele pedir galletas a los vecinos a través del balcón porque no hay comida preparada en casa. Sus padres salen a trabajar o a reuniones sociales diariamente. Este caso ilustra un estilo de crianza:''',
+    text:
+        r'''Los vecinos de un edificio notan que un niño de 6 años se queda solo en su departamento hasta la medianoche de forma recurrente, no asiste a la escuela y suele pedir galletas a los vecinos a través del balcón porque no hay comida preparada en casa. Sus padres salen a trabajar o a reuniones sociales diariamente. Este caso ilustra un estilo de crianza:''',
     options: [
       r'''Negligente, pues existe abandono de las necesidades básicas físicas, alimentarias y educativas del menor''',
       r'''Permisivo, ya que los padres confían plenamente en la autonomía del niño a temprana edad''',
@@ -7092,12 +8161,14 @@ final List<Question> pfrhQuestions = [
       r'''Democrático, dado que se evita el control excesivo para no generar dependencia emocional''',
     ],
     correctAnswer: 0,
-    explanation: r'''La desatención crónica de las necesidades alimenticias, de seguridad y educativas del menor de edad configura negligencia parental severa.''',
+    explanation:
+        r'''La desatención crónica de las necesidades alimenticias, de seguridad y educativas del menor de edad configura negligencia parental severa.''',
   ),
   Question(
     id: 'pfrh_q702',
     topicId: 'pfrh_t5',
-    text: r"""La señora Elena opina que para ser la mejor amiga de su hija de 14 años no debe imponerle reglas. Por ello, le permite ir a fiestas sin hora de retorno, consumir alcohol si lo hace con amigos y no la obliga a estudiar, argumentando: 'Confío en ella, no quiero que me oculte cosas'. ¿Qué estilo de crianza y sesgo relacional se observa?""",
+    text:
+        r"""La señora Elena opina que para ser la mejor amiga de su hija de 14 años no debe imponerle reglas. Por ello, le permite ir a fiestas sin hora de retorno, consumir alcohol si lo hace con amigos y no la obliga a estudiar, argumentando: 'Confío en ella, no quiero que me oculte cosas'. ¿Qué estilo de crianza y sesgo relacional se observa?""",
     options: [
       r'''Estilo permisivo basado en una sobretolerancia y ausencia de límites''',
       r'''Estilo democrático que prioriza la confianza recíproca''',
@@ -7105,12 +8176,14 @@ final List<Question> pfrhQuestions = [
       r'''Estilo negligente que busca la emancipación económica prematura''',
     ],
     correctAnswer: 0,
-    explanation: r"""La eliminación de normas básicas y el rol de 'mejor amigo' que anula la jerarquía parental de cuidado corresponden al estilo de crianza permisivo.""",
+    explanation:
+        r"""La eliminación de normas básicas y el rol de 'mejor amigo' que anula la jerarquía parental de cuidado corresponden al estilo de crianza permisivo.""",
   ),
   Question(
     id: 'pfrh_q703',
     topicId: 'pfrh_t5',
-    text: r'''Andrés pide permiso para ir a una fiesta de su colegio. Sus padres conversan con él, evalúan los peligros del vecindario, acuerdan que irá si un adulto lo recoge a la medianoche y le permiten opinar sobre el medio de transporte. Aunque Andrés quería quedarse hasta más tarde, comprende los motivos de sus padres. Este estilo es:''',
+    text:
+        r'''Andrés pide permiso para ir a una fiesta de su colegio. Sus padres conversan con él, evalúan los peligros del vecindario, acuerdan que irá si un adulto lo recoge a la medianoche y le permiten opinar sobre el medio de transporte. Aunque Andrés quería quedarse hasta más tarde, comprende los motivos de sus padres. Este estilo es:''',
     options: [
       r'''Autoritativo o democrático, porque combina el afecto y el diálogo con la firmeza en la seguridad''',
       r'''Permisivo, ya que ceden a la solicitud de salida del menor a pesar de los riesgos del entorno''',
@@ -7118,12 +8191,14 @@ final List<Question> pfrhQuestions = [
       r'''Negligente, pues delegan la supervisión del retorno en un conductor de taxi ajeno al hogar''',
     ],
     correctAnswer: 0,
-    explanation: r'''La negociación razonada, la escucha de las propuestas del hijo y el mantenimiento de las precauciones de seguridad tipifican el estilo autoritativo.''',
+    explanation:
+        r'''La negociación razonada, la escucha de las propuestas del hijo y el mantenimiento de las precauciones de seguridad tipifican el estilo autoritativo.''',
   ),
   Question(
     id: 'pfrh_q704',
     topicId: 'pfrh_t5',
-    text: r"""Durante una fuerte discusión conyugal en la sala, la madre le dice a su hijo de 13 años: 'Dile a tu padre que es un mentiroso y que no le voy a servir la cena hasta que nos pida perdón a los dos'. ¿Qué dinámica disfuncional del sistema familiar se está manifestando en este comportamiento?""",
+    text:
+        r"""Durante una fuerte discusión conyugal en la sala, la madre le dice a su hijo de 13 años: 'Dile a tu padre que es un mentiroso y que no le voy a servir la cena hasta que nos pida perdón a los dos'. ¿Qué dinámica disfuncional del sistema familiar se está manifestando en este comportamiento?""",
     options: [
       r'''Una triangulación relacional donde la madre busca formar una alianza contra el padre''',
       r'''Una correcta aplicación de la función socializadora basada en la defensa de la justicia''',
@@ -7131,12 +8206,14 @@ final List<Question> pfrhQuestions = [
       r'''El fortalecimiento del subsistema fraternal a través del apoyo emocional mutuo''',
     ],
     correctAnswer: 0,
-    explanation: r'''Utilizar al hijo como mensajero o aliado en el conflicto conyugal es una triangulación disfuncional que daña la neutralidad afectiva del menor.''',
+    explanation:
+        r'''Utilizar al hijo como mensajero o aliado en el conflicto conyugal es una triangulación disfuncional que daña la neutralidad afectiva del menor.''',
   ),
   Question(
     id: 'pfrh_q705',
     topicId: 'pfrh_t5',
-    text: r'''Un niño de 9 años encuentra una billetera con dinero tirada en la acera del parque de su urbanización. Sus padres le explican que el dinero pertenece a otra persona, revisan los documentos para contactar al dueño por teléfono y devuelven la billetera junto al niño. ¿Qué función familiar y cívica se cumple?''',
+    text:
+        r'''Un niño de 9 años encuentra una billetera con dinero tirada en la acera del parque de su urbanización. Sus padres le explican que el dinero pertenece a otra persona, revisan los documentos para contactar al dueño por teléfono y devuelven la billetera junto al niño. ¿Qué función familiar y cívica se cumple?''',
     options: [
       r'''Función socializadora mediante la transmisión e internalización práctica de la honestidad y valores éticos''',
       r'''Función protectora para evitar que el menor sea denunciado por robo de bienes públicos''',
@@ -7144,12 +8221,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa a través de un juego de búsqueda del dueño de la billetera''',
     ],
     correctAnswer: 0,
-    explanation: r'''La familia enseña mediante el ejemplo un valor cívico fundamental (la honestidad y el respeto por lo ajeno), cumpliendo la función socializadora.''',
+    explanation:
+        r'''La familia enseña mediante el ejemplo un valor cívico fundamental (la honestidad y el respeto por lo ajeno), cumpliendo la función socializadora.''',
   ),
   Question(
     id: 'pfrh_q706',
     topicId: 'pfrh_t5',
-    text: r"""Un vecino enciende un equipo de sonido con música a alto volumen en la vereda de su casa durante la madrugada de un martes. Cuando otros vecinos le solicitan apagarlo por respeto al descanso ajeno, este responde: 'En mi propiedad yo hago lo que quiero con mi familia y nadie nos va a dar órdenes'. ¿Qué deficiencia familiar se observa?""",
+    text:
+        r"""Un vecino enciende un equipo de sonido con música a alto volumen en la vereda de su casa durante la madrugada de un martes. Cuando otros vecinos le solicitan apagarlo por respeto al descanso ajeno, este responde: 'En mi propiedad yo hago lo que quiero con mi familia y nadie nos va a dar órdenes'. ¿Qué deficiencia familiar se observa?""",
     options: [
       r'''Falla en la función socializadora, que no transmitió el sentido de convivencia y respeto cívico al bien común''',
       r'''Correcto ejercicio de la función recreativa familiar en un espacio de propiedad privada''',
@@ -7157,12 +8236,14 @@ final List<Question> pfrhQuestions = [
       r'''Una respuesta de resiliencia familiar ante agresiones del entorno urbano''',
     ],
     correctAnswer: 0,
-    explanation: r'''El comportamiento del vecino evidencia una falla en la función socializadora familiar, la cual debió inculcar el respeto a las normas cívicas y la convivencia pacífica.''',
+    explanation:
+        r'''El comportamiento del vecino evidencia una falla en la función socializadora familiar, la cual debió inculcar el respeto a las normas cívicas y la convivencia pacífica.''',
   ),
   Question(
     id: 'pfrh_q707',
     topicId: 'pfrh_t5',
-    text: r"""En una familia conviven los padres, los hijos y la abuela materna. Cuando los padres llaman la atención a su hijo menor por golpear a su hermana, la abuela interviene descalificando a los padres frente al niño, diciendo: 'No le digan nada a mi nieto, ustedes son muy malos con él'. ¿Qué conflicto estructural se presenta?""",
+    text:
+        r"""En una familia conviven los padres, los hijos y la abuela materna. Cuando los padres llaman la atención a su hijo menor por golpear a su hermana, la abuela interviene descalificando a los padres frente al niño, diciendo: 'No le digan nada a mi nieto, ustedes son muy malos con él'. ¿Qué conflicto estructural se presenta?""",
     options: [
       r'''Falta de alineación y jerarquía en el subsistema parental por interferencia de límites difusos''',
       r'''Una adecuada función afectiva y protectora de la abuela hacia el menor de edad''',
@@ -7170,12 +8251,14 @@ final List<Question> pfrhQuestions = [
       r'''La consolidación de un apego seguro de carácter transgeneracional en el menor''',
     ],
     correctAnswer: 0,
-    explanation: r'''La descalificación de la autoridad de los padres por parte de la abuela en presencia del menor rompe la jerarquía parental y confunde las normas del hogar.''',
+    explanation:
+        r'''La descalificación de la autoridad de los padres por parte de la abuela en presencia del menor rompe la jerarquía parental y confunde las normas del hogar.''',
   ),
   Question(
     id: 'pfrh_q708',
     topicId: 'pfrh_t5',
-    text: r'''Una pareja de esposos cuyos hijos ya se casaron e independizaron experimenta dificultades para convivir solos. Pasan el día discutiendo por detalles menores y sienten que ya no tienen temas de conversación en común al no estar la crianza de por medio. Esta crisis requiere:''',
+    text:
+        r'''Una pareja de esposos cuyos hijos ya se casaron e independizaron experimenta dificultades para convivir solos. Pasan el día discutiendo por detalles menores y sienten que ya no tienen temas de conversación en común al no estar la crianza de por medio. Esta crisis requiere:''',
     options: [
       r'''Redefinir el subsistema conyugal adaptándose a la fase del ciclo vital del nido vacío''',
       r'''Aumentar los ingresos del presupuesto familiar de la función económica''',
@@ -7183,12 +8266,14 @@ final List<Question> pfrhQuestions = [
       r'''Aplicar límites rígidos orientados a disolver de inmediato la alianza parental''',
     ],
     correctAnswer: 0,
-    explanation: r'''Al concluir la fase de crianza, la pareja debe centrarse en su rol conyugal y reconstruir su vínculo relacional independiente de las tareas parentales.''',
+    explanation:
+        r'''Al concluir la fase de crianza, la pareja debe centrarse en su rol conyugal y reconstruir su vínculo relacional independiente de las tareas parentales.''',
   ),
   Question(
     id: 'pfrh_q709',
     topicId: 'pfrh_t5',
-    text: r"""Dos hermanos menores se agreden físicamente de manera constante, insultándose y rompiendo sus útiles escolares. Los padres ignoran las peleas comentando: 'Son varones, es normal que peleen, dejen que lo resuelvan solos'. Esta actitud de los padres representa una:""",
+    text:
+        r"""Dos hermanos menores se agreden físicamente de manera constante, insultándose y rompiendo sus útiles escolares. Los padres ignoran las peleas comentando: 'Son varones, es normal que peleen, dejen que lo resuelvan solos'. Esta actitud de los padres representa una:""",
     options: [
       r'''Omisión y falla en las funciones protectora y socializadora de la familia''',
       r'''Adecuada aplicación del estilo democrático que fomenta la resolución de conflictos''',
@@ -7196,12 +8281,14 @@ final List<Question> pfrhQuestions = [
       r'''Estrategia de resiliencia familiar basada en la mínima intervención parental''',
     ],
     correctAnswer: 0,
-    explanation: r'''Ignorar la violencia física y el acoso entre hermanos constituye una falla de la función protectora (seguridad de los miembros) y de la socializadora (limitar la agresividad).''',
+    explanation:
+        r'''Ignorar la violencia física y el acoso entre hermanos constituye una falla de la función protectora (seguridad de los miembros) y de la socializadora (limitar la agresividad).''',
   ),
   Question(
     id: 'pfrh_q710',
     topicId: 'pfrh_t5',
-    text: r'''Un fin de semana largo, una familia viaja al campo para acampar. Se distribuyen las tareas: el padre y el hijo arman la carpa, la madre y la hija preparan la comida de campo, y por la noche hacen una fogata donde cantan y conversan sobre la historia familiar. ¿Qué función se optimiza en esta casuística?''',
+    text:
+        r'''Un fin de semana largo, una familia viaja al campo para acampar. Se distribuyen las tareas: el padre y el hijo arman la carpa, la madre y la hija preparan la comida de campo, y por la noche hacen una fogata donde cantan y conversan sobre la historia familiar. ¿Qué función se optimiza en esta casuística?''',
     options: [
       r'''Función recreativa combinada con la función afectiva mediante el ocio compartido''',
       r'''Función socializadora basada en la instrucción académica de técnicas de supervivencia''',
@@ -7209,12 +8296,14 @@ final List<Question> pfrhQuestions = [
       r'''Función reproductiva orientada a la extensión biológica del grupo familiar''',
     ],
     correctAnswer: 0,
-    explanation: r'''El campamento familiar combina el esparcimiento (función recreativa) con la consolidación de lazos afectivos e intimidad (función afectiva).''',
+    explanation:
+        r'''El campamento familiar combina el esparcimiento (función recreativa) con la consolidación de lazos afectivos e intimidad (función afectiva).''',
   ),
   Question(
     id: 'pfrh_q711',
     topicId: 'pfrh_t5',
-    text: r"""Un padre de familia trabaja 16 horas diarias, logrando matricular a sus hijos en el colegio más caro de la zona y comprándoles computadoras y ropa de marcas exclusivas. Sin embargo, nunca almuerza con ellos, rechaza conversar sobre sus problemas escolares argumentando que está muy cansado y les dice: 'No me pidan afecto, yo ya cumplo dándoles todo'. Este caso denota una:""",
+    text:
+        r"""Un padre de familia trabaja 16 horas diarias, logrando matricular a sus hijos en el colegio más caro de la zona y comprándoles computadoras y ropa de marcas exclusivas. Sin embargo, nunca almuerza con ellos, rechaza conversar sobre sus problemas escolares argumentando que está muy cansado y les dice: 'No me pidan afecto, yo ya cumplo dándoles todo'. Este caso denota una:""",
     options: [
       r'''Hipertrofia de la función económica con abandono de la función afectiva en el hogar''',
       r'''Parentalidad asertiva basada en la entrega de recompensas materiales de alta calidad''',
@@ -7222,12 +8311,14 @@ final List<Question> pfrhQuestions = [
       r'''Adecuada función socializadora que educa para la competitividad del mercado de consumo''',
     ],
     correctAnswer: 0,
-    explanation: r'''Centrar el rol parental únicamente en la provisión económica desatendiendo por completo el soporte emocional y el tiempo compartido constituye un desequilibrio disfuncional.''',
+    explanation:
+        r'''Centrar el rol parental únicamente en la provisión económica desatendiendo por completo el soporte emocional y el tiempo compartido constituye un desequilibrio disfuncional.''',
   ),
   Question(
     id: 'pfrh_q712',
     topicId: 'pfrh_t5',
-    text: r"""Una niña de 11 años es culpada constantemente por sus padres debido a las discusiones del matrimonio y la falta de dinero. En cada conflicto, le repiten: 'Si no hubieras nacido, tendríamos una mejor vida y seríamos felices'. Esta conducta familiar configura una disfunción por:""",
+    text:
+        r"""Una niña de 11 años es culpada constantemente por sus padres debido a las discusiones del matrimonio y la falta de dinero. En cada conflicto, le repiten: 'Si no hubieras nacido, tendríamos una mejor vida y seríamos felices'. Esta conducta familiar configura una disfunción por:""",
     options: [
       r'''Uso del menor como chivo expiatorio de las frustraciones parentales, constituyendo maltrato emocional''',
       r'''Estilo de crianza democrático que enseña la cruda realidad del presupuesto familiar''',
@@ -7235,12 +8326,14 @@ final List<Question> pfrhQuestions = [
       r'''Una estrategia de resiliencia para forzar la madurez temprana de la menor''',
     ],
     correctAnswer: 0,
-    explanation: r'''Depositar la culpa de la crisis matrimonial y económica de los adultos en un hijo menor de edad es la definición de chivo expiatorio y califica como maltrato emocional.''',
+    explanation:
+        r'''Depositar la culpa de la crisis matrimonial y económica de los adultos en un hijo menor de edad es la definición de chivo expiatorio y califica como maltrato emocional.''',
   ),
   Question(
     id: 'pfrh_q713',
     topicId: 'pfrh_t5',
-    text: r'''Un padre de familia pierde su empleo y no puede comprar los uniformes escolares de sus hijos para el inicio del año escolar. ¿Qué función específica de la institución familiar se está viendo afectada directamente en este escenario?''',
+    text:
+        r'''Un padre de familia pierde su empleo y no puede comprar los uniformes escolares de sus hijos para el inicio del año escolar. ¿Qué función específica de la institución familiar se está viendo afectada directamente en este escenario?''',
     options: [
       r'''Función Educativa''',
       r'''Función Protectora''',
@@ -7249,12 +8342,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Función Afectiva''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C (Función Económica). El distractor A (Función Educativa) es la 'Trampa Contextual'; el alumno lee 'escolares' y marca 'Educativa', pero la falta de recursos materiales para sostener a los miembros de la familia corresponde a la función económica.""",
+    explanation:
+        r"""La respuesta correcta es C (Función Económica). El distractor A (Función Educativa) es la 'Trampa Contextual'; el alumno lee 'escolares' y marca 'Educativa', pero la falta de recursos materiales para sostener a los miembros de la familia corresponde a la función económica.""",
   ),
   Question(
     id: 'pfrh_q714',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es el núcleo fundamental y unidad básica de la sociedad según la Constitución Política del Perú, al cual el Estado y la Policía Nacional deben protección especial?''',
+    text:
+        r'''¿Cuál es el núcleo fundamental y unidad básica de la sociedad según la Constitución Política del Perú, al cual el Estado y la Policía Nacional deben protección especial?''',
     options: [
       r'''La Familia''',
       r'''El Matrimonio Civil''',
@@ -7263,12 +8358,14 @@ final List<Question> pfrhQuestions = [
       r'''E) El Individuo Pleno''',
     ],
     correctAnswer: 0,
-    explanation: r"""La respuesta correcta es A (La Familia). El artículo 4 de la Constitución establece que el Estado protege a la familia (y promueve el matrimonio). El distractor D (Persona Humana) es el fin supremo de la sociedad (Art. 1), pero el 'núcleo fundamental/unidad básica de la sociedad' es la Familia.""",
+    explanation:
+        r"""La respuesta correcta es A (La Familia). El artículo 4 de la Constitución establece que el Estado protege a la familia (y promueve el matrimonio). El distractor D (Persona Humana) es el fin supremo de la sociedad (Art. 1), pero el 'núcleo fundamental/unidad básica de la sociedad' es la Familia.""",
   ),
   Question(
     id: 'pfrh_q715',
     topicId: 'pfrh_t5',
-    text: r'''En situaciones de violencia familiar, la medida de protección de RETIRO DEL AGRESOR DEL DOMICILIO es dictada inmediatamente por el:''',
+    text:
+        r'''En situaciones de violencia familiar, la medida de protección de RETIRO DEL AGRESOR DEL DOMICILIO es dictada inmediatamente por el:''',
     options: [
       r'''Efectivo de la PNP que interviene en flagrancia.''',
       r'''Fiscal de Prevención del Delito.''',
@@ -7277,12 +8374,14 @@ final List<Question> pfrhQuestions = [
       r'''E) Centro de Salud local al certificar la agresión.''',
     ],
     correctAnswer: 2,
-    explanation: r"""La respuesta correcta es C. Solo el Juez de Familia (o equivalente) puede dictar las 'medidas de protección' formales según la Ley 30364. El distractor A (Efectivo PNP) es la 'Trampa de Acción Táctica'; el policía detiene en flagrancia, pero la 'medida de protección' judicial (que expulsa legalmente al agresor del domicilio permanentemente) es dictada por el juez.""",
+    explanation:
+        r"""La respuesta correcta es C. Solo el Juez de Familia (o equivalente) puede dictar las 'medidas de protección' formales según la Ley 30364. El distractor A (Efectivo PNP) es la 'Trampa de Acción Táctica'; el policía detiene en flagrancia, pero la 'medida de protección' judicial (que expulsa legalmente al agresor del domicilio permanentemente) es dictada por el juez.""",
   ),
   Question(
     id: 'pfrh_q716',
     topicId: 'pfrh_t5',
-    text: r'''El tipo de estructura familiar constituida exclusivamente por los cónyuges (padre y madre) y sus hijos consanguíneos o adoptivos se denomina:''',
+    text:
+        r'''El tipo de estructura familiar constituida exclusivamente por los cónyuges (padre y madre) y sus hijos consanguíneos o adoptivos se denomina:''',
     options: [
       r'''Familia sin vínculos''',
       r'''Familia extensa''',
@@ -7291,12 +8390,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia nuclear''',
     ],
     correctAnswer: 4,
-    explanation: r'''La familia nuclear o conyugal es la forma de organización básica tradicional predominante en la sociedad.''',
+    explanation:
+        r'''La familia nuclear o conyugal es la forma de organización básica tradicional predominante en la sociedad.''',
   ),
   Question(
     id: 'pfrh_q717',
     topicId: 'pfrh_t5',
-    text: r'''Cuando la estructura familiar acoge, además de los padres e hijos, a otros parientes como abuelos, tíos, primos o sobrinos que cohabitan en el mismo hogar, se trata de una:''',
+    text:
+        r'''Cuando la estructura familiar acoge, además de los padres e hijos, a otros parientes como abuelos, tíos, primos o sobrinos que cohabitan en el mismo hogar, se trata de una:''',
     options: [
       r'''Familia ensamblada''',
       r'''Familia monoparental''',
@@ -7305,12 +8406,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia nuclear''',
     ],
     correctAnswer: 3,
-    explanation: r'''La familia extensa agrupa a múltiples generaciones bajo un mismo techo con lazos de parentesco consanguíneo.''',
+    explanation:
+        r'''La familia extensa agrupa a múltiples generaciones bajo un mismo techo con lazos de parentesco consanguíneo.''',
   ),
   Question(
     id: 'pfrh_q718',
     topicId: 'pfrh_t5',
-    text: r'''La familia conformada por un solo progenitor (sea el padre o la madre) y sus respectivos hijos a cargo se clasifica como:''',
+    text:
+        r'''La familia conformada por un solo progenitor (sea el padre o la madre) y sus respectivos hijos a cargo se clasifica como:''',
     options: [
       r'''Familia ensamblada''',
       r'''Familia nuclear''',
@@ -7319,12 +8422,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia monoparental''',
     ],
     correctAnswer: 4,
-    explanation: r'''La familia monoparental puede originarse por situaciones de divorcio, viudez, separación o maternidad/paternidad soltera.''',
+    explanation:
+        r'''La familia monoparental puede originarse por situaciones de divorcio, viudez, separación o maternidad/paternidad soltera.''',
   ),
   Question(
     id: 'pfrh_q719',
     topicId: 'pfrh_t5',
-    text: r'''Aquella familia conformada por una pareja donde uno o ambos miembros traen hijos de una relación sentimental o matrimonial previa se denomina:''',
+    text:
+        r'''Aquella familia conformada por una pareja donde uno o ambos miembros traen hijos de una relación sentimental o matrimonial previa se denomina:''',
     options: [
       r'''Familia extensa''',
       r'''Familia nuclear''',
@@ -7333,12 +8438,14 @@ final List<Question> pfrhQuestions = [
       r'''Familia extendida voluntaria''',
     ],
     correctAnswer: 2,
-    explanation: r'''La familia ensamblada incorpora padrastros, madrastras y hermanastros en un nuevo núcleo familiar.''',
+    explanation:
+        r'''La familia ensamblada incorpora padrastros, madrastras y hermanastros en un nuevo núcleo familiar.''',
   ),
   Question(
     id: 'pfrh_q720',
     topicId: 'pfrh_t5',
-    text: r'''¿Qué función familiar consiste en transmitir e introducir a los hijos en las normas, valores, costumbres y roles culturales indispensables para convivir socialmente?''',
+    text:
+        r'''¿Qué función familiar consiste en transmitir e introducir a los hijos en las normas, valores, costumbres y roles culturales indispensables para convivir socialmente?''',
     options: [
       r'''Función económica''',
       r'''Función afectiva''',
@@ -7347,12 +8454,14 @@ final List<Question> pfrhQuestions = [
       r'''Función recreativa''',
     ],
     correctAnswer: 2,
-    explanation: r'''La función socializadora modela la personalidad social del individuo transmitiéndole pautas cívicas y morales.''',
+    explanation:
+        r'''La función socializadora modela la personalidad social del individuo transmitiéndole pautas cívicas y morales.''',
   ),
   Question(
     id: 'pfrh_q721',
     topicId: 'pfrh_t5',
-    text: r'''La función orientada a proveer seguridad emocional, cariño, comprensión y aceptación incondicional a todos sus integrantes es la:''',
+    text:
+        r'''La función orientada a proveer seguridad emocional, cariño, comprensión y aceptación incondicional a todos sus integrantes es la:''',
     options: [
       r'''Función socializadora''',
       r'''Función afectiva''',
@@ -7361,12 +8470,14 @@ final List<Question> pfrhQuestions = [
       r'''Función educativa''',
     ],
     correctAnswer: 1,
-    explanation: r'''La función afectiva es crucial para el sano desarrollo de la autoestima y el bienestar psicológico infantil.''',
+    explanation:
+        r'''La función afectiva es crucial para el sano desarrollo de la autoestima y el bienestar psicológico infantil.''',
   ),
   Question(
     id: 'pfrh_q722',
     topicId: 'pfrh_t5',
-    text: r'''¿Cuál es la función familiar encargada de proveer los recursos económicos indispensables para garantizar la alimentación, vivienda, vestimenta y salud del núcleo?''',
+    text:
+        r'''¿Cuál es la función familiar encargada de proveer los recursos económicos indispensables para garantizar la alimentación, vivienda, vestimenta y salud del núcleo?''',
     options: [
       r'''Función educativa''',
       r'''Función biológica''',
@@ -7375,12 +8486,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora''',
     ],
     correctAnswer: 2,
-    explanation: r'''La función económica satisface las necesidades materiales de subsistencia y desarrollo de los miembros de la familia.''',
+    explanation:
+        r'''La función económica satisface las necesidades materiales de subsistencia y desarrollo de los miembros de la familia.''',
   ),
   Question(
     id: 'pfrh_q723',
     topicId: 'pfrh_t5',
-    text: r'''La función familiar dirigida a la continuidad de la especie humana mediante la procreación y crianza responsable de nuevos miembros se denomina:''',
+    text:
+        r'''La función familiar dirigida a la continuidad de la especie humana mediante la procreación y crianza responsable de nuevos miembros se denomina:''',
     options: [
       r'''Función afectiva''',
       r'''Función reproductora o biológica''',
@@ -7389,12 +8502,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora''',
     ],
     correctAnswer: 1,
-    explanation: r'''La función reproductora asegura el reemplazo generacional y la estabilidad demográfica de la sociedad.''',
+    explanation:
+        r'''La función reproductora asegura el reemplazo generacional y la estabilidad demográfica de la sociedad.''',
   ),
   Question(
     id: 'pfrh_q724',
     topicId: 'pfrh_t5',
-    text: r'''Brindar refugio seguro, velar por la integridad física y la salud de los miembros desvalidos (niños, enfermos o ancianos) de la familia corresponde a la:''',
+    text:
+        r'''Brindar refugio seguro, velar por la integridad física y la salud de los miembros desvalidos (niños, enfermos o ancianos) de la familia corresponde a la:''',
     options: [
       r'''Función económica''',
       r'''Función recreativa''',
@@ -7403,12 +8518,14 @@ final List<Question> pfrhQuestions = [
       r'''Función protectora o asistencial''',
     ],
     correctAnswer: 4,
-    explanation: r'''La función protectora garantiza la seguridad y cuidado de la integridad física de sus dependientes ante peligros externos.''',
+    explanation:
+        r'''La función protectora garantiza la seguridad y cuidado de la integridad física de sus dependientes ante peligros externos.''',
   ),
   Question(
     id: 'pfrh_q725',
     topicId: 'pfrh_t5',
-    text: r'''El estilo de crianza caracterizado por un alto nivel de afecto y comunicación sincera, combinado con normas y límites claros y razonables explicados a los hijos, se denomina:''',
+    text:
+        r'''El estilo de crianza caracterizado por un alto nivel de afecto y comunicación sincera, combinado con normas y límites claros y razonables explicados a los hijos, se denomina:''',
     options: [
       r'''Paternalista protector''',
       r'''Autoritario''',
@@ -7417,12 +8534,14 @@ final List<Question> pfrhQuestions = [
       r'''Negligente o indiferente''',
     ],
     correctAnswer: 2,
-    explanation: r'''El estilo democrático fomenta la autonomía, el sentido de responsabilidad y una sólida autoestima en los menores de edad.''',
+    explanation:
+        r'''El estilo democrático fomenta la autonomía, el sentido de responsabilidad y una sólida autoestima en los menores de edad.''',
   ),
   Question(
     id: 'pfrh_q766',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál es el objeto principal de la Ley N° 30364, Ley para prevenir, erradicar y sancionar la violencia contra las mujeres y los integrantes del grupo familiar?''',
+    text:
+        r'''¿Cuál es el objeto principal de la Ley N° 30364, Ley para prevenir, erradicar y sancionar la violencia contra las mujeres y los integrantes del grupo familiar?''',
     options: [
       r'''Regular las sanciones penales exclusivas para delitos graves cometidos en el ámbito público.''',
       r'''Establecer un marco de protección preventiva, cautelar y de sanción frente a la violencia física, psicológica, sexual y económica en el ámbito público y privado.''',
@@ -7430,12 +8549,14 @@ final List<Question> pfrhQuestions = [
       r'''Definir los procedimientos administrativos de divorcio rápido por mutuo acuerdo en casos de incompatibilidad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El objeto de la Ley N° 30364 es prevenir, erradicar y sancionar toda forma de violencia producida en el ámbito público o privado contra las mujeres y los integrantes del grupo familiar, mediante un marco de protección integral.''',
+    explanation:
+        r'''El objeto de la Ley N° 30364 es prevenir, erradicar y sancionar toda forma de violencia producida en el ámbito público o privado contra las mujeres y los integrantes del grupo familiar, mediante un marco de protección integral.''',
   ),
   Question(
     id: 'pfrh_q767',
     topicId: 'pfrh_t6',
-    text: r'''Según la Ley N° 30364, ¿quiénes se consideran integrantes del grupo familiar y, por ende, sujetos de protección?''',
+    text:
+        r'''Según la Ley N° 30364, ¿quiénes se consideran integrantes del grupo familiar y, por ende, sujetos de protección?''',
     options: [
       r'''Únicamente el cónyuge, los hijos y los padres que cohabiten en el mismo domicilio al momento de la agresión.''',
       r'''Los parientes consanguíneos hasta el cuarto grado, parientes afines hasta el segundo grado, cónyuges, convivientes, ex cónyuges o ex convivientes, y quienes habiten en el mismo hogar sin relación contractual.''',
@@ -7443,12 +8564,14 @@ final List<Question> pfrhQuestions = [
       r'''Exclusivamente los familiares directos que dependan económicamente del agresor principal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El grupo familiar abarca a cónyuges, ex cónyuges, convivientes, ex convivientes, ascendientes, descendientes, parientes colaterales hasta el cuarto grado de consanguinidad y segundo de afinidad, y quienes habiten en el mismo hogar sin vínculo contractual o laboral.''',
+    explanation:
+        r'''El grupo familiar abarca a cónyuges, ex cónyuges, convivientes, ex convivientes, ascendientes, descendientes, parientes colaterales hasta el cuarto grado de consanguinidad y segundo de afinidad, y quienes habiten en el mismo hogar sin vínculo contractual o laboral.''',
   ),
   Question(
     id: 'pfrh_q768',
     topicId: 'pfrh_t6',
-    text: r"""En virtud del principio de 'Debida Diligencia' establecido en la Ley N° 30364, ¿cuál es el mandato imperativo para los operadores estatales de justicia?""",
+    text:
+        r"""En virtud del principio de 'Debida Diligencia' establecido en la Ley N° 30364, ¿cuál es el mandato imperativo para los operadores estatales de justicia?""",
     options: [
       r'''Priorizar la reconciliación de la pareja antes de dictar cualquier medida que afecte la convivencia.''',
       r'''Actuar con celeridad, eficacia y de manera oportuna en la prevención, investigación, sanción y reparación, evitando retrasos innecesarios en el proceso.''',
@@ -7456,12 +8579,14 @@ final List<Question> pfrhQuestions = [
       r'''Derivar el caso a la vía comunitaria o vecinal para aplicar prácticas de justicia restaurativa informal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio de Debida Diligencia exige que el Estado adopte de manera oportuna, proactiva y sin dilaciones todas las medidas necesarias para proteger a las víctimas y sancionar a los responsables.''',
+    explanation:
+        r'''El principio de Debida Diligencia exige que el Estado adopte de manera oportuna, proactiva y sin dilaciones todas las medidas necesarias para proteger a las víctimas y sancionar a los responsables.''',
   ),
   Question(
     id: 'pfrh_q769',
     topicId: 'pfrh_t6',
-    text: r"""¿Cómo define la Ley N° 30364 la 'violencia económica o patrimonial'?""",
+    text:
+        r"""¿Cómo define la Ley N° 30364 la 'violencia económica o patrimonial'?""",
     options: [
       r'''La falta de pago de impuestos o tributos municipales que afecten el patrimonio de la sociedad conyugal.''',
       r'''La acción u omisión que ocasiona menoscabo en los recursos económicos o patrimoniales de la mujer o del grupo familiar, mediante la pérdida, destrucción o retención de bienes, documentos o herramientas de trabajo.''',
@@ -7469,12 +8594,14 @@ final List<Question> pfrhQuestions = [
       r'''El desacuerdo mutuo sobre la distribución de las ganancias en un negocio familiar legalmente constituido.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia económica o patrimonial implica limitar o controlar los ingresos, retener documentos personales, destruir herramientas de trabajo o bienes comunes, y el incumplimiento de obligaciones alimentarias.''',
+    explanation:
+        r'''La violencia económica o patrimonial implica limitar o controlar los ingresos, retener documentos personales, destruir herramientas de trabajo o bienes comunes, y el incumplimiento de obligaciones alimentarias.''',
   ),
   Question(
     id: 'pfrh_q770',
     topicId: 'pfrh_t6',
-    text: r'''Respecto de la prohibición de confrontación y conciliación, ¿qué establece taxativamente la Ley N° 30364?''',
+    text:
+        r'''Respecto de la prohibición de confrontación y conciliación, ¿qué establece taxativamente la Ley N° 30364?''',
     options: [
       r'''Está permitida la conciliación únicamente si la víctima manifiesta expresamente su voluntad de perdonar al agresor.''',
       r'''Se prohíbe bajo sanción de nulidad la confrontación física directa entre la víctima y el agresor, así como la conciliación o mediación en cualquier etapa del proceso.''',
@@ -7482,12 +8609,14 @@ final List<Question> pfrhQuestions = [
       r'''Se permite la mediación familiar solo si el agresor no cuenta con antecedentes policiales o penales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Para evitar la revictimización y el desequilibrio de poder, la ley prohíbe terminantemente la conciliación, mediación o confrontación directa entre la víctima y el presunto agresor.''',
+    explanation:
+        r'''Para evitar la revictimización y el desequilibrio de poder, la ley prohíbe terminantemente la conciliación, mediación o confrontación directa entre la víctima y el presunto agresor.''',
   ),
   Question(
     id: 'pfrh_q771',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué finalidad primordial tiene la Ficha de Valoración de Riesgo aplicada por los operadores de justicia al recibir una denuncia por violencia?''',
+    text:
+        r'''¿Qué finalidad primordial tiene la Ficha de Valoración de Riesgo aplicada por los operadores de justicia al recibir una denuncia por violencia?''',
     options: [
       r'''Determinar de forma definitiva la culpabilidad o inocencia del denunciado en el ámbito penal.''',
       r'''Estimar la probabilidad de ocurrencia de nuevos actos de violencia e identificar la gravedad del peligro que corre la víctima para dictar medidas de protección idóneas.''',
@@ -7495,12 +8624,14 @@ final List<Question> pfrhQuestions = [
       r'''Evaluar si la víctima cuenta con la estabilidad psicológica necesaria para continuar con el proceso legal de divorcio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Ficha de Valoración de Riesgo es un instrumento técnico que permite cuantificar el nivel de riesgo (leve, moderado, severo) para que el juez dicte de manera inmediata las medidas de protección adecuadas.''',
+    explanation:
+        r'''La Ficha de Valoración de Riesgo es un instrumento técnico que permite cuantificar el nivel de riesgo (leve, moderado, severo) para que el juez dicte de manera inmediata las medidas de protección adecuadas.''',
   ),
   Question(
     id: 'pfrh_q772',
     topicId: 'pfrh_t6',
-    text: r"""El principio de 'No Revictimización' consagrado en la Ley N° 30364 implica que:""",
+    text:
+        r"""El principio de 'No Revictimización' consagrado en la Ley N° 30364 implica que:""",
     options: [
       r'''La víctima debe ser evaluada constantemente por diferentes especialistas para confirmar la veracidad de su testimonio.''',
       r'''Se deben evitar declaraciones reiterativas y diligencias innecesarias que obliguen a la víctima a revivir los hechos traumáticos de la agresión.''',
@@ -7508,12 +8639,14 @@ final List<Question> pfrhQuestions = [
       r'''Se debe garantizar que la víctima asuma los costos económicos de su propia terapia de recuperación para valorar su autonomía.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Este principio busca evitar que el paso de la víctima por el sistema de justicia (interrogatorios repetidos, pericias redundantes) le genere un sufrimiento psicológico adicional.''',
+    explanation:
+        r'''Este principio busca evitar que el paso de la víctima por el sistema de justicia (interrogatorios repetidos, pericias redundantes) le genere un sufrimiento psicológico adicional.''',
   ),
   Question(
     id: 'pfrh_q773',
     topicId: 'pfrh_t6',
-    text: r'''De acuerdo con la Ley N° 30364, si un menor de edad es testigo o víctima directa de violencia familiar, ¿cuál es el procedimiento respecto de su denuncia?''',
+    text:
+        r'''De acuerdo con la Ley N° 30364, si un menor de edad es testigo o víctima directa de violencia familiar, ¿cuál es el procedimiento respecto de su denuncia?''',
     options: [
       r'''La denuncia solo será admitida si es presentada formalmente por su tutor legal o por un abogado colegiado.''',
       r'''El menor puede presentar la denuncia directamente y sin necesidad de estar acompañado de un adulto, debiendo el Estado brindarle defensa pública inmediata.''',
@@ -7521,12 +8654,14 @@ final List<Question> pfrhQuestions = [
       r'''El menor debe acudir obligatoriamente a una fiscalía penal juvenil para que su denuncia tenga validez jurídica preliminar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ley otorga legitimidad activa a los niños y adolescentes para denunciar directamente actos de violencia, activando de oficio los mecanismos de protección estatal sin trabas burocráticas.''',
+    explanation:
+        r'''La ley otorga legitimidad activa a los niños y adolescentes para denunciar directamente actos de violencia, activando de oficio los mecanismos de protección estatal sin trabas burocráticas.''',
   ),
   Question(
     id: 'pfrh_q774',
     topicId: 'pfrh_t6',
-    text: r"""Cuando el juez de familia recibe la Ficha de Valoración de Riesgo que califica el caso con riesgo 'severo', ¿de cuánto tiempo dispone como máximo para emitir las medidas de protección correspondientes?""",
+    text:
+        r"""Cuando el juez de familia recibe la Ficha de Valoración de Riesgo que califica el caso con riesgo 'severo', ¿de cuánto tiempo dispone como máximo para emitir las medidas de protección correspondientes?""",
     options: [
       r'''Un plazo máximo de 24 horas.''',
       r'''Un plazo máximo de 72 horas.''',
@@ -7534,12 +8669,14 @@ final List<Question> pfrhQuestions = [
       r'''Un plazo máximo de 12 horas.''',
     ],
     correctAnswer: 0,
-    explanation: r'''En casos calificados con riesgo severo, el Juzgado de Familia tiene un plazo máximo e improrrogable de 24 horas para emitir las medidas de protección necesarias para salvaguardar la vida de la víctima.''',
+    explanation:
+        r'''En casos calificados con riesgo severo, el Juzgado de Familia tiene un plazo máximo e improrrogable de 24 horas para emitir las medidas de protección necesarias para salvaguardar la vida de la víctima.''',
   ),
   Question(
     id: 'pfrh_q775',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué característica define la vigencia temporal de las medidas de protección dictadas al amparo de la Ley N° 30364?''',
+    text:
+        r'''¿Qué característica define la vigencia temporal de las medidas de protección dictadas al amparo de la Ley N° 30364?''',
     options: [
       r'''Caducan automáticamente a los 30 días de haber sido emitidas si no se presenta una acusación fiscal.''',
       r'''Tienen vigencia indefinida y se mantienen activas hasta que el juez penal emita una resolución definitiva o decida modificarlas formalmente.''',
@@ -7547,12 +8684,14 @@ final List<Question> pfrhQuestions = [
       r'''Tienen una duración máxima de 6 meses, prorrogables por una sola vez a solicitud de la víctima.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las medidas de protección subsisten mientras persista la situación de riesgo de la víctima, y su vigencia es independiente del trámite penal subsecuente, pudiendo ser modificadas únicamente por decisión judicial.''',
+    explanation:
+        r'''Las medidas de protección subsisten mientras persista la situación de riesgo de la víctima, y su vigencia es independiente del trámite penal subsecuente, pudiendo ser modificadas únicamente por decisión judicial.''',
   ),
   Question(
     id: 'pfrh_q776',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál de los siguientes principios de la Ley N° 30364 exige que las intervenciones estatales consideren las diferencias culturales y las lenguas originarias de las víctimas?''',
+    text:
+        r'''¿Cuál de los siguientes principios de la Ley N° 30364 exige que las intervenciones estatales consideren las diferencias culturales y las lenguas originarias de las víctimas?''',
     options: [
       r'''Principio de Interés Superior del Niño.''',
       r'''Principio de Interculturalidad.''',
@@ -7560,12 +8699,14 @@ final List<Question> pfrhQuestions = [
       r'''Principio de Proporcionalidad Penal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El Principio de Interculturalidad garantiza que la atención judicial y social respete la identidad cultural, costumbres y lengua materna de la persona afectada, adaptando los servicios públicos a dicha realidad.''',
+    explanation:
+        r'''El Principio de Interculturalidad garantiza que la atención judicial y social respete la identidad cultural, costumbres y lengua materna de la persona afectada, adaptando los servicios públicos a dicha realidad.''',
   ),
   Question(
     id: 'pfrh_q777',
     topicId: 'pfrh_t6',
-    text: r'''Según el marco de la Ley N° 30364, ¿qué entidad tiene la responsabilidad de ejecutar de manera inmediata las medidas de protección que prohíben el acercamiento del agresor a la víctima?''',
+    text:
+        r'''Según el marco de la Ley N° 30364, ¿qué entidad tiene la responsabilidad de ejecutar de manera inmediata las medidas de protección que prohíben el acercamiento del agresor a la víctima?''',
     options: [
       r'''El Ministerio de la Mujer y Poblaciones Vulnerables a través de sus promotores sociales.''',
       r'''La Policía Nacional del Perú, encargada del control de la ejecución de las medidas de protección y el auxilio inmediato a la víctima.''',
@@ -7573,12 +8714,14 @@ final List<Question> pfrhQuestions = [
       r'''Los inspectores de fiscalización de las municipalidades distritales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Corresponde a la Policía Nacional del Perú, por mandato de la ley y las resoluciones judiciales, ejecutar, hacer seguimiento y brindar auxilio prioritario a las víctimas que cuentan con medidas de protección.''',
+    explanation:
+        r'''Corresponde a la Policía Nacional del Perú, por mandato de la ley y las resoluciones judiciales, ejecutar, hacer seguimiento y brindar auxilio prioritario a las víctimas que cuentan con medidas de protección.''',
   ),
   Question(
     id: 'pfrh_q778',
     topicId: 'pfrh_t6',
-    text: r'''¿Bajo qué supuesto una denuncia de violencia psicológica puede ser archivada liminarmente por el juez de familia?''',
+    text:
+        r'''¿Bajo qué supuesto una denuncia de violencia psicológica puede ser archivada liminarmente por el juez de familia?''',
     options: [
       r'''Si la víctima no presenta un examen médico forense que acredite daño cerebral orgánico.''',
       r'''Bajo ningún supuesto, pues la ley prohíbe el rechazo liminar de denuncias por violencia contra las mujeres o integrantes del grupo familiar.''',
@@ -7586,12 +8729,14 @@ final List<Question> pfrhQuestions = [
       r'''Si la víctima decide desistir formalmente del proceso mediante firma legalizada ante notario.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Ley N° 30364 prohíbe expresamente el rechazo liminar o el archivo preliminar de la denuncia de violencia, debiendo tramitarse de oficio y evaluarse el riesgo para dictar las medidas cautelares pertinentes.''',
+    explanation:
+        r'''La Ley N° 30364 prohíbe expresamente el rechazo liminar o el archivo preliminar de la denuncia de violencia, debiendo tramitarse de oficio y evaluarse el riesgo para dictar las medidas cautelares pertinentes.''',
   ),
   Question(
     id: 'pfrh_q779',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál es el rol de los Centros Emergencia Mujer (CEM) en el engranaje de la Ley N° 30364?''',
+    text:
+        r'''¿Cuál es el rol de los Centros Emergencia Mujer (CEM) en el engranaje de la Ley N° 30364?''',
     options: [
       r'''Constituir tribunales administrativos especiales con facultad para sancionar con prisión preventiva a los agresores.''',
       r'''Brindar asesoría legal integral, apoyo psicológico y asistencia social gratuita a las víctimas de violencia familiar y de género.''',
@@ -7599,12 +8744,14 @@ final List<Question> pfrhQuestions = [
       r'''Actuar como centros de conciliación voluntaria para parejas en conflicto convivencial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los CEM son servicios públicos especializados del Ministerio de la Mujer que brindan atención multidisciplinaria (legal, psicológica y social) para proteger a las víctimas y acompañarlas en el proceso judicial.''',
+    explanation:
+        r'''Los CEM son servicios públicos especializados del Ministerio de la Mujer que brindan atención multidisciplinaria (legal, psicológica y social) para proteger a las víctimas y acompañarlas en el proceso judicial.''',
   ),
   Question(
     id: 'pfrh_q780',
     topicId: 'pfrh_t6',
-    text: r"""¿Qué se entiende por 'violencia de género' en el contexto de la Ley N° 30364?""",
+    text:
+        r"""¿Qué se entiende por 'violencia de género' en el contexto de la Ley N° 30364?""",
     options: [
       r'''Cualquier agresión física cometida entre parientes masculinos de la misma línea de consanguinidad.''',
       r'''La acción u omisión dirigida contra una mujer por su condición de tal, o que afecte a personas por no cumplir con roles de género preestablecidos socialmente.''',
@@ -7612,12 +8759,14 @@ final List<Question> pfrhQuestions = [
       r'''Todo desacuerdo familiar que surja exclusivamente a causa de la distribución del cuidado de los hijos menores de edad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia de género es aquella que se ejerce sobre las mujeres por el hecho de serlo, sustentada en relaciones de poder asimétricas y estereotipos sociales de subordinación.''',
+    explanation:
+        r'''La violencia de género es aquella que se ejerce sobre las mujeres por el hecho de serlo, sustentada en relaciones de poder asimétricas y estereotipos sociales de subordinación.''',
   ),
   Question(
     id: 'pfrh_q781',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué tipo de violencia se configura cuando se obliga a un integrante del grupo familiar a realizar trabajos sin remuneración o a mendigar bajo amenazas de castigo?''',
+    text:
+        r'''¿Qué tipo de violencia se configura cuando se obliga a un integrante del grupo familiar a realizar trabajos sin remuneración o a mendigar bajo amenazas de castigo?''',
     options: [
       r'''Violencia psicológica por desprecio social.''',
       r'''Violencia económica o patrimonial.''',
@@ -7625,12 +8774,14 @@ final List<Question> pfrhQuestions = [
       r'''Infracción laboral común no tipificada como violencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La explotación económica, la privación de ingresos, el trabajo forzoso intrafamiliar y obligar a mendigar constituyen formas de violencia económica o patrimonial según la Ley N° 30364.''',
+    explanation:
+        r'''La explotación económica, la privación de ingresos, el trabajo forzoso intrafamiliar y obligar a mendigar constituyen formas de violencia económica o patrimonial según la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q782',
     topicId: 'pfrh_t6',
-    text: r"""El principio de 'Intervención Inmediata y Oportuna' exige que los operadores de justicia:""",
+    text:
+        r"""El principio de 'Intervención Inmediata y Oportuna' exige que los operadores de justicia:""",
     options: [
       r'''Esperen a reunir todas las pruebas periciales antes de notificar al agresor.''',
       r'''Actúen sin dilaciones, priorizando la protección de la vida y la integridad de la víctima por encima de formalismos procesales.''',
@@ -7638,12 +8789,14 @@ final List<Question> pfrhQuestions = [
       r'''Remitan el expediente al juzgado de paz no letrado para simplificar la burocracia judicial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Este principio determina que los órganos estatales deben responder de manera urgente ante un pedido de auxilio, dictando medidas provisionales de resguardo antes de dilucidar el fondo penal del asunto.''',
+    explanation:
+        r'''Este principio determina que los órganos estatales deben responder de manera urgente ante un pedido de auxilio, dictando medidas provisionales de resguardo antes de dilucidar el fondo penal del asunto.''',
   ),
   Question(
     id: 'pfrh_q783',
     topicId: 'pfrh_t6',
-    text: r"""¿En qué consiste el derecho a la 'asistencia jurídica gratuita' garantizado por la Ley N° 30364 para las víctimas?""",
+    text:
+        r"""¿En qué consiste el derecho a la 'asistencia jurídica gratuita' garantizado por la Ley N° 30364 para las víctimas?""",
     options: [
       r'''En el patrocinio legal gratuito brindado por el Estado a través de defensores públicos en materia de familia y penal, si la víctima carece de recursos económicos o está en vulnerabilidad.''',
       r'''En la exoneración de impuestos personales a las víctimas por un lapso de cinco años.''',
@@ -7651,12 +8804,14 @@ final List<Question> pfrhQuestions = [
       r'''En el asesoramiento legal voluntario de vecinos o representantes comunitarios sin título profesional.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El Estado garantiza que las víctimas que no cuenten con medios para contratar defensa privada tengan acceso a defensores públicos especializados del Ministerio de Justicia y Derechos Humanos o del Ministerio de la Mujer.''',
+    explanation:
+        r'''El Estado garantiza que las víctimas que no cuenten con medios para contratar defensa privada tengan acceso a defensores públicos especializados del Ministerio de Justicia y Derechos Humanos o del Ministerio de la Mujer.''',
   ),
   Question(
     id: 'pfrh_q784',
     topicId: 'pfrh_t6',
-    text: r'''Un cónyuge sustrae los títulos de propiedad de la vivienda familiar (adquirida antes del matrimonio por su esposa) y los esconde para presionar a su pareja a vender el inmueble y entregarle el dinero. ¿Qué tipo de violencia se discrimina en esta conducta?''',
+    text:
+        r'''Un cónyuge sustrae los títulos de propiedad de la vivienda familiar (adquirida antes del matrimonio por su esposa) y los esconde para presionar a su pareja a vender el inmueble y entregarle el dinero. ¿Qué tipo de violencia se discrimina en esta conducta?''',
     options: [
       r'''Violencia psicológica por intimidación indirecta.''',
       r'''Violencia económica o patrimonial.''',
@@ -7664,12 +8819,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta atípica por tratarse de bienes gananciales en disputa.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La retención de documentos personales o de propiedad con el fin de menoscabar el control del patrimonio o forzar decisiones económicas configura violencia económica o patrimonial.''',
+    explanation:
+        r'''La retención de documentos personales o de propiedad con el fin de menoscabar el control del patrimonio o forzar decisiones económicas configura violencia económica o patrimonial.''',
   ),
   Question(
     id: 'pfrh_q785',
     topicId: 'pfrh_t6',
-    text: r'''Un padre de familia, molesto porque su conviviente decidió retomar sus estudios universitarios, retiene la tarjeta de débito donde se deposita el sueldo de ella y controla cada gasto que realiza, exigiéndole boletas hasta del transporte público. Esta conducta constituye:''',
+    text:
+        r'''Un padre de familia, molesto porque su conviviente decidió retomar sus estudios universitarios, retiene la tarjeta de débito donde se deposita el sueldo de ella y controla cada gasto que realiza, exigiéndole boletas hasta del transporte público. Esta conducta constituye:''',
     options: [
       r'''Violencia psicológica por control de conducta social.''',
       r'''Violencia económica o patrimonial.''',
@@ -7677,12 +8834,14 @@ final List<Question> pfrhQuestions = [
       r'''Coacción civil de carácter administrativo no sancionable.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El control restrictivo sobre el dinero propio de la víctima, la retención de tarjetas bancarias y la fiscalización humillante del gasto propio constituyen violencia económica.''',
+    explanation:
+        r'''El control restrictivo sobre el dinero propio de la víctima, la retención de tarjetas bancarias y la fiscalización humillante del gasto propio constituyen violencia económica.''',
   ),
   Question(
     id: 'pfrh_q786',
     topicId: 'pfrh_t6',
-    text: r"""Si un padrastro golpea a su hijastro menor de edad causándole hematomas en la espalda, y al mismo tiempo lo insulta diciéndole que 'no sirve para nada', ¿cómo deben tipificarse estos hechos según la Ley N° 30364?""",
+    text:
+        r"""Si un padrastro golpea a su hijastro menor de edad causándole hematomas en la espalda, y al mismo tiempo lo insulta diciéndole que 'no sirve para nada', ¿cómo deben tipificarse estos hechos según la Ley N° 30364?""",
     options: [
       r'''Únicamente como violencia física, absorbiendo los insultos en la agresión corporal.''',
       r'''Como violencia física y violencia psicológica de forma concurrente, debiendo sancionarse e investigarse ambas tipificaciones.''',
@@ -7690,12 +8849,14 @@ final List<Question> pfrhQuestions = [
       r'''Como conflicto de corrección familiar amparado en el derecho de corrección parental.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Ley N° 30364 reconoce que un mismo evento puede involucrar múltiples tipos de violencia (física y psicológica simultáneamente), las cuales deben ser tipificadas y atendidas en su conjunto.''',
+    explanation:
+        r'''La Ley N° 30364 reconoce que un mismo evento puede involucrar múltiples tipos de violencia (física y psicológica simultáneamente), las cuales deben ser tipificadas y atendidas en su conjunto.''',
   ),
   Question(
     id: 'pfrh_q787',
     topicId: 'pfrh_t6',
-    text: r'''Una persona mayor de edad reside de forma temporal en casa de un amigo. El dueño de la vivienda, tras una discusión doméstica por las tareas del hogar, agrede verbal y psicológicamente a su huésped. ¿Es aplicable el marco de protección de la Ley N° 30364 en este caso?''',
+    text:
+        r'''Una persona mayor de edad reside de forma temporal en casa de un amigo. El dueño de la vivienda, tras una discusión doméstica por las tareas del hogar, agrede verbal y psicológicamente a su huésped. ¿Es aplicable el marco de protección de la Ley N° 30364 en este caso?''',
     options: [
       r'''Sí, porque habitan en el mismo hogar, lo cual es suficiente según la ley para considerarse parte del grupo familiar.''',
       r'''No, porque entre ambos no existe un vínculo familiar consanguíneo, de afinidad o una relación de pareja previa, tratándose de un conflicto civil común.''',
@@ -7703,12 +8864,14 @@ final List<Question> pfrhQuestions = [
       r'''No, a menos que el huésped pague una renta formal que configure una relación de hospedaje contractual.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aunque habiten bajo el mismo techo, la ley exige que exista un vínculo familiar, de parentesco o relación afectiva previa (como ex parejas). La mera cohabitación amistosa temporal sin vínculo familiar o afectivo no califica como violencia del grupo familiar.''',
+    explanation:
+        r'''Aunque habiten bajo el mismo techo, la ley exige que exista un vínculo familiar, de parentesco o relación afectiva previa (como ex parejas). La mera cohabitación amistosa temporal sin vínculo familiar o afectivo no califica como violencia del grupo familiar.''',
   ),
   Question(
     id: 'pfrh_q788',
     topicId: 'pfrh_t6',
-    text: r'''Una mujer sufre maltrato verbal constante por parte de la actual esposa de su exconviviente en la vía pública. ¿Se tipifica esta conducta dentro de la Ley N° 30364?''',
+    text:
+        r'''Una mujer sufre maltrato verbal constante por parte de la actual esposa de su exconviviente en la vía pública. ¿Se tipifica esta conducta dentro de la Ley N° 30364?''',
     options: [
       r'''Sí, porque la actual esposa califica como pariente afín en segundo grado del exconviviente.''',
       r"""No, porque entre la víctima y la actual esposa de su exconviviente no existe un vínculo familiar de consanguinidad o afinidad que configure 'grupo familiar' según la ley.""",
@@ -7716,12 +8879,14 @@ final List<Question> pfrhQuestions = [
       r'''No, a menos que compartan el mismo domicilio o tengan hijos en común.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ley delimita los sujetos del grupo familiar. La relación entre la expareja de un hombre y la actual esposa de este no encuadra dentro de los grados de afinidad ni consanguineidad que define la ley, por lo que se trata de un conflicto civil o penal común.''',
+    explanation:
+        r'''La ley delimita los sujetos del grupo familiar. La relación entre la expareja de un hombre y la actual esposa de este no encuadra dentro de los grados de afinidad ni consanguineidad que define la ley, por lo que se trata de un conflicto civil o penal común.''',
   ),
   Question(
     id: 'pfrh_q789',
     topicId: 'pfrh_t6',
-    text: r'''Un sujeto amenaza de muerte a su hermana mayor por vía de mensajes telefónicos para obligarla a desistir de la custodia de su madre anciana. ¿Qué tipo de violencia se configura según la tipificación de la Ley N° 30364?''',
+    text:
+        r'''Un sujeto amenaza de muerte a su hermana mayor por vía de mensajes telefónicos para obligarla a desistir de la custodia de su madre anciana. ¿Qué tipo de violencia se configura según la tipificación de la Ley N° 30364?''',
     options: [
       r'''Violencia económica por afectar el cuidado de un dependiente.''',
       r'''Violencia psicológica.''',
@@ -7729,12 +8894,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia física frustrada.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las amenazas de muerte, la intimidación y la coacción orientadas a causar sufrimiento moral o forzar conductas mediante el temor configuran violencia psicológica.''',
+    explanation:
+        r'''Las amenazas de muerte, la intimidación y la coacción orientadas a causar sufrimiento moral o forzar conductas mediante el temor configuran violencia psicológica.''',
   ),
   Question(
     id: 'pfrh_q790',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué distingue la tipificación de violencia sexual de la violencia psicológica en un escenario de pareja donde se imponen tocamientos indeseados?''',
+    text:
+        r'''¿Qué distingue la tipificación de violencia sexual de la violencia psicológica en un escenario de pareja donde se imponen tocamientos indeseados?''',
     options: [
       r'''La violencia sexual implica actos de connotación sexual realizados mediante violencia física o coacción sin consentimiento, mientras que la psicológica ataca la integridad emocional sin contacto de dicha índole.''',
       r'''Ambas son idénticas ante la ley y se sancionan con las mismas medidas de protección sin distinción procesal.''',
@@ -7742,12 +8909,14 @@ final List<Question> pfrhQuestions = [
       r'''La violencia psicológica absorbe siempre a la violencia sexual por ser de carácter emocional dominante.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La violencia sexual involucra la imposición de conductas de naturaleza sexual no deseadas, mientras que la violencia psicológica daña la salud emocional a través de la humillación, el insulto o el aislamiento.''',
+    explanation:
+        r'''La violencia sexual involucra la imposición de conductas de naturaleza sexual no deseadas, mientras que la violencia psicológica daña la salud emocional a través de la humillación, el insulto o el aislamiento.''',
   ),
   Question(
     id: 'pfrh_q791',
     topicId: 'pfrh_t6',
-    text: r'''Si un hombre de 40 años desaloja a la fuerza a su tío anciano de 80 años de la habitación que este ocupa en el hogar familiar, tirando sus enseres a la calle con violencia, ¿cómo se califica esta acción?''',
+    text:
+        r'''Si un hombre de 40 años desaloja a la fuerza a su tío anciano de 80 años de la habitación que este ocupa en el hogar familiar, tirando sus enseres a la calle con violencia, ¿cómo se califica esta acción?''',
     options: [
       r'''Conflicto sucesorio civil que debe ser resuelto ante un árbitro o notario público.''',
       r'''Violencia económica o patrimonial (pérdida del derecho a la vivienda) y violencia física, en el marco del grupo familiar.''',
@@ -7755,12 +8924,14 @@ final List<Question> pfrhQuestions = [
       r'''Derecho de propiedad legítimo si el sobrino es el titular catastral del predio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Desalojar a la fuerza a un familiar directo del hogar y destruir o botar sus pertenencias constituye violencia física y económica o patrimonial dentro de los sujetos protegidos por la Ley N° 30364 (sobrino y tío son tercer grado de consanguinidad).''',
+    explanation:
+        r'''Desalojar a la fuerza a un familiar directo del hogar y destruir o botar sus pertenencias constituye violencia física y económica o patrimonial dentro de los sujetos protegidos por la Ley N° 30364 (sobrino y tío son tercer grado de consanguinidad).''',
   ),
   Question(
     id: 'pfrh_q792',
     topicId: 'pfrh_t6',
-    text: r'''La trabajadora del hogar de un domicilio es agredida físicamente por el hijo de sus empleadores. ¿Es aplicable la Ley N° 30364 en este caso bajo la tipificación de violencia familiar?''',
+    text:
+        r'''La trabajadora del hogar de un domicilio es agredida físicamente por el hijo de sus empleadores. ¿Es aplicable la Ley N° 30364 en este caso bajo la tipificación de violencia familiar?''',
     options: [
       r'''Sí, porque la trabajadora del hogar reside de forma permanente en el domicilio y califica como integrante del grupo familiar.''',
       r'''No, porque la relación de la trabajadora del hogar con los empleadores y sus parientes es de carácter laboral y contractual, estando excluida de esta ley, debiendo canalizarse por la vía penal común.''',
@@ -7768,12 +8939,14 @@ final List<Question> pfrhQuestions = [
       r'''No, a menos que la trabajadora sea menor de edad y cuente con el permiso firmado de sus padres.''',
     ],
     correctAnswer: 1,
-    explanation: r"""La ley excluye expresamente de los 'integrantes del grupo familiar' a las personas que habitan en el mismo hogar bajo relaciones de carácter laboral o contractual, sin perjuicio de la denuncia penal común.""",
+    explanation:
+        r"""La ley excluye expresamente de los 'integrantes del grupo familiar' a las personas que habitan en el mismo hogar bajo relaciones de carácter laboral o contractual, sin perjuicio de la denuncia penal común.""",
   ),
   Question(
     id: 'pfrh_q793',
     topicId: 'pfrh_t6',
-    text: r'''Un hombre se niega a pagar los gastos médicos indispensables de su cónyuge convaleciente, a pesar de administrar en exclusiva las cuentas bancarias compartidas, provocando el agravamiento de la salud de ella. ¿Qué tipo de violencia se configura?''',
+    text:
+        r'''Un hombre se niega a pagar los gastos médicos indispensables de su cónyuge convaleciente, a pesar de administrar en exclusiva las cuentas bancarias compartidas, provocando el agravamiento de la salud de ella. ¿Qué tipo de violencia se configura?''',
     options: [
       r'''Violencia psicológica pasiva por abandono emocional voluntario.''',
       r'''Violencia económica o patrimonial con repercusión en la integridad física.''',
@@ -7781,12 +8954,14 @@ final List<Question> pfrhQuestions = [
       r'''Negligencia médica civil atribuible a los profesionales de la salud.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La privación de los recursos económicos necesarios para la subsistencia y el cuidado de la salud de un integrante del grupo familiar constituye violencia económica o patrimonial según la tipificación de la Ley N° 30364.''',
+    explanation:
+        r'''La privación de los recursos económicos necesarios para la subsistencia y el cuidado de la salud de un integrante del grupo familiar constituye violencia económica o patrimonial según la tipificación de la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q794',
     topicId: 'pfrh_t6',
-    text: r"""¿Qué distingue jurídicamente una 'medida de protección' de una 'sanción penal' en el contexto de la Ley N° 30364?""",
+    text:
+        r"""¿Qué distingue jurídicamente una 'medida de protección' de una 'sanción penal' en el contexto de la Ley N° 30364?""",
     options: [
       r'''La medida de protección busca neutralizar el riesgo inmediato y resguardar a la víctima, mientras que la sanción penal determina la responsabilidad penal y la pena del agresor.''',
       r'''Las medidas de protección solo las dicta la policía y las sanciones penales las dicta el Ministerio de la Mujer.''',
@@ -7794,12 +8969,14 @@ final List<Question> pfrhQuestions = [
       r'''No existe diferencia, ya que ambas persiguen privar de la libertad de forma inmediata al agresor.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Las medidas de protección (Juzgado de Familia) son preventivas y urgentes para garantizar la seguridad de la víctima; las sanciones penales (Juzgado Penal) se emiten tras un juicio donde se demuestra la culpabilidad del procesado.''',
+    explanation:
+        r'''Las medidas de protección (Juzgado de Familia) son preventivas y urgentes para garantizar la seguridad de la víctima; las sanciones penales (Juzgado Penal) se emiten tras un juicio donde se demuestra la culpabilidad del procesado.''',
   ),
   Question(
     id: 'pfrh_q795',
     topicId: 'pfrh_t6',
-    text: r"""Durante un proceso judicial por violencia familiar, el agresor intenta justificar sus agresiones verbales alegando que 'actuó bajo emoción violenta por celos justificados ante una supuesta infidelidad'. En el marco de la Ley N° 30364, este argumento de la defensa representa:""",
+    text:
+        r"""Durante un proceso judicial por violencia familiar, el agresor intenta justificar sus agresiones verbales alegando que 'actuó bajo emoción violenta por celos justificados ante una supuesta infidelidad'. En el marco de la Ley N° 30364, este argumento de la defensa representa:""",
     options: [
       r'''Una causa de atenuación de la responsabilidad civil y penal.''',
       r'''Un distractor de justificación estereotipada que carece de validez legal y ratifica el sesgo de violencia de género.''',
@@ -7807,12 +8984,14 @@ final List<Question> pfrhQuestions = [
       r'''Un supuesto que obliga al archivo de la causa para iniciar un proceso de divorcio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ley y el enfoque de género prohíben justificar la violencia bajo supuestos celos, control o conductas de la víctima, considerándolos estereotipos que no eximen ni atenúan la responsabilidad del agresor.''',
+    explanation:
+        r'''La ley y el enfoque de género prohíben justificar la violencia bajo supuestos celos, control o conductas de la víctima, considerándolos estereotipos que no eximen ni atenúan la responsabilidad del agresor.''',
   ),
   Question(
     id: 'pfrh_q796',
     topicId: 'pfrh_t6',
-    text: r'''Un hermano vende sin el consentimiento de su hermana el automóvil que ella utiliza para realizar delivery, el cual estaba registrado a nombre de ambos tras una herencia. ¿Qué tipo de violencia se tipifica?''',
+    text:
+        r'''Un hermano vende sin el consentimiento de su hermana el automóvil que ella utiliza para realizar delivery, el cual estaba registrado a nombre de ambos tras una herencia. ¿Qué tipo de violencia se tipifica?''',
     options: [
       r'''Violencia psicológica por causar estrés financiero incidental.''',
       r'''Violencia económica o patrimonial.''',
@@ -7820,12 +8999,14 @@ final List<Question> pfrhQuestions = [
       r'''Apropiación ilícita común que solo se tramita si hay violencia física de por medio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Disponer indebidamente, ocultar o vender bienes de propiedad común o de la víctima que afecten su sustento económico o herramientas de trabajo califica como violencia económica o patrimonial.''',
+    explanation:
+        r'''Disponer indebidamente, ocultar o vender bienes de propiedad común o de la víctima que afecten su sustento económico o herramientas de trabajo califica como violencia económica o patrimonial.''',
   ),
   Question(
     id: 'pfrh_q797',
     topicId: 'pfrh_t6',
-    text: r'''Un padre amenaza a su hija de 18 años con dejar de pagar sus estudios superiores universitarios si ella continúa viéndose con su novio actual. ¿Bajo qué supuesto de violencia se encuadra esta situación?''',
+    text:
+        r'''Un padre amenaza a su hija de 18 años con dejar de pagar sus estudios superiores universitarios si ella continúa viéndose con su novio actual. ¿Bajo qué supuesto de violencia se encuadra esta situación?''',
     options: [
       r'''Coacción parental lícita derivada de la patria potestad.''',
       r'''Violencia psicológica e incipiente violencia económica (chantaje financiero).''',
@@ -7833,12 +9014,14 @@ final List<Question> pfrhQuestions = [
       r'''Intromisión ilegítima sancionable únicamente por la vía penal juvenil.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El uso de la dependencia económica para controlar las decisiones personales, la libertad de tránsito o asociación de un miembro del grupo familiar configura violencia psicológica mediante el chantaje o coacción económica.''',
+    explanation:
+        r'''El uso de la dependencia económica para controlar las decisiones personales, la libertad de tránsito o asociación de un miembro del grupo familiar configura violencia psicológica mediante el chantaje o coacción económica.''',
   ),
   Question(
     id: 'pfrh_q798',
     topicId: 'pfrh_t6',
-    text: r'''Un conviviente rompe sistemáticamente las cartas de los familiares de su pareja antes de que ella las lea, con el fin de convencerla de que su familia la ha olvidado y mantenerla aislada. ¿Cómo se tipifica esta conducta?''',
+    text:
+        r'''Un conviviente rompe sistemáticamente las cartas de los familiares de su pareja antes de que ella las lea, con el fin de convencerla de que su familia la ha olvidado y mantenerla aislada. ¿Cómo se tipifica esta conducta?''',
     options: [
       r'''Violencia económica por destrucción de correspondencia material.''',
       r'''Violencia psicológica mediante aislamiento afectivo.''',
@@ -7846,12 +9029,14 @@ final List<Question> pfrhQuestions = [
       r'''Falta contra el patrimonio en la modalidad de daño simple.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Manipular la comunicación, ocultar correspondencia y aislar intencionalmente a la víctima de sus redes de soporte social constituye una modalidad grave de violencia psicológica.''',
+    explanation:
+        r'''Manipular la comunicación, ocultar correspondencia y aislar intencionalmente a la víctima de sus redes de soporte social constituye una modalidad grave de violencia psicológica.''',
   ),
   Question(
     id: 'pfrh_q799',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué tipificación corresponde a la conducta de un familiar que obliga a un anciano a firmar un poder amplio para disponer de sus cuentas de ahorros bajo la amenaza de dejar de alimentarlo o recluirlo en un asilo abandonado?''',
+    text:
+        r'''¿Qué tipificación corresponde a la conducta de un familiar que obliga a un anciano a firmar un poder amplio para disponer de sus cuentas de ahorros bajo la amenaza de dejar de alimentarlo o recluirlo en un asilo abandonado?''',
     options: [
       r'''Delito civil de nulidad de acto jurídico únicamente.''',
       r'''Violencia económica o patrimonial y violencia psicológica, en agravio de un adulto mayor.''',
@@ -7859,12 +9044,14 @@ final List<Question> pfrhQuestions = [
       r'''Desacuerdo ordinario en la gestión de recursos de personas dependientes.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Coaccionar a un adulto mayor para apoderarse de sus bienes o ingresos financieros mediante amenazas de abandono o privación de alimentos califica como violencia económica y psicológica de acuerdo con la Ley N° 30364.''',
+    explanation:
+        r'''Coaccionar a un adulto mayor para apoderarse de sus bienes o ingresos financieros mediante amenazas de abandono o privación de alimentos califica como violencia económica y psicológica de acuerdo con la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q800',
     topicId: 'pfrh_t6',
-    text: r'''Un sujeto ejerce violencia física contra su exconviviente en la casa de esta última. El agresor sostiene que, al haberse disuelto el vínculo de convivencia hace dos años, la agresión no califica como violencia familiar según la Ley N° 30364. ¿Es correcto este argumento?''',
+    text:
+        r'''Un sujeto ejerce violencia física contra su exconviviente en la casa de esta última. El agresor sostiene que, al haberse disuelto el vínculo de convivencia hace dos años, la agresión no califica como violencia familiar según la Ley N° 30364. ¿Es correcto este argumento?''',
     options: [
       r'''Sí, porque la ley solo protege a quienes mantienen una relación de convivencia vigente y cohabitan.''',
       r'''No, porque los exconvivientes están expresamente incluidos por la ley como sujetos de protección, sin importar el tiempo transcurrido desde la separación.''',
@@ -7872,12 +9059,14 @@ final List<Question> pfrhQuestions = [
       r'''No, a menos que tengan hijos en común que sirvan como nexo familiar activo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los ex cónyuges y ex convivientes están expresamente tipificados como integrantes del grupo familiar a efectos de la protección contra la violencia, con el fin de evitar agresiones de represalia tras la ruptura.''',
+    explanation:
+        r'''Los ex cónyuges y ex convivientes están expresamente tipificados como integrantes del grupo familiar a efectos de la protección contra la violencia, con el fin de evitar agresiones de represalia tras la ruptura.''',
   ),
   Question(
     id: 'pfrh_q801',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué tipo de violencia se configura cuando un progenitor ridiculiza públicamente a su hijo adolescente por sus rasgos físicos o dificultades de aprendizaje frente a otros familiares y amigos?''',
+    text:
+        r'''¿Qué tipo de violencia se configura cuando un progenitor ridiculiza públicamente a su hijo adolescente por sus rasgos físicos o dificultades de aprendizaje frente a otros familiares y amigos?''',
     options: [
       r'''Disciplina formativa severa permitida en el ámbito privado.''',
       r'''Violencia psicológica.''',
@@ -7885,12 +9074,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia económica indirecta al afectar la autoestima del menor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Ridiculizar, desvalorizar de forma sistemática y humillar públicamente a un menor de edad por parte de un progenitor lesiona la integridad emocional y la autoestima del menor, configurando violencia psicológica.''',
+    explanation:
+        r'''Ridiculizar, desvalorizar de forma sistemática y humillar públicamente a un menor de edad por parte de un progenitor lesiona la integridad emocional y la autoestima del menor, configurando violencia psicológica.''',
   ),
   Question(
     id: 'pfrh_q802',
     topicId: 'pfrh_t6',
-    text: r"""Si durante una discusión entre hermanos, uno de ellos empuja al otro haciéndolo caer y provocándole una fractura de muñeca, pero el agresor argumenta que 'no tuvo la intención de causar una lesión grave', ¿qué determina la tipificación bajo la Ley N° 30364?""",
+    text:
+        r"""Si durante una discusión entre hermanos, uno de ellos empuja al otro haciéndolo caer y provocándole una fractura de muñeca, pero el agresor argumenta que 'no tuvo la intención de causar una lesión grave', ¿qué determina la tipificación bajo la Ley N° 30364?""",
     options: [
       r'''Se descarta la violencia familiar por tratarse de un accidente fortuito sin dolo de lesionar.''',
       r'''Se tipifica como violencia física, puesto que el daño corporal es real y objetivo, derivado de una acción hostil en el ámbito de la relación familiar.''',
@@ -7898,12 +9089,14 @@ final List<Question> pfrhQuestions = [
       r'''Se califica como violencia psicológica por el trauma posterior de la fractura.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La falta de intención homicida o de causar lesiones severas no anula la existencia de violencia física. Todo acto de fuerza que altere la integridad corporal de un miembro de la familia constituye violencia física.''',
+    explanation:
+        r'''La falta de intención homicida o de causar lesiones severas no anula la existencia de violencia física. Todo acto de fuerza que altere la integridad corporal de un miembro de la familia constituye violencia física.''',
   ),
   Question(
     id: 'pfrh_q803',
     topicId: 'pfrh_t6',
-    text: r'''Si un cónyuge impide a su esposa buscar empleo o postular a capacitaciones profesionales bajo la amenaza de divorcio y pérdida de la custodia de sus hijos, ¿qué tipo de violencia se está discriminando?''',
+    text:
+        r'''Si un cónyuge impide a su esposa buscar empleo o postular a capacitaciones profesionales bajo la amenaza de divorcio y pérdida de la custodia de sus hijos, ¿qué tipo de violencia se está discriminando?''',
     options: [
       r'''Violencia psicológica mediante el control y coacción a la libertad individual.''',
       r'''Violencia económica simple por inactividad laboral lícita.''',
@@ -7911,12 +9104,14 @@ final List<Question> pfrhQuestions = [
       r'''Conflicto civil de intereses sobre el cuidado del hogar común.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Limitar el desarrollo profesional, prohibir el trabajo o estudio y chantajear con la pérdida de los hijos para subordinar a la pareja es una manifestación clara de violencia psicológica y restricción a la libertad personal.''',
+    explanation:
+        r'''Limitar el desarrollo profesional, prohibir el trabajo o estudio y chantajear con la pérdida de los hijos para subordinar a la pareja es una manifestación clara de violencia psicológica y restricción a la libertad personal.''',
   ),
   Question(
     id: 'pfrh_q804',
     topicId: 'pfrh_t6',
-    text: r"""Mariana se dedica a realizar pastelería artística desde casa y compró una batidora industrial y un horno con sus propios ahorros. Su esposo Carlos, molesto por los horarios de trabajo de ella, aprovecha la ausencia de Mariana para regalar estos artefactos a una vecina lejana, manifestándole a Mariana que 'así volverá a dedicarse exclusivamente a las tareas del hogar'. Mariana denuncia el hecho. ¿Cómo tipifica la Ley N° 30364 la conducta de Carlos?""",
+    text:
+        r"""Mariana se dedica a realizar pastelería artística desde casa y compró una batidora industrial y un horno con sus propios ahorros. Su esposo Carlos, molesto por los horarios de trabajo de ella, aprovecha la ausencia de Mariana para regalar estos artefactos a una vecina lejana, manifestándole a Mariana que 'así volverá a dedicarse exclusivamente a las tareas del hogar'. Mariana denuncia el hecho. ¿Cómo tipifica la Ley N° 30364 la conducta de Carlos?""",
     options: [
       r'''Un acto de desprendimiento y generosidad vecinal no sancionable en la vía judicial.''',
       r'''Violencia económica o patrimonial, al privar de manera deliberada a la víctima de sus herramientas de trabajo y sustento económico autónomo.''',
@@ -7924,12 +9119,14 @@ final List<Question> pfrhQuestions = [
       r'''Un delito de hurto simple entre cónyuges que se encuentra exento de responsabilidad penal por ley ordinaria.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Despojar a la pareja de sus herramientas de trabajo indispensables para su desarrollo autónomo constituye violencia económica o patrimonial bajo la Ley N° 30364. La ley prohíbe la conciliación y no admite exenciones basadas en el matrimonio para estas conductas.''',
+    explanation:
+        r'''Despojar a la pareja de sus herramientas de trabajo indispensables para su desarrollo autónomo constituye violencia económica o patrimonial bajo la Ley N° 30364. La ley prohíbe la conciliación y no admite exenciones basadas en el matrimonio para estas conductas.''',
   ),
   Question(
     id: 'pfrh_q805',
     topicId: 'pfrh_t6',
-    text: r'''Sofía y Alberto conviven en el segundo piso de la casa de los padres de Alberto. Durante las discusiones, Alberto le grita a Sofía insultos degradantes y la amenaza con botarla a la calle a altas horas de la noche con su bebé de meses, sabiendo que Sofía no tiene familiares en esa ciudad. Sofía no presenta lesiones corporales, pero muestra una severa afectación emocional acreditada por un informe psicológico. En esta situación, ¿qué tipo de violencia se configura y qué medida de protección corresponde?''',
+    text:
+        r'''Sofía y Alberto conviven en el segundo piso de la casa de los padres de Alberto. Durante las discusiones, Alberto le grita a Sofía insultos degradantes y la amenaza con botarla a la calle a altas horas de la noche con su bebé de meses, sabiendo que Sofía no tiene familiares en esa ciudad. Sofía no presenta lesiones corporales, pero muestra una severa afectación emocional acreditada por un informe psicológico. En esta situación, ¿qué tipo de violencia se configura y qué medida de protección corresponde?''',
     options: [
       r'''Violencia física frustrada; corresponde obligar a Sofía a retornar a su ciudad natal de forma inmediata.''',
       r'''Violencia psicológica; corresponde ordenar el retiro del agresor (Alberto) del hogar común y prohibirle cualquier forma de acoso o acercamiento a Sofía.''',
@@ -7937,12 +9134,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia patrimonial; corresponde la división inmediata de los bienes de la casa de los suegros de Sofía.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia psicológica no requiere daño físico para ser sancionada. Las medidas de protección idóneas incluyen el retiro del agresor de la vivienda compartida y la prohibición de comunicación y acercamiento para proteger la integridad mental y seguridad de Sofía y su menor hijo.''',
+    explanation:
+        r'''La violencia psicológica no requiere daño físico para ser sancionada. Las medidas de protección idóneas incluyen el retiro del agresor de la vivienda compartida y la prohibición de comunicación y acercamiento para proteger la integridad mental y seguridad de Sofía y su menor hijo.''',
   ),
   Question(
     id: 'pfrh_q806',
     topicId: 'pfrh_t6',
-    text: r'''Doña Julia, una viuda de 79 años, vive con su nieto Ricardo. Ricardo se ha apropiado de la tarjeta de débito donde Julia percibe su pensión de viudez, impidiéndole comprar sus medicamentos para la diabetes. Cuando Julia le reclama, Ricardo la encierra en su habitación por días, alegando que es por su propia seguridad debido a su senilidad. Vecinos alertan a las autoridades. ¿Cómo debe catalogarse esta casuística?''',
+    text:
+        r'''Doña Julia, una viuda de 79 años, vive con su nieto Ricardo. Ricardo se ha apropiado de la tarjeta de débito donde Julia percibe su pensión de viudez, impidiéndole comprar sus medicamentos para la diabetes. Cuando Julia le reclama, Ricardo la encierra en su habitación por días, alegando que es por su propia seguridad debido a su senilidad. Vecinos alertan a las autoridades. ¿Cómo debe catalogarse esta casuística?''',
     options: [
       r'''Ejercicio responsable del derecho de cuidado y tutela de personas de la tercera edad con demencia senil.''',
       r'''Violencia física, psicológica y económica o patrimonial contra un miembro vulnerable del grupo familiar, debiendo dictarse medidas de protección urgentes.''',
@@ -7950,12 +9149,14 @@ final List<Question> pfrhQuestions = [
       r'''Disputa menor por recursos económicos que se brinda como tolerada por el parentesco consanguíneo de Ricardo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Apropiarse de la pensión de un adulto mayor, impedirle el acceso a salud/medicinas y encerrarlo configura múltiples formas de violencia familiar amparadas por la Ley N° 30364, la cual prioriza la protección de adultos mayores frente a abusos de sus parientes directos.''',
+    explanation:
+        r'''Apropiarse de la pensión de un adulto mayor, impedirle el acceso a salud/medicinas y encerrarlo configura múltiples formas de violencia familiar amparadas por la Ley N° 30364, la cual prioriza la protección de adultos mayores frente a abusos de sus parientes directos.''',
   ),
   Question(
     id: 'pfrh_q807',
     topicId: 'pfrh_t6',
-    text: r'''Tras el fallecimiento de sus padres, los hermanos Elena y Javier comparten la vivienda heredada. Javier desea vender el inmueble para pagar sus deudas, pero Elena se niega porque no tiene otro lugar donde vivir. En represalia, Javier destruye la puerta del cuarto de Elena, tira su ropa a la basura y le corta el agua y la luz del predio de forma constante. Elena decide solicitar protección legal. ¿Cómo encuadra este caso dentro de la Ley N° 30364?''',
+    text:
+        r'''Tras el fallecimiento de sus padres, los hermanos Elena y Javier comparten la vivienda heredada. Javier desea vender el inmueble para pagar sus deudas, pero Elena se niega porque no tiene otro lugar donde vivir. En represalia, Javier destruye la puerta del cuarto de Elena, tira su ropa a la basura y le corta el agua y la luz del predio de forma constante. Elena decide solicitar protección legal. ¿Cómo encuadra este caso dentro de la Ley N° 30364?''',
     options: [
       r'''Es un litigio puramente civil de división y partición de herencia que excluye las medidas de protección de la Ley N° 30364.''',
       r'''Constituye un caso de violencia psicológica y económica o patrimonial entre integrantes del grupo familiar, resultando aplicables las medidas de protección.''',
@@ -7963,12 +9164,14 @@ final List<Question> pfrhQuestions = [
       r'''Se tipifica como violencia física por el uso de fuerza destructora para vulnerar el mobiliario del predio.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El parentesco entre hermanos (segundo grado de consanguinidad) y el domicilio común configuran el marco del grupo familiar. Los actos de Javier dirigidos a despojar a su hermana de su vivienda y servicios esenciales mediante la hostilidad configuran violencia económica y psicológica.''',
+    explanation:
+        r'''El parentesco entre hermanos (segundo grado de consanguinidad) y el domicilio común configuran el marco del grupo familiar. Los actos de Javier dirigidos a despojar a su hermana de su vivienda y servicios esenciales mediante la hostilidad configuran violencia económica y psicológica.''',
   ),
   Question(
     id: 'pfrh_q808',
     topicId: 'pfrh_t6',
-    text: r'''En un aula de educación secundaria, Matías difunde rumores falsos e imágenes íntimas manipuladas digitalmente de su compañera y exenamorada Andrea, con el objetivo de humillarla ante el grupo. Los demás estudiantes la aíslan y Andrea comienza a faltar a clases por crisis de ansiedad. Los padres de Andrea denuncian el hecho. ¿Qué valoración técnico-legal se debe aplicar a este caso?''',
+    text:
+        r'''En un aula de educación secundaria, Matías difunde rumores falsos e imágenes íntimas manipuladas digitalmente de su compañera y exenamorada Andrea, con el objetivo de humillarla ante el grupo. Los demás estudiantes la aíslan y Andrea comienza a faltar a clases por crisis de ansiedad. Los padres de Andrea denuncian el hecho. ¿Qué valoración técnico-legal se debe aplicar a este caso?''',
     options: [
       r'''Es un problema de indisciplina escolar menor que debe ser resuelto por el tutor del aula mediante una disculpa firmada por Matías.''',
       r'''Constituye violencia de género en el ámbito escolar que afecta la salud psicológica de Andrea, siendo aplicable la ley para disponer medidas de protección a favor de la menor.''',
@@ -7976,12 +9179,14 @@ final List<Question> pfrhQuestions = [
       r'''Debe tipificarse como una disputa sentimental de pareja que requiere la renuncia de Andrea al año escolar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las relaciones afectivas adolescentes (ex parejas) se encuentran tuteladas por la Ley N° 30364. La difusión de contenidos para dañar la reputación y salud mental de la menor es violencia de género y psicológica, requiriendo intervención protectora del sistema de justicia y la escuela.''',
+    explanation:
+        r'''Las relaciones afectivas adolescentes (ex parejas) se encuentran tuteladas por la Ley N° 30364. La difusión de contenidos para dañar la reputación y salud mental de la menor es violencia de género y psicológica, requiriendo intervención protectora del sistema de justicia y la escuela.''',
   ),
   Question(
     id: 'pfrh_q809',
     topicId: 'pfrh_t6',
-    text: r"""Un agricultor de una localidad rural impide que su hija de 11 años asista a la escuela primaria, obligándola a trabajar diariamente en el pastoreo de ganado y las tareas de la chacra de sol a sol, bajo la justificación de que 'las mujeres en el campo no necesitan estudiar, solo servir a su familia'. Un maestro de la zona reporta la situación. ¿Qué tipo de violencia familiar y vulneración de derechos se configura?""",
+    text:
+        r"""Un agricultor de una localidad rural impide que su hija de 11 años asista a la escuela primaria, obligándola a trabajar diariamente en el pastoreo de ganado y las tareas de la chacra de sol a sol, bajo la justificación de que 'las mujeres en el campo no necesitan estudiar, solo servir a su familia'. Un maestro de la zona reporta la situación. ¿Qué tipo de violencia familiar y vulneración de derechos se configura?""",
     options: [
       r'''Una manifestación de violencia económica o patrimonial y psicológica basada en discriminación de género en el seno familiar.''',
       r'''Un derecho consuetudinario agrario lícito no interferido por las leyes estatales de protección.''',
@@ -7989,12 +9194,14 @@ final List<Question> pfrhQuestions = [
       r'''Una falta administrativa menor que prescribe automáticamente al cumplir la menor la mayoría de edad.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Forzar el trabajo infantil, negar el derecho a la educación y justificarlo bajo estereotipos de subordinación femenina constituye violencia económica, psicológica y vulneración del interés superior de la niña dentro del ámbito del grupo familiar.''',
+    explanation:
+        r'''Forzar el trabajo infantil, negar el derecho a la educación y justificarlo bajo estereotipos de subordinación femenina constituye violencia económica, psicológica y vulneración del interés superior de la niña dentro del ámbito del grupo familiar.''',
   ),
   Question(
     id: 'pfrh_q810',
     topicId: 'pfrh_t6',
-    text: r'''Laura decide terminar la relación de convivencia con Esteban por incompatibilidad de caracteres. Esteban, quien es el propietario del departamento donde viven, le dice a Laura que si decide marcharse, él no le permitirá llevarse su ropa, sus joyas familiares ni la laptop personal que ella utiliza para su trabajo independiente. Ante el temor de perder sus pertenencias, Laura se ve forzada a permanecer con él. ¿Cómo califica jurídicamente la actitud de Esteban?''',
+    text:
+        r'''Laura decide terminar la relación de convivencia con Esteban por incompatibilidad de caracteres. Esteban, quien es el propietario del departamento donde viven, le dice a Laura que si decide marcharse, él no le permitirá llevarse su ropa, sus joyas familiares ni la laptop personal que ella utiliza para su trabajo independiente. Ante el temor de perder sus pertenencias, Laura se ve forzada a permanecer con él. ¿Cómo califica jurídicamente la actitud de Esteban?''',
     options: [
       r'''Ejercicio legítimo del derecho de retención de bienes por supuestos gastos comunes adeudados.''',
       r'''Violencia psicológica y económica o patrimonial, mediante el uso de la posesión de los bienes para coaccionar la libertad de Laura.''',
@@ -8002,12 +9209,14 @@ final List<Question> pfrhQuestions = [
       r'''Presión afectiva lícita enmarcada en el derecho de defensa de la unión familiar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El uso de los bienes materiales y documentos de la víctima para obligarla a permanecer en una relación indeseada configura violencia económica y psicológica (coacción), requiriendo medidas de protección inmediatas para la entrega de enseres.''',
+    explanation:
+        r'''El uso de los bienes materiales y documentos de la víctima para obligarla a permanecer en una relación indeseada configura violencia económica y psicológica (coacción), requiriendo medidas de protección inmediatas para la entrega de enseres.''',
   ),
   Question(
     id: 'pfrh_q811',
     topicId: 'pfrh_t6',
-    text: r"""Lucía, de 16 años, trabaja como asistente del hogar en la residencia de su tía materna (segundo grado de consanguinidad). La tía no le paga el salario prometido, le retiene su DNI alegando que es para 'evitar que se escape' y la maltrata verbalmente llamándola inútil. ¿Es aplicable la Ley N° 30364 en esta circunstancia?""",
+    text:
+        r"""Lucía, de 16 años, trabaja como asistente del hogar en la residencia de su tía materna (segundo grado de consanguinidad). La tía no le paga el salario prometido, le retiene su DNI alegando que es para 'evitar que se escape' y la maltrata verbalmente llamándola inútil. ¿Es aplicable la Ley N° 30364 en esta circunstancia?""",
     options: [
       r'''No, porque se trata de una relación netamente laboral de trabajadora del hogar que se excluye de la ley.''',
       r'''Sí, porque independientemente del rol laboral, la agredida es menor de edad y existe un vínculo de parentesco familiar consanguíneo (tía-sobrina), lo que sitúa el caso bajo el ámbito del grupo familiar.''',
@@ -8015,12 +9224,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si la madre de Lucía presenta un desistimiento formal de la patria potestad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Si bien las relaciones laborales puras se excluyen, en este caso el vínculo familiar de parentesco consanguíneo y la minoría de edad activan la protección de la Ley N° 30364 por encima de la fachada contractual que la tía pretenda imponer.''',
+    explanation:
+        r'''Si bien las relaciones laborales puras se excluyen, en este caso el vínculo familiar de parentesco consanguíneo y la minoría de edad activan la protección de la Ley N° 30364 por encima de la fachada contractual que la tía pretenda imponer.''',
   ),
   Question(
     id: 'pfrh_q812',
     topicId: 'pfrh_t6',
-    text: r'''Tras obtener una orden judicial que prohíbe a su expareja Manuel acercarse a ella a menos de 100 metros, Carmen se percata de que Manuel se para diariamente frente al paradero de autobuses donde ella toma transporte para su trabajo, mirándola fijamente sin hablarle ni tocarla. Carmen reporta que se siente intimidada. ¿Es válida la denuncia de Carmen en el marco de la protección integral?''',
+    text:
+        r'''Tras obtener una orden judicial que prohíbe a su expareja Manuel acercarse a ella a menos de 100 metros, Carmen se percata de que Manuel se para diariamente frente al paradero de autobuses donde ella toma transporte para su trabajo, mirándola fijamente sin hablarle ni tocarla. Carmen reporta que se siente intimidada. ¿Es válida la denuncia de Carmen en el marco de la protección integral?''',
     options: [
       r'''No, porque Manuel se encuentra en la vía pública y no ha realizado agresiones físicas o verbales directas.''',
       r'''Sí, porque la conducta de Manuel representa una forma de acoso e intimidación psicológica silenciosa que transgrede la medida de protección de prohibición de acercamiento.''',
@@ -8028,12 +9239,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero únicamente si Carmen demuestra que llegó tarde a su centro de labores por culpa de la presencia de Manuel.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El acoso silencioso o vigilancia hostil en el entorno cotidiano de la víctima viola la prohibición judicial de acercamiento y configura violencia psicológica de carácter persecutorio, constituyendo además desobediencia a la autoridad judicial.''',
+    explanation:
+        r'''El acoso silencioso o vigilancia hostil en el entorno cotidiano de la víctima viola la prohibición judicial de acercamiento y configura violencia psicológica de carácter persecutorio, constituyendo además desobediencia a la autoridad judicial.''',
   ),
   Question(
     id: 'pfrh_q813',
     topicId: 'pfrh_t6',
-    text: r'''Un hombre mayor de edad convive con su madre anciana de 85 años en una vivienda propia de la madre. El hijo, para apoderarse de la propiedad, no le provee los alimentos diarios necesarios, le esconde las llaves de la casa para que no salga a conversar con las vecinas y destruye las recetas médicas de su tratamiento cardiológico. ¿Bajo qué lineamientos tutelares de la Ley N° 30364 se debe actuar de inmediato?''',
+    text:
+        r'''Un hombre mayor de edad convive con su madre anciana de 85 años en una vivienda propia de la madre. El hijo, para apoderarse de la propiedad, no le provee los alimentos diarios necesarios, le esconde las llaves de la casa para que no salga a conversar con las vecinas y destruye las recetas médicas de su tratamiento cardiológico. ¿Bajo qué lineamientos tutelares de la Ley N° 30364 se debe actuar de inmediato?''',
     options: [
       r'''Esperar a que la madre inicie un proceso civil de desalojo por precariedad contra su hijo.''',
       r'''Dictar medidas de protección inmediatas que incluyan el retiro del hijo del inmueble de la madre, prohibición de comunicación y canalización de alimentos bajo supervisión del Juzgado de Familia.''',
@@ -8041,12 +9254,14 @@ final List<Question> pfrhQuestions = [
       r'''Declarar la incompetencia familiar debido a que la anciana conserva sus facultades mentales plenas para defenderse.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La privación alimenticia, el aislamiento y la destrucción de recetas de un adulto mayor dependiente representan violencia económica, física por omisión y psicológica. La medida prioritaria es retirar al agresor del hogar de la víctima para cesar el riesgo.''',
+    explanation:
+        r'''La privación alimenticia, el aislamiento y la destrucción de recetas de un adulto mayor dependiente representan violencia económica, física por omisión y psicológica. La medida prioritaria es retirar al agresor del hogar de la víctima para cesar el riesgo.''',
   ),
   Question(
     id: 'pfrh_q814',
     topicId: 'pfrh_t6',
-    text: r"""Andrea descubre que su conviviente Luis ha instalado programas de espionaje en su computadora personal, accediendo a sus redes sociales, correos y contraseñas bancarias sin su autorización. Al confrontarlo, Luis le grita que 'el que no la debe no la teme' y la amenaza con publicar conversaciones privadas en el grupo de mensajería de su familia si ella cambia las claves. Andrea acude a denunciar la agresión. ¿Qué valoración corresponde bajo la Ley N° 30364?""",
+    text:
+        r"""Andrea descubre que su conviviente Luis ha instalado programas de espionaje en su computadora personal, accediendo a sus redes sociales, correos y contraseñas bancarias sin su autorización. Al confrontarlo, Luis le grita que 'el que no la debe no la teme' y la amenaza con publicar conversaciones privadas en el grupo de mensajería de su familia si ella cambia las claves. Andrea acude a denunciar la agresión. ¿Qué valoración corresponde bajo la Ley N° 30364?""",
     options: [
       r'''Es un desacuerdo privado sobre ciberseguridad doméstica no tipificable como violencia.''',
       r'''Configura un caso de violencia psicológica y patrimonial mediante el control de tecnologías de información y chantaje reputacional familiar.''',
@@ -8054,12 +9269,14 @@ final List<Question> pfrhQuestions = [
       r'''Delito informático puro que debe ventilarse exclusivamente ante la fiscalía corporativa de delitos tecnológicos sin medidas de protección.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El control coercitivo digital, la invasión de la privacidad tecnológica y la extorsión con revelar información íntima de la pareja constituyen formas contemporáneas de violencia psicológica severa tipificadas por la ley.''',
+    explanation:
+        r'''El control coercitivo digital, la invasión de la privacidad tecnológica y la extorsión con revelar información íntima de la pareja constituyen formas contemporáneas de violencia psicológica severa tipificadas por la ley.''',
   ),
   Question(
     id: 'pfrh_q815',
     topicId: 'pfrh_t6',
-    text: r'''En un edificio multifamiliar, dos primas hermanas tienen un conflicto por el ruido de las mascotas de una de ellas. Una de las primas aprovecha un encuentro en el ascensor para empujar a la otra, arañarle el rostro e insultarla por su origen. La víctima interpone una denuncia invocando la Ley N° 30364. El agresor sostiene que es un simple conflicto vecinal ajeno a la violencia familiar. ¿Cómo debe resolverse el ámbito de aplicación?''',
+    text:
+        r'''En un edificio multifamiliar, dos primas hermanas tienen un conflicto por el ruido de las mascotas de una de ellas. Una de las primas aprovecha un encuentro en el ascensor para empujar a la otra, arañarle el rostro e insultarla por su origen. La víctima interpone una denuncia invocando la Ley N° 30364. El agresor sostiene que es un simple conflicto vecinal ajeno a la violencia familiar. ¿Cómo debe resolverse el ámbito de aplicación?''',
     options: [
       r'''Excluir el caso de la Ley N° 30364, puesto que los problemas entre vecinos no califican como violencia doméstica aunque sean parientes.''',
       r'''Tramitar la denuncia bajo la Ley N° 30364, ya que las primas hermanas son parientes colaterales en cuarto grado de consanguinidad (sujetos protegidos), ocurriendo la violencia física y psicológica en el ámbito de su relación familiar.''',
@@ -8067,12 +9284,14 @@ final List<Question> pfrhQuestions = [
       r'''Calificar el hecho como disturbio público general exento de medidas de protección familiar al ocurrir fuera de los departamentos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El cuarto grado de consanguinidad (primos hermanos) está incluido dentro de los límites de protección del grupo familiar de la Ley N° 30364. La agresión física y psicológica es tutelable mediante esta norma sin importar que el detonante sea vecinal o el lugar común del condominio.''',
+    explanation:
+        r'''El cuarto grado de consanguinidad (primos hermanos) está incluido dentro de los límites de protección del grupo familiar de la Ley N° 30364. La agresión física y psicológica es tutelable mediante esta norma sin importar que el detonante sea vecinal o el lugar común del condominio.''',
   ),
   Question(
     id: 'pfrh_q816',
     topicId: 'pfrh_t6',
-    text: r"""¿Qué establece el principio de 'Sencillez y Oralidad' en los procesos bajo la Ley N° 30364?""",
+    text:
+        r"""¿Qué establece el principio de 'Sencillez y Oralidad' en los procesos bajo la Ley N° 30364?""",
     options: [
       r'''Obligatoriedad de redactar actas manuscritas sin usar soporte digital.''',
       r'''El uso de formatos simples de fácil comprensión y la primacía de las audiencias orales para agilizar las decisiones y resolver la situación de riesgo.''',
@@ -8080,12 +9299,14 @@ final List<Question> pfrhQuestions = [
       r'''Derecho a no prestar juramento de decir la verdad durante la declaración oral preliminar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El principio de sencillez y oralidad busca eliminar las trabas burocráticas y formales en los procesos de tutela especial, permitiendo un entendimiento directo y una justicia ágil e inmediata para la víctima.''',
+    explanation:
+        r'''El principio de sencillez y oralidad busca eliminar las trabas burocráticas y formales en los procesos de tutela especial, permitiendo un entendimiento directo y una justicia ágil e inmediata para la víctima.''',
   ),
   Question(
     id: 'pfrh_q817',
     topicId: 'pfrh_t6',
-    text: r'''Dentro del catálogo de medidas de protección admisibles en la Ley N° 30364, ¿cuál de las siguientes medidas tiene naturaleza patrimonial directa?''',
+    text:
+        r'''Dentro del catálogo de medidas de protección admisibles en la Ley N° 30364, ¿cuál de las siguientes medidas tiene naturaleza patrimonial directa?''',
     options: [
       r'''La prohibición del reingreso del agresor al domicilio común.''',
       r'''El señalamiento de una pensión de alimentos provisional a favor de las víctimas dependientes del agresor.''',
@@ -8093,12 +9314,14 @@ final List<Question> pfrhQuestions = [
       r'''El internamiento del agresor en un centro de reeducación social.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La pensión provisional de alimentos es una medida de protección de carácter patrimonial para evitar que la víctima quede en desamparo económico al separarse del agresor, garantizando su subsistencia material inmediata.''',
+    explanation:
+        r'''La pensión provisional de alimentos es una medida de protección de carácter patrimonial para evitar que la víctima quede en desamparo económico al separarse del agresor, garantizando su subsistencia material inmediata.''',
   ),
   Question(
     id: 'pfrh_q818',
     topicId: 'pfrh_t6',
-    text: r'''Según la Ley N° 30364, ¿qué valor probatorio tiene la Ficha de Valoración de Riesgo en la etapa de dictado de medidas de protección?''',
+    text:
+        r'''Según la Ley N° 30364, ¿qué valor probatorio tiene la Ficha de Valoración de Riesgo en la etapa de dictado de medidas de protección?''',
     options: [
       r'''Es una prueba definitiva de culpabilidad penal que exime al juez de realizar más investigaciones.''',
       r'''Es un instrumento de carácter técnico especializado que sustenta y justifica la idoneidad y urgencia de las medidas de protección del juzgado de familia.''',
@@ -8106,12 +9329,14 @@ final List<Question> pfrhQuestions = [
       r'''Constituye una declaración jurada del agresor respecto de su inocencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La Ficha de Valoración de Riesgo aporta información técnica esencial sobre la probabilidad de daño futuro, permitiendo al juez de familia fundamentar jurídicamente la proporcionalidad y necesidad de las medidas de protección que emite.''',
+    explanation:
+        r'''La Ficha de Valoración de Riesgo aporta información técnica esencial sobre la probabilidad de daño futuro, permitiendo al juez de familia fundamentar jurídicamente la proporcionalidad y necesidad de las medidas de protección que emite.''',
   ),
   Question(
     id: 'pfrh_q819',
     topicId: 'pfrh_t6',
-    text: r"""¿Cómo define conceptualmente la Ley N° 30364 a la 'violencia psicológica'?""",
+    text:
+        r"""¿Cómo define conceptualmente la Ley N° 30364 a la 'violencia psicológica'?""",
     options: [
       r'''El daño exclusivamente cerebral causado por accidentes de tránsito en el núcleo familiar.''',
       r'''La acción u omisión tendiente a controlar o aislar a la persona contra su voluntad, a humillarla, avergonzarla, insultarla, estigmatizarla o desvalorizarla, afectando su salud mental.''',
@@ -8119,12 +9344,14 @@ final List<Question> pfrhQuestions = [
       r'''El estado de tristeza natural derivado de la pérdida voluntaria de una relación sentimental.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia psicológica comprende actos dirigidos a menoscabar la autoestima, humillar o aislar a la víctima, dañando su salud emocional y psíquica sin necesidad de que exista fuerza física.''',
+    explanation:
+        r'''La violencia psicológica comprende actos dirigidos a menoscabar la autoestima, humillar o aislar a la víctima, dañando su salud emocional y psíquica sin necesidad de que exista fuerza física.''',
   ),
   Question(
     id: 'pfrh_q820',
     topicId: 'pfrh_t6',
-    text: r'''¿Quiénes están obligados a denunciar los actos de violencia familiar o de género si toman conocimiento de ellos en el ejercicio de sus funciones profesionales?''',
+    text:
+        r'''¿Quiénes están obligados a denunciar los actos de violencia familiar o de género si toman conocimiento de ellos en el ejercicio de sus funciones profesionales?''',
     options: [
       r'''Únicamente los abogados patrocinantes de la víctima.''',
       r'''Los profesionales de la salud, educación, servicios sociales u otros que, en el desempeño de su labor, tengan noticia de hechos que constituyan violencia.''',
@@ -8132,12 +9359,14 @@ final List<Question> pfrhQuestions = [
       r'''Exclusivamente los familiares directos hasta el segundo grado de consanguinidad de la víctima.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ley impone la obligación especial de denuncia a los profesionales (como médicos o docentes) que, por razón de su cargo o función, adviertan signos inequívocos de violencia en pacientes o alumnos.''',
+    explanation:
+        r'''La ley impone la obligación especial de denuncia a los profesionales (como médicos o docentes) que, por razón de su cargo o función, adviertan signos inequívocos de violencia en pacientes o alumnos.''',
   ),
   Question(
     id: 'pfrh_q821',
     topicId: 'pfrh_t6',
-    text: r'''Si la víctima decide perdonar formalmente al agresor y solicita el retiro voluntario de las medidas de protección, ¿cuál es la potestad del juez de familia?''',
+    text:
+        r'''Si la víctima decide perdonar formalmente al agresor y solicita el retiro voluntario de las medidas de protección, ¿cuál es la potestad del juez de familia?''',
     options: [
       r'''Archivar de inmediato el caso de forma definitiva debido al desistimiento voluntario de la víctima.''',
       r'''Mantener vigentes las medidas de protección si considera que subsiste la situación de riesgo para la vida o la integridad de la víctima.''',
@@ -8145,12 +9374,14 @@ final List<Question> pfrhQuestions = [
       r'''Trasladar el caso al ámbito de un tribunal moral local.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El proceso de tutela especial por violencia no es de libre disposición. Aunque la víctima exprese perdón o desistimiento, el juez de familia tiene el deber de proteger su integridad, manteniendo las medidas si la valoración de riesgo arroja peligro persistente.''',
+    explanation:
+        r'''El proceso de tutela especial por violencia no es de libre disposición. Aunque la víctima exprese perdón o desistimiento, el juez de familia tiene el deber de proteger su integridad, manteniendo las medidas si la valoración de riesgo arroja peligro persistente.''',
   ),
   Question(
     id: 'pfrh_q822',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál es el tratamiento que la Ley N° 30364 otorga a las pruebas obtenidas de forma directa en el ámbito familiar, como mensajes de texto, audios o correos electrónicos?''',
+    text:
+        r'''¿Cuál es el tratamiento que la Ley N° 30364 otorga a las pruebas obtenidas de forma directa en el ámbito familiar, como mensajes de texto, audios o correos electrónicos?''',
     options: [
       r'''Son inadmisibles por violar de forma directa el derecho a la confidencialidad de las comunicaciones privadas.''',
       r'''Son consideradas medios probatorios válidos que deben ser valorados por el juez para acreditar los hechos de violencia e identificar el riesgo.''',
@@ -8158,12 +9389,14 @@ final List<Question> pfrhQuestions = [
       r'''Se consideran indicios leves que requieren obligatoriamente la confesión de culpabilidad del agresor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las comunicaciones electrónicas directas son admitidas ampliamente en procesos de violencia familiar como medios de prueba idóneos para acreditar el acoso, la intimidación o las amenazas.''',
+    explanation:
+        r'''Las comunicaciones electrónicas directas son admitidas ampliamente en procesos de violencia familiar como medios de prueba idóneos para acreditar el acoso, la intimidación o las amenazas.''',
   ),
   Question(
     id: 'pfrh_q823',
     topicId: 'pfrh_t6',
-    text: r"""¿A qué se refiere el principio de 'Razonabilidad y Proporcionalidad' en el dictado de las medidas de protección bajo la Ley N° 30364?""",
+    text:
+        r"""¿A qué se refiere el principio de 'Razonabilidad y Proporcionalidad' en el dictado de las medidas de protección bajo la Ley N° 30364?""",
     options: [
       r'''A la obligatoriedad de sancionar al agresor con una pena de prisión igual a los días de descanso médico de la víctima.''',
       r'''A que las medidas adoptadas por el juez deben corresponder estrictamente al nivel de riesgo identificado en la Ficha de Valoración de Riesgo, sin exceder lo necesario para salvaguardar a la víctima.''',
@@ -8171,12 +9404,14 @@ final List<Question> pfrhQuestions = [
       r'''A la limitación de las medidas cautelares para que no perturben en absoluto el horario laboral o comercial del agresor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Este principio guía al juez para que la restricción impuesta (como retirar al agresor del hogar) sea la idónea y necesaria para frenar la violencia y el riesgo detectado, balanceando la protección sin incurrir en excesos innecesarios.''',
+    explanation:
+        r'''Este principio guía al juez para que la restricción impuesta (como retirar al agresor del hogar) sea la idónea y necesaria para frenar la violencia y el riesgo detectado, balanceando la protección sin incurrir en excesos innecesarios.''',
   ),
   Question(
     id: 'pfrh_q824',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué servicio de soporte social del Estado está encargado de brindar albergue temporal a las víctimas de violencia familiar que se encuentran en situación de riesgo extremo?''',
+    text:
+        r'''¿Qué servicio de soporte social del Estado está encargado de brindar albergue temporal a las víctimas de violencia familiar que se encuentran en situación de riesgo extremo?''',
     options: [
       r'''Los Hogares de Refugio Temporal (HRT) gestionados o validados por el Ministerio de la Mujer y Poblaciones Vulnerables.''',
       r'''Las comisarías de la Policía Nacional del Perú, de forma indefinida en sus instalaciones.''',
@@ -8184,12 +9419,14 @@ final List<Question> pfrhQuestions = [
       r'''Los comedores populares distritales administrados por las juntas vecinales.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Los Hogares de Refugio Temporal (HRT) son espacios protegidos del Estado y organizaciones autorizadas que albergan a las víctimas y sus hijos menores cuando permanecer en su entorno representa peligro de muerte.''',
+    explanation:
+        r'''Los Hogares de Refugio Temporal (HRT) son espacios protegidos del Estado y organizaciones autorizadas que albergan a las víctimas y sus hijos menores cuando permanecer en su entorno representa peligro de muerte.''',
   ),
   Question(
     id: 'pfrh_q825',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál es el tratamiento procesal en la Ley N° 30364 si el presunto agresor no asiste a la audiencia convocada por el Juez de Familia?''',
+    text:
+        r'''¿Cuál es el tratamiento procesal en la Ley N° 30364 si el presunto agresor no asiste a la audiencia convocada por el Juez de Familia?''',
     options: [
       r'''Se suspende la audiencia de manera definitiva y se archiva el expediente de protección.''',
       r'''La audiencia se realiza en su rebeldía y el Juez emite pronunciamiento sobre las medidas de protección con la información disponible en autos.''',
@@ -8197,12 +9434,14 @@ final List<Question> pfrhQuestions = [
       r'''Se traslada la audiencia al centro laboral del demandado para obligar su asistencia presencial.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El carácter urgente del proceso tutelar de violencia impide paralizarlo por inasistencia del agresor. Si es debidamente notificado y no asiste, el juez resuelve con la declaración de la víctima y las pruebas existentes.''',
+    explanation:
+        r'''El carácter urgente del proceso tutelar de violencia impide paralizarlo por inasistencia del agresor. Si es debidamente notificado y no asiste, el juez resuelve con la declaración de la víctima y las pruebas existentes.''',
   ),
   Question(
     id: 'pfrh_q826',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué enfoque de la Ley N° 30364 prohíbe fundar decisiones judiciales basándose en prejuicios, estereotipos de género o roles asignados tradicionalmente?''',
+    text:
+        r'''¿Qué enfoque de la Ley N° 30364 prohíbe fundar decisiones judiciales basándose en prejuicios, estereotipos de género o roles asignados tradicionalmente?''',
     options: [
       r'''Principio de Jerarquía Normativa.''',
       r'''Enfoque de Género.''',
@@ -8210,12 +9449,14 @@ final List<Question> pfrhQuestions = [
       r'''Enfoque de Seguridad Ciudadana.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El enfoque de género exige analizar las relaciones asimétricas de poder y deconstruir los estereotipos y sesgos discriminatorios que minimizan las agresiones a mujeres y dependientes.''',
+    explanation:
+        r'''El enfoque de género exige analizar las relaciones asimétricas de poder y deconstruir los estereotipos y sesgos discriminatorios que minimizan las agresiones a mujeres y dependientes.''',
   ),
   Question(
     id: 'pfrh_q827',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué tipo de violencia se define legalmente como la afectación de los derechos de reproducción de una mujer, incluyendo el embarazo forzado o la esterilización no consentida?''',
+    text:
+        r'''¿Qué tipo de violencia se define legalmente como la afectación de los derechos de reproducción de una mujer, incluyendo el embarazo forzado o la esterilización no consentida?''',
     options: [
       r'''Violencia psicológica institucionalizada.''',
       r'''Violencia sexual.''',
@@ -8223,12 +9464,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta médica atípica lícita bajo el marco familiar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La imposición de decisiones reproductivas, el embarazo forzado, el aborto forzado o impedir el uso de métodos anticonceptivos constituyen formas graves de violencia sexual.''',
+    explanation:
+        r'''La imposición de decisiones reproductivas, el embarazo forzado, el aborto forzado o impedir el uso de métodos anticonceptivos constituyen formas graves de violencia sexual.''',
   ),
   Question(
     id: 'pfrh_q828',
     topicId: 'pfrh_t6',
-    text: r'''Cuando se emiten medidas de protección, ¿qué consecuencia legal se establece frente a un agresor que incumple las órdenes del Juez de Familia?''',
+    text:
+        r'''Cuando se emiten medidas de protección, ¿qué consecuencia legal se establece frente a un agresor que incumple las órdenes del Juez de Familia?''',
     options: [
       r'''Una multa administrativa equivalente a media Unidad Impositiva Tributaria.''',
       r'''La suspensión del proceso de familia sin consecuencias de orden criminal.''',
@@ -8236,12 +9479,14 @@ final List<Question> pfrhQuestions = [
       r'''La suspensión temporal de sus derechos ciudadanos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Desobedecer las medidas de protección dictadas por el juez constituye delito de resistencia o desobediencia a la autoridad (Art. 368 del Código Penal), tipificado severamente para disuadir al agresor de reincidir.''',
+    explanation:
+        r'''Desobedecer las medidas de protección dictadas por el juez constituye delito de resistencia o desobediencia a la autoridad (Art. 368 del Código Penal), tipificado severamente para disuadir al agresor de reincidir.''',
   ),
   Question(
     id: 'pfrh_q829',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué requisito es necesario para que el juez de familia ordene el tratamiento psicológico obligatorio para el agresor como parte de las medidas de protección?''',
+    text:
+        r'''¿Qué requisito es necesario para que el juez de familia ordene el tratamiento psicológico obligatorio para el agresor como parte de las medidas de protección?''',
     options: [
       r'''Que el agresor preste su consentimiento por escrito y acepte su responsabilidad previa.''',
       r'''Únicamente la determinación judicial basada en la necesidad de corregir conductas agresivas detectadas.''',
@@ -8249,12 +9494,14 @@ final List<Question> pfrhQuestions = [
       r'''Que exista una sentencia condenatoria firme de carácter penal.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El tratamiento psicológico obligatorio puede y debe ser dictado por el juez de familia de manera discrecional como medida de protección y prevención, sin requerir el consentimiento del agresor.''',
+    explanation:
+        r'''El tratamiento psicológico obligatorio puede y debe ser dictado por el juez de familia de manera discrecional como medida de protección y prevención, sin requerir el consentimiento del agresor.''',
   ),
   Question(
     id: 'pfrh_q830',
     topicId: 'pfrh_t6',
-    text: r"""En el contexto de la Ley N° 30364, ¿cuál es el alcance de la obligación de 'Debida Diligencia' respecto a las medidas de protección para víctimas con discapacidad?""",
+    text:
+        r"""En el contexto de la Ley N° 30364, ¿cuál es el alcance de la obligación de 'Debida Diligencia' respecto a las medidas de protección para víctimas con discapacidad?""",
     options: [
       r'''Se aplican los mismos plazos y formatos ordinarios que para cualquier otra víctima sin distinción.''',
       r'''Se deben implementar ajustes razonables y apoyos necesarios para garantizar la accesibilidad y protección efectiva.''',
@@ -8262,12 +9509,14 @@ final List<Question> pfrhQuestions = [
       r'''Se le exige a la víctima presentar un tutor legal de forma obligatoria para dar curso al proceso.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Las víctimas con discapacidad tienen derecho a un tratamiento especializado que elimine barreras del sistema de justicia, mediante ajustes razonables que les permitan declarar e integrarse efectivamente al proceso.''',
+    explanation:
+        r'''Las víctimas con discapacidad tienen derecho a un tratamiento especializado que elimine barreras del sistema de justicia, mediante ajustes razonables que les permitan declarar e integrarse efectivamente al proceso.''',
   ),
   Question(
     id: 'pfrh_q831',
     topicId: 'pfrh_t6',
-    text: r"""¿En qué consiste el principio de 'Gratuidad' consagrado en la Ley N° 30364 para las víctimas de violencia familiar?""",
+    text:
+        r"""¿En qué consiste el principio de 'Gratuidad' consagrado en la Ley N° 30364 para las víctimas de violencia familiar?""",
     options: [
       r'''En la exoneración de todo cobro de tasas, aranceles, pericias judiciales y costos procesales durante la tramitación del proceso en cualquier instancia.''',
       r'''En la entrega gratuita de vales de alimentos por parte del Juzgado de Familia.''',
@@ -8275,12 +9524,14 @@ final List<Question> pfrhQuestions = [
       r'''En el cobro diferido de los honorarios judiciales solo si el agresor es insolvente.''',
     ],
     correctAnswer: 0,
-    explanation: r'''La gratuidad procesal garantiza que ninguna barrera económica impida a la víctima acceder a los órganos de justicia para solicitar tutela, por lo que todo trámite, pericia médica o psicológica es gratuito.''',
+    explanation:
+        r'''La gratuidad procesal garantiza que ninguna barrera económica impida a la víctima acceder a los órganos de justicia para solicitar tutela, por lo que todo trámite, pericia médica o psicológica es gratuito.''',
   ),
   Question(
     id: 'pfrh_q832',
     topicId: 'pfrh_t6',
-    text: r'''Según la Ley N° 30364, ¿qué tratamiento se le da a la información e identidad de las víctimas de violencia familiar durante el proceso?''',
+    text:
+        r'''Según la Ley N° 30364, ¿qué tratamiento se le da a la información e identidad de las víctimas de violencia familiar durante el proceso?''',
     options: [
       r'''Es de libre acceso público para garantizar el principio de transparencia del Estado.''',
       r'''Se mantiene bajo estricta reserva y confidencialidad para proteger la intimidad y seguridad de la víctima.''',
@@ -8288,12 +9539,14 @@ final List<Question> pfrhQuestions = [
       r'''Se divulga exclusivamente en los medios de comunicación comunitarios.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La reserva de identidad y confidencialidad del expediente protege a la víctima y a sus familiares de la exposición pública de su intimidad y previene represalias o escarnio social.''',
+    explanation:
+        r'''La reserva de identidad y confidencialidad del expediente protege a la víctima y a sus familiares de la exposición pública de su intimidad y previene represalias o escarnio social.''',
   ),
   Question(
     id: 'pfrh_q833',
     topicId: 'pfrh_t6',
-    text: r'''Un cónyuge cambia la cerradura de la puerta del domicilio familiar, impidiendo el ingreso de su esposa al retornar de sus labores, obligándola a pernoctar a la intemperie. ¿Qué tipo de violencia se discrimina?''',
+    text:
+        r'''Un cónyuge cambia la cerradura de la puerta del domicilio familiar, impidiendo el ingreso de su esposa al retornar de sus labores, obligándola a pernoctar a la intemperie. ¿Qué tipo de violencia se discrimina?''',
     options: [
       r'''Infracción simple a las normas de copropiedad de carácter civil.''',
       r'''Violencia física por someterla a la intemperie y violencia económica o patrimonial al impedirle el uso de su vivienda.''',
@@ -8301,12 +9554,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia psicológica de nivel leve que se disuelve al entregar una copia de la llave.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Impedir el acceso a la vivienda común mediante la alteración de cerraduras es un acto físico y patrimonial que vulnera la seguridad y dignidad de la víctima, tipificado en la Ley N° 30364.''',
+    explanation:
+        r'''Impedir el acceso a la vivienda común mediante la alteración de cerraduras es un acto físico y patrimonial que vulnera la seguridad y dignidad de la víctima, tipificado en la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q834',
     topicId: 'pfrh_t6',
-    text: r'''Un hombre, tras una discusión con su esposa, decide arrojar por la ventana las medicinas de ella, las cuales requiere para controlar su asma crónica. ¿Qué tipo de violencia califica esta acción?''',
+    text:
+        r'''Un hombre, tras una discusión con su esposa, decide arrojar por la ventana las medicinas de ella, las cuales requiere para controlar su asma crónica. ¿Qué tipo de violencia califica esta acción?''',
     options: [
       r'''Daño simple al patrimonio privado no vinculado a la violencia intrafamiliar.''',
       r'''Violencia económica o patrimonial y atentado indirecto contra su integridad física.''',
@@ -8314,12 +9569,14 @@ final List<Question> pfrhQuestions = [
       r'''Disputa doméstica ordinaria amparada bajo el régimen de sociedad de gananciales.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La destrucción de bienes personales y el despojo de medicamentos indispensables para la salud de un familiar directo constituyen violencia patrimonial con implicancia física real.''',
+    explanation:
+        r'''La destrucción de bienes personales y el despojo de medicamentos indispensables para la salud de un familiar directo constituyen violencia patrimonial con implicancia física real.''',
   ),
   Question(
     id: 'pfrh_q835',
     topicId: 'pfrh_t6',
-    text: r'''Si una hija mayor de edad insulta verbalmente a su madre anciana de manera recurrente para forzarla a cederle el control de su pensión de viudez, ¿cómo se tipifican estas acciones?''',
+    text:
+        r'''Si una hija mayor de edad insulta verbalmente a su madre anciana de manera recurrente para forzarla a cederle el control de su pensión de viudez, ¿cómo se tipifican estas acciones?''',
     options: [
       r'''Únicamente como violencia psicológica debido a la ausencia de daño físico.''',
       r'''Como violencia psicológica y violencia económica o patrimonial contra un integrante del grupo familiar.''',
@@ -8327,12 +9584,14 @@ final List<Question> pfrhQuestions = [
       r'''Como maltrato menor no tipificado al ser una relación directa de consanguinidad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coacción verbal (violencia psicológica) orientada a la apropiación de recursos económicos o pensión (violencia económica) configura concurso de conductas de violencia tipificadas por la ley.''',
+    explanation:
+        r'''La coacción verbal (violencia psicológica) orientada a la apropiación de recursos económicos o pensión (violencia económica) configura concurso de conductas de violencia tipificadas por la ley.''',
   ),
   Question(
     id: 'pfrh_q836',
     topicId: 'pfrh_t6',
-    text: r'''Un exconviviente publica fotos de la vida privada y mensajes íntimos de su expareja en redes sociales, afectando su reputación personal. Ella interpone una denuncia. ¿Qué tipo de violencia ampara la solicitud de protección?''',
+    text:
+        r'''Un exconviviente publica fotos de la vida privada y mensajes íntimos de su expareja en redes sociales, afectando su reputación personal. Ella interpone una denuncia. ¿Qué tipo de violencia ampara la solicitud de protección?''',
     options: [
       r'''Delito de difamación civil que no califica para medidas de protección de la Ley N° 30364.''',
       r'''Violencia psicológica y acoso basado en razones de género.''',
@@ -8340,12 +9599,14 @@ final List<Question> pfrhQuestions = [
       r'''Inconducta moral ajena a la regulación legal del Juzgado de Familia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La publicación no consentida de información o material íntimo en redes sociales para humillar o difamar a una expareja constituye violencia psicológica bajo la modalidad de acoso digital de género.''',
+    explanation:
+        r'''La publicación no consentida de información o material íntimo en redes sociales para humillar o difamar a una expareja constituye violencia psicológica bajo la modalidad de acoso digital de género.''',
   ),
   Question(
     id: 'pfrh_q837',
     topicId: 'pfrh_t6',
-    text: r'''Si un tío que vive en el mismo predio familiar que su sobrina de 14 años la obliga a realizar masajes en su cuerpo bajo amenazas de castigo físico si cuenta lo sucedido, ¿qué tipo de violencia se configura?''',
+    text:
+        r'''Si un tío que vive en el mismo predio familiar que su sobrina de 14 años la obliga a realizar masajes en su cuerpo bajo amenazas de castigo físico si cuenta lo sucedido, ¿qué tipo de violencia se configura?''',
     options: [
       r'''Disciplina o corrección familiar ordinaria lícita.''',
       r'''Violencia sexual y violencia física bajo la modalidad de coacción contra un menor.''',
@@ -8353,12 +9614,14 @@ final List<Question> pfrhQuestions = [
       r'''Falta psicológica menor por exceso de confianza familiar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los tocamientos o insinuaciones de connotación sexual forzados mediante amenazas contra un menor de edad del grupo familiar configuran violencia sexual grave y física según la ley.''',
+    explanation:
+        r'''Los tocamientos o insinuaciones de connotación sexual forzados mediante amenazas contra un menor de edad del grupo familiar configuran violencia sexual grave y física según la ley.''',
   ),
   Question(
     id: 'pfrh_q838',
     topicId: 'pfrh_t6',
-    text: r'''Un conviviente impide a su pareja salir a trabajar fuera del hogar alegando que su deber es cuidar de él y de la casa, amenazándola con no darle dinero para comprar la leche de su hijo si desobedece. ¿Qué tipo de violencia se discrimina?''',
+    text:
+        r'''Un conviviente impide a su pareja salir a trabajar fuera del hogar alegando que su deber es cuidar de él y de la casa, amenazándola con no darle dinero para comprar la leche de su hijo si desobedece. ¿Qué tipo de violencia se discrimina?''',
     options: [
       r'''Violencia psicológica por control de conducta y violencia económica por coacción alimentaria.''',
       r'''Intención de protección familiar exenta de sanción legal.''',
@@ -8366,12 +9629,14 @@ final List<Question> pfrhQuestions = [
       r'''Ejercicio lícito del derecho alimentario supeditado a la conducta familiar de la madre.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Impedir el desarrollo laboral autónomo mediante el control de la movilidad y chantajear con la privación de recursos esenciales (leche del menor) configura violencia psicológica y económica concomitante.''',
+    explanation:
+        r'''Impedir el desarrollo laboral autónomo mediante el control de la movilidad y chantajear con la privación de recursos esenciales (leche del menor) configura violencia psicológica y económica concomitante.''',
   ),
   Question(
     id: 'pfrh_q839',
     topicId: 'pfrh_t6',
-    text: r'''Un hermano destruye con un martillo la máquina de coser de su hermana en la vivienda que comparten, debido a que ella se negó a realizarle un trabajo gratuito. Ella dependía de esa máquina para subsistir. ¿Cómo tipifica la Ley N° 30364 esta acción?''',
+    text:
+        r'''Un hermano destruye con un martillo la máquina de coser de su hermana en la vivienda que comparten, debido a que ella se negó a realizarle un trabajo gratuito. Ella dependía de esa máquina para subsistir. ¿Cómo tipifica la Ley N° 30364 esta acción?''',
     options: [
       r'''Daño material simple de carácter civil patrimonial.''',
       r'''Violencia económica o patrimonial al destruir herramientas de trabajo indispensables.''',
@@ -8379,12 +9644,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta lícita si la máquina fue heredada o adquirida en conjunto.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La destrucción maliciosa de herramientas de trabajo de un familiar directo constituye violencia económica o patrimonial porque socava la capacidad de generación de ingresos y autonomía de la víctima.''',
+    explanation:
+        r'''La destrucción maliciosa de herramientas de trabajo de un familiar directo constituye violencia económica o patrimonial porque socava la capacidad de generación de ingresos y autonomía de la víctima.''',
   ),
   Question(
     id: 'pfrh_q840',
     topicId: 'pfrh_t6',
-    text: r'''Una tía política (segundo grado de afinidad) que habita en el mismo predio insulta recurrentemente a su sobrina por padecer una discapacidad física, llamándola carga inútil. ¿Se tipifica esta conducta dentro de la Ley N° 30364?''',
+    text:
+        r'''Una tía política (segundo grado de afinidad) que habita en el mismo predio insulta recurrentemente a su sobrina por padecer una discapacidad física, llamándola carga inútil. ¿Se tipifica esta conducta dentro de la Ley N° 30364?''',
     options: [
       r'''No, porque el parentesco de afinidad no genera responsabilidades de trato.''',
       r'''Sí, puesto que se trata de violencia psicológica ejercida contra un integrante del grupo familiar en razón de su vulnerabilidad.''',
@@ -8392,12 +9659,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si la agresión deja huellas físicas visibles.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La agresión verbal sistemática que desvaloriza y humilla a una persona con discapacidad por parte de un pariente afín en el hogar compartido configura violencia psicológica en el grupo familiar.''',
+    explanation:
+        r'''La agresión verbal sistemática que desvaloriza y humilla a una persona con discapacidad por parte de un pariente afín en el hogar compartido configura violencia psicológica en el grupo familiar.''',
   ),
   Question(
     id: 'pfrh_q841',
     topicId: 'pfrh_t6',
-    text: r'''Un exconviviente que no tiene la tenencia legal de su menor hijo decide llevarse al niño del colegio y ocultarlo por semanas, exigiéndole a la madre desistir de la denuncia por alimentos para devolverlo. ¿Qué tipo de violencia se configura?''',
+    text:
+        r'''Un exconviviente que no tiene la tenencia legal de su menor hijo decide llevarse al niño del colegio y ocultarlo por semanas, exigiéndole a la madre desistir de la denuncia por alimentos para devolverlo. ¿Qué tipo de violencia se configura?''',
     options: [
       r'''Ejercicio legítimo de los deberes parentales del progenitor no custodio.''',
       r'''Violencia psicológica severa contra la madre y el menor, y coacción económica vinculada a los alimentos.''',
@@ -8405,12 +9674,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta atípica lícita por primacía del vínculo paterno.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Utilizar la sustracción u ocultamiento del menor de edad para chantajear a la madre y obligarla a retirar denuncias de pensión alimenticia configura violencia psicológica grave e instrumentalización del menor.''',
+    explanation:
+        r'''Utilizar la sustracción u ocultamiento del menor de edad para chantajear a la madre y obligarla a retirar denuncias de pensión alimenticia configura violencia psicológica grave e instrumentalización del menor.''',
   ),
   Question(
     id: 'pfrh_q842',
     topicId: 'pfrh_t6',
-    text: r'''Si un yerno (primer grado de afinidad) despoja de sus joyas y ahorros a su suegra de 80 años aprovechando su convalecencia en la vivienda común, ¿qué tipificación legal corresponde bajo la Ley N° 30364?''',
+    text:
+        r'''Si un yerno (primer grado de afinidad) despoja de sus joyas y ahorros a su suegra de 80 años aprovechando su convalecencia en la vivienda común, ¿qué tipificación legal corresponde bajo la Ley N° 30364?''',
     options: [
       r'''Estafa menor exenta de sanción por tratarse de familiares políticos.''',
       r'''Violencia económica o patrimonial en agravio de un adulto mayor integrante del grupo familiar.''',
@@ -8418,12 +9689,14 @@ final List<Question> pfrhQuestions = [
       r'''Conflicto ordinario de administración del patrimonio del adulto mayor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los suegros y yernos se encuentran vinculados por afinidad en primer grado, por lo que el despojo patrimonial o económico en el hogar compartido configura violencia económica bajo la Ley N° 30364.''',
+    explanation:
+        r'''Los suegros y yernos se encuentran vinculados por afinidad en primer grado, por lo que el despojo patrimonial o económico en el hogar compartido configura violencia económica bajo la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q843',
     topicId: 'pfrh_t6',
-    text: r'''Durante una discusión familiar, un primo hermano (cuarto grado de consanguinidad) agrede físicamente a su prima propinándole bofetadas que no requieren descanso médico prolongado. ¿Es aplicable el marco de la Ley N° 30364?''',
+    text:
+        r'''Durante una discusión familiar, un primo hermano (cuarto grado de consanguinidad) agrede físicamente a su prima propinándole bofetadas que no requieren descanso médico prolongado. ¿Es aplicable el marco de la Ley N° 30364?''',
     options: [
       r'''No, puesto que el parentesco es colateral lejano y requiere un mínimo de lesiones graves.''',
       r'''Sí, porque los primos hermanos se encuentran incluidos como integrantes del grupo familiar y las bofetadas configuran violencia física.''',
@@ -8431,12 +9704,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si la agredida demuestra dependencia económica absoluta.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El parentesco colateral hasta el cuarto grado (primos hermanos) está tutelado por la ley. La agresión física directa califica como violencia familiar sin importar la duración o gravedad médica de las secuelas para dictar medidas de protección.''',
+    explanation:
+        r'''El parentesco colateral hasta el cuarto grado (primos hermanos) está tutelado por la ley. La agresión física directa califica como violencia familiar sin importar la duración o gravedad médica de las secuelas para dictar medidas de protección.''',
   ),
   Question(
     id: 'pfrh_q844',
     topicId: 'pfrh_t6',
-    text: r'''Un conviviente amenaza a su pareja con difundir audios íntimos si ella decide salir a testificar a favor de su hermana en un proceso familiar. ¿Qué tipo de violencia se discrimina en esta conducta?''',
+    text:
+        r'''Un conviviente amenaza a su pareja con difundir audios íntimos si ella decide salir a testificar a favor de su hermana en un proceso familiar. ¿Qué tipo de violencia se discrimina en esta conducta?''',
     options: [
       r'''Violencia económica indirecta por interferir en los recursos de la hermana.''',
       r'''Violencia psicológica bajo la modalidad de coacción y chantaje.''',
@@ -8444,12 +9719,14 @@ final List<Question> pfrhQuestions = [
       r'''Delito civil de difamación sin contenido familiar de protección.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La coacción mediante chantaje con información de carácter privado o íntimo para controlar las decisiones cívicas o personales de la pareja constituye una manifestación de violencia psicológica.''',
+    explanation:
+        r'''La coacción mediante chantaje con información de carácter privado o íntimo para controlar las decisiones cívicas o personales de la pareja constituye una manifestación de violencia psicológica.''',
   ),
   Question(
     id: 'pfrh_q845',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué diferencia existe en la tipificación de violencia familiar cuando la agresión ocurre frente a los hijos menores de edad de la pareja?''',
+    text:
+        r'''¿Qué diferencia existe en la tipificación de violencia familiar cuando la agresión ocurre frente a los hijos menores de edad de la pareja?''',
     options: [
       r'''Ninguna, puesto que la ley sanciona el acto violento independientemente de los testigos.''',
       r'''Representa un factor de agravación del riesgo y daño psicológico colateral que el juez debe valorar de forma prioritaria.''',
@@ -8457,12 +9734,14 @@ final List<Question> pfrhQuestions = [
       r'''Genera la pérdida automática del empleo del agresor sin juicio previo.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Exponer a menores de edad a presenciar actos de violencia contra sus progenitores incrementa el riesgo de daño emocional, lo que agrava la calificación técnica del caso y exige medidas de protección especiales para todo el grupo familiar.''',
+    explanation:
+        r'''Exponer a menores de edad a presenciar actos de violencia contra sus progenitores incrementa el riesgo de daño emocional, lo que agrava la calificación técnica del caso y exige medidas de protección especiales para todo el grupo familiar.''',
   ),
   Question(
     id: 'pfrh_q846',
     topicId: 'pfrh_t6',
-    text: r'''Un hermano retiene el DNI de su hermano menor de edad para impedir que asista a su examen de postulación, alegando que debe permanecer trabajando en el negocio de la familia. ¿Qué tipo de violencia se tipifica?''',
+    text:
+        r'''Un hermano retiene el DNI de su hermano menor de edad para impedir que asista a su examen de postulación, alegando que debe permanecer trabajando en el negocio de la familia. ¿Qué tipo de violencia se tipifica?''',
     options: [
       r'''Violencia psicológica y económica o patrimonial en agravio de un menor de edad del grupo familiar.''',
       r'''Derecho de tutela formativa laboral lícito en la empresa familiar.''',
@@ -8470,12 +9749,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta atípica ordinaria exenta de control judicial.''',
     ],
     correctAnswer: 0,
-    explanation: r'''Retener documentos personales esenciales de un menor para restringir sus oportunidades educativas e imponerle el trabajo no remunerado constituye violencia económica y psicológica bajo la Ley N° 30364.''',
+    explanation:
+        r'''Retener documentos personales esenciales de un menor para restringir sus oportunidades educativas e imponerle el trabajo no remunerado constituye violencia económica y psicológica bajo la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q847',
     topicId: 'pfrh_t6',
-    text: r'''Un cónyuge, disconforme con el presupuesto doméstico, destruye intencionalmente el refrigerador y la cocina que su esposa compró para el uso del hogar con su propio salario. ¿Cómo tipifica la ley este acto?''',
+    text:
+        r'''Un cónyuge, disconforme con el presupuesto doméstico, destruye intencionalmente el refrigerador y la cocina que su esposa compró para el uso del hogar con su propio salario. ¿Cómo tipifica la ley este acto?''',
     options: [
       r'''Inconducta menor derivada del uso de enseres gananciales comunes.''',
       r'''Violencia económica o patrimonial, al ocasionar menoscabo en los recursos y bienes de la víctima.''',
@@ -8483,12 +9764,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia física indirecta por el impacto sobre los electrodomésticos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Destruir intencionalmente los enseres o bienes del hogar adquiridos por la víctima o de propiedad compartida, con el fin de ejercer dominio u hostilidad, constituye violencia económica o patrimonial según la Ley N° 30364.''',
+    explanation:
+        r'''Destruir intencionalmente los enseres o bienes del hogar adquiridos por la víctima o de propiedad compartida, con el fin de ejercer dominio u hostilidad, constituye violencia económica o patrimonial según la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q848',
     topicId: 'pfrh_t6',
-    text: r'''Un hombre obliga a su pareja conviviente a ver videos de connotación pornográfica de manera reiterada a pesar de su negativa expresa y llanto de rechazo. ¿Qué tipo de violencia se configura?''',
+    text:
+        r'''Un hombre obliga a su pareja conviviente a ver videos de connotación pornográfica de manera reiterada a pesar de su negativa expresa y llanto de rechazo. ¿Qué tipo de violencia se configura?''',
     options: [
       r'''Violencia psicológica de nivel moderado.''',
       r'''Violencia sexual.''',
@@ -8496,12 +9779,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta atípica permitida bajo el régimen del derecho de convivencia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Imponer la visualización de pornografía o realizar actos de naturaleza sexual sin el libre consentimiento de la pareja constituye violencia sexual bajo los términos de la Ley N° 30364.''',
+    explanation:
+        r'''Imponer la visualización de pornografía o realizar actos de naturaleza sexual sin el libre consentimiento de la pareja constituye violencia sexual bajo los términos de la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q849',
     topicId: 'pfrh_t6',
-    text: r'''Si un progenitor prohíbe de forma absoluta a su hijo menor de edad ver o comunicarse con su abuelo materno con el único fin de infligir dolor a la madre, ¿bajo qué supuesto se enmarca esta casuística?''',
+    text:
+        r'''Si un progenitor prohíbe de forma absoluta a su hijo menor de edad ver o comunicarse con su abuelo materno con el único fin de infligir dolor a la madre, ¿bajo qué supuesto se enmarca esta casuística?''',
     options: [
       r'''Potestad legítima derivada de la patria potestad del menor.''',
       r'''Violencia psicológica instrumental a través del aislamiento del menor.''',
@@ -8509,12 +9794,14 @@ final List<Question> pfrhQuestions = [
       r'''Pauta de crianza lícita orientada a la selección del círculo social.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Utilizar la restricción de las relaciones socio-familiares del menor de edad para causar sufrimiento emocional a la madre u otros parientes es una forma de violencia psicológica por instrumentalización.''',
+    explanation:
+        r'''Utilizar la restricción de las relaciones socio-familiares del menor de edad para causar sufrimiento emocional a la madre u otros parientes es una forma de violencia psicológica por instrumentalización.''',
   ),
   Question(
     id: 'pfrh_q850',
     topicId: 'pfrh_t6',
-    text: r'''Un hombre exige a su excónyuge la rendición de cuentas del gasto de su sueldo personal, bajo la amenaza de no permitirle ver a los hijos si no le reporta sus movimientos financieros. ¿Qué tipo de violencia se discrimina?''',
+    text:
+        r'''Un hombre exige a su excónyuge la rendición de cuentas del gasto de su sueldo personal, bajo la amenaza de no permitirle ver a los hijos si no le reporta sus movimientos financieros. ¿Qué tipo de violencia se discrimina?''',
     options: [
       r'''Ejercicios legítimos de la tenencia compartida por parte del padre.''',
       r'''Violencia psicológica y económica por uso instrumental de los hijos y chantaje.''',
@@ -8522,12 +9809,14 @@ final List<Question> pfrhQuestions = [
       r'''Conducta lícita al tener el padre la custodia directa de los menores.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Chantajear a la madre con restringir el vínculo afectivo con sus hijos para controlar sus finanzas personales constituye violencia económica y psicológica bajo la Ley N° 30364.''',
+    explanation:
+        r'''Chantajear a la madre con restringir el vínculo afectivo con sus hijos para controlar sus finanzas personales constituye violencia económica y psicológica bajo la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q851',
     topicId: 'pfrh_t6',
-    text: r'''Si un hermano agrede psicológicamente de forma virtual a su hermana mediante mensajes denigrantes de texto, ¿se requiere convivencia física para aplicar la Ley N° 30364?''',
+    text:
+        r'''Si un hermano agrede psicológicamente de forma virtual a su hermana mediante mensajes denigrantes de texto, ¿se requiere convivencia física para aplicar la Ley N° 30364?''',
     options: [
       r'''Sí, puesto que la ley de violencia familiar exige la cohabitación en el mismo domicilio.''',
       r'''No, porque el vínculo de parentesco (hermanos) sitúa a las partes dentro del grupo familiar, resultando aplicable sin importar el domicilio.''',
@@ -8535,12 +9824,14 @@ final List<Question> pfrhQuestions = [
       r'''No, a menos que el canal digital de comunicación esté registrado a nombre de los padres.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El parentesco consanguíneo en segundo grado (hermanos) es suficiente para activar la Ley N° 30364. La convivencia física no es un requisito indispensable para la aplicación de la ley a los miembros de la familia.''',
+    explanation:
+        r'''El parentesco consanguíneo en segundo grado (hermanos) es suficiente para activar la Ley N° 30364. La convivencia física no es un requisito indispensable para la aplicación de la ley a los miembros de la familia.''',
   ),
   Question(
     id: 'pfrh_q852',
     topicId: 'pfrh_t6',
-    text: r'''Un cónyuge sustrae la cartilla de atención del seguro médico de su esposa embarazada con el fin de evitar que asista a sus controles prenatales. ¿Qué tipo de violencia se discrimina en esta conducta?''',
+    text:
+        r'''Un cónyuge sustrae la cartilla de atención del seguro médico de su esposa embarazada con el fin de evitar que asista a sus controles prenatales. ¿Qué tipo de violencia se discrimina en esta conducta?''',
     options: [
       r'''Violencia psicológica por negligencia conyugal recíproca.''',
       r'''Violencia económica o patrimonial al retener documentos de acceso a la salud.''',
@@ -8548,12 +9839,14 @@ final List<Question> pfrhQuestions = [
       r'''Ejercicios lícitos de toma de decisiones médicas en el hogar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Retener documentos de identidad o de salud para restringir el acceso a la atención médica indispensable de la gestante constituye violencia económica y patrimonial directa según el ordenamiento de la Ley N° 30364.''',
+    explanation:
+        r'''Retener documentos de identidad o de salud para restringir el acceso a la atención médica indispensable de la gestante constituye violencia económica y patrimonial directa según el ordenamiento de la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q853',
     topicId: 'pfrh_t6',
-    text: r'''Don Valerio, de 72 años, posee una pequeña parcela de cultivo de la cual subsiste. Su hijo Julián, molesto porque su padre se niega a traspasarle la propiedad, tranca el canal de regadío de la parcela y le esconde sus herramientas de labranza (pala, rastrillo y machete), manifestándole que se quede encerrado en su cuarto. El anciano recurre al Juzgado de Familia. ¿Cómo debe resolverse esta casuística?''',
+    text:
+        r'''Don Valerio, de 72 años, posee una pequeña parcela de cultivo de la cual subsiste. Su hijo Julián, molesto porque su padre se niega a traspasarle la propiedad, tranca el canal de regadío de la parcela y le esconde sus herramientas de labranza (pala, rastrillo y machete), manifestándole que se quede encerrado en su cuarto. El anciano recurre al Juzgado de Familia. ¿Cómo debe resolverse esta casuística?''',
     options: [
       r'''Archivar el caso por tratarse de un litigio de aguas de exclusiva competencia de la Autoridad Nacional del Agua.''',
       r'''Tipificar la conducta de Julián como violencia económica o patrimonial y psicológica contra un adulto mayor integrante del grupo familiar, dictando medidas de protección inmediatas.''',
@@ -8561,12 +9854,14 @@ final List<Question> pfrhQuestions = [
       r'''Calificar la obstrucción del canal como daño vecinal menor exento de medidas de protección familiar.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Julián corta el agua de regadío y oculta las herramientas de labranza del anciano (instrumentos de trabajo). Esto representa violencia económica y psicológica en perjuicio de un adulto mayor dependiente, ameritando la tutela del Juzgado de Familia de acuerdo con la Ley N° 30364.''',
+    explanation:
+        r'''Julián corta el agua de regadío y oculta las herramientas de labranza del anciano (instrumentos de trabajo). Esto representa violencia económica y psicológica en perjuicio de un adulto mayor dependiente, ameritando la tutela del Juzgado de Familia de acuerdo con la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q854',
     topicId: 'pfrh_t6',
-    text: r"""Martina vive con su cónyuge y la madre de este, la señora Elena. Martina, argumentando que la señora Elena 'ocupa demasiado espacio', le sirve porciones mínimas de alimento, le grita calificativos degradantes y le prohíbe usar la sala común de la casa, confinándola al lavadero del patio. Elena se queja con su hijo, pero este minimiza la agresión. Un pariente denuncia los hechos. ¿Qué procede legalmente?""",
+    text:
+        r"""Martina vive con su cónyuge y la madre de este, la señora Elena. Martina, argumentando que la señora Elena 'ocupa demasiado espacio', le sirve porciones mínimas de alimento, le grita calificativos degradantes y le prohíbe usar la sala común de la casa, confinándola al lavadero del patio. Elena se queja con su hijo, pero este minimiza la agresión. Un pariente denuncia los hechos. ¿Qué procede legalmente?""",
     options: [
       r'''Declarar la improcedencia de la denuncia, pues las desavenencias entre suegra y nuera representan conflictos vecinales privados.''',
       r'''Tramitar el caso bajo la Ley N° 30364, ya que la nuera y la suegra están vinculadas por afinidad en primer grado, configurando violencia física, psicológica y maltrato por omisión contra un adulto mayor.''',
@@ -8574,12 +9869,14 @@ final List<Question> pfrhQuestions = [
       r'''Archivar la denuncia si el hijo manifiesta que su madre exagera debido a su avanzada edad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El parentesco de afinidad en primer grado (suegra y nuera) está dentro del ámbito familiar de protección de la Ley N° 30364. Negar alimentos adecuados, restringir el uso de la vivienda y gritar insultos degradantes a una adulta mayor constituye violencia familiar grave y requiere medidas de protección inmediatas.''',
+    explanation:
+        r'''El parentesco de afinidad en primer grado (suegra y nuera) está dentro del ámbito familiar de protección de la Ley N° 30364. Negar alimentos adecuados, restringir el uso de la vivienda y gritar insultos degradantes a una adulta mayor constituye violencia familiar grave y requiere medidas de protección inmediatas.''',
   ),
   Question(
     id: 'pfrh_q855',
     topicId: 'pfrh_t6',
-    text: r'''Claudia es docente universitaria y vive con su conviviente Pedro. Pedro, celoso de las interacciones académicas de Claudia, hackea sus cuentas de correo institucional e instala cámaras espía en su escritorio sin su consentimiento. Al ser confrontado, Pedro rompe la laptop de Claudia y le dice que así no tendrá que responder a ningún colega. Claudia se siente atemorizada. ¿Cómo califica la agresión bajo la Ley N° 30364?''',
+    text:
+        r'''Claudia es docente universitaria y vive con su conviviente Pedro. Pedro, celoso de las interacciones académicas de Claudia, hackea sus cuentas de correo institucional e instala cámaras espía en su escritorio sin su consentimiento. Al ser confrontado, Pedro rompe la laptop de Claudia y le dice que así no tendrá que responder a ningún colega. Claudia se siente atemorizada. ¿Cómo califica la agresión bajo la Ley N° 30364?''',
     options: [
       r'''Delito informático de violación de comunicaciones que excluye la competencia de la ley de violencia familiar.''',
       r'''Violencia económica o patrimonial (destrucción de la laptop de trabajo) y violencia psicológica de género en la modalidad de acoso e intrusión tecnológica.''',
@@ -8587,12 +9884,14 @@ final List<Question> pfrhQuestions = [
       r'''Ejercicio lícito del derecho de fiscalización conyugal para preservar la fidelidad.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La intromisión en el correo laboral, la videovigilancia doméstica sin consentimiento y la destrucción de la laptop representan violencia psicológica y económica patrimonial bajo la Ley N° 30364, habilitando el dictado de medidas de protección.''',
+    explanation:
+        r'''La intromisión en el correo laboral, la videovigilancia doméstica sin consentimiento y la destrucción de la laptop representan violencia psicológica y económica patrimonial bajo la Ley N° 30364, habilitando el dictado de medidas de protección.''',
   ),
   Question(
     id: 'pfrh_q856',
     topicId: 'pfrh_t6',
-    text: r'''Tras la muerte del padre de ambos, los hermanos Luciana y Mateo continúan habitando el predio heredado. Mateo, quien desea ocupar todo el inmueble con su nueva pareja, comienza a arrojar baldes de agua sucia en la habitación de Luciana, le esconde las llaves de acceso del portón y le grita insultos misóginos exigiéndole que desaloje la casa. Luciana permanece encerrada por miedo. ¿Es aplicable la Ley N° 30364 en esta casuística?''',
+    text:
+        r'''Tras la muerte del padre de ambos, los hermanos Luciana y Mateo continúan habitando el predio heredado. Mateo, quien desea ocupar todo el inmueble con su nueva pareja, comienza a arrojar baldes de agua sucia en la habitación de Luciana, le esconde las llaves de acceso del portón y le grita insultos misóginos exigiéndole que desaloje la casa. Luciana permanece encerrada por miedo. ¿Es aplicable la Ley N° 30364 en esta casuística?''',
     options: [
       r'''No, porque es un litigio de herencia civil que debe resolverse mediante un juicio de división y partición ante el juzgado civil.''',
       r'''Sí, puesto que se configura violencia física indirecta, psicológica y económica o patrimonial entre hermanos en el entorno del domicilio común.''',
@@ -8600,12 +9899,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si Mateo es el heredero universal debidamente registrado.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Aunque el trasfondo sea un conflicto sucesorio, los métodos utilizados por Mateo (arrojar agua sucia, restringir llaves, insultos) configuran violencia psicológica y patrimonial para coaccionar a su hermana, requiriendo el cese de los actos hostiles y medidas judiciales de protección.''',
+    explanation:
+        r'''Aunque el trasfondo sea un conflicto sucesorio, los métodos utilizados por Mateo (arrojar agua sucia, restringir llaves, insultos) configuran violencia psicológica y patrimonial para coaccionar a su hermana, requiriendo el cese de los actos hostiles y medidas judiciales de protección.''',
   ),
   Question(
     id: 'pfrh_q857',
     topicId: 'pfrh_t6',
-    text: r'''Gisela denunció a su exconviviente Julio por violencia física previa. Julio, en represalia, retiene el DNI del menor hijo de ambos durante un fin de semana de visitas, manifestándole a Gisela que no le devolverá el documento para evitar que ella pueda matricularlo en el colegio o llevarlo a citas médicas. ¿Cómo debe tipificarse esta conducta de Julio?''',
+    text:
+        r'''Gisela denunció a su exconviviente Julio por violencia física previa. Julio, en represalia, retiene el DNI del menor hijo de ambos durante un fin de semana de visitas, manifestándole a Gisela que no le devolverá el documento para evitar que ella pueda matricularlo en el colegio o llevarlo a citas médicas. ¿Cómo debe tipificarse esta conducta de Julio?''',
     options: [
       r'''Ejercicio legítimo de la guarda documental provisional compartida.''',
       r'''Violencia económica o patrimonial en agravio de la madre e instrumentalización del menor de edad para causar daño psicológico.''',
@@ -8613,12 +9914,14 @@ final List<Question> pfrhQuestions = [
       r'''Conflicto civil de tenencia que solo puede ser analizado en la vía judicial penal de secuestro de documentos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La retención de documentos de identidad de los hijos menores de edad para perjudicar el cuidado de la madre representa violencia patrimonial y psicológica (manipulación instrumental de los hijos), sancionada por la Ley N° 30364.''',
+    explanation:
+        r'''La retención de documentos de identidad de los hijos menores de edad para perjudicar el cuidado de la madre representa violencia patrimonial y psicológica (manipulación instrumental de los hijos), sancionada por la Ley N° 30364.''',
   ),
   Question(
     id: 'pfrh_q858',
     topicId: 'pfrh_t6',
-    text: r'''El estudiante Renato publica en un grupo de mensajería de alumnos memes ofensivos con contenido de índole sexual degradante sobre su exenamorada y compañera de sección, Camila. Camila sufre crisis de llanto en el aula y se niega a retornar al colegio. Los padres de Renato minimizan el hecho alegando que son bromas de internet. ¿Qué procedimiento exige la ley ante este escenario?''',
+    text:
+        r'''El estudiante Renato publica en un grupo de mensajería de alumnos memes ofensivos con contenido de índole sexual degradante sobre su exenamorada y compañera de sección, Camila. Camila sufre crisis de llanto en el aula y se niega a retornar al colegio. Los padres de Renato minimizan el hecho alegando que son bromas de internet. ¿Qué procedimiento exige la ley ante este escenario?''',
     options: [
       r'''Esperar a que Camila cumpla la mayoría de edad para interponer una querella por difamación en el fuero civil.''',
       r'''Intervenir bajo la Ley N° 30364 al tratarse de violencia de género en el entorno escolar entre ex parejas, dictando medidas de protección de cese de acoso y apoyo psicológico.''',
@@ -8626,12 +9929,14 @@ final List<Question> pfrhQuestions = [
       r'''Recomendar a Camila que se traslade a otro colegio para no perturbar el rendimiento escolar de Renato.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La violencia digital de género entre adolescentes vinculados por una relación sentimental previa (ex parejas) está dentro de la protección de la Ley N° 30364, debiendo la escuela y el juzgado de familia actuar con rapidez para garantizar el bienestar de la menor y el cese de la hostilidad.''',
+    explanation:
+        r'''La violencia digital de género entre adolescentes vinculados por una relación sentimental previa (ex parejas) está dentro de la protección de la Ley N° 30364, debiendo la escuela y el juzgado de familia actuar con rapidez para garantizar el bienestar de la menor y el cese de la hostilidad.''',
   ),
   Question(
     id: 'pfrh_q859',
     topicId: 'pfrh_t6',
-    text: r'''Ricardo y Mónica están divorciados. Ricardo condiciona la entrega del dinero de la pensión alimenticia de sus hijos, manifestándole a Mónica que solo le depositará la mensualidad completa si ella accede a salir con él a solas y reportarle con quién sale los fines de semana. Mónica, desempleada y desesperada por las necesidades de sus hijos, denuncia la conducta. ¿Qué tipo de violencia se configura?''',
+    text:
+        r'''Ricardo y Mónica están divorciados. Ricardo condiciona la entrega del dinero de la pensión alimenticia de sus hijos, manifestándole a Mónica que solo le depositará la mensualidad completa si ella accede a salir con él a solas y reportarle con quién sale los fines de semana. Mónica, desempleada y desesperada por las necesidades de sus hijos, denuncia la conducta. ¿Qué tipo de violencia se configura?''',
     options: [
       r'''Una práctica de negociación conyugal ordinaria permitida tras el divorcio.''',
       r'''Violencia económica o patrimonial (manipulación alimenticia) y violencia psicológica al atentar contra la libertad individual de su expareja.''',
@@ -8639,12 +9944,14 @@ final List<Question> pfrhQuestions = [
       r'''Incumplimiento de deberes alimentarios simple que debe resolverse únicamente en el juzgado de alimentos.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El uso de la pensión alimentaria como herramienta de control y chantaje para coaccionar la libertad individual y personal de la expareja constituye violencia económica y psicológica bajo la Ley N° 30364, ameritando medidas de protección de prohibición de acoso.''',
+    explanation:
+        r'''El uso de la pensión alimentaria como herramienta de control y chantaje para coaccionar la libertad individual y personal de la expareja constituye violencia económica y psicológica bajo la Ley N° 30364, ameritando medidas de protección de prohibición de acoso.''',
   ),
   Question(
     id: 'pfrh_q860',
     topicId: 'pfrh_t6',
-    text: r'''Don Jacinto, un agricultor analfabeto de 82 años, vive en la sierra con su hijo menor Andrés. Andrés lo obliga a colocar su huella digital en un documento que transfiere la propiedad de sus tierras de cultivo a favor de Andrés, amenazándolo con no darle de comer ni llevarlo al puesto de salud si se niega. Don Jacinto cede por miedo. Vecinos descubren la situación y denuncian el hecho. ¿Cuál es el tratamiento de este caso bajo la Ley N° 30364?''',
+    text:
+        r'''Don Jacinto, un agricultor analfabeto de 82 años, vive en la sierra con su hijo menor Andrés. Andrés lo obliga a colocar su huella digital en un documento que transfiere la propiedad de sus tierras de cultivo a favor de Andrés, amenazándolo con no darle de comer ni llevarlo al puesto de salud si se niega. Don Jacinto cede por miedo. Vecinos descubren la situación y denuncian el hecho. ¿Cuál es el tratamiento de este caso bajo la Ley N° 30364?''',
     options: [
       r'''Declarar la ineficacia de la ley, pues los contratos firmados por el adulto mayor son plenamente válidos e irrevocables.''',
       r'''Configurar violencia económica o patrimonial y psicológica contra un adulto mayor vulnerable, debiendo el juez dictar medidas de protección inmediatas.''',
@@ -8652,12 +9959,14 @@ final List<Question> pfrhQuestions = [
       r'''Archivar la denuncia al considerarse una transacción agraria familiar lícita no interferible.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Obligar a un adulto mayor analfabeto a transferir sus bienes mediante la amenaza de privarlo de alimentación y salud representa violencia patrimonial y psicológica severa. El Juzgado de Familia de la Ley N° 30364 está facultado para dictar medidas de protección que impidan el despojo material de la víctima.''',
+    explanation:
+        r'''Obligar a un adulto mayor analfabeto a transferir sus bienes mediante la amenaza de privarlo de alimentación y salud representa violencia patrimonial y psicológica severa. El Juzgado de Familia de la Ley N° 30364 está facultado para dictar medidas de protección que impidan el despojo material de la víctima.''',
   ),
   Question(
     id: 'pfrh_q861',
     topicId: 'pfrh_t6',
-    text: r'''Viviana y Tomás conviven hace cinco años en un departamento alquilado a nombre de Tomás. Tras una discusión sobre el cuidado de la casa, Tomás echa a Viviana del predio en horas de la madrugada arrojándole sus pertenencias por el balcón y reteniéndole su DNI y dinero personal. ¿Tiene Viviana amparo bajo la Ley N° 30364?''',
+    text:
+        r'''Viviana y Tomás conviven hace cinco años en un departamento alquilado a nombre de Tomás. Tras una discusión sobre el cuidado de la casa, Tomás echa a Viviana del predio en horas de la madrugada arrojándole sus pertenencias por el balcón y reteniéndole su DNI y dinero personal. ¿Tiene Viviana amparo bajo la Ley N° 30364?''',
     options: [
       r'''No, porque al no estar casados civilmente no se configura un grupo familiar legalmente establecido.''',
       r'''Sí, porque la convivencia la faculta como integrante del grupo familiar, constituyendo el desalojo forzoso y retención de bienes violencia económica, física y psicológica.''',
@@ -8665,12 +9974,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si Viviana paga una tasa judicial administrativa de carácter penal para validar la denuncia.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La ley incluye expresamente a los convivientes y exconvivientes dentro de los sujetos del grupo familiar de protección. Echar a la pareja de madrugada y retener sus documentos y dinero representa violencia patrimonial, psicológica y física, requiriendo el dictado inmediato de medidas de protección.''',
+    explanation:
+        r'''La ley incluye expresamente a los convivientes y exconvivientes dentro de los sujetos del grupo familiar de protección. Echar a la pareja de madrugada y retener sus documentos y dinero representa violencia patrimonial, psicológica y física, requiriendo el dictado inmediato de medidas de protección.''',
   ),
   Question(
     id: 'pfrh_q862',
     topicId: 'pfrh_t6',
-    text: r'''Carlos y Teresa son hermanos y comparten una vivienda heredada. Teresa tiene un taller de costura en el patio común. Carlos, molesto por el ruido de las máquinas, destrozar los cables eléctricos de las máquinas y roza pintura sobre las telas de Teresa. Teresa denuncia el hecho alegando violencia patrimonial. ¿Qué debe resolver el juez de familia?''',
+    text:
+        r'''Carlos y Teresa son hermanos y comparten una vivienda heredada. Teresa tiene un taller de costura en el patio común. Carlos, molesto por el ruido de las máquinas, destrozar los cables eléctricos de las máquinas y roza pintura sobre las telas de Teresa. Teresa denuncia el hecho alegando violencia patrimonial. ¿Qué debe resolver el juez de familia?''',
     options: [
       r'''Archivar el caso por ser un simple litigio de daños materiales comunes entre vecinos.''',
       r'''Dictar medidas de protección por violencia económica o patrimonial y psicológica entre miembros del grupo familiar (hermanos), prohibiendo a Carlos realizar actos hostiles.''',
@@ -8678,12 +9989,14 @@ final List<Question> pfrhQuestions = [
       r'''Remitir el caso a la vía de la conciliación extrajudicial para acordar un pago por daños en el futuro.''',
     ],
     correctAnswer: 1,
-    explanation: r'''El parentesco consanguíneo en segundo grado (hermanos) sitúa el conflicto bajo el ámbito del grupo familiar de la Ley N° 30364. La destrucción intencional de la maquinaria de coser e insumos de trabajo califica como violencia económica, ameritando el dictado rápido de medidas de protección.''',
+    explanation:
+        r'''El parentesco consanguíneo en segundo grado (hermanos) sitúa el conflicto bajo el ámbito del grupo familiar de la Ley N° 30364. La destrucción intencional de la maquinaria de coser e insumos de trabajo califica como violencia económica, ameritando el dictado rápido de medidas de protección.''',
   ),
   Question(
     id: 'pfrh_q863',
     topicId: 'pfrh_t6',
-    text: r'''Al terminar la relación con Liliana, Daniel le envía mensajes amenazándola con publicar fotos privadas en redes sociales si no accede a reunirse con él. Liliana sufre crisis de ansiedad y se siente acorralada. ¿Cómo debe tipificarse y abordarse este caso de violencia?''',
+    text:
+        r'''Al terminar la relación con Liliana, Daniel le envía mensajes amenazándola con publicar fotos privadas en redes sociales si no accede a reunirse con él. Liliana sufre crisis de ansiedad y se siente acorralada. ¿Cómo debe tipificarse y abordarse este caso de violencia?''',
     options: [
       r'''Delito civil común de chantaje que se excluye del marco de la violencia intrafamiliar y de género.''',
       r'''Violencia psicológica y sexual bajo la modalidad de acoso digital y coacción de carácter íntimo, debiendo el Juez de Familia emitir de inmediato medidas de protección.''',
@@ -8691,12 +10004,14 @@ final List<Question> pfrhQuestions = [
       r'''Intromisión lícita en la privacidad con fines de reconciliación voluntaria de pareja.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La amenaza de difundir imágenes íntimas para forzar encuentros o condicionar la libertad de una ex pareja constituye violencia psicológica severa y violencia sexual. La Ley N° 30364 faculta al juez a dictar medidas prohibitivas urgentes para cesar el acoso digital.''',
+    explanation:
+        r'''La amenaza de difundir imágenes íntimas para forzar encuentros o condicionar la libertad de una ex pareja constituye violencia psicológica severa y violencia sexual. La Ley N° 30364 faculta al juez a dictar medidas prohibitivas urgentes para cesar el acoso digital.''',
   ),
   Question(
     id: 'pfrh_q864',
     topicId: 'pfrh_t6',
-    text: r'''Elena asume en exclusividad el cuidado diario de su anciano padre postrado en cama. Sus otros tres hermanos se desentienden del padre, negándose a aportar dinero para pañales, medicina y alimentación, a pesar de tener recursos económicos holgados, dejándole toda la carga a Elena quien está desempleada. ¿Qué tipo de violencia familiar se configura?''',
+    text:
+        r'''Elena asume en exclusividad el cuidado diario de su anciano padre postrado en cama. Sus otros tres hermanos se desentienden del padre, negándose a aportar dinero para pañales, medicina y alimentación, a pesar de tener recursos económicos holgados, dejándole toda la carga a Elena quien está desempleada. ¿Qué tipo de violencia familiar se configura?''',
     options: [
       r'''Conflicto ordinario de corresponsabilidad filial privada sin relevancia penal o tutelar.''',
       r'''Violencia económica o patrimonial por omisión contra el adulto mayor (abandono alimenticio) y violencia psicológica por sobrecarga forzada contra la hermana.''',
@@ -8704,12 +10019,14 @@ final List<Question> pfrhQuestions = [
       r'''Falta menor que prescribe de manera inmediata al fallecer el adulto mayor.''',
     ],
     correctAnswer: 1,
-    explanation: r'''La omisión de asistencia alimentaria y de salud al padre anciano dependiente por parte de los hijos con capacidad económica configura violencia económica contra el adulto mayor. Asimismo, imponer de forma coercitiva toda la carga de cuidados a un solo familiar sin recursos representa violencia psicológica intrafamiliar.''',
+    explanation:
+        r'''La omisión de asistencia alimentaria y de salud al padre anciano dependiente por parte de los hijos con capacidad económica configura violencia económica contra el adulto mayor. Asimismo, imponer de forma coercitiva toda la carga de cuidados a un solo familiar sin recursos representa violencia psicológica intrafamiliar.''',
   ),
   Question(
     id: 'pfrh_q865',
     topicId: 'pfrh_t6',
-    text: r'''Javier alquila una habitación de su casa a su primo hermano Ernesto. Tras una fuerte discusión por el pago del alquiler mensual, Ernesto ingresa a la cocina de Javier y arroja la vajilla al suelo, escupiéndole en el rostro y amenazándolo con quemarle la casa si intenta desalojarlo legalmente. ¿Se ampara este hecho bajo el ámbito de la Ley N° 30364?''',
+    text:
+        r'''Javier alquila una habitación de su casa a su primo hermano Ernesto. Tras una fuerte discusión por el pago del alquiler mensual, Ernesto ingresa a la cocina de Javier y arroja la vajilla al suelo, escupiéndole en el rostro y amenazándolo con quemarle la casa si intenta desalojarlo legalmente. ¿Se ampara este hecho bajo el ámbito de la Ley N° 30364?''',
     options: [
       r'''No, porque al existir un contrato de alquiler, la relación se torna comercial, quedando excluida del grupo familiar.''',
       r'''Sí, porque el parentesco de primos hermanos (cuarto grado de consanguinidad) prevalece sobre la relación de arrendamiento, configurando violencia física, psicológica y económica en el grupo familiar.''',
@@ -8717,12 +10034,14 @@ final List<Question> pfrhQuestions = [
       r'''Sí, pero solo si Ernesto cuenta con antecedentes policiales previos por invasión de tierras.''',
     ],
     correctAnswer: 1,
-    explanation: r'''Los primos hermanos son parientes en cuarto grado de consanguinidad, constituyendo sujetos protegidos de la Ley N° 30364. La agresión física, psicológica y las amenazas de daño patrimonial en el predio común se canalizan bajo la ley de violencia familiar, sin que la relación contractual secundaria (alquiler) anule el deber de tutela especial del grupo familiar.''',
+    explanation:
+        r'''Los primos hermanos son parientes en cuarto grado de consanguinidad, constituyendo sujetos protegidos de la Ley N° 30364. La agresión física, psicológica y las amenazas de daño patrimonial en el predio común se canalizan bajo la ley de violencia familiar, sin que la relación contractual secundaria (alquiler) anule el deber de tutela especial del grupo familiar.''',
   ),
   Question(
     id: 'pfrh_q866',
     topicId: 'pfrh_t6',
-    text: r'''Según la Ley 30364, toda acción u omisión que cause lesiones corporales, dolor, daño a la salud o muerte de un miembro familiar se clasifica como:''',
+    text:
+        r'''Según la Ley 30364, toda acción u omisión que cause lesiones corporales, dolor, daño a la salud o muerte de un miembro familiar se clasifica como:''',
     options: [
       r'''Violencia de género abstracta''',
       r'''Violencia sexual''',
@@ -8731,12 +10050,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia patrimonial''',
     ],
     correctAnswer: 2,
-    explanation: r'''La violencia física involucra el uso intencional de la fuerza corporal o de objetos para causar lesiones o heridas.''',
+    explanation:
+        r'''La violencia física involucra el uso intencional de la fuerza corporal o de objetos para causar lesiones o heridas.''',
   ),
   Question(
     id: 'pfrh_q867',
     topicId: 'pfrh_t6',
-    text: r'''El maltrato sistemático caracterizado por humillaciones, insultos, amenazas, aislamiento, control y desvalorización que perturba la estabilidad emocional es la:''',
+    text:
+        r'''El maltrato sistemático caracterizado por humillaciones, insultos, amenazas, aislamiento, control y desvalorización que perturba la estabilidad emocional es la:''',
     options: [
       r'''Violencia patrimonial''',
       r'''Violencia física''',
@@ -8745,12 +10066,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia de género''',
     ],
     correctAnswer: 3,
-    explanation: r'''La violencia psicológica daña la autoestima, la dignidad y el libre desarrollo de la personalidad sin dejar huellas físicas visibles.''',
+    explanation:
+        r'''La violencia psicológica daña la autoestima, la dignidad y el libre desarrollo de la personalidad sin dejar huellas físicas visibles.''',
   ),
   Question(
     id: 'pfrh_q868',
     topicId: 'pfrh_t6',
-    text: r'''Imponer conductas de carácter sexual a una persona sin su libre consentimiento, mediante el uso de la fuerza física, amenazas o intimidación, constituye:''',
+    text:
+        r'''Imponer conductas de carácter sexual a una persona sin su libre consentimiento, mediante el uso de la fuerza física, amenazas o intimidación, constituye:''',
     options: [
       r'''Acoso callejero leve''',
       r'''Violencia psicológica''',
@@ -8759,12 +10082,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia sexual''',
     ],
     correctAnswer: 4,
-    explanation: r'''La violencia sexual transgrede la libertad y autodeterminación sexual del individuo, siendo delito penal grave.''',
+    explanation:
+        r'''La violencia sexual transgrede la libertad y autodeterminación sexual del individuo, siendo delito penal grave.''',
   ),
   Question(
     id: 'pfrh_q869',
     topicId: 'pfrh_t6',
-    text: r'''La retención de sueldos o documentos, el control financiero abusivo o la destrucción de bienes personales del cónyuge tipifican como:''',
+    text:
+        r'''La retención de sueldos o documentos, el control financiero abusivo o la destrucción de bienes personales del cónyuge tipifican como:''',
     options: [
       r'''Violencia administrativa''',
       r'''Violencia física''',
@@ -8773,12 +10098,14 @@ final List<Question> pfrhQuestions = [
       r'''Violencia psicológica''',
     ],
     correctAnswer: 3,
-    explanation: r'''La violencia económica o patrimonial menoscaba los recursos financieros de la víctima con fines de coacción y dependencia.''',
+    explanation:
+        r'''La violencia económica o patrimonial menoscaba los recursos financieros de la víctima con fines de coacción y dependencia.''',
   ),
   Question(
     id: 'pfrh_q870',
     topicId: 'pfrh_t6',
-    text: r'''¿Cuál es el marco normativo peruano vigente diseñado para prevenir, sancionar y erradicar la violencia contra las mujeres y los integrantes del grupo familiar?''',
+    text:
+        r'''¿Cuál es el marco normativo peruano vigente diseñado para prevenir, sancionar y erradicar la violencia contra las mujeres y los integrantes del grupo familiar?''',
     options: [
       r'''Ley 30364''',
       r'''Código Penal General''',
@@ -8787,12 +10114,14 @@ final List<Question> pfrhQuestions = [
       r'''Ley de Seguridad Ciudadana''',
     ],
     correctAnswer: 0,
-    explanation: r'''La Ley 30364 regula de manera integral el proceso especial de tutela, las medidas de protección y la sanción penal para los agresores.''',
+    explanation:
+        r'''La Ley 30364 regula de manera integral el proceso especial de tutela, las medidas de protección y la sanción penal para los agresores.''',
   ),
   Question(
     id: 'pfrh_q871',
     topicId: 'pfrh_t6',
-    text: r'''Las acciones inmediatas de carácter provisional dictadas por el juez de familia para salvaguardar la vida e integridad de la víctima (como el retiro del agresor o impedimento de acercamiento) se llaman:''',
+    text:
+        r'''Las acciones inmediatas de carácter provisional dictadas por el juez de familia para salvaguardar la vida e integridad de la víctima (como el retiro del agresor o impedimento de acercamiento) se llaman:''',
     options: [
       r'''Sanciones penales''',
       r'''Sentencias preventivas''',
@@ -8801,12 +10130,14 @@ final List<Question> pfrhQuestions = [
       r'''Medidas de protección''',
     ],
     correctAnswer: 4,
-    explanation: r'''Las medidas de protección neutralizan el riesgo de agresión inmediata y su desobediencia es un delito penal de flagrancia.''',
+    explanation:
+        r'''Las medidas de protección neutralizan el riesgo de agresión inmediata y su desobediencia es un delito penal de flagrancia.''',
   ),
   Question(
     id: 'pfrh_q872',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué órgano jurisdiccional es el encargado de recibir los informes sobre violencia y dictar las medidas de protección a favor de la víctima en un plazo máximo de 24 a 72 horas?''',
+    text:
+        r'''¿Qué órgano jurisdiccional es el encargado de recibir los informes sobre violencia y dictar las medidas de protección a favor de la víctima en un plazo máximo de 24 a 72 horas?''',
     options: [
       r'''Corte Suprema''',
       r'''Fiscalía de la Nación''',
@@ -8815,12 +10146,14 @@ final List<Question> pfrhQuestions = [
       r'''Comisaría de la PNP''',
     ],
     correctAnswer: 2,
-    explanation: r'''El juez de familia (o penal en su defecto) tiene la competencia exclusiva para ordenar las medidas de tutela y protección necesarias.''',
+    explanation:
+        r'''El juez de familia (o penal en su defecto) tiene la competencia exclusiva para ordenar las medidas de tutela y protección necesarias.''',
   ),
   Question(
     id: 'pfrh_q873',
     topicId: 'pfrh_t6',
-    text: r'''¿Qué institución del Estado tiene el deber ineludible de recibir denuncias por violencia familiar, realizar las diligencias urgentes y ejecutar las medidas de protección dictadas por el juez?''',
+    text:
+        r'''¿Qué institución del Estado tiene el deber ineludible de recibir denuncias por violencia familiar, realizar las diligencias urgentes y ejecutar las medidas de protección dictadas por el juez?''',
     options: [
       r'''Las Juntas Vecinales''',
       r'''La Policía Nacional del Perú''',
@@ -8829,12 +10162,14 @@ final List<Question> pfrhQuestions = [
       r'''El Centro Emergencia Mujer (CEM)''',
     ],
     correctAnswer: 1,
-    explanation: r'''La PNP ejerce un rol operativo vital en la atención prioritaria de la violencia, estando facultada para allanar domicilios ante peligro inminente.''',
+    explanation:
+        r'''La PNP ejerce un rol operativo vital en la atención prioritaria de la violencia, estando facultada para allanar domicilios ante peligro inminente.''',
   ),
   Question(
     id: 'pfrh_q874',
     topicId: 'pfrh_t6',
-    text: r'''Los servicios públicos especializados y gratuitos del MIMP que brindan asesoría jurídica, psicológica y social a las víctimas de violencia familiar se denominan:''',
+    text:
+        r'''Los servicios públicos especializados y gratuitos del MIMP que brindan asesoría jurídica, psicológica y social a las víctimas de violencia familiar se denominan:''',
     options: [
       r'''Centros de Rehabilitación Social''',
       r'''Demunas distritales''',
@@ -8843,12 +10178,14 @@ final List<Question> pfrhQuestions = [
       r'''Centro Emergencia Mujer (CEM)''',
     ],
     correctAnswer: 4,
-    explanation: r'''Los CEM son centros del Ministerio de la Mujer ubicados en provincias y comisarias para dar acompañamiento integral a las víctimas.''',
+    explanation:
+        r'''Los CEM son centros del Ministerio de la Mujer ubicados en provincias y comisarias para dar acompañamiento integral a las víctimas.''',
   ),
   Question(
     id: 'pfrh_q875',
     topicId: 'pfrh_t6',
-    text: r'''El homicidio de una mujer cometido por un hombre debido a su condición de tal, en el contexto de violencia familiar, discriminación o acoso, se tipifica en el Código Penal como:''',
+    text:
+        r'''El homicidio de una mujer cometido por un hombre debido a su condición de tal, en el contexto de violencia familiar, discriminación o acoso, se tipifica en el Código Penal como:''',
     options: [
       r'''Feminicidio o Femicidio''',
       r'''Parricidio agravado''',
@@ -8857,7 +10194,8 @@ final List<Question> pfrhQuestions = [
       r'''Lesión dolosa con resultado de muerte''',
     ],
     correctAnswer: 0,
-    explanation: r'''El feminicidio es la expresión extrema del ciclo de violencia de género, tipificado como un delito autónomo con penas privativas de libertad muy severas.''',
+    explanation:
+        r'''El feminicidio es la expresión extrema del ciclo de violencia de género, tipificado como un delito autónomo con penas privativas de libertad muy severas.''',
   ),
   ...personaFamiliaQuestions,
   ...derechosHumanosQuestions,

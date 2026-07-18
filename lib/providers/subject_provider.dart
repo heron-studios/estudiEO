@@ -15,7 +15,6 @@ class SubjectProvider extends ChangeNotifier {
   bool _isPremium = false;
   bool get isPremium => _isPremium;
 
-
   void setPremium(bool value) {
     if (_isPremium != value) {
       _isPremium = value;
@@ -31,14 +30,16 @@ class SubjectProvider extends ChangeNotifier {
     _allSubjects = SubjectsRepository.getAllSubjects()
         .where((s) => s.id != 'matematicas')
         .toList();
-    
-    _allSubjects.add(Subject(
-      id: 'ai_custom_subject',
-      name: 'Mis Flashcards',
-      icon: 'psychology',
-      color: '#9C27B0',
-      topicIds: [],
-    ));
+
+    _allSubjects.add(
+      Subject(
+        id: 'ai_custom_subject',
+        name: 'Mis Flashcards',
+        icon: 'psychology',
+        color: '#9C27B0',
+        topicIds: [],
+      ),
+    );
 
     _currentSubject = null;
     _currentTopic = null;
@@ -52,7 +53,9 @@ class SubjectProvider extends ChangeNotifier {
 
   void updateVisibleSubjects() {
     final hiddenSubjectIds = _storage.loadHiddenSubjects();
-    _visibleSubjects = _allSubjects.where((s) => !hiddenSubjectIds.contains(s.id)).toList();
+    _visibleSubjects = _allSubjects
+        .where((s) => !hiddenSubjectIds.contains(s.id))
+        .toList();
     notifyListeners();
   }
 
@@ -89,32 +92,40 @@ class SubjectProvider extends ChangeNotifier {
     }
     return SubjectsRepository.getSubject(id);
   }
-  
+
   List<Topic> getTopicsBySubject(String subjectId) {
     if (subjectId == 'ai_custom_subject') {
       return _storage.loadCustomTopics();
     }
     return SubjectsRepository.getTopicsBySubject(subjectId);
   }
-  
+
   Topic? getTopic(String id) {
     if (id.startsWith('ai_topic_')) {
       return _storage.loadCustomTopics().where((t) => t.id == id).firstOrNull;
     }
     return SubjectsRepository.getTopic(id);
   }
-  
+
   List<Question> getQuestionsByTopic(String id) {
     if (id.startsWith('ai_topic_')) {
-      return _storage.loadCustomQuestions().where((q) => q.topicId == id).toList();
+      return _storage
+          .loadCustomQuestions()
+          .where((q) => q.topicId == id)
+          .toList();
     }
     return SubjectsRepository.getQuestionsByTopic(id, isPremium: _isPremium);
   }
-  
-  List<Question> generateExamQuestions() => SubjectsRepository.generateExamQuestions(isPremium: _isPremium);
-  
-  List<Question> getAllQuestionsByTopicShuffled(String id) => SubjectsRepository.getAllQuestionsByTopicShuffled(id, isPremium: _isPremium);
-  
+
+  List<Question> generateExamQuestions() =>
+      SubjectsRepository.generateExamQuestions(isPremium: _isPremium);
+
+  List<Question> getAllQuestionsByTopicShuffled(String id) =>
+      SubjectsRepository.getAllQuestionsByTopicShuffled(
+        id,
+        isPremium: _isPremium,
+      );
+
   Question? getQuestion(String id) {
     if (id.startsWith('ai_gen_')) {
       return _storage.getCustomQuestion(id);
@@ -122,8 +133,16 @@ class SubjectProvider extends ChangeNotifier {
     return SubjectsRepository.getQuestion(id, isPremium: _isPremium);
   }
 
-  List<Question> getQuestionsByTopicAndLevel(String id, Dificultad nivel, {int count = 10}) =>
-      SubjectsRepository.getQuestionsByTopicAndLevel(id, nivel, count: count, isPremium: _isPremium);
+  List<Question> getQuestionsByTopicAndLevel(
+    String id,
+    Dificultad nivel, {
+    int count = 10,
+  }) => SubjectsRepository.getQuestionsByTopicAndLevel(
+    id,
+    nivel,
+    count: count,
+    isPremium: _isPremium,
+  );
 
   String? getTheoryByTopicAndLevel(String id, Dificultad nivel) =>
       SubjectsRepository.getTheoryByTopicAndLevel(id, nivel);

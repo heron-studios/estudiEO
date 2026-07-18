@@ -83,14 +83,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final auth = context.read<AuthService>();
     final user = auth.currentUser;
     if (user == null) return;
-    
+
     final storage = context.read<LocalStorageService>();
     final name = storage.loadUserName();
     final school = storage.loadTargetSchool();
-    
+
     final gami = context.read<GamificationProvider>();
     final xp = gami.xp;
-    
+
     final leaderboard = LeaderboardService();
     await leaderboard.syncUserScore(
       uid: user.uid,
@@ -656,7 +656,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
     return HoverGlassCard(
@@ -707,7 +706,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       color: Colors.white.withValues(alpha: 0.15),
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3)),
+                        color: Colors.white.withValues(alpha: 0.3),
+                      ),
                     ),
                     child: const Icon(
                       Icons.check_circle_rounded,
@@ -1009,29 +1009,50 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             children: [
                               // Trophy (Leaderboard)
                               GestureDetector(
-                                onTap: () => _showLeaderboardDialog(context, nt),
+                                onTap: () =>
+                                    _showLeaderboardDialog(context, nt),
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 6,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: Colors.amber.withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+                                    border: Border.all(
+                                      color: Colors.amber.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                    ),
                                   ),
-                                  child: const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 16),
+                                  child: const Icon(
+                                    Icons.emoji_events_rounded,
+                                    color: Colors.amber,
+                                    size: 16,
+                                  ),
                                 ),
                               ),
                               const SizedBox(width: 8),
                               // Racha
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.orange.withValues(alpha: 0.15),
                                   borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                    color: Colors.orange.withValues(alpha: 0.3),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
-                                    const Icon(Icons.local_fire_department_rounded, color: Colors.orangeAccent, size: 16),
+                                    const Icon(
+                                      Icons.local_fire_department_rounded,
+                                      color: Colors.orangeAccent,
+                                      size: 16,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '${gami.streak}',
@@ -1047,15 +1068,28 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               const SizedBox(width: 8),
                               // Nivel
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF7C3AED).withValues(alpha: 0.15),
+                                  color: const Color(
+                                    0xFF7C3AED,
+                                  ).withValues(alpha: 0.15),
                                   borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: const Color(0xFF7C3AED).withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                    color: const Color(
+                                      0xFF7C3AED,
+                                    ).withValues(alpha: 0.3),
+                                  ),
                                 ),
                                 child: Row(
                                   children: [
-                                    const Icon(Icons.star_rounded, color: Color(0xFFC084FC), size: 16),
+                                    const Icon(
+                                      Icons.star_rounded,
+                                      color: Color(0xFFC084FC),
+                                      size: 16,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'Nvl ${gami.level}',
@@ -1118,13 +1152,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-              
+
               // ── BANNER DE REPASO (SRS) ──────────────────────────────────
               Consumer<SrsProvider>(
                 builder: (context, srs, child) {
                   final count = srs.getReviewQueue().length;
                   if (count == 0) return const SizedBox.shrink();
-                  
+
                   return FadeTransition(
                     opacity: _fabAnimation,
                     child: Padding(
@@ -1136,10 +1170,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           onTap: () => context.push('/srs-review'),
                           hoverGradientBorder: true,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 16,
+                            ),
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [nt.successGreen.withValues(alpha: 0.8), nt.successGreen.withValues(alpha: 0.4)],
+                                colors: [
+                                  nt.successGreen.withValues(alpha: 0.8),
+                                  nt.successGreen.withValues(alpha: 0.4),
+                                ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),
@@ -1153,12 +1193,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     color: Colors.white.withValues(alpha: 0.2),
                                     shape: BoxShape.circle,
                                   ),
-                                  child: const Icon(Icons.history_edu_rounded, color: Colors.white, size: 28),
+                                  child: const Icon(
+                                    Icons.history_edu_rounded,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
                                 ),
                                 const SizedBox(width: 16),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         '🎯 ¡Tienes $count repaso${count > 1 ? 's' : ''} pendiente${count > 1 ? 's' : ''}!',
@@ -1180,7 +1225,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                                const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
+                                const Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
                               ],
                             ),
                           ),
@@ -1208,7 +1257,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 Row(
                                   children: [
                                     Expanded(
-                                      child: _buildDailyMissionCard(context, nt),
+                                      child: _buildDailyMissionCard(
+                                        context,
+                                        nt,
+                                      ),
                                     ),
                                     const SizedBox(width: 16),
                                     Expanded(
@@ -1236,7 +1288,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     Expanded(
                                       child: AspectRatio(
                                         aspectRatio: 1.25,
-                                        child: _buildAprendizajeTile(context, nt),
+                                        child: _buildAprendizajeTile(
+                                          context,
+                                          nt,
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(width: 16),
@@ -1339,7 +1394,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 ],
                               ),
                             );
-
                           }
                         },
                       ),
@@ -1357,13 +1411,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void _showLeaderboardDialog(BuildContext context, NeuralThemeData nt) {
     final storage = context.read<LocalStorageService>();
     final userSchool = storage.loadTargetSchool();
-    
+
     showDialog(
       context: context,
       builder: (context) {
         return Dialog(
           backgroundColor: Colors.transparent,
-          insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          insetPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 24,
+          ),
           child: Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.75,
@@ -1375,7 +1432,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.5),
                   blurRadius: 30,
-                )
+                ),
               ],
             ),
             child: ClipRRect(
@@ -1399,7 +1456,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                       child: Column(
                         children: [
-                          const Icon(Icons.emoji_events_rounded, color: Colors.amber, size: 40),
+                          const Icon(
+                            Icons.emoji_events_rounded,
+                            color: Colors.amber,
+                            size: 40,
+                          ),
                           const SizedBox(height: 8),
                           const Text(
                             'Ranking Global',
@@ -1435,16 +1496,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       padding: const EdgeInsets.all(16.0),
                       child: TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: Text('Cerrar', style: TextStyle(color: nt.textSecondary)),
+                        child: Text(
+                          'Cerrar',
+                          style: TextStyle(color: nt.textSecondary),
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
           ),
         );
-      }
+      },
     );
   }
 
@@ -1471,7 +1535,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           itemBuilder: (context, index) {
             final user = users[index];
             final rank = index + 1;
-            
+
             Color rankColor;
             if (rank == 1) {
               rankColor = const Color(0xFFFFD700);
@@ -1489,8 +1553,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 color: Colors.white.withValues(alpha: rank <= 3 ? 0.05 : 0.02),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: rank <= 3 
-                      ? rankColor.withValues(alpha: 0.3) 
+                  color: rank <= 3
+                      ? rankColor.withValues(alpha: 0.3)
                       : Colors.white.withValues(alpha: 0.05),
                 ),
               ),
@@ -1527,7 +1591,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 }
-
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  _GlassTile — tile cuadrado del grid con gradiente por color

@@ -35,13 +35,16 @@ class SRSItem {
       intervalDays = 1;
     }
 
-    easinessFactor = easinessFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+    easinessFactor =
+        easinessFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
     if (easinessFactor < 1.3) easinessFactor = 1.3;
 
     nextReviewDate = DateTime.now().add(Duration(days: intervalDays));
   }
 
-  bool get isDue => DateTime.now().isAfter(nextReviewDate) || DateTime.now().isAtSameMomentAs(nextReviewDate);
+  bool get isDue =>
+      DateTime.now().isAfter(nextReviewDate) ||
+      DateTime.now().isAtSameMomentAs(nextReviewDate);
 }
 
 class SpacedRepetitionEngine {

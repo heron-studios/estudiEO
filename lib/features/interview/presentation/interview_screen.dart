@@ -18,18 +18,25 @@ class _PulsingMic extends StatefulWidget {
   @override
   State<_PulsingMic> createState() => _PulsingMicState();
 }
-class _PulsingMicState extends State<_PulsingMic> with SingleTickerProviderStateMixin {
+
+class _PulsingMicState extends State<_PulsingMic>
+    with SingleTickerProviderStateMixin {
   late AnimationController _ctrl;
   @override
   void initState() {
     super.initState();
-    _ctrl = AnimationController(vsync: this, duration: const Duration(seconds: 1))..repeat(reverse: true);
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
   }
+
   @override
   void dispose() {
     _ctrl.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -41,13 +48,15 @@ class _PulsingMicState extends State<_PulsingMic> with SingleTickerProviderState
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: widget.nt.pink.withValues(alpha: 0.1 + (_ctrl.value * 0.2)),
+              color: widget.nt.pink.withValues(
+                alpha: 0.1 + (_ctrl.value * 0.2),
+              ),
               boxShadow: [
                 BoxShadow(
                   color: widget.nt.pink.withValues(alpha: _ctrl.value * 0.4),
                   blurRadius: 20,
                   spreadRadius: _ctrl.value * 10,
-                )
+                ),
               ],
             ),
             child: Icon(Icons.mic_rounded, color: widget.nt.pink, size: 36),
@@ -65,10 +74,11 @@ class InterviewScreen extends StatefulWidget {
   State<InterviewScreen> createState() => _InterviewScreenState();
 }
 
-class _InterviewScreenState extends State<InterviewScreen> with TickerProviderStateMixin {
+class _InterviewScreenState extends State<InterviewScreen>
+    with TickerProviderStateMixin {
   final PageController _pageController = PageController();
   late final InterviewService _service;
-  
+
   List<InterviewQuestion> _questions = [];
   int _currentIndex = 0;
   bool _showAnswer = false;
@@ -78,7 +88,7 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
   bool _isRealismMode = false;
   Timer? _countdownTimer;
   double _timerProgress = 1.0;
-  
+
   // Tracking
   int _sessionQuestionsAnswered = 0;
   int _sessionMastered = 0;
@@ -125,7 +135,7 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
     _countdownTimer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       final elapsed = DateTime.now().difference(startTime);
       final remaining = duration.inMilliseconds - elapsed.inMilliseconds;
-      
+
       if (remaining <= 0) {
         timer.cancel();
         _handleTimeout();
@@ -157,13 +167,15 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
     _countdownTimer?.cancel();
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => _ResultsSummaryScreen(
-        total: _sessionQuestionsAnswered,
-        mastered: _sessionMastered,
-        timeouts: _sessionTimeouts,
-        skipped: _sessionSkipped,
-        outcomes: _questionOutcomes,
-      )),
+      MaterialPageRoute(
+        builder: (context) => _ResultsSummaryScreen(
+          total: _sessionQuestionsAnswered,
+          mastered: _sessionMastered,
+          timeouts: _sessionTimeouts,
+          skipped: _sessionSkipped,
+          outcomes: _questionOutcomes,
+        ),
+      ),
     );
   }
 
@@ -191,9 +203,12 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
   void _nextQuestion() {
     _countdownTimer?.cancel();
     if (_currentIndex < _questions.length - 1) {
-      _pageController.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeInOutQuart);
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOutQuart,
+      );
     } else {
-      _showFinalResults(); 
+      _showFinalResults();
     }
   }
 
@@ -211,7 +226,10 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
           elevation: 0,
           centerTitle: true,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_rounded, color: isDark ? Colors.white : Colors.black87),
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
+              color: isDark ? Colors.white : Colors.black87,
+            ),
             onPressed: () {
               if (_sessionQuestionsAnswered > 0) {
                 _showFinalResults();
@@ -220,13 +238,20 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
               }
             },
           ),
-          title: const Text('SIMULADOR TÁCTICO', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, letterSpacing: 2.0)),
+          title: const Text(
+            'SIMULADOR TÁCTICO',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 14,
+              letterSpacing: 2.0,
+            ),
+          ),
         ),
         body: Stack(
           children: [
-            _isLoading 
-              ? Center(child: CircularProgressIndicator(color: nt.blueGoogle))
-              : _questions.isEmpty 
+            _isLoading
+                ? Center(child: CircularProgressIndicator(color: nt.blueGoogle))
+                : _questions.isEmpty
                 ? _buildAllMasteredState(nt, isDark)
                 : SafeArea(
                     child: Column(
@@ -243,7 +268,11 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
                               _startTimer();
                             }),
                             itemCount: _questions.length,
-                            itemBuilder: (context, index) => _buildQuestionView(_questions[index], nt, isDark),
+                            itemBuilder: (context, index) => _buildQuestionView(
+                              _questions[index],
+                              nt,
+                              isDark,
+                            ),
                           ),
                         ),
                         _buildTacticalControls(nt, isDark),
@@ -268,8 +297,14 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
             children: [
               Icon(Icons.timer_rounded, size: 14, color: timerColor),
               const SizedBox(width: 6),
-              Text('TIEMPO DE REACCIÓN', 
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.w900, color: timerColor)),
+              Text(
+                'TIEMPO DE REACCIÓN',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w900,
+                  color: timerColor,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 6),
@@ -293,14 +328,32 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('SIMULACRO ACTIVO', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 10, color: nt.blueGoogle)),
-          Text('${_currentIndex + 1} / ${_questions.length}', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey)),
+          Text(
+            'SIMULACRO ACTIVO',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 10,
+              color: nt.blueGoogle,
+            ),
+          ),
+          Text(
+            '${_currentIndex + 1} / ${_questions.length}',
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildQuestionView(InterviewQuestion q, NeuralThemeData nt, bool isDark) {
+  Widget _buildQuestionView(
+    InterviewQuestion q,
+    NeuralThemeData nt,
+    bool isDark,
+  ) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(30),
       child: Column(
@@ -312,10 +365,18 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
             ),
-            child: Text(q.categoria.toUpperCase(), style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.w900, fontSize: 9, letterSpacing: 1.2)),
+            child: Text(
+              q.categoria.toUpperCase(),
+              style: TextStyle(
+                color: nt.blueGoogle,
+                fontWeight: FontWeight.w900,
+                fontSize: 9,
+                letterSpacing: 1.2,
+              ),
+            ),
           ),
           const SizedBox(height: 30),
-          
+
           TweenAnimationBuilder(
             tween: Tween<double>(begin: 0, end: _showAnswer ? 1 : 0),
             duration: const Duration(milliseconds: 600),
@@ -339,7 +400,7 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
             },
           ),
           const SizedBox(height: 40),
-          
+
           if (!_showAnswer) ...[
             _PulsingMic(nt: nt),
             const SizedBox(height: 20),
@@ -349,22 +410,35 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
                 setState(() => _showAnswer = true);
               },
               icon: const Icon(Icons.psychology_alt_rounded),
-              label: const Text('¿CÓMO RESPONDER?', style: TextStyle(fontWeight: FontWeight.w900)),
+              label: const Text(
+                '¿CÓMO RESPONDER?',
+                style: TextStyle(fontWeight: FontWeight.w900),
+              ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: nt.blueGoogle, foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+                backgroundColor: nt.blueGoogle,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18),
+                ),
                 elevation: 10,
                 shadowColor: nt.blueGoogle.withValues(alpha: 0.5),
               ),
             ),
-          ]
+          ],
         ],
       ),
     );
   }
 
-  Widget _buildQuestionCard(InterviewQuestion q, NeuralThemeData nt, bool isDark) {
+  Widget _buildQuestionCard(
+    InterviewQuestion q,
+    NeuralThemeData nt,
+    bool isDark,
+  ) {
     return Container(
       width: double.infinity,
       constraints: const BoxConstraints(minHeight: 280),
@@ -372,23 +446,38 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
       decoration: BoxDecoration(
         color: isDark ? nt.surfaceCard : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.4), width: 1.5),
+        border: Border.all(
+          color: nt.blueGoogle.withValues(alpha: 0.4),
+          width: 1.5,
+        ),
         boxShadow: [
           BoxShadow(
             color: nt.blueGoogle.withValues(alpha: 0.15),
             blurRadius: 30,
             offset: const Offset(0, 15),
-          )
+          ),
         ],
       ),
       child: Center(
-        child: Text(q.pregunta, textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, height: 1.4, color: isDark ? Colors.white : Colors.black87)),
+        child: Text(
+          q.pregunta,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w900,
+            height: 1.4,
+            color: isDark ? Colors.white : Colors.black87,
+          ),
+        ),
       ),
     );
   }
 
-  Widget _buildAnswerCard(InterviewQuestion q, NeuralThemeData nt, bool isDark) {
+  Widget _buildAnswerCard(
+    InterviewQuestion q,
+    NeuralThemeData nt,
+    bool isDark,
+  ) {
     return Container(
       width: double.infinity,
       constraints: const BoxConstraints(minHeight: 280),
@@ -396,24 +485,46 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
       decoration: BoxDecoration(
         color: isDark ? nt.surfaceCard : Colors.white.withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: nt.successGreen.withValues(alpha: 0.4), width: 2),
+        border: Border.all(
+          color: nt.successGreen.withValues(alpha: 0.4),
+          width: 2,
+        ),
         boxShadow: [
-          BoxShadow(color: nt.successGreen.withValues(alpha: 0.15), blurRadius: 30, offset: const Offset(0, 15))
+          BoxShadow(
+            color: nt.successGreen.withValues(alpha: 0.15),
+            blurRadius: 30,
+            offset: const Offset(0, 15),
+          ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _buildInfoCard('ENFOQUE TÁCTico', q.puntosClave, nt.warningAmber, isDark),
+          _buildInfoCard(
+            'ENFOQUE TÁCTico',
+            q.puntosClave,
+            nt.warningAmber,
+            isDark,
+          ),
           const SizedBox(height: 16),
-          _buildInfoCard('LENGUAJE NATURAL', q.respuestaIdeal, nt.successGreen, isDark),
+          _buildInfoCard(
+            'LENGUAJE NATURAL',
+            q.respuestaIdeal,
+            nt.successGreen,
+            isDark,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildInfoCard(String title, String content, Color color, bool isDark) {
+  Widget _buildInfoCard(
+    String title,
+    String content,
+    Color color,
+    bool isDark,
+  ) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -424,9 +535,23 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title.toUpperCase(), style: TextStyle(color: color, fontWeight: FontWeight.w900, fontSize: 10)),
+          Text(
+            title.toUpperCase(),
+            style: TextStyle(
+              color: color,
+              fontWeight: FontWeight.w900,
+              fontSize: 10,
+            ),
+          ),
           const SizedBox(height: 8),
-          Text(content, style: TextStyle(fontSize: 13, height: 1.5, color: isDark ? Colors.white70 : Colors.black87)),
+          Text(
+            content,
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: isDark ? Colors.white70 : Colors.black87,
+            ),
+          ),
         ],
       ),
     );
@@ -441,11 +566,22 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
             child: OutlinedButton(
               onPressed: _markSkipped,
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: isDark ? Colors.white24 : Colors.black26),
+                side: BorderSide(
+                  color: isDark ? Colors.white24 : Colors.black26,
+                ),
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
               ),
-              child: const Text('MÁS ADELANTE', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w900, fontSize: 12)),
+              child: const Text(
+                'MÁS ADELANTE',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 12,
+                ),
+              ),
             ),
           ),
           const SizedBox(width: 12),
@@ -456,11 +592,16 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
                 backgroundColor: nt.successGreen,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
                 elevation: 8,
                 shadowColor: nt.successGreen.withValues(alpha: 0.4),
               ),
-              child: const Text('LO TENGO ✓', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12)),
+              child: const Text(
+                'LO TENGO ✓',
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12),
+              ),
             ),
           ),
         ],
@@ -475,14 +616,28 @@ class _InterviewScreenState extends State<InterviewScreen> with TickerProviderSt
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.verified_user_rounded, size: 100, color: nt.successGreen),
+            Icon(
+              Icons.verified_user_rounded,
+              size: 100,
+              color: nt.successGreen,
+            ),
             const SizedBox(height: 24),
-            Text('¡BANCO DOMINADO!', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: isDark ? Colors.white : Colors.black87)),
+            Text(
+              '¡BANCO DOMINADO!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : Colors.black87,
+              ),
+            ),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () => Navigator.pop(context), 
-              style: ElevatedButton.styleFrom(backgroundColor: nt.blueGoogle, foregroundColor: Colors.white),
-              child: const Text('VOLVER AL DASHBOARD')
+              onPressed: () => Navigator.pop(context),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: nt.blueGoogle,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('VOLVER AL DASHBOARD'),
             ),
           ],
         ),
@@ -499,8 +654,8 @@ class _ResultsSummaryScreen extends StatelessWidget {
   final Map<InterviewQuestion, String> outcomes;
 
   const _ResultsSummaryScreen({
-    required this.total, 
-    required this.mastered, 
+    required this.total,
+    required this.mastered,
     required this.timeouts,
     required this.skipped,
     required this.outcomes,
@@ -510,11 +665,19 @@ class _ResultsSummaryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return NeuralBackgroundWrapper(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0, centerTitle: true, title: const Text('RESULTADOS DE SESIÓN', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14))),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: const Text(
+            'RESULTADOS DE SESIÓN',
+            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14),
+          ),
+        ),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(40),
@@ -525,8 +688,12 @@ class _ResultsSummaryScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(color: nt.blueGoogle.withValues(alpha: 0.3)),
                 boxShadow: [
-                  BoxShadow(color: nt.blueGoogle.withValues(alpha: 0.1), blurRadius: 20, offset: const Offset(0, 10))
-                ]
+                  BoxShadow(
+                    color: nt.blueGoogle.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -536,9 +703,17 @@ class _ResultsSummaryScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   _resultRow('Preguntas analizadas', '$total', nt.blueGoogle),
                   const Divider(color: Colors.white24, height: 30),
-                  _resultRow('Dominadas (Aprendido)', '$mastered', nt.successGreen),
+                  _resultRow(
+                    'Dominadas (Aprendido)',
+                    '$mastered',
+                    nt.successGreen,
+                  ),
                   _resultRow('Sin respuesta (Timeout)', '$timeouts', nt.pink),
-                  _resultRow('Saltadas para luego', '$skipped', nt.warningAmber),
+                  _resultRow(
+                    'Saltadas para luego',
+                    '$skipped',
+                    nt.warningAmber,
+                  ),
                   const SizedBox(height: 30),
                   Row(
                     children: [
@@ -546,13 +721,28 @@ class _ResultsSummaryScreen extends StatelessWidget {
                         child: SizedBox(
                           height: 50,
                           child: OutlinedButton.icon(
-                            onPressed: () => ExportService.exportInterviewToPdf(context, outcomes),
-                            icon: const Icon(Icons.picture_as_pdf_rounded, color: Colors.redAccent),
-                            label: const Text('PDF', style: TextStyle(fontWeight: FontWeight.bold)),
+                            onPressed: () => ExportService.exportInterviewToPdf(
+                              context,
+                              outcomes,
+                            ),
+                            icon: const Icon(
+                              Icons.picture_as_pdf_rounded,
+                              color: Colors.redAccent,
+                            ),
+                            label: const Text(
+                              'PDF',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             style: OutlinedButton.styleFrom(
-                              foregroundColor: isDark ? Colors.white : Colors.black87,
-                              side: BorderSide(color: isDark ? Colors.white24 : Colors.black26),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                              foregroundColor: isDark
+                                  ? Colors.white
+                                  : Colors.black87,
+                              side: BorderSide(
+                                color: isDark ? Colors.white24 : Colors.black26,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
                             ),
                           ),
                         ),
@@ -562,13 +752,29 @@ class _ResultsSummaryScreen extends StatelessWidget {
                         child: SizedBox(
                           height: 50,
                           child: OutlinedButton.icon(
-                            onPressed: () => ExportService.exportInterviewToWord(context, outcomes),
-                            icon: const Icon(Icons.description_rounded, color: Colors.blueAccent),
-                            label: const Text('Word', style: TextStyle(fontWeight: FontWeight.bold)),
+                            onPressed: () =>
+                                ExportService.exportInterviewToWord(
+                                  context,
+                                  outcomes,
+                                ),
+                            icon: const Icon(
+                              Icons.description_rounded,
+                              color: Colors.blueAccent,
+                            ),
+                            label: const Text(
+                              'Word',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             style: OutlinedButton.styleFrom(
-                              foregroundColor: isDark ? Colors.white : Colors.black87,
-                              side: BorderSide(color: isDark ? Colors.white24 : Colors.black26),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                              foregroundColor: isDark
+                                  ? Colors.white
+                                  : Colors.black87,
+                              side: BorderSide(
+                                color: isDark ? Colors.white24 : Colors.black26,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
                             ),
                           ),
                         ),
@@ -578,8 +784,15 @@ class _ResultsSummaryScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () => Navigator.pop(context),
-                    style: ElevatedButton.styleFrom(backgroundColor: nt.blueGoogle, foregroundColor: Colors.white, minimumSize: const Size(double.infinity, 60)),
-                    child: const Text('FINALIZAR ENTRENAMIENTO', style: TextStyle(fontWeight: FontWeight.bold)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: nt.blueGoogle,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(double.infinity, 60),
+                    ),
+                    child: const Text(
+                      'FINALIZAR ENTRENAMIENTO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
@@ -595,8 +808,22 @@ class _ResultsSummaryScreen extends StatelessWidget {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey)),
-        Text(val, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: color)),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Colors.grey,
+          ),
+        ),
+        Text(
+          val,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+            color: color,
+          ),
+        ),
       ],
     ),
   );

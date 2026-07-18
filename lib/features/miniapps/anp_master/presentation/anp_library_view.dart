@@ -55,14 +55,15 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: const Text(
           'Biblioteca del SINANPE',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         bottom: TabBar(
@@ -149,9 +150,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
             const Text(
               'SINANPE en Números',
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
@@ -165,13 +167,11 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
           childAspectRatio: 2.5,
           children: facts.map((f) {
             return Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 14, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               decoration: BoxDecoration(
                 color: f.$3.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(
-                    color: f.$3.withValues(alpha: 0.25)),
+                border: Border.all(color: f.$3.withValues(alpha: 0.25)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,15 +180,17 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                   Text(
                     f.$1,
                     style: TextStyle(
-                        color: f.$3,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      color: f.$3,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     f.$2,
                     style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        fontSize: 10),
+                      color: Colors.white.withValues(alpha: 0.5),
+                      fontSize: 10,
+                    ),
                   ),
                 ],
               ),
@@ -212,9 +214,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                 child: Text(
                   'Diferencia Jurídica Central (Ley N° 26834)',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -255,33 +258,38 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
           decoration: BoxDecoration(
             color: badgeColor.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(8),
-            border:
-                Border.all(color: badgeColor.withValues(alpha: 0.3)),
+            border: Border.all(color: badgeColor.withValues(alpha: 0.3)),
           ),
           child: Text(
             title,
             style: TextStyle(
-                color: badgeColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 12),
+              color: badgeColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+            ),
           ),
         ),
         const SizedBox(height: 8),
-        Text(desc,
-            style: const TextStyle(
-                color: Colors.white70, fontSize: 13, height: 1.5)),
+        Text(
+          desc,
+          style: const TextStyle(
+            color: Colors.white70,
+            fontSize: 13,
+            height: 1.5,
+          ),
+        ),
         const SizedBox(height: 6),
         Text(
           'Categorías: $categories',
           style: TextStyle(
-              color: nt.textMuted,
-              fontSize: 11,
-              fontStyle: FontStyle.italic),
+            color: nt.textMuted,
+            fontSize: 11,
+            fontStyle: FontStyle.italic,
+          ),
         ),
       ],
     );
@@ -306,9 +314,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                 child: Text(
                   title,
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -317,7 +326,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
           Text(
             content,
             style: const TextStyle(
-                color: Colors.white70, fontSize: 13, height: 1.6),
+              color: Colors.white70,
+              fontSize: 13,
+              height: 1.6,
+            ),
           ),
         ],
       ),
@@ -327,22 +339,18 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
   // ─── Tab 2: Catalog ────────────────────────────────────────────────────────
   Widget _buildCatalogTab(NeuralThemeData nt) {
     final filtered = _anps.where((anp) {
-      final matchSearch = _searchQuery.isEmpty ||
-          anp.name
-              .toLowerCase()
-              .contains(_searchQuery.toLowerCase()) ||
-          anp.regions.any((r) =>
-              r.toLowerCase().contains(_searchQuery.toLowerCase())) ||
-          anp.category
-              .toLowerCase()
-              .contains(_searchQuery.toLowerCase());
+      final matchSearch =
+          _searchQuery.isEmpty ||
+          anp.name.toLowerCase().contains(_searchQuery.toLowerCase()) ||
+          anp.regions.any(
+            (r) => r.toLowerCase().contains(_searchQuery.toLowerCase()),
+          ) ||
+          anp.category.toLowerCase().contains(_searchQuery.toLowerCase());
 
       final matchFilter = switch (_catalogFilter) {
         'Uso Indirecto' => anp.useType.contains('Indirecto'),
         'Uso Directo' => anp.useType.contains('Directo'),
-        _ => _catalogFilter == 'Todos'
-            ? true
-            : anp.category == _catalogFilter,
+        _ => _catalogFilter == 'Todos' ? true : anp.category == _catalogFilter,
       };
 
       return matchSearch && matchFilter;
@@ -352,22 +360,24 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
       children: [
         // Search bar
         Padding(
-          padding:
-              const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           child: TextField(
             onChanged: (val) => setState(() => _searchQuery = val),
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
               hintText: 'Buscar por nombre, región o categoría...',
               hintStyle: const TextStyle(color: Colors.white38),
-              prefixIcon: const Icon(Icons.search_rounded,
-                  color: Colors.white60),
+              prefixIcon: const Icon(
+                Icons.search_rounded,
+                color: Colors.white60,
+              ),
               filled: true,
               fillColor: Colors.white.withValues(alpha: 0.05),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
                 borderSide: BorderSide(
-                    color: Colors.white.withValues(alpha: 0.1)),
+                  color: Colors.white.withValues(alpha: 0.1),
+                ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
@@ -390,12 +400,13 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: GestureDetector(
-                  onTap: () =>
-                      setState(() => _catalogFilter = filter),
+                  onTap: () => setState(() => _catalogFilter = filter),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 6),
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: isActive
                           ? nt.blueGoogle.withValues(alpha: 0.2)
@@ -410,12 +421,12 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                     child: Text(
                       filter,
                       style: TextStyle(
-                          color:
-                              isActive ? nt.blueGoogle : Colors.white38,
-                          fontSize: 11,
-                          fontWeight: isActive
-                              ? FontWeight.bold
-                              : FontWeight.normal),
+                        color: isActive ? nt.blueGoogle : Colors.white38,
+                        fontSize: 11,
+                        fontWeight: isActive
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
@@ -431,8 +442,9 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
               Text(
                 '${filtered.length} áreas encontradas',
                 style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.4),
-                    fontSize: 11),
+                  color: Colors.white.withValues(alpha: 0.4),
+                  fontSize: 11,
+                ),
               ),
             ],
           ),
@@ -463,42 +475,47 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                               color: catColor.withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                  color: catColor.withValues(alpha: 0.3)),
+                                color: catColor.withValues(alpha: 0.3),
+                              ),
                             ),
-                            child: Icon(_categoryIcon(anp.category),
-                                color: catColor, size: 20),
+                            child: Icon(
+                              _categoryIcon(anp.category),
+                              color: catColor,
+                              size: 20,
+                            ),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
                               anp.name,
                               style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 7, vertical: 3),
+                              horizontal: 7,
+                              vertical: 3,
+                            ),
                             decoration: BoxDecoration(
                               color: (isIndirect ? nt.pink : nt.successGreen)
                                   .withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                  color: (isIndirect
-                                          ? nt.pink
-                                          : nt.successGreen)
-                                      .withValues(alpha: 0.3)),
+                                color: (isIndirect ? nt.pink : nt.successGreen)
+                                    .withValues(alpha: 0.3),
+                              ),
                             ),
                             child: Text(
                               isIndirect ? 'Indirecto' : 'Directo',
                               style: TextStyle(
-                                  color: isIndirect
-                                      ? nt.pink
-                                      : nt.successGreen,
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.bold),
+                                color: isIndirect ? nt.pink : nt.successGreen,
+                                fontSize: 9,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -509,34 +526,44 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                         runSpacing: 6,
                         children: [
                           _infoChip(
-                              Icons.landscape_rounded,
-                              anp.category,
-                              catColor,
-                              nt),
-                          _infoChip(Icons.calendar_today_rounded,
-                              'Est. ${anp.establishedYear}', nt.purple, nt),
+                            Icons.landscape_rounded,
+                            anp.category,
+                            catColor,
+                            nt,
+                          ),
                           _infoChip(
-                              Icons.map_rounded,
-                              anp.regions.join(', '),
-                              nt.blueGoogle,
-                              nt),
+                            Icons.calendar_today_rounded,
+                            'Est. ${anp.establishedYear}',
+                            nt.purple,
+                            nt,
+                          ),
+                          _infoChip(
+                            Icons.map_rounded,
+                            anp.regions.join(', '),
+                            nt.blueGoogle,
+                            nt,
+                          ),
                         ],
                       ),
                       const SizedBox(height: 10),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(Icons.lightbulb_rounded,
-                              color: nt.warningAmber, size: 14),
+                          Icon(
+                            Icons.lightbulb_rounded,
+                            color: nt.warningAmber,
+                            size: 14,
+                          ),
                           const SizedBox(width: 6),
                           Expanded(
                             child: Text(
                               anp.mnemonicHint,
                               style: const TextStyle(
-                                  color: Colors.white60,
-                                  fontSize: 12,
-                                  fontStyle: FontStyle.italic,
-                                  height: 1.4),
+                                color: Colors.white60,
+                                fontSize: 12,
+                                fontStyle: FontStyle.italic,
+                                height: 1.4,
+                              ),
                             ),
                           ),
                         ],
@@ -553,7 +580,11 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
   }
 
   Widget _infoChip(
-      IconData icon, String label, Color color, NeuralThemeData nt) {
+    IconData icon,
+    String label,
+    Color color,
+    NeuralThemeData nt,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
@@ -568,8 +599,9 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
           Text(
             label,
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.6),
-                fontSize: 10),
+              color: Colors.white.withValues(alpha: 0.6),
+              fontSize: 10,
+            ),
           ),
         ],
       ),
@@ -683,11 +715,9 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                        color: color.withValues(alpha: 0.3)),
+                    border: Border.all(color: color.withValues(alpha: 0.3)),
                   ),
-                  child: Icon(tool['icon'] as IconData,
-                      color: color, size: 26),
+                  child: Icon(tool['icon'] as IconData, color: color, size: 26),
                 ),
                 const SizedBox(width: 14),
                 Expanded(
@@ -700,14 +730,17 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                             child: Text(
                               tool['title'] as String,
                               style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 7, vertical: 3),
+                              horizontal: 7,
+                              vertical: 3,
+                            ),
                             decoration: BoxDecoration(
                               color: color.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(6),
@@ -715,9 +748,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                             child: Text(
                               tool['tag'] as String,
                               style: TextStyle(
-                                  color: color,
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.bold),
+                                color: color,
+                                fontSize: 9,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -725,15 +759,19 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                       Text(
                         tool['subtitle'] as String,
                         style: TextStyle(
-                            color: color, fontSize: 11, fontWeight: FontWeight.w600),
+                          color: color,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       const SizedBox(height: 6),
                       Text(
                         tool['desc'] as String,
                         style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            height: 1.5),
+                          color: Colors.white70,
+                          fontSize: 12,
+                          height: 1.5,
+                        ),
                       ),
                     ],
                   ),
@@ -755,19 +793,25 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
 
     switch (_sortBy) {
       case 'Extensión':
-        sortedAnps.sort((a, b) => _sortAscending
-            ? a.extensionHa.compareTo(b.extensionHa)
-            : b.extensionHa.compareTo(a.extensionHa));
+        sortedAnps.sort(
+          (a, b) => _sortAscending
+              ? a.extensionHa.compareTo(b.extensionHa)
+              : b.extensionHa.compareTo(a.extensionHa),
+        );
         break;
       case 'Año':
-        sortedAnps.sort((a, b) => _sortAscending
-            ? a.establishedYear.compareTo(b.establishedYear)
-            : b.establishedYear.compareTo(a.establishedYear));
+        sortedAnps.sort(
+          (a, b) => _sortAscending
+              ? a.establishedYear.compareTo(b.establishedYear)
+              : b.establishedYear.compareTo(a.establishedYear),
+        );
         break;
       case 'Nombre':
-        sortedAnps.sort((a, b) => _sortAscending
-            ? a.name.compareTo(b.name)
-            : b.name.compareTo(a.name));
+        sortedAnps.sort(
+          (a, b) => _sortAscending
+              ? a.name.compareTo(b.name)
+              : b.name.compareTo(a.name),
+        );
         break;
     }
 
@@ -775,22 +819,18 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
       children: [
         // Sort controls
         Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
             children: [
               Text(
                 'Ordenar por:',
                 style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    fontSize: 12),
+                  color: Colors.white.withValues(alpha: 0.5),
+                  fontSize: 12,
+                ),
               ),
               const SizedBox(width: 10),
-              ...[
-                'Extensión',
-                'Año',
-                'Nombre',
-              ].map((s) {
+              ...['Extensión', 'Año', 'Nombre'].map((s) {
                 final isActive = s == _sortBy;
                 return Padding(
                   padding: const EdgeInsets.only(right: 6),
@@ -807,16 +847,19 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 5),
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
                       decoration: BoxDecoration(
                         color: isActive
                             ? nt.blueGoogle.withValues(alpha: 0.2)
                             : Colors.white.withValues(alpha: 0.04),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                            color: isActive
-                                ? nt.blueGoogle.withValues(alpha: 0.5)
-                                : Colors.white12),
+                          color: isActive
+                              ? nt.blueGoogle.withValues(alpha: 0.5)
+                              : Colors.white12,
+                        ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -824,13 +867,12 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                           Text(
                             s,
                             style: TextStyle(
-                                color: isActive
-                                    ? nt.blueGoogle
-                                    : Colors.white38,
-                                fontSize: 11,
-                                fontWeight: isActive
-                                    ? FontWeight.bold
-                                    : FontWeight.normal),
+                              color: isActive ? nt.blueGoogle : Colors.white38,
+                              fontSize: 11,
+                              fontWeight: isActive
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                            ),
                           ),
                           if (isActive) ...[
                             const SizedBox(width: 3),
@@ -883,7 +925,9 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.03),
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.06),
+                    ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -907,9 +951,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                                   child: Text(
                                     anp.name,
                                     style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500),
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -922,9 +967,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                             child: Text(
                               '${(anp.extensionHa / 1000).toStringAsFixed(0)}K Ha',
                               style: TextStyle(
-                                  color: nt.cyan,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold),
+                                color: nt.cyan,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -933,8 +979,9 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                             child: Text(
                               '${anp.establishedYear}',
                               style: const TextStyle(
-                                  color: Colors.white60,
-                                  fontSize: 11),
+                                color: Colors.white60,
+                                fontSize: 11,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -946,9 +993,7 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                                 height: 8,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: isIndirect
-                                      ? nt.pink
-                                      : nt.successGreen,
+                                  color: isIndirect ? nt.pink : nt.successGreen,
                                 ),
                               ),
                             ),
@@ -964,25 +1009,21 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
                           child: Stack(
                             children: [
                               Container(
-                                  color: Colors.white
-                                      .withValues(alpha: 0.06)),
+                                color: Colors.white.withValues(alpha: 0.06),
+                              ),
                               AnimatedContainer(
-                                duration:
-                                    const Duration(milliseconds: 400),
-                                width: (MediaQuery.of(context)
-                                            .size
-                                            .width -
-                                        64) *
+                                duration: const Duration(milliseconds: 400),
+                                width:
+                                    (MediaQuery.of(context).size.width - 64) *
                                     relSize,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
                                       catColor.withValues(alpha: 0.7),
-                                      catColor
+                                      catColor,
                                     ],
                                   ),
-                                  borderRadius:
-                                      BorderRadius.circular(3),
+                                  borderRadius: BorderRadius.circular(3),
                                 ),
                               ),
                             ],
@@ -1022,9 +1063,10 @@ class _ANPLibraryViewState extends State<ANPLibraryView>
           decoration: BoxDecoration(shape: BoxShape.circle, color: color),
         ),
         const SizedBox(width: 6),
-        Text(label,
-            style:
-                const TextStyle(color: Colors.white54, fontSize: 11)),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white54, fontSize: 11),
+        ),
       ],
     );
   }
@@ -1039,10 +1081,11 @@ class _TableHeader extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-          color: Colors.white38,
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 0.5),
+        color: Colors.white38,
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 0.5,
+      ),
       textAlign: TextAlign.center,
     );
   }

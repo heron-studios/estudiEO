@@ -4,7 +4,8 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
   Question(
     id: 'lit_per_10q_q1',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''La literatura incaica presentó diversas características esenciales. ¿Cuál de los siguientes términos define su estrecha relación con las labores del campo, las siembras y cosechas?''',
+    text:
+        r'''La literatura incaica presentó diversas características esenciales. ¿Cuál de los siguientes términos define su estrecha relación con las labores del campo, las siembras y cosechas?''',
     options: [
       r'''Anónima''',
       r'''Clasista''',
@@ -13,12 +14,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Colectiva''',
     ],
     correctAnswer: 3,
-    explanation: r'''La literatura incaica era agrarista ya que sus manifestaciones (como el canto del haylli) estaban íntimamente ligadas al trabajo de la tierra y los ciclos agrícolas.''',
+    explanation:
+        r'''La literatura incaica era agrarista ya que sus manifestaciones (como el canto del haylli) estaban íntimamente ligadas al trabajo de la tierra y los ciclos agrícolas.''',
   ),
   Question(
     id: 'lit_per_10q_q2',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Cómo se denominaba en la literatura lírica prehispánica al canto guerrero, agrario o religioso que expresaba triunfo y alegría colectiva?''',
+    text:
+        r'''¿Cómo se denominaba en la literatura lírica prehispánica al canto guerrero, agrario o religioso que expresaba triunfo y alegría colectiva?''',
     options: [
       r'''Harawi''',
       r'''Ayataqui''',
@@ -27,12 +30,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Aymoray''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Haylli era el himno de alegría que se entonaba en las celebraciones de triunfos militares, fiestas religiosas o éxitos agrarios.''',
+    explanation:
+        r'''El Haylli era el himno de alegría que se entonaba en las celebraciones de triunfos militares, fiestas religiosas o éxitos agrarios.''',
   ),
   Question(
     id: 'lit_per_10q_q3',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Es el drama de la época incaica de autor anónimo que relata el amor prohibido de un general de origen plebeyo con la hija del Inca Pachacútec:''',
+    text:
+        r'''Es el drama de la época incaica de autor anónimo que relata el amor prohibido de un general de origen plebeyo con la hija del Inca Pachacútec:''',
     options: [
       r'''Uska Paukar''',
       r'''El hijo pródigo''',
@@ -41,12 +46,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Dioses y hombres de Huarochirí''',
     ],
     correctAnswer: 3,
-    explanation: r'''Ollantay es la máxima obra dramática de origen quechua y autor anónimo que narra la rebelión del general Ollantay por su amor hacia Cusi Coyllur.''',
+    explanation:
+        r'''Ollantay es la máxima obra dramática de origen quechua y autor anónimo que narra la rebelión del general Ollantay por su amor hacia Cusi Coyllur.''',
   ),
   Question(
     id: 'lit_per_10q_q4',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué ilustre escritor de la etapa de la Conquista es considerado históricamente como el "primer mestizo biológico y espiritual de América"?''',
+    text:
+        r'''¿Qué ilustre escritor de la etapa de la Conquista es considerado históricamente como el "primer mestizo biológico y espiritual de América"?''',
     options: [
       r'''Pedro Cieza de León''',
       r'''Juan de Betanzos''',
@@ -55,12 +62,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Blas Valera''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Inca Garcilaso de la Vega recibe este apelativo por saber asumir, conciliar y expresar en su altísima prosa sus dos herencias culturales: la incaica y la española.''',
+    explanation:
+        r'''El Inca Garcilaso de la Vega recibe este apelativo por saber asumir, conciliar y expresar en su altísima prosa sus dos herencias culturales: la incaica y la española.''',
   ),
   Question(
     id: 'lit_per_10q_q5',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''La monumental obra "Los Comentarios Reales de los Incas" del Inca Garcilaso de la Vega se dividió en dos grandes partes. ¿Cuál es el tema central de su primera parte publicada en 1609?''',
+    text:
+        r'''La monumental obra "Los Comentarios Reales de los Incas" del Inca Garcilaso de la Vega se dividió en dos grandes partes. ¿Cuál es el tema central de su primera parte publicada en 1609?''',
     options: [
       r'''La destrucción del mundo andino y los abusos españoles.''',
       r'''Las guerras civiles entre los conquistadores Pizarro y Almagro.''',
@@ -69,12 +78,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''La historia, costumbres e idolatría de la civilización incaica (idealizada).''',
     ],
     correctAnswer: 4,
-    explanation: r'''La primera parte de los Comentarios Reales trata sobre la historia preincaica e incaica exaltando la grandeza de este imperio, mientras que la segunda parte (Historia General del Perú) trata del descubrimiento y las guerras civiles.''',
+    explanation:
+        r'''La primera parte de los Comentarios Reales trata sobre la historia preincaica e incaica exaltando la grandeza de este imperio, mientras que la segunda parte (Historia General del Perú) trata del descubrimiento y las guerras civiles.''',
   ),
   Question(
     id: 'lit_per_10q_q6',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Cronista indígena autor de una monumental carta al rey de España provista de casi 400 dibujos, donde denuncia la crítica situación de los indios bajo el dominio virreinal:''',
+    text:
+        r'''Cronista indígena autor de una monumental carta al rey de España provista de casi 400 dibujos, donde denuncia la crítica situación de los indios bajo el dominio virreinal:''',
     options: [
       r'''Inca Garcilaso de la Vega''',
       r'''Titu Cusi Yupanqui''',
@@ -83,12 +94,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Blas Valera''',
     ],
     correctAnswer: 3,
-    explanation: r'''Felipe Guamán Poma de Ayala escribió "Nueva Corónica y Buen Gobierno", una extensa carta ilustrada dirigida al Rey reclamando un mejor trato para los indígenas.''',
+    explanation:
+        r'''Felipe Guamán Poma de Ayala escribió "Nueva Corónica y Buen Gobierno", una extensa carta ilustrada dirigida al Rey reclamando un mejor trato para los indígenas.''',
   ),
   Question(
     id: 'lit_per_10q_q7',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Es considerado el precursor del Romanticismo peruano y ofrendó su vida siendo fusilado a los 24 años en la batalla de Umachiri luchando por la patria:''',
+    text:
+        r'''Es considerado el precursor del Romanticismo peruano y ofrendó su vida siendo fusilado a los 24 años en la batalla de Umachiri luchando por la patria:''',
     options: [
       r'''Carlos Augusto Salaverry''',
       r'''Ricardo Palma''',
@@ -97,12 +110,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''José Faustino Sánchez Carrión''',
     ],
     correctAnswer: 3,
-    explanation: r'''Mariano Melgar, apodado el "Poeta Mártir", murió fusilado en 1815 luchando por la Emancipación, y literariamente es el máximo precursor romántico del Perú.''',
+    explanation:
+        r'''Mariano Melgar, apodado el "Poeta Mártir", murió fusilado en 1815 luchando por la Emancipación, y literariamente es el máximo precursor romántico del Perú.''',
   ),
   Question(
     id: 'lit_per_10q_q8',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué especie lírica mestiza, creada a partir de la fusión del harawi quechua con la métrica española, fue cultivada magistralmente por Mariano Melgar para expresar el dolor amoroso?''',
+    text:
+        r'''¿Qué especie lírica mestiza, creada a partir de la fusión del harawi quechua con la métrica española, fue cultivada magistralmente por Mariano Melgar para expresar el dolor amoroso?''',
     options: [
       r'''La elegía''',
       r'''La oda''',
@@ -111,12 +126,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''El epigrama''',
     ],
     correctAnswer: 2,
-    explanation: r'''Melgar adaptó el antiguo canto quechua de dolor (harawi) a los moldes y métricas españolas, instaurando de manera inmortal la especie poética del yaraví.''',
+    explanation:
+        r'''Melgar adaptó el antiguo canto quechua de dolor (harawi) a los moldes y métricas españolas, instaurando de manera inmortal la especie poética del yaraví.''',
   ),
   Question(
     id: 'lit_per_10q_q9',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''La musa inspiradora de los melancólicos yaravíes de Mariano Melgar, a quien el poeta canta su despecho amoroso, fue inmortalizada poéticamente bajo el nombre de:''',
+    text:
+        r'''La musa inspiradora de los melancólicos yaravíes de Mariano Melgar, a quien el poeta canta su despecho amoroso, fue inmortalizada poéticamente bajo el nombre de:''',
     options: [
       r'''Amarilis''',
       r'''Micaela''',
@@ -125,12 +142,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Laura''',
     ],
     correctAnswer: 2,
-    explanation: r'''La musa de Melgar fue María Santos Corrales, a quien él idealizó e inmortalizó en sus célebres poemas y yaravíes bajo el apelativo poético de Silvia.''',
+    explanation:
+        r'''La musa de Melgar fue María Santos Corrales, a quien él idealizó e inmortalizó en sus célebres poemas y yaravíes bajo el apelativo poético de Silvia.''',
   ),
   Question(
     id: 'lit_per_10q_q10',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''En la cosmovisión andina que sustentaba a la literatura quechua, existía el "mundo de arriba", morada de dioses máximos como Wiracocha y el Sol. ¿Con qué nombre en quechua se le conocía a este plano divino?''',
+    text:
+        r'''En la cosmovisión andina que sustentaba a la literatura quechua, existía el "mundo de arriba", morada de dioses máximos como Wiracocha y el Sol. ¿Con qué nombre en quechua se le conocía a este plano divino?''',
     options: [
       r'''Uku Pacha''',
       r'''Kay Pacha''',
@@ -139,12 +158,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Pariacaca''',
     ],
     correctAnswer: 2,
-    explanation: r'''La mitología inca dividía el mundo en el Hanan Pacha (mundo de arriba, de los dioses), el Kay Pacha (mundo terrenal, de los hombres) y el Uku Pacha (mundo de los muertos y fuerzas ocultas).''',
+    explanation:
+        r'''La mitología inca dividía el mundo en el Hanan Pacha (mundo de arriba, de los dioses), el Kay Pacha (mundo terrenal, de los hombres) y el Uku Pacha (mundo de los muertos y fuerzas ocultas).''',
   ),
   Question(
     id: 'lit_per_10q_q11',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Máximo representante del costumbrismo anticriollista, poseedor de una actitud aristocrática que ridiculizaba los modales populares, autor del artículo de costumbres "Un viaje":''',
+    text:
+        r'''Máximo representante del costumbrismo anticriollista, poseedor de una actitud aristocrática que ridiculizaba los modales populares, autor del artículo de costumbres "Un viaje":''',
     options: [
       r'''Manuel Ascencio Segura''',
       r'''Mariano Melgar''',
@@ -153,12 +174,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Ricardo Palma''',
     ],
     correctAnswer: 3,
-    explanation: r'''Felipe Pardo y Aliaga fue la figura central del anticriollismo, desdeñando a la clase popular a través de punzantes críticas como en su obra "Un viaje" (El niño Goyito).''',
+    explanation:
+        r'''Felipe Pardo y Aliaga fue la figura central del anticriollismo, desdeñando a la clase popular a través de punzantes críticas como en su obra "Un viaje" (El niño Goyito).''',
   ),
   Question(
     id: 'lit_per_10q_q12',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Es reconocido históricamente como el "Padre del teatro nacional" peruano por representar magistralmente la idiosincrasia del pueblo en comedias como "Ña Catita":''',
+    text:
+        r'''Es reconocido históricamente como el "Padre del teatro nacional" peruano por representar magistralmente la idiosincrasia del pueblo en comedias como "Ña Catita":''',
     options: [
       r'''Ricardo Palma''',
       r'''Carlos Augusto Salaverry''',
@@ -167,12 +190,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Felipe Pardo y Aliaga''',
     ],
     correctAnswer: 2,
-    explanation: r'''Manuel Ascencio Segura lideró la vertiente del criollismo costumbrista utilizando un lenguaje popular y festivo en comedias teatrales que retrataban a la clase media limeña.''',
+    explanation:
+        r'''Manuel Ascencio Segura lideró la vertiente del criollismo costumbrista utilizando un lenguaje popular y festivo en comedias teatrales que retrataban a la clase media limeña.''',
   ),
   Question(
     id: 'lit_per_10q_q13',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Creador de un subgénero literario genuinamente peruano que fusiona la historia real con la ficción pícara, célebre por su encomiable labor de reconstruir la Biblioteca Nacional del Perú tras el saqueo chileno:''',
+    text:
+        r'''Creador de un subgénero literario genuinamente peruano que fusiona la historia real con la ficción pícara, célebre por su encomiable labor de reconstruir la Biblioteca Nacional del Perú tras el saqueo chileno:''',
     options: [
       r'''Manuel González Prada''',
       r'''Abraham Valdelomar''',
@@ -181,12 +206,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Julio Ramón Ribeyro''',
     ],
     correctAnswer: 3,
-    explanation: r'''Ricardo Palma, llamado "El Bibliotecario Mendigo" por su magna obra de restauración tras la Guerra del Pacífico, es el creador de las célebres Tradiciones Peruanas.''',
+    explanation:
+        r'''Ricardo Palma, llamado "El Bibliotecario Mendigo" por su magna obra de restauración tras la Guerra del Pacífico, es el creador de las célebres Tradiciones Peruanas.''',
   ),
   Question(
     id: 'lit_per_10q_q14',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Cuál es el nombre del género literario original creado por Ricardo Palma en el cual narra de forma jocosa anécdotas ocurridas en el virreinato, la conquista y la república?''',
+    text:
+        r'''¿Cuál es el nombre del género literario original creado por Ricardo Palma en el cual narra de forma jocosa anécdotas ocurridas en el virreinato, la conquista y la república?''',
     options: [
       r'''Leyenda''',
       r'''Mito''',
@@ -195,12 +222,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Cuento costumbrista''',
     ],
     correctAnswer: 3,
-    explanation: r'''Palma inventó la "Tradición", una especie narrativa breve que amalgama datos históricos verídicos con ficción, refranes y chispazos de humor criollo.''',
+    explanation:
+        r'''Palma inventó la "Tradición", una especie narrativa breve que amalgama datos históricos verídicos con ficción, refranes y chispazos de humor criollo.''',
   ),
   Question(
     id: 'lit_per_10q_q15',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Poeta cumbre del romanticismo sentimental peruano, autor del legendario poema "Acuérdate de mí", incluido en su poemario "Cartas a un Ángel":''',
+    text:
+        r'''Poeta cumbre del romanticismo sentimental peruano, autor del legendario poema "Acuérdate de mí", incluido en su poemario "Cartas a un Ángel":''',
     options: [
       r'''Mariano Melgar''',
       r'''José Santos Chocano''',
@@ -209,12 +238,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Abraham Valdelomar''',
     ],
     correctAnswer: 2,
-    explanation: r'''Carlos Augusto Salaverry es considerado el mayor poeta lírico del siglo XIX peruano, expresando el dolor romántico y la evocación nostálgica en obras como Cartas a un Ángel.''',
+    explanation:
+        r'''Carlos Augusto Salaverry es considerado el mayor poeta lírico del siglo XIX peruano, expresando el dolor romántico y la evocación nostálgica en obras como Cartas a un Ángel.''',
   ),
   Question(
     id: 'lit_per_10q_q16',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Figura central del Realismo peruano que, mediante feroces ensayos, criticó la descomposición moral de las autoridades tras la Guerra del Pacífico en su libro "Pájinas Libres":''',
+    text:
+        r'''Figura central del Realismo peruano que, mediante feroces ensayos, criticó la descomposición moral de las autoridades tras la Guerra del Pacífico en su libro "Pájinas Libres":''',
     options: [
       r'''Clorinda Matto de Turner''',
       r'''Manuel González Prada''',
@@ -223,12 +254,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Abraham Valdelomar''',
     ],
     correctAnswer: 1,
-    explanation: r'''Manuel González Prada lideró el Realismo de posguerra denunciando la corrupción civil y religiosa de la época en incendiarios discursos y ensayos aglutinados en *Pájinas libres* e *Horas de lucha*.''',
+    explanation:
+        r'''Manuel González Prada lideró el Realismo de posguerra denunciando la corrupción civil y religiosa de la época en incendiarios discursos y ensayos aglutinados en *Pájinas libres* e *Horas de lucha*.''',
   ),
   Question(
     id: 'lit_per_10q_q17',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''"¿En qué discurso patriótico y de reivindicación juvenil Manuel González Prada pronuncia la inmortal arenga "¡Los viejos a la tumba, los jóvenes a la obra!"?''',
+    text:
+        r'''"¿En qué discurso patriótico y de reivindicación juvenil Manuel González Prada pronuncia la inmortal arenga "¡Los viejos a la tumba, los jóvenes a la obra!"?''',
     options: [
       r'''Discurso en el teatro Olimpo''',
       r'''Ensayo sobre el problema del indio''',
@@ -237,12 +270,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Discurso en San Marcos''',
     ],
     correctAnswer: 2,
-    explanation: r'''En 1888, González Prada expuso su célebre Discurso en el Politeama llamando a las nuevas generaciones a tomar las riendas de un país sumergido en el fracaso.''',
+    explanation:
+        r'''En 1888, González Prada expuso su célebre Discurso en el Politeama llamando a las nuevas generaciones a tomar las riendas de un país sumergido en el fracaso.''',
   ),
   Question(
     id: 'lit_per_10q_q18',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué importante novela de Clorinda Matto de Turner escandalizó a la sociedad de fines del siglo XIX al denunciar abiertamente los abusos sexuales y económicos de las autoridades contra el indio en los Andes?''',
+    text:
+        r'''¿Qué importante novela de Clorinda Matto de Turner escandalizó a la sociedad de fines del siglo XIX al denunciar abiertamente los abusos sexuales y económicos de las autoridades contra el indio en los Andes?''',
     options: [
       r'''Matalaché''',
       r'''El padre Horán''',
@@ -251,12 +286,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Yawar Fiesta''',
     ],
     correctAnswer: 3,
-    explanation: r'''"Aves sin nido" (1889) es la primera novela peruana que expone la trágica situación real de la población quechua víctima de gobernadores locales y curas, prefigurando el indigenismo.''',
+    explanation:
+        r'''"Aves sin nido" (1889) es la primera novela peruana que expone la trágica situación real de la población quechua víctima de gobernadores locales y curas, prefigurando el indigenismo.''',
   ),
   Question(
     id: 'lit_per_10q_q19',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Con qué apelativo histórico es mundialmente reconocido el poeta modernista peruano José Santos Chocano, por exaltar la geografía y el mestizaje del continente?''',
+    text:
+        r'''¿Con qué apelativo histórico es mundialmente reconocido el poeta modernista peruano José Santos Chocano, por exaltar la geografía y el mestizaje del continente?''',
     options: [
       r'''El Bibliotecario Mendigo''',
       r'''El Conde de Lemos''',
@@ -265,12 +302,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''El Cantor de América''',
     ],
     correctAnswer: 4,
-    explanation: r'''José Santos Chocano fue coronado poéticamente y es reconocido como "El Cantor de América" gracias a su obra épica y colorista centrada en el trópico y los Andes.''',
+    explanation:
+        r'''José Santos Chocano fue coronado poéticamente y es reconocido como "El Cantor de América" gracias a su obra épica y colorista centrada en el trópico y los Andes.''',
   ),
   Question(
     id: 'lit_per_10q_q20',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''El poema que inicia con los versos: "Soy el cantor de América autóctono y salvaje / mi lira tiene un alma, mi canto un ideal", pertenece al insigne exponente del modernismo peruano:''',
+    text:
+        r'''El poema que inicia con los versos: "Soy el cantor de América autóctono y salvaje / mi lira tiene un alma, mi canto un ideal", pertenece al insigne exponente del modernismo peruano:''',
     options: [
       r'''Abraham Valdelomar''',
       r'''José María Eguren''',
@@ -279,12 +318,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Martín Adán''',
     ],
     correctAnswer: 2,
-    explanation: r'''Esos versos pertenecen a "Blasón", un poema autobiográfico y manifiesto estético que forma parte del libro *Alma América* del gran José Santos Chocano.''',
+    explanation:
+        r'''Esos versos pertenecen a "Blasón", un poema autobiográfico y manifiesto estético que forma parte del libro *Alma América* del gran José Santos Chocano.''',
   ),
   Question(
     id: 'lit_per_10q_q21',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Quién fue el director de la efímera pero sumamente influyente revista literaria *Colónida* (1916), grupo que atacó el academicismo rígido de su época e impulsó los aires de renovación literaria en el Perú?''',
+    text:
+        r'''¿Quién fue el director de la efímera pero sumamente influyente revista literaria *Colónida* (1916), grupo que atacó el academicismo rígido de su época e impulsó los aires de renovación literaria en el Perú?''',
     options: [
       r'''José Santos Chocano''',
       r'''Abraham Valdelomar''',
@@ -293,12 +334,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''César Vallejo''',
     ],
     correctAnswer: 1,
-    explanation: r'''Abraham Valdelomar, líder de la generación posmodernista, fundó y dirigió la innovadora revista literaria Colónida, atrayendo a múltiples escritores jóvenes.''',
+    explanation:
+        r'''Abraham Valdelomar, líder de la generación posmodernista, fundó y dirigió la innovadora revista literaria Colónida, atrayendo a múltiples escritores jóvenes.''',
   ),
   Question(
     id: 'lit_per_10q_q22',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué aclamado cuento de Abraham Valdelomar, ambientado en San Andrés de los Pescadores (Pisco), retrata con profundo tono nostálgico la épica victoria y consiguiente muerte de un valeroso gallo de pelea?''',
+    text:
+        r'''¿Qué aclamado cuento de Abraham Valdelomar, ambientado en San Andrés de los Pescadores (Pisco), retrata con profundo tono nostálgico la épica victoria y consiguiente muerte de un valeroso gallo de pelea?''',
     options: [
       r'''El vuelo de los cóndores''',
       r'''Los ojos de Judas''',
@@ -307,12 +350,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Evaristo, el sauce que murió de amor''',
     ],
     correctAnswer: 2,
-    explanation: r'''"El Caballero Carmelo" es el cuento fundacional de la estética provinciana de Valdelomar, y nos narra la gloriosa historia del veterano gallo Carmelo y su triunfo letal ante el Ajiseco.''',
+    explanation:
+        r'''"El Caballero Carmelo" es el cuento fundacional de la estética provinciana de Valdelomar, y nos narra la gloriosa historia del veterano gallo Carmelo y su triunfo letal ante el Ajiseco.''',
   ),
   Question(
     id: 'lit_per_10q_q23',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Extraordinario poeta que mantuvo un espíritu insular y puro, en su obra abundan seres misteriosos infantiles e imágenes cromáticas sugerentes que plasman estados de ánimo. Autor de "Simbólicas" y "La canción de las figuras".''',
+    text:
+        r'''Extraordinario poeta que mantuvo un espíritu insular y puro, en su obra abundan seres misteriosos infantiles e imágenes cromáticas sugerentes que plasman estados de ánimo. Autor de "Simbólicas" y "La canción de las figuras".''',
     options: [
       r'''José Santos Chocano''',
       r'''Martín Adán''',
@@ -321,12 +366,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Alberto Hidalgo''',
     ],
     correctAnswer: 3,
-    explanation: r'''José María Eguren fue un poeta singular cercano a la estética del simbolismo europeo, creador de una poética de sugerencia musical y colorida imaginación (poesía pura).''',
+    explanation:
+        r'''José María Eguren fue un poeta singular cercano a la estética del simbolismo europeo, creador de una poética de sugerencia musical y colorida imaginación (poesía pura).''',
   ),
   Question(
     id: 'lit_per_10q_q24',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Dentro de la literatura peruana de inicios del siglo XX, ¿qué obra representa la más colosal hazaña del Vanguardismo al violentar radicalmente el lenguaje, romper con la lógica y reinventar neologismos?''',
+    text:
+        r'''Dentro de la literatura peruana de inicios del siglo XX, ¿qué obra representa la más colosal hazaña del Vanguardismo al violentar radicalmente el lenguaje, romper con la lógica y reinventar neologismos?''',
     options: [
       r'''Fabla salvaje''',
       r'''La casa de cartón''',
@@ -335,12 +382,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Trilce''',
     ],
     correctAnswer: 4,
-    explanation: r'''Trilce, de César Vallejo, publicada en 1922, es la cúspide vanguardista en lengua castellana; rompió todo esquema sintáctico, métrico y ortográfico precedente.''',
+    explanation:
+        r'''Trilce, de César Vallejo, publicada en 1922, es la cúspide vanguardista en lengua castellana; rompió todo esquema sintáctico, métrico y ortográfico precedente.''',
   ),
   Question(
     id: 'lit_per_10q_q25',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''El profundo poema de César Vallejo que encabeza su primera publicación poética y que contiene el verso "Hay golpes en la vida, tan fuertes... ¡Yo no sé!", pertenece a su obra:''',
+    text:
+        r'''El profundo poema de César Vallejo que encabeza su primera publicación poética y que contiene el verso "Hay golpes en la vida, tan fuertes... ¡Yo no sé!", pertenece a su obra:''',
     options: [
       r'''Los dados eternos''',
       r'''Poemas humanos''',
@@ -349,12 +398,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Masa''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Los heraldos negros" (1919) es la magna obra de la etapa inicial modernista de Vallejo, siendo el poema homónimo el que refleja de forma angustiosa el inexplicable dolor humano.''',
+    explanation:
+        r'''"Los heraldos negros" (1919) es la magna obra de la etapa inicial modernista de Vallejo, siendo el poema homónimo el que refleja de forma angustiosa el inexplicable dolor humano.''',
   ),
   Question(
     id: 'lit_per_10q_q26',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué obras conforman la tercera etapa de la producción poética de César Vallejo, caracterizada por un hondo humanismo marxista y una férrea solidaridad ante el dolor ajeno de la clase explotada?''',
+    text:
+        r'''¿Qué obras conforman la tercera etapa de la producción poética de César Vallejo, caracterizada por un hondo humanismo marxista y una férrea solidaridad ante el dolor ajeno de la clase explotada?''',
     options: [
       r'''Trilce y Escalas melografiadas''',
       r'''Poemas humanos y España, aparta de mí este cáliz''',
@@ -363,12 +414,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Fabla salvaje y Rusia en 1931''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Poemas humanos" y "España, aparta de mí este cáliz" son los últimos poemarios escritos por Vallejo en Europa bajo la fuerte influencia de su ideología comunista y la Guerra Civil Española (poesía social).''',
+    explanation:
+        r'''"Poemas humanos" y "España, aparta de mí este cáliz" son los últimos poemarios escritos por Vallejo en Europa bajo la fuerte influencia de su ideología comunista y la Guerra Civil Española (poesía social).''',
   ),
   Question(
     id: 'lit_per_10q_q27',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Se le considera el pionero de la corriente indigenista peruana, ya que con su libro *Cuentos andinos* (1920) retrató la psicología cruda y brutal de los indígenas desde su rol como juez penal de la sierra:''',
+    text:
+        r'''Se le considera el pionero de la corriente indigenista peruana, ya que con su libro *Cuentos andinos* (1920) retrató la psicología cruda y brutal de los indígenas desde su rol como juez penal de la sierra:''',
     options: [
       r'''Clorinda Matto de Turner''',
       r'''Manuel Scorza''',
@@ -377,12 +430,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''José María Arguedas''',
     ],
     correctAnswer: 3,
-    explanation: r'''Enrique López Albújar, a través de su labor judicial, compiló historias sobre la violencia y criminalidad andina en *Cuentos andinos*, marcando el inicio del indigenismo del siglo XX.''',
+    explanation:
+        r'''Enrique López Albújar, a través de su labor judicial, compiló historias sobre la violencia y criminalidad andina en *Cuentos andinos*, marcando el inicio del indigenismo del siglo XX.''',
   ),
   Question(
     id: 'lit_per_10q_q28',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''En la novela monumental *El mundo es ancho y ajeno*, ¿cómo se llama el desalmado hacendado y gamonal corrupto que despoja ilegalmente de sus tierras a los comuneros de Rumi?''',
+    text:
+        r'''En la novela monumental *El mundo es ancho y ajeno*, ¿cómo se llama el desalmado hacendado y gamonal corrupto que despoja ilegalmente de sus tierras a los comuneros de Rumi?''',
     options: [
       r'''Benito Castro''',
       r'''Rosendo Maqui''',
@@ -391,12 +446,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Demetrio Sumallacta''',
     ],
     correctAnswer: 2,
-    explanation: r'''Álvaro Amenábar representa el poder explotador oligárquico de las haciendas andinas en la genial novela de Ciro Alegría, enfrentándose de forma implacable al alcalde indio Rosendo Maqui.''',
+    explanation:
+        r'''Álvaro Amenábar representa el poder explotador oligárquico de las haciendas andinas en la genial novela de Ciro Alegría, enfrentándose de forma implacable al alcalde indio Rosendo Maqui.''',
   ),
   Question(
     id: 'lit_per_10q_q29',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Considerado por la crítica internacional como el "escritor etnólogo", su narrativa indigenista destaca por mostrar el alma, la magia y el pensamiento del indio quechua "desde adentro", utilizando en sus diálogos una fusión lingüística quechua-española:''',
+    text:
+        r'''Considerado por la crítica internacional como el "escritor etnólogo", su narrativa indigenista destaca por mostrar el alma, la magia y el pensamiento del indio quechua "desde adentro", utilizando en sus diálogos una fusión lingüística quechua-española:''',
     options: [
       r'''José Carlos Mariátegui''',
       r'''Julio Ramón Ribeyro''',
@@ -405,12 +462,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Mario Vargas Llosa''',
     ],
     correctAnswer: 3,
-    explanation: r'''José María Arguedas, criado por sirvientes indígenas, asimiló de forma bilingüe y antropológica la visión mágico-religiosa del quechua, reflejándola íntimamente en su literatura.''',
+    explanation:
+        r'''José María Arguedas, criado por sirvientes indígenas, asimiló de forma bilingüe y antropológica la visión mágico-religiosa del quechua, reflejándola íntimamente en su literatura.''',
   ),
   Question(
     id: 'lit_per_10q_q30',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''En la famosa novela *Los ríos profundos* de José María Arguedas, Ernesto, un niño que oscila entre el mundo andino de sus cuidadores y el mundo criollo dominante, encuentra refugio espiritual y místico mediante un juguete. ¿Cuál es ese objeto?''',
+    text:
+        r'''En la famosa novela *Los ríos profundos* de José María Arguedas, Ernesto, un niño que oscila entre el mundo andino de sus cuidadores y el mundo criollo dominante, encuentra refugio espiritual y místico mediante un juguete. ¿Cuál es ese objeto?''',
     options: [
       r'''Una honda''',
       r'''El zumbayllu (trompo)''',
@@ -419,12 +478,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''El huaco mágico''',
     ],
     correctAnswer: 1,
-    explanation: r'''El "Zumbayllu" es un trompo de fabricación andina que, para el personaje Ernesto, posee propiedades divinas y mágicas en el áspero ambiente del internado de Abancay.''',
+    explanation:
+        r'''El "Zumbayllu" es un trompo de fabricación andina que, para el personaje Ernesto, posee propiedades divinas y mágicas en el áspero ambiente del internado de Abancay.''',
   ),
   Question(
     id: 'lit_per_10q_q31',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''En el marco literario de la Generación del 50 en el Perú, ¿qué fenómeno demográfico y sociocultural fundamental sirve de inspiración y contexto central para el desarrollo del llamado "realismo urbano"?''',
+    text:
+        r'''En el marco literario de la Generación del 50 en el Perú, ¿qué fenómeno demográfico y sociocultural fundamental sirve de inspiración y contexto central para el desarrollo del llamado "realismo urbano"?''',
     options: [
       r'''La migración interna masiva de pobladores de los Andes hacia Lima y la subsecuente aparición de las barriadas periféricas de extrema pobreza.''',
       r'''La reconstrucción económica producto de la inmensa venta del guano y salitre a mercados europeos de posguerra.''',
@@ -433,12 +494,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''La implementación de las reformas de la revolución militar orientada a desarticular la oligarquía azucarera costeña.''',
     ],
     correctAnswer: 0,
-    explanation: r'''El realismo urbano de la Generación del 50 refleja el doloroso proceso de modernización de la capital y la gigantesca ola de marginados provocada por el violento y acelerado proceso de migración de la sierra a la costa.''',
+    explanation:
+        r'''El realismo urbano de la Generación del 50 refleja el doloroso proceso de modernización de la capital y la gigantesca ola de marginados provocada por el violento y acelerado proceso de migración de la sierra a la costa.''',
   ),
   Question(
     id: 'lit_per_10q_q32',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Considerado el mejor exponente de la cuentística urbana hispanoamericana, bautizó su gran compilación de relatos como "La palabra del mudo" para brindarle voz narrativa a aquellos seres humanos invisibles, perdedores y marginados de la nueva urbe limeña. ¿De quién hablamos?''',
+    text:
+        r'''Considerado el mejor exponente de la cuentística urbana hispanoamericana, bautizó su gran compilación de relatos como "La palabra del mudo" para brindarle voz narrativa a aquellos seres humanos invisibles, perdedores y marginados de la nueva urbe limeña. ¿De quién hablamos?''',
     options: [
       r'''Mario Vargas Llosa''',
       r'''Alfredo Bryce Echenique''',
@@ -447,12 +510,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Oswaldo Reynoso''',
     ],
     correctAnswer: 3,
-    explanation: r'''Julio Ramón Ribeyro es la cumbre indiscutible de la Generación del 50. Tituló toda su antología cuentística como "La palabra del mudo" porque sus relatos reivindicaban a los desposeídos y marginados.''',
+    explanation:
+        r'''Julio Ramón Ribeyro es la cumbre indiscutible de la Generación del 50. Tituló toda su antología cuentística como "La palabra del mudo" porque sus relatos reivindicaban a los desposeídos y marginados.''',
   ),
   Question(
     id: 'lit_per_10q_q33',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Identifique el grupo de personajes que integran el desgarrador y marginal universo del clásico relato "Los gallinazos sin plumas", la gran obra maestra cuentística de Julio Ramón Ribeyro:''',
+    text:
+        r'''Identifique el grupo de personajes que integran el desgarrador y marginal universo del clásico relato "Los gallinazos sin plumas", la gran obra maestra cuentística de Julio Ramón Ribeyro:''',
     options: [
       r'''Ernesto, Zumbayllu, Froylán.''',
       r'''Cunce Maille, Calixto Garmendia, El Fiero Vásquez.''',
@@ -461,12 +526,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Zavalita, Carlitos, Cayo Bermúdez y Ambrosio.''',
     ],
     correctAnswer: 2,
-    explanation: r'''"Los gallinazos sin plumas" expone la cruel vida de Efraín y Enrique, forzados a escarbar en muladares de basura para dar de comer al cerdo Pascual bajo el autoritarismo patológico de su abuelo Don Santos.''',
+    explanation:
+        r'''"Los gallinazos sin plumas" expone la cruel vida de Efraín y Enrique, forzados a escarbar en muladares de basura para dar de comer al cerdo Pascual bajo el autoritarismo patológico de su abuelo Don Santos.''',
   ),
   Question(
     id: 'lit_per_10q_q34',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿En cuál de sus renombradas novelas Mario Vargas Llosa desglosa y denuncia duramente las estructuras de poder militar, los pactos del machismo, la violencia institucionalizada y la traición adolescente, ambientándola dentro del colegio militar Leoncio Prado?''',
+    text:
+        r'''¿En cuál de sus renombradas novelas Mario Vargas Llosa desglosa y denuncia duramente las estructuras de poder militar, los pactos del machismo, la violencia institucionalizada y la traición adolescente, ambientándola dentro del colegio militar Leoncio Prado?''',
     options: [
       r'''Pantaleón y las visitadoras''',
       r'''Los jefes''',
@@ -475,12 +542,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''La fiesta del Chivo''',
     ],
     correctAnswer: 3,
-    explanation: r'''"La ciudad y los perros" (1963) marcó un hito en el Boom narrativo. A través del Poeta, el Esclavo y el Jaguar, Vargas Llosa hace trizas el corrupto microcosmos formativo militar de la capital.''',
+    explanation:
+        r'''"La ciudad y los perros" (1963) marcó un hito en el Boom narrativo. A través del Poeta, el Esclavo y el Jaguar, Vargas Llosa hace trizas el corrupto microcosmos formativo militar de la capital.''',
   ),
   Question(
     id: 'lit_per_10q_q35',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''A través de los monólogos y diálogos de su personaje "Zavalita", quien arranca la novela con la icónica pregunta "¿En qué momento se había jodido el Perú?", Vargas Llosa critica despiadadamente la podredumbre civil bajo la dictadura de Manuel A. Odría. ¿Cómo se llama esta majestuosa obra?''',
+    text:
+        r'''A través de los monólogos y diálogos de su personaje "Zavalita", quien arranca la novela con la icónica pregunta "¿En qué momento se había jodido el Perú?", Vargas Llosa critica despiadadamente la podredumbre civil bajo la dictadura de Manuel A. Odría. ¿Cómo se llama esta majestuosa obra?''',
     options: [
       r'''La guerra del fin del mundo''',
       r'''Conversación en La Catedral''',
@@ -489,12 +558,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Cinco esquinas''',
     ],
     correctAnswer: 1,
-    explanation: r'''"Conversación en La Catedral" (1969) es el mayor diagnóstico político-narrativo de la época de Odría; los diálogos de Zavalita y Ambrosio revelan el descalabro del país de la Generación del 50.''',
+    explanation:
+        r'''"Conversación en La Catedral" (1969) es el mayor diagnóstico político-narrativo de la época de Odría; los diálogos de Zavalita y Ambrosio revelan el descalabro del país de la Generación del 50.''',
   ),
   Question(
     id: 'lit_per_10q_q36',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Eminente novela irónica y nostálgica del año 1970 escrita por Alfredo Bryce Echenique, cuya temática es el contraste del vacío afectivo en la alta burguesía frente a la calidez de la servidumbre andina y afrodescendiente experimentada por un niño adinerado:''',
+    text:
+        r'''Eminente novela irónica y nostálgica del año 1970 escrita por Alfredo Bryce Echenique, cuya temática es el contraste del vacío afectivo en la alta burguesía frente a la calidez de la servidumbre andina y afrodescendiente experimentada por un niño adinerado:''',
     options: [
       r'''Un mundo para Julius''',
       r'''El huerto de mi amada''',
@@ -503,12 +574,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''La palabra del mudo''',
     ],
     correctAnswer: 0,
-    explanation: r'''"Un mundo para Julius" consagra a Bryce Echenique como agudo y tierno retratista del fin de la decadente oligarquía limeña, oponiendo a sus sirvientes Vilma, Celso y Daniel con su familia clasista.''',
+    explanation:
+        r'''"Un mundo para Julius" consagra a Bryce Echenique como agudo y tierno retratista del fin de la decadente oligarquía limeña, oponiendo a sus sirvientes Vilma, Celso y Daniel con su familia clasista.''',
   ),
   Question(
     id: 'lit_per_10q_q37',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''Obra literaria adscrita al "Neoindigenismo" cuyo telón de fondo histórico no es la vieja hacienda feudal, sino el crudo enfrentamiento de organizaciones campesinas modernas en Cerro de Pasco contra poderosos consorcios multinacionales mineros en el Perú central:''',
+    text:
+        r'''Obra literaria adscrita al "Neoindigenismo" cuyo telón de fondo histórico no es la vieja hacienda feudal, sino el crudo enfrentamiento de organizaciones campesinas modernas en Cerro de Pasco contra poderosos consorcios multinacionales mineros en el Perú central:''',
     options: [
       r'''Todas las sangres''',
       r'''El mundo es ancho y ajeno''',
@@ -517,12 +590,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Redoble por Rancas''',
     ],
     correctAnswer: 4,
-    explanation: r'''"Redoble por Rancas", escrita por Manuel Scorza en 1970, eleva a novela el combate histórico y letal de las comunidades altoandinas cerreñas contra la Cerro de Pasco Corporation y el imperialismo norteamericano.''',
+    explanation:
+        r'''"Redoble por Rancas", escrita por Manuel Scorza en 1970, eleva a novela el combate histórico y letal de las comunidades altoandinas cerreñas contra la Cerro de Pasco Corporation y el imperialismo norteamericano.''',
   ),
   Question(
     id: 'lit_per_10q_q38',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué insigne poetisa peruana de la Generación del 50, dueña de una voz poética desgarradoramente introspectiva y reflexiva ante una cruda realidad y considerada una de las más trascendentes del siglo, escribió el magistral poemario "Ese puerto existe"?''',
+    text:
+        r'''¿Qué insigne poetisa peruana de la Generación del 50, dueña de una voz poética desgarradoramente introspectiva y reflexiva ante una cruda realidad y considerada una de las más trascendentes del siglo, escribió el magistral poemario "Ese puerto existe"?''',
     options: [
       r'''Magda Portal''',
       r'''Clorinda Matto de Turner''',
@@ -531,12 +606,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''María Emilia Cornejo''',
     ],
     correctAnswer: 3,
-    explanation: r'''Blanca Varela es la cima de la poesía femenina del medio siglo; dotada de una visión existencial de alta condensación conceptual, irrumpe internacionalmente apadrinada por Octavio Paz con su libro *Ese puerto existe*.''',
+    explanation:
+        r'''Blanca Varela es la cima de la poesía femenina del medio siglo; dotada de una visión existencial de alta condensación conceptual, irrumpe internacionalmente apadrinada por Octavio Paz con su libro *Ese puerto existe*.''',
   ),
   Question(
     id: 'lit_per_10q_q39',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''En el marco del magistral "Boom Latinoamericano", Mario Vargas Llosa patentó diversas técnicas vanguardistas en sus narraciones. ¿Cómo se denomina técnicamente a la fusión sorpresiva y simultánea de múltiples diálogos correspondientes a distintos tiempos o lugares en un solo bloque narrativo, dotándolo de simultaneidad y atemporalidad estructural?''',
+    text:
+        r'''En el marco del magistral "Boom Latinoamericano", Mario Vargas Llosa patentó diversas técnicas vanguardistas en sus narraciones. ¿Cómo se denomina técnicamente a la fusión sorpresiva y simultánea de múltiples diálogos correspondientes a distintos tiempos o lugares en un solo bloque narrativo, dotándolo de simultaneidad y atemporalidad estructural?''',
     options: [
       r'''Dato escondido''',
       r'''Vasos comunicantes''',
@@ -545,12 +622,14 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Flashforward lineal''',
     ],
     correctAnswer: 1,
-    explanation: r'''La técnica de "vasos comunicantes" (o diálogos telescópicos y simultáneos) es el sello constructivista más complejo de Vargas Llosa, obligando al lector a participar en el salto violento entre distintos cronotopos amalgamados.''',
+    explanation:
+        r'''La técnica de "vasos comunicantes" (o diálogos telescópicos y simultáneos) es el sello constructivista más complejo de Vargas Llosa, obligando al lector a participar en el salto violento entre distintos cronotopos amalgamados.''',
   ),
   Question(
     id: 'lit_per_10q_q40',
     topicId: 'eo_pnp_literatura_peruana_ext_10q',
-    text: r'''¿Qué radical movimiento poético y vanguardista peruano nace en la "Generación del 70" (con fundadores como Jorge Pimentel, Juan Ramírez Ruiz y Enrique Verástegui), rechazando furibundamente toda la tradición artística literaria anterior de la burguesía y propugnando un lenguaje áspero del proletariado barrial bajo la forma del "poema integral"?''',
+    text:
+        r'''¿Qué radical movimiento poético y vanguardista peruano nace en la "Generación del 70" (con fundadores como Jorge Pimentel, Juan Ramírez Ruiz y Enrique Verástegui), rechazando furibundamente toda la tradición artística literaria anterior de la burguesía y propugnando un lenguaje áspero del proletariado barrial bajo la forma del "poema integral"?''',
     options: [
       r'''Grupo Gleba Literaria''',
       r'''Grupo Colónida''',
@@ -559,6 +638,7 @@ final List<Question> literaturaPeruanaExt10qQuestions = [
       r'''Generación Arielista''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Movimiento Hora Zero irrumpió poéticamente en 1970 con su Manifiesto "Palabras Urgentes", exigiendo una revolución social y estética demoliendo las pautas de escritura convencionales del parnaso limeño y alzando las vivencias del suburbio obrero.''',
+    explanation:
+        r'''El Movimiento Hora Zero irrumpió poéticamente en 1970 con su Manifiesto "Palabras Urgentes", exigiendo una revolución social y estética demoliendo las pautas de escritura convencionales del parnaso limeño y alzando las vivencias del suburbio obrero.''',
   ),
 ];

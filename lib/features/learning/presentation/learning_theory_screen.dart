@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/models/learning_level.dart';
 import 'package:learn/models/question.dart';
@@ -48,19 +48,22 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
   @override
   void initState() {
     super.initState();
-    
+
     // Recuperar posición de scroll guardada
-    final initialOffset = context.read<LearningProvider>().getScrollPosition(widget.topicId, widget.nivel);
+    final initialOffset = context.read<LearningProvider>().getScrollPosition(
+      widget.topicId,
+      widget.nivel,
+    );
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
 
     // Guardar posición de scroll al desplazarse
     _scrollController.addListener(() {
       if (_scrollController.hasClients) {
         context.read<LearningProvider>().saveScrollPosition(
-              widget.topicId,
-              widget.nivel,
-              _scrollController.offset,
-            );
+          widget.topicId,
+          widget.nivel,
+          _scrollController.offset,
+        );
       }
     });
 
@@ -94,8 +97,10 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
     final learningProvider = context.read<LearningProvider>();
 
     // Si hay sesión pendiente guardada, retomar; si no, crear nueva
-    final hasPending =
-        learningProvider.hasPendingSession(widget.topicId, widget.nivel);
+    final hasPending = learningProvider.hasPendingSession(
+      widget.topicId,
+      widget.nivel,
+    );
 
     if (hasPending) {
       learningProvider.resumeSession(widget.topicId, widget.nivel);
@@ -103,14 +108,17 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
       learningProvider.startSession(widget.topicId, widget.nivel);
     }
 
-    context.replace('/learning-quiz', extra: {
-        'topicId': widget.topicId,
-        'nivel': widget.nivel,
-      },
+    context.replace(
+      '/learning-quiz',
+      extra: {'topicId': widget.topicId, 'nivel': widget.nivel},
     );
   }
 
-  void _onCheckpointAnswered(String questionId, int selectedOptionIndex, bool isCorrect) {
+  void _onCheckpointAnswered(
+    String questionId,
+    int selectedOptionIndex,
+    bool isCorrect,
+  ) {
     setState(() {
       _selectedAnswers[questionId] = selectedOptionIndex;
       _checkpointFeedback[questionId] = isCorrect;
@@ -147,8 +155,11 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
               backgroundColor: Colors.transparent,
               elevation: 0,
               leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new,
-                    color: Colors.white, size: 20),
+                icon: const Icon(
+                  Icons.arrow_back_ios_new,
+                  color: Colors.white,
+                  size: 20,
+                ),
                 onPressed: () => Navigator.pop(context),
               ),
               flexibleSpace: FlexibleSpaceBar(
@@ -158,7 +169,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
                 ),
               ),
             ),
-  
+
             // ─── Contenido teórico ─────────────────────────────────────────
             SliverToBoxAdapter(
               child: Center(
@@ -172,11 +183,16 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
                         // Indicador de nivel en la ruta
                         _LevelBreadcrumb(nivel: widget.nivel),
                         const SizedBox(height: 24),
-  
+
                         // Sección principal de teoría
                         _TheorySection(
-                          title: '📖 Contenido de Nivel ${widget.nivel.displayName}',
-                          content: subjectProvider.getTheoryByTopicAndLevel(widget.topicId, widget.nivel) ?? 
+                          title:
+                              '📖 Contenido de Nivel ${widget.nivel.displayName}',
+                          content:
+                              subjectProvider.getTheoryByTopicAndLevel(
+                                widget.topicId,
+                                widget.nivel,
+                              ) ??
                               'Aún no hay contenido teórico registrado para este nivel. Por favor, contacta al administrador.',
                         ),
                         const SizedBox(height: 20),
@@ -192,7 +208,7 @@ class _LearningTheoryScreenState extends State<LearningTheoryScreen>
                           ),
                           const SizedBox(height: 20),
                         ],
-  
+
                         // Recuerda / Tip
                         _TipCard(nivel: widget.nivel),
                       ],
@@ -250,13 +266,17 @@ class _TheoryHeader extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 5,
+                    ),
                     decoration: BoxDecoration(
                       color: nivel.color.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                          color: nivel.color.withValues(alpha: 0.4), width: 1),
+                        color: nivel.color.withValues(alpha: 0.4),
+                        width: 1,
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -276,8 +296,11 @@ class _TheoryHeader extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  const Icon(Icons.menu_book_rounded,
-                      color: Colors.white38, size: 28),
+                  const Icon(
+                    Icons.menu_book_rounded,
+                    color: Colors.white38,
+                    size: 28,
+                  ),
                 ],
               ),
               const SizedBox(height: 10),
@@ -332,8 +355,8 @@ class _LevelBreadcrumb extends StatelessWidget {
                         color: isPast
                             ? d.color
                             : isActive
-                                ? nivel.color
-                                : const Color(0xFF1E293B),
+                            ? nivel.color
+                            : const Color(0xFF1E293B),
                         borderRadius: BorderRadius.circular(2),
                       ),
                     ),
@@ -344,8 +367,8 @@ class _LevelBreadcrumb extends StatelessWidget {
                         color: isActive
                             ? nivel.color
                             : isPast
-                                ? Colors.white38
-                                : Colors.white24,
+                            ? Colors.white38
+                            : Colors.white24,
                         fontSize: 11,
                         fontWeight: isActive
                             ? FontWeight.bold
@@ -372,22 +395,32 @@ class _TheorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPlaceholder = content.trim().isEmpty || content.contains('Aún no hay contenido');
-    
+    final isPlaceholder =
+        content.trim().isEmpty || content.contains('Aún no hay contenido');
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1F20).withValues(alpha: 0.5), // Glassmorphism surface
+        color: const Color(
+          0xFF1E1F20,
+        ).withValues(alpha: 0.5), // Glassmorphism surface
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1.0),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.1),
+          width: 1.0,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(Icons.menu_book_rounded, color: Color(0xFF4285F4), size: 22),
+              const Icon(
+                Icons.menu_book_rounded,
+                color: Color(0xFF4285F4),
+                size: 22,
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
@@ -434,47 +467,64 @@ class _TheorySection extends StatelessWidget {
                   _buildSkeletonLine(widthFactor: 0.60),
                 ],
               ),
-            )
+            ),
           ] else
             MarkdownBody(
-            data: content,
-            selectable: true,
-            styleSheet: MarkdownStyleSheet(
-              p: const TextStyle(
-                color: Color(0xFFE2E8F0),
-                fontSize: 16,
-                height: 1.7,
-                letterSpacing: 0.3,
-              ),
-              strong: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-              ),
-              em: const TextStyle(
-                color: Color(0xFF94A3B8),
-                fontStyle: FontStyle.italic,
-              ),
-              listBullet: const TextStyle(
-                color: Color(0xFF4ECDC4),
-                fontSize: 18,
-              ),
-              h1: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold, height: 1.4),
-              h2: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold, height: 1.4),
-              h3: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, height: 1.4),
-              blockquoteDecoration: BoxDecoration(
-                color: const Color(0xFF1E293B),
-                borderRadius: BorderRadius.circular(8),
-                border: const Border(left: BorderSide(color: Color(0xFF4ECDC4), width: 4)),
-              ),
-              blockquotePadding: const EdgeInsets.all(16),
-              blockquote: const TextStyle(
-                color: Color(0xFFCBD5E1),
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-                height: 1.6,
+              data: content,
+              selectable: true,
+              styleSheet: MarkdownStyleSheet(
+                p: const TextStyle(
+                  color: Color(0xFFE2E8F0),
+                  fontSize: 16,
+                  height: 1.7,
+                  letterSpacing: 0.3,
+                ),
+                strong: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                ),
+                em: const TextStyle(
+                  color: Color(0xFF94A3B8),
+                  fontStyle: FontStyle.italic,
+                ),
+                listBullet: const TextStyle(
+                  color: Color(0xFF4ECDC4),
+                  fontSize: 18,
+                ),
+                h1: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                ),
+                h2: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                ),
+                h3: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                ),
+                blockquoteDecoration: BoxDecoration(
+                  color: const Color(0xFF1E293B),
+                  borderRadius: BorderRadius.circular(8),
+                  border: const Border(
+                    left: BorderSide(color: Color(0xFF4ECDC4), width: 4),
+                  ),
+                ),
+                blockquotePadding: const EdgeInsets.all(16),
+                blockquote: const TextStyle(
+                  color: Color(0xFFCBD5E1),
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  height: 1.6,
+                ),
               ),
             ),
-          ),
         ],
       ),
     );
@@ -514,8 +564,7 @@ class _TipCard extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-            color: nivel.color.withValues(alpha: 0.3), width: 1),
+        border: Border.all(color: nivel.color.withValues(alpha: 0.3), width: 1),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -592,14 +641,8 @@ class _StartPracticeButton extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: isEnabled
-                    ? [
-                        nivel.color,
-                        nivel.color.withValues(alpha: 0.75),
-                      ]
-                    : [
-                        const Color(0xFF1E293B),
-                        const Color(0xFF334155),
-                      ],
+                    ? [nivel.color, nivel.color.withValues(alpha: 0.75)]
+                    : [const Color(0xFF1E293B), const Color(0xFF334155)],
               ),
               borderRadius: BorderRadius.circular(16),
               boxShadow: isEnabled
@@ -634,7 +677,9 @@ class _StartPracticeButton extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        isEnabled ? '¡Entendido, a practicar!' : 'Puntos de Control Pendientes',
+                        isEnabled
+                            ? '¡Entendido, a practicar!'
+                            : 'Puntos de Control Pendientes',
                         style: TextStyle(
                           color: isEnabled ? Colors.white : Colors.white38,
                           fontSize: 17,
@@ -644,7 +689,9 @@ class _StartPracticeButton extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Icon(
-                        isEnabled ? Icons.arrow_forward_rounded : Icons.lock_outline_rounded,
+                        isEnabled
+                            ? Icons.arrow_forward_rounded
+                            : Icons.lock_outline_rounded,
                         color: isEnabled ? Colors.white : Colors.white38,
                         size: 22,
                       ),
@@ -665,7 +712,8 @@ class _CheckpointsSection extends StatefulWidget {
   final Dificultad nivel;
   final Map<String, int> selectedAnswers;
   final Map<String, bool> checkpointFeedback;
-  final Function(String questionId, int selectedOptionIndex, bool isCorrect) onAnswerSelected;
+  final Function(String questionId, int selectedOptionIndex, bool isCorrect)
+  onAnswerSelected;
 
   const _CheckpointsSection({
     required this.checkpoints,
@@ -691,7 +739,10 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
       decoration: BoxDecoration(
         color: const Color(0xFF1E293B).withValues(alpha: 0.4),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: widget.nivel.color.withValues(alpha: 0.3), width: 1),
+        border: Border.all(
+          color: widget.nivel.color.withValues(alpha: 0.3),
+          width: 1,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -712,14 +763,21 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.05),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   'Completado: ${widget.checkpoints.where((q) => widget.checkpointFeedback[q.id] == true).length}/${widget.checkpoints.length}',
-                  style: const TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -727,7 +785,10 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
           const SizedBox(height: 6),
           Text(
             'Responde correctamente las siguientes preguntas de control para desbloquear la práctica.',
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.6), fontSize: 13),
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.6),
+              fontSize: 13,
+            ),
           ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
@@ -763,24 +824,41 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                       if (isCorrect == true) {
                         borderCol = const Color(0xFF22C55E);
                         bgCol = const Color(0xFF15803D).withValues(alpha: 0.2);
-                        trailing = const Icon(Icons.check_circle_rounded, color: Color(0xFF22C55E), size: 18);
+                        trailing = const Icon(
+                          Icons.check_circle_rounded,
+                          color: Color(0xFF22C55E),
+                          size: 18,
+                        );
                       } else {
                         borderCol = const Color(0xFFEF4444);
                         bgCol = const Color(0xFFB91C1C).withValues(alpha: 0.2);
-                        trailing = const Icon(Icons.cancel_rounded, color: Color(0xFFEF4444), size: 18);
+                        trailing = const Icon(
+                          Icons.cancel_rounded,
+                          color: Color(0xFFEF4444),
+                          size: 18,
+                        );
                       }
                     }
 
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: InkWell(
-                        onTap: (isCorrect == true) ? null : () {
-                          final correct = optIndex == q.correctAnswer;
-                          widget.onAnswerSelected(q.id, optIndex, correct);
-                        },
+                        onTap: (isCorrect == true)
+                            ? null
+                            : () {
+                                final correct = optIndex == q.correctAnswer;
+                                widget.onAnswerSelected(
+                                  q.id,
+                                  optIndex,
+                                  correct,
+                                );
+                              },
                         borderRadius: BorderRadius.circular(12),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 12,
+                          ),
                           decoration: BoxDecoration(
                             color: bgCol,
                             borderRadius: BorderRadius.circular(12),
@@ -793,7 +871,9 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                                   q.options[optIndex],
                                   style: TextStyle(
                                     color: isOptSelected
-                                        ? (isCorrect == true ? const Color(0xFF86EFAC) : const Color(0xFFFCA5A5))
+                                        ? (isCorrect == true
+                                              ? const Color(0xFF86EFAC)
+                                              : const Color(0xFFFCA5A5))
                                         : Colors.white70,
                                     fontSize: 13,
                                   ),
@@ -813,12 +893,21 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                     const SizedBox(height: 6),
                     Row(
                       children: [
-                        const Icon(Icons.info_outline, color: Color(0xFFFCA5A5), size: 14),
+                        const Icon(
+                          Icons.info_outline,
+                          color: Color(0xFFFCA5A5),
+                          size: 14,
+                        ),
                         const SizedBox(width: 6),
                         Expanded(
                           child: Text(
                             'Respuesta incorrecta. Vuelve a leer la teoría e inténtalo de nuevo.',
-                            style: TextStyle(color: const Color(0xFFFCA5A5).withValues(alpha: 0.9), fontSize: 11),
+                            style: TextStyle(
+                              color: const Color(
+                                0xFFFCA5A5,
+                              ).withValues(alpha: 0.9),
+                              fontSize: 11,
+                            ),
                           ),
                         ),
                       ],
@@ -827,12 +916,23 @@ class _CheckpointsSectionState extends State<_CheckpointsSection> {
                     const SizedBox(height: 6),
                     Row(
                       children: [
-                        const Icon(Icons.check_circle_outline, color: Color(0xFF86EFAC), size: 14),
+                        const Icon(
+                          Icons.check_circle_outline,
+                          color: Color(0xFF86EFAC),
+                          size: 14,
+                        ),
                         const SizedBox(width: 6),
                         Expanded(
                           child: Text(
-                            q.explanation.isNotEmpty ? q.explanation : '¡Correcto!',
-                            style: TextStyle(color: const Color(0xFF86EFAC).withValues(alpha: 0.9), fontSize: 11),
+                            q.explanation.isNotEmpty
+                                ? q.explanation
+                                : '¡Correcto!',
+                            style: TextStyle(
+                              color: const Color(
+                                0xFF86EFAC,
+                              ).withValues(alpha: 0.9),
+                              fontSize: 11,
+                            ),
                           ),
                         ),
                       ],

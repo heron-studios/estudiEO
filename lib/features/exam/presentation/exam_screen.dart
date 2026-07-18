@@ -27,7 +27,7 @@ class _ExamScreenState extends State<ExamScreen> {
   final Map<String, int> _answers = {}; // questionId -> selectedIndex
   final Set<String> _flaggedQuestionIds = {}; // questionId flagged for review
   final FocusNode _focusNode = FocusNode();
-  
+
   // Timer
   static const int _examDuration = 3 * 60 * 60; // 3 hours in seconds
   int _secondsLeft = _examDuration;
@@ -45,18 +45,24 @@ class _ExamScreenState extends State<ExamScreen> {
       if (savedState != null) {
         try {
           final List<dynamic> qList = savedState['questions'] as List;
-          _questions = qList.map((e) => Question.fromJson(Map<String, dynamic>.from(e as Map))).toList();
-          
-          final Map<dynamic, dynamic> ansMap = savedState['answers'] as Map? ?? {};
+          _questions = qList
+              .map(
+                (e) => Question.fromJson(Map<String, dynamic>.from(e as Map)),
+              )
+              .toList();
+
+          final Map<dynamic, dynamic> ansMap =
+              savedState['answers'] as Map? ?? {};
           ansMap.forEach((key, val) {
             _answers[key.toString()] = val as int;
           });
-          
-          final List<dynamic> flaggedList = savedState['flagged'] as List? ?? [];
+
+          final List<dynamic> flaggedList =
+              savedState['flagged'] as List? ?? [];
           for (final f in flaggedList) {
             _flaggedQuestionIds.add(f.toString());
           }
-          
+
           _secondsLeft = savedState['secondsLeft'] as int? ?? _examDuration;
           _currentIndex = savedState['currentIndex'] as int? ?? 0;
         } catch (e) {
@@ -70,9 +76,9 @@ class _ExamScreenState extends State<ExamScreen> {
       _questions = context.read<SubjectProvider>().generateExamQuestions();
       storage.clearActiveExamState();
     }
-    
+
     _startTimer();
-    
+
     if (!widget.resume) {
       _saveExamProgress();
     }
@@ -174,13 +180,13 @@ class _ExamScreenState extends State<ExamScreen> {
       _answers[qId] = selected;
     });
     _saveExamProgress();
-    
+
     // Auto-advance only if answering for the first time
     if (!wasAlreadyAnswered && _currentIndex < _questions.length - 1) {
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted) {
-              setState(() => _currentIndex++);
-              _saveExamProgress();
+          setState(() => _currentIndex++);
+          _saveExamProgress();
         }
       });
     }
@@ -189,7 +195,7 @@ class _ExamScreenState extends State<ExamScreen> {
   void _finishExam() {
     _timer?.cancel();
     int correctCount = 0;
-    
+
     final srs = context.read<SrsProvider>();
     final gamification = context.read<GamificationProvider>();
     final storage = context.read<LocalStorageService>();
@@ -201,7 +207,7 @@ class _ExamScreenState extends State<ExamScreen> {
       }
       srs.processAnswer(q.id, q.topicId, isCorrect);
     }
-    
+
     if (correctCount > 0) {
       gamification.addXp(correctCount * 10);
     }
@@ -215,11 +221,13 @@ class _ExamScreenState extends State<ExamScreen> {
       'timeSpent': _examDuration - _secondsLeft,
     };
     storage.saveExamHistory(record);
-    
+
     // Clear active state
     storage.clearActiveExamState();
-    
-    context.replace('/exam-results', extra: {
+
+    context.replace(
+      '/exam-results',
+      extra: {
         'score': correctCount,
         'total': _questions.length,
         'timeSpent': _examDuration - _secondsLeft,
@@ -231,14 +239,17 @@ class _ExamScreenState extends State<ExamScreen> {
 
   Future<void> _confirmFinish() async {
     int missing = _questions.length - _answers.length;
-    
+
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E293B),
-        title: const Text('¿Entregar Examen?', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          '¿Entregar Examen?',
+          style: TextStyle(color: Colors.white),
+        ),
         content: Text(
-          missing > 0 
+          missing > 0
               ? 'Aún te faltan $missing preguntas por responder.\n\n¿Estás seguro de que deseas entregar el simulacro ahora?'
               : 'Has respondido todas las preguntas.\n\n¿Deseas entregar el simulacro y ver tus resultados?',
           style: const TextStyle(color: Color(0xFF94A3B8)),
@@ -250,8 +261,13 @@ class _ExamScreenState extends State<ExamScreen> {
           ),
           ElevatedButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF3B82F6)),
-            child: const Text('Sí, Entregar', style: TextStyle(color: Colors.white)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF3B82F6),
+            ),
+            child: const Text(
+              'Sí, Entregar',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),
@@ -267,7 +283,10 @@ class _ExamScreenState extends State<ExamScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E293B),
-        title: const Text('¿Abandonar el examen?', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          '¿Abandonar el examen?',
+          style: TextStyle(color: Colors.white),
+        ),
         content: const Text(
           '¿Qué deseas hacer? Puedes guardar tu progreso para continuar después o abandonar permanentemente y destruir tu puntaje.',
           style: TextStyle(color: Color(0xFF94A3B8)),
@@ -282,14 +301,20 @@ class _ExamScreenState extends State<ExamScreen> {
               Navigator.pop(ctx, false);
               _saveAndExit();
             },
-            child: const Text('Guardar y Salir', style: TextStyle(color: Colors.blueAccent)),
+            child: const Text(
+              'Guardar y Salir',
+              style: TextStyle(color: Colors.blueAccent),
+            ),
           ),
           TextButton(
             onPressed: () {
               context.read<LocalStorageService>().clearActiveExamState();
               Navigator.pop(ctx, true);
             },
-            child: const Text('Abandonar', style: TextStyle(color: Colors.redAccent)),
+            child: const Text(
+              'Abandonar',
+              style: TextStyle(color: Colors.redAccent),
+            ),
           ),
         ],
       ),
@@ -355,7 +380,11 @@ class _ExamScreenState extends State<ExamScreen> {
                     children: [
                       const Text(
                         'Mapa de Preguntas',
-                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const Spacer(),
                       IconButton(
@@ -377,11 +406,12 @@ class _ExamScreenState extends State<ExamScreen> {
                   Expanded(
                     child: GridView.builder(
                       controller: scrollController,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 5,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                      ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                          ),
                       itemCount: _questions.length,
                       itemBuilder: (context, index) {
                         final q = _questions[index];
@@ -456,7 +486,11 @@ class _ExamScreenState extends State<ExamScreen> {
         children: [
           const Text(
             'Mapa de Preguntas',
-            style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 12),
           Row(
@@ -500,8 +534,8 @@ class _ExamScreenState extends State<ExamScreen> {
 
                 return GestureDetector(
                   onTap: () {
-                      setState(() => _currentIndex = index);
-                      _saveExamProgress();
+                    setState(() => _currentIndex = index);
+                    _saveExamProgress();
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -540,7 +574,9 @@ class _ExamScreenState extends State<ExamScreen> {
   ) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: isLargeScreen ? double.infinity : 650),
+        constraints: BoxConstraints(
+          maxWidth: isLargeScreen ? double.infinity : 650,
+        ),
         child: Column(
           children: [
             // ── HEADER ──
@@ -555,14 +591,19 @@ class _ExamScreenState extends State<ExamScreen> {
                   const Spacer(),
                   // Pausa + Timer
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
-                      color: _secondsLeft < 300 
-                          ? Colors.redAccent.withValues(alpha: 0.15) 
+                      color: _secondsLeft < 300
+                          ? Colors.redAccent.withValues(alpha: 0.15)
                           : const Color(0xFF1E293B),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: _secondsLeft < 300 ? Colors.redAccent : const Color(0xFF334155),
+                        color: _secondsLeft < 300
+                            ? Colors.redAccent
+                            : const Color(0xFF334155),
                       ),
                     ),
                     child: Row(
@@ -571,24 +612,35 @@ class _ExamScreenState extends State<ExamScreen> {
                         IconButton(
                           constraints: const BoxConstraints(),
                           padding: const EdgeInsets.symmetric(horizontal: 8),
-                          icon: const Icon(Icons.pause, color: Colors.white, size: 20),
+                          icon: const Icon(
+                            Icons.pause,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                           onPressed: _pauseTimer,
                         ),
                         const SizedBox(
                           height: 20,
-                          child: VerticalDivider(color: Color(0xFF334155), width: 1),
+                          child: VerticalDivider(
+                            color: Color(0xFF334155),
+                            width: 1,
+                          ),
                         ),
                         const SizedBox(width: 8),
                         Icon(
-                          Icons.timer_outlined, 
-                          color: _secondsLeft < 300 ? Colors.redAccent : Colors.white70, 
+                          Icons.timer_outlined,
+                          color: _secondsLeft < 300
+                              ? Colors.redAccent
+                              : Colors.white70,
                           size: 18,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           _formattedTime,
                           style: TextStyle(
-                            color: _secondsLeft < 300 ? Colors.redAccent : Colors.white,
+                            color: _secondsLeft < 300
+                                ? Colors.redAccent
+                                : Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
                           ),
@@ -600,7 +652,13 @@ class _ExamScreenState extends State<ExamScreen> {
                   const Spacer(),
                   TextButton(
                     onPressed: _confirmFinish,
-                    child: const Text('Entregar', style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold)),
+                    child: const Text(
+                      'Entregar',
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -614,9 +672,13 @@ class _ExamScreenState extends State<ExamScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(4),
                     child: LinearProgressIndicator(
-                      value: _questions.isEmpty ? 0 : (_currentIndex + 1) / _questions.length,
+                      value: _questions.isEmpty
+                          ? 0
+                          : (_currentIndex + 1) / _questions.length,
                       backgroundColor: const Color(0xFF1E293B),
-                      valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF3B82F6)),
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Color(0xFF3B82F6),
+                      ),
                       minHeight: 6,
                     ),
                   ),
@@ -626,11 +688,19 @@ class _ExamScreenState extends State<ExamScreen> {
                     children: [
                       Text(
                         'Pregunta ${_currentIndex + 1} de ${_questions.length}',
-                        style: const TextStyle(color: Color(0xFF94A3B8), fontWeight: FontWeight.bold, fontSize: 12),
+                        style: const TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
                       ),
                       Text(
                         'Respondidas: ${_answers.length}/${_questions.length}',
-                        style: const TextStyle(color: Color(0xFF94A3B8), fontWeight: FontWeight.bold, fontSize: 12),
+                        style: const TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
                       ),
                     ],
                   ),
@@ -646,11 +716,17 @@ class _ExamScreenState extends State<ExamScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: subjectColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: subjectColor.withValues(alpha: 0.4), width: 1),
+                      border: Border.all(
+                        color: subjectColor.withValues(alpha: 0.4),
+                        width: 1,
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -673,7 +749,10 @@ class _ExamScreenState extends State<ExamScreen> {
                     children: [
                       if (!isLargeScreen)
                         IconButton(
-                          icon: const Icon(Icons.grid_view_rounded, color: Colors.white70),
+                          icon: const Icon(
+                            Icons.grid_view_rounded,
+                            color: Colors.white70,
+                          ),
                           onPressed: _showNavigationGrid,
                           tooltip: 'Ver todas las preguntas',
                         ),
@@ -713,20 +792,24 @@ class _ExamScreenState extends State<ExamScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: _currentIndex > 0 ? () {
-                            setState(() => _currentIndex--);
-                            _saveExamProgress();
-                          } : null,
+                          onPressed: _currentIndex > 0
+                              ? () {
+                                  setState(() => _currentIndex--);
+                                  _saveExamProgress();
+                                }
+                              : null,
                           icon: const Icon(Icons.arrow_back_ios, size: 18),
                           color: Colors.white,
                           disabledColor: Colors.white24,
                         ),
                         const Spacer(),
                         IconButton(
-                          onPressed: _currentIndex < _questions.length - 1 ? () {
-                            setState(() => _currentIndex++);
-                            _saveExamProgress();
-                          } : null,
+                          onPressed: _currentIndex < _questions.length - 1
+                              ? () {
+                                  setState(() => _currentIndex++);
+                                  _saveExamProgress();
+                                }
+                              : null,
                           icon: const Icon(Icons.arrow_forward_ios, size: 18),
                           color: Colors.white,
                           disabledColor: Colors.white24,
@@ -756,16 +839,23 @@ class _ExamScreenState extends State<ExamScreen> {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 12),
                         child: Material(
-                          color: isSelected ? const Color(0xFF1E3A5F) : const Color(0xFF1E293B),
+                          color: isSelected
+                              ? const Color(0xFF1E3A5F)
+                              : const Color(0xFF1E293B),
                           borderRadius: BorderRadius.circular(14),
                           child: InkWell(
                             onTap: () => _answerQuestion(question.id, i),
                             borderRadius: BorderRadius.circular(14),
                             child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 18,
+                                vertical: 16,
+                              ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: isSelected ? const Color(0xFF3B82F6) : const Color(0xFF334155),
+                                  color: isSelected
+                                      ? const Color(0xFF3B82F6)
+                                      : const Color(0xFF334155),
                                   width: 1.5,
                                 ),
                                 borderRadius: BorderRadius.circular(14),
@@ -777,15 +867,21 @@ class _ExamScreenState extends State<ExamScreen> {
                                     height: 30,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: isSelected 
-                                          ? const Color(0xFF3B82F6).withValues(alpha: 0.2) 
-                                          : const Color(0xFF334155).withValues(alpha: 0.2),
+                                      color: isSelected
+                                          ? const Color(
+                                              0xFF3B82F6,
+                                            ).withValues(alpha: 0.2)
+                                          : const Color(
+                                              0xFF334155,
+                                            ).withValues(alpha: 0.2),
                                     ),
                                     child: Center(
                                       child: Text(
                                         String.fromCharCode(65 + i),
                                         style: TextStyle(
-                                          color: isSelected ? const Color(0xFF3B82F6) : const Color(0xFF334155),
+                                          color: isSelected
+                                              ? const Color(0xFF3B82F6)
+                                              : const Color(0xFF334155),
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -796,7 +892,9 @@ class _ExamScreenState extends State<ExamScreen> {
                                     child: Text(
                                       question.options[i],
                                       style: TextStyle(
-                                        color: isSelected ? const Color(0xFF93C5FD) : Colors.white,
+                                        color: isSelected
+                                            ? const Color(0xFF93C5FD)
+                                            : Colors.white,
                                         fontSize: 15,
                                         height: 1.4,
                                       ),
@@ -818,11 +916,17 @@ class _ExamScreenState extends State<ExamScreen> {
                           onPressed: _confirmFinish,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.redAccent,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
                           ),
                           child: const Text(
-                            'Entregar Simulacro', 
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                            'Entregar Simulacro',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -859,7 +963,9 @@ class _ExamScreenState extends State<ExamScreen> {
 
     final currentSubject = _getCurrentSubject(question);
     final subjectColorHex = currentSubject?.color ?? '#3B82F6';
-    final colorVal = int.tryParse(subjectColorHex.replaceAll('#', ''), radix: 16) ?? 0xFF3B82F6;
+    final colorVal =
+        int.tryParse(subjectColorHex.replaceAll('#', ''), radix: 16) ??
+        0xFF3B82F6;
     final subjectColor = Color(colorVal | 0xFF000000);
     final subjectIcon = currentSubject?.icon ?? '📚';
 
@@ -878,7 +984,7 @@ class _ExamScreenState extends State<ExamScreen> {
         onKeyEvent: (KeyEvent event) {
           if (event is KeyDownEvent && !_isPaused) {
             final key = event.logicalKey;
-            
+
             if (key == LogicalKeyboardKey.arrowLeft) {
               if (_currentIndex > 0) {
                 setState(() => _currentIndex--);
@@ -891,16 +997,21 @@ class _ExamScreenState extends State<ExamScreen> {
               }
             } else {
               int selectedIndex = -1;
-              if (key == LogicalKeyboardKey.keyA || key == LogicalKeyboardKey.digit1) {
+              if (key == LogicalKeyboardKey.keyA ||
+                  key == LogicalKeyboardKey.digit1) {
                 selectedIndex = 0;
-              } else if (key == LogicalKeyboardKey.keyB || key == LogicalKeyboardKey.digit2) {
+              } else if (key == LogicalKeyboardKey.keyB ||
+                  key == LogicalKeyboardKey.digit2) {
                 selectedIndex = 1;
-              } else if (key == LogicalKeyboardKey.keyC || key == LogicalKeyboardKey.digit3) {
+              } else if (key == LogicalKeyboardKey.keyC ||
+                  key == LogicalKeyboardKey.digit3) {
                 selectedIndex = 2;
-              } else if (key == LogicalKeyboardKey.keyD || key == LogicalKeyboardKey.digit4) {
+              } else if (key == LogicalKeyboardKey.keyD ||
+                  key == LogicalKeyboardKey.digit4) {
                 selectedIndex = 3;
               }
-              if (selectedIndex != -1 && selectedIndex < question.options.length) {
+              if (selectedIndex != -1 &&
+                  selectedIndex < question.options.length) {
                 _answerQuestion(question.id, selectedIndex);
               }
             }
@@ -912,7 +1023,7 @@ class _ExamScreenState extends State<ExamScreen> {
             children: [
               NeuralBackgroundWrapper(
                 child: SafeArea(
-                  child: isLargeScreen 
+                  child: isLargeScreen
                       ? Center(
                           child: SizedBox(
                             width: screenWidth.clamp(0.0, 960.0),
@@ -956,16 +1067,27 @@ class _ExamScreenState extends State<ExamScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.pause_circle_filled_rounded, size: 90, color: Color(0xFF3B82F6)),
+                          const Icon(
+                            Icons.pause_circle_filled_rounded,
+                            size: 90,
+                            color: Color(0xFF3B82F6),
+                          ),
                           const SizedBox(height: 24),
                           const Text(
                             'Simulacro Pausado',
-                            style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           const SizedBox(height: 8),
                           const Text(
                             'El contenido de las preguntas está oculto.',
-                            style: TextStyle(color: Color(0xFF94A3B8), fontSize: 16),
+                            style: TextStyle(
+                              color: Color(0xFF94A3B8),
+                              fontSize: 16,
+                            ),
                           ),
                           const SizedBox(height: 36),
                           ElevatedButton.icon(
@@ -975,9 +1097,17 @@ class _ExamScreenState extends State<ExamScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF3B82F6),
                               foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                              textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 32,
+                                vertical: 16,
+                              ),
+                              textStyle: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
                             ),
                           ),
                           const SizedBox(height: 20),
@@ -987,7 +1117,9 @@ class _ExamScreenState extends State<ExamScreen> {
                             label: const Text('Guardar Progreso y Salir'),
                             style: TextButton.styleFrom(
                               foregroundColor: const Color(0xFF94A3B8),
-                              textStyle: const TextStyle(fontWeight: FontWeight.bold),
+                              textStyle: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],

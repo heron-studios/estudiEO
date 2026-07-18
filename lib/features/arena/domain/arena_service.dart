@@ -19,7 +19,7 @@ class ArenaService {
       // Unirse a una sala existente
       final doc = waitingMatches.docs.first;
       final match = ArenaMatch.fromFirestore(doc);
-      
+
       // Evitar jugar contra uno mismo (por si el usuario presionó dos veces o testea en dos pestañas)
       if (match.player1Id != playerId) {
         await doc.reference.update({
@@ -53,21 +53,34 @@ class ArenaService {
       allQuestions.addAll(SubjectsRepository.getQuestionsBySubject(s.id));
     }
     allQuestions.shuffle();
-    return allQuestions.take(count).map((q) => {
-      'id': q.id,
-      'text': q.text,
-      'options': q.options,
-      'correctAnswer': q.correctAnswer,
-    }).toList();
+    return allQuestions
+        .take(count)
+        .map(
+          (q) => {
+            'id': q.id,
+            'text': q.text,
+            'options': q.options,
+            'correctAnswer': q.correctAnswer,
+          },
+        )
+        .toList();
   }
 
   // Stream para escuchar cambios en la partida
   Stream<ArenaMatch> watchMatch(String matchId) {
-    return _firestore.collection('arena_matches').doc(matchId).snapshots().map((doc) => ArenaMatch.fromFirestore(doc));
+    return _firestore
+        .collection('arena_matches')
+        .doc(matchId)
+        .snapshots()
+        .map((doc) => ArenaMatch.fromFirestore(doc));
   }
 
   // Actualizar puntaje
-  Future<void> updateScore(String matchId, String playerKey, int newScore) async {
+  Future<void> updateScore(
+    String matchId,
+    String playerKey,
+    int newScore,
+  ) async {
     await _firestore.collection('arena_matches').doc(matchId).update({
       playerKey: newScore,
     });

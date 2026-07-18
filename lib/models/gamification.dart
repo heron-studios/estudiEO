@@ -53,7 +53,10 @@ class Gamification {
     final today = DateTime(now.year, now.month, now.day);
     if (lastActivityDate != null) {
       final lastDate = DateTime(
-          lastActivityDate!.year, lastActivityDate!.month, lastActivityDate!.day);
+        lastActivityDate!.year,
+        lastActivityDate!.month,
+        lastActivityDate!.day,
+      );
       final daysDiff = today.difference(lastDate).inDays;
       if (daysDiff == 0) {
         return;

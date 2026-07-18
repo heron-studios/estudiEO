@@ -37,7 +37,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   @override
   void initState() {
     super.initState();
-    _cards = context.read<SubjectProvider>().getQuestionsByTopic(widget.topicId)..shuffle();
+    _cards = context.read<SubjectProvider>().getQuestionsByTopic(widget.topicId)
+      ..shuffle();
 
     _flipController = AnimationController(
       vsync: this,
@@ -62,12 +63,13 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   void _flip() {
     if (_isFront) {
       _flipController.forward();
-      
+
       if (!_allTimeFlipped.contains(_current.id)) {
         _allTimeFlipped.add(_current.id);
         _batchQuestionIds.add(_current.id);
-        
-        if (_batchQuestionIds.length == 20 || _allTimeFlipped.length == _cards.length) {
+
+        if (_batchQuestionIds.length == 20 ||
+            _allTimeFlipped.length == _cards.length) {
           if (_batchQuestionIds.isNotEmpty) {
             Future.delayed(const Duration(milliseconds: 500), () {
               if (mounted) _showMiniQuizPrompt();
@@ -91,31 +93,45 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       builder: (context) {
         return AlertDialog(
           backgroundColor: _card,
-          title: const Text('¡Tarjetas completadas!', style: TextStyle(color: Colors.white)),
-          content: const Text('Probemos si te las aprendiste. ¿Listo para un quiz rápido?', style: TextStyle(color: Colors.white70)),
+          title: const Text(
+            '¡Tarjetas completadas!',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: const Text(
+            'Probemos si te las aprendiste. ¿Listo para un quiz rápido?',
+            style: TextStyle(color: Colors.white70),
+          ),
           actions: [
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context); // Close dialog
                 final batch = List<String>.from(_batchQuestionIds);
                 _batchQuestionIds.clear();
-                
-                context.push('/srs-mini-quiz', extra: batch,
-                );
+
+                context.push('/srs-mini-quiz', extra: batch);
               },
-              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF4ADE80), foregroundColor: _bg),
-              child: const Text('Realizar quiz rápido', style: TextStyle(fontWeight: FontWeight.bold)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF4ADE80),
+                foregroundColor: _bg,
+              ),
+              child: const Text(
+                'Realizar quiz rápido',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 _batchQuestionIds.clear();
               },
-              child: const Text('Ahora no', style: TextStyle(color: Colors.white54)),
+              child: const Text(
+                'Ahora no',
+                style: TextStyle(color: Colors.white54),
+              ),
             ),
           ],
         );
-      }
+      },
     );
   }
 
@@ -144,13 +160,15 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
         appBar: _buildAppBar(),
         body: const NeuralBackgroundWrapper(
           child: Center(
-            child: Text('No hay tarjetas disponibles',
-                style: TextStyle(color: Colors.white60)),
+            child: Text(
+              'No hay tarjetas disponibles',
+              style: TextStyle(color: Colors.white60),
+            ),
           ),
         ),
       );
     }
-   
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: _buildAppBar(),
@@ -179,8 +197,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
                               alignment: Alignment.center,
                               transform: Matrix4.identity()
                                 ..setEntry(3, 2, 0.001)
-                                ..rotateY(isFrontVisible ? angle : angle - math.pi),
-                              child: isFrontVisible ? _buildFront() : _buildBack(),
+                                ..rotateY(
+                                  isFrontVisible ? angle : angle - math.pi,
+                                ),
+                              child: isFrontVisible
+                                  ? _buildFront()
+                                  : _buildBack(),
                             );
                           },
                         ),
@@ -206,13 +228,21 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('TARJETAS',
-              style: TextStyle(
-                  color: _blue, fontSize: 12, fontWeight: FontWeight.w600)),
+          const Text(
+            'TARJETAS',
+            style: TextStyle(
+              color: _blue,
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           Text(
             widget.topicName,
             style: const TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),
@@ -238,7 +268,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
         Text(
           '${_index + 1}/${_cards.length}',
           style: const TextStyle(
-              color: _muted, fontSize: 12, fontWeight: FontWeight.bold),
+            color: _muted,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );
@@ -260,12 +293,15 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               color: _blue.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Text('PREGUNTA',
-                style: TextStyle(
-                    color: _blue,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5)),
+            child: const Text(
+              'PREGUNTA',
+              style: TextStyle(
+                color: _blue,
+                fontSize: 10,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.5,
+              ),
+            ),
           ),
           const SizedBox(height: 16),
           Expanded(
@@ -276,10 +312,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
                   _current.text,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      height: 1.5),
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    height: 1.5,
+                  ),
                 ),
               ),
             ),
@@ -290,8 +327,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
             children: [
               Icon(Icons.touch_app, color: _muted, size: 14),
               SizedBox(width: 4),
-              Text('Toca para ver respuesta',
-                  style: TextStyle(color: _muted, fontSize: 11)),
+              Text(
+                'Toca para ver respuesta',
+                style: TextStyle(color: _muted, fontSize: 11),
+              ),
             ],
           ),
         ],
@@ -301,18 +340,23 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
 
   Widget _buildBack() {
     String answer = 'Error: Respuesta no encontrada.';
-    if (_current.options.isNotEmpty && _current.correctAnswer >= 0 && _current.correctAnswer < _current.options.length) {
+    if (_current.options.isNotEmpty &&
+        _current.correctAnswer >= 0 &&
+        _current.correctAnswer < _current.options.length) {
       answer = _current.options[_current.correctAnswer];
     } else {
       // Si entra aquí, es porque la app sigue usando los datos antiguos en memoria.
-      answer = 'Por favor, reinicia la app por completo (Hot Restart) para cargar los nuevos datos.';
+      answer =
+          'Por favor, reinicia la app por completo (Hot Restart) para cargar los nuevos datos.';
     }
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF052E16),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-            color: const Color(0xFF16A34A).withValues(alpha: 0.6), width: 1.5),
+          color: const Color(0xFF16A34A).withValues(alpha: 0.6),
+          width: 1.5,
+        ),
       ),
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -323,12 +367,15 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               color: const Color(0xFF16A34A).withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Text('RESPUESTA',
-                style: TextStyle(
-                    color: Color(0xFF4ADE80),
-                    fontSize: 10,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5)),
+            child: const Text(
+              'RESPUESTA',
+              style: TextStyle(
+                color: Color(0xFF4ADE80),
+                fontSize: 10,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.5,
+              ),
+            ),
           ),
           const SizedBox(height: 16),
           Expanded(
@@ -339,10 +386,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
                   answer,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      color: Color(0xFF86EFAC),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      height: 1.5),
+                    color: Color(0xFF86EFAC),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    height: 1.5,
+                  ),
                 ),
               ),
             ),
@@ -353,8 +401,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
             children: [
               Icon(Icons.touch_app, color: Color(0xFF4ADE80), size: 14),
               SizedBox(width: 4),
-              Text('Toca para voltear',
-                  style: TextStyle(color: Color(0xFF4ADE80), fontSize: 11)),
+              Text(
+                'Toca para voltear',
+                style: TextStyle(color: Color(0xFF4ADE80), fontSize: 11),
+              ),
             ],
           ),
         ],
@@ -389,9 +439,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
                   Text(
                     _showAnswer ? 'Ver pregunta' : 'Ver respuesta',
                     style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
                   ),
                 ],
               ),
@@ -443,8 +494,10 @@ class _NavBtn extends StatelessWidget {
             children: [
               Icon(icon, color: Colors.white70, size: 16),
               const SizedBox(height: 2),
-              Text(label,
-                  style: const TextStyle(color: Colors.white54, fontSize: 9)),
+              Text(
+                label,
+                style: const TextStyle(color: Colors.white54, fontSize: 9),
+              ),
             ],
           ),
         ),

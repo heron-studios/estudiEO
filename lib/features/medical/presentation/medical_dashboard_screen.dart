@@ -70,29 +70,36 @@ class MedicalDashboardScreen extends StatelessWidget {
                   _buildTestCard(
                     nt: nt,
                     title: 'Cuestionario de Personalidad (Eysenck)',
-                    subtitle: 'Test de temperamento y rasgos de personalidad (Extroversión, Neuroticismo, Psicoticismo).',
+                    subtitle:
+                        'Test de temperamento y rasgos de personalidad (Extroversión, Neuroticismo, Psicoticismo).',
                     icon: Icons.timer_rounded,
                     color: nt.cyan,
                     badge: '10 MIN',
                     isLocked: !isPremium,
-                    onTap: !isPremium ? () => PremiumUpgradeDialog.show(context) : () => context.push('/medical/eysenck'),
+                    onTap: !isPremium
+                        ? () => PremiumUpgradeDialog.show(context)
+                        : () => context.push('/medical/eysenck'),
                   ),
                   const SizedBox(height: 16),
                   _buildTestCard(
                     nt: nt,
                     title: 'Frases Incompletas (Sacks)',
-                    subtitle: 'Área: Autoridad y Figuras Paternas. Evalúa la subordinación y valores.',
+                    subtitle:
+                        'Área: Autoridad y Figuras Paternas. Evalúa la subordinación y valores.',
                     icon: Icons.edit_note_rounded,
                     color: nt.blueGoogle,
                     badge: 'INTERACTIVO',
                     isLocked: !isPremium,
-                    onTap: !isPremium ? () => PremiumUpgradeDialog.show(context) : () => context.push('/medical/sacks'),
+                    onTap: !isPremium
+                        ? () => PremiumUpgradeDialog.show(context)
+                        : () => context.push('/medical/sacks'),
                   ),
                   const SizedBox(height: 16),
                   _buildTestCard(
                     nt: nt,
                     title: 'Test del Trazo (Trail Making Test)',
-                    subtitle: 'Evalúa la atención, velocidad motora y flexibilidad cognitiva.',
+                    subtitle:
+                        'Evalúa la atención, velocidad motora y flexibilidad cognitiva.',
                     icon: Icons.gesture_rounded,
                     color: nt.successGreen,
                     badge: 'INTERACTIVO',
@@ -161,9 +168,7 @@ class MedicalDashboardScreen extends StatelessWidget {
       hoverGradientBorder: true,
       child: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         child: Row(
           children: [
             Container(
@@ -195,7 +200,10 @@ class MedicalDashboardScreen extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: color.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
@@ -230,7 +238,11 @@ class MedicalDashboardScreen extends StatelessWidget {
                 color: Colors.white.withValues(alpha: 0.05),
                 shape: BoxShape.circle,
               ),
-              child: Icon(isLocked ? Icons.lock_rounded : Icons.arrow_forward_ios_rounded, color: Colors.white54, size: 16),
+              child: Icon(
+                isLocked ? Icons.lock_rounded : Icons.arrow_forward_ios_rounded,
+                color: Colors.white54,
+                size: 16,
+              ),
             ),
           ],
         ),

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:learn/models/quiz_session.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:uuid/uuid.dart';
@@ -24,26 +24,30 @@ class QuizProvider extends ChangeNotifier {
 
   QuizSession? get currentSession => _currentSession;
   List<QuizSession> get sessions => _sessions;
-  
+
   // Devuelve la sesión actual si coincide con el topic, útil para "Continuar"
   bool hasPendingSessionForTopic(String topicId) {
-    if (_currentSession != null && 
-        _currentSession!.topicId == topicId && 
+    if (_currentSession != null &&
+        _currentSession!.topicId == topicId &&
         !_currentSession!.isCompleted) {
       return true;
     }
-    final pending = _sessions.where((s) => s.topicId == topicId && !s.isCompleted).toList();
+    final pending = _sessions
+        .where((s) => s.topicId == topicId && !s.isCompleted)
+        .toList();
     return pending.isNotEmpty;
   }
 
   void resumeSession(String topicId) {
-    if (_currentSession != null && 
-        _currentSession!.topicId == topicId && 
+    if (_currentSession != null &&
+        _currentSession!.topicId == topicId &&
         !_currentSession!.isCompleted) {
       notifyListeners();
       return;
     }
-    final pending = _sessions.where((s) => s.topicId == topicId && !s.isCompleted).toList();
+    final pending = _sessions
+        .where((s) => s.topicId == topicId && !s.isCompleted)
+        .toList();
     if (pending.isNotEmpty) {
       _currentSession = pending.last;
     }
@@ -57,8 +61,10 @@ class QuizProvider extends ChangeNotifier {
 
     // Filtrar preguntas ya aprendidas en este topic
     final learned = _learnedQuestions[topicId] ?? [];
-    List<String> pool = allQuestionIds.where((id) => !learned.contains(id)).toList();
-    
+    List<String> pool = allQuestionIds
+        .where((id) => !learned.contains(id))
+        .toList();
+
     // Si ya no quedan preguntas (se agotó la bolsa), reiniciar
     if (pool.isEmpty) {
       _learnedQuestions[topicId] = [];
@@ -81,7 +87,7 @@ class QuizProvider extends ChangeNotifier {
 
     _currentSession!.answers[questionId] = selectedIndex;
     _currentSession!.correctness[questionId] = isCorrect;
-    
+
     // Registrar si fue correcta para excluirla en futuros quizzes
     if (isCorrect) {
       final topicId = _currentSession!.topicId;
@@ -91,7 +97,7 @@ class QuizProvider extends ChangeNotifier {
         _storage.saveLearnedQuestions(_learnedQuestions);
       }
     }
-    
+
     // Guardar la sesión pendiente para que se mantenga si el usuario sale
     _storage.saveQuizSession(_currentSession!);
 
@@ -116,9 +122,16 @@ class QuizProvider extends ChangeNotifier {
     // Keep a maximum of 50 completed sessions to prevent memory leaks and JS jank on Web.
     final completedSessions = _sessions.where((s) => s.isCompleted).toList();
     if (completedSessions.length > 50) {
-      completedSessions.sort((a, b) => (a.finishedAt ?? DateTime(0)).compareTo(b.finishedAt ?? DateTime(0)));
+      completedSessions.sort(
+        (a, b) => (a.finishedAt ?? DateTime(0)).compareTo(
+          b.finishedAt ?? DateTime(0),
+        ),
+      );
       final toRemove = completedSessions.length - 50;
-      final idsToRemove = completedSessions.take(toRemove).map((s) => s.id).toSet();
+      final idsToRemove = completedSessions
+          .take(toRemove)
+          .map((s) => s.id)
+          .toSet();
       _sessions.removeWhere((s) => idsToRemove.contains(s.id));
     }
   }
@@ -158,7 +171,9 @@ class QuizProvider extends ChangeNotifier {
   }
 
   Map<String, dynamic> getSubjectStats(List<String> topicIds) {
-    final subjectSessions = _sessions.where((s) => topicIds.contains(s.topicId)).toList();
+    final subjectSessions = _sessions
+        .where((s) => topicIds.contains(s.topicId))
+        .toList();
     if (subjectSessions.isEmpty) {
       return {'averagePercentage': 0.0, 'totalSessions': 0, 'bestScore': 0.0};
     }

@@ -51,8 +51,7 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
   }
 
   Future<void> _loadQuestions() async {
-    final ids =
-        context.read<LocalStorageService>().getFailedPsicoQuestionIds();
+    final ids = context.read<LocalStorageService>().getFailedPsicoQuestionIds();
     if (ids.isEmpty) {
       if (!mounted) return;
       setState(() {
@@ -78,7 +77,9 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
 
     if (isCorrect) {
       context.read<AudioService>().playCorrectSound();
-      context.read<LocalStorageService>().removeFailedPsicoQuestion(question.id);
+      context.read<LocalStorageService>().removeFailedPsicoQuestion(
+        question.id,
+      );
       _correctedCount++;
     } else {
       context.read<AudioService>().playIncorrectSound();
@@ -125,7 +126,9 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
               color: nt.surfaceCard,
               borderRadius: BorderRadius.circular(28),
               border: Border.all(
-                  color: nt.successGreen.withValues(alpha: 0.4), width: 1.5),
+                color: nt.successGreen.withValues(alpha: 0.4),
+                width: 1.5,
+              ),
               boxShadow: [
                 BoxShadow(
                   color: nt.successGreen.withValues(alpha: 0.1),
@@ -144,11 +147,15 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                     shape: BoxShape.circle,
                     color: nt.successGreen.withValues(alpha: 0.15),
                     border: Border.all(
-                        color: nt.successGreen.withValues(alpha: 0.4),
-                        width: 2),
+                      color: nt.successGreen.withValues(alpha: 0.4),
+                      width: 2,
+                    ),
                   ),
-                  child:
-                      Icon(Icons.school_rounded, color: nt.successGreen, size: 36),
+                  child: Icon(
+                    Icons.school_rounded,
+                    color: nt.successGreen,
+                    size: 36,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Text(
@@ -175,15 +182,19 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.check_circle_rounded,
-                              color: nt.successGreen, size: 20),
+                          Icon(
+                            Icons.check_circle_rounded,
+                            color: nt.successGreen,
+                            size: 20,
+                          ),
                           const SizedBox(width: 8),
                           Text(
                             '$_correctedCount correctas esta sesión',
                             style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
                         ],
                       ),
@@ -194,7 +205,11 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                 const Text(
                   'Las preguntas que respondiste correctamente han sido eliminadas de la lista de repaso. Si te equivocaste en algunas, seguirán pendientes para tu próxima sesión.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white60, fontSize: 13, height: 1.5),
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 13,
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
@@ -205,14 +220,17 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                       context.pop();
                     },
                     icon: const Icon(Icons.home_rounded),
-                    label: const Text('VOLVER',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    label: const Text(
+                      'VOLVER',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: nt.blueGoogle,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
                     ),
                   ),
                 ),
@@ -238,8 +256,10 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
               children: [
                 CircularProgressIndicator(color: nt.blueGoogle),
                 const SizedBox(height: 16),
-                const Text('Cargando errores pendientes...',
-                    style: TextStyle(color: Colors.white70)),
+                const Text(
+                  'Cargando errores pendientes...',
+                  style: TextStyle(color: Colors.white70),
+                ),
               ],
             ),
           ),
@@ -256,12 +276,16 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(
-              icon:
-                  const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white60),
+              icon: const Icon(
+                Icons.arrow_back_ios_new_rounded,
+                color: Colors.white60,
+              ),
               onPressed: () => context.pop(),
             ),
-            title: const Text('Re Entrenamiento',
-                style: TextStyle(color: Colors.white, fontFamily: 'Outfit')),
+            title: const Text(
+              'Re Entrenamiento',
+              style: TextStyle(color: Colors.white, fontFamily: 'Outfit'),
+            ),
             centerTitle: true,
           ),
           body: Center(
@@ -277,42 +301,55 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                       shape: BoxShape.circle,
                       color: nt.successGreen.withValues(alpha: 0.1),
                       border: Border.all(
-                          color: nt.successGreen.withValues(alpha: 0.4),
-                          width: 2),
+                        color: nt.successGreen.withValues(alpha: 0.4),
+                        width: 2,
+                      ),
                     ),
-                    child:
-                        Icon(Icons.check_circle_outline_rounded, size: 60, color: nt.successGreen),
+                    child: Icon(
+                      Icons.check_circle_outline_rounded,
+                      size: 60,
+                      color: nt.successGreen,
+                    ),
                   ),
                   const SizedBox(height: 28),
                   const Text(
                     '¡TODO LIMPIO!',
                     style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontFamily: 'Outfit',
-                        letterSpacing: 1),
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontFamily: 'Outfit',
+                      letterSpacing: 1,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
                     'No tienes errores pendientes de repaso.\nTus conocimientos están al máximo nivel.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white70, fontSize: 16, height: 1.5),
+                      color: Colors.white70,
+                      fontSize: 16,
+                      height: 1.5,
+                    ),
                   ),
                   const SizedBox(height: 36),
                   ElevatedButton.icon(
                     onPressed: () => context.pop(),
                     icon: const Icon(Icons.home_rounded),
-                    label: const Text('VOLVER AL INICIO',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    label: const Text(
+                      'VOLVER AL INICIO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: nt.blueGoogle,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 32, vertical: 16),
+                        horizontal: 32,
+                        vertical: 16,
+                      ),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
                     ),
                   ),
                 ],
@@ -338,16 +375,18 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
           ),
           title: Column(
             children: [
-              const Text('Re Entrenamiento',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.bold)),
+              const Text(
+                'Re Entrenamiento',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontFamily: 'Outfit',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Text(
                 'Error ${_currentIndex + 1} de $totalCount',
-                style:
-                    const TextStyle(color: Colors.white54, fontSize: 11),
+                style: const TextStyle(color: Colors.white54, fontSize: 11),
               ),
             ],
           ),
@@ -361,8 +400,7 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                 child: LinearProgressIndicator(
                   value: (_currentIndex + 1) / totalCount,
                   backgroundColor: Colors.white10,
-                  valueColor:
-                      AlwaysStoppedAnimation<Color>(nt.warningAmber),
+                  valueColor: AlwaysStoppedAnimation<Color>(nt.warningAmber),
                   minHeight: 3,
                 ),
               ),
@@ -382,19 +420,28 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                             children: [
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 4),
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: nt.warningAmber.withValues(alpha: 0.15),
+                                  color: nt.warningAmber.withValues(
+                                    alpha: 0.15,
+                                  ),
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                      color:
-                                          nt.warningAmber.withValues(alpha: 0.4)),
+                                    color: nt.warningAmber.withValues(
+                                      alpha: 0.4,
+                                    ),
+                                  ),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(Icons.replay_rounded,
-                                        color: nt.warningAmber, size: 12),
+                                    Icon(
+                                      Icons.replay_rounded,
+                                      color: nt.warningAmber,
+                                      size: 12,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       'REPASO',
@@ -415,7 +462,9 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                                   child: Text(
                                     question.displayDimension,
                                     style: const TextStyle(
-                                        color: Colors.white54, fontSize: 12),
+                                      color: Colors.white54,
+                                      fontSize: 12,
+                                    ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
@@ -446,103 +495,120 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                               .asMap()
                               .entries
                               .map((indexedEntry) {
-                            final idx = indexedEntry.key;
-                            final entry = indexedEntry.value;
-                            final labels = ['A', 'B', 'C', 'D', 'E'];
-                            final label =
-                                idx < labels.length ? labels[idx] : entry.key;
-                            final isSelected = _selectedOptionKey == entry.key;
-                            final isCorrectAnswer =
-                                entry.key == question.correctAnswer;
+                                final idx = indexedEntry.key;
+                                final entry = indexedEntry.value;
+                                final labels = ['A', 'B', 'C', 'D', 'E'];
+                                final label = idx < labels.length
+                                    ? labels[idx]
+                                    : entry.key;
+                                final isSelected =
+                                    _selectedOptionKey == entry.key;
+                                final isCorrectAnswer =
+                                    entry.key == question.correctAnswer;
 
-                            Color borderColor = Colors.white10;
-                            Color bgColor = nt.surfaceCard;
-                            Color textColor = Colors.white70;
-                            Color circleColor = Colors.white10;
-                            Widget? trailingIcon;
+                                Color borderColor = Colors.white10;
+                                Color bgColor = nt.surfaceCard;
+                                Color textColor = Colors.white70;
+                                Color circleColor = Colors.white10;
+                                Widget? trailingIcon;
 
-                            if (_showingFeedback) {
-                              if (isCorrectAnswer) {
-                                borderColor = nt.successGreen;
-                                bgColor = nt.successGreen.withValues(alpha: 0.12);
-                                textColor = Colors.white;
-                                circleColor = nt.successGreen;
-                                trailingIcon = Icon(Icons.check_circle_rounded,
-                                    color: nt.successGreen);
-                              } else if (isSelected) {
-                                borderColor = nt.pink;
-                                bgColor = nt.pink.withValues(alpha: 0.12);
-                                textColor = Colors.white;
-                                circleColor = nt.pink;
-                                trailingIcon = Icon(Icons.cancel_rounded,
-                                    color: nt.pink);
-                              }
-                            } else if (isSelected) {
-                              borderColor = nt.blueGoogle;
-                              bgColor =
-                                  nt.blueGoogle.withValues(alpha: 0.12);
-                            }
+                                if (_showingFeedback) {
+                                  if (isCorrectAnswer) {
+                                    borderColor = nt.successGreen;
+                                    bgColor = nt.successGreen.withValues(
+                                      alpha: 0.12,
+                                    );
+                                    textColor = Colors.white;
+                                    circleColor = nt.successGreen;
+                                    trailingIcon = Icon(
+                                      Icons.check_circle_rounded,
+                                      color: nt.successGreen,
+                                    );
+                                  } else if (isSelected) {
+                                    borderColor = nt.pink;
+                                    bgColor = nt.pink.withValues(alpha: 0.12);
+                                    textColor = Colors.white;
+                                    circleColor = nt.pink;
+                                    trailingIcon = Icon(
+                                      Icons.cancel_rounded,
+                                      color: nt.pink,
+                                    );
+                                  }
+                                } else if (isSelected) {
+                                  borderColor = nt.blueGoogle;
+                                  bgColor = nt.blueGoogle.withValues(
+                                    alpha: 0.12,
+                                  );
+                                }
 
-                            return Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 300),
-                                padding: const EdgeInsets.all(18),
-                                decoration: BoxDecoration(
-                                  color: bgColor,
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(
-                                      color: borderColor,
-                                      width:
-                                          _showingFeedback && (isCorrectAnswer || isSelected)
-                                              ? 1.5
-                                              : 1),
-                                ),
-                                child: InkWell(
-                                  onTap: _showingFeedback
-                                      ? null
-                                      : () => _onOptionSelected(entry.key),
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Row(
-                                    children: [
-                                      AnimatedContainer(
-                                        duration:
-                                            const Duration(milliseconds: 300),
-                                        width: 34,
-                                        height: 34,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: circleColor,
-                                        ),
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          label,
-                                          style: TextStyle(
-                                            color: _showingFeedback &&
-                                                    (isCorrectAnswer || isSelected)
-                                                ? Colors.white
-                                                : Colors.white54,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 13,
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 300),
+                                    padding: const EdgeInsets.all(18),
+                                    decoration: BoxDecoration(
+                                      color: bgColor,
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color: borderColor,
+                                        width:
+                                            _showingFeedback &&
+                                                (isCorrectAnswer || isSelected)
+                                            ? 1.5
+                                            : 1,
+                                      ),
+                                    ),
+                                    child: InkWell(
+                                      onTap: _showingFeedback
+                                          ? null
+                                          : () => _onOptionSelected(entry.key),
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: Row(
+                                        children: [
+                                          AnimatedContainer(
+                                            duration: const Duration(
+                                              milliseconds: 300,
+                                            ),
+                                            width: 34,
+                                            height: 34,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: circleColor,
+                                            ),
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              label,
+                                              style: TextStyle(
+                                                color:
+                                                    _showingFeedback &&
+                                                        (isCorrectAnswer ||
+                                                            isSelected)
+                                                    ? Colors.white
+                                                    : Colors.white54,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 13,
+                                              ),
+                                            ),
                                           ),
-                                        ),
+                                          const SizedBox(width: 14),
+                                          Expanded(
+                                            child: Text(
+                                              entry.value,
+                                              style: TextStyle(
+                                                color: textColor,
+                                                fontSize: 15,
+                                                height: 1.3,
+                                              ),
+                                            ),
+                                          ),
+                                          if (trailingIcon != null)
+                                            trailingIcon,
+                                        ],
                                       ),
-                                      const SizedBox(width: 14),
-                                      Expanded(
-                                        child: Text(
-                                          entry.value,
-                                          style: TextStyle(
-                                              color: textColor, fontSize: 15, height: 1.3),
-                                        ),
-                                      ),
-                                      if (trailingIcon != null)
-                                        trailingIcon,
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
-                            );
-                          }),
+                                );
+                              }),
 
                           // Panel de hint si es incorrecta
                           if (_showingFeedback && !_selectedIsCorrect) ...[
@@ -557,12 +623,16 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                                 child: StaticGlassContainer(
                                   padding: const EdgeInsets.all(16),
                                   borderRadius: BorderRadius.circular(16),
-                                  borderColor:
-                                      nt.warningAmber.withValues(alpha: 0.4),
+                                  borderColor: nt.warningAmber.withValues(
+                                    alpha: 0.4,
+                                  ),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.lightbulb_outline_rounded,
-                                          color: nt.warningAmber, size: 22),
+                                      Icon(
+                                        Icons.lightbulb_outline_rounded,
+                                        color: nt.warningAmber,
+                                        size: 22,
+                                      ),
                                       const SizedBox(width: 12),
                                       Expanded(
                                         child: Column(
@@ -584,9 +654,10 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                                                   ? question.hint
                                                   : 'Revisa bien las opciones. La respuesta correcta refleja mayor equilibrio o resiliencia.',
                                               style: const TextStyle(
-                                                  color: Colors.white70,
-                                                  fontSize: 13,
-                                                  height: 1.4),
+                                                color: Colors.white70,
+                                                fontSize: 13,
+                                                height: 1.4,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -609,21 +680,27 @@ class _ReEntrenamientoScreenState extends State<ReEntrenamientoScreen>
                                   color: nt.successGreen.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                      color:
-                                          nt.successGreen.withValues(alpha: 0.3)),
+                                    color: nt.successGreen.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                  ),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.check_circle_rounded,
-                                        color: nt.successGreen, size: 20),
+                                    Icon(
+                                      Icons.check_circle_rounded,
+                                      color: nt.successGreen,
+                                      size: 20,
+                                    ),
                                     const SizedBox(width: 8),
                                     Text(
                                       '¡Correcto! Eliminado del repaso.',
                                       style: TextStyle(
-                                          color: nt.successGreen,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
+                                        color: nt.successGreen,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
                                     ),
                                   ],
                                 ),

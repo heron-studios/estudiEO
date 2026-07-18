@@ -70,9 +70,13 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
     }
 
     final isCorrect = index == question.correctAnswer;
-    
+
     // Integra la respuesta con el algoritmo de Repaso Espaciado (SRS)
-    context.read<SrsProvider>().processAnswer(question.id, question.topicId, isCorrect);
+    context.read<SrsProvider>().processAnswer(
+      question.id,
+      question.topicId,
+      isCorrect,
+    );
 
     if (isCorrect) {
       // Mostrar overlay de éxito brevemente
@@ -83,16 +87,18 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
 
       // Procesar respuesta (esto modifica la cola)
       context.read<LearningProvider>().responder(
-            question.id,
-            index,
-            question.correctAnswer,
-          );
+        question.id,
+        index,
+        question.correctAnswer,
+      );
 
       // Verificar si terminó
       final lp = context.read<LearningProvider>();
       if (lp.isFinished) {
         if (mounted) {
-          context.replace('/learning-levelup', extra: {
+          context.replace(
+            '/learning-levelup',
+            extra: {
               'topicId': widget.topicId,
               'nivel': widget.nivel,
               'elapsed': lp.currentSession?.elapsed ?? Duration.zero,
@@ -118,10 +124,10 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
 
       // Procesar respuesta incorrecta (reencola)
       context.read<LearningProvider>().responder(
-            question.id,
-            index,
-            question.correctAnswer,
-          );
+        question.id,
+        index,
+        question.correctAnswer,
+      );
 
       if (mounted) {
         setState(() {
@@ -133,7 +139,9 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
   }
 
   Future<void> _showIncorrectBottomSheet(
-      BuildContext context, Question question) async {
+    BuildContext context,
+    Question question,
+  ) async {
     await showModalBottomSheet(
       context: context,
       isDismissible: false,
@@ -230,14 +238,18 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 4),
+                                      horizontal: 10,
+                                      vertical: 4,
+                                    ),
                                     decoration: BoxDecoration(
-                                      color: widget.nivel.color
-                                          .withValues(alpha: 0.15),
+                                      color: widget.nivel.color.withValues(
+                                        alpha: 0.15,
+                                      ),
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: widget.nivel.color
-                                            .withValues(alpha: 0.4),
+                                        color: widget.nivel.color.withValues(
+                                          alpha: 0.4,
+                                        ),
                                       ),
                                     ),
                                     child: Text(
@@ -281,8 +293,7 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
                                   text: question.options[i],
                                   isSelected: _selectedAnswer == i,
                                   isEnabled: !_isAnswering,
-                                  onTap: () =>
-                                      _onAnswerSelected(i, question),
+                                  onTap: () => _onAnswerSelected(i, question),
                                 );
                               }),
 
@@ -304,8 +315,11 @@ class _LearningQuizScreenState extends State<LearningQuizScreen>
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(Icons.check_circle_rounded,
-                                  color: Color(0xFF22C55E), size: 80),
+                              Icon(
+                                Icons.check_circle_rounded,
+                                color: Color(0xFF22C55E),
+                                size: 80,
+                              ),
                               SizedBox(height: 16),
                               Text(
                                 '¡Correcto!',
@@ -375,8 +389,7 @@ class _QuizTopBar extends StatelessWidget {
                     value: progress,
                     minHeight: 10,
                     backgroundColor: const Color(0xFF1E293B),
-                    valueColor:
-                        AlwaysStoppedAnimation<Color>(nivel.color),
+                    valueColor: AlwaysStoppedAnimation<Color>(nivel.color),
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -393,10 +406,7 @@ class _QuizTopBar extends StatelessWidget {
                     ),
                     const Text(
                       'Meta: 10 ✓',
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontSize: 12,
-                      ),
+                      style: TextStyle(color: Colors.white38, fontSize: 12),
                     ),
                   ],
                 ),
@@ -432,8 +442,7 @@ class _OptionTile extends StatelessWidget {
     final Color border = isSelected
         ? const Color(0xFF3B82F6)
         : const Color(0xFF1F2937);
-    final Color textColor =
-        isSelected ? const Color(0xFF93C5FD) : Colors.white;
+    final Color textColor = isSelected ? const Color(0xFF93C5FD) : Colors.white;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
@@ -462,7 +471,9 @@ class _OptionTile extends StatelessWidget {
                     child: Text(
                       String.fromCharCode(65 + index),
                       style: TextStyle(
-                        color: isSelected ? const Color(0xFF3B82F6) : Colors.white54,
+                        color: isSelected
+                            ? const Color(0xFF3B82F6)
+                            : Colors.white54,
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
@@ -544,7 +555,9 @@ class _IncorrectFeedbackSheet extends StatelessWidget {
                               color: const Color(0xFF450A0A),
                               shape: BoxShape.circle,
                               border: Border.all(
-                                  color: const Color(0xFFEF4444), width: 2),
+                                color: const Color(0xFFEF4444),
+                                width: 2,
+                              ),
                             ),
                             child: const Center(
                               child: Text('❌', style: TextStyle(fontSize: 20)),
@@ -594,13 +607,18 @@ class _IncorrectFeedbackSheet extends StatelessWidget {
                           color: const Color(0xFF052E16),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                              color: const Color(0xFF16A34A), width: 1.5),
+                            color: const Color(0xFF16A34A),
+                            width: 1.5,
+                          ),
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Icon(Icons.check_circle,
-                                color: Color(0xFF22C55E), size: 22),
+                            const Icon(
+                              Icons.check_circle,
+                              color: Color(0xFF22C55E),
+                              size: 22,
+                            ),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -623,8 +641,7 @@ class _IncorrectFeedbackSheet extends StatelessWidget {
                         const SizedBox(height: 12),
                         const Text(
                           'Tu respuesta:',
-                          style:
-                              TextStyle(color: Colors.white38, fontSize: 13),
+                          style: TextStyle(color: Colors.white38, fontSize: 13),
                         ),
                         const SizedBox(height: 8),
                         Container(
@@ -633,13 +650,18 @@ class _IncorrectFeedbackSheet extends StatelessWidget {
                             color: const Color(0xFF2D0A0A),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                                color: const Color(0xFFDC2626), width: 1.5),
+                              color: const Color(0xFFDC2626),
+                              width: 1.5,
+                            ),
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Icon(Icons.cancel,
-                                  color: Color(0xFFEF4444), size: 22),
+                              const Icon(
+                                Icons.cancel,
+                                color: Color(0xFFEF4444),
+                                size: 22,
+                              ),
                               const SizedBox(width: 12),
                               Expanded(
                                 child: Text(
@@ -665,18 +687,18 @@ class _IncorrectFeedbackSheet extends StatelessWidget {
                             color: const Color(0xFF0F172A),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                                color: const Color(0xFF1E3A5F), width: 1),
+                              color: const Color(0xFF1E3A5F),
+                              width: 1,
+                            ),
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text('💡',
-                                  style: TextStyle(fontSize: 20)),
+                              const Text('💡', style: TextStyle(fontSize: 20)),
                               const SizedBox(width: 12),
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Text(
                                       'Concepto a aprender',

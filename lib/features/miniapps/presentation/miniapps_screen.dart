@@ -46,221 +46,232 @@ class MiniAppsScreen extends StatelessWidget {
                       bottom: 110,
                     ),
                     child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Entry animation for Simuladores section
-                    TweenAnimationBuilder<double>(
-                      tween: Tween<double>(begin: 0.0, end: 1.0),
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeOutCubic,
-                      builder: (context, value, child) {
-                        return Transform.translate(
-                          offset: Offset(-20 * (1.0 - value), 0),
-                          child: Opacity(opacity: value, child: child),
-                        );
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'SIMULADORES OFICIALES',
-                            style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.8),
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.5,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          GridView.count(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            crossAxisCount:
-                                MediaQuery.of(context).size.width > 600 ? 3 : 2,
-                            mainAxisSpacing: 16,
-                            crossAxisSpacing: 16,
-                            childAspectRatio:
-                                MediaQuery.of(context).size.width > 600
-                                ? 1.0
-                                : 0.85,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Entry animation for Simuladores section
+                        TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0.0, end: 1.0),
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeOutCubic,
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(-20 * (1.0 - value), 0),
+                              child: Opacity(opacity: value, child: child),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              MiniAppCard(
-                                title: 'Aptitud Física',
-                                description:
-                                    'Calculadora de puntos según las tablas de Anexos 05 y 06.',
-                                icon: Icons.directions_run_rounded,
-                                themeColor: const Color(0xFFF59E0B),
-                                isLocked: false,
-                                isSquare: true,
-                                onTap: () =>
-                                    context.push('/fitness-calculator'),
+                              Text(
+                                'SIMULADORES OFICIALES',
+                                style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.8),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.5,
+                                ),
                               ),
-                              MiniAppCard(
-                                title: 'Cuadro de Mérito',
-                                description:
-                                    'Calculadora ponderada y simulador de bonificaciones.',
-                                icon: Icons.bar_chart_rounded,
-                                themeColor: const Color(0xFF6366F1),
-                                isLocked: false,
-                                isSquare: true,
-                                onTap: () => context.push('/merit-calculator'),
+                              const SizedBox(height: 16),
+                              GridView.count(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                crossAxisCount:
+                                    MediaQuery.of(context).size.width > 600
+                                    ? 3
+                                    : 2,
+                                mainAxisSpacing: 16,
+                                crossAxisSpacing: 16,
+                                childAspectRatio:
+                                    MediaQuery.of(context).size.width > 600
+                                    ? 1.0
+                                    : 0.85,
+                                children: [
+                                  MiniAppCard(
+                                    title: 'Aptitud Física',
+                                    description:
+                                        'Calculadora de puntos según las tablas de Anexos 05 y 06.',
+                                    icon: Icons.directions_run_rounded,
+                                    themeColor: const Color(0xFFF59E0B),
+                                    isLocked: false,
+                                    isSquare: true,
+                                    onTap: () =>
+                                        context.push('/fitness-calculator'),
+                                  ),
+                                  MiniAppCard(
+                                    title: 'Cuadro de Mérito',
+                                    description:
+                                        'Calculadora ponderada y simulador de bonificaciones.',
+                                    icon: Icons.bar_chart_rounded,
+                                    themeColor: const Color(0xFF6366F1),
+                                    isLocked: false,
+                                    isSquare: true,
+                                    onTap: () =>
+                                        context.push('/merit-calculator'),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 40),
-
-                    // Entry animation for Herramientas title
-                    TweenAnimationBuilder<double>(
-                      tween: Tween<double>(begin: 0.0, end: 1.0),
-                      duration: const Duration(milliseconds: 600),
-                      curve: Curves.easeOutCubic,
-                      builder: (context, value, child) {
-                        return Transform.translate(
-                          offset: Offset(-20 * (1.0 - value), 0),
-                          child: Opacity(opacity: value, child: child),
-                        );
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Herramientas Interactivas',
-                            style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.95),
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: -0.5,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            'Potencia tu memoria y agilidad mental con estas aplicaciones rápidas.',
-                            style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.6),
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 28),
-
-                    // Entry animation for the cards grid
-                    TweenAnimationBuilder<double>(
-                      tween: Tween<double>(begin: 0.0, end: 1.0),
-                      duration: const Duration(milliseconds: 700),
-                      curve: Curves.easeOutCubic,
-                      builder: (context, value, child) {
-                        return Transform.translate(
-                          offset: Offset(0, 30 * (1.0 - value)),
-                          child: Opacity(opacity: value, child: child),
-                        );
-                      },
-                      child: GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount:
-                              MediaQuery.of(context).size.width > 600 ? 3 : 2,
-                          mainAxisSpacing: 16,
-                          crossAxisSpacing: 16,
-                          childAspectRatio:
-                              MediaQuery.of(context).size.width > 600
-                              ? 1.0
-                              : 0.85,
                         ),
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          final auth = context.read<AuthService>();
-                          final isPremium = auth.isPremium;
-                          final isLocked = !isPremium && index != 0;
+                        const SizedBox(height: 40),
 
-                          if (index == 0) {
-                            return MiniAppCard(
-                              title: 'Tabla Periódica',
-                              description:
-                                  'Modo exploratorio, entrenamiento dual y supervivencia.',
-                              icon: Icons.science_rounded,
-                              themeColor: nt.blueGoogle,
-                              badgeText: 'EXPLORADOR',
-                              isLocked: false,
-                              isSquare: true,
-                              onTap: () =>
-                                  context.push('/miniapps/periodic-table'),
+                        // Entry animation for Herramientas title
+                        TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0.0, end: 1.0),
+                          duration: const Duration(milliseconds: 600),
+                          curve: Curves.easeOutCubic,
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(-20 * (1.0 - value), 0),
+                              child: Opacity(opacity: value, child: child),
                             );
-                          } else if (index == 1) {
-                            return MiniAppCard(
-                              title: 'Generador Flashcards IA',
-                              description:
-                                  'Crea tarjetas de memoria automáticas desde cualquier texto.',
-                              icon: Icons.auto_awesome_rounded,
-                              themeColor: const Color(0xFF8B5CF6),
-                              badgeText: 'EXPERIMENTAL',
-                              isLocked: false, // Disponible para todos (o puede ser premium)
-                              isSquare: true,
-                              onTap: () => context.push('/srs/generator'),
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Herramientas Interactivas',
+                                style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.95),
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: -0.5,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                'Potencia tu memoria y agilidad mental con estas aplicaciones rápidas.',
+                                style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.6),
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 28),
+
+                        // Entry animation for the cards grid
+                        TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0.0, end: 1.0),
+                          duration: const Duration(milliseconds: 700),
+                          curve: Curves.easeOutCubic,
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(0, 30 * (1.0 - value)),
+                              child: Opacity(opacity: value, child: child),
                             );
-                          } else if (index == 2) {
-                            return MiniAppCard(
-                              title: 'Silogismos',
-                              description:
-                                  'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
-                              icon: Icons.account_tree_rounded,
-                              themeColor: const Color(0xFF14B8A6),
-                              badgeText: 'MINIJUEGO',
-                              isLocked: isLocked,
-                              isSquare: true,
-                              onTap: isLocked
-                                  ? () => PremiumUpgradeDialog.show(context)
-                                  : () => context.push('/miniapps/silogismos'),
-                            );
-                          } else if (index == 3) {
-                            return MiniAppCard(
-                              title: 'ANP Master',
-                              description:
-                                  'Áreas Naturales Protegidas del Perú. Repaso visual activo y mapas.',
-                              icon: Icons.map_rounded,
-                              themeColor: const Color(0xFF4ADE80),
-                              badgeText: 'BIODIVERSIDAD',
-                              isLocked: isLocked,
-                              isSquare: true,
-                              onTap: isLocked
-                                  ? () => PremiumUpgradeDialog.show(context)
-                                  : () => context.push('/miniapps/anp-master'),
-                            );
-                          } else {
-                            return MiniAppCard(
-                              title: 'Prod. Notables',
-                              description:
-                                  'Aprende de forma interactiva las fórmulas matemáticas principales.',
-                              icon: Icons.calculate_rounded,
-                              themeColor: Colors.orangeAccent,
-                              badgeText: 'EXPLORADOR',
-                              isLocked: isLocked,
-                              isSquare: true,
-                              onTap: isLocked
-                                  ? () => PremiumUpgradeDialog.show(context)
-                                  : () => context.push(
-                                      '/miniapps/productos-notables',
-                                    ),
-                            );
-                          }
-                        },
-                      ),
+                          },
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount:
+                                      MediaQuery.of(context).size.width > 600
+                                      ? 3
+                                      : 2,
+                                  mainAxisSpacing: 16,
+                                  crossAxisSpacing: 16,
+                                  childAspectRatio:
+                                      MediaQuery.of(context).size.width > 600
+                                      ? 1.0
+                                      : 0.85,
+                                ),
+                            itemCount: 5,
+                            itemBuilder: (context, index) {
+                              final auth = context.read<AuthService>();
+                              final isPremium = auth.isPremium;
+                              final isLocked = !isPremium && index != 0;
+
+                              if (index == 0) {
+                                return MiniAppCard(
+                                  title: 'Tabla Periódica',
+                                  description:
+                                      'Modo exploratorio, entrenamiento dual y supervivencia.',
+                                  icon: Icons.science_rounded,
+                                  themeColor: nt.blueGoogle,
+                                  badgeText: 'EXPLORADOR',
+                                  isLocked: false,
+                                  isSquare: true,
+                                  onTap: () =>
+                                      context.push('/miniapps/periodic-table'),
+                                );
+                              } else if (index == 1) {
+                                return MiniAppCard(
+                                  title: 'Generador Flashcards IA',
+                                  description:
+                                      'Crea tarjetas de memoria automáticas desde cualquier texto.',
+                                  icon: Icons.auto_awesome_rounded,
+                                  themeColor: const Color(0xFF8B5CF6),
+                                  badgeText: 'EXPERIMENTAL',
+                                  isLocked:
+                                      false, // Disponible para todos (o puede ser premium)
+                                  isSquare: true,
+                                  onTap: () => context.push('/srs/generator'),
+                                );
+                              } else if (index == 2) {
+                                return MiniAppCard(
+                                  title: 'Silogismos',
+                                  description:
+                                      'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
+                                  icon: Icons.account_tree_rounded,
+                                  themeColor: const Color(0xFF14B8A6),
+                                  badgeText: 'MINIJUEGO',
+                                  isLocked: isLocked,
+                                  isSquare: true,
+                                  onTap: isLocked
+                                      ? () => PremiumUpgradeDialog.show(context)
+                                      : () => context.push(
+                                          '/miniapps/silogismos',
+                                        ),
+                                );
+                              } else if (index == 3) {
+                                return MiniAppCard(
+                                  title: 'ANP Master',
+                                  description:
+                                      'Áreas Naturales Protegidas del Perú. Repaso visual activo y mapas.',
+                                  icon: Icons.map_rounded,
+                                  themeColor: const Color(0xFF4ADE80),
+                                  badgeText: 'BIODIVERSIDAD',
+                                  isLocked: isLocked,
+                                  isSquare: true,
+                                  onTap: isLocked
+                                      ? () => PremiumUpgradeDialog.show(context)
+                                      : () => context.push(
+                                          '/miniapps/anp-master',
+                                        ),
+                                );
+                              } else {
+                                return MiniAppCard(
+                                  title: 'Prod. Notables',
+                                  description:
+                                      'Aprende de forma interactiva las fórmulas matemáticas principales.',
+                                  icon: Icons.calculate_rounded,
+                                  themeColor: Colors.orangeAccent,
+                                  badgeText: 'EXPLORADOR',
+                                  isLocked: isLocked,
+                                  isSquare: true,
+                                  onTap: isLocked
+                                      ? () => PremiumUpgradeDialog.show(context)
+                                      : () => context.push(
+                                          '/miniapps/productos-notables',
+                                        ),
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
           ),
         ),
       ),
-    ),
-  ),
-);
+    );
   }
 }
 

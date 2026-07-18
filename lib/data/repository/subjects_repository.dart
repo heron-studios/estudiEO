@@ -1,4 +1,3 @@
-
 import 'package:learn/data/library/matematicas/matematicas_subject.dart';
 import 'package:learn/data/library/matematicas/matematicas_questions.dart';
 import 'package:learn/data/library/matematicas/matematicas_topics.dart';
@@ -26,7 +25,6 @@ import 'package:learn/models/topic.dart';
 import 'package:learn/models/learning_level.dart';
 
 class SubjectsRepository {
-
   static final Map<String, Subject> _subjects = {
     'matematicas': matematicasSubject,
     'comunicacion': comunicacionSubject,
@@ -62,10 +60,10 @@ class SubjectsRepository {
 
   static void _initIndexes() {
     if (_questionByIdCache != null && _questionsByTopicCache != null) return;
-    
+
     _questionByIdCache = {};
     _questionsByTopicCache = {};
-    
+
     for (final questions in _questionsBySubject.values) {
       for (final q in questions) {
         _questionByIdCache![q.id] = q;
@@ -92,7 +90,10 @@ class SubjectsRepository {
   }
 
   /// Obtiene preguntas de un tópico específico
-  static List<Question> getQuestionsByTopic(String topicId, {bool isPremium = false}) {
+  static List<Question> getQuestionsByTopic(
+    String topicId, {
+    bool isPremium = false,
+  }) {
     _initIndexes();
     final cached = _questionsByTopicCache![topicId] ?? [];
     return List<Question>.from(cached);
@@ -127,7 +128,11 @@ class SubjectsRepository {
   }
 
   /// Obtiene preguntas aleatorias de un tópico
-  static List<Question> getRandomQuestionsByTopic(String topicId, int count, {bool isPremium = false}) {
+  static List<Question> getRandomQuestionsByTopic(
+    String topicId,
+    int count, {
+    bool isPremium = false,
+  }) {
     final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     if (questions.isEmpty) return [];
 
@@ -136,7 +141,10 @@ class SubjectsRepository {
   }
 
   /// Obtiene todas las preguntas de un tópico barajadas
-  static List<Question> getAllQuestionsByTopicShuffled(String topicId, {bool isPremium = false}) {
+  static List<Question> getAllQuestionsByTopicShuffled(
+    String topicId, {
+    bool isPremium = false,
+  }) {
     final questions = getQuestionsByTopic(topicId, isPremium: isPremium);
     questions.shuffle();
     return questions;
@@ -154,7 +162,9 @@ class SubjectsRepository {
     bool isPremium = false,
   }) {
     _initIndexes();
-    final allQuestions = List<Question>.from(_questionsByTopicCache![topicId] ?? []);
+    final allQuestions = List<Question>.from(
+      _questionsByTopicCache![topicId] ?? [],
+    );
 
     if (allQuestions.isEmpty) return [];
 
@@ -195,10 +205,18 @@ class SubjectsRepository {
       // Clave en inglés (CS, Comunicación): 'easy','medium','hard','extreme'
       final String englishKey;
       switch (nivel) {
-        case Dificultad.facil:   englishKey = 'easy';    break;
-        case Dificultad.medio:   englishKey = 'medium';  break;
-        case Dificultad.dificil: englishKey = 'hard';    break;
-        case Dificultad.extremo: englishKey = 'extreme'; break;
+        case Dificultad.facil:
+          englishKey = 'easy';
+          break;
+        case Dificultad.medio:
+          englishKey = 'medium';
+          break;
+        case Dificultad.dificil:
+          englishKey = 'hard';
+          break;
+        case Dificultad.extremo:
+          englishKey = 'extreme';
+          break;
       }
       if (map.containsKey(englishKey)) return map[englishKey];
 
@@ -216,7 +234,10 @@ class SubjectsRepository {
   }
 
   /// Obtiene datos de una asignatura completa
-  static Map<String, dynamic> getSubjectData(String subjectId, {bool isPremium = false}) {
+  static Map<String, dynamic> getSubjectData(
+    String subjectId, {
+    bool isPremium = false,
+  }) {
     return {
       'subject': getSubject(subjectId),
       'topics': getTopicsBySubject(subjectId),
@@ -238,9 +259,11 @@ class SubjectsRepository {
     final List<Question> exam = [];
 
     quotas.forEach((subjectId, count) {
-      final subjectQuestions = List<Question>.from(getQuestionsBySubject(subjectId));
+      final subjectQuestions = List<Question>.from(
+        getQuestionsBySubject(subjectId),
+      );
       if (subjectQuestions.isEmpty) return; // Fail safe
-      
+
       subjectQuestions.shuffle();
       if (subjectQuestions.length >= count) {
         exam.addAll(subjectQuestions.take(count));

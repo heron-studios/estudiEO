@@ -508,7 +508,11 @@ class _SwimCard extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: color.withValues(alpha: 0.15),
                     ),
-                    child: const Icon(Icons.pool_rounded, color: color, size: 20),
+                    child: const Icon(
+                      Icons.pool_rounded,
+                      color: color,
+                      size: 20,
+                    ),
                   ),
                   const SizedBox(width: 12),
                   const Expanded(

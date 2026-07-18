@@ -8,7 +8,6 @@ import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
 import 'package:learn/core/widgets/bento_card.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -16,7 +15,8 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen>
+    with TickerProviderStateMixin {
   bool _isCheckingAuth = false;
 
   // Single controller for orbs floats
@@ -33,13 +33,13 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    
+
     // 60-second repeating loop for drift frequencies calculation
     _orbController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 60),
     )..repeat();
-    
+
     _orbAnimation = CurvedAnimation(
       parent: _orbController,
       curve: Curves.linear,
@@ -91,7 +91,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           children: [
             const Icon(Icons.error_rounded, color: Colors.white, size: 20),
             const SizedBox(width: 12),
-            Expanded(child: Text(message, style: const TextStyle(fontSize: 13))),
+            Expanded(
+              child: Text(message, style: const TextStyle(fontSize: 13)),
+            ),
           ],
         ),
         backgroundColor: NeuralDesignSystem.pink.withValues(alpha: 0.9),
@@ -156,13 +158,19 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                                 minHeight: constraints.maxHeight,
                               ),
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 52),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 32,
+                                  vertical: 52,
+                                ),
                                 alignment: Alignment.center,
                                 child: ConstrainedBox(
-                                  constraints: const BoxConstraints(maxWidth: 1000),
+                                  constraints: const BoxConstraints(
+                                    maxWidth: 1000,
+                                  ),
                                   child: isDesktop
                                       ? Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Expanded(
                                               flex: 5,
@@ -171,7 +179,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                                             const SizedBox(width: 48),
                                             Expanded(
                                               flex: 6,
-                                              child: _buildRightSideContent(true),
+                                              child: _buildRightSideContent(
+                                                true,
+                                              ),
                                             ),
                                           ],
                                         )
@@ -198,12 +208,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
       decoration: const BoxDecoration(
         color: Color(0xB30A0A0F), // rgba(10,10,15,0.7)
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.white10,
-            width: 1.0,
-          ),
-        ),
+        border: Border(bottom: BorderSide(color: Colors.white10, width: 1.0)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -216,7 +221,11 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
-                    colors: [Color(0xFF4285F4), Color(0xFF9C27B0), Color(0xFFE91E63)],
+                    colors: [
+                      Color(0xFF4285F4),
+                      Color(0xFF9C27B0),
+                      Color(0xFFE91E63),
+                    ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -251,7 +260,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
   Widget _buildHeroSection(bool isDesktop) {
     return Column(
-      crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+      crossAxisAlignment: isDesktop
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
       children: [
         // Badge
         Container(
@@ -299,7 +310,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             end: Alignment.bottomRight,
           ).createShader(bounds),
           child: Text(
-            isDesktop ? 'Entrenamiento\nAcadémico\nInteligente' : 'Entrenamiento Académico Inteligente',
+            isDesktop
+                ? 'Entrenamiento\nAcadémico\nInteligente'
+                : 'Entrenamiento Académico Inteligente',
             textAlign: isDesktop ? TextAlign.left : TextAlign.center,
             style: const TextStyle(
               fontSize: 36,
@@ -344,7 +357,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                     height: 18,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF202124)),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Color(0xFF202124),
+                      ),
                     ),
                   )
                 : const Row(
@@ -375,7 +390,9 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
   Widget _buildRightSideContent(bool isDesktop) {
     return Column(
-      crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+      crossAxisAlignment: isDesktop
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
       children: [
         const Align(
           alignment: Alignment.centerLeft,
@@ -403,7 +420,8 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           children: [
             BentoCard(
               title: 'Misión Diaria',
-              description: 'Resuelve preguntas personalizadas cada día para mantener tu racha.',
+              description:
+                  'Resuelve preguntas personalizadas cada día para mantener tu racha.',
               tag: 'Activo',
               icon: Icons.bolt_rounded,
               glowColor: const Color(0xFF4285F4).withValues(alpha: 0.12),
@@ -414,7 +432,8 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             ),
             BentoCard(
               title: 'Temario PNP',
-              description: 'Miles de preguntas oficiales del prospecto PNP vigente.',
+              description:
+                  'Miles de preguntas oficiales del prospecto PNP vigente.',
               tag: 'Oficial',
               icon: Icons.menu_book_rounded,
               glowColor: const Color(0xFF9C27B0).withValues(alpha: 0.12),
@@ -425,7 +444,8 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             ),
             BentoCard(
               title: 'Simulacros Reales',
-              description: 'Exámenes completos contrarreloj con el formato exacto de admisión.',
+              description:
+                  'Exámenes completos contrarreloj con el formato exacto de admisión.',
               tag: 'Cronometrado',
               icon: Icons.play_circle_outline_rounded,
               glowColor: const Color(0xFF00A884).withValues(alpha: 0.12),
@@ -436,7 +456,8 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             ),
             BentoCard(
               title: 'Aprendizaje Guiado',
-              description: 'Rutas de estudio adaptativas con seguimiento de progreso.',
+              description:
+                  'Rutas de estudio adaptativas con seguimiento de progreso.',
               tag: 'Adaptativo',
               icon: Icons.alt_route_rounded,
               glowColor: const Color(0xFFF472B6).withValues(alpha: 0.12),
@@ -477,14 +498,18 @@ class _SupportButtonState extends State<_SupportButton> {
             Icon(
               Icons.headset_mic_rounded,
               size: 16,
-              color: _isHovered ? const Color(0xFFE8EAED) : const Color(0xFF9AA0A6),
+              color: _isHovered
+                  ? const Color(0xFFE8EAED)
+                  : const Color(0xFF9AA0A6),
             ),
             const SizedBox(width: 6),
             Text(
               'Soporte',
               style: TextStyle(
                 fontSize: 13,
-                color: _isHovered ? const Color(0xFFE8EAED) : const Color(0xFF9AA0A6),
+                color: _isHovered
+                    ? const Color(0xFFE8EAED)
+                    : const Color(0xFF9AA0A6),
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -537,55 +562,154 @@ class GoogleLogoPainter extends CustomPainter {
     final double sy = size.height / 24.0;
 
     // Red path
-    final Paint redPaint = Paint()..color = const Color(0xFFEA4335)..style = PaintingStyle.fill;
+    final Paint redPaint = Paint()
+      ..color = const Color(0xFFEA4335)
+      ..style = PaintingStyle.fill;
     final Path redPath = Path()
       ..moveTo(12.0 * sx, 5.38 * sy)
-      ..cubicTo(13.62 * sx, 5.38 * sy, 15.06 * sx, 5.94 * sy, 16.21 * sx, 7.02 * sy)
+      ..cubicTo(
+        13.62 * sx,
+        5.38 * sy,
+        15.06 * sx,
+        5.94 * sy,
+        16.21 * sx,
+        7.02 * sy,
+      )
       ..lineTo(19.36 * sx, 3.87 * sy)
-      ..cubicTo(17.45 * sx, 2.09 * sy, 14.97 * sx, 1.0 * sy, 12.0 * sx, 1.0 * sy)
+      ..cubicTo(
+        17.45 * sx,
+        2.09 * sy,
+        14.97 * sx,
+        1.0 * sy,
+        12.0 * sx,
+        1.0 * sy,
+      )
       ..cubicTo(7.7 * sx, 1.0 * sy, 3.99 * sx, 3.47 * sy, 2.18 * sx, 7.07 * sy)
       ..lineTo(5.84 * sx, 9.91 * sy)
-      ..cubicTo(6.71 * sx, 7.31 * sy, 9.14 * sx, 5.38 * sy, 12.0 * sx, 5.38 * sy)
+      ..cubicTo(
+        6.71 * sx,
+        7.31 * sy,
+        9.14 * sx,
+        5.38 * sy,
+        12.0 * sx,
+        5.38 * sy,
+      )
       ..close();
     canvas.drawPath(redPath, redPaint);
 
     // Yellow path
-    final Paint yellowPaint = Paint()..color = const Color(0xFFFBBC05)..style = PaintingStyle.fill;
+    final Paint yellowPaint = Paint()
+      ..color = const Color(0xFFFBBC05)
+      ..style = PaintingStyle.fill;
     final Path yellowPath = Path()
       ..moveTo(5.84 * sx, 14.09 * sy)
-      ..cubicTo(5.62 * sx, 13.43 * sy, 5.49 * sx, 12.73 * sy, 5.49 * sx, 12.0 * sy)
-      ..cubicTo(5.49 * sx, 11.27 * sy, 5.62 * sx, 10.57 * sy, 5.84 * sx, 9.91 * sy)
+      ..cubicTo(
+        5.62 * sx,
+        13.43 * sy,
+        5.49 * sx,
+        12.73 * sy,
+        5.49 * sx,
+        12.0 * sy,
+      )
+      ..cubicTo(
+        5.49 * sx,
+        11.27 * sy,
+        5.62 * sx,
+        10.57 * sy,
+        5.84 * sx,
+        9.91 * sy,
+      )
       ..lineTo(2.18 * sx, 7.07 * sy)
       ..cubicTo(1.43 * sx, 8.55 * sy, 1.0 * sx, 10.22 * sy, 1.0 * sx, 12.0 * sy)
-      ..cubicTo(1.0 * sx, 13.78 * sy, 1.43 * sx, 15.45 * sy, 2.18 * sx, 16.93 * sy)
+      ..cubicTo(
+        1.0 * sx,
+        13.78 * sy,
+        1.43 * sx,
+        15.45 * sy,
+        2.18 * sx,
+        16.93 * sy,
+      )
       ..lineTo(5.84 * sx, 14.09 * sy)
       ..close();
     canvas.drawPath(yellowPath, yellowPaint);
 
     // Green path
-    final Paint greenPaint = Paint()..color = const Color(0xFF34A853)..style = PaintingStyle.fill;
+    final Paint greenPaint = Paint()
+      ..color = const Color(0xFF34A853)
+      ..style = PaintingStyle.fill;
     final Path greenPath = Path()
       ..moveTo(12.0 * sx, 23.0 * sy)
-      ..cubicTo(14.97 * sx, 23.0 * sy, 17.46 * sx, 22.02 * sy, 19.28 * sx, 20.34 * sy)
+      ..cubicTo(
+        14.97 * sx,
+        23.0 * sy,
+        17.46 * sx,
+        22.02 * sy,
+        19.28 * sx,
+        20.34 * sy,
+      )
       ..lineTo(15.71 * sx, 17.57 * sy)
-      ..cubicTo(14.73 * sx, 18.23 * sy, 13.48 * sx, 18.63 * sy, 12.0 * sx, 18.63 * sy)
-      ..cubicTo(9.14 * sx, 18.63 * sy, 6.71 * sx, 16.7 * sy, 5.84 * sx, 14.09 * sy)
+      ..cubicTo(
+        14.73 * sx,
+        18.23 * sy,
+        13.48 * sx,
+        18.63 * sy,
+        12.0 * sx,
+        18.63 * sy,
+      )
+      ..cubicTo(
+        9.14 * sx,
+        18.63 * sy,
+        6.71 * sx,
+        16.7 * sy,
+        5.84 * sx,
+        14.09 * sy,
+      )
       ..lineTo(2.18 * sx, 16.93 * sy)
-      ..cubicTo(3.99 * sx, 20.53 * sy, 7.7 * sx, 23.0 * sy, 12.0 * sx, 23.0 * sy)
+      ..cubicTo(
+        3.99 * sx,
+        20.53 * sy,
+        7.7 * sx,
+        23.0 * sy,
+        12.0 * sx,
+        23.0 * sy,
+      )
       ..close();
     canvas.drawPath(greenPath, greenPaint);
 
     // Blue path
-    final Paint bluePaint = Paint()..color = const Color(0xFF4285F4)..style = PaintingStyle.fill;
+    final Paint bluePaint = Paint()
+      ..color = const Color(0xFF4285F4)
+      ..style = PaintingStyle.fill;
     final Path bluePath = Path()
       ..moveTo(22.56 * sx, 12.25 * sy)
-      ..cubicTo(22.56 * sx, 11.47 * sy, 22.49 * sx, 10.72 * sy, 22.36 * sx, 10.0 * sy)
+      ..cubicTo(
+        22.56 * sx,
+        11.47 * sy,
+        22.49 * sx,
+        10.72 * sy,
+        22.36 * sx,
+        10.0 * sy,
+      )
       ..lineTo(12.0 * sx, 10.0 * sy)
       ..lineTo(12.0 * sx, 14.26 * sy)
       ..lineTo(17.92 * sx, 14.26 * sy)
-      ..cubicTo(17.66 * sx, 15.63 * sy, 16.88 * sx, 16.79 * sy, 15.71 * sx, 17.57 * sy)
+      ..cubicTo(
+        17.66 * sx,
+        15.63 * sy,
+        16.88 * sx,
+        16.79 * sy,
+        15.71 * sx,
+        17.57 * sy,
+      )
       ..lineTo(19.28 * sx, 20.34 * sy)
-      ..cubicTo(21.36 * sx, 18.42 * sy, 22.56 * sx, 15.6 * sy, 22.56 * sx, 12.25 * sy)
+      ..cubicTo(
+        21.36 * sx,
+        18.42 * sy,
+        22.56 * sx,
+        15.6 * sy,
+        22.56 * sx,
+        12.25 * sy,
+      )
       ..close();
     canvas.drawPath(bluePath, bluePaint);
   }

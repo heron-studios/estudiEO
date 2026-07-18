@@ -3,9 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:learn/features/psicolearn/domain/models/psico_question.dart';
 
 class PsicoService {
-  Future<List<PsicoQuestion>> loadDailyMission(int count, {List<int> failedIds = const []}) async {
+  Future<List<PsicoQuestion>> loadDailyMission(
+    int count, {
+    List<int> failedIds = const [],
+  }) async {
     try {
-      final ByteData byteData = await rootBundle.load('assets/data/preguntas.json');
+      final ByteData byteData = await rootBundle.load(
+        'assets/data/preguntas.json',
+      );
       final String raw = utf8.decode(byteData.buffer.asUint8List());
       final Map<String, dynamic> data = json.decode(raw);
       final List<dynamic> rawList = data['preguntas'] ?? [];
@@ -19,14 +24,18 @@ class PsicoService {
 
       // Carga adaptativa: priorizar preguntas falladas anteriormente (máximo 6)
       if (failedIds.isNotEmpty) {
-        final failedQuestions = allQuestions.where((q) => failedIds.contains(q.id)).toList();
+        final failedQuestions = allQuestions
+            .where((q) => failedIds.contains(q.id))
+            .toList();
         failedQuestions.shuffle();
         final failedToTake = failedQuestions.take(6).toList();
         selectedQuestions.addAll(failedToTake);
       }
 
       // Filtrar las ya agregadas
-      final remainingPool = allQuestions.where((q) => !selectedQuestions.any((sq) => sq.id == q.id)).toList();
+      final remainingPool = allQuestions
+          .where((q) => !selectedQuestions.any((sq) => sq.id == q.id))
+          .toList();
       remainingPool.shuffle();
 
       final countNeeded = count - selectedQuestions.length;
@@ -44,7 +53,7 @@ class PsicoService {
           text: '¿Prefieres trabajar en equipo?',
           options: {'A': 'Sí', 'B': 'A veces', 'C': 'No'},
           puntosOpciones: {'A': 10, 'B': 5, 'C': 0},
-        )
+        ),
       ];
     }
   }
@@ -52,7 +61,9 @@ class PsicoService {
   Future<List<PsicoQuestion>> getQuestionsByIds(List<int> ids) async {
     if (ids.isEmpty) return [];
     try {
-      final ByteData byteData = await rootBundle.load('assets/data/preguntas.json');
+      final ByteData byteData = await rootBundle.load(
+        'assets/data/preguntas.json',
+      );
       final String raw = utf8.decode(byteData.buffer.asUint8List());
       final Map<String, dynamic> data = json.decode(raw);
       final List<dynamic> rawList = data['preguntas'] ?? [];
@@ -72,7 +83,9 @@ class PsicoService {
 
   Future<List<PsicoQuestion>> loadSilogismos({int? count}) async {
     try {
-      final ByteData byteData = await rootBundle.load('assets/data/silogismos.json');
+      final ByteData byteData = await rootBundle.load(
+        'assets/data/silogismos.json',
+      );
       final String raw = utf8.decode(byteData.buffer.asUint8List());
       final List<dynamic> rawList = json.decode(raw);
 

@@ -18,10 +18,7 @@ class ExportService {
     try {
       final outfitRegular = await PdfGoogleFonts.outfitRegular();
       final outfitBold = await PdfGoogleFonts.outfitBold();
-      return pw.ThemeData.withFont(
-        base: outfitRegular,
-        bold: outfitBold,
-      );
+      return pw.ThemeData.withFont(base: outfitRegular, bold: outfitBold);
     } catch (e) {
       // Fallback in case there is no internet connection for Google Fonts
       return pw.ThemeData();
@@ -32,18 +29,23 @@ class ExportService {
   //  1. QUIZ RESULTS EXPORT
   // ─────────────────────────────────────────────────────────────────────────────
   static Future<void> exportQuizToPdf(
-    BuildContext context, 
-    QuizSession session, 
+    BuildContext context,
+    QuizSession session,
     List<Question> questions,
   ) async {
     final pdfTheme = await _getPdfTheme();
     final pdf = pw.Document(theme: pdfTheme);
     final topic = SubjectsRepository.getTopic(session.topicId);
-    final subject = topic != null ? SubjectsRepository.getSubject(topic.subjectId) : null;
+    final subject = topic != null
+        ? SubjectsRepository.getSubject(topic.subjectId)
+        : null;
 
-    final dateStr = DateFormat('dd/MM/yyyy HH:mm').format(session.finishedAt ?? DateTime.now());
+    final dateStr = DateFormat(
+      'dd/MM/yyyy HH:mm',
+    ).format(session.finishedAt ?? DateTime.now());
     final accuracy = session.percentage.toStringAsFixed(0);
-    final durationStr = '${session.duration.inMinutes}m ${session.duration.inSeconds % 60}s';
+    final durationStr =
+        '${session.duration.inMinutes}m ${session.duration.inSeconds % 60}s';
 
     pdf.addPage(
       pw.MultiPage(
@@ -60,11 +62,30 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
-                      pw.Text('Reporte de Resultados de Quiz', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
+                      pw.Text(
+                        'EDUPOL',
+                        style: pw.TextStyle(
+                          fontSize: 24,
+                          fontWeight: pw.FontWeight.bold,
+                          color: PdfColors.blue900,
+                        ),
+                      ),
+                      pw.Text(
+                        'Reporte de Resultados de Quiz',
+                        style: const pw.TextStyle(
+                          fontSize: 14,
+                          color: PdfColors.grey700,
+                        ),
+                      ),
                     ],
                   ),
-                  pw.Text(dateStr, style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey500)),
+                  pw.Text(
+                    dateStr,
+                    style: const pw.TextStyle(
+                      fontSize: 10,
+                      color: PdfColors.grey500,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -83,17 +104,44 @@ class ExportService {
                   pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                     children: [
-                      pw.Text('Asignatura: ${subject?.name ?? "General"}', style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
-                      pw.Text('Tema: ${topic?.name ?? "Varios"}', style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+                      pw.Text(
+                        'Asignatura: ${subject?.name ?? "General"}',
+                        style: pw.TextStyle(
+                          fontSize: 12,
+                          fontWeight: pw.FontWeight.bold,
+                        ),
+                      ),
+                      pw.Text(
+                        'Tema: ${topic?.name ?? "Varios"}',
+                        style: pw.TextStyle(
+                          fontSize: 12,
+                          fontWeight: pw.FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                   pw.SizedBox(height: 8),
                   pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                     children: [
-                      pw.Text('Precisión: $accuracy%', style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold, color: session.percentage >= 60 ? PdfColors.green700 : PdfColors.orange700)),
-                      pw.Text('Correctas: ${session.correctCount} / ${session.totalQuestions}', style: const pw.TextStyle(fontSize: 11)),
-                      pw.Text('Tiempo: $durationStr', style: const pw.TextStyle(fontSize: 11)),
+                      pw.Text(
+                        'Precisión: $accuracy%',
+                        style: pw.TextStyle(
+                          fontSize: 11,
+                          fontWeight: pw.FontWeight.bold,
+                          color: session.percentage >= 60
+                              ? PdfColors.green700
+                              : PdfColors.orange700,
+                        ),
+                      ),
+                      pw.Text(
+                        'Correctas: ${session.correctCount} / ${session.totalQuestions}',
+                        style: const pw.TextStyle(fontSize: 11),
+                      ),
+                      pw.Text(
+                        'Tiempo: $durationStr',
+                        style: const pw.TextStyle(fontSize: 11),
+                      ),
                     ],
                   ),
                 ],
@@ -101,7 +149,14 @@ class ExportService {
             ),
             pw.SizedBox(height: 24),
 
-            pw.Text('Preguntas Respondidas:', style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text(
+              'Preguntas Respondidas:',
+              style: pw.TextStyle(
+                fontSize: 14,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.blue900,
+              ),
+            ),
             pw.SizedBox(height: 12),
 
             // Questions list
@@ -114,45 +169,93 @@ class ExportService {
                 margin: const pw.EdgeInsets.only(bottom: 16),
                 padding: const pw.EdgeInsets.all(10),
                 decoration: pw.BoxDecoration(
-                  border: pw.Border(left: pw.BorderSide(color: isCorrect ? PdfColors.green500 : PdfColors.red500, width: 4)),
+                  border: pw.Border(
+                    left: pw.BorderSide(
+                      color: isCorrect ? PdfColors.green500 : PdfColors.red500,
+                      width: 4,
+                    ),
+                  ),
                   color: PdfColors.grey50,
                 ),
                 child: pw.Column(
                   crossAxisAlignment: pw.CrossAxisAlignment.start,
                   children: [
-                    pw.Text('Pregunta ${idx + 1}: ${q.text}', style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 11)),
+                    pw.Text(
+                      'Pregunta ${idx + 1}: ${q.text}',
+                      style: pw.TextStyle(
+                        fontWeight: pw.FontWeight.bold,
+                        fontSize: 11,
+                      ),
+                    ),
                     pw.SizedBox(height: 6),
                     ...List.generate(q.options.length, (optIdx) {
                       final isSelected = userAnswerIdx == optIdx;
                       final isAnsCorrect = q.correctAnswer == optIdx;
-                      
+
                       pw.TextStyle textStyle = const pw.TextStyle(fontSize: 10);
                       if (isSelected) {
-                        textStyle = pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold, color: isCorrect ? PdfColors.green700 : PdfColors.red700);
+                        textStyle = pw.TextStyle(
+                          fontSize: 10,
+                          fontWeight: pw.FontWeight.bold,
+                          color: isCorrect
+                              ? PdfColors.green700
+                              : PdfColors.red700,
+                        );
                       } else if (isAnsCorrect) {
-                        textStyle = pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold, color: PdfColors.green700);
+                        textStyle = pw.TextStyle(
+                          fontSize: 10,
+                          fontWeight: pw.FontWeight.bold,
+                          color: PdfColors.green700,
+                        );
                       }
 
                       return pw.Row(
                         crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: [
                           pw.Text(isSelected ? '-> ' : '   ', style: textStyle),
-                          pw.Text('${String.fromCharCode(65 + optIdx)}) ', style: textStyle),
-                          pw.Expanded(child: pw.Text(q.options[optIdx], style: textStyle)),
+                          pw.Text(
+                            '${String.fromCharCode(65 + optIdx)}) ',
+                            style: textStyle,
+                          ),
+                          pw.Expanded(
+                            child: pw.Text(q.options[optIdx], style: textStyle),
+                          ),
                         ],
                       );
                     }),
                     pw.SizedBox(height: 6),
                     pw.Row(
                       children: [
-                        pw.Text('Resultado: ', style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey700)),
-                        pw.Text(isCorrect ? 'CORRECTO' : 'INCORRECTO', style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold, color: isCorrect ? PdfColors.green700 : PdfColors.red700)),
+                        pw.Text(
+                          'Resultado: ',
+                          style: const pw.TextStyle(
+                            fontSize: 9,
+                            color: PdfColors.grey700,
+                          ),
+                        ),
+                        pw.Text(
+                          isCorrect ? 'CORRECTO' : 'INCORRECTO',
+                          style: pw.TextStyle(
+                            fontSize: 9,
+                            fontWeight: pw.FontWeight.bold,
+                            color: isCorrect
+                                ? PdfColors.green700
+                                : PdfColors.red700,
+                          ),
+                        ),
                       ],
                     ),
                     if (q.explanation.isNotEmpty) ...[
                       pw.SizedBox(height: 4),
-                      pw.Text('Explicación: ${q.explanation}', style: pw.TextStyle(fontSize: 9, fontStyle: pw.FontStyle.italic, color: PdfColors.grey600)),
-                    ]
+                      pw.Text(
+                        'Explicación: ${q.explanation}',
+                        style: pw.TextStyle(
+                          fontSize: 9,
+                          fontStyle: pw.FontStyle.italic,
+                          color: PdfColors.grey600,
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               );
@@ -174,10 +277,15 @@ class ExportService {
     List<Question> questions,
   ) async {
     final topic = SubjectsRepository.getTopic(session.topicId);
-    final subject = topic != null ? SubjectsRepository.getSubject(topic.subjectId) : null;
-    final dateStr = DateFormat('dd/MM/yyyy HH:mm').format(session.finishedAt ?? DateTime.now());
+    final subject = topic != null
+        ? SubjectsRepository.getSubject(topic.subjectId)
+        : null;
+    final dateStr = DateFormat(
+      'dd/MM/yyyy HH:mm',
+    ).format(session.finishedAt ?? DateTime.now());
     final accuracy = session.percentage.toStringAsFixed(0);
-    final durationStr = '${session.duration.inMinutes}m ${session.duration.inSeconds % 60}s';
+    final durationStr =
+        '${session.duration.inMinutes}m ${session.duration.inSeconds % 60}s';
 
     final buffer = StringBuffer();
     buffer.write('''
@@ -231,8 +339,12 @@ class ExportService {
       final userAnswerIdx = session.answers[q.id];
       final isCorrect = session.correctness[q.id] ?? false;
 
-      buffer.write('<div class="question-container" style="border-left-color: ${isCorrect ? '#22c55e' : '#ef4444'};">');
-      buffer.write('<div class="question-text">Pregunta ${i + 1}: ${q.text}</div>');
+      buffer.write(
+        '<div class="question-container" style="border-left-color: ${isCorrect ? '#22c55e' : '#ef4444'};">',
+      );
+      buffer.write(
+        '<div class="question-text">Pregunta ${i + 1}: ${q.text}</div>',
+      );
 
       for (var o = 0; o < q.options.length; o++) {
         final optionText = q.options[o];
@@ -255,15 +367,21 @@ class ExportService {
           optionStyle = 'color: #dc2626; font-weight: bold;';
         }
 
-        buffer.write('<div class="$optionClass" style="$optionStyle">$marker ${String.fromCharCode(65 + o)}) $optionText</div>');
+        buffer.write(
+          '<div class="$optionClass" style="$optionStyle">$marker ${String.fromCharCode(65 + o)}) $optionText</div>',
+        );
       }
 
       buffer.write('<div style="margin-top: 8px; font-size: 11px;">');
-      buffer.write('<strong>Resultado:</strong> <span class="${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? 'CORRECTO' : 'INCORRECTO'}</span>');
+      buffer.write(
+        '<strong>Resultado:</strong> <span class="${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? 'CORRECTO' : 'INCORRECTO'}</span>',
+      );
       buffer.write('</div>');
 
       if (q.explanation.isNotEmpty) {
-        buffer.write('<div class="explanation"><strong>Explicación:</strong> ${q.explanation}</div>');
+        buffer.write(
+          '<div class="explanation"><strong>Explicación:</strong> ${q.explanation}</div>',
+        );
       }
 
       buffer.write('</div>');
@@ -272,7 +390,10 @@ class ExportService {
     buffer.write('</body></html>');
 
     final tempDir = await getTemporaryDirectory();
-    final cleanTopicName = (topic?.name ?? 'Resultados').replaceAll(RegExp(r'[<>:"/\\|?*]'), '_');
+    final cleanTopicName = (topic?.name ?? 'Resultados').replaceAll(
+      RegExp(r'[<>:"/\\|?*]'),
+      '_',
+    );
     final file = File('${tempDir.path}/Quiz_$cleanTopicName.doc');
     await file.writeAsString(buffer.toString(), encoding: utf8);
 
@@ -283,7 +404,6 @@ class ExportService {
       ),
     );
   }
-
 
   // ─────────────────────────────────────────────────────────────────────────────
   //  2. INTERVIEW RESULTS EXPORT
@@ -316,11 +436,30 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
-                      pw.Text('Reporte de Simulador Táctico (Entrevista)', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
+                      pw.Text(
+                        'EDUPOL',
+                        style: pw.TextStyle(
+                          fontSize: 24,
+                          fontWeight: pw.FontWeight.bold,
+                          color: PdfColors.blue900,
+                        ),
+                      ),
+                      pw.Text(
+                        'Reporte de Simulador Táctico (Entrevista)',
+                        style: const pw.TextStyle(
+                          fontSize: 14,
+                          color: PdfColors.grey700,
+                        ),
+                      ),
                     ],
                   ),
-                  pw.Text(dateStr, style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey500)),
+                  pw.Text(
+                    dateStr,
+                    style: const pw.TextStyle(
+                      fontSize: 10,
+                      color: PdfColors.grey500,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -336,16 +475,50 @@ class ExportService {
               child: pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('Total: $total', style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold)),
-                  pw.Text('Dominadas: $mastered', style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold, color: PdfColors.green700)),
-                  pw.Text('Sin Respuesta: $timeouts', style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold, color: PdfColors.red700)),
-                  pw.Text('Saltadas: $skipped', style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold, color: PdfColors.orange700)),
+                  pw.Text(
+                    'Total: $total',
+                    style: pw.TextStyle(
+                      fontSize: 11,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
+                  pw.Text(
+                    'Dominadas: $mastered',
+                    style: pw.TextStyle(
+                      fontSize: 11,
+                      fontWeight: pw.FontWeight.bold,
+                      color: PdfColors.green700,
+                    ),
+                  ),
+                  pw.Text(
+                    'Sin Respuesta: $timeouts',
+                    style: pw.TextStyle(
+                      fontSize: 11,
+                      fontWeight: pw.FontWeight.bold,
+                      color: PdfColors.red700,
+                    ),
+                  ),
+                  pw.Text(
+                    'Saltadas: $skipped',
+                    style: pw.TextStyle(
+                      fontSize: 11,
+                      fontWeight: pw.FontWeight.bold,
+                      color: PdfColors.orange700,
+                    ),
+                  ),
                 ],
               ),
             ),
             pw.SizedBox(height: 24),
 
-            pw.Text('Detalle de Preguntas de Entrevista:', style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text(
+              'Detalle de Preguntas de Entrevista:',
+              style: pw.TextStyle(
+                fontSize: 14,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.blue900,
+              ),
+            ),
             pw.SizedBox(height: 12),
 
             // Questions
@@ -367,7 +540,9 @@ class ExportService {
                 margin: const pw.EdgeInsets.only(bottom: 16),
                 padding: const pw.EdgeInsets.all(10),
                 decoration: pw.BoxDecoration(
-                  border: pw.Border(left: pw.BorderSide(color: borderColor, width: 4)),
+                  border: pw.Border(
+                    left: pw.BorderSide(color: borderColor, width: 4),
+                  ),
                   color: PdfColors.grey50,
                 ),
                 child: pw.Column(
@@ -376,18 +551,58 @@ class ExportService {
                     pw.Row(
                       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                       children: [
-                        pw.Text('Categoría: ${q.categoria.toUpperCase()}', style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold, color: PdfColors.blue700)),
-                        pw.Text(outcomeStr, style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold, color: borderColor)),
+                        pw.Text(
+                          'Categoría: ${q.categoria.toUpperCase()}',
+                          style: pw.TextStyle(
+                            fontSize: 9,
+                            fontWeight: pw.FontWeight.bold,
+                            color: PdfColors.blue700,
+                          ),
+                        ),
+                        pw.Text(
+                          outcomeStr,
+                          style: pw.TextStyle(
+                            fontSize: 9,
+                            fontWeight: pw.FontWeight.bold,
+                            color: borderColor,
+                          ),
+                        ),
                       ],
                     ),
                     pw.SizedBox(height: 6),
-                    pw.Text(q.pregunta, style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 11)),
+                    pw.Text(
+                      q.pregunta,
+                      style: pw.TextStyle(
+                        fontWeight: pw.FontWeight.bold,
+                        fontSize: 11,
+                      ),
+                    ),
                     pw.SizedBox(height: 8),
-                    pw.Text('Enfoque Táctico:', style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 9, color: PdfColors.orange700)),
-                    pw.Text(q.puntosClave, style: const pw.TextStyle(fontSize: 9)),
+                    pw.Text(
+                      'Enfoque Táctico:',
+                      style: pw.TextStyle(
+                        fontWeight: pw.FontWeight.bold,
+                        fontSize: 9,
+                        color: PdfColors.orange700,
+                      ),
+                    ),
+                    pw.Text(
+                      q.puntosClave,
+                      style: const pw.TextStyle(fontSize: 9),
+                    ),
                     pw.SizedBox(height: 6),
-                    pw.Text('Respuesta Ideal:', style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 9, color: PdfColors.green700)),
-                    pw.Text(q.respuestaIdeal, style: const pw.TextStyle(fontSize: 9)),
+                    pw.Text(
+                      'Respuesta Ideal:',
+                      style: pw.TextStyle(
+                        fontWeight: pw.FontWeight.bold,
+                        fontSize: 9,
+                        color: PdfColors.green700,
+                      ),
+                    ),
+                    pw.Text(
+                      q.respuestaIdeal,
+                      style: const pw.TextStyle(fontSize: 9),
+                    ),
                   ],
                 ),
               );
@@ -476,10 +691,14 @@ class ExportService {
         borderColor = '#ef4444';
       }
 
-      buffer.write('<div class="question-container" style="border-left-color: $borderColor;">');
-      buffer.write('<div class="question-header">Categoría: ${q.categoria.toUpperCase()} | Estado: <span class="$outcomeClass">$outcomeStr</span></div>');
+      buffer.write(
+        '<div class="question-container" style="border-left-color: $borderColor;">',
+      );
+      buffer.write(
+        '<div class="question-header">Categoría: ${q.categoria.toUpperCase()} | Estado: <span class="$outcomeClass">$outcomeStr</span></div>',
+      );
       buffer.write('<div class="question-text">${q.pregunta}</div>');
-      
+
       buffer.write('<div class="section-title focus">Enfoque Táctico:</div>');
       buffer.write('<div style="font-size: 13px;">${q.puntosClave}</div>');
 
@@ -502,7 +721,6 @@ class ExportService {
       ),
     );
   }
-
 
   // ─────────────────────────────────────────────────────────────────────────────
   //  3. DASHBOARD PROGRESS EXPORT
@@ -538,18 +756,44 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
-                      pw.Text('Reporte de Progreso de Estudiante', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
+                      pw.Text(
+                        'EDUPOL',
+                        style: pw.TextStyle(
+                          fontSize: 24,
+                          fontWeight: pw.FontWeight.bold,
+                          color: PdfColors.blue900,
+                        ),
+                      ),
+                      pw.Text(
+                        'Reporte de Progreso de Estudiante',
+                        style: const pw.TextStyle(
+                          fontSize: 14,
+                          color: PdfColors.grey700,
+                        ),
+                      ),
                     ],
                   ),
-                  pw.Text(dateStr, style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey500)),
+                  pw.Text(
+                    dateStr,
+                    style: const pw.TextStyle(
+                      fontSize: 10,
+                      color: PdfColors.grey500,
+                    ),
+                  ),
                 ],
               ),
             ),
             pw.SizedBox(height: 20),
 
             // SRS Section
-            pw.Text('Repaso Espaciado (SRS)', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text(
+              'Repaso Espaciado (SRS)',
+              style: pw.TextStyle(
+                fontSize: 16,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.blue900,
+              ),
+            ),
             pw.SizedBox(height: 8),
             pw.Container(
               padding: const pw.EdgeInsets.all(12),
@@ -563,14 +807,24 @@ class ExportService {
                   _pdfStatRow('Tarjetas Nuevas:', '$nuevos'),
                   _pdfStatRow('Tarjetas en Aprendizaje:', '$aprendiendo'),
                   _pdfStatRow('Tarjetas Dominadas:', '$dominadas'),
-                  _pdfStatRow('Tarjetas Pendientes de revisión:', '$porRevisar'),
+                  _pdfStatRow(
+                    'Tarjetas Pendientes de revisión:',
+                    '$porRevisar',
+                  ),
                 ],
               ),
             ),
             pw.SizedBox(height: 20),
 
             // AI advice Section
-            pw.Text('Consejo Personalizado del Tutor IA', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text(
+              'Consejo Personalizado del Tutor IA',
+              style: pw.TextStyle(
+                fontSize: 16,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.blue900,
+              ),
+            ),
             pw.SizedBox(height: 8),
             pw.Container(
               padding: const pw.EdgeInsets.all(12),
@@ -581,13 +835,24 @@ class ExportService {
               ),
               child: pw.Text(
                 tutorAdvice,
-                style: pw.TextStyle(fontSize: 10, fontStyle: pw.FontStyle.italic, color: PdfColors.blue900),
+                style: pw.TextStyle(
+                  fontSize: 10,
+                  fontStyle: pw.FontStyle.italic,
+                  color: PdfColors.blue900,
+                ),
               ),
             ),
             pw.SizedBox(height: 20),
 
             // Subject Stats Section
-            pw.Text('Rendimiento por Asignatura', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+            pw.Text(
+              'Rendimiento por Asignatura',
+              style: pw.TextStyle(
+                fontSize: 16,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.blue900,
+              ),
+            ),
             pw.SizedBox(height: 8),
 
             // Table of subjects
@@ -599,15 +864,36 @@ class ExportService {
                   children: [
                     pw.Padding(
                       padding: const pw.EdgeInsets.all(8),
-                      child: pw.Text('Asignatura', style: pw.TextStyle(color: PdfColors.white, fontWeight: pw.FontWeight.bold, fontSize: 10)),
+                      child: pw.Text(
+                        'Asignatura',
+                        style: pw.TextStyle(
+                          color: PdfColors.white,
+                          fontWeight: pw.FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      ),
                     ),
                     pw.Padding(
                       padding: const pw.EdgeInsets.all(8),
-                      child: pw.Text('Quizzes Realizados', style: pw.TextStyle(color: PdfColors.white, fontWeight: pw.FontWeight.bold, fontSize: 10)),
+                      child: pw.Text(
+                        'Quizzes Realizados',
+                        style: pw.TextStyle(
+                          color: PdfColors.white,
+                          fontWeight: pw.FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      ),
                     ),
                     pw.Padding(
                       padding: const pw.EdgeInsets.all(8),
-                      child: pw.Text('Precisión Promedio', style: pw.TextStyle(color: PdfColors.white, fontWeight: pw.FontWeight.bold, fontSize: 10)),
+                      child: pw.Text(
+                        'Precisión Promedio',
+                        style: pw.TextStyle(
+                          color: PdfColors.white,
+                          fontWeight: pw.FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -616,15 +902,24 @@ class ExportService {
                     children: [
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(8),
-                        child: pw.Text('${s['icon']} ${s['name']}', style: const pw.TextStyle(fontSize: 10)),
+                        child: pw.Text(
+                          '${s['icon']} ${s['name']}',
+                          style: const pw.TextStyle(fontSize: 10),
+                        ),
                       ),
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(8),
-                        child: pw.Text('${s['totalSessions']}', style: const pw.TextStyle(fontSize: 10)),
+                        child: pw.Text(
+                          '${s['totalSessions']}',
+                          style: const pw.TextStyle(fontSize: 10),
+                        ),
                       ),
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(8),
-                        child: pw.Text('${(s['averagePercentage'] as double).toStringAsFixed(1)}%', style: const pw.TextStyle(fontSize: 10)),
+                        child: pw.Text(
+                          '${(s['averagePercentage'] as double).toStringAsFixed(1)}%',
+                          style: const pw.TextStyle(fontSize: 10),
+                        ),
                       ),
                     ],
                   );
@@ -649,7 +944,10 @@ class ExportService {
         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
         children: [
           pw.Text(label, style: const pw.TextStyle(fontSize: 10)),
-          pw.Text(value, style: pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold)),
+          pw.Text(
+            value,
+            style: pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold),
+          ),
         ],
       ),
     );
@@ -767,7 +1065,6 @@ class ExportService {
     );
   }
 
-
   // ─────────────────────────────────────────────────────────────────────────────
   //  4. EXAM SIMULACRO RESULTS EXPORT
   // ─────────────────────────────────────────────────────────────────────────────
@@ -784,7 +1081,7 @@ class ExportService {
     final dateStr = DateFormat('dd/MM/yyyy HH:mm').format(DateTime.now());
 
     final percentage = (score / total) * 100;
-    
+
     final h = timeSpent ~/ 3600;
     final m = (timeSpent % 3600) ~/ 60;
     final s = timeSpent % 60;
@@ -815,11 +1112,30 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('EDUPOL', style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
-                      pw.Text('Reporte de Resultados de Simulacro de Examen', style: const pw.TextStyle(fontSize: 14, color: PdfColors.grey700)),
+                      pw.Text(
+                        'EDUPOL',
+                        style: pw.TextStyle(
+                          fontSize: 24,
+                          fontWeight: pw.FontWeight.bold,
+                          color: PdfColors.blue900,
+                        ),
+                      ),
+                      pw.Text(
+                        'Reporte de Resultados de Simulacro de Examen',
+                        style: const pw.TextStyle(
+                          fontSize: 14,
+                          color: PdfColors.grey700,
+                        ),
+                      ),
                     ],
                   ),
-                  pw.Text(dateStr, style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey500)),
+                  pw.Text(
+                    dateStr,
+                    style: const pw.TextStyle(
+                      fontSize: 10,
+                      color: PdfColors.grey500,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -838,18 +1154,46 @@ class ExportService {
                   pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('Puntaje: $score de $total (${percentage.toStringAsFixed(0)}%)', style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: pdfColor)),
-                      pw.Text(feedback, style: pw.TextStyle(fontSize: 11, fontStyle: pw.FontStyle.italic, color: PdfColors.grey700)),
+                      pw.Text(
+                        'Puntaje: $score de $total (${percentage.toStringAsFixed(0)}%)',
+                        style: pw.TextStyle(
+                          fontSize: 16,
+                          fontWeight: pw.FontWeight.bold,
+                          color: pdfColor,
+                        ),
+                      ),
+                      pw.Text(
+                        feedback,
+                        style: pw.TextStyle(
+                          fontSize: 11,
+                          fontStyle: pw.FontStyle.italic,
+                          color: PdfColors.grey700,
+                        ),
+                      ),
                     ],
                   ),
-                  pw.Text('Tiempo Utilizado: $timeStr', style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+                  pw.Text(
+                    'Tiempo Utilizado: $timeStr',
+                    style: pw.TextStyle(
+                      fontSize: 12,
+                      fontWeight: pw.FontWeight.bold,
+                      color: PdfColors.blue900,
+                    ),
+                  ),
                 ],
               ),
             ),
             pw.SizedBox(height: 24),
 
             if (questions.isNotEmpty) ...[
-              pw.Text('Detalle de Preguntas del Simulacro:', style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold, color: PdfColors.blue900)),
+              pw.Text(
+                'Detalle de Preguntas del Simulacro:',
+                style: pw.TextStyle(
+                  fontSize: 14,
+                  fontWeight: pw.FontWeight.bold,
+                  color: PdfColors.blue900,
+                ),
+              ),
               pw.SizedBox(height: 12),
 
               ...List.generate(questions.length, (idx) {
@@ -861,50 +1205,108 @@ class ExportService {
                   margin: const pw.EdgeInsets.only(bottom: 16),
                   padding: const pw.EdgeInsets.all(10),
                   decoration: pw.BoxDecoration(
-                    border: pw.Border(left: pw.BorderSide(color: isCorrect ? PdfColors.green500 : PdfColors.red500, width: 4)),
+                    border: pw.Border(
+                      left: pw.BorderSide(
+                        color: isCorrect
+                            ? PdfColors.green500
+                            : PdfColors.red500,
+                        width: 4,
+                      ),
+                    ),
                     color: PdfColors.grey50,
                   ),
                   child: pw.Column(
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
-                      pw.Text('Pregunta ${idx + 1}: ${q.text}', style: pw.TextStyle(fontWeight: pw.FontWeight.bold, fontSize: 11)),
+                      pw.Text(
+                        'Pregunta ${idx + 1}: ${q.text}',
+                        style: pw.TextStyle(
+                          fontWeight: pw.FontWeight.bold,
+                          fontSize: 11,
+                        ),
+                      ),
                       pw.SizedBox(height: 6),
                       ...List.generate(q.options.length, (optIdx) {
                         final isSelected = userAnswerIdx == optIdx;
                         final isAnsCorrect = q.correctAnswer == optIdx;
-                        
-                        pw.TextStyle textStyle = const pw.TextStyle(fontSize: 10);
+
+                        pw.TextStyle textStyle = const pw.TextStyle(
+                          fontSize: 10,
+                        );
                         if (isSelected) {
-                          textStyle = pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold, color: isCorrect ? PdfColors.green700 : PdfColors.red700);
+                          textStyle = pw.TextStyle(
+                            fontSize: 10,
+                            fontWeight: pw.FontWeight.bold,
+                            color: isCorrect
+                                ? PdfColors.green700
+                                : PdfColors.red700,
+                          );
                         } else if (isAnsCorrect) {
-                          textStyle = pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold, color: PdfColors.green700);
+                          textStyle = pw.TextStyle(
+                            fontSize: 10,
+                            fontWeight: pw.FontWeight.bold,
+                            color: PdfColors.green700,
+                          );
                         }
 
                         return pw.Row(
                           crossAxisAlignment: pw.CrossAxisAlignment.start,
                           children: [
-                            pw.Text(isSelected ? '-> ' : '   ', style: textStyle),
-                            pw.Text('${String.fromCharCode(65 + optIdx)}) ', style: textStyle),
-                            pw.Expanded(child: pw.Text(q.options[optIdx], style: textStyle)),
+                            pw.Text(
+                              isSelected ? '-> ' : '   ',
+                              style: textStyle,
+                            ),
+                            pw.Text(
+                              '${String.fromCharCode(65 + optIdx)}) ',
+                              style: textStyle,
+                            ),
+                            pw.Expanded(
+                              child: pw.Text(
+                                q.options[optIdx],
+                                style: textStyle,
+                              ),
+                            ),
                           ],
                         );
                       }),
                       pw.SizedBox(height: 6),
                       pw.Row(
                         children: [
-                          pw.Text('Resultado: ', style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey700)),
-                          pw.Text(isCorrect ? 'CORRECTO' : 'INCORRECTO', style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold, color: isCorrect ? PdfColors.green700 : PdfColors.red700)),
+                          pw.Text(
+                            'Resultado: ',
+                            style: const pw.TextStyle(
+                              fontSize: 9,
+                              color: PdfColors.grey700,
+                            ),
+                          ),
+                          pw.Text(
+                            isCorrect ? 'CORRECTO' : 'INCORRECTO',
+                            style: pw.TextStyle(
+                              fontSize: 9,
+                              fontWeight: pw.FontWeight.bold,
+                              color: isCorrect
+                                  ? PdfColors.green700
+                                  : PdfColors.red700,
+                            ),
+                          ),
                         ],
                       ),
                       if (q.explanation.isNotEmpty) ...[
                         pw.SizedBox(height: 4),
-                        pw.Text('Explicación: ${q.explanation}', style: pw.TextStyle(fontSize: 9, fontStyle: pw.FontStyle.italic, color: PdfColors.grey600)),
-                      ]
+                        pw.Text(
+                          'Explicación: ${q.explanation}',
+                          style: pw.TextStyle(
+                            fontSize: 9,
+                            fontStyle: pw.FontStyle.italic,
+                            color: PdfColors.grey600,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 );
               }),
-            ]
+            ],
           ];
         },
       ),
@@ -927,7 +1329,7 @@ class ExportService {
     final dateStr = DateFormat('dd/MM/yyyy HH:mm').format(DateTime.now());
 
     final percentage = (score / total) * 100;
-    
+
     final h = timeSpent ~/ 3600;
     final m = (timeSpent % 3600) ~/ 60;
     final s = timeSpent % 60;
@@ -988,8 +1390,12 @@ class ExportService {
       final userAnswerIdx = answers[q.id];
       final isCorrect = userAnswerIdx == q.correctAnswer;
 
-      buffer.write('<div class="question-container" style="border-left-color: ${isCorrect ? '#22c55e' : '#ef4444'};">');
-      buffer.write('<div class="question-text">Pregunta ${i + 1}: ${q.text}</div>');
+      buffer.write(
+        '<div class="question-container" style="border-left-color: ${isCorrect ? '#22c55e' : '#ef4444'};">',
+      );
+      buffer.write(
+        '<div class="question-text">Pregunta ${i + 1}: ${q.text}</div>',
+      );
 
       for (var o = 0; o < q.options.length; o++) {
         final optionText = q.options[o];
@@ -1012,15 +1418,21 @@ class ExportService {
           optionStyle = 'color: #dc2626; font-weight: bold;';
         }
 
-        buffer.write('<div class="$optionClass" style="$optionStyle">$marker ${String.fromCharCode(65 + o)}) $optionText</div>');
+        buffer.write(
+          '<div class="$optionClass" style="$optionStyle">$marker ${String.fromCharCode(65 + o)}) $optionText</div>',
+        );
       }
 
       buffer.write('<div style="margin-top: 8px; font-size: 11px;">');
-      buffer.write('<strong>Resultado:</strong> <span class="${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? 'CORRECTO' : 'INCORRECTO'}</span>');
+      buffer.write(
+        '<strong>Resultado:</strong> <span class="${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? 'CORRECTO' : 'INCORRECTO'}</span>',
+      );
       buffer.write('</div>');
 
       if (q.explanation.isNotEmpty) {
-        buffer.write('<div class="explanation"><strong>Explicación:</strong> ${q.explanation}</div>');
+        buffer.write(
+          '<div class="explanation"><strong>Explicación:</strong> ${q.explanation}</div>',
+        );
       }
 
       buffer.write('</div>');

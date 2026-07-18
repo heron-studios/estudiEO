@@ -44,7 +44,8 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
       explanationA: 'Bien: Refleja respeto a la autoridad y valores heredados.',
       isAApt: true,
       optionB: 'hubiera estado más tiempo conmigo.',
-      explanationB: 'Mal: Refleja carencia afectiva o resentimiento que puede afectar tu madurez.',
+      explanationB:
+          'Mal: Refleja carencia afectiva o resentimiento que puede afectar tu madurez.',
       isBApt: false,
     ),
     SacksQuestion(
@@ -124,7 +125,8 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
       explanationA: 'Bien: Relación estable.',
       isAApt: true,
       optionB: 'siempre me está reclamando cosas.',
-      explanationB: 'Mal: Conflicto en el entorno íntimo que genera estrés laboral.',
+      explanationB:
+          'Mal: Conflicto en el entorno íntimo que genera estrés laboral.',
       isBApt: false,
     ),
     SacksQuestion(
@@ -162,7 +164,8 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
   int _currentIndex = 0;
   bool _answered = false;
   bool _selectedTop = false; // true if the top button was selected
-  bool _isAptFirst = true; // Determines if the correct/Apt option is shown first
+  bool _isAptFirst =
+      true; // Determines if the correct/Apt option is shown first
 
   @override
   void initState() {
@@ -197,7 +200,10 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: const Color(0xFF1E1F20),
-          title: const Text('¡Test Completado!', style: TextStyle(color: Colors.white)),
+          title: const Text(
+            '¡Test Completado!',
+            style: TextStyle(color: Colors.white),
+          ),
           content: const Text(
             'Has completado la sección de Autoridad y Figuras Paternas.',
             style: TextStyle(color: Colors.white70),
@@ -208,7 +214,10 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                 Navigator.pop(context);
                 context.pop();
               },
-              child: const Text('Volver al Menú', style: TextStyle(color: Colors.blueAccent)),
+              child: const Text(
+                'Volver al Menú',
+                style: TextStyle(color: Colors.blueAccent),
+              ),
             ),
           ],
         );
@@ -233,7 +242,11 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
           ),
           title: const Text(
             'Frases de Sacks',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: 'Outfit'),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Outfit',
+            ),
           ),
           centerTitle: true,
         ),
@@ -246,14 +259,21 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
+                    ),
                     decoration: BoxDecoration(
                       color: nt.blueGoogle.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
                       'Área: Autoridad y Figuras Paternas',
-                      style: TextStyle(color: nt.blueGoogle, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+                      style: TextStyle(
+                        color: nt.blueGoogle,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -282,7 +302,9 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                   _buildOptionCard(
                     isTop: true,
                     text: _isAptFirst ? currentQ.optionA : currentQ.optionB,
-                    explanation: _isAptFirst ? currentQ.explanationA : currentQ.explanationB,
+                    explanation: _isAptFirst
+                        ? currentQ.explanationA
+                        : currentQ.explanationB,
                     isApt: _isAptFirst ? currentQ.isAApt : currentQ.isBApt,
                     nt: nt,
                   ),
@@ -290,7 +312,9 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                   _buildOptionCard(
                     isTop: false,
                     text: !_isAptFirst ? currentQ.optionA : currentQ.optionB,
-                    explanation: !_isAptFirst ? currentQ.explanationA : currentQ.explanationB,
+                    explanation: !_isAptFirst
+                        ? currentQ.explanationA
+                        : currentQ.explanationB,
                     isApt: !_isAptFirst ? currentQ.isAApt : currentQ.isBApt,
                     nt: nt,
                   ),
@@ -301,11 +325,19 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: nt.blueGoogle,
                         padding: const EdgeInsets.symmetric(vertical: 18),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
                       ),
                       child: Text(
-                        _currentIndex < _questions.length - 1 ? 'SIGUIENTE PREGUNTA' : 'FINALIZAR',
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                        _currentIndex < _questions.length - 1
+                            ? 'SIGUIENTE PREGUNTA'
+                            : 'FINALIZAR',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                 ],
@@ -331,7 +363,9 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
     Color borderColor = Colors.white.withValues(alpha: 0.2);
 
     if (showFeedback) {
-      baseColor = isApt ? nt.successGreen.withValues(alpha: 0.2) : nt.pink.withValues(alpha: 0.2);
+      baseColor = isApt
+          ? nt.successGreen.withValues(alpha: 0.2)
+          : nt.pink.withValues(alpha: 0.2);
       borderColor = isApt ? nt.successGreen : nt.pink;
     } else if (_answered) {
       // Not selected, dim it
@@ -363,7 +397,10 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                   ),
                   child: Text(
                     isTop ? 'A' : 'B',
-                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -371,7 +408,9 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                   child: Text(
                     text,
                     style: TextStyle(
-                      color: _answered && !isSelected ? Colors.white30 : Colors.white,
+                      color: _answered && !isSelected
+                          ? Colors.white30
+                          : Colors.white,
                       fontSize: 16,
                       height: 1.4,
                     ),
@@ -395,7 +434,11 @@ class _SacksTestScreenState extends State<SacksTestScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.info_outline_rounded, color: isApt ? nt.successGreen : nt.pink, size: 18),
+                    Icon(
+                      Icons.info_outline_rounded,
+                      color: isApt ? nt.successGreen : nt.pink,
+                      size: 18,
+                    ),
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(

@@ -22,43 +22,191 @@ class PsicologicoTestScreen extends StatefulWidget {
 
 class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
   final List<PsicologicoQuestion> _questions = [
-    PsicologicoQuestion('No me interesan los problemas de los demás', false, 'La empatía y vocación de servicio son fundamentales en la función policial/militar.'),
-    PsicologicoQuestion('Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago', false, 'Un efectivo debe ser el principal garante y cumplidor de la ley.'),
-    PsicologicoQuestion('Constantemente siento que no soy capaz de hacer frente a las cosas nuevas', false, 'Se busca seguridad en sí mismo y capacidad de adaptación ante nuevos retos.'),
-    PsicologicoQuestion('En muchas ocasiones suelo precipitarme', false, 'La impulsividad es negativa; se debe actuar con serenidad y criterio analítico.'),
-    PsicologicoQuestion('Con cierta regularidad le gusta mantener distancia con los demás', false, 'El trabajo operativo es en equipo y requiere altos niveles de sociabilidad.'),
-    PsicologicoQuestion('A veces pongo trabas a las opiniones de otras personas', false, 'Demuestra falta de tolerancia y genera conflictos para el trabajo en equipo.'),
-    PsicologicoQuestion('Raramente evito a las multitudes', true, 'Se trabaja constantemente en contacto masivo con el público; evitar multitudes es desfavorable.'),
-    PsicologicoQuestion('Con poca frecuencia se cómo debo hacer las cosas', false, 'Refleja inseguridad y falta de iniciativa, rasgos desfavorables para la toma de decisiones.'),
-    PsicologicoQuestion('Suelo dejar mis decisiones en manos del grupo', false, 'Un postulante debe tener autonomía, criterio propio y capacidad de liderazgo.'),
-    PsicologicoQuestion('Por lo general, no me siento a gusto conmigo mismo', false, 'Refleja problemas de autoestima o inestabilidad emocional que afectan el desempeño.'),
-    PsicologicoQuestion('Espero que los demás tomen el liderazgo', false, 'En las fuerzas del orden se valora fuertemente la proactividad y la iniciativa.'),
-    PsicologicoQuestion('No entiendo a la gente sentimental', false, 'Refleja falta de empatía o frialdad emocional hacia los ciudadanos.'),
-    PsicologicoQuestion('Me afectan las situaciones sociales difíciles', false, 'Se requiere gran resiliencia emocional para lidiar con situaciones críticas a diario.'),
-    PsicologicoQuestion('Dedico poco tiempo y esfuerzo a mi trabajo', false, 'Muestra irresponsabilidad y falta de compromiso, actitudes inaceptables.'),
-    PsicologicoQuestion('Raramente me tomo mi revancha con los demás', true, 'El rencor y la venganza son negativos; se debe actuar por justicia y racionalidad.'),
-    PsicologicoQuestion('Soy incapaz de controlar mis deseos', false, 'Refleja falta de autocontrol e impulsividad, un rasgo muy peligroso al portar un arma.'),
-    PsicologicoQuestion('Siempre suelo hablar de mis cualidades a los demás', false, 'Denota egocentrismo o complejo de superioridad; la institución valora la humildad.'),
-    PsicologicoQuestion('Me gusta la acción y el peligro', false, 'Buscar el peligro innecesariamente indica temeridad imprudente, no valentía controlada.'),
-    PsicologicoQuestion('Siempre miro el lado bueno de la vida', true, 'Refleja optimismo, estabilidad emocional y buena resiliencia ante la adversidad.'),
-    PsicologicoQuestion('Me considero una persona incapaz de controlar mis deseos', false, 'La falta de control de impulsos es uno de los principales criterios de exclusión.'),
-    PsicologicoQuestion('Rompo mis promesas con regularidad', false, 'Demuestra falta de integridad, deshonestidad y nula confiabilidad personal.'),
-    PsicologicoQuestion('Siempre desconfio de la gente', false, 'La paranoia o suspicacia extrema dificultan las relaciones y el servicio a la comunidad.'),
-    PsicologicoQuestion('Me gusta abstraerme', false, 'Se debe estar siempre alerta y conectado con su entorno (conciencia situacional).'),
-    PsicologicoQuestion('Me importa no hacer cosas ilegales', true, 'Respetar la legalidad y tener una brújula moral fuerte es el requisito innegociable.'),
-    PsicologicoQuestion('Con mucha frecuencia dejo volar mi imaginación', false, 'Se requiere pensamiento práctico, realista y enfocado; la distracción constante es un riesgo.'),
-    PsicologicoQuestion('Me encanta experimentar de manera frecuente sensaciones fuertes', false, 'Indica búsqueda de riesgo (thrill-seeking), asociado a inestabilidad e imprudencia.'),
-    PsicologicoQuestion('¿Es impaciente por el ritmo en el que se desarrollan los acontecimientos?', false, 'La impaciencia denota poco control emocional y baja tolerancia a la frustración.'),
-    PsicologicoQuestion('Terminas las frases de otras personas', false, 'Demuestra ansiedad, impaciencia y falta de escucha activa hacia el interlocutor.'),
-    PsicologicoQuestion('En el amor y la Guerra todo vale', false, 'El fin no justifica los medios. Siempre se debe actuar respetando los Derechos Humanos.'),
-    PsicologicoQuestion('Me es difícil consumir drogas', true, 'El rechazo firme al consumo de sustancias ilícitas es un perfil obligatorio.'),
-    PsicologicoQuestion('Si las drogas serían legales las consumiría', false, 'Indica propensión a las adicciones frenada únicamente por el miedo al castigo legal.'),
-    PsicologicoQuestion('Postulo a la PNP por rechazo de mis padres', false, 'La motivación debe ser netamente vocacional, no una vía de escape a presiones externas.'),
-    PsicologicoQuestion('No es cierto que nuca he robado', false, 'Admitir un robo es causal de exclusión. El historial de integridad debe ser intachable.'),
-    PsicologicoQuestion('No es cierto que nunca he mentido', true, 'Pregunta de sinceridad. Todos han mentido alguna vez; negarlo rotundamente te marca como alguien que finge perfección (escala de mentira).'),
-    PsicologicoQuestion('Es cierto que no he consumido drogas', true, 'Confirmación directa de un perfil limpio, libre de adicciones.'),
-    PsicologicoQuestion('Es cierto que no rompo las reglas', true, 'Refleja tu disposición a acatar las normas y la disciplina institucional.'),
-    PsicologicoQuestion('Me interesa el sexo', true, 'Es una función fisiológica normal. Negarlo suele interpretarse como falsedad en el test de sinceridad.'),
+    PsicologicoQuestion(
+      'No me interesan los problemas de los demás',
+      false,
+      'La empatía y vocación de servicio son fundamentales en la función policial/militar.',
+    ),
+    PsicologicoQuestion(
+      'Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago',
+      false,
+      'Un efectivo debe ser el principal garante y cumplidor de la ley.',
+    ),
+    PsicologicoQuestion(
+      'Constantemente siento que no soy capaz de hacer frente a las cosas nuevas',
+      false,
+      'Se busca seguridad en sí mismo y capacidad de adaptación ante nuevos retos.',
+    ),
+    PsicologicoQuestion(
+      'En muchas ocasiones suelo precipitarme',
+      false,
+      'La impulsividad es negativa; se debe actuar con serenidad y criterio analítico.',
+    ),
+    PsicologicoQuestion(
+      'Con cierta regularidad le gusta mantener distancia con los demás',
+      false,
+      'El trabajo operativo es en equipo y requiere altos niveles de sociabilidad.',
+    ),
+    PsicologicoQuestion(
+      'A veces pongo trabas a las opiniones de otras personas',
+      false,
+      'Demuestra falta de tolerancia y genera conflictos para el trabajo en equipo.',
+    ),
+    PsicologicoQuestion(
+      'Raramente evito a las multitudes',
+      true,
+      'Se trabaja constantemente en contacto masivo con el público; evitar multitudes es desfavorable.',
+    ),
+    PsicologicoQuestion(
+      'Con poca frecuencia se cómo debo hacer las cosas',
+      false,
+      'Refleja inseguridad y falta de iniciativa, rasgos desfavorables para la toma de decisiones.',
+    ),
+    PsicologicoQuestion(
+      'Suelo dejar mis decisiones en manos del grupo',
+      false,
+      'Un postulante debe tener autonomía, criterio propio y capacidad de liderazgo.',
+    ),
+    PsicologicoQuestion(
+      'Por lo general, no me siento a gusto conmigo mismo',
+      false,
+      'Refleja problemas de autoestima o inestabilidad emocional que afectan el desempeño.',
+    ),
+    PsicologicoQuestion(
+      'Espero que los demás tomen el liderazgo',
+      false,
+      'En las fuerzas del orden se valora fuertemente la proactividad y la iniciativa.',
+    ),
+    PsicologicoQuestion(
+      'No entiendo a la gente sentimental',
+      false,
+      'Refleja falta de empatía o frialdad emocional hacia los ciudadanos.',
+    ),
+    PsicologicoQuestion(
+      'Me afectan las situaciones sociales difíciles',
+      false,
+      'Se requiere gran resiliencia emocional para lidiar con situaciones críticas a diario.',
+    ),
+    PsicologicoQuestion(
+      'Dedico poco tiempo y esfuerzo a mi trabajo',
+      false,
+      'Muestra irresponsabilidad y falta de compromiso, actitudes inaceptables.',
+    ),
+    PsicologicoQuestion(
+      'Raramente me tomo mi revancha con los demás',
+      true,
+      'El rencor y la venganza son negativos; se debe actuar por justicia y racionalidad.',
+    ),
+    PsicologicoQuestion(
+      'Soy incapaz de controlar mis deseos',
+      false,
+      'Refleja falta de autocontrol e impulsividad, un rasgo muy peligroso al portar un arma.',
+    ),
+    PsicologicoQuestion(
+      'Siempre suelo hablar de mis cualidades a los demás',
+      false,
+      'Denota egocentrismo o complejo de superioridad; la institución valora la humildad.',
+    ),
+    PsicologicoQuestion(
+      'Me gusta la acción y el peligro',
+      false,
+      'Buscar el peligro innecesariamente indica temeridad imprudente, no valentía controlada.',
+    ),
+    PsicologicoQuestion(
+      'Siempre miro el lado bueno de la vida',
+      true,
+      'Refleja optimismo, estabilidad emocional y buena resiliencia ante la adversidad.',
+    ),
+    PsicologicoQuestion(
+      'Me considero una persona incapaz de controlar mis deseos',
+      false,
+      'La falta de control de impulsos es uno de los principales criterios de exclusión.',
+    ),
+    PsicologicoQuestion(
+      'Rompo mis promesas con regularidad',
+      false,
+      'Demuestra falta de integridad, deshonestidad y nula confiabilidad personal.',
+    ),
+    PsicologicoQuestion(
+      'Siempre desconfio de la gente',
+      false,
+      'La paranoia o suspicacia extrema dificultan las relaciones y el servicio a la comunidad.',
+    ),
+    PsicologicoQuestion(
+      'Me gusta abstraerme',
+      false,
+      'Se debe estar siempre alerta y conectado con su entorno (conciencia situacional).',
+    ),
+    PsicologicoQuestion(
+      'Me importa no hacer cosas ilegales',
+      true,
+      'Respetar la legalidad y tener una brújula moral fuerte es el requisito innegociable.',
+    ),
+    PsicologicoQuestion(
+      'Con mucha frecuencia dejo volar mi imaginación',
+      false,
+      'Se requiere pensamiento práctico, realista y enfocado; la distracción constante es un riesgo.',
+    ),
+    PsicologicoQuestion(
+      'Me encanta experimentar de manera frecuente sensaciones fuertes',
+      false,
+      'Indica búsqueda de riesgo (thrill-seeking), asociado a inestabilidad e imprudencia.',
+    ),
+    PsicologicoQuestion(
+      '¿Es impaciente por el ritmo en el que se desarrollan los acontecimientos?',
+      false,
+      'La impaciencia denota poco control emocional y baja tolerancia a la frustración.',
+    ),
+    PsicologicoQuestion(
+      'Terminas las frases de otras personas',
+      false,
+      'Demuestra ansiedad, impaciencia y falta de escucha activa hacia el interlocutor.',
+    ),
+    PsicologicoQuestion(
+      'En el amor y la Guerra todo vale',
+      false,
+      'El fin no justifica los medios. Siempre se debe actuar respetando los Derechos Humanos.',
+    ),
+    PsicologicoQuestion(
+      'Me es difícil consumir drogas',
+      true,
+      'El rechazo firme al consumo de sustancias ilícitas es un perfil obligatorio.',
+    ),
+    PsicologicoQuestion(
+      'Si las drogas serían legales las consumiría',
+      false,
+      'Indica propensión a las adicciones frenada únicamente por el miedo al castigo legal.',
+    ),
+    PsicologicoQuestion(
+      'Postulo a la PNP por rechazo de mis padres',
+      false,
+      'La motivación debe ser netamente vocacional, no una vía de escape a presiones externas.',
+    ),
+    PsicologicoQuestion(
+      'No es cierto que nuca he robado',
+      false,
+      'Admitir un robo es causal de exclusión. El historial de integridad debe ser intachable.',
+    ),
+    PsicologicoQuestion(
+      'No es cierto que nunca he mentido',
+      true,
+      'Pregunta de sinceridad. Todos han mentido alguna vez; negarlo rotundamente te marca como alguien que finge perfección (escala de mentira).',
+    ),
+    PsicologicoQuestion(
+      'Es cierto que no he consumido drogas',
+      true,
+      'Confirmación directa de un perfil limpio, libre de adicciones.',
+    ),
+    PsicologicoQuestion(
+      'Es cierto que no rompo las reglas',
+      true,
+      'Refleja tu disposición a acatar las normas y la disciplina institucional.',
+    ),
+    PsicologicoQuestion(
+      'Me interesa el sexo',
+      true,
+      'Es una función fisiológica normal. Negarlo suele interpretarse como falsedad en el test de sinceridad.',
+    ),
   ];
 
   int _currentIndex = 0;
@@ -100,7 +248,10 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: const Color(0xFF1E1F20),
-          title: const Text('¡Tiempo agotado!', style: TextStyle(color: Colors.white)),
+          title: const Text(
+            '¡Tiempo agotado!',
+            style: TextStyle(color: Colors.white),
+          ),
           content: const Text(
             'El tiempo para el Test Psicológico ha finalizado.',
             style: TextStyle(color: Colors.white70),
@@ -111,7 +262,10 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
                 Navigator.pop(context);
                 context.pop();
               },
-              child: const Text('Entendido', style: TextStyle(color: Colors.cyan)),
+              child: const Text(
+                'Entendido',
+                style: TextStyle(color: Colors.cyan),
+              ),
             ),
           ],
         );
@@ -131,17 +285,29 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
         return AlertDialog(
           backgroundColor: const Color(0xFF1E1F20),
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-              side: BorderSide(color: isCorrect ? nt.successGreen : nt.pink, width: 2)),
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(
+              color: isCorrect ? nt.successGreen : nt.pink,
+              width: 2,
+            ),
+          ),
           title: Row(
             children: [
-              Icon(isCorrect ? Icons.check_circle_outline : Icons.cancel_outlined,
-                  color: isCorrect ? nt.successGreen : nt.pink, size: 28),
+              Icon(
+                isCorrect ? Icons.check_circle_outline : Icons.cancel_outlined,
+                color: isCorrect ? nt.successGreen : nt.pink,
+                size: 28,
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  isCorrect ? '¡Respuesta Ideal!' : 'Cuidado con esta respuesta',
-                  style: TextStyle(color: isCorrect ? nt.successGreen : nt.pink, fontSize: 18),
+                  isCorrect
+                      ? '¡Respuesta Ideal!'
+                      : 'Cuidado con esta respuesta',
+                  style: TextStyle(
+                    color: isCorrect ? nt.successGreen : nt.pink,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ],
@@ -152,12 +318,20 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
             children: [
               Text(
                 'Respondiste: ${isYes ? "SÍ" : "NO"}',
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
               const SizedBox(height: 12),
               Text(
                 _questions[_currentIndex].explanation,
-                style: const TextStyle(color: Colors.white70, fontSize: 15, height: 1.4),
+                style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 15,
+                  height: 1.4,
+                ),
               ),
             ],
           ),
@@ -175,8 +349,10 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
                   }
                 });
               },
-              child: const Text('Entendido -> Continuar',
-                  style: TextStyle(color: Colors.cyan, fontSize: 16)),
+              child: const Text(
+                'Entendido -> Continuar',
+                style: TextStyle(color: Colors.cyan, fontSize: 16),
+              ),
             ),
           ],
         );
@@ -191,7 +367,10 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: const Color(0xFF1E1F20),
-          title: const Text('¡Test Completado!', style: TextStyle(color: Colors.white)),
+          title: const Text(
+            '¡Test Completado!',
+            style: TextStyle(color: Colors.white),
+          ),
           content: Text(
             'Has respondido ${_answers.length} de ${_questions.length} preguntas.\\nFalta configurar la lógica de resultados.',
             style: const TextStyle(color: Colors.white70),
@@ -202,7 +381,10 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
                 Navigator.pop(context);
                 context.pop();
               },
-              child: const Text('Volver al Menú', style: TextStyle(color: Colors.cyan)),
+              child: const Text(
+                'Volver al Menú',
+                style: TextStyle(color: Colors.cyan),
+              ),
             ),
           ],
         );
@@ -236,7 +418,11 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
           ),
           title: const Text(
             'Test Psicológico',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: 'Outfit'),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Outfit',
+            ),
           ),
           centerTitle: true,
           actions: [
@@ -244,20 +430,37 @@ class _PsicologicoTestScreenState extends State<PsicologicoTestScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
-                    color: _secondsRemaining < 60 ? Colors.redAccent.withValues(alpha: 0.2) : Colors.white.withValues(alpha: 0.1),
+                    color: _secondsRemaining < 60
+                        ? Colors.redAccent.withValues(alpha: 0.2)
+                        : Colors.white.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: _secondsRemaining < 60 ? Colors.redAccent : Colors.transparent),
+                    border: Border.all(
+                      color: _secondsRemaining < 60
+                          ? Colors.redAccent
+                          : Colors.transparent,
+                    ),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.timer_outlined, color: _secondsRemaining < 60 ? Colors.redAccent : Colors.white, size: 16),
+                      Icon(
+                        Icons.timer_outlined,
+                        color: _secondsRemaining < 60
+                            ? Colors.redAccent
+                            : Colors.white,
+                        size: 16,
+                      ),
                       const SizedBox(width: 6),
                       Text(
                         _formattedTime,
                         style: TextStyle(
-                          color: _secondsRemaining < 60 ? Colors.redAccent : Colors.white,
+                          color: _secondsRemaining < 60
+                              ? Colors.redAccent
+                              : Colors.white,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Outfit',
                         ),

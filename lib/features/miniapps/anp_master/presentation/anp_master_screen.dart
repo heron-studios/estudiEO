@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
+
 class ANPMasterScreen extends StatefulWidget {
   const ANPMasterScreen({super.key});
 
@@ -56,7 +57,10 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.white,
+          ),
           onPressed: () => context.pop(),
         ),
         title: const Text(
@@ -72,7 +76,9 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
               decoration: BoxDecoration(
                 color: Colors.greenAccent.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
+                border: Border.all(
+                  color: Colors.greenAccent.withValues(alpha: 0.3),
+                ),
               ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
@@ -82,14 +88,15 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                   Text(
                     'SINANPE',
                     style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold),
+                      color: Colors.greenAccent,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       body: NeuralBackgroundWrapper(
@@ -157,13 +164,15 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
             end: Alignment.bottomRight,
           ),
           border: Border.all(
-              color: nt.successGreen.withValues(alpha: 0.3), width: 1.5),
+            color: nt.successGreen.withValues(alpha: 0.3),
+            width: 1.5,
+          ),
           boxShadow: [
             BoxShadow(
               color: nt.successGreen.withValues(alpha: 0.1),
               blurRadius: 30,
               offset: const Offset(0, 8),
-            )
+            ),
           ],
         ),
         child: Column(
@@ -177,10 +186,14 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                     color: nt.successGreen.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                        color: nt.successGreen.withValues(alpha: 0.3)),
+                      color: nt.successGreen.withValues(alpha: 0.3),
+                    ),
                   ),
-                  child: Icon(Icons.forest_rounded,
-                      color: nt.successGreen, size: 28),
+                  child: Icon(
+                    Icons.forest_rounded,
+                    color: nt.successGreen,
+                    size: 28,
+                  ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -199,8 +212,9 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                       Text(
                         '$_totalANPs ANPs · 4 categorías de protección',
                         style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.55),
-                            fontSize: 12),
+                          color: Colors.white.withValues(alpha: 0.55),
+                          fontSize: 12,
+                        ),
                       ),
                     ],
                   ),
@@ -215,16 +229,18 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                 Text(
                   'Progreso Global',
                   style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.7),
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500),
+                    color: Colors.white.withValues(alpha: 0.7),
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 Text(
                   '$_anpsDominated/$_totalANPs ANPs',
                   style: TextStyle(
-                      color: nt.successGreen,
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold),
+                    color: nt.successGreen,
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -238,8 +254,8 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                     Container(color: Colors.white.withValues(alpha: 0.08)),
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 600),
-                      width: (MediaQuery.of(context).size.width - 88) *
-                          progress,
+                      width:
+                          (MediaQuery.of(context).size.width - 88) * progress,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [nt.successGreen, nt.blueGoogle],
@@ -267,26 +283,46 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
       child: Row(
         children: [
           Expanded(
-              child: _buildStatCard(
-                  'Mejor Score', '$_bestScore pts', Icons.emoji_events_rounded,
-                  nt.warningAmber, nt)),
+            child: _buildStatCard(
+              'Mejor Score',
+              '$_bestScore pts',
+              Icons.emoji_events_rounded,
+              nt.warningAmber,
+              nt,
+            ),
+          ),
           const SizedBox(width: 12),
           Expanded(
-              child: _buildStatCard(
-                  'Racha', '$_streak días', Icons.local_fire_department_rounded,
-                  nt.pink, nt)),
+            child: _buildStatCard(
+              'Racha',
+              '$_streak días',
+              Icons.local_fire_department_rounded,
+              nt.pink,
+              nt,
+            ),
+          ),
           const SizedBox(width: 12),
           Expanded(
-              child: _buildStatCard(
-                  'ANPs', '$_anpsDominated', Icons.park_rounded,
-                  nt.successGreen, nt)),
+            child: _buildStatCard(
+              'ANPs',
+              '$_anpsDominated',
+              Icons.park_rounded,
+              nt.successGreen,
+              nt,
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildStatCard(String label, String value, IconData icon, Color color,
-      NeuralThemeData nt) {
+  Widget _buildStatCard(
+    String label,
+    String value,
+    IconData icon,
+    Color color,
+    NeuralThemeData nt,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
       decoration: BoxDecoration(
@@ -301,15 +337,18 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
           Text(
             value,
             style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 2),
           Text(
             label,
             style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.45), fontSize: 10),
+              color: Colors.white.withValues(alpha: 0.45),
+              fontSize: 10,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -431,13 +470,16 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
               decoration: BoxDecoration(
                 color: color.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(18),
-                border: Border.all(color: color.withValues(alpha: 0.35),
-                    width: 1.5),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.35),
+                  width: 1.5,
+                ),
                 boxShadow: [
                   BoxShadow(
-                      color: color.withValues(alpha: 0.15),
-                      blurRadius: 12,
-                      offset: const Offset(0, 4))
+                    color: color.withValues(alpha: 0.15),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
+                  ),
                 ],
               ),
               child: Icon(icon, color: color, size: 28),
@@ -452,7 +494,9 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                       children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 3),
+                            horizontal: 8,
+                            vertical: 3,
+                          ),
                           decoration: BoxDecoration(
                             color: color.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(6),
@@ -461,16 +505,19 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               if (badgeIcon != null)
-                                Icon(badgeIcon,
-                                    color: color.withValues(alpha: 0.8),
-                                    size: 10),
+                                Icon(
+                                  badgeIcon,
+                                  color: color.withValues(alpha: 0.8),
+                                  size: 10,
+                                ),
                               if (badgeIcon != null) const SizedBox(width: 3),
                               Text(
                                 badge,
                                 style: TextStyle(
-                                    color: color,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: color,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ],
                           ),
@@ -541,12 +588,15 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                     color: color.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(13),
                     border: Border.all(
-                        color: color.withValues(alpha: 0.35), width: 1),
+                      color: color.withValues(alpha: 0.35),
+                      width: 1,
+                    ),
                     boxShadow: [
                       BoxShadow(
-                          color: color.withValues(alpha: 0.12),
-                          blurRadius: 10,
-                          offset: const Offset(0, 3))
+                        color: color.withValues(alpha: 0.12),
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
+                      ),
                     ],
                   ),
                   child: Icon(icon, color: color, size: 22),
@@ -581,8 +631,7 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
             if (badge != null) ...[
               const SizedBox(height: 6),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(4),
@@ -590,7 +639,10 @@ class _ANPMasterScreenState extends State<ANPMasterScreen>
                 child: Text(
                   badge,
                   style: TextStyle(
-                      color: color, fontSize: 9, fontWeight: FontWeight.bold),
+                    color: color,
+                    fontSize: 9,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],

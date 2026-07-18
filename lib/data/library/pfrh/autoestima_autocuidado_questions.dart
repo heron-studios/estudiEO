@@ -14,7 +14,8 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''El documento legal que certifica la identidad de un ciudadano ante el Estado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autoestima es la opinión que cada persona tiene de sí misma y de su propia valía, condicionada por la valoración emocional y la satisfacción con quién es y cómo es.''',
+    explanation:
+        r'''La autoestima es la opinión que cada persona tiene de sí misma y de su propia valía, condicionada por la valoración emocional y la satisfacción con quién es y cómo es.''',
   ),
   Question(
     id: 'pfrh_aa_f2',
@@ -28,12 +29,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''El consumo excesivo de medicamentos sin receta para prevenir cualquier malestar corporal.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado hace referencia a todas las acciones que toma una persona de forma consciente para mantener su salud física, mental y emocional en niveles óptimos.''',
+    explanation:
+        r'''El autocuidado hace referencia a todas las acciones que toma una persona de forma consciente para mantener su salud física, mental y emocional en niveles óptimos.''',
   ),
   Question(
     id: 'pfrh_aa_f3',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Según los enfoques de bienestar emocional, ¿qué principio resume la base del autocuidado?''',
+    text:
+        r'''Según los enfoques de bienestar emocional, ¿qué principio resume la base del autocuidado?''',
     options: [
       r'''El éxito financiero justifica el desgaste físico (El fin justifica los medios).''',
       r'''Cuidar a los demás es siempre más importante que cuidarse a uno mismo (Sacrificio absoluto).''',
@@ -42,12 +45,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La salud mental depende exclusivamente de la herencia genética (Biología es destino).''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado se sustenta en el amor y respeto hacia uno mismo, lo cual se resume en la ecuación fundamental para el bienestar: ME QUIERO = ME CUIDO.''',
+    explanation:
+        r'''El autocuidado se sustenta en el amor y respeto hacia uno mismo, lo cual se resume en la ecuación fundamental para el bienestar: ME QUIERO = ME CUIDO.''',
   ),
   Question(
     id: 'pfrh_aa_f4',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Cuál de las siguientes acciones es un claro ejemplo de "autocuidado físico"?''',
+    text:
+        r'''¿Cuál de las siguientes acciones es un claro ejemplo de "autocuidado físico"?''',
     options: [
       r'''Reprimir las emociones de tristeza para no preocupar a la familia.''',
       r'''Trabajar o estudiar sin pausas durante toda la noche para ser el mejor.''',
@@ -56,7 +61,8 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Pasar todo el tiempo libre jugando videojuegos para evadir la realidad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado físico implica acciones directas sobre el cuerpo, como mantener una alimentación balanceada, hacer ejercicio regular y respetar las horas de descanso y sueño.''',
+    explanation:
+        r'''El autocuidado físico implica acciones directas sobre el cuerpo, como mantener una alimentación balanceada, hacer ejercicio regular y respetar las horas de descanso y sueño.''',
   ),
   Question(
     id: 'pfrh_aa_f5',
@@ -70,7 +76,8 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Cuidar excesivamente la apariencia física invirtiendo mucho dinero en ropa.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Una persona con baja autoestima no se valora positivamente, no está satisfecha de sí misma y constantemente siente que le gustaría ser diferente porque cree no ser suficientemente buena.''',
+    explanation:
+        r'''Una persona con baja autoestima no se valora positivamente, no está satisfecha de sí misma y constantemente siente que le gustaría ser diferente porque cree no ser suficientemente buena.''',
   ),
   Question(
     id: 'pfrh_aa_f6',
@@ -84,12 +91,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Porque elimina por completo la necesidad de interactuar con otras personas en la sociedad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado no es egoísta; es una responsabilidad primordial y una habilidad matriz que nos permite vivir en equilibrio para poder funcionar en la vida, dar amor y cuidar también de los otros.''',
+    explanation:
+        r'''El autocuidado no es egoísta; es una responsabilidad primordial y una habilidad matriz que nos permite vivir en equilibrio para poder funcionar en la vida, dar amor y cuidar también de los otros.''',
   ),
   Question(
     id: 'pfrh_aa_f7',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué recomienda el autocuidado emocional frente al exceso de estrés o agotamiento?''',
+    text:
+        r'''¿Qué recomienda el autocuidado emocional frente al exceso de estrés o agotamiento?''',
     options: [
       r'''Consumir grandes cantidades de azúcar para recuperar la energía rápidamente.''',
       r'''Ignorar el agotamiento y obligarse a trabajar el doble para superar la debilidad.''',
@@ -98,12 +107,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Competir agresivamente con los demás para liberar la tensión acumulada.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Ante el estrés o agotamiento, las técnicas de autocuidado emocional sugieren tomar una pausa, practicar ejercicios de respiración (mindfulness) y realizar actividades que nos relajen y desconecten.''',
+    explanation:
+        r'''Ante el estrés o agotamiento, las técnicas de autocuidado emocional sugieren tomar una pausa, practicar ejercicios de respiración (mindfulness) y realizar actividades que nos relajen y desconecten.''',
   ),
   Question(
     id: 'pfrh_aa_f8',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Dentro del entorno escolar y familiar, ¿cómo influyen los adultos en la autoestima de los niños y adolescentes?''',
+    text:
+        r'''Dentro del entorno escolar y familiar, ¿cómo influyen los adultos en la autoestima de los niños y adolescentes?''',
     options: [
       r'''Imponiendo castigos severos para que aprendan a respetar la autoridad y se hagan fuertes.''',
       r'''Evitando cualquier muestra de afecto para que desarrollen independencia extrema.''',
@@ -112,12 +123,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Comparándolos constantemente con sus hermanos o amigos más exitosos para motivarlos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autoestima se desarrolla desde el nacimiento y se construye sólidamente con base en los mensajes, la atención, el afecto y los estímulos que reciben de sus padres y entorno cercano.''',
+    explanation:
+        r'''La autoestima se desarrolla desde el nacimiento y se construye sólidamente con base en los mensajes, la atención, el afecto y los estímulos que reciben de sus padres y entorno cercano.''',
   ),
   Question(
     id: 'pfrh_aa_f9',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué beneficio directo tiene el ejercicio físico regular en relación con nuestro autocuidado y salud mental?''',
+    text:
+        r'''¿Qué beneficio directo tiene el ejercicio físico regular en relación con nuestro autocuidado y salud mental?''',
     options: [
       r'''Disminuye la capacidad de concentración para evitar el desgaste neuronal.''',
       r'''Incrementa los niveles de enojo para poder defendernos mejor ante un ataque.''',
@@ -126,12 +139,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Nos vuelve dependientes de la aprobación social y de los cánones de belleza estéticos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Practicar ejercicio físico no solo mejora el cuerpo, sino que reduce el riesgo de enfermedades, disminuye el estrés (cortisol) y libera endorfinas, lo que genera una mayor sensación de bienestar y felicidad.''',
+    explanation:
+        r'''Practicar ejercicio físico no solo mejora el cuerpo, sino que reduce el riesgo de enfermedades, disminuye el estrés (cortisol) y libera endorfinas, lo que genera una mayor sensación de bienestar y felicidad.''',
   ),
   Question(
     id: 'pfrh_aa_f10',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿A qué se refiere la "dimensión cognitiva o mental" del autocuidado?''',
+    text:
+        r'''¿A qué se refiere la "dimensión cognitiva o mental" del autocuidado?''',
     options: [
       r'''A mantener las manos limpias y cepillarse los dientes todos los días.''',
       r'''A saber decir que "NO" cuando un amigo nos pide algo que no queremos hacer.''',
@@ -140,14 +155,16 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''A organizar eventos deportivos masivos en la comunidad local de forma mensual.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La dimensión cognitiva/mental del autocuidado consiste en mantener la mente en forma óptima a través del aprendizaje, la lectura y actividades que permitan la desconexión del estrés rutinario.''',
+    explanation:
+        r'''La dimensión cognitiva/mental del autocuidado consiste en mantener la mente en forma óptima a través del aprendizaje, la lectura y actividades que permitan la desconexión del estrés rutinario.''',
   ),
 
   // ─── Nivel Medio ───
   Question(
     id: 'pfrh_aa_m1',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Según el modelo de Ellen Bard, ¿cómo se define estructuralmente el autocuidado?''',
+    text:
+        r'''Según el modelo de Ellen Bard, ¿cómo se define estructuralmente el autocuidado?''',
     options: [
       r'''Como una serie de gastos económicos mensuales destinados a centros de estética y relajación de lujo.''',
       r'''Como la evasión total de cualquier responsabilidad familiar o laboral para no sentir presión psíquica.''',
@@ -156,12 +173,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Como el proceso quirúrgico mediante el cual se corrigen imperfecciones anatómicas para mejorar la apariencia.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Para Ellen Bard, el autocuidado no es un evento aislado, sino la repetición constante de pequeños hábitos diarios que calman y aseguran el punto óptimo del individuo física y emocionalmente.''',
+    explanation:
+        r'''Para Ellen Bard, el autocuidado no es un evento aislado, sino la repetición constante de pequeños hábitos diarios que calman y aseguran el punto óptimo del individuo física y emocionalmente.''',
   ),
   Question(
     id: 'pfrh_aa_m2',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''En el marco del desarrollo socioemocional, ¿cuáles son los tres componentes que conforman la "Inteligencia Emocional Intrapersonal"?''',
+    text:
+        r'''En el marco del desarrollo socioemocional, ¿cuáles son los tres componentes que conforman la "Inteligencia Emocional Intrapersonal"?''',
     options: [
       r'''Pensamiento matemático, destreza lingüística y agilidad deportiva.''',
       r'''Comunicación asertiva, mediación de conflictos y liderazgo grupal.''',
@@ -170,7 +189,8 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Pertenencia social, respeto a la autoridad y obediencia ciega.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La inteligencia intrapersonal considera el modo de relacionarnos con nosotros mismos e incluye la autoestima (valoración), la conciencia emocional (reconocer emociones) y la autorregulación (manejo de las emociones).''',
+    explanation:
+        r'''La inteligencia intrapersonal considera el modo de relacionarnos con nosotros mismos e incluye la autoestima (valoración), la conciencia emocional (reconocer emociones) y la autorregulación (manejo de las emociones).''',
   ),
   Question(
     id: 'pfrh_aa_m3',
@@ -184,12 +204,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Aislarse del mundo exterior y comunicarse únicamente mediante avatares en redes sociales anónimas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El autocuidado en su dimensión social involucra construir relaciones saludables (conexión, pedir ayuda) y aprender a establecer límites para proteger nuestro bienestar emocional mediante la asertividad.''',
+    explanation:
+        r'''El autocuidado en su dimensión social involucra construir relaciones saludables (conexión, pedir ayuda) y aprender a establecer límites para proteger nuestro bienestar emocional mediante la asertividad.''',
   ),
   Question(
     id: 'pfrh_aa_m4',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''En relación con el bienestar, ¿por qué la "autocompasión" es una técnica efectiva de autocuidado emocional?''',
+    text:
+        r'''En relación con el bienestar, ¿por qué la "autocompasión" es una técnica efectiva de autocuidado emocional?''',
     options: [
       r'''Porque nos permite sentir lástima de nosotros mismos y usar el victimismo para evadir los exámenes escolares.''',
       r'''Porque anula nuestra capacidad de sentir dolor o tristeza, volviéndonos fríos ante cualquier tragedia.''',
@@ -198,12 +220,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Porque nos ayuda a desarrollar una actitud de superioridad moral frente a las personas que cometen equivocaciones.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La autocompasión implica tratarnos con la misma amabilidad con la que trataríamos a un ser querido que sufre, alejándonos de la autocrítica y validando nuestras emociones, lo cual promueve la resiliencia.''',
+    explanation:
+        r'''La autocompasión implica tratarnos con la misma amabilidad con la que trataríamos a un ser querido que sufre, alejándonos de la autocrítica y validando nuestras emociones, lo cual promueve la resiliencia.''',
   ),
   Question(
     id: 'pfrh_aa_m5',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué beneficio tiene el uso de un lenguaje amable con nosotros mismos (lenguaje autocompasivo) a nivel bioquímico y psicológico?''',
+    text:
+        r'''¿Qué beneficio tiene el uso de un lenguaje amable con nosotros mismos (lenguaje autocompasivo) a nivel bioquímico y psicológico?''',
     options: [
       r'''Genera grandes cantidades de adrenalina, lo que nos predispone a la agresividad competitiva constante.''',
       r'''Produce un estado de somnolencia permanente que nos impide reaccionar ante los peligros reales del entorno.''',
@@ -212,12 +236,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Desconecta el lóbulo frontal del cerebro, permitiendo que actuemos impulsivamente sin razonamiento ético.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Un lenguaje autocrítico aumenta el cortisol (hormona del estrés), mientras que hablarnos de forma amable y compasiva ayuda a reducir el estrés y a regular emociones desagradables como la ansiedad.''',
+    explanation:
+        r'''Un lenguaje autocrítico aumenta el cortisol (hormona del estrés), mientras que hablarnos de forma amable y compasiva ayuda a reducir el estrés y a regular emociones desagradables como la ansiedad.''',
   ),
   Question(
     id: 'pfrh_aa_m6',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''La técnica de autocuidado conocida como "PAUSA" (mindfulness o atención plena) sugiere que las personas deben:''',
+    text:
+        r'''La técnica de autocuidado conocida como "PAUSA" (mindfulness o atención plena) sugiere que las personas deben:''',
     options: [
       r'''Paralizar su proyecto de vida por un año sabático para viajar por el mundo y gastar sus ahorros.''',
       r'''Ignorar los sentimientos de frustración suprimiéndolos hasta que desaparezcan por completo de su mente.''',
@@ -226,12 +252,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Interrumpir repentinamente las conversaciones con otras personas si el tema tratado nos genera aburrimiento.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Dar una "Pausa" consiste en un pequeño hábito de atención plena en el día a día (saborear un café, respirar conscientemente, estirar el cuerpo) para inducir la relajación y enfocar la atención en el presente.''',
+    explanation:
+        r'''Dar una "Pausa" consiste en un pequeño hábito de atención plena en el día a día (saborear un café, respirar conscientemente, estirar el cuerpo) para inducir la relajación y enfocar la atención en el presente.''',
   ),
   Question(
     id: 'pfrh_aa_m7',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué capacidad permite a una persona reconocer el ritmo de su respiración y, a partir de ello, evitar que una emoción la descontrole?''',
+    text:
+        r'''¿Qué capacidad permite a una persona reconocer el ritmo de su respiración y, a partir de ello, evitar que una emoción la descontrole?''',
     options: [
       r'''La empatía cognitiva.''',
       r'''La agilidad motora.''',
@@ -240,12 +268,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La inteligencia interpersonal.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Aprender a ser conscientes de la respiración (la cual tiene un ritmo distinto para cada emoción) permite reconocer y regular (autorregulación) la emoción que se está vivenciando, reduciendo la ansiedad.''',
+    explanation:
+        r'''Aprender a ser conscientes de la respiración (la cual tiene un ritmo distinto para cada emoción) permite reconocer y regular (autorregulación) la emoción que se está vivenciando, reduciendo la ansiedad.''',
   ),
   Question(
     id: 'pfrh_aa_m8',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Por qué es importante "aprender a decir NO" en el marco de la comunicación asertiva y el autocuidado?''',
+    text:
+        r'''¿Por qué es importante "aprender a decir NO" en el marco de la comunicación asertiva y el autocuidado?''',
     options: [
       r'''Porque genera una actitud rebelde que desafía todas las leyes impuestas por la escuela y el Estado moderno.''',
       r'''Porque garantiza que nunca tendremos que esforzarnos ni realizar trabajos colaborativos grupales aburridos.''',
@@ -254,12 +284,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Porque obliga a los demás a someternos pleitesía y aceptar que nuestra opinión es la única verdad absoluta.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La asertividad y el establecimiento de límites (aprender a decir NO sin culpa) son fundamentales para el autocuidado, ya que salvaguardan el bienestar emocional frente a situaciones o exigencias que nos afectan negativamente.''',
+    explanation:
+        r'''La asertividad y el establecimiento de límites (aprender a decir NO sin culpa) son fundamentales para el autocuidado, ya que salvaguardan el bienestar emocional frente a situaciones o exigencias que nos afectan negativamente.''',
   ),
   Question(
     id: 'pfrh_aa_m9',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Según el análisis psicológico, ¿cuál es una de las consecuencias directas de la falta o ausencia de autocuidado en la vida diaria?''',
+    text:
+        r'''Según el análisis psicológico, ¿cuál es una de las consecuencias directas de la falta o ausencia de autocuidado en la vida diaria?''',
     options: [
       r'''El desarrollo inmediato de poderes de telepatía debido al esfuerzo mental de sobrevivir bajo presión extrema.''',
       r'''El incremento automático de las finanzas personales al dedicar el cien por ciento del tiempo al trabajo ininterrumpido.''',
@@ -268,12 +300,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''El aumento excesivo de la empatía, lo que provoca que la persona se convierta en líder social de su comunidad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''No realizar autocuidado impide regular el estrés, lo que genera desgaste físico, vulnerabilidad a enfermedades, irritabilidad y la sensación de estar sobrepasado por las situaciones.''',
+    explanation:
+        r'''No realizar autocuidado impide regular el estrés, lo que genera desgaste físico, vulnerabilidad a enfermedades, irritabilidad y la sensación de estar sobrepasado por las situaciones.''',
   ),
   Question(
     id: 'pfrh_aa_m10',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿En qué consisten los "autorrefuerzos" al intentar mantener una rutina de autocuidado?''',
+    text:
+        r'''¿En qué consisten los "autorrefuerzos" al intentar mantener una rutina de autocuidado?''',
     options: [
       r'''En castigarnos severamente frente a un espejo cada vez que incumplimos nuestra rutina de ejercicios matutinos.''',
       r'''En pedirle a un psicólogo que nos supervise las veinticuatro horas del día para evitar que cometamos infracciones.''',
@@ -282,14 +316,16 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''En obligar a nuestros amigos a que nos hagan regalos costosos cada vez que nos alimentamos sanamente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los autorrefuerzos son premios (desde palabras amables hasta disfrutar algo que nos apetezca) que nos damos proporcionalmente a nuestro mérito, lo que ayuda a mantener y motivar las rutinas de autocuidado.''',
+    explanation:
+        r'''Los autorrefuerzos son premios (desde palabras amables hasta disfrutar algo que nos apetezca) que nos damos proporcionalmente a nuestro mérito, lo que ayuda a mantener y motivar las rutinas de autocuidado.''',
   ),
 
   // ─── Nivel Difícil ───
   Question(
     id: 'pfrh_aa_d1',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''De acuerdo con las áreas para el desarrollo de la autoestima, ¿a qué se refiere la "Seguridad"?''',
+    text:
+        r'''De acuerdo con las áreas para el desarrollo de la autoestima, ¿a qué se refiere la "Seguridad"?''',
     options: [
       r'''Al uso de escoltas policiales privados que garanticen la integridad física del adolescente durante su trayecto hacia el colegio.''',
       r'''A la acumulación de grandes ahorros financieros en cuentas bancarias para asegurar un futuro económico sin dificultades ni pobreza.''',
@@ -298,12 +334,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''A la certeza absoluta de que el individuo jamás cometerá un error a lo largo de toda su trayectoria personal y profesional.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el desarrollo de la autoestima, el pilar de "Seguridad" implica tener confianza en sí mismo y autorespeto, lo cual se consolida en un entorno que brinda reglas claras, justas y consistentes.''',
+    explanation:
+        r'''En el desarrollo de la autoestima, el pilar de "Seguridad" implica tener confianza en sí mismo y autorespeto, lo cual se consolida en un entorno que brinda reglas claras, justas y consistentes.''',
   ),
   Question(
     id: 'pfrh_aa_d2',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Dentro de los pilares de la autoestima, ¿qué implica el área de "Pertenencia"?''',
+    text:
+        r'''Dentro de los pilares de la autoestima, ¿qué implica el área de "Pertenencia"?''',
     options: [
       r'''La propiedad legal sobre bienes raíces y objetos materiales de alto valor económico registrados a nombre del adolescente.''',
       r'''La obligación de pensar exactamente igual que el grupo de amigos para no ser expulsado de la pandilla barrial dominante.''',
@@ -312,12 +350,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''El rechazo absoluto a cualquier cultura foránea para defender de manera radical las tradiciones ancestrales del país de origen.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El área de "Pertenencia" en la construcción de la autoestima se refiere al sentimiento de estar integrado y ser aceptado en su medio (familia, amigos, escuela), sintiéndose amado y respetado.''',
+    explanation:
+        r'''El área de "Pertenencia" en la construcción de la autoestima se refiere al sentimiento de estar integrado y ser aceptado en su medio (familia, amigos, escuela), sintiéndose amado y respetado.''',
   ),
   Question(
     id: 'pfrh_aa_d3',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Cómo se desarrolla el área de "Competencia" en la construcción de una autoestima saludable?''',
+    text:
+        r'''¿Cómo se desarrolla el área de "Competencia" en la construcción de una autoestima saludable?''',
     options: [
       r'''Compitiendo agresivamente contra los compañeros de clase para obtener siempre el primer puesto en los exámenes a cualquier costo ético.''',
       r'''Evitando cualquier tipo de desafío o problema complejo para no experimentar jamás el sentimiento de fracaso o frustración.''',
@@ -326,12 +366,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Adquiriendo una fuerza física superior mediante entrenamientos extremos que permitan al individuo dominar a los demás mediante la intimidación.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La "Competencia" (como pilar de autoestima) es el sentimiento de eficacia y poder para actuar; se desarrolla enseñando a resolver problemas, dándole responsabilidades y reconociendo sus logros.''',
+    explanation:
+        r'''La "Competencia" (como pilar de autoestima) es el sentimiento de eficacia y poder para actuar; se desarrolla enseñando a resolver problemas, dándole responsabilidades y reconociendo sus logros.''',
   ),
   Question(
     id: 'pfrh_aa_d4',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''El componente de "Identificación" como base de la autoestima se logra principalmente a través de:''',
+    text:
+        r'''El componente de "Identificación" como base de la autoestima se logra principalmente a través de:''',
     options: [
       r'''El uso de un documento de identidad nacional (DNI) emitido oficialmente por las autoridades gubernamentales desde el momento del nacimiento biológico.''',
       r'''La adopción ciega de los estereotipos de moda, música y consumo dictados por las redes sociales y las campañas publicitarias masivas de las corporaciones.''',
@@ -340,12 +382,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La negación de las raíces familiares y culturales para crear una nueva historia personal basada en la fantasía literaria y la mitología antigua.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La "Identificación" es el reconocimiento de la propia esencia y presencia; implica conocer los propios valores e intereses y potenciar las habilidades intrínsecas de cada individuo.''',
+    explanation:
+        r'''La "Identificación" es el reconocimiento de la propia esencia y presencia; implica conocer los propios valores e intereses y potenciar las habilidades intrínsecas de cada individuo.''',
   ),
   Question(
     id: 'pfrh_aa_d5',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''En la formación del autoconcepto, ¿qué función cumple el área de "Intención" (o Propósito)?''',
+    text:
+        r'''En la formación del autoconcepto, ¿qué función cumple el área de "Intención" (o Propósito)?''',
     options: [
       r'''Obliga al adolescente a cumplir estrictamente con los planes de vida que sus padres han diseñado para él sin cuestionarlos.''',
       r'''Promueve la acumulación de rencor e intenciones vengativas contra aquellos que lo maltrataron durante la etapa de la niñez temprana.''',
@@ -354,12 +398,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Sustituye el razonamiento lógico por creencias mágicas que aseguran que el éxito llegará por simple inercia del destino sin necesidad de esfuerzo humano.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La "Intención" es la actitud visionaria y de esperanza que fomenta la capacidad de proyectar metas, soñar con un proyecto de vida y tener confianza en las propias capacidades para alcanzarlo.''',
+    explanation:
+        r'''La "Intención" es la actitud visionaria y de esperanza que fomenta la capacidad de proyectar metas, soñar con un proyecto de vida y tener confianza en las propias capacidades para alcanzarlo.''',
   ),
   Question(
     id: 'pfrh_aa_d6',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Según los fundamentos teóricos del Área de Desarrollo Personal (PFRH), la "Construcción de la autonomía" está directamente conectada a la autoestima porque:''',
+    text:
+        r'''Según los fundamentos teóricos del Área de Desarrollo Personal (PFRH), la "Construcción de la autonomía" está directamente conectada a la autoestima porque:''',
     options: [
       r'''Fomenta que el adolescente abandone el hogar familiar a temprana edad para sostenerse económicamente sin la intervención de las leyes del Estado.''',
       r'''Exige que el individuo se vuelva insensible ante el dolor ajeno para poder enfocarse exclusivamente en sus ganancias financieras a largo plazo.''',
@@ -368,12 +414,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Condiciona el valor de la persona a su capacidad de memorizar datos históricos y teorías filosóficas europeas durante la educación secundaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La construcción de la autonomía permite al adolescente diferenciarse (proceso de individuación), definir su identidad propia, reconocer sus intereses y autovalorarse, lo que es la base misma de una autoestima consolidada.''',
+    explanation:
+        r'''La construcción de la autonomía permite al adolescente diferenciarse (proceso de individuación), definir su identidad propia, reconocer sus intereses y autovalorarse, lo que es la base misma de una autoestima consolidada.''',
   ),
   Question(
     id: 'pfrh_aa_d7',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''De acuerdo con el economista Max-Neef, ¿por qué las necesidades humanas como la "Identidad" y la "Protección" (autocuidado) NO son meras carencias materiales?''',
+    text:
+        r'''De acuerdo con el economista Max-Neef, ¿por qué las necesidades humanas como la "Identidad" y la "Protección" (autocuidado) NO son meras carencias materiales?''',
     options: [
       r'''Porque son lujos innecesarios que solo las sociedades capitalistas altamente industrializadas pueden darse el privilegio de satisfacer a través del libre mercado global.''',
       r'''Porque son debilidades psicológicas que deben ser erradicadas mediante una educación espartana basada en la disciplina militar y la represión absoluta de los afectos.''',
@@ -382,12 +430,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Porque representan metas utópicas imposibles de alcanzar en la realidad física, diseñadas únicamente para consolar espiritualmente a las masas oprimidas por los gobiernos totalitarios modernos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el modelo de Max-Neef, necesidades como identidad, protección y afecto son categorías axiológicas que trascienden la simple carencia material; su satisfacción es sistémica y potencia el desarrollo y la felicidad integral del individuo.''',
+    explanation:
+        r'''En el modelo de Max-Neef, necesidades como identidad, protección y afecto son categorías axiológicas que trascienden la simple carencia material; su satisfacción es sistémica y potencia el desarrollo y la felicidad integral del individuo.''',
   ),
   Question(
     id: 'pfrh_aa_d8',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué relación existe entre la "Cultura de la Legalidad" y el autocuidado frente a situaciones de riesgo en la etapa adolescente?''',
+    text:
+        r'''¿Qué relación existe entre la "Cultura de la Legalidad" y el autocuidado frente a situaciones de riesgo en la etapa adolescente?''',
     options: [
       r'''Implica que el Estado utilice castigos físicos severos en las plazas públicas para intimidar a los jóvenes y obligarlos a cuidar su cuerpo y su mente por temor a la tortura.''',
       r'''Determina que los adolescentes no pueden tomar ninguna decisión sobre su salud sin consultar previamente a un juez, anulando su autonomía médica hasta la mayoría de edad.''',
@@ -396,12 +446,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Sostiene que el autocuidado es un tema exclusivamente jurídico y policial, prohibiendo que los psicólogos, maestros o padres de familia intervengan en la educación emocional de los menores.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La cultura de prevención y legalidad vincula la autoestima/autocuidado con la defensa de la dignidad y los derechos: una persona que se valora protege su bienestar, previene riesgos (como adicciones) y exige que se respete su integridad.''',
+    explanation:
+        r'''La cultura de prevención y legalidad vincula la autoestima/autocuidado con la defensa de la dignidad y los derechos: una persona que se valora protege su bienestar, previene riesgos (como adicciones) y exige que se respete su integridad.''',
   ),
   Question(
     id: 'pfrh_aa_d9',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Al aplicar el concepto de "Paz Positiva" a nivel intrapersonal, el manejo adecuado del estrés y la regulación de emociones mediante el autocuidado significa:''',
+    text:
+        r'''Al aplicar el concepto de "Paz Positiva" a nivel intrapersonal, el manejo adecuado del estrés y la regulación de emociones mediante el autocuidado significa:''',
     options: [
       r'''La represión violenta de cualquier pensamiento negativo, instaurando una "dictadura de la felicidad" artificial en la mente del individuo mediante la negación de la realidad.''',
       r'''La total inactividad física y cognitiva ante la injusticia social, logrando un estado de pasividad absoluta que evita el conflicto pero perpetúa la marginación ciudadana.''',
@@ -410,12 +462,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La sumisión incondicional a las órdenes de las figuras de autoridad, eliminando el pensamiento crítico para asegurar que el entorno escolar se mantenga en silencio y orden aparente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Análogo a la "paz positiva" social, a nivel intrapersonal no es solo "no estar enfermo o en crisis" (ausencia del problema), sino desarrollar activamente resiliencia, salud mental, equilibrio y herramientas afectivas constructivas.''',
+    explanation:
+        r'''Análogo a la "paz positiva" social, a nivel intrapersonal no es solo "no estar enfermo o en crisis" (ausencia del problema), sino desarrollar activamente resiliencia, salud mental, equilibrio y herramientas afectivas constructivas.''',
   ),
   Question(
     id: 'pfrh_aa_d10',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Si un adolescente experimenta fatiga constante por anteponer la aprobación de sus pares a su descanso, incurriendo en un déficit de autocuidado, ¿qué mecanismo psicológico suele estar fallando en la base de este comportamiento?''',
+    text:
+        r'''Si un adolescente experimenta fatiga constante por anteponer la aprobación de sus pares a su descanso, incurriendo en un déficit de autocuidado, ¿qué mecanismo psicológico suele estar fallando en la base de este comportamiento?''',
     options: [
       r'''La inteligencia lógico-matemática, que le impide calcular numéricamente las horas exactas de sueño que su cuerpo necesita para sobrevivir biológicamente.''',
       r'''El instinto de conservación de la especie humana, el cual se ha atrofiado debido a la evolución tecnológica y a la comodidad de la vida en las grandes ciudades modernas.''',
@@ -424,14 +478,16 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La hiperactividad del lóbulo parietal, que le impide obedecer las normas establecidas en los manuales de convivencia institucional del centro educativo al que asiste regularmente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las personas con autoestima vulnerable a menudo buscan seguridad complaciendo a los demás y cediendo a la presión del grupo, lo que les impide establecer límites asertivos (decir NO) y perjudica directamente su autocuidado y descanso.''',
+    explanation:
+        r'''Las personas con autoestima vulnerable a menudo buscan seguridad complaciendo a los demás y cediendo a la presión del grupo, lo que les impide establecer límites asertivos (decir NO) y perjudica directamente su autocuidado y descanso.''',
   ),
 
   // ─── Nivel Extremo ───
   Question(
     id: 'pfrh_aa_e1',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Desde la neurobiología asociada al aprendizaje (aplicada a las técnicas de autocuidado como el mindfulness), ¿cuál es el fundamento fisiológico que vincula la regulación emocional con la mejora de las funciones ejecutivas y el aprendizaje escolar?''',
+    text:
+        r'''Desde la neurobiología asociada al aprendizaje (aplicada a las técnicas de autocuidado como el mindfulness), ¿cuál es el fundamento fisiológico que vincula la regulación emocional con la mejora de las funciones ejecutivas y el aprendizaje escolar?''',
     options: [
       r'''La hiperventilación provoca una saturación extrema de oxígeno en los músculos esqueléticos, lo que induce un estado de agresividad competitiva útil para dominar los debates escolares y derrotar a los adversarios.''',
       r'''El incremento crónico de la adrenalina paraliza permanentemente las sinapsis neuronales del hemisferio derecho, obligando al individuo a utilizar exclusivamente el pensamiento matemático y frío para resolver problemas humanos.''',
@@ -440,12 +496,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''El consumo de suplementos hormonales artificiales reemplaza la necesidad de dormir y descansar, manteniendo al cerebro en un estado constante de alerta máxima que acelera la memorización de datos inconexos y fechas históricas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''A nivel fisiológico, el estrés crónico eleva el cortisol y bloquea las funciones ejecutivas (prefrontal). El autocuidado (mindfulness/respiración) activa la rama parasimpática, reduciendo el cortisol, calmando la amígdala y permitiendo procesos complejos como la metacognición y el juicio.''',
+    explanation:
+        r'''A nivel fisiológico, el estrés crónico eleva el cortisol y bloquea las funciones ejecutivas (prefrontal). El autocuidado (mindfulness/respiración) activa la rama parasimpática, reduciendo el cortisol, calmando la amígdala y permitiendo procesos complejos como la metacognición y el juicio.''',
   ),
   Question(
     id: 'pfrh_aa_e2',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''¿Qué exige epistemológica y pedagógicamente el Diseño Curricular Nacional (DCN) al estudiante de secundaria al momento de consolidar la competencia "Construye su Identidad" frente a un dilema moral complejo?''',
+    text:
+        r'''¿Qué exige epistemológica y pedagógicamente el Diseño Curricular Nacional (DCN) al estudiante de secundaria al momento de consolidar la competencia "Construye su Identidad" frente a un dilema moral complejo?''',
     options: [
       r'''Que someta sus convicciones éticas a un referéndum popular inmediato, aceptando sin cuestionar la opinión de la mayoría estadística para evitar debates políticos que alteren el orden y la obediencia jerárquica institucional.''',
       r'''Que suprima cualquier intervención de la empatía o los sentimientos, formulando dictámenes fríos basados únicamente en el análisis utilitario de costos y beneficios económicos para la empresa en la que laborará en el futuro.''',
@@ -454,12 +512,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Que justifique sus acciones basándose exclusivamente en el instinto genético de conservación, demostrando que la supervivencia personal justifica dañar a terceros o destruir el ecosistema si las circunstancias materiales lo exigen imperativamente.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El DCN establece (nivel destacado, Ciclo VII) que construir la identidad implica razonar y asumir posturas éticas frente a dilemas, integrando principios universales de derechos humanos, la dignidad y la responsabilidad por las consecuencias de sus actos.''',
+    explanation:
+        r'''El DCN establece (nivel destacado, Ciclo VII) que construir la identidad implica razonar y asumir posturas éticas frente a dilemas, integrando principios universales de derechos humanos, la dignidad y la responsabilidad por las consecuencias de sus actos.''',
   ),
   Question(
     id: 'pfrh_aa_e3',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Al abordar la "Identidad y la Equidad de Género" en el área de Desarrollo Personal, ¿cómo impactan los "estereotipos de género" hegemónicos en la estructuración de la autoestima y el autocuidado del adolescente?''',
+    text:
+        r'''Al abordar la "Identidad y la Equidad de Género" en el área de Desarrollo Personal, ¿cómo impactan los "estereotipos de género" hegemónicos en la estructuración de la autoestima y el autocuidado del adolescente?''',
     options: [
       r'''Promueven el desarrollo de una inteligencia intrapersonal superior, ya que obligan a los individuos a reflexionar filosóficamente sobre la historia de la biología evolutiva y el origen mitológico de los sexos en las culturas antiguas.''',
       r'''Eliminan permanentemente las disputas intrafamiliares al delimitar con total precisión y rigidez quién ostenta la autoridad absoluta en el hogar y quién debe someterse pasivamente a las órdenes, garantizando una paz negativa duradera.''',
@@ -468,12 +528,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Favorecen la diversidad cultural porque permiten que cada país diseñe sus propias normas biológicas exclusivas para diferenciar a hombres de mujeres mediante procedimientos quirúrgicos estéticos obligatorios desde el nacimiento.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los estereotipos de género son constructos socioculturales que imponen expectativas rígidas de comportamiento. Si se asimilan de forma acrítica, fracturan el autoconcepto, reprimen dimensiones de la personalidad humana y legitiman la desigualdad y la dominación (afectando la autoestima).''',
+    explanation:
+        r'''Los estereotipos de género son constructos socioculturales que imponen expectativas rígidas de comportamiento. Si se asimilan de forma acrítica, fracturan el autoconcepto, reprimen dimensiones de la personalidad humana y legitiman la desigualdad y la dominación (afectando la autoestima).''',
   ),
   Question(
     id: 'pfrh_aa_e4',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Desde la "Ontología Relacional" y el análisis sociosemiótico, ¿por qué se afirma que la Identidad Personal (el Autoconcepto) nunca se construye en el vacío o desde el "aislamiento puro"?''',
+    text:
+        r'''Desde la "Ontología Relacional" y el análisis sociosemiótico, ¿por qué se afirma que la Identidad Personal (el Autoconcepto) nunca se construye en el vacío o desde el "aislamiento puro"?''',
     options: [
       r'''Porque el ADN de cada individuo contiene una programación cibernética predeterminada que es decodificada instantáneamente por los campos magnéticos de la Tierra durante la etapa de gestación materna.''',
       r'''Porque las leyes del mercado internacional exigen que todas las personas compren los mismos productos tecnológicos para ser considerados ciudadanos plenos y sujetos de crédito bancario confiable.''',
@@ -482,12 +544,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Porque los individuos que se aíslan sufren mutaciones anatómicas irreversibles que los incapacitan para articular el lenguaje hablado, retornando a estados evolutivos primitivos incomprensibles para la ciencia antropológica.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Filosófica y semióticamente, la identidad y el autoconcepto son constructos intersubjetivos y relacionales: el "Yo" solo adquiere significado y frontera a partir de la interacción, el reconocimiento y la diferenciación respecto al "Otro" (alteridad).''',
+    explanation:
+        r'''Filosófica y semióticamente, la identidad y el autoconcepto son constructos intersubjetivos y relacionales: el "Yo" solo adquiere significado y frontera a partir de la interacción, el reconocimiento y la diferenciación respecto al "Otro" (alteridad).''',
   ),
   Question(
     id: 'pfrh_aa_e5',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''En el modelo de "Desarrollo a Escala Humana" (Max-Neef), la carencia de habilidades para el Autocuidado y la persistencia de relaciones violentas en la familia escolar evidencian un tipo específico de pobreza sistémica. ¿A qué categoría axiológica vulnerada nos referimos principalmente?''',
+    text:
+        r'''En el modelo de "Desarrollo a Escala Humana" (Max-Neef), la carencia de habilidades para el Autocuidado y la persistencia de relaciones violentas en la familia escolar evidencian un tipo específico de pobreza sistémica. ¿A qué categoría axiológica vulnerada nos referimos principalmente?''',
     options: [
       r'''A una pobreza de Subsistencia calórica, causada exclusivamente por la falta de consumo de proteínas y vitaminas en el comedor estudiantil durante los primeros años de escolaridad primaria.''',
       r'''A una pobreza de Creación tecnológica, debido a la ausencia de computadoras de última generación e infraestructura digital avanzada en los laboratorios de ciencias de las instituciones públicas rurales.''',
@@ -496,12 +560,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''A una pobreza de Libertad económica, originada por los altos impuestos fiscales que impiden a los adolescentes fundar empresas multinacionales antes de alcanzar la mayoría de edad constitucional requerida.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Max-Neef categoriza necesidades humanas (Subsistencia, Protección, Afecto, Entendimiento, etc.). La violencia, la falta de autoconocimiento y de herramientas socioemocionales en el sistema causan una pobreza en las dimensiones de Protección, Afecto y Entendimiento.''',
+    explanation:
+        r'''Max-Neef categoriza necesidades humanas (Subsistencia, Protección, Afecto, Entendimiento, etc.). La violencia, la falta de autoconocimiento y de herramientas socioemocionales en el sistema causan una pobreza en las dimensiones de Protección, Afecto y Entendimiento.''',
   ),
   Question(
     id: 'pfrh_aa_e6',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Cuando el Programa Curricular de Educación Secundaria integra la "Habilidad Metacognitiva" en el área de autoconocimiento, ¿qué proceso intra-psíquico superior se busca movilizar en el estudiante para afianzar su autoestima?''',
+    text:
+        r'''Cuando el Programa Curricular de Educación Secundaria integra la "Habilidad Metacognitiva" en el área de autoconocimiento, ¿qué proceso intra-psíquico superior se busca movilizar en el estudiante para afianzar su autoestima?''',
     options: [
       r'''La capacidad de hipertrofiar la musculatura esquelética mediante la visualización mental constante de rutinas olímpicas de levantamiento de pesas de alta intensidad sin realizar movimiento físico real.''',
       r'''La destreza para suprimir totalmente las conexiones neuronales que procesan la empatía, logrando una eficiencia matemática pura e inalterable ante el sufrimiento o la vulnerabilidad de las minorías sociales.''',
@@ -510,12 +576,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''La facultad de proyectar una imagen falsa y carismática ante las autoridades escolares mediante la manipulación del lenguaje corporal y la mentira compulsiva para encubrir la falta de preparación académica y moral.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La metacognición ("aprender a aprender/pensar") es la reflexión de segundo orden sobre los propios procesos cognitivos. Permite al sujeto monitorear, autoevaluar y ajustar su conducta/aprendizaje, lo cual afianza la autonomía y la autoconfianza (autoestima).''',
+    explanation:
+        r'''La metacognición ("aprender a aprender/pensar") es la reflexión de segundo orden sobre los propios procesos cognitivos. Permite al sujeto monitorear, autoevaluar y ajustar su conducta/aprendizaje, lo cual afianza la autonomía y la autoconfianza (autoestima).''',
   ),
   Question(
     id: 'pfrh_aa_e7',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''El "Role-playing" (juego de roles) y el análisis de casos, utilizados como estrategias de aprendizaje para la convivencia y la resolución de dilemas morales, fundamentan su eficacia epistemológica en que:''',
+    text:
+        r'''El "Role-playing" (juego de roles) y el análisis de casos, utilizados como estrategias de aprendizaje para la convivencia y la resolución de dilemas morales, fundamentan su eficacia epistemológica en que:''',
     options: [
       r'''Condicionan el comportamiento del estudiante mediante estímulos dolorosos (refuerzos negativos) aplicados públicamente para avergonzar al infractor y garantizar su futura obediencia ciega a las leyes marciales del Estado.''',
       r'''Sustituyen el currículo científico por dramatizaciones puramente recreativas que permiten a los estudiantes evadir la rigurosidad académica y disfrutar de períodos prolongados de ocio improductivo sin ninguna supervisión docente calificada.''',
@@ -524,12 +592,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Estructuran una jerarquía de poder competitiva donde los mejores actores de la clase adquieren el derecho legítimo de gobernar a sus compañeros con menos talento artístico e imponerles castigos disciplinarios académicos inapelables y sumarios.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Las estrategias experienciales (role-playing, análisis de dilemas) descentran al sujeto, movilizando competencias metacognitivas y empatía (ponerse en el lugar del otro), ensayando respuestas éticas y de autorregulación en escenarios seguros.''',
+    explanation:
+        r'''Las estrategias experienciales (role-playing, análisis de dilemas) descentran al sujeto, movilizando competencias metacognitivas y empatía (ponerse en el lugar del otro), ensayando respuestas éticas y de autorregulación en escenarios seguros.''',
   ),
   Question(
     id: 'pfrh_aa_e8',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Analizando la estructura de la violencia desde la óptica de Galtung, el daño profundo a la "Autoestima" de grupos minoritarios en las escuelas a menudo no se debe a agresiones físicas directas, sino a la "Violencia Cultural". ¿Cómo opera esta última?''',
+    text:
+        r'''Analizando la estructura de la violencia desde la óptica de Galtung, el daño profundo a la "Autoestima" de grupos minoritarios en las escuelas a menudo no se debe a agresiones físicas directas, sino a la "Violencia Cultural". ¿Cómo opera esta última?''',
     options: [
       r'''A través de la demolición física y sistemática de la infraestructura escolar perpetrada por grupos delincuenciales foráneos que buscan aterrorizar a la población estudiantil durante las horas de clase regulares.''',
       r'''Mediante la imposición legislativa de currículos educativos redactados exclusivamente en lenguas muertas, haciendo imposible que la población actual logre comprender los textos científicos y literarios obligatorios.''',
@@ -538,12 +608,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''A través del uso indiscriminado de la piratería informática y el plagio de obras artísticas en internet, lo que desmotiva a los jóvenes talentos a perseguir carreras creativas y musicales profesionales por falta de incentivos monetarios.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La violencia cultural (Galtung) utiliza el universo simbólico (lenguaje, prejuicios, racismo, relatos sesgados) para justificar y normalizar la violencia estructural o directa, convenciendo a los oprimidos de su supuesta inferioridad y dañando letalmente su autoestima.''',
+    explanation:
+        r'''La violencia cultural (Galtung) utiliza el universo simbólico (lenguaje, prejuicios, racismo, relatos sesgados) para justificar y normalizar la violencia estructural o directa, convenciendo a los oprimidos de su supuesta inferioridad y dañando letalmente su autoestima.''',
   ),
   Question(
     id: 'pfrh_aa_e9',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''Según las orientaciones pedagógicas del área, para que el autocuidado y la resiliencia funcionen como verdaderos factores protectores (Cultura de Prevención), el sujeto debe trascender la "Paz Negativa". ¿Qué implica esto pragmáticamente en el aula?''',
+    text:
+        r'''Según las orientaciones pedagógicas del área, para que el autocuidado y la resiliencia funcionen como verdaderos factores protectores (Cultura de Prevención), el sujeto debe trascender la "Paz Negativa". ¿Qué implica esto pragmáticamente en el aula?''',
     options: [
       r'''Que los estudiantes deben someterse a regímenes de vigilancia panóptica mediante cámaras de seguridad en cada rincón del colegio para asegurar que el miedo al castigo suprima cualquier intento de infracción normativa de forma permanente.''',
       r'''Que el silencio absoluto y la prohibición de debatir temas políticos controvertidos en el salón de clases son las herramientas más efectivas para mantener la tranquilidad académica sin distraer a los alumnos con problemas sociológicos complejos.''',
@@ -552,12 +624,14 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Que se deben administrar medicamentos ansiolíticos de forma profiláctica y obligatoria a todos los adolescentes con temperamentos explosivos o hiperactivos para estandarizar sus niveles de energía física según los requerimientos estrictos de la disciplina escolar autoritaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La cultura de prevención y la paz positiva no consisten meramente en "no pelear" o "no drogarse" (negativo), sino en el fomento positivo de factores protectores: habilidades psicosociales asertivas, equidad, resolución democrática y resiliencia activa.''',
+    explanation:
+        r'''La cultura de prevención y la paz positiva no consisten meramente en "no pelear" o "no drogarse" (negativo), sino en el fomento positivo de factores protectores: habilidades psicosociales asertivas, equidad, resolución democrática y resiliencia activa.''',
   ),
   Question(
     id: 'pfrh_aa_e10',
     topicId: 'pfrh_autoestima_autocuidado',
-    text: r'''En el proceso de "autorregulación del aprendizaje" y construcción de la autoestima escolar, ¿qué rol juega la "motivación" entendida no como mero entusiasmo, sino como constructo cognitivo?''',
+    text:
+        r'''En el proceso de "autorregulación del aprendizaje" y construcción de la autoestima escolar, ¿qué rol juega la "motivación" entendida no como mero entusiasmo, sino como constructo cognitivo?''',
     options: [
       r'''Es la fuerza mística inexplicable que otorga a algunos estudiantes la genialidad innata para comprender la física cuántica avanzada sin necesidad de estudiar previamente los principios matemáticos elementales requeridos por el programa curricular oficial estandarizado.''',
       r'''Representa el incremento momentáneo del ritmo cardíaco producido por el consumo de bebidas energéticas comerciales, lo cual permite al alumno permanecer despierto durante varios días seguidos para rendir los exámenes finales con éxito.''',
@@ -566,6 +640,7 @@ final List<Question> autoestimaAutocuidadoQuestions = [
       r'''Es un estado emocional transitorio e irrelevante para el aprendizaje, completamente dependiente de factores externos como la temperatura ambiental del aula y el ruido de los vehículos que pasan frente a la institución educativa.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La motivación, desde la psicología cognitiva (Bandura, Zimmerman), no es un simple impulso, sino un sistema de creencias complejas sobre la autoeficacia, el valor de la tarea y el control de los resultados, que son la base del aprendizaje autorregulado y la construcción de la autoestima académica.''',
+    explanation:
+        r'''La motivación, desde la psicología cognitiva (Bandura, Zimmerman), no es un simple impulso, sino un sistema de creencias complejas sobre la autoeficacia, el valor de la tarea y el control de los resultados, que son la base del aprendizaje autorregulado y la construcción de la autoestima académica.''',
   ),
 ];

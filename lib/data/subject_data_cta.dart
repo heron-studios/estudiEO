@@ -17,28 +17,39 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de las siguientes magnitudes es de naturaleza vectorial?',
     options: ['Temperatura', 'Masa', 'Fuerza', 'Energía'],
     correctAnswer: 2,
-    explanation: 'La fuerza es una magnitud vectorial porque posee módulo, dirección y sentido. La temperatura, la masa y la energía son magnitudes escalares.',
+    explanation:
+        'La fuerza es una magnitud vectorial porque posee módulo, dirección y sentido. La temperatura, la masa y la energía son magnitudes escalares.',
   ),
   Question(
     id: 'cta_q2',
     topicId: 'cta_t1',
-    text: '¿Qué característica diferencia a una magnitud vectorial de una escalar?',
-    options: ['Se expresa con números negativos', 'Posee módulo, dirección y sentido', 'Solo se mide con instrumentos digitales', 'Siempre tiene unidades del SI'],
+    text:
+        '¿Qué característica diferencia a una magnitud vectorial de una escalar?',
+    options: [
+      'Se expresa con números negativos',
+      'Posee módulo, dirección y sentido',
+      'Solo se mide con instrumentos digitales',
+      'Siempre tiene unidades del SI',
+    ],
     correctAnswer: 1,
-    explanation: 'Una magnitud vectorial se caracteriza por tener módulo (valor numérico), dirección y sentido, mientras que la escalar solo tiene módulo.',
+    explanation:
+        'Una magnitud vectorial se caracteriza por tener módulo (valor numérico), dirección y sentido, mientras que la escalar solo tiene módulo.',
   ),
   Question(
     id: 'cta_q3',
     topicId: 'cta_t1',
-    text: 'Dos vectores de 3 N y 4 N forman un ángulo de 90° entre sí. ¿Cuál es el módulo de su resultante?',
+    text:
+        'Dos vectores de 3 N y 4 N forman un ángulo de 90° entre sí. ¿Cuál es el módulo de su resultante?',
     options: ['7 N', '1 N', '5 N', '12 N'],
     correctAnswer: 2,
-    explanation: 'Usando el teorema de Pitágoras: R = √(3² + 4²) = √(9 + 16) = √25 = 5 N.',
+    explanation:
+        'Usando el teorema de Pitágoras: R = √(3² + 4²) = √(9 + 16) = √25 = 5 N.',
   ),
   Question(
     id: 'cta_q4',
     topicId: 'cta_t1',
-    text: 'Si un vector A tiene componentes Ax = 6 m y Ay = 8 m, ¿cuál es su módulo?',
+    text:
+        'Si un vector A tiene componentes Ax = 6 m y Ay = 8 m, ¿cuál es su módulo?',
     options: ['14 m', '10 m', '2 m', '48 m'],
     correctAnswer: 1,
     explanation: '|A| = √(6² + 8²) = √(36 + 64) = √100 = 10 m.',
@@ -46,15 +57,23 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q5',
     topicId: 'cta_t1',
-    text: 'La componente rectangular horizontal (Fx) de una fuerza F que forma un ángulo θ con la horizontal se calcula como:',
-    options: ['Fx = F · sen θ', 'Fx = F · cos θ', 'Fx = F · tan θ', 'Fx = F / cos θ'],
+    text:
+        'La componente rectangular horizontal (Fx) de una fuerza F que forma un ángulo θ con la horizontal se calcula como:',
+    options: [
+      'Fx = F · sen θ',
+      'Fx = F · cos θ',
+      'Fx = F · tan θ',
+      'Fx = F / cos θ',
+    ],
     correctAnswer: 1,
-    explanation: 'La componente horizontal se obtiene proyectando el vector sobre el eje x: Fx = F · cos θ.',
+    explanation:
+        'La componente horizontal se obtiene proyectando el vector sobre el eje x: Fx = F · cos θ.',
   ),
   Question(
     id: 'cta_q6',
     topicId: 'cta_t1',
-    text: 'Un vector de 20 N forma un ángulo de 30° con la horizontal. ¿Cuál es su componente vertical (Fy)? (sen 30° = 0,5)',
+    text:
+        'Un vector de 20 N forma un ángulo de 30° con la horizontal. ¿Cuál es su componente vertical (Fy)? (sen 30° = 0,5)',
     options: ['10 N', '17,3 N', '20 N', '5 N'],
     correctAnswer: 0,
     explanation: 'Fy = F · sen 30° = 20 × 0,5 = 10 N.',
@@ -62,18 +81,32 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q7',
     topicId: 'cta_t1',
-    text: '¿Cuál es el vector resultante de sumar un vector de 5 m hacia el Este y otro de 5 m hacia el Norte?',
-    options: ['10 m hacia el Noreste', '0 m', '5√2 m hacia el Noreste', '5 m hacia el Norte'],
+    text:
+        '¿Cuál es el vector resultante de sumar un vector de 5 m hacia el Este y otro de 5 m hacia el Norte?',
+    options: [
+      '10 m hacia el Noreste',
+      '0 m',
+      '5√2 m hacia el Noreste',
+      '5 m hacia el Norte',
+    ],
     correctAnswer: 2,
-    explanation: 'R = √(5² + 5²) = √50 = 5√2 ≈ 7,07 m, con dirección a 45° (Noreste).',
+    explanation:
+        'R = √(5² + 5²) = √50 = 5√2 ≈ 7,07 m, con dirección a 45° (Noreste).',
   ),
   Question(
     id: 'cta_q8',
     topicId: 'cta_t1',
-    text: 'Un policía aplica dos fuerzas simultáneas sobre un objeto: 12 N hacia la derecha y 8 N hacia la izquierda. ¿Cuál es la fuerza neta?',
-    options: ['20 N hacia la derecha', '4 N hacia la izquierda', '4 N hacia la derecha', '20 N hacia la izquierda'],
+    text:
+        'Un policía aplica dos fuerzas simultáneas sobre un objeto: 12 N hacia la derecha y 8 N hacia la izquierda. ¿Cuál es la fuerza neta?',
+    options: [
+      '20 N hacia la derecha',
+      '4 N hacia la izquierda',
+      '4 N hacia la derecha',
+      '20 N hacia la izquierda',
+    ],
     correctAnswer: 2,
-    explanation: 'Fuerzas opuestas se restan: 12 − 8 = 4 N, en el sentido de la mayor (derecha).',
+    explanation:
+        'Fuerzas opuestas se restan: 12 − 8 = 4 N, en el sentido de la mayor (derecha).',
   ),
   Question(
     id: 'cta_q9',
@@ -81,15 +114,22 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es la unidad de fuerza en el Sistema Internacional (SI)?',
     options: ['Dina', 'Newton', 'Kilogramo-fuerza', 'Libra'],
     correctAnswer: 1,
-    explanation: 'En el SI, la unidad de fuerza es el Newton (N), equivalente a 1 kg·m/s².',
+    explanation:
+        'En el SI, la unidad de fuerza es el Newton (N), equivalente a 1 kg·m/s².',
   ),
   Question(
     id: 'cta_q10',
     topicId: 'cta_t1',
     text: '¿Cuáles son las magnitudes fundamentales de la Mecánica en el SI?',
-    options: ['Fuerza, velocidad y tiempo', 'Masa, longitud y tiempo', 'Energía, potencia y fuerza', 'Aceleración, masa y velocidad'],
+    options: [
+      'Fuerza, velocidad y tiempo',
+      'Masa, longitud y tiempo',
+      'Energía, potencia y fuerza',
+      'Aceleración, masa y velocidad',
+    ],
     correctAnswer: 1,
-    explanation: 'Las tres magnitudes fundamentales de la Mecánica en el SI son masa (kg), longitud (m) y tiempo (s).',
+    explanation:
+        'Las tres magnitudes fundamentales de la Mecánica en el SI son masa (kg), longitud (m) y tiempo (s).',
   ),
   Question(
     id: 'cta_q11',
@@ -97,7 +137,8 @@ final List<Question> ctaQuestions = [
     text: 'La ecuación dimensional de la velocidad es:',
     options: ['[M L T⁻¹]', '[L T⁻¹]', '[L T⁻²]', '[M L T⁻²]'],
     correctAnswer: 1,
-    explanation: 'Velocidad = distancia/tiempo, por lo tanto su dimensión es [L T⁻¹]. No depende de la masa.',
+    explanation:
+        'Velocidad = distancia/tiempo, por lo tanto su dimensión es [L T⁻¹]. No depende de la masa.',
   ),
   Question(
     id: 'cta_q12',
@@ -110,10 +151,17 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q13',
     topicId: 'cta_t1',
-    text: 'Si una ecuación física es dimensionalmente correcta, esto garantiza que:',
-    options: ['La ecuación es numéricamente exacta', 'Las unidades son consistentes en ambos miembros', 'Los valores numéricos son correctos', 'La ecuación describe un fenómeno real'],
+    text:
+        'Si una ecuación física es dimensionalmente correcta, esto garantiza que:',
+    options: [
+      'La ecuación es numéricamente exacta',
+      'Las unidades son consistentes en ambos miembros',
+      'Los valores numéricos son correctos',
+      'La ecuación describe un fenómeno real',
+    ],
     correctAnswer: 1,
-    explanation: 'El principio de homogeneidad dimensional indica que ambos miembros deben tener las mismas dimensiones, pero no garantiza la exactitud numérica ni la validez física completa.',
+    explanation:
+        'El principio de homogeneidad dimensional indica que ambos miembros deben tener las mismas dimensiones, pero no garantiza la exactitud numérica ni la validez física completa.',
   ),
   Question(
     id: 'cta_q14',
@@ -121,44 +169,62 @@ final List<Question> ctaQuestions = [
     text: 'La ecuación dimensional de la fuerza (F = m·a) es:',
     options: ['[M L T⁻¹]', '[M L² T⁻²]', '[M L T⁻²]', '[M² L T⁻²]'],
     correctAnswer: 2,
-    explanation: 'F = m·a → [M][L T⁻²] = [M L T⁻²]. Esta es la dimensión del Newton.',
+    explanation:
+        'F = m·a → [M][L T⁻²] = [M L T⁻²]. Esta es la dimensión del Newton.',
   ),
   Question(
     id: 'cta_q15',
     topicId: 'cta_t1',
-    text: "En la expresión v = v₀ + a·t, si v₀ se mide en m/s y t en segundos, ¿en qué unidades debe expresarse la aceleración 'a' para que la ecuación sea dimensionalmente homogénea?",
+    text:
+        "En la expresión v = v₀ + a·t, si v₀ se mide en m/s y t en segundos, ¿en qué unidades debe expresarse la aceleración 'a' para que la ecuación sea dimensionalmente homogénea?",
     options: ['m/s', 'm/s²', 'm²/s', 's/m'],
     correctAnswer: 1,
-    explanation: 'Para que a·t tenga dimensiones de velocidad [L T⁻¹], la aceleración debe ser [L T⁻²], es decir m/s².',
+    explanation:
+        'Para que a·t tenga dimensiones de velocidad [L T⁻¹], la aceleración debe ser [L T⁻²], es decir m/s².',
   ),
   Question(
     id: 'cta_q16',
     topicId: 'cta_t1',
     text: '¿Cuál de las siguientes NO es una magnitud fundamental del SI?',
-    options: ['Intensidad de corriente eléctrica', 'Cantidad de sustancia', 'Velocidad', 'Temperatura termodinámica'],
+    options: [
+      'Intensidad de corriente eléctrica',
+      'Cantidad de sustancia',
+      'Velocidad',
+      'Temperatura termodinámica',
+    ],
     correctAnswer: 2,
-    explanation: 'La velocidad es una magnitud derivada (longitud/tiempo). Las siete magnitudes fundamentales del SI son: longitud, masa, tiempo, intensidad de corriente eléctrica, temperatura termodinámica, cantidad de sustancia e intensidad luminosa.',
+    explanation:
+        'La velocidad es una magnitud derivada (longitud/tiempo). Las siete magnitudes fundamentales del SI son: longitud, masa, tiempo, intensidad de corriente eléctrica, temperatura termodinámica, cantidad de sustancia e intensidad luminosa.',
   ),
   Question(
     id: 'cta_q17',
     topicId: 'cta_t1',
     text: 'En el MRU, ¿qué magnitud permanece constante?',
-    options: ['La aceleración', 'La posición', 'La velocidad', 'La fuerza neta'],
+    options: [
+      'La aceleración',
+      'La posición',
+      'La velocidad',
+      'La fuerza neta',
+    ],
     correctAnswer: 2,
-    explanation: 'En el Movimiento Rectilíneo Uniforme, la velocidad es constante (magnitud y dirección no cambian).',
+    explanation:
+        'En el Movimiento Rectilíneo Uniforme, la velocidad es constante (magnitud y dirección no cambian).',
   ),
   Question(
     id: 'cta_q18',
     topicId: 'cta_t1',
-    text: 'Un patrullero recorre 180 km en 2 horas a velocidad constante. ¿Cuál es su velocidad en m/s?',
+    text:
+        'Un patrullero recorre 180 km en 2 horas a velocidad constante. ¿Cuál es su velocidad en m/s?',
     options: ['90 m/s', '25 m/s', '50 m/s', '36 m/s'],
     correctAnswer: 1,
-    explanation: 'v = 180 km / 2 h = 90 km/h. Conversión: 90 × (1000/3600) = 90/3,6 = 25 m/s.',
+    explanation:
+        'v = 180 km / 2 h = 90 km/h. Conversión: 90 × (1000/3600) = 90/3,6 = 25 m/s.',
   ),
   Question(
     id: 'cta_q19',
     topicId: 'cta_t1',
-    text: 'Un vehículo se desplaza a 20 m/s durante 30 segundos. ¿Qué distancia recorre?',
+    text:
+        'Un vehículo se desplaza a 20 m/s durante 30 segundos. ¿Qué distancia recorre?',
     options: ['600 m', '60 m', '150 m', '300 m'],
     correctAnswer: 0,
     explanation: 'En MRU: d = v × t = 20 m/s × 30 s = 600 m.',
@@ -166,23 +232,33 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q20',
     topicId: 'cta_t1',
-    text: 'Dos vehículos parten simultáneamente desde el mismo punto en sentidos opuestos, uno a 60 km/h y otro a 40 km/h. ¿A qué distancia estarán después de 2 horas?',
+    text:
+        'Dos vehículos parten simultáneamente desde el mismo punto en sentidos opuestos, uno a 60 km/h y otro a 40 km/h. ¿A qué distancia estarán después de 2 horas?',
     options: ['120 km', '200 km', '40 km', '80 km'],
     correctAnswer: 1,
-    explanation: 'La velocidad relativa de separación es 60 + 40 = 100 km/h. En 2 h: d = 100 × 2 = 200 km.',
+    explanation:
+        'La velocidad relativa de separación es 60 + 40 = 100 km/h. En 2 h: d = 100 × 2 = 200 km.',
   ),
   Question(
     id: 'cta_q21',
     topicId: 'cta_t1',
-    text: 'En la gráfica posición vs. tiempo de un MRU, ¿qué representa la pendiente de la recta?',
-    options: ['La aceleración', 'La fuerza aplicada', 'La velocidad', 'La distancia recorrida'],
+    text:
+        'En la gráfica posición vs. tiempo de un MRU, ¿qué representa la pendiente de la recta?',
+    options: [
+      'La aceleración',
+      'La fuerza aplicada',
+      'La velocidad',
+      'La distancia recorrida',
+    ],
     correctAnswer: 2,
-    explanation: 'En un gráfico x vs. t, la pendiente (Δx/Δt) representa la velocidad del móvil.',
+    explanation:
+        'En un gráfico x vs. t, la pendiente (Δx/Δt) representa la velocidad del móvil.',
   ),
   Question(
     id: 'cta_q22',
     topicId: 'cta_t1',
-    text: '¿Cuánto tarda una bala que viaja a 400 m/s en recorrer 200 m? (Asumiendo MRU)',
+    text:
+        '¿Cuánto tarda una bala que viaja a 400 m/s en recorrer 200 m? (Asumiendo MRU)',
     options: ['2 s', '0,5 s', '0,05 s', '5 s'],
     correctAnswer: 1,
     explanation: 't = d/v = 200 m / 400 m/s = 0,5 s.',
@@ -191,14 +267,21 @@ final List<Question> ctaQuestions = [
     id: 'cta_q23',
     topicId: 'cta_t1',
     text: 'En el MRUV, ¿qué magnitud permanece constante?',
-    options: ['La velocidad', 'La posición', 'La aceleración', 'La distancia recorrida por segundo'],
+    options: [
+      'La velocidad',
+      'La posición',
+      'La aceleración',
+      'La distancia recorrida por segundo',
+    ],
     correctAnswer: 2,
-    explanation: 'En el MRUV la aceleración es constante, lo que provoca que la velocidad cambie uniformemente.',
+    explanation:
+        'En el MRUV la aceleración es constante, lo que provoca que la velocidad cambie uniformemente.',
   ),
   Question(
     id: 'cta_q24',
     topicId: 'cta_t1',
-    text: 'Un auto parte del reposo y alcanza 20 m/s en 5 segundos. ¿Cuál es su aceleración?',
+    text:
+        'Un auto parte del reposo y alcanza 20 m/s en 5 segundos. ¿Cuál es su aceleración?',
     options: ['100 m/s²', '4 m/s²', '25 m/s²', '15 m/s²'],
     correctAnswer: 1,
     explanation: 'a = (vf − v₀)/t = (20 − 0)/5 = 4 m/s².',
@@ -209,12 +292,14 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de las siguientes ecuaciones corresponde al MRUV?',
     options: ['x = v · t', 'vf² = v₀² + 2·a·d', 'v = ω · r', 'F = m · a'],
     correctAnswer: 1,
-    explanation: 'La ecuación vf² = v₀² + 2·a·d es una de las ecuaciones cinemáticas del MRUV que relaciona velocidades, aceleración y distancia.',
+    explanation:
+        'La ecuación vf² = v₀² + 2·a·d es una de las ecuaciones cinemáticas del MRUV que relaciona velocidades, aceleración y distancia.',
   ),
   Question(
     id: 'cta_q26',
     topicId: 'cta_t1',
-    text: 'Un móvil con MRUV tiene velocidad inicial de 10 m/s y aceleración de 2 m/s². ¿Qué distancia recorre en 4 s?',
+    text:
+        'Un móvil con MRUV tiene velocidad inicial de 10 m/s y aceleración de 2 m/s². ¿Qué distancia recorre en 4 s?',
     options: ['48 m', '56 m', '40 m', '72 m'],
     correctAnswer: 1,
     explanation: 'd = v₀·t + ½·a·t² = 10(4) + ½(2)(16) = 40 + 16 = 56 m.',
@@ -222,23 +307,33 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q27',
     topicId: 'cta_t1',
-    text: 'Un vehículo policial frena con aceleración de −5 m/s². Si su velocidad inicial era 30 m/s, ¿qué distancia recorre hasta detenerse?',
+    text:
+        'Un vehículo policial frena con aceleración de −5 m/s². Si su velocidad inicial era 30 m/s, ¿qué distancia recorre hasta detenerse?',
     options: ['90 m', '180 m', '45 m', '60 m'],
     correctAnswer: 0,
-    explanation: 'Usando vf² = v₀² + 2ad: 0 = 900 + 2(−5)d → d = 900/10 = 90 m.',
+    explanation:
+        'Usando vf² = v₀² + 2ad: 0 = 900 + 2(−5)d → d = 900/10 = 90 m.',
   ),
   Question(
     id: 'cta_q28',
     topicId: 'cta_t1',
-    text: 'En la gráfica velocidad vs. tiempo de un MRUV, ¿qué representa el área bajo la curva?',
-    options: ['La aceleración', 'La fuerza resultante', 'La distancia recorrida', 'La velocidad media'],
+    text:
+        'En la gráfica velocidad vs. tiempo de un MRUV, ¿qué representa el área bajo la curva?',
+    options: [
+      'La aceleración',
+      'La fuerza resultante',
+      'La distancia recorrida',
+      'La velocidad media',
+    ],
     correctAnswer: 2,
-    explanation: 'El área bajo la curva v vs. t representa el desplazamiento (distancia recorrida) del móvil.',
+    explanation:
+        'El área bajo la curva v vs. t representa el desplazamiento (distancia recorrida) del móvil.',
   ),
   Question(
     id: 'cta_q29',
     topicId: 'cta_t1',
-    text: 'Un auto acelera desde 0 hasta 36 km/h en 5 s. ¿Cuál es su aceleración en m/s²?',
+    text:
+        'Un auto acelera desde 0 hasta 36 km/h en 5 s. ¿Cuál es su aceleración en m/s²?',
     options: ['7,2 m/s²', '2 m/s²', '3,6 m/s²', '10 m/s²'],
     correctAnswer: 1,
     explanation: '36 km/h = 10 m/s. a = (10 − 0)/5 = 2 m/s².',
@@ -246,15 +341,18 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q30',
     topicId: 'cta_t1',
-    text: 'En la caída libre, ¿cuál es el valor aproximado de la aceleración de la gravedad?',
+    text:
+        'En la caída libre, ¿cuál es el valor aproximado de la aceleración de la gravedad?',
     options: ['9,8 m/s', '9,8 m/s²', '9,8 m²/s', '9,8 km/s²'],
     correctAnswer: 1,
-    explanation: 'La aceleración de la gravedad es aproximadamente 9,8 m/s² (≈ 10 m/s²). Nótese que las unidades son de aceleración, no de velocidad.',
+    explanation:
+        'La aceleración de la gravedad es aproximadamente 9,8 m/s² (≈ 10 m/s²). Nótese que las unidades son de aceleración, no de velocidad.',
   ),
   Question(
     id: 'cta_q31',
     topicId: 'cta_t1',
-    text: 'Un objeto se deja caer libremente desde cierta altura. ¿Qué velocidad tiene después de 3 s? (g = 10 m/s²)',
+    text:
+        'Un objeto se deja caer libremente desde cierta altura. ¿Qué velocidad tiene después de 3 s? (g = 10 m/s²)',
     options: ['10 m/s', '20 m/s', '30 m/s', '45 m/s'],
     correctAnswer: 2,
     explanation: 'v = g·t = 10 × 3 = 30 m/s.',
@@ -262,7 +360,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q32',
     topicId: 'cta_t1',
-    text: '¿Qué altura recorre un objeto en caída libre durante los primeros 2 segundos? (g = 10 m/s²)',
+    text:
+        '¿Qué altura recorre un objeto en caída libre durante los primeros 2 segundos? (g = 10 m/s²)',
     options: ['10 m', '20 m', '40 m', '5 m'],
     correctAnswer: 1,
     explanation: 'h = ½·g·t² = ½ × 10 × 4 = 20 m.',
@@ -270,7 +369,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q33',
     topicId: 'cta_t1',
-    text: 'Se lanza una piedra verticalmente hacia arriba con velocidad de 20 m/s. ¿Cuánto tiempo tarda en alcanzar su altura máxima? (g = 10 m/s²)',
+    text:
+        'Se lanza una piedra verticalmente hacia arriba con velocidad de 20 m/s. ¿Cuánto tiempo tarda en alcanzar su altura máxima? (g = 10 m/s²)',
     options: ['1 s', '4 s', '2 s', '0,5 s'],
     correctAnswer: 2,
     explanation: 'En la altura máxima vf = 0. t = v₀/g = 20/10 = 2 s.',
@@ -279,14 +379,21 @@ final List<Question> ctaQuestions = [
     id: 'cta_q34',
     topicId: 'cta_t1',
     text: 'En el tiro vertical, cuando el objeto alcanza la altura máxima:',
-    options: ['Su velocidad y aceleración son cero', 'Su velocidad es cero pero la aceleración es g', 'Su velocidad es máxima y la aceleración es cero', 'Tanto la velocidad como la aceleración son máximas'],
+    options: [
+      'Su velocidad y aceleración son cero',
+      'Su velocidad es cero pero la aceleración es g',
+      'Su velocidad es máxima y la aceleración es cero',
+      'Tanto la velocidad como la aceleración son máximas',
+    ],
     correctAnswer: 1,
-    explanation: 'En la altura máxima, la velocidad es instantáneamente cero, pero la aceleración gravitatoria (g) sigue actuando hacia abajo.',
+    explanation:
+        'En la altura máxima, la velocidad es instantáneamente cero, pero la aceleración gravitatoria (g) sigue actuando hacia abajo.',
   ),
   Question(
     id: 'cta_q35',
     topicId: 'cta_t1',
-    text: 'Se deja caer un objeto desde 80 m de altura. ¿Con qué velocidad llega al suelo? (g = 10 m/s²)',
+    text:
+        'Se deja caer un objeto desde 80 m de altura. ¿Con qué velocidad llega al suelo? (g = 10 m/s²)',
     options: ['20 m/s', '30 m/s', '40 m/s', '80 m/s'],
     correctAnswer: 2,
     explanation: 'v² = 2gh = 2(10)(80) = 1600 → v = 40 m/s.',
@@ -294,7 +401,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q36',
     topicId: 'cta_t1',
-    text: 'Una pelota lanzada verticalmente hacia arriba con 30 m/s, ¿qué altura máxima alcanza? (g = 10 m/s²)',
+    text:
+        'Una pelota lanzada verticalmente hacia arriba con 30 m/s, ¿qué altura máxima alcanza? (g = 10 m/s²)',
     options: ['90 m', '30 m', '45 m', '60 m'],
     correctAnswer: 2,
     explanation: 'h = v₀²/(2g) = 900/20 = 45 m.',
@@ -302,58 +410,81 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q37',
     topicId: 'cta_t1',
-    text: 'En un movimiento parabólico (tiro oblicuo), ¿qué tipo de movimiento describe la componente horizontal?',
+    text:
+        'En un movimiento parabólico (tiro oblicuo), ¿qué tipo de movimiento describe la componente horizontal?',
     options: ['MRUV', 'Caída libre', 'MRU', 'MCU'],
     correctAnswer: 2,
-    explanation: 'En el tiro parabólico, la componente horizontal es un MRU (velocidad horizontal constante, sin aceleración en x, despreciando la resistencia del aire).',
+    explanation:
+        'En el tiro parabólico, la componente horizontal es un MRU (velocidad horizontal constante, sin aceleración en x, despreciando la resistencia del aire).',
   ),
   Question(
     id: 'cta_q38',
     topicId: 'cta_t1',
-    text: '¿Con qué ángulo de lanzamiento se obtiene el máximo alcance horizontal en un proyectil lanzado desde el suelo? (sin resistencia del aire)',
+    text:
+        '¿Con qué ángulo de lanzamiento se obtiene el máximo alcance horizontal en un proyectil lanzado desde el suelo? (sin resistencia del aire)',
     options: ['30°', '60°', '90°', '45°'],
     correctAnswer: 3,
-    explanation: 'El alcance máximo se obtiene con un ángulo de 45°, ya que R = v₀²·sen(2θ)/g y sen(90°) = 1 es el máximo.',
+    explanation:
+        'El alcance máximo se obtiene con un ángulo de 45°, ya que R = v₀²·sen(2θ)/g y sen(90°) = 1 es el máximo.',
   ),
   Question(
     id: 'cta_q39',
     topicId: 'cta_t1',
-    text: 'Un proyectil se dispara con velocidad de 50 m/s a 30° sobre la horizontal. ¿Cuál es su velocidad horizontal? (cos 30° ≈ 0,87)',
+    text:
+        'Un proyectil se dispara con velocidad de 50 m/s a 30° sobre la horizontal. ¿Cuál es su velocidad horizontal? (cos 30° ≈ 0,87)',
     options: ['25 m/s', '43,3 m/s', '50 m/s', '100 m/s'],
     correctAnswer: 1,
-    explanation: 'vx = v₀ · cos 30° = 50 × 0,87 ≈ 43,3 m/s. Esta componente se mantiene constante durante todo el vuelo.',
+    explanation:
+        'vx = v₀ · cos 30° = 50 × 0,87 ≈ 43,3 m/s. Esta componente se mantiene constante durante todo el vuelo.',
   ),
   Question(
     id: 'cta_q40',
     topicId: 'cta_t1',
-    text: 'En balística exterior, ¿qué fuerza actúa principalmente sobre una bala en vuelo, despreciando la resistencia del aire?',
-    options: ['La fuerza de propulsión del arma', 'La fuerza centrípeta', 'La fuerza de gravedad', 'La fuerza magnética terrestre'],
+    text:
+        'En balística exterior, ¿qué fuerza actúa principalmente sobre una bala en vuelo, despreciando la resistencia del aire?',
+    options: [
+      'La fuerza de propulsión del arma',
+      'La fuerza centrípeta',
+      'La fuerza de gravedad',
+      'La fuerza magnética terrestre',
+    ],
     correctAnswer: 2,
-    explanation: 'Una vez que la bala abandona el cañón, la única fuerza significativa (despreciando el aire) es la gravedad, que curva su trayectoria en forma parabólica.',
+    explanation:
+        'Una vez que la bala abandona el cañón, la única fuerza significativa (despreciando el aire) es la gravedad, que curva su trayectoria en forma parabólica.',
   ),
   Question(
     id: 'cta_q41',
     topicId: 'cta_t1',
-    text: 'Un oficial dispara horizontalmente desde una altura de 20 m. ¿Cuánto tarda la bala en llegar al suelo? (g = 10 m/s²)',
+    text:
+        'Un oficial dispara horizontalmente desde una altura de 20 m. ¿Cuánto tarda la bala en llegar al suelo? (g = 10 m/s²)',
     options: ['1 s', '2 s', '4 s', '√2 s'],
     correctAnswer: 1,
-    explanation: 'La caída vertical es independiente de la velocidad horizontal: h = ½gt² → 20 = ½(10)t² → t² = 4 → t = 2 s.',
+    explanation:
+        'La caída vertical es independiente de la velocidad horizontal: h = ½gt² → 20 = ½(10)t² → t² = 4 → t = 2 s.',
   ),
   Question(
     id: 'cta_q42',
     topicId: 'cta_t1',
     text: 'En el MCU, ¿qué magnitud permanece constante?',
-    options: ['La velocidad lineal (vector)', 'La aceleración centrípeta', 'La velocidad angular', 'La dirección de la velocidad'],
+    options: [
+      'La velocidad lineal (vector)',
+      'La aceleración centrípeta',
+      'La velocidad angular',
+      'La dirección de la velocidad',
+    ],
     correctAnswer: 2,
-    explanation: 'En el MCU la velocidad angular (ω) es constante. La velocidad lineal cambia de dirección, aunque su módulo (rapidez) es constante.',
+    explanation:
+        'En el MCU la velocidad angular (ω) es constante. La velocidad lineal cambia de dirección, aunque su módulo (rapidez) es constante.',
   ),
   Question(
     id: 'cta_q43',
     topicId: 'cta_t1',
-    text: '¿Cuál es la relación entre la velocidad lineal (v) y la velocidad angular (ω) en el MCU?',
+    text:
+        '¿Cuál es la relación entre la velocidad lineal (v) y la velocidad angular (ω) en el MCU?',
     options: ['v = ω / r', 'v = ω · r', 'v = ω² · r', 'v = ω + r'],
     correctAnswer: 1,
-    explanation: 'La relación fundamental del MCU es v = ω · r, donde r es el radio de la trayectoria circular.',
+    explanation:
+        'La relación fundamental del MCU es v = ω · r, donde r es el radio de la trayectoria circular.',
   ),
   Question(
     id: 'cta_q44',
@@ -375,22 +506,35 @@ final List<Question> ctaQuestions = [
     id: 'cta_q46',
     topicId: 'cta_t1',
     text: 'La aceleración centrípeta en el MCU apunta:',
-    options: ['En la dirección tangente a la trayectoria', 'Hacia el centro de la trayectoria circular', 'En sentido opuesto al movimiento', 'Hacia afuera de la trayectoria circular'],
+    options: [
+      'En la dirección tangente a la trayectoria',
+      'Hacia el centro de la trayectoria circular',
+      'En sentido opuesto al movimiento',
+      'Hacia afuera de la trayectoria circular',
+    ],
     correctAnswer: 1,
-    explanation: 'La aceleración centrípeta siempre apunta hacia el centro de la circunferencia, provocando el cambio continuo de dirección.',
+    explanation:
+        'La aceleración centrípeta siempre apunta hacia el centro de la circunferencia, provocando el cambio continuo de dirección.',
   ),
   Question(
     id: 'cta_q47',
     topicId: 'cta_t1',
     text: 'La Primera Ley de Newton (Ley de Inercia) establece que:',
-    options: ['La fuerza es igual a masa por aceleración', 'A toda acción corresponde una reacción igual y opuesta', 'Un cuerpo permanece en reposo o MRU si la fuerza neta sobre él es cero', 'La energía se conserva en todo sistema aislado'],
+    options: [
+      'La fuerza es igual a masa por aceleración',
+      'A toda acción corresponde una reacción igual y opuesta',
+      'Un cuerpo permanece en reposo o MRU si la fuerza neta sobre él es cero',
+      'La energía se conserva en todo sistema aislado',
+    ],
     correctAnswer: 2,
-    explanation: 'La Primera Ley de Newton indica que un cuerpo mantiene su estado de reposo o de MRU si no actúa ninguna fuerza neta sobre él.',
+    explanation:
+        'La Primera Ley de Newton indica que un cuerpo mantiene su estado de reposo o de MRU si no actúa ninguna fuerza neta sobre él.',
   ),
   Question(
     id: 'cta_q48',
     topicId: 'cta_t1',
-    text: 'Según la Segunda Ley de Newton, si se aplica una fuerza de 20 N a un objeto de 4 kg, ¿cuál es su aceleración?',
+    text:
+        'Según la Segunda Ley de Newton, si se aplica una fuerza de 20 N a un objeto de 4 kg, ¿cuál es su aceleración?',
     options: ['80 m/s²', '5 m/s²', '16 m/s²', '24 m/s²'],
     correctAnswer: 1,
     explanation: 'F = m·a → a = F/m = 20/4 = 5 m/s².',
@@ -398,7 +542,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q49',
     topicId: 'cta_t1',
-    text: 'Un objeto de 10 kg está sobre una mesa sin fricción. Se le aplica una fuerza horizontal de 50 N. ¿Cuál es su aceleración?',
+    text:
+        'Un objeto de 10 kg está sobre una mesa sin fricción. Se le aplica una fuerza horizontal de 50 N. ¿Cuál es su aceleración?',
     options: ['0,5 m/s²', '500 m/s²', '5 m/s²', '10 m/s²'],
     correctAnswer: 2,
     explanation: 'a = F/m = 50/10 = 5 m/s².',
@@ -406,7 +551,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q50',
     topicId: 'cta_t1',
-    text: 'Un policía empuja una caja contra el piso. Si la caja tiene masa de 20 kg y la aceleración es de 3 m/s², ¿cuál es la fuerza neta aplicada?',
+    text:
+        'Un policía empuja una caja contra el piso. Si la caja tiene masa de 20 kg y la aceleración es de 3 m/s², ¿cuál es la fuerza neta aplicada?',
     options: ['6,67 N', '23 N', '17 N', '60 N'],
     correctAnswer: 3,
     explanation: 'F = m·a = 20 × 3 = 60 N.',
@@ -415,30 +561,46 @@ final List<Question> ctaQuestions = [
     id: 'cta_q51',
     topicId: 'cta_t1',
     text: 'La Tercera Ley de Newton (acción y reacción) implica que:',
-    options: ['Las fuerzas de acción y reacción actúan sobre el mismo cuerpo', 'Las fuerzas de acción y reacción se anulan entre sí', 'Las fuerzas de acción y reacción actúan sobre cuerpos diferentes y son de igual magnitud', 'La reacción siempre es mayor que la acción'],
+    options: [
+      'Las fuerzas de acción y reacción actúan sobre el mismo cuerpo',
+      'Las fuerzas de acción y reacción se anulan entre sí',
+      'Las fuerzas de acción y reacción actúan sobre cuerpos diferentes y son de igual magnitud',
+      'La reacción siempre es mayor que la acción',
+    ],
     correctAnswer: 2,
-    explanation: 'La Tercera Ley establece que las fuerzas de acción y reacción son iguales en magnitud y opuestas en dirección, pero actúan sobre cuerpos distintos, por lo que no se anulan.',
+    explanation:
+        'La Tercera Ley establece que las fuerzas de acción y reacción son iguales en magnitud y opuestas en dirección, pero actúan sobre cuerpos distintos, por lo que no se anulan.',
   ),
   Question(
     id: 'cta_q52',
     topicId: 'cta_t1',
-    text: '¿Por qué un pasajero en un autobús se inclina hacia adelante cuando el vehículo frena bruscamente?',
-    options: ['Porque una fuerza lo empuja hacia adelante', 'Debido a la inercia del pasajero, que tiende a mantener su estado de movimiento', 'Por la acción de la gravedad', 'Porque el autobús lo atrae magnéticamente'],
+    text:
+        '¿Por qué un pasajero en un autobús se inclina hacia adelante cuando el vehículo frena bruscamente?',
+    options: [
+      'Porque una fuerza lo empuja hacia adelante',
+      'Debido a la inercia del pasajero, que tiende a mantener su estado de movimiento',
+      'Por la acción de la gravedad',
+      'Porque el autobús lo atrae magnéticamente',
+    ],
     correctAnswer: 1,
-    explanation: 'Por la Primera Ley de Newton (inercia), el cuerpo del pasajero tiende a continuar en movimiento cuando el autobús desacelera.',
+    explanation:
+        'Por la Primera Ley de Newton (inercia), el cuerpo del pasajero tiende a continuar en movimiento cuando el autobús desacelera.',
   ),
   Question(
     id: 'cta_q53',
     topicId: 'cta_t1',
-    text: 'Se aplica una fuerza constante a dos objetos de masas m y 2m. ¿Cuál es la relación entre sus aceleraciones (a₁/a₂)?',
+    text:
+        'Se aplica una fuerza constante a dos objetos de masas m y 2m. ¿Cuál es la relación entre sus aceleraciones (a₁/a₂)?',
     options: ['1/2', '1', '2', '4'],
     correctAnswer: 2,
-    explanation: 'F = m·a₁ = 2m·a₂ → a₁ = F/m y a₂ = F/2m → a₁/a₂ = 2. El objeto más ligero tiene el doble de aceleración.',
+    explanation:
+        'F = m·a₁ = 2m·a₂ → a₁ = F/m y a₂ = F/2m → a₁/a₂ = 2. El objeto más ligero tiene el doble de aceleración.',
   ),
   Question(
     id: 'cta_q54',
     topicId: 'cta_t1',
-    text: 'Un ascensor de 1000 kg sube con aceleración de 2 m/s². ¿Cuál es la tensión en el cable? (g = 10 m/s²)',
+    text:
+        'Un ascensor de 1000 kg sube con aceleración de 2 m/s². ¿Cuál es la tensión en el cable? (g = 10 m/s²)',
     options: ['10 000 N', '8 000 N', '12 000 N', '2 000 N'],
     correctAnswer: 2,
     explanation: 'T − mg = ma → T = m(g + a) = 1000(10 + 2) = 12 000 N.',
@@ -447,22 +609,35 @@ final List<Question> ctaQuestions = [
     id: 'cta_q55',
     topicId: 'cta_t1',
     text: 'La primera condición de equilibrio establece que:',
-    options: ['La suma de torques es cero', 'La suma vectorial de todas las fuerzas es cero', 'La energía cinética es cero', 'La velocidad angular es constante'],
+    options: [
+      'La suma de torques es cero',
+      'La suma vectorial de todas las fuerzas es cero',
+      'La energía cinética es cero',
+      'La velocidad angular es constante',
+    ],
     correctAnswer: 1,
-    explanation: 'La primera condición de equilibrio (traslacional) indica que ΣF = 0, es decir, la resultante de todas las fuerzas es nula.',
+    explanation:
+        'La primera condición de equilibrio (traslacional) indica que ΣF = 0, es decir, la resultante de todas las fuerzas es nula.',
   ),
   Question(
     id: 'cta_q56',
     topicId: 'cta_t1',
     text: 'La segunda condición de equilibrio establece que:',
-    options: ['La suma de todas las fuerzas es cero', 'La aceleración lineal es cero', 'La suma de todos los torques respecto a cualquier punto es cero', 'La velocidad es constante'],
+    options: [
+      'La suma de todas las fuerzas es cero',
+      'La aceleración lineal es cero',
+      'La suma de todos los torques respecto a cualquier punto es cero',
+      'La velocidad es constante',
+    ],
     correctAnswer: 2,
-    explanation: 'La segunda condición de equilibrio (rotacional) establece que Στ = 0, evitando que el cuerpo rote.',
+    explanation:
+        'La segunda condición de equilibrio (rotacional) establece que Στ = 0, evitando que el cuerpo rote.',
   ),
   Question(
     id: 'cta_q57',
     topicId: 'cta_t1',
-    text: 'Una barra de 4 m y peso despreciable tiene un peso de 60 N en un extremo. Si el punto de apoyo está a 1 m de ese extremo, ¿qué fuerza se necesita en el otro extremo para equilibrar?',
+    text:
+        'Una barra de 4 m y peso despreciable tiene un peso de 60 N en un extremo. Si el punto de apoyo está a 1 m de ese extremo, ¿qué fuerza se necesita en el otro extremo para equilibrar?',
     options: ['20 N', '30 N', '60 N', '180 N'],
     correctAnswer: 0,
     explanation: 'Στ = 0: 60 × 1 = F × 3 → F = 60/3 = 20 N.',
@@ -470,34 +645,61 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q58',
     topicId: 'cta_t1',
-    text: 'Un cuerpo está en equilibrio estático. ¿Cuál de las siguientes afirmaciones es correcta?',
-    options: ['Solo se cumple ΣF = 0', 'Solo se cumple Στ = 0', 'Se cumplen ambas: ΣF = 0 y Στ = 0', 'Ninguna de las anteriores es necesaria'],
+    text:
+        'Un cuerpo está en equilibrio estático. ¿Cuál de las siguientes afirmaciones es correcta?',
+    options: [
+      'Solo se cumple ΣF = 0',
+      'Solo se cumple Στ = 0',
+      'Se cumplen ambas: ΣF = 0 y Στ = 0',
+      'Ninguna de las anteriores es necesaria',
+    ],
     correctAnswer: 2,
-    explanation: 'El equilibrio estático requiere que tanto la suma de fuerzas como la suma de torques sean cero (ambas condiciones simultáneamente).',
+    explanation:
+        'El equilibrio estático requiere que tanto la suma de fuerzas como la suma de torques sean cero (ambas condiciones simultáneamente).',
   ),
   Question(
     id: 'cta_q59',
     topicId: 'cta_t1',
-    text: 'Un semáforo de 200 N cuelga del centro de un cable horizontal. Si el cable forma un ángulo de 10° con la horizontal en cada extremo, ¿qué se puede afirmar sobre la tensión en el cable?',
-    options: ['Es igual al peso del semáforo (200 N)', 'Es menor que el peso del semáforo', 'Es mucho mayor que el peso del semáforo', 'Es exactamente el doble del peso'],
+    text:
+        'Un semáforo de 200 N cuelga del centro de un cable horizontal. Si el cable forma un ángulo de 10° con la horizontal en cada extremo, ¿qué se puede afirmar sobre la tensión en el cable?',
+    options: [
+      'Es igual al peso del semáforo (200 N)',
+      'Es menor que el peso del semáforo',
+      'Es mucho mayor que el peso del semáforo',
+      'Es exactamente el doble del peso',
+    ],
     correctAnswer: 2,
-    explanation: 'La componente vertical de la tensión (T·sen10°) debe soportar la mitad del peso. Como sen10° ≈ 0,17 es pequeño, T = 100/0,17 ≈ 576 N, mucho mayor que el peso del semáforo.',
+    explanation:
+        'La componente vertical de la tensión (T·sen10°) debe soportar la mitad del peso. Como sen10° ≈ 0,17 es pequeño, T = 100/0,17 ≈ 576 N, mucho mayor que el peso del semáforo.',
   ),
   Question(
     id: 'cta_q60',
     topicId: 'cta_t1',
-    text: 'Un objeto de 50 N está suspendido de dos cuerdas que forman ángulos de 30° y 60° con la horizontal. ¿Cuál de las siguientes es correcta?',
-    options: ['Ambas cuerdas soportan la misma tensión', 'La cuerda con ángulo de 60° soporta mayor tensión', 'La cuerda con ángulo de 30° soporta mayor tensión', 'Las tensiones suman exactamente 50 N'],
+    text:
+        'Un objeto de 50 N está suspendido de dos cuerdas que forman ángulos de 30° y 60° con la horizontal. ¿Cuál de las siguientes es correcta?',
+    options: [
+      'Ambas cuerdas soportan la misma tensión',
+      'La cuerda con ángulo de 60° soporta mayor tensión',
+      'La cuerda con ángulo de 30° soporta mayor tensión',
+      'Las tensiones suman exactamente 50 N',
+    ],
     correctAnswer: 1,
-    explanation: 'La cuerda más vertical (60° respecto a la horizontal) soporta mayor componente del peso, por lo que tiene mayor tensión.',
+    explanation:
+        'La cuerda más vertical (60° respecto a la horizontal) soporta mayor componente del peso, por lo que tiene mayor tensión.',
   ),
   Question(
     id: 'cta_q61',
     topicId: 'cta_t1',
     text: 'La fórmula del trabajo mecánico es:',
-    options: ['W = m · g · h', 'W = F · d · cos θ', 'W = ½ · m · v²', 'W = P · t'],
+    options: [
+      'W = m · g · h',
+      'W = F · d · cos θ',
+      'W = ½ · m · v²',
+      'W = P · t',
+    ],
     correctAnswer: 1,
-    explanation: 'El trabajo mecánico se define como W = F · d · cos θ, donde θ es el ángulo entre la fuerza y el desplazamiento.',
+    explanation:
+        'El trabajo mecánico se define como W = F · d · cos θ, donde θ es el ángulo entre la fuerza y el desplazamiento.',
   ),
   Question(
     id: 'cta_q62',
@@ -505,12 +707,14 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es la unidad de trabajo en el SI?',
     options: ['Watt', 'Newton', 'Joule', 'Pascal'],
     correctAnswer: 2,
-    explanation: 'En el SI, el trabajo se mide en Joules (J), donde 1 J = 1 N · 1 m.',
+    explanation:
+        'En el SI, el trabajo se mide en Joules (J), donde 1 J = 1 N · 1 m.',
   ),
   Question(
     id: 'cta_q63',
     topicId: 'cta_t1',
-    text: 'Una persona arrastra una caja con una fuerza de 100 N a lo largo de 5 m, en la dirección del desplazamiento. ¿Cuánto trabajo realiza?',
+    text:
+        'Una persona arrastra una caja con una fuerza de 100 N a lo largo de 5 m, en la dirección del desplazamiento. ¿Cuánto trabajo realiza?',
     options: ['20 J', '500 J', '105 J', '50 J'],
     correctAnswer: 1,
     explanation: 'W = F · d · cos 0° = 100 × 5 × 1 = 500 J.',
@@ -518,15 +722,18 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q64',
     topicId: 'cta_t1',
-    text: 'Un policía carga una caja de 15 kg sobre su cabeza y camina 20 m en línea recta horizontal. ¿Cuánto trabajo realiza la fuerza que sostiene la caja?',
+    text:
+        'Un policía carga una caja de 15 kg sobre su cabeza y camina 20 m en línea recta horizontal. ¿Cuánto trabajo realiza la fuerza que sostiene la caja?',
     options: ['300 J', '3000 J', '0 J', '150 J'],
     correctAnswer: 2,
-    explanation: 'La fuerza que sostiene la caja es vertical (hacia arriba) y el desplazamiento es horizontal. Como θ = 90°, W = F·d·cos 90° = 0 J.',
+    explanation:
+        'La fuerza que sostiene la caja es vertical (hacia arriba) y el desplazamiento es horizontal. Como θ = 90°, W = F·d·cos 90° = 0 J.',
   ),
   Question(
     id: 'cta_q65',
     topicId: 'cta_t1',
-    text: 'Se aplica una fuerza de 80 N sobre un objeto a 60° respecto al desplazamiento. Si el objeto se mueve 10 m, ¿cuánto trabajo se realiza? (cos 60° = 0,5)',
+    text:
+        'Se aplica una fuerza de 80 N sobre un objeto a 60° respecto al desplazamiento. Si el objeto se mueve 10 m, ¿cuánto trabajo se realiza? (cos 60° = 0,5)',
     options: ['800 J', '400 J', '693 J', '160 J'],
     correctAnswer: 1,
     explanation: 'W = F·d·cos θ = 80 × 10 × cos 60° = 80 × 10 × 0,5 = 400 J.',
@@ -534,18 +741,31 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q66',
     topicId: 'cta_t1',
-    text: '¿En cuál de los siguientes casos el trabajo realizado por la fuerza aplicada es negativo?',
-    options: ['Empujar una caja en la dirección del movimiento', 'Levantar un objeto verticalmente', 'La fuerza de fricción que se opone al movimiento', 'Lanzar una pelota hacia adelante'],
+    text:
+        '¿En cuál de los siguientes casos el trabajo realizado por la fuerza aplicada es negativo?',
+    options: [
+      'Empujar una caja en la dirección del movimiento',
+      'Levantar un objeto verticalmente',
+      'La fuerza de fricción que se opone al movimiento',
+      'Lanzar una pelota hacia adelante',
+    ],
     correctAnswer: 2,
-    explanation: 'El trabajo es negativo cuando la fuerza y el desplazamiento tienen sentidos opuestos (θ > 90°). La fricción siempre se opone al movimiento, por lo que cos 180° = −1.',
+    explanation:
+        'El trabajo es negativo cuando la fuerza y el desplazamiento tienen sentidos opuestos (θ > 90°). La fricción siempre se opone al movimiento, por lo que cos 180° = −1.',
   ),
   Question(
     id: 'cta_q67',
     topicId: 'cta_t1',
     text: 'La potencia mecánica se define como:',
-    options: ['La fuerza aplicada por unidad de área', 'El trabajo realizado por unidad de tiempo', 'La energía almacenada en un cuerpo', 'La masa por la aceleración'],
+    options: [
+      'La fuerza aplicada por unidad de área',
+      'El trabajo realizado por unidad de tiempo',
+      'La energía almacenada en un cuerpo',
+      'La masa por la aceleración',
+    ],
     correctAnswer: 1,
-    explanation: 'La potencia es la rapidez con que se realiza trabajo: P = W/t.',
+    explanation:
+        'La potencia es la rapidez con que se realiza trabajo: P = W/t.',
   ),
   Question(
     id: 'cta_q68',
@@ -553,12 +773,14 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es la unidad de potencia en el SI?',
     options: ['Joule', 'Newton', 'Watt', 'Pascal'],
     correctAnswer: 2,
-    explanation: 'La unidad de potencia en el SI es el Watt (W), donde 1 W = 1 J/s.',
+    explanation:
+        'La unidad de potencia en el SI es el Watt (W), donde 1 W = 1 J/s.',
   ),
   Question(
     id: 'cta_q69',
     topicId: 'cta_t1',
-    text: 'Una grúa realiza un trabajo de 6000 J en 30 segundos. ¿Cuál es su potencia?',
+    text:
+        'Una grúa realiza un trabajo de 6000 J en 30 segundos. ¿Cuál es su potencia?',
     options: ['180 000 W', '200 W', '20 W', '300 W'],
     correctAnswer: 1,
     explanation: 'P = W/t = 6000/30 = 200 W.',
@@ -566,7 +788,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q70',
     topicId: 'cta_t1',
-    text: 'Un motor tiene una potencia de 500 W. ¿Cuánto trabajo realiza en 1 minuto?',
+    text:
+        'Un motor tiene una potencia de 500 W. ¿Cuánto trabajo realiza en 1 minuto?',
     options: ['500 J', '30 000 J', '8,33 J', '60 000 J'],
     correctAnswer: 1,
     explanation: 'W = P × t = 500 × 60 = 30 000 J.',
@@ -574,15 +797,18 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q71',
     topicId: 'cta_t1',
-    text: 'Dos bomberos suben al mismo piso. El bombero A sube en 20 s y el bombero B en 40 s. Si pesan igual, ¿qué relación hay entre sus potencias?',
+    text:
+        'Dos bomberos suben al mismo piso. El bombero A sube en 20 s y el bombero B en 40 s. Si pesan igual, ¿qué relación hay entre sus potencias?',
     options: ['PA = PB', 'PA = 2PB', 'PA = ½PB', 'PA = 4PB'],
     correctAnswer: 1,
-    explanation: 'Realizan el mismo trabajo (W = mgh igual). PA = W/20 y PB = W/40. Entonces PA/PB = 40/20 = 2. El bombero A desarrolla el doble de potencia.',
+    explanation:
+        'Realizan el mismo trabajo (W = mgh igual). PA = W/20 y PB = W/40. Entonces PA/PB = 40/20 = 2. El bombero A desarrolla el doble de potencia.',
   ),
   Question(
     id: 'cta_q72',
     topicId: 'cta_t1',
-    text: 'La energía cinética de un cuerpo de masa m que se mueve con velocidad v se expresa como:',
+    text:
+        'La energía cinética de un cuerpo de masa m que se mueve con velocidad v se expresa como:',
     options: ['Ec = m·v', 'Ec = m·g·h', 'Ec = ½·m·v²', 'Ec = m·v²'],
     correctAnswer: 2,
     explanation: 'La energía cinética se calcula con la fórmula Ec = ½mv².',
@@ -591,14 +817,21 @@ final List<Question> ctaQuestions = [
     id: 'cta_q73',
     topicId: 'cta_t1',
     text: 'La energía potencial gravitatoria depende de:',
-    options: ['La velocidad y la masa del cuerpo', 'La masa, la gravedad y la altura respecto a un nivel de referencia', 'Solo de la velocidad del cuerpo', 'De la fuerza de fricción y la distancia'],
+    options: [
+      'La velocidad y la masa del cuerpo',
+      'La masa, la gravedad y la altura respecto a un nivel de referencia',
+      'Solo de la velocidad del cuerpo',
+      'De la fuerza de fricción y la distancia',
+    ],
     correctAnswer: 1,
-    explanation: 'Ep = m·g·h, donde m es la masa, g la gravedad y h la altura respecto al nivel de referencia.',
+    explanation:
+        'Ep = m·g·h, donde m es la masa, g la gravedad y h la altura respecto al nivel de referencia.',
   ),
   Question(
     id: 'cta_q74',
     topicId: 'cta_t1',
-    text: '¿Cuál es la energía cinética de un proyectil de 0,01 kg que viaja a 400 m/s?',
+    text:
+        '¿Cuál es la energía cinética de un proyectil de 0,01 kg que viaja a 400 m/s?',
     options: ['4 J', '800 J', '1600 J', '400 J'],
     correctAnswer: 1,
     explanation: 'Ec = ½mv² = ½ × 0,01 × (400)² = ½ × 0,01 × 160 000 = 800 J.',
@@ -606,7 +839,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q75',
     topicId: 'cta_t1',
-    text: 'Un objeto de 5 kg se encuentra a 20 m de altura. ¿Cuál es su energía potencial gravitatoria? (g = 10 m/s²)',
+    text:
+        'Un objeto de 5 kg se encuentra a 20 m de altura. ¿Cuál es su energía potencial gravitatoria? (g = 10 m/s²)',
     options: ['100 J', '500 J', '1000 J', '200 J'],
     correctAnswer: 2,
     explanation: 'Ep = mgh = 5 × 10 × 20 = 1000 J.',
@@ -615,30 +849,45 @@ final List<Question> ctaQuestions = [
     id: 'cta_q76',
     topicId: 'cta_t1',
     text: 'Si se duplica la velocidad de un cuerpo, su energía cinética:',
-    options: ['Se duplica', 'Se cuadruplica', 'Se triplica', 'Se mantiene igual'],
+    options: [
+      'Se duplica',
+      'Se cuadruplica',
+      'Se triplica',
+      'Se mantiene igual',
+    ],
     correctAnswer: 1,
-    explanation: "Ec = ½mv². Si v → 2v, entonces Ec' = ½m(2v)² = ½m·4v² = 4(½mv²). La energía cinética se cuadruplica.",
+    explanation:
+        "Ec = ½mv². Si v → 2v, entonces Ec' = ½m(2v)² = ½m·4v² = 4(½mv²). La energía cinética se cuadruplica.",
   ),
   Question(
     id: 'cta_q77',
     topicId: 'cta_t1',
-    text: '¿Cuál es la energía cinética de un patrullero de 1500 kg que se mueve a 20 m/s?',
+    text:
+        '¿Cuál es la energía cinética de un patrullero de 1500 kg que se mueve a 20 m/s?',
     options: ['30 000 J', '300 000 J', '150 000 J', '600 000 J'],
     correctAnswer: 1,
-    explanation: 'Ec = ½mv² = ½ × 1500 × (20)² = ½ × 1500 × 400 = 300 000 J = 300 kJ.',
+    explanation:
+        'Ec = ½mv² = ½ × 1500 × (20)² = ½ × 1500 × 400 = 300 000 J = 300 kJ.',
   ),
   Question(
     id: 'cta_q78',
     topicId: 'cta_t1',
     text: 'El principio de conservación de la energía mecánica establece que:',
-    options: ['La energía cinética siempre es igual a la potencial', 'La energía solo se presenta en forma cinética', 'En ausencia de fuerzas no conservativas, la suma de Ec + Ep permanece constante', 'La energía se crea cuando un cuerpo se mueve'],
+    options: [
+      'La energía cinética siempre es igual a la potencial',
+      'La energía solo se presenta en forma cinética',
+      'En ausencia de fuerzas no conservativas, la suma de Ec + Ep permanece constante',
+      'La energía se crea cuando un cuerpo se mueve',
+    ],
     correctAnswer: 2,
-    explanation: 'Cuando solo actúan fuerzas conservativas (como la gravedad), la energía mecánica total (Ec + Ep) se conserva.',
+    explanation:
+        'Cuando solo actúan fuerzas conservativas (como la gravedad), la energía mecánica total (Ec + Ep) se conserva.',
   ),
   Question(
     id: 'cta_q79',
     topicId: 'cta_t1',
-    text: 'Un objeto de 2 kg se deja caer desde 5 m de altura. ¿Con qué velocidad llega al suelo? (g = 10 m/s², usar conservación de energía)',
+    text:
+        'Un objeto de 2 kg se deja caer desde 5 m de altura. ¿Con qué velocidad llega al suelo? (g = 10 m/s², usar conservación de energía)',
     options: ['5 m/s', '10 m/s', '20 m/s', '100 m/s'],
     correctAnswer: 1,
     explanation: 'mgh = ½mv² → v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s.',
@@ -646,26 +895,42 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q80',
     topicId: 'cta_t1',
-    text: 'Una pelota es lanzada verticalmente hacia arriba. En el punto más alto de su trayectoria:',
-    options: ['Toda su energía es cinética', 'Toda su energía es potencial', 'Tiene igual energía cinética y potencial', 'No tiene ningún tipo de energía'],
+    text:
+        'Una pelota es lanzada verticalmente hacia arriba. En el punto más alto de su trayectoria:',
+    options: [
+      'Toda su energía es cinética',
+      'Toda su energía es potencial',
+      'Tiene igual energía cinética y potencial',
+      'No tiene ningún tipo de energía',
+    ],
     correctAnswer: 1,
-    explanation: 'En el punto más alto, la velocidad es cero (Ec = 0), por lo que toda la energía mecánica se ha transformado en energía potencial gravitatoria.',
+    explanation:
+        'En el punto más alto, la velocidad es cero (Ec = 0), por lo que toda la energía mecánica se ha transformado en energía potencial gravitatoria.',
   ),
   Question(
     id: 'cta_q81',
     topicId: 'cta_t1',
-    text: 'Un péndulo oscila libremente. En el punto más bajo de su trayectoria:',
-    options: ['La energía potencial es máxima', 'La energía cinética es mínima', 'La energía cinética es máxima y la potencial es mínima', 'Ambas energías son cero'],
+    text:
+        'Un péndulo oscila libremente. En el punto más bajo de su trayectoria:',
+    options: [
+      'La energía potencial es máxima',
+      'La energía cinética es mínima',
+      'La energía cinética es máxima y la potencial es mínima',
+      'Ambas energías son cero',
+    ],
     correctAnswer: 2,
-    explanation: 'En el punto más bajo, la altura es mínima (Ep mínima) y la velocidad es máxima (Ec máxima), por conservación de la energía mecánica.',
+    explanation:
+        'En el punto más bajo, la altura es mínima (Ep mínima) y la velocidad es máxima (Ec máxima), por conservación de la energía mecánica.',
   ),
   Question(
     id: 'cta_q82',
     topicId: 'cta_t1',
-    text: 'Un objeto de 4 kg desliza sin fricción desde lo alto de un plano inclinado de 10 m de altura. ¿Cuál es su velocidad al llegar abajo? (g = 10 m/s²)',
+    text:
+        'Un objeto de 4 kg desliza sin fricción desde lo alto de un plano inclinado de 10 m de altura. ¿Cuál es su velocidad al llegar abajo? (g = 10 m/s²)',
     options: ['10√2 m/s', '20 m/s', '10 m/s', '√200 m/s'],
     correctAnswer: 0,
-    explanation: 'Por conservación de energía: mgh = ½mv² → v = √(2gh) = √(2×10×10) = √200 = 10√2 ≈ 14,1 m/s. Las opciones A y D son equivalentes, pero la forma simplificada es 10√2.',
+    explanation:
+        'Por conservación de energía: mgh = ½mv² → v = √(2gh) = √(2×10×10) = √200 = 10√2 ≈ 14,1 m/s. Las opciones A y D son equivalentes, pero la forma simplificada es 10√2.',
   ),
   Question(
     id: 'cta_q83',
@@ -681,15 +946,18 @@ final List<Question> ctaQuestions = [
     text: '¿Qué tipo de magnitud es la rapidez?',
     options: ['Vectorial', 'Escalar', 'Tensorial', 'Adimensional'],
     correctAnswer: 1,
-    explanation: 'La rapidez es el módulo de la velocidad y es una magnitud escalar (solo tiene valor numérico y unidades).',
+    explanation:
+        'La rapidez es el módulo de la velocidad y es una magnitud escalar (solo tiene valor numérico y unidades).',
   ),
   Question(
     id: 'cta_q85',
     topicId: 'cta_t1',
-    text: 'En un tiro vertical hacia arriba, el tiempo de subida comparado con el tiempo de bajada (despreciando el aire) es:',
+    text:
+        'En un tiro vertical hacia arriba, el tiempo de subida comparado con el tiempo de bajada (despreciando el aire) es:',
     options: ['Mayor', 'Menor', 'Igual', 'Depende de la masa del objeto'],
     correctAnswer: 2,
-    explanation: 'Sin resistencia del aire, el tiempo de subida es igual al tiempo de bajada por simetría del movimiento.',
+    explanation:
+        'Sin resistencia del aire, el tiempo de subida es igual al tiempo de bajada por simetría del movimiento.',
   ),
   Question(
     id: 'cta_q86',
@@ -697,52 +965,69 @@ final List<Question> ctaQuestions = [
     text: 'La inercia de un cuerpo depende fundamentalmente de:',
     options: ['Su velocidad', 'Su volumen', 'Su masa', 'Su forma'],
     correctAnswer: 2,
-    explanation: 'La inercia es la resistencia de un cuerpo a cambiar su estado de movimiento y es directamente proporcional a su masa.',
+    explanation:
+        'La inercia es la resistencia de un cuerpo a cambiar su estado de movimiento y es directamente proporcional a su masa.',
   ),
   Question(
     id: 'cta_q87',
     topicId: 'cta_t1',
-    text: 'Un móvil parte del reposo y luego de 10 s alcanza una velocidad de 50 m/s. ¿Qué distancia recorrió?',
+    text:
+        'Un móvil parte del reposo y luego de 10 s alcanza una velocidad de 50 m/s. ¿Qué distancia recorrió?',
     options: ['500 m', '250 m', '100 m', '125 m'],
     correctAnswer: 1,
-    explanation: 'a = 50/10 = 5 m/s². d = ½at² = ½ × 5 × 100 = 250 m. También: d = (v₀ + vf)/2 × t = 25 × 10 = 250 m.',
+    explanation:
+        'a = 50/10 = 5 m/s². d = ½at² = ½ × 5 × 100 = 250 m. También: d = (v₀ + vf)/2 × t = 25 × 10 = 250 m.',
   ),
   Question(
     id: 'cta_q88',
     topicId: 'cta_t1',
-    text: 'Dos cuerpos de diferente masa se dejan caer simultáneamente desde la misma altura en el vacío. ¿Cuál llega primero al suelo?',
-    options: ['El más pesado', 'El más liviano', 'Llegan al mismo tiempo', 'Depende de su volumen'],
+    text:
+        'Dos cuerpos de diferente masa se dejan caer simultáneamente desde la misma altura en el vacío. ¿Cuál llega primero al suelo?',
+    options: [
+      'El más pesado',
+      'El más liviano',
+      'Llegan al mismo tiempo',
+      'Depende de su volumen',
+    ],
     correctAnswer: 2,
-    explanation: 'En el vacío (sin resistencia del aire), todos los cuerpos caen con la misma aceleración g, independientemente de su masa. Llegan al mismo tiempo.',
+    explanation:
+        'En el vacío (sin resistencia del aire), todos los cuerpos caen con la misma aceleración g, independientemente de su masa. Llegan al mismo tiempo.',
   ),
   Question(
     id: 'cta_q89',
     topicId: 'cta_t1',
-    text: 'Una fuerza de 200 N actúa sobre un cuerpo de 50 kg inicialmente en reposo. ¿Qué velocidad alcanza en 5 s?',
+    text:
+        'Una fuerza de 200 N actúa sobre un cuerpo de 50 kg inicialmente en reposo. ¿Qué velocidad alcanza en 5 s?',
     options: ['4 m/s', '20 m/s', '40 m/s', '10 m/s'],
     correctAnswer: 1,
-    explanation: 'a = F/m = 200/50 = 4 m/s². vf = v₀ + at = 0 + 4 × 5 = 20 m/s.',
+    explanation:
+        'a = F/m = 200/50 = 4 m/s². vf = v₀ + at = 0 + 4 × 5 = 20 m/s.',
   ),
   Question(
     id: 'cta_q90',
     topicId: 'cta_t1',
-    text: 'La velocidad angular de las manecillas del segundero de un reloj es:',
+    text:
+        'La velocidad angular de las manecillas del segundero de un reloj es:',
     options: ['2π/60 rad/s', '2π/3600 rad/s', '2π rad/s', 'π/30 rad/s'],
     correctAnswer: 0,
-    explanation: 'El segundero completa una vuelta (2π rad) en 60 s, por lo tanto ω = 2π/60 rad/s = π/30 rad/s. Nota: las opciones A y D son equivalentes.',
+    explanation:
+        'El segundero completa una vuelta (2π rad) en 60 s, por lo tanto ω = 2π/60 rad/s = π/30 rad/s. Nota: las opciones A y D son equivalentes.',
   ),
   Question(
     id: 'cta_q91',
     topicId: 'cta_t1',
-    text: 'Un cuerpo de 3 kg se mueve a 4 m/s. ¿Qué trabajo neto se necesita para detenerlo?',
+    text:
+        'Un cuerpo de 3 kg se mueve a 4 m/s. ¿Qué trabajo neto se necesita para detenerlo?',
     options: ['12 J', '24 J', '48 J', '6 J'],
     correctAnswer: 1,
-    explanation: 'El trabajo neto es igual al cambio de energía cinética: W = ΔEc = 0 − ½mv² = −½(3)(16) = −24 J. El módulo del trabajo es 24 J.',
+    explanation:
+        'El trabajo neto es igual al cambio de energía cinética: W = ΔEc = 0 − ½mv² = −½(3)(16) = −24 J. El módulo del trabajo es 24 J.',
   ),
   Question(
     id: 'cta_q92',
     topicId: 'cta_t1',
-    text: 'Un proyectil se lanza a 45° con velocidad de 20 m/s. ¿Cuál es su alcance horizontal máximo? (g = 10 m/s²)',
+    text:
+        'Un proyectil se lanza a 45° con velocidad de 20 m/s. ¿Cuál es su alcance horizontal máximo? (g = 10 m/s²)',
     options: ['20 m', '40 m', '80 m', '10 m'],
     correctAnswer: 1,
     explanation: 'R = v₀²·sen(2θ)/g = (400 × sen90°)/10 = 400/10 = 40 m.',
@@ -750,7 +1035,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q93',
     topicId: 'cta_t1',
-    text: 'Un cuerpo tiene una energía cinética de 200 J y una masa de 4 kg. ¿Cuál es su velocidad?',
+    text:
+        'Un cuerpo tiene una energía cinética de 200 J y una masa de 4 kg. ¿Cuál es su velocidad?',
     options: ['50 m/s', '10 m/s', '100 m/s', '25 m/s'],
     correctAnswer: 1,
     explanation: 'Ec = ½mv² → v² = 2Ec/m = 2(200)/4 = 100 → v = 10 m/s.',
@@ -758,15 +1044,18 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q94',
     topicId: 'cta_t1',
-    text: 'Un auto de 1000 kg viaja a 72 km/h y frena hasta detenerse. ¿Cuánta energía disipa el sistema de frenos?',
+    text:
+        'Un auto de 1000 kg viaja a 72 km/h y frena hasta detenerse. ¿Cuánta energía disipa el sistema de frenos?',
     options: ['200 000 J', '100 000 J', '259 200 J', '50 000 J'],
     correctAnswer: 0,
-    explanation: '72 km/h = 20 m/s. La energía disipada es Ec = ½mv² = ½ × 1000 × 400 = 200 000 J = 200 kJ.',
+    explanation:
+        '72 km/h = 20 m/s. La energía disipada es Ec = ½mv² = ½ × 1000 × 400 = 200 000 J = 200 kJ.',
   ),
   Question(
     id: 'cta_q95',
     topicId: 'cta_t1',
-    text: 'Un obrero sube un saco de 25 kg a una altura de 8 m en 10 s. ¿Cuál es la potencia desarrollada? (g = 10 m/s²)',
+    text:
+        'Un obrero sube un saco de 25 kg a una altura de 8 m en 10 s. ¿Cuál es la potencia desarrollada? (g = 10 m/s²)',
     options: ['20 W', '200 W', '2000 W', '250 W'],
     correctAnswer: 1,
     explanation: 'W = mgh = 25 × 10 × 8 = 2000 J. P = W/t = 2000/10 = 200 W.',
@@ -774,66 +1063,100 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q96',
     topicId: 'cta_t1',
-    text: 'Un bloque se desliza por un plano inclinado sin fricción de 15 m de largo y 3 m de alto. ¿Con qué velocidad llega a la base? (g = 10 m/s²)',
+    text:
+        'Un bloque se desliza por un plano inclinado sin fricción de 15 m de largo y 3 m de alto. ¿Con qué velocidad llega a la base? (g = 10 m/s²)',
     options: ['√300 m/s', '√60 m/s', '√30 m/s', '√600 m/s'],
     correctAnswer: 1,
-    explanation: 'Por conservación de energía: mgh = ½mv² → v = √(2gh) = √(2 × 10 × 3) = √60 ≈ 7,75 m/s. La longitud del plano no afecta el resultado.',
+    explanation:
+        'Por conservación de energía: mgh = ½mv² → v = √(2gh) = √(2 × 10 × 3) = √60 ≈ 7,75 m/s. La longitud del plano no afecta el resultado.',
   ),
   Question(
     id: 'cta_q97',
     topicId: 'cta_t1',
-    text: 'Una bala de 10 g sale del cañón a 300 m/s e impacta un bloque de madera penetrando 15 cm antes de detenerse. ¿Cuál es la fuerza promedio de frenado?',
+    text:
+        'Una bala de 10 g sale del cañón a 300 m/s e impacta un bloque de madera penetrando 15 cm antes de detenerse. ¿Cuál es la fuerza promedio de frenado?',
     options: ['3000 N', '300 N', '30 000 N', '450 N'],
     correctAnswer: 0,
-    explanation: 'Ec = ½mv² = ½(0,01)(90000) = 450 J. W = F·d → F = W/d = 450/0,15 = 3000 N.',
+    explanation:
+        'Ec = ½mv² = ½(0,01)(90000) = 450 J. W = F·d → F = W/d = 450/0,15 = 3000 N.',
   ),
   Question(
     id: 'cta_q98',
     topicId: 'cta_t1',
-    text: 'Un cuerpo recorre 25 m en el primer segundo de caída libre. Determine el tiempo que lleva cayendo al inicio de ese segundo. (g = 10 m/s²)',
+    text:
+        'Un cuerpo recorre 25 m en el primer segundo de caída libre. Determine el tiempo que lleva cayendo al inicio de ese segundo. (g = 10 m/s²)',
     options: ['1 s', '2 s', '3 s', '4 s'],
     correctAnswer: 1,
-    explanation: 'La distancia en el n-ésimo segundo es: dn = ½g(2n−1). Entonces 25 = 5(2n−1) → 2n−1 = 5 → n = 3. Al inicio del tercer segundo lleva 2 s cayendo.',
+    explanation:
+        'La distancia en el n-ésimo segundo es: dn = ½g(2n−1). Entonces 25 = 5(2n−1) → 2n−1 = 5 → n = 3. Al inicio del tercer segundo lleva 2 s cayendo.',
   ),
   Question(
     id: 'cta_q99',
     topicId: 'cta_t1',
-    text: 'Un motor de 750 W eleva un objeto de 50 kg. ¿A qué velocidad constante puede subirlo? (g = 10 m/s²)',
+    text:
+        'Un motor de 750 W eleva un objeto de 50 kg. ¿A qué velocidad constante puede subirlo? (g = 10 m/s²)',
     options: ['15 m/s', '0,15 m/s', '1,5 m/s', '7,5 m/s'],
     correctAnswer: 2,
-    explanation: 'P = F·v = mg·v → v = P/(mg) = 750/(50 × 10) = 750/500 = 1,5 m/s.',
+    explanation:
+        'P = F·v = mg·v → v = P/(mg) = 750/(50 × 10) = 750/500 = 1,5 m/s.',
   ),
   Question(
     id: 'cta_q100',
     topicId: 'cta_t1',
-    text: 'Desde lo alto de un edificio de 45 m de altura se lanza una piedra horizontalmente con 10 m/s. ¿A qué distancia horizontal del edificio cae? (g = 10 m/s²)',
+    text:
+        'Desde lo alto de un edificio de 45 m de altura se lanza una piedra horizontalmente con 10 m/s. ¿A qué distancia horizontal del edificio cae? (g = 10 m/s²)',
     options: ['45 m', '30 m', '10 m', '20 m'],
     correctAnswer: 1,
-    explanation: 'Tiempo de caída: h = ½gt² → 45 = 5t² → t = 3 s. Distancia horizontal: x = vx·t = 10 × 3 = 30 m.',
+    explanation:
+        'Tiempo de caída: h = ½gt² → 45 = 5t² → t = 3 s. Distancia horizontal: x = vx·t = 10 × 3 = 30 m.',
   ),
   Question(
     id: 'cta_q101',
     topicId: 'cta_t1',
-    text: 'En la resolución de problemas de cinemática, un objeto es lanzado verticalmente hacia arriba en el vacío. En el punto de altura máxima de su trayectoria, ¿cuál es el valor de su aceleración?',
-    options: ['A) Cero, porque el objeto se detiene momentáneamente.', 'B) Igual a la gravedad (9.8 m/s²), dirigida hacia abajo.', 'C) Igual a la gravedad, dirigida hacia arriba.', 'D) Máxima, debido a la inversión del movimiento.', 'E) Menor que la gravedad pero mayor que cero.'],
+    text:
+        'En la resolución de problemas de cinemática, un objeto es lanzado verticalmente hacia arriba en el vacío. En el punto de altura máxima de su trayectoria, ¿cuál es el valor de su aceleración?',
+    options: [
+      'A) Cero, porque el objeto se detiene momentáneamente.',
+      'B) Igual a la gravedad (9.8 m/s²), dirigida hacia abajo.',
+      'C) Igual a la gravedad, dirigida hacia arriba.',
+      'D) Máxima, debido a la inversión del movimiento.',
+      'E) Menor que la gravedad pero mayor que cero.',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B. La aceleración es constante e igual a la gravedad en todo momento (hacia abajo). El distractor A es la 'Trampa del Reposo Instentáneo'; el alumno asocia que si la velocidad es cero (se detiene), la aceleración también es cero, lo cual es físicamente incorrecto.",
+    explanation:
+        "La respuesta correcta es B. La aceleración es constante e igual a la gravedad en todo momento (hacia abajo). El distractor A es la 'Trampa del Reposo Instentáneo'; el alumno asocia que si la velocidad es cero (se detiene), la aceleración también es cero, lo cual es físicamente incorrecto.",
   ),
   Question(
     id: 'cta_q102',
     topicId: 'cta_t1',
-    text: 'Según la Segunda Ley de Newton, la aceleración de un cuerpo es directamente proporcional a la fuerza neta que actúa sobre él. Si un cuerpo de masa M se mueve a velocidad constante sobre una superficie horizontal con fricción, la fuerza neta sobre el sistema es:',
-    options: ['A) Igual a la fuerza de fricción.', 'B) Igual al peso del cuerpo (M * g).', 'C) Mayor que la fuerza de fricción.', 'D) Cero.', 'E) Constante y proporcional a la velocidad.'],
+    text:
+        'Según la Segunda Ley de Newton, la aceleración de un cuerpo es directamente proporcional a la fuerza neta que actúa sobre él. Si un cuerpo de masa M se mueve a velocidad constante sobre una superficie horizontal con fricción, la fuerza neta sobre el sistema es:',
+    options: [
+      'A) Igual a la fuerza de fricción.',
+      'B) Igual al peso del cuerpo (M * g).',
+      'C) Mayor que la fuerza de fricción.',
+      'D) Cero.',
+      'E) Constante y proporcional a la velocidad.',
+    ],
     correctAnswer: 3,
-    explanation: "La respuesta correcta es D (Cero). Si la velocidad es constante, la aceleración es cero, por lo tanto la fuerza neta es cero (las fuerzas se anulan). El distractor E es un 'Distractor por Proporcionalidad Ilógica'; el alumno asocia 'constante' con 'constante'.",
+    explanation:
+        "La respuesta correcta es D (Cero). Si la velocidad es constante, la aceleración es cero, por lo tanto la fuerza neta es cero (las fuerzas se anulan). El distractor E es un 'Distractor por Proporcionalidad Ilógica'; el alumno asocia 'constante' con 'constante'.",
   ),
   Question(
     id: 'cta_q103',
     topicId: 'cta_t1',
-    text: 'En un análisis dimensional, si [F] es fuerza, [M] es masa, [L] es longitud y [T] es tiempo, ¿cuál es la ecuación dimensional del Trabajo Mecánico (W)? (Sabiendo que W = F * d)',
-    options: ['A) M L T⁻²', 'B) M L² T⁻²', 'C) M L T⁻¹', 'D) M L² T⁻³', 'E) M L⁻¹ T⁻²'],
+    text:
+        'En un análisis dimensional, si [F] es fuerza, [M] es masa, [L] es longitud y [T] es tiempo, ¿cuál es la ecuación dimensional del Trabajo Mecánico (W)? (Sabiendo que W = F * d)',
+    options: [
+      'A) M L T⁻²',
+      'B) M L² T⁻²',
+      'C) M L T⁻¹',
+      'D) M L² T⁻³',
+      'E) M L⁻¹ T⁻²',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B (M L² T⁻²). El distractor A (M L T⁻²) es la fórmula dimensional de la Fuerza. Es un 'Distractor por Impaciencia', el alumno olvida multiplicar por la distancia [L].",
+    explanation:
+        "La respuesta correcta es B (M L² T⁻²). El distractor A (M L T⁻²) es la fórmula dimensional de la Fuerza. Es un 'Distractor por Impaciencia', el alumno olvida multiplicar por la distancia [L].",
   ),
   Question(
     id: 'cta_q104',
@@ -1238,50 +1561,72 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q154',
     topicId: 'cta_t2',
-    text: '¿En cuál estado de la materia las partículas se encuentran muy juntas, vibran en posiciones fijas y mantienen forma y volumen definidos?',
+    text:
+        '¿En cuál estado de la materia las partículas se encuentran muy juntas, vibran en posiciones fijas y mantienen forma y volumen definidos?',
     options: ['Líquido', 'Sólido', 'Gaseoso', 'Plasma'],
     correctAnswer: 1,
-    explanation: 'En el estado sólido las partículas están fuertemente unidas, vibran en posiciones fijas y conservan forma y volumen definidos.',
+    explanation:
+        'En el estado sólido las partículas están fuertemente unidas, vibran en posiciones fijas y conservan forma y volumen definidos.',
   ),
   Question(
     id: 'cta_q155',
     topicId: 'cta_t2',
-    text: 'El cambio de estado que ocurre cuando un sólido pasa directamente a gas sin pasar por el estado líquido se denomina:',
+    text:
+        'El cambio de estado que ocurre cuando un sólido pasa directamente a gas sin pasar por el estado líquido se denomina:',
     options: ['Evaporación', 'Fusión', 'Sublimación', 'Condensación'],
     correctAnswer: 2,
-    explanation: 'La sublimación es el paso directo de sólido a gas sin transitar por el estado líquido. Un ejemplo es la naftalina.',
+    explanation:
+        'La sublimación es el paso directo de sólido a gas sin transitar por el estado líquido. Un ejemplo es la naftalina.',
   ),
   Question(
     id: 'cta_q156',
     topicId: 'cta_t2',
-    text: '¿Cuál es el cuarto estado de la materia, presente en las estrellas y en ciertos dispositivos de iluminación, donde los átomos están ionizados?',
-    options: ['Gaseoso supercrítico', 'Coloidal', 'Plasma', 'Condensado de Bose-Einstein'],
+    text:
+        '¿Cuál es el cuarto estado de la materia, presente en las estrellas y en ciertos dispositivos de iluminación, donde los átomos están ionizados?',
+    options: [
+      'Gaseoso supercrítico',
+      'Coloidal',
+      'Plasma',
+      'Condensado de Bose-Einstein',
+    ],
     correctAnswer: 2,
-    explanation: 'El plasma es el cuarto estado de la materia, formado por gas ionizado a altas temperaturas; se encuentra en estrellas y tubos fluorescentes.',
+    explanation:
+        'El plasma es el cuarto estado de la materia, formado por gas ionizado a altas temperaturas; se encuentra en estrellas y tubos fluorescentes.',
   ),
   Question(
     id: 'cta_q157',
     topicId: 'cta_t2',
-    text: 'Al calentar hielo a presión atmosférica normal, primero ocurre la fusión a 0 °C y luego la ebullición a 100 °C. ¿Qué tipo de cambio representa la fusión?',
-    options: ['Cambio químico irreversible', 'Cambio físico endotérmico', 'Cambio físico exotérmico', 'Cambio químico exotérmico'],
+    text:
+        'Al calentar hielo a presión atmosférica normal, primero ocurre la fusión a 0 °C y luego la ebullición a 100 °C. ¿Qué tipo de cambio representa la fusión?',
+    options: [
+      'Cambio químico irreversible',
+      'Cambio físico endotérmico',
+      'Cambio físico exotérmico',
+      'Cambio químico exotérmico',
+    ],
     correctAnswer: 1,
-    explanation: 'La fusión es un cambio de estado físico que requiere absorción de energía (endotérmico) para romper las fuerzas intermoleculares del sólido.',
+    explanation:
+        'La fusión es un cambio de estado físico que requiere absorción de energía (endotérmico) para romper las fuerzas intermoleculares del sólido.',
   ),
   Question(
     id: 'cta_q158',
     topicId: 'cta_t2',
-    text: 'En una mañana fría, se observa que el vapor de agua del aire se convierte en pequeñas gotas sobre el vidrio de una ventana. ¿Qué cambio de estado se ha producido?',
+    text:
+        'En una mañana fría, se observa que el vapor de agua del aire se convierte en pequeñas gotas sobre el vidrio de una ventana. ¿Qué cambio de estado se ha producido?',
     options: ['Evaporación', 'Sublimación inversa', 'Condensación', 'Fusión'],
     correctAnswer: 2,
-    explanation: 'La condensación es el paso de gas a líquido; ocurre cuando el vapor de agua se enfría al contacto con la superficie fría del vidrio.',
+    explanation:
+        'La condensación es el paso de gas a líquido; ocurre cuando el vapor de agua se enfría al contacto con la superficie fría del vidrio.',
   ),
   Question(
     id: 'cta_q159',
     topicId: 'cta_t2',
-    text: 'Un gas noble como el neón, al someterse a una descarga eléctrica intensa, se ioniza y emite luz. ¿En qué estado de la materia se encuentra el neón ionizado dentro del tubo?',
+    text:
+        'Un gas noble como el neón, al someterse a una descarga eléctrica intensa, se ioniza y emite luz. ¿En qué estado de la materia se encuentra el neón ionizado dentro del tubo?',
     options: ['Gaseoso', 'Líquido sobrecalentado', 'Plasma', 'Sólido amorfo'],
     correctAnswer: 2,
-    explanation: 'Al ionizarse por la descarga eléctrica, el gas se convierte en plasma, lo que permite la emisión de luz característica.',
+    explanation:
+        'Al ionizarse por la descarga eléctrica, el gas se convierte en plasma, lo que permite la emisión de luz característica.',
   ),
   Question(
     id: 'cta_q160',
@@ -1289,12 +1634,14 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de las siguientes es una propiedad general de la materia?',
     options: ['Densidad', 'Punto de ebullición', 'Masa', 'Solubilidad'],
     correctAnswer: 2,
-    explanation: 'La masa es una propiedad general (extensiva) que posee toda materia, independientemente de su naturaleza. La densidad, el punto de ebullición y la solubilidad son propiedades específicas.',
+    explanation:
+        'La masa es una propiedad general (extensiva) que posee toda materia, independientemente de su naturaleza. La densidad, el punto de ebullición y la solubilidad son propiedades específicas.',
   ),
   Question(
     id: 'cta_q161',
     topicId: 'cta_t2',
-    text: 'La densidad de una sustancia es de 2,7 g/cm³. Si se tiene un bloque de 540 g de dicha sustancia, ¿cuál es su volumen?',
+    text:
+        'La densidad de una sustancia es de 2,7 g/cm³. Si se tiene un bloque de 540 g de dicha sustancia, ¿cuál es su volumen?',
     options: ['200 cm³', '150 cm³', '270 cm³', '100 cm³'],
     correctAnswer: 0,
     explanation: 'V = m / d = 540 g / 2,7 g/cm³ = 200 cm³.',
@@ -1302,10 +1649,12 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q162',
     topicId: 'cta_t2',
-    text: '¿Cuál propiedad específica permite diferenciar el agua pura del alcohol etílico a simple inspección de sus constantes físicas?',
+    text:
+        '¿Cuál propiedad específica permite diferenciar el agua pura del alcohol etílico a simple inspección de sus constantes físicas?',
     options: ['Masa', 'Volumen', 'Punto de ebullición', 'Inercia'],
     correctAnswer: 2,
-    explanation: 'El punto de ebullición es una propiedad específica (intensiva): el agua hierve a 100 °C y el etanol a 78,4 °C, lo que permite diferenciarlos.',
+    explanation:
+        'El punto de ebullición es una propiedad específica (intensiva): el agua hierve a 100 °C y el etanol a 78,4 °C, lo que permite diferenciarlos.',
   ),
   Question(
     id: 'cta_q163',
@@ -1318,66 +1667,110 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q164',
     topicId: 'cta_t2',
-    text: 'Se tienen tres líquidos con las siguientes densidades: aceite (0,92 g/mL), agua (1,00 g/mL) y mercurio (13,6 g/mL). Si se vierten en un recipiente, ¿cuál será el orden de las capas de abajo hacia arriba?',
-    options: ['Agua – aceite – mercurio', 'Mercurio – agua – aceite', 'Aceite – mercurio – agua', 'Mercurio – aceite – agua'],
+    text:
+        'Se tienen tres líquidos con las siguientes densidades: aceite (0,92 g/mL), agua (1,00 g/mL) y mercurio (13,6 g/mL). Si se vierten en un recipiente, ¿cuál será el orden de las capas de abajo hacia arriba?',
+    options: [
+      'Agua – aceite – mercurio',
+      'Mercurio – agua – aceite',
+      'Aceite – mercurio – agua',
+      'Mercurio – aceite – agua',
+    ],
     correctAnswer: 1,
-    explanation: 'Los líquidos inmiscibles se estratifican según su densidad: el más denso (mercurio) va al fondo, luego el agua y finalmente el aceite arriba.',
+    explanation:
+        'Los líquidos inmiscibles se estratifican según su densidad: el más denso (mercurio) va al fondo, luego el agua y finalmente el aceite arriba.',
   ),
   Question(
     id: 'cta_q165',
     topicId: 'cta_t2',
     text: '¿Cuál de las siguientes es una mezcla homogénea?',
-    options: ['Ensalada de frutas', 'Agua con arena', 'Aire atmosférico', 'Granito'],
+    options: [
+      'Ensalada de frutas',
+      'Agua con arena',
+      'Aire atmosférico',
+      'Granito',
+    ],
     correctAnswer: 2,
-    explanation: 'El aire es una mezcla homogénea (solución gaseosa) porque sus componentes no se distinguen a simple vista y tiene composición uniforme.',
+    explanation:
+        'El aire es una mezcla homogénea (solución gaseosa) porque sus componentes no se distinguen a simple vista y tiene composición uniforme.',
   ),
   Question(
     id: 'cta_q166',
     topicId: 'cta_t2',
-    text: 'Una sustancia pura que NO puede descomponerse en sustancias más simples por métodos químicos ordinarios se denomina:',
+    text:
+        'Una sustancia pura que NO puede descomponerse en sustancias más simples por métodos químicos ordinarios se denomina:',
     options: ['Compuesto', 'Mezcla', 'Elemento', 'Solución'],
     correctAnswer: 2,
-    explanation: 'Un elemento es una sustancia pura formada por un solo tipo de átomo que no puede descomponerse por reacciones químicas ordinarias.',
+    explanation:
+        'Un elemento es una sustancia pura formada por un solo tipo de átomo que no puede descomponerse por reacciones químicas ordinarias.',
   ),
   Question(
     id: 'cta_q167',
     topicId: 'cta_t2',
-    text: '¿Cuál método de separación sería el más adecuado para obtener sal disuelta en agua?',
+    text:
+        '¿Cuál método de separación sería el más adecuado para obtener sal disuelta en agua?',
     options: ['Filtración', 'Decantación', 'Evaporación', 'Tamizado'],
     correctAnswer: 2,
-    explanation: 'La evaporación permite separar un soluto sólido disuelto (sal) de su solvente (agua) al calentar hasta que el agua se evapore.',
+    explanation:
+        'La evaporación permite separar un soluto sólido disuelto (sal) de su solvente (agua) al calentar hasta que el agua se evapore.',
   ),
   Question(
     id: 'cta_q168',
     topicId: 'cta_t2',
-    text: 'El bronce es una aleación de cobre y estaño. ¿Cómo se clasifica el bronce?',
-    options: ['Sustancia pura simple', 'Compuesto químico', 'Mezcla heterogénea', 'Mezcla homogénea'],
+    text:
+        'El bronce es una aleación de cobre y estaño. ¿Cómo se clasifica el bronce?',
+    options: [
+      'Sustancia pura simple',
+      'Compuesto químico',
+      'Mezcla heterogénea',
+      'Mezcla homogénea',
+    ],
     correctAnswer: 3,
-    explanation: 'Las aleaciones son mezclas homogéneas de metales porque tienen composición uniforme a nivel macroscópico, aunque no son compuestos químicos.',
+    explanation:
+        'Las aleaciones son mezclas homogéneas de metales porque tienen composición uniforme a nivel macroscópico, aunque no son compuestos químicos.',
   ),
   Question(
     id: 'cta_q169',
     topicId: 'cta_t2',
-    text: 'Un técnico forense necesita separar limaduras de hierro de arena recogida en una escena del crimen. ¿Qué método de separación debe emplear?',
-    options: ['Destilación', 'Separación magnética', 'Cromatografía', 'Centrifugación'],
+    text:
+        'Un técnico forense necesita separar limaduras de hierro de arena recogida en una escena del crimen. ¿Qué método de separación debe emplear?',
+    options: [
+      'Destilación',
+      'Separación magnética',
+      'Cromatografía',
+      'Centrifugación',
+    ],
     correctAnswer: 1,
-    explanation: 'La separación magnética aprovecha las propiedades magnéticas del hierro para atraerlo con un imán y separarlo de la arena.',
+    explanation:
+        'La separación magnética aprovecha las propiedades magnéticas del hierro para atraerlo con un imán y separarlo de la arena.',
   ),
   Question(
     id: 'cta_q170',
     topicId: 'cta_t2',
     text: 'El agua destilada es considerada una sustancia pura porque:',
-    options: ['Tiene aspecto transparente', 'Está formada por moléculas de H₂O con composición definida y constante', 'Se obtiene por filtración', 'Es una mezcla de hidrógeno y oxígeno gaseosos'],
+    options: [
+      'Tiene aspecto transparente',
+      'Está formada por moléculas de H₂O con composición definida y constante',
+      'Se obtiene por filtración',
+      'Es una mezcla de hidrógeno y oxígeno gaseosos',
+    ],
     correctAnswer: 1,
-    explanation: 'El agua destilada es un compuesto puro con fórmula H₂O y composición constante (ley de las proporciones definidas).',
+    explanation:
+        'El agua destilada es un compuesto puro con fórmula H₂O y composición constante (ley de las proporciones definidas).',
   ),
   Question(
     id: 'cta_q171',
     topicId: 'cta_t2',
-    text: 'La tabla periódica moderna organiza los elementos químicos en orden creciente de:',
-    options: ['Masa atómica', 'Número atómico', 'Electronegatividad', 'Radio atómico'],
+    text:
+        'La tabla periódica moderna organiza los elementos químicos en orden creciente de:',
+    options: [
+      'Masa atómica',
+      'Número atómico',
+      'Electronegatividad',
+      'Radio atómico',
+    ],
     correctAnswer: 1,
-    explanation: 'La ley periódica moderna (Moseley) establece que las propiedades de los elementos son función periódica de su número atómico (Z).',
+    explanation:
+        'La ley periódica moderna (Moseley) establece que las propiedades de los elementos son función periódica de su número atómico (Z).',
   ),
   Question(
     id: 'cta_q172',
@@ -1385,183 +1778,298 @@ final List<Question> ctaQuestions = [
     text: 'Las filas horizontales de la tabla periódica se denominan:',
     options: ['Grupos', 'Familias', 'Periodos', 'Bloques'],
     correctAnswer: 2,
-    explanation: 'Las filas horizontales se llaman periodos y van del 1 al 7; indican el número de niveles de energía ocupados por los electrones.',
+    explanation:
+        'Las filas horizontales se llaman periodos y van del 1 al 7; indican el número de niveles de energía ocupados por los electrones.',
   ),
   Question(
     id: 'cta_q173',
     topicId: 'cta_t2',
     text: '¿Cuántos periodos y grupos tiene la tabla periódica actual?',
-    options: ['7 periodos y 18 grupos', '8 periodos y 16 grupos', '7 periodos y 16 grupos', '6 periodos y 18 grupos'],
+    options: [
+      '7 periodos y 18 grupos',
+      '8 periodos y 16 grupos',
+      '7 periodos y 16 grupos',
+      '6 periodos y 18 grupos',
+    ],
     correctAnswer: 0,
-    explanation: 'La tabla periódica actual tiene 7 periodos (filas) y 18 grupos (columnas).',
+    explanation:
+        'La tabla periódica actual tiene 7 periodos (filas) y 18 grupos (columnas).',
   ),
   Question(
     id: 'cta_q174',
     topicId: 'cta_t2',
     text: 'La electronegatividad en la tabla periódica generalmente:',
-    options: ['Aumenta de izquierda a derecha y de arriba hacia abajo', 'Disminuye de izquierda a derecha y aumenta de abajo hacia arriba', 'Aumenta de izquierda a derecha y de abajo hacia arriba', 'Es constante en cada periodo'],
+    options: [
+      'Aumenta de izquierda a derecha y de arriba hacia abajo',
+      'Disminuye de izquierda a derecha y aumenta de abajo hacia arriba',
+      'Aumenta de izquierda a derecha y de abajo hacia arriba',
+      'Es constante en cada periodo',
+    ],
     correctAnswer: 2,
-    explanation: 'La electronegatividad aumenta hacia la derecha en un periodo y hacia arriba en un grupo, siendo el flúor el elemento más electronegativo.',
+    explanation:
+        'La electronegatividad aumenta hacia la derecha en un periodo y hacia arriba en un grupo, siendo el flúor el elemento más electronegativo.',
   ),
   Question(
     id: 'cta_q175',
     topicId: 'cta_t2',
-    text: 'El elemento con número atómico 11 es el sodio (Na). ¿En qué periodo y grupo de la tabla periódica se ubica?',
-    options: ['Periodo 2, grupo IA', 'Periodo 3, grupo IA', 'Periodo 3, grupo IIA', 'Periodo 2, grupo IIA'],
+    text:
+        'El elemento con número atómico 11 es el sodio (Na). ¿En qué periodo y grupo de la tabla periódica se ubica?',
+    options: [
+      'Periodo 2, grupo IA',
+      'Periodo 3, grupo IA',
+      'Periodo 3, grupo IIA',
+      'Periodo 2, grupo IIA',
+    ],
     correctAnswer: 1,
-    explanation: 'Na (Z=11): configuración 1s² 2s² 2p⁶ 3s¹. Tiene 3 niveles de energía (periodo 3) y 1 electrón de valencia en el bloque s (grupo IA).',
+    explanation:
+        'Na (Z=11): configuración 1s² 2s² 2p⁶ 3s¹. Tiene 3 niveles de energía (periodo 3) y 1 electrón de valencia en el bloque s (grupo IA).',
   ),
   Question(
     id: 'cta_q176',
     topicId: 'cta_t2',
-    text: '¿Cuál de las siguientes propiedades es característica de los metales?',
-    options: ['Son malos conductores de electricidad', 'Tienen alto punto de fusión y son dúctiles', 'Son frágiles y opacos', 'Forman aniones con facilidad'],
+    text:
+        '¿Cuál de las siguientes propiedades es característica de los metales?',
+    options: [
+      'Son malos conductores de electricidad',
+      'Tienen alto punto de fusión y son dúctiles',
+      'Son frágiles y opacos',
+      'Forman aniones con facilidad',
+    ],
     correctAnswer: 1,
-    explanation: 'Los metales generalmente tienen altos puntos de fusión, son dúctiles, maleables y buenos conductores de calor y electricidad.',
+    explanation:
+        'Los metales generalmente tienen altos puntos de fusión, son dúctiles, maleables y buenos conductores de calor y electricidad.',
   ),
   Question(
     id: 'cta_q177',
     topicId: 'cta_t2',
     text: 'Los metaloides se caracterizan por:',
-    options: ['Ser excelentes conductores eléctricos', 'Presentar propiedades intermedias entre metales y no metales', 'Ser todos gaseosos a temperatura ambiente', 'Ubicarse exclusivamente en el grupo VIIIA'],
+    options: [
+      'Ser excelentes conductores eléctricos',
+      'Presentar propiedades intermedias entre metales y no metales',
+      'Ser todos gaseosos a temperatura ambiente',
+      'Ubicarse exclusivamente en el grupo VIIIA',
+    ],
     correctAnswer: 1,
-    explanation: 'Los metaloides (como el silicio y el germanio) poseen propiedades intermedias; son semiconductores, por lo que se usan en electrónica.',
+    explanation:
+        'Los metaloides (como el silicio y el germanio) poseen propiedades intermedias; son semiconductores, por lo que se usan en electrónica.',
   ),
   Question(
     id: 'cta_q178',
     topicId: 'cta_t2',
-    text: '¿Cuál de los siguientes elementos es un no metal que se presenta como gas diatómico a temperatura ambiente?',
+    text:
+        '¿Cuál de los siguientes elementos es un no metal que se presenta como gas diatómico a temperatura ambiente?',
     options: ['Hierro (Fe)', 'Silicio (Si)', 'Oxígeno (O₂)', 'Sodio (Na)'],
     correctAnswer: 2,
-    explanation: 'El oxígeno es un no metal que a temperatura ambiente existe como gas diatómico (O₂).',
+    explanation:
+        'El oxígeno es un no metal que a temperatura ambiente existe como gas diatómico (O₂).',
   ),
   Question(
     id: 'cta_q179',
     topicId: 'cta_t2',
-    text: 'Los elementos del grupo IA (excepto el hidrógeno) se conocen como metales alcalinos. ¿Cuál es su principal característica?',
-    options: ['Tienen 7 electrones de valencia', 'Son muy poco reactivos', 'Tienen 1 electrón de valencia y son altamente reactivos', 'Son gases nobles'],
+    text:
+        'Los elementos del grupo IA (excepto el hidrógeno) se conocen como metales alcalinos. ¿Cuál es su principal característica?',
+    options: [
+      'Tienen 7 electrones de valencia',
+      'Son muy poco reactivos',
+      'Tienen 1 electrón de valencia y son altamente reactivos',
+      'Son gases nobles',
+    ],
     correctAnswer: 2,
-    explanation: 'Los metales alcalinos poseen 1 electrón de valencia que pierden fácilmente, lo que los hace extremadamente reactivos.',
+    explanation:
+        'Los metales alcalinos poseen 1 electrón de valencia que pierden fácilmente, lo que los hace extremadamente reactivos.',
   ),
   Question(
     id: 'cta_q180',
     topicId: 'cta_t2',
-    text: '¿Cuál familia de la tabla periódica incluye al flúor, cloro, bromo y yodo?',
+    text:
+        '¿Cuál familia de la tabla periódica incluye al flúor, cloro, bromo y yodo?',
     options: ['Alcalinos', 'Alcalinotérreos', 'Halógenos', 'Gases nobles'],
     correctAnswer: 2,
-    explanation: 'Los halógenos pertenecen al grupo VIIA (17) e incluyen F, Cl, Br, I y At. Necesitan ganar un electrón para completar su octeto.',
+    explanation:
+        'Los halógenos pertenecen al grupo VIIA (17) e incluyen F, Cl, Br, I y At. Necesitan ganar un electrón para completar su octeto.',
   ),
   Question(
     id: 'cta_q181',
     topicId: 'cta_t2',
-    text: 'Los gases nobles (grupo VIIIA) son químicamente muy estables porque:',
-    options: ['Tienen un solo electrón de valencia', 'Poseen su última capa de valencia completa (8 electrones, excepto el helio con 2)', 'Son todos radiactivos', 'Forman enlaces iónicos fácilmente'],
+    text:
+        'Los gases nobles (grupo VIIIA) son químicamente muy estables porque:',
+    options: [
+      'Tienen un solo electrón de valencia',
+      'Poseen su última capa de valencia completa (8 electrones, excepto el helio con 2)',
+      'Son todos radiactivos',
+      'Forman enlaces iónicos fácilmente',
+    ],
     correctAnswer: 1,
-    explanation: 'Los gases nobles tienen su capa de valencia completa, lo que les confiere gran estabilidad y muy baja reactividad.',
+    explanation:
+        'Los gases nobles tienen su capa de valencia completa, lo que les confiere gran estabilidad y muy baja reactividad.',
   ),
   Question(
     id: 'cta_q182',
     topicId: 'cta_t2',
-    text: 'El calcio (Ca) pertenece al grupo IIA. ¿Qué tipo de ion forma preferentemente al reaccionar?',
-    options: ['Anión Ca²⁻', 'Catión Ca²⁺', 'Catión Ca⁺', 'Permanece neutro siempre'],
+    text:
+        'El calcio (Ca) pertenece al grupo IIA. ¿Qué tipo de ion forma preferentemente al reaccionar?',
+    options: [
+      'Anión Ca²⁻',
+      'Catión Ca²⁺',
+      'Catión Ca⁺',
+      'Permanece neutro siempre',
+    ],
     correctAnswer: 1,
-    explanation: 'Los alcalinotérreos (grupo IIA) tienen 2 electrones de valencia que pierden para formar cationes con carga 2+ (Ca²⁺).',
+    explanation:
+        'Los alcalinotérreos (grupo IIA) tienen 2 electrones de valencia que pierden para formar cationes con carga 2+ (Ca²⁺).',
   ),
   Question(
     id: 'cta_q183',
     topicId: 'cta_t2',
-    text: 'Un elemento desconocido reacciona violentamente con el agua produciendo hidrógeno gaseoso e hidróxido, y su compuesto con cloro tiene fórmula XCl. ¿A qué familia pertenece más probablemente?',
-    options: ['Halógenos', 'Gases nobles', 'Alcalinos (IA)', 'Alcalinotérreos (IIA)'],
+    text:
+        'Un elemento desconocido reacciona violentamente con el agua produciendo hidrógeno gaseoso e hidróxido, y su compuesto con cloro tiene fórmula XCl. ¿A qué familia pertenece más probablemente?',
+    options: [
+      'Halógenos',
+      'Gases nobles',
+      'Alcalinos (IA)',
+      'Alcalinotérreos (IIA)',
+    ],
     correctAnswer: 2,
-    explanation: 'La fórmula XCl indica valencia 1, y la reacción violenta con agua es típica de los metales alcalinos del grupo IA.',
+    explanation:
+        'La fórmula XCl indica valencia 1, y la reacción violenta con agua es típica de los metales alcalinos del grupo IA.',
   ),
   Question(
     id: 'cta_q184',
     topicId: 'cta_t2',
     text: 'El enlace iónico se forma generalmente entre:',
-    options: ['Dos no metales', 'Un metal y un no metal', 'Dos metales', 'Dos gases nobles'],
+    options: [
+      'Dos no metales',
+      'Un metal y un no metal',
+      'Dos metales',
+      'Dos gases nobles',
+    ],
     correctAnswer: 1,
-    explanation: 'El enlace iónico se forma por transferencia de electrones de un metal (baja electronegatividad) a un no metal (alta electronegatividad).',
+    explanation:
+        'El enlace iónico se forma por transferencia de electrones de un metal (baja electronegatividad) a un no metal (alta electronegatividad).',
   ),
   Question(
     id: 'cta_q185',
     topicId: 'cta_t2',
-    text: '¿Qué tipo de enlace mantiene unidos a los átomos de cloro en la molécula de Cl₂?',
+    text:
+        '¿Qué tipo de enlace mantiene unidos a los átomos de cloro en la molécula de Cl₂?',
     options: ['Iónico', 'Metálico', 'Covalente apolar', 'Covalente polar'],
     correctAnswer: 2,
-    explanation: 'En Cl₂, dos átomos idénticos comparten un par de electrones. Al tener la misma electronegatividad, el enlace es covalente apolar.',
+    explanation:
+        'En Cl₂, dos átomos idénticos comparten un par de electrones. Al tener la misma electronegatividad, el enlace es covalente apolar.',
   ),
   Question(
     id: 'cta_q186',
     topicId: 'cta_t2',
-    text: 'El enlace metálico explica varias propiedades de los metales. ¿Cuál de las siguientes es una consecuencia directa de este tipo de enlace?',
-    options: ['Fragilidad extrema', 'Conductividad eléctrica por electrones deslocalizados', 'Formación de moléculas discretas', 'Puntos de fusión muy bajos'],
+    text:
+        'El enlace metálico explica varias propiedades de los metales. ¿Cuál de las siguientes es una consecuencia directa de este tipo de enlace?',
+    options: [
+      'Fragilidad extrema',
+      'Conductividad eléctrica por electrones deslocalizados',
+      'Formación de moléculas discretas',
+      'Puntos de fusión muy bajos',
+    ],
     correctAnswer: 1,
-    explanation: "En el enlace metálico, los electrones de valencia están deslocalizados formando un 'mar de electrones' que permite la conducción eléctrica.",
+    explanation:
+        "En el enlace metálico, los electrones de valencia están deslocalizados formando un 'mar de electrones' que permite la conducción eléctrica.",
   ),
   Question(
     id: 'cta_q187',
     topicId: 'cta_t2',
-    text: 'El cloruro de sodio (NaCl) tiene un punto de fusión de 801 °C y conduce electricidad cuando está disuelto en agua. Estas propiedades son consistentes con un enlace de tipo:',
+    text:
+        'El cloruro de sodio (NaCl) tiene un punto de fusión de 801 °C y conduce electricidad cuando está disuelto en agua. Estas propiedades son consistentes con un enlace de tipo:',
     options: ['Covalente apolar', 'Covalente polar', 'Iónico', 'Metálico'],
     correctAnswer: 2,
-    explanation: 'Alto punto de fusión y conducción eléctrica en solución son propiedades típicas de compuestos iónicos, donde existen iones Na⁺ y Cl⁻.',
+    explanation:
+        'Alto punto de fusión y conducción eléctrica en solución son propiedades típicas de compuestos iónicos, donde existen iones Na⁺ y Cl⁻.',
   ),
   Question(
     id: 'cta_q188',
     topicId: 'cta_t2',
-    text: 'En la molécula de agua (H₂O), los enlaces O–H son covalentes polares. ¿Por qué se consideran polares?',
-    options: ['Porque el hidrógeno y el oxígeno tienen la misma electronegatividad', 'Porque hay transferencia total de electrones del H al O', 'Porque existe diferencia de electronegatividad entre O y H, generando una distribución asimétrica de carga', 'Porque los electrones se deslocalizan libremente'],
+    text:
+        'En la molécula de agua (H₂O), los enlaces O–H son covalentes polares. ¿Por qué se consideran polares?',
+    options: [
+      'Porque el hidrógeno y el oxígeno tienen la misma electronegatividad',
+      'Porque hay transferencia total de electrones del H al O',
+      'Porque existe diferencia de electronegatividad entre O y H, generando una distribución asimétrica de carga',
+      'Porque los electrones se deslocalizan libremente',
+    ],
     correctAnswer: 2,
-    explanation: 'El oxígeno es más electronegativo que el hidrógeno, lo que genera una distribución desigual de la densidad electrónica, creando un dipolo.',
+    explanation:
+        'El oxígeno es más electronegativo que el hidrógeno, lo que genera una distribución desigual de la densidad electrónica, creando un dipolo.',
   ),
   Question(
     id: 'cta_q189',
     topicId: 'cta_t2',
     text: 'La tetravalencia del carbono significa que:',
-    options: ['El carbono solo forma enlaces iónicos', 'El carbono puede formar 4 enlaces covalentes', 'El carbono tiene 4 neutrones', 'El carbono siempre forma moléculas inorgánicas'],
+    options: [
+      'El carbono solo forma enlaces iónicos',
+      'El carbono puede formar 4 enlaces covalentes',
+      'El carbono tiene 4 neutrones',
+      'El carbono siempre forma moléculas inorgánicas',
+    ],
     correctAnswer: 1,
-    explanation: 'El carbono tiene 4 electrones de valencia y puede formar 4 enlaces covalentes, lo que le permite unirse a múltiples átomos simultáneamente.',
+    explanation:
+        'El carbono tiene 4 electrones de valencia y puede formar 4 enlaces covalentes, lo que le permite unirse a múltiples átomos simultáneamente.',
   ),
   Question(
     id: 'cta_q190',
     topicId: 'cta_t2',
-    text: 'La propiedad del carbono de formar cadenas largas uniéndose consigo mismo se denomina:',
+    text:
+        'La propiedad del carbono de formar cadenas largas uniéndose consigo mismo se denomina:',
     options: ['Isomería', 'Alotropía', 'Catenación', 'Polimerización'],
     correctAnswer: 2,
-    explanation: 'La catenación es la capacidad del carbono de formar enlaces C–C estables, dando lugar a cadenas lineales, ramificadas y cíclicas.',
+    explanation:
+        'La catenación es la capacidad del carbono de formar enlaces C–C estables, dando lugar a cadenas lineales, ramificadas y cíclicas.',
   ),
   Question(
     id: 'cta_q191',
     topicId: 'cta_t2',
-    text: 'En la hibridación sp³ del carbono, ¿cuántos orbitales híbridos se forman y qué geometría adoptan?',
-    options: ['2 orbitales, geometría lineal', '3 orbitales, geometría trigonal plana', '4 orbitales, geometría tetraédrica', '6 orbitales, geometría octaédrica'],
+    text:
+        'En la hibridación sp³ del carbono, ¿cuántos orbitales híbridos se forman y qué geometría adoptan?',
+    options: [
+      '2 orbitales, geometría lineal',
+      '3 orbitales, geometría trigonal plana',
+      '4 orbitales, geometría tetraédrica',
+      '6 orbitales, geometría octaédrica',
+    ],
     correctAnswer: 2,
-    explanation: 'En la hibridación sp³ se mezclan 1 orbital s y 3 orbitales p, formando 4 orbitales híbridos equivalentes con geometría tetraédrica (ángulo ≈ 109,5°).',
+    explanation:
+        'En la hibridación sp³ se mezclan 1 orbital s y 3 orbitales p, formando 4 orbitales híbridos equivalentes con geometría tetraédrica (ángulo ≈ 109,5°).',
   ),
   Question(
     id: 'cta_q192',
     topicId: 'cta_t2',
-    text: '¿Qué tipo de hibridación presenta el carbono en el etileno (CH₂=CH₂), que tiene un doble enlace C=C?',
+    text:
+        '¿Qué tipo de hibridación presenta el carbono en el etileno (CH₂=CH₂), que tiene un doble enlace C=C?',
     options: ['sp³', 'sp²', 'sp', 'No presenta hibridación'],
     correctAnswer: 1,
-    explanation: 'En el doble enlace C=C, cada carbono presenta hibridación sp² (1s + 2p), con geometría trigonal plana y un enlace pi adicional.',
+    explanation:
+        'En el doble enlace C=C, cada carbono presenta hibridación sp² (1s + 2p), con geometría trigonal plana y un enlace pi adicional.',
   ),
   Question(
     id: 'cta_q193',
     topicId: 'cta_t2',
-    text: 'El diamante y el grafito son formas alotrópicas del carbono. El diamante es extremadamente duro porque:',
-    options: ['Cada carbono se une a 3 átomos de carbono en capas planas', 'Cada carbono forma 4 enlaces covalentes en una estructura tridimensional rígida (sp³)', 'Contiene enlaces metálicos entre sus átomos', 'Sus átomos están unidos por fuerzas de van der Waals'],
+    text:
+        'El diamante y el grafito son formas alotrópicas del carbono. El diamante es extremadamente duro porque:',
+    options: [
+      'Cada carbono se une a 3 átomos de carbono en capas planas',
+      'Cada carbono forma 4 enlaces covalentes en una estructura tridimensional rígida (sp³)',
+      'Contiene enlaces metálicos entre sus átomos',
+      'Sus átomos están unidos por fuerzas de van der Waals',
+    ],
     correctAnswer: 1,
-    explanation: 'En el diamante, cada carbono con hibridación sp³ se une a otros 4 carbonos en una red tridimensional muy rígida, lo que le confiere gran dureza.',
+    explanation:
+        'En el diamante, cada carbono con hibridación sp³ se une a otros 4 carbonos en una red tridimensional muy rígida, lo que le confiere gran dureza.',
   ),
   Question(
     id: 'cta_q194',
     topicId: 'cta_t2',
-    text: '¿Cuál es la fórmula general de los alcanos (hidrocarburos saturados)?',
+    text:
+        '¿Cuál es la fórmula general de los alcanos (hidrocarburos saturados)?',
     options: ['CₙH₂ₙ', 'CₙH₂ₙ₋₂', 'CₙH₂ₙ₊₂', 'CₙHₙ'],
     correctAnswer: 2,
-    explanation: 'Los alcanos son hidrocarburos saturados (solo enlaces simples C–C) con fórmula general CₙH₂ₙ₊₂.',
+    explanation:
+        'Los alcanos son hidrocarburos saturados (solo enlaces simples C–C) con fórmula general CₙH₂ₙ₊₂.',
   ),
   Question(
     id: 'cta_q195',
@@ -1569,7 +2077,8 @@ final List<Question> ctaQuestions = [
     text: 'El hidrocarburo con fórmula CH₃–CH₂–CH₃ se denomina:',
     options: ['Etano', 'Propano', 'Butano', 'Metano'],
     correctAnswer: 1,
-    explanation: "La molécula tiene 3 carbonos: el prefijo 'prop-' indica 3 carbonos y la terminación '-ano' indica que es un alcano. Es propano (C₃H₈).",
+    explanation:
+        "La molécula tiene 3 carbonos: el prefijo 'prop-' indica 3 carbonos y la terminación '-ano' indica que es un alcano. Es propano (C₃H₈).",
   ),
   Question(
     id: 'cta_q196',
@@ -1577,15 +2086,22 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es el nombre IUPAC del compuesto CH₂=CH₂?',
     options: ['Etano', 'Etino', 'Eteno', 'Metano'],
     correctAnswer: 2,
-    explanation: "CH₂=CH₂ tiene 2 carbonos unidos por un doble enlace: prefijo 'et-' (2C) y sufijo '-eno' (doble enlace). Es eteno (etileno).",
+    explanation:
+        "CH₂=CH₂ tiene 2 carbonos unidos por un doble enlace: prefijo 'et-' (2C) y sufijo '-eno' (doble enlace). Es eteno (etileno).",
   ),
   Question(
     id: 'cta_q197',
     topicId: 'cta_t2',
     text: 'Los alquinos se caracterizan por poseer:',
-    options: ['Solo enlaces simples entre carbonos', 'Al menos un enlace doble C=C', 'Al menos un triple enlace C≡C', 'Un grupo hidroxilo (–OH)'],
+    options: [
+      'Solo enlaces simples entre carbonos',
+      'Al menos un enlace doble C=C',
+      'Al menos un triple enlace C≡C',
+      'Un grupo hidroxilo (–OH)',
+    ],
     correctAnswer: 2,
-    explanation: 'Los alquinos son hidrocarburos insaturados que poseen al menos un triple enlace C≡C. Su fórmula general es CₙH₂ₙ₋₂.',
+    explanation:
+        'Los alquinos son hidrocarburos insaturados que poseen al menos un triple enlace C≡C. Su fórmula general es CₙH₂ₙ₋₂.',
   ),
   Question(
     id: 'cta_q198',
@@ -1593,55 +2109,88 @@ final List<Question> ctaQuestions = [
     text: 'El grupo funcional –OH caracteriza a los:',
     options: ['Aldehídos', 'Ácidos carboxílicos', 'Alcoholes', 'Éteres'],
     correctAnswer: 2,
-    explanation: 'El grupo hidroxilo (–OH) unido a un carbono saturado es el grupo funcional característico de los alcoholes.',
+    explanation:
+        'El grupo hidroxilo (–OH) unido a un carbono saturado es el grupo funcional característico de los alcoholes.',
   ),
   Question(
     id: 'cta_q199',
     topicId: 'cta_t2',
-    text: 'El metanol (CH₃OH) es un alcohol de un solo carbono. Es altamente tóxico para el ser humano. ¿Cuál es el nombre común del alcohol de dos carbonos (CH₃CH₂OH) que se encuentra en las bebidas alcohólicas?',
-    options: ['Alcohol metílico', 'Alcohol etílico', 'Alcohol propílico', 'Alcohol butílico'],
+    text:
+        'El metanol (CH₃OH) es un alcohol de un solo carbono. Es altamente tóxico para el ser humano. ¿Cuál es el nombre común del alcohol de dos carbonos (CH₃CH₂OH) que se encuentra en las bebidas alcohólicas?',
+    options: [
+      'Alcohol metílico',
+      'Alcohol etílico',
+      'Alcohol propílico',
+      'Alcohol butílico',
+    ],
     correctAnswer: 1,
-    explanation: 'El etanol (CH₃CH₂OH) se conoce comúnmente como alcohol etílico y es el alcohol presente en las bebidas alcohólicas.',
+    explanation:
+        'El etanol (CH₃CH₂OH) se conoce comúnmente como alcohol etílico y es el alcohol presente en las bebidas alcohólicas.',
   ),
   Question(
     id: 'cta_q200',
     topicId: 'cta_t2',
-    text: 'El petróleo es una mezcla compleja de hidrocarburos. El proceso industrial que separa sus componentes según sus puntos de ebullición se denomina:',
-    options: ['Craqueo catalítico', 'Destilación fraccionada', 'Polimerización', 'Vulcanización'],
+    text:
+        'El petróleo es una mezcla compleja de hidrocarburos. El proceso industrial que separa sus componentes según sus puntos de ebullición se denomina:',
+    options: [
+      'Craqueo catalítico',
+      'Destilación fraccionada',
+      'Polimerización',
+      'Vulcanización',
+    ],
     correctAnswer: 1,
-    explanation: 'La destilación fraccionada separa los componentes del petróleo aprovechando las diferencias en sus puntos de ebullición.',
+    explanation:
+        'La destilación fraccionada separa los componentes del petróleo aprovechando las diferencias en sus puntos de ebullición.',
   ),
   Question(
     id: 'cta_q201',
     topicId: 'cta_t2',
-    text: 'Los polímeros son macromoléculas formadas por la repetición de unidades llamadas:',
+    text:
+        'Los polímeros son macromoléculas formadas por la repetición de unidades llamadas:',
     options: ['Isómeros', 'Alótropos', 'Monómeros', 'Electrolitos'],
     correctAnswer: 2,
-    explanation: 'Los monómeros son las unidades básicas que se unen repetidamente mediante reacciones de polimerización para formar polímeros.',
+    explanation:
+        'Los monómeros son las unidades básicas que se unen repetidamente mediante reacciones de polimerización para formar polímeros.',
   ),
   Question(
     id: 'cta_q202',
     topicId: 'cta_t2',
-    text: '¿Cuál de los siguientes plásticos, de uso masivo, es un polímero derivado del etileno (eteno)?',
+    text:
+        '¿Cuál de los siguientes plásticos, de uso masivo, es un polímero derivado del etileno (eteno)?',
     options: ['Nailon', 'Polietileno', 'Baquelita', 'Caucho natural'],
     correctAnswer: 1,
-    explanation: 'El polietileno se obtiene por polimerización del etileno (CH₂=CH₂) y es uno de los plásticos más utilizados a nivel mundial.',
+    explanation:
+        'El polietileno se obtiene por polimerización del etileno (CH₂=CH₂) y es uno de los plásticos más utilizados a nivel mundial.',
   ),
   Question(
     id: 'cta_q203',
     topicId: 'cta_t2',
-    text: 'Un investigador policial encuentra un material plástico en una escena del crimen. Al calentarlo, el material se ablanda y puede moldearse nuevamente. ¿Qué tipo de plástico es?',
-    options: ['Termoestable', 'Termoplástico', 'Elastómero vulcanizado', 'Cerámico'],
+    text:
+        'Un investigador policial encuentra un material plástico en una escena del crimen. Al calentarlo, el material se ablanda y puede moldearse nuevamente. ¿Qué tipo de plástico es?',
+    options: [
+      'Termoestable',
+      'Termoplástico',
+      'Elastómero vulcanizado',
+      'Cerámico',
+    ],
     correctAnswer: 1,
-    explanation: 'Los termoplásticos se ablandan con el calor y pueden remoldearse, a diferencia de los termoestables que no se ablandan una vez formados.',
+    explanation:
+        'Los termoplásticos se ablandan con el calor y pueden remoldearse, a diferencia de los termoestables que no se ablandan una vez formados.',
   ),
   Question(
     id: 'cta_q204',
     topicId: 'cta_t2',
-    text: 'Los carbohidratos están compuestos principalmente por los elementos:',
-    options: ['Carbono, nitrógeno y azufre', 'Carbono, hidrógeno y oxígeno', 'Carbono, fósforo y nitrógeno', 'Hidrógeno, nitrógeno y oxígeno'],
+    text:
+        'Los carbohidratos están compuestos principalmente por los elementos:',
+    options: [
+      'Carbono, nitrógeno y azufre',
+      'Carbono, hidrógeno y oxígeno',
+      'Carbono, fósforo y nitrógeno',
+      'Hidrógeno, nitrógeno y oxígeno',
+    ],
     correctAnswer: 1,
-    explanation: 'Los carbohidratos (glúcidos) están formados por carbono, hidrógeno y oxígeno, generalmente en proporción Cₙ(H₂O)ₙ.',
+    explanation:
+        'Los carbohidratos (glúcidos) están formados por carbono, hidrógeno y oxígeno, generalmente en proporción Cₙ(H₂O)ₙ.',
   ),
   Question(
     id: 'cta_q205',
@@ -1649,207 +2198,350 @@ final List<Question> ctaQuestions = [
     text: 'La glucosa (C₆H₁₂O₆) es un ejemplo de:',
     options: ['Disacárido', 'Polisacárido', 'Monosacárido', 'Lípido'],
     correctAnswer: 2,
-    explanation: 'La glucosa es un monosacárido (azúcar simple) de 6 carbonos; es la principal fuente de energía celular.',
+    explanation:
+        'La glucosa es un monosacárido (azúcar simple) de 6 carbonos; es la principal fuente de energía celular.',
   ),
   Question(
     id: 'cta_q206',
     topicId: 'cta_t2',
-    text: '¿Cuál de los siguientes es un polisacárido de reserva energética en los animales?',
+    text:
+        '¿Cuál de los siguientes es un polisacárido de reserva energética en los animales?',
     options: ['Almidón', 'Celulosa', 'Glucógeno', 'Sacarosa'],
     correctAnswer: 2,
-    explanation: 'El glucógeno es el polisacárido de reserva energética en animales, almacenado principalmente en el hígado y los músculos.',
+    explanation:
+        'El glucógeno es el polisacárido de reserva energética en animales, almacenado principalmente en el hígado y los músculos.',
   ),
   Question(
     id: 'cta_q207',
     topicId: 'cta_t2',
-    text: 'La celulosa es un polisacárido estructural presente en las plantas. ¿Por qué los seres humanos no pueden digerirla?',
-    options: ['Porque es un lípido insoluble', 'Porque carecemos de la enzima celulasa para romper los enlaces β-1,4-glucosídicos', 'Porque la celulosa es tóxica para los humanos', 'Porque la celulosa se descompone en el estómago en ácidos grasos'],
+    text:
+        'La celulosa es un polisacárido estructural presente en las plantas. ¿Por qué los seres humanos no pueden digerirla?',
+    options: [
+      'Porque es un lípido insoluble',
+      'Porque carecemos de la enzima celulasa para romper los enlaces β-1,4-glucosídicos',
+      'Porque la celulosa es tóxica para los humanos',
+      'Porque la celulosa se descompone en el estómago en ácidos grasos',
+    ],
     correctAnswer: 1,
-    explanation: 'Los humanos no producen celulasa, la enzima necesaria para hidrolizar los enlaces β-1,4-glucosídicos de la celulosa.',
+    explanation:
+        'Los humanos no producen celulasa, la enzima necesaria para hidrolizar los enlaces β-1,4-glucosídicos de la celulosa.',
   ),
   Question(
     id: 'cta_q208',
     topicId: 'cta_t2',
-    text: 'La sacarosa (azúcar de mesa) es un disacárido formado por la unión de:',
-    options: ['Dos moléculas de glucosa', 'Glucosa y galactosa', 'Glucosa y fructosa', 'Dos moléculas de fructosa'],
+    text:
+        'La sacarosa (azúcar de mesa) es un disacárido formado por la unión de:',
+    options: [
+      'Dos moléculas de glucosa',
+      'Glucosa y galactosa',
+      'Glucosa y fructosa',
+      'Dos moléculas de fructosa',
+    ],
     correctAnswer: 2,
-    explanation: 'La sacarosa es un disacárido compuesto por una molécula de glucosa y una de fructosa unidas por un enlace glucosídico.',
+    explanation:
+        'La sacarosa es un disacárido compuesto por una molécula de glucosa y una de fructosa unidas por un enlace glucosídico.',
   ),
   Question(
     id: 'cta_q209',
     topicId: 'cta_t2',
     text: '¿Cuál es la principal característica de los lípidos?',
-    options: ['Son solubles en agua e insolubles en solventes orgánicos', 'Son insolubles en agua y solubles en solventes orgánicos', 'Están formados por aminoácidos', 'Siempre son sólidos a temperatura ambiente'],
+    options: [
+      'Son solubles en agua e insolubles en solventes orgánicos',
+      'Son insolubles en agua y solubles en solventes orgánicos',
+      'Están formados por aminoácidos',
+      'Siempre son sólidos a temperatura ambiente',
+    ],
     correctAnswer: 1,
-    explanation: 'Los lípidos son biomoléculas hidrofóbicas, insolubles en agua pero solubles en solventes orgánicos como éter, cloroformo y benceno.',
+    explanation:
+        'Los lípidos son biomoléculas hidrofóbicas, insolubles en agua pero solubles en solventes orgánicos como éter, cloroformo y benceno.',
   ),
   Question(
     id: 'cta_q210',
     topicId: 'cta_t2',
-    text: '¿Cuál de las siguientes funciones NO corresponde a los lípidos en los organismos vivos?',
-    options: ['Reserva energética', 'Aislamiento térmico', 'Catálisis de reacciones químicas', 'Componente estructural de membranas celulares'],
+    text:
+        '¿Cuál de las siguientes funciones NO corresponde a los lípidos en los organismos vivos?',
+    options: [
+      'Reserva energética',
+      'Aislamiento térmico',
+      'Catálisis de reacciones químicas',
+      'Componente estructural de membranas celulares',
+    ],
     correctAnswer: 2,
-    explanation: 'La catálisis de reacciones químicas es función de las enzimas (proteínas). Los lípidos cumplen funciones de reserva energética, aislamiento y estructura de membranas.',
+    explanation:
+        'La catálisis de reacciones químicas es función de las enzimas (proteínas). Los lípidos cumplen funciones de reserva energética, aislamiento y estructura de membranas.',
   ),
   Question(
     id: 'cta_q211',
     topicId: 'cta_t2',
     text: 'Un ácido graso insaturado se diferencia de uno saturado porque:',
-    options: ['Tiene mayor número de carbonos', 'Posee uno o más dobles enlaces entre carbonos de su cadena', 'Carece de grupo carboxilo', 'Es siempre sólido a temperatura ambiente'],
+    options: [
+      'Tiene mayor número de carbonos',
+      'Posee uno o más dobles enlaces entre carbonos de su cadena',
+      'Carece de grupo carboxilo',
+      'Es siempre sólido a temperatura ambiente',
+    ],
     correctAnswer: 1,
-    explanation: 'Los ácidos grasos insaturados poseen uno o más dobles enlaces C=C en su cadena hidrocarbonada, lo que les da mayor fluidez.',
+    explanation:
+        'Los ácidos grasos insaturados poseen uno o más dobles enlaces C=C en su cadena hidrocarbonada, lo que les da mayor fluidez.',
   ),
   Question(
     id: 'cta_q212',
     topicId: 'cta_t2',
-    text: 'Las proteínas son polímeros biológicos formados por unidades llamadas:',
+    text:
+        'Las proteínas son polímeros biológicos formados por unidades llamadas:',
     options: ['Nucleótidos', 'Monosacáridos', 'Aminoácidos', 'Ácidos grasos'],
     correctAnswer: 2,
-    explanation: 'Las proteínas están formadas por cadenas de aminoácidos unidos por enlaces peptídicos.',
+    explanation:
+        'Las proteínas están formadas por cadenas de aminoácidos unidos por enlaces peptídicos.',
   ),
   Question(
     id: 'cta_q213',
     topicId: 'cta_t2',
     text: 'El enlace que une a dos aminoácidos en una proteína se denomina:',
-    options: ['Enlace glucosídico', 'Enlace éster', 'Enlace peptídico', 'Enlace fosfodiéster'],
+    options: [
+      'Enlace glucosídico',
+      'Enlace éster',
+      'Enlace peptídico',
+      'Enlace fosfodiéster',
+    ],
     correctAnswer: 2,
-    explanation: 'El enlace peptídico se forma entre el grupo carboxilo (–COOH) de un aminoácido y el grupo amino (–NH₂) del siguiente, con pérdida de agua.',
+    explanation:
+        'El enlace peptídico se forma entre el grupo carboxilo (–COOH) de un aminoácido y el grupo amino (–NH₂) del siguiente, con pérdida de agua.',
   ),
   Question(
     id: 'cta_q214',
     topicId: 'cta_t2',
-    text: 'Las enzimas son proteínas con función catalítica. ¿Qué significa que una enzima es específica?',
-    options: ['Que funciona a cualquier temperatura', 'Que solo actúa sobre un sustrato o tipo de reacción determinado', 'Que se consume durante la reacción', 'Que solo funciona en organismos vegetales'],
+    text:
+        'Las enzimas son proteínas con función catalítica. ¿Qué significa que una enzima es específica?',
+    options: [
+      'Que funciona a cualquier temperatura',
+      'Que solo actúa sobre un sustrato o tipo de reacción determinado',
+      'Que se consume durante la reacción',
+      'Que solo funciona en organismos vegetales',
+    ],
     correctAnswer: 1,
-    explanation: 'La especificidad enzimática significa que cada enzima reconoce y actúa solo sobre su sustrato específico (modelo llave-cerradura).',
+    explanation:
+        'La especificidad enzimática significa que cada enzima reconoce y actúa solo sobre su sustrato específico (modelo llave-cerradura).',
   ),
   Question(
     id: 'cta_q215',
     topicId: 'cta_t2',
-    text: 'Cuando una proteína pierde su estructura tridimensional por calor o cambios de pH, pierde su función biológica. Este proceso se denomina:',
-    options: ['Hidrólisis', 'Polimerización', 'Desnaturalización', 'Neutralización'],
+    text:
+        'Cuando una proteína pierde su estructura tridimensional por calor o cambios de pH, pierde su función biológica. Este proceso se denomina:',
+    options: [
+      'Hidrólisis',
+      'Polimerización',
+      'Desnaturalización',
+      'Neutralización',
+    ],
     correctAnswer: 2,
-    explanation: 'La desnaturalización es la pérdida de la estructura tridimensional de la proteína, lo que anula su función biológica.',
+    explanation:
+        'La desnaturalización es la pérdida de la estructura tridimensional de la proteína, lo que anula su función biológica.',
   ),
   Question(
     id: 'cta_q216',
     topicId: 'cta_t2',
-    text: 'Un biólogo observa que una enzima deja de funcionar cuando la temperatura supera los 45 °C. La explicación más probable es que:',
-    options: ['Los enlaces peptídicos se rompen a esa temperatura', 'La enzima se desnaturaliza, perdiendo su conformación activa', 'La enzima se transforma en un lípido', 'El sustrato desaparece a altas temperaturas'],
+    text:
+        'Un biólogo observa que una enzima deja de funcionar cuando la temperatura supera los 45 °C. La explicación más probable es que:',
+    options: [
+      'Los enlaces peptídicos se rompen a esa temperatura',
+      'La enzima se desnaturaliza, perdiendo su conformación activa',
+      'La enzima se transforma en un lípido',
+      'El sustrato desaparece a altas temperaturas',
+    ],
     correctAnswer: 1,
-    explanation: 'A temperaturas elevadas, las interacciones que mantienen la estructura terciaria de la enzima se rompen, causando desnaturalización.',
+    explanation:
+        'A temperaturas elevadas, las interacciones que mantienen la estructura terciaria de la enzima se rompen, causando desnaturalización.',
   ),
   Question(
     id: 'cta_q217',
     topicId: 'cta_t2',
     text: '¿Cuáles son los componentes de un nucleótido?',
-    options: ['Un aminoácido, un azúcar y un fosfato', 'Una base nitrogenada, un azúcar pentosa y un grupo fosfato', 'Un ácido graso, una base nitrogenada y un fosfato', 'Un monosacárido, un lípido y una base nitrogenada'],
+    options: [
+      'Un aminoácido, un azúcar y un fosfato',
+      'Una base nitrogenada, un azúcar pentosa y un grupo fosfato',
+      'Un ácido graso, una base nitrogenada y un fosfato',
+      'Un monosacárido, un lípido y una base nitrogenada',
+    ],
     correctAnswer: 1,
-    explanation: 'Un nucleótido está formado por tres componentes: una base nitrogenada, un azúcar pentosa (ribosa o desoxirribosa) y un grupo fosfato.',
+    explanation:
+        'Un nucleótido está formado por tres componentes: una base nitrogenada, un azúcar pentosa (ribosa o desoxirribosa) y un grupo fosfato.',
   ),
   Question(
     id: 'cta_q218',
     topicId: 'cta_t2',
-    text: '¿Cuál de las siguientes bases nitrogenadas NO está presente en el ADN?',
+    text:
+        '¿Cuál de las siguientes bases nitrogenadas NO está presente en el ADN?',
     options: ['Adenina', 'Uracilo', 'Citosina', 'Guanina'],
     correctAnswer: 1,
-    explanation: 'El uracilo es exclusivo del ARN. En el ADN, la base complementaria de la adenina es la timina, no el uracilo.',
+    explanation:
+        'El uracilo es exclusivo del ARN. En el ADN, la base complementaria de la adenina es la timina, no el uracilo.',
   ),
   Question(
     id: 'cta_q219',
     topicId: 'cta_t2',
-    text: "En la estructura del ADN, la adenina se aparea con la timina y la guanina con la citosina. Si una cadena de ADN tiene la secuencia 5'-ATGCCTA-3', ¿cuál es la secuencia complementaria?",
-    options: ["5'-ATGCCTA-3'", "3'-TACGGAT-5'", "3'-UACGGAU-5'", "5'-GCCATGA-3'"],
+    text:
+        "En la estructura del ADN, la adenina se aparea con la timina y la guanina con la citosina. Si una cadena de ADN tiene la secuencia 5'-ATGCCTA-3', ¿cuál es la secuencia complementaria?",
+    options: [
+      "5'-ATGCCTA-3'",
+      "3'-TACGGAT-5'",
+      "3'-UACGGAU-5'",
+      "5'-GCCATGA-3'",
+    ],
     correctAnswer: 1,
-    explanation: "Por complementariedad: A↔T, T↔A, G↔C, C↔G. La cadena complementaria antiparalela es 3'-TACGGAT-5'.",
+    explanation:
+        "Por complementariedad: A↔T, T↔A, G↔C, C↔G. La cadena complementaria antiparalela es 3'-TACGGAT-5'.",
   ),
   Question(
     id: 'cta_q220',
     topicId: 'cta_t2',
     text: '¿Cuál es la principal diferencia estructural entre el ADN y el ARN?',
-    options: ['El ADN es de cadena simple y el ARN de cadena doble', 'El ADN contiene ribosa y el ARN desoxirribosa', 'El ADN contiene desoxirribosa y el ARN ribosa; además el ADN usa timina y el ARN uracilo', 'No existe diferencia estructural entre ambos'],
+    options: [
+      'El ADN es de cadena simple y el ARN de cadena doble',
+      'El ADN contiene ribosa y el ARN desoxirribosa',
+      'El ADN contiene desoxirribosa y el ARN ribosa; además el ADN usa timina y el ARN uracilo',
+      'No existe diferencia estructural entre ambos',
+    ],
     correctAnswer: 2,
-    explanation: 'El ADN tiene desoxirribosa y timina, mientras que el ARN tiene ribosa y uracilo. Además, el ADN suele ser bicatenario y el ARN monocatenario.',
+    explanation:
+        'El ADN tiene desoxirribosa y timina, mientras que el ARN tiene ribosa y uracilo. Además, el ADN suele ser bicatenario y el ARN monocatenario.',
   ),
   Question(
     id: 'cta_q221',
     topicId: 'cta_t2',
     text: 'El ARN mensajero (ARNm) cumple la función de:',
-    options: ['Almacenar la información genética permanente', 'Transportar aminoácidos al ribosoma', 'Llevar la información genética del ADN al ribosoma para la síntesis de proteínas', 'Formar la estructura del ribosoma'],
+    options: [
+      'Almacenar la información genética permanente',
+      'Transportar aminoácidos al ribosoma',
+      'Llevar la información genética del ADN al ribosoma para la síntesis de proteínas',
+      'Formar la estructura del ribosoma',
+    ],
     correctAnswer: 2,
-    explanation: 'El ARNm transporta la información genética copiada del ADN hasta los ribosomas, donde se traduce en una secuencia de aminoácidos.',
+    explanation:
+        'El ARNm transporta la información genética copiada del ADN hasta los ribosomas, donde se traduce en una secuencia de aminoácidos.',
   ),
   Question(
     id: 'cta_q222',
     topicId: 'cta_t2',
     text: "El agua se considera el 'solvente universal' porque:",
-    options: ['Disuelve absolutamente todas las sustancias', 'Su molécula polar le permite disolver una gran variedad de sustancias iónicas y polares', 'Es la única sustancia líquida en la naturaleza', 'Tiene un pH neutro de exactamente 7,00 en todas las condiciones'],
+    options: [
+      'Disuelve absolutamente todas las sustancias',
+      'Su molécula polar le permite disolver una gran variedad de sustancias iónicas y polares',
+      'Es la única sustancia líquida en la naturaleza',
+      'Tiene un pH neutro de exactamente 7,00 en todas las condiciones',
+    ],
     correctAnswer: 1,
-    explanation: 'La polaridad del agua le permite disolver gran cantidad de sustancias iónicas y polares, aunque no disuelve sustancias apolares como los aceites.',
+    explanation:
+        'La polaridad del agua le permite disolver gran cantidad de sustancias iónicas y polares, aunque no disuelve sustancias apolares como los aceites.',
   ),
   Question(
     id: 'cta_q223',
     topicId: 'cta_t2',
-    text: '¿Qué tipo de enlace intermolecular es responsable del alto punto de ebullición del agua comparado con otras moléculas de masa similar?',
-    options: ['Enlaces covalentes apolares', 'Fuerzas de London', 'Puentes de hidrógeno', 'Enlaces metálicos'],
+    text:
+        '¿Qué tipo de enlace intermolecular es responsable del alto punto de ebullición del agua comparado con otras moléculas de masa similar?',
+    options: [
+      'Enlaces covalentes apolares',
+      'Fuerzas de London',
+      'Puentes de hidrógeno',
+      'Enlaces metálicos',
+    ],
     correctAnswer: 2,
-    explanation: 'Los puentes de hidrógeno entre las moléculas de agua son fuerzas intermoleculares relativamente fuertes que elevan su punto de ebullición.',
+    explanation:
+        'Los puentes de hidrógeno entre las moléculas de agua son fuerzas intermoleculares relativamente fuertes que elevan su punto de ebullición.',
   ),
   Question(
     id: 'cta_q224',
     topicId: 'cta_t2',
-    text: 'Una propiedad anómala del agua es que su fase sólida (hielo) es menos densa que su fase líquida. ¿Qué consecuencia ecológica tiene esto?',
-    options: ['Los lagos se congelan de abajo hacia arriba, matando a los peces', 'El hielo flota, formando una capa aislante que protege la vida acuática debajo', 'No tiene ninguna consecuencia ecológica relevante', 'Los ríos nunca se congelan en la naturaleza'],
+    text:
+        'Una propiedad anómala del agua es que su fase sólida (hielo) es menos densa que su fase líquida. ¿Qué consecuencia ecológica tiene esto?',
+    options: [
+      'Los lagos se congelan de abajo hacia arriba, matando a los peces',
+      'El hielo flota, formando una capa aislante que protege la vida acuática debajo',
+      'No tiene ninguna consecuencia ecológica relevante',
+      'Los ríos nunca se congelan en la naturaleza',
+    ],
     correctAnswer: 1,
-    explanation: 'Al ser el hielo menos denso que el agua líquida, flota y forma una capa aislante que mantiene el agua líquida debajo, permitiendo la supervivencia de organismos acuáticos.',
+    explanation:
+        'Al ser el hielo menos denso que el agua líquida, flota y forma una capa aislante que mantiene el agua líquida debajo, permitiendo la supervivencia de organismos acuáticos.',
   ),
   Question(
     id: 'cta_q225',
     topicId: 'cta_t2',
-    text: '¿Cuál de las siguientes sales minerales es fundamental para la formación de huesos y dientes?',
-    options: ['Cloruro de sodio (NaCl)', 'Fosfato de calcio [Ca₃(PO₄)₂]', 'Sulfato de magnesio (MgSO₄)', 'Bicarbonato de sodio (NaHCO₃)'],
+    text:
+        '¿Cuál de las siguientes sales minerales es fundamental para la formación de huesos y dientes?',
+    options: [
+      'Cloruro de sodio (NaCl)',
+      'Fosfato de calcio [Ca₃(PO₄)₂]',
+      'Sulfato de magnesio (MgSO₄)',
+      'Bicarbonato de sodio (NaHCO₃)',
+    ],
     correctAnswer: 1,
-    explanation: 'El fosfato de calcio es el principal componente mineral de huesos y dientes, proporcionándoles dureza y rigidez.',
+    explanation:
+        'El fosfato de calcio es el principal componente mineral de huesos y dientes, proporcionándoles dureza y rigidez.',
   ),
   Question(
     id: 'cta_q226',
     topicId: 'cta_t2',
-    text: 'El cloruro de sodio (NaCl) disuelto en los fluidos corporales cumple un papel importante en:',
-    options: ['La síntesis de proteínas', 'La regulación osmótica y el equilibrio hídrico', 'La fotosíntesis', 'La formación de vitaminas'],
+    text:
+        'El cloruro de sodio (NaCl) disuelto en los fluidos corporales cumple un papel importante en:',
+    options: [
+      'La síntesis de proteínas',
+      'La regulación osmótica y el equilibrio hídrico',
+      'La fotosíntesis',
+      'La formación de vitaminas',
+    ],
     correctAnswer: 1,
-    explanation: 'El NaCl, al disociarse en Na⁺ y Cl⁻, regula la presión osmótica, el equilibrio hídrico y la transmisión de impulsos nerviosos.',
+    explanation:
+        'El NaCl, al disociarse en Na⁺ y Cl⁻, regula la presión osmótica, el equilibrio hídrico y la transmisión de impulsos nerviosos.',
   ),
   Question(
     id: 'cta_q227',
     topicId: 'cta_t2',
-    text: 'Se mezclan 200 mL de agua (densidad = 1,0 g/mL) con 300 mL de etanol (densidad = 0,8 g/mL). ¿Cuál es la masa total de la mezcla?',
+    text:
+        'Se mezclan 200 mL de agua (densidad = 1,0 g/mL) con 300 mL de etanol (densidad = 0,8 g/mL). ¿Cuál es la masa total de la mezcla?',
     options: ['500 g', '440 g', '250 g', '400 g'],
     correctAnswer: 1,
-    explanation: 'Masa agua = 200 mL × 1,0 g/mL = 200 g. Masa etanol = 300 mL × 0,8 g/mL = 240 g. Masa total = 200 + 240 = 440 g.',
+    explanation:
+        'Masa agua = 200 mL × 1,0 g/mL = 200 g. Masa etanol = 300 mL × 0,8 g/mL = 240 g. Masa total = 200 + 240 = 440 g.',
   ),
   Question(
     id: 'cta_q228',
     topicId: 'cta_t2',
-    text: 'Un compuesto presenta alto punto de fusión, es soluble en agua y conduce la corriente eléctrica en solución acuosa. ¿Qué tipo de enlace predomina en este compuesto?',
+    text:
+        'Un compuesto presenta alto punto de fusión, es soluble en agua y conduce la corriente eléctrica en solución acuosa. ¿Qué tipo de enlace predomina en este compuesto?',
     options: ['Covalente apolar', 'Covalente polar', 'Iónico', 'Metálico'],
     correctAnswer: 2,
-    explanation: 'Las propiedades descritas (alto punto de fusión, solubilidad en agua, conducción en solución) son características de compuestos iónicos.',
+    explanation:
+        'Las propiedades descritas (alto punto de fusión, solubilidad en agua, conducción en solución) son características de compuestos iónicos.',
   ),
   Question(
     id: 'cta_q229',
     topicId: 'cta_t2',
     text: 'El radio atómico en la tabla periódica generalmente:',
-    options: ['Aumenta de izquierda a derecha en un periodo y de arriba hacia abajo en un grupo', 'Disminuye de izquierda a derecha en un periodo y aumenta de arriba hacia abajo en un grupo', 'Permanece constante en un mismo periodo', 'Aumenta en todas las direcciones'],
+    options: [
+      'Aumenta de izquierda a derecha en un periodo y de arriba hacia abajo en un grupo',
+      'Disminuye de izquierda a derecha en un periodo y aumenta de arriba hacia abajo en un grupo',
+      'Permanece constante en un mismo periodo',
+      'Aumenta en todas las direcciones',
+    ],
     correctAnswer: 1,
-    explanation: 'El radio atómico disminuye hacia la derecha (mayor carga nuclear efectiva) y aumenta hacia abajo (más niveles de energía) en la tabla periódica.',
+    explanation:
+        'El radio atómico disminuye hacia la derecha (mayor carga nuclear efectiva) y aumenta hacia abajo (más niveles de energía) en la tabla periódica.',
   ),
   Question(
     id: 'cta_q230',
     topicId: 'cta_t2',
-    text: 'Un elemento X tiene la configuración electrónica 1s² 2s² 2p⁶ 3s² 3p⁵. ¿A qué grupo y familia pertenece?',
-    options: ['Grupo IA, alcalinos', 'Grupo VIIA, halógenos', 'Grupo VA, nitrogenoides', 'Grupo VIIIA, gases nobles'],
+    text:
+        'Un elemento X tiene la configuración electrónica 1s² 2s² 2p⁶ 3s² 3p⁵. ¿A qué grupo y familia pertenece?',
+    options: [
+      'Grupo IA, alcalinos',
+      'Grupo VIIA, halógenos',
+      'Grupo VA, nitrogenoides',
+      'Grupo VIIIA, gases nobles',
+    ],
     correctAnswer: 1,
-    explanation: 'Con 7 electrones de valencia (3s² 3p⁵), el elemento pertenece al grupo VIIA (halógenos). Se trata del cloro (Z=17).',
+    explanation:
+        'Con 7 electrones de valencia (3s² 3p⁵), el elemento pertenece al grupo VIIA (halógenos). Se trata del cloro (Z=17).',
   ),
   Question(
     id: 'cta_q231',
@@ -1857,55 +2549,93 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de los siguientes compuestos orgánicos es un alquino?',
     options: ['CH₃–CH₃', 'CH₂=CH₂', 'CH≡CH', 'CH₃OH'],
     correctAnswer: 2,
-    explanation: 'CH≡CH (etino o acetileno) presenta un triple enlace carbono-carbono, lo que lo clasifica como alquino.',
+    explanation:
+        'CH≡CH (etino o acetileno) presenta un triple enlace carbono-carbono, lo que lo clasifica como alquino.',
   ),
   Question(
     id: 'cta_q232',
     topicId: 'cta_t2',
-    text: 'En una prueba de laboratorio forense, se analiza una sustancia blanca cristalina. Al disolverla en agua, la solución conduce electricidad. Al calentar, funde a más de 700 °C. ¿Qué tipo de sustancia es más probable?',
-    options: ['Un compuesto covalente molecular', 'Un compuesto iónico', 'Un polímero orgánico', 'Un metal puro'],
+    text:
+        'En una prueba de laboratorio forense, se analiza una sustancia blanca cristalina. Al disolverla en agua, la solución conduce electricidad. Al calentar, funde a más de 700 °C. ¿Qué tipo de sustancia es más probable?',
+    options: [
+      'Un compuesto covalente molecular',
+      'Un compuesto iónico',
+      'Un polímero orgánico',
+      'Un metal puro',
+    ],
     correctAnswer: 1,
-    explanation: 'Alto punto de fusión, cristales blancos y conducción en solución acuosa son propiedades típicas de un compuesto iónico.',
+    explanation:
+        'Alto punto de fusión, cristales blancos y conducción en solución acuosa son propiedades típicas de un compuesto iónico.',
   ),
   Question(
     id: 'cta_q233',
     topicId: 'cta_t2',
-    text: 'El almidón y la celulosa son polisacáridos formados por unidades de glucosa. Sin embargo, tienen funciones muy diferentes. ¿Cuál es la principal causa de esta diferencia?',
-    options: ['El almidón tiene más átomos de carbono que la celulosa', 'Difieren en el tipo de enlace glucosídico (α en almidón, β en celulosa)', 'El almidón contiene nitrógeno y la celulosa no', 'La celulosa es más soluble en agua que el almidón'],
+    text:
+        'El almidón y la celulosa son polisacáridos formados por unidades de glucosa. Sin embargo, tienen funciones muy diferentes. ¿Cuál es la principal causa de esta diferencia?',
+    options: [
+      'El almidón tiene más átomos de carbono que la celulosa',
+      'Difieren en el tipo de enlace glucosídico (α en almidón, β en celulosa)',
+      'El almidón contiene nitrógeno y la celulosa no',
+      'La celulosa es más soluble en agua que el almidón',
+    ],
     correctAnswer: 1,
-    explanation: 'El almidón tiene enlaces α-glucosídicos (digeribles por enzimas humanas) y la celulosa tiene enlaces β-glucosídicos (no digeribles).',
+    explanation:
+        'El almidón tiene enlaces α-glucosídicos (digeribles por enzimas humanas) y la celulosa tiene enlaces β-glucosídicos (no digeribles).',
   ),
   Question(
     id: 'cta_q234',
     topicId: 'cta_t2',
-    text: '¿Cuántos enlaces sigma (σ) y pi (π) hay en la molécula de etino (acetileno, C₂H₂)?',
-    options: ['3 sigma y 2 pi', '5 sigma y 0 pi', '2 sigma y 3 pi', '4 sigma y 1 pi'],
+    text:
+        '¿Cuántos enlaces sigma (σ) y pi (π) hay en la molécula de etino (acetileno, C₂H₂)?',
+    options: [
+      '3 sigma y 2 pi',
+      '5 sigma y 0 pi',
+      '2 sigma y 3 pi',
+      '4 sigma y 1 pi',
+    ],
     correctAnswer: 0,
-    explanation: 'En C₂H₂: cada enlace C–H es un enlace σ (2 en total), y el triple enlace C≡C consiste en 1 σ + 2 π. Total: 3σ y 2π.',
+    explanation:
+        'En C₂H₂: cada enlace C–H es un enlace σ (2 en total), y el triple enlace C≡C consiste en 1 σ + 2 π. Total: 3σ y 2π.',
   ),
   Question(
     id: 'cta_q235',
     topicId: 'cta_t2',
-    text: 'El petróleo crudo contiene una variedad de hidrocarburos. Durante la destilación fraccionada, ¿qué fracción se obtiene primero (en la parte superior de la torre)?',
-    options: ['Asfalto', 'Gasóleo (diésel)', 'Gases ligeros (GLP)', 'Aceites lubricantes'],
+    text:
+        'El petróleo crudo contiene una variedad de hidrocarburos. Durante la destilación fraccionada, ¿qué fracción se obtiene primero (en la parte superior de la torre)?',
+    options: [
+      'Asfalto',
+      'Gasóleo (diésel)',
+      'Gases ligeros (GLP)',
+      'Aceites lubricantes',
+    ],
     correctAnswer: 2,
-    explanation: 'Los gases ligeros (como propano y butano del GLP) tienen los puntos de ebullición más bajos y se recogen en la parte superior de la torre.',
+    explanation:
+        'Los gases ligeros (como propano y butano del GLP) tienen los puntos de ebullición más bajos y se recogen en la parte superior de la torre.',
   ),
   Question(
     id: 'cta_q236',
     topicId: 'cta_t2',
-    text: 'Si en una muestra de ADN el 20% de las bases son adenina, ¿cuál es el porcentaje de guanina?',
+    text:
+        'Si en una muestra de ADN el 20% de las bases son adenina, ¿cuál es el porcentaje de guanina?',
     options: ['20%', '30%', '40%', '10%'],
     correctAnswer: 1,
-    explanation: 'Por las reglas de Chargaff: A = T = 20%, entonces G + C = 100% - 40% = 60%, por lo que G = C = 30%.',
+    explanation:
+        'Por las reglas de Chargaff: A = T = 20%, entonces G + C = 100% - 40% = 60%, por lo que G = C = 30%.',
   ),
   Question(
     id: 'cta_q237',
     topicId: 'cta_t2',
-    text: '¿Cuál de las siguientes propiedades del agua se debe a los puentes de hidrógeno?',
-    options: ['Su capacidad de disolver aceites', 'Su elevada tensión superficial', 'Su carácter ácido fuerte', 'Su bajo calor específico'],
+    text:
+        '¿Cuál de las siguientes propiedades del agua se debe a los puentes de hidrógeno?',
+    options: [
+      'Su capacidad de disolver aceites',
+      'Su elevada tensión superficial',
+      'Su carácter ácido fuerte',
+      'Su bajo calor específico',
+    ],
     correctAnswer: 1,
-    explanation: 'La elevada tensión superficial del agua se debe a la fuerte atracción entre moléculas por puentes de hidrógeno en la superficie.',
+    explanation:
+        'La elevada tensión superficial del agua se debe a la fuerte atracción entre moléculas por puentes de hidrógeno en la superficie.',
   ),
   Question(
     id: 'cta_q238',
@@ -1913,31 +2643,43 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es el nombre IUPAC del siguiente compuesto: CH₃–CH₂–CH₂–OH?',
     options: ['Metanol', 'Etanol', 'Propan-1-ol', 'Butan-1-ol'],
     correctAnswer: 2,
-    explanation: 'La cadena tiene 3 carbonos (prop-) con un grupo –OH en el carbono 1, y terminación -ol (alcohol): propan-1-ol.',
+    explanation:
+        'La cadena tiene 3 carbonos (prop-) con un grupo –OH en el carbono 1, y terminación -ol (alcohol): propan-1-ol.',
   ),
   Question(
     id: 'cta_q239',
     topicId: 'cta_t2',
-    text: 'El hierro (Fe) se ubica en el periodo 4, bloque d de la tabla periódica. Se clasifica como:',
+    text:
+        'El hierro (Fe) se ubica en el periodo 4, bloque d de la tabla periódica. Se clasifica como:',
     options: ['No metal', 'Metaloide', 'Metal de transición', 'Gas noble'],
     correctAnswer: 2,
-    explanation: 'El hierro es un metal de transición ubicado en el bloque d, conocido por sus propiedades magnéticas y múltiples estados de oxidación.',
+    explanation:
+        'El hierro es un metal de transición ubicado en el bloque d, conocido por sus propiedades magnéticas y múltiples estados de oxidación.',
   ),
   Question(
     id: 'cta_q240',
     topicId: 'cta_t2',
-    text: 'Un policía necesita identificar si un líquido incautado es gasolina o agua. ¿Cuál prueba rápida sería más útil?',
-    options: ['Medir su masa con una balanza', 'Verificar si es soluble en aceite y si su densidad es menor que la del agua', 'Observar su color a simple vista', 'Medir su volumen con una probeta'],
+    text:
+        'Un policía necesita identificar si un líquido incautado es gasolina o agua. ¿Cuál prueba rápida sería más útil?',
+    options: [
+      'Medir su masa con una balanza',
+      'Verificar si es soluble en aceite y si su densidad es menor que la del agua',
+      'Observar su color a simple vista',
+      'Medir su volumen con una probeta',
+    ],
     correctAnswer: 1,
-    explanation: 'La gasolina es un hidrocarburo apolar (soluble en aceite, inmiscible en agua) y menos denso que el agua (~0,75 g/mL vs 1,0 g/mL).',
+    explanation:
+        'La gasolina es un hidrocarburo apolar (soluble en aceite, inmiscible en agua) y menos denso que el agua (~0,75 g/mL vs 1,0 g/mL).',
   ),
   Question(
     id: 'cta_q241',
     topicId: 'cta_t2',
-    text: 'El carbono en el metano (CH₄) tiene hibridación sp³. ¿Qué ángulo de enlace aproximado se espera entre los enlaces H–C–H?',
+    text:
+        'El carbono en el metano (CH₄) tiene hibridación sp³. ¿Qué ángulo de enlace aproximado se espera entre los enlaces H–C–H?',
     options: ['90°', '109,5°', '120°', '180°'],
     correctAnswer: 1,
-    explanation: 'La hibridación sp³ genera una geometría tetraédrica con ángulos de enlace de aproximadamente 109,5°.',
+    explanation:
+        'La hibridación sp³ genera una geometría tetraédrica con ángulos de enlace de aproximadamente 109,5°.',
   ),
   Question(
     id: 'cta_q242',
@@ -1945,135 +2687,236 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de los siguientes elementos tiene mayor electronegatividad?',
     options: ['Sodio (Na)', 'Carbono (C)', 'Oxígeno (O)', 'Flúor (F)'],
     correctAnswer: 3,
-    explanation: 'El flúor (F) es el elemento más electronegativo de la tabla periódica, con un valor de 4,0 en la escala de Pauling.',
+    explanation:
+        'El flúor (F) es el elemento más electronegativo de la tabla periódica, con un valor de 4,0 en la escala de Pauling.',
   ),
   Question(
     id: 'cta_q243',
     topicId: 'cta_t2',
-    text: 'La reacción del sodio (Na) con el cloro (Cl₂) produce cloruro de sodio (NaCl). En este proceso, el sodio:',
-    options: ['Gana un electrón y se convierte en anión', 'Pierde un electrón y se convierte en catión Na⁺', 'Comparte electrones con el cloro', 'No participa en la transferencia de electrones'],
+    text:
+        'La reacción del sodio (Na) con el cloro (Cl₂) produce cloruro de sodio (NaCl). En este proceso, el sodio:',
+    options: [
+      'Gana un electrón y se convierte en anión',
+      'Pierde un electrón y se convierte en catión Na⁺',
+      'Comparte electrones con el cloro',
+      'No participa en la transferencia de electrones',
+    ],
     correctAnswer: 1,
-    explanation: 'El sodio (metal alcalino) pierde su electrón de valencia para formar Na⁺, mientras el cloro gana ese electrón para formar Cl⁻, creando un enlace iónico.',
+    explanation:
+        'El sodio (metal alcalino) pierde su electrón de valencia para formar Na⁺, mientras el cloro gana ese electrón para formar Cl⁻, creando un enlace iónico.',
   ),
   Question(
     id: 'cta_q244',
     topicId: 'cta_t2',
     text: '¿Cuál de las siguientes sustancias es una mezcla heterogénea?',
-    options: ['Vinagre (ácido acético diluido)', 'Agua con sal disuelta', 'Sangre', 'Aire limpio'],
+    options: [
+      'Vinagre (ácido acético diluido)',
+      'Agua con sal disuelta',
+      'Sangre',
+      'Aire limpio',
+    ],
     correctAnswer: 2,
-    explanation: 'La sangre es una mezcla heterogénea; contiene células (glóbulos rojos, blancos) suspendidas en plasma, distinguibles al microscopio.',
+    explanation:
+        'La sangre es una mezcla heterogénea; contiene células (glóbulos rojos, blancos) suspendidas en plasma, distinguibles al microscopio.',
   ),
   Question(
     id: 'cta_q245',
     topicId: 'cta_t2',
-    text: 'Un compuesto tiene la fórmula molecular C₃H₈. ¿Cumple con la fórmula general de los alcanos (CₙH₂ₙ₊₂)?',
-    options: ['No, porque debería tener 6 hidrógenos', 'Sí, porque para n=3: 2(3)+2=8 hidrógenos', 'No, porque los alcanos solo tienen un carbono', 'Sí, pero se trata de un alqueno'],
+    text:
+        'Un compuesto tiene la fórmula molecular C₃H₈. ¿Cumple con la fórmula general de los alcanos (CₙH₂ₙ₊₂)?',
+    options: [
+      'No, porque debería tener 6 hidrógenos',
+      'Sí, porque para n=3: 2(3)+2=8 hidrógenos',
+      'No, porque los alcanos solo tienen un carbono',
+      'Sí, pero se trata de un alqueno',
+    ],
     correctAnswer: 1,
-    explanation: 'Para n = 3: CₙH₂ₙ₊₂ = C₃H₈. El compuesto cumple la fórmula de alcanos; es el propano.',
+    explanation:
+        'Para n = 3: CₙH₂ₙ₊₂ = C₃H₈. El compuesto cumple la fórmula de alcanos; es el propano.',
   ),
   Question(
     id: 'cta_q246',
     topicId: 'cta_t2',
-    text: 'En una investigación criminalística se analiza una fibra textil. Los análisis revelan que es un polímero sintético derivado del ácido tereftálico y etilenglicol. ¿De qué material se trata?',
+    text:
+        'En una investigación criminalística se analiza una fibra textil. Los análisis revelan que es un polímero sintético derivado del ácido tereftálico y etilenglicol. ¿De qué material se trata?',
     options: ['Nailon', 'Polietileno', 'Poliéster (PET)', 'Caucho sintético'],
     correctAnswer: 2,
-    explanation: 'El PET (polietileno tereftalato) es un poliéster formado por condensación de ácido tereftálico y etilenglicol, muy usado en fibras textiles y botellas.',
+    explanation:
+        'El PET (polietileno tereftalato) es un poliéster formado por condensación de ácido tereftálico y etilenglicol, muy usado en fibras textiles y botellas.',
   ),
   Question(
     id: 'cta_q247',
     topicId: 'cta_t2',
     text: 'Los aminoácidos esenciales son aquellos que:',
-    options: ['Se sintetizan fácilmente en el cuerpo humano', 'Deben obtenerse a través de la alimentación porque el cuerpo no puede sintetizarlos', 'Solo se encuentran en proteínas vegetales', 'Son tóxicos para el organismo en cualquier cantidad'],
+    options: [
+      'Se sintetizan fácilmente en el cuerpo humano',
+      'Deben obtenerse a través de la alimentación porque el cuerpo no puede sintetizarlos',
+      'Solo se encuentran en proteínas vegetales',
+      'Son tóxicos para el organismo en cualquier cantidad',
+    ],
     correctAnswer: 1,
-    explanation: 'Los aminoácidos esenciales no pueden ser sintetizados por el organismo humano, por lo que deben ser incorporados a través de la dieta.',
+    explanation:
+        'Los aminoácidos esenciales no pueden ser sintetizados por el organismo humano, por lo que deben ser incorporados a través de la dieta.',
   ),
   Question(
     id: 'cta_q248',
     topicId: 'cta_t2',
-    text: '¿Qué proceso permite separar los componentes de una mezcla de agua y alcohol etílico?',
-    options: ['Filtración', 'Decantación', 'Destilación simple', 'Separación magnética'],
+    text:
+        '¿Qué proceso permite separar los componentes de una mezcla de agua y alcohol etílico?',
+    options: [
+      'Filtración',
+      'Decantación',
+      'Destilación simple',
+      'Separación magnética',
+    ],
     correctAnswer: 2,
-    explanation: 'La destilación simple separa líquidos miscibles con diferentes puntos de ebullición: etanol (78,4 °C) y agua (100 °C).',
+    explanation:
+        'La destilación simple separa líquidos miscibles con diferentes puntos de ebullición: etanol (78,4 °C) y agua (100 °C).',
   ),
   Question(
     id: 'cta_q249',
     topicId: 'cta_t2',
-    text: 'El potasio (K, Z=19) es un metal alcalino. Si reacciona con bromo (Br), ¿cuál es la fórmula del compuesto iónico resultante?',
+    text:
+        'El potasio (K, Z=19) es un metal alcalino. Si reacciona con bromo (Br), ¿cuál es la fórmula del compuesto iónico resultante?',
     options: ['KBr₂', 'K₂Br', 'KBr', 'K₃Br'],
     correctAnswer: 2,
-    explanation: 'K pierde 1 electrón (K⁺) y Br gana 1 electrón (Br⁻). La proporción 1:1 da la fórmula KBr (bromuro de potasio).',
+    explanation:
+        'K pierde 1 electrón (K⁺) y Br gana 1 electrón (Br⁻). La proporción 1:1 da la fórmula KBr (bromuro de potasio).',
   ),
   Question(
     id: 'cta_q250',
     topicId: 'cta_t2',
-    text: 'El colesterol es un tipo de lípido que cumple funciones importantes en el organismo. ¿Cuál de las siguientes es una función del colesterol?',
-    options: ['Almacenar información genética', 'Formar parte de la estructura de las membranas celulares', 'Catalizar la digestión de proteínas', 'Transportar oxígeno en la sangre'],
+    text:
+        'El colesterol es un tipo de lípido que cumple funciones importantes en el organismo. ¿Cuál de las siguientes es una función del colesterol?',
+    options: [
+      'Almacenar información genética',
+      'Formar parte de la estructura de las membranas celulares',
+      'Catalizar la digestión de proteínas',
+      'Transportar oxígeno en la sangre',
+    ],
     correctAnswer: 1,
-    explanation: 'El colesterol es un componente esencial de las membranas celulares animales, regulando su fluidez y permeabilidad.',
+    explanation:
+        'El colesterol es un componente esencial de las membranas celulares animales, regulando su fluidez y permeabilidad.',
   ),
   Question(
     id: 'cta_q251',
     topicId: 'cta_t2',
-    text: 'Una sustancia desconocida tiene las siguientes propiedades: baja densidad, no conduce electricidad, es blanda y tiene bajo punto de fusión. ¿Qué tipo de sólido es más probable?',
-    options: ['Sólido iónico', 'Sólido metálico', 'Sólido covalente molecular', 'Sólido covalente reticular'],
+    text:
+        'Una sustancia desconocida tiene las siguientes propiedades: baja densidad, no conduce electricidad, es blanda y tiene bajo punto de fusión. ¿Qué tipo de sólido es más probable?',
+    options: [
+      'Sólido iónico',
+      'Sólido metálico',
+      'Sólido covalente molecular',
+      'Sólido covalente reticular',
+    ],
     correctAnswer: 2,
-    explanation: 'Baja densidad, bajo punto de fusión, blandura y no conductividad son propiedades de sólidos covalentes moleculares (como la parafina).',
+    explanation:
+        'Baja densidad, bajo punto de fusión, blandura y no conductividad son propiedades de sólidos covalentes moleculares (como la parafina).',
   ),
   Question(
     id: 'cta_q252',
     topicId: 'cta_t2',
-    text: 'En la fabricación de fertilizantes se utiliza amoníaco (NH₃). En la molécula de NH₃, el nitrógeno forma tres enlaces covalentes con hidrógeno y posee un par de electrones libres. ¿Qué geometría molecular tiene el NH₃?',
+    text:
+        'En la fabricación de fertilizantes se utiliza amoníaco (NH₃). En la molécula de NH₃, el nitrógeno forma tres enlaces covalentes con hidrógeno y posee un par de electrones libres. ¿Qué geometría molecular tiene el NH₃?',
     options: ['Lineal', 'Trigonal plana', 'Piramidal trigonal', 'Tetraédrica'],
     correctAnswer: 2,
-    explanation: 'El NH₃ tiene geometría piramidal trigonal: 3 pares enlazantes y 1 par libre sobre el nitrógeno, lo que genera un ángulo menor a 109,5°.',
+    explanation:
+        'El NH₃ tiene geometría piramidal trigonal: 3 pares enlazantes y 1 par libre sobre el nitrógeno, lo que genera un ángulo menor a 109,5°.',
   ),
   Question(
     id: 'cta_q253',
     topicId: 'cta_t2',
-    text: 'Un cadete de la PNP estudia bioquímica y necesita identificar una biomolécula. La sustancia analizada contiene C, H, O, N y P, está formada por nucleótidos y tiene estructura de doble hélice. ¿De qué biomolécula se trata?',
-    options: ['Proteína', 'Polisacárido', 'Ácido desoxirribonucleico (ADN)', 'Lípido fosforilado'],
+    text:
+        'Un cadete de la PNP estudia bioquímica y necesita identificar una biomolécula. La sustancia analizada contiene C, H, O, N y P, está formada por nucleótidos y tiene estructura de doble hélice. ¿De qué biomolécula se trata?',
+    options: [
+      'Proteína',
+      'Polisacárido',
+      'Ácido desoxirribonucleico (ADN)',
+      'Lípido fosforilado',
+    ],
     correctAnswer: 2,
-    explanation: 'La presencia de C, H, O, N y P, estructura de nucleótidos y doble hélice son características exclusivas del ADN.',
+    explanation:
+        'La presencia de C, H, O, N y P, estructura de nucleótidos y doble hélice son características exclusivas del ADN.',
   ),
   Question(
     id: 'cta_q254',
     topicId: 'cta_t2',
-    text: 'Respecto a las propiedades del átomo de carbono, la propiedad que le permite unirse sucesivamente a otros átomos de carbono formando cadenas lineales, ramificadas y cíclicas es:',
-    options: ['A) Covalencia', 'B) Tetravalencia', 'C) Hibridación', 'D) Catenación', 'E) Isomería'],
+    text:
+        'Respecto a las propiedades del átomo de carbono, la propiedad que le permite unirse sucesivamente a otros átomos de carbono formando cadenas lineales, ramificadas y cíclicas es:',
+    options: [
+      'A) Covalencia',
+      'B) Tetravalencia',
+      'C) Hibridación',
+      'D) Catenación',
+      'E) Isomería',
+    ],
     correctAnswer: 3,
-    explanation: "La respuesta correcta es D (Catenación). El distractor B (Tetravalencia) es la 'Trampa de la Característica Famosa'; el alumno sabe que el carbono es tetravalente (forma 4 enlaces), pero esa propiedad específica de formar largas cadenas entre sí se llama catenación.",
+    explanation:
+        "La respuesta correcta es D (Catenación). El distractor B (Tetravalencia) es la 'Trampa de la Característica Famosa'; el alumno sabe que el carbono es tetravalente (forma 4 enlaces), pero esa propiedad específica de formar largas cadenas entre sí se llama catenación.",
   ),
   Question(
     id: 'cta_q255',
     topicId: 'cta_t2',
-    text: 'En la Tabla Periódica, los elementos del Grupo VIIA (halógenos) se caracterizan por ser altamente reactivos. Esta alta reactividad química se debe principalmente a que:',
-    options: ['A) Son gases a temperatura ambiente.', 'B) Poseen 7 electrones en su capa de valencia y gran electronegatividad.', 'C) Tienen la mayor energía de ionización de su periodo.', 'D) Son elementos metálicos de transición.', 'E) No reaccionan con los metales alcalinos.'],
+    text:
+        'En la Tabla Periódica, los elementos del Grupo VIIA (halógenos) se caracterizan por ser altamente reactivos. Esta alta reactividad química se debe principalmente a que:',
+    options: [
+      'A) Son gases a temperatura ambiente.',
+      'B) Poseen 7 electrones en su capa de valencia y gran electronegatividad.',
+      'C) Tienen la mayor energía de ionización de su periodo.',
+      'D) Son elementos metálicos de transición.',
+      'E) No reaccionan con los metales alcalinos.',
+    ],
     correctAnswer: 1,
-    explanation: 'La respuesta correcta es B. El distractor A es parcialmente cierto para el Flúor y Cloro, pero no es la causa de su reactividad (el Iodo es sólido). El distractor C describe mejor a los gases nobles (VIII A).',
+    explanation:
+        'La respuesta correcta es B. El distractor A es parcialmente cierto para el Flúor y Cloro, pero no es la causa de su reactividad (el Iodo es sólido). El distractor C describe mejor a los gases nobles (VIII A).',
   ),
   Question(
     id: 'cta_q256',
     topicId: 'cta_t2',
-    text: 'Se define como un cambio físico a aquel que no altera la estructura molecular interna de la sustancia. Identifique el proceso que constituye estrictamente un CAMBIO FÍSICO:',
-    options: ['A) La oxidación de un clavo de hierro.', 'B) La fotosíntesis de las plantas.', 'C) La sublimación del hielo seco (CO₂).', 'D) La digestión de los alimentos.', 'E) La combustión del gas propano.'],
+    text:
+        'Se define como un cambio físico a aquel que no altera la estructura molecular interna de la sustancia. Identifique el proceso que constituye estrictamente un CAMBIO FÍSICO:',
+    options: [
+      'A) La oxidación de un clavo de hierro.',
+      'B) La fotosíntesis de las plantas.',
+      'C) La sublimación del hielo seco (CO₂).',
+      'D) La digestión de los alimentos.',
+      'E) La combustión del gas propano.',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (sublimación), que es un simple cambio de estado. El resto son reacciones químicas. El distractor B (fotosíntesis) o D (digestión) engañan a quienes confunden procesos biológicos naturales con 'físicos'.",
+    explanation:
+        "La respuesta correcta es C (sublimación), que es un simple cambio de estado. El resto son reacciones químicas. El distractor B (fotosíntesis) o D (digestión) engañan a quienes confunden procesos biológicos naturales con 'físicos'.",
   ),
   Question(
     id: 'cta_q257',
     topicId: 'cta_t2',
-    text: 'Los seres vivos se agrupan en niveles de organización de la materia. ¿A qué nivel de organización pertenece una bacteria viva individual (como Escherichia coli)?',
-    options: ['A) Nivel celular', 'B) Nivel orgánico', 'C) Nivel tisular', 'D) Nivel ecosistémico', 'E) Nivel individual y celular simultáneamente'],
+    text:
+        'Los seres vivos se agrupan en niveles de organización de la materia. ¿A qué nivel de organización pertenece una bacteria viva individual (como Escherichia coli)?',
+    options: [
+      'A) Nivel celular',
+      'B) Nivel orgánico',
+      'C) Nivel tisular',
+      'D) Nivel ecosistémico',
+      'E) Nivel individual y celular simultáneamente',
+    ],
     correctAnswer: 4,
-    explanation: "La respuesta correcta es E. Al ser un organismo unicelular, la célula ES el individuo entero. El distractor A es un 'Razonamiento Incompleto'; es correcto que es una célula, pero olvida que también es un organismo individual independiente.",
+    explanation:
+        "La respuesta correcta es E. Al ser un organismo unicelular, la célula ES el individuo entero. El distractor A es un 'Razonamiento Incompleto'; es correcto que es una célula, pero olvida que también es un organismo individual independiente.",
   ),
   Question(
     id: 'cta_q258',
     topicId: 'cta_t2',
-    text: "De las siguientes alternativas energéticas, ¿cuál es considerada una fuente de 'energía limpia' que aprovecha la degradación anaerobia de la materia orgánica para generar combustible (CH₄)?",
-    options: ['A) Energía Eólica', 'B) Geotermia', 'C) Biodigestores (Biogás)', 'D) Energía Nuclear de fisión', 'E) Carbón mineral procesado'],
+    text:
+        "De las siguientes alternativas energéticas, ¿cuál es considerada una fuente de 'energía limpia' que aprovecha la degradación anaerobia de la materia orgánica para generar combustible (CH₄)?",
+    options: [
+      'A) Energía Eólica',
+      'B) Geotermia',
+      'C) Biodigestores (Biogás)',
+      'D) Energía Nuclear de fisión',
+      'E) Carbón mineral procesado',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (Biogás). El distractor A (Eólica) es una energía limpia muy popular, pero no usa 'materia orgánica'. Es una 'Trampa por Fama', el alumno ve 'energía limpia' y marca lo primero que asocia a ello sin leer el mecanismo orgánico.",
+    explanation:
+        "La respuesta correcta es C (Biogás). El distractor A (Eólica) es una energía limpia muy popular, pero no usa 'materia orgánica'. Es una 'Trampa por Fama', el alumno ve 'energía limpia' y marca lo primero que asocia a ello sin leer el mecanismo orgánico.",
   ),
   Question(
     id: 'cta_q259',
@@ -2478,370 +3321,644 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q309',
     topicId: 'cta_t3',
-    text: '¿Quién propuso la teoría celular que establece que «todo ser vivo está formado por células»?',
-    options: ['Schleiden y Schwann', 'Darwin y Wallace', 'Watson y Crick', 'Mendel y Morgan'],
+    text:
+        '¿Quién propuso la teoría celular que establece que «todo ser vivo está formado por células»?',
+    options: [
+      'Schleiden y Schwann',
+      'Darwin y Wallace',
+      'Watson y Crick',
+      'Mendel y Morgan',
+    ],
     correctAnswer: 0,
-    explanation: 'Matthias Schleiden y Theodor Schwann formularon la teoría celular (1838-1839), estableciendo que todos los seres vivos están compuestos por células.',
+    explanation:
+        'Matthias Schleiden y Theodor Schwann formularon la teoría celular (1838-1839), estableciendo que todos los seres vivos están compuestos por células.',
   ),
   Question(
     id: 'cta_q310',
     topicId: 'cta_t3',
-    text: 'La célula es considerada la unidad básica de la vida porque cumple simultáneamente tres funciones fundamentales. ¿Cuáles son?',
-    options: ['Nutrición, relación y reproducción', 'Crecimiento, excreción y locomoción', 'Digestión, circulación y respiración', 'Secreción, absorción y conducción'],
+    text:
+        'La célula es considerada la unidad básica de la vida porque cumple simultáneamente tres funciones fundamentales. ¿Cuáles son?',
+    options: [
+      'Nutrición, relación y reproducción',
+      'Crecimiento, excreción y locomoción',
+      'Digestión, circulación y respiración',
+      'Secreción, absorción y conducción',
+    ],
     correctAnswer: 0,
-    explanation: 'Toda célula cumple las tres funciones vitales: nutrición (obtención de energía y materia), relación (respuesta al medio) y reproducción (generación de nuevas células).',
+    explanation:
+        'Toda célula cumple las tres funciones vitales: nutrición (obtención de energía y materia), relación (respuesta al medio) y reproducción (generación de nuevas células).',
   ),
   Question(
     id: 'cta_q311',
     topicId: 'cta_t3',
-    text: 'Rudolf Virchow completó la teoría celular con el principio «Omnis cellula e cellula». ¿Qué significa esta frase?',
-    options: ['Toda célula proviene de otra célula preexistente', 'Todas las células tienen el mismo tamaño', 'Las células solo existen en organismos multicelulares', 'Cada célula posee un núcleo definido'],
+    text:
+        'Rudolf Virchow completó la teoría celular con el principio «Omnis cellula e cellula». ¿Qué significa esta frase?',
+    options: [
+      'Toda célula proviene de otra célula preexistente',
+      'Todas las células tienen el mismo tamaño',
+      'Las células solo existen en organismos multicelulares',
+      'Cada célula posee un núcleo definido',
+    ],
     correctAnswer: 0,
-    explanation: 'Virchow (1855) estableció que toda célula se origina a partir de otra célula, descartando la generación espontánea a nivel celular.',
+    explanation:
+        'Virchow (1855) estableció que toda célula se origina a partir de otra célula, descartando la generación espontánea a nivel celular.',
   ),
   Question(
     id: 'cta_q312',
     topicId: 'cta_t3',
-    text: 'Un biólogo observa al microscopio un organismo que carece de núcleo definido, posee pared celular y un solo cromosoma circular. ¿A qué tipo de célula corresponde?',
-    options: ['Célula eucariota vegetal', 'Célula procariota', 'Célula eucariota animal', 'Célula fúngica'],
+    text:
+        'Un biólogo observa al microscopio un organismo que carece de núcleo definido, posee pared celular y un solo cromosoma circular. ¿A qué tipo de célula corresponde?',
+    options: [
+      'Célula eucariota vegetal',
+      'Célula procariota',
+      'Célula eucariota animal',
+      'Célula fúngica',
+    ],
     correctAnswer: 1,
-    explanation: 'Las características descritas (ausencia de núcleo definido, ADN circular y pared celular) son propias de una célula procariota, como las bacterias.',
+    explanation:
+        'Las características descritas (ausencia de núcleo definido, ADN circular y pared celular) son propias de una célula procariota, como las bacterias.',
   ),
   Question(
     id: 'cta_q313',
     topicId: 'cta_t3',
-    text: '¿Cuál es la principal diferencia estructural entre una célula procariota y una eucariota?',
-    options: ['La procariota carece de membrana plasmática', 'La eucariota carece de ribosomas', 'La procariota carece de núcleo definido con envoltura nuclear', 'La eucariota no posee material genético'],
+    text:
+        '¿Cuál es la principal diferencia estructural entre una célula procariota y una eucariota?',
+    options: [
+      'La procariota carece de membrana plasmática',
+      'La eucariota carece de ribosomas',
+      'La procariota carece de núcleo definido con envoltura nuclear',
+      'La eucariota no posee material genético',
+    ],
     correctAnswer: 2,
-    explanation: 'La diferencia fundamental es que las células procariotas carecen de un núcleo delimitado por una envoltura nuclear; su ADN se encuentra en el nucleoide.',
+    explanation:
+        'La diferencia fundamental es que las células procariotas carecen de un núcleo delimitado por una envoltura nuclear; su ADN se encuentra en el nucleoide.',
   ),
   Question(
     id: 'cta_q314',
     topicId: 'cta_t3',
-    text: '¿Qué estructura está presente tanto en células procariotas como en eucariotas?',
-    options: ['Retículo endoplasmático', 'Ribosomas', 'Mitocondrias', 'Aparato de Golgi'],
+    text:
+        '¿Qué estructura está presente tanto en células procariotas como en eucariotas?',
+    options: [
+      'Retículo endoplasmático',
+      'Ribosomas',
+      'Mitocondrias',
+      'Aparato de Golgi',
+    ],
     correctAnswer: 1,
-    explanation: 'Los ribosomas son los únicos organelos presentes en ambos tipos celulares, ya que son indispensables para la síntesis de proteínas. Los demás son exclusivos de eucariotas.',
+    explanation:
+        'Los ribosomas son los únicos organelos presentes en ambos tipos celulares, ya que son indispensables para la síntesis de proteínas. Los demás son exclusivos de eucariotas.',
   ),
   Question(
     id: 'cta_q315',
     topicId: 'cta_t3',
-    text: 'Las bacterias son organismos procariotas. ¿Cuál de las siguientes afirmaciones sobre ellas es correcta?',
-    options: ['Poseen mitocondrias para obtener energía', 'Su material genético se encuentra en un nucleoide, sin envoltura nuclear', 'Presentan un núcleo rodeado por doble membrana', 'Carecen completamente de ribosomas'],
+    text:
+        'Las bacterias son organismos procariotas. ¿Cuál de las siguientes afirmaciones sobre ellas es correcta?',
+    options: [
+      'Poseen mitocondrias para obtener energía',
+      'Su material genético se encuentra en un nucleoide, sin envoltura nuclear',
+      'Presentan un núcleo rodeado por doble membrana',
+      'Carecen completamente de ribosomas',
+    ],
     correctAnswer: 1,
-    explanation: 'Las bacterias tienen su ADN concentrado en una región llamada nucleoide, sin membrana nuclear. No poseen organelos membranosos como mitocondrias.',
+    explanation:
+        'Las bacterias tienen su ADN concentrado en una región llamada nucleoide, sin membrana nuclear. No poseen organelos membranosos como mitocondrias.',
   ),
   Question(
     id: 'cta_q316',
     topicId: 'cta_t3',
-    text: 'Si se descubre un microorganismo unicelular con núcleo definido, mitocondrias y retículo endoplasmático, ¿cómo se clasificaría su tipo celular?',
+    text:
+        'Si se descubre un microorganismo unicelular con núcleo definido, mitocondrias y retículo endoplasmático, ¿cómo se clasificaría su tipo celular?',
     options: ['Procariota', 'Eucariota', 'Acariota', 'Virus'],
     correctAnswer: 1,
-    explanation: 'La presencia de núcleo con envoltura nuclear y organelos membranosos (mitocondrias, RE) indica que se trata de una célula eucariota.',
+    explanation:
+        'La presencia de núcleo con envoltura nuclear y organelos membranosos (mitocondrias, RE) indica que se trata de una célula eucariota.',
   ),
   Question(
     id: 'cta_q317',
     topicId: 'cta_t3',
-    text: '¿Qué tipo de organismos presentan exclusivamente células procariotas?',
-    options: ['Hongos y algas', 'Bacterias y arqueas', 'Protozoos y algas', 'Plantas y animales'],
+    text:
+        '¿Qué tipo de organismos presentan exclusivamente células procariotas?',
+    options: [
+      'Hongos y algas',
+      'Bacterias y arqueas',
+      'Protozoos y algas',
+      'Plantas y animales',
+    ],
     correctAnswer: 1,
-    explanation: 'Solo las bacterias y las arqueas son organismos procariotas. Todos los demás reinos poseen células eucariotas.',
+    explanation:
+        'Solo las bacterias y las arqueas son organismos procariotas. Todos los demás reinos poseen células eucariotas.',
   ),
   Question(
     id: 'cta_q318',
     topicId: 'cta_t3',
-    text: '¿Cuál de las siguientes estructuras es exclusiva de la célula vegetal?',
-    options: ['Membrana plasmática', 'Mitocondria', 'Pared celular de celulosa', 'Ribosomas'],
+    text:
+        '¿Cuál de las siguientes estructuras es exclusiva de la célula vegetal?',
+    options: [
+      'Membrana plasmática',
+      'Mitocondria',
+      'Pared celular de celulosa',
+      'Ribosomas',
+    ],
     correctAnswer: 2,
-    explanation: 'La pared celular compuesta de celulosa es exclusiva de las células vegetales. La membrana plasmática, las mitocondrias y los ribosomas están en ambos tipos.',
+    explanation:
+        'La pared celular compuesta de celulosa es exclusiva de las células vegetales. La membrana plasmática, las mitocondrias y los ribosomas están en ambos tipos.',
   ),
   Question(
     id: 'cta_q319',
     topicId: 'cta_t3',
-    text: '¿Qué organelo está presente en la célula animal pero ausente en la mayoría de las células vegetales superiores?',
+    text:
+        '¿Qué organelo está presente en la célula animal pero ausente en la mayoría de las células vegetales superiores?',
     options: ['Cloroplasto', 'Vacuola central', 'Centriolos', 'Pared celular'],
     correctAnswer: 2,
-    explanation: 'Los centriolos participan en la división celular animal y están ausentes en la mayoría de las plantas superiores, que forman el huso acromático sin ellos.',
+    explanation:
+        'Los centriolos participan en la división celular animal y están ausentes en la mayoría de las plantas superiores, que forman el huso acromático sin ellos.',
   ),
   Question(
     id: 'cta_q320',
     topicId: 'cta_t3',
-    text: 'La vacuola central de la célula vegetal ocupa gran parte del volumen celular. ¿Cuál es su función principal?',
-    options: ['Sintetizar proteínas', 'Realizar la fotosíntesis', 'Almacenar agua, sales y mantener la turgencia celular', 'Degradar moléculas orgánicas'],
+    text:
+        'La vacuola central de la célula vegetal ocupa gran parte del volumen celular. ¿Cuál es su función principal?',
+    options: [
+      'Sintetizar proteínas',
+      'Realizar la fotosíntesis',
+      'Almacenar agua, sales y mantener la turgencia celular',
+      'Degradar moléculas orgánicas',
+    ],
     correctAnswer: 2,
-    explanation: 'La vacuola central almacena agua, iones y metabolitos, y genera presión de turgencia que mantiene la rigidez de la célula vegetal.',
+    explanation:
+        'La vacuola central almacena agua, iones y metabolitos, y genera presión de turgencia que mantiene la rigidez de la célula vegetal.',
   ),
   Question(
     id: 'cta_q321',
     topicId: 'cta_t3',
-    text: 'Un estudiante observa una célula con pared celular, cloroplastos y una gran vacuola central. ¿Qué tipo de célula está observando?',
-    options: ['Célula animal', 'Célula procariota', 'Célula vegetal', 'Célula fúngica'],
+    text:
+        'Un estudiante observa una célula con pared celular, cloroplastos y una gran vacuola central. ¿Qué tipo de célula está observando?',
+    options: [
+      'Célula animal',
+      'Célula procariota',
+      'Célula vegetal',
+      'Célula fúngica',
+    ],
     correctAnswer: 2,
-    explanation: 'La presencia simultánea de pared celular de celulosa, cloroplastos y vacuola central es característica exclusiva de la célula vegetal.',
+    explanation:
+        'La presencia simultánea de pared celular de celulosa, cloroplastos y vacuola central es característica exclusiva de la célula vegetal.',
   ),
   Question(
     id: 'cta_q322',
     topicId: 'cta_t3',
-    text: '¿Por qué la célula vegetal no se lisa (revienta) cuando se coloca en un medio hipotónico?',
-    options: ['Porque carece de membrana plasmática', 'Porque la pared celular resiste la presión de turgencia', 'Porque sus cloroplastos absorben el exceso de agua', 'Porque no realiza ósmosis'],
+    text:
+        '¿Por qué la célula vegetal no se lisa (revienta) cuando se coloca en un medio hipotónico?',
+    options: [
+      'Porque carece de membrana plasmática',
+      'Porque la pared celular resiste la presión de turgencia',
+      'Porque sus cloroplastos absorben el exceso de agua',
+      'Porque no realiza ósmosis',
+    ],
     correctAnswer: 1,
-    explanation: 'La pared celular rígida de celulosa soporta la presión de turgencia generada por la entrada de agua, impidiendo que la célula se rompa.',
+    explanation:
+        'La pared celular rígida de celulosa soporta la presión de turgencia generada por la entrada de agua, impidiendo que la célula se rompa.',
   ),
   Question(
     id: 'cta_q323',
     topicId: 'cta_t3',
     text: '¿Cuál es la función principal de la mitocondria?',
-    options: ['Síntesis de lípidos', 'Producción de ATP mediante la respiración celular', 'Digestión intracelular', 'Fotosíntesis'],
+    options: [
+      'Síntesis de lípidos',
+      'Producción de ATP mediante la respiración celular',
+      'Digestión intracelular',
+      'Fotosíntesis',
+    ],
     correctAnswer: 1,
-    explanation: 'La mitocondria es la «central energética» de la célula: produce ATP a través de la respiración celular aeróbica.',
+    explanation:
+        'La mitocondria es la «central energética» de la célula: produce ATP a través de la respiración celular aeróbica.',
   ),
   Question(
     id: 'cta_q324',
     topicId: 'cta_t3',
     text: 'Los ribosomas son los organelos encargados de:',
-    options: ['La digestión intracelular', 'La síntesis de proteínas', 'El empaquetamiento de sustancias', 'El almacenamiento de lípidos'],
+    options: [
+      'La digestión intracelular',
+      'La síntesis de proteínas',
+      'El empaquetamiento de sustancias',
+      'El almacenamiento de lípidos',
+    ],
     correctAnswer: 1,
-    explanation: 'Los ribosomas traducen el ARN mensajero en cadenas polipeptídicas, siendo responsables de la síntesis de proteínas.',
+    explanation:
+        'Los ribosomas traducen el ARN mensajero en cadenas polipeptídicas, siendo responsables de la síntesis de proteínas.',
   ),
   Question(
     id: 'cta_q325',
     topicId: 'cta_t3',
-    text: '¿Qué organelo se encarga de modificar, empaquetar y distribuir proteínas y lípidos hacia su destino final?',
-    options: ['Ribosoma', 'Retículo endoplasmático liso', 'Aparato de Golgi', 'Lisosoma'],
+    text:
+        '¿Qué organelo se encarga de modificar, empaquetar y distribuir proteínas y lípidos hacia su destino final?',
+    options: [
+      'Ribosoma',
+      'Retículo endoplasmático liso',
+      'Aparato de Golgi',
+      'Lisosoma',
+    ],
     correctAnswer: 2,
-    explanation: 'El aparato de Golgi recibe proteínas del retículo endoplasmático, las modifica (glucosilación), empaqueta en vesículas y las dirige a su destino.',
+    explanation:
+        'El aparato de Golgi recibe proteínas del retículo endoplasmático, las modifica (glucosilación), empaqueta en vesículas y las dirige a su destino.',
   ),
   Question(
     id: 'cta_q326',
     topicId: 'cta_t3',
-    text: 'Los lisosomas contienen enzimas hidrolíticas. ¿Cuál es su función principal?',
-    options: ['Sintetizar ATP', 'Realizar la fotosíntesis', 'Degradar moléculas orgánicas y organelos dañados', 'Almacenar agua y sales minerales'],
+    text:
+        'Los lisosomas contienen enzimas hidrolíticas. ¿Cuál es su función principal?',
+    options: [
+      'Sintetizar ATP',
+      'Realizar la fotosíntesis',
+      'Degradar moléculas orgánicas y organelos dañados',
+      'Almacenar agua y sales minerales',
+    ],
     correctAnswer: 2,
-    explanation: 'Los lisosomas realizan la digestión intracelular, degradando macromoléculas, patógenos fagocitados y organelos envejecidos (autofagia).',
+    explanation:
+        'Los lisosomas realizan la digestión intracelular, degradando macromoléculas, patógenos fagocitados y organelos envejecidos (autofagia).',
   ),
   Question(
     id: 'cta_q327',
     topicId: 'cta_t3',
-    text: '¿Cuál es la diferencia funcional entre el retículo endoplasmático rugoso (RER) y el retículo endoplasmático liso (REL)?',
-    options: ['El RER sintetiza proteínas y el REL sintetiza lípidos y detoxifica', 'El RER produce ATP y el REL realiza fotosíntesis', 'El RER almacena agua y el REL almacena glucosa', 'No hay diferencia funcional entre ambos'],
+    text:
+        '¿Cuál es la diferencia funcional entre el retículo endoplasmático rugoso (RER) y el retículo endoplasmático liso (REL)?',
+    options: [
+      'El RER sintetiza proteínas y el REL sintetiza lípidos y detoxifica',
+      'El RER produce ATP y el REL realiza fotosíntesis',
+      'El RER almacena agua y el REL almacena glucosa',
+      'No hay diferencia funcional entre ambos',
+    ],
     correctAnswer: 0,
-    explanation: 'El RER tiene ribosomas adheridos y participa en la síntesis de proteínas, mientras que el REL carece de ribosomas y sintetiza lípidos, hormonas esteroideas y detoxifica sustancias.',
+    explanation:
+        'El RER tiene ribosomas adheridos y participa en la síntesis de proteínas, mientras que el REL carece de ribosomas y sintetiza lípidos, hormonas esteroideas y detoxifica sustancias.',
   ),
   Question(
     id: 'cta_q328',
     topicId: 'cta_t3',
-    text: 'Una célula hepática (del hígado) que detoxifica fármacos y alcohol tendría un desarrollo especialmente notable de:',
-    options: ['Cloroplastos', 'Retículo endoplasmático liso', 'Vacuola central', 'Pared celular'],
+    text:
+        'Una célula hepática (del hígado) que detoxifica fármacos y alcohol tendría un desarrollo especialmente notable de:',
+    options: [
+      'Cloroplastos',
+      'Retículo endoplasmático liso',
+      'Vacuola central',
+      'Pared celular',
+    ],
     correctAnswer: 1,
-    explanation: 'El retículo endoplasmático liso es abundante en hepatocitos porque participa en la detoxificación de sustancias como fármacos y alcohol.',
+    explanation:
+        'El retículo endoplasmático liso es abundante en hepatocitos porque participa en la detoxificación de sustancias como fármacos y alcohol.',
   ),
   Question(
     id: 'cta_q329',
     topicId: 'cta_t3',
-    text: '¿Qué organelo posee su propio ADN y se cree que tiene origen endosimbiótico?',
-    options: ['Lisosoma y ribosoma', 'Mitocondria y cloroplasto', 'Aparato de Golgi y vacuola', 'Centriolos y peroxisomas'],
+    text:
+        '¿Qué organelo posee su propio ADN y se cree que tiene origen endosimbiótico?',
+    options: [
+      'Lisosoma y ribosoma',
+      'Mitocondria y cloroplasto',
+      'Aparato de Golgi y vacuola',
+      'Centriolos y peroxisomas',
+    ],
     correctAnswer: 1,
-    explanation: 'Las mitocondrias y los cloroplastos poseen ADN circular propio y doble membrana, evidencia que sustenta la teoría endosimbiótica de Lynn Margulis.',
+    explanation:
+        'Las mitocondrias y los cloroplastos poseen ADN circular propio y doble membrana, evidencia que sustenta la teoría endosimbiótica de Lynn Margulis.',
   ),
   Question(
     id: 'cta_q330',
     topicId: 'cta_t3',
-    text: 'Un investigador inhibe selectivamente la función del aparato de Golgi en una célula secretora. ¿Qué proceso se vería directamente afectado?',
-    options: ['La replicación del ADN', 'La modificación y empaquetamiento de proteínas para secreción', 'La producción de ATP', 'La síntesis de ARN mensajero'],
+    text:
+        'Un investigador inhibe selectivamente la función del aparato de Golgi en una célula secretora. ¿Qué proceso se vería directamente afectado?',
+    options: [
+      'La replicación del ADN',
+      'La modificación y empaquetamiento de proteínas para secreción',
+      'La producción de ATP',
+      'La síntesis de ARN mensajero',
+    ],
     correctAnswer: 1,
-    explanation: 'Sin aparato de Golgi funcional, las proteínas no podrían ser modificadas postraduccionalmente ni empaquetadas en vesículas secretoras.',
+    explanation:
+        'Sin aparato de Golgi funcional, las proteínas no podrían ser modificadas postraduccionalmente ni empaquetadas en vesículas secretoras.',
   ),
   Question(
     id: 'cta_q331',
     topicId: 'cta_t3',
-    text: 'El modelo del mosaico fluido de la membrana plasmática fue propuesto por:',
-    options: ['Watson y Crick', 'Singer y Nicolson', 'Schleiden y Schwann', 'Mendel y Morgan'],
+    text:
+        'El modelo del mosaico fluido de la membrana plasmática fue propuesto por:',
+    options: [
+      'Watson y Crick',
+      'Singer y Nicolson',
+      'Schleiden y Schwann',
+      'Mendel y Morgan',
+    ],
     correctAnswer: 1,
-    explanation: 'S. Jonathan Singer y Garth Nicolson propusieron en 1972 el modelo del mosaico fluido para describir la estructura de la membrana plasmática.',
+    explanation:
+        'S. Jonathan Singer y Garth Nicolson propusieron en 1972 el modelo del mosaico fluido para describir la estructura de la membrana plasmática.',
   ),
   Question(
     id: 'cta_q332',
     topicId: 'cta_t3',
-    text: 'Según el modelo del mosaico fluido, la membrana plasmática está compuesta principalmente por:',
-    options: ['Una doble capa de fosfolípidos con proteínas embebidas', 'Una capa simple de celulosa con carbohidratos', 'Una triple capa de colesterol sin proteínas', 'Una red de peptidoglucano con lípidos'],
+    text:
+        'Según el modelo del mosaico fluido, la membrana plasmática está compuesta principalmente por:',
+    options: [
+      'Una doble capa de fosfolípidos con proteínas embebidas',
+      'Una capa simple de celulosa con carbohidratos',
+      'Una triple capa de colesterol sin proteínas',
+      'Una red de peptidoglucano con lípidos',
+    ],
     correctAnswer: 0,
-    explanation: 'La membrana plasmática consta de una bicapa de fosfolípidos en la que se insertan proteínas integrales y periféricas, formando un mosaico dinámico.',
+    explanation:
+        'La membrana plasmática consta de una bicapa de fosfolípidos en la que se insertan proteínas integrales y periféricas, formando un mosaico dinámico.',
   ),
   Question(
     id: 'cta_q333',
     topicId: 'cta_t3',
-    text: 'La membrana plasmática es selectivamente permeable. Esto significa que:',
-    options: ['No permite el paso de ninguna sustancia', 'Permite el paso libre de todas las sustancias', 'Regula qué sustancias pueden entrar o salir de la célula', 'Solo permite la salida de sustancias, nunca la entrada'],
+    text:
+        'La membrana plasmática es selectivamente permeable. Esto significa que:',
+    options: [
+      'No permite el paso de ninguna sustancia',
+      'Permite el paso libre de todas las sustancias',
+      'Regula qué sustancias pueden entrar o salir de la célula',
+      'Solo permite la salida de sustancias, nunca la entrada',
+    ],
     correctAnswer: 2,
-    explanation: 'La permeabilidad selectiva implica que la membrana controla el paso de sustancias según su tamaño, carga y polaridad, manteniendo la homeostasis celular.',
+    explanation:
+        'La permeabilidad selectiva implica que la membrana controla el paso de sustancias según su tamaño, carga y polaridad, manteniendo la homeostasis celular.',
   ),
   Question(
     id: 'cta_q334',
     topicId: 'cta_t3',
-    text: '¿Qué componente de la membrana plasmática contribuye a su fluidez y estabilidad a diferentes temperaturas?',
+    text:
+        '¿Qué componente de la membrana plasmática contribuye a su fluidez y estabilidad a diferentes temperaturas?',
     options: ['Glucógeno', 'Colesterol', 'Celulosa', 'Almidón'],
     correctAnswer: 1,
-    explanation: 'El colesterol se intercala entre los fosfolípidos, impidiendo que se compacten demasiado a bajas temperaturas o se desordenen a altas temperaturas.',
+    explanation:
+        'El colesterol se intercala entre los fosfolípidos, impidiendo que se compacten demasiado a bajas temperaturas o se desordenen a altas temperaturas.',
   ),
   Question(
     id: 'cta_q335',
     topicId: 'cta_t3',
-    text: 'Las proteínas que atraviesan completamente la bicapa lipídica de la membrana plasmática se denominan:',
-    options: ['Proteínas periféricas', 'Proteínas integrales o transmembrana', 'Proteínas citosólicas', 'Proteínas nucleares'],
+    text:
+        'Las proteínas que atraviesan completamente la bicapa lipídica de la membrana plasmática se denominan:',
+    options: [
+      'Proteínas periféricas',
+      'Proteínas integrales o transmembrana',
+      'Proteínas citosólicas',
+      'Proteínas nucleares',
+    ],
     correctAnswer: 1,
-    explanation: 'Las proteínas integrales (transmembrana) cruzan toda la bicapa lipídica y funcionan como canales, transportadores o receptores.',
+    explanation:
+        'Las proteínas integrales (transmembrana) cruzan toda la bicapa lipídica y funcionan como canales, transportadores o receptores.',
   ),
   Question(
     id: 'cta_q336',
     topicId: 'cta_t3',
     text: 'La difusión simple es un tipo de transporte que se caracteriza por:',
-    options: ['Requerir energía (ATP) y proteínas transportadoras', 'Mover moléculas a favor del gradiente de concentración sin gasto de energía', 'Mover moléculas en contra del gradiente de concentración', 'Ocurrir exclusivamente en células vegetales'],
+    options: [
+      'Requerir energía (ATP) y proteínas transportadoras',
+      'Mover moléculas a favor del gradiente de concentración sin gasto de energía',
+      'Mover moléculas en contra del gradiente de concentración',
+      'Ocurrir exclusivamente en células vegetales',
+    ],
     correctAnswer: 1,
-    explanation: 'En la difusión simple, las moléculas pequeñas y apolares (O₂, CO₂) se mueven a favor del gradiente de concentración sin gasto de ATP ni proteínas.',
+    explanation:
+        'En la difusión simple, las moléculas pequeñas y apolares (O₂, CO₂) se mueven a favor del gradiente de concentración sin gasto de ATP ni proteínas.',
   ),
   Question(
     id: 'cta_q337',
     topicId: 'cta_t3',
     text: 'La ósmosis es el movimiento de:',
-    options: ['Soluto a través de una membrana permeable', 'Agua a través de una membrana semipermeable, de menor a mayor concentración de soluto', 'Proteínas a través de la pared celular', 'Iones a favor del gradiente eléctrico'],
+    options: [
+      'Soluto a través de una membrana permeable',
+      'Agua a través de una membrana semipermeable, de menor a mayor concentración de soluto',
+      'Proteínas a través de la pared celular',
+      'Iones a favor del gradiente eléctrico',
+    ],
     correctAnswer: 1,
-    explanation: 'La ósmosis es la difusión del agua a través de una membrana semipermeable desde la zona de menor concentración de soluto hacia la de mayor concentración.',
+    explanation:
+        'La ósmosis es la difusión del agua a través de una membrana semipermeable desde la zona de menor concentración de soluto hacia la de mayor concentración.',
   ),
   Question(
     id: 'cta_q338',
     topicId: 'cta_t3',
-    text: '¿Qué tipo de transporte utiliza proteínas transportadoras para mover sustancias a favor del gradiente de concentración sin gasto de ATP?',
-    options: ['Transporte activo', 'Difusión simple', 'Difusión facilitada', 'Endocitosis'],
+    text:
+        '¿Qué tipo de transporte utiliza proteínas transportadoras para mover sustancias a favor del gradiente de concentración sin gasto de ATP?',
+    options: [
+      'Transporte activo',
+      'Difusión simple',
+      'Difusión facilitada',
+      'Endocitosis',
+    ],
     correctAnswer: 2,
-    explanation: 'La difusión facilitada utiliza proteínas canal o carrier para transportar moléculas polares o iones a favor del gradiente, sin consumo de energía.',
+    explanation:
+        'La difusión facilitada utiliza proteínas canal o carrier para transportar moléculas polares o iones a favor del gradiente, sin consumo de energía.',
   ),
   Question(
     id: 'cta_q339',
     topicId: 'cta_t3',
     text: 'El transporte activo se diferencia del transporte pasivo porque:',
-    options: ['No requiere proteínas transportadoras', 'Mueve sustancias a favor del gradiente de concentración', 'Requiere gasto de energía (ATP) y mueve sustancias en contra del gradiente', 'Solo transporta moléculas de agua'],
+    options: [
+      'No requiere proteínas transportadoras',
+      'Mueve sustancias a favor del gradiente de concentración',
+      'Requiere gasto de energía (ATP) y mueve sustancias en contra del gradiente',
+      'Solo transporta moléculas de agua',
+    ],
     correctAnswer: 2,
-    explanation: 'El transporte activo consume ATP para mover sustancias en contra de su gradiente de concentración, como la bomba sodio-potasio (Na⁺/K⁺ ATPasa).',
+    explanation:
+        'El transporte activo consume ATP para mover sustancias en contra de su gradiente de concentración, como la bomba sodio-potasio (Na⁺/K⁺ ATPasa).',
   ),
   Question(
     id: 'cta_q340',
     topicId: 'cta_t3',
     text: 'La endocitosis es un proceso por el cual la célula:',
-    options: ['Expulsa desechos al exterior', 'Incorpora sustancias del medio externo mediante invaginación de la membrana', 'Divide su núcleo en dos', 'Sintetiza proteínas en los ribosomas'],
+    options: [
+      'Expulsa desechos al exterior',
+      'Incorpora sustancias del medio externo mediante invaginación de la membrana',
+      'Divide su núcleo en dos',
+      'Sintetiza proteínas en los ribosomas',
+    ],
     correctAnswer: 1,
-    explanation: 'En la endocitosis, la membrana plasmática se invagina para englobar partículas o líquidos del medio externo, formando vesículas intracelulares.',
+    explanation:
+        'En la endocitosis, la membrana plasmática se invagina para englobar partículas o líquidos del medio externo, formando vesículas intracelulares.',
   ),
   Question(
     id: 'cta_q341',
     topicId: 'cta_t3',
-    text: '¿Qué proceso utilizan las células para liberar sustancias al exterior mediante la fusión de vesículas con la membrana plasmática?',
+    text:
+        '¿Qué proceso utilizan las células para liberar sustancias al exterior mediante la fusión de vesículas con la membrana plasmática?',
     options: ['Endocitosis', 'Exocitosis', 'Ósmosis', 'Difusión simple'],
     correctAnswer: 1,
-    explanation: 'La exocitosis es el proceso inverso a la endocitosis: vesículas intracelulares se fusionan con la membrana plasmática y liberan su contenido al exterior.',
+    explanation:
+        'La exocitosis es el proceso inverso a la endocitosis: vesículas intracelulares se fusionan con la membrana plasmática y liberan su contenido al exterior.',
   ),
   Question(
     id: 'cta_q342',
     topicId: 'cta_t3',
-    text: 'Si se coloca un glóbulo rojo en una solución hipertónica, ¿qué ocurrirá?',
-    options: ['Se hinchará y lisará (citólisis)', 'Permanecerá igual', 'Perderá agua y se arrugará (crenación)', 'Realizará fotosíntesis'],
+    text:
+        'Si se coloca un glóbulo rojo en una solución hipertónica, ¿qué ocurrirá?',
+    options: [
+      'Se hinchará y lisará (citólisis)',
+      'Permanecerá igual',
+      'Perderá agua y se arrugará (crenación)',
+      'Realizará fotosíntesis',
+    ],
     correctAnswer: 2,
-    explanation: 'En un medio hipertónico, el agua sale del glóbulo rojo por ósmosis hacia el medio más concentrado, provocando que la célula se deshidrate y arrugue (crenación).',
+    explanation:
+        'En un medio hipertónico, el agua sale del glóbulo rojo por ósmosis hacia el medio más concentrado, provocando que la célula se deshidrate y arrugue (crenación).',
   ),
   Question(
     id: 'cta_q343',
     topicId: 'cta_t3',
-    text: 'Un macrófago de la policía inmunológica del cuerpo humano ingiere una bacteria mediante un proceso llamado:',
-    options: ['Pinocitosis', 'Fagocitosis', 'Exocitosis', 'Difusión facilitada'],
+    text:
+        'Un macrófago de la policía inmunológica del cuerpo humano ingiere una bacteria mediante un proceso llamado:',
+    options: [
+      'Pinocitosis',
+      'Fagocitosis',
+      'Exocitosis',
+      'Difusión facilitada',
+    ],
     correctAnswer: 1,
-    explanation: 'La fagocitosis es un tipo de endocitosis donde la célula (macrófago) extiende pseudópodos para englobar partículas sólidas como bacterias.',
+    explanation:
+        'La fagocitosis es un tipo de endocitosis donde la célula (macrófago) extiende pseudópodos para englobar partículas sólidas como bacterias.',
   ),
   Question(
     id: 'cta_q344',
     topicId: 'cta_t3',
-    text: '¿Cuál es el orden correcto de los niveles de organización de la materia viva, de menor a mayor complejidad?',
-    options: ['Celular → molecular → tisular → orgánico → sistémico', 'Molecular → celular → tisular → orgánico → sistémico → individual', 'Individual → celular → tisular → molecular → orgánico', 'Tisular → celular → molecular → sistémico → orgánico'],
+    text:
+        '¿Cuál es el orden correcto de los niveles de organización de la materia viva, de menor a mayor complejidad?',
+    options: [
+      'Celular → molecular → tisular → orgánico → sistémico',
+      'Molecular → celular → tisular → orgánico → sistémico → individual',
+      'Individual → celular → tisular → molecular → orgánico',
+      'Tisular → celular → molecular → sistémico → orgánico',
+    ],
     correctAnswer: 1,
-    explanation: 'El orden correcto de menor a mayor complejidad es: molecular → celular → tisular → orgánico → sistémico → individual (→ poblacional → ecosistémico).',
+    explanation:
+        'El orden correcto de menor a mayor complejidad es: molecular → celular → tisular → orgánico → sistémico → individual (→ poblacional → ecosistémico).',
   ),
   Question(
     id: 'cta_q345',
     topicId: 'cta_t3',
-    text: 'El nivel de organización en el que varios tejidos se asocian para cumplir una función específica se denomina nivel:',
+    text:
+        'El nivel de organización en el que varios tejidos se asocian para cumplir una función específica se denomina nivel:',
     options: ['Celular', 'Tisular', 'Orgánico', 'Molecular'],
     correctAnswer: 2,
-    explanation: 'El nivel orgánico corresponde a los órganos, que son estructuras formadas por la asociación de diferentes tejidos que cumplen una función conjunta.',
+    explanation:
+        'El nivel orgánico corresponde a los órganos, que son estructuras formadas por la asociación de diferentes tejidos que cumplen una función conjunta.',
   ),
   Question(
     id: 'cta_q346',
     topicId: 'cta_t3',
-    text: 'Un conjunto de individuos de la misma especie que habitan en una zona determinada y en un tiempo dado corresponde al nivel:',
+    text:
+        'Un conjunto de individuos de la misma especie que habitan en una zona determinada y en un tiempo dado corresponde al nivel:',
     options: ['Individual', 'Ecosistémico', 'Poblacional', 'Comunitario'],
     correctAnswer: 2,
-    explanation: 'El nivel poblacional agrupa individuos de la misma especie que comparten un área geográfica y tiempo, pudiendo reproducirse entre sí.',
+    explanation:
+        'El nivel poblacional agrupa individuos de la misma especie que comparten un área geográfica y tiempo, pudiendo reproducirse entre sí.',
   ),
   Question(
     id: 'cta_q347',
     topicId: 'cta_t3',
     text: '¿A qué nivel de organización corresponde el estómago humano?',
-    options: ['Nivel tisular', 'Nivel celular', 'Nivel orgánico', 'Nivel sistémico'],
+    options: [
+      'Nivel tisular',
+      'Nivel celular',
+      'Nivel orgánico',
+      'Nivel sistémico',
+    ],
     correctAnswer: 2,
-    explanation: 'El estómago es un órgano formado por varios tejidos (muscular, epitelial, conectivo, nervioso) que trabajan juntos en la digestión, correspondiendo al nivel orgánico.',
+    explanation:
+        'El estómago es un órgano formado por varios tejidos (muscular, epitelial, conectivo, nervioso) que trabajan juntos en la digestión, correspondiendo al nivel orgánico.',
   ),
   Question(
     id: 'cta_q348',
     topicId: 'cta_t3',
-    text: '¿Qué reino agrupa a organismos unicelulares procariotas como las bacterias?',
+    text:
+        '¿Qué reino agrupa a organismos unicelulares procariotas como las bacterias?',
     options: ['Protista', 'Fungi', 'Monera', 'Plantae'],
     correctAnswer: 2,
-    explanation: 'El reino Monera (o Prokaryota) incluye a los organismos unicelulares procariotas: bacterias y cianobacterias.',
+    explanation:
+        'El reino Monera (o Prokaryota) incluye a los organismos unicelulares procariotas: bacterias y cianobacterias.',
   ),
   Question(
     id: 'cta_q349',
     topicId: 'cta_t3',
-    text: 'Los hongos pertenecen al reino Fungi. ¿Cuál de las siguientes es una característica de este reino?',
-    options: ['Son autótrofos fotosintéticos', 'Son heterótrofos que se alimentan por absorción', 'Carecen de pared celular', 'Son exclusivamente unicelulares'],
+    text:
+        'Los hongos pertenecen al reino Fungi. ¿Cuál de las siguientes es una característica de este reino?',
+    options: [
+      'Son autótrofos fotosintéticos',
+      'Son heterótrofos que se alimentan por absorción',
+      'Carecen de pared celular',
+      'Son exclusivamente unicelulares',
+    ],
     correctAnswer: 1,
-    explanation: 'Los hongos son heterótrofos que obtienen nutrientes por absorción, secretando enzimas que degradan la materia orgánica externamente. Poseen pared celular de quitina.',
+    explanation:
+        'Los hongos son heterótrofos que obtienen nutrientes por absorción, secretando enzimas que degradan la materia orgánica externamente. Poseen pared celular de quitina.',
   ),
   Question(
     id: 'cta_q350',
     topicId: 'cta_t3',
-    text: '¿Qué reino incluye organismos eucariotas, mayoritariamente unicelulares, como las amebas y los paramecios?',
+    text:
+        '¿Qué reino incluye organismos eucariotas, mayoritariamente unicelulares, como las amebas y los paramecios?',
     options: ['Monera', 'Protista', 'Fungi', 'Animalia'],
     correctAnswer: 1,
-    explanation: 'El reino Protista agrupa eucariotas generalmente unicelulares como protozoos (amebas, paramecios) y algas unicelulares.',
+    explanation:
+        'El reino Protista agrupa eucariotas generalmente unicelulares como protozoos (amebas, paramecios) y algas unicelulares.',
   ),
   Question(
     id: 'cta_q351',
     topicId: 'cta_t3',
-    text: '¿Cuál es la principal diferencia nutricional entre el reino Plantae y el reino Animalia?',
-    options: ['Las plantas son heterótrofas y los animales autótrofos', 'Las plantas son autótrofas fotosintéticas y los animales son heterótrofos', 'Ambos reinos son autótrofos', 'Ambos reinos son heterótrofos por absorción'],
+    text:
+        '¿Cuál es la principal diferencia nutricional entre el reino Plantae y el reino Animalia?',
+    options: [
+      'Las plantas son heterótrofas y los animales autótrofos',
+      'Las plantas son autótrofas fotosintéticas y los animales son heterótrofos',
+      'Ambos reinos son autótrofos',
+      'Ambos reinos son heterótrofos por absorción',
+    ],
     correctAnswer: 1,
-    explanation: 'Las plantas realizan fotosíntesis (autótrofas), produciendo su propio alimento. Los animales son heterótrofos y deben ingerir otros organismos.',
+    explanation:
+        'Las plantas realizan fotosíntesis (autótrofas), produciendo su propio alimento. Los animales son heterótrofos y deben ingerir otros organismos.',
   ),
   Question(
     id: 'cta_q352',
     topicId: 'cta_t3',
     text: '¿Cuál de los siguientes organismos es unicelular?',
-    options: ['Un helecho', 'Una lombriz de tierra', 'Una ameba', 'Un hongo de sombrero (Agaricus)'],
+    options: [
+      'Un helecho',
+      'Una lombriz de tierra',
+      'Una ameba',
+      'Un hongo de sombrero (Agaricus)',
+    ],
     correctAnswer: 2,
-    explanation: 'La ameba es un protozoo unicelular del reino Protista. Los helechos, lombrices y hongos macroscópicos son pluricelulares.',
+    explanation:
+        'La ameba es un protozoo unicelular del reino Protista. Los helechos, lombrices y hongos macroscópicos son pluricelulares.',
   ),
   Question(
     id: 'cta_q353',
     topicId: 'cta_t3',
-    text: 'Una diferencia fundamental entre un organismo unicelular y uno pluricelular es que:',
-    options: ['Los unicelulares no poseen material genético', 'Los pluricelulares presentan especialización celular y división de funciones', 'Los unicelulares no pueden reproducirse', 'Los pluricelulares carecen de membrana plasmática'],
+    text:
+        'Una diferencia fundamental entre un organismo unicelular y uno pluricelular es que:',
+    options: [
+      'Los unicelulares no poseen material genético',
+      'Los pluricelulares presentan especialización celular y división de funciones',
+      'Los unicelulares no pueden reproducirse',
+      'Los pluricelulares carecen de membrana plasmática',
+    ],
     correctAnswer: 1,
-    explanation: 'En los organismos pluricelulares, las células se especializan en diferentes funciones (tejidos), mientras que en los unicelulares, una sola célula realiza todas las funciones.',
+    explanation:
+        'En los organismos pluricelulares, las células se especializan en diferentes funciones (tejidos), mientras que en los unicelulares, una sola célula realiza todas las funciones.',
   ),
   Question(
     id: 'cta_q354',
     topicId: 'cta_t3',
-    text: '¿Cuál es la característica que distingue a los vertebrados de los invertebrados?',
-    options: ['Los vertebrados poseen columna vertebral y los invertebrados no', 'Los invertebrados son más grandes que los vertebrados', 'Los vertebrados son todos acuáticos', 'Los invertebrados poseen esqueleto interno óseo'],
+    text:
+        '¿Cuál es la característica que distingue a los vertebrados de los invertebrados?',
+    options: [
+      'Los vertebrados poseen columna vertebral y los invertebrados no',
+      'Los invertebrados son más grandes que los vertebrados',
+      'Los vertebrados son todos acuáticos',
+      'Los invertebrados poseen esqueleto interno óseo',
+    ],
     correctAnswer: 0,
-    explanation: 'La presencia de columna vertebral (y cráneo) es la característica definitoria de los vertebrados, ausente en los invertebrados.',
+    explanation:
+        'La presencia de columna vertebral (y cráneo) es la característica definitoria de los vertebrados, ausente en los invertebrados.',
   ),
   Question(
     id: 'cta_q355',
@@ -2849,63 +3966,102 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál de los siguientes animales es un invertebrado?',
     options: ['Trucha', 'Serpiente', 'Medusa', 'Lagarto'],
     correctAnswer: 2,
-    explanation: 'La medusa es un invertebrado del filo Cnidaria. La trucha, serpiente y lagarto son vertebrados (peces, reptiles).',
+    explanation:
+        'La medusa es un invertebrado del filo Cnidaria. La trucha, serpiente y lagarto son vertebrados (peces, reptiles).',
   ),
   Question(
     id: 'cta_q356',
     topicId: 'cta_t3',
-    text: 'Los artrópodos son el grupo más diverso de invertebrados. ¿Cuál de las siguientes es una característica común de los artrópodos?',
-    options: ['Cuerpo blando sin segmentar', 'Exoesqueleto quitinoso y apéndices articulados', 'Esqueleto interno de cartílago', 'Respiración exclusivamente pulmonar'],
+    text:
+        'Los artrópodos son el grupo más diverso de invertebrados. ¿Cuál de las siguientes es una característica común de los artrópodos?',
+    options: [
+      'Cuerpo blando sin segmentar',
+      'Exoesqueleto quitinoso y apéndices articulados',
+      'Esqueleto interno de cartílago',
+      'Respiración exclusivamente pulmonar',
+    ],
     correctAnswer: 1,
-    explanation: 'Los artrópodos (insectos, arácnidos, crustáceos) se caracterizan por su exoesqueleto de quitina, cuerpo segmentado y apéndices articulados.',
+    explanation:
+        'Los artrópodos (insectos, arácnidos, crustáceos) se caracterizan por su exoesqueleto de quitina, cuerpo segmentado y apéndices articulados.',
   ),
   Question(
     id: 'cta_q357',
     topicId: 'cta_t3',
     text: '¿Cuál es la ecuación general simplificada de la fotosíntesis?',
-    options: ['C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energía', '6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂', '6O₂ + C₆H₁₂O₆ → 6H₂O + 6CO₂', '6CO₂ + 6O₂ → C₆H₁₂O₆ + 6H₂O'],
+    options: [
+      'C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energía',
+      '6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂',
+      '6O₂ + C₆H₁₂O₆ → 6H₂O + 6CO₂',
+      '6CO₂ + 6O₂ → C₆H₁₂O₆ + 6H₂O',
+    ],
     correctAnswer: 1,
-    explanation: 'La fotosíntesis utiliza CO₂ y H₂O, con energía luminosa, para producir glucosa (C₆H₁₂O₆) y liberar O₂ como subproducto.',
+    explanation:
+        'La fotosíntesis utiliza CO₂ y H₂O, con energía luminosa, para producir glucosa (C₆H₁₂O₆) y liberar O₂ como subproducto.',
   ),
   Question(
     id: 'cta_q358',
     topicId: 'cta_t3',
-    text: 'La fotosíntesis se realiza en dos fases. La fase luminosa ocurre en los __________ del cloroplasto y la fase oscura en el __________.',
-    options: ['Tilacoides — estroma', 'Estroma — tilacoides', 'Matriz mitocondrial — citoplasma', 'Ribosomas — núcleo'],
+    text:
+        'La fotosíntesis se realiza en dos fases. La fase luminosa ocurre en los __________ del cloroplasto y la fase oscura en el __________.',
+    options: [
+      'Tilacoides — estroma',
+      'Estroma — tilacoides',
+      'Matriz mitocondrial — citoplasma',
+      'Ribosomas — núcleo',
+    ],
     correctAnswer: 0,
-    explanation: 'La fase luminosa se lleva a cabo en las membranas de los tilacoides (donde están los fotosistemas) y la fase oscura (Ciclo de Calvin) ocurre en el estroma del cloroplasto.',
+    explanation:
+        'La fase luminosa se lleva a cabo en las membranas de los tilacoides (donde están los fotosistemas) y la fase oscura (Ciclo de Calvin) ocurre en el estroma del cloroplasto.',
   ),
   Question(
     id: 'cta_q359',
     topicId: 'cta_t3',
-    text: '¿Qué pigmento es el principal responsable de captar la energía luminosa durante la fotosíntesis?',
+    text:
+        '¿Qué pigmento es el principal responsable de captar la energía luminosa durante la fotosíntesis?',
     options: ['Hemoglobina', 'Melanina', 'Clorofila', 'Caroteno'],
     correctAnswer: 2,
-    explanation: 'La clorofila (principalmente clorofila a y b) es el pigmento fotosintético principal que absorbe la luz roja y azul para impulsar la fotosíntesis.',
+    explanation:
+        'La clorofila (principalmente clorofila a y b) es el pigmento fotosintético principal que absorbe la luz roja y azul para impulsar la fotosíntesis.',
   ),
   Question(
     id: 'cta_q360',
     topicId: 'cta_t3',
-    text: 'En la fase oscura de la fotosíntesis (Ciclo de Calvin), ¿qué sustancia se fija para formar moléculas orgánicas?',
-    options: ['Oxígeno (O₂)', 'Dióxido de carbono (CO₂)', 'Nitrógeno (N₂)', 'Hidrógeno (H₂)'],
+    text:
+        'En la fase oscura de la fotosíntesis (Ciclo de Calvin), ¿qué sustancia se fija para formar moléculas orgánicas?',
+    options: [
+      'Oxígeno (O₂)',
+      'Dióxido de carbono (CO₂)',
+      'Nitrógeno (N₂)',
+      'Hidrógeno (H₂)',
+    ],
     correctAnswer: 1,
-    explanation: 'En el Ciclo de Calvin, el CO₂ atmosférico se fija mediante la enzima RuBisCO para formar moléculas de tres carbonos que luego se convierten en glucosa.',
+    explanation:
+        'En el Ciclo de Calvin, el CO₂ atmosférico se fija mediante la enzima RuBisCO para formar moléculas de tres carbonos que luego se convierten en glucosa.',
   ),
   Question(
     id: 'cta_q361',
     topicId: 'cta_t3',
-    text: '¿Qué producto de la fase luminosa de la fotosíntesis es liberado como gas a la atmósfera?',
+    text:
+        '¿Qué producto de la fase luminosa de la fotosíntesis es liberado como gas a la atmósfera?',
     options: ['Dióxido de carbono', 'Nitrógeno', 'Oxígeno', 'Metano'],
     correctAnswer: 2,
-    explanation: 'Durante la fotólisis del agua en la fase luminosa, se libera O₂ como subproducto. Este oxígeno es esencial para la respiración de los seres aerobios.',
+    explanation:
+        'Durante la fotólisis del agua en la fase luminosa, se libera O₂ como subproducto. Este oxígeno es esencial para la respiración de los seres aerobios.',
   ),
   Question(
     id: 'cta_q362',
     topicId: 'cta_t3',
-    text: 'Si una planta se coloca en un ambiente con luz intensa pero sin CO₂, ¿qué fase de la fotosíntesis se detendría primero?',
-    options: ['La fase luminosa, porque necesita CO₂ para la fotólisis', 'La fase oscura (Ciclo de Calvin), porque el CO₂ es su sustrato', 'Ambas fases se detendrían simultáneamente', 'Ninguna fase se vería afectada'],
+    text:
+        'Si una planta se coloca en un ambiente con luz intensa pero sin CO₂, ¿qué fase de la fotosíntesis se detendría primero?',
+    options: [
+      'La fase luminosa, porque necesita CO₂ para la fotólisis',
+      'La fase oscura (Ciclo de Calvin), porque el CO₂ es su sustrato',
+      'Ambas fases se detendrían simultáneamente',
+      'Ninguna fase se vería afectada',
+    ],
     correctAnswer: 1,
-    explanation: 'La fase oscura (Ciclo de Calvin) requiere CO₂ como sustrato para la fijación del carbono. Sin CO₂, esta fase se detiene aunque haya luz disponible.',
+    explanation:
+        'La fase oscura (Ciclo de Calvin) requiere CO₂ como sustrato para la fijación del carbono. Sin CO₂, esta fase se detiene aunque haya luz disponible.',
   ),
   Question(
     id: 'cta_q363',
@@ -2913,247 +4069,435 @@ final List<Question> ctaQuestions = [
     text: '¿En qué organelo celular se realiza la fotosíntesis?',
     options: ['Mitocondria', 'Ribosoma', 'Cloroplasto', 'Lisosoma'],
     correctAnswer: 2,
-    explanation: 'La fotosíntesis ocurre en los cloroplastos, organelos exclusivos de células vegetales y algas que contienen clorofila en sus tilacoides.',
+    explanation:
+        'La fotosíntesis ocurre en los cloroplastos, organelos exclusivos de células vegetales y algas que contienen clorofila en sus tilacoides.',
   ),
   Question(
     id: 'cta_q364',
     topicId: 'cta_t3',
-    text: 'La deforestación masiva en la Amazonía peruana reduce la capacidad fotosintética de la región. ¿Cuál es la consecuencia directa sobre la atmósfera?',
-    options: ['Aumenta la concentración de O₂ y disminuye el CO₂', 'Disminuye la fijación de CO₂ y se reduce la liberación de O₂', 'Aumenta la producción de nitrógeno atmosférico', 'No hay efecto sobre la composición atmosférica'],
+    text:
+        'La deforestación masiva en la Amazonía peruana reduce la capacidad fotosintética de la región. ¿Cuál es la consecuencia directa sobre la atmósfera?',
+    options: [
+      'Aumenta la concentración de O₂ y disminuye el CO₂',
+      'Disminuye la fijación de CO₂ y se reduce la liberación de O₂',
+      'Aumenta la producción de nitrógeno atmosférico',
+      'No hay efecto sobre la composición atmosférica',
+    ],
     correctAnswer: 1,
-    explanation: 'Al reducirse la masa vegetal, disminuye la fotosíntesis, lo que implica menor captación de CO₂ y menor liberación de O₂, contribuyendo al cambio climático.',
+    explanation:
+        'Al reducirse la masa vegetal, disminuye la fotosíntesis, lo que implica menor captación de CO₂ y menor liberación de O₂, contribuyendo al cambio climático.',
   ),
   Question(
     id: 'cta_q365',
     topicId: 'cta_t3',
-    text: '¿Cuáles son las tres etapas principales de la respiración celular aeróbica, en orden?',
-    options: ['Ciclo de Calvin, fase luminosa, fermentación', 'Glucólisis, ciclo de Krebs, cadena transportadora de electrones', 'Transcripción, traducción, replicación', 'Mitosis, meiosis, citocinesis'],
+    text:
+        '¿Cuáles son las tres etapas principales de la respiración celular aeróbica, en orden?',
+    options: [
+      'Ciclo de Calvin, fase luminosa, fermentación',
+      'Glucólisis, ciclo de Krebs, cadena transportadora de electrones',
+      'Transcripción, traducción, replicación',
+      'Mitosis, meiosis, citocinesis',
+    ],
     correctAnswer: 1,
-    explanation: 'La respiración celular aeróbica comprende: glucólisis (citoplasma), ciclo de Krebs (matriz mitocondrial) y cadena transportadora de electrones (membrana interna mitocondrial).',
+    explanation:
+        'La respiración celular aeróbica comprende: glucólisis (citoplasma), ciclo de Krebs (matriz mitocondrial) y cadena transportadora de electrones (membrana interna mitocondrial).',
   ),
   Question(
     id: 'cta_q366',
     topicId: 'cta_t3',
-    text: 'La glucólisis es la primera etapa de la respiración celular. ¿Dónde ocurre y qué molécula se degrada?',
-    options: ['En la mitocondria; se degrada el oxígeno', 'En el citoplasma; se degrada la glucosa', 'En el núcleo; se degrada el ADN', 'En el cloroplasto; se degrada el CO₂'],
+    text:
+        'La glucólisis es la primera etapa de la respiración celular. ¿Dónde ocurre y qué molécula se degrada?',
+    options: [
+      'En la mitocondria; se degrada el oxígeno',
+      'En el citoplasma; se degrada la glucosa',
+      'En el núcleo; se degrada el ADN',
+      'En el cloroplasto; se degrada el CO₂',
+    ],
     correctAnswer: 1,
-    explanation: 'La glucólisis ocurre en el citoplasma y consiste en la degradación de una molécula de glucosa (6C) en dos moléculas de piruvato (3C), produciendo 2 ATP netos.',
+    explanation:
+        'La glucólisis ocurre en el citoplasma y consiste en la degradación de una molécula de glucosa (6C) en dos moléculas de piruvato (3C), produciendo 2 ATP netos.',
   ),
   Question(
     id: 'cta_q367',
     topicId: 'cta_t3',
-    text: '¿En qué compartimento de la mitocondria se lleva a cabo el ciclo de Krebs?',
-    options: ['En la membrana externa', 'En el espacio intermembranoso', 'En la matriz mitocondrial', 'En las crestas mitocondriales'],
+    text:
+        '¿En qué compartimento de la mitocondria se lleva a cabo el ciclo de Krebs?',
+    options: [
+      'En la membrana externa',
+      'En el espacio intermembranoso',
+      'En la matriz mitocondrial',
+      'En las crestas mitocondriales',
+    ],
     correctAnswer: 2,
-    explanation: 'El ciclo de Krebs (o ciclo del ácido cítrico) ocurre en la matriz mitocondrial, donde se completa la oxidación del piruvato generando CO₂, NADH y FADH₂.',
+    explanation:
+        'El ciclo de Krebs (o ciclo del ácido cítrico) ocurre en la matriz mitocondrial, donde se completa la oxidación del piruvato generando CO₂, NADH y FADH₂.',
   ),
   Question(
     id: 'cta_q368',
     topicId: 'cta_t3',
-    text: 'La mayor producción de ATP durante la respiración celular ocurre en:',
-    options: ['La glucólisis', 'El ciclo de Krebs', 'La cadena transportadora de electrones (fosforilación oxidativa)', 'La fermentación láctica'],
+    text:
+        'La mayor producción de ATP durante la respiración celular ocurre en:',
+    options: [
+      'La glucólisis',
+      'El ciclo de Krebs',
+      'La cadena transportadora de electrones (fosforilación oxidativa)',
+      'La fermentación láctica',
+    ],
     correctAnswer: 2,
-    explanation: 'La cadena transportadora de electrones y la fosforilación oxidativa producen aproximadamente 34 ATP de los ~36-38 ATP totales por molécula de glucosa.',
+    explanation:
+        'La cadena transportadora de electrones y la fosforilación oxidativa producen aproximadamente 34 ATP de los ~36-38 ATP totales por molécula de glucosa.',
   ),
   Question(
     id: 'cta_q369',
     topicId: 'cta_t3',
-    text: '¿Cuál es la relación entre la fotosíntesis y la respiración celular en términos de sus reactivos y productos?',
-    options: ['Ambos procesos consumen oxígeno y liberan CO₂', 'Son procesos inversos: los productos de uno son los reactivos del otro', 'Ambos procesos producen glucosa', 'No tienen ninguna relación entre sí'],
+    text:
+        '¿Cuál es la relación entre la fotosíntesis y la respiración celular en términos de sus reactivos y productos?',
+    options: [
+      'Ambos procesos consumen oxígeno y liberan CO₂',
+      'Son procesos inversos: los productos de uno son los reactivos del otro',
+      'Ambos procesos producen glucosa',
+      'No tienen ninguna relación entre sí',
+    ],
     correctAnswer: 1,
-    explanation: 'La fotosíntesis usa CO₂ y H₂O para producir glucosa y O₂, mientras que la respiración celular usa glucosa y O₂ para producir CO₂ y H₂O. Son procesos complementarios.',
+    explanation:
+        'La fotosíntesis usa CO₂ y H₂O para producir glucosa y O₂, mientras que la respiración celular usa glucosa y O₂ para producir CO₂ y H₂O. Son procesos complementarios.',
   ),
   Question(
     id: 'cta_q370',
     topicId: 'cta_t3',
-    text: 'Un deportista peruano realiza un sprint intenso de 100 metros. Al finalizar, sus músculos presentan fatiga y dolor. ¿Qué proceso metabólico predominó en sus músculos durante el esfuerzo máximo?',
-    options: ['Fotosíntesis', 'Respiración aeróbica completa', 'Fermentación láctica (respiración anaeróbica)', 'Ciclo de Calvin'],
+    text:
+        'Un deportista peruano realiza un sprint intenso de 100 metros. Al finalizar, sus músculos presentan fatiga y dolor. ¿Qué proceso metabólico predominó en sus músculos durante el esfuerzo máximo?',
+    options: [
+      'Fotosíntesis',
+      'Respiración aeróbica completa',
+      'Fermentación láctica (respiración anaeróbica)',
+      'Ciclo de Calvin',
+    ],
     correctAnswer: 2,
-    explanation: 'Durante esfuerzos intensos y breves, el oxígeno es insuficiente y predomina la fermentación láctica, que produce ácido láctico y causa fatiga muscular.',
+    explanation:
+        'Durante esfuerzos intensos y breves, el oxígeno es insuficiente y predomina la fermentación láctica, que produce ácido láctico y causa fatiga muscular.',
   ),
   Question(
     id: 'cta_q371',
     topicId: 'cta_t3',
-    text: '¿Cuál es el aceptor final de electrones en la cadena transportadora de electrones de la respiración aeróbica?',
-    options: ['Dióxido de carbono (CO₂)', 'Glucosa (C₆H₁₂O₆)', 'Oxígeno molecular (O₂)', 'NADH'],
+    text:
+        '¿Cuál es el aceptor final de electrones en la cadena transportadora de electrones de la respiración aeróbica?',
+    options: [
+      'Dióxido de carbono (CO₂)',
+      'Glucosa (C₆H₁₂O₆)',
+      'Oxígeno molecular (O₂)',
+      'NADH',
+    ],
     correctAnswer: 2,
-    explanation: 'El oxígeno molecular (O₂) es el aceptor final de electrones en la cadena respiratoria. Al aceptar los electrones, se combina con H⁺ para formar agua (H₂O).',
+    explanation:
+        'El oxígeno molecular (O₂) es el aceptor final de electrones en la cadena respiratoria. Al aceptar los electrones, se combina con H⁺ para formar agua (H₂O).',
   ),
   Question(
     id: 'cta_q372',
     topicId: 'cta_t3',
     text: '¿Cuál es el resultado de la mitosis?',
-    options: ['Cuatro células haploides genéticamente diferentes', 'Dos células diploides genéticamente idénticas a la célula madre', 'Una célula con el doble de cromosomas', 'Dos células con la mitad de cromosomas'],
+    options: [
+      'Cuatro células haploides genéticamente diferentes',
+      'Dos células diploides genéticamente idénticas a la célula madre',
+      'Una célula con el doble de cromosomas',
+      'Dos células con la mitad de cromosomas',
+    ],
     correctAnswer: 1,
-    explanation: 'La mitosis produce dos células hijas diploides (2n) genéticamente idénticas a la célula madre. Es fundamental para el crecimiento y la reparación de tejidos.',
+    explanation:
+        'La mitosis produce dos células hijas diploides (2n) genéticamente idénticas a la célula madre. Es fundamental para el crecimiento y la reparación de tejidos.',
   ),
   Question(
     id: 'cta_q373',
     topicId: 'cta_t3',
     text: '¿Cuál es el resultado de la meiosis?',
-    options: ['Dos células diploides idénticas', 'Cuatro células haploides genéticamente diferentes', 'Una célula con cuatro núcleos', 'Dos células haploides idénticas'],
+    options: [
+      'Dos células diploides idénticas',
+      'Cuatro células haploides genéticamente diferentes',
+      'Una célula con cuatro núcleos',
+      'Dos células haploides idénticas',
+    ],
     correctAnswer: 1,
-    explanation: 'La meiosis produce cuatro células haploides (n) genéticamente diferentes. Esto es fundamental para la formación de gametos y la variabilidad genética.',
+    explanation:
+        'La meiosis produce cuatro células haploides (n) genéticamente diferentes. Esto es fundamental para la formación de gametos y la variabilidad genética.',
   ),
   Question(
     id: 'cta_q374',
     topicId: 'cta_t3',
     text: 'Las fases de la mitosis, en orden, son:',
-    options: ['Profase, metafase, anafase, telofase', 'Interfase, anafase, metafase, profase', 'Telofase, profase, anafase, metafase', 'Metafase, profase, telofase, anafase'],
+    options: [
+      'Profase, metafase, anafase, telofase',
+      'Interfase, anafase, metafase, profase',
+      'Telofase, profase, anafase, metafase',
+      'Metafase, profase, telofase, anafase',
+    ],
     correctAnswer: 0,
-    explanation: 'Las fases de la mitosis siguen el orden: profase (condensación del ADN), metafase (alineación en el ecuador), anafase (separación de cromátidas) y telofase (descondensación).',
+    explanation:
+        'Las fases de la mitosis siguen el orden: profase (condensación del ADN), metafase (alineación en el ecuador), anafase (separación de cromátidas) y telofase (descondensación).',
   ),
   Question(
     id: 'cta_q375',
     topicId: 'cta_t3',
     text: '¿En qué tipo de células ocurre la meiosis en el ser humano?',
-    options: ['En todas las células del cuerpo', 'Solo en las células de la piel', 'En las células germinales (precursoras de gametos)', 'En las neuronas'],
+    options: [
+      'En todas las células del cuerpo',
+      'Solo en las células de la piel',
+      'En las células germinales (precursoras de gametos)',
+      'En las neuronas',
+    ],
     correctAnswer: 2,
-    explanation: 'La meiosis ocurre exclusivamente en las células germinales de las gónadas (ovarios y testículos) para producir óvulos y espermatozoides.',
+    explanation:
+        'La meiosis ocurre exclusivamente en las células germinales de las gónadas (ovarios y testículos) para producir óvulos y espermatozoides.',
   ),
   Question(
     id: 'cta_q376',
     topicId: 'cta_t3',
-    text: 'Si una célula humana diploide tiene 46 cromosomas (2n = 46), ¿cuántos cromosomas tendrá cada célula resultante de la meiosis?',
-    options: ['46 cromosomas', '92 cromosomas', '23 cromosomas', '12 cromosomas'],
+    text:
+        'Si una célula humana diploide tiene 46 cromosomas (2n = 46), ¿cuántos cromosomas tendrá cada célula resultante de la meiosis?',
+    options: [
+      '46 cromosomas',
+      '92 cromosomas',
+      '23 cromosomas',
+      '12 cromosomas',
+    ],
     correctAnswer: 2,
-    explanation: 'La meiosis reduce el número de cromosomas a la mitad. Si 2n = 46, las células resultantes (gametos) tendrán n = 23 cromosomas.',
+    explanation:
+        'La meiosis reduce el número de cromosomas a la mitad. Si 2n = 46, las células resultantes (gametos) tendrán n = 23 cromosomas.',
   ),
   Question(
     id: 'cta_q377',
     topicId: 'cta_t3',
-    text: '¿Qué proceso de reproducción celular es responsable del crecimiento de un organismo y la reparación de tejidos dañados?',
+    text:
+        '¿Qué proceso de reproducción celular es responsable del crecimiento de un organismo y la reparación de tejidos dañados?',
     options: ['Meiosis', 'Mitosis', 'Fecundación', 'Gametogénesis'],
     correctAnswer: 1,
-    explanation: 'La mitosis permite el crecimiento del organismo y la regeneración de tejidos, ya que produce células idénticas que reemplazan a las dañadas o envejecidas.',
+    explanation:
+        'La mitosis permite el crecimiento del organismo y la regeneración de tejidos, ya que produce células idénticas que reemplazan a las dañadas o envejecidas.',
   ),
   Question(
     id: 'cta_q378',
     topicId: 'cta_t3',
-    text: 'Un error durante la meiosis produce un gameto con un cromosoma extra (n+1). Si este gameto se une con un gameto normal, ¿qué condición puede producirse en el embrión?',
-    options: ['Un organismo haploide', 'Una trisomía (2n+1), como el síndrome de Down', 'Una célula sin cromosomas', 'Un organismo con células procariotas'],
+    text:
+        'Un error durante la meiosis produce un gameto con un cromosoma extra (n+1). Si este gameto se une con un gameto normal, ¿qué condición puede producirse en el embrión?',
+    options: [
+      'Un organismo haploide',
+      'Una trisomía (2n+1), como el síndrome de Down',
+      'Una célula sin cromosomas',
+      'Un organismo con células procariotas',
+    ],
     correctAnswer: 1,
-    explanation: 'Un gameto con n+1 cromosomas, al fusionarse con uno normal (n), da un cigoto con 2n+1, produciendo una trisomía. La trisomía del cromosoma 21 causa síndrome de Down.',
+    explanation:
+        'Un gameto con n+1 cromosomas, al fusionarse con uno normal (n), da un cigoto con 2n+1, produciendo una trisomía. La trisomía del cromosoma 21 causa síndrome de Down.',
   ),
   Question(
     id: 'cta_q379',
     topicId: 'cta_t3',
-    text: '¿Qué evento de la meiosis I genera variabilidad genética al intercambiar segmentos entre cromosomas homólogos?',
-    options: ['Citocinesis', 'Entrecruzamiento (crossing over)', 'Duplicación del ADN', 'Condensación de la cromatina'],
+    text:
+        '¿Qué evento de la meiosis I genera variabilidad genética al intercambiar segmentos entre cromosomas homólogos?',
+    options: [
+      'Citocinesis',
+      'Entrecruzamiento (crossing over)',
+      'Duplicación del ADN',
+      'Condensación de la cromatina',
+    ],
     correctAnswer: 1,
-    explanation: 'El entrecruzamiento (crossing over) ocurre en la profase I de la meiosis, cuando las cromátidas de cromosomas homólogos intercambian segmentos, generando nuevas combinaciones genéticas.',
+    explanation:
+        'El entrecruzamiento (crossing over) ocurre en la profase I de la meiosis, cuando las cromátidas de cromosomas homólogos intercambian segmentos, generando nuevas combinaciones genéticas.',
   ),
   Question(
     id: 'cta_q380',
     topicId: 'cta_t3',
-    text: 'Los virus NO son considerados seres vivos por muchos científicos porque:',
-    options: ['Poseen ADN y ARN simultáneamente', 'No tienen estructura celular y no pueden reproducirse por sí mismos', 'Son más grandes que las bacterias', 'Realizan fotosíntesis'],
+    text:
+        'Los virus NO son considerados seres vivos por muchos científicos porque:',
+    options: [
+      'Poseen ADN y ARN simultáneamente',
+      'No tienen estructura celular y no pueden reproducirse por sí mismos',
+      'Son más grandes que las bacterias',
+      'Realizan fotosíntesis',
+    ],
     correctAnswer: 1,
-    explanation: 'Los virus carecen de organización celular, metabolismo propio y no pueden replicarse sin infectar una célula hospedadora, por lo que no se consideran seres vivos en sentido estricto.',
+    explanation:
+        'Los virus carecen de organización celular, metabolismo propio y no pueden replicarse sin infectar una célula hospedadora, por lo que no se consideran seres vivos en sentido estricto.',
   ),
   Question(
     id: 'cta_q381',
     topicId: 'cta_t3',
     text: '¿Cuál de los siguientes microorganismos es un ser procariota?',
-    options: ['Ameba', 'Hongo levadura', 'Bacteria Escherichia coli', 'Paramecio'],
+    options: [
+      'Ameba',
+      'Hongo levadura',
+      'Bacteria Escherichia coli',
+      'Paramecio',
+    ],
     correctAnswer: 2,
-    explanation: 'Escherichia coli es una bacteria (procariota). Las amebas y paramecios son protistas (eucariotas) y las levaduras son hongos (eucariotas).',
+    explanation:
+        'Escherichia coli es una bacteria (procariota). Las amebas y paramecios son protistas (eucariotas) y las levaduras son hongos (eucariotas).',
   ),
   Question(
     id: 'cta_q382',
     topicId: 'cta_t3',
-    text: 'El dengue, enfermedad endémica en varias regiones del Perú, es causado por:',
-    options: ['Una bacteria transmitida por el agua contaminada', 'Un virus transmitido por el mosquito Aedes aegypti', 'Un hongo que se inhala del ambiente', 'Un protozoo transmitido por la picadura de garrapata'],
+    text:
+        'El dengue, enfermedad endémica en varias regiones del Perú, es causado por:',
+    options: [
+      'Una bacteria transmitida por el agua contaminada',
+      'Un virus transmitido por el mosquito Aedes aegypti',
+      'Un hongo que se inhala del ambiente',
+      'Un protozoo transmitido por la picadura de garrapata',
+    ],
     correctAnswer: 1,
-    explanation: 'El dengue es causado por un virus (flavivirus) transmitido por la picadura del mosquito Aedes aegypti, un problema importante de salud pública en el Perú.',
+    explanation:
+        'El dengue es causado por un virus (flavivirus) transmitido por la picadura del mosquito Aedes aegypti, un problema importante de salud pública en el Perú.',
   ),
   Question(
     id: 'cta_q383',
     topicId: 'cta_t3',
-    text: '¿Qué tipo de microorganismo causa la tuberculosis, enfermedad de alta incidencia en el Perú?',
-    options: ['Virus', 'Hongo', 'Protozoo', 'Bacteria (Mycobacterium tuberculosis)'],
+    text:
+        '¿Qué tipo de microorganismo causa la tuberculosis, enfermedad de alta incidencia en el Perú?',
+    options: [
+      'Virus',
+      'Hongo',
+      'Protozoo',
+      'Bacteria (Mycobacterium tuberculosis)',
+    ],
     correctAnswer: 3,
-    explanation: 'La tuberculosis es causada por la bacteria Mycobacterium tuberculosis. Es una enfermedad de alta prevalencia en el Perú que afecta principalmente los pulmones.',
+    explanation:
+        'La tuberculosis es causada por la bacteria Mycobacterium tuberculosis. Es una enfermedad de alta prevalencia en el Perú que afecta principalmente los pulmones.',
   ),
   Question(
     id: 'cta_q384',
     topicId: 'cta_t3',
-    text: 'Las vacunas protegen al organismo contra enfermedades infecciosas porque:',
-    options: ['Destruyen directamente todos los patógenos del cuerpo', 'Estimulan al sistema inmunológico a producir anticuerpos específicos sin causar la enfermedad', 'Reemplazan los glóbulos blancos dañados', 'Aumentan la temperatura corporal para matar los virus'],
+    text:
+        'Las vacunas protegen al organismo contra enfermedades infecciosas porque:',
+    options: [
+      'Destruyen directamente todos los patógenos del cuerpo',
+      'Estimulan al sistema inmunológico a producir anticuerpos específicos sin causar la enfermedad',
+      'Reemplazan los glóbulos blancos dañados',
+      'Aumentan la temperatura corporal para matar los virus',
+    ],
     correctAnswer: 1,
-    explanation: 'Las vacunas contienen antígenos atenuados o inactivados que estimulan la producción de anticuerpos y memoria inmunológica, sin causar la enfermedad.',
+    explanation:
+        'Las vacunas contienen antígenos atenuados o inactivados que estimulan la producción de anticuerpos y memoria inmunológica, sin causar la enfermedad.',
   ),
   Question(
     id: 'cta_q385',
     topicId: 'cta_t3',
-    text: 'En una comunidad rural del Perú se detecta un brote de cólera. ¿Qué tipo de microorganismo lo causa y cuál es la principal vía de transmisión?',
-    options: ['Virus; transmisión aérea', 'Hongo; contacto directo con el suelo', 'Bacteria (Vibrio cholerae); agua y alimentos contaminados', 'Protozoo; picadura de insecto'],
+    text:
+        'En una comunidad rural del Perú se detecta un brote de cólera. ¿Qué tipo de microorganismo lo causa y cuál es la principal vía de transmisión?',
+    options: [
+      'Virus; transmisión aérea',
+      'Hongo; contacto directo con el suelo',
+      'Bacteria (Vibrio cholerae); agua y alimentos contaminados',
+      'Protozoo; picadura de insecto',
+    ],
     correctAnswer: 2,
-    explanation: 'El cólera es causado por la bacteria Vibrio cholerae, que se transmite principalmente por agua y alimentos contaminados con materia fecal.',
+    explanation:
+        'El cólera es causado por la bacteria Vibrio cholerae, que se transmite principalmente por agua y alimentos contaminados con materia fecal.',
   ),
   Question(
     id: 'cta_q386',
     topicId: 'cta_t3',
     text: 'Los antibióticos son medicamentos eficaces contra:',
-    options: ['Virus', 'Bacterias', 'Priones', 'Todos los microorganismos por igual'],
+    options: [
+      'Virus',
+      'Bacterias',
+      'Priones',
+      'Todos los microorganismos por igual',
+    ],
     correctAnswer: 1,
-    explanation: 'Los antibióticos actúan específicamente contra bacterias, inhibiendo su crecimiento o destruyéndolas. No son eficaces contra virus ni priones.',
+    explanation:
+        'Los antibióticos actúan específicamente contra bacterias, inhibiendo su crecimiento o destruyéndolas. No son eficaces contra virus ni priones.',
   ),
   Question(
     id: 'cta_q387',
     topicId: 'cta_t3',
     text: '¿Cuál es la función principal del núcleo celular?',
-    options: ['Producir energía en forma de ATP', 'Almacenar y transmitir la información genética (ADN)', 'Realizar la digestión intracelular', 'Sintetizar lípidos para la membrana'],
+    options: [
+      'Producir energía en forma de ATP',
+      'Almacenar y transmitir la información genética (ADN)',
+      'Realizar la digestión intracelular',
+      'Sintetizar lípidos para la membrana',
+    ],
     correctAnswer: 1,
-    explanation: 'El núcleo contiene el ADN organizado en cromosomas y controla la expresión génica, siendo el centro de control de la célula eucariota.',
+    explanation:
+        'El núcleo contiene el ADN organizado en cromosomas y controla la expresión génica, siendo el centro de control de la célula eucariota.',
   ),
   Question(
     id: 'cta_q388',
     topicId: 'cta_t3',
-    text: 'El citoesqueleto de la célula eucariota está formado por microfilamentos, filamentos intermedios y microtúbulos. Su función principal es:',
-    options: ['Almacenar energía en forma de glucógeno', 'Dar forma, soporte estructural y permitir el movimiento celular', 'Realizar la síntesis de proteínas', 'Digerir sustancias extracelulares'],
+    text:
+        'El citoesqueleto de la célula eucariota está formado por microfilamentos, filamentos intermedios y microtúbulos. Su función principal es:',
+    options: [
+      'Almacenar energía en forma de glucógeno',
+      'Dar forma, soporte estructural y permitir el movimiento celular',
+      'Realizar la síntesis de proteínas',
+      'Digerir sustancias extracelulares',
+    ],
     correctAnswer: 1,
-    explanation: 'El citoesqueleto proporciona soporte mecánico, mantiene la forma celular, facilita el movimiento intracelular y participa en la división celular.',
+    explanation:
+        'El citoesqueleto proporciona soporte mecánico, mantiene la forma celular, facilita el movimiento intracelular y participa en la división celular.',
   ),
   Question(
     id: 'cta_q389',
     topicId: 'cta_t3',
-    text: 'Una célula del páncreas produce grandes cantidades de enzimas digestivas (proteínas). ¿Qué organelos estarían especialmente desarrollados en esta célula?',
-    options: ['Cloroplastos y vacuola central', 'Retículo endoplasmático rugoso y aparato de Golgi', 'Retículo endoplasmático liso y lisosomas', 'Centriolos y peroxisomas'],
+    text:
+        'Una célula del páncreas produce grandes cantidades de enzimas digestivas (proteínas). ¿Qué organelos estarían especialmente desarrollados en esta célula?',
+    options: [
+      'Cloroplastos y vacuola central',
+      'Retículo endoplasmático rugoso y aparato de Golgi',
+      'Retículo endoplasmático liso y lisosomas',
+      'Centriolos y peroxisomas',
+    ],
     correctAnswer: 1,
-    explanation: 'El RER sintetiza proteínas y el aparato de Golgi las modifica, empaqueta y secreta. Ambos están muy desarrollados en células secretoras como las pancreáticas.',
+    explanation:
+        'El RER sintetiza proteínas y el aparato de Golgi las modifica, empaqueta y secreta. Ambos están muy desarrollados en células secretoras como las pancreáticas.',
   ),
   Question(
     id: 'cta_q390',
     topicId: 'cta_t3',
     text: 'La bomba sodio-potasio (Na⁺/K⁺ ATPasa) es un ejemplo clásico de:',
-    options: ['Difusión simple', 'Ósmosis', 'Transporte activo primario', 'Difusión facilitada'],
+    options: [
+      'Difusión simple',
+      'Ósmosis',
+      'Transporte activo primario',
+      'Difusión facilitada',
+    ],
     correctAnswer: 2,
-    explanation: 'La bomba Na⁺/K⁺ utiliza directamente ATP para mover 3 Na⁺ hacia fuera y 2 K⁺ hacia dentro de la célula, en contra de sus gradientes de concentración.',
+    explanation:
+        'La bomba Na⁺/K⁺ utiliza directamente ATP para mover 3 Na⁺ hacia fuera y 2 K⁺ hacia dentro de la célula, en contra de sus gradientes de concentración.',
   ),
   Question(
     id: 'cta_q391',
     topicId: 'cta_t3',
-    text: 'Si se coloca una célula vegetal en una solución hipertónica, el agua saldrá de la célula causando que la membrana plasmática se separe de la pared celular. Este fenómeno se llama:',
+    text:
+        'Si se coloca una célula vegetal en una solución hipertónica, el agua saldrá de la célula causando que la membrana plasmática se separe de la pared celular. Este fenómeno se llama:',
     options: ['Turgencia', 'Plasmólisis', 'Citólisis', 'Crenación'],
     correctAnswer: 1,
-    explanation: 'La plasmólisis es la retracción del protoplasto (membrana + contenido celular) que se separa de la pared celular rígida al perder agua en un medio hipertónico.',
+    explanation:
+        'La plasmólisis es la retracción del protoplasto (membrana + contenido celular) que se separa de la pared celular rígida al perder agua en un medio hipertónico.',
   ),
   Question(
     id: 'cta_q392',
     topicId: 'cta_t3',
-    text: '¿Qué tipo de moléculas atraviesan la membrana plasmática con mayor facilidad por difusión simple?',
-    options: ['Proteínas grandes y polisacáridos', 'Moléculas pequeñas, apolares y sin carga, como O₂ y CO₂', 'Iones con carga eléctrica como Na⁺ y Cl⁻', 'Moléculas de glucosa y aminoácidos'],
+    text:
+        '¿Qué tipo de moléculas atraviesan la membrana plasmática con mayor facilidad por difusión simple?',
+    options: [
+      'Proteínas grandes y polisacáridos',
+      'Moléculas pequeñas, apolares y sin carga, como O₂ y CO₂',
+      'Iones con carga eléctrica como Na⁺ y Cl⁻',
+      'Moléculas de glucosa y aminoácidos',
+    ],
     correctAnswer: 1,
-    explanation: 'Las moléculas pequeñas, apolares y sin carga (O₂, CO₂, N₂) atraviesan fácilmente la bicapa lipídica por difusión simple. Los iones y moléculas polares grandes necesitan transportadores.',
+    explanation:
+        'Las moléculas pequeñas, apolares y sin carga (O₂, CO₂, N₂) atraviesan fácilmente la bicapa lipídica por difusión simple. Los iones y moléculas polares grandes necesitan transportadores.',
   ),
   Question(
     id: 'cta_q393',
     topicId: 'cta_t3',
-    text: 'Un suero fisiológico utilizado en hospitales tiene una concentración de NaCl al 0,9%, igual a la del plasma sanguíneo. Esta solución se denomina:',
+    text:
+        'Un suero fisiológico utilizado en hospitales tiene una concentración de NaCl al 0,9%, igual a la del plasma sanguíneo. Esta solución se denomina:',
     options: ['Hipertónica', 'Hipotónica', 'Isotónica', 'Saturada'],
     correctAnswer: 2,
-    explanation: 'Una solución isotónica tiene la misma concentración de solutos que la célula, por lo que no hay flujo neto de agua. El suero al 0,9% es isotónico respecto al plasma.',
+    explanation:
+        'Una solución isotónica tiene la misma concentración de solutos que la célula, por lo que no hay flujo neto de agua. El suero al 0,9% es isotónico respecto al plasma.',
   ),
   Question(
     id: 'cta_q394',
@@ -3161,148 +4505,256 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es la composición de la pared celular en el reino Fungi?',
     options: ['Celulosa', 'Peptidoglucano', 'Quitina', 'Sílice'],
     correctAnswer: 2,
-    explanation: 'La pared celular de los hongos está compuesta de quitina, a diferencia de las plantas (celulosa) y las bacterias (peptidoglucano).',
+    explanation:
+        'La pared celular de los hongos está compuesta de quitina, a diferencia de las plantas (celulosa) y las bacterias (peptidoglucano).',
   ),
   Question(
     id: 'cta_q395',
     topicId: 'cta_t3',
-    text: 'Un organismo eucariota, pluricelular, autótrofo y con pared celular de celulosa pertenece al reino:',
+    text:
+        'Un organismo eucariota, pluricelular, autótrofo y con pared celular de celulosa pertenece al reino:',
     options: ['Monera', 'Fungi', 'Animalia', 'Plantae'],
     correctAnswer: 3,
-    explanation: 'Las características descritas (eucariota, pluricelular, autótrofo, pared de celulosa) corresponden al reino Plantae.',
+    explanation:
+        'Las características descritas (eucariota, pluricelular, autótrofo, pared de celulosa) corresponden al reino Plantae.',
   ),
   Question(
     id: 'cta_q396',
     topicId: 'cta_t3',
-    text: '¿Cuál de las siguientes afirmaciones sobre el reino Animalia es correcta?',
-    options: ['Son autótrofos con pared celular de celulosa', 'Son eucariotas, heterótrofos y pluricelulares, sin pared celular', 'Son procariotas unicelulares', 'Obtienen nutrientes por absorción como los hongos'],
+    text:
+        '¿Cuál de las siguientes afirmaciones sobre el reino Animalia es correcta?',
+    options: [
+      'Son autótrofos con pared celular de celulosa',
+      'Son eucariotas, heterótrofos y pluricelulares, sin pared celular',
+      'Son procariotas unicelulares',
+      'Obtienen nutrientes por absorción como los hongos',
+    ],
     correctAnswer: 1,
-    explanation: 'Los animales son eucariotas, heterótrofos por ingestión, pluricelulares y carecen de pared celular, a diferencia de plantas y hongos.',
+    explanation:
+        'Los animales son eucariotas, heterótrofos por ingestión, pluricelulares y carecen de pared celular, a diferencia de plantas y hongos.',
   ),
   Question(
     id: 'cta_q397',
     topicId: 'cta_t3',
-    text: 'Los vertebrados se clasifican en cinco grupos principales. ¿Cuáles son?',
-    options: ['Insectos, arácnidos, crustáceos, moluscos, equinodermos', 'Peces, anfibios, reptiles, aves, mamíferos', 'Esponjas, cnidarios, platelmintos, anélidos, moluscos', 'Bacterias, protozoos, algas, hongos, plantas'],
+    text:
+        'Los vertebrados se clasifican en cinco grupos principales. ¿Cuáles son?',
+    options: [
+      'Insectos, arácnidos, crustáceos, moluscos, equinodermos',
+      'Peces, anfibios, reptiles, aves, mamíferos',
+      'Esponjas, cnidarios, platelmintos, anélidos, moluscos',
+      'Bacterias, protozoos, algas, hongos, plantas',
+    ],
     correctAnswer: 1,
-    explanation: 'Los cinco grupos de vertebrados son: peces, anfibios, reptiles, aves y mamíferos, todos con columna vertebral y cráneo.',
+    explanation:
+        'Los cinco grupos de vertebrados son: peces, anfibios, reptiles, aves y mamíferos, todos con columna vertebral y cráneo.',
   ),
   Question(
     id: 'cta_q398',
     topicId: 'cta_t3',
-    text: '¿Cuál de las siguientes características es exclusiva de los mamíferos?',
-    options: ['Piel cubierta de escamas', 'Respiración branquial', 'Glándulas mamarias para alimentar a sus crías', 'Cuerpo cubierto de plumas'],
+    text:
+        '¿Cuál de las siguientes características es exclusiva de los mamíferos?',
+    options: [
+      'Piel cubierta de escamas',
+      'Respiración branquial',
+      'Glándulas mamarias para alimentar a sus crías',
+      'Cuerpo cubierto de plumas',
+    ],
     correctAnswer: 2,
-    explanation: 'Las glándulas mamarias, que producen leche para alimentar a las crías, son la característica definitoria y exclusiva de los mamíferos.',
+    explanation:
+        'Las glándulas mamarias, que producen leche para alimentar a las crías, son la característica definitoria y exclusiva de los mamíferos.',
   ),
   Question(
     id: 'cta_q399',
     topicId: 'cta_t3',
-    text: '¿A qué grupo de invertebrados pertenecen los insectos, arañas y cangrejos?',
+    text:
+        '¿A qué grupo de invertebrados pertenecen los insectos, arañas y cangrejos?',
     options: ['Moluscos', 'Equinodermos', 'Artrópodos', 'Anélidos'],
     correctAnswer: 2,
-    explanation: 'Insectos, arácnidos (arañas) y crustáceos (cangrejos) son artrópodos, caracterizados por su exoesqueleto quitinoso, cuerpo segmentado y patas articuladas.',
+    explanation:
+        'Insectos, arácnidos (arañas) y crustáceos (cangrejos) son artrópodos, caracterizados por su exoesqueleto quitinoso, cuerpo segmentado y patas articuladas.',
   ),
   Question(
     id: 'cta_q400',
     topicId: 'cta_t3',
-    text: 'En una investigación policial en la selva peruana, se encuentran restos óseos con plumas adheridas. ¿A qué grupo de vertebrados pertenecería el animal?',
+    text:
+        'En una investigación policial en la selva peruana, se encuentran restos óseos con plumas adheridas. ¿A qué grupo de vertebrados pertenecería el animal?',
     options: ['Mamíferos', 'Reptiles', 'Peces', 'Aves'],
     correctAnswer: 3,
-    explanation: 'Las plumas son una característica exclusiva de las aves entre los vertebrados actuales. La presencia de plumas permite identificar al animal como un ave.',
+    explanation:
+        'Las plumas son una característica exclusiva de las aves entre los vertebrados actuales. La presencia de plumas permite identificar al animal como un ave.',
   ),
   Question(
     id: 'cta_q401',
     topicId: 'cta_t3',
-    text: 'El sistema digestivo humano está formado por varios órganos que trabajan juntos. ¿A qué nivel de organización corresponde?',
-    options: ['Nivel tisular', 'Nivel orgánico', 'Nivel sistémico (de aparatos y sistemas)', 'Nivel celular'],
+    text:
+        'El sistema digestivo humano está formado por varios órganos que trabajan juntos. ¿A qué nivel de organización corresponde?',
+    options: [
+      'Nivel tisular',
+      'Nivel orgánico',
+      'Nivel sistémico (de aparatos y sistemas)',
+      'Nivel celular',
+    ],
     correctAnswer: 2,
-    explanation: 'Un sistema o aparato (como el digestivo) está formado por varios órganos coordinados para una función compleja, correspondiendo al nivel sistémico.',
+    explanation:
+        'Un sistema o aparato (como el digestivo) está formado por varios órganos coordinados para una función compleja, correspondiendo al nivel sistémico.',
   ),
   Question(
     id: 'cta_q402',
     topicId: 'cta_t3',
     text: '¿A qué nivel de organización corresponde el tejido muscular?',
-    options: ['Nivel molecular', 'Nivel celular', 'Nivel tisular', 'Nivel orgánico'],
+    options: [
+      'Nivel molecular',
+      'Nivel celular',
+      'Nivel tisular',
+      'Nivel orgánico',
+    ],
     correctAnswer: 2,
-    explanation: 'Un tejido es un conjunto de células similares que cumplen una función específica. El tejido muscular corresponde al nivel tisular de organización.',
+    explanation:
+        'Un tejido es un conjunto de células similares que cumplen una función específica. El tejido muscular corresponde al nivel tisular de organización.',
   ),
   Question(
     id: 'cta_q403',
     topicId: 'cta_t3',
-    text: 'Un biólogo aísla una célula que posee pared celular pero carece de cloroplastos y es heterótrofa. ¿A qué grupo probablemente pertenece este organismo?',
-    options: ['Reino Plantae', 'Reino Fungi', 'Reino Animalia', 'Dominio Bacteria (reino Monera)'],
+    text:
+        'Un biólogo aísla una célula que posee pared celular pero carece de cloroplastos y es heterótrofa. ¿A qué grupo probablemente pertenece este organismo?',
+    options: [
+      'Reino Plantae',
+      'Reino Fungi',
+      'Reino Animalia',
+      'Dominio Bacteria (reino Monera)',
+    ],
     correctAnswer: 1,
-    explanation: 'La combinación de pared celular + ausencia de cloroplastos + heterotrofia es característica de los hongos (Fungi), cuya pared es de quitina.',
+    explanation:
+        'La combinación de pared celular + ausencia de cloroplastos + heterotrofia es característica de los hongos (Fungi), cuya pared es de quitina.',
   ),
   Question(
     id: 'cta_q404',
     topicId: 'cta_t3',
-    text: 'Si se administra un veneno que destruye las mitocondrias de una célula, ¿qué proceso se vería directamente afectado?',
-    options: ['La síntesis de proteínas', 'La fotosíntesis', 'La producción de ATP por respiración celular aeróbica', 'La replicación del ADN nuclear'],
+    text:
+        'Si se administra un veneno que destruye las mitocondrias de una célula, ¿qué proceso se vería directamente afectado?',
+    options: [
+      'La síntesis de proteínas',
+      'La fotosíntesis',
+      'La producción de ATP por respiración celular aeróbica',
+      'La replicación del ADN nuclear',
+    ],
     correctAnswer: 2,
-    explanation: 'Sin mitocondrias funcionales, la célula no puede realizar el ciclo de Krebs ni la fosforilación oxidativa, quedando limitada a la glucólisis anaeróbica con muy baja producción de ATP.',
+    explanation:
+        'Sin mitocondrias funcionales, la célula no puede realizar el ciclo de Krebs ni la fosforilación oxidativa, quedando limitada a la glucólisis anaeróbica con muy baja producción de ATP.',
   ),
   Question(
     id: 'cta_q405',
     topicId: 'cta_t3',
-    text: 'En la lucha contra la malaria en la Amazonía peruana, se investigan los parásitos causantes. ¿Qué tipo de microorganismo causa esta enfermedad?',
-    options: ['Un virus transmitido por alimentos', 'Una bacteria de transmisión aérea', 'Un protozoo del género Plasmodium, transmitido por el mosquito Anopheles', 'Un hongo que contamina el agua'],
+    text:
+        'En la lucha contra la malaria en la Amazonía peruana, se investigan los parásitos causantes. ¿Qué tipo de microorganismo causa esta enfermedad?',
+    options: [
+      'Un virus transmitido por alimentos',
+      'Una bacteria de transmisión aérea',
+      'Un protozoo del género Plasmodium, transmitido por el mosquito Anopheles',
+      'Un hongo que contamina el agua',
+    ],
     correctAnswer: 2,
-    explanation: 'La malaria es causada por protozoos del género Plasmodium (P. vivax, P. falciparum), transmitidos por la picadura del mosquito Anopheles. Es endémica en la selva peruana.',
+    explanation:
+        'La malaria es causada por protozoos del género Plasmodium (P. vivax, P. falciparum), transmitidos por la picadura del mosquito Anopheles. Es endémica en la selva peruana.',
   ),
   Question(
     id: 'cta_q406',
     topicId: 'cta_t3',
-    text: 'Un glóbulo rojo humano (2n = 46) se divide por mitosis. ¿Es posible esta situación?',
-    options: ['Sí, los glóbulos rojos se dividen constantemente', 'No, porque los glóbulos rojos maduros de mamíferos carecen de núcleo y no pueden dividirse', 'Sí, pero solo por meiosis', 'No, porque los glóbulos rojos son células procariotas'],
+    text:
+        'Un glóbulo rojo humano (2n = 46) se divide por mitosis. ¿Es posible esta situación?',
+    options: [
+      'Sí, los glóbulos rojos se dividen constantemente',
+      'No, porque los glóbulos rojos maduros de mamíferos carecen de núcleo y no pueden dividirse',
+      'Sí, pero solo por meiosis',
+      'No, porque los glóbulos rojos son células procariotas',
+    ],
     correctAnswer: 1,
-    explanation: 'Los glóbulos rojos maduros (eritrocitos) de mamíferos expulsan su núcleo durante la maduración, por lo que carecen de ADN y no pueden dividirse.',
+    explanation:
+        'Los glóbulos rojos maduros (eritrocitos) de mamíferos expulsan su núcleo durante la maduración, por lo que carecen de ADN y no pueden dividirse.',
   ),
   Question(
     id: 'cta_q407',
     topicId: 'cta_t3',
-    text: 'Se analiza un organismo unicelular eucariota que se desplaza mediante cilios y vive en agua dulce. ¿A qué reino y grupo pertenecería?',
-    options: ['Reino Monera — bacteria', 'Reino Protista — protozoo ciliado', 'Reino Fungi — levadura', 'Reino Plantae — alga verde'],
+    text:
+        'Se analiza un organismo unicelular eucariota que se desplaza mediante cilios y vive en agua dulce. ¿A qué reino y grupo pertenecería?',
+    options: [
+      'Reino Monera — bacteria',
+      'Reino Protista — protozoo ciliado',
+      'Reino Fungi — levadura',
+      'Reino Plantae — alga verde',
+    ],
     correctAnswer: 1,
-    explanation: 'Un eucariota unicelular con cilios que vive en agua dulce corresponde a un protozoo ciliado (como Paramecium) del reino Protista.',
+    explanation:
+        'Un eucariota unicelular con cilios que vive en agua dulce corresponde a un protozoo ciliado (como Paramecium) del reino Protista.',
   ),
   Question(
     id: 'cta_q408',
     topicId: 'cta_t3',
-    text: 'En un laboratorio forense de la PNP se necesita comparar el ADN de dos muestras biológicas. ¿En qué organelo de las células nucleadas se encuentra principalmente el ADN que se analizará?',
-    options: ['En los ribosomas', 'En el aparato de Golgi', 'En el núcleo celular', 'En los lisosomas'],
+    text:
+        'En un laboratorio forense de la PNP se necesita comparar el ADN de dos muestras biológicas. ¿En qué organelo de las células nucleadas se encuentra principalmente el ADN que se analizará?',
+    options: [
+      'En los ribosomas',
+      'En el aparato de Golgi',
+      'En el núcleo celular',
+      'En los lisosomas',
+    ],
     correctAnswer: 2,
-    explanation: 'El ADN genómico se localiza en el núcleo celular, organizado en cromosomas. Es este ADN nuclear el que se analiza en pruebas forenses de identificación genética.',
+    explanation:
+        'El ADN genómico se localiza en el núcleo celular, organizado en cromosomas. Es este ADN nuclear el que se analiza en pruebas forenses de identificación genética.',
   ),
   Question(
     id: 'cta_q409',
     topicId: 'cta_t3',
-    text: 'En la citología eucariota, ¿cuál de las siguientes estructuras celulares tiene como función exclusiva la digestión intracelular (autofagia y heterofagia) al contener enzimas hidrolíticas?',
-    options: ['A) Complejo de Golgi', 'B) Mitocondria', 'C) Lisosoma', 'D) Retículo Endoplasmático Liso', 'E) Ribosoma'],
+    text:
+        'En la citología eucariota, ¿cuál de las siguientes estructuras celulares tiene como función exclusiva la digestión intracelular (autofagia y heterofagia) al contener enzimas hidrolíticas?',
+    options: [
+      'A) Complejo de Golgi',
+      'B) Mitocondria',
+      'C) Lisosoma',
+      'D) Retículo Endoplasmático Liso',
+      'E) Ribosoma',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (Lisosoma). El distractor B (Mitocondria) es el 'Distractor de Energía', donde los alumnos asocian 'digestión/alimento' con 'energía/respiración'. A (Golgi) empaqueta proteínas, no las digiere.",
+    explanation:
+        "La respuesta correcta es C (Lisosoma). El distractor B (Mitocondria) es el 'Distractor de Energía', donde los alumnos asocian 'digestión/alimento' con 'energía/respiración'. A (Golgi) empaqueta proteínas, no las digiere.",
   ),
   Question(
     id: 'cta_q410',
     topicId: 'cta_t3',
-    text: 'La ósmosis es un proceso biológico vital. Si colocamos un eritrocito (glóbulo rojo) humano en una solución altamente HIPERTÓNICA, ¿qué sucederá con la célula?',
-    options: ['A) Se hinchará y sufrirá lisis (estallará).', 'B) Mantendrá su volumen intacto.', 'C) El agua saldrá de la célula y sufrirá plasmólisis (crenación).', 'D) Se dividirá rápidamente por mitosis.', 'E) Absorberá solutos del medio para equilibrarse.'],
+    text:
+        'La ósmosis es un proceso biológico vital. Si colocamos un eritrocito (glóbulo rojo) humano en una solución altamente HIPERTÓNICA, ¿qué sucederá con la célula?',
+    options: [
+      'A) Se hinchará y sufrirá lisis (estallará).',
+      'B) Mantendrá su volumen intacto.',
+      'C) El agua saldrá de la célula y sufrirá plasmólisis (crenación).',
+      'D) Se dividirá rápidamente por mitosis.',
+      'E) Absorberá solutos del medio para equilibrarse.',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C. Al estar en medio hipertónico (más salado afuera), el agua sale y se encoge. El distractor A (Lisis) es la 'Falla Inversa'; ocurre cuando el medio es hipotónico (agua pura).",
+    explanation:
+        "La respuesta correcta es C. Al estar en medio hipertónico (más salado afuera), el agua sale y se encoge. El distractor A (Lisis) es la 'Falla Inversa'; ocurre cuando el medio es hipotónico (agua pura).",
   ),
   Question(
     id: 'cta_q411',
     topicId: 'cta_t3',
-    text: 'Durante la fase oscura de la fotosíntesis (Ciclo de Calvin), que ocurre en el estroma del cloroplasto, el evento bioquímico principal es:',
-    options: ['A) La fotólisis del agua para liberar oxígeno.', 'B) La fijación del dióxido de carbono (CO₂) para sintetizar glucosa.', 'C) La absorción de fotones por la clorofila.', 'D) La producción masiva de ATP y NADPH.', 'E) El desprendimiento de energía térmica.'],
+    text:
+        'Durante la fase oscura de la fotosíntesis (Ciclo de Calvin), que ocurre en el estroma del cloroplasto, el evento bioquímico principal es:',
+    options: [
+      'A) La fotólisis del agua para liberar oxígeno.',
+      'B) La fijación del dióxido de carbono (CO₂) para sintetizar glucosa.',
+      'C) La absorción de fotones por la clorofila.',
+      'D) La producción masiva de ATP y NADPH.',
+      'E) El desprendimiento de energía térmica.',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B. El distractor A (fotólisis) y C/D son características exclusivas de la fase LUMINOSA. Esto es una 'Trampa Cruzada', mezclando eventos de la fase 1 en la fase 2.",
+    explanation:
+        "La respuesta correcta es B. El distractor A (fotólisis) y C/D son características exclusivas de la fase LUMINOSA. Esto es una 'Trampa Cruzada', mezclando eventos de la fase 1 en la fase 2.",
   ),
   Question(
     id: 'cta_q412',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 1)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 1)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3310,7 +4762,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q413',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 2)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 2)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3318,7 +4771,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q414',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 3)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 3)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3326,7 +4780,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q415',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 4)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 4)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3334,7 +4789,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q416',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 5)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 5)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3342,7 +4798,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q417',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 6)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 6)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3350,7 +4807,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q418',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 7)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 7)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3358,7 +4816,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q419',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 8)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 8)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3366,7 +4825,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q420',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 9)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 9)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3374,7 +4834,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q421',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 10)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 10)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3382,7 +4843,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q422',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 11)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 11)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3390,7 +4852,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q423',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 12)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 12)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3398,7 +4861,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q424',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 13)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 13)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3406,7 +4870,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q425',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 14)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 14)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3414,7 +4879,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q426',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 15)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 15)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3422,7 +4888,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q427',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 16)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 16)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3430,7 +4897,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q428',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 17)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 17)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3438,7 +4906,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q429',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 18)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 18)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3446,7 +4915,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q430',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 19)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 19)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3454,7 +4924,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q431',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 20)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 20)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3462,7 +4933,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q432',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 21)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 21)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3470,7 +4942,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q433',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 22)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 22)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3478,7 +4951,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q434',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 23)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 23)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3486,7 +4960,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q435',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 24)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 24)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3494,7 +4969,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q436',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 25)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 25)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3502,7 +4978,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q437',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 26)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 26)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3510,7 +4987,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q438',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 27)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 27)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3518,7 +4996,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q439',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 28)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 28)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3526,7 +5005,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q440',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 29)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 29)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3534,7 +5014,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q441',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 30)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 30)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3542,7 +5023,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q442',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 31)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 31)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3550,7 +5032,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q443',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 32)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 32)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3558,7 +5041,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q444',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 33)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 33)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3566,7 +5050,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q445',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 34)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 34)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3574,7 +5059,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q446',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 35)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 35)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3582,7 +5068,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q447',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 36)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 36)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3590,7 +5077,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q448',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 37)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 37)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3598,7 +5086,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q449',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 38)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 38)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3606,7 +5095,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q450',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 39)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 39)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3614,7 +5104,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q451',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 40)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 40)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3622,7 +5113,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q452',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 41)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 41)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3630,7 +5122,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q453',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 42)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 42)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3638,7 +5131,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q454',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 43)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 43)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3646,7 +5140,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q455',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 44)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 44)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3654,7 +5149,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q456',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 45)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 45)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3662,7 +5158,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q457',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 46)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 46)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3670,7 +5167,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q458',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 47)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 47)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3678,7 +5176,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q459',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 48)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 48)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3686,7 +5185,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q460',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 49)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 49)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3694,7 +5194,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q461',
     topicId: 'cta_t3',
-    text: 'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 50)',
+    text:
+        'FIJA BIOLOGÍA: Organelo responsable de la respiración celular: (Var 50)',
     options: ['Mitocondria', 'Ribosoma', 'Lisosoma', 'Núcleo'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -3702,122 +5203,205 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q462',
     topicId: 'cta_t4',
-    text: '¿Qué teoría científica explica el origen del universo a partir de una singularidad extremadamente densa y caliente hace aproximadamente 13 800 millones de años?',
-    options: ['Teoría del Big Bang', 'Teoría del Estado Estacionario', 'Teoría de la Panspermia', 'Teoría Nebular'],
+    text:
+        '¿Qué teoría científica explica el origen del universo a partir de una singularidad extremadamente densa y caliente hace aproximadamente 13 800 millones de años?',
+    options: [
+      'Teoría del Big Bang',
+      'Teoría del Estado Estacionario',
+      'Teoría de la Panspermia',
+      'Teoría Nebular',
+    ],
     correctAnswer: 0,
-    explanation: 'La Teoría del Big Bang propone que el universo se originó a partir de una singularidad de densidad y temperatura infinitas hace ~13 800 millones de años.',
+    explanation:
+        'La Teoría del Big Bang propone que el universo se originó a partir de una singularidad de densidad y temperatura infinitas hace ~13 800 millones de años.',
   ),
   Question(
     id: 'cta_q463',
     topicId: 'cta_t4',
-    text: '¿Qué astrónomo demostró en 1929 que las galaxias se alejan unas de otras, evidenciando la expansión del universo?',
-    options: ['Nicolás Copérnico', 'Edwin Hubble', 'Galileo Galilei', 'Johannes Kepler'],
+    text:
+        '¿Qué astrónomo demostró en 1929 que las galaxias se alejan unas de otras, evidenciando la expansión del universo?',
+    options: [
+      'Nicolás Copérnico',
+      'Edwin Hubble',
+      'Galileo Galilei',
+      'Johannes Kepler',
+    ],
     correctAnswer: 1,
-    explanation: 'Edwin Hubble descubrió la relación entre la distancia de las galaxias y su velocidad de recesión (Ley de Hubble), demostrando que el universo se expande.',
+    explanation:
+        'Edwin Hubble descubrió la relación entre la distancia de las galaxias y su velocidad de recesión (Ley de Hubble), demostrando que el universo se expande.',
   ),
   Question(
     id: 'cta_q464',
     topicId: 'cta_t4',
-    text: '¿Cómo se denomina la galaxia espiral barrada en la que se encuentra nuestro Sistema Solar?',
-    options: ['Andrómeda', 'Nube de Magallanes', 'Vía Láctea', 'Galaxia del Triángulo'],
+    text:
+        '¿Cómo se denomina la galaxia espiral barrada en la que se encuentra nuestro Sistema Solar?',
+    options: [
+      'Andrómeda',
+      'Nube de Magallanes',
+      'Vía Láctea',
+      'Galaxia del Triángulo',
+    ],
     correctAnswer: 2,
-    explanation: 'La Vía Láctea es una galaxia espiral barrada de unos 100 000 años luz de diámetro, donde se ubica nuestro Sistema Solar.',
+    explanation:
+        'La Vía Láctea es una galaxia espiral barrada de unos 100 000 años luz de diámetro, donde se ubica nuestro Sistema Solar.',
   ),
   Question(
     id: 'cta_q465',
     topicId: 'cta_t4',
     text: '¿Cuáles son los planetas interiores o rocosos del Sistema Solar?',
-    options: ['Mercurio, Venus, Tierra y Marte', 'Júpiter, Saturno, Urano y Neptuno', 'Mercurio, Venus, Marte y Júpiter', 'Tierra, Marte, Júpiter y Saturno'],
+    options: [
+      'Mercurio, Venus, Tierra y Marte',
+      'Júpiter, Saturno, Urano y Neptuno',
+      'Mercurio, Venus, Marte y Júpiter',
+      'Tierra, Marte, Júpiter y Saturno',
+    ],
     correctAnswer: 0,
-    explanation: 'Los planetas interiores (rocosos o telúricos) son Mercurio, Venus, Tierra y Marte; se ubican entre el Sol y el cinturón de asteroides.',
+    explanation:
+        'Los planetas interiores (rocosos o telúricos) son Mercurio, Venus, Tierra y Marte; se ubican entre el Sol y el cinturón de asteroides.',
   ),
   Question(
     id: 'cta_q466',
     topicId: 'cta_t4',
-    text: '¿Cuál es la capa más externa y delgada de la estructura interna de la Tierra?',
-    options: ['Manto superior', 'Núcleo externo', 'Corteza terrestre', 'Astenosfera'],
+    text:
+        '¿Cuál es la capa más externa y delgada de la estructura interna de la Tierra?',
+    options: [
+      'Manto superior',
+      'Núcleo externo',
+      'Corteza terrestre',
+      'Astenosfera',
+    ],
     correctAnswer: 2,
-    explanation: 'La corteza terrestre es la capa más externa y delgada de la Tierra, con un espesor de 5 a 70 km aproximadamente.',
+    explanation:
+        'La corteza terrestre es la capa más externa y delgada de la Tierra, con un espesor de 5 a 70 km aproximadamente.',
   ),
   Question(
     id: 'cta_q467',
     topicId: 'cta_t4',
-    text: '¿Qué movimiento terrestre tiene una duración aproximada de 24 horas y produce la alternancia del día y la noche?',
+    text:
+        '¿Qué movimiento terrestre tiene una duración aproximada de 24 horas y produce la alternancia del día y la noche?',
     options: ['Traslación', 'Precesión', 'Rotación', 'Nutación'],
     correctAnswer: 2,
-    explanation: 'La rotación es el giro de la Tierra sobre su propio eje, con una duración de aproximadamente 24 horas, y genera la sucesión del día y la noche.',
+    explanation:
+        'La rotación es el giro de la Tierra sobre su propio eje, con una duración de aproximadamente 24 horas, y genera la sucesión del día y la noche.',
   ),
   Question(
     id: 'cta_q468',
     topicId: 'cta_t4',
-    text: 'Las fases de la Luna son: Luna Nueva, Cuarto Creciente, Luna Llena y:',
+    text:
+        'Las fases de la Luna son: Luna Nueva, Cuarto Creciente, Luna Llena y:',
     options: ['Cuarto Menguante', 'Luna Gibosa', 'Media Luna', 'Luna Oscura'],
     correctAnswer: 0,
-    explanation: 'Las cuatro fases principales de la Luna son Luna Nueva, Cuarto Creciente, Luna Llena y Cuarto Menguante.',
+    explanation:
+        'Las cuatro fases principales de la Luna son Luna Nueva, Cuarto Creciente, Luna Llena y Cuarto Menguante.',
   ),
   Question(
     id: 'cta_q469',
     topicId: 'cta_t4',
-    text: '¿Qué tipo de rocas se forma por la solidificación del magma o la lava volcánica?',
+    text:
+        '¿Qué tipo de rocas se forma por la solidificación del magma o la lava volcánica?',
     options: ['Sedimentarias', 'Metamórficas', 'Ígneas', 'Detríticas'],
     correctAnswer: 2,
-    explanation: 'Las rocas ígneas se forman por el enfriamiento y solidificación del magma (intrusivas) o de la lava (extrusivas o volcánicas).',
+    explanation:
+        'Las rocas ígneas se forman por el enfriamiento y solidificación del magma (intrusivas) o de la lava (extrusivas o volcánicas).',
   ),
   Question(
     id: 'cta_q470',
     topicId: 'cta_t4',
-    text: '¿Cuál es el principal gas de efecto invernadero emitido por la quema de combustibles fósiles?',
-    options: ['Metano (CH₄)', 'Óxido nitroso (N₂O)', 'Dióxido de carbono (CO₂)', 'Ozono troposférico (O₃)'],
+    text:
+        '¿Cuál es el principal gas de efecto invernadero emitido por la quema de combustibles fósiles?',
+    options: [
+      'Metano (CH₄)',
+      'Óxido nitroso (N₂O)',
+      'Dióxido de carbono (CO₂)',
+      'Ozono troposférico (O₃)',
+    ],
     correctAnswer: 2,
-    explanation: 'El CO₂ es el principal GEI de origen antropogénico, liberado masivamente por la quema de petróleo, gas natural y carbón.',
+    explanation:
+        'El CO₂ es el principal GEI de origen antropogénico, liberado masivamente por la quema de petróleo, gas natural y carbón.',
   ),
   Question(
     id: 'cta_q471',
     topicId: 'cta_t4',
-    text: '¿Qué protocolo internacional, firmado en 1987, busca proteger la capa de ozono restringiendo el uso de sustancias como los CFC?',
-    options: ['Protocolo de Kioto', 'Acuerdo de París', 'Protocolo de Montreal', 'Convención de Basilea'],
+    text:
+        '¿Qué protocolo internacional, firmado en 1987, busca proteger la capa de ozono restringiendo el uso de sustancias como los CFC?',
+    options: [
+      'Protocolo de Kioto',
+      'Acuerdo de París',
+      'Protocolo de Montreal',
+      'Convención de Basilea',
+    ],
     correctAnswer: 2,
-    explanation: 'El Protocolo de Montreal (1987) regula y prohíbe las sustancias que agotan la capa de ozono, especialmente los clorofluorocarbonos (CFC).',
+    explanation:
+        'El Protocolo de Montreal (1987) regula y prohíbe las sustancias que agotan la capa de ozono, especialmente los clorofluorocarbonos (CFC).',
   ),
   Question(
     id: 'cta_q472',
     topicId: 'cta_t4',
-    text: '¿Qué acuerdo climático de 2015 establece el objetivo de limitar el aumento de la temperatura global a menos de 2 °C respecto a niveles preindustriales?',
-    options: ['Protocolo de Montreal', 'Acuerdo de París', 'Protocolo de Kioto', 'Cumbre de Estocolmo'],
+    text:
+        '¿Qué acuerdo climático de 2015 establece el objetivo de limitar el aumento de la temperatura global a menos de 2 °C respecto a niveles preindustriales?',
+    options: [
+      'Protocolo de Montreal',
+      'Acuerdo de París',
+      'Protocolo de Kioto',
+      'Cumbre de Estocolmo',
+    ],
     correctAnswer: 1,
-    explanation: 'El Acuerdo de París (2015) establece que los países deben limitar el calentamiento global muy por debajo de 2 °C, idealmente a 1,5 °C.',
+    explanation:
+        'El Acuerdo de París (2015) establece que los países deben limitar el calentamiento global muy por debajo de 2 °C, idealmente a 1,5 °C.',
   ),
   Question(
     id: 'cta_q473',
     topicId: 'cta_t4',
     text: '¿Cuál es la función principal de la capa de ozono estratosférico?',
-    options: ['Regular la temperatura de la troposfera', 'Filtrar la radiación ultravioleta B (UV-B)', 'Absorber la radiación infrarroja terrestre', 'Generar lluvia ácida en zonas industriales'],
+    options: [
+      'Regular la temperatura de la troposfera',
+      'Filtrar la radiación ultravioleta B (UV-B)',
+      'Absorber la radiación infrarroja terrestre',
+      'Generar lluvia ácida en zonas industriales',
+    ],
     correctAnswer: 1,
-    explanation: 'La capa de ozono en la estratosfera filtra la mayor parte de la radiación UV-B del Sol, protegiendo a los seres vivos de sus efectos nocivos.',
+    explanation:
+        'La capa de ozono en la estratosfera filtra la mayor parte de la radiación UV-B del Sol, protegiendo a los seres vivos de sus efectos nocivos.',
   ),
   Question(
     id: 'cta_q474',
     topicId: 'cta_t4',
-    text: '¿Qué fenómeno climático se caracteriza por un calentamiento anómalo de las aguas superficiales del océano Pacífico ecuatorial?',
+    text:
+        '¿Qué fenómeno climático se caracteriza por un calentamiento anómalo de las aguas superficiales del océano Pacífico ecuatorial?',
     options: ['La Niña', 'Monzón', 'El Niño', 'Corriente de Humboldt'],
     correctAnswer: 2,
-    explanation: 'El Fenómeno El Niño implica un calentamiento anómalo de las aguas superficiales del Pacífico ecuatorial oriental, afectando los patrones climáticos globales.',
+    explanation:
+        'El Fenómeno El Niño implica un calentamiento anómalo de las aguas superficiales del Pacífico ecuatorial oriental, afectando los patrones climáticos globales.',
   ),
   Question(
     id: 'cta_q475',
     topicId: 'cta_t4',
-    text: '¿En qué zona sísmica se ubica el Perú, donde convergen las placas de Nazca y Sudamericana?',
-    options: ['Falla de San Andrés', 'Dorsal Mesoatlántica', 'Cinturón de Fuego del Pacífico', 'Fosa de las Marianas'],
+    text:
+        '¿En qué zona sísmica se ubica el Perú, donde convergen las placas de Nazca y Sudamericana?',
+    options: [
+      'Falla de San Andrés',
+      'Dorsal Mesoatlántica',
+      'Cinturón de Fuego del Pacífico',
+      'Fosa de las Marianas',
+    ],
     correctAnswer: 2,
-    explanation: 'El Perú se encuentra en el Cinturón de Fuego del Pacífico, zona de alta actividad sísmica y volcánica por la subducción de la placa de Nazca bajo la Sudamericana.',
+    explanation:
+        'El Perú se encuentra en el Cinturón de Fuego del Pacífico, zona de alta actividad sísmica y volcánica por la subducción de la placa de Nazca bajo la Sudamericana.',
   ),
   Question(
     id: 'cta_q476',
     topicId: 'cta_t4',
-    text: '¿Qué tipo de energía renovable aprovecha la radiación electromagnética proveniente del Sol para generar electricidad?',
-    options: ['Energía eólica', 'Energía geotérmica', 'Energía solar', 'Energía mareomotriz'],
+    text:
+        '¿Qué tipo de energía renovable aprovecha la radiación electromagnética proveniente del Sol para generar electricidad?',
+    options: [
+      'Energía eólica',
+      'Energía geotérmica',
+      'Energía solar',
+      'Energía mareomotriz',
+    ],
     correctAnswer: 2,
-    explanation: 'La energía solar transforma la radiación electromagnética del Sol en electricidad mediante paneles fotovoltaicos o en calor mediante colectores térmicos.',
+    explanation:
+        'La energía solar transforma la radiación electromagnética del Sol en electricidad mediante paneles fotovoltaicos o en calor mediante colectores térmicos.',
   ),
   Question(
     id: 'cta_q477',
@@ -3825,279 +5409,500 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es el satélite natural de la Tierra?',
     options: ['Fobos', 'Europa', 'La Luna', 'Titán'],
     correctAnswer: 2,
-    explanation: 'La Luna es el único satélite natural de la Tierra, con un diámetro de unos 3 474 km y una distancia media de 384 400 km.',
+    explanation:
+        'La Luna es el único satélite natural de la Tierra, con un diámetro de unos 3 474 km y una distancia media de 384 400 km.',
   ),
   Question(
     id: 'cta_q478',
     topicId: 'cta_t4',
-    text: '¿Qué glaciar peruano fue declarado «en extinción» y cerrado al turismo por su avanzado retroceso?',
-    options: ['Glaciar del Huaytapallana', 'Glaciar Pastoruri', 'Glaciar Quelccaya', 'Glaciar Coropuna'],
+    text:
+        '¿Qué glaciar peruano fue declarado «en extinción» y cerrado al turismo por su avanzado retroceso?',
+    options: [
+      'Glaciar del Huaytapallana',
+      'Glaciar Pastoruri',
+      'Glaciar Quelccaya',
+      'Glaciar Coropuna',
+    ],
     correctAnswer: 1,
-    explanation: 'El glaciar Pastoruri, en la Cordillera Blanca, fue declarado en extinción y su ruta turística cerrada por el severo retroceso glaciar.',
+    explanation:
+        'El glaciar Pastoruri, en la Cordillera Blanca, fue declarado en extinción y su ruta turística cerrada por el severo retroceso glaciar.',
   ),
   Question(
     id: 'cta_q479',
     topicId: 'cta_t4',
-    text: '¿Qué informe de 1987 definió el desarrollo sostenible como aquel que satisface las necesidades del presente sin comprometer las de las generaciones futuras?',
-    options: ['Informe del Club de Roma', 'Informe Brundtland (Nuestro Futuro Común)', 'Informe Stern', 'Informe del IPCC AR5'],
+    text:
+        '¿Qué informe de 1987 definió el desarrollo sostenible como aquel que satisface las necesidades del presente sin comprometer las de las generaciones futuras?',
+    options: [
+      'Informe del Club de Roma',
+      'Informe Brundtland (Nuestro Futuro Común)',
+      'Informe Stern',
+      'Informe del IPCC AR5',
+    ],
     correctAnswer: 1,
-    explanation: "El Informe Brundtland (1987), titulado 'Nuestro Futuro Común', introdujo la definición clásica de desarrollo sostenible.",
+    explanation:
+        "El Informe Brundtland (1987), titulado 'Nuestro Futuro Común', introdujo la definición clásica de desarrollo sostenible.",
   ),
   Question(
     id: 'cta_q480',
     topicId: 'cta_t4',
-    text: 'La evidencia del corrimiento al rojo (redshift) de la luz de las galaxias lejanas es prueba directa de que:',
-    options: ['Las galaxias están compuestas principalmente de hidrógeno', 'El universo se está expandiendo', 'Las estrellas emiten únicamente luz roja', 'La Vía Láctea es la galaxia más grande del universo'],
+    text:
+        'La evidencia del corrimiento al rojo (redshift) de la luz de las galaxias lejanas es prueba directa de que:',
+    options: [
+      'Las galaxias están compuestas principalmente de hidrógeno',
+      'El universo se está expandiendo',
+      'Las estrellas emiten únicamente luz roja',
+      'La Vía Láctea es la galaxia más grande del universo',
+    ],
     correctAnswer: 1,
-    explanation: 'El corrimiento al rojo indica que las galaxias se alejan de nosotros; a mayor distancia, mayor velocidad de recesión, lo que evidencia la expansión del universo.',
+    explanation:
+        'El corrimiento al rojo indica que las galaxias se alejan de nosotros; a mayor distancia, mayor velocidad de recesión, lo que evidencia la expansión del universo.',
   ),
   Question(
     id: 'cta_q481',
     topicId: 'cta_t4',
-    text: '¿Por qué Júpiter, Saturno, Urano y Neptuno se denominan «planetas exteriores» o «gaseosos»?',
-    options: ['Porque están compuestos principalmente de roca y metal', 'Porque se ubican más allá del cinturón de asteroides y están formados principalmente por gases y hielos', 'Porque no poseen satélites naturales', 'Porque carecen de campo magnético'],
+    text:
+        '¿Por qué Júpiter, Saturno, Urano y Neptuno se denominan «planetas exteriores» o «gaseosos»?',
+    options: [
+      'Porque están compuestos principalmente de roca y metal',
+      'Porque se ubican más allá del cinturón de asteroides y están formados principalmente por gases y hielos',
+      'Porque no poseen satélites naturales',
+      'Porque carecen de campo magnético',
+    ],
     correctAnswer: 1,
-    explanation: 'Los planetas exteriores se ubican más allá del cinturón de asteroides y están compuestos principalmente de hidrógeno, helio y hielos, a diferencia de los rocosos interiores.',
+    explanation:
+        'Los planetas exteriores se ubican más allá del cinturón de asteroides y están compuestos principalmente de hidrógeno, helio y hielos, a diferencia de los rocosos interiores.',
   ),
   Question(
     id: 'cta_q482',
     topicId: 'cta_t4',
-    text: 'El movimiento de traslación de la Tierra alrededor del Sol, combinado con la inclinación del eje terrestre (23,5°), es responsable de:',
-    options: ['Las fases lunares', 'Las estaciones del año', 'La formación de eclipses', 'La alternancia del día y la noche'],
+    text:
+        'El movimiento de traslación de la Tierra alrededor del Sol, combinado con la inclinación del eje terrestre (23,5°), es responsable de:',
+    options: [
+      'Las fases lunares',
+      'Las estaciones del año',
+      'La formación de eclipses',
+      'La alternancia del día y la noche',
+    ],
     correctAnswer: 1,
-    explanation: 'La traslación terrestre junto con la inclinación axial de 23,5° produce las estaciones del año, al variar la incidencia de los rayos solares sobre cada hemisferio.',
+    explanation:
+        'La traslación terrestre junto con la inclinación axial de 23,5° produce las estaciones del año, al variar la incidencia de los rayos solares sobre cada hemisferio.',
   ),
   Question(
     id: 'cta_q483',
     topicId: 'cta_t4',
     text: 'Un eclipse solar ocurre cuando:',
-    options: ['La Tierra se interpone entre el Sol y la Luna', 'La Luna se interpone entre el Sol y la Tierra', 'El Sol se interpone entre la Tierra y la Luna', 'La Luna entra en la sombra de Júpiter'],
+    options: [
+      'La Tierra se interpone entre el Sol y la Luna',
+      'La Luna se interpone entre el Sol y la Tierra',
+      'El Sol se interpone entre la Tierra y la Luna',
+      'La Luna entra en la sombra de Júpiter',
+    ],
     correctAnswer: 1,
-    explanation: 'En un eclipse solar, la Luna se ubica entre el Sol y la Tierra, proyectando su sombra sobre la superficie terrestre.',
+    explanation:
+        'En un eclipse solar, la Luna se ubica entre el Sol y la Tierra, proyectando su sombra sobre la superficie terrestre.',
   ),
   Question(
     id: 'cta_q484',
     topicId: 'cta_t4',
-    text: '¿Por qué las mareas alcanzan su máxima intensidad (mareas vivas) durante la Luna Nueva y la Luna Llena?',
-    options: ['Porque la Luna deja de ejercer atracción gravitacional', 'Porque el Sol, la Luna y la Tierra están alineados y las fuerzas gravitacionales se suman', 'Porque la Luna está más lejos de la Tierra en esas fases', 'Porque la rotación terrestre se acelera en esas fechas'],
+    text:
+        '¿Por qué las mareas alcanzan su máxima intensidad (mareas vivas) durante la Luna Nueva y la Luna Llena?',
+    options: [
+      'Porque la Luna deja de ejercer atracción gravitacional',
+      'Porque el Sol, la Luna y la Tierra están alineados y las fuerzas gravitacionales se suman',
+      'Porque la Luna está más lejos de la Tierra en esas fases',
+      'Porque la rotación terrestre se acelera en esas fechas',
+    ],
     correctAnswer: 1,
-    explanation: 'En Luna Nueva y Luna Llena, el Sol, la Luna y la Tierra están alineados (sicigia), y las fuerzas gravitacionales del Sol y la Luna se refuerzan, produciendo mareas vivas.',
+    explanation:
+        'En Luna Nueva y Luna Llena, el Sol, la Luna y la Tierra están alineados (sicigia), y las fuerzas gravitacionales del Sol y la Luna se refuerzan, produciendo mareas vivas.',
   ),
   Question(
     id: 'cta_q485',
     topicId: 'cta_t4',
-    text: 'Las rocas metamórficas se forman a partir de rocas preexistentes que han sido sometidas a:',
-    options: ['Erosión y transporte por el viento', 'Altas temperaturas y presiones sin llegar a fundirse completamente', 'Enfriamiento rápido del magma en la superficie', 'Acumulación y compactación de sedimentos marinos'],
+    text:
+        'Las rocas metamórficas se forman a partir de rocas preexistentes que han sido sometidas a:',
+    options: [
+      'Erosión y transporte por el viento',
+      'Altas temperaturas y presiones sin llegar a fundirse completamente',
+      'Enfriamiento rápido del magma en la superficie',
+      'Acumulación y compactación de sedimentos marinos',
+    ],
     correctAnswer: 1,
-    explanation: 'Las rocas metamórficas se originan cuando rocas ígneas, sedimentarias u otras metamórficas son transformadas por altas presiones y temperaturas (sin fusión total).',
+    explanation:
+        'Las rocas metamórficas se originan cuando rocas ígneas, sedimentarias u otras metamórficas son transformadas por altas presiones y temperaturas (sin fusión total).',
   ),
   Question(
     id: 'cta_q486',
     topicId: 'cta_t4',
-    text: 'El efecto invernadero natural es esencial para la vida en la Tierra porque:',
-    options: ['Elimina completamente la radiación ultravioleta', 'Aumenta la concentración de oxígeno en la atmósfera', 'Mantiene la temperatura promedio de la Tierra en unos 15 °C en lugar de −18 °C', 'Produce ozono en la troposfera'],
+    text:
+        'El efecto invernadero natural es esencial para la vida en la Tierra porque:',
+    options: [
+      'Elimina completamente la radiación ultravioleta',
+      'Aumenta la concentración de oxígeno en la atmósfera',
+      'Mantiene la temperatura promedio de la Tierra en unos 15 °C en lugar de −18 °C',
+      'Produce ozono en la troposfera',
+    ],
     correctAnswer: 2,
-    explanation: 'Sin el efecto invernadero natural, la temperatura media de la Tierra sería de −18 °C; los gases de efecto invernadero retienen parte de la radiación infrarroja y elevan la temperatura a unos 15 °C.',
+    explanation:
+        'Sin el efecto invernadero natural, la temperatura media de la Tierra sería de −18 °C; los gases de efecto invernadero retienen parte de la radiación infrarroja y elevan la temperatura a unos 15 °C.',
   ),
   Question(
     id: 'cta_q487',
     topicId: 'cta_t4',
-    text: '¿Por qué los CFC (clorofluorocarbonos) son especialmente dañinos para la capa de ozono?',
-    options: ['Porque reaccionan con el nitrógeno atmosférico generando lluvia ácida', 'Porque liberan átomos de cloro que destruyen catalíticamente miles de moléculas de ozono', 'Porque absorben radiación UV-A impidiendo que llegue al ozono', 'Porque incrementan directamente la concentración de CO₂'],
+    text:
+        '¿Por qué los CFC (clorofluorocarbonos) son especialmente dañinos para la capa de ozono?',
+    options: [
+      'Porque reaccionan con el nitrógeno atmosférico generando lluvia ácida',
+      'Porque liberan átomos de cloro que destruyen catalíticamente miles de moléculas de ozono',
+      'Porque absorben radiación UV-A impidiendo que llegue al ozono',
+      'Porque incrementan directamente la concentración de CO₂',
+    ],
     correctAnswer: 1,
-    explanation: 'Los CFC liberan átomos de cloro en la estratosfera que actúan como catalizadores, destruyendo miles de moléculas de O₃ antes de desactivarse.',
+    explanation:
+        'Los CFC liberan átomos de cloro en la estratosfera que actúan como catalizadores, destruyendo miles de moléculas de O₃ antes de desactivarse.',
   ),
   Question(
     id: 'cta_q488',
     topicId: 'cta_t4',
-    text: 'El Fenómeno La Niña se caracteriza por un enfriamiento anómalo de las aguas del Pacífico ecuatorial. ¿Cuál es su consecuencia típica en la sierra del Perú?',
-    options: ['Sequías prolongadas y menor precipitación', 'Lluvias intensas, heladas y friajes', 'Aumento de la temperatura en la costa', 'Desaparición temporal de la Corriente de Humboldt'],
+    text:
+        'El Fenómeno La Niña se caracteriza por un enfriamiento anómalo de las aguas del Pacífico ecuatorial. ¿Cuál es su consecuencia típica en la sierra del Perú?',
+    options: [
+      'Sequías prolongadas y menor precipitación',
+      'Lluvias intensas, heladas y friajes',
+      'Aumento de la temperatura en la costa',
+      'Desaparición temporal de la Corriente de Humboldt',
+    ],
     correctAnswer: 1,
-    explanation: 'La Niña suele provocar en la sierra peruana lluvias intensas, heladas y friajes, afectando la agricultura y las vías de comunicación.',
+    explanation:
+        'La Niña suele provocar en la sierra peruana lluvias intensas, heladas y friajes, afectando la agricultura y las vías de comunicación.',
   ),
   Question(
     id: 'cta_q489',
     topicId: 'cta_t4',
-    text: '¿Cuál es la diferencia fundamental entre el efecto invernadero natural y el efecto invernadero intensificado (antrópico)?',
-    options: ['El natural involucra CO₂ y el antrópico solo metano', 'El natural mantiene la temperatura habitable; el antrópico eleva la concentración de GEI por actividades humanas, provocando calentamiento adicional', 'El natural ocurre solo en los polos y el antrópico en los trópicos', 'No existe diferencia; ambos producen los mismos efectos'],
+    text:
+        '¿Cuál es la diferencia fundamental entre el efecto invernadero natural y el efecto invernadero intensificado (antrópico)?',
+    options: [
+      'El natural involucra CO₂ y el antrópico solo metano',
+      'El natural mantiene la temperatura habitable; el antrópico eleva la concentración de GEI por actividades humanas, provocando calentamiento adicional',
+      'El natural ocurre solo en los polos y el antrópico en los trópicos',
+      'No existe diferencia; ambos producen los mismos efectos',
+    ],
     correctAnswer: 1,
-    explanation: 'El efecto invernadero natural es un proceso esencial que mantiene la temperatura; el antrópico agrava este efecto por exceso de emisiones de GEI de origen humano.',
+    explanation:
+        'El efecto invernadero natural es un proceso esencial que mantiene la temperatura; el antrópico agrava este efecto por exceso de emisiones de GEI de origen humano.',
   ),
   Question(
     id: 'cta_q490',
     topicId: 'cta_t4',
-    text: 'La lluvia ácida se produce cuando contaminantes como SO₂ y NOₓ reaccionan con el agua atmosférica. ¿Cuál es una consecuencia directa de este fenómeno?',
-    options: ['Aumento del pH de los lagos, favoreciendo la vida acuática', 'Acidificación de suelos y cuerpos de agua, dañando ecosistemas', 'Incremento de la capa de ozono estratosférico', 'Reducción de la temperatura global'],
+    text:
+        'La lluvia ácida se produce cuando contaminantes como SO₂ y NOₓ reaccionan con el agua atmosférica. ¿Cuál es una consecuencia directa de este fenómeno?',
+    options: [
+      'Aumento del pH de los lagos, favoreciendo la vida acuática',
+      'Acidificación de suelos y cuerpos de agua, dañando ecosistemas',
+      'Incremento de la capa de ozono estratosférico',
+      'Reducción de la temperatura global',
+    ],
     correctAnswer: 1,
-    explanation: 'La lluvia ácida disminuye el pH de suelos y cuerpos de agua, dañando bosques, vida acuática y estructuras de piedra caliza.',
+    explanation:
+        'La lluvia ácida disminuye el pH de suelos y cuerpos de agua, dañando bosques, vida acuática y estructuras de piedra caliza.',
   ),
   Question(
     id: 'cta_q491',
     topicId: 'cta_t4',
-    text: '¿Qué relación existe entre la deforestación amazónica y los llamados «ríos voladores»?',
-    options: ['La deforestación aumenta el caudal de los ríos voladores', 'Los ríos voladores son corrientes marinas afectadas por la deforestación', 'La deforestación interrumpe la evapotranspiración, reduciendo el transporte atmosférico de humedad hacia el interior del continente', 'Los ríos voladores solo existen en la selva africana'],
+    text:
+        '¿Qué relación existe entre la deforestación amazónica y los llamados «ríos voladores»?',
+    options: [
+      'La deforestación aumenta el caudal de los ríos voladores',
+      'Los ríos voladores son corrientes marinas afectadas por la deforestación',
+      'La deforestación interrumpe la evapotranspiración, reduciendo el transporte atmosférico de humedad hacia el interior del continente',
+      'Los ríos voladores solo existen en la selva africana',
+    ],
     correctAnswer: 2,
-    explanation: 'Los ríos voladores son flujos de humedad atmosférica generados por la evapotranspiración de la selva amazónica; la deforestación los debilita, reduciendo lluvias en regiones lejanas.',
+    explanation:
+        'Los ríos voladores son flujos de humedad atmosférica generados por la evapotranspiración de la selva amazónica; la deforestación los debilita, reduciendo lluvias en regiones lejanas.',
   ),
   Question(
     id: 'cta_q492',
     topicId: 'cta_t4',
     text: 'El smog fotoquímico se forma principalmente por la interacción de:',
-    options: ['SO₂ y partículas de hollín con la niebla', 'Óxidos de nitrógeno (NOₓ) e hidrocarburos volátiles con la radiación solar', 'CO₂ y vapor de agua en presencia de tormentas eléctricas', 'CFC y ozono estratosférico'],
+    options: [
+      'SO₂ y partículas de hollín con la niebla',
+      'Óxidos de nitrógeno (NOₓ) e hidrocarburos volátiles con la radiación solar',
+      'CO₂ y vapor de agua en presencia de tormentas eléctricas',
+      'CFC y ozono estratosférico',
+    ],
     correctAnswer: 1,
-    explanation: 'El smog fotoquímico se produce cuando los NOₓ y compuestos orgánicos volátiles reaccionan bajo la radiación solar, formando ozono troposférico y otros contaminantes.',
+    explanation:
+        'El smog fotoquímico se produce cuando los NOₓ y compuestos orgánicos volátiles reaccionan bajo la radiación solar, formando ozono troposférico y otros contaminantes.',
   ),
   Question(
     id: 'cta_q493',
     topicId: 'cta_t4',
-    text: '¿Por qué la energía hidroeléctrica se considera renovable, pero no siempre limpia ambientalmente?',
-    options: ['Porque genera grandes cantidades de CO₂ durante su operación', 'Porque depende de combustibles fósiles para funcionar', 'Porque las represas alteran ecosistemas fluviales, inundan terrenos y pueden generar metano por descomposición de biomasa sumergida', 'Porque agota el recurso hídrico permanentemente'],
+    text:
+        '¿Por qué la energía hidroeléctrica se considera renovable, pero no siempre limpia ambientalmente?',
+    options: [
+      'Porque genera grandes cantidades de CO₂ durante su operación',
+      'Porque depende de combustibles fósiles para funcionar',
+      'Porque las represas alteran ecosistemas fluviales, inundan terrenos y pueden generar metano por descomposición de biomasa sumergida',
+      'Porque agota el recurso hídrico permanentemente',
+    ],
     correctAnswer: 2,
-    explanation: 'Aunque el agua se renueva, las represas causan impactos ambientales como inundación de ecosistemas, alteración del flujo natural y emisión de CH₄ por materia orgánica sumergida.',
+    explanation:
+        'Aunque el agua se renueva, las represas causan impactos ambientales como inundación de ecosistemas, alteración del flujo natural y emisión de CH₄ por materia orgánica sumergida.',
   ),
   Question(
     id: 'cta_q494',
     topicId: 'cta_t4',
     text: '¿Qué característica distingue a un cometa de un asteroide?',
-    options: ['Los cometas son más grandes que los asteroides', 'Los cometas están compuestos de hielo, polvo y roca, y desarrollan una cola al acercarse al Sol', 'Los asteroides orbitan más allá de Neptuno', 'Los cometas son satélites de Júpiter'],
+    options: [
+      'Los cometas son más grandes que los asteroides',
+      'Los cometas están compuestos de hielo, polvo y roca, y desarrollan una cola al acercarse al Sol',
+      'Los asteroides orbitan más allá de Neptuno',
+      'Los cometas son satélites de Júpiter',
+    ],
     correctAnswer: 1,
-    explanation: 'Los cometas contienen hielos que subliman al acercarse al Sol, formando una coma y una cola; los asteroides son cuerpos rocosos/metálicos sin esta característica.',
+    explanation:
+        'Los cometas contienen hielos que subliman al acercarse al Sol, formando una coma y una cola; los asteroides son cuerpos rocosos/metálicos sin esta característica.',
   ),
   Question(
     id: 'cta_q495',
     topicId: 'cta_t4',
-    text: 'El núcleo externo de la Tierra se encuentra en estado líquido. ¿Qué fenómeno importante genera este núcleo?',
-    options: ['La formación de rocas sedimentarias', 'El campo magnético terrestre (geodínamo)', 'La deriva continental directa', 'Las mareas oceánicas'],
+    text:
+        'El núcleo externo de la Tierra se encuentra en estado líquido. ¿Qué fenómeno importante genera este núcleo?',
+    options: [
+      'La formación de rocas sedimentarias',
+      'El campo magnético terrestre (geodínamo)',
+      'La deriva continental directa',
+      'Las mareas oceánicas',
+    ],
     correctAnswer: 1,
-    explanation: 'El núcleo externo líquido, compuesto de hierro y níquel, genera corrientes de convección que producen el campo magnético terrestre (efecto geodínamo).',
+    explanation:
+        'El núcleo externo líquido, compuesto de hierro y níquel, genera corrientes de convección que producen el campo magnético terrestre (efecto geodínamo).',
   ),
   Question(
     id: 'cta_q496',
     topicId: 'cta_t4',
-    text: 'Las estrellas se clasifican espectralmente con las letras O, B, A, F, G, K y M. ¿Qué tipo espectral corresponde al Sol?',
-    options: ['Tipo O (azul, muy caliente)', 'Tipo G (amarilla, ~5 500 °C en superficie)', 'Tipo M (roja, fría)', 'Tipo B (azul-blanca)'],
+    text:
+        'Las estrellas se clasifican espectralmente con las letras O, B, A, F, G, K y M. ¿Qué tipo espectral corresponde al Sol?',
+    options: [
+      'Tipo O (azul, muy caliente)',
+      'Tipo G (amarilla, ~5 500 °C en superficie)',
+      'Tipo M (roja, fría)',
+      'Tipo B (azul-blanca)',
+    ],
     correctAnswer: 1,
-    explanation: 'El Sol es una estrella de tipo espectral G2V, con una temperatura superficial de aproximadamente 5 500 °C, clasificada como enana amarilla.',
+    explanation:
+        'El Sol es una estrella de tipo espectral G2V, con una temperatura superficial de aproximadamente 5 500 °C, clasificada como enana amarilla.',
   ),
   Question(
     id: 'cta_q497',
     topicId: 'cta_t4',
-    text: '¿Cuál es el papel de las Conferencias de las Partes (COP) en la lucha contra el cambio climático?',
-    options: ['Son reuniones exclusivas de científicos para publicar artículos', 'Son foros internacionales donde los países negocian compromisos y políticas para reducir emisiones de GEI', 'Son eventos organizados por empresas privadas para promover combustibles fósiles', 'Son conferencias solo para países desarrollados'],
+    text:
+        '¿Cuál es el papel de las Conferencias de las Partes (COP) en la lucha contra el cambio climático?',
+    options: [
+      'Son reuniones exclusivas de científicos para publicar artículos',
+      'Son foros internacionales donde los países negocian compromisos y políticas para reducir emisiones de GEI',
+      'Son eventos organizados por empresas privadas para promover combustibles fósiles',
+      'Son conferencias solo para países desarrollados',
+    ],
     correctAnswer: 1,
-    explanation: 'Las COP son reuniones anuales de la Convención Marco de la ONU sobre Cambio Climático (CMNUCC), donde los países negocian metas y compromisos de reducción de emisiones.',
+    explanation:
+        'Las COP son reuniones anuales de la Convención Marco de la ONU sobre Cambio Climático (CMNUCC), donde los países negocian metas y compromisos de reducción de emisiones.',
   ),
   Question(
     id: 'cta_q498',
     topicId: 'cta_t4',
-    text: 'El retroceso del glaciar Huaytapallana ha reducido su superficie en aproximadamente un 72 %. ¿Cuál es la principal consecuencia hídrica para la región?',
-    options: ['Aumento permanente del caudal de los ríos', 'Reducción de las reservas de agua para el Valle del Mantaro, afectando agricultura y abastecimiento', 'Mejora de la calidad del agua por menor sedimentación', 'Formación de nuevos glaciares en zonas bajas'],
+    text:
+        'El retroceso del glaciar Huaytapallana ha reducido su superficie en aproximadamente un 72 %. ¿Cuál es la principal consecuencia hídrica para la región?',
+    options: [
+      'Aumento permanente del caudal de los ríos',
+      'Reducción de las reservas de agua para el Valle del Mantaro, afectando agricultura y abastecimiento',
+      'Mejora de la calidad del agua por menor sedimentación',
+      'Formación de nuevos glaciares en zonas bajas',
+    ],
     correctAnswer: 1,
-    explanation: 'La pérdida del ~72 % de la superficie del Huaytapallana reduce las reservas hídricas que alimentan el Valle del Mantaro, comprometiendo la agricultura y el abastecimiento de agua.',
+    explanation:
+        'La pérdida del ~72 % de la superficie del Huaytapallana reduce las reservas hídricas que alimentan el Valle del Mantaro, comprometiendo la agricultura y el abastecimiento de agua.',
   ),
   Question(
     id: 'cta_q499',
     topicId: 'cta_t4',
-    text: 'Los huaicos son desastres naturales frecuentes en el Perú. Se producen principalmente por:',
-    options: ['Erupciones volcánicas submarinas', 'Lluvias intensas que saturan suelos en laderas deforestadas, generando flujos de lodo y escombros', 'Mareas extraordinarias en la costa', 'Terremotos de magnitud superior a 8,0'],
+    text:
+        'Los huaicos son desastres naturales frecuentes en el Perú. Se producen principalmente por:',
+    options: [
+      'Erupciones volcánicas submarinas',
+      'Lluvias intensas que saturan suelos en laderas deforestadas, generando flujos de lodo y escombros',
+      'Mareas extraordinarias en la costa',
+      'Terremotos de magnitud superior a 8,0',
+    ],
     correctAnswer: 1,
-    explanation: 'Los huaicos son flujos de lodo, piedras y escombros provocados por lluvias intensas en laderas con suelos inestables, frecuentemente agravados por la deforestación.',
+    explanation:
+        'Los huaicos son flujos de lodo, piedras y escombros provocados por lluvias intensas en laderas con suelos inestables, frecuentemente agravados por la deforestación.',
   ),
   Question(
     id: 'cta_q500',
     topicId: 'cta_t4',
-    text: 'Si la concentración atmosférica de CO₂ pasó de 280 ppm (era preindustrial) a 420 ppm en la actualidad, ¿qué porcentaje de aumento representa aproximadamente?',
+    text:
+        'Si la concentración atmosférica de CO₂ pasó de 280 ppm (era preindustrial) a 420 ppm en la actualidad, ¿qué porcentaje de aumento representa aproximadamente?',
     options: ['30 %', '50 %', '75 %', '100 %'],
     correctAnswer: 1,
-    explanation: 'Aumento = (420 − 280)/280 × 100 = 140/280 × 100 = 50 %. La concentración de CO₂ ha aumentado aproximadamente un 50 % desde la era preindustrial.',
+    explanation:
+        'Aumento = (420 − 280)/280 × 100 = 140/280 × 100 = 50 %. La concentración de CO₂ ha aumentado aproximadamente un 50 % desde la era preindustrial.',
   ),
   Question(
     id: 'cta_q501',
     topicId: 'cta_t4',
-    text: 'Una región peruana registra lluvias torrenciales en la costa norte, aumento de temperatura del mar y pérdida de especies marinas como la anchoveta. ¿A qué fenómeno climático corresponden estos indicadores?',
-    options: ['La Niña intensa', 'Fenómeno El Niño', 'Erupción volcánica', 'Inversión térmica permanente'],
+    text:
+        'Una región peruana registra lluvias torrenciales en la costa norte, aumento de temperatura del mar y pérdida de especies marinas como la anchoveta. ¿A qué fenómeno climático corresponden estos indicadores?',
+    options: [
+      'La Niña intensa',
+      'Fenómeno El Niño',
+      'Erupción volcánica',
+      'Inversión térmica permanente',
+    ],
     correctAnswer: 1,
-    explanation: 'El Fenómeno El Niño calienta las aguas del Pacífico oriental, provocando lluvias torrenciales en la costa norte del Perú y migración o mortalidad de especies como la anchoveta.',
+    explanation:
+        'El Fenómeno El Niño calienta las aguas del Pacífico oriental, provocando lluvias torrenciales en la costa norte del Perú y migración o mortalidad de especies como la anchoveta.',
   ),
   Question(
     id: 'cta_q502',
     topicId: 'cta_t4',
-    text: 'Un investigador observa que la velocidad de recesión de una galaxia es de 7 000 km/s y la constante de Hubble es 70 km/s/Mpc. ¿A qué distancia se encuentra esa galaxia?',
+    text:
+        'Un investigador observa que la velocidad de recesión de una galaxia es de 7 000 km/s y la constante de Hubble es 70 km/s/Mpc. ¿A qué distancia se encuentra esa galaxia?',
     options: ['10 Mpc', '100 Mpc', '490 Mpc', '1 000 Mpc'],
     correctAnswer: 1,
-    explanation: 'Aplicando v = H₀ × d → d = 7 000/70 = 100 Mpc (megaparsecs). La Ley de Hubble relaciona velocidad de recesión con distancia.',
+    explanation:
+        'Aplicando v = H₀ × d → d = 7 000/70 = 100 Mpc (megaparsecs). La Ley de Hubble relaciona velocidad de recesión con distancia.',
   ),
   Question(
     id: 'cta_q503',
     topicId: 'cta_t4',
-    text: 'En una localidad amazónica peruana se detecta deforestación masiva, disminución de lluvias regionales y erosión acelerada del suelo. Si un policía ambiental investiga, ¿cuál es la relación causa-efecto más probable?',
-    options: ['La erosión causó la deforestación y esta redujo las lluvias', 'La tala masiva eliminó la evapotranspiración, reduciendo los ríos voladores y las lluvias, lo que expuso el suelo a la erosión', 'El aumento de lluvias provocó la deforestación', 'La erosión es independiente de la cubierta vegetal'],
+    text:
+        'En una localidad amazónica peruana se detecta deforestación masiva, disminución de lluvias regionales y erosión acelerada del suelo. Si un policía ambiental investiga, ¿cuál es la relación causa-efecto más probable?',
+    options: [
+      'La erosión causó la deforestación y esta redujo las lluvias',
+      'La tala masiva eliminó la evapotranspiración, reduciendo los ríos voladores y las lluvias, lo que expuso el suelo a la erosión',
+      'El aumento de lluvias provocó la deforestación',
+      'La erosión es independiente de la cubierta vegetal',
+    ],
     correctAnswer: 1,
-    explanation: 'La deforestación reduce la evapotranspiración (ríos voladores), lo que disminuye las precipitaciones locales; sin cobertura vegetal, el suelo queda expuesto a la erosión.',
+    explanation:
+        'La deforestación reduce la evapotranspiración (ríos voladores), lo que disminuye las precipitaciones locales; sin cobertura vegetal, el suelo queda expuesto a la erosión.',
   ),
   Question(
     id: 'cta_q504',
     topicId: 'cta_t4',
-    text: 'Si la temperatura global supera los 2 °C por encima de los niveles preindustriales, ¿cuál sería la consecuencia más probable según los modelos del IPCC?',
-    options: ['Aumento de la biodiversidad en todas las regiones', 'Deshielo acelerado de glaciares, elevación del nivel del mar y eventos climáticos extremos más frecuentes', 'Estabilización inmediata de los ecosistemas polares', 'Reducción de la frecuencia de huracanes y tifones'],
+    text:
+        'Si la temperatura global supera los 2 °C por encima de los niveles preindustriales, ¿cuál sería la consecuencia más probable según los modelos del IPCC?',
+    options: [
+      'Aumento de la biodiversidad en todas las regiones',
+      'Deshielo acelerado de glaciares, elevación del nivel del mar y eventos climáticos extremos más frecuentes',
+      'Estabilización inmediata de los ecosistemas polares',
+      'Reducción de la frecuencia de huracanes y tifones',
+    ],
     correctAnswer: 1,
-    explanation: 'Superar los 2 °C implica deshielo masivo, subida del nivel del mar, mayor frecuencia de eventos extremos y pérdida de ecosistemas según los informes del IPCC.',
+    explanation:
+        'Superar los 2 °C implica deshielo masivo, subida del nivel del mar, mayor frecuencia de eventos extremos y pérdida de ecosistemas según los informes del IPCC.',
   ),
   Question(
     id: 'cta_q505',
     topicId: 'cta_t4',
-    text: 'Un municipio peruano desea implementar una planta de energía renovable en una zona con alta radiación solar, vientos débiles y sin ríos caudalosos. ¿Qué tipo de energía renovable es la más adecuada?',
-    options: ['Energía eólica', 'Energía hidroeléctrica', 'Energía solar fotovoltaica', 'Energía mareomotriz'],
+    text:
+        'Un municipio peruano desea implementar una planta de energía renovable en una zona con alta radiación solar, vientos débiles y sin ríos caudalosos. ¿Qué tipo de energía renovable es la más adecuada?',
+    options: [
+      'Energía eólica',
+      'Energía hidroeléctrica',
+      'Energía solar fotovoltaica',
+      'Energía mareomotriz',
+    ],
     correctAnswer: 2,
-    explanation: 'Con alta radiación solar, vientos débiles y sin ríos, la opción óptima es la energía solar fotovoltaica, que no depende del viento ni del agua.',
+    explanation:
+        'Con alta radiación solar, vientos débiles y sin ríos, la opción óptima es la energía solar fotovoltaica, que no depende del viento ni del agua.',
   ),
   Question(
     id: 'cta_q506',
     topicId: 'cta_t4',
-    text: 'Se descubre una roca con cristales grandes, textura granular y sin fósiles en su interior. ¿Qué tipo de roca y origen es más probable?',
-    options: ['Roca sedimentaria formada por depósito de sedimentos', 'Roca ígnea intrusiva formada por enfriamiento lento del magma en profundidad', 'Roca metamórfica formada por erosión del viento', 'Roca volcánica formada por enfriamiento rápido en la superficie'],
+    text:
+        'Se descubre una roca con cristales grandes, textura granular y sin fósiles en su interior. ¿Qué tipo de roca y origen es más probable?',
+    options: [
+      'Roca sedimentaria formada por depósito de sedimentos',
+      'Roca ígnea intrusiva formada por enfriamiento lento del magma en profundidad',
+      'Roca metamórfica formada por erosión del viento',
+      'Roca volcánica formada por enfriamiento rápido en la superficie',
+    ],
     correctAnswer: 1,
-    explanation: 'Los cristales grandes indican enfriamiento lento del magma en profundidad (roca ígnea intrusiva, como el granito). Las extrusivas tienen cristales pequeños por enfriamiento rápido.',
+    explanation:
+        'Los cristales grandes indican enfriamiento lento del magma en profundidad (roca ígnea intrusiva, como el granito). Las extrusivas tienen cristales pequeños por enfriamiento rápido.',
   ),
   Question(
     id: 'cta_q507',
     topicId: 'cta_t4',
-    text: 'Un país decide reemplazar su principal refrigerante industrial (un CFC) por un hidrofluorocarbono (HFC). ¿Qué problema ambiental resuelve y cuál podría persistir?',
-    options: ['Resuelve el efecto invernadero y persiste la destrucción de la capa de ozono', 'Resuelve la destrucción de la capa de ozono, pero los HFC siguen siendo potentes gases de efecto invernadero', 'Resuelve ambos problemas completamente', 'No resuelve ningún problema ambiental'],
+    text:
+        'Un país decide reemplazar su principal refrigerante industrial (un CFC) por un hidrofluorocarbono (HFC). ¿Qué problema ambiental resuelve y cuál podría persistir?',
+    options: [
+      'Resuelve el efecto invernadero y persiste la destrucción de la capa de ozono',
+      'Resuelve la destrucción de la capa de ozono, pero los HFC siguen siendo potentes gases de efecto invernadero',
+      'Resuelve ambos problemas completamente',
+      'No resuelve ningún problema ambiental',
+    ],
     correctAnswer: 1,
-    explanation: 'Los HFC no destruyen la capa de ozono (no contienen cloro), pero tienen alto potencial de calentamiento global, por lo que contribuyen al efecto invernadero.',
+    explanation:
+        'Los HFC no destruyen la capa de ozono (no contienen cloro), pero tienen alto potencial de calentamiento global, por lo que contribuyen al efecto invernadero.',
   ),
   Question(
     id: 'cta_q508',
     topicId: 'cta_t4',
-    text: 'Un sismo de magnitud 7,0 sacude Lima. ¿Por qué la ciudad es especialmente vulnerable a terremotos?',
-    options: ['Porque se ubica sobre un volcán activo', 'Porque se encuentra en la zona de subducción de la placa de Nazca bajo la Sudamericana, dentro del Cinturón de Fuego del Pacífico', 'Porque Lima está sobre una falla transformante como la de San Andrés', 'Porque los sismos en Sudamérica son exclusivamente de origen volcánico'],
+    text:
+        'Un sismo de magnitud 7,0 sacude Lima. ¿Por qué la ciudad es especialmente vulnerable a terremotos?',
+    options: [
+      'Porque se ubica sobre un volcán activo',
+      'Porque se encuentra en la zona de subducción de la placa de Nazca bajo la Sudamericana, dentro del Cinturón de Fuego del Pacífico',
+      'Porque Lima está sobre una falla transformante como la de San Andrés',
+      'Porque los sismos en Sudamérica son exclusivamente de origen volcánico',
+    ],
     correctAnswer: 1,
-    explanation: 'Lima está ubicada sobre la zona de subducción donde la placa de Nazca se introduce bajo la Sudamericana, generando sismos de gran magnitud en el Cinturón de Fuego.',
+    explanation:
+        'Lima está ubicada sobre la zona de subducción donde la placa de Nazca se introduce bajo la Sudamericana, generando sismos de gran magnitud en el Cinturón de Fuego.',
   ),
   Question(
     id: 'cta_q509',
     topicId: 'cta_t4',
-    text: 'Analiza: Si el metano (CH₄) tiene un potencial de calentamiento global 28 veces mayor que el CO₂ a 100 años, pero su vida media en la atmósfera es de solo 12 años, ¿qué implica esto para las estrategias de mitigación?',
-    options: ['Reducir las emisiones de CH₄ no tendría impacto significativo', 'Reducir las emisiones de CH₄ puede producir efectos rápidos de enfriamiento a corto plazo, complementando reducciones de CO₂ a largo plazo', 'El CH₄ es menos importante que el N₂O en el calentamiento global', 'Solo importa reducir CO₂ porque es el único gas con efecto invernadero'],
+    text:
+        'Analiza: Si el metano (CH₄) tiene un potencial de calentamiento global 28 veces mayor que el CO₂ a 100 años, pero su vida media en la atmósfera es de solo 12 años, ¿qué implica esto para las estrategias de mitigación?',
+    options: [
+      'Reducir las emisiones de CH₄ no tendría impacto significativo',
+      'Reducir las emisiones de CH₄ puede producir efectos rápidos de enfriamiento a corto plazo, complementando reducciones de CO₂ a largo plazo',
+      'El CH₄ es menos importante que el N₂O en el calentamiento global',
+      'Solo importa reducir CO₂ porque es el único gas con efecto invernadero',
+    ],
     correctAnswer: 1,
-    explanation: 'Dado que el CH₄ es muy potente pero de corta vida, reducir sus emisiones produce beneficios climáticos rápidos (en una década), mientras que reducir CO₂ tiene efectos a largo plazo.',
+    explanation:
+        'Dado que el CH₄ es muy potente pero de corta vida, reducir sus emisiones produce beneficios climáticos rápidos (en una década), mientras que reducir CO₂ tiene efectos a largo plazo.',
   ),
   Question(
     id: 'cta_q510',
     topicId: 'cta_t4',
-    text: 'La Cordillera Blanca alberga el 25 % de los glaciares tropicales del mundo. Si continúa la tendencia actual de retroceso, ¿cuál sería el impacto más crítico para las poblaciones andinas?',
-    options: ['Aumento del turismo por formación de nuevas lagunas', 'Crisis hídrica severa por reducción de caudales en época seca, afectando agricultura, ganadería y consumo humano', 'Mejora de la producción agrícola por mayor temperatura', 'Incremento de la biodiversidad acuática en los ríos'],
+    text:
+        'La Cordillera Blanca alberga el 25 % de los glaciares tropicales del mundo. Si continúa la tendencia actual de retroceso, ¿cuál sería el impacto más crítico para las poblaciones andinas?',
+    options: [
+      'Aumento del turismo por formación de nuevas lagunas',
+      'Crisis hídrica severa por reducción de caudales en época seca, afectando agricultura, ganadería y consumo humano',
+      'Mejora de la producción agrícola por mayor temperatura',
+      'Incremento de la biodiversidad acuática en los ríos',
+    ],
     correctAnswer: 1,
-    explanation: 'Los glaciares regulan el caudal de los ríos en época seca; su desaparición generaría crisis hídrica severa para millones de personas que dependen de ellos.',
+    explanation:
+        'Los glaciares regulan el caudal de los ríos en época seca; su desaparición generaría crisis hídrica severa para millones de personas que dependen de ellos.',
   ),
   Question(
     id: 'cta_q511',
     topicId: 'cta_t4',
-    text: 'Un plan de desarrollo sostenible para una comunidad amazónica propone: (I) manejo forestal comunitario, (II) agricultura de tala y quema extensa, (III) ecoturismo, (IV) extracción de madera sin regulación. ¿Cuáles acciones son compatibles con el desarrollo sostenible según el Informe Brundtland?',
+    text:
+        'Un plan de desarrollo sostenible para una comunidad amazónica propone: (I) manejo forestal comunitario, (II) agricultura de tala y quema extensa, (III) ecoturismo, (IV) extracción de madera sin regulación. ¿Cuáles acciones son compatibles con el desarrollo sostenible según el Informe Brundtland?',
     options: ['I y II', 'I y III', 'II y IV', 'I, II, III y IV'],
     correctAnswer: 1,
-    explanation: 'El manejo forestal comunitario (I) y el ecoturismo (III) son compatibles con el desarrollo sostenible; la tala y quema extensa (II) y la extracción sin regulación (IV) agotan los recursos.',
+    explanation:
+        'El manejo forestal comunitario (I) y el ecoturismo (III) son compatibles con el desarrollo sostenible; la tala y quema extensa (II) y la extracción sin regulación (IV) agotan los recursos.',
   ),
   Question(
     id: 'cta_q512',
@@ -4105,436 +5910,768 @@ final List<Question> ctaQuestions = [
     text: '¿Cuál es el planeta más grande del Sistema Solar?',
     options: ['Saturno', 'Neptuno', 'Júpiter', 'Urano'],
     correctAnswer: 2,
-    explanation: 'Júpiter es el planeta más grande del Sistema Solar, con un diámetro ecuatorial de aproximadamente 142 984 km.',
+    explanation:
+        'Júpiter es el planeta más grande del Sistema Solar, con un diámetro ecuatorial de aproximadamente 142 984 km.',
   ),
   Question(
     id: 'cta_q513',
     topicId: 'cta_t4',
-    text: '¿Qué capa de la estructura interna de la Tierra es la más voluminosa y se extiende desde la corteza hasta el núcleo externo?',
+    text:
+        '¿Qué capa de la estructura interna de la Tierra es la más voluminosa y se extiende desde la corteza hasta el núcleo externo?',
     options: ['Corteza oceánica', 'Núcleo interno', 'Manto', 'Litosfera'],
     correctAnswer: 2,
-    explanation: 'El manto terrestre se extiende desde la base de la corteza (~35 km) hasta los 2 900 km de profundidad, constituyendo ~84 % del volumen de la Tierra.',
+    explanation:
+        'El manto terrestre se extiende desde la base de la corteza (~35 km) hasta los 2 900 km de profundidad, constituyendo ~84 % del volumen de la Tierra.',
   ),
   Question(
     id: 'cta_q514',
     topicId: 'cta_t4',
-    text: '¿Cuál es el gas que más contribuye al efecto invernadero de origen natural en la atmósfera terrestre?',
-    options: ['Dióxido de carbono (CO₂)', 'Metano (CH₄)', 'Vapor de agua (H₂O)', 'Óxido nitroso (N₂O)'],
+    text:
+        '¿Cuál es el gas que más contribuye al efecto invernadero de origen natural en la atmósfera terrestre?',
+    options: [
+      'Dióxido de carbono (CO₂)',
+      'Metano (CH₄)',
+      'Vapor de agua (H₂O)',
+      'Óxido nitroso (N₂O)',
+    ],
     correctAnswer: 2,
-    explanation: 'El vapor de agua es el gas de efecto invernadero más abundante y de mayor contribución al efecto invernadero natural, responsable de ~60 % de dicho efecto.',
+    explanation:
+        'El vapor de agua es el gas de efecto invernadero más abundante y de mayor contribución al efecto invernadero natural, responsable de ~60 % de dicho efecto.',
   ),
   Question(
     id: 'cta_q515',
     topicId: 'cta_t4',
-    text: '¿Qué nombre reciben los cuerpos rocosos que orbitan entre Marte y Júpiter, en una región denominada cinturón principal?',
+    text:
+        '¿Qué nombre reciben los cuerpos rocosos que orbitan entre Marte y Júpiter, en una región denominada cinturón principal?',
     options: ['Cometas', 'Meteoroides', 'Asteroides', 'Planetesimales'],
     correctAnswer: 2,
-    explanation: 'Los asteroides del cinturón principal orbitan entre Marte y Júpiter; son cuerpos rocosos y metálicos remanentes de la formación del Sistema Solar.',
+    explanation:
+        'Los asteroides del cinturón principal orbitan entre Marte y Júpiter; son cuerpos rocosos y metálicos remanentes de la formación del Sistema Solar.',
   ),
   Question(
     id: 'cta_q516',
     topicId: 'cta_t4',
-    text: '¿Cuánto tarda aproximadamente la Tierra en completar una vuelta alrededor del Sol (movimiento de traslación)?',
+    text:
+        '¿Cuánto tarda aproximadamente la Tierra en completar una vuelta alrededor del Sol (movimiento de traslación)?',
     options: ['24 horas', '28 días', '365,25 días', '687 días'],
     correctAnswer: 2,
-    explanation: 'La traslación terrestre dura aproximadamente 365,25 días (un año), motivo por el cual cada cuatro años se añade un día bisiesto.',
+    explanation:
+        'La traslación terrestre dura aproximadamente 365,25 días (un año), motivo por el cual cada cuatro años se añade un día bisiesto.',
   ),
   Question(
     id: 'cta_q517',
     topicId: 'cta_t4',
-    text: '¿Qué tipo de combustible fósil es el más utilizado para la generación de electricidad a nivel mundial?',
+    text:
+        '¿Qué tipo de combustible fósil es el más utilizado para la generación de electricidad a nivel mundial?',
     options: ['Petróleo', 'Gas natural', 'Carbón', 'Turba'],
     correctAnswer: 2,
-    explanation: 'El carbón ha sido históricamente el combustible fósil más utilizado para la generación eléctrica, aunque su participación está disminuyendo frente al gas natural y las renovables.',
+    explanation:
+        'El carbón ha sido históricamente el combustible fósil más utilizado para la generación eléctrica, aunque su participación está disminuyendo frente al gas natural y las renovables.',
   ),
   Question(
     id: 'cta_q518',
     topicId: 'cta_t4',
-    text: '¿Qué tipo de energía renovable aprovecha el calor interno de la Tierra?',
-    options: ['Energía eólica', 'Energía de biomasa', 'Energía geotérmica', 'Energía solar térmica'],
+    text:
+        '¿Qué tipo de energía renovable aprovecha el calor interno de la Tierra?',
+    options: [
+      'Energía eólica',
+      'Energía de biomasa',
+      'Energía geotérmica',
+      'Energía solar térmica',
+    ],
     correctAnswer: 2,
-    explanation: 'La energía geotérmica utiliza el calor proveniente del interior de la Tierra (magma, aguas termales) para generar electricidad o calefacción.',
+    explanation:
+        'La energía geotérmica utiliza el calor proveniente del interior de la Tierra (magma, aguas termales) para generar electricidad o calefacción.',
   ),
   Question(
     id: 'cta_q519',
     topicId: 'cta_t4',
-    text: '¿Qué planeta del Sistema Solar posee un sistema de anillos más prominente y visible?',
+    text:
+        '¿Qué planeta del Sistema Solar posee un sistema de anillos más prominente y visible?',
     options: ['Júpiter', 'Urano', 'Neptuno', 'Saturno'],
     correctAnswer: 3,
-    explanation: 'Saturno posee el sistema de anillos más extenso y visible del Sistema Solar, compuesto principalmente de partículas de hielo y roca.',
+    explanation:
+        'Saturno posee el sistema de anillos más extenso y visible del Sistema Solar, compuesto principalmente de partículas de hielo y roca.',
   ),
   Question(
     id: 'cta_q520',
     topicId: 'cta_t4',
     text: '¿Cuál es la composición principal del núcleo terrestre?',
-    options: ['Silicio y oxígeno', 'Hierro y níquel', 'Aluminio y magnesio', 'Calcio y potasio'],
+    options: [
+      'Silicio y oxígeno',
+      'Hierro y níquel',
+      'Aluminio y magnesio',
+      'Calcio y potasio',
+    ],
     correctAnswer: 1,
-    explanation: 'El núcleo terrestre está compuesto principalmente de hierro y níquel, con el núcleo externo en estado líquido y el interno en estado sólido.',
+    explanation:
+        'El núcleo terrestre está compuesto principalmente de hierro y níquel, con el núcleo externo en estado líquido y el interno en estado sólido.',
   ),
   Question(
     id: 'cta_q521',
     topicId: 'cta_t4',
-    text: 'Un aluvión es un flujo violento de agua, lodo y rocas. ¿Cuál fue uno de los aluviones más devastadores ocurridos en el Perú?',
-    options: ['Aluvión de Yungay (1970)', 'Terremoto de Pisco (2007)', 'Inundación de Iquitos (2012)', 'Erupción del Misti (1985)'],
+    text:
+        'Un aluvión es un flujo violento de agua, lodo y rocas. ¿Cuál fue uno de los aluviones más devastadores ocurridos en el Perú?',
+    options: [
+      'Aluvión de Yungay (1970)',
+      'Terremoto de Pisco (2007)',
+      'Inundación de Iquitos (2012)',
+      'Erupción del Misti (1985)',
+    ],
     correctAnswer: 0,
-    explanation: 'El aluvión de Yungay (1970), causado por el sismo de Áncash y el desprendimiento de una parte del nevado Huascarán, sepultó la ciudad de Yungay.',
+    explanation:
+        'El aluvión de Yungay (1970), causado por el sismo de Áncash y el desprendimiento de una parte del nevado Huascarán, sepultó la ciudad de Yungay.',
   ),
   Question(
     id: 'cta_q522',
     topicId: 'cta_t4',
-    text: '¿Cuál es el nombre del satélite natural más grande de Júpiter, que posee un océano subterráneo de agua líquida?',
+    text:
+        '¿Cuál es el nombre del satélite natural más grande de Júpiter, que posee un océano subterráneo de agua líquida?',
     options: ['Io', 'Calisto', 'Europa', 'Ganímedes'],
     correctAnswer: 3,
-    explanation: 'Ganímedes es el satélite más grande de Júpiter y del Sistema Solar. Sin embargo, Europa también posee un océano subterráneo. Ganímedes destaca por ser el mayor satélite.',
+    explanation:
+        'Ganímedes es el satélite más grande de Júpiter y del Sistema Solar. Sin embargo, Europa también posee un océano subterráneo. Ganímedes destaca por ser el mayor satélite.',
   ),
   Question(
     id: 'cta_q523',
     topicId: 'cta_t4',
-    text: '¿Qué tipo de roca se forma por la acumulación, compactación y cementación de sedimentos?',
-    options: ['Ígnea extrusiva', 'Metamórfica', 'Sedimentaria', 'Ígnea intrusiva'],
+    text:
+        '¿Qué tipo de roca se forma por la acumulación, compactación y cementación de sedimentos?',
+    options: [
+      'Ígnea extrusiva',
+      'Metamórfica',
+      'Sedimentaria',
+      'Ígnea intrusiva',
+    ],
     correctAnswer: 2,
-    explanation: 'Las rocas sedimentarias se forman por la acumulación de sedimentos (fragmentos de rocas, restos orgánicos o precipitados químicos) que se compactan y cementan.',
+    explanation:
+        'Las rocas sedimentarias se forman por la acumulación de sedimentos (fragmentos de rocas, restos orgánicos o precipitados químicos) que se compactan y cementan.',
   ),
   Question(
     id: 'cta_q524',
     topicId: 'cta_t4',
-    text: '¿Qué siglas identifican al Panel Intergubernamental sobre el Cambio Climático de la ONU?',
+    text:
+        '¿Qué siglas identifican al Panel Intergubernamental sobre el Cambio Climático de la ONU?',
     options: ['PNUMA', 'IPCC', 'CMNUCC', 'FAO'],
     correctAnswer: 1,
-    explanation: 'El IPCC (Intergovernmental Panel on Climate Change) es el organismo de la ONU que evalúa la ciencia del cambio climático y publica informes de evaluación periódicos.',
+    explanation:
+        'El IPCC (Intergovernmental Panel on Climate Change) es el organismo de la ONU que evalúa la ciencia del cambio climático y publica informes de evaluación periódicos.',
   ),
   Question(
     id: 'cta_q525',
     topicId: 'cta_t4',
     text: '¿En qué cordillera peruana se localiza el glaciar Pastoruri?',
-    options: ['Cordillera Negra', 'Cordillera Blanca', 'Cordillera Huayhuash', 'Cordillera Vilcanota'],
+    options: [
+      'Cordillera Negra',
+      'Cordillera Blanca',
+      'Cordillera Huayhuash',
+      'Cordillera Vilcanota',
+    ],
     correctAnswer: 1,
-    explanation: 'El glaciar Pastoruri se ubica en la Cordillera Blanca, departamento de Áncash, que alberga la mayor concentración de glaciares tropicales del mundo.',
+    explanation:
+        'El glaciar Pastoruri se ubica en la Cordillera Blanca, departamento de Áncash, que alberga la mayor concentración de glaciares tropicales del mundo.',
   ),
   Question(
     id: 'cta_q526',
     topicId: 'cta_t4',
-    text: '¿Cuál es el principal componente del gas natural utilizado como combustible fósil?',
-    options: ['Propano (C₃H₈)', 'Metano (CH₄)', 'Butano (C₄H₁₀)', 'Etano (C₂H₆)'],
+    text:
+        '¿Cuál es el principal componente del gas natural utilizado como combustible fósil?',
+    options: [
+      'Propano (C₃H₈)',
+      'Metano (CH₄)',
+      'Butano (C₄H₁₀)',
+      'Etano (C₂H₆)',
+    ],
     correctAnswer: 1,
-    explanation: 'El gas natural está compuesto principalmente por metano (CH₄), que constituye entre el 70 % y el 90 % de su volumen.',
+    explanation:
+        'El gas natural está compuesto principalmente por metano (CH₄), que constituye entre el 70 % y el 90 % de su volumen.',
   ),
   Question(
     id: 'cta_q527',
     topicId: 'cta_t4',
-    text: '¿Qué fenómeno astronómico ocurre cuando la Tierra se interpone entre el Sol y la Luna, proyectando su sombra sobre la Luna?',
-    options: ['Eclipse solar total', 'Eclipse solar parcial', 'Eclipse lunar', 'Tránsito planetario'],
+    text:
+        '¿Qué fenómeno astronómico ocurre cuando la Tierra se interpone entre el Sol y la Luna, proyectando su sombra sobre la Luna?',
+    options: [
+      'Eclipse solar total',
+      'Eclipse solar parcial',
+      'Eclipse lunar',
+      'Tránsito planetario',
+    ],
     correctAnswer: 2,
-    explanation: 'En un eclipse lunar, la Tierra se ubica entre el Sol y la Luna, y la sombra terrestre oscurece parcial o totalmente a la Luna.',
+    explanation:
+        'En un eclipse lunar, la Tierra se ubica entre el Sol y la Luna, y la sombra terrestre oscurece parcial o totalmente a la Luna.',
   ),
   Question(
     id: 'cta_q528',
     topicId: 'cta_t4',
-    text: '¿Cuál es la unidad de medida que se utiliza en la escala de magnitud de momento (Mw) para cuantificar la energía liberada por un sismo?',
-    options: ['Grados Celsius', 'Decibelios', 'La magnitud Mw es adimensional (escala logarítmica basada en el momento sísmico)', 'Pascales'],
+    text:
+        '¿Cuál es la unidad de medida que se utiliza en la escala de magnitud de momento (Mw) para cuantificar la energía liberada por un sismo?',
+    options: [
+      'Grados Celsius',
+      'Decibelios',
+      'La magnitud Mw es adimensional (escala logarítmica basada en el momento sísmico)',
+      'Pascales',
+    ],
     correctAnswer: 2,
-    explanation: 'La escala de magnitud de momento (Mw) es logarítmica y adimensional; se basa en el momento sísmico, que integra el área de ruptura, el desplazamiento y la rigidez de la roca.',
+    explanation:
+        'La escala de magnitud de momento (Mw) es logarítmica y adimensional; se basa en el momento sísmico, que integra el área de ruptura, el desplazamiento y la rigidez de la roca.',
   ),
   Question(
     id: 'cta_q529',
     topicId: 'cta_t4',
-    text: '¿Por qué Mercurio, a pesar de ser el planeta más cercano al Sol, no es el más caliente del Sistema Solar?',
-    options: ['Porque su núcleo absorbe todo el calor', 'Porque carece de atmósfera significativa que retenga el calor, mientras que Venus tiene una atmósfera densa de CO₂ que genera un intenso efecto invernadero', 'Porque refleja toda la radiación solar', 'Porque su órbita es más rápida que la de Venus'],
+    text:
+        '¿Por qué Mercurio, a pesar de ser el planeta más cercano al Sol, no es el más caliente del Sistema Solar?',
+    options: [
+      'Porque su núcleo absorbe todo el calor',
+      'Porque carece de atmósfera significativa que retenga el calor, mientras que Venus tiene una atmósfera densa de CO₂ que genera un intenso efecto invernadero',
+      'Porque refleja toda la radiación solar',
+      'Porque su órbita es más rápida que la de Venus',
+    ],
     correctAnswer: 1,
-    explanation: 'Mercurio no retiene calor por falta de atmósfera; Venus alcanza ~465 °C gracias a su densa atmósfera de CO₂ que atrapa el calor por efecto invernadero extremo.',
+    explanation:
+        'Mercurio no retiene calor por falta de atmósfera; Venus alcanza ~465 °C gracias a su densa atmósfera de CO₂ que atrapa el calor por efecto invernadero extremo.',
   ),
   Question(
     id: 'cta_q530',
     topicId: 'cta_t4',
-    text: '¿Qué relación existe entre la quema de combustibles fósiles y la acidificación de los océanos?',
-    options: ['No existe relación alguna', 'El CO₂ emitido es absorbido parcialmente por los océanos, formando ácido carbónico (H₂CO₃) que reduce el pH del agua', 'Los combustibles fósiles liberan ácido sulfúrico directamente al mar', 'La acidificación se debe al aumento de temperatura, no al CO₂'],
+    text:
+        '¿Qué relación existe entre la quema de combustibles fósiles y la acidificación de los océanos?',
+    options: [
+      'No existe relación alguna',
+      'El CO₂ emitido es absorbido parcialmente por los océanos, formando ácido carbónico (H₂CO₃) que reduce el pH del agua',
+      'Los combustibles fósiles liberan ácido sulfúrico directamente al mar',
+      'La acidificación se debe al aumento de temperatura, no al CO₂',
+    ],
     correctAnswer: 1,
-    explanation: 'Aproximadamente un 30 % del CO₂ emitido es absorbido por los océanos, donde reacciona con el agua formando H₂CO₃, que libera H⁺ y reduce el pH (acidificación).',
+    explanation:
+        'Aproximadamente un 30 % del CO₂ emitido es absorbido por los océanos, donde reacciona con el agua formando H₂CO₃, que libera H⁺ y reduce el pH (acidificación).',
   ),
   Question(
     id: 'cta_q531',
     topicId: 'cta_t4',
-    text: '¿Por qué las rocas sedimentarias son las más propensas a contener fósiles?',
-    options: ['Porque se forman a altas temperaturas que preservan los restos', 'Porque los organismos quedan enterrados bajo capas de sedimentos que los protegen de la descomposición, permitiendo su fosilización', 'Porque contienen minerales radioactivos que conservan el ADN', 'Porque se forman en el manto terrestre donde no hay oxígeno'],
+    text:
+        '¿Por qué las rocas sedimentarias son las más propensas a contener fósiles?',
+    options: [
+      'Porque se forman a altas temperaturas que preservan los restos',
+      'Porque los organismos quedan enterrados bajo capas de sedimentos que los protegen de la descomposición, permitiendo su fosilización',
+      'Porque contienen minerales radioactivos que conservan el ADN',
+      'Porque se forman en el manto terrestre donde no hay oxígeno',
+    ],
     correctAnswer: 1,
-    explanation: 'Los restos de organismos se depositan con los sedimentos y, al quedar sepultados, se protegen de la descomposición, permitiendo su mineralización y fosilización a lo largo de millones de años.',
+    explanation:
+        'Los restos de organismos se depositan con los sedimentos y, al quedar sepultados, se protegen de la descomposición, permitiendo su mineralización y fosilización a lo largo de millones de años.',
   ),
   Question(
     id: 'cta_q532',
     topicId: 'cta_t4',
-    text: 'El efecto invernadero intensificado aumenta la temperatura media global. ¿Cómo afecta esto al ciclo hidrológico?',
-    options: ['Reduce la evaporación porque el aire caliente retiene menos humedad', 'Acelera la evaporación, intensifica las precipitaciones y aumenta la frecuencia de fenómenos extremos como sequías e inundaciones', 'No tiene efecto sobre el ciclo del agua', 'Congela más agua en los polos por el aumento de nubosidad'],
+    text:
+        'El efecto invernadero intensificado aumenta la temperatura media global. ¿Cómo afecta esto al ciclo hidrológico?',
+    options: [
+      'Reduce la evaporación porque el aire caliente retiene menos humedad',
+      'Acelera la evaporación, intensifica las precipitaciones y aumenta la frecuencia de fenómenos extremos como sequías e inundaciones',
+      'No tiene efecto sobre el ciclo del agua',
+      'Congela más agua en los polos por el aumento de nubosidad',
+    ],
     correctAnswer: 1,
-    explanation: 'El calentamiento global intensifica el ciclo hidrológico: más evaporación, más vapor en la atmósfera, precipitaciones más intensas y mayor frecuencia de sequías e inundaciones.',
+    explanation:
+        'El calentamiento global intensifica el ciclo hidrológico: más evaporación, más vapor en la atmósfera, precipitaciones más intensas y mayor frecuencia de sequías e inundaciones.',
   ),
   Question(
     id: 'cta_q533',
     topicId: 'cta_t4',
-    text: '¿Por qué el Fenómeno El Niño afecta negativamente a la industria pesquera peruana?',
-    options: ['Porque aumenta la salinidad del mar, eliminando todas las especies', 'Porque el calentamiento de las aguas superficiales impide el afloramiento de nutrientes, reduciendo el fitoplancton y la anchoveta', 'Porque las corrientes marinas se detienen completamente', 'Porque los peces migran hacia el Atlántico'],
+    text:
+        '¿Por qué el Fenómeno El Niño afecta negativamente a la industria pesquera peruana?',
+    options: [
+      'Porque aumenta la salinidad del mar, eliminando todas las especies',
+      'Porque el calentamiento de las aguas superficiales impide el afloramiento de nutrientes, reduciendo el fitoplancton y la anchoveta',
+      'Porque las corrientes marinas se detienen completamente',
+      'Porque los peces migran hacia el Atlántico',
+    ],
     correctAnswer: 1,
-    explanation: 'El Niño debilita el afloramiento costero (upwelling) que trae nutrientes fríos a la superficie; sin nutrientes, disminuye el fitoplancton y la anchoveta, base de la pesca peruana.',
+    explanation:
+        'El Niño debilita el afloramiento costero (upwelling) que trae nutrientes fríos a la superficie; sin nutrientes, disminuye el fitoplancton y la anchoveta, base de la pesca peruana.',
   ),
   Question(
     id: 'cta_q534',
     topicId: 'cta_t4',
-    text: 'La energía eólica depende de la velocidad del viento. ¿Cuál es la relación entre la potencia generada y la velocidad del viento?',
-    options: ['La potencia es directamente proporcional a la velocidad', 'La potencia es inversamente proporcional a la velocidad', 'La potencia es proporcional al cubo de la velocidad del viento', 'La potencia no depende de la velocidad sino de la dirección'],
+    text:
+        'La energía eólica depende de la velocidad del viento. ¿Cuál es la relación entre la potencia generada y la velocidad del viento?',
+    options: [
+      'La potencia es directamente proporcional a la velocidad',
+      'La potencia es inversamente proporcional a la velocidad',
+      'La potencia es proporcional al cubo de la velocidad del viento',
+      'La potencia no depende de la velocidad sino de la dirección',
+    ],
     correctAnswer: 2,
-    explanation: 'La potencia eólica es proporcional al cubo de la velocidad del viento (P ∝ v³): si la velocidad se duplica, la potencia se multiplica por 8.',
+    explanation:
+        'La potencia eólica es proporcional al cubo de la velocidad del viento (P ∝ v³): si la velocidad se duplica, la potencia se multiplica por 8.',
   ),
   Question(
     id: 'cta_q535',
     topicId: 'cta_t4',
-    text: '¿Por qué se dice que la radiación cósmica de fondo de microondas (CMB) es una evidencia del Big Bang?',
-    options: ['Porque es radiación emitida actualmente por el Sol', 'Porque es el remanente térmico del universo primitivo caliente, enfriado por la expansión hasta convertirse en microondas (~2,7 K)', 'Porque es generada por agujeros negros modernos', 'Porque proviene exclusivamente de la Vía Láctea'],
+    text:
+        '¿Por qué se dice que la radiación cósmica de fondo de microondas (CMB) es una evidencia del Big Bang?',
+    options: [
+      'Porque es radiación emitida actualmente por el Sol',
+      'Porque es el remanente térmico del universo primitivo caliente, enfriado por la expansión hasta convertirse en microondas (~2,7 K)',
+      'Porque es generada por agujeros negros modernos',
+      'Porque proviene exclusivamente de la Vía Láctea',
+    ],
     correctAnswer: 1,
-    explanation: 'La CMB es radiación térmica residual del Big Bang; cuando el universo se enfrió lo suficiente (~380 000 años después), los fotones se desacoplaron de la materia y hoy se observan como microondas a ~2,7 K.',
+    explanation:
+        'La CMB es radiación térmica residual del Big Bang; cuando el universo se enfrió lo suficiente (~380 000 años después), los fotones se desacoplaron de la materia y hoy se observan como microondas a ~2,7 K.',
   ),
   Question(
     id: 'cta_q536',
     topicId: 'cta_t4',
-    text: '¿Qué sucede con las estaciones del año en el hemisferio sur cuando la Tierra se encuentra en el afelio (punto más alejado del Sol)?',
-    options: ['Se produce el invierno porque la Tierra está más lejos del Sol', 'Se produce el verano porque la inclinación axial hace que el hemisferio sur reciba más radiación directa, independientemente de la distancia al Sol', 'No hay estaciones definidas durante el afelio', 'Se produce el otoño'],
+    text:
+        '¿Qué sucede con las estaciones del año en el hemisferio sur cuando la Tierra se encuentra en el afelio (punto más alejado del Sol)?',
+    options: [
+      'Se produce el invierno porque la Tierra está más lejos del Sol',
+      'Se produce el verano porque la inclinación axial hace que el hemisferio sur reciba más radiación directa, independientemente de la distancia al Sol',
+      'No hay estaciones definidas durante el afelio',
+      'Se produce el otoño',
+    ],
     correctAnswer: 1,
-    explanation: 'El afelio ocurre en julio; sin embargo, el hemisferio sur experimenta invierno por la inclinación axial. Cuando la Tierra pasa el afelio (julio), el hemisferio sur tiene invierno. La inclinación del eje, no la distancia al Sol, determina las estaciones.',
+    explanation:
+        'El afelio ocurre en julio; sin embargo, el hemisferio sur experimenta invierno por la inclinación axial. Cuando la Tierra pasa el afelio (julio), el hemisferio sur tiene invierno. La inclinación del eje, no la distancia al Sol, determina las estaciones.',
   ),
   Question(
     id: 'cta_q537',
     topicId: 'cta_t4',
-    text: 'Los manglares costeros del norte peruano funcionan como barreras naturales. ¿Cuál es su principal función de protección?',
-    options: ['Aumentar la velocidad de las corrientes marinas', 'Amortiguar el oleaje, proteger contra marejadas, retener sedimentos y ser hábitat de biodiversidad', 'Generar contaminación por materia orgánica', 'Reducir la salinidad del océano'],
+    text:
+        'Los manglares costeros del norte peruano funcionan como barreras naturales. ¿Cuál es su principal función de protección?',
+    options: [
+      'Aumentar la velocidad de las corrientes marinas',
+      'Amortiguar el oleaje, proteger contra marejadas, retener sedimentos y ser hábitat de biodiversidad',
+      'Generar contaminación por materia orgánica',
+      'Reducir la salinidad del océano',
+    ],
     correctAnswer: 1,
-    explanation: 'Los manglares actúan como barreras naturales contra oleaje y marejadas, retienen sedimentos, filtran contaminantes y albergan una alta biodiversidad marina y costera.',
+    explanation:
+        'Los manglares actúan como barreras naturales contra oleaje y marejadas, retienen sedimentos, filtran contaminantes y albergan una alta biodiversidad marina y costera.',
   ),
   Question(
     id: 'cta_q538',
     topicId: 'cta_t4',
-    text: 'El Protocolo de Montreal ha sido exitoso en reducir la producción de CFC. ¿Por qué la capa de ozono no se ha recuperado completamente aún?',
-    options: ['Porque los CFC nunca afectaron realmente la capa de ozono', 'Porque los CFC ya liberados tienen una vida media larga (50-100 años) y continúan destruyendo ozono en la estratosfera', 'Porque la producción de CFC ha aumentado desde 1987', 'Porque el ozono no se regenera naturalmente'],
+    text:
+        'El Protocolo de Montreal ha sido exitoso en reducir la producción de CFC. ¿Por qué la capa de ozono no se ha recuperado completamente aún?',
+    options: [
+      'Porque los CFC nunca afectaron realmente la capa de ozono',
+      'Porque los CFC ya liberados tienen una vida media larga (50-100 años) y continúan destruyendo ozono en la estratosfera',
+      'Porque la producción de CFC ha aumentado desde 1987',
+      'Porque el ozono no se regenera naturalmente',
+    ],
     correctAnswer: 1,
-    explanation: 'Los CFC tienen una vida media de 50-100 años en la atmósfera; los que ya fueron emitidos siguen liberando cloro y destruyendo ozono, por lo que la recuperación es gradual.',
+    explanation:
+        'Los CFC tienen una vida media de 50-100 años en la atmósfera; los que ya fueron emitidos siguen liberando cloro y destruyendo ozono, por lo que la recuperación es gradual.',
   ),
   Question(
     id: 'cta_q539',
     topicId: 'cta_t4',
-    text: '¿Por qué la tala ilegal en la Amazonía peruana contribuye al cambio climático global?',
-    options: ['Porque aumenta la producción de oxígeno', 'Porque los árboles talados ya no absorben CO₂ y la biomasa quemada o descompuesta libera el carbono almacenado a la atmósfera', 'Porque la tala crea nuevos sumideros de carbono', 'Porque genera ozono estratosférico'],
+    text:
+        '¿Por qué la tala ilegal en la Amazonía peruana contribuye al cambio climático global?',
+    options: [
+      'Porque aumenta la producción de oxígeno',
+      'Porque los árboles talados ya no absorben CO₂ y la biomasa quemada o descompuesta libera el carbono almacenado a la atmósfera',
+      'Porque la tala crea nuevos sumideros de carbono',
+      'Porque genera ozono estratosférico',
+    ],
     correctAnswer: 1,
-    explanation: 'Los bosques amazónicos son sumideros de carbono; al ser talados, dejan de absorber CO₂ y su biomasa en descomposición o quema libera grandes cantidades de carbono a la atmósfera.',
+    explanation:
+        'Los bosques amazónicos son sumideros de carbono; al ser talados, dejan de absorber CO₂ y su biomasa en descomposición o quema libera grandes cantidades de carbono a la atmósfera.',
   ),
   Question(
     id: 'cta_q540',
     topicId: 'cta_t4',
-    text: '¿Cuál es la diferencia principal entre la corteza continental y la corteza oceánica?',
-    options: ['La corteza continental es más delgada y densa que la oceánica', 'La corteza continental es más gruesa (30-70 km) y menos densa (granítica), mientras que la oceánica es más delgada (5-10 km) y más densa (basáltica)', 'Ambas tienen el mismo grosor y composición', 'La corteza oceánica es más antigua que la continental en todos los casos'],
+    text:
+        '¿Cuál es la diferencia principal entre la corteza continental y la corteza oceánica?',
+    options: [
+      'La corteza continental es más delgada y densa que la oceánica',
+      'La corteza continental es más gruesa (30-70 km) y menos densa (granítica), mientras que la oceánica es más delgada (5-10 km) y más densa (basáltica)',
+      'Ambas tienen el mismo grosor y composición',
+      'La corteza oceánica es más antigua que la continental en todos los casos',
+    ],
     correctAnswer: 1,
-    explanation: 'La corteza continental es granítica, más gruesa (~30-70 km) y menos densa; la oceánica es basáltica, más delgada (~5-10 km) y más densa.',
+    explanation:
+        'La corteza continental es granítica, más gruesa (~30-70 km) y menos densa; la oceánica es basáltica, más delgada (~5-10 km) y más densa.',
   ),
   Question(
     id: 'cta_q541',
     topicId: 'cta_t4',
     text: 'La «sabanización» de la Amazonía es un escenario en el cual:',
-    options: ['La selva tropical se convierte gradualmente en sabana seca por pérdida de humedad y retroalimentación positiva entre deforestación y cambio climático', 'La sabana africana se extiende hasta Sudamérica', 'Los ríos amazónicos se secan por sobreexplotación minera exclusivamente', 'Los bosques crecen más rápido por el aumento de CO₂'],
+    options: [
+      'La selva tropical se convierte gradualmente en sabana seca por pérdida de humedad y retroalimentación positiva entre deforestación y cambio climático',
+      'La sabana africana se extiende hasta Sudamérica',
+      'Los ríos amazónicos se secan por sobreexplotación minera exclusivamente',
+      'Los bosques crecen más rápido por el aumento de CO₂',
+    ],
     correctAnswer: 0,
-    explanation: 'La sabanización implica que la deforestación y el calentamiento reducen la humedad, creando un ciclo de retroalimentación positiva que convierte la selva húmeda en sabana seca.',
+    explanation:
+        'La sabanización implica que la deforestación y el calentamiento reducen la humedad, creando un ciclo de retroalimentación positiva que convierte la selva húmeda en sabana seca.',
   ),
   Question(
     id: 'cta_q542',
     topicId: 'cta_t4',
-    text: '¿Por qué la contaminación hídrica por metales pesados (mercurio) es particularmente grave en la Amazonía peruana?',
-    options: ['Porque el mercurio se evapora rápidamente sin causar daño', 'Porque el mercurio utilizado en la minería artesanal de oro se bioacumula en la cadena alimentaria, afectando peces y comunidades indígenas', 'Porque el mercurio solo afecta a organismos marinos, no fluviales', 'Porque los ríos amazónicos naturalmente contienen altas concentraciones de mercurio'],
+    text:
+        '¿Por qué la contaminación hídrica por metales pesados (mercurio) es particularmente grave en la Amazonía peruana?',
+    options: [
+      'Porque el mercurio se evapora rápidamente sin causar daño',
+      'Porque el mercurio utilizado en la minería artesanal de oro se bioacumula en la cadena alimentaria, afectando peces y comunidades indígenas',
+      'Porque el mercurio solo afecta a organismos marinos, no fluviales',
+      'Porque los ríos amazónicos naturalmente contienen altas concentraciones de mercurio',
+    ],
     correctAnswer: 1,
-    explanation: 'La minería artesanal de oro usa mercurio que se vierte a los ríos; este se metila y se bioacumula en peces y la cadena trófica, afectando gravemente la salud de comunidades ribereñas.',
+    explanation:
+        'La minería artesanal de oro usa mercurio que se vierte a los ríos; este se metila y se bioacumula en peces y la cadena trófica, afectando gravemente la salud de comunidades ribereñas.',
   ),
   Question(
     id: 'cta_q543',
     topicId: 'cta_t4',
     text: '¿Cuál es la diferencia fundamental entre un meteoro y un meteorito?',
-    options: ['Un meteoro es un cuerpo en el espacio y un meteorito es una estrella', 'Un meteoro es el fenómeno luminoso al entrar a la atmósfera; un meteorito es el fragmento que sobrevive y llega a la superficie', 'Son términos sinónimos', 'Un meteorito solo existe en Marte'],
+    options: [
+      'Un meteoro es un cuerpo en el espacio y un meteorito es una estrella',
+      'Un meteoro es el fenómeno luminoso al entrar a la atmósfera; un meteorito es el fragmento que sobrevive y llega a la superficie',
+      'Son términos sinónimos',
+      'Un meteorito solo existe en Marte',
+    ],
     correctAnswer: 1,
-    explanation: 'Un meteoroide que entra en la atmósfera produce un meteoro (estrella fugaz); si un fragmento sobrevive al ingreso y alcanza la superficie, se denomina meteorito.',
+    explanation:
+        'Un meteoroide que entra en la atmósfera produce un meteoro (estrella fugaz); si un fragmento sobrevive al ingreso y alcanza la superficie, se denomina meteorito.',
   ),
   Question(
     id: 'cta_q544',
     topicId: 'cta_t4',
     text: 'Las mareas muertas (mareas de menor amplitud) ocurren cuando:',
-    options: ['La Luna está en fase de Luna Nueva', 'La Luna está en Cuarto Creciente o Cuarto Menguante, y las fuerzas gravitacionales del Sol y la Luna actúan en ángulo recto', 'La Luna está en Luna Llena', 'La Luna está en su punto más cercano a la Tierra (perigeo)'],
+    options: [
+      'La Luna está en fase de Luna Nueva',
+      'La Luna está en Cuarto Creciente o Cuarto Menguante, y las fuerzas gravitacionales del Sol y la Luna actúan en ángulo recto',
+      'La Luna está en Luna Llena',
+      'La Luna está en su punto más cercano a la Tierra (perigeo)',
+    ],
     correctAnswer: 1,
-    explanation: 'En cuartos (creciente o menguante), el Sol y la Luna forman un ángulo de 90° respecto a la Tierra; sus fuerzas gravitacionales se contrarrestan parcialmente, produciendo mareas muertas.',
+    explanation:
+        'En cuartos (creciente o menguante), el Sol y la Luna forman un ángulo de 90° respecto a la Tierra; sus fuerzas gravitacionales se contrarrestan parcialmente, produciendo mareas muertas.',
   ),
   Question(
     id: 'cta_q545',
     topicId: 'cta_t4',
-    text: 'La Corriente de Humboldt transporta aguas frías a lo largo de la costa peruana. ¿Cómo influye esto en el clima de la costa?',
-    options: ['Genera un clima tropical lluvioso', 'Enfría la superficie del mar, favoreciendo un clima árido y con neblinas (garúa) en la costa', 'Calienta la atmósfera generando huracanes', 'No tiene influencia sobre el clima costero'],
+    text:
+        'La Corriente de Humboldt transporta aguas frías a lo largo de la costa peruana. ¿Cómo influye esto en el clima de la costa?',
+    options: [
+      'Genera un clima tropical lluvioso',
+      'Enfría la superficie del mar, favoreciendo un clima árido y con neblinas (garúa) en la costa',
+      'Calienta la atmósfera generando huracanes',
+      'No tiene influencia sobre el clima costero',
+    ],
     correctAnswer: 1,
-    explanation: 'La Corriente de Humboldt enfría las aguas superficiales, estabiliza la atmósfera, inhibe lluvias y genera neblinas costeras (garúa), creando el clima desértico de la costa peruana.',
+    explanation:
+        'La Corriente de Humboldt enfría las aguas superficiales, estabiliza la atmósfera, inhibe lluvias y genera neblinas costeras (garúa), creando el clima desértico de la costa peruana.',
   ),
   Question(
     id: 'cta_q546',
     topicId: 'cta_t4',
-    text: 'Los residuos sólidos plásticos representan un problema ambiental grave porque:',
-    options: ['Se biodegradan rápidamente en días', 'Tardan cientos de años en degradarse, se fragmentan en microplásticos que contaminan suelos, aguas y entran en la cadena alimentaria', 'Son completamente reciclables sin pérdida de calidad', 'No generan contaminación en el océano'],
+    text:
+        'Los residuos sólidos plásticos representan un problema ambiental grave porque:',
+    options: [
+      'Se biodegradan rápidamente en días',
+      'Tardan cientos de años en degradarse, se fragmentan en microplásticos que contaminan suelos, aguas y entran en la cadena alimentaria',
+      'Son completamente reciclables sin pérdida de calidad',
+      'No generan contaminación en el océano',
+    ],
     correctAnswer: 1,
-    explanation: 'Los plásticos tardan 100-1 000 años en degradarse y se fragmentan en microplásticos (<5 mm) que contaminan ecosistemas acuáticos y terrestres, ingresando a la cadena trófica.',
+    explanation:
+        'Los plásticos tardan 100-1 000 años en degradarse y se fragmentan en microplásticos (<5 mm) que contaminan ecosistemas acuáticos y terrestres, ingresando a la cadena trófica.',
   ),
   Question(
     id: 'cta_q547',
     topicId: 'cta_t4',
-    text: '¿Por qué las estrellas de tipo O (azules) tienen una vida más corta que las estrellas de tipo M (rojas)?',
-    options: ['Porque las estrellas azules son más pequeñas y consumen menos combustible', 'Porque las estrellas azules son mucho más masivas y consumen su combustible nuclear a un ritmo enormemente mayor', 'Porque las estrellas rojas están más cerca del centro galáctico', 'Porque las estrellas azules no realizan fusión nuclear'],
+    text:
+        '¿Por qué las estrellas de tipo O (azules) tienen una vida más corta que las estrellas de tipo M (rojas)?',
+    options: [
+      'Porque las estrellas azules son más pequeñas y consumen menos combustible',
+      'Porque las estrellas azules son mucho más masivas y consumen su combustible nuclear a un ritmo enormemente mayor',
+      'Porque las estrellas rojas están más cerca del centro galáctico',
+      'Porque las estrellas azules no realizan fusión nuclear',
+    ],
     correctAnswer: 1,
-    explanation: 'Las estrellas tipo O son muy masivas y luminosas; fusionan su hidrógeno a tasas enormemente superiores, agotando su combustible en millones de años, mientras que las tipo M viven billones.',
+    explanation:
+        'Las estrellas tipo O son muy masivas y luminosas; fusionan su hidrógeno a tasas enormemente superiores, agotando su combustible en millones de años, mientras que las tipo M viven billones.',
   ),
   Question(
     id: 'cta_q548',
     topicId: 'cta_t4',
-    text: '¿Cuál es la importancia del concepto de «explotación racional de recursos naturales»?',
-    options: ['Prohíbe completamente el uso de recursos naturales', 'Promueve el uso de los recursos satisfaciendo necesidades actuales sin agotarlos, asegurando su disponibilidad para futuras generaciones', 'Permite la explotación ilimitada siempre que sea rentable', 'Solo se aplica a los recursos no renovables'],
+    text:
+        '¿Cuál es la importancia del concepto de «explotación racional de recursos naturales»?',
+    options: [
+      'Prohíbe completamente el uso de recursos naturales',
+      'Promueve el uso de los recursos satisfaciendo necesidades actuales sin agotarlos, asegurando su disponibilidad para futuras generaciones',
+      'Permite la explotación ilimitada siempre que sea rentable',
+      'Solo se aplica a los recursos no renovables',
+    ],
     correctAnswer: 1,
-    explanation: 'La explotación racional implica usar los recursos naturales de forma eficiente y sostenible, garantizando su renovación y disponibilidad a largo plazo.',
+    explanation:
+        'La explotación racional implica usar los recursos naturales de forma eficiente y sostenible, garantizando su renovación y disponibilidad a largo plazo.',
   ),
   Question(
     id: 'cta_q549',
     topicId: 'cta_t4',
-    text: 'En 2017, el Perú sufrió el «Niño Costero», con lluvias devastadoras. ¿Qué factores combinados explican la magnitud de los desastres (huaicos, inundaciones) ocurridos?',
-    options: ['Solo el calentamiento anómalo del mar frente a la costa', 'El calentamiento anómalo del mar, la deforestación de cuencas, la urbanización desordenada en zonas de riesgo y la falta de infraestructura de drenaje', 'Exclusivamente la actividad volcánica del Cinturón de Fuego', 'La baja temperatura del mar y la sequía previa'],
+    text:
+        'En 2017, el Perú sufrió el «Niño Costero», con lluvias devastadoras. ¿Qué factores combinados explican la magnitud de los desastres (huaicos, inundaciones) ocurridos?',
+    options: [
+      'Solo el calentamiento anómalo del mar frente a la costa',
+      'El calentamiento anómalo del mar, la deforestación de cuencas, la urbanización desordenada en zonas de riesgo y la falta de infraestructura de drenaje',
+      'Exclusivamente la actividad volcánica del Cinturón de Fuego',
+      'La baja temperatura del mar y la sequía previa',
+    ],
     correctAnswer: 1,
-    explanation: 'El Niño Costero 2017 combinó el calentamiento anómalo del mar con factores de vulnerabilidad: deforestación, urbanización en cauces de ríos y deficiente infraestructura, amplificando los desastres.',
+    explanation:
+        'El Niño Costero 2017 combinó el calentamiento anómalo del mar con factores de vulnerabilidad: deforestación, urbanización en cauces de ríos y deficiente infraestructura, amplificando los desastres.',
   ),
   Question(
     id: 'cta_q550',
     topicId: 'cta_t4',
-    text: 'Una fábrica emite 1 000 toneladas anuales de SO₂. Si la meta de regulación ambiental es reducir un 80 % las emisiones, ¿cuántas toneladas de SO₂ podría emitir como máximo después de implementar los controles?',
-    options: ['800 toneladas', '200 toneladas', '100 toneladas', '500 toneladas'],
+    text:
+        'Una fábrica emite 1 000 toneladas anuales de SO₂. Si la meta de regulación ambiental es reducir un 80 % las emisiones, ¿cuántas toneladas de SO₂ podría emitir como máximo después de implementar los controles?',
+    options: [
+      '800 toneladas',
+      '200 toneladas',
+      '100 toneladas',
+      '500 toneladas',
+    ],
     correctAnswer: 1,
-    explanation: '80 % de reducción: 1 000 × 0,80 = 800 ton de reducción. Emisión permitida: 1 000 − 800 = 200 toneladas anuales.',
+    explanation:
+        '80 % de reducción: 1 000 × 0,80 = 800 ton de reducción. Emisión permitida: 1 000 − 800 = 200 toneladas anuales.',
   ),
   Question(
     id: 'cta_q551',
     topicId: 'cta_t4',
-    text: 'Se analiza una muestra de roca que presenta bandas alternadas de minerales claros y oscuros, deformados por presión. ¿Qué tipo de roca y qué ejemplo es más probable?',
-    options: ['Roca sedimentaria, como la arenisca', 'Roca ígnea extrusiva, como la obsidiana', 'Roca metamórfica foliada, como el gneis', 'Roca ígnea intrusiva, como el granito'],
+    text:
+        'Se analiza una muestra de roca que presenta bandas alternadas de minerales claros y oscuros, deformados por presión. ¿Qué tipo de roca y qué ejemplo es más probable?',
+    options: [
+      'Roca sedimentaria, como la arenisca',
+      'Roca ígnea extrusiva, como la obsidiana',
+      'Roca metamórfica foliada, como el gneis',
+      'Roca ígnea intrusiva, como el granito',
+    ],
     correctAnswer: 2,
-    explanation: 'Las bandas alternadas de minerales claros y oscuros con deformación son características de rocas metamórficas foliadas como el gneis, formado por alta presión y temperatura.',
+    explanation:
+        'Las bandas alternadas de minerales claros y oscuros con deformación son características de rocas metamórficas foliadas como el gneis, formado por alta presión y temperatura.',
   ),
   Question(
     id: 'cta_q552',
     topicId: 'cta_t4',
-    text: 'Un ingeniero ambiental propone capturar CO₂ de una planta de carbón y almacenarlo en formaciones geológicas profundas (CCS). ¿Cuál es la principal limitación de esta tecnología?',
-    options: ['No es técnicamente posible capturar CO₂', 'El alto costo energético y económico del proceso de captura, transporte y almacenamiento, y el riesgo de fugas a largo plazo', 'El CO₂ capturado se convierte automáticamente en oxígeno', 'Solo funciona con gas natural, no con carbón'],
+    text:
+        'Un ingeniero ambiental propone capturar CO₂ de una planta de carbón y almacenarlo en formaciones geológicas profundas (CCS). ¿Cuál es la principal limitación de esta tecnología?',
+    options: [
+      'No es técnicamente posible capturar CO₂',
+      'El alto costo energético y económico del proceso de captura, transporte y almacenamiento, y el riesgo de fugas a largo plazo',
+      'El CO₂ capturado se convierte automáticamente en oxígeno',
+      'Solo funciona con gas natural, no con carbón',
+    ],
     correctAnswer: 1,
-    explanation: 'La Captura y Almacenamiento de Carbono (CCS) es técnicamente viable pero costosa, consume energía significativa y presenta riesgos de fugas del CO₂ almacenado a largo plazo.',
+    explanation:
+        'La Captura y Almacenamiento de Carbono (CCS) es técnicamente viable pero costosa, consume energía significativa y presenta riesgos de fugas del CO₂ almacenado a largo plazo.',
   ),
   Question(
     id: 'cta_q553',
     topicId: 'cta_t4',
-    text: 'Un científico compara la composición atmosférica de Venus (96,5 % CO₂), Marte (95 % CO₂) y la Tierra (0,04 % CO₂). ¿Por qué Venus es mucho más caliente que Marte si ambos tienen atmósferas dominadas por CO₂?',
-    options: ['Porque Marte está más cerca del Sol', 'Porque Venus tiene una atmósfera mucho más densa (presión ~92 atm) que genera un efecto invernadero extremadamente intenso, mientras que Marte tiene una atmósfera muy tenue', 'Porque Marte tiene más volcanes activos', 'Porque Venus carece de efecto invernadero'],
+    text:
+        'Un científico compara la composición atmosférica de Venus (96,5 % CO₂), Marte (95 % CO₂) y la Tierra (0,04 % CO₂). ¿Por qué Venus es mucho más caliente que Marte si ambos tienen atmósferas dominadas por CO₂?',
+    options: [
+      'Porque Marte está más cerca del Sol',
+      'Porque Venus tiene una atmósfera mucho más densa (presión ~92 atm) que genera un efecto invernadero extremadamente intenso, mientras que Marte tiene una atmósfera muy tenue',
+      'Porque Marte tiene más volcanes activos',
+      'Porque Venus carece de efecto invernadero',
+    ],
     correctAnswer: 1,
-    explanation: 'Aunque ambos tienen altos % de CO₂, Venus posee una atmósfera ~100 veces más densa que la Tierra, generando un efecto invernadero masivo; la atmósfera de Marte es ~100 veces más tenue.',
+    explanation:
+        'Aunque ambos tienen altos % de CO₂, Venus posee una atmósfera ~100 veces más densa que la Tierra, generando un efecto invernadero masivo; la atmósfera de Marte es ~100 veces más tenue.',
   ),
   Question(
     id: 'cta_q554',
     topicId: 'cta_t4',
-    text: 'Una comunidad campesina en Junín depende del glaciar Huaytapallana para su agua. Si el glaciar desaparece completamente, ¿cuál sería la estrategia de adaptación más sostenible?',
-    options: ['Trasladar toda la población a Lima', 'Implementar cosecha de agua de lluvia, construcción de reservorios y manejo eficiente de microcuencas', 'Perforar pozos profundos ilimitadamente', 'Esperar a que el glaciar se regenere naturalmente'],
+    text:
+        'Una comunidad campesina en Junín depende del glaciar Huaytapallana para su agua. Si el glaciar desaparece completamente, ¿cuál sería la estrategia de adaptación más sostenible?',
+    options: [
+      'Trasladar toda la población a Lima',
+      'Implementar cosecha de agua de lluvia, construcción de reservorios y manejo eficiente de microcuencas',
+      'Perforar pozos profundos ilimitadamente',
+      'Esperar a que el glaciar se regenere naturalmente',
+    ],
     correctAnswer: 1,
-    explanation: 'La cosecha de agua de lluvia, los reservorios y el manejo integral de microcuencas son estrategias sostenibles de adaptación ante la pérdida glaciar, asegurando el recurso hídrico.',
+    explanation:
+        'La cosecha de agua de lluvia, los reservorios y el manejo integral de microcuencas son estrategias sostenibles de adaptación ante la pérdida glaciar, asegurando el recurso hídrico.',
   ),
   Question(
     id: 'cta_q555',
     topicId: 'cta_t4',
-    text: 'Si un planeta extrasolar tiene el doble de la masa terrestre y orbita a la misma distancia de su estrella (tipo G) que la Tierra del Sol, ¿qué factor sería más determinante para evaluar su habitabilidad?',
-    options: ['Únicamente su masa', 'La presencia y composición de su atmósfera, que determine si puede mantener agua líquida en superficie', 'Su velocidad de rotación', 'El número de satélites naturales que posea'],
+    text:
+        'Si un planeta extrasolar tiene el doble de la masa terrestre y orbita a la misma distancia de su estrella (tipo G) que la Tierra del Sol, ¿qué factor sería más determinante para evaluar su habitabilidad?',
+    options: [
+      'Únicamente su masa',
+      'La presencia y composición de su atmósfera, que determine si puede mantener agua líquida en superficie',
+      'Su velocidad de rotación',
+      'El número de satélites naturales que posea',
+    ],
     correctAnswer: 1,
-    explanation: 'La habitabilidad depende fundamentalmente de que el planeta pueda retener una atmósfera adecuada que permita mantener agua líquida en superficie (temperatura y presión correctas).',
+    explanation:
+        'La habitabilidad depende fundamentalmente de que el planeta pueda retener una atmósfera adecuada que permita mantener agua líquida en superficie (temperatura y presión correctas).',
   ),
   Question(
     id: 'cta_q556',
     topicId: 'cta_t4',
-    text: 'Un policía ambiental encuentra que una empresa deposita residuos tóxicos cerca de un río amazónico. Según la cadena de impactos, ¿cuál es la secuencia correcta de afectación ambiental?',
-    options: ['Contaminación del aire → erosión del suelo → muerte de peces', 'Contaminación del río → bioacumulación en organismos acuáticos → afectación de comunidades que consumen peces → daños a la salud humana', 'Muerte de aves → contaminación del río → afectación del suelo', 'Erosión del suelo → deforestación → contaminación hídrica'],
+    text:
+        'Un policía ambiental encuentra que una empresa deposita residuos tóxicos cerca de un río amazónico. Según la cadena de impactos, ¿cuál es la secuencia correcta de afectación ambiental?',
+    options: [
+      'Contaminación del aire → erosión del suelo → muerte de peces',
+      'Contaminación del río → bioacumulación en organismos acuáticos → afectación de comunidades que consumen peces → daños a la salud humana',
+      'Muerte de aves → contaminación del río → afectación del suelo',
+      'Erosión del suelo → deforestación → contaminación hídrica',
+    ],
     correctAnswer: 1,
-    explanation: 'Los tóxicos contaminan el agua, se bioacumulan en peces y otros organismos, y al ser consumidos por las comunidades ribereñas causan intoxicación y problemas de salud crónicos.',
+    explanation:
+        'Los tóxicos contaminan el agua, se bioacumulan en peces y otros organismos, y al ser consumidos por las comunidades ribereñas causan intoxicación y problemas de salud crónicos.',
   ),
   Question(
     id: 'cta_q557',
     topicId: 'cta_t4',
-    text: 'Una estación meteorológica registra que la temperatura media anual de una localidad andina aumentó 1,2 °C en los últimos 30 años. Si esta tendencia se mantiene linealmente, ¿cuál sería el aumento total en 50 años desde el inicio?',
+    text:
+        'Una estación meteorológica registra que la temperatura media anual de una localidad andina aumentó 1,2 °C en los últimos 30 años. Si esta tendencia se mantiene linealmente, ¿cuál sería el aumento total en 50 años desde el inicio?',
     options: ['1,2 °C', '1,5 °C', '2,0 °C', '2,4 °C'],
     correctAnswer: 2,
-    explanation: 'Tasa = 1,2 °C / 30 años = 0,04 °C/año. En 50 años: 0,04 × 50 = 2,0 °C de aumento total si la tendencia se mantiene lineal.',
+    explanation:
+        'Tasa = 1,2 °C / 30 años = 0,04 °C/año. En 50 años: 0,04 × 50 = 2,0 °C de aumento total si la tendencia se mantiene lineal.',
   ),
   Question(
     id: 'cta_q558',
     topicId: 'cta_t4',
-    text: 'El Perú tiene potencial para energía geotérmica en zonas volcánicas del sur. ¿Qué ventaja tiene la geotermia sobre la energía solar en estas regiones?',
-    options: ['La geotermia es más barata de instalar siempre', 'La geotermia proporciona energía continua (base load) las 24 horas, independientemente de las condiciones climáticas, mientras que la solar es intermitente', 'La energía solar genera más potencia que la geotérmica', 'La geotermia no requiere ninguna infraestructura'],
+    text:
+        'El Perú tiene potencial para energía geotérmica en zonas volcánicas del sur. ¿Qué ventaja tiene la geotermia sobre la energía solar en estas regiones?',
+    options: [
+      'La geotermia es más barata de instalar siempre',
+      'La geotermia proporciona energía continua (base load) las 24 horas, independientemente de las condiciones climáticas, mientras que la solar es intermitente',
+      'La energía solar genera más potencia que la geotérmica',
+      'La geotermia no requiere ninguna infraestructura',
+    ],
     correctAnswer: 1,
-    explanation: 'La geotermia produce energía constante (24/7) sin depender del clima ni la hora del día, lo que la convierte en fuente de carga base, a diferencia de la solar que es intermitente.',
+    explanation:
+        'La geotermia produce energía constante (24/7) sin depender del clima ni la hora del día, lo que la convierte en fuente de carga base, a diferencia de la solar que es intermitente.',
   ),
   Question(
     id: 'cta_q559',
     topicId: 'cta_t4',
-    text: 'Analiza: Una galaxia elíptica contiene principalmente estrellas rojas viejas y casi nada de gas interestelar. ¿Qué se puede inferir sobre su formación estelar actual?',
-    options: ['Tiene alta formación estelar activa', 'La formación de nuevas estrellas es casi nula, porque ha agotado o perdido la mayor parte de su gas interestelar', 'Forma estrellas azules exclusivamente', 'Su tasa de formación estelar es idéntica a la de las galaxias espirales'],
+    text:
+        'Analiza: Una galaxia elíptica contiene principalmente estrellas rojas viejas y casi nada de gas interestelar. ¿Qué se puede inferir sobre su formación estelar actual?',
+    options: [
+      'Tiene alta formación estelar activa',
+      'La formación de nuevas estrellas es casi nula, porque ha agotado o perdido la mayor parte de su gas interestelar',
+      'Forma estrellas azules exclusivamente',
+      'Su tasa de formación estelar es idéntica a la de las galaxias espirales',
+    ],
     correctAnswer: 1,
-    explanation: 'Las galaxias elípticas carecen de gas interestelar abundante, requisito para formar nuevas estrellas; por eso predominan estrellas rojas viejas y la formación estelar es casi nula.',
+    explanation:
+        'Las galaxias elípticas carecen de gas interestelar abundante, requisito para formar nuevas estrellas; por eso predominan estrellas rojas viejas y la formación estelar es casi nula.',
   ),
   Question(
     id: 'cta_q560',
     topicId: 'cta_t4',
-    text: 'Un proyecto de reforestación en la selva alta del Perú busca compensar emisiones de carbono. Si un árbol tropical absorbe en promedio 22 kg de CO₂/año y se necesita compensar 2 200 toneladas de CO₂ anuales, ¿cuántos árboles se requieren aproximadamente?',
-    options: ['10 000 árboles', '22 000 árboles', '100 000 árboles', '1 000 000 árboles'],
+    text:
+        'Un proyecto de reforestación en la selva alta del Perú busca compensar emisiones de carbono. Si un árbol tropical absorbe en promedio 22 kg de CO₂/año y se necesita compensar 2 200 toneladas de CO₂ anuales, ¿cuántos árboles se requieren aproximadamente?',
+    options: [
+      '10 000 árboles',
+      '22 000 árboles',
+      '100 000 árboles',
+      '1 000 000 árboles',
+    ],
     correctAnswer: 2,
-    explanation: '2 200 toneladas = 2 200 000 kg. Árboles necesarios = 2 200 000 / 22 = 100 000 árboles para compensar esas emisiones anuales.',
+    explanation:
+        '2 200 toneladas = 2 200 000 kg. Árboles necesarios = 2 200 000 / 22 = 100 000 árboles para compensar esas emisiones anuales.',
   ),
   Question(
     id: 'cta_q561',
     topicId: 'cta_t4',
-    text: 'Un modelo climático predice que si la deforestación amazónica supera el 25 % del área total, se podría alcanzar un «punto de no retorno» hacia la sabanización. Actualmente la deforestación acumulada es de ~17 %. ¿Qué tipo de acción pública es más eficaz según este análisis?',
-    options: ['Reforestar solo áreas urbanas', 'Detener la deforestación ilegal mediante fiscalización, fortalecer áreas protegidas y promover alternativas económicas sostenibles para evitar alcanzar el umbral crítico', 'Aumentar la extracción de madera para generar empleo a corto plazo', 'No tomar acción porque aún falta mucho para el umbral'],
+    text:
+        'Un modelo climático predice que si la deforestación amazónica supera el 25 % del área total, se podría alcanzar un «punto de no retorno» hacia la sabanización. Actualmente la deforestación acumulada es de ~17 %. ¿Qué tipo de acción pública es más eficaz según este análisis?',
+    options: [
+      'Reforestar solo áreas urbanas',
+      'Detener la deforestación ilegal mediante fiscalización, fortalecer áreas protegidas y promover alternativas económicas sostenibles para evitar alcanzar el umbral crítico',
+      'Aumentar la extracción de madera para generar empleo a corto plazo',
+      'No tomar acción porque aún falta mucho para el umbral',
+    ],
     correctAnswer: 1,
-    explanation: 'Con ~17 % ya deforestado y un umbral crítico de ~25 %, la acción más eficaz es la prevención: detener la tala ilegal, proteger áreas y ofrecer alternativas sostenibles antes de alcanzar el punto de no retorno.',
+    explanation:
+        'Con ~17 % ya deforestado y un umbral crítico de ~25 %, la acción más eficaz es la prevención: detener la tala ilegal, proteger áreas y ofrecer alternativas sostenibles antes de alcanzar el punto de no retorno.',
   ),
   Question(
     id: 'cta_q562',
     topicId: 'cta_t4',
-    text: "El Sistema Solar está conformado por diversos cuerpos celestes. Según la clasificación moderna de la UAI, Plutón es considerado un 'planeta enano' y NO un planeta principal debido fundamentalmente a que:",
-    options: ['A) Es demasiado pequeño, menor que nuestra Luna.', 'B) No orbita alrededor del Sol, sino de Neptuno.', 'C) No ha despejado su órbita de otros objetos transneptunianos (Cinturón de Kuiper).', 'D) No tiene forma esférica regular.', 'E) Su atmósfera está compuesta de metano congelado.'],
+    text:
+        "El Sistema Solar está conformado por diversos cuerpos celestes. Según la clasificación moderna de la UAI, Plutón es considerado un 'planeta enano' y NO un planeta principal debido fundamentalmente a que:",
+    options: [
+      'A) Es demasiado pequeño, menor que nuestra Luna.',
+      'B) No orbita alrededor del Sol, sino de Neptuno.',
+      'C) No ha despejado su órbita de otros objetos transneptunianos (Cinturón de Kuiper).',
+      'D) No tiene forma esférica regular.',
+      'E) Su atmósfera está compuesta de metano congelado.',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C (no despejó su órbita). El distractor A (es pequeño) es la creencia popular errónea ('Trampa del Mito'), pero el tamaño por sí solo no lo descalifica (Mercurio es pequeño también, pero despejó su órbita).",
+    explanation:
+        "La respuesta correcta es C (no despejó su órbita). El distractor A (es pequeño) es la creencia popular errónea ('Trampa del Mito'), pero el tamaño por sí solo no lo descalifica (Mercurio es pequeño también, pero despejó su órbita).",
   ),
   Question(
     id: 'cta_q563',
     topicId: 'cta_t4',
-    text: 'Uno de los problemas ambientales globales más severos es la destrucción de la capa de ozono (O₃). Esta capa se encuentra ubicada en una región específica de la atmósfera conocida como:',
-    options: ['A) Troposfera', 'B) Mesosfera', 'C) Estratosfera', 'D) Termosfera', 'E) Exosfera'],
+    text:
+        'Uno de los problemas ambientales globales más severos es la destrucción de la capa de ozono (O₃). Esta capa se encuentra ubicada en una región específica de la atmósfera conocida como:',
+    options: [
+      'A) Troposfera',
+      'B) Mesosfera',
+      'C) Estratosfera',
+      'D) Termosfera',
+      'E) Exosfera',
+    ],
     correctAnswer: 2,
-    explanation: 'La respuesta correcta es C (Estratosfera). El distractor A (Troposfera) engaña a los estudiantes porque allí ocurren los fenómenos climáticos y la contaminación local (smog), pero el ozono protector está más arriba.',
+    explanation:
+        'La respuesta correcta es C (Estratosfera). El distractor A (Troposfera) engaña a los estudiantes porque allí ocurren los fenómenos climáticos y la contaminación local (smog), pero el ozono protector está más arriba.',
   ),
   Question(
     id: 'cta_q564',
     topicId: 'cta_t4',
-    text: 'El Protocolo de Montreal (1987) es considerado uno de los acuerdos ambientales más exitosos de la historia. ¿Cuál fue su objetivo principal y vinculante?',
-    options: ['A) Reducir las emisiones mundiales de dióxido de carbono (CO₂).', 'B) Eliminar la producción de sustancias que agotan la capa de ozono, como los Clorofluorocarbonos (CFC).', 'C) Frenar la deforestación de la selva amazónica.', 'D) Establecer el mercado de bonos de carbono.', 'E) Prohibir la caza comercial de cetáceos.'],
+    text:
+        'El Protocolo de Montreal (1987) es considerado uno de los acuerdos ambientales más exitosos de la historia. ¿Cuál fue su objetivo principal y vinculante?',
+    options: [
+      'A) Reducir las emisiones mundiales de dióxido de carbono (CO₂).',
+      'B) Eliminar la producción de sustancias que agotan la capa de ozono, como los Clorofluorocarbonos (CFC).',
+      'C) Frenar la deforestación de la selva amazónica.',
+      'D) Establecer el mercado de bonos de carbono.',
+      'E) Prohibir la caza comercial de cetáceos.',
+    ],
     correctAnswer: 1,
-    explanation: "La respuesta correcta es B. El distractor A es la 'Trampa de Kioto/París', ya que el alumno asocia CO2 con todos los tratados ambientales importantes.",
+    explanation:
+        "La respuesta correcta es B. El distractor A es la 'Trampa de Kioto/París', ya que el alumno asocia CO2 con todos los tratados ambientales importantes.",
   ),
   Question(
     id: 'cta_q565',
     topicId: 'cta_t4',
-    text: "En el ecosistema altoandino peruano, el fenómeno del 'retroceso glaciar' se evidencia en la pérdida drástica de masa de hielo (ej. Nevado Pastoruri). La consecuencia directa e inmediata a mediano plazo para las poblaciones locales es:",
-    options: ['A) El aumento del nivel del mar inundando las ciudades costeras.', 'B) El aumento del turismo vivencial.', 'C) El desabastecimiento hídrico crónico para consumo humano y agricultura.', 'D) La aparición de nuevos bosques de neblina.', 'E) La reactivación de volcanes extintos.'],
+    text:
+        "En el ecosistema altoandino peruano, el fenómeno del 'retroceso glaciar' se evidencia en la pérdida drástica de masa de hielo (ej. Nevado Pastoruri). La consecuencia directa e inmediata a mediano plazo para las poblaciones locales es:",
+    options: [
+      'A) El aumento del nivel del mar inundando las ciudades costeras.',
+      'B) El aumento del turismo vivencial.',
+      'C) El desabastecimiento hídrico crónico para consumo humano y agricultura.',
+      'D) La aparición de nuevos bosques de neblina.',
+      'E) La reactivación de volcanes extintos.',
+    ],
     correctAnswer: 2,
-    explanation: "La respuesta correcta es C. Los glaciares actúan como reservorios de agua sólida. El distractor A (aumento del nivel del mar) es la 'Escala Equivocada', es una consecuencia global del deshielo en los polos, pero no la inmediata para la población local andina.",
+    explanation:
+        "La respuesta correcta es C. Los glaciares actúan como reservorios de agua sólida. El distractor A (aumento del nivel del mar) es la 'Escala Equivocada', es una consecuencia global del deshielo en los polos, pero no la inmediata para la población local andina.",
   ),
   Question(
     id: 'cta_q566',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 1)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 1)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4542,7 +6679,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q567',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 2)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 2)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4550,7 +6688,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q568',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 3)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 3)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4558,7 +6697,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q569',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 4)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 4)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4566,7 +6706,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q570',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 5)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 5)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4574,7 +6715,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q571',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 6)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 6)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4582,7 +6724,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q572',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 7)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 7)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4590,7 +6733,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q573',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 8)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 8)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4598,7 +6742,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q574',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 9)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 9)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4606,7 +6751,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q575',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 10)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 10)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4614,7 +6760,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q576',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 11)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 11)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4622,7 +6769,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q577',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 12)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 12)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4630,7 +6778,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q578',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 13)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 13)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4638,7 +6787,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q579',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 14)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 14)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4646,7 +6796,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q580',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 15)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 15)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4654,7 +6805,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q581',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 16)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 16)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4662,7 +6814,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q582',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 17)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 17)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4670,7 +6823,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q583',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 18)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 18)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4678,7 +6832,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q584',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 19)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 19)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4686,7 +6841,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q585',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 20)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 20)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4694,7 +6850,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q586',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 21)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 21)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4702,7 +6859,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q587',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 22)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 22)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4710,7 +6868,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q588',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 23)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 23)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4718,7 +6877,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q589',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 24)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 24)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4726,7 +6886,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q590',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 25)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 25)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4734,7 +6895,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q591',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 26)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 26)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4742,7 +6904,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q592',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 27)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 27)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4750,7 +6913,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q593',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 28)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 28)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4758,7 +6922,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q594',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 29)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 29)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4766,7 +6931,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q595',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 30)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 30)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4774,7 +6940,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q596',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 31)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 31)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4782,7 +6949,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q597',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 32)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 32)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4790,7 +6958,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q598',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 33)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 33)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4798,7 +6967,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q599',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 34)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 34)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4806,7 +6976,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q600',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 35)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 35)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4814,7 +6985,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q601',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 36)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 36)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4822,7 +6994,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q602',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 37)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 37)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4830,7 +7003,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q603',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 38)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 38)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4838,7 +7012,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q604',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 39)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 39)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4846,7 +7021,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q605',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 40)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 40)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4854,7 +7030,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q606',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 41)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 41)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4862,7 +7039,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q607',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 42)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 42)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4870,7 +7048,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q608',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 43)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 43)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4878,7 +7057,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q609',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 44)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 44)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4886,7 +7066,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q610',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 45)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 45)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4894,7 +7075,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q611',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 46)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 46)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4902,7 +7084,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q612',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 47)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 47)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4910,7 +7093,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q613',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 48)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 48)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4918,7 +7102,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q614',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 49)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 49)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4926,7 +7111,8 @@ final List<Question> ctaQuestions = [
   Question(
     id: 'cta_q615',
     topicId: 'cta_t4',
-    text: 'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 50)',
+    text:
+        'FIJA ECOLOGÍA: Capa atmosférica que nos protege de la radiación UV: (Var 50)',
     options: ['Capa de ozono', 'Troposfera', 'Mesosfera', 'Ionosfera'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -4938,28 +7124,32 @@ final Map<String, Topic> ctaTopics = {
     id: 'cta_t1',
     subjectId: 'cta',
     name: '1. Fisica y Cinematica',
-    description: 'Magnitudes, vectores, MRU, MRUV, leyes de Newton, trabajo, potencia y energia.',
+    description:
+        'Magnitudes, vectores, MRU, MRUV, leyes de Newton, trabajo, potencia y energia.',
     questionCount: 153,
   ),
   'cta_t2': Topic(
     id: 'cta_t2',
     subjectId: 'cta',
     name: '2. Quimica de la Materia',
-    description: 'Materia, tabla periodica, carbono, biomoleculas, mezclas y sustancias.',
+    description:
+        'Materia, tabla periodica, carbono, biomoleculas, mezclas y sustancias.',
     questionCount: 155,
   ),
   'cta_t3': Topic(
     id: 'cta_t3',
     subjectId: 'cta',
     name: '3. Mundo Viviente y Citologia',
-    description: 'Celula, organelos, transporte celular, reinos, organizacion biologica y fotosintesis.',
+    description:
+        'Celula, organelos, transporte celular, reinos, organizacion biologica y fotosintesis.',
     questionCount: 153,
   ),
   'cta_t4': Topic(
     id: 'cta_t4',
     subjectId: 'cta',
     name: '4. Cosmologia, Clima y Medio Ambiente',
-    description: 'Sistema solar, cambio climatico, capa de ozono, glaciares y conservacion ambiental.',
+    description:
+        'Sistema solar, cambio climatico, capa de ozono, glaciares y conservacion ambiental.',
     questionCount: 154,
   ),
 };

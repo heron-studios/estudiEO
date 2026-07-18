@@ -5,8 +5,5 @@ final Subject razonamientoVerbalSubject = Subject(
   name: 'Razonamiento Verbal',
   color: '#FFDAB9',
   icon: '📝',
-  topicIds: [
-    'eo_pnp_sinonimos_ext_10q',
-    'eo_pnp_antonimos_ext_10q',
-  ],
+  topicIds: ['eo_pnp_sinonimos_ext_10q', 'eo_pnp_antonimos_ext_10q'],
 );

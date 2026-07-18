@@ -3861,8 +3861,7 @@ Seleccione el conector logico adecuado. Caso 3.''',
   Question(
     id: 'rv_q351',
     topicId: 'rv_plan',
-    text:
-        r'''Ordena correctamente: "Evolución de la Criminología Aplicada"
+    text: r'''Ordena correctamente: "Evolución de la Criminología Aplicada"
 I. Gracias a estos estudios pioneros, se lograron establecer sistemas penitenciarios de resocialización.
 II. Sus raíces como disciplina moderna se consolidan a finales del siglo XIX.
 III. En la actualidad, el perfilador criminal representa la máxima evolución de la criminología.
@@ -3881,8 +3880,7 @@ V. En sus etapas formativas iniciales, centró su análisis en causas biológica
   Question(
     id: 'rv_q352',
     topicId: 'rv_plan',
-    text:
-        r'''Ordena correctamente: "La Fotosíntesis"
+    text: r'''Ordena correctamente: "La Fotosíntesis"
 I. Los cloroplastos captan la energía solar mediante la clorofila.
 II. Proceso metabólico mediante el cual las plantas elaboran su propio alimento.
 III. El resultado final es la producción de glucosa y liberación de oxígeno.
@@ -3901,8 +3899,7 @@ V. Este oxígeno es vital hoy en día para el mantenimiento de la biosfera terre
   Question(
     id: 'rv_q353',
     topicId: 'rv_plan',
-    text:
-        r'''Ordena correctamente: "El Método Científico"
+    text: r'''Ordena correctamente: "El Método Científico"
 I. Análisis de resultados y formulación de conclusiones objetivas.
 II. Conjunto de pasos sistemáticos para alcanzar conocimiento válido.
 III. Diseño y ejecución de la experimentación controlada.
@@ -3921,8 +3918,7 @@ V. Planteamiento de hipótesis o posibles explicaciones iniciales.''',
   Question(
     id: 'rv_q354',
     topicId: 'rv_plan',
-    text:
-        r'''Ordena correctamente: "El Imperio Romano"
+    text: r'''Ordena correctamente: "El Imperio Romano"
 I. La división del imperio por Teodosio entre sus hijos Honorio y Arcadio.
 II. Civilización de la Antigüedad clásica surgida en la península itálica.
 III. La caída definitiva de Roma occidental en el año 476 d.C.
@@ -3941,8 +3937,7 @@ V. Su máxima expansión territorial ocurrió bajo el gobierno de Trajano.''',
   Question(
     id: 'rv_q355',
     topicId: 'rv_plan',
-    text:
-        r'''Ordena correctamente: "Desarrollo de Software"
+    text: r'''Ordena correctamente: "Desarrollo de Software"
 I. Etapa de codificación utilizando lenguajes de programación.
 II. Recolección exhaustiva y análisis de los requerimientos del cliente.
 III. Concepto de ingeniería informática para crear aplicativos lógicos.
@@ -3961,8 +3956,7 @@ V. Pruebas de calidad (Testing) para detectar errores (bugs).''',
   Question(
     id: 'rv_q356',
     topicId: 'rv_plan',
-    text:
-        r'''El proceso de potabilización del agua
+    text: r'''El proceso de potabilización del agua
 I. Captación del agua cruda desde ríos o lagos mediante rejillas protectoras.
 II. Distribución del agua potable a los hogares a través de la red de tuberías.
 III. Aplicación de cloro u otros desinfectantes para eliminar microorganismos patógenos.
@@ -3981,8 +3975,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q357',
     topicId: 'rv_plan',
-    text:
-        r'''La evolución estelar
+    text: r'''La evolución estelar
 I. Colapso gravitatorio de una nube interestelar de gas y polvo.
 II. Consumo del combustible nuclear en el núcleo de la estrella.
 III. Nacimiento de una protoestrella que comienza a brillar debido al calor.
@@ -4001,8 +3994,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q358',
     topicId: 'rv_plan',
-    text:
-        r'''La investigación científica de campo
+    text: r'''La investigación científica de campo
 I. Formulación de la hipótesis de investigación basada en teorías previas.
 II. Análisis de los datos recolectados mediante herramientas estadísticas.
 III. Recolección de muestras biológicas directamente en el ecosistema estudiado.
@@ -4040,8 +4032,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q360',
     topicId: 'rv_plan',
-    text:
-        r'''El descubrimiento de la penicilina
+    text: r'''El descubrimiento de la penicilina
 I. Fleming observa que las bacterias alrededor del hongo Penicillium habían muerto.
 II. Alexander Fleming olvida unas placas de cultivo de bacterias en su laboratorio.
 III. Purificación industrial de la penicilina para su uso en la Segunda Guerra Mundial.
@@ -4060,8 +4051,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q361',
     topicId: 'rv_plan',
-    text:
-        r'''Publicación de un libro de texto
+    text: r'''Publicación de un libro de texto
 I. Redacción de los capítulos por parte del equipo de autores especialistas.
 II. Revisión del texto por parte del editor y corrección de estilo.
 III. Impresión y encuadernación de los ejemplares en los talleres gráficos.
@@ -4081,8 +4071,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q362',
     topicId: 'rv_plan',
-    text:
-        r'''El ciclo del carbono
+    text: r'''El ciclo del carbono
 I. Liberación de dióxido de carbono a la atmósfera mediante la respiración animal.
 II. Fijación del carbono por parte de las plantas mediante la fotosíntesis.
 III. Transferencia de carbono al suelo tras la muerte y descomposición de los organismos.
@@ -4101,8 +4090,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q363',
     topicId: 'rv_plan',
-    text:
-        r'''La redacción de un ensayo académico
+    text: r'''La redacción de un ensayo académico
 I. Selección del tema delimitado y búsqueda de fuentes bibliográficas confiables.
 II. Elaboración de un esquema argumentativo preliminar.
 III. Escritura del borrador inicial desarrollando la tesis central y argumentos.
@@ -4121,8 +4109,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q364',
     topicId: 'rv_plan',
-    text:
-        r'''El proceso de evolución humana
+    text: r'''El proceso de evolución humana
 I. Desarrollo del bipedismo como adaptación a la vida en la sabana africana.
 II. Migración de los primeros homínidos fuera del continente africano hacia Eurasia.
 III. Incremento significativo del volumen craneal y uso sistemático de herramientas.
@@ -4141,8 +4128,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q365',
     topicId: 'rv_plan',
-    text:
-        r'''La crisis de la deuda externa en América Latina
+    text: r'''La crisis de la deuda externa en América Latina
 I. Declaración de moratoria de pagos por parte de México en 1982.
 II. Concesión masiva de préstamos baratos a tasas de interés flotantes por bancos internacionales durante la bonanza petrolera de los años 70.
 III. Implementación de severas políticas de ajuste macroeconómico y reformas estructurales bajo el Consenso de Washington.
@@ -4161,8 +4147,7 @@ Elija el ordenamiento lógico correcto de las ideas:''',
   Question(
     id: 'rv_q366',
     topicId: 'rv_plan',
-    text:
-        r'''Preparacion academica
+    text: r'''Preparacion academica
 I. Identificacion de temas debiles
 II. Diagnostico inicial de conocimientos
 III. Practica diaria con retroalimentacio
@@ -4181,8 +4166,7 @@ Elija el ordenamiento logico correcto de las ideas:''',
   Question(
     id: 'rv_q367',
     topicId: 'rv_plan',
-    text:
-        r'''Lectura comprensiva
+    text: r'''Lectura comprensiva
 I. Identificacion de ideas secundarias
 II. Reconocimiento del tema central
 III. Sintesis final del texto
@@ -4201,8 +4185,7 @@ Elija el ordenamiento logico correcto de las ideas:''',
   Question(
     id: 'rv_q368',
     topicId: 'rv_plan',
-    text:
-        r'''Investigacion historica
+    text: r'''Investigacion historica
 I. Busqueda de fuentes confiables
 II. Planteamiento del problema
 III. Redaccion de conclusiones
@@ -4221,8 +4204,7 @@ Elija el ordenamiento logico correcto de las ideas:''',
   Question(
     id: 'rv_q369',
     topicId: 'rv_plan',
-    text:
-        r'''Resolucion de problemas
+    text: r'''Resolucion de problemas
 I. Seleccion de datos relevantes
 II. Comprension del enunciado
 III. Verificacion del resultado

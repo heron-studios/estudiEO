@@ -5,7 +5,8 @@ final List<Question> derechosHumanosQuestions = [
   Question(
     id: 'pfrh_dh_f1',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Qué establece el Artículo 1° de la Declaración Universal de Derechos Humanos?''',
+    text:
+        r'''¿Qué establece el Artículo 1° de la Declaración Universal de Derechos Humanos?''',
     options: [
       r'''Que los derechos solo aplican a los ciudadanos nacidos en un territorio específico.''',
       r'''Que las leyes económicas determinan el valor de la vida de las personas.''',
@@ -14,12 +15,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Que los Estados pueden decidir quiénes tienen derechos según su comportamiento.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 1° de la DUDH consagra el principio de igualdad y dignidad inherente desde el nacimiento, estableciendo la base de que todos los humanos nacen libres e iguales y deben tratarse con fraternidad.''',
+    explanation:
+        r'''El Artículo 1° de la DUDH consagra el principio de igualdad y dignidad inherente desde el nacimiento, estableciendo la base de que todos los humanos nacen libres e iguales y deben tratarse con fraternidad.''',
   ),
   Question(
     id: 'pfrh_dh_f2',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Según la DUDH, ¿cuál es el derecho fundamental estipulado en el Artículo 3?''',
+    text:
+        r'''Según la DUDH, ¿cuál es el derecho fundamental estipulado en el Artículo 3?''',
     options: [
       r'''El derecho a la propiedad privada y colectiva.''',
       r'''El derecho a formar sindicatos de trabajadores.''',
@@ -28,12 +31,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''El derecho a buscar asilo en cualquier país.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 3 de la Declaración Universal garantiza que todo individuo tiene el derecho irrenunciable a la vida, la libertad y a la seguridad de su propia persona.''',
+    explanation:
+        r'''El Artículo 3 de la Declaración Universal garantiza que todo individuo tiene el derecho irrenunciable a la vida, la libertad y a la seguridad de su propia persona.''',
   ),
   Question(
     id: 'pfrh_dh_f3',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Qué prohíbe explícitamente el Artículo 5 de la Declaración Universal de Derechos Humanos?''',
+    text:
+        r'''¿Qué prohíbe explícitamente el Artículo 5 de la Declaración Universal de Derechos Humanos?''',
     options: [
       r'''La circulación libre entre fronteras internacionales.''',
       r'''La injerencia arbitraria en el domicilio personal.''',
@@ -42,12 +47,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La formación de asociaciones pacíficas sin permiso del Estado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Como una protección absoluta a la integridad física y moral, el Artículo 5 prohíbe terminantemente la tortura y cualquier trato cruel, inhumano o degradante.''',
+    explanation:
+        r'''Como una protección absoluta a la integridad física y moral, el Artículo 5 prohíbe terminantemente la tortura y cualquier trato cruel, inhumano o degradante.''',
   ),
   Question(
     id: 'pfrh_dh_f4',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿A qué se refiere el principio de "No discriminación" en el marco de los derechos humanos?''',
+    text:
+        r'''¿A qué se refiere el principio de "No discriminación" en el marco de los derechos humanos?''',
     options: [
       r'''A tratar de manera diferente a las personas según sus ingresos económicos para equilibrar la sociedad.''',
       r'''A permitir que solo los adultos mayores participen en las decisiones democráticas.''',
@@ -56,12 +63,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''A otorgar beneficios legales únicamente a quienes profesan la religión oficial del Estado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Según el Artículo 2 de la DUDH y la doctrina internacional, la no discriminación asegura que toda persona goce de sus derechos sin distinciones por motivos de raza, sexo, religión, opinión o cualquier otra condición.''',
+    explanation:
+        r'''Según el Artículo 2 de la DUDH y la doctrina internacional, la no discriminación asegura que toda persona goce de sus derechos sin distinciones por motivos de raza, sexo, religión, opinión o cualquier otra condición.''',
   ),
   Question(
     id: 'pfrh_dh_f5',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Cuál es el propósito del derecho a la educación según el Artículo 26 de la DUDH?''',
+    text:
+        r'''¿Cuál es el propósito del derecho a la educación según el Artículo 26 de la DUDH?''',
     options: [
       r'''Garantizar que las personas puedan conseguir empleos altamente remunerados exclusivamente.''',
       r'''Enseñar a los estudiantes a obedecer ciegamente las órdenes del Estado.''',
@@ -70,7 +79,8 @@ final List<Question> derechosHumanosQuestions = [
       r'''Separar a los estudiantes según sus aptitudes físicas desde la primera infancia.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El derecho a la educación tiene por objeto el desarrollo pleno de la personalidad y fortalecer el respeto a los derechos humanos, favoreciendo la tolerancia y la paz.''',
+    explanation:
+        r'''El derecho a la educación tiene por objeto el desarrollo pleno de la personalidad y fortalecer el respeto a los derechos humanos, favoreciendo la tolerancia y la paz.''',
   ),
   Question(
     id: 'pfrh_dh_f6',
@@ -84,7 +94,8 @@ final List<Question> derechosHumanosQuestions = [
       r'''El reconocimiento público otorgado por los medios de comunicación a figuras destacadas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La dignidad humana es el presupuesto esencial y el valor supremo del ordenamiento constitucional y de los derechos humanos, reconociendo a cada persona como sujeto único e inalienable.''',
+    explanation:
+        r'''La dignidad humana es el presupuesto esencial y el valor supremo del ordenamiento constitucional y de los derechos humanos, reconociendo a cada persona como sujeto único e inalienable.''',
   ),
   Question(
     id: 'pfrh_dh_f7',
@@ -98,12 +109,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''El permiso incondicional para ingresar a residencias privadas de otras personas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 13 de la DUDH protege la libertad de locomoción, asegurando el derecho a circular libremente, fijar residencia y entrar o salir de cualquier país.''',
+    explanation:
+        r'''El Artículo 13 de la DUDH protege la libertad de locomoción, asegurando el derecho a circular libremente, fijar residencia y entrar o salir de cualquier país.''',
   ),
   Question(
     id: 'pfrh_dh_f8',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Cómo define la Asamblea General de la ONU a la "Cultura de Paz"?''',
+    text:
+        r'''¿Cómo define la Asamblea General de la ONU a la "Cultura de Paz"?''',
     options: [
       r'''Como la firma de tratados militares para equilibrar el poder armamentístico entre potencias.''',
       r'''Como la evasión sistemática de los problemas sociales para evitar cualquier discusión política.''',
@@ -112,7 +125,8 @@ final List<Question> derechosHumanosQuestions = [
       r'''Como la imposición de una sola cultura global para eliminar las diferencias étnicas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La ONU define la Cultura de Paz como valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos incidiendo en sus raíces mediante el diálogo y la cooperación.''',
+    explanation:
+        r'''La ONU define la Cultura de Paz como valores, actitudes y comportamientos que rechazan la violencia y previenen los conflictos incidiendo en sus raíces mediante el diálogo y la cooperación.''',
   ),
   Question(
     id: 'pfrh_dh_f9',
@@ -126,12 +140,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Que se permite para saldar deudas bancarias heredadas de la familia.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 4 de la DUDH es claro y absoluto al declarar que nadie estará sometido a esclavitud ni a servidumbre, prohibiendo la trata de esclavos en todas sus formas.''',
+    explanation:
+        r'''El Artículo 4 de la DUDH es claro y absoluto al declarar que nadie estará sometido a esclavitud ni a servidumbre, prohibiendo la trata de esclavos en todas sus formas.''',
   ),
   Question(
     id: 'pfrh_dh_f10',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Por qué el derecho a la nacionalidad es considerado fundamental desde el nacimiento?''',
+    text:
+        r'''¿Por qué el derecho a la nacionalidad es considerado fundamental desde el nacimiento?''',
     options: [
       r'''Porque permite a la persona adquirir propiedades y tierras gratuitamente del gobierno local.''',
       r'''Porque obliga a la persona a prestar servicio militar obligatorio sin objeción.''',
@@ -140,14 +156,16 @@ final List<Question> derechosHumanosQuestions = [
       r'''Porque asegura que la persona solo pueda hablar un único idioma durante toda su vida.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El derecho a la nacionalidad (Artículo 15 DUDH) es vital porque establece un vínculo jurídico y político con un Estado, lo cual garantiza la protección legal y el acceso a los demás derechos civiles y políticos.''',
+    explanation:
+        r'''El derecho a la nacionalidad (Artículo 15 DUDH) es vital porque establece un vínculo jurídico y político con un Estado, lo cual garantiza la protección legal y el acceso a los demás derechos civiles y políticos.''',
   ),
 
   // Nivel Medio
   Question(
     id: 'pfrh_dh_m1',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Cuáles son los tres componentes esenciales de la Educación en Derechos Humanos (EDH)?''',
+    text:
+        r'''¿Cuáles son los tres componentes esenciales de la Educación en Derechos Humanos (EDH)?''',
     options: [
       r'''Educación financiera, educación tecnológica y educación física para la competencia social.''',
       r'''Aprendizaje sobre castigos, obediencia a la autoridad y respeto a las jerarquías militares.''',
@@ -156,12 +174,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Gestión del crimen, entrenamiento en defensa personal y aislamiento de grupos de riesgo.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La EDH se estructura en tres componentes: educación sobre los derechos (conocimiento), por medio de (o a través de) los derechos (entornos respetuosos) y para los derechos humanos (empoderamiento y acción).''',
+    explanation:
+        r'''La EDH se estructura en tres componentes: educación sobre los derechos (conocimiento), por medio de (o a través de) los derechos (entornos respetuosos) y para los derechos humanos (empoderamiento y acción).''',
   ),
   Question(
     id: 'pfrh_dh_m2',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Según la doctrina jurídica, ¿cómo se divide el "derecho a la identidad"?''',
+    text:
+        r'''Según la doctrina jurídica, ¿cómo se divide el "derecho a la identidad"?''',
     options: [
       r'''En identidad pública, que es la apariencia, e identidad privada, que es la cuenta bancaria.''',
       r'''En identidad biológica para los hombres e identidad cultural exclusiva para las mujeres.''',
@@ -170,12 +190,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''En identidad natural, inmodificable, e identidad digital, utilizada solo en redes sociales.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El derecho a la identidad posee un aspecto estático (elementos fijos como nombre y origen) y uno dinámico, que abarca la suma de pensamientos, vínculos, cultura y creencias que la persona proyecta a lo largo de su vida.''',
+    explanation:
+        r'''El derecho a la identidad posee un aspecto estático (elementos fijos como nombre y origen) y uno dinámico, que abarca la suma de pensamientos, vínculos, cultura y creencias que la persona proyecta a lo largo de su vida.''',
   ),
   Question(
     id: 'pfrh_dh_m3',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Según la principio que rige la Convención de los Derechos del Niño frente a los derechos de los demás:''',
+    text:
+        r'''Según la principio que rige la Convención de los Derechos del Niño frente a los derechos de los demás:''',
     options: [
       r'''El principio de autoridad filial, donde los padres tienen poder absoluto sobre la vida del menor.''',
       r'''El principio de madurez, donde los derechos solo aplican cuando el niño cumple la mayoría de edad legal.''',
@@ -184,12 +206,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''El principio de asimilación, que obliga a los niños a abandonar su cultura para integrar el sistema escolar.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La Constitución y los tratados internacionales establecen el principio del "interés superior del niño", reconociendo que sus derechos son prevalentes e interdependientes y deben priorizarse en toda circunstancia.''',
+    explanation:
+        r'''La Constitución y los tratados internacionales establecen el principio del "interés superior del niño", reconociendo que sus derechos son prevalentes e interdependientes y deben priorizarse en toda circunstancia.''',
   ),
   Question(
     id: 'pfrh_dh_m4',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''De acuerdo con el Pacto Internacional de Derechos Económicos, Sociales y Culturales, ¿cuál es uno de los propósitos centrales del derecho a la educación?''',
+    text:
+        r'''De acuerdo con el Pacto Internacional de Derechos Económicos, Sociales y Culturales, ¿cuál es uno de los propósitos centrales del derecho a la educación?''',
     options: [
       r'''Promover el crecimiento exclusivo de corporaciones multinacionales mediante mano de obra barata.''',
       r'''Formar soldados disciplinados para la expansión territorial del Estado.''',
@@ -198,12 +222,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Fomentar la competitividad extrema y el individualismo para asegurar el éxito financiero personal.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Este Pacto de la ONU establece que la educación debe orientarse al "pleno desarrollo de la personalidad humana y del sentido de su dignidad" y fortalecer el respeto por los derechos fundamentales.''',
+    explanation:
+        r'''Este Pacto de la ONU establece que la educación debe orientarse al "pleno desarrollo de la personalidad humana y del sentido de su dignidad" y fortalecer el respeto por los derechos fundamentales.''',
   ),
   Question(
     id: 'pfrh_dh_m5',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En materia de no discriminación y equidad, ¿qué implica la "perspectiva de género"?''',
+    text:
+        r'''En materia de no discriminación y equidad, ¿qué implica la "perspectiva de género"?''',
     options: [
       r'''La imposición de roles tradicionales inamovibles para asegurar la estructura patriarcal familiar.''',
       r'''La exclusión de los varones de todos los espacios de poder y representación ciudadana.''',
@@ -212,12 +238,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La prohibición de que las mujeres trabajen fuera del hogar para proteger la unidad doméstica.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El enfoque de género es una categoría analítica que evidencia cómo las diferencias biológicas y sociales se traducen en desventajas y discriminación, buscando erradicarlas para alcanzar la igualdad efectiva.''',
+    explanation:
+        r'''El enfoque de género es una categoría analítica que evidencia cómo las diferencias biológicas y sociales se traducen en desventajas y discriminación, buscando erradicarlas para alcanzar la igualdad efectiva.''',
   ),
   Question(
     id: 'pfrh_dh_m6',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿En qué consiste el derecho al "debido proceso" plasmado en la DUDH (Artículo 10 y 11)?''',
+    text:
+        r'''¿En qué consiste el derecho al "debido proceso" plasmado en la DUDH (Artículo 10 y 11)?''',
     options: [
       r'''En la facultad del Estado de condenar sin pruebas en casos de terrorismo internacional.''',
       r'''En el derecho de las víctimas a aplicar la justicia por mano propia cuando el Estado falla.''',
@@ -226,12 +254,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''En el privilegio de las autoridades gubernamentales de evitar juicios penales durante su mandato.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los artículos 10 y 11 de la DUDH garantizan condiciones plenas de igualdad ante tribunales imparciales, la presunción de inocencia y el principio de legalidad (no condena sin ley previa).''',
+    explanation:
+        r'''Los artículos 10 y 11 de la DUDH garantizan condiciones plenas de igualdad ante tribunales imparciales, la presunción de inocencia y el principio de legalidad (no condena sin ley previa).''',
   ),
   Question(
     id: 'pfrh_dh_m7',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Qué proponen Fierro y Carbajal como abordaje adecuado frente al conflicto escolar desde la óptica de derechos?''',
+    text:
+        r'''¿Qué proponen Fierro y Carbajal como abordaje adecuado frente al conflicto escolar desde la óptica de derechos?''',
     options: [
       r'''La expulsión automática de los estudiantes conflictivos para mantener la "paz negativa" en el recinto.''',
       r'''La imposición de castigos físicos moderados para instaurar el respeto a la autoridad docente.''',
@@ -240,12 +270,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La creación de manuales punitivos sin la participación de los alumnos para garantizar la disciplina estricta.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Fierro y Carbajal apuestan por la escucha, la mediación, la educación socioemocional y la democratización del espacio educativo para transformar el conflicto de manera pacífica y constructiva.''',
+    explanation:
+        r'''Fierro y Carbajal apuestan por la escucha, la mediación, la educación socioemocional y la democratización del espacio educativo para transformar el conflicto de manera pacífica y constructiva.''',
   ),
   Question(
     id: 'pfrh_dh_m8',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Cómo concibe la Convención Americana sobre Derechos Humanos (Pacto de San José) la relación entre derechos civiles y derechos económicos?''',
+    text:
+        r'''¿Cómo concibe la Convención Americana sobre Derechos Humanos (Pacto de San José) la relación entre derechos civiles y derechos económicos?''',
     options: [
       r'''Afirma que los derechos económicos son un lujo que solo los países ricos deben garantizar.''',
       r'''Sostiene que los derechos políticos tienen absoluta prioridad, haciendo irrelevantes la alimentación y la salud.''',
@@ -254,12 +286,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Indica que la justicia social es un mito y solo la libertad civil debe ser protegida por la ley.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Pacto de San José establece que la libertad y el ideal humano exento de miseria requieren la realización inseparable e interdependiente de los derechos civiles/políticos y los económicos/sociales/culturales.''',
+    explanation:
+        r'''El Pacto de San José establece que la libertad y el ideal humano exento de miseria requieren la realización inseparable e interdependiente de los derechos civiles/políticos y los económicos/sociales/culturales.''',
   ),
   Question(
     id: 'pfrh_dh_m9',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Dentro de las funciones de la educación, ¿qué se entiende por "Cultura de la Legalidad"?''',
+    text:
+        r'''Dentro de las funciones de la educación, ¿qué se entiende por "Cultura de la Legalidad"?''',
     options: [
       r'''El adoctrinamiento para que los ciudadanos obedezcan ciegamente leyes injustas sin cuestionarlas.''',
       r'''La práctica de contratar abogados privados para solucionar cualquier discrepancia escolar.''',
@@ -268,12 +302,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La sustitución de los manuales de convivencia por el Código Penal de la nación en todas las aulas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La cultura de la legalidad en la formación cívica implica la apropiación del Estado de derecho, el respeto consciente a las normas democráticas y la lucha activa contra la delincuencia y la corrupción.''',
+    explanation:
+        r'''La cultura de la legalidad en la formación cívica implica la apropiación del Estado de derecho, el respeto consciente a las normas democráticas y la lucha activa contra la delincuencia y la corrupción.''',
   ),
   Question(
     id: 'pfrh_dh_m10',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En relación a la participación democrática (Artículo 21 de la DUDH), ¿cuál es la base de la autoridad del poder público?''',
+    text:
+        r'''En relación a la participación democrática (Artículo 21 de la DUDH), ¿cuál es la base de la autoridad del poder público?''',
     options: [
       r'''El linaje y la herencia de sangre de las familias gobernantes tradicionales.''',
       r'''El control monopólico de los medios de comunicación y las corporaciones tecnológicas.''',
@@ -282,14 +318,16 @@ final List<Question> derechosHumanosQuestions = [
       r'''Las decisiones tomadas unilateralmente por organizaciones internacionales no gubernamentales.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 21 estipula que la voluntad del pueblo es la base genuina de la autoridad pública, legitimada a través del sufragio universal, igual y secreto en procesos democráticos.''',
+    explanation:
+        r'''El Artículo 21 estipula que la voluntad del pueblo es la base genuina de la autoridad pública, legitimada a través del sufragio universal, igual y secreto en procesos democráticos.''',
   ),
 
   // Nivel Difícil
   Question(
     id: 'pfrh_dh_d1',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Al aplicar el concepto de paz de Johan Galtung, ¿cómo se define la "paz positiva" en contraste con la mera ausencia de guerra (paz negativa)?''',
+    text:
+        r'''Al aplicar el concepto de paz de Johan Galtung, ¿cómo se define la "paz positiva" en contraste con la mera ausencia de guerra (paz negativa)?''',
     options: [
       r'''Es la militarización extrema de las fronteras que impide que otras naciones ataquen, garantizando la quietud armada.''',
       r'''Es el aislamiento total del individuo de la sociedad para alcanzar un estado de iluminación mental intocable.''',
@@ -298,12 +336,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Es un mandato gubernamental que prohíbe el uso de palabras negativas en los medios de comunicación para crear una ilusión de felicidad.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La paz positiva (Galtung) trasciende el control de la violencia directa (paz negativa) y busca eliminar las violencias estructurales y culturales mediante la promoción activa de la justicia, la equidad y los DD.HH..''',
+    explanation:
+        r'''La paz positiva (Galtung) trasciende el control de la violencia directa (paz negativa) y busca eliminar las violencias estructurales y culturales mediante la promoción activa de la justicia, la equidad y los DD.HH..''',
   ),
   Question(
     id: 'pfrh_dh_d2',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Desde la perspectiva de los teóricos del Derecho (como Peces-Barba), ¿qué fundamento filosófico legitima a los Derechos Humanos?''',
+    text:
+        r'''Desde la perspectiva de los teóricos del Derecho (como Peces-Barba), ¿qué fundamento filosófico legitima a los Derechos Humanos?''',
     options: [
       r'''Son concesiones graciosas que el monarca o el Estado otorga como regalos temporales a sus súbditos más leales.''',
       r'''Son invenciones mercantiles diseñadas exclusivamente para proteger las transacciones de libre comercio global.''',
@@ -312,12 +352,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Son dogmas religiosos estrictos que solo aplican a los miembros de una fe particular dentro de un Estado confesional.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Peces-Barba define los DD.HH. como facultades de las personas y grupos que expresan sus necesidades axiológicas de libertad, igualdad y participación social, constituyendo la base de su desarrollo integral.''',
+    explanation:
+        r'''Peces-Barba define los DD.HH. como facultades de las personas y grupos que expresan sus necesidades axiológicas de libertad, igualdad y participación social, constituyendo la base de su desarrollo integral.''',
   ),
   Question(
     id: 'pfrh_dh_d3',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿A qué se refiere el enfoque ético de la "Acción sin Daño" en la gestión de programas institucionales o humanitarios?''',
+    text:
+        r'''¿A qué se refiere el enfoque ético de la "Acción sin Daño" en la gestión de programas institucionales o humanitarios?''',
     options: [
       r'''A ignorar por completo las injusticias sociales para no generar conflictos mediáticos incómodos.''',
       r'''A paralizar todas las políticas de Estado porque cualquier decisión humana siempre daña a alguien inevitablemente.''',
@@ -326,12 +368,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''A ocultar las fallas de los proyectos sociales para proteger la reputación institucional y no lastimar el orgullo político.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La "Acción sin daño" es un enfoque ético que busca planificar y evaluar proyectos (humanitarios o sociales) para disminuir impactos negativos (no exacerbar el conflicto) y potenciar factores de salidas pacíficas.''',
+    explanation:
+        r'''La "Acción sin daño" es un enfoque ético que busca planificar y evaluar proyectos (humanitarios o sociales) para disminuir impactos negativos (no exacerbar el conflicto) y potenciar factores de salidas pacíficas.''',
   ),
   Question(
     id: 'pfrh_dh_d4',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En el análisis multidimensional de la convivencia, ¿qué se entiende por "violencia estructural"?''',
+    text:
+        r'''En el análisis multidimensional de la convivencia, ¿qué se entiende por "violencia estructural"?''',
     options: [
       r'''El uso de lenguaje soez o insultos entre dos estudiantes en el patio de recreo.''',
       r'''La agresión física directa perpetrada por un individuo hacia otro usando fuerza o armas.''',
@@ -340,12 +384,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La difusión de música con mensajes agresivos a través de plataformas de internet y redes sociales.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La violencia estructural se produce desde las propias estructuras de la sociedad (leyes, economía, política) que generan explotación, represión, exclusión e impiden la realización de los derechos y la vida digna.''',
+    explanation:
+        r'''La violencia estructural se produce desde las propias estructuras de la sociedad (leyes, economía, política) que generan explotación, represión, exclusión e impiden la realización de los derechos y la vida digna.''',
   ),
   Question(
     id: 'pfrh_dh_d5',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En materia de prevención de la violencia contra la mujer (CEDAW y legislaciones conexas), ¿qué exige el principio de "Debida Diligencia" al Estado?''',
+    text:
+        r'''En materia de prevención de la violencia contra la mujer (CEDAW y legislaciones conexas), ¿qué exige el principio de "Debida Diligencia" al Estado?''',
     options: [
       r'''Que el Estado contrate agencias de seguridad privadas para proteger exclusivamente a las mujeres con altos cargos políticos.''',
       r'''Que las autoridades promuevan la justicia por mano propia cuando el sistema judicial sea demasiado lento.''',
@@ -354,12 +400,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Que se minimicen las investigaciones policiales para no estigmatizar a los agresores en las comunidades pequeñas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La "debida diligencia" obliga al Estado a tener la capacidad institucional real (adecuar leyes, políticas, justicia) para prevenir, investigar, sancionar y reparar efectivamente toda violación a los derechos humanos.''',
+    explanation:
+        r'''La "debida diligencia" obliga al Estado a tener la capacidad institucional real (adecuar leyes, políticas, justicia) para prevenir, investigar, sancionar y reparar efectivamente toda violación a los derechos humanos.''',
   ),
   Question(
     id: 'pfrh_dh_d6',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''El economista Max-Neef clasifica diversas formas de "pobreza humana" al vincularlas con necesidades fundamentales insatisfechas. ¿A qué se debe la "pobreza de protección"?''',
+    text:
+        r'''El economista Max-Neef clasifica diversas formas de "pobreza humana" al vincularlas con necesidades fundamentales insatisfechas. ¿A qué se debe la "pobreza de protección"?''',
     options: [
       r'''A la carencia absoluta de vestimenta y alimentación suficiente para sobrevivir el invierno.''',
       r'''A la falta de espacios lúdicos y de recreación para el tiempo libre de los jóvenes en las ciudades modernas.''',
@@ -368,12 +416,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''A la marginación política que prohíbe el ejercicio del voto en elecciones presidenciales a ciertos grupos étnicos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Según Max-Neef, la pobreza va más allá de la subsistencia económica; por ejemplo, la "pobreza de protección" surge debido a sistemas de salud deficientes y a la exposición a la violencia.''',
+    explanation:
+        r'''Según Max-Neef, la pobreza va más allá de la subsistencia económica; por ejemplo, la "pobreza de protección" surge debido a sistemas de salud deficientes y a la exposición a la violencia.''',
   ),
   Question(
     id: 'pfrh_dh_d7',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Por qué Abraham Magendzo afirma que la Educación en Derechos Humanos (EDH) debe adoptar una "pedagogía de la controversia"?''',
+    text:
+        r'''¿Por qué Abraham Magendzo afirma que la Educación en Derechos Humanos (EDH) debe adoptar una "pedagogía de la controversia"?''',
     options: [
       r'''Porque los alumnos deben aprender a gritar y ofender a sus oponentes políticos para ganar debates escolares rápidamente.''',
       r'''Porque el único objetivo de la educación es generar conflictos insalvables entre las familias y los directores de las instituciones.''',
@@ -382,12 +432,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Porque el aula debe convertirse en un tribunal penal internacional donde los estudiantes dicten sentencias de cárcel.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Magendzo sostiene que la EDH no debe ser neutral o acrítica, sino problematizadora: debe analizar las tensiones, injusticias y juegos de poder que vulneran los DD.HH. ("temas controversiales") para no callar ante la impunidad.''',
+    explanation:
+        r'''Magendzo sostiene que la EDH no debe ser neutral o acrítica, sino problematizadora: debe analizar las tensiones, injusticias y juegos de poder que vulneran los DD.HH. ("temas controversiales") para no callar ante la impunidad.''',
   ),
   Question(
     id: 'pfrh_dh_d8',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Qué significa que los Derechos Humanos operen bajo el principio de "indivisibilidad e interdependencia"?''',
+    text:
+        r'''¿Qué significa que los Derechos Humanos operen bajo el principio de "indivisibilidad e interdependencia"?''',
     options: [
       r'''Que un país puede escoger proteger solo los derechos civiles y descartar los derechos a la salud y educación si no tiene presupuesto.''',
       r'''Que los derechos solo se otorgan a los individuos que demuestran una lealtad patriótica ciega a las autoridades gubernamentales.''',
@@ -396,12 +448,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Que los derechos de la infancia son completamente opuestos y desconectados de los derechos de la mujer.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El enfoque de derechos reconoce que son universales, inalienables, indivisibles e interdependientes; la afectación o cumplimiento de derechos sociales impacta directamente en el goce de derechos civiles/políticos, y viceversa.''',
+    explanation:
+        r'''El enfoque de derechos reconoce que son universales, inalienables, indivisibles e interdependientes; la afectación o cumplimiento de derechos sociales impacta directamente en el goce de derechos civiles/políticos, y viceversa.''',
   ),
   Question(
     id: 'pfrh_dh_d9',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En el análisis sociológico de la convivencia escolar (Serey, Viscardi, Velásquez), ¿qué tensión paradigmática se produce frente a los manuales de convivencia tradicionales?''',
+    text:
+        r'''En el análisis sociológico de la convivencia escolar (Serey, Viscardi, Velásquez), ¿qué tensión paradigmática se produce frente a los manuales de convivencia tradicionales?''',
     options: [
       r'''La excesiva libertad que otorgan dichos manuales provoca que los estudiantes olviden jugar y se concentren solo en la filosofía política.''',
       r'''Los manuales intentan reemplazar la Constitución Nacional de forma ilegal, declarando la independencia política de la escuela.''',
@@ -410,12 +464,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Las normativas prohíben absolutamente a los padres de familia comunicarse con sus hijos durante todo el año académico.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Los autores críticos identifican una tensión donde la escuela usa los manuales como herramientas de control punitivo y jerárquico, priorizando la disciplina estricta y extralimitándose en sanciones, en desmedro del reconocimiento del estudiante como sujeto de derechos (debido proceso, participación).''',
+    explanation:
+        r'''Los autores críticos identifican una tensión donde la escuela usa los manuales como herramientas de control punitivo y jerárquico, priorizando la disciplina estricta y extralimitándose en sanciones, en desmedro del reconocimiento del estudiante como sujeto de derechos (debido proceso, participación).''',
   ),
   Question(
     id: 'pfrh_dh_d10',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''El Artículo 29 de la Declaración Universal de Derechos Humanos establece que las personas tienen deberes respecto a su comunidad. ¿Cuál es el único fin legítimo por el que la ley puede establecer "limitaciones" al ejercicio de los derechos y libertades?''',
+    text:
+        r'''El Artículo 29 de la Declaración Universal de Derechos Humanos establece que las personas tienen deberes respecto a su comunidad. ¿Cuál es el único fin legítimo por el que la ley puede establecer "limitaciones" al ejercicio de los derechos y libertades?''',
     options: [
       r'''Para garantizar que una dictadura militar pueda perpetuarse en el poder sin oposición ciudadana alguna.''',
       r'''Para asegurar que las corporaciones económicas privadas puedan maximizar sus ganancias a costa del medio ambiente.''',
@@ -424,14 +480,16 @@ final List<Question> derechosHumanosQuestions = [
       r'''Para prohibir permanentemente cualquier protesta civil pacífica que cuestione las políticas fiscales del Estado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Art. 29.2 de la DUDH indica que las limitaciones a los derechos solo pueden establecerse por ley con el propósito exclusivo de proteger los derechos de los demás y satisfacer el orden público, la moral y el bienestar en una sociedad democrática.''',
+    explanation:
+        r'''El Art. 29.2 de la DUDH indica que las limitaciones a los derechos solo pueden establecerse por ley con el propósito exclusivo de proteger los derechos de los demás y satisfacer el orden público, la moral y el bienestar en una sociedad democrática.''',
   ),
 
   // Nivel Extremo
   Question(
     id: 'pfrh_dh_e1',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Qué reclaman las "epistemologías del Sur" y las "ontologías relacionales" frente al marco tradicional e histórico de la paz liberal y los derechos humanos occidentales?''',
+    text:
+        r'''¿Qué reclaman las "epistemologías del Sur" y las "ontologías relacionales" frente al marco tradicional e histórico de la paz liberal y los derechos humanos occidentales?''',
     options: [
       r'''Exigen la militarización total del hemisferio sur para competir con las potencias atómicas del norte y asegurar la hegemonía global.''',
       r'''Proponen abandonar cualquier concepto de derecho o ley, promoviendo la anarquía absoluta en las comunidades originarias.''',
@@ -440,12 +498,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Demandan que los tribunales penales solo funcionen mediante algoritmos informáticos sin intervención de la ética o los sentimientos humanos.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Desde perspectivas críticas (epistemologías del Sur, cosmovisiones indígenas), se cuestiona el individualismo liberal, ampliando el marco hacia lógicas comunitarias, la interdependencia con la naturaleza y otras racionalidades ("pensar desde los márgenes").''',
+    explanation:
+        r'''Desde perspectivas críticas (epistemologías del Sur, cosmovisiones indígenas), se cuestiona el individualismo liberal, ampliando el marco hacia lógicas comunitarias, la interdependencia con la naturaleza y otras racionalidades ("pensar desde los márgenes").''',
   ),
   Question(
     id: 'pfrh_dh_e2',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En el currículo de Desarrollo Personal (Ciclo VII) sobre el dilema moral, la competencia "Construye su identidad" exige epistemológicamente que el estudiante:''',
+    text:
+        r'''En el currículo de Desarrollo Personal (Ciclo VII) sobre el dilema moral, la competencia "Construye su identidad" exige epistemológicamente que el estudiante:''',
     options: [
       r'''Delegue toda la responsabilidad ética a las autoridades superiores y evite cuestionar las órdenes dictadas por sus docentes.''',
       r'''Elimine de su análisis las emociones y los sentimientos, para emitir un juicio frío basado únicamente en leyes de supervivencia biológica.''',
@@ -454,12 +514,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Utilice exclusivamente dogmas religiosos antiguos para interpretar los conflictos tecnológicos contemporáneos de manera dogmática.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En el nivel destacado/esperado (Ciclo VII), el estudiante debe construir su identidad argumentando frente a dilemas morales integrando principios éticos, los derechos humanos, la dignidad y el análisis de consecuencias, más allá de la simple obediencia normativa.''',
+    explanation:
+        r'''En el nivel destacado/esperado (Ciclo VII), el estudiante debe construir su identidad argumentando frente a dilemas morales integrando principios éticos, los derechos humanos, la dignidad y el análisis de consecuencias, más allá de la simple obediencia normativa.''',
   ),
   Question(
     id: 'pfrh_dh_e3',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''¿Cómo vincula el "ecofeminismo" y la "economía feminista" la violencia estructural con la Cultura de Paz?''',
+    text:
+        r'''¿Cómo vincula el "ecofeminismo" y la "economía feminista" la violencia estructural con la Cultura de Paz?''',
     options: [
       r'''Exigiendo que las mujeres dominen los directorios de los bancos para replicar el modelo de acumulación neoliberal.''',
       r'''Plantando que el desarrollo sostenible solo es posible si se extraen agresivamente todos los recursos de los países empobrecidos.''',
@@ -468,12 +530,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Postulando que la tecnología genética resolverá por sí sola las injusticias de género sin necesidad de cambiar los modelos políticos vigentes.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El ecofeminismo y la economía feminista incorporan la interdependencia social y ecológica, cuestionan las desigualdades interseccionales de opresión/dominación y el modelo capitalista depredador, proponiendo poner la sostenibilidad de la vida y los cuidados en el centro.''',
+    explanation:
+        r'''El ecofeminismo y la economía feminista incorporan la interdependencia social y ecológica, cuestionan las desigualdades interseccionales de opresión/dominación y el modelo capitalista depredador, proponiendo poner la sostenibilidad de la vida y los cuidados en el centro.''',
   ),
   Question(
     id: 'pfrh_dh_e4',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Si aplicamos la concepción de "Paz Imperfecta" (Muñoz, citado implícitamente en dinámicas de paz holística) y la gestión de controversias, ¿cuál es el postulado ontológico frente al conflicto?''',
+    text:
+        r'''Si aplicamos la concepción de "Paz Imperfecta" (Muñoz, citado implícitamente en dinámicas de paz holística) y la gestión de controversias, ¿cuál es el postulado ontológico frente al conflicto?''',
     options: [
       r'''Que el conflicto es un síntoma de enfermedad psicológica que requiere medicación y asilamiento inmediato de las partes.''',
       r'''Que la paz solo se alcanza en paraísos post-mortem, siendo imposible gestionar conflictos reales en la tierra.''',
@@ -482,12 +546,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Que los conflictos escolares deben ser resueltos exclusivamente por tribunales penales externos para evitar el sesgo del profesorado.''',
     ],
     correctAnswer: 2,
-    explanation: r'''La cultura de paz holística entiende que el conflicto es natural e inherente a la convivencia (por divergencias de intereses); la clave no es eliminarlo por la fuerza, sino reconocerlo y transformarlo creativa y pacíficamente mediante el diálogo ("paz dinámica/imperfecta").''',
+    explanation:
+        r'''La cultura de paz holística entiende que el conflicto es natural e inherente a la convivencia (por divergencias de intereses); la clave no es eliminarlo por la fuerza, sino reconocerlo y transformarlo creativa y pacíficamente mediante el diálogo ("paz dinámica/imperfecta").''',
   ),
   Question(
     id: 'pfrh_dh_e5',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Desde la "Acción de Incidencia Política" en la Educación por la Paz (eLankidetza), ¿por qué se demanda la "supranacionalidad" y la justicia internacional?''',
+    text:
+        r'''Desde la "Acción de Incidencia Política" en la Educación por la Paz (eLankidetza), ¿por qué se demanda la "supranacionalidad" y la justicia internacional?''',
     options: [
       r'''Para garantizar la expansión comercial de corporaciones transnacionales eliminando los impuestos locales.''',
       r'''Para crear un ejército global que imponga por la fuerza una sola cultura occidental sobre las naciones del Sur.''',
@@ -496,12 +562,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Para censurar los medios de comunicación locales que critiquen las intervenciones armadas extranjeras no autorizadas.''',
     ],
     correctAnswer: 2,
-    explanation: r'''En la dimensión política de la cultura de paz, se exige el cumplimiento del Derecho Internacional, tribunales con sentencias vinculantes y una mayor democratización y representatividad de entidades como la ONU, limitando la impunidad estatal.''',
+    explanation:
+        r'''En la dimensión política de la cultura de paz, se exige el cumplimiento del Derecho Internacional, tribunales con sentencias vinculantes y una mayor democratización y representatividad de entidades como la ONU, limitando la impunidad estatal.''',
   ),
   Question(
     id: 'pfrh_dh_e6',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En el modelo de competencias para el Área de Persona y Relaciones Humanas, ¿cómo se fundamenta epistemológicamente la técnica del "Análisis DAFO" y los juegos de roles (Role-playing) para la resolución de conflictos?''',
+    text:
+        r'''En el modelo de competencias para el Área de Persona y Relaciones Humanas, ¿cómo se fundamenta epistemológicamente la técnica del "Análisis DAFO" y los juegos de roles (Role-playing) para la resolución de conflictos?''',
     options: [
       r'''Como una métrica biométrica para calcular la fuerza física de los estudiantes y dividir la clase en ganadores y perdedores natos.''',
       r'''Como un mecanismo punitivo secreto utilizado por la dirección para expulsar a los alumnos con debilidades cognitivas.''',
@@ -510,12 +578,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Como una terapia farmacológica experimental para alterar químicamente el comportamiento disruptivo en estudiantes de secundaria.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El uso de simulaciones, DAFO (identificar amenazas, oportunidades, etc. de convivencia) y role-playing movilizan competencias metacognitivas, empatía ("ponerse en el lugar del otro") y permiten ensayar respuestas éticas y pacíficas en ambientes controlados, fomentando la prevención y la ciudadanía activa.''',
+    explanation:
+        r'''El uso de simulaciones, DAFO (identificar amenazas, oportunidades, etc. de convivencia) y role-playing movilizan competencias metacognitivas, empatía ("ponerse en el lugar del otro") y permiten ensayar respuestas éticas y pacíficas en ambientes controlados, fomentando la prevención y la ciudadanía activa.''',
   ),
   Question(
     id: 'pfrh_dh_e7',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''A la luz de la Resolución 53/243 de las Naciones Unidas sobre la "Cultura de Paz", ¿qué correlación jurídica existe entre el derecho a la libre determinación de los pueblos y la paz global?''',
+    text:
+        r'''A la luz de la Resolución 53/243 de las Naciones Unidas sobre la "Cultura de Paz", ¿qué correlación jurídica existe entre el derecho a la libre determinación de los pueblos y la paz global?''',
     options: [
       r'''Son excluyentes; la paz global exige que todos los pueblos se sometan a un imperio centralizado perdiendo su soberanía.''',
       r'''La libre determinación solo se otorga a naciones que posean armamento nuclear disuasivo y ejércitos expansionistas.''',
@@ -524,12 +594,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''La paz internacional requiere que las minorías lingüísticas abandonen su idioma para no generar barreras de comunicación comercial con las potencias.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Artículo 3 de la Declaración de la ONU sobre Cultura de Paz vincula explícitamente el desarrollo pleno de la paz con el respeto al derecho de libre determinación de los pueblos, incluyendo aquellos bajo dominación u ocupación.''',
+    explanation:
+        r'''El Artículo 3 de la Declaración de la ONU sobre Cultura de Paz vincula explícitamente el desarrollo pleno de la paz con el respeto al derecho de libre determinación de los pueblos, incluyendo aquellos bajo dominación u ocupación.''',
   ),
   Question(
     id: 'pfrh_dh_e8',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Desde el punto de vista del desarrollo de la "inteligencia moral", ¿por qué se dice que una escuela que prioriza el castigo sobre la reparación genera "pobreza de participación y entendimiento"?''',
+    text:
+        r'''Desde el punto de vista del desarrollo de la "inteligencia moral", ¿por qué se dice que una escuela que prioriza el castigo sobre la reparación genera "pobreza de participación y entendimiento"?''',
     options: [
       r'''Porque los castigos físicos consumen demasiado tiempo que debería invertirse en dictar clases de matemáticas avanzadas.''',
       r'''Porque los docentes pierden su autoridad cuando la policía interviene para sancionar los delitos dentro del colegio.''',
@@ -538,12 +610,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Porque el gobierno central suspende los fondos de inversión a los colegios que aplican sanciones severas según la ley marcial.''',
     ],
     correctAnswer: 2,
-    explanation: r'''Un enfoque netamente punitivo que ignora la mediación y los derechos humanos limita el crecimiento del estudiante como sujeto moral, generando exclusión y negándole habilidades para gestionar conflictos, participar y comprender éticamente la convivencia (pobreza de participación/entendimiento según la crítica a los regímenes autoritarios/punitivos).''',
+    explanation:
+        r'''Un enfoque netamente punitivo que ignora la mediación y los derechos humanos limita el crecimiento del estudiante como sujeto moral, generando exclusión y negándole habilidades para gestionar conflictos, participar y comprender éticamente la convivencia (pobreza de participación/entendimiento según la crítica a los regímenes autoritarios/punitivos).''',
   ),
   Question(
     id: 'pfrh_dh_e9',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''Según el diseño curricular peruano de "Formación Ciudadana y Cívica" asociado a los DD.HH., ¿cómo interactúan los conceptos de "Estado de Derecho" y "Secularidad"?''',
+    text:
+        r'''Según el diseño curricular peruano de "Formación Ciudadana y Cívica" asociado a los DD.HH., ¿cómo interactúan los conceptos de "Estado de Derecho" y "Secularidad"?''',
     options: [
       r'''Implican que el Estado debe fusionarse con la Iglesia para dictar normas de convivencia basadas en mandatos divinos inmutables aplicables mediante el Código Penal.''',
       r'''Suponen que el Estado debe abolir todas las libertades individuales para garantizar que la economía planificada funcione sin errores.''',
@@ -552,12 +626,14 @@ final List<Question> derechosHumanosQuestions = [
       r'''Dictaminan que los ciudadanos solo tienen responsabilidades y deberes frente a la nación, careciendo de derechos inherentes frente al abuso de poder policial.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El Estado de derecho y los principios democráticos (autofundación, secularidad, lo público) implican una institucionalidad sujeta a leyes y garantías constitucionales que respeta la diversidad y la participación, donde la norma se sustenta en derechos humanos y consensos sociales, no en dogmatismos excluyentes.''',
+    explanation:
+        r'''El Estado de derecho y los principios democráticos (autofundación, secularidad, lo público) implican una institucionalidad sujeta a leyes y garantías constitucionales que respeta la diversidad y la participación, donde la norma se sustenta en derechos humanos y consensos sociales, no en dogmatismos excluyentes.''',
   ),
   Question(
     id: 'pfrh_dh_e10',
     topicId: 'pfrh_derechos_humanos',
-    text: r'''En la dimensión de la "Interseccionalidad" del maltrato, si analizamos la "Violencia Basada en Género" descrita en las Guías Pedagógicas de Comisarías de Familia colombianas, ¿por qué la "corresponsabilidad" es un principio de interpretación imperativo?''',
+    text:
+        r'''En la dimensión de la "Interseccionalidad" del maltrato, si analizamos la "Violencia Basada en Género" descrita en las Guías Pedagógicas de Comisarías de Familia colombianas, ¿por qué la "corresponsabilidad" es un principio de interpretación imperativo?''',
     options: [
       r'''Porque exculpa al Estado de cualquier inoperancia, culpando exclusivamente a la familia de la víctima por no prevenir el delito a tiempo.''',
       r'''Porque permite a los agresores pagar una fianza económica para que la sociedad civil asuma la culpa en juicios mediáticos.''',
@@ -566,6 +642,7 @@ final List<Question> derechosHumanosQuestions = [
       r'''Porque transfiere la responsabilidad de crear leyes de protección directamente a organizaciones internacionales sin injerencia del gobierno nacional.''',
     ],
     correctAnswer: 2,
-    explanation: r'''El principio de corresponsabilidad y debida diligencia marca que el Estado, la sociedad y la familia deben concurrir operativamente (con recursos, prevención, investigación y sanción) para erradicar las violencias, sin tolerar la impunidad institucional ni culpar a la víctima.''',
+    explanation:
+        r'''El principio de corresponsabilidad y debida diligencia marca que el Estado, la sociedad y la familia deben concurrir operativamente (con recursos, prevención, investigación y sanción) para erradicar las violencias, sin tolerar la impunidad institucional ni culpar a la víctima.''',
   ),
 ];

@@ -8,14 +8,24 @@ class TrailMakingLevels {
       description: 'Una los números en orden ascendente (1 → 2 → 3...).',
       timeLimitSeconds: 20,
       nodes: [
-        TrailNode(label: '1 (Inicio)', sequenceIndex: 0, xOffset: 0.50, yOffset: 0.55),
+        TrailNode(
+          label: '1 (Inicio)',
+          sequenceIndex: 0,
+          xOffset: 0.50,
+          yOffset: 0.55,
+        ),
         TrailNode(label: '2', sequenceIndex: 1, xOffset: 0.65, yOffset: 0.20),
         TrailNode(label: '3', sequenceIndex: 2, xOffset: 0.75, yOffset: 0.55),
         TrailNode(label: '4', sequenceIndex: 3, xOffset: 0.60, yOffset: 0.40),
         TrailNode(label: '5', sequenceIndex: 4, xOffset: 0.68, yOffset: 0.75),
         TrailNode(label: '6', sequenceIndex: 5, xOffset: 0.35, yOffset: 0.70),
         TrailNode(label: '7', sequenceIndex: 6, xOffset: 0.25, yOffset: 0.45),
-        TrailNode(label: '8 (Fin)', sequenceIndex: 7, xOffset: 0.45, yOffset: 0.25),
+        TrailNode(
+          label: '8 (Fin)',
+          sequenceIndex: 7,
+          xOffset: 0.45,
+          yOffset: 0.25,
+        ),
       ],
     ),
     TrailLevel(
@@ -24,14 +34,24 @@ class TrailMakingLevels {
       description: 'Una alternadamente números y letras (1 → A → 2 → B...).',
       timeLimitSeconds: 20,
       nodes: [
-        TrailNode(label: '1 (Inicio)', sequenceIndex: 0, xOffset: 0.50, yOffset: 0.60),
+        TrailNode(
+          label: '1 (Inicio)',
+          sequenceIndex: 0,
+          xOffset: 0.50,
+          yOffset: 0.60,
+        ),
         TrailNode(label: 'A', sequenceIndex: 1, xOffset: 0.65, yOffset: 0.25),
         TrailNode(label: '2', sequenceIndex: 2, xOffset: 0.75, yOffset: 0.70),
         TrailNode(label: 'B', sequenceIndex: 3, xOffset: 0.65, yOffset: 0.50),
         TrailNode(label: '3', sequenceIndex: 4, xOffset: 0.68, yOffset: 0.85),
         TrailNode(label: 'C', sequenceIndex: 5, xOffset: 0.35, yOffset: 0.85),
         TrailNode(label: '4', sequenceIndex: 6, xOffset: 0.25, yOffset: 0.55),
-        TrailNode(label: 'D (Fin)', sequenceIndex: 7, xOffset: 0.45, yOffset: 0.35),
+        TrailNode(
+          label: 'D (Fin)',
+          sequenceIndex: 7,
+          xOffset: 0.45,
+          yOffset: 0.35,
+        ),
       ],
     ),
     TrailLevel(
@@ -40,7 +60,12 @@ class TrailMakingLevels {
       description: 'Una los números en orden ascendente lo más rápido posible.',
       timeLimitSeconds: 60,
       nodes: [
-        TrailNode(label: '1 (Inicio)', sequenceIndex: 0, xOffset: 0.68, yOffset: 0.55),
+        TrailNode(
+          label: '1 (Inicio)',
+          sequenceIndex: 0,
+          xOffset: 0.68,
+          yOffset: 0.55,
+        ),
         TrailNode(label: '2', sequenceIndex: 1, xOffset: 0.48, yOffset: 0.65),
         TrailNode(label: '3', sequenceIndex: 2, xOffset: 0.75, yOffset: 0.70),
         TrailNode(label: '4', sequenceIndex: 3, xOffset: 0.72, yOffset: 0.40),
@@ -64,7 +89,12 @@ class TrailMakingLevels {
         TrailNode(label: '22', sequenceIndex: 21, xOffset: 0.85, yOffset: 0.38),
         TrailNode(label: '23', sequenceIndex: 22, xOffset: 0.88, yOffset: 0.82),
         TrailNode(label: '24', sequenceIndex: 23, xOffset: 0.80, yOffset: 0.54),
-        TrailNode(label: '25 (Fin)', sequenceIndex: 24, xOffset: 0.78, yOffset: 0.80),
+        TrailNode(
+          label: '25 (Fin)',
+          sequenceIndex: 24,
+          xOffset: 0.78,
+          yOffset: 0.80,
+        ),
       ],
     ),
     TrailLevel(
@@ -73,7 +103,12 @@ class TrailMakingLevels {
       description: 'Una alternadamente números y letras (1 → A → 2 → B...).',
       timeLimitSeconds: 120,
       nodes: [
-        TrailNode(label: '1 (Inicio)', sequenceIndex: 0, xOffset: 0.50, yOffset: 0.45),
+        TrailNode(
+          label: '1 (Inicio)',
+          sequenceIndex: 0,
+          xOffset: 0.50,
+          yOffset: 0.45,
+        ),
         TrailNode(label: 'A', sequenceIndex: 1, xOffset: 0.65, yOffset: 0.65),
         TrailNode(label: '2', sequenceIndex: 2, xOffset: 0.30, yOffset: 0.72),
         TrailNode(label: 'B', sequenceIndex: 3, xOffset: 0.45, yOffset: 0.25),
@@ -97,7 +132,12 @@ class TrailMakingLevels {
         TrailNode(label: 'K', sequenceIndex: 21, xOffset: 0.12, yOffset: 0.82),
         TrailNode(label: '12', sequenceIndex: 22, xOffset: 0.12, yOffset: 0.58),
         TrailNode(label: 'L', sequenceIndex: 23, xOffset: 0.18, yOffset: 0.75),
-        TrailNode(label: '13 (Fin)', sequenceIndex: 24, xOffset: 0.12, yOffset: 0.15),
+        TrailNode(
+          label: '13 (Fin)',
+          sequenceIndex: 24,
+          xOffset: 0.12,
+          yOffset: 0.15,
+        ),
       ],
     ),
   ];

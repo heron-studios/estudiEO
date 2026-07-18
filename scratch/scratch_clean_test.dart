@@ -986,8 +986,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q72',
     topicId: 'com_t1',
-    text:
-        "¿Cuál es la correcta división silábica de la palabra 'cooperación'?",
+    text: "¿Cuál es la correcta división silábica de la palabra 'cooperación'?",
     options: [
       'co-o-pe-ra-ción',
       'coo-pe-ra-ción',
@@ -1498,8 +1497,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q109',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 1)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 1)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1507,8 +1505,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q110',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 2)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 2)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1516,8 +1513,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q111',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 3)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 3)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1525,8 +1521,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q112',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 4)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 4)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1534,8 +1529,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q113',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 5)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 5)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1543,8 +1537,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q114',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 6)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 6)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1552,8 +1545,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q115',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 7)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 7)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1561,8 +1553,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q116',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 8)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 8)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1570,8 +1561,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q117',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 9)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 9)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1579,8 +1569,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q118',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 10)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 10)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1588,8 +1577,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q119',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 11)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 11)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1597,8 +1585,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q120',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 12)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 12)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1606,8 +1593,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q121',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 13)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 13)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1615,8 +1601,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q122',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 14)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 14)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1624,8 +1609,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q123',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 15)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 15)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1633,8 +1617,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q124',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 16)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 16)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1642,8 +1625,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q125',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 17)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 17)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1651,8 +1633,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q126',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 18)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 18)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1660,8 +1641,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q127',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 19)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 19)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1669,8 +1649,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q128',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 20)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 20)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1678,8 +1657,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q129',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 21)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 21)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1687,8 +1665,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q130',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 22)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 22)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1696,8 +1673,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q131',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 23)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 23)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1705,8 +1681,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q132',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 24)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 24)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1714,8 +1689,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q133',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 25)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 25)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1723,8 +1697,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q134',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 26)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 26)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1732,8 +1705,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q135',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 27)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 27)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1741,8 +1713,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q136',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 28)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 28)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1750,8 +1721,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q137',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 29)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 29)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1759,8 +1729,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q138',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 30)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 30)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1768,8 +1737,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q139',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 31)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 31)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1777,8 +1745,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q140',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 32)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 32)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1786,8 +1753,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q141',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 33)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 33)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1795,8 +1761,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q142',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 34)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 34)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1804,8 +1769,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q143',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 35)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 35)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1813,8 +1777,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q144',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 36)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 36)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1822,8 +1785,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q145',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 37)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 37)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1831,8 +1793,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q146',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 38)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 38)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1840,8 +1801,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q147',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 39)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 39)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1849,8 +1809,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q148',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 40)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 40)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1858,8 +1817,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q149',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 41)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 41)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1867,8 +1825,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q150',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 42)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 42)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1876,8 +1833,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q151',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 43)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 43)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1885,8 +1841,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q152',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 44)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 44)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1894,8 +1849,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q153',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 45)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 45)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1903,8 +1857,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q154',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 46)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 46)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1912,8 +1865,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q155',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 47)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 47)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1921,8 +1873,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q156',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 48)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 48)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1930,8 +1881,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q157',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 49)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 49)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -1939,8 +1889,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q158',
     topicId: 'com_t1',
-    text:
-        'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 50)',
+    text: 'FIJA ORTOGRAFÍA: ¿Qué palabra está correctamente tildada? (Var 50)',
     options: ['Canción', 'Cancion', 'Canciòn', 'Cançion'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -2114,12 +2063,7 @@ final List<Question> comunicacionQuestions = [
     topicId: 'com_t2',
     text:
         "Identifique el complemento circunstancial de lugar en: 'La intervención ocurrió ayer en la avenida principal'.",
-    options: [
-      'La intervención',
-      'ocurrió',
-      'ayer',
-      'en la avenida principal',
-    ],
+    options: ['La intervención', 'ocurrió', 'ayer', 'en la avenida principal'],
     correctAnswer: 3,
     explanation:
         'El circunstancial de lugar indica dónde se realiza la acción verbal y responde a la pregunta ¿Dónde?.',
@@ -2910,12 +2854,7 @@ final List<Question> comunicacionQuestions = [
     id: 'com_q230',
     topicId: 'com_t2',
     text: "¿Cuál es la concordancia correcta para el sustantivo 'agua'?",
-    options: [
-      'La agua fría',
-      'El agua fría',
-      'El agua frío',
-      'La agua frío',
-    ],
+    options: ['La agua fría', 'El agua fría', 'El agua frío', 'La agua frío'],
     correctAnswer: 1,
     explanation:
         "Los sustantivos femeninos que empiezan por 'a' tónica exigen el artículo 'el' en singular para evitar cacofonía, pero mantienen su género femenino, por lo que el adjetivo debe ser femenino ('fría').",
@@ -5201,8 +5140,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q424',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 10)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 10)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5210,8 +5148,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q425',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 11)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 11)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5219,8 +5156,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q426',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 12)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 12)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5228,8 +5164,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q427',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 13)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 13)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5237,8 +5172,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q428',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 14)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 14)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5246,8 +5180,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q429',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 15)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 15)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5255,8 +5188,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q430',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 16)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 16)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5264,8 +5196,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q431',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 17)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 17)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5273,8 +5204,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q432',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 18)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 18)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5282,8 +5212,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q433',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 19)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 19)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5291,8 +5220,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q434',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 20)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 20)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5300,8 +5228,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q435',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 21)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 21)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5309,8 +5236,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q436',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 22)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 22)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5318,8 +5244,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q437',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 23)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 23)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5327,8 +5252,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q438',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 24)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 24)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5336,8 +5260,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q439',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 25)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 25)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5345,8 +5268,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q440',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 26)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 26)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5354,8 +5276,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q441',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 27)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 27)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5363,8 +5284,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q442',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 28)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 28)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5372,8 +5292,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q443',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 29)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 29)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5381,8 +5300,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q444',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 30)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 30)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5390,8 +5308,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q445',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 31)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 31)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5399,8 +5316,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q446',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 32)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 32)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5408,8 +5324,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q447',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 33)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 33)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5417,8 +5332,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q448',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 34)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 34)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5426,8 +5340,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q449',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 35)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 35)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5435,8 +5348,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q450',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 36)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 36)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5444,8 +5356,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q451',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 37)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 37)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5453,8 +5364,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q452',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 38)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 38)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5462,8 +5372,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q453',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 39)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 39)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5471,8 +5380,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q454',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 40)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 40)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5480,8 +5388,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q455',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 41)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 41)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5489,8 +5396,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q456',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 42)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 42)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5498,8 +5404,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q457',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 43)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 43)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5507,8 +5412,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q458',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 44)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 44)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5516,8 +5420,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q459',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 45)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 45)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5525,8 +5428,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q460',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 46)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 46)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5534,8 +5436,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q461',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 47)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 47)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5543,8 +5444,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q462',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 48)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 48)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5552,8 +5452,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q463',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 49)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 49)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5561,8 +5460,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q464',
     topicId: 'com_t3',
-    text:
-        'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 50)',
+    text: 'FIJA NARRACIÓN: Especie narrativa corta que deja moraleja: (Var 50)',
     options: ['Fábula', 'Cuento', 'Mito', 'Novela'],
     correctAnswer: 0,
     explanation: 'Pregunta clásica de examen de admisión EO PNP.',
@@ -5585,8 +5483,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q466',
     topicId: 'com_t4',
-    text:
-        "¿A qué género pertenece el 'haylli' en la literatura prehispánica?",
+    text: "¿A qué género pertenece el 'haylli' en la literatura prehispánica?",
     options: [
       'Poesía épico-lírica o triunfal',
       'Drama de enredos',
@@ -5684,8 +5581,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q473',
     topicId: 'com_t4',
-    text:
-        "¿Qué autor realista pronunció el famoso 'Discurso en el Politeama'?",
+    text: "¿Qué autor realista pronunció el famoso 'Discurso en el Politeama'?",
     options: [
       'Manuel González Prada',
       'Clorinda Matto de Turner',
@@ -6786,8 +6682,7 @@ final List<Question> comunicacionQuestions = [
   Question(
     id: 'com_q547',
     topicId: 'com_t4',
-    text:
-        "El cuento 'El niño de junto al cielo' de Enrique Congrains refleja:",
+    text: "El cuento 'El niño de junto al cielo' de Enrique Congrains refleja:",
     options: [
       'El triunfo del emprendimiento en la ciudad',
       'La inocencia del niño andino (Esteban) enfrentada al engaño y la crueldad urbana (Pedro)',

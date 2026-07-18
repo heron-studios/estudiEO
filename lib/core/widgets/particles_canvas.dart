@@ -29,7 +29,8 @@ class ParticleCanvas extends StatefulWidget {
   State<ParticleCanvas> createState() => _ParticleCanvasState();
 }
 
-class _ParticleCanvasState extends State<ParticleCanvas> with SingleTickerProviderStateMixin {
+class _ParticleCanvasState extends State<ParticleCanvas>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final List<_Particle> _particles = [];
   Size _lastSize = Size.zero;
@@ -60,15 +61,17 @@ class _ParticleCanvasState extends State<ParticleCanvas> with SingleTickerProvid
         const Color(0xFFF9A8D4),
       ];
       for (int i = 0; i < 90; i++) {
-        _particles.add(_Particle(
-          x: random.nextDouble() * size.width,
-          y: random.nextDouble() * size.height,
-          vx: (random.nextDouble() - 0.5) * 0.25,
-          vy: (random.nextDouble() - 0.5) * 0.25,
-          r: random.nextDouble() * 1.4 + 0.3,
-          a: random.nextDouble(),
-          color: colors[random.nextInt(3)],
-        ));
+        _particles.add(
+          _Particle(
+            x: random.nextDouble() * size.width,
+            y: random.nextDouble() * size.height,
+            vx: (random.nextDouble() - 0.5) * 0.25,
+            vy: (random.nextDouble() - 0.5) * 0.25,
+            r: random.nextDouble() * 1.4 + 0.3,
+            a: random.nextDouble(),
+            color: colors[random.nextInt(3)],
+          ),
+        );
       }
       return;
     }

@@ -31,18 +31,19 @@ class PsicoQuestion {
         (key, value) => MapEntry(key.toString(), _clean(value.toString())),
       ),
     );
-    
+
     final int qId = (json['pregunta_id'] ?? json['id'] ?? 0 as num).toInt();
-    
+
     // Barajar opciones aleatoriamente pero de forma consistente segÃºn el ID
-    final List<MapEntry<String, String>> entriesList = rawOptions.entries.toList();
+    final List<MapEntry<String, String>> entriesList = rawOptions.entries
+        .toList();
     entriesList.shuffle(Random(qId));
     final options = Map.fromEntries(entriesList);
 
     final esReversa = json['es_reversa'] ?? false;
     final Map<String, dynamic> rawPuntos =
         json['puntos_opciones'] ?? json['puntosOpciones'] ?? {};
-        
+
     final puntosMap = rawPuntos.isNotEmpty
         ? rawPuntos.map((k, v) => MapEntry(k, (v as num).toInt()))
         : _inferOptionScores(rawOptions, esReversa: esReversa);
@@ -56,8 +57,12 @@ class PsicoQuestion {
       dimension: _clean(json['dimension'] ?? 'General'),
       subDimension: _clean(json['sub_dimension'] ?? ''),
       esEscalaMentira: json['es_escala_mentira'] ?? false,
-      contextoCorrecto: _clean(json['contexto_correcto'] ?? json['contextoCorrecto'] ?? ''),
-      contextoIncorrecto: _clean(json['contexto_incorrecto'] ?? json['contextoIncorrecto'] ?? ''),
+      contextoCorrecto: _clean(
+        json['contexto_correcto'] ?? json['contextoCorrecto'] ?? '',
+      ),
+      contextoIncorrecto: _clean(
+        json['contexto_incorrecto'] ?? json['contextoIncorrecto'] ?? '',
+      ),
     );
   }
 

@@ -49,9 +49,10 @@ class _HoverGlassCardState extends State<HoverGlassCard>
       vsync: this,
       duration: const Duration(milliseconds: 180),
     );
-    _scale = Tween<double>(begin: 1.0, end: 1.018).animate(
-      CurvedAnimation(parent: _ctrl, curve: Curves.easeOut),
-    );
+    _scale = Tween<double>(
+      begin: 1.0,
+      end: 1.018,
+    ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOut));
     _hoverT = _ctrl; // alias semántico
   }
 
@@ -79,55 +80,57 @@ class _HoverGlassCardState extends State<HoverGlassCard>
           // builder sólo reconstruye ESTE widget, no el árbol padre
           builder: (_, child) {
             final t = _hoverT.value;
-            final borderColor = Color.lerp(
-              nt.borderSubtle,
-              nt.borderHover,
-              t,
-            )!;
+            final borderColor = Color.lerp(nt.borderSubtle, nt.borderHover, t)!;
             final surfaceOpacity = ui.lerpDouble(
               nt.cardOpacityMin,
               nt.cardOpacityMax,
               t,
             )!;
 
-              // Ahora que usamos CanvasKit en web, podemos permitir un poco más de blur sin lag,
-              // aunque lo limitamos a 12.0 para mantener un rendimiento seguro en dispositivos móviles web.
-              final double effectiveBlur = kIsWeb ? (widget.blur > 12.0 ? 12.0 : widget.blur) : widget.blur;
+            // Ahora que usamos CanvasKit en web, podemos permitir un poco más de blur sin lag,
+            // aunque lo limitamos a 12.0 para mantener un rendimiento seguro en dispositivos móviles web.
+            final double effectiveBlur = kIsWeb
+                ? (widget.blur > 12.0 ? 12.0 : widget.blur)
+                : widget.blur;
 
-              return Transform.scale(
-                scale: _scale.value,
-                child: ClipRRect(
-                  borderRadius: widget.borderRadius,
-                  child: effectiveBlur > 0 
-                      ? BackdropFilter(
-                          filter: ui.ImageFilter.blur(
-                            sigmaX: effectiveBlur,
-                            sigmaY: effectiveBlur,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: nt.surfaceCard.withValues(alpha: surfaceOpacity),
-                              borderRadius: widget.borderRadius,
-                              border: Border.all(color: borderColor, width: 1.0),
-                            ),
-                            child: child,
-                          ),
-                        )
-                      : Container(
+            return Transform.scale(
+              scale: _scale.value,
+              child: ClipRRect(
+                borderRadius: widget.borderRadius,
+                child: effectiveBlur > 0
+                    ? BackdropFilter(
+                        filter: ui.ImageFilter.blur(
+                          sigmaX: effectiveBlur,
+                          sigmaY: effectiveBlur,
+                        ),
+                        child: Container(
                           decoration: BoxDecoration(
-                            color: nt.surfaceCard.withValues(alpha: surfaceOpacity),
+                            color: nt.surfaceCard.withValues(
+                              alpha: surfaceOpacity,
+                            ),
                             borderRadius: widget.borderRadius,
                             border: Border.all(color: borderColor, width: 1.0),
                           ),
                           child: child,
                         ),
-                ),
-              );
-            },
-            child: widget.child, // estático — no se reconstruye en la animación
-          ),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(
+                          color: nt.surfaceCard.withValues(
+                            alpha: surfaceOpacity,
+                          ),
+                          borderRadius: widget.borderRadius,
+                          border: Border.all(color: borderColor, width: 1.0),
+                        ),
+                        child: child,
+                      ),
+              ),
+            );
+          },
+          child: widget.child, // estático — no se reconstruye en la animación
         ),
-      );
+      ),
+    );
   }
 }
 
@@ -173,7 +176,10 @@ class StaticGlassContainer extends StatelessWidget {
       borderRadius: borderRadius,
       child: effectiveBlur > 0
           ? BackdropFilter(
-              filter: ui.ImageFilter.blur(sigmaX: effectiveBlur, sigmaY: effectiveBlur),
+              filter: ui.ImageFilter.blur(
+                sigmaX: effectiveBlur,
+                sigmaY: effectiveBlur,
+              ),
               child: container,
             )
           : container,
