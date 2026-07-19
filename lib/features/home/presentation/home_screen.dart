@@ -163,12 +163,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final minVariation = dart_math.Random(seed + now.minute).nextInt(5) - 2;
     _activeUsers = baseUsers + minVariation;
 
-    _activeUsersTimer = Timer.periodic(const Duration(seconds: 45), (_) {
+    // Actualizar cada 15 minutos para mayor realismo estático y no sentir que salta.
+    _activeUsersTimer = Timer.periodic(const Duration(minutes: 15), (_) {
       if (mounted) {
         setState(() {
-          // Varía en +/- 1 usuario ocasionalmente para más realismo
-          final change = dart_math.Random().nextInt(3) - 1; 
-          _activeUsers = (_activeUsers + change).clamp(40, 300);
+          // Nueva semilla cada 15 min, el número base cambiará acorde a la hora real.
+          final currentBlock = DateTime.now().minute ~/ 15;
+          final newSeed = DateTime.now().year * 10000 + DateTime.now().month * 100 + DateTime.now().day * 24 + DateTime.now().hour + currentBlock;
+          final nr = dart_math.Random(newSeed);
+          
+          int newBase = nr.nextInt(45) + 120;
+          if (DateTime.now().hour > 18 || DateTime.now().hour < 2) {
+            newBase += 40;
+          } else if (DateTime.now().hour > 8 && DateTime.now().hour < 14) {
+            newBase -= 20;
+          }
+          
+          _activeUsers = newBase;
         });
       }
     });

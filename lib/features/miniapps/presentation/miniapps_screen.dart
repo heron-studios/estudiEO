@@ -365,251 +365,262 @@ class _MiniAppCardState extends State<MiniAppCard>
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
-        child: AnimatedBuilder(
-          animation: _ctrl,
-          builder: (context, child) {
-            return Transform.scale(
-              scale: _scale.value,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  border: Border.all(
-                    color: Colors.white.withValues(
-                      alpha: 0.08 + 0.1 * _glow.value,
-                    ),
-                    width: 1.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: widget.themeColor.withValues(
-                        alpha: 0.02 + 0.08 * _glow.value,
+        child: RepaintBoundary(
+          child: AnimatedBuilder(
+            animation: _ctrl,
+            builder: (context, child) {
+              return Transform.scale(
+                scale: _scale.value,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      color: Colors.white.withValues(
+                        alpha: 0.08 + 0.15 * _glow.value,
                       ),
-                      blurRadius: 24,
-                      spreadRadius: 2 * _glow.value,
-                      offset: const Offset(0, 8),
+                      width: 1.0,
                     ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(23),
-                  child: BackdropFilter(
-                    filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: nt.surfaceCard.withValues(alpha: 0.3),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            widget.themeColor.withValues(
-                              alpha: 0.1 + 0.05 * _glow.value,
-                            ),
-                            Colors.transparent,
-                          ],
+                    boxShadow: [
+                      BoxShadow(
+                        color: widget.themeColor.withValues(
+                          alpha: 0.05 + 0.1 * _glow.value,
                         ),
+                        blurRadius: 30,
+                        spreadRadius: 2 * _glow.value,
+                        offset: const Offset(0, 10),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 20,
-                      ),
-                      child: widget.isSquare
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
-                                  width: 48,
-                                  height: 48,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: widget.themeColor.withValues(
-                                      alpha: 0.15,
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      widget.icon,
-                                      color: widget.themeColor,
-                                      size: 24,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 12),
-                                Text(
-                                  widget.title,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: -0.5,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                if (widget.badgeText != null) ...[
-                                  const SizedBox(height: 6),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 6,
-                                      vertical: 2,
-                                    ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(23),
+                    child: BackdropFilter(
+                      filter: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: nt.surfaceCard.withValues(alpha: 0.35),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              widget.themeColor.withValues(
+                                alpha: 0.12 + 0.08 * _glow.value,
+                              ),
+                              Colors.white.withValues(alpha: 0.02),
+                            ],
+                            stops: const [0.0, 1.0],
+                          ),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 20,
+                        ),
+                        child: widget.isSquare
+                            ? Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  AnimatedContainer(
+                                    duration: const Duration(milliseconds: 200),
+                                    width: 52,
+                                    height: 52,
                                     decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
                                       color: widget.themeColor.withValues(
-                                        alpha: 0.15,
+                                        alpha: 0.1 + (0.1 * _glow.value),
                                       ),
-                                      borderRadius: BorderRadius.circular(6),
                                       border: Border.all(
-                                        color: widget.themeColor.withValues(
-                                          alpha: 0.4,
-                                        ),
-                                        width: 1,
+                                        color: widget.themeColor.withValues(alpha: 0.2 + (0.3 * _glow.value)),
+                                        width: 1.0,
                                       ),
                                     ),
-                                    child: Text(
-                                      widget.badgeText!,
-                                      style: TextStyle(
+                                    child: Center(
+                                      child: Icon(
+                                        widget.icon,
                                         color: widget.themeColor,
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 0.5,
+                                        size: 26,
                                       ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    widget.title,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: -0.3,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  if (widget.badgeText != null) ...[
+                                    const SizedBox(height: 8),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8,
+                                        vertical: 3,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: widget.themeColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: widget.themeColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        widget.badgeText!,
+                                        style: TextStyle(
+                                          color: widget.themeColor,
+                                          fontSize: 9,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 0.5,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                  const SizedBox(height: 10),
+                                  Expanded(
+                                    child: Text(
+                                      widget.description,
+                                      style: TextStyle(
+                                        color: Colors.white.withValues(
+                                          alpha: 0.7,
+                                        ),
+                                        fontSize: 12,
+                                        height: 1.35,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
                                 ],
-                                const SizedBox(height: 8),
-                                Expanded(
-                                  child: Text(
-                                    widget.description,
-                                    style: TextStyle(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.65,
+                              )
+                            : Row(
+                                children: [
+                                  AnimatedContainer(
+                                    duration: const Duration(milliseconds: 200),
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: widget.themeColor.withValues(
+                                        alpha: 0.1 + (0.1 * _glow.value),
                                       ),
-                                      fontSize: 11,
-                                      height: 1.3,
+                                      border: Border.all(
+                                        color: widget.themeColor.withValues(alpha: 0.2 + (0.3 * _glow.value)),
+                                        width: 1.0,
+                                      ),
                                     ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            )
-                          : Row(
-                              children: [
-                                AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
-                                  width: 56,
-                                  height: 56,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: widget.themeColor.withValues(
-                                      alpha: 0.15,
+                                    child: Center(
+                                      child: Icon(
+                                        widget.icon,
+                                        color: widget.themeColor,
+                                        size: 30,
+                                      ),
                                     ),
                                   ),
-                                  child: Center(
-                                    child: Icon(
-                                      widget.icon,
-                                      color: widget.themeColor,
-                                      size: 32,
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Flexible(
-                                            child: Text(
-                                              widget.title,
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: -0.5,
-                                              ),
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          if (widget.badgeText != null) ...[
-                                            const SizedBox(width: 8),
-                                            Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                    horizontal: 8,
-                                                    vertical: 3,
-                                                  ),
-                                              decoration: BoxDecoration(
-                                                color: widget.themeColor
-                                                    .withValues(alpha: 0.15),
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                                border: Border.all(
-                                                  color: widget.themeColor
-                                                      .withValues(alpha: 0.4),
-                                                  width: 1,
-                                                ),
-                                              ),
+                                  const SizedBox(width: 20),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Flexible(
                                               child: Text(
-                                                widget.badgeText!,
-                                                style: TextStyle(
-                                                  color: widget.themeColor,
-                                                  fontSize: 9,
-                                                  fontWeight: FontWeight.w900,
-                                                  letterSpacing: 0.5,
+                                                widget.title,
+                                                style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 19,
+                                                  fontWeight: FontWeight.bold,
+                                                  letterSpacing: -0.3,
                                                 ),
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
+                                            if (widget.badgeText != null) ...[
+                                              const SizedBox(width: 10),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 8,
+                                                      vertical: 4,
+                                                    ),
+                                                decoration: BoxDecoration(
+                                                  color: widget.themeColor
+                                                      .withValues(alpha: 0.15),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                  border: Border.all(
+                                                    color: widget.themeColor
+                                                        .withValues(alpha: 0.3),
+                                                    width: 1,
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  widget.badgeText!,
+                                                  style: TextStyle(
+                                                    color: widget.themeColor,
+                                                    fontSize: 9,
+                                                    fontWeight: FontWeight.w900,
+                                                    letterSpacing: 0.5,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ],
-                                        ],
-                                      ),
-                                      const SizedBox(height: 6),
-                                      Text(
-                                        widget.description,
-                                        style: TextStyle(
-                                          color: Colors.white.withValues(
-                                            alpha: 0.65,
-                                          ),
-                                          fontSize: 13,
-                                          height: 1.4,
                                         ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(width: 12),
-                                Transform.translate(
-                                  offset: Offset(6 * _glow.value, 0),
-                                  child: Icon(
-                                    widget.isLocked
-                                        ? Icons.lock_rounded
-                                        : Icons.arrow_forward_ios_rounded,
-                                    color: widget.isLocked
-                                        ? Colors.white54
-                                        : Color.lerp(
-                                            Colors.white24,
-                                            widget.themeColor,
-                                            _glow.value,
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          widget.description,
+                                          style: TextStyle(
+                                            color: Colors.white.withValues(
+                                              alpha: 0.7,
+                                            ),
+                                            fontSize: 13,
+                                            height: 1.4,
                                           ),
-                                    size: 18,
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                  const SizedBox(width: 16),
+                                  Transform.translate(
+                                    offset: Offset(8 * _glow.value, 0),
+                                    child: Icon(
+                                      widget.isLocked
+                                          ? Icons.lock_rounded
+                                          : Icons.arrow_forward_ios_rounded,
+                                      color: widget.isLocked
+                                          ? Colors.white54
+                                          : Color.lerp(
+                                              Colors.white30,
+                                              widget.themeColor,
+                                              _glow.value,
+                                            ),
+                                      size: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
