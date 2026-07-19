@@ -35,13 +35,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
 
-  Widget _buildUserBasicInfo(String userName, String userEmail, String targetSchool) {
-    return Center(
-      child: Column(
+  Widget _buildUserBasicInfo(String userName, String userEmail, String targetSchool, bool isDesktop) {
+    return Container(
+      padding: EdgeInsets.all(isDesktop ? 32 : 24),
+      decoration: BoxDecoration(
+        color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.4),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.08),
+          width: 1.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            blurRadius: 30,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Flex(
+        direction: isDesktop ? Axis.horizontal : Axis.vertical,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: isDesktop ? CrossAxisAlignment.center : CrossAxisAlignment.center,
         children: [
           Container(
-            width: 100,
-            height: 100,
+            width: isDesktop ? 100 : 120,
+            height: isDesktop ? 100 : 120,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               gradient: const LinearGradient(
@@ -51,8 +70,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: _blue.withValues(alpha: 0.3),
-                  blurRadius: 20,
+                  color: _blue.withValues(alpha: 0.4),
+                  blurRadius: 25,
                   spreadRadius: 2,
                 ),
               ],
@@ -60,50 +79,68 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Center(
               child: Text(
                 userName.isNotEmpty ? userName[0].toUpperCase() : 'E',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 40,
+                  fontSize: isDesktop ? 40 : 48,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Outfit',
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 16),
-          Text(
-            userName.isNotEmpty ? userName : 'Aspirante',
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Outfit',
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            userEmail,
-            style: TextStyle(
-              color: _muted.withValues(alpha: 0.8),
-              fontSize: 14,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: _blue.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: _blue.withValues(alpha: 0.3),
-              ),
-            ),
-            child: Text(
-              'Objetivo: $targetSchool',
-              style: const TextStyle(
-                color: _blue,
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-              ),
+          SizedBox(width: isDesktop ? 32 : 0, height: isDesktop ? 0 : 24),
+          Expanded(
+            flex: isDesktop ? 1 : 0,
+            child: Column(
+              crossAxisAlignment: isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+              children: [
+                Text(
+                  userName.isNotEmpty ? userName : 'Aspirante',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: isDesktop ? 32 : 28,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: 'Outfit',
+                    letterSpacing: -0.5,
+                  ),
+                  textAlign: isDesktop ? TextAlign.left : TextAlign.center,
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  userEmail,
+                  style: TextStyle(
+                    color: _muted.withValues(alpha: 0.9),
+                    fontSize: 15,
+                  ),
+                  textAlign: isDesktop ? TextAlign.left : TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: _blue.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: _blue.withValues(alpha: 0.3),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.flag_rounded, color: _blue, size: 16),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Objetivo: $targetSchool',
+                        style: const TextStyle(
+                          color: _blue,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -194,7 +231,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                _buildUserBasicInfo(userName, userEmail, targetSchool),
+                                _buildUserBasicInfo(userName, userEmail, targetSchool, isDesktop),
                                 const SizedBox(height: 32),
                                 _buildGamificationStats(gamification),
                                 const SizedBox(height: 32),
@@ -225,7 +262,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        _buildUserBasicInfo(userName, userEmail, targetSchool),
+                        _buildUserBasicInfo(userName, userEmail, targetSchool, isDesktop),
                         const SizedBox(height: 32),
                         _buildGamificationStats(gamification),
                         const SizedBox(height: 32),
@@ -245,7 +282,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 }
 
-class _StatCard extends StatelessWidget {
+class _StatCard extends StatefulWidget {
   final IconData icon;
   final Color iconColor;
   final String title;
@@ -259,40 +296,73 @@ class _StatCard extends StatelessWidget {
   });
 
   @override
+  State<_StatCard> createState() => _StatCardState();
+}
+
+class _StatCardState extends State<_StatCard> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-      decoration: BoxDecoration(
-        color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.4),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Colors.white.withValues(alpha: 0.08),
-          width: 1.0,
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOutCirc,
+        transform: Matrix4.translationValues(0, _isHovered ? -4.0 : 0.0, 0),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+        decoration: BoxDecoration(
+          color: NeuralDesignSystem.surfaceCard.withValues(alpha: _isHovered ? 0.6 : 0.3),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: widget.iconColor.withValues(alpha: _isHovered ? 0.4 : 0.08),
+            width: 1.0,
+          ),
+          boxShadow: _isHovered
+              ? [
+                  BoxShadow(
+                    color: widget.iconColor.withValues(alpha: 0.2),
+                    blurRadius: 20,
+                    spreadRadius: -2,
+                    offset: const Offset(0, 10),
+                  )
+                ]
+              : [],
         ),
-      ),
-      child: Column(
-        children: [
-          Icon(icon, color: iconColor, size: 28),
-          const SizedBox(height: 8),
-          Text(
-            value,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: widget.iconColor.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(widget.icon, color: widget.iconColor, size: 28),
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 4),
-          Text(
-            title,
-            style: TextStyle(
-              color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.7),
-              fontSize: 12,
+            const SizedBox(height: 12),
+            Text(
+              widget.value,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Outfit',
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+            const SizedBox(height: 4),
+            Text(
+              widget.title,
+              style: TextStyle(
+                color: NeuralDesignSystem.textSecondary.withValues(alpha: 0.8),
+                fontSize: 12,
+                letterSpacing: 0.5,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
