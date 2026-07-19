@@ -996,13 +996,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           child: Column(
             children: [
               // ── HEADER ──────────────────────────────────────────────────
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                alignment: WrapAlignment.spaceBetween,
+                runSpacing: 12,
+                spacing: 16,
                 children: [
                   // Logo + Badge + Greeting
-                  Expanded(
-                    child: Column(
+                  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -1129,7 +1130,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         ),
                       ],
                     ),
-                  ),
                   // Derecha: Gamificación, Hoja de Ruta y Ajustes
                   Consumer<GamificationProvider>(
                     builder: (context, gami, child) {
