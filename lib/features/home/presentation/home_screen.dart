@@ -21,6 +21,7 @@ import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/features/dashboard/domain/leaderboard_service.dart';
+import 'package:learn/core/widgets/profile_setup_dialog.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:learn/core/widgets/animated_grid_bg.dart';
 
@@ -139,7 +140,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     _loadPsicoProgress();
     _loadDailyVerse();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await ProfileSetupDialog.showIfNeeded(context);
       _checkPremiumStatus();
       _syncLeaderboard();
     });
@@ -711,16 +713,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildTutorTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.psychology_rounded,
-      color: const Color(0xFFC084FC),
-      gradientColors: const [Color(0xFF23103A), Color(0xFF140822)],
-      title: 'Tutor IA',
-      subtitle: 'Análisis',
-      onTap: () => context.push('/tutor-analitico'),
-    );
-  }
+
 
   /// Misión Diaria — card mejorada
   Widget _buildDailyMissionCard(BuildContext context, dynamic nt) {
@@ -942,7 +935,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               tooltip: 'Configuración',
               icon: Icons.settings_rounded,
               glowColor: const Color(0xFF94A3B8),
-              onPressed: () => context.push('/settings'),
+              onPressed: () => context.push('/profile'),
             ),
             _PremiumFabButton(
               tooltip: 'Arena',
@@ -954,7 +947,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               tooltip: 'Tutor',
               icon: Icons.psychology_rounded,
               glowColor: const Color(0xFFC084FC),
-              onPressed: () => context.push('/tutor-analitico'),
+              onPressed: () => context.push('/profile'),
             ),
           ],
         ),
@@ -1201,7 +1194,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 constraints: const BoxConstraints(),
                               ),
                             ),
-                            // Ajustes (⚙️)
+                            // Perfil (👤)
                             Container(
                               decoration: BoxDecoration(
                                 color: Colors.white.withValues(alpha: 0.08),
@@ -1211,13 +1204,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 ),
                               ),
                               child: IconButton(
-                                onPressed: () => context.push('/settings'),
+                                onPressed: () => context.push('/profile'),
                                 icon: const Icon(
-                                  Icons.settings_rounded,
+                                  Icons.person_rounded,
                                   color: Colors.white,
                                   size: 22,
                                 ),
-                                tooltip: 'Ajustes',
+                                tooltip: 'Perfil',
                                 padding: const EdgeInsets.all(8),
                                 constraints: const BoxConstraints(),
                               ),
@@ -1374,24 +1367,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   ],
                                 ),
                                 const SizedBox(height: 16),
-                                if (isLargeScreen)
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 2.6,
-                                          child: _buildArenaTile(context, nt),
+                                  if (isLargeScreen)
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: AspectRatio(
+                                            aspectRatio: 2.6,
+                                            child: _buildArenaTile(context, nt),
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(width: 16),
-                                      Expanded(
-                                        child: AspectRatio(
-                                          aspectRatio: 2.6,
-                                          child: _buildTutorTile(context, nt),
+                                        const SizedBox(width: 16),
+                                        const Expanded(
+                                          child: AspectRatio(
+                                            aspectRatio: 2.6,
+                                            child: SizedBox(),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
                               ],
                             );
                           } else {
@@ -1454,7 +1447,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ],
                                   ),
                                   const SizedBox(height: 10),
-                                  // Fila 3: Arena + Tutor (Solo si somehow entra a mobile pero con isLargeScreen false, que no es el caso, pero por seguridad)
                                   if (isLargeScreen)
                                     Row(
                                       children: [
@@ -1468,13 +1460,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                           ),
                                         ),
                                         const SizedBox(width: 10),
-                                        Expanded(
+                                        const Expanded(
                                           child: AspectRatio(
                                             aspectRatio: 1.45,
-                                            child: _buildTutorTile(
-                                              context,
-                                              nt,
-                                            ),
+                                            child: SizedBox(),
                                           ),
                                         ),
                                       ],
@@ -1510,20 +1499,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             horizontal: 16,
             vertical: 24,
           ),
-          child: Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.75,
-            decoration: BoxDecoration(
-              color: nt.surfaceCard,
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.5),
-                  blurRadius: 30,
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 500),
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.75,
+                decoration: BoxDecoration(
+                  color: nt.surfaceCard,
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.5),
+                      blurRadius: 30,
+                    ),
+                  ],
                 ),
-              ],
-            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(24),
               child: AnimatedGridBackground(
@@ -1596,9 +1588,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ),
               ),
             ),
-            ),
           ),
-        );
+        ),
+      ),
+    ),
+  );
       },
     );
   }
@@ -1620,65 +1614,166 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         }
 
         final users = snapshot.data!;
-        return ListView.builder(
-          padding: const EdgeInsets.all(16),
-          itemCount: users.length,
-          itemBuilder: (context, index) {
-            final user = users[index];
-            final rank = index + 1;
+        
+        // Podium for top 3
+        final topUsers = users.take(3).toList();
+        final restUsers = users.skip(3).toList();
 
-            Color rankColor;
-            if (rank == 1) {
-              rankColor = const Color(0xFFFFD700);
-            } else if (rank == 2) {
-              rankColor = const Color(0xFFC0C0C0);
-            } else if (rank == 3) {
-              rankColor = const Color(0xFFCD7F32);
-            } else {
-              rankColor = nt.textSecondary;
-            }
-
-            return Container(
-              margin: const EdgeInsets.only(bottom: 8),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: rank <= 3 ? 0.05 : 0.02),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: rank <= 3
-                      ? rankColor.withValues(alpha: 0.3)
-                      : Colors.white.withValues(alpha: 0.05),
-                ),
-              ),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: rankColor.withValues(alpha: 0.2),
-                  child: Text(
-                    '$rank',
-                    style: TextStyle(
-                      color: rankColor,
-                      fontWeight: FontWeight.bold,
+        return CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            if (topUsers.isNotEmpty)
+              SliverToBoxAdapter(
+                child: RepaintBoundary(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 24.0, bottom: 32.0, left: 16, right: 16),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        if (topUsers.length > 1) _buildPodiumItem(nt, topUsers[1], 2, 120),
+                        if (topUsers.isNotEmpty) _buildPodiumItem(nt, topUsers[0], 1, 160),
+                        if (topUsers.length > 2) _buildPodiumItem(nt, topUsers[2], 3, 100),
+                      ],
                     ),
                   ),
                 ),
-                title: Text(
-                  user['name'] ?? 'Aspirante',
-                  style: TextStyle(
-                    color: rank <= 3 ? Colors.white : nt.textPrimary,
-                    fontWeight: rank <= 3 ? FontWeight.bold : FontWeight.normal,
-                  ),
-                ),
-                trailing: Text(
-                  '${user['xp']} XP',
-                  style: TextStyle(
-                    color: nt.blueGoogle,
-                    fontWeight: FontWeight.bold,
-                  ),
+              ),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final user = restUsers[index];
+                    final rank = index + 4;
+                    return _buildLeaderboardListItem(nt, user, rank);
+                  },
+                  childCount: restUsers.length,
                 ),
               ),
-            );
-          },
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 24)),
+          ],
         );
       },
+    );
+  }
+
+  Widget _buildPodiumItem(NeuralThemeData nt, Map<String, dynamic> user, int rank, double height) {
+    Color rankColor;
+    if (rank == 1) {
+      rankColor = const Color(0xFFFFD700);
+    } else if (rank == 2) {
+      rankColor = const Color(0xFFC0C0C0);
+    } else {
+      rankColor = const Color(0xFFCD7F32);
+    }
+
+    final name = user['name'] ?? 'Aspirante';
+    final initial = name.isNotEmpty ? name[0].toUpperCase() : 'A';
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        CircleAvatar(
+          radius: rank == 1 ? 28 : 22,
+          backgroundColor: rankColor,
+          child: Text(
+            initial,
+            style: const TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          name.split(' ').first,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: rank == 1 ? FontWeight.bold : FontWeight.w600,
+            fontSize: rank == 1 ? 14 : 12,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+        Text(
+          '${user['xp']} XP',
+          style: TextStyle(
+            color: nt.blueGoogle,
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Container(
+          width: 80,
+          height: height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                rankColor.withValues(alpha: 0.8),
+                rankColor.withValues(alpha: 0.2),
+                Colors.transparent,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+            border: Border(
+              top: BorderSide(color: rankColor, width: 2),
+              left: BorderSide(color: rankColor.withValues(alpha: 0.5), width: 1),
+              right: BorderSide(color: rankColor.withValues(alpha: 0.5), width: 1),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              '$rank',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.9),
+                fontSize: rank == 1 ? 40 : 32,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLeaderboardListItem(NeuralThemeData nt, Map<String, dynamic> user, int rank) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.02),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.05),
+        ),
+      ),
+      child: ListTile(
+        leading: Text(
+          '$rank',
+          style: TextStyle(
+            color: nt.textSecondary,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
+        title: Text(
+          user['name'] ?? 'Aspirante',
+          style: TextStyle(
+            color: nt.textPrimary,
+          ),
+        ),
+        trailing: Text(
+          '${user['xp']} XP',
+          style: TextStyle(
+            color: nt.blueGoogle,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
