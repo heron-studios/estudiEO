@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/providers/gamification_provider.dart';
 import 'package:provider/provider.dart';
 import 'dart:async';
-
+import 'dart:math' as math;
 class ArenaScreen extends StatefulWidget {
   const ArenaScreen({super.key});
 
@@ -29,10 +29,31 @@ class _ArenaScreenState extends State<ArenaScreen> {
   int _currentQuestionIndex = 0;
   bool _answeredCurrent = false;
 
+  Timer? _botTimer;
+
   @override
   void dispose() {
     _matchSub?.cancel();
+    _botTimer?.cancel();
     super.dispose();
+  }
+
+  void _startBotSimulation() {
+    _botTimer?.cancel();
+    _botTimer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      if (!mounted || _match == null || _match!.status != 'playing') {
+        timer.cancel();
+        return;
+      }
+      final isBotPlayer2 = _match!.player2Id?.startsWith('BOT_') ?? false;
+      if (isBotPlayer2) {
+        // Simular que el bot responde correctamente con una probabilidad del 70%
+        if (math.Random().nextDouble() < 0.7) {
+           final currentScore = _match!.player2Score;
+           _arenaService.updateScore(_match!.id, 'player2Score', currentScore + 10);
+        }
+      }
+    });
   }
 
   Future<void> _startMatchmaking() async {
@@ -43,9 +64,16 @@ class _ArenaScreenState extends State<ArenaScreen> {
       final match = await _arenaService.findOrJoinMatch(_playerId, _playerName);
       _matchSub = _arenaService.watchMatch(match.id).listen((updatedMatch) {
         if (!mounted) return;
+        final wasWaiting = _match?.status == 'waiting' || _match == null;
         setState(() {
           _match = updatedMatch;
         });
+
+        if (wasWaiting && updatedMatch.status == 'playing') {
+          if (updatedMatch.player2Id?.startsWith('BOT_') ?? false) {
+            _startBotSimulation();
+          }
+        }
 
         if (updatedMatch.status == 'finished') {
           _handleMatchFinished();

@@ -162,104 +162,37 @@ class MiniAppsScreen extends StatelessWidget {
                               child: Opacity(opacity: value, child: child),
                             );
                           },
-                          child: GridView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount:
-                                      MediaQuery.of(context).size.width > 600
-                                      ? 3
-                                      : 2,
-                                  mainAxisSpacing: 16,
-                                  crossAxisSpacing: 16,
-                                  childAspectRatio:
-                                      MediaQuery.of(context).size.width > 600
-                                      ? 1.0
-                                      : 0.85,
-                                ),
-                            itemCount: 5,
-                            itemBuilder: (context, index) {
-                              final auth = context.read<AuthService>();
-                              final isPremium = auth.isPremium;
-                              final isLocked = !isPremium && index != 0;
-
-                              if (index == 0) {
-                                return MiniAppCard(
-                                  title: 'Tabla Periódica',
-                                  description:
-                                      'Modo exploratorio, entrenamiento dual y supervivencia.',
-                                  icon: Icons.science_rounded,
-                                  themeColor: nt.blueGoogle,
-                                  badgeText: 'EXPLORADOR',
-                                  isLocked: false,
-                                  isSquare: true,
-                                  onTap: () =>
-                                      context.push('/miniapps/periodic-table'),
-                                );
-                              } else if (index == 1) {
-                                return MiniAppCard(
-                                  title: 'Generador Flashcards IA',
-                                  description:
-                                      'Crea tarjetas de memoria automáticas desde cualquier texto.',
-                                  icon: Icons.auto_awesome_rounded,
-                                  themeColor: const Color(0xFF8B5CF6),
-                                  badgeText: 'EXPERIMENTAL',
-                                  isLocked:
-                                      false, // Disponible para todos (o puede ser premium)
-                                  isSquare: true,
-                                  onTap: () => context.push('/srs/generator'),
-                                );
-                              } else if (index == 2) {
-                                return MiniAppCard(
-                                  title: 'Silogismos',
-                                  description:
-                                      'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
-                                  icon: Icons.account_tree_rounded,
-                                  themeColor: const Color(0xFF14B8A6),
-                                  badgeText: 'MINIJUEGO',
-                                  isLocked: isLocked,
-                                  isSquare: true,
-                                  onTap: isLocked
-                                      ? () => PremiumUpgradeDialog.show(context)
-                                      : () => context.push(
-                                          '/miniapps/silogismos',
-                                        ),
-                                );
-                              } else if (index == 3) {
-                                return MiniAppCard(
-                                  title: 'ANP Master',
-                                  description:
-                                      'Áreas Naturales Protegidas del Perú. Repaso visual activo y mapas.',
-                                  icon: Icons.map_rounded,
-                                  themeColor: const Color(0xFF4ADE80),
-                                  badgeText: 'BIODIVERSIDAD',
-                                  isLocked: isLocked,
-                                  isSquare: true,
-                                  onTap: isLocked
-                                      ? () => PremiumUpgradeDialog.show(context)
-                                      : () => context.push(
-                                          '/miniapps/anp-master',
-                                        ),
-                                );
-                              } else {
-                                return MiniAppCard(
-                                  title: 'Prod. Notables',
-                                  description:
-                                      'Aprende de forma interactiva las fórmulas matemáticas principales.',
-                                  icon: Icons.calculate_rounded,
-                                  themeColor: Colors.orangeAccent,
-                                  badgeText: 'EXPLORADOR',
-                                  isLocked: isLocked,
-                                  isSquare: true,
-                                  onTap: isLocked
-                                      ? () => PremiumUpgradeDialog.show(context)
-                                      : () => context.push(
-                                          '/miniapps/productos-notables',
-                                        ),
-                                );
-                              }
-                            },
+                          child: Column(
+                            children: [
+                              _buildBentoRow(
+                                context,
+                                [
+                                  _buildAppCard(context, 0, false, 1.0),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              _buildBentoRow(
+                                context,
+                                [
+                                  _buildAppCard(context, 2, true, 1.0),
+                                  _buildAppCard(context, 3, true, 1.0),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              _buildBentoRow(
+                                context,
+                                [
+                                  _buildAppCard(context, 1, false, 1.0),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                              _buildBentoRow(
+                                context,
+                                [
+                                  _buildAppCard(context, 4, false, 1.0),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -273,6 +206,99 @@ class MiniAppsScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildBentoRow(BuildContext context, List<Widget> children) {
+    if (children.length == 1) {
+      return children.first;
+    }
+    return Row(
+      children: [
+        Expanded(child: children[0]),
+        const SizedBox(width: 16),
+        Expanded(child: children[1]),
+      ],
+    );
+  }
+
+  Widget _buildAppCard(BuildContext context, int index, bool isSquare, double aspectRatio) {
+    final auth = context.read<AuthService>();
+    final isPremium = auth.isPremium;
+    final isLocked = !isPremium && index != 0;
+    final nt = NeuralTheme.of(context);
+
+    if (index == 0) {
+      return AspectRatio(
+        aspectRatio: isSquare ? aspectRatio : 2.5,
+        child: MiniAppCard(
+          title: 'Tabla Periódica',
+          description: 'Modo exploratorio, entrenamiento dual y supervivencia.',
+          icon: Icons.science_rounded,
+          themeColor: nt.blueGoogle,
+          badgeText: 'EXPLORADOR',
+          isLocked: false,
+          isSquare: isSquare,
+          onTap: () => context.push('/miniapps/periodic-table'),
+        ),
+      );
+    } else if (index == 1) {
+      return AspectRatio(
+        aspectRatio: isSquare ? aspectRatio : 2.5,
+        child: MiniAppCard(
+          title: 'Generador Flashcards IA',
+          description: 'Crea tarjetas de memoria automáticas desde cualquier texto.',
+          icon: Icons.auto_awesome_rounded,
+          themeColor: const Color(0xFF8B5CF6),
+          badgeText: 'EXPERIMENTAL',
+          isLocked: false,
+          isSquare: isSquare,
+          onTap: () => context.push('/srs/generator'),
+        ),
+      );
+    } else if (index == 2) {
+      return AspectRatio(
+        aspectRatio: isSquare ? aspectRatio : 1.0,
+        child: MiniAppCard(
+          title: 'Silogismos',
+          description: 'Lógica deductiva e inferencia. Repaso de razonamiento verbal.',
+          icon: Icons.account_tree_rounded,
+          themeColor: const Color(0xFF14B8A6),
+          badgeText: 'MINIJUEGO',
+          isLocked: isLocked,
+          isSquare: true, // Force square for half-width cards
+          onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/silogismos'),
+        ),
+      );
+    } else if (index == 3) {
+      return AspectRatio(
+        aspectRatio: isSquare ? aspectRatio : 1.0,
+        child: MiniAppCard(
+          title: 'ANP Master',
+          description: 'Áreas Naturales Protegidas del Perú. Repaso visual activo.',
+          icon: Icons.map_rounded,
+          themeColor: const Color(0xFF4ADE80),
+          badgeText: 'BIODIVERSIDAD',
+          isLocked: isLocked,
+          isSquare: true,
+          onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/anp-master'),
+        ),
+      );
+    } else {
+      return AspectRatio(
+        aspectRatio: isSquare ? aspectRatio : 2.5,
+        child: MiniAppCard(
+          title: 'Prod. Notables',
+          description: 'Aprende de forma interactiva las fórmulas matemáticas principales.',
+          icon: Icons.calculate_rounded,
+          themeColor: Colors.orangeAccent,
+          badgeText: 'EXPLORADOR',
+          isLocked: isLocked,
+          isSquare: isSquare,
+          onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/productos-notables'),
+        ),
+      );
+    }
+  }
+
 }
 
 class MiniAppCard extends StatefulWidget {

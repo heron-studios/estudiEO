@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
-import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';

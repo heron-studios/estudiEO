@@ -31,14 +31,24 @@ class ArenaService {
       }
     }
 
-    // Crear una nueva sala
+    // Crear una nueva sala contra un BOT
     final questions = _generateRandomQuestions(5);
     final docRef = _firestore.collection('arena_matches').doc();
+    final botNames = [
+      'Cadete Sánchez', 'Aspirante Rojas', 'S03 PNP Mendoza', 
+      'Aspirante Silva', 'Cadete Quispe', 'Alumno Torres', 
+      'S02 PNP Castillo', 'Aspirante Vargas'
+    ];
+    botNames.shuffle();
+    final botName = botNames.first;
+    
     final newMatch = ArenaMatch(
       id: docRef.id,
       player1Id: playerId,
       player1Name: playerName,
-      status: 'waiting',
+      player2Id: 'BOT_${DateTime.now().millisecondsSinceEpoch}',
+      player2Name: botName,
+      status: 'playing', // Inicia instantáneamente
       createdAt: DateTime.now(),
       questions: questions,
     );

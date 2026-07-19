@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:js_interop';
 import 'package:flutter/widgets.dart';
+import 'groq_service.dart';
 import 'puter_service.dart';
 
 @JS('puter.ai.chat')
@@ -10,10 +11,13 @@ external JSPromise _puterAiChat(JSAny prompt);
 external String _jsonStringify(JSAny? obj);
 
 /// Implementación de PuterService nativa para Web usando Puter.js
+/// Cuenta con un mecanismo de FALLBACK a Groq para que nunca falle a futuro.
 class PuterServiceWeb implements PuterService {
+  final GroqService _groq = GroqService(); // Fallback
   String _systemPrompt = '';
   bool _initialized = false;
   final List<Map<String, String>> _messages = [];
+  bool _useGroqFallback = false; // Bandera para saber si Puter falló
 
   PuterServiceWeb();
 
@@ -32,8 +36,7 @@ class PuterServiceWeb implements PuterService {
 
   @override
   Widget? buildBridgeWidget() {
-    // En la web usamos JS interop directo, no hay bridge widget
-    return null;
+    return null; // En la web usamos JS interop directo
   }
 
   @override
@@ -55,9 +58,12 @@ class PuterServiceWeb implements PuterService {
       _messages.add({'role': 'user', 'content': prompt});
     }
 
+    if (_useGroqFallback) {
+      return _chatWithGroq(prompt);
+    }
+
     try {
-      // Concatenamos el contexto para que Puter tenga historial
-      // usando la API básica de string.
+      // Intentamos usar Puter.js
       String fullContext = _messages
           .map(
             (m) =>
@@ -71,13 +77,21 @@ class PuterServiceWeb implements PuterService {
       final dartified = response.dartify();
 
       String reply = _extractContent(dartified, response);
-
       _messages.add({'role': 'assistant', 'content': reply});
       return reply;
     } catch (e) {
-      debugPrint('Error Puter JS: $e');
-      return 'Error de conexión con Puter.js: $e';
+      // Si falla Puter (CORS, ad-blocker, no auth, error JS), activamos Groq para siempre
+      debugPrint('Error Puter JS (Activando Fallback a Groq): $e');
+      _useGroqFallback = true;
+      return _chatWithGroq(prompt);
     }
+  }
+
+  Future<String> _chatWithGroq(String prompt) async {
+    return _groq.chat(
+      systemPrompt: _systemPrompt,
+      userPrompt: prompt,
+    );
   }
 
   @override
@@ -101,14 +115,30 @@ El formato JSON estricto esperado es:
 
     String fullPrompt =
         '$systemPrompt\n\nTexto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.';
+
+    if (_useGroqFallback) {
+      return _groq.chatOneShot(
+        systemPrompt: systemPrompt,
+        userPrompt:
+            'Texto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.',
+        expectJson: true,
+      );
+    }
+
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
       final dartified = response.dartify();
       return _extractContent(dartified, response);
     } catch (e) {
-      debugPrint('Error Puter JS Flashcards: $e');
-      throw Exception('Error al comunicarse con Puter.js: $e');
+      debugPrint('Error Puter JS Flashcards (Fallback a Groq): $e');
+      _useGroqFallback = true;
+      return _groq.chatOneShot(
+        systemPrompt: systemPrompt,
+        userPrompt:
+            'Texto a procesar:\n\n$text\n\nRecuerda, responde solo con JSON.',
+        expectJson: true,
+      );
     }
   }
 
@@ -123,6 +153,15 @@ El formato JSON estricto esperado es:
 
     final fullPrompt =
         '$systemPrompt\n\nEstos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.';
+
+    if (_useGroqFallback) {
+      return _groq.chatOneShot(
+        systemPrompt: systemPrompt,
+        userPrompt:
+            'Estos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.',
+      );
+    }
+
     try {
       final promise = _puterAiChat(fullPrompt.toJS);
       final response = await promise.toDart;
@@ -130,8 +169,13 @@ El formato JSON estricto esperado es:
 
       return _extractContent(dartified, response);
     } catch (e) {
-      debugPrint('Error Puter JS Tutor: $e');
-      throw Exception('Error al comunicarse con Puter.js: $e');
+      debugPrint('Error Puter JS Tutor (Fallback a Groq): $e');
+      _useGroqFallback = true;
+      return _groq.chatOneShot(
+        systemPrompt: systemPrompt,
+        userPrompt:
+            'Estos son los datos del estudiante (JSON):\n\n$statsJson\n\nGenera el análisis personalizado.',
+      );
     }
   }
 }

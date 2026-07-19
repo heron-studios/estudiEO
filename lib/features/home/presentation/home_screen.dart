@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'dart:async';
+import 'dart:math' as dart_math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -113,6 +115,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _todayCompleted = false;
 
   String? _dailyVerse;
+  
+  int _activeUsers = 23;
+  Timer? _activeUsersTimer;
 
   @override
   void initState() {
@@ -140,6 +145,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     _loadPsicoProgress();
     _loadDailyVerse();
+    
+    _activeUsers = dart_math.Random().nextInt(25) + 18;
+    _activeUsersTimer = Timer.periodic(const Duration(seconds: 12), (_) {
+      if (mounted) {
+        setState(() {
+          // Varía en +/- 2 usuarios
+          final change = dart_math.Random().nextInt(5) - 2;
+          _activeUsers = (_activeUsers + change).clamp(12, 58);
+        });
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await ProfileSetupDialog.showIfNeeded(context);
       _checkPremiumStatus();
@@ -189,6 +206,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void dispose() {
     _fabController.dispose();
     _warningLottieController.dispose();
+    _activeUsersTimer?.cancel();
     super.dispose();
   }
 
@@ -1104,6 +1122,40 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         alignment: WrapAlignment.end,
                         children: [
+                          // Active Users Pill
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: Colors.green.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  width: 8,
+                                  height: 8,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.greenAccent,
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                      BoxShadow(color: Colors.greenAccent, blurRadius: 4),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  '$_activeUsers activos',
+                                  style: const TextStyle(
+                                    color: Colors.greenAccent,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           // Unified Gamification Stats Pill
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),

@@ -11,23 +11,23 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/export_service.dart';
 import 'package:learn/core/widgets/neural_background_wrapper.dart';
 
-// Componente animado: Micrófono palpitante
-class _PulsingMic extends StatefulWidget {
+class _VoiceOrb extends StatefulWidget {
   final NeuralThemeData nt;
-  const _PulsingMic({required this.nt});
+  final bool isListening;
+  
+  const _VoiceOrb({required this.nt, this.isListening = false});
   @override
-  State<_PulsingMic> createState() => _PulsingMicState();
+  State<_VoiceOrb> createState() => _VoiceOrbState();
 }
 
-class _PulsingMicState extends State<_PulsingMic>
-    with SingleTickerProviderStateMixin {
+class _VoiceOrbState extends State<_VoiceOrb> with SingleTickerProviderStateMixin {
   late AnimationController _ctrl;
   @override
   void initState() {
     super.initState();
     _ctrl = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 1500),
     )..repeat(reverse: true);
   }
 
@@ -39,30 +39,75 @@ class _PulsingMicState extends State<_PulsingMic>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _ctrl,
-      builder: (context, child) {
-        return Transform.scale(
-          scale: 1.0 + (_ctrl.value * 0.15),
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: widget.nt.pink.withValues(
-                alpha: 0.1 + (_ctrl.value * 0.2),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.nt.pink.withValues(alpha: _ctrl.value * 0.4),
-                  blurRadius: 20,
-                  spreadRadius: _ctrl.value * 10,
+    return RepaintBoundary(
+      child: AnimatedBuilder(
+        animation: _ctrl,
+        builder: (context, child) {
+          final color = widget.isListening ? widget.nt.successGreen : widget.nt.pink;
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              // Outer Ripple
+              Transform.scale(
+                scale: 1.0 + (_ctrl.value * 0.4),
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color.withValues(alpha: 0.1),
+                  ),
                 ),
-              ],
-            ),
-            child: Icon(Icons.mic_rounded, color: widget.nt.pink, size: 36),
-          ),
-        );
-      },
+              ),
+              // Middle Ripple
+              Transform.scale(
+                scale: 1.0 + (_ctrl.value * 0.2),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: color.withValues(alpha: 0.2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: _ctrl.value * 0.3),
+                        blurRadius: 30,
+                        spreadRadius: 10,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // Core Orb
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      Colors.white,
+                      color,
+                    ],
+                    stops: const [0.2, 1.0],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.5),
+                      blurRadius: 20,
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  widget.isListening ? Icons.graphic_eq_rounded : Icons.mic_rounded,
+                  color: Colors.white,
+                  size: 36,
+                ),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
@@ -375,7 +420,9 @@ class _InterviewScreenState extends State<InterviewScreen>
               ),
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 60),
+          _VoiceOrb(nt: nt, isListening: !_showAnswer),
+          const SizedBox(height: 60),
 
           TweenAnimationBuilder(
             tween: Tween<double>(begin: 0, end: _showAnswer ? 1 : 0),
@@ -402,8 +449,6 @@ class _InterviewScreenState extends State<InterviewScreen>
           const SizedBox(height: 40),
 
           if (!_showAnswer) ...[
-            _PulsingMic(nt: nt),
-            const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {
                 _countdownTimer?.cancel();

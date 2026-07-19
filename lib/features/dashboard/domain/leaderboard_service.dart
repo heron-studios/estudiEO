@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'dart:math' as dart_math;
 
 class LeaderboardService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -30,6 +31,30 @@ class LeaderboardService {
     }
   }
 
+  List<Map<String, dynamic>> _getFictitiousUsers(String school) {
+    // Usar la hora actual como semilla para que los bots no cambien caóticamente en cada parpadeo, pero roten durante el día.
+    final now = DateTime.now();
+    final hourSeed = now.year * 10000 + now.month * 100 + now.day * 24 + now.hour;
+    final r = dart_math.Random(hourSeed + school.hashCode);
+    
+    final names = [
+      'Cadete Silva', 'Aspirante Mendoza', 'S03 PNP Torres', 
+      'Aspirante Rojas', 'Cadete Quispe', 'Alumno Vargas', 
+      'S02 PNP Castillo', 'Cadete Morales', 'Aspirante Flores',
+      'Alumno Gutierrez', 'S03 PNP Rios', 'Aspirante Vega'
+    ];
+    
+    final bots = <Map<String, dynamic>>[];
+    for (int i = 0; i < 12; i++) {
+      bots.add({
+        'uid': 'bot_${school}_$i',
+        'name': names[i % names.length],
+        'xp': r.nextInt(4500) + 200, // XP aleatorio pero estable por hora
+      });
+    }
+    return bots;
+  }
+
   /// Obtiene los mejores estudiantes de una escuela ordenados por XP.
   Stream<List<Map<String, dynamic>>> getTopRankings(
     String school, {
@@ -45,7 +70,7 @@ class LeaderboardService {
         .limit(limit)
         .snapshots()
         .map((snapshot) {
-          return snapshot.docs.map((doc) {
+          final realUsers = snapshot.docs.map((doc) {
             final data = doc.data();
             return {
               'uid': doc.id,
@@ -53,6 +78,11 @@ class LeaderboardService {
               'xp': (data['xp'] as num?)?.toInt() ?? 0,
             };
           }).toList();
+
+          final allUsers = [...realUsers, ..._getFictitiousUsers(school)];
+          allUsers.sort((a, b) => (b['xp'] as int).compareTo(a['xp'] as int));
+
+          return allUsers.take(limit).toList();
         });
   }
 }
