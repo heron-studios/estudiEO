@@ -35,6 +35,115 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
 
+  Widget _buildUserBasicInfo(String userName, String userEmail, String targetSchool) {
+    return Center(
+      child: Column(
+        children: [
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: const LinearGradient(
+                colors: [_blue, Color(0xFF8B5CF6)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: _blue.withValues(alpha: 0.3),
+                  blurRadius: 20,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                userName.isNotEmpty ? userName[0].toUpperCase() : 'E',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Outfit',
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            userName.isNotEmpty ? userName : 'Aspirante',
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Outfit',
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            userEmail,
+            style: TextStyle(
+              color: _muted.withValues(alpha: 0.8),
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: _blue.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: _blue.withValues(alpha: 0.3),
+              ),
+            ),
+            child: Text(
+              'Objetivo: $targetSchool',
+              style: const TextStyle(
+                color: _blue,
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGamificationStats(GamificationProvider gamification) {
+    return Row(
+      children: [
+        Expanded(
+          child: _StatCard(
+            icon: Icons.star_rounded,
+            iconColor: const Color(0xFFF59E0B),
+            title: 'Nivel',
+            value: gamification.level.toString(),
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _StatCard(
+            icon: Icons.flash_on_rounded,
+            iconColor: const Color(0xFF8B5CF6),
+            title: 'Experiencia',
+            value: '${gamification.xp} XP',
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _StatCard(
+            icon: Icons.local_fire_department_rounded,
+            iconColor: const Color(0xFFEF4444),
+            title: 'Racha',
+            value: '$_streakDays días',
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final storage = context.read<LocalStorageService>();
@@ -65,137 +174,70 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       body: NeuralBackgroundWrapper(
         child: SafeArea(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 600),
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                  // --- User Basic Info ---
-                  Center(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isDesktop = constraints.maxWidth > 900;
+              
+              if (isDesktop) {
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1200),
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
+                      physics: const BouncingScrollPhysics(),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Columna Izquierda (Perfil, Ajustes)
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                _buildUserBasicInfo(userName, userEmail, targetSchool),
+                                const SizedBox(height: 32),
+                                _buildGamificationStats(gamification),
+                                const SizedBox(height: 32),
+                                const SettingsView(),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 48),
+                          // Columna Derecha (Tutor IA Analítico)
+                          const Expanded(
+                            flex: 7,
+                            child: TutorAnaliticoView(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              }
+
+              // Diseño Móvil / Tablet Vertical
+              return Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 600),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                    physics: const BouncingScrollPhysics(),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: const LinearGradient(
-                              colors: [_blue, Color(0xFF8B5CF6)],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: _blue.withValues(alpha: 0.3),
-                                blurRadius: 20,
-                                spreadRadius: 2,
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              userName.isNotEmpty ? userName[0].toUpperCase() : 'E',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Outfit',
-                              ),
-                            ),
-                          ),
-                        ),
+                        _buildUserBasicInfo(userName, userEmail, targetSchool),
+                        const SizedBox(height: 32),
+                        _buildGamificationStats(gamification),
+                        const SizedBox(height: 32),
+                        const TutorAnaliticoView(),
                         const SizedBox(height: 16),
-                        Text(
-                          userName.isNotEmpty ? userName : 'Aspirante',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Outfit',
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          userEmail,
-                          style: TextStyle(
-                            color: _muted.withValues(alpha: 0.8),
-                            fontSize: 14,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: _blue.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: _blue.withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Text(
-                            'Objetivo: $targetSchool',
-                            style: const TextStyle(
-                              color: _blue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
+                        const SettingsView(),
                       ],
                     ),
                   ),
-                  
-                  const SizedBox(height: 32),
-                  
-                  // --- Gamification Stats ---
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _StatCard(
-                          icon: Icons.star_rounded,
-                          iconColor: const Color(0xFFF59E0B),
-                          title: 'Nivel',
-                          value: gamification.level.toString(),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: _StatCard(
-                          icon: Icons.flash_on_rounded,
-                          iconColor: const Color(0xFF8B5CF6),
-                          title: 'Experiencia',
-                          value: '${gamification.xp} XP',
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: _StatCard(
-                          icon: Icons.local_fire_department_rounded,
-                          iconColor: const Color(0xFFEF4444),
-                          title: 'Racha',
-                          value: '$_streakDays días',
-                        ),
-                      ),
-                    ],
-                  ),
-                  
-                  const SizedBox(height: 32),
-                  
-                  // --- Tutor IA Embedded ---
-                  const TutorAnaliticoView(),
-                  
-                  const SizedBox(height: 16),
-                  
-                  // --- System Settings Embedded ---
-                  const SettingsView(),
-                ],
-              ),
-            ),
-          ),
+                ),
+              );
+            },
           ),
         ),
       ),

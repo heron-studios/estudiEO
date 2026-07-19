@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/neural_theme.dart';
+import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/providers/srs_provider.dart';
 import 'package:learn/providers/quiz_provider.dart';
 import 'package:learn/providers/gamification_provider.dart';
@@ -158,12 +159,18 @@ class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
 
     return Container(
       decoration: BoxDecoration(
+        color: NeuralDesignSystem.surfaceCard.withValues(alpha: 0.4),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.08),
+          width: 1.0,
+        ),
         gradient: RadialGradient(
           center: const Alignment(-0.4, -0.6),
-          radius: 1.2,
+          radius: 1.5,
           colors: [
-            const Color(0xFF4F1B8F).withValues(alpha: 0.35),
-            nt.background,
+            const Color(0xFF7C3AED).withValues(alpha: 0.15),
+            Colors.transparent,
           ],
         ),
       ),
