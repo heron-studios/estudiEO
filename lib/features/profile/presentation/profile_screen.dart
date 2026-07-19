@@ -68,10 +68,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 600),
-              child: ListView(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 physics: const BouncingScrollPhysics(),
-                children: [
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
                   // --- User Basic Info ---
                   Center(
                     child: Column(
@@ -193,6 +195,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
+          ),
           ),
         ),
       ),
