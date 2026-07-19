@@ -48,9 +48,9 @@ def fix_file(path):
         f.write(text)
 
 files = [
-    'C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/preguntas.json',
-    'C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/new_preguntas.json',
-    'C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/new_preguntas2.json'
+    'C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/preguntas.json',
+    'C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/new_preguntas.json',
+    'C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/new_preguntas2.json'
 ]
 
 for f in files:

@@ -2,7 +2,7 @@ import 'package:learn/models/srs_card.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 
 /// Motor de Repetición Espaciada Adaptativo basado en SM-2
-/// Algoritmo optimizado para EstudiEO
+/// Algoritmo optimizado para EDUPOL
 class SrsEngine {
   final LocalStorageService _storage;
 

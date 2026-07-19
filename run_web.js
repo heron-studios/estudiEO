@@ -5,10 +5,10 @@ const path = require('path');
 const app = express();
 const port = 8080;
 
-app.use('/EstudiEO-flutter', express.static(path.join(__dirname, 'build/web')));
+app.use('/EDUPOL-flutter', express.static(path.join(__dirname, 'build/web')));
 
 app.listen(port, async () => {
-  console.log(`Server running at http://localhost:${port}/EstudiEO-flutter/`);
+  console.log(`Server running at http://localhost:${port}/EDUPOL-flutter/`);
   
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -21,8 +21,8 @@ app.listen(port, async () => {
     console.error(`[BROWSER ERROR] ${err.toString()}`);
   });
 
-  console.log('Navigating to http://localhost:8080/EstudiEO-flutter/');
-  await page.goto('http://localhost:8080/EstudiEO-flutter/', { waitUntil: 'networkidle0', timeout: 60000 });
+  console.log('Navigating to http://localhost:8080/EDUPOL-flutter/');
+  await page.goto('http://localhost:8080/EDUPOL-flutter/', { waitUntil: 'networkidle0', timeout: 60000 });
   
   console.log('Waiting 15 seconds for flutter to initialize...');
   await new Promise(resolve => setTimeout(resolve, 15000));

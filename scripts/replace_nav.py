@@ -1,7 +1,7 @@
 import os
 import re
 
-lib_path = r'c:\Users\PC\Downloads\EstudiEO-flutter\lib'
+lib_path = r'c:\Users\PC\Downloads\EDUPOL-flutter\lib'
 
 def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:

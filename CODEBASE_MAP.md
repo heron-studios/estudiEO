@@ -1,13 +1,13 @@
-# 🗺️ Mapa de Navegación y Arquitectura del Proyecto — EstudiEO
+# 🗺️ Mapa de Navegación y Arquitectura del Proyecto — EDUPOL
 
-Este documento sirve como guía para agentes de Inteligencia Artificial (IA) y desarrolladores humanos para comprender la estructura, flujos de datos y diseño del proyecto Flutter **EstudiEO**.
+Este documento sirve como guía para agentes de Inteligencia Artificial (IA) y desarrolladores humanos para comprender la estructura, flujos de datos y diseño del proyecto Flutter **EDUPOL**.
 
 ---
 
 ## 📂 Estructura de Directorios
 
 ```text
-/estudieo-flutter
+/EDUPOL-flutter
 ├── android/                   # Configuración y código nativo de Android
 │   └── app/src/main/
 │       └── AndroidManifest.xml # Manifiesto principal (contiene queries de url_launcher)
@@ -34,7 +34,7 @@ Este documento sirve como guía para agentes de Inteligencia Artificial (IA) y d
 
 ## 🏗️ Arquitectura y Flujo de Datos
 
-EstudiEO utiliza el patrón de diseño **Provider** para la gestión de estado de forma reactiva y el desacoplamiento entre las pantallas y la base de datos estática.
+EDUPOL utiliza el patrón de diseño **Provider** para la gestión de estado de forma reactiva y el desacoplamiento entre las pantallas y la base de datos estática.
 
 ```mermaid
 graph TD

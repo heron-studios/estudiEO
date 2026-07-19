@@ -34,7 +34,7 @@ class LocalStorageService {
   static const String targetSchoolKey = 'target_school';
   static const String userNameKey = 'user_name';
 
-  final Box _storage = Hive.box('estudieo_data');
+  final Box _storage = Hive.box('EDUPOL_data');
   Map<String, SrsCard>? _srsCache;
   Map<String, dynamic>? _srsJsonCache;
 

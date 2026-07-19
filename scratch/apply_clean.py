@@ -1,6 +1,6 @@
 import os
 
-source_file = r"c:\Users\PC\Downloads\EstudiEO-flutter\lib\data\library\comunicacion\comunicacion_questions.dart"
+source_file = r"c:\Users\PC\Downloads\EDUPOL-flutter\lib\data\library\comunicacion\comunicacion_questions.dart"
 
 with open(source_file, 'r', encoding='utf-8', errors='ignore') as f:
     lines = f.readlines()

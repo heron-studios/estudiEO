@@ -22,7 +22,7 @@ void main() async {
   try {
     // Initialize Hive first (essential for offline storage)
     await Hive.initFlutter();
-    await Hive.openBox('estudieo_data');
+    await Hive.openBox('EDUPOL_data');
 
     // Initialize Firebase (essential for Auth/Firestore)
     await Firebase.initializeApp(

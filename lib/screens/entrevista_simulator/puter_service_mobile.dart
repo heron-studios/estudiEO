@@ -72,7 +72,7 @@ El formato JSON estricto esperado es:
   @override
   Future<String> generateTutorAnalysis(String statsJson) async {
     const String systemPrompt =
-        'Eres ARIA, un tutor de IA emocional e inteligente para la app EstudiEO. '
+        'Eres ARIA, un tutor de IA emocional e inteligente para la app EDUPOL. '
         'Analizas los datos de rendimiento de un estudiante preparando un examen de policía en Colombia '
         'y generas un consejo motivacional, personalizado y preciso en 3-4 oraciones. '
         'Resaltas su fortaleza, identificas su mayor debilidad y sugieres una acción concreta. '

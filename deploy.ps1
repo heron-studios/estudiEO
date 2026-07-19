@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 Write-Host "Building Flutter web app..."
-flutter build web --release --base-href /estudiEO/
+flutter build web --release --base-href /EDUPOL/
 
 Write-Host "Preparing deployment folder..."
 if (Test-Path "tmp_deploy") { Remove-Item -Recurse -Force "tmp_deploy" }
@@ -12,7 +12,7 @@ Write-Host "Initializing git and pushing to gh-pages..."
 git init
 git add .
 git commit -m "Deploy to GitHub Pages"
-git push https://github.com/pnp-edu/estudiEO.git HEAD:gh-pages --force
+git push https://github.com/pnp-edu/EDUPOL.git HEAD:gh-pages --force
 
 Set-Location ..
 Remove-Item -Recurse -Force "tmp_deploy"

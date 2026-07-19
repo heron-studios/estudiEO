@@ -1,4 +1,4 @@
-# estudiEO Flutter Optimization Rules
+# EDUPOL Flutter Optimization Rules
 
 Always implement the following guidelines when writing or modifying UI components and graphics code to ensure optimal performance on mobile and Flutter Web (CanvasKit/HTML):
 

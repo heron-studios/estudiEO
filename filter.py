@@ -1,7 +1,7 @@
 import json
 import statistics
 
-input_file = r'C:\Users\PC\Downloads\EstudiEO-flutter\assets\data\silogismos.json'
+input_file = r'C:\Users\PC\Downloads\EDUPOL-flutter\assets\data\silogismos.json'
 
 with open(input_file, 'r', encoding='utf-8') as f:
     data = json.load(f)

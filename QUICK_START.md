@@ -1,4 +1,4 @@
-# 🚀 GUÍA RÁPIDA - EstudiEO Flutter
+# 🚀 GUÍA RÁPIDA - EDUPOL Flutter
 
 ## ✅ Estado Actual
 
@@ -16,7 +16,7 @@ Tu aplicación Flutter está **100% lista** con:
 
 ### 1. Terminal - Obtener dependencias
 ```bash
-cd c:\Users\PC\Downloads\EstudiEO-flutter
+cd c:\Users\PC\Downloads\EDUPOL-flutter
 flutter pub get
 ```
 
@@ -242,4 +242,4 @@ final List<Question> nuevasPreguntas = [
 **¡Tu app está lista!** 🎉
 Solo ejecuta `flutter run` y disfruta de tu plataforma educativa.
 
-Hecho con ❤️ para EstudiEO
+Hecho con ❤️ para EDUPOL

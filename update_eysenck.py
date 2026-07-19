@@ -1,6 +1,6 @@
 import re
 
-file_path = r'c:\Users\PC\Downloads\EstudiEO-flutter\lib\features\medical\presentation\eysenck_test_screen.dart'
+file_path = r'c:\Users\PC\Downloads\EDUPOL-flutter\lib\features\medical\presentation\eysenck_test_screen.dart'
 with open(file_path, 'r', encoding='utf-8') as f:
     content = f.read()
 

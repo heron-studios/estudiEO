@@ -1,4 +1,4 @@
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/lib/core/config/app_router.dart', 'r', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/lib/core/config/app_router.dart', 'r', encoding='utf-8') as f:
     code = f.read()
 
 import_str = "import 'package:learn/features/psicolearn/presentation/silogismos_screen.dart';"
@@ -13,7 +13,7 @@ route_str = '''
 if "path: 'razonamiento'" not in code:
     code = code.replace("path: 're-entrenamiento',\n          builder: (context, state) => const ReEntrenamientoScreen(),\n        ),", "path: 're-entrenamiento',\n          builder: (context, state) => const ReEntrenamientoScreen(),\n        )," + route_str)
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/lib/core/config/app_router.dart', 'w', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/lib/core/config/app_router.dart', 'w', encoding='utf-8') as f:
     f.write(code)
 
 print('Updated app_router.dart')

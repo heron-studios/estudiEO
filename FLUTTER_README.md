@@ -1,8 +1,8 @@
-# EstudiEO - Plataforma de Estudio Flutter
+# EDUPOL - Plataforma de Estudio Flutter
 
 ## 📱 Descripción
 
-**EstudiEO** es una plataforma educativa móvil desarrollada en Flutter con persistencia de datos local completa. Transforma el código original de React/Firebase a una aplicación nativa Flutter con todas las funcionalidades de:
+**EDUPOL** es una plataforma educativa móvil desarrollada en Flutter con persistencia de datos local completa. Transforma el código original de React/Firebase a una aplicación nativa Flutter con todas las funcionalidades de:
 
 - 📚 7 Asignaturas principales
 - 🎯 Sistema de Repetición Espaciada (SRS)
@@ -271,7 +271,7 @@ final List<Question> nuevasPreguntas = [
 
 ## 📄 Licencia
 
-Este proyecto es una transformación educativa del sistema original de EstudiEO.
+Este proyecto es una transformación educativa del sistema original de EDUPOL.
 
 ## 👨‍💻 Desarrollador
 

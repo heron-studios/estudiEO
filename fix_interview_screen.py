@@ -1,6 +1,6 @@
 import re
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/lib/features/interview/presentation/interview_screen.dart', 'r', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/lib/features/interview/presentation/interview_screen.dart', 'r', encoding='utf-8') as f:
     code = f.read()
 
 # Fix imports
@@ -28,7 +28,7 @@ init_state_new = '''  void initState() {
 
 code = code.replace(init_state_old, init_state_new)
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/lib/features/interview/presentation/interview_screen.dart', 'w', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/lib/features/interview/presentation/interview_screen.dart', 'w', encoding='utf-8') as f:
     f.write(code)
 
 print('Updated interview_screen.dart')

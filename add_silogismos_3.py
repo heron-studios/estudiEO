@@ -1,6 +1,6 @@
 import json
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/silogismos.json', 'r', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/silogismos.json', 'r', encoding='utf-8') as f:
     qs = json.load(f)
 
 new_qs = [
@@ -145,7 +145,7 @@ for q in new_qs:
     q['puntos_opciones'] = {k: 10 if k == ans else 0 for k in q['opciones']}
     qs.append(q)
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/silogismos.json', 'w', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/silogismos.json', 'w', encoding='utf-8') as f:
     json.dump(qs, f, ensure_ascii=False, indent=2)
 
 print(f'Successfully added {len(new_qs)} new syllogisms.')

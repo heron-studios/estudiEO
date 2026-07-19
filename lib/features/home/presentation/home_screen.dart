@@ -30,7 +30,7 @@ import 'package:learn/core/widgets/animated_grid_bg.dart';
 //  HomeScreen — Pantalla principal del dashboard neural
 //
 //  v3 cambios:
-//  • Header muestra "EstudiEO  X  APTO/PENDIENTE/INAPTO" al costado del logo.
+//  • Header muestra "EDUPOL  X  APTO/PENDIENTE/INAPTO" al costado del logo.
 //  • Misión Diaria integrada directamente en el menú principal.
 //  • Consejo psicométrico debajo del botón de misión diaria.
 //  • PsicoLearnBanner eliminado; fallidos van a Repasar (SRS) integrado.

@@ -1,5 +1,5 @@
 import json
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/preguntas.json', 'r', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/preguntas.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 qs = data.get('preguntas', data) if isinstance(data, dict) else data
@@ -74,7 +74,7 @@ new_qs = [
 
 qs.extend(new_qs)
 
-with open('C:/Users/PC/Downloads/EstudiEO-flutter/assets/data/preguntas.json', 'w', encoding='utf-8') as f:
+with open('C:/Users/PC/Downloads/EDUPOL-flutter/assets/data/preguntas.json', 'w', encoding='utf-8') as f:
     json.dump({'preguntas': qs} if isinstance(data, dict) else qs, f, ensure_ascii=False, indent=2)
 
 print('Appended', len(new_qs), 'questions')

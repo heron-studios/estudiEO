@@ -128,7 +128,7 @@ class _ProfileSetupDialogState extends State<ProfileSetupDialog> {
             ),
             const SizedBox(height: 16),
             const Text(
-              '¡Bienvenido a EstudiEO!',
+              '¡Bienvenido a EDUPOL!',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,

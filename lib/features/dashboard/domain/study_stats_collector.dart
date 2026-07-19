@@ -113,7 +113,7 @@ class StudyStatsCollector {
         'performance_by_subject': subjectPerformance,
       },
       'context': {
-        'app': 'EstudiEO',
+        'app': 'EDUPOL',
         'goal': 'Examen de admisión a la Policía Nacional de Colombia',
         'note':
             'El estudiante está preparando el examen de admisión. Dame un análisis breve y motivador.',

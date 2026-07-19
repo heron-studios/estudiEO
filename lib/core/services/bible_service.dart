@@ -7,7 +7,7 @@ class BibleService {
 
   static bool get hasShownDailyVerse {
     try {
-      final box = Hive.box('estudieo_data');
+      final box = Hive.box('EDUPOL_data');
       final lastShownDate = box.get('last_shown_daily_verse_date') as String?;
       if (lastShownDate == null) return false;
 
@@ -20,7 +20,7 @@ class BibleService {
 
   static set hasShownDailyVerse(bool value) {
     try {
-      final box = Hive.box('estudieo_data');
+      final box = Hive.box('EDUPOL_data');
       if (value) {
         box.put('last_shown_daily_verse_date', _getTodayDateString());
       } else {

@@ -138,5 +138,5 @@ for e in elements:
 
 out += "];\n"
 
-with open(r"c:\Users\PC\Downloads\EstudiEO-flutter\lib\data\periodic_table_data.dart", "w", encoding="utf-8") as f:
+with open(r"c:\Users\PC\Downloads\EDUPOL-flutter\lib\data\periodic_table_data.dart", "w", encoding="utf-8") as f:
     f.write(out)

@@ -11,7 +11,7 @@ subjects = {
     'rv': '📝'
 }
 
-base_path = r'C:\Users\PC\Downloads\EstudiEO-flutter\lib\data\library'
+base_path = r'C:\Users\PC\Downloads\EDUPOL-flutter\lib\data\library'
 
 for subj, icon in subjects.items():
     file_path = os.path.join(base_path, subj, f'{subj}_subject.dart')

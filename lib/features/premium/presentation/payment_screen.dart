@@ -8,50 +8,132 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/config/app_config.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 
-// ─── Beneficios del plan ──────────────────────────────────────────────────────
+// ─── Constantes de datos ──────────────────────────────────────────────────────
+
 const _benefits = [
-  _Benefit(
-    Icons.all_inclusive_rounded,
-    Color(0xFF3B82F6),
-    'Acceso permanente a la app',
-    'Una vez, para siempre. Sin renovaciones.',
-  ),
   _Benefit(
     Icons.quiz_rounded,
     Color(0xFF8B5CF6),
-    'Simulacro Tipo Examen de Admisión',
-    'Con preguntas reales de exámenes de procesos pasados.',
+    'Simulacros de Examen de Admisión',
+    'Cientos de preguntas reales de procesos EO PNP y EETSPN anteriores. Practica ilimitado.',
+    '+400 preguntas verificadas',
   ),
   _Benefit(
-    Icons.psychology_rounded,
+    Icons.psychology_alt_rounded,
     Color(0xFFF59E0B),
-    'Misión Diaria de Aprendizaje',
-    'Sistema inteligente para repasar temas frecuentes.',
+    'Tutor IA "ARIA" (Inteligencia Artificial)',
+    'Tu cerebro digital que analiza tus debilidades y te dice exactamente qué temas dominar.',
+    'Análisis en tiempo real',
+  ),
+  _Benefit(
+    Icons.sports_mma_rounded,
+    Color(0xFFEF4444),
+    'Arena Policial (PvP 1 vs 1)',
+    'Combate en vivo contra otros postulantes de todo el Perú. Gana XP y domina el Leaderboard.',
+    'Multijugador en tiempo real',
   ),
   _Benefit(
     Icons.health_and_safety_rounded,
     Color(0xFF10B981),
     'Área Médica y Psicométrica',
-    'Test de Eysenck, Sacks, TMT y simuladores psicotécnicos.',
+    'Simuladores del Test de Eysenck, Sacks y Trail Making Test (TMT). Los mismos que toma la PNP.',
+    'Evaluación psicológica oficial',
   ),
   _Benefit(
     Icons.record_voice_over_rounded,
-    Color(0xFFEF4444),
-    'Simuladores de Entrevista',
-    'Entrevista personal con IA (Groq) y trivias de cultura general policial.',
+    Color(0xFF3B82F6),
+    'Simulador Táctico de Entrevista',
+    'Preguntas bajo presión con cuenta regresiva. Aprende el lenguaje táctico que el jurado quiere escuchar.',
+    'IA + Modo Realismo',
+  ),
+  _Benefit(
+    Icons.directions_run_rounded,
+    Color(0xFF06B6D4),
+    'Calculadora de Aptitud Física Oficial',
+    'Ingresa tus barras, planchas y tiempo de carrera. Obtén tu nota exacta del Anexo 05 y 06.',
+    'Basada en tablas oficiales PNP',
+  ),
+  _Benefit(
+    Icons.leaderboard_rounded,
+    Color(0xFFFFD700),
+    'Cuadro de Mérito Ponderado',
+    'Simula tu nota final promediando físico, conocimientos, entrevista y psicométrico. Sabe si ya pasaste.',
+    'Predictor de vacante real',
   ),
   _Benefit(
     Icons.extension_rounded,
-    Color(0xFF06B6D4),
-    'Mini-apps y Taller de Redacción',
-    'ANP Master, Silogismos, Productos Notables y corrección de redacción.',
+    Color(0xFFEC4899),
+    'Mini-Apps y Herramientas Interactivas',
+    'ANP Master, Silogismos, Productos Notables, Tabla Periódica y Taller de Redacción Policial.',
+    '10+ herramientas incluidas',
   ),
   _Benefit(
     Icons.support_agent_rounded,
-    Color(0xFFFFD700),
-    'Soporte VIP y Actualizaciones',
-    'Grupo exclusivo y nuevas preguntas sin costo adicional.',
+    Color(0xFFA78BFA),
+    'Soporte VIP y Actualizaciones Eternas',
+    'Grupo exclusivo de WhatsApp para cadetes + nuevas preguntas y mejoras sin costo adicional nunca.',
+    'Para siempre, sin mensualidades',
   ),
+];
+
+const _testimonials = [
+  _Testimonial(
+    'Carlos M.',
+    'Ingresó a EO PNP 2024-I',
+    'La Arena me hizo súper competitivo. Llegué al examen real sintiéndome invencible.',
+    5,
+  ),
+  _Testimonial(
+    'Luciana R.',
+    'Ingresó a EETSPN 2024-II',
+    'Los tests de Eysenck me salvaron. Sin EDUPOL, hubiera fallado en el área médica.',
+    5,
+  ),
+  _Testimonial(
+    'Rodrigo V.',
+    'Ingresó a EO PNP 2025-I',
+    'La IA ARIA detectó que fallaba en Geografía y me enfocó ahí. ¡Me fue perfecto!',
+    5,
+  ),
+  _Testimonial(
+    'Karely T.',
+    'Ingresó a EETSPN 2025-I',
+    'El simulador de entrevista fue CLAVE. Fui segura, sin nervios. Entré en el primer intento.',
+    5,
+  ),
+];
+
+const _faqs = [
+  _FAQ(
+    '¿Cuánto tiempo tengo acceso?',
+    'Acceso de por vida. Pagas una sola vez y EDUPOL es tuyo para siempre, incluyendo todas las actualizaciones futuras.',
+  ),
+  _FAQ(
+    '¿Sirve para EO PNP y EETSPN?',
+    'Sí. El contenido está actualizado y cubre ambas escuelas: Escuela de Oficiales (EO PNP) y Escuela de Técnicos y Suboficiales (EETSPN).',
+  ),
+  _FAQ(
+    '¿Cómo pago y cuándo activo?',
+    'Paga por Yape o Plin al número de WhatsApp. Envías el voucher y en menos de 1 hora tienes acceso completo activado.',
+  ),
+  _FAQ(
+    '¿Funciona sin internet?',
+    'El núcleo de quizzes y estudio funciona offline. La Arena y el Leaderboard requieren conexión a internet.',
+  ),
+  _FAQ(
+    '¿El precio sube después de julio?',
+    'Sí. El precio normal es S/30. El descuento Cyber Wow de 50% (S/15) es solo durante julio. Después sube.',
+  ),
+];
+
+const _competitorComparison = [
+  _CompareRow('Costo mensual', 'S/0 (único pago)', 'S/80-200/mes'),
+  _CompareRow('Simulador físico oficial', '✓ Anexo 05 y 06', '✗ No existe'),
+  _CompareRow('Tests psicométricos reales', '✓ Eysenck, Sacks, TMT', '✗ Solo teoría'),
+  _CompareRow('Competencia multijugador', '✓ Arena 1v1 en vivo', '✗ No existe'),
+  _CompareRow('Tutor con Inteligencia Artificial', '✓ ARIA 24/7', '✗ No existe'),
+  _CompareRow('Simulador de entrevista con IA', '✓ Modo realismo', '✗ No existe'),
+  _CompareRow('Disponible 24/7', '✓ En tu celular', '✗ Solo horario de academia'),
 ];
 
 class _Benefit {
@@ -59,7 +141,29 @@ class _Benefit {
   final Color color;
   final String title;
   final String subtitle;
-  const _Benefit(this.icon, this.color, this.title, this.subtitle);
+  final String tag;
+  const _Benefit(this.icon, this.color, this.title, this.subtitle, this.tag);
+}
+
+class _Testimonial {
+  final String name;
+  final String school;
+  final String quote;
+  final int stars;
+  const _Testimonial(this.name, this.school, this.quote, this.stars);
+}
+
+class _FAQ {
+  final String question;
+  final String answer;
+  const _FAQ(this.question, this.answer);
+}
+
+class _CompareRow {
+  final String feature;
+  final String edupol;
+  final String competitor;
+  const _CompareRow(this.feature, this.edupol, this.competitor);
 }
 
 // ─── Pantalla principal ───────────────────────────────────────────────────────
@@ -77,16 +181,26 @@ class _PaymentScreenState extends State<PaymentScreen>
   late final AnimationController _floatCtrl;
   late final AnimationController _entranceCtrl;
   late final AnimationController _bgCtrl;
+  late final AnimationController _urgencyCtrl;
 
   late final Animation<double> _pulseAnim;
   late final Animation<double> _floatAnim;
   late final Animation<double> _entranceAnim;
 
   bool _isPressing = false;
+  int _expandedFaq = -1;
+
+  // Cuenta regresiva de urgencia (julio 2025)
+  late Duration _timeLeft;
+  late final DateTime _deadline;
 
   @override
   void initState() {
     super.initState();
+
+    _deadline = DateTime(2025, 8, 1); // Fin de julio
+    _timeLeft = _deadline.difference(DateTime.now());
+    if (_timeLeft.isNegative) _timeLeft = Duration.zero;
 
     _pulseCtrl = AnimationController(
       vsync: this,
@@ -104,22 +218,39 @@ class _PaymentScreenState extends State<PaymentScreen>
       vsync: this,
       duration: const Duration(seconds: 8),
     );
+    _urgencyCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
+
     if (kIsWeb) {
       _bgCtrl.repeat();
     }
 
-    _pulseAnim = Tween<double>(
-      begin: 0.97,
-      end: 1.03,
-    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
-    _floatAnim = Tween<double>(
-      begin: -6.0,
-      end: 6.0,
-    ).animate(CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut));
+    _pulseAnim = Tween<double>(begin: 0.97, end: 1.03).animate(
+      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
+    );
+    _floatAnim = Tween<double>(begin: -6.0, end: 6.0).animate(
+      CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut),
+    );
     _entranceAnim = CurvedAnimation(
       parent: _entranceCtrl,
       curve: Curves.easeOutBack,
     );
+
+    // Tick cada segundo para countdown
+    _updateCountdown();
+  }
+
+  void _updateCountdown() {
+    Future.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+      final remaining = _deadline.difference(DateTime.now());
+      setState(() {
+        _timeLeft = remaining.isNegative ? Duration.zero : remaining;
+      });
+      if (_timeLeft.inSeconds > 0) _updateCountdown();
+    });
   }
 
   @override
@@ -128,12 +259,13 @@ class _PaymentScreenState extends State<PaymentScreen>
     _floatCtrl.dispose();
     _entranceCtrl.dispose();
     _bgCtrl.dispose();
+    _urgencyCtrl.dispose();
     super.dispose();
   }
 
   Future<void> _launchWhatsApp() async {
     const text =
-        'Hola! estoy interesado en adquirir la aplicacion con el descuento Cyber Wow de 15 soles, mas informacion por favor';
+        'Hola! quiero adquirir EDUPOL con el descuento Cyber Wow de 15 soles. ¿Me confirman el Yape/Plin para hacer el pago?';
     final uri = Uri.parse(
       'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
     );
@@ -151,96 +283,53 @@ class _PaymentScreenState extends State<PaymentScreen>
     }
   }
 
+  Future<void> _launchUrl(String urlStr) async {
+    final Uri url = Uri.parse(urlStr);
+    try {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('No se pudo abrir el enlace: $e'),
+            backgroundColor: Colors.redAccent,
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final isWide = screenWidth > 900; // Breakpoint optimizado
+    final isWide = screenWidth > 900;
 
     return Scaffold(
       backgroundColor: const Color(0xFF060B18),
       body: Stack(
         children: [
           // Fondo animado
-          Positioned.fill(
-            child: AnimatedBuilder(
-              animation: _bgCtrl,
-              builder: (_, __) =>
-                  CustomPaint(painter: _BgPainter(_bgCtrl.value)),
+          RepaintBoundary(
+            child: Positioned.fill(
+              child: AnimatedBuilder(
+                animation: _bgCtrl,
+                builder: (_, __) =>
+                    CustomPaint(painter: _BgPainter(_bgCtrl.value)),
+              ),
             ),
           ),
 
-          // Contenido
-          SafeArea(child: isWide ? _buildWideLayout() : _buildNarrowLayout()),
+          // Contenido principal
+          SafeArea(
+            child: isWide ? _buildWideLayout() : _buildNarrowLayout(),
+          ),
 
-          // Cerrar sesión
+          // Botón Cerrar Sesión
           Positioned(
             top: 16,
             right: 16,
             child: SafeArea(
-              child: TextButton.icon(
-                onPressed: () async {
-                  final authService = context.read<AuthService>();
-                  final confirm = await showDialog<bool>(
-                    context: context,
-                    builder: (ctx) => AlertDialog(
-                      backgroundColor: const Color(0xFF1E293B),
-                      title: const Text(
-                        '¿Cerrar Sesión?',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      content: const Text(
-                        '¿Estás seguro de que deseas salir y volver al inicio de sesión?',
-                        style: TextStyle(color: Color(0xFF94A3B8)),
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(ctx, false),
-                          child: const Text(
-                            'Cancelar',
-                            style: TextStyle(color: Colors.white70),
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () => Navigator.pop(ctx, true),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFEF4444),
-                          ),
-                          child: const Text(
-                            'Salir',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                  if (confirm == true) {
-                    await authService.signOut();
-                  }
-                },
-                icon: const Icon(
-                  Icons.logout_rounded,
-                  color: Colors.white70,
-                  size: 16,
-                ),
-                label: const Text(
-                  'Cerrar Sesión',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white.withValues(alpha: 0.05),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 10,
-                  ),
-                ),
-              ),
+              child: _buildLogoutButton(),
             ),
           ),
         ],
@@ -248,58 +337,131 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // ── Layout ancho: web / escritorio ──────────────────────────────────────────
+  Widget _buildLogoutButton() {
+    return TextButton.icon(
+      onPressed: () async {
+        final authService = context.read<AuthService>();
+        final confirm = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            backgroundColor: const Color(0xFF1E293B),
+            title: const Text(
+              '¿Cerrar Sesión?',
+              style: TextStyle(color: Colors.white),
+            ),
+            content: const Text(
+              '¿Estás seguro de que deseas salir?',
+              style: TextStyle(color: Color(0xFF94A3B8)),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text(
+                  'Cancelar',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFEF4444),
+                ),
+                child: const Text(
+                  'Salir',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        );
+        if (confirm == true) {
+          await authService.signOut();
+        }
+      },
+      icon: const Icon(Icons.logout_rounded, color: Colors.white70, size: 16),
+      label: const Text(
+        'Cerrar Sesión',
+        style: TextStyle(
+          color: Colors.white70,
+          fontSize: 13,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.white.withValues(alpha: 0.05),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      ),
+    );
+  }
+
+  // ── Layout ancho ─────────────────────────────────────────────────────────────
   Widget _buildWideLayout() {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 30),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1100),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 30),
+            child: Column(
               children: [
-                // Columna izquierda: Badge, Título, Descripción y Lista de Beneficios
-                Expanded(
-                  flex: 6,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildTopBadge(),
-                      const SizedBox(height: 12),
-                      _buildTitleLeft(),
-                      const SizedBox(height: 24),
-                      const Text(
-                        'Beneficios exclusivos incluidos:',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5,
-                        ),
+                // Hero section: 2 columnas
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 6,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildUrgencyBanner(),
+                          const SizedBox(height: 16),
+                          _buildTopBadge(),
+                          const SizedBox(height: 12),
+                          _buildTitleLeft(),
+                          const SizedBox(height: 20),
+                          _buildSocialProofBar(),
+                          const SizedBox(height: 28),
+                          const Text(
+                            '¿QUÉ INCLUYE TU ACCESO PERMANENTE?',
+                            style: TextStyle(
+                              color: Color(0xFF93C5FD),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          const SizedBox(height: 14),
+                          _buildBenefitsList(),
+                        ],
                       ),
-                      const SizedBox(height: 12),
-                      _buildBenefitsList(),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 40),
-                // Columna derecha: Tarjeta de compra unificada
-                Expanded(
-                  flex: 5,
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 12,
-                      ), // Alínea verticalmente con el título de la izquierda
-                      ScaleTransition(
-                        scale: _entranceAnim,
-                        child: _buildUnifiedCheckoutCard(),
+                    ),
+                    const SizedBox(width: 40),
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 64),
+                          ScaleTransition(
+                            scale: _entranceAnim,
+                            child: _buildUnifiedCheckoutCard(),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+
+                const SizedBox(height: 56),
+                _buildComparisonSection(),
+                const SizedBox(height: 56),
+                _buildTestimonialsSection(),
+                const SizedBox(height: 56),
+                _buildFaqSection(),
+                const SizedBox(height: 56),
+                _buildFinalCTABanner(),
+                const SizedBox(height: 40),
               ],
             ),
           ),
@@ -308,35 +470,40 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // ── Layout estrecho: móvil ──────────────────────────────────────────────────
+  // ── Layout estrecho ───────────────────────────────────────────────────────────
   Widget _buildNarrowLayout() {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
           children: [
+            _buildUrgencyBanner(),
+            const SizedBox(height: 14),
             _buildTopBadge(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 16),
             _buildFloatingIcon(),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
             _buildTitleCenter(),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
+            _buildSocialProofBar(),
+            const SizedBox(height: 28),
             ScaleTransition(
               scale: _entranceAnim,
               child: _buildUnifiedCheckoutCard(),
             ),
-            const SizedBox(height: 36),
-            const Text(
-              '¿Qué incluye tu acceso permanente?',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
+            _buildSectionHeader('TODO LO QUE INCLUYE TU ACCESO'),
+            const SizedBox(height: 16),
             _buildBenefitsList(),
+            const SizedBox(height: 40),
+            _buildComparisonSection(),
+            const SizedBox(height: 40),
+            _buildTestimonialsSection(),
+            const SizedBox(height: 40),
+            _buildFaqSection(),
+            const SizedBox(height: 40),
+            _buildFinalCTABanner(),
             const SizedBox(height: 30),
           ],
         ),
@@ -344,8 +511,209 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // ── Componentes de la UI ─────────────────────────────────────────────────────
+  // ── Urgency Banner ────────────────────────────────────────────────────────────
+  Widget _buildUrgencyBanner() {
+    final days = _timeLeft.inDays;
+    final hours = _timeLeft.inHours % 24;
+    final minutes = _timeLeft.inMinutes % 60;
+    final seconds = _timeLeft.inSeconds % 60;
 
+    return RepaintBoundary(
+      child: AnimatedBuilder(
+        animation: _urgencyCtrl,
+        builder: (_, child) => Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            gradient: LinearGradient(
+              colors: [
+                const Color(0xFFDC2626).withValues(
+                  alpha: 0.15 + _urgencyCtrl.value * 0.08,
+                ),
+                const Color(0xFF991B1B).withValues(alpha: 0.25),
+                const Color(0xFFDC2626).withValues(
+                  alpha: 0.15 + _urgencyCtrl.value * 0.08,
+                ),
+              ],
+            ),
+            border: Border.all(
+              color: const Color(0xFFEF4444).withValues(alpha: 0.5),
+              width: 1,
+            ),
+          ),
+          child: child,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.timer_outlined,
+              color: Color(0xFFEF4444),
+              size: 16,
+            ),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                'Oferta Cyber Wow expira en: ',
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.8),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            const SizedBox(width: 6),
+            _buildCountdownUnit('${days}d'),
+            const Text(
+              ' : ',
+              style: TextStyle(
+                color: Color(0xFFEF4444),
+                fontSize: 14,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            _buildCountdownUnit('${hours.toString().padLeft(2, '0')}h'),
+            const Text(
+              ' : ',
+              style: TextStyle(
+                color: Color(0xFFEF4444),
+                fontSize: 14,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            _buildCountdownUnit('${minutes.toString().padLeft(2, '0')}m'),
+            const Text(
+              ' : ',
+              style: TextStyle(
+                color: Color(0xFFEF4444),
+                fontSize: 14,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            _buildCountdownUnit('${seconds.toString().padLeft(2, '0')}s'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCountdownUnit(String value) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: const Color(0xFFEF4444).withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(
+          color: const Color(0xFFEF4444).withValues(alpha: 0.4),
+        ),
+      ),
+      child: Text(
+        value,
+        style: const TextStyle(
+          color: Color(0xFFFF6B6B),
+          fontSize: 13,
+          fontWeight: FontWeight.w900,
+          fontFeatures: [FontFeature.tabularFigures()],
+        ),
+      ),
+    );
+  }
+
+  // ── Social Proof Bar ──────────────────────────────────────────────────────────
+  Widget _buildSocialProofBar() {
+    return Row(
+      children: [
+        // Avatares apilados
+        Builder(
+          builder: (context) {
+            final avatarColors = [
+              const Color(0xFF3B82F6),
+              const Color(0xFF10B981),
+              const Color(0xFFEF4444),
+              const Color(0xFF8B5CF6),
+            ];
+            return SizedBox(
+              width: 76,
+              height: 32,
+              child: Stack(
+                children: List.generate(
+                  4,
+                  (i) => Positioned(
+                    left: i * 18.0,
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFF060B18),
+                          width: 2,
+                        ),
+                        color: avatarColors[i],
+                      ),
+                      child: const Icon(
+                        Icons.person_rounded,
+                        color: Colors.white70,
+                        size: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+        const SizedBox(width: 10),
+        Flexible(
+          child: RichText(
+            text: TextSpan(
+              children: [
+                const TextSpan(
+                  text: '+5,000 postulantes ',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
+                ),
+                TextSpan(
+                  text: 'ya entrenan con EDUPOL',
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.6),
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Row(
+          children: List.generate(
+            5,
+            (_) => const Icon(
+              Icons.star_rounded,
+              color: Color(0xFFFFD700),
+              size: 14,
+            ),
+          ),
+        ),
+        const SizedBox(width: 4),
+        Text(
+          '4.9',
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.7),
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+  // ── Top Badge ─────────────────────────────────────────────────────────────────
   Widget _buildTopBadge() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -357,7 +725,6 @@ class _PaymentScreenState extends State<PaymentScreen>
             const Color(0xFFFFA500).withValues(alpha: 0.25),
             const Color(0xFFFFD700).withValues(alpha: 0.15),
           ],
-          stops: const [0.0, 0.5, 1.0],
         ),
         border: Border.all(
           color: const Color(0xFFFFD700).withValues(alpha: 0.5),
@@ -387,55 +754,39 @@ class _PaymentScreenState extends State<PaymentScreen>
   }
 
   Widget _buildFloatingIcon() {
-    return AnimatedBuilder(
-      animation: _floatAnim,
-      builder: (_, child) => Transform.translate(
-        offset: Offset(0, _floatAnim.value),
-        child: child,
-      ),
+    return RepaintBoundary(
       child: AnimatedBuilder(
-        animation: _pulseAnim,
-        builder: (_, child) =>
-            Transform.scale(scale: _pulseAnim.value, child: child),
-        child: Container(
-          width: 110,
-          height: 110,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: const RadialGradient(
-              colors: [Color(0xFF4F9EFF), Color(0xFF1E40AF)],
-              center: Alignment(-0.3, -0.3),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF3B82F6).withValues(alpha: 0.6),
-                blurRadius: 40,
-                spreadRadius: 10,
+        animation: _floatAnim,
+        builder: (_, child) => Transform.translate(
+          offset: Offset(0, _floatAnim.value),
+          child: child,
+        ),
+        child: AnimatedBuilder(
+          animation: _pulseAnim,
+          builder: (_, child) =>
+              Transform.scale(scale: _pulseAnim.value, child: child),
+          child: Container(
+            width: 110,
+            height: 110,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: const RadialGradient(
+                colors: [Color(0xFF4F9EFF), Color(0xFF1E40AF)],
+                center: Alignment(-0.3, -0.3),
               ),
-              BoxShadow(
-                color: const Color(0xFF7C3AED).withValues(alpha: 0.4),
-                blurRadius: 60,
-                spreadRadius: 5,
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white.withValues(alpha: 0.08),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF3B82F6).withValues(alpha: 0.6),
+                  blurRadius: 40,
+                  spreadRadius: 10,
                 ),
-              ),
-              const Icon(
-                Icons.military_tech_rounded,
-                color: Colors.white,
-                size: 52,
-              ),
-            ],
+              ],
+            ),
+            child: const Icon(
+              Icons.military_tech_rounded,
+              color: Colors.white,
+              size: 52,
+            ),
           ),
         ),
       ),
@@ -452,11 +803,7 @@ class _PaymentScreenState extends State<PaymentScreen>
             children: [
               ShaderMask(
                 shaderCallback: (b) => const LinearGradient(
-                  colors: [
-                    Color(0xFF60A5FA),
-                    Color(0xFFA78BFA),
-                    Color(0xFFF472B6),
-                  ],
+                  colors: [Color(0xFF60A5FA), Color(0xFFA78BFA), Color(0xFFF472B6)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(b),
@@ -473,9 +820,9 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
               const SizedBox(height: 12),
               Text(
-                'Miles de postulantes a oficiales y suboficiales ya se preparan y aprueban con EDUPOL. Obtén acceso de por vida a la plataforma y asegura tu futuro en la policía.',
+                'La única plataforma con Simuladores Oficiales, IA de entrenamiento, Arena Multijugador y tests médicos reales. Todo por un único pago.',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 15,
                   color: Colors.white.withValues(alpha: 0.65),
                   height: 1.5,
                 ),
@@ -512,10 +859,10 @@ class _PaymentScreenState extends State<PaymentScreen>
         ),
         const SizedBox(height: 12),
         Text(
-          'Miles de alumnos y cadetes ya aprobaron con EDUPOL.\nSé el próximo.',
+          'Simuladores Oficiales · IA ARIA · Arena PvP\nTests Médicos · Cuadro de Mérito Real',
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 15,
+            fontSize: 14,
             color: Colors.white.withValues(alpha: 0.6),
             height: 1.6,
           ),
@@ -524,67 +871,99 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
+  // ── Benefits List ─────────────────────────────────────────────────────────────
   Widget _buildBenefitsList() {
     return Column(
-      children: _benefits
-          .map(
-            (b) => Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 2),
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      color: b.color.withValues(alpha: 0.15),
-                      shape: BoxShape.circle,
-                      border: Border.all(color: b.color.withValues(alpha: 0.3)),
-                    ),
-                    child: Icon(b.icon, color: b.color, size: 16),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          b.title,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          b.subtitle,
-                          style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.5),
-                            fontSize: 12.5,
-                            height: 1.35,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 4, left: 8),
-                    child: Icon(
-                      Icons.check_circle_rounded,
-                      color: Color(0xFF22C55E),
-                      size: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          )
-          .toList(),
+      children: _benefits.map((b) => _buildBenefitItem(b)).toList(),
     );
   }
 
+  Widget _buildBenefitItem(_Benefit b) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: b.color.withValues(alpha: 0.05),
+        border: Border.all(color: b.color.withValues(alpha: 0.15), width: 1),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 38,
+            height: 38,
+            margin: const EdgeInsets.only(top: 2),
+            decoration: BoxDecoration(
+              color: b.color.withValues(alpha: 0.15),
+              shape: BoxShape.circle,
+              border: Border.all(color: b.color.withValues(alpha: 0.3)),
+            ),
+            child: Icon(b.icon, color: b.color, size: 18),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        b.title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
+                      decoration: BoxDecoration(
+                        color: b.color.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        b.tag,
+                        style: TextStyle(
+                          color: b.color,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  b.subtitle,
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.5),
+                    fontSize: 12.5,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 4, left: 10),
+            child: Icon(
+              Icons.check_circle_rounded,
+              color: Color(0xFF22C55E),
+              size: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ── Checkout Card ─────────────────────────────────────────────────────────────
   Widget _buildUnifiedCheckoutCard() {
     final checkoutContent = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
@@ -592,7 +971,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Cabecera del Plan
+          // Cabecera
           Row(
             children: [
               Container(
@@ -610,29 +989,30 @@ class _PaymentScreenState extends State<PaymentScreen>
                 ),
               ),
               const SizedBox(width: 12),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'PLAN COMPLETO',
-                    style: TextStyle(
-                      color: Color(0xFF93C5FD),
-                      fontSize: 11,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
+              const Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'PLAN COMPLETO EDUPOL',
+                      style: TextStyle(
+                        color: Color(0xFF93C5FD),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.5,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Acceso Permanente',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                    Text(
+                      'Acceso Permanente',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const Spacer(),
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -662,16 +1042,124 @@ class _PaymentScreenState extends State<PaymentScreen>
           const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
           const SizedBox(height: 12),
 
-          // Precio
-          _buildPriceSection(),
+          // Precio tachado + precio real
+          Center(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'S/30',
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.35),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.lineThrough,
+                        decorationColor: Colors.white.withValues(alpha: 0.35),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    const Text(
+                      'S/',
+                      style: TextStyle(
+                        color: Color(0xFF60A5FA),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    ShaderMask(
+                      shaderCallback: (b) => const LinearGradient(
+                        colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
+                      ).createShader(b),
+                      child: const Text(
+                        '15',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 72,
+                          fontWeight: FontWeight.w900,
+                          height: 1,
+                          letterSpacing: -3,
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '.00',
+                            style: TextStyle(
+                              color: Color(0xFF60A5FA),
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            'soles',
+                            style: TextStyle(
+                              color: Color(0xFF94A3B8),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 5,
+                  ),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFEF4444).withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: const Color(0xFFEF4444).withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: const Text(
+                    '50% OFF · Solo julio · De S/30 a S/15',
+                    style: TextStyle(
+                      color: Color(0xFFFF6B6B),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  'Pago único · Sin mensualidades · Sin sorpresas',
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.4),
+                    fontSize: 11,
+                  ),
+                ),
+              ],
+            ),
+          ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 18),
 
-          // Botón de WhatsApp
+          // ─ Botón principal CTA ─
           _buildBuyButton(),
 
+          const SizedBox(height: 14),
+          const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
           const SizedBox(height: 10),
 
+          // Pasos de cómo comprar
+          _buildHowToBuy(),
+
+          const SizedBox(height: 14),
+          const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
+          const SizedBox(height: 10),
+
+          // Links secundarios
           _buildSecondaryButton(
             icon: Icons.home_rounded,
             label: 'Volver al menú principal',
@@ -685,9 +1173,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               }
             },
           ),
-
           const SizedBox(height: 8),
-
           _buildSecondaryButton(
             icon: Icons.groups_rounded,
             label: 'Comunidad de WhatsApp',
@@ -697,9 +1183,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               'https://whatsapp.com/channel/0029Vb8DGVV7YSd7ld4WjX05',
             ),
           ),
-
           const SizedBox(height: 8),
-
           _buildSecondaryButton(
             icon: Icons.download_for_offline_rounded,
             label: 'Descargar App (Android / PC)',
@@ -714,12 +1198,10 @@ class _PaymentScreenState extends State<PaymentScreen>
           const Divider(color: Color(0xFF1E3A5F), thickness: 1.5),
           const SizedBox(height: 12),
 
-          // Badges de Confianza (Seguro, Activación rápida, Yape/Plin)
+          // Trust badges
           _buildTrustBadges(),
 
-          const SizedBox(height: 16),
-
-          // Textos de Seguridad y Garantía
+          const SizedBox(height: 14),
           _buildSecurityText(),
         ],
       ),
@@ -763,95 +1245,149 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  Widget _buildPriceSection() {
+  Widget _buildHowToBuy() {
+    final steps = [
+      ('1', 'Toca "COMPRAR AHORA"', 'Se abre WhatsApp automáticamente'),
+      ('2', 'Paga S/15 por Yape o Plin', 'Número del administrador'),
+      ('3', 'Envía captura del pago', 'Al mismo WhatsApp'),
+      ('4', '¡Acceso activado!', 'En menos de 1 hora'),
+    ];
+
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Text(
-                'S/',
-                style: TextStyle(
-                  color: Color(0xFF60A5FA),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            const SizedBox(width: 4),
-            ShaderMask(
-              shaderCallback: (b) => const LinearGradient(
-                colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
-              ).createShader(b),
-              child: const Text(
-                '15',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 72,
-                  fontWeight: FontWeight.w900,
-                  height: 1,
-                  letterSpacing: -3,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '.00',
-                    style: TextStyle(
-                      color: Color(0xFF60A5FA),
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text(
-                    'soles',
-                    style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Center(
-          child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 4),
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            decoration: BoxDecoration(
-              color: const Color(0xFFEF4444).withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: const Color(0xFFEF4444).withValues(alpha: 0.5),
-              ),
-            ),
-            child: const Text(
-              '🔥 Descuento Cyber Wow 50%: de 30 soles a 15 soles todo el mes de julio',
-              style: TextStyle(
-                color: Color(0xFFEF4444),
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
-            ),
+        Text(
+          'CÓMO COMPRAR (4 PASOS):',
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.4),
+            fontSize: 10,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 1.2,
           ),
         ),
-        Center(
-          child: Text(
-            'Pago único · Sin mensualidades · Sin sorpresas',
-            style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.5),
-              fontSize: 12,
+        const SizedBox(height: 10),
+        ...steps.map(
+          (s) => Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 22,
+                  height: 22,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF25D366),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: Text(
+                      s.$1,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        s.$2,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          height: 1.2,
+                        ),
+                      ),
+                      Text(
+                        s.$3,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.45),
+                          fontSize: 11,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildBuyButton() {
+    return GestureDetector(
+      onTapDown: (_) => setState(() => _isPressing = true),
+      onTapUp: (_) {
+        setState(() => _isPressing = false);
+        _launchWhatsApp();
+      },
+      onTapCancel: () => setState(() => _isPressing = false),
+      child: AnimatedScale(
+        scale: _isPressing ? 0.96 : 1.0,
+        duration: const Duration(milliseconds: 120),
+        child: RepaintBoundary(
+          child: AnimatedBuilder(
+            animation: _pulseAnim,
+            builder: (_, child) => Container(
+              width: double.infinity,
+              height: 62,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF25D366), Color(0xFF1DAA54)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF25D366).withValues(
+                      alpha: 0.5 * _pulseAnim.value,
+                    ),
+                    blurRadius: 28 * _pulseAnim.value,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: child,
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.message_rounded, color: Colors.white, size: 28),
+                SizedBox(width: 12),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'COMPRAR AHORA · S/15',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    Text(
+                      'Toca aquí · Pagar por WhatsApp',
+                      style: TextStyle(color: Colors.white70, fontSize: 11),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -888,73 +1424,6 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  Widget _buildBuyButton() {
-    return GestureDetector(
-      onTapDown: (_) => setState(() => _isPressing = true),
-      onTapUp: (_) {
-        setState(() => _isPressing = false);
-        _launchWhatsApp();
-      },
-      onTapCancel: () => setState(() => _isPressing = false),
-      child: AnimatedScale(
-        scale: _isPressing ? 0.96 : 1.0,
-        duration: const Duration(milliseconds: 120),
-        child: AnimatedBuilder(
-          animation: _pulseAnim,
-          builder: (_, child) => Container(
-            width: double.infinity,
-            height: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(
-                colors: [Color(0xFF25D366), Color(0xFF1DAA54)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(
-                    0xFF25D366,
-                  ).withValues(alpha: 0.5 * _pulseAnim.value),
-                  blurRadius: 25 * _pulseAnim.value,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 6),
-                ),
-              ],
-            ),
-            child: child,
-          ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.message_rounded, color: Colors.white, size: 28),
-              SizedBox(width: 12),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'COMPRAR AHORA · S/15',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  Text(
-                    'Contactar por WhatsApp',
-                    style: TextStyle(color: Colors.white70, fontSize: 11),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildSecurityText() {
     return Column(
       children: [
@@ -986,22 +1455,6 @@ class _PaymentScreenState extends State<PaymentScreen>
         ),
       ],
     );
-  }
-
-  Future<void> _launchUrl(String urlStr) async {
-    final Uri url = Uri.parse(urlStr);
-    try {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('No se pudo abrir el enlace: $e'),
-            backgroundColor: Colors.redAccent,
-          ),
-        );
-      }
-    }
   }
 
   Widget _buildSecondaryButton({
@@ -1066,9 +1519,475 @@ class _PaymentScreenState extends State<PaymentScreen>
       ),
     );
   }
+
+  // ── Comparison Section ────────────────────────────────────────────────────────
+  Widget _buildComparisonSection() {
+    return Column(
+      children: [
+        _buildSectionHeader('EDUPOL vs ACADEMIA TRADICIONAL'),
+        const SizedBox(height: 6),
+        Text(
+          'La ventaja competitiva desleal que mereces',
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.5),
+            fontSize: 14,
+          ),
+        ),
+        const SizedBox(height: 24),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white.withValues(alpha: 0.03),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.08),
+            ),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            children: [
+              // Header row
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 12,
+                ),
+                color: Colors.white.withValues(alpha: 0.05),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      flex: 3,
+                      child: Text(
+                        'Característica',
+                        style: TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)],
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'EDUPOL',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        'Academia',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.4),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ...List.generate(_competitorComparison.length, (i) {
+                final row = _competitorComparison[i];
+                final isEven = i % 2 == 0;
+                return Container(
+                  color: isEven
+                      ? Colors.white.withValues(alpha: 0.02)
+                      : Colors.transparent,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Text(
+                          row.feature,
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.75),
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          row.edupol,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Color(0xFF22C55E),
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          row.competitor,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  // ── Testimonials ──────────────────────────────────────────────────────────────
+  Widget _buildTestimonialsSection() {
+    return Column(
+      children: [
+        _buildSectionHeader('HISTORIAS DE INGRESANTES'),
+        const SizedBox(height: 6),
+        Text(
+          'Ellos lo lograron. Tú eres el siguiente.',
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.5),
+            fontSize: 14,
+          ),
+        ),
+        const SizedBox(height: 24),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final isWide = constraints.maxWidth > 600;
+            if (isWide) {
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 14,
+                  mainAxisSpacing: 14,
+                  childAspectRatio: 2.2,
+                ),
+                itemCount: _testimonials.length,
+                itemBuilder: (_, i) => _buildTestimonialCard(_testimonials[i]),
+              );
+            } else {
+              return Column(
+                children: _testimonials
+                    .map(
+                      (t) => Padding(
+                        padding: const EdgeInsets.only(bottom: 12),
+                        child: _buildTestimonialCard(t),
+                      ),
+                    )
+                    .toList(),
+              );
+            }
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTestimonialCard(_Testimonial t) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        color: Colors.white.withValues(alpha: 0.04),
+        border: Border.all(
+          color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 36,
+                height: 36,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)],
+                  ),
+                ),
+                child: const Icon(
+                  Icons.person_rounded,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      t.name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      t.school,
+                      style: const TextStyle(
+                        color: Color(0xFF22C55E),
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: List.generate(
+                  t.stars,
+                  (_) => const Icon(
+                    Icons.star_rounded,
+                    color: Color(0xFFFFD700),
+                    size: 13,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Expanded(
+            child: Text(
+              '"${t.quote}"',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.7),
+                fontSize: 13,
+                fontStyle: FontStyle.italic,
+                height: 1.45,
+              ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ── FAQ Section ───────────────────────────────────────────────────────────────
+  Widget _buildFaqSection() {
+    return Column(
+      children: [
+        _buildSectionHeader('PREGUNTAS FRECUENTES'),
+        const SizedBox(height: 24),
+        ...List.generate(_faqs.length, (i) {
+          final isExpanded = _expandedFaq == i;
+          final faq = _faqs[i];
+          return Container(
+            margin: const EdgeInsets.only(bottom: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14),
+              color: isExpanded
+                  ? const Color(0xFF3B82F6).withValues(alpha: 0.08)
+                  : Colors.white.withValues(alpha: 0.03),
+              border: Border.all(
+                color: isExpanded
+                    ? const Color(0xFF3B82F6).withValues(alpha: 0.4)
+                    : Colors.white.withValues(alpha: 0.08),
+              ),
+            ),
+            child: InkWell(
+              onTap: () => setState(
+                () => _expandedFaq = isExpanded ? -1 : i,
+              ),
+              borderRadius: BorderRadius.circular(14),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 14,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            faq.question,
+                            style: TextStyle(
+                              color: isExpanded
+                                  ? const Color(0xFF93C5FD)
+                                  : Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          isExpanded
+                              ? Icons.keyboard_arrow_up_rounded
+                              : Icons.keyboard_arrow_down_rounded,
+                          color: isExpanded
+                              ? const Color(0xFF60A5FA)
+                              : Colors.white.withValues(alpha: 0.4),
+                        ),
+                      ],
+                    ),
+                    if (isExpanded) ...[
+                      const SizedBox(height: 10),
+                      Text(
+                        faq.answer,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.65),
+                          fontSize: 13,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
+          );
+        }),
+      ],
+    );
+  }
+
+  // ── Final CTA Banner ──────────────────────────────────────────────────────────
+  Widget _buildFinalCTABanner() {
+    return Container(
+      padding: const EdgeInsets.all(28),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF1E3A5F), Color(0xFF1A1040)],
+        ),
+        border: Border.all(
+          color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+            blurRadius: 40,
+            spreadRadius: 5,
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          ShaderMask(
+            shaderCallback: (b) => const LinearGradient(
+              colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
+            ).createShader(b),
+            child: const Text(
+              '¿Sigues pensándolo?\nEl cupo de tu vacante no espera.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
+                height: 1.3,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'Miles de postulantes están entrenando ahora mismo en la Arena Policial. Cada día que pasa, ellos se ponen por delante tuyo en el Cuadro de Mérito.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.6),
+              fontSize: 14,
+              height: 1.5,
+            ),
+          ),
+          const SizedBox(height: 20),
+          GestureDetector(
+            onTap: _launchWhatsApp,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF25D366), Color(0xFF1DAA54)],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF25D366).withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.message_rounded, color: Colors.white, size: 22),
+                  SizedBox(width: 10),
+                  Text(
+                    'UNIRME AHORA POR S/15',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ── Utility ───────────────────────────────────────────────────────────────────
+  Widget _buildSectionHeader(String text) {
+    return ShaderMask(
+      shaderCallback: (b) => const LinearGradient(
+        colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
+      ).createShader(b),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w900,
+          letterSpacing: 0.5,
+        ),
+      ),
+    );
+  }
 }
 
-// ─── Badge de confianza ───────────────────────────────────────────────────────
+// ─── Trust Item ───────────────────────────────────────────────────────────────
 
 class _TrustItem extends StatelessWidget {
   final IconData icon;
@@ -1117,7 +2036,6 @@ class _BgPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Fondo base
     final bg = Paint()
       ..shader = const LinearGradient(
         begin: Alignment.topLeft,
@@ -1126,12 +2044,10 @@ class _BgPainter extends CustomPainter {
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), bg);
 
-    // Orbes de luz
     _drawOrb(canvas, size, 0.15, 0.2, 0.0, const Color(0xFF3B82F6));
     _drawOrb(canvas, size, 0.85, 0.6, 0.3, const Color(0xFF7C3AED));
     _drawOrb(canvas, size, 0.5, 0.9, 0.6, const Color(0xFF06B6D4));
 
-    // Grid sutil
     final grid = Paint()
       ..color = Colors.white.withValues(alpha: 0.025)
       ..strokeWidth = 0.5;
@@ -1157,24 +2073,27 @@ class _BgPainter extends CustomPainter {
     final opacity = 0.04 + pulse * 0.04;
 
     final paint = Paint()
-      ..shader =
-          RadialGradient(
-            colors: [
-              color.withValues(alpha: opacity),
-              color.withValues(alpha: 0),
-            ],
-          ).createShader(
-            Rect.fromCircle(
-              center: Offset(nx * size.width, ny * size.height),
-              radius: radius,
-            ),
-          );
+      ..shader = RadialGradient(
+        colors: [
+          color.withValues(alpha: opacity),
+          color.withValues(alpha: 0),
+        ],
+      ).createShader(
+        Rect.fromCircle(
+          center: Offset(nx * size.width, ny * size.height),
+          radius: radius,
+        ),
+      );
 
     if (kIsWeb) {
       paint.maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
     }
 
-    canvas.drawCircle(Offset(nx * size.width, ny * size.height), radius, paint);
+    canvas.drawCircle(
+      Offset(nx * size.width, ny * size.height),
+      radius,
+      paint,
+    );
   }
 
   @override
