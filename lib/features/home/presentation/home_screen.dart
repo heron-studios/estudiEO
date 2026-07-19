@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'dart:async';
-import 'dart:math' as dart_math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -115,9 +114,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   bool _todayCompleted = false;
 
   String? _dailyVerse;
-  
-  int _activeUsers = 23;
-  Timer? _activeUsersTimer;
 
   @override
   void initState() {
@@ -145,44 +141,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     _loadPsicoProgress();
     _loadDailyVerse();
-    
-    final now = DateTime.now();
-    // Semilla basada en la hora actual
-    final seed = now.year * 10000 + now.month * 100 + now.day * 24 + now.hour;
-    final r = dart_math.Random(seed);
-    
-    // Cantidad base de usuarios según la hora
-    int baseUsers = r.nextInt(45) + 120; // 120 - 165
-    if (now.hour > 18 || now.hour < 2) {
-      baseUsers += 40; // Más en la noche
-    } else if (now.hour > 8 && now.hour < 14) {
-      baseUsers -= 20; // Menos en la mañana/mediodía
-    }
 
-    // Variación sutil según el minuto actual para que al recargar se sienta vivo pero no salte caóticamente
-    final minVariation = dart_math.Random(seed + now.minute).nextInt(5) - 2;
-    _activeUsers = baseUsers + minVariation;
-
-    // Actualizar cada 15 minutos para mayor realismo estático y no sentir que salta.
-    _activeUsersTimer = Timer.periodic(const Duration(minutes: 15), (_) {
-      if (mounted) {
-        setState(() {
-          // Nueva semilla cada 15 min, el número base cambiará acorde a la hora real.
-          final currentBlock = DateTime.now().minute ~/ 15;
-          final newSeed = DateTime.now().year * 10000 + DateTime.now().month * 100 + DateTime.now().day * 24 + DateTime.now().hour + currentBlock;
-          final nr = dart_math.Random(newSeed);
-          
-          int newBase = nr.nextInt(45) + 120;
-          if (DateTime.now().hour > 18 || DateTime.now().hour < 2) {
-            newBase += 40;
-          } else if (DateTime.now().hour > 8 && DateTime.now().hour < 14) {
-            newBase -= 20;
-          }
-          
-          _activeUsers = newBase;
-        });
-      }
-    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await ProfileSetupDialog.showIfNeeded(context);
@@ -233,7 +192,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void dispose() {
     _fabController.dispose();
     _warningLottieController.dispose();
-    _activeUsersTimer?.cancel();
     super.dispose();
   }
 
@@ -1139,40 +1097,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         alignment: WrapAlignment.end,
                         children: [
-                          // Active Users Pill
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: Colors.green.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  width: 8,
-                                  height: 8,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.greenAccent,
-                                    shape: BoxShape.circle,
-                                    boxShadow: [
-                                      BoxShadow(color: Colors.greenAccent, blurRadius: 4),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(width: 6),
-                                Text(
-                                  '$_activeUsers activos',
-                                  style: const TextStyle(
-                                    color: Colors.greenAccent,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                           // Unified Gamification Stats Pill
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
