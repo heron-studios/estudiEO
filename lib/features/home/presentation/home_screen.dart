@@ -1320,6 +1320,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       child: LayoutBuilder(
                         builder: (context, constraints) {
                           if (isLargeScreen) {
+                            final totalWidth = constraints.maxWidth;
+                            final colWidth3 = (totalWidth - 32) / 3;
+                            final row3Height = colWidth3 / 1.25;
+                            final arenaWidth = (colWidth3 * 2) + 16;
+
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1327,10 +1332,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 Row(
                                   children: [
                                     Expanded(
-                                      child: _buildDailyMissionCard(
-                                        context,
-                                        nt,
-                                      ),
+                                      child: _buildDailyMissionCard(context, nt),
                                     ),
                                     const SizedBox(width: 16),
                                     Expanded(
@@ -1341,50 +1343,35 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 const SizedBox(height: 16),
                                 Row(
                                   children: [
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 1.25,
-                                        child: _buildEstudiarTile(context, nt),
-                                      ),
+                                    SizedBox(
+                                      width: colWidth3,
+                                      height: row3Height,
+                                      child: _buildEstudiarTile(context, nt),
                                     ),
                                     const SizedBox(width: 16),
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 1.25,
-                                        child: _buildTarjetasTile(context, nt),
-                                      ),
+                                    SizedBox(
+                                      width: colWidth3,
+                                      height: row3Height,
+                                      child: _buildTarjetasTile(context, nt),
                                     ),
                                     const SizedBox(width: 16),
-                                    Expanded(
-                                      child: AspectRatio(
-                                        aspectRatio: 1.25,
-                                        child: _buildAprendizajeTile(
-                                          context,
-                                          nt,
-                                        ),
-                                      ),
+                                    SizedBox(
+                                      width: colWidth3,
+                                      height: row3Height,
+                                      child: _buildAprendizajeTile(context, nt),
                                     ),
                                   ],
                                 ),
                                 const SizedBox(height: 16),
-                                  if (isLargeScreen)
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: AspectRatio(
-                                            aspectRatio: 2.6,
-                                            child: _buildArenaTile(context, nt),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 16),
-                                        const Expanded(
-                                          child: AspectRatio(
-                                            aspectRatio: 2.6,
-                                            child: SizedBox(),
-                                          ),
-                                        ),
-                                      ],
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: arenaWidth,
+                                      height: row3Height,
+                                      child: _buildArenaTile(context, nt),
                                     ),
+                                  ],
+                                ),
                               ],
                             );
                           } else {
