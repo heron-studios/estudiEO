@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileSetupDialog extends StatefulWidget {
   const ProfileSetupDialog({super.key});
@@ -40,9 +41,15 @@ class _ProfileSetupDialogState extends State<ProfileSetupDialog> {
   void initState() {
     super.initState();
     final storage = context.read<LocalStorageService>();
-    _nameController = TextEditingController(
-      text: storage.loadUserName() == 'Aspirante' ? '' : storage.loadUserName()
-    );
+    final googleName = FirebaseAuth.instance.currentUser?.displayName;
+    String currentName = storage.loadUserName();
+    if (currentName == 'Aspirante' || currentName.trim().isEmpty) {
+      currentName = (googleName != null && googleName.trim().isNotEmpty) 
+          ? googleName 
+          : 'Usuario PNP';
+    }
+
+    _nameController = TextEditingController(text: currentName);
     final currentSchool = storage.loadTargetSchool();
     if (currentSchool == 'EO PNP' || currentSchool == 'EETSPN') {
       _selectedSchool = currentSchool;
@@ -147,10 +154,11 @@ class _ProfileSetupDialogState extends State<ProfileSetupDialog> {
             const SizedBox(height: 8),
             TextField(
               controller: _nameController,
-              style: const TextStyle(color: Colors.white),
+              readOnly: true, // No editable por petición
+              style: TextStyle(color: Colors.white.withValues(alpha: 0.6)),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.black26,
+                fillColor: Colors.black12, // Más oscuro para indicar read-only
                 hintText: 'Ej. Juan Pérez',
                 hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.3)),
                 border: OutlineInputBorder(

@@ -38,10 +38,10 @@ class LeaderboardService {
     final r = dart_math.Random(hourSeed + school.hashCode);
     
     final names = [
-      'Cadete Silva', 'Aspirante Mendoza', 'S03 PNP Torres', 
-      'Aspirante Rojas', 'Cadete Quispe', 'Alumno Vargas', 
-      'S02 PNP Castillo', 'Cadete Morales', 'Aspirante Flores',
-      'Alumno Gutierrez', 'S03 PNP Rios', 'Aspirante Vega'
+      'Luis Silva', 'Carlos Mendoza', 'Jorge Torres', 
+      'Ana Rojas', 'Diego Quispe', 'Pedro Vargas', 
+      'Juan Castillo', 'Miguel Morales', 'Maria Flores',
+      'José Gutierrez', 'Roberto Rios', 'Luis Vega'
     ];
     
     final bots = <Map<String, dynamic>>[];

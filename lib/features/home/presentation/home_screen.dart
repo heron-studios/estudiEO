@@ -147,11 +147,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _loadDailyVerse();
     
     _activeUsers = dart_math.Random().nextInt(25) + 18;
-    _activeUsersTimer = Timer.periodic(const Duration(seconds: 12), (_) {
+    _activeUsersTimer = Timer.periodic(const Duration(seconds: 45), (_) {
       if (mounted) {
         setState(() {
-          // Varía en +/- 2 usuarios
-          final change = dart_math.Random().nextInt(5) - 2;
+          // Varía en +/- 1 usuario ocasionalmente para más realismo
+          final change = dart_math.Random().nextInt(3) - 1; 
           _activeUsers = (_activeUsers + change).clamp(12, 58);
         });
       }
@@ -720,16 +720,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildArenaTile(BuildContext context, dynamic nt) {
-    return _GlassTile(
-      icon: Icons.sports_esports_rounded,
-      color: const Color(0xFFF59E0B),
-      gradientColors: const [Color(0xFF2A1F10), Color(0xFF1A1308)],
-      title: 'Arena',
-      subtitle: 'Entrenamiento',
-      onTap: () => context.push('/arena'),
-    );
-  }
 
 
 
@@ -1173,11 +1163,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 // Trophy (Leaderboard)
                                 GestureDetector(
                                   onTap: () => _showLeaderboardDialog(context, nt),
-                                  child: const Icon(
-                                    Icons.emoji_events_rounded,
-                                    color: Colors.amber,
-                                    size: 18,
-                                  ),
+                                  child: const BlinkingTrophyIcon(),
                                 ),
                                 Container(
                                   margin: const EdgeInsets.symmetric(horizontal: 12),
@@ -1414,16 +1400,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: arenaWidth,
-                                      height: row3Height,
-                                      child: _buildArenaTile(context, nt),
-                                    ),
-                                  ],
-                                ),
                               ],
                             );
                           } else {
@@ -1485,28 +1461,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10),
-                                  if (isLargeScreen)
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: AspectRatio(
-                                            aspectRatio: 1.45,
-                                            child: _buildArenaTile(
-                                              context,
-                                              nt,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Expanded(
-                                          child: AspectRatio(
-                                            aspectRatio: 1.45,
-                                            child: SizedBox(),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
                                   const SizedBox(height: 16),
                                 ],
                               ),
@@ -1615,12 +1569,36 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text(
-                          'Cerrar',
-                          style: TextStyle(color: nt.textSecondary),
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              'Cerrar',
+                              style: TextStyle(color: nt.textSecondary),
+                            ),
+                          ),
+                          ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFF59E0B),
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              context.push('/arena');
+                            },
+                            icon: const Icon(Icons.sports_esports_rounded),
+                            label: const Text(
+                              'Entrar a la Arena',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -1914,6 +1892,63 @@ class _GlassTile extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class BlinkingTrophyIcon extends StatefulWidget {
+  const BlinkingTrophyIcon({super.key});
+
+  @override
+  State<BlinkingTrophyIcon> createState() => _BlinkingTrophyIconState();
+}
+
+class _BlinkingTrophyIconState extends State<BlinkingTrophyIcon>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    )..repeat(reverse: true);
+    _animation = Tween<double>(begin: 0.3, end: 1.0).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.amber.withValues(alpha: _animation.value * 0.6),
+                blurRadius: 10,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: const Icon(
+            Icons.emoji_events_rounded,
+            color: Colors.amber,
+            size: 20,
+          ),
+        );
+      },
     );
   }
 }

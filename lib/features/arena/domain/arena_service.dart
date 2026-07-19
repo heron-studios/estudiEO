@@ -31,29 +31,37 @@ class ArenaService {
       }
     }
 
-    // Crear una nueva sala contra un BOT
+    // Crear una nueva sala en espera
     final questions = _generateRandomQuestions(5);
     final docRef = _firestore.collection('arena_matches').doc();
-    final botNames = [
-      'Cadete Sánchez', 'Aspirante Rojas', 'S03 PNP Mendoza', 
-      'Aspirante Silva', 'Cadete Quispe', 'Alumno Torres', 
-      'S02 PNP Castillo', 'Aspirante Vargas'
-    ];
-    botNames.shuffle();
-    final botName = botNames.first;
     
     final newMatch = ArenaMatch(
       id: docRef.id,
       player1Id: playerId,
       player1Name: playerName,
-      player2Id: 'BOT_${DateTime.now().millisecondsSinceEpoch}',
-      player2Name: botName,
-      status: 'playing', // Inicia instantáneamente
+      status: 'waiting', 
       createdAt: DateTime.now(),
       questions: questions,
     );
     await docRef.set(newMatch.toMap());
     return newMatch;
+  }
+
+  Future<void> assignBot(String matchId) async {
+    final botNames = [
+      'Luis Silva', 'Carlos Mendoza', 'Jorge Torres', 
+      'Ana Rojas', 'Diego Quispe', 'Pedro Vargas', 
+      'Juan Castillo', 'Miguel Morales', 'Maria Flores',
+      'José Gutierrez', 'Roberto Rios', 'Luis Vega'
+    ];
+    botNames.shuffle();
+    final botName = botNames.first;
+    
+    await _firestore.collection('arena_matches').doc(matchId).update({
+      'player2Id': 'BOT_${DateTime.now().millisecondsSinceEpoch}',
+      'player2Name': botName,
+      'status': 'playing',
+    });
   }
 
   List<Map<String, dynamic>> _generateRandomQuestions(int count) {

@@ -62,6 +62,15 @@ class _ArenaScreenState extends State<ArenaScreen> {
     });
     try {
       final match = await _arenaService.findOrJoinMatch(_playerId, _playerName);
+      
+      if (match.status == 'waiting') {
+        Future.delayed(const Duration(seconds: 10), () async {
+          if (mounted && _match?.status == 'waiting') {
+            await _arenaService.assignBot(match.id);
+          }
+        });
+      }
+
       _matchSub = _arenaService.watchMatch(match.id).listen((updatedMatch) {
         if (!mounted) return;
         final wasWaiting = _match?.status == 'waiting' || _match == null;
