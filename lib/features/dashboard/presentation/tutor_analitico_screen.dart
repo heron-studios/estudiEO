@@ -156,22 +156,20 @@ class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
 
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: RadialGradient(
-                center: const Alignment(-0.4, -0.6),
-                radius: 1.2,
-                colors: [
-                  const Color(0xFF4F1B8F).withValues(alpha: 0.35),
-                  nt.background,
-                ],
-              ),
-            ),
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: RadialGradient(
+          center: const Alignment(-0.4, -0.6),
+          radius: 1.2,
+          colors: [
+            const Color(0xFF4F1B8F).withValues(alpha: 0.35),
+            nt.background,
+          ],
         ),
+      ),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
         Positioned(
           right: -60,
           bottom: 80,
@@ -256,7 +254,8 @@ class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
                     ],
                   ),
                 ),
-      ],
+        ],
+      ),
     );
   }
 
