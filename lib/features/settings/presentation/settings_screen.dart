@@ -14,14 +14,14 @@ import 'package:learn/core/config/app_config.dart';
 import 'package:learn/core/services/audio_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({super.key});
+class SettingsView extends StatefulWidget {
+  const SettingsView({super.key});
 
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
+  State<SettingsView> createState() => _SettingsViewState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsViewState extends State<SettingsView> {
   // Neural design tokens (via NeuralDesignSystem)
   static const _cardBg = NeuralDesignSystem.surfaceCard;
   static const _text = NeuralDesignSystem.textPrimary;
@@ -266,30 +266,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final allSubjects = context.watch<SubjectProvider>().allSubjects;
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Ajustes',
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              children: [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
                 _buildSectionTitle('PERFIL DEL ASPIRANTE'),
                 _SettingsGlassSection(
                   children: [
@@ -466,10 +445,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const SizedBox(height: 32),
               ],
-            ),
-          ),
-        ),
-      ),
     );
   }
 

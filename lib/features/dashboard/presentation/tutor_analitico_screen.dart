@@ -11,14 +11,14 @@ import 'package:learn/features/dashboard/domain/study_stats_collector.dart';
 import 'package:learn/screens/entrevista_simulator/puter_service.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 
-class TutorAnaliticoScreen extends StatefulWidget {
-  const TutorAnaliticoScreen({super.key});
+class TutorAnaliticoView extends StatefulWidget {
+  const TutorAnaliticoView({super.key});
 
   @override
-  State<TutorAnaliticoScreen> createState() => _TutorAnaliticoScreenState();
+  State<TutorAnaliticoView> createState() => _TutorAnaliticoViewState();
 }
 
-class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
+class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
     with TickerProviderStateMixin {
   late final AnimationController _pulseCtrl;
   late final AnimationController _fadeCtrl;
@@ -156,163 +156,116 @@ class _TutorAnaliticoScreenState extends State<TutorAnaliticoScreen>
   Widget build(BuildContext context) {
     final nt = NeuralTheme.of(context);
 
-    return Scaffold(
-      backgroundColor: nt.background,
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: RadialGradient(
-                  center: const Alignment(-0.4, -0.6),
-                  radius: 1.2,
-                  colors: [
-                    const Color(0xFF4F1B8F).withValues(alpha: 0.35),
-                    nt.background,
-                  ],
-                ),
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                center: const Alignment(-0.4, -0.6),
+                radius: 1.2,
+                colors: [
+                  const Color(0xFF4F1B8F).withValues(alpha: 0.35),
+                  nt.background,
+                ],
               ),
             ),
           ),
-          Positioned(
-            right: -60,
-            bottom: 80,
-            child: RepaintBoundary(
-              child: ScaleTransition(
-                scale: _pulseAnim,
-                child: Container(
-                  width: 280,
-                  height: 280,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        const Color(0xFF7C3AED).withValues(alpha: 0.18),
-                        Colors.transparent,
-                      ],
-                    ),
+        ),
+        Positioned(
+          right: -60,
+          bottom: 80,
+          child: RepaintBoundary(
+            child: ScaleTransition(
+              scale: _pulseAnim,
+              child: Container(
+                width: 280,
+                height: 280,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      const Color(0xFF7C3AED).withValues(alpha: 0.18),
+                      Colors.transparent,
+                    ],
                   ),
                 ),
               ),
             ),
           ),
-
-          SafeArea(
-            child: Column(
-              children: [
-                _buildAppBar(context),
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 12),
-                        _buildAriaHeader(),
+        ),
+        SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 12),
+                      _buildAriaHeader(),
+                      const SizedBox(height: 16),
+                      Center(child: _buildProfileCard(nt)),
+                      const SizedBox(height: 24),
+                      if (_isLoading) _buildLoadingCard(nt),
+                      if (_hasError) _buildErrorCard(nt),
+                      if (!_isLoading && !_hasError) ...[
+                        _buildMetricsRow(nt),
                         const SizedBox(height: 16),
-                        Center(child: _buildProfileCard(nt)),
-                        const SizedBox(height: 24),
-                        if (_isLoading) _buildLoadingCard(nt),
-                        if (_hasError) _buildErrorCard(nt),
-                        if (!_isLoading && !_hasError) ...[
-                          _buildMetricsRow(nt),
-                          const SizedBox(height: 16),
-                          _buildSubjectBars(nt),
-                          const SizedBox(height: 16),
-                          Center(
-                            child: TextButton.icon(
-                              onPressed: _isLoading
-                                  ? null
-                                  : () => _analyze(forceRefresh: true),
-                              icon: const Icon(
-                                Icons.refresh_rounded,
+                        _buildSubjectBars(nt),
+                        const SizedBox(height: 16),
+                        Center(
+                          child: TextButton.icon(
+                            onPressed: _isLoading
+                                ? null
+                                : () => _analyze(forceRefresh: true),
+                            icon: const Icon(
+                              Icons.refresh_rounded,
+                              color: Colors.white54,
+                              size: 20,
+                            ),
+                            label: const Text(
+                              'Actualizar Análisis',
+                              style: TextStyle(
                                 color: Colors.white54,
-                                size: 20,
+                                fontFamily: 'Inter',
                               ),
-                              label: const Text(
-                                'Actualizar Análisis',
-                                style: TextStyle(
-                                  color: Colors.white54,
-                                  fontFamily: 'Inter',
-                                ),
+                            ),
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.white.withValues(
+                                alpha: 0.05,
                               ),
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.white.withValues(
-                                  alpha: 0.05,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 12,
-                                ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 12,
                               ),
                             ),
                           ),
-                          const SizedBox(height: 80),
-                          FadeTransition(
-                            opacity: _fadeAnim,
-                            child: _buildAiAdviceCard(nt),
-                          ),
-                          if (_worstSubjectId != null) ...[
-                            const SizedBox(height: 16),
-                            _buildActionCta(nt),
-                          ],
+                        ),
+                        const SizedBox(height: 80),
+                        FadeTransition(
+                          opacity: _fadeAnim,
+                          child: _buildAiAdviceCard(nt),
+                        ),
+                        if (_worstSubjectId != null) ...[
+                          const SizedBox(height: 16),
+                          _buildActionCta(nt),
                         ],
-                        const SizedBox(height: 24),
                       ],
-                    ),
+                      const SizedBox(height: 24),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAppBar(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        children: [
-          _glassButton(
-            icon: Icons.arrow_back_ios_new_rounded,
-            onTap: () => context.pop(),
-          ),
-          const Spacer(),
-          const Text(
-            'Tutor IA',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Outfit',
-            ),
-          ),
-          const Spacer(),
-          _glassButton(icon: Icons.refresh_rounded, onTap: _analyze),
-        ],
-      ),
-    );
-  }
-
-  Widget _glassButton({required IconData icon, required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.08),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
         ),
-        child: Icon(icon, color: Colors.white, size: 18),
-      ),
+      ],
     );
   }
 
