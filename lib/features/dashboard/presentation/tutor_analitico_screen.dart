@@ -194,16 +194,11 @@ class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
             ),
           ),
         ),
-        SafeArea(
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
                       const SizedBox(height: 12),
                       _buildAriaHeader(),
                       const SizedBox(height: 16),
@@ -261,10 +256,6 @@ class _TutorAnaliticoViewState extends State<TutorAnaliticoView>
                     ],
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
       ],
     );
   }

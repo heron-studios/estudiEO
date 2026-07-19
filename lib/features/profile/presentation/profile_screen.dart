@@ -45,47 +45,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final userEmail = auth.currentUser?.email ?? 'Sin cuenta vinculada';
     final targetSchool = storage.loadTargetSchool();
     
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        backgroundColor: NeuralDesignSystem.background,
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Colors.black.withValues(alpha: 0.5),
-          elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: const Text(
-            'Perfil',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          centerTitle: true,
-          bottom: const TabBar(
-            indicatorColor: NeuralDesignSystem.blueGoogle,
-            labelColor: Colors.white,
-            unselectedLabelColor: Colors.white54,
-            tabs: [
-              Tab(text: 'Mi Perfil'),
-              Tab(text: 'Tutor IA'),
-            ],
+    return Scaffold(
+      backgroundColor: NeuralDesignSystem.background,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
+          'Perfil',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
         ),
-        body: NeuralBackgroundWrapper(
-          child: SafeArea(
-            child: TabBarView(
-              children: [
-                // Tab 1: Mi Perfil y Ajustes
-                Center(
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 600),
-                    child: ListView(
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                      physics: const BouncingScrollPhysics(),
-                      children: [
+        centerTitle: true,
+      ),
+      body: NeuralBackgroundWrapper(
+        child: SafeArea(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 600),
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                physics: const BouncingScrollPhysics(),
+                children: [
                   // --- User Basic Info ---
                   Center(
                     child: Column(
@@ -197,16 +183,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   
                   const SizedBox(height: 32),
                   
+                  // --- Tutor IA Embedded ---
+                  const TutorAnaliticoView(),
+                  
+                  const SizedBox(height: 16),
+                  
                   // --- System Settings Embedded ---
                   const SettingsView(),
                 ],
               ),
             ),
-          ),
-          // Tab 2: Tutor IA
-          const TutorAnaliticoView(),
-        ],
-      ),
           ),
         ),
       ),
