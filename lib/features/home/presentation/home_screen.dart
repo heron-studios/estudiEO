@@ -146,13 +146,29 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _loadPsicoProgress();
     _loadDailyVerse();
     
-    _activeUsers = dart_math.Random().nextInt(25) + 18;
+    final now = DateTime.now();
+    // Semilla basada en la hora actual
+    final seed = now.year * 10000 + now.month * 100 + now.day * 24 + now.hour;
+    final r = dart_math.Random(seed);
+    
+    // Cantidad base de usuarios según la hora
+    int baseUsers = r.nextInt(45) + 120; // 120 - 165
+    if (now.hour > 18 || now.hour < 2) {
+      baseUsers += 40; // Más en la noche
+    } else if (now.hour > 8 && now.hour < 14) {
+      baseUsers -= 20; // Menos en la mañana/mediodía
+    }
+
+    // Variación sutil según el minuto actual para que al recargar se sienta vivo pero no salte caóticamente
+    final minVariation = dart_math.Random(seed + now.minute).nextInt(5) - 2;
+    _activeUsers = baseUsers + minVariation;
+
     _activeUsersTimer = Timer.periodic(const Duration(seconds: 45), (_) {
       if (mounted) {
         setState(() {
           // Varía en +/- 1 usuario ocasionalmente para más realismo
           final change = dart_math.Random().nextInt(3) - 1; 
-          _activeUsers = (_activeUsers + change).clamp(12, 58);
+          _activeUsers = (_activeUsers + change).clamp(40, 300);
         });
       }
     });
@@ -1361,7 +1377,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             final totalWidth = constraints.maxWidth;
                             final colWidth3 = (totalWidth - 32) / 3;
                             final row3Height = colWidth3 / 1.25;
-                            final arenaWidth = (colWidth3 * 2) + 16;
 
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.center,
