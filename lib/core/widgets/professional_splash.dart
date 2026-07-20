@@ -311,31 +311,52 @@ class _ProfessionalSplashState extends State<ProfessionalSplash>
                   ),
                 ),
 
-                // Núcleo del orbe (glassmorphism)
+                // Núcleo del orbe — BackdropFilter solo en no-web (CanvasKit puede fallar)
                 ClipOval(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                    child: Container(
-                      width: 110,
-                      height: 110,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: const RadialGradient(
-                          colors: [Color(0xFF1E3A5F), Color(0xFF0A1628)],
-                          center: Alignment(-0.3, -0.3),
+                  child: kIsWeb
+                      ? Container(
+                          width: 110,
+                          height: 110,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: const RadialGradient(
+                              colors: [Color(0xFF1E3A5F), Color(0xFF0A1628)],
+                              center: Alignment(-0.3, -0.3),
+                            ),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.2),
+                              width: 1.5,
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.military_tech_rounded,
+                            color: Colors.white,
+                            size: 52,
+                          ),
+                        )
+                      : BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                          child: Container(
+                            width: 110,
+                            height: 110,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const RadialGradient(
+                                colors: [Color(0xFF1E3A5F), Color(0xFF0A1628)],
+                                center: Alignment(-0.3, -0.3),
+                              ),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                width: 1.5,
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.military_tech_rounded,
+                              color: Colors.white,
+                              size: 52,
+                            ),
+                          ),
                         ),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.15),
-                          width: 1.5,
-                        ),
-                      ),
-                      child: const Icon(
-                        Icons.military_tech_rounded,
-                        color: Colors.white,
-                        size: 52,
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -488,14 +509,10 @@ class _ProfessionalSplashState extends State<ProfessionalSplash>
               snapshot.data == null) {
             return const SizedBox(height: 60);
           }
+          // No BackdropFilter on web — causes CanvasKit render issues
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: kIsWeb
-                ? BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: _verseCard(snapshot.data!),
-                  )
-                : _verseCard(snapshot.data!),
+            child: _verseCard(snapshot.data!),
           );
         },
       ),

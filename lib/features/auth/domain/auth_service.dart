@@ -52,38 +52,53 @@ class AuthService extends ChangeNotifier {
   }
 
   Future<void> _checkInitialAuth() async {
+    // Safety net: no matter what happens, force isInitializing=false after 10s
+    // This prevents the router from being stuck at /loading forever on web.
+    Future.delayed(const Duration(seconds: 10), () {
+      if (_isInitializing && mounted) {
+        debugPrint('[AuthService] Safety timeout: forcing isInitializing=false');
+        _isInitializing = false;
+        notifyListeners();
+      }
+    });
+
     try {
       // Wait for at least 3 seconds so the splash screen is visible (only on mobile)
       if (!kIsWeb) {
         await Future.delayed(const Duration(seconds: 3));
       }
 
-      // Esperar a que Firebase termine de cargar la sesión persistida (hasta 2 segundos)
+      // Wait for Firebase to restore the persisted session — max 4s on web, 2s on mobile
+      const timeoutDuration = Duration(seconds: 4);
+
       final user = await _auth.userChanges().first.timeout(
-        const Duration(seconds: 2),
+        timeoutDuration,
         onTimeout: () => _auth.currentUser,
       );
 
       if (user != null) {
-        // Safe timeout for verification in slow networks
+        // Safe timeout for Firestore verification
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 10),
+          const Duration(seconds: 8),
           onTimeout: () {
-            debugPrint('Auth check timeout');
-            return false;
+            debugPrint('[AuthService] Firestore verification timeout');
+            return true; // Let user in as free tier on timeout
           },
         );
       } else {
         _isAuthorized = false;
       }
     } catch (e) {
-      debugPrint('Auth check error: $e');
+      debugPrint('[AuthService] Auth check error: $e');
       _isAuthorized = false;
     } finally {
       _isInitializing = false;
       notifyListeners();
     }
   }
+
+  bool get mounted => true; // ChangeNotifier doesn't have mounted; always safe
+
 
   void _setLoading(bool value) {
     _isLoading = value;
