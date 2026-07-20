@@ -1236,11 +1236,11 @@ class _PaymentScreenState extends State<PaymentScreen>
       child: ClipRRect(
         borderRadius: BorderRadius.circular(28),
         child: kIsWeb
-            ? BackdropFilter(
+            ? checkoutContent
+            : BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: checkoutContent,
-              )
-            : checkoutContent,
+              ),
       ),
     );
   }
@@ -2084,10 +2084,6 @@ class _BgPainter extends CustomPainter {
           radius: radius,
         ),
       );
-
-    if (kIsWeb) {
-      paint.maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
-    }
 
     canvas.drawCircle(
       Offset(nx * size.width, ny * size.height),
