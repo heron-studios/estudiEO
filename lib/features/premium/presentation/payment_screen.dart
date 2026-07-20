@@ -76,33 +76,6 @@ const _benefits = [
   ),
 ];
 
-const _testimonials = [
-  _Testimonial(
-    'Carlos M.',
-    'Ingresó a EO PNP 2024-I',
-    'La Arena me hizo súper competitivo. Llegué al examen real sintiéndome invencible.',
-    5,
-  ),
-  _Testimonial(
-    'Luciana R.',
-    'Ingresó a EETSPN 2024-II',
-    'Los tests de Eysenck me salvaron. Sin EDUPOL, hubiera fallado en el área médica.',
-    5,
-  ),
-  _Testimonial(
-    'Rodrigo V.',
-    'Ingresó a EO PNP 2025-I',
-    'La IA ARIA detectó que fallaba en Geografía y me enfocó ahí. ¡Me fue perfecto!',
-    5,
-  ),
-  _Testimonial(
-    'Karely T.',
-    'Ingresó a EETSPN 2025-I',
-    'El simulador de entrevista fue CLAVE. Fui segura, sin nervios. Entré en el primer intento.',
-    5,
-  ),
-];
-
 const _faqs = [
   _FAQ(
     '¿Cuánto tiempo tengo acceso?',
@@ -129,11 +102,27 @@ const _faqs = [
 const _competitorComparison = [
   _CompareRow('Costo mensual', 'S/0 (único pago)', 'S/80-200/mes'),
   _CompareRow('Simulador físico oficial', '✓ Anexo 05 y 06', '✗ No existe'),
-  _CompareRow('Tests psicométricos reales', '✓ Eysenck, Sacks, TMT', '✗ Solo teoría'),
+  _CompareRow(
+    'Tests psicométricos reales',
+    '✓ Eysenck, Sacks, TMT',
+    '✗ Solo teoría',
+  ),
   _CompareRow('Competencia multijugador', '✓ Arena 1v1 en vivo', '✗ No existe'),
-  _CompareRow('Tutor con Inteligencia Artificial', '✓ ARIA 24/7', '✗ No existe'),
-  _CompareRow('Simulador de entrevista con IA', '✓ Modo realismo', '✗ No existe'),
-  _CompareRow('Disponible 24/7', '✓ En tu celular', '✗ Solo horario de academia'),
+  _CompareRow(
+    'Tutor con Inteligencia Artificial',
+    '✓ ARIA 24/7',
+    '✗ No existe',
+  ),
+  _CompareRow(
+    'Simulador de entrevista con IA',
+    '✓ Modo realismo',
+    '✗ No existe',
+  ),
+  _CompareRow(
+    'Disponible 24/7',
+    '✓ En tu celular',
+    '✗ Solo horario de academia',
+  ),
 ];
 
 class _Benefit {
@@ -143,14 +132,6 @@ class _Benefit {
   final String subtitle;
   final String tag;
   const _Benefit(this.icon, this.color, this.title, this.subtitle, this.tag);
-}
-
-class _Testimonial {
-  final String name;
-  final String school;
-  final String quote;
-  final int stars;
-  const _Testimonial(this.name, this.school, this.quote, this.stars);
 }
 
 class _FAQ {
@@ -181,7 +162,6 @@ class _PaymentScreenState extends State<PaymentScreen>
   late final AnimationController _floatCtrl;
   late final AnimationController _entranceCtrl;
   late final AnimationController _bgCtrl;
-  late final AnimationController _urgencyCtrl;
 
   late final Animation<double> _pulseAnim;
   late final Animation<double> _floatAnim;
@@ -190,17 +170,9 @@ class _PaymentScreenState extends State<PaymentScreen>
   bool _isPressing = false;
   int _expandedFaq = -1;
 
-  // Cuenta regresiva de urgencia (julio 2025)
-  late Duration _timeLeft;
-  late final DateTime _deadline;
-
   @override
   void initState() {
     super.initState();
-
-    _deadline = DateTime(2025, 8, 1); // Fin de julio
-    _timeLeft = _deadline.difference(DateTime.now());
-    if (_timeLeft.isNegative) _timeLeft = Duration.zero;
 
     _pulseCtrl = AnimationController(
       vsync: this,
@@ -218,39 +190,23 @@ class _PaymentScreenState extends State<PaymentScreen>
       vsync: this,
       duration: const Duration(seconds: 8),
     );
-    _urgencyCtrl = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    )..repeat(reverse: true);
 
     if (kIsWeb) {
       _bgCtrl.repeat();
     }
 
-    _pulseAnim = Tween<double>(begin: 0.97, end: 1.03).animate(
-      CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut),
-    );
-    _floatAnim = Tween<double>(begin: -6.0, end: 6.0).animate(
-      CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut),
-    );
+    _pulseAnim = Tween<double>(
+      begin: 0.97,
+      end: 1.03,
+    ).animate(CurvedAnimation(parent: _pulseCtrl, curve: Curves.easeInOut));
+    _floatAnim = Tween<double>(
+      begin: -6.0,
+      end: 6.0,
+    ).animate(CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut));
     _entranceAnim = CurvedAnimation(
       parent: _entranceCtrl,
       curve: Curves.easeOutBack,
     );
-
-    // Tick cada segundo para countdown
-    _updateCountdown();
-  }
-
-  void _updateCountdown() {
-    Future.delayed(const Duration(seconds: 1), () {
-      if (!mounted) return;
-      final remaining = _deadline.difference(DateTime.now());
-      setState(() {
-        _timeLeft = remaining.isNegative ? Duration.zero : remaining;
-      });
-      if (_timeLeft.inSeconds > 0) _updateCountdown();
-    });
   }
 
   @override
@@ -259,7 +215,7 @@ class _PaymentScreenState extends State<PaymentScreen>
     _floatCtrl.dispose();
     _entranceCtrl.dispose();
     _bgCtrl.dispose();
-    _urgencyCtrl.dispose();
+
     super.dispose();
   }
 
@@ -320,17 +276,13 @@ class _PaymentScreenState extends State<PaymentScreen>
           ),
 
           // Contenido principal
-          SafeArea(
-            child: isWide ? _buildWideLayout() : _buildNarrowLayout(),
-          ),
+          SafeArea(child: isWide ? _buildWideLayout() : _buildNarrowLayout()),
 
           // Botón Cerrar Sesión
           Positioned(
             top: 16,
             right: 16,
-            child: SafeArea(
-              child: _buildLogoutButton(),
-            ),
+            child: SafeArea(child: _buildLogoutButton()),
           ),
         ],
       ),
@@ -415,8 +367,6 @@ class _PaymentScreenState extends State<PaymentScreen>
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _buildUrgencyBanner(),
-                          const SizedBox(height: 16),
                           _buildTopBadge(),
                           const SizedBox(height: 12),
                           _buildTitleLeft(),
@@ -455,9 +405,6 @@ class _PaymentScreenState extends State<PaymentScreen>
 
                 const SizedBox(height: 56),
                 _buildComparisonSection(),
-                const SizedBox(height: 56),
-                _buildTestimonialsSection(),
-                const SizedBox(height: 56),
                 _buildFaqSection(),
                 const SizedBox(height: 56),
                 _buildFinalCTABanner(),
@@ -478,8 +425,6 @@ class _PaymentScreenState extends State<PaymentScreen>
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
           children: [
-            _buildUrgencyBanner(),
-            const SizedBox(height: 14),
             _buildTopBadge(),
             const SizedBox(height: 16),
             _buildFloatingIcon(),
@@ -498,124 +443,11 @@ class _PaymentScreenState extends State<PaymentScreen>
             _buildBenefitsList(),
             const SizedBox(height: 40),
             _buildComparisonSection(),
-            const SizedBox(height: 40),
-            _buildTestimonialsSection(),
-            const SizedBox(height: 40),
             _buildFaqSection(),
             const SizedBox(height: 40),
             _buildFinalCTABanner(),
             const SizedBox(height: 30),
           ],
-        ),
-      ),
-    );
-  }
-
-  // ── Urgency Banner ────────────────────────────────────────────────────────────
-  Widget _buildUrgencyBanner() {
-    final days = _timeLeft.inDays;
-    final hours = _timeLeft.inHours % 24;
-    final minutes = _timeLeft.inMinutes % 60;
-    final seconds = _timeLeft.inSeconds % 60;
-
-    return RepaintBoundary(
-      child: AnimatedBuilder(
-        animation: _urgencyCtrl,
-        builder: (_, child) => Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            gradient: LinearGradient(
-              colors: [
-                const Color(0xFFDC2626).withValues(
-                  alpha: 0.15 + _urgencyCtrl.value * 0.08,
-                ),
-                const Color(0xFF991B1B).withValues(alpha: 0.25),
-                const Color(0xFFDC2626).withValues(
-                  alpha: 0.15 + _urgencyCtrl.value * 0.08,
-                ),
-              ],
-            ),
-            border: Border.all(
-              color: const Color(0xFFEF4444).withValues(alpha: 0.5),
-              width: 1,
-            ),
-          ),
-          child: child,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.timer_outlined,
-              color: Color(0xFFEF4444),
-              size: 16,
-            ),
-            const SizedBox(width: 8),
-            Flexible(
-              child: Text(
-                'Oferta Cyber Wow expira en: ',
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.8),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            const SizedBox(width: 6),
-            _buildCountdownUnit('${days}d'),
-            const Text(
-              ' : ',
-              style: TextStyle(
-                color: Color(0xFFEF4444),
-                fontSize: 14,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            _buildCountdownUnit('${hours.toString().padLeft(2, '0')}h'),
-            const Text(
-              ' : ',
-              style: TextStyle(
-                color: Color(0xFFEF4444),
-                fontSize: 14,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            _buildCountdownUnit('${minutes.toString().padLeft(2, '0')}m'),
-            const Text(
-              ' : ',
-              style: TextStyle(
-                color: Color(0xFFEF4444),
-                fontSize: 14,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            _buildCountdownUnit('${seconds.toString().padLeft(2, '0')}s'),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCountdownUnit(String value) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-      decoration: BoxDecoration(
-        color: const Color(0xFFEF4444).withValues(alpha: 0.2),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(
-          color: const Color(0xFFEF4444).withValues(alpha: 0.4),
-        ),
-      ),
-      child: Text(
-        value,
-        style: const TextStyle(
-          color: Color(0xFFFF6B6B),
-          fontSize: 13,
-          fontWeight: FontWeight.w900,
-          fontFeatures: [FontFeature.tabularFigures()],
         ),
       ),
     );
@@ -803,7 +635,11 @@ class _PaymentScreenState extends State<PaymentScreen>
             children: [
               ShaderMask(
                 shaderCallback: (b) => const LinearGradient(
-                  colors: [Color(0xFF60A5FA), Color(0xFFA78BFA), Color(0xFFF472B6)],
+                  colors: [
+                    Color(0xFF60A5FA),
+                    Color(0xFFA78BFA),
+                    Color(0xFFF472B6),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ).createShader(b),
@@ -1348,9 +1184,9 @@ class _PaymentScreenState extends State<PaymentScreen>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF25D366).withValues(
-                      alpha: 0.5 * _pulseAnim.value,
-                    ),
+                    color: const Color(
+                      0xFF25D366,
+                    ).withValues(alpha: 0.5 * _pulseAnim.value),
                     blurRadius: 28 * _pulseAnim.value,
                     spreadRadius: 2,
                     offset: const Offset(0, 6),
@@ -1538,9 +1374,7 @@ class _PaymentScreenState extends State<PaymentScreen>
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white.withValues(alpha: 0.03),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.08),
-            ),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
           ),
           clipBehavior: Clip.antiAlias,
           child: Column(
@@ -1663,139 +1497,6 @@ class _PaymentScreenState extends State<PaymentScreen>
     );
   }
 
-  // ── Testimonials ──────────────────────────────────────────────────────────────
-  Widget _buildTestimonialsSection() {
-    return Column(
-      children: [
-        _buildSectionHeader('HISTORIAS DE INGRESANTES'),
-        const SizedBox(height: 6),
-        Text(
-          'Ellos lo lograron. Tú eres el siguiente.',
-          style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.5),
-            fontSize: 14,
-          ),
-        ),
-        const SizedBox(height: 24),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            final isWide = constraints.maxWidth > 600;
-            if (isWide) {
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 14,
-                  mainAxisSpacing: 14,
-                  childAspectRatio: 2.2,
-                ),
-                itemCount: _testimonials.length,
-                itemBuilder: (_, i) => _buildTestimonialCard(_testimonials[i]),
-              );
-            } else {
-              return Column(
-                children: _testimonials
-                    .map(
-                      (t) => Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: _buildTestimonialCard(t),
-                      ),
-                    )
-                    .toList(),
-              );
-            }
-          },
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTestimonialCard(_Testimonial t) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.white.withValues(alpha: 0.04),
-        border: Border.all(
-          color: const Color(0xFF3B82F6).withValues(alpha: 0.2),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 36,
-                height: 36,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [Color(0xFF3B82F6), Color(0xFF7C3AED)],
-                  ),
-                ),
-                child: const Icon(
-                  Icons.person_rounded,
-                  color: Colors.white,
-                  size: 20,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      t.name,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      t.school,
-                      style: const TextStyle(
-                        color: Color(0xFF22C55E),
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                children: List.generate(
-                  t.stars,
-                  (_) => const Icon(
-                    Icons.star_rounded,
-                    color: Color(0xFFFFD700),
-                    size: 13,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: Text(
-              '"${t.quote}"',
-              style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.7),
-                fontSize: 13,
-                fontStyle: FontStyle.italic,
-                height: 1.45,
-              ),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   // ── FAQ Section ───────────────────────────────────────────────────────────────
   Widget _buildFaqSection() {
     return Column(
@@ -1819,9 +1520,7 @@ class _PaymentScreenState extends State<PaymentScreen>
               ),
             ),
             child: InkWell(
-              onTap: () => setState(
-                () => _expandedFaq = isExpanded ? -1 : i,
-              ),
+              onTap: () => setState(() => _expandedFaq = isExpanded ? -1 : i),
               borderRadius: BorderRadius.circular(14),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -2073,23 +1772,20 @@ class _BgPainter extends CustomPainter {
     final opacity = 0.04 + pulse * 0.04;
 
     final paint = Paint()
-      ..shader = RadialGradient(
-        colors: [
-          color.withValues(alpha: opacity),
-          color.withValues(alpha: 0),
-        ],
-      ).createShader(
-        Rect.fromCircle(
-          center: Offset(nx * size.width, ny * size.height),
-          radius: radius,
-        ),
-      );
+      ..shader =
+          RadialGradient(
+            colors: [
+              color.withValues(alpha: opacity),
+              color.withValues(alpha: 0),
+            ],
+          ).createShader(
+            Rect.fromCircle(
+              center: Offset(nx * size.width, ny * size.height),
+              radius: radius,
+            ),
+          );
 
-    canvas.drawCircle(
-      Offset(nx * size.width, ny * size.height),
-      radius,
-      paint,
-    );
+    canvas.drawCircle(Offset(nx * size.width, ny * size.height), radius, paint);
   }
 
   @override
