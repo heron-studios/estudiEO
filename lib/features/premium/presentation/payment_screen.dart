@@ -309,8 +309,8 @@ class _PaymentScreenState extends State<PaymentScreen>
       body: Stack(
         children: [
           // Fondo animado
-          RepaintBoundary(
-            child: Positioned.fill(
+          Positioned.fill(
+            child: RepaintBoundary(
               child: AnimatedBuilder(
                 animation: _bgCtrl,
                 builder: (_, __) =>
