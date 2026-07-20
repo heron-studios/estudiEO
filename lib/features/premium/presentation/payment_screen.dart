@@ -95,7 +95,7 @@ const _faqs = [
   ),
   _FAQ(
     '¿El precio sube después de julio?',
-    'Sí. El precio normal es S/30. El descuento Cyber Wow de 50% (S/15) es solo durante julio. Después sube.',
+    'Sí. El precio regular de EDUPOL es S/60. Por lanzamiento lo estamos ofreciendo al 50% de descuento: S/30 pago único, acceso de por vida.',
   ),
 ];
 
@@ -221,7 +221,7 @@ class _PaymentScreenState extends State<PaymentScreen>
 
   Future<void> _launchWhatsApp() async {
     const text =
-        'Hola! quiero adquirir EDUPOL con el descuento Cyber Wow de 15 soles. ¿Me confirman el Yape/Plin para hacer el pago?';
+        'Hola! quiero adquirir EDUPOL por S/30. ¿Me confirman el Yape/Plin para hacer el pago y activar mi acceso completo?';
     final uri = Uri.parse(
       'https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(text)}',
     );
@@ -887,7 +887,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'S/30',
+                       'S/60',
                       style: TextStyle(
                         color: Colors.white.withValues(alpha: 0.35),
                         fontSize: 22,
@@ -910,7 +910,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                         colors: [Color(0xFF60A5FA), Color(0xFFA78BFA)],
                       ).createShader(b),
                       child: const Text(
-                        '15',
+                         '30',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 72,
@@ -959,7 +959,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                     ),
                   ),
                   child: const Text(
-                    '50% OFF · Solo julio · De S/30 a S/15',
+                    '50% OFF · Oferta de lanzamiento · Antes S/60',
                     style: TextStyle(
                       color: Color(0xFFFF6B6B),
                       fontSize: 12,
@@ -1084,7 +1084,7 @@ class _PaymentScreenState extends State<PaymentScreen>
   Widget _buildHowToBuy() {
     final steps = [
       ('1', 'Toca "COMPRAR AHORA"', 'Se abre WhatsApp automáticamente'),
-      ('2', 'Paga S/15 por Yape o Plin', 'Número del administrador'),
+      ('2', 'Paga S/30 por Yape o Plin', 'Número del administrador'),
       ('3', 'Envía captura del pago', 'Al mismo WhatsApp'),
       ('4', '¡Acceso activado!', 'En menos de 1 hora'),
     ];
@@ -1205,7 +1205,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'COMPRAR AHORA · S/15',
+                      'COMPRAR AHORA · S/30',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,
@@ -1649,7 +1649,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                   Icon(Icons.message_rounded, color: Colors.white, size: 22),
                   SizedBox(width: 10),
                   Text(
-                    'UNIRME AHORA POR S/15',
+                    'UNIRME AHORA POR S/30',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,

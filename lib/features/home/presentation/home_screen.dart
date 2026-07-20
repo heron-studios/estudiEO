@@ -475,18 +475,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Future<void> onTap() async {
       final auth = context.read<AuthService>();
       if (!auth.isPremium) {
-        final canTake = await LimitsService.canTakeSimulacro();
-        if (!canTake) {
-          if (context.mounted) {
-            PremiumUpgradeDialog.show(
-              context,
-              title: 'Límite Semanal Alcanzado',
-              message:
-                  'Solo puedes realizar 1 simulacro por semana en la versión gratuita. ¡Pásate a Premium para simulacros ilimitados!',
-            );
-          }
-          return;
+        if (context.mounted) {
+          PremiumUpgradeDialog.show(
+            context,
+            title: '¡Simulacro Premium!',
+            message:
+                'Los simulacros completos de 100 preguntas son exclusivos para usuarios Premium. ¡Accede por S/30 (antes S/60) — pago único de por vida!',
+          );
         }
+        return;
       }
 
       if (!context.mounted) return;
@@ -690,7 +687,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       gradientColors: const [Color(0xFF2A1A4A), Color(0xFF1A0F3D)],
       title: 'Tarjetas',
       subtitle: 'Memoria visual',
-      onTap: () => context.push('/flashcards'),
+      isLocked: !context.read<AuthService>().isPremium,
+      onTap: () {
+        final auth = context.read<AuthService>();
+        if (!auth.isPremium) {
+          PremiumUpgradeDialog.show(
+            context,
+            title: 'Tarjetas Flashcard Premium',
+            message: 'Las tarjetas de memoria visual son exclusivas para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+          );
+          return;
+        }
+        context.push('/flashcards');
+      },
     );
   }
 
@@ -701,7 +710,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       gradientColors: const [Color(0xFF2A2010), Color(0xFF1A1508)],
       title: 'Aprendizaje',
       subtitle: 'Modo guiado',
-      onTap: () => _startGuidedLearningFlow(context),
+      isLocked: !context.read<AuthService>().isPremium,
+      onTap: () {
+        final auth = context.read<AuthService>();
+        if (!auth.isPremium) {
+          PremiumUpgradeDialog.show(
+            context,
+            title: 'Aprendizaje Guiado Premium',
+            message: 'El modo de aprendizaje guiado por temas es exclusivo para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+          );
+          return;
+        }
+        _startGuidedLearningFlow(context);
+      },
     );
   }
 
@@ -934,13 +955,35 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               tooltip: 'Arena',
               icon: Icons.sports_esports_rounded,
               glowColor: const Color(0xFFF59E0B),
-              onPressed: () => context.push('/arena'),
+              onPressed: () {
+                final auth = context.read<AuthService>();
+                if (!auth.isPremium) {
+                  PremiumUpgradeDialog.show(
+                    context,
+                    title: 'Modo Arena Premium',
+                    message: 'La Arena competitiva multijugador es exclusiva para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+                  );
+                  return;
+                }
+                context.push('/arena');
+              },
             ),
             _PremiumFabButton(
               tooltip: 'Tutor',
               icon: Icons.psychology_rounded,
               glowColor: const Color(0xFFC084FC),
-              onPressed: () => context.push('/profile'),
+              onPressed: () {
+                final auth = context.read<AuthService>();
+                if (!auth.isPremium) {
+                  PremiumUpgradeDialog.show(
+                    context,
+                    title: 'Tutor IA Premium',
+                    message: 'El Tutor con Inteligencia Artificial es exclusivo para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+                  );
+                  return;
+                }
+                context.push('/profile'); // o la ruta correspondiente al tutor
+              },
             ),
           ],
         ),
@@ -1755,6 +1798,7 @@ class _GlassTile extends StatelessWidget {
   final String title;
   final String subtitle;
   final VoidCallback onTap;
+  final bool isLocked;
 
   const _GlassTile({
     required this.icon,
@@ -1763,6 +1807,7 @@ class _GlassTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.onTap,
+    this.isLocked = false,
   });
 
   @override
@@ -1770,77 +1815,119 @@ class _GlassTile extends StatelessWidget {
     return HoverGlassCard(
       borderRadius: BorderRadius.circular(22),
       onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: gradientColors,
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(22),
-          border: Border.all(color: color.withValues(alpha: 0.2)),
-        ),
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // Icon with glow
-            Container(
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    color.withValues(alpha: 0.35),
-                    color.withValues(alpha: 0.15),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: color.withValues(alpha: 0.4)),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 12,
-                    spreadRadius: 0,
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: gradientColors,
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(22),
+              border: Border.all(
+                color: isLocked
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : color.withValues(alpha: 0.2),
+              ),
+            ),
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Icon with glow
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        (isLocked ? Colors.white : color).withValues(alpha: isLocked ? 0.08 : 0.35),
+                        (isLocked ? Colors.white : color).withValues(alpha: isLocked ? 0.04 : 0.15),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                      color: (isLocked ? Colors.white : color).withValues(alpha: isLocked ? 0.1 : 0.4),
+                    ),
                   ),
-                ],
-              ),
-              child: Icon(icon, color: color, size: 22),
+                  child: Icon(
+                    isLocked ? Icons.lock_rounded : icon,
+                    color: isLocked ? Colors.white.withValues(alpha: 0.3) : color,
+                    size: 22,
+                  ),
+                ),
+                const Spacer(),
+                // Title
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: isLocked
+                          ? Colors.white.withValues(alpha: 0.35)
+                          : Colors.white,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 15,
+                      letterSpacing: -0.2,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 3),
+                // Subtitle with accent color
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    isLocked ? 'Solo Premium' : subtitle,
+                    style: TextStyle(
+                      color: isLocked
+                          ? const Color(0xFFFFD700).withValues(alpha: 0.6)
+                          : color.withValues(alpha: 0.7),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const Spacer(),
-            // Title
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 15,
-                  letterSpacing: -0.2,
+          ),
+          // Lock badge
+          if (isLocked)
+            Positioned(
+              top: 8,
+              right: 8,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.workspace_premium_rounded, color: Colors.white, size: 9),
+                    SizedBox(width: 3),
+                    Text(
+                      'PRO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 9,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(height: 3),
-            // Subtitle with accent color
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                subtitle,
-                style: TextStyle(
-                  color: color.withValues(alpha: 0.7),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

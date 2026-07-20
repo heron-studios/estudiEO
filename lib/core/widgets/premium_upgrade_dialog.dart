@@ -145,7 +145,36 @@ class _PremiumUpgradeDialogState extends State<PremiumUpgradeDialog>
                     letterSpacing: 0.5,
                   ),
                 ),
+                const SizedBox(height: 12),
+                
+                // Badge de Oferta
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFEF4444).withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: const Color(0xFFEF4444).withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.local_offer_rounded, color: Color(0xFFFF6B6B), size: 14),
+                      SizedBox(width: 6),
+                      Text(
+                        '50% OFF · S/30 (antes S/60)',
+                        style: TextStyle(
+                          color: Color(0xFFFF6B6B),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 16),
+
 
                 // Mensaje
                 Text(

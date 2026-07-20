@@ -92,10 +92,19 @@ class MiniAppsScreen extends StatelessWidget {
                                         'Calculadora de puntos según las tablas de Anexos 05 y 06.',
                                     icon: Icons.directions_run_rounded,
                                     themeColor: const Color(0xFFF59E0B),
-                                    isLocked: false,
+                                    isLocked: !context.read<AuthService>().isPremium,
                                     isSquare: true,
-                                    onTap: () =>
-                                        context.push('/fitness-calculator'),
+                                    onTap: () {
+                                      if (!context.read<AuthService>().isPremium) {
+                                        PremiumUpgradeDialog.show(
+                                          context,
+                                          title: 'Calculadoras Premium',
+                                          message: 'El acceso a los simuladores oficiales de Aptitud Física y Cuadro de Mérito es exclusivo para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+                                        );
+                                        return;
+                                      }
+                                      context.push('/fitness-calculator');
+                                    },
                                   ),
                                   MiniAppCard(
                                     title: 'Cuadro de Mérito',
@@ -103,10 +112,19 @@ class MiniAppsScreen extends StatelessWidget {
                                         'Calculadora ponderada y simulador de bonificaciones.',
                                     icon: Icons.bar_chart_rounded,
                                     themeColor: const Color(0xFF6366F1),
-                                    isLocked: false,
+                                    isLocked: !context.read<AuthService>().isPremium,
                                     isSquare: true,
-                                    onTap: () =>
-                                        context.push('/merit-calculator'),
+                                    onTap: () {
+                                      if (!context.read<AuthService>().isPremium) {
+                                        PremiumUpgradeDialog.show(
+                                          context,
+                                          title: 'Calculadoras Premium',
+                                          message: 'El acceso a los simuladores oficiales de Aptitud Física y Cuadro de Mérito es exclusivo para usuarios Premium. ¡Accede por S/30 (antes S/60)!',
+                                        );
+                                        return;
+                                      }
+                                      context.push('/merit-calculator');
+                                    },
                                   ),
                                 ],
                               ),
@@ -223,7 +241,7 @@ class MiniAppsScreen extends StatelessWidget {
   Widget _buildAppCard(BuildContext context, int index, bool isSquare, double aspectRatio) {
     final auth = context.read<AuthService>();
     final isPremium = auth.isPremium;
-    final isLocked = !isPremium && index != 0;
+    final isLocked = !isPremium;
     final nt = NeuralTheme.of(context);
 
     if (index == 0) {
@@ -235,9 +253,9 @@ class MiniAppsScreen extends StatelessWidget {
           icon: Icons.science_rounded,
           themeColor: nt.blueGoogle,
           badgeText: 'EXPLORADOR',
-          isLocked: false,
+          isLocked: isLocked,
           isSquare: isSquare,
-          onTap: () => context.push('/miniapps/periodic-table'),
+          onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/miniapps/periodic-table'),
         ),
       );
     } else if (index == 1) {
@@ -249,9 +267,9 @@ class MiniAppsScreen extends StatelessWidget {
           icon: Icons.auto_awesome_rounded,
           themeColor: const Color(0xFF8B5CF6),
           badgeText: 'EXPERIMENTAL',
-          isLocked: false,
+          isLocked: isLocked,
           isSquare: isSquare,
-          onTap: () => context.push('/srs/generator'),
+          onTap: isLocked ? () => PremiumUpgradeDialog.show(context) : () => context.push('/srs/generator'),
         ),
       );
     } else if (index == 2) {
