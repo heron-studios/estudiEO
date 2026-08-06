@@ -18,6 +18,7 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'play_store_invite_dialog.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -147,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       await ProfileSetupDialog.showIfNeeded(context);
       _checkPremiumStatus();
       _syncLeaderboard();
+      _checkPlayStoreInvite();
     });
   }
 
@@ -193,6 +195,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _fabController.dispose();
     _warningLottieController.dispose();
     super.dispose();
+  }
+
+  Future<void> _checkPlayStoreInvite() async {
+    final auth = context.read<AuthService>();
+    if (!auth.isPremium) return;
+
+    final storage = context.read<LocalStorageService>();
+    if (storage.loadHasSeenPlayStoreInvite()) return;
+
+    if (!mounted) return;
+    await showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const PlayStoreInviteDialog(),
+    );
   }
 
   void _loadPsicoProgress() {

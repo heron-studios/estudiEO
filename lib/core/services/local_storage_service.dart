@@ -19,6 +19,7 @@ class LocalStorageService {
   static const String hiddenSubjectsKey = 'hidden_subjects';
   static const String learnedQuestionsKey = 'learned_questions';
   static const String hasSeenOnboardingKey = 'has_seen_onboarding';
+  static const String hasSeenPlayStoreInviteKey = 'has_seen_play_store_invite';
   static const String strictModeKey = 'srs_strict_mode';
   static const String sfxMutedKey = 'sfx_muted';
   static const String learningSessionsKey = 'learning_sessions';
@@ -213,6 +214,15 @@ class LocalStorageService {
 
   void saveHasSeenOnboarding(bool value) {
     _storage.put(hasSeenOnboardingKey, value);
+  }
+
+  // ─── Play Store Invite setting ──────────────────────────────
+  bool loadHasSeenPlayStoreInvite() {
+    return _storage.get(hasSeenPlayStoreInviteKey) as bool? ?? false;
+  }
+
+  void saveHasSeenPlayStoreInvite(bool value) {
+    _storage.put(hasSeenPlayStoreInviteKey, value);
   }
 
   // ─── Strict Mode setting ───────────────────────────
