@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/core/services/local_storage_service.dart';
+import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PlayStoreInviteDialog extends StatefulWidget {
   const PlayStoreInviteDialog({super.key});
@@ -17,6 +19,22 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
       context.read<LocalStorageService>().saveHasSeenPlayStoreInvite(true);
     }
     Navigator.of(context).pop();
+  }
+
+  Future<void> _openWhatsApp() async {
+    final auth = context.read<AuthService>();
+    final email = auth.currentUser?.email ?? "[Escribe tu correo aquí]";
+    final message = "$email quiero ser de los primeros en probar el app";
+    final url = Uri.parse("https://wa.me/51955285763?text=${Uri.encodeComponent(message)}");
+    
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    }
+    
+    // Auto-close after launching WA
+    if (mounted) {
+      _close();
+    }
   }
 
   @override
@@ -52,20 +70,20 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: theme.colorScheme.primary.withOpacity(0.1),
+                color: Colors.green.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.android_rounded,
                 size: 56,
-                color: theme.colorScheme.primary,
+                color: Colors.green,
               ),
             ),
             const SizedBox(height: 24),
             
             // Title
             Text(
-              '¡EDUPOL ya está en la\nPlay Store! 🎉',
+              '¡EDUPOL muy pronto en la Play Store! 🎉',
               textAlign: TextAlign.center,
               style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
@@ -76,7 +94,7 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             
             // Message
             Text(
-              'Como usuario PRO, has sido invitado en exclusiva a ser de los primeros en probar nuestra nueva aplicación móvil.\n\nRevisa tu correo electrónico para obtener acceso.',
+              'Queremos que seas de los primeros en probar nuestra aplicación móvil. Como usuario de EDUPOL, puedes ser parte del programa de testers.',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium?.copyWith(
                 height: 1.5,
@@ -85,26 +103,52 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             ),
             const SizedBox(height: 28),
             
-            // Action button
+            // Action button to WhatsApp
             SizedBox(
               width: double.infinity,
-              child: FilledButton(
-                onPressed: _close,
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                child: const Text(
-                  '¡Entendido!',
+              child: FilledButton.icon(
+                onPressed: _openWhatsApp,
+                icon: const Icon(Icons.chat_rounded),
+                label: const Text(
+                  'Quiero ser tester (WhatsApp)',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                style: FilledButton.styleFrom(
+                  backgroundColor: Colors.green, // WhatsApp Color
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
               ),
             ),
+            const SizedBox(height: 12),
+            
+            // Secondary close button
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: _close,
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: Text(
+                  'Quizás más tarde',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: theme.colorScheme.onSurface.withOpacity(0.6),
+                  ),
+                ),
+              ),
+            ),
+            
             const SizedBox(height: 16),
             
             // Checkbox for do not show again
@@ -134,6 +178,7 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),
+                        activeColor: theme.colorScheme.primary,
                       ),
                     ),
                     const SizedBox(width: 8),

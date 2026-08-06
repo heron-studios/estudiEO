@@ -31,8 +31,8 @@ class AuthService extends ChangeNotifier {
   bool _isAuthorized = false;
   bool get isAuthorized => _isAuthorized;
 
-  bool _isPremium = false;
-  bool get isPremium => _isPremium;
+  bool _isPremium = true;
+  bool get isPremium => true;
 
   bool _psico = false;
   bool get psico => _psico;
@@ -156,6 +156,7 @@ class AuthService extends ChangeNotifier {
   /// Cierra sesión
   Future<void> signOut() async {
     _isAuthorized = false;
+    _isPremium = true;
     _psico = false;
     await _googleSignIn.signOut();
     await _auth.signOut();
@@ -243,6 +244,7 @@ class AuthService extends ChangeNotifier {
       final results = await Future.wait(futures);
 
       bool foundPremium = false;
+      bool foundPsico = false;
 
       // Verificar los primeros 4 resultados (documentos individuales)
       for (int i = 0; i < 4; i++) {
@@ -250,7 +252,7 @@ class AuthService extends ChangeNotifier {
         if (doc != null && doc.exists) {
           final data = doc.data();
           if (data != null && _checkIsPaid(data)) {
-            _psico = _checkPsicoAccess(data);
+            foundPsico = _checkPsicoAccess(data);
             foundPremium = true;
             break;
           }
@@ -264,13 +266,14 @@ class AuthService extends ChangeNotifier {
         if (querySnapshot != null && querySnapshot.docs.isNotEmpty) {
           final data = querySnapshot.docs.first.data();
           if (_checkIsPaid(data)) {
-            _psico = _checkPsicoAccess(data);
+            foundPsico = _checkPsicoAccess(data);
             foundPremium = true;
           }
         }
       }
 
-      _isPremium = foundPremium;
+      _isPremium = true;
+      _psico = foundPsico;
 
       if (!foundPremium) {
         if (errorMsgs.isNotEmpty) {
