@@ -87,6 +87,17 @@ class MobileBlockerOverlay extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 24),
+                TextButton(
+                  onPressed: () => context.read<AuthService>().signOut(),
+                  child: const Text(
+                    'Cerrar Sesión',
+                    style: TextStyle(
+                      color: Colors.white54,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

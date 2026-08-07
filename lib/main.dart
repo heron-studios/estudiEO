@@ -140,10 +140,11 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
       builder: (context, child) {
+        final authService = context.watch<AuthService>();
         return LayoutBuilder(
           builder: (context, constraints) {
-            // Block if on web and screen is small (mobile width)
-            if (kIsWeb && constraints.maxWidth < 600) {
+            // Block if on web, screen is small (mobile width) AND user is logged in
+            if (kIsWeb && constraints.maxWidth < 600 && authService.isAuthorized) {
               return const MobileBlockerOverlay();
             }
             return child ?? const SizedBox();
