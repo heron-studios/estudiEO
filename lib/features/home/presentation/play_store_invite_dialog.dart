@@ -24,7 +24,8 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
   Future<void> _openWhatsApp() async {
     final auth = context.read<AuthService>();
     final email = auth.currentUser?.email ?? "[Escribe tu correo aquí]";
-    final message = "$email quiero ser de los primeros en probar el app";
+    final name = auth.currentUser?.displayName ?? "[Escribe tu nombre aquí]";
+    final message = "$name - $email quiero ser de los primeros en probar el app";
     final url = Uri.parse("https://wa.me/51955285763?text=${Uri.encodeComponent(message)}");
     
     if (await canLaunchUrl(url)) {
@@ -83,7 +84,7 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             
             // Title
             Text(
-              '¡EDUPOL muy pronto en la Play Store! 🎉',
+              '¡EDUPOL llega a la Play Store! 🎉',
               textAlign: TextAlign.center,
               style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
@@ -94,7 +95,7 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             
             // Message
             Text(
-              'Queremos que seas de los primeros en probar nuestra aplicación móvil. Como usuario de EDUPOL, puedes ser parte del programa de testers.',
+              'Sé uno de nuestros primeros 20 Beta Testers y llévate una cuenta PRO de por vida totalmente gratis.\n\nEnvíanos un mensaje a WhatsApp con tu nombre y correo para reservar tu cupo.',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium?.copyWith(
                 height: 1.5,
@@ -110,7 +111,7 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
                 onPressed: _openWhatsApp,
                 icon: const Icon(Icons.chat_rounded),
                 label: const Text(
-                  'Quiero ser tester (WhatsApp)',
+                  'Solicitar acceso PRO',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
