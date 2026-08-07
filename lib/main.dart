@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
+import 'package:learn/core/widgets/mobile_blocker_overlay.dart';
 
 import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/config/app_router.dart';
@@ -117,6 +119,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+
 class _MyAppState extends State<MyApp> {
   late final GoRouter _router;
 
@@ -136,6 +139,17 @@ class _MyAppState extends State<MyApp> {
       theme: NeuralTheme.buildThemeData(),
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
+      builder: (context, child) {
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            // Block if on web and screen is small (mobile width)
+            if (kIsWeb && constraints.maxWidth < 600) {
+              return const MobileBlockerOverlay();
+            }
+            return child ?? const SizedBox();
+          },
+        );
+      },
     );
   }
 }
