@@ -1321,7 +1321,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   ),
                                   SizedBox(height: 4),
                                   Text(
-                                    'Android & macOS Desktop',
+                                    'Versión Android',
                                     style: TextStyle(color: Colors.white70, fontSize: 13),
                                   ),
                                 ],

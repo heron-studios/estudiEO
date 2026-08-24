@@ -88,30 +88,6 @@ class DownloadsScreen extends StatelessWidget {
                         url: 'https://github.com/pnp-edu/estudiEO/releases/download/v1.0.0-release/app-release.apk',
                       ),
                       
-                      const SizedBox(height: 20),
-                      
-                      _buildDownloadCard(
-                        nt: nt,
-                        icon: Icons.shop_rounded,
-                        color: const Color(0xFF4285F4),
-                        title: 'Android App Bundle (AAB)',
-                        subtitle: 'Formato optimizado para publicación. Si deseas subirlo tú mismo o probar la versión bundle.',
-                        size: '~38 MB',
-                        url: 'https://github.com/pnp-edu/estudiEO/releases/download/v1.0.0-release/app-release.aab',
-                      ),
-                      
-                      const SizedBox(height: 20),
-                      
-                      _buildDownloadCard(
-                        nt: nt,
-                        icon: Icons.laptop_mac_rounded,
-                        color: const Color(0xFFA2AAAD),
-                        title: 'macOS Desktop',
-                        subtitle: 'Aplicación nativa para Mac (Intel y Apple Silicon).',
-                        size: '~60 MB',
-                        url: 'https://github.com/pnp-edu/estudiEO/releases/download/v1.0.0-release/estudiEO-macOS.zip',
-                      ),
-                      
                       const SizedBox(height: 40),
                     ],
                   ),
