@@ -1271,6 +1271,70 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ],
               ),
+              // ── BANNER DE DESCARGAS NATIVAS ──────────────────────────────────
+              FadeTransition(
+                opacity: _fabAnimation,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Container(
+                    width: double.infinity,
+                    constraints: const BoxConstraints(maxWidth: 1000),
+                    child: HoverGlassCard(
+                      onTap: () => context.push('/downloads'),
+                      hoverGradientBorder: true,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.orangeAccent.withValues(alpha: 0.8),
+                              Colors.orange.withValues(alpha: 0.4),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.2),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(Icons.install_mobile_rounded, color: Colors.white, size: 28),
+                            ),
+                            const SizedBox(width: 16),
+                            const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '¡Instala la App Nativa!',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      fontFamily: 'Outfit',
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    'Android & macOS Desktop',
+                                    style: TextStyle(color: Colors.white70, fontSize: 13),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
               // ── BANNER DE REPASO (SRS) ──────────────────────────────────
               Consumer<SrsProvider>(
