@@ -85,7 +85,7 @@ class DownloadsScreen extends StatelessWidget {
                         title: 'Android APK (Universal)',
                         subtitle: 'Instalador directo compatible con cualquier celular Android. No requiere Play Store.',
                         size: '~35 MB',
-                        url: 'https://github.com/pnp-edu/estudiEO/releases/download/v1.0.0-release/app-release.apk',
+                        url: 'https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file',
                       ),
                       
                       const SizedBox(height: 40),

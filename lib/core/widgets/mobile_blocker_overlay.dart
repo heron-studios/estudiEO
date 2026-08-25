@@ -19,7 +19,7 @@ class MobileBlockerOverlay extends StatelessWidget {
   }
 
   Future<void> _openPlayStore() async {
-    final url = Uri.parse('https://play.google.com/store/apps/details?id=com.edupol.radar');
+    final url = Uri.parse('https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file');
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     }
