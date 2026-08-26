@@ -38,16 +38,6 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
     }
   }
 
-  Future<void> _openPlayStore() async {
-    final url = Uri.parse('https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    }
-    if (mounted) {
-      _close();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -163,32 +153,6 @@ class _PlayStoreInviteDialogState extends State<PlayStoreInviteDialog> {
             ),
             const SizedBox(height: 16),
             
-            // Secondary Action: Play Store Link
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton.icon(
-                onPressed: _openPlayStore,
-                icon: const Icon(Icons.download_rounded, size: 20),
-                label: const Text(
-                  'Si ya lo enviaste, descarga aquí',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: theme.colorScheme.onSurface,
-                  side: BorderSide(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.15),
-                    width: 1.5,
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-            ),
             const SizedBox(height: 16),
             
             // Close button

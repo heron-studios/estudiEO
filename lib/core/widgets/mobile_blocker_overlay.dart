@@ -18,13 +18,6 @@ class MobileBlockerOverlay extends StatelessWidget {
     }
   }
 
-  Future<void> _openPlayStore() async {
-    final url = Uri.parse('https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -130,7 +123,7 @@ class MobileBlockerOverlay extends StatelessWidget {
                   
                   // Message
                   Text(
-                    'Únete a nuestros primeros 20 Beta Testers y obtén acceso PRO de por vida totalmente gratis.\n\nEnvíanos un mensaje por WhatsApp con tu correo para asegurar tu lugar.',
+                    '¡Atención! Para liberar EDUPOL en Play Store necesitamos tu ayuda.\n\nSé uno de nuestros últimos 13 Beta Testers y obtén acceso PRO de por vida totalmente gratis.\n\nEnvíanos un mensaje por WhatsApp con tu correo para asegurar tu lugar antes de que se agoten los cupos.',
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       height: 1.6,
@@ -163,34 +156,6 @@ class MobileBlockerOverlay extends StatelessWidget {
                         ),
                         elevation: 8,
                         shadowColor: const Color(0xFF25D366).withValues(alpha: 0.5),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  
-                  // Secondary Action: Play Store Link
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton.icon(
-                      onPressed: _openPlayStore,
-                      icon: const Icon(Icons.download_rounded, size: 20),
-                      label: const Text(
-                        'Si ya lo enviaste, descarga aquí',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: theme.colorScheme.onSurface,
-                        side: BorderSide(
-                          color: theme.colorScheme.onSurface.withValues(alpha: 0.15),
-                          width: 1.5,
-                        ),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
                       ),
                     ),
                   ),

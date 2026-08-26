@@ -1280,7 +1280,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     width: double.infinity,
                     constraints: const BoxConstraints(maxWidth: 1000),
                     child: HoverGlassCard(
-                      onTap: () => context.push('/downloads'),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => const PlayStoreInviteDialog(),
+                        );
+                      },
                       hoverGradientBorder: true,
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
