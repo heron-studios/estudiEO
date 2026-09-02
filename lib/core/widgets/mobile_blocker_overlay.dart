@@ -64,9 +64,9 @@ class MobileBlockerOverlay extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children: [
                         Icon(Icons.warning_amber_rounded, color: Colors.amber, size: 18),
                         SizedBox(width: 8),
                         Text(
@@ -88,21 +88,21 @@ class MobileBlockerOverlay extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF00C6FF), Color(0xFF0072FF)],
+                        colors: [Color(0xFF2563EB), Color(0xFF7C3AED)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF0072FF).withValues(alpha: 0.4),
+                          color: const Color(0xFF7C3AED).withValues(alpha: 0.4),
                           blurRadius: 20,
                           offset: const Offset(0, 8),
                         )
                       ],
                     ),
                     child: const Icon(
-                      Icons.shop_rounded,
+                      Icons.devices_rounded,
                       size: 48,
                       color: Colors.white,
                     ),
@@ -111,7 +111,7 @@ class MobileBlockerOverlay extends StatelessWidget {
                   
                   // Title
                   Text(
-                    '¡EDUPOL en Play Store! 🎉',
+                    '¡Disponible para PC y Celular!',
                     textAlign: TextAlign.center,
                     style: theme.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w900,
@@ -123,7 +123,7 @@ class MobileBlockerOverlay extends StatelessWidget {
                   
                   // Message
                   Text(
-                    '¡Atención! Para liberar EDUPOL en Play Store necesitamos tu ayuda.\n\nSé uno de nuestros últimos 13 Beta Testers y obtén acceso PRO de por vida totalmente gratis.\n\nEnvíanos un mensaje por WhatsApp con tu correo para asegurar tu lugar antes de que se agoten los cupos.',
+                    'La versión web de EDUPOL está optimizada exclusivamente para pantallas de computadora.\n\nPara estudiar desde tu teléfono celular con la máxima velocidad y sin interrupciones, instala nuestra aplicación oficial.',
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       height: 1.6,
@@ -133,16 +133,16 @@ class MobileBlockerOverlay extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   
-                  // Primary Action button to WhatsApp
+                  // Primary Action button
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton.icon(
                       onPressed: () => _openWhatsApp(context),
-                      icon: const Icon(Icons.star_rounded, color: Colors.amberAccent),
+                      icon: const Icon(Icons.android_rounded, color: Colors.white),
                       label: const Text(
-                        'Solicitar acceso PRO',
+                        'Pedir enlace de la App por WhatsApp',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 0.5,
                         ),

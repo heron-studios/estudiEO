@@ -329,6 +329,15 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                             onTap: () => _goBranch(1),
                             nt: nt,
                           ),
+                          const SizedBox(width: 24),
+                          _NavItem(
+                            icon: Icons.download_for_offline_rounded,
+                            label: 'Descargas',
+                            isSelected:
+                                widget.navigationShell.currentIndex == 2,
+                            onTap: () => _goBranch(2),
+                            nt: nt,
+                          ),
                           if (!kIsWeb) ...[
                             const SizedBox(width: 24),
                             _NavItem(

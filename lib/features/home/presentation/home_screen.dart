@@ -18,7 +18,6 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'play_store_invite_dialog.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -148,7 +147,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       await ProfileSetupDialog.showIfNeeded(context);
       _checkPremiumStatus();
       _syncLeaderboard();
-      _checkPlayStoreInvite();
     });
   }
 
@@ -197,20 +195,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  Future<void> _checkPlayStoreInvite() async {
-    final auth = context.read<AuthService>();
-    if (!auth.isPremium) return;
-
-    final storage = context.read<LocalStorageService>();
-    if (storage.loadHasSeenPlayStoreInvite()) return;
-
-    if (!mounted) return;
-    await showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => const PlayStoreInviteDialog(),
-    );
-  }
 
   void _loadPsicoProgress() {
     final storage = context.read<LocalStorageService>();
@@ -1272,6 +1256,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ],
               ),
               // ── BANNER DE DESCARGAS NATIVAS ──────────────────────────────────
+              // ── BANNER DE DESCARGAS MULTIPLATAFORMA ─────────────────────────
               FadeTransition(
                 opacity: _fabAnimation,
                 child: Padding(
@@ -1280,25 +1265,30 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     width: double.infinity,
                     constraints: const BoxConstraints(maxWidth: 1000),
                     child: HoverGlassCard(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => const PlayStoreInviteDialog(),
-                        );
-                      },
+                      onTap: () => context.go('/downloads'),
                       hoverGradientBorder: true,
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              Colors.orangeAccent.withValues(alpha: 0.8),
-                              Colors.orange.withValues(alpha: 0.4),
+                              const Color(0xFF2563EB).withValues(alpha: 0.85),
+                              const Color(0xFF7C3AED).withValues(alpha: 0.65),
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                           borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.2),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF3B82F6).withValues(alpha: 0.25),
+                              blurRadius: 20,
+                              offset: const Offset(0, 6),
+                            ),
+                          ],
                         ),
                         child: Row(
                           children: [
@@ -1308,31 +1298,81 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 color: Colors.white.withValues(alpha: 0.2),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(Icons.install_mobile_rounded, color: Colors.white, size: 28),
+                              child: const Icon(
+                                Icons.devices_rounded,
+                                color: Colors.white,
+                                size: 28,
+                              ),
                             ),
                             const SizedBox(width: 16),
                             const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    '¡Instala la App Nativa!',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                      fontFamily: 'Outfit',
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        '¡Instala la App Oficial!',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          fontFamily: 'Outfit',
+                                        ),
+                                      ),
+                                      SizedBox(width: 8),
+                                      Badge(
+                                        backgroundColor: Color(0xFF22C55E),
+                                        label: Text(
+                                          'NUEVO',
+                                          style: TextStyle(
+                                            fontSize: 9,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(height: 4),
                                   Text(
-                                    'Versión Android',
-                                    style: TextStyle(color: Colors.white70, fontSize: 13),
+                                    'Windows · macOS · Android APK',
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 13,
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                            const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Ver',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  SizedBox(width: 4),
+                                  Icon(
+                                    Icons.arrow_forward_ios_rounded,
+                                    color: Colors.white,
+                                    size: 12,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),

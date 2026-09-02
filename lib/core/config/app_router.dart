@@ -52,6 +52,7 @@ import 'package:learn/features/fitness/presentation/fitness_calculator_screen.da
 import 'package:learn/features/merit/presentation/merit_calculator_screen.dart';
 import 'package:learn/features/roadmap/presentation/roadmap_screen.dart';
 import 'package:learn/features/arena/presentation/arena_screen.dart';
+import 'package:learn/features/home/presentation/downloads_screen.dart';
 
 
 class AppRouter {
@@ -128,6 +129,15 @@ class AppRouter {
                 GoRoute(
                   path: '/miniapps',
                   builder: (context, state) => const MiniAppsScreen(),
+                ),
+              ],
+            ),
+
+            StatefulShellBranch(
+              routes: [
+                GoRoute(
+                  path: '/downloads',
+                  builder: (context, state) => const DownloadsScreen(showBackButton: false),
                 ),
               ],
             ),
