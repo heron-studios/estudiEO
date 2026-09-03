@@ -132,16 +132,11 @@ class AppRouter {
                 ),
               ],
             ),
-
-            StatefulShellBranch(
-              routes: [
-                GoRoute(
-                  path: '/downloads',
-                  builder: (context, state) => const DownloadsScreen(showBackButton: false),
-                ),
-              ],
-            ),
           ],
+        ),
+        GoRoute(
+          path: '/downloads',
+          builder: (context, state) => const DownloadsScreen(),
         ),
         GoRoute(
           path: '/gallery',
