@@ -18,6 +18,7 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:learn/features/home/presentation/downloads_dialog.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -1265,7 +1266,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     width: double.infinity,
                     constraints: const BoxConstraints(maxWidth: 1000),
                     child: HoverGlassCard(
-                      onTap: () => context.go('/downloads'),
+                      onTap: () => DownloadsDialog.show(context),
                       hoverGradientBorder: true,
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),

@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/core/widgets/glass_card_widget.dart';
+import 'package:learn/features/home/presentation/downloads_dialog.dart';
 
 class AppShell extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
@@ -333,9 +334,8 @@ class _AppShellState extends State<AppShell> with TickerProviderStateMixin {
                           _NavItem(
                             icon: Icons.download_for_offline_rounded,
                             label: 'Descargas',
-                            isSelected:
-                                widget.navigationShell.currentIndex == 2,
-                            onTap: () => _goBranch(2),
+                            isSelected: false,
+                            onTap: () => DownloadsDialog.show(context),
                             nt: nt,
                           ),
                           if (!kIsWeb) ...[
