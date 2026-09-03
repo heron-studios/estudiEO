@@ -18,6 +18,13 @@ class MobileBlockerOverlay extends StatelessWidget {
     }
   }
 
+  Future<void> _openApkDownload() async {
+    final url = Uri.parse('https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file');
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -133,33 +140,58 @@ class MobileBlockerOverlay extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
                   
-                  // Primary Action button
+                  // Primary Action: Descargar APK Directa
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton.icon(
-                      onPressed: () => _openWhatsApp(context),
+                      onPressed: _openApkDownload,
                       icon: const Icon(Icons.android_rounded, color: Colors.white),
                       label: const Text(
-                        'Pedir enlace de la App por WhatsApp',
+                        'Descargar APK para Android',
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 0.5,
                         ),
                       ),
                       style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFF25D366),
+                        backgroundColor: const Color(0xFF22C55E),
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 18),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
                         elevation: 8,
-                        shadowColor: const Color(0xFF25D366).withValues(alpha: 0.5),
+                        shadowColor: const Color(0xFF22C55E).withValues(alpha: 0.5),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 14),
+
+                  // Secondary Action: WhatsApp
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () => _openWhatsApp(context),
+                      icon: const Icon(Icons.chat_rounded, color: Color(0xFF25D366), size: 18),
+                      label: const Text(
+                        'Pedir ayuda por WhatsApp',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white70,
+                        ),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(color: Colors.white.withValues(alpha: 0.15)),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                   
                   // Log Out
                   TextButton(

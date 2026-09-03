@@ -37,7 +37,8 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
   // URLs de descarga configurables (listas para recibir los enlaces definitivos del usuario)
   static const String? _windowsUrl = null;
   static const String? _macUrl = null;
-  static const String? _androidUrl = null;
+  static const String _androidUrl =
+      'https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file';
 
   bool _showInstallGuide = false;
 
