@@ -38,7 +38,7 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
   static const String? _windowsUrl = null;
   static const String? _macUrl = null;
   static const String _androidUrl =
-      'https://www.mediafire.com/file/rpen8pn1vkkm0kh/edupol-release.apk/file';
+      'https://download1581.mediafire.com/n621rsaj0wngnPXE8w9yty-5tN5rCtp6Tkn1YpVP4VTh3OVKheSd1fICUxKeJgSgLzBP5MW_ukGDd4LYeyu8uQq31axzeGnJiQcrp6DlljpTEpMQOpnvehtRkVfKr4AfneBpss98Yn1wtOaLYMDY2G0OlwB2CJ7z4yxd0g6ZKxWjAw/rpen8pn1vkkm0kh/edupol-release.apk';
 
   bool _showInstallGuide = false;
 
