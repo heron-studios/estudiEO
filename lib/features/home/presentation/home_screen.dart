@@ -19,6 +19,7 @@ import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/features/home/presentation/downloads_dialog.dart';
+import 'package:learn/features/home/presentation/promo_banner_dialog.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -146,8 +147,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await ProfileSetupDialog.showIfNeeded(context);
+      if (!mounted) return;
       _checkPremiumStatus();
       _syncLeaderboard();
+      PromoBannerDialog.showIfFirstTime(context);
     });
   }
 
