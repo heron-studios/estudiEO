@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:learn/core/config/app_config.dart';
 
 /// Modal flotante compacto y ultra-premium para descargas nativas (Windows, macOS, Android APK).
 class DownloadsDialog extends StatefulWidget {
@@ -34,11 +35,10 @@ class DownloadsDialog extends StatefulWidget {
 }
 
 class _DownloadsDialogState extends State<DownloadsDialog> {
-  // URLs de descarga configurables (listas para recibir los enlaces definitivos del usuario)
-  static const String? _windowsUrl = null;
-  static const String? _macUrl = null;
-  static const String _androidUrl =
-      'https://download1581.mediafire.com/n621rsaj0wngnPXE8w9yty-5tN5rCtp6Tkn1YpVP4VTh3OVKheSd1fICUxKeJgSgLzBP5MW_ukGDd4LYeyu8uQq31axzeGnJiQcrp6DlljpTEpMQOpnvehtRkVfKr4AfneBpss98Yn1wtOaLYMDY2G0OlwB2CJ7z4yxd0g6ZKxWjAw/rpen8pn1vkkm0kh/edupol-release.apk';
+  // URLs de descarga centralizadas en AppConfig
+  static const String? _windowsUrl = AppConfig.windowsDownloadUrl;
+  static const String? _macUrl = AppConfig.macDownloadUrl;
+  static const String _androidUrl = AppConfig.androidApkDownloadUrl;
 
   bool _showInstallGuide = false;
 

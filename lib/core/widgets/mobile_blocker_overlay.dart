@@ -1,26 +1,90 @@
+import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
+import 'package:learn/core/config/app_config.dart';
 
-class MobileBlockerOverlay extends StatelessWidget {
+/// Pantalla móvil oficial de alta conversión para usuarios que ingresan desde smartphones.
+/// Presenta las 3 imágenes promocionales oficiales en un carrusel dinámico y ofrece la descarga directa del APK.
+class MobileBlockerOverlay extends StatefulWidget {
   const MobileBlockerOverlay({super.key});
+
+  @override
+  State<MobileBlockerOverlay> createState() => _MobileBlockerOverlayState();
+}
+
+class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+  Timer? _autoSlideTimer;
+
+  static const List<Map<String, String>> _promoSlides = [
+    {
+      'image': 'assets/images/promo_1.jpg',
+      'tag': 'PROSPECTO OFICIAL PNP 2026',
+      'title': '¿Quieres ser Policía?',
+      'subtitle': 'Simulacros reales y preparación táctica para asegurar tu ingreso.',
+    },
+    {
+      'image': 'assets/images/promo_2.jpg',
+      'tag': 'METODOLOGÍA INTELIGENTE',
+      'title': 'Tu Herramienta Definitiva',
+      'subtitle': 'Temario completo, Flashcards SRS y Bóveda de Errores en tu bolsillo.',
+    },
+    {
+      'image': 'assets/images/promo_3.jpg',
+      'tag': 'ESTUDIA EN TODO MOMENTO',
+      'title': 'Toda la Información en tus Manos',
+      'subtitle': 'Estudia ligero con el Radar de Riesgo predictivo sin libros pesados.',
+    },
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    _autoSlideTimer?.cancel();
+    _autoSlideTimer = Timer.periodic(const Duration(seconds: 4), (_) {
+      if (!mounted || !_pageController.hasClients) return;
+      final next = (_currentPage + 1) % _promoSlides.length;
+      _pageController.animateToPage(
+        next,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOutCubic,
+      );
+    });
+  }
+
+  void _pauseTimer() {
+    _autoSlideTimer?.cancel();
+  }
+
+  @override
+  void dispose() {
+    _autoSlideTimer?.cancel();
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _openApkDownload() async {
+    final url = Uri.parse(AppConfig.androidApkDownloadUrl);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
 
   Future<void> _openWhatsApp(BuildContext context) async {
     final auth = context.read<AuthService>();
     final email = auth.currentUser?.email ?? '[Escribe tu correo aquí]';
     final name = auth.currentUser?.displayName ?? '[Escribe tu nombre aquí]';
-    final message = '$name - $email quiero ser de los primeros en probar el app';
-    final url = Uri.parse('https://wa.me/51955285763?text=${Uri.encodeComponent(message)}');
-    
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    }
-  }
+    final message = '$name - $email: Hola, necesito ayuda para instalar la App oficial de EDUPOL en mi celular';
+    final url = Uri.parse('https://wa.me/${AppConfig.whatsappNumber}?text=${Uri.encodeComponent(message)}');
 
-  Future<void> _openApkDownload() async {
-    final url = Uri.parse(
-        'https://download1581.mediafire.com/n621rsaj0wngnPXE8w9yty-5tN5rCtp6Tkn1YpVP4VTh3OVKheSd1fICUxKeJgSgLzBP5MW_ukGDd4LYeyu8uQq31axzeGnJiQcrp6DlljpTEpMQOpnvehtRkVfKr4AfneBpss98Yn1wtOaLYMDY2G0OlwB2CJ7z4yxd0g6ZKxWjAw/rpen8pn1vkkm0kh/edupol-release.apk');
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     }
@@ -28,188 +92,397 @@ class MobileBlockerOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
+    final isVerySmall = size.height < 680;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24.0),
+      backgroundColor: const Color(0xFF0A0F1D),
+      body: Stack(
+        children: [
+          // Fondo ambiental con orbes de luz
+          Positioned(
+            top: -60,
+            right: -60,
             child: Container(
-              padding: const EdgeInsets.all(32.0),
+              width: 260,
+              height: 260,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    theme.colorScheme.surface,
-                    theme.colorScheme.surface.withValues(alpha: 0.95),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(32),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.1),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.greenAccent.withValues(alpha: 0.15),
-                    blurRadius: 40,
-                    spreadRadius: -5,
-                    offset: const Offset(0, 10),
-                  )
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Warning Header
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.amber.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
-                    ),
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.warning_amber_rounded, color: Colors.amber, size: 18),
-                        SizedBox(width: 8),
-                        Text(
-                          'WEB SOLO PARA PC',
-                          style: TextStyle(
-                            color: Colors.amber,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.2,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 28),
-                  
-                  // Premium Header Icon
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF2563EB), Color(0xFF7C3AED)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF7C3AED).withValues(alpha: 0.4),
-                          blurRadius: 20,
-                          offset: const Offset(0, 8),
-                        )
-                      ],
-                    ),
-                    child: const Icon(
-                      Icons.devices_rounded,
-                      size: 48,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 28),
-                  
-                  // Title
-                  Text(
-                    '¡Disponible para PC y Celular!',
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: -0.5,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  
-                  // Message
-                  Text(
-                    'La versión web de EDUPOL está optimizada exclusivamente para pantallas de computadora.\n\nPara estudiar desde tu teléfono celular con la máxima velocidad y sin interrupciones, instala nuestra aplicación oficial.',
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      height: 1.6,
-                      fontSize: 15,
-                      color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-                  
-                  // Primary Action: Descargar APK Directa
-                  SizedBox(
-                    width: double.infinity,
-                    child: FilledButton.icon(
-                      onPressed: _openApkDownload,
-                      icon: const Icon(Icons.android_rounded, color: Colors.white),
-                      label: const Text(
-                        'Descargar APK para Android',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFF22C55E),
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 18),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        elevation: 8,
-                        shadowColor: const Color(0xFF22C55E).withValues(alpha: 0.5),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 14),
-
-                  // Secondary Action: WhatsApp
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton.icon(
-                      onPressed: () => _openWhatsApp(context),
-                      icon: const Icon(Icons.chat_rounded, color: Color(0xFF25D366), size: 18),
-                      label: const Text(
-                        'Pedir ayuda por WhatsApp',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white70,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: Colors.white.withValues(alpha: 0.15)),
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  
-                  // Log Out
-                  TextButton(
-                    onPressed: () => context.read<AuthService>().signOut(),
-                    child: const Text(
-                      'Cerrar Sesión',
-                      style: TextStyle(
-                        color: Colors.white54,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
+                shape: BoxShape.circle,
+                color: const Color(0xFF10B981).withValues(alpha: 0.18),
               ),
             ),
           ),
-        ),
+          Positioned(
+            bottom: 120,
+            left: -80,
+            child: Container(
+              width: 280,
+              height: 280,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: const Color(0xFF2563EB).withValues(alpha: 0.15),
+              ),
+            ),
+          ),
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 70, sigmaY: 70),
+            child: Container(color: Colors.transparent),
+          ),
+
+          // Contenido principal
+          SafeArea(
+            child: Column(
+              children: [
+                // ── HEADER SUPERIOR ─────────────────────────────────────────
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                  child: Row(
+                    children: [
+                      // Badge de App Oficial
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF047857), Color(0xFF10B981)],
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF10B981).withValues(alpha: 0.35),
+                              blurRadius: 10,
+                            ),
+                          ],
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.verified_rounded, color: Colors.white, size: 14),
+                            SizedBox(width: 5),
+                            Text(
+                              'EDUPOL OFICIAL · PNP',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 11,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Spacer(),
+                      // Botón Cerrar Sesión
+                      TextButton.icon(
+                        onPressed: () => context.read<AuthService>().signOut(),
+                        icon: const Icon(Icons.logout_rounded, size: 14, color: Colors.white60),
+                        label: const Text(
+                          'Salir',
+                          style: TextStyle(color: Colors.white60, fontSize: 12),
+                        ),
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // ── TÍTULO Y SUBTÍTULO ───────────────────────────────────────
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      const Text(
+                        '¡Estudia desde tu Celular!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: -0.5,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'La web es para computadoras. Descarga la App Oficial para una experiencia rápida, fluida y sin cortes.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.75),
+                          fontSize: 12.5,
+                          height: 1.3,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                // ── HERO CAROUSEL DE FOTOS PROMOCIONALES ─────────────────────
+                Expanded(
+                  child: NotificationListener<ScrollNotification>(
+                    onNotification: (notif) {
+                      if (notif is ScrollStartNotification) _pauseTimer();
+                      if (notif is ScrollEndNotification) _startTimer();
+                      return false;
+                    },
+                    child: PageView.builder(
+                      controller: _pageController,
+                      itemCount: _promoSlides.length,
+                      onPageChanged: (idx) => setState(() => _currentPage = idx),
+                      itemBuilder: (context, index) {
+                        final slide = _promoSlides[index];
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              border: Border.all(
+                                color: const Color(0xFF10B981).withValues(alpha: 0.35),
+                                width: 1.5,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.6),
+                                  blurRadius: 25,
+                                  offset: const Offset(0, 10),
+                                ),
+                                BoxShadow(
+                                  color: const Color(0xFF10B981).withValues(alpha: 0.15),
+                                  blurRadius: 20,
+                                  spreadRadius: 1,
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(23),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  // Imagen completa con proporción cuidada
+                                  Image.asset(
+                                    slide['image']!,
+                                    fit: BoxFit.contain,
+                                    alignment: Alignment.center,
+                                  ),
+                                  // Overlay degradado inferior con info
+                                  Positioned(
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    child: Container(
+                                      padding: const EdgeInsets.fromLTRB(16, 36, 16, 12),
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Colors.transparent,
+                                            Colors.black.withValues(alpha: 0.85),
+                                            Colors.black.withValues(alpha: 0.95),
+                                          ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                        ),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFF10B981).withValues(alpha: 0.25),
+                                              borderRadius: BorderRadius.circular(6),
+                                            ),
+                                            child: Text(
+                                              slide['tag']!,
+                                              style: const TextStyle(
+                                                color: Color(0xFF34D399),
+                                                fontSize: 9.5,
+                                                fontWeight: FontWeight.w800,
+                                                letterSpacing: 0.5,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(height: 5),
+                                          Text(
+                                            slide['title']!,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 2),
+                                          Text(
+                                            slide['subtitle']!,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              color: Colors.white.withValues(alpha: 0.8),
+                                              fontSize: 11.5,
+                                              height: 1.25,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+
+                // ── INDICADOR DE PUNTOS ──────────────────────────────────────
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(_promoSlides.length, (idx) {
+                      final isSelected = _currentPage == idx;
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        width: isSelected ? 24 : 7,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: isSelected ? const Color(0xFF10B981) : Colors.white24,
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+
+                // ── PANEL DE ACCIÓN Y DESCARGA ──────────────────────────────
+                Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.fromLTRB(18, 2, 18, 12),
+                  padding: EdgeInsets.all(isVerySmall ? 14 : 16),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF131D33).withValues(alpha: 0.9),
+                    borderRadius: BorderRadius.circular(22),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.1),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.4),
+                        blurRadius: 16,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Botón Principal: Descargar APK Oficial
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFF059669),
+                              Color(0xFF10B981),
+                              Color(0xFF22C55E),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF10B981).withValues(alpha: 0.45),
+                              blurRadius: 16,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: _openApkDownload,
+                            borderRadius: BorderRadius.circular(16),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: isVerySmall ? 13 : 15,
+                                horizontal: 16,
+                              ),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.android_rounded, color: Colors.white, size: 24),
+                                  SizedBox(width: 10),
+                                  Flexible(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(
+                                          'Descargar APK Oficial (Android)',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w900,
+                                            letterSpacing: 0.3,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Instalación directa · Última versión oficial',
+                                          style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Icon(Icons.download_rounded, color: Colors.white, size: 20),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 10),
+
+                      // Botón Secundario: WhatsApp Soporte
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton.icon(
+                          onPressed: () => _openWhatsApp(context),
+                          icon: const Icon(Icons.chat_rounded, color: Color(0xFF25D366), size: 17),
+                          label: const Text(
+                            '¿Problemas al instalar? Escríbenos por WhatsApp',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(
+                              color: Colors.white.withValues(alpha: 0.15),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
