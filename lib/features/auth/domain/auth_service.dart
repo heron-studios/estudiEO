@@ -32,7 +32,7 @@ class AuthService extends ChangeNotifier {
   bool get isAuthorized => _isAuthorized;
 
   bool _isPremium = true;
-  bool get isPremium => true;
+  bool get isPremium => _isPremium;
 
   bool _psico = false;
   bool get psico => _psico;
@@ -121,6 +121,22 @@ class AuthService extends ChangeNotifier {
     _setError(null);
 
     try {
+      if (kIsWeb) {
+        try {
+          final GoogleAuthProvider googleProvider = GoogleAuthProvider();
+          googleProvider.addScope('email');
+          googleProvider.addScope('profile');
+          googleProvider.setCustomParameters({'prompt': 'select_account'});
+          final UserCredential userCredential =
+              await _auth.signInWithPopup(googleProvider);
+          return userCredential;
+        } catch (webPopupError) {
+          debugPrint(
+            '[AuthService] signInWithPopup falló ($webPopupError), intentando fallback con GoogleSignIn...',
+          );
+        }
+      }
+
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
       if (googleUser == null) {

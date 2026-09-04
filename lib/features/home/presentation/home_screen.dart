@@ -19,6 +19,7 @@ import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/features/home/presentation/downloads_dialog.dart';
+import 'package:learn/core/config/app_config.dart';
 import 'package:learn/features/home/presentation/promo_banner_dialog.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
@@ -1259,8 +1260,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-              // ── BANNER DE DESCARGAS NATIVAS ──────────────────────────────────
-              // ── BANNER DE DESCARGAS MULTIPLATAFORMA ─────────────────────────
+              // ── BANNER DE DESCARGAS MULTIPLATAFORMA (APK & macOS) ───────────
               FadeTransition(
                 opacity: _fabAnimation,
                 child: Padding(
@@ -1268,117 +1268,187 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   child: Container(
                     width: double.infinity,
                     constraints: const BoxConstraints(maxWidth: 1000),
-                    child: HoverGlassCard(
-                      onTap: () => DownloadsDialog.show(context),
-                      hoverGradientBorder: true,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              const Color(0xFF2563EB).withValues(alpha: 0.85),
-                              const Color(0xFF7C3AED).withValues(alpha: 0.65),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.2),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF3B82F6).withValues(alpha: 0.25),
-                              blurRadius: 20,
-                              offset: const Offset(0, 6),
-                            ),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color(0xFF0F172A),
+                            Color(0xFF1A2234),
                           ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.2),
-                                shape: BoxShape.circle,
-                              ),
-                              child: const Icon(
-                                Icons.devices_rounded,
-                                color: Colors.white,
-                                size: 28,
-                              ),
-                            ),
-                            const SizedBox(width: 16),
-                            const Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                        borderRadius: BorderRadius.circular(22),
+                        border: Border.all(
+                          color: const Color(0xFF38BDF8).withValues(alpha: 0.25),
+                          width: 1.2,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF3B82F6).withValues(alpha: 0.12),
+                            blurRadius: 20,
+                            offset: const Offset(0, 6),
+                          ),
+                        ],
+                      ),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final isWide = constraints.maxWidth > 700;
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        '¡Instala la App Oficial!',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                          fontFamily: 'Outfit',
-                                        ),
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF38BDF8).withValues(alpha: 0.15),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: const Color(0xFF38BDF8).withValues(alpha: 0.3),
                                       ),
-                                      SizedBox(width: 8),
-                                      Badge(
-                                        backgroundColor: Color(0xFF22C55E),
-                                        label: Text(
-                                          'NUEVO',
+                                    ),
+                                    child: const Icon(
+                                      Icons.cloud_download_rounded,
+                                      color: Color(0xFF38BDF8),
+                                      size: 24,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 14),
+                                  const Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Instala la App Oficial en tu dispositivo',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16,
+                                                fontFamily: 'Outfit',
+                                              ),
+                                            ),
+                                            SizedBox(width: 8),
+                                            Badge(
+                                              backgroundColor: Color(0xFF10B981),
+                                              label: Text(
+                                                'OFICIAL',
+                                                style: TextStyle(
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 3),
+                                        Text(
+                                          'Aceleración gráfica sin lag, práctica táctica offline y mayor estabilidad.',
                                           style: TextStyle(
-                                            fontSize: 9,
-                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white70,
+                                            fontSize: 12.5,
                                           ),
                                         ),
+                                      ],
+                                    ),
+                                  ),
+                                  if (isWide)
+                                    TextButton.icon(
+                                      onPressed: () => DownloadsDialog.show(context),
+                                      icon: const Icon(
+                                        Icons.info_outline_rounded,
+                                        size: 16,
+                                        color: Color(0xFF94A3B8),
                                       ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    'Windows · macOS · Android APK',
-                                    style: TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 13,
+                                      label: const Text(
+                                        'Guía de instalación',
+                                        style: TextStyle(
+                                          color: Color(0xFF94A3B8),
+                                          fontSize: 12,
+                                        ),
+                                      ),
                                     ),
-                                  ),
                                 ],
                               ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 6,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: const Row(
-                                mainAxisSize: MainAxisSize.min,
+                              const SizedBox(height: 16),
+                              Wrap(
+                                spacing: 12,
+                                runSpacing: 10,
                                 children: [
-                                  Text(
-                                    'Ver',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
+                                  // Botón Descargar APK Android
+                                  FilledButton.icon(
+                                    onPressed: () async {
+                                      final uri = Uri.parse(AppConfig.androidApkDownloadUrl);
+                                      if (await canLaunchUrl(uri)) {
+                                        await launchUrl(uri, mode: LaunchMode.externalApplication);
+                                      }
+                                    },
+                                    style: FilledButton.styleFrom(
+                                      backgroundColor: const Color(0xFF10B981),
+                                      foregroundColor: Colors.white,
+                                      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(14),
+                                      ),
+                                      elevation: 2,
+                                    ),
+                                    icon: const Icon(Icons.android_rounded, size: 19),
+                                    label: const Text(
+                                      'Descargar APK (Android)',
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                                     ),
                                   ),
-                                  SizedBox(width: 4),
-                                  Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.white,
-                                    size: 12,
+                                  // Botón Descargar macOS
+                                  FilledButton.icon(
+                                    onPressed: () async {
+                                      final uri = Uri.parse(AppConfig.macDownloadUrl);
+                                      if (await canLaunchUrl(uri)) {
+                                        await launchUrl(uri, mode: LaunchMode.externalApplication);
+                                      }
+                                    },
+                                    style: FilledButton.styleFrom(
+                                      backgroundColor: const Color(0xFF334155),
+                                      foregroundColor: Colors.white,
+                                      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(14),
+                                      ),
+                                      elevation: 2,
+                                    ),
+                                    icon: const Icon(Icons.laptop_mac_rounded, size: 19),
+                                    label: const Text(
+                                      'Descargar para Mac (.DMG)',
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                                    ),
                                   ),
+                                  if (!isWide)
+                                    OutlinedButton.icon(
+                                      onPressed: () => DownloadsDialog.show(context),
+                                      style: OutlinedButton.styleFrom(
+                                        foregroundColor: Colors.white70,
+                                        side: BorderSide(
+                                          color: Colors.white.withValues(alpha: 0.2),
+                                        ),
+                                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(14),
+                                        ),
+                                      ),
+                                      icon: const Icon(Icons.info_outline_rounded, size: 16),
+                                      label: const Text(
+                                        'Guía de instalación',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                    ),
                                 ],
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          );
+                        },
                       ),
                     ),
                   ),

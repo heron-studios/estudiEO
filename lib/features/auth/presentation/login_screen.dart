@@ -6,7 +6,7 @@ import 'package:learn/core/config/app_config.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
-import 'package:learn/features/auth/presentation/widgets/shader_horizontal_gallery.dart';
+import 'package:learn/core/widgets/bento_card.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,6 +26,10 @@ class _LoginScreenState extends State<LoginScreen>
   // Controller for particles connection network tick
   late ValueNotifier<Offset> _mouseNotifier;
 
+  // Controller for bento cards shimmers
+  late AnimationController _shimmerController;
+  late Animation<double> _shimmerAnimation;
+
   @override
   void initState() {
     super.initState();
@@ -42,12 +46,24 @@ class _LoginScreenState extends State<LoginScreen>
     );
 
     _mouseNotifier = ValueNotifier<Offset>(const Offset(-999, -999));
+
+    // 4-second repeating loop for bento shimmer sweep
+    _shimmerController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 4),
+    )..repeat();
+
+    _shimmerAnimation = CurvedAnimation(
+      parent: _shimmerController,
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
   void dispose() {
     _orbController.dispose();
     _mouseNotifier.dispose();
+    _shimmerController.dispose();
     super.dispose();
   }
 
@@ -372,185 +388,86 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Future<void> _downloadAndroidApk() async {
-    final url = Uri.parse(AppConfig.androidApkDownloadUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    }
-  }
-
-
-  Future<void> _downloadMac() async {
-    final url = Uri.parse(AppConfig.macDownloadUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-      return;
-    }
-    _showPlatformInfoDialog(
-      platform: 'macOS (Mac)',
-      icon: Icons.laptop_mac_rounded,
-      accentColor: const Color(0xFFA1A1AA),
-      message:
-          'No se pudo iniciar la descarga del instalador de macOS automáticamente. Por favor, verifica los permisos del navegador o vuelve a intentar.',
-    );
-  }
-
-
-
-  void _showPlatformInfoDialog({
-    required String platform,
-    required IconData icon,
-    required Color accentColor,
-    required String message,
-    String? actionLabel,
-    VoidCallback? onAction,
-  }) {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: true,
-      barrierLabel: 'Cerrar',
-      barrierColor: Colors.black.withValues(alpha: 0.7),
-      transitionDuration: const Duration(milliseconds: 250),
-      pageBuilder: (ctx, anim1, anim2) {
-        return Center(
-          child: Container(
-            width: 440,
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.all(26),
-            decoration: BoxDecoration(
-              color: const Color(0xFF0F172A),
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(
-                color: accentColor.withValues(alpha: 0.45),
-                width: 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: accentColor.withValues(alpha: 0.25),
-                  blurRadius: 35,
-                ),
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.8),
-                  blurRadius: 45,
-                ),
-              ],
-            ),
-            child: Material(
-              color: Colors.transparent,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: accentColor.withValues(alpha: 0.15),
-                      shape: BoxShape.circle,
-                      border:
-                          Border.all(color: accentColor.withValues(alpha: 0.35)),
-                    ),
-                    child: Icon(icon, color: accentColor, size: 36),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    platform,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    message,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white70,
-                      fontSize: 13,
-                      height: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 22),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () => Navigator.of(ctx).pop(),
-                        child: const Text(
-                          'Entendido',
-                          style: TextStyle(color: Colors.white60),
-                        ),
-                      ),
-                      if (actionLabel != null && onAction != null) ...[
-                        const SizedBox(width: 8),
-                        FilledButton(
-                          onPressed: () {
-                            Navigator.of(ctx).pop();
-                            onAction();
-                          },
-                          style: FilledButton.styleFrom(
-                            backgroundColor: accentColor,
-                            foregroundColor: Colors.white,
-                          ),
-                          child: Text(actionLabel),
-                        ),
-                      ],
-                    ],
-                  ),
-                ],
-              ),
+  Widget _buildRightSideContent(bool isDesktop) {
+    return Column(
+      crossAxisAlignment: isDesktop
+          ? CrossAxisAlignment.start
+          : CrossAxisAlignment.center,
+      children: [
+        const Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'CARACTERÍSTICAS DEL SISTEMA',
+            style: TextStyle(
+              color: Color(0xFF5F6368),
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 1.6,
             ),
           ),
-        );
-      },
-    );
-  }
-
-  Widget _buildRightSideContent(bool isDesktop) {
-    final items = [
-      ShaderGalleryItem(
-        id: 'apk',
-        title: 'Android Móvil',
-        format: '.APK Directa Oficial',
-        badge: 'OFICIAL · RECOMENDADO',
-        badgeColor: const Color(0xFF34D399),
-        image: 'assets/images/promo_1.jpg',
-        accentColor: const Color(0xFF10B981),
-        icon: Icons.android_rounded,
-        description:
-            'Simulacros reales y preparación táctica en tu celular con bancos de preguntas actualizados.',
-        specs: const [
-          'Instalación directa sin intermediarios',
-          'Modo de estudio táctico sin conexión',
-          'Alineado al Prospecto Oficial PNP 2026',
-        ],
-        buttonLabel: 'Descargar APK Directa',
-        onDownload: _downloadAndroidApk,
-      ),
-      ShaderGalleryItem(
-        id: 'mac',
-        title: 'macOS Mac',
-        format: '.DMG Universal',
-        badge: 'APPLE SILICON & INTEL',
-        badgeColor: const Color(0xFFE4E4E7),
-        image: 'assets/images/promo_2.jpg',
-        accentColor: const Color(0xFFA1A1AA),
-        icon: Icons.laptop_mac_rounded,
-        description:
-            'Optimizado nativamente para chips Apple Silicon (M1/M2/M3/M4) e Intel con fluidez a 120Hz.',
-        specs: const [
-          'Fluidez nativa en pantallas Retina Display',
-          'Bajo consumo de batería en MacBook',
-          'Compatible con macOS Sequoia y anteriores',
-        ],
-        buttonLabel: 'Descargar .DMG',
-        onDownload: _downloadMac,
-      ),
-    ];
-
-    return ShaderHorizontalGallery(
-      items: items,
-      isDesktop: isDesktop,
+        ),
+        const SizedBox(height: 14),
+        GridView(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: isDesktop ? 2 : 1,
+            crossAxisSpacing: 14,
+            mainAxisSpacing: 14,
+            childAspectRatio: isDesktop ? 1.05 : 1.7,
+          ),
+          children: [
+            BentoCard(
+              title: 'Misión Diaria',
+              description:
+                  'Resuelve preguntas personalizadas cada día para mantener tu racha.',
+              tag: 'Activo',
+              icon: Icons.bolt_rounded,
+              glowColor: const Color(0xFF4285F4).withValues(alpha: 0.12),
+              iconColor: const Color(0xFF8AB4F8),
+              iconBgColor: const Color(0x2E4285F4),
+              shimmerPhase: 0.0,
+              shimmerAnimation: _shimmerAnimation,
+            ),
+            BentoCard(
+              title: 'Temario PNP',
+              description:
+                  'Miles de preguntas oficiales del prospecto PNP vigente.',
+              tag: 'Oficial',
+              icon: Icons.menu_book_rounded,
+              glowColor: const Color(0xFF9C27B0).withValues(alpha: 0.12),
+              iconColor: const Color(0xFFC084FC),
+              iconBgColor: const Color(0x2E9C27B0),
+              shimmerPhase: 0.25,
+              shimmerAnimation: _shimmerAnimation,
+            ),
+            BentoCard(
+              title: 'Simulacros Reales',
+              description:
+                  'Exámenes completos contrarreloj con el formato exacto de admisión.',
+              tag: 'Cronometrado',
+              icon: Icons.play_circle_outline_rounded,
+              glowColor: const Color(0xFF00A884).withValues(alpha: 0.12),
+              iconColor: const Color(0xFF34D399),
+              iconBgColor: const Color(0x2E00A884),
+              shimmerPhase: 0.5,
+              shimmerAnimation: _shimmerAnimation,
+            ),
+            BentoCard(
+              title: 'Aprendizaje Guiado',
+              description:
+                  'Rutas de estudio adaptativas con seguimiento de progreso.',
+              tag: 'Adaptativo',
+              icon: Icons.alt_route_rounded,
+              glowColor: const Color(0xFFF472B6).withValues(alpha: 0.12),
+              iconColor: const Color(0xFFF9A8D4),
+              iconBgColor: const Color(0x2EF472B6),
+              shimmerPhase: 0.125,
+              shimmerAnimation: _shimmerAnimation,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
