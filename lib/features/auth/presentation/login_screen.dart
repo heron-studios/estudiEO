@@ -6,7 +6,7 @@ import 'package:learn/core/config/app_config.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
-import 'package:learn/features/home/presentation/promo_banner_dialog.dart';
+import 'package:learn/features/auth/presentation/widgets/shader_horizontal_gallery.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -415,28 +415,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  void _showIosExplanationDialog() {
-    _showPlatformInfoDialog(
-      platform: 'iOS (iPhone / iPad)',
-      icon: Icons.phone_iphone_rounded,
-      accentColor: const Color(0xFFA855F7),
-      message:
-          '¿Por qué no hay APK para iPhone?\n\nEn dispositivos Apple (iOS) no es posible instalar archivos APK directamente porque Apple restringe la instalación manual de paquetes externos por seguridad.\n\nPara iPhone estamos preparando el acceso oficial a través de Apple TestFlight y el App Store oficial.',
-      actionLabel: 'Consultar por WhatsApp',
-      onAction: () => _contactSupport(),
-    );
-  }
 
-  void _showPromoPicturesDialog() {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: true,
-      barrierLabel: 'Cerrar Banner Promocional',
-      barrierColor: Colors.black.withValues(alpha: 0.75),
-      transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (ctx, anim1, anim2) => const PromoBannerDialog(),
-    );
-  }
 
   void _showPlatformInfoDialog({
     required String platform,
@@ -548,479 +527,69 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Widget _buildRightSideContent(bool isDesktop) {
-    return Column(
-      crossAxisAlignment:
-          isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-      children: [
-        // Header de la sección de descargas
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: const Color(0xFF10B981).withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: const Color(0xFF10B981).withValues(alpha: 0.3),
-                ),
-              ),
-              child: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.downloading_rounded,
-                    size: 13,
-                    color: Color(0xFF34D399),
-                  ),
-                  SizedBox(width: 5),
-                  Text(
-                    'ZONA DE DESCARGA OFICIAL',
-                    style: TextStyle(
-                      color: Color(0xFF34D399),
-                      fontSize: 9.5,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1.1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Text(
-              'v1.0.2 Oficial',
-              style: TextStyle(
-                color: Color(0xFF9AA0A6),
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'Descarga EDUPOL en tu Dispositivo',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 19,
-            fontWeight: FontWeight.w900,
-            letterSpacing: -0.4,
-          ),
-        ),
-        const SizedBox(height: 4),
-        const Text(
-          'Instala las aplicaciones oficiales con aceleración gráfica, modo offline y simulacros para tu PC, Mac o celular.',
-          style: TextStyle(
-            color: Color(0xFF9AA0A6),
-            fontSize: 12,
-            height: 1.35,
-          ),
-        ),
-        const SizedBox(height: 14),
-
-        // Grid 2x2 con las 4 tarjetas de plataforma
-        GridView(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: isDesktop ? 2 : 1,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: isDesktop ? 0.98 : 1.6,
-          ),
-          children: [
-            _DownloadPlatformCard(
-              title: 'Windows PC',
-              format: '.EXE Instalador',
-              tag: 'PC DESKTOP',
-              tagColor: const Color(0xFF38BDF8),
-              icon: Icons.desktop_windows_rounded,
-              accentColor: const Color(0xFF0078D7),
-              bullets: const [
-                'Aceleración DirectX nativa',
-                'Atajos tácticos de examen',
-              ],
-              buttonLabel: 'Descargar .EXE',
-              buttonIcon: Icons.download_rounded,
-              onTap: _downloadWindows,
-            ),
-            _DownloadPlatformCard(
-              title: 'macOS Mac',
-              format: '.DMG / .ZIP',
-              tag: 'APPLE SILICON & INTEL',
-              tagColor: const Color(0xFFE4E4E7),
-              icon: Icons.laptop_mac_rounded,
-              accentColor: const Color(0xFFA1A1AA),
-              bullets: const [
-                'Optimizado para M1/M2/M3/M4',
-                'Fluidez nativa de 120Hz',
-              ],
-              buttonLabel: 'Descargar .DMG',
-              buttonIcon: Icons.download_rounded,
-              onTap: _downloadMac,
-            ),
-            _DownloadPlatformCard(
-              title: 'Android Móvil',
-              format: '.APK Directa Oficial',
-              tag: 'RECOMENDADO',
-              tagColor: const Color(0xFF34D399),
-              icon: Icons.android_rounded,
-              accentColor: const Color(0xFF22C55E),
-              bullets: const [
-                'Instalación directa sin esperas',
-                'Estudio táctico offline',
-              ],
-              buttonLabel: 'Descargar APK Directa',
-              buttonIcon: Icons.download_rounded,
-              isPrimary: true,
-              onTap: _downloadAndroidApk,
-            ),
-            _DownloadPlatformCard(
-              title: 'iOS (iPhone)',
-              format: 'App Store / TestFlight',
-              tag: 'EN CERTIFICACIÓN',
-              tagColor: const Color(0xFFC084FC),
-              icon: Icons.phone_iphone_rounded,
-              accentColor: const Color(0xFFA855F7),
-              bullets: const [
-                'Apple no admite APKs directos',
-                'Pronto en TestFlight oficial',
-              ],
-              buttonLabel: 'Info para iPhone',
-              buttonIcon: Icons.info_outline_rounded,
-              isUpcoming: true,
-              onTap: _showIosExplanationDialog,
-            ),
-          ],
-        ),
-
-        const SizedBox(height: 12),
-
-        // Barra inferior informativa y acceso a fotos
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
-          ),
-          child: Row(
-            children: [
-              const Icon(Icons.shield_outlined,
-                  size: 14, color: Color(0xFF34D399)),
-              const SizedBox(width: 6),
-              const Expanded(
-                child: Text(
-                  'Instaladores oficiales · 100% seguros y sin publicidad',
-                  style: TextStyle(
-                    color: Color(0xFF9AA0A6),
-                    fontSize: 10.5,
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: _showPromoPicturesDialog,
-                borderRadius: BorderRadius.circular(6),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.photo_library_outlined,
-                          size: 13, color: Color(0xFF8AB4F8)),
-                      SizedBox(width: 4),
-                      Text(
-                        'Ver fotos',
-                        style: TextStyle(
-                          color: Color(0xFF8AB4F8),
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-// ── DOWNLOAD PLATFORM CARD ──
-class _DownloadPlatformCard extends StatefulWidget {
-  final String title;
-  final String format;
-  final String tag;
-  final Color tagColor;
-  final IconData icon;
-  final Color accentColor;
-  final List<String> bullets;
-  final String buttonLabel;
-  final IconData buttonIcon;
-  final VoidCallback onTap;
-  final bool isPrimary;
-  final bool isUpcoming;
-
-  const _DownloadPlatformCard({
-    required this.title,
-    required this.format,
-    required this.tag,
-    required this.tagColor,
-    required this.icon,
-    required this.accentColor,
-    required this.bullets,
-    required this.buttonLabel,
-    required this.buttonIcon,
-    required this.onTap,
-    this.isPrimary = false,
-    this.isUpcoming = false,
-  });
-
-  @override
-  State<_DownloadPlatformCard> createState() => _DownloadPlatformCardState();
-}
-
-class _DownloadPlatformCardState extends State<_DownloadPlatformCard> {
-  bool _isHovered = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.easeOut,
-        transform: Matrix4.translationValues(0, _isHovered ? -3 : 0, 0),
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: const Color(0xFF101524).withValues(alpha: 0.9),
-          borderRadius: BorderRadius.circular(18),
-          border: Border.all(
-            color: _isHovered
-                ? widget.accentColor.withValues(alpha: 0.6)
-                : Colors.white.withValues(alpha: 0.09),
-            width: _isHovered ? 1.5 : 1.0,
-          ),
-          boxShadow: [
-            if (_isHovered || widget.isPrimary)
-              BoxShadow(
-                color: widget.accentColor
-                    .withValues(alpha: _isHovered ? 0.22 : 0.12),
-                blurRadius: 18,
-                offset: const Offset(0, 6),
-              ),
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.4),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // Header: Icon + Name + Tag
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    color: widget.accentColor.withValues(alpha: 0.14),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: widget.accentColor.withValues(alpha: 0.3),
-                    ),
-                  ),
-                  child: Icon(
-                    widget.icon,
-                    color: widget.accentColor,
-                    size: 20,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 13.5,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.2,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 1.5),
-                        decoration: BoxDecoration(
-                          color: widget.tagColor.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(
-                            color: widget.tagColor.withValues(alpha: 0.3),
-                          ),
-                        ),
-                        child: Text(
-                          widget.tag,
-                          style: TextStyle(
-                            color: widget.tagColor,
-                            fontSize: 8,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 6),
-
-            // Format chip
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Text(
-                widget.format,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'monospace',
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 6),
-
-            // Bullets
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widget.bullets.map((b) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 3),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Icon(
-                        Icons.check_rounded,
-                        size: 12,
-                        color: widget.accentColor,
-                      ),
-                      const SizedBox(width: 4),
-                      Expanded(
-                        child: Text(
-                          b,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            color: Colors.white60,
-                            fontSize: 10,
-                            height: 1.2,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }).toList(),
-            ),
-
-            const SizedBox(height: 8),
-
-            // Action button
-            SizedBox(
-              width: double.infinity,
-              height: 32,
-              child: widget.isPrimary
-                  ? Container(
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF059669), Color(0xFF10B981)],
-                        ),
-                        borderRadius: BorderRadius.circular(9),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xFF10B981)
-                                .withValues(alpha: 0.35),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: widget.onTap,
-                          borderRadius: BorderRadius.circular(9),
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(widget.buttonIcon,
-                                  color: Colors.white, size: 14),
-                                const SizedBox(width: 5),
-                                Text(
-                                  widget.buttonLabel,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  : OutlinedButton.icon(
-                      onPressed: widget.onTap,
-                      icon: Icon(
-                        widget.buttonIcon,
-                        size: 13,
-                        color:
-                            _isHovered ? widget.accentColor : Colors.white70,
-                      ),
-                      label: Text(
-                        widget.buttonLabel,
-                        style: TextStyle(
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.w600,
-                          color: _isHovered ? Colors.white : Colors.white70,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          color: _isHovered
-                              ? widget.accentColor.withValues(alpha: 0.5)
-                              : Colors.white.withValues(alpha: 0.12),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 6),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(9),
-                        ),
-                      ),
-                    ),
-            ),
-          ],
-        ),
+    final items = [
+      ShaderGalleryItem(
+        id: 'apk',
+        title: 'Android Móvil',
+        format: '.APK Directa Oficial',
+        badge: 'OFICIAL · RECOMENDADO',
+        badgeColor: const Color(0xFF34D399),
+        image: 'assets/images/promo_1.jpg',
+        accentColor: const Color(0xFF10B981),
+        icon: Icons.android_rounded,
+        description:
+            'Simulacros reales y preparación táctica en tu celular con bancos de preguntas actualizados.',
+        specs: const [
+          'Instalación directa sin intermediarios',
+          'Modo de estudio táctico sin conexión',
+          'Alineado al Prospecto Oficial PNP 2026',
+        ],
+        buttonLabel: 'Descargar APK Directa',
+        onDownload: _downloadAndroidApk,
       ),
+      ShaderGalleryItem(
+        id: 'win',
+        title: 'Windows PC',
+        format: '.EXE Instalador',
+        badge: '64-BIT DESKTOP',
+        badgeColor: const Color(0xFF38BDF8),
+        image: 'assets/images/promo_2.jpg',
+        accentColor: const Color(0xFF0078D7),
+        icon: Icons.desktop_windows_rounded,
+        description:
+            'Aceleración por GPU DirectX y modo examen a pantalla completa para máxima concentración.',
+        specs: const [
+          'Aceleración de gráficos DirectX nativa',
+          'Atajos de teclado tácticos para examen',
+          'Rendimiento ultra veloz y sin lag',
+        ],
+        buttonLabel: 'Descargar .EXE',
+        onDownload: _downloadWindows,
+      ),
+      ShaderGalleryItem(
+        id: 'mac',
+        title: 'macOS Mac',
+        format: '.DMG Universal',
+        badge: 'APPLE SILICON & INTEL',
+        badgeColor: const Color(0xFFE4E4E7),
+        image: 'assets/images/promo_3.jpg',
+        accentColor: const Color(0xFFA1A1AA),
+        icon: Icons.laptop_mac_rounded,
+        description:
+            'Optimizado nativamente para chips Apple Silicon (M1/M2/M3/M4) e Intel con fluidez a 120Hz.',
+        specs: const [
+          'Fluidez nativa en pantallas Retina Display',
+          'Bajo consumo de batería en MacBook',
+          'Compatible con macOS Sequoia y anteriores',
+        ],
+        buttonLabel: 'Descargar .DMG',
+        onDownload: _downloadMac,
+      ),
+    ];
+
+    return ShaderHorizontalGallery(
+      items: items,
+      isDesktop: isDesktop,
     );
   }
 }
