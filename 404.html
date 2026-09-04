@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <!-- SEO -->
+  <meta name="description" content="EDUPOL - La mejor app de preparación para el examen de ingreso a la Escuela PNP. Preguntas reales, simulacros y seguimiento de progreso.">
+  <meta name="keywords" content="PNP, escuela PNP, examen PNP, preparación policial, ingreso PNP, EDUPOL">
+  <meta name="author" content="EDUPOL">
+  <meta name="robots" content="index, follow">
+
+  <!-- Evitar caché -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- Preload fonts for faster icon and text rendering -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EDUPOL - Prepárate para la PNP">
+  <meta property="og:description" content="Acceso permanente por S/30. Preguntas reales, simulacros oficiales y soporte VIP por WhatsApp.">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <!-- PWA / iOS -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EDUPOL">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png?v=2"/>
+  <link rel="manifest" href="manifest.json?v=2">
+
+  <title>EDUPOL - Prepárate para la PNP</title>
+
+  <style>
+    /* Pantalla de carga mientras Flutter inicializa */
+    body {
+      margin: 0;
+      background-color: #060B18;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    #loading-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    #loading-screen .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(59,130,246,0.2);
+      border-top: 3px solid #3B82F6;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <span>Cargando EDUPOL...</span>
+  </div>
+
+  <script>
+    // Clean up any active service workers to prevent cache-related infinite loading
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+  <script src="flutter_bootstrap.js?v=5" async></script>
+</body>
+</html>

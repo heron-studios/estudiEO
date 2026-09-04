@@ -1,0 +1,20 @@
+<USER_REQUEST>
+[
+  { "id": 251, "texto": "Suelo terminar mis tareas antes de la fecha límite para evitar presiones de último momento.", "opciones": { "A": "Siempre.", "B": "A veces.", "C": "Nunca." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La planificación y responsabilidad son vitales para la disciplina policial.", "dimension": "Personalidad", "sub_dimension": "Responsabilidad" },
+  { "id": 252, "texto": "Si alguien me falta el respeto en público, mi primera reacción es gritarle para que sepa que no me dejo.", "opciones": { "A": "En desacuerdo.", "B": "Indeciso.", "C": "De acuerdo." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "Un oficial debe mantener el temple y no reaccionar impulsivamente ante provocaciones.", "dimension": "Personalidad", "sub_dimension": "Control de Impulsos" },
+  { "id": 253, "texto": "Me siento cómodo siguiendo órdenes estrictas de mis superiores, aunque no esté de acuerdo.", "opciones": { "A": "Cierto.", "B": "A veces.", "C": "Falso." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La obediencia jerárquica es la base de las instituciones castrenses y policiales.", "dimension": "Valores", "sub_dimension": "Disciplina" },
+  { "id": 254, "texto": "He sentido en varias ocasiones que la gente me mira con envidia por mis capacidades.", "opciones": { "A": "Nunca.", "B": "A veces.", "C": "Siempre." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide el grado de suspicacia y ajuste social del candidato.", "dimension": "Personalidad", "sub_dimension": "Ajuste Social" },
+  { "id": 255, "texto": "¿Alguna vez ha tomado algo que no le pertenecía, aunque fuera de valor insignificante?", "opciones": { "A": "Falso.", "B": "No estoy seguro.", "C": "Cierto." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "La honradez absoluta es un requisito innegociable para un policía.", "dimension": "Valores", "sub_dimension": "Integridad" },
+  { "id": 256, "texto": "Cuando tengo un problema grave, prefiero guardarlo para mí mis
+<truncated 13838 bytes>
+mpre.", "B": "Indeciso.", "C": "Nunca." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Indica deseo de superación y actualización constante.", "dimension": "Personalidad", "sub_dimension": "Motivación" },
+  { "id": 296, "texto": "¿Alguna vez ha mentido en una entrevista o cuestionario para quedar bien?", "opciones": { "A": "Falso.", "B": "No estoy seguro.", "C": "Cierto." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Pregunta de control de sinceridad (escala L).", "dimension": "Control", "sub_dimension": "Sinceridad" },
+  { "id": 297, "texto": "Me gusta participar en actividades de voluntariado o ayuda social.", "opciones": { "A": "De acuerdo.", "B": "A veces.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Muestra proactividad y compromiso con el bienestar social.", "dimension": "Valores", "sub_dimension": "Servicio" },
+  { "id": 298, "texto": "¿Siente que es una persona que se adapta rápido a los cambios inesperados?", "opciones": { "A": "Siempre.", "B": "A veces.", "C": "Nunca." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La adaptabilidad es crucial en el cambiante entorno policial.", "dimension": "Personalidad", "sub_dimension": "Flexibilidad" },
+  { "id": 299, "texto": "Me considero una persona capaz de controlar sus impulsos sexuales.", "opciones": { "A": "Cierto.", "B": "A veces.", "C": "Falso." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide el autocontrol en impulsos biológicos básicos.", "dimension": "Personalidad", "sub_dimension": "Control de Impulsos" },
+  { "id": 300, "texto": "Estoy convencido de que ser oficial de la PNP es mi verdadera vocación.", "opciones": { "A": "Siempre.", "B": "Indeciso.", "C": "Nunca." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "Pregunta final de reafirmación vocacional.", "dimension": "Valores", "sub_dimension": "Vocación" }
+]
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T00:44:13-05:00.
+</ADDITIONAL_METADATA>

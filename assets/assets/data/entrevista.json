@@ -1,0 +1,284 @@
+{
+  "preguntas_entrevista": [
+    {
+      "id": 1,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "Durante una intervención, un civil comienza a grabarlo y lo insulta repetidamente para provocarlo. ¿Cómo reacciona?",
+      "puntos_clave": "Autocontrol emocional, evitar la escalada del conflicto, apego al manual de derechos humanos.",
+      "respuesta_ideal": "Mantengo la calma y una postura neutral. Le informo amablemente que tiene derecho a grabar la intervención pública, procedo con mis funciones sin dejarme provocar y solicito apoyo si la situación amenaza con descontrolarse."
+    },
+    {
+      "id": 2,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Descubre a un colega de su misma unidad aceptando dinero a cambio de no imponer una infracción. ¿Qué hace?",
+      "puntos_clave": "Integridad inquebrantable, conocimiento del protocolo de denuncia, lealtad institucional.",
+      "respuesta_ideal": "Mi lealtad es con la institución y la ley. Reportaría inmediatamente el incidente por los canales correspondientes a mis superiores o a Inspectoría, ya que actos así manchan el uniforme y comprometen nuestro servicio a la sociedad."
+    },
+    {
+      "id": 3,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "¿Cómo logra separar una escena traumática o violenta que presenció en servicio de su vida familiar al llegar a casa?",
+      "puntos_clave": "Mecanismos de afrontamiento saludables, resiliencia psicológica, reconocimiento de la necesidad de apoyo.",
+      "respuesta_ideal": "Es fundamental aplicar técnicas de descompresión emocional. Suelo hacer ejercicio o conversar con compañeros de confianza tras eventos críticos. Si siento que me afecta demasiado, no dudaría en solicitar apoyo psicológico institucional antes de que afecte a mi familia."
+    },
+    {
+      "id": 4,
+      "categoria": "LIDERAZGO",
+      "pregunta": "Está a cargo de un pequeño grupo en un operativo rutinario y nota que sus compañeros están desmotivados y distraídos. ¿Cómo maneja la situación?",
+      "puntos_clave": "Capacidad de motivación, comunicación asertiva, enfoque en el objetivo.",
+      "respuesta_ideal": "Hago una pausa táctica para reunir al equipo. Les recuerdo la importancia de la misión y cómo un descuido puede costarnos la vida. Mantengo un tono firme pero motivador, reasignando posiciones si es necesario para mantener a todos alerta."
+    },
+    {
+      "id": 5,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Por qué decidió postular a la Policía Nacional del Perú y no a otra institución armada?",
+      "puntos_clave": "Vocación de servicio civil, claridad de propósito, conocimiento del rol policial.",
+      "respuesta_ideal": "Tengo vocación de servicio directo hacia la ciudadanía. A diferencia de otras instituciones, el policía está en contacto diario con la comunidad, resolviendo problemas cotidianos y garantizando la seguridad interna. Ese contacto social y preventivo es lo que me motiva a ser un buen policía."
+    },
+    {
+      "id": 6,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "En medio de una protesta pacífica que de pronto se torna violenta, le tiran piedras. Sus órdenes son mantener la línea. ¿Qué hace?",
+      "puntos_clave": "Disciplina táctica, obediencia, resistencia bajo presión.",
+      "respuesta_ideal": "Acatar estrictamente las órdenes de mantener la línea, usando mi equipo antidisturbios de forma defensiva. No reacciono de manera individual ni abandono la formación, confiando en el mando táctico para la orden de avance o repliegue."
+    },
+    {
+      "id": 7,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Un familiar directo suyo está involucrado en una falta menor (ej: manejar bajo efectos mínimos de alcohol) y usted es quien interviene. ¿Qué hace?",
+      "puntos_clave": "Imparcialidad, adherencia a la ley por sobre vínculos personales.",
+      "respuesta_ideal": "Procedo de acuerdo a ley como lo haría con cualquier otro ciudadano, solicitando el apoyo de otra unidad para evitar cualquier sospecha de conflicto de intereses y garantizar la transparencia de la intervención."
+    },
+    {
+      "id": 8,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "¿Alguna vez ha perdido el control por ira? Describa la situación y qué aprendió de ello.",
+      "puntos_clave": "Sinceridad, capacidad de autocrítica, lecciones aprendidas.",
+      "respuesta_ideal": "[Dar un ejemplo real y leve]. Aprendí que reaccionar impulsivamente nunca resuelve el problema subyacente. Desde entonces, aplico la técnica de 'pausa táctica', respiro profundamente antes de responder en situaciones de alta tensión."
+    },
+    {
+      "id": 9,
+      "categoria": "LIDERAZGO",
+      "pregunta": "Un subordinado con más experiencia que usted cuestiona abiertamente una de sus órdenes frente a los demás. ¿Cómo procede?",
+      "puntos_clave": "Firmeza, respeto a la trayectoria, resolución de conflictos sin humillar.",
+      "respuesta_ideal": "Mantengo mi decisión en el momento para preservar la autoridad táctica. Posteriormente, lo cito en privado para escuchar sus razones, demostrando respeto por su experiencia, pero dejando claro que las órdenes en el campo no se discuten frente a la tropa."
+    },
+    {
+      "id": 10,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Qué opina de las noticias recientes sobre casos de corrupción policial?",
+      "puntos_clave": "Posición ética firme, distinción entre la institución y las malas personas.",
+      "respuesta_ideal": "Me generan rechazo. Siento que esos malos elementos manchan el uniforme y el sacrificio de los miles de policías honestos. Me motiva aún más a ingresar para sumar integridad a la institución y demostrar el verdadero valor de la PNP."
+    },
+    {
+      "id": 11,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "En un patrullaje nocturno, su vehículo sufre una emboscada y recibe disparos. ¿Cuál es su reacción inmediata según su entrenamiento mental?",
+      "puntos_clave": "Respuesta instintiva de supervivencia, comunicación, evaluación rápida.",
+      "respuesta_ideal": "Buscar cubierta inmediata, proteger a mi binomio y reportar por radio solicitando apoyo, indicando nuestra ubicación y situación (L.A.C.E. - Location, Ammo, Casualties, Equipment). Recién después evalúo repeler el ataque según la amenaza y visibilidad."
+    },
+    {
+      "id": 12,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Le dan una orden directa que usted sabe que va en contra del manual de procedimientos o es ilegal. ¿La obedece?",
+      "puntos_clave": "Conocimiento legal, jerarquía vs legalidad.",
+      "respuesta_ideal": "No. La disciplina y la jerarquía son pilares, pero ninguna orden puede estar por encima de la Constitución, las leyes o los derechos humanos. Solicitaría respetuosamente que la orden sea reconsiderada o puesta por escrito, y me negaría a ejecutar actos ilícitos."
+    },
+    {
+      "id": 13,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "Acaba de presenciar un accidente de tránsito grave con víctimas fatales, incluyendo niños. Usted es el primer respondedor. ¿Cómo se controla?",
+      "puntos_clave": "Disociación táctica temporal, enfoque operativo.",
+      "respuesta_ideal": "En ese momento mi mente debe cambiar a 'modo operativo'. Me enfoco en asegurar la zona, pedir las unidades de emergencia médicas y salvaguardar evidencias. Guardo el impacto emocional para procesarlo después del servicio."
+    },
+    {
+      "id": 14,
+      "categoria": "LIDERAZGO",
+      "pregunta": "¿Considera que el liderazgo se impone por el grado o se gana con el ejemplo?",
+      "puntos_clave": "Comprensión del liderazgo moderno, autoridad moral.",
+      "respuesta_ideal": "El grado otorga la autoridad formal para emitir órdenes, pero el verdadero liderazgo se gana con el ejemplo, la integridad y el respeto hacia los subordinados. Un buen líder es el primero en esforzarse y el último en descansar."
+    },
+    {
+      "id": 15,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Qué hará si no aprueba este proceso de asimilación/ingreso?",
+      "puntos_clave": "Tolerancia a la frustración, persistencia.",
+      "respuesta_ideal": "Analizaría los resultados y mis puntos débiles para mejorarlos. Mi vocación de servir a la sociedad a través de la PNP es firme, por lo que me prepararía más duro y volvería a postular en la siguiente convocatoria."
+    },
+    {
+      "id": 16,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "Lleva 48 horas seguidas de servicio por inamovilidad y le asignan una misión de patrullaje de alto riesgo. Se siente agotado. ¿Qué hace?",
+      "puntos_clave": "Sinceridad sobre capacidades, resistencia, compromiso.",
+      "respuesta_ideal": "Si mi fatiga extrema pone en riesgo mi vida o la de mis compañeros, lo reporto a mi superior inmediato para que evalúe la situación. Si la orden se mantiene por extrema necesidad del servicio, usaría todas mis reservas de energía para mantener la alerta máxima."
+    },
+    {
+      "id": 17,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Durante un allanamiento antidrogas incautan grandes sumas de dinero en efectivo. Un oficial superior sugiere 'perder' un pequeño fajo. Nadie se daría cuenta. ¿Cómo reacciona?",
+      "puntos_clave": "Cero tolerancia a la corrupción, firmeza ante superiores.",
+      "respuesta_ideal": "Me negaría rotundamente y dejaría claro que todo el dinero incautado debe ser registrado íntegramente en las actas de intervención. Posteriormente procedería a denunciar el hecho a Inspectoría."
+    },
+    {
+      "id": 18,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "Se entera de un problema grave familiar (enfermedad de un hijo/padre) justo 5 minutos antes de iniciar un operativo importante. ¿Qué hace?",
+      "puntos_clave": "Priorización, toma de decisiones, comunicación.",
+      "respuesta_ideal": "Informo de inmediato a mi superior. Si el operativo permite mi reemplazo, solicito el permiso correspondiente. Si no hay reemplazo y mi presencia es crítica, intento concentrar mi mente en la tarea hasta completarla para no arriesgar al equipo, aunque es la decisión más difícil."
+    },
+    {
+      "id": 19,
+      "categoria": "LIDERAZGO",
+      "pregunta": "¿Cuál cree que es su mayor debilidad cuando trabaja en equipo?",
+      "puntos_clave": "Autoconciencia, humildad, capacidad de mejora.",
+      "respuesta_ideal": "A veces puedo ser muy perfeccionista y exijo demasiado a mis compañeros en tareas menores, lo que puede causar tensión. He aprendido a delegar más y a confiar en las capacidades de cada uno, interviniendo solo cuando el objetivo general está en riesgo."
+    },
+    {
+      "id": 20,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Cómo describiría la función de la policía en una sola oración?",
+      "puntos_clave": "Conocimiento del fin supremo de la PNP.",
+      "respuesta_ideal": "Garantizar, mantener y restablecer el orden interno, prestando protección y ayuda a las personas y a la comunidad, en estricto respeto a los Derechos Humanos."
+    },
+    {
+      "id": 21,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "En una persecución a pie, usted atrapa al delincuente quien le suplica llorando que no lo arreste porque tiene hijos pequeños. ¿Qué hace?",
+      "puntos_clave": "Separación de la empatía situacional del cumplimiento del deber.",
+      "respuesta_ideal": "Le coloco los grilletes y le informo sus derechos. Aunque siento empatía por su familia, mi deber ineludible es ponerlo a disposición de la justicia por el delito cometido. La ley debe aplicarse a todos por igual."
+    },
+    {
+      "id": 22,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Un comerciante de su sector le ofrece comida gratis todos los días a cambio de que pase más seguido por su local. ¿Acepta?",
+      "puntos_clave": "Prevención de dádivas, imparcialidad del servicio.",
+      "respuesta_ideal": "Agradezco el gesto amablemente pero rechazo la oferta. Como policía, mi deber es patrullar todo el sector de forma equitativa. Aceptar dádivas compromete mi imparcialidad y vulnera la ética policial."
+    },
+    {
+      "id": 23,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "Un superior le llama la atención duramente, utilizando insultos, frente a personal civil. Usted no cometió el error que se le atribuye. ¿Cómo responde?",
+      "puntos_clave": "Disciplina, manejo de humillación, conducto regular.",
+      "respuesta_ideal": "Mantengo la posición de firmes, escucho sin interrumpir ni responder de mala manera frente a civiles. Una vez finalizado el incidente y en privado, solicito respetuosamente hablar con él para aclarar el malentendido con las pruebas correspondientes."
+    },
+    {
+      "id": 24,
+      "categoria": "LIDERAZGO",
+      "pregunta": "Siendo jefe de un pelotón, se da cuenta de que dio una orden equivocada que resultó en el fracaso de una intervención (sin heridos). ¿Qué hace?",
+      "puntos_clave": "Asunción de responsabilidad, integridad.",
+      "respuesta_ideal": "Asumo toda la responsabilidad de inmediato frente a mis superiores y frente a mi personal. Un verdadero líder no busca chivos expiatorios. Luego, evalúo los errores cometidos en un 'debriefing' para que no vuelvan a ocurrir."
+    },
+    {
+      "id": 25,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Qué estaría dispuesto a sacrificar por pertenecer a la PNP?",
+      "puntos_clave": "Compromiso absoluto, entendimiento de las privaciones del servicio.",
+      "respuesta_ideal": "Estoy dispuesto a sacrificar mis horas de sueño, fechas especiales con mi familia (Navidad, cumpleaños), y poner en riesgo mi propia vida si la protección de la sociedad lo demanda, porque es el juramento que hago al vestir el uniforme."
+    },
+    {
+      "id": 26,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "Durante una intervención de control de identidad, un sujeto se altera y saca un arma blanca amenazando su vida. Usted tiene su arma de fuego enfundada. ¿Qué hace?",
+      "puntos_clave": "Uso proporcional de la fuerza, protocolos de escalamiento.",
+      "respuesta_ideal": "Retrocedo para ganar distancia táctica (reacción mínima), desenfundo mi arma apuntando a zonas no vitales si es posible, y doy comandos verbales fuertes y claros ('¡Alto, arroje el arma!'). Si la amenaza inminente continúa hacia mi integridad, haré uso de mi arma de reglamento para neutralizar el peligro."
+    },
+    {
+      "id": 27,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Un amigo cercano de su infancia le confiesa que ha comprado objetos robados y le pide que no lo denuncie. ¿Cuál es su accionar?",
+      "puntos_clave": "Separación de la vida personal del deber profesional.",
+      "respuesta_ideal": "Le explico que mi deber como ciudadano y como policía me obliga a denunciar los hechos. Le aconsejo que se entregue y devuelva los bienes, pero de no hacerlo, tendré que proceder con la denuncia formal correspondiente."
+    },
+    {
+      "id": 28,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "¿Cómo suele manejar la crítica negativa cuando viene de alguien que usted considera menos capacitado?",
+      "puntos_clave": "Humildad, control del ego, apertura mental.",
+      "respuesta_ideal": "Trato de ser objetivo y separar 'el mensaje' del 'mensajero'. Si la crítica tiene fundamento, la tomo para mejorar y agradezco la observación, independientemente del rango o la capacidad de la persona. Siempre hay espacio para aprender."
+    },
+    {
+      "id": 29,
+      "categoria": "LIDERAZGO",
+      "pregunta": "¿Cómo fomenta la confianza dentro de un equipo donde hay rencillas personales?",
+      "puntos_clave": "Resolución de conflictos, construcción de equipo.",
+      "respuesta_ideal": "Primero converso con las partes por separado para entender la raíz del problema. Luego, organizo actividades o simulacros donde dependan el uno del otro operativamente. En el trabajo policial, saber que tu vida depende del compañero supera cualquier diferencia personal."
+    },
+    {
+      "id": 30,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "Diga 3 valores fundamentales que todo policía debe tener y explique por qué.",
+      "puntos_clave": "Conocimiento de doctrina, valores éticos.",
+      "respuesta_ideal": "1. Integridad: para actuar con honestidad cuando nadie nos ve. 2. Disciplina: porque es la base del orden institucional y táctico. 3. Vocación de servicio: porque sin ella no podríamos soportar los sacrificios que exige esta carrera por el bien ciudadano."
+    },
+    {
+      "id": 31,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "En un operativo de rescate, usted ve a su mejor amigo dentro de la institución caer gravemente herido, pero usted tiene la orden de cubrir un flanco específico por donde se acercan los atacantes. ¿Qué hace?",
+      "puntos_clave": "Disciplina operativa frente a apego personal, priorización del éxito de la misión para salvar a todos.",
+      "respuesta_ideal": "Es la situación más dolorosa posible, pero debo cumplir mi orden de mantener el flanco. Si abandono mi posición, toda la unidad será flanqueada y moriremos todos, incluyendo mi amigo. Pido por radio la extracción médica inmediata mientras cubro mi sector con letalidad."
+    },
+    {
+      "id": 32,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "En un desalojo ordenado por un juez, se encuentra con familias pobres llorando con niños pequeños que no tienen a donde ir. Legalmente debe sacarlos a la fuerza si se resisten. ¿Cómo maneja el dilema ético/moral?",
+      "puntos_clave": "Cumplimiento del deber judicial, empatía en el uso de la fuerza, gestión de crisis.",
+      "respuesta_ideal": "La orden judicial se debe cumplir ineludiblemente. Sin embargo, aplico tácticas de persuasión primero, agotando toda vía de diálogo con los dirigentes. Coordino con servicios sociales (si están presentes) y realizo el retiro de las personas de la forma menos traumática posible, usando la fuerza solo como último y extremo recurso defensivo."
+    },
+    {
+      "id": 33,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "Usted detiene a una figura pública importante (ej. un congresista), quien de inmediato empieza a gritarle: '¡Tú no sabes quién soy! ¡Mañana mismo te doy de baja!'. ¿Cómo reacciona a la presión psicológica e intimidación?",
+      "puntos_clave": "Resistencia a la intimidación, ecuanimidad, firmeza, conocimiento de la ley.",
+      "respuesta_ideal": "Mantengo mi ecuanimidad. Le indico que estoy cumpliendo con mi deber, enciendo mi cámara corporal (o grabadora) como respaldo, y procedo con la intervención conforme a la ley. El rango o posición de la persona no me exime de cumplir mis obligaciones."
+    },
+    {
+      "id": 34,
+      "categoria": "LIDERAZGO",
+      "pregunta": "Descubre que uno de los miembros de su patrulla está sufriendo de depresión silenciosa pero no quiere contarlo para que no lo suspendan del servicio armado. Usted es el líder de la patrulla. ¿Qué decisión toma?",
+      "puntos_clave": "Preocupación por la salud mental del subordinado, gestión del riesgo del arma de fuego, liderazgo preventivo.",
+      "respuesta_ideal": "Mi deber como líder es velar por su bienestar y por la seguridad del equipo. Me acerco a él en privado, le ofrezco mi apoyo y le indico que buscar ayuda psicológica no es debilidad. Debo reportar la situación de forma confidencial al superior para su desarmado temporal y tratamiento médico antes de que ocurra una tragedia."
+    },
+    {
+      "id": 35,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "En 10 años, ¿dónde se ve dentro de la institución?",
+      "puntos_clave": "Proyección, ambición profesional sana, metas a largo plazo.",
+      "respuesta_ideal": "Me veo como un Suboficial / Oficial con amplia experiencia, liderando equipos operativos o de investigación criminal. Haber completado cursos de especialización y sirviendo como mentor y ejemplo para las nuevas generaciones de policías que ingresen."
+    },
+    {
+      "id": 36,
+      "categoria": "MANEJO DE ESTRÉS",
+      "pregunta": "Interviene en violencia familiar. El esposo agresor amenaza con lastimar a la esposa si usted da un paso más, teniendo un cuchillo en su cuello. Está solo y faltan 5 minutos para que llegue el refuerzo. ¿Qué hace?",
+      "puntos_clave": "Negociación de crisis, control de impulsos, preservación de la vida de los rehenes.",
+      "respuesta_ideal": "Me detengo inmediatamente, levanto mis manos vacías o mi arma en posición de prevención (no apuntando directamente a la cabeza) para no alterar más al sujeto. Inicio comandos de voz calmados, pidiéndole que hablemos, intentando desescalar la tensión, ganar tiempo y esperar a los refuerzos y unidades especializadas (SUAT)."
+    },
+    {
+      "id": 37,
+      "categoria": "DILEMAS ÉTICOS",
+      "pregunta": "Su comandante directo le indica que altere el reporte de una intervención para omitir un uso excesivo de fuerza por parte de él. Le dice que si lo hace, le dará un buen puesto. ¿Qué hace?",
+      "puntos_clave": "Integridad frente a coacción superior, protección legal propia, ética.",
+      "respuesta_ideal": "Redacto mi reporte apegado estrictamente a la verdad de los hechos que presencié. Alterar un parte oficial es un delito. Si el comandante intenta forzarme o tomar represalias, elevaré una queja disciplinaria adjuntando copia de mi parte original a Inspectoría."
+    },
+    {
+      "id": 38,
+      "categoria": "CONTROL EMOCIONAL",
+      "pregunta": "Usted es acusado falsamente por un ciudadano de haberle robado dinero durante un registro, frente a mucha prensa. Usted sabe que es inocente. ¿Cómo maneja la frustración y la imagen pública?",
+      "puntos_clave": "Madurez institucional, comprensión de los protocolos de investigación, control de imagen institucional.",
+      "respuesta_ideal": "Evito discutir o alterarme frente a las cámaras, ya que eso podría interpretarse como culpabilidad. Expreso formalmente que me someteré con total transparencia a las investigaciones y que solicito se revisen las cámaras de videovigilancia o mi cámara corporal que probarán mi inocencia."
+    },
+    {
+      "id": 39,
+      "categoria": "LIDERAZGO",
+      "pregunta": "Usted llega nuevo a una comisaría como jefe de un área, y nota que todos tienen la costumbre de llegar 30 minutos tarde. Al primer llamado de atención, todos se molestan. ¿Cómo cambia esa cultura?",
+      "puntos_clave": "Gestión del cambio, liderazgo por ejemplo, firmeza progresiva.",
+      "respuesta_ideal": "Empiezo llegando yo mismo 15 minutos antes de la hora exacta. Reúno al personal y establezco la nueva normativa con firmeza pero explicando la razón (disciplina y servicio). A partir de ahí, aplico amonestaciones verbales iniciales y progresivamente aplico la ley disciplinaria a los reincidentes, sin retroceder."
+    },
+    {
+      "id": 40,
+      "categoria": "ANTECEDENTES Y MOTIVACIÓN",
+      "pregunta": "¿Qué piensa sobre el miedo? ¿Siente miedo al enfrentar delincuentes armados?",
+      "puntos_clave": "Sinceridad humana, distinción entre miedo y pánico, valor.",
+      "respuesta_ideal": "El miedo es una respuesta humana y natural que nos mantiene alertas. Quien dice no tener miedo, miente o es temerario. Lo importante es que, mediante el entrenamiento y la doctrina, aprendemos a controlar ese miedo para que no se convierta en pánico, permitiéndonos actuar con valentía y racionalidad en situaciones de peligro."
+    }
+  ]
+}
