@@ -6,7 +6,7 @@ import 'package:learn/core/config/app_config.dart';
 import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
-import 'package:learn/core/widgets/bento_card.dart';
+import 'package:learn/features/home/presentation/promo_banner_dialog.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,10 +26,6 @@ class _LoginScreenState extends State<LoginScreen>
   // Controller for particles connection network tick
   late ValueNotifier<Offset> _mouseNotifier;
 
-  // Controller for bento cards shimmers
-  late AnimationController _shimmerController;
-  late Animation<double> _shimmerAnimation;
-
   @override
   void initState() {
     super.initState();
@@ -46,24 +42,12 @@ class _LoginScreenState extends State<LoginScreen>
     );
 
     _mouseNotifier = ValueNotifier<Offset>(const Offset(-999, -999));
-
-    // 4-second repeating loop for bento shimmer sweep
-    _shimmerController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 4),
-    )..repeat();
-
-    _shimmerAnimation = CurvedAnimation(
-      parent: _shimmerController,
-      curve: Curves.easeInOut,
-    );
   }
 
   @override
   void dispose() {
     _orbController.dispose();
     _mouseNotifier.dispose();
-    _shimmerController.dispose();
     super.dispose();
   }
 
@@ -165,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen>
                                 alignment: Alignment.center,
                                 child: ConstrainedBox(
                                   constraints: const BoxConstraints(
-                                    maxWidth: 1000,
+                                    maxWidth: 1100,
                                   ),
                                   child: isDesktop
                                       ? Row(
@@ -388,87 +372,655 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
+  Future<void> _downloadAndroidApk() async {
+    final url = Uri.parse(AppConfig.androidApkDownloadUrl);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
+  Future<void> _downloadWindows() async {
+    const urlStr = AppConfig.windowsDownloadUrl;
+    if (urlStr != null && urlStr.isNotEmpty) {
+      final url = Uri.parse(urlStr);
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url, mode: LaunchMode.externalApplication);
+        return;
+      }
+    }
+    _showPlatformInfoDialog(
+      platform: 'Windows (PC)',
+      icon: Icons.desktop_windows_rounded,
+      accentColor: const Color(0xFF0078D7),
+      message:
+          'El paquete instalador oficial para Windows (.exe) se encuentra en su fase final de compilación. Mientras tanto, puedes usar la versión Web completa en tu navegador o descargar el APK en tu celular Android.',
+    );
+  }
+
+  Future<void> _downloadMac() async {
+    const urlStr = AppConfig.macDownloadUrl;
+    if (urlStr != null && urlStr.isNotEmpty) {
+      final url = Uri.parse(urlStr);
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url, mode: LaunchMode.externalApplication);
+        return;
+      }
+    }
+    _showPlatformInfoDialog(
+      platform: 'macOS (Mac)',
+      icon: Icons.laptop_mac_rounded,
+      accentColor: const Color(0xFFA1A1AA),
+      message:
+          'El instalador para Mac (.dmg universal para procesadores Apple Silicon M1/M2/M3/M4 e Intel) estará disponible muy pronto. Actualmente puedes usar EDUPOL Web directamente en tu Mac o el APK oficial para Android.',
+    );
+  }
+
+  void _showIosExplanationDialog() {
+    _showPlatformInfoDialog(
+      platform: 'iOS (iPhone / iPad)',
+      icon: Icons.phone_iphone_rounded,
+      accentColor: const Color(0xFFA855F7),
+      message:
+          '¿Por qué no hay APK para iPhone?\n\nEn dispositivos Apple (iOS) no es posible instalar archivos APK directamente porque Apple restringe la instalación manual de paquetes externos por seguridad.\n\nPara iPhone estamos preparando el acceso oficial a través de Apple TestFlight y el App Store oficial.',
+      actionLabel: 'Consultar por WhatsApp',
+      onAction: () => _contactSupport(),
+    );
+  }
+
+  void _showPromoPicturesDialog() {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'Cerrar Banner Promocional',
+      barrierColor: Colors.black.withValues(alpha: 0.75),
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (ctx, anim1, anim2) => const PromoBannerDialog(),
+    );
+  }
+
+  void _showPlatformInfoDialog({
+    required String platform,
+    required IconData icon,
+    required Color accentColor,
+    required String message,
+    String? actionLabel,
+    VoidCallback? onAction,
+  }) {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'Cerrar',
+      barrierColor: Colors.black.withValues(alpha: 0.7),
+      transitionDuration: const Duration(milliseconds: 250),
+      pageBuilder: (ctx, anim1, anim2) {
+        return Center(
+          child: Container(
+            width: 440,
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(26),
+            decoration: BoxDecoration(
+              color: const Color(0xFF0F172A),
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                color: accentColor.withValues(alpha: 0.45),
+                width: 1.5,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: accentColor.withValues(alpha: 0.25),
+                  blurRadius: 35,
+                ),
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.8),
+                  blurRadius: 45,
+                ),
+              ],
+            ),
+            child: Material(
+              color: Colors.transparent,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: accentColor.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
+                      border:
+                          Border.all(color: accentColor.withValues(alpha: 0.35)),
+                    ),
+                    child: Icon(icon, color: accentColor, size: 36),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    platform,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    message,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.white70,
+                      fontSize: 13,
+                      height: 1.5,
+                    ),
+                  ),
+                  const SizedBox(height: 22),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () => Navigator.of(ctx).pop(),
+                        child: const Text(
+                          'Entendido',
+                          style: TextStyle(color: Colors.white60),
+                        ),
+                      ),
+                      if (actionLabel != null && onAction != null) ...[
+                        const SizedBox(width: 8),
+                        FilledButton(
+                          onPressed: () {
+                            Navigator.of(ctx).pop();
+                            onAction();
+                          },
+                          style: FilledButton.styleFrom(
+                            backgroundColor: accentColor,
+                            foregroundColor: Colors.white,
+                          ),
+                          child: Text(actionLabel),
+                        ),
+                      ],
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildRightSideContent(bool isDesktop) {
     return Column(
-      crossAxisAlignment: isDesktop
-          ? CrossAxisAlignment.start
-          : CrossAxisAlignment.center,
+      crossAxisAlignment:
+          isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       children: [
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'CARACTERÍSTICAS DEL SISTEMA',
-            style: TextStyle(
-              color: Color(0xFF5F6368),
-              fontSize: 10,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 1.6,
+        // Header de la sección de descargas
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: const Color(0xFF10B981).withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: const Color(0xFF10B981).withValues(alpha: 0.3),
+                ),
+              ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.downloading_rounded,
+                    size: 13,
+                    color: Color(0xFF34D399),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    'ZONA DE DESCARGA OFICIAL',
+                    style: TextStyle(
+                      color: Color(0xFF34D399),
+                      fontSize: 9.5,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.1,
+                    ),
+                  ),
+                ],
+              ),
             ),
+            const Text(
+              'v1.0.2 Oficial',
+              style: TextStyle(
+                color: Color(0xFF9AA0A6),
+                fontSize: 11,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          'Descarga EDUPOL en tu Dispositivo',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 19,
+            fontWeight: FontWeight.w900,
+            letterSpacing: -0.4,
+          ),
+        ),
+        const SizedBox(height: 4),
+        const Text(
+          'Instala las aplicaciones oficiales con aceleración gráfica, modo offline y simulacros para tu PC, Mac o celular.',
+          style: TextStyle(
+            color: Color(0xFF9AA0A6),
+            fontSize: 12,
+            height: 1.35,
           ),
         ),
         const SizedBox(height: 14),
-        // Grid Bento Box
+
+        // Grid 2x2 con las 4 tarjetas de plataforma
         GridView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: isDesktop ? 2 : 1,
-            crossAxisSpacing: 14,
-            mainAxisSpacing: 14,
-            childAspectRatio: isDesktop ? 1.05 : 1.7,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: isDesktop ? 0.98 : 1.6,
           ),
           children: [
-            BentoCard(
-              title: 'Misión Diaria',
-              description:
-                  'Resuelve preguntas personalizadas cada día para mantener tu racha.',
-              tag: 'Activo',
-              icon: Icons.bolt_rounded,
-              glowColor: const Color(0xFF4285F4).withValues(alpha: 0.12),
-              iconColor: const Color(0xFF8AB4F8),
-              iconBgColor: const Color(0x2E4285F4),
-              shimmerPhase: 0.0,
-              shimmerAnimation: _shimmerAnimation,
+            _DownloadPlatformCard(
+              title: 'Windows PC',
+              format: '.EXE Instalador',
+              tag: 'PC DESKTOP',
+              tagColor: const Color(0xFF38BDF8),
+              icon: Icons.desktop_windows_rounded,
+              accentColor: const Color(0xFF0078D7),
+              bullets: const [
+                'Aceleración DirectX nativa',
+                'Atajos tácticos de examen',
+              ],
+              buttonLabel: 'Descargar .EXE',
+              buttonIcon: Icons.download_rounded,
+              onTap: _downloadWindows,
             ),
-            BentoCard(
-              title: 'Temario PNP',
-              description:
-                  'Miles de preguntas oficiales del prospecto PNP vigente.',
-              tag: 'Oficial',
-              icon: Icons.menu_book_rounded,
-              glowColor: const Color(0xFF9C27B0).withValues(alpha: 0.12),
-              iconColor: const Color(0xFFC084FC),
-              iconBgColor: const Color(0x2E9C27B0),
-              shimmerPhase: 0.25, // 1s delay (1s / 4s = 0.25)
-              shimmerAnimation: _shimmerAnimation,
+            _DownloadPlatformCard(
+              title: 'macOS Mac',
+              format: '.DMG / .ZIP',
+              tag: 'APPLE SILICON & INTEL',
+              tagColor: const Color(0xFFE4E4E7),
+              icon: Icons.laptop_mac_rounded,
+              accentColor: const Color(0xFFA1A1AA),
+              bullets: const [
+                'Optimizado para M1/M2/M3/M4',
+                'Fluidez nativa de 120Hz',
+              ],
+              buttonLabel: 'Descargar .DMG',
+              buttonIcon: Icons.download_rounded,
+              onTap: _downloadMac,
             ),
-            BentoCard(
-              title: 'Simulacros Reales',
-              description:
-                  'Exámenes completos contrarreloj con el formato exacto de admisión.',
-              tag: 'Cronometrado',
-              icon: Icons.play_circle_outline_rounded,
-              glowColor: const Color(0xFF00A884).withValues(alpha: 0.12),
-              iconColor: const Color(0xFF34D399),
-              iconBgColor: const Color(0x2E00A884),
-              shimmerPhase: 0.5, // 2s delay (2s / 4s = 0.5)
-              shimmerAnimation: _shimmerAnimation,
+            _DownloadPlatformCard(
+              title: 'Android Móvil',
+              format: '.APK Directa Oficial',
+              tag: 'RECOMENDADO',
+              tagColor: const Color(0xFF34D399),
+              icon: Icons.android_rounded,
+              accentColor: const Color(0xFF22C55E),
+              bullets: const [
+                'Instalación directa sin esperas',
+                'Estudio táctico offline',
+              ],
+              buttonLabel: 'Descargar APK Directa',
+              buttonIcon: Icons.download_rounded,
+              isPrimary: true,
+              onTap: _downloadAndroidApk,
             ),
-            BentoCard(
-              title: 'Aprendizaje Guiado',
-              description:
-                  'Rutas de estudio adaptativas con seguimiento de progreso.',
-              tag: 'Adaptativo',
-              icon: Icons.alt_route_rounded,
-              glowColor: const Color(0xFFF472B6).withValues(alpha: 0.12),
-              iconColor: const Color(0xFFF9A8D4),
-              iconBgColor: const Color(0x2EF472B6),
-              shimmerPhase: 0.125, // 0.5s delay (0.5s / 4s = 0.125)
-              shimmerAnimation: _shimmerAnimation,
+            _DownloadPlatformCard(
+              title: 'iOS (iPhone)',
+              format: 'App Store / TestFlight',
+              tag: 'EN CERTIFICACIÓN',
+              tagColor: const Color(0xFFC084FC),
+              icon: Icons.phone_iphone_rounded,
+              accentColor: const Color(0xFFA855F7),
+              bullets: const [
+                'Apple no admite APKs directos',
+                'Pronto en TestFlight oficial',
+              ],
+              buttonLabel: 'Info para iPhone',
+              buttonIcon: Icons.info_outline_rounded,
+              isUpcoming: true,
+              onTap: _showIosExplanationDialog,
             ),
           ],
         ),
+
+        const SizedBox(height: 12),
+
+        // Barra inferior informativa y acceso a fotos
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.03),
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.shield_outlined,
+                  size: 14, color: Color(0xFF34D399)),
+              const SizedBox(width: 6),
+              const Expanded(
+                child: Text(
+                  'Instaladores oficiales · 100% seguros y sin publicidad',
+                  style: TextStyle(
+                    color: Color(0xFF9AA0A6),
+                    fontSize: 10.5,
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: _showPromoPicturesDialog,
+                borderRadius: BorderRadius.circular(6),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.photo_library_outlined,
+                          size: 13, color: Color(0xFF8AB4F8)),
+                      SizedBox(width: 4),
+                      Text(
+                        'Ver fotos',
+                        style: TextStyle(
+                          color: Color(0xFF8AB4F8),
+                          fontSize: 10.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
+    );
+  }
+}
+
+// ── DOWNLOAD PLATFORM CARD ──
+class _DownloadPlatformCard extends StatefulWidget {
+  final String title;
+  final String format;
+  final String tag;
+  final Color tagColor;
+  final IconData icon;
+  final Color accentColor;
+  final List<String> bullets;
+  final String buttonLabel;
+  final IconData buttonIcon;
+  final VoidCallback onTap;
+  final bool isPrimary;
+  final bool isUpcoming;
+
+  const _DownloadPlatformCard({
+    required this.title,
+    required this.format,
+    required this.tag,
+    required this.tagColor,
+    required this.icon,
+    required this.accentColor,
+    required this.bullets,
+    required this.buttonLabel,
+    required this.buttonIcon,
+    required this.onTap,
+    this.isPrimary = false,
+    this.isUpcoming = false,
+  });
+
+  @override
+  State<_DownloadPlatformCard> createState() => _DownloadPlatformCardState();
+}
+
+class _DownloadPlatformCardState extends State<_DownloadPlatformCard> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+        transform: Matrix4.translationValues(0, _isHovered ? -3 : 0, 0),
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF101524).withValues(alpha: 0.9),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(
+            color: _isHovered
+                ? widget.accentColor.withValues(alpha: 0.6)
+                : Colors.white.withValues(alpha: 0.09),
+            width: _isHovered ? 1.5 : 1.0,
+          ),
+          boxShadow: [
+            if (_isHovered || widget.isPrimary)
+              BoxShadow(
+                color: widget.accentColor
+                    .withValues(alpha: _isHovered ? 0.22 : 0.12),
+                blurRadius: 18,
+                offset: const Offset(0, 6),
+              ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.4),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Header: Icon + Name + Tag
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 36,
+                  height: 36,
+                  decoration: BoxDecoration(
+                    color: widget.accentColor.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: widget.accentColor.withValues(alpha: 0.3),
+                    ),
+                  ),
+                  child: Icon(
+                    widget.icon,
+                    color: widget.accentColor,
+                    size: 20,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13.5,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.2,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 1.5),
+                        decoration: BoxDecoration(
+                          color: widget.tagColor.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(
+                            color: widget.tagColor.withValues(alpha: 0.3),
+                          ),
+                        ),
+                        child: Text(
+                          widget.tag,
+                          style: TextStyle(
+                            color: widget.tagColor,
+                            fontSize: 8,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 6),
+
+            // Format chip
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text(
+                widget.format,
+                style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'monospace',
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 6),
+
+            // Bullets
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widget.bullets.map((b) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 3),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.check_rounded,
+                        size: 12,
+                        color: widget.accentColor,
+                      ),
+                      const SizedBox(width: 4),
+                      Expanded(
+                        child: Text(
+                          b,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: Colors.white60,
+                            fontSize: 10,
+                            height: 1.2,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+
+            const SizedBox(height: 8),
+
+            // Action button
+            SizedBox(
+              width: double.infinity,
+              height: 32,
+              child: widget.isPrimary
+                  ? Container(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF059669), Color(0xFF10B981)],
+                        ),
+                        borderRadius: BorderRadius.circular(9),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF10B981)
+                                .withValues(alpha: 0.35),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: widget.onTap,
+                          borderRadius: BorderRadius.circular(9),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(widget.buttonIcon,
+                                  color: Colors.white, size: 14),
+                                const SizedBox(width: 5),
+                                Text(
+                                  widget.buttonLabel,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : OutlinedButton.icon(
+                      onPressed: widget.onTap,
+                      icon: Icon(
+                        widget.buttonIcon,
+                        size: 13,
+                        color:
+                            _isHovered ? widget.accentColor : Colors.white70,
+                      ),
+                      label: Text(
+                        widget.buttonLabel,
+                        style: TextStyle(
+                          fontSize: 10.5,
+                          fontWeight: FontWeight.w600,
+                          color: _isHovered ? Colors.white : Colors.white70,
+                        ),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          color: _isHovered
+                              ? widget.accentColor.withValues(alpha: 0.5)
+                              : Colors.white.withValues(alpha: 0.12),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                      ),
+                    ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
