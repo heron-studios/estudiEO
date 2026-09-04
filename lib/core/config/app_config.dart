@@ -18,9 +18,12 @@ class AppConfig {
 
   /// URL oficial de descarga directa para la última versión del APK de Android.
   static const String androidApkDownloadUrl =
-      'https://download1475.mediafire.com/dbtnqhk1udogq88D7M-2jZ6XPWnMmLUPxlwMkRN6a0rcB6JYyMPW8NCrBpAD68FMUw15Eqoa0ZMgPITRqhfV5cruBK4CQrgAQ3zZ0q2lK-nF3bLNFhDHYfgIgmh-t8-CaO4tmt52qDd8HvNNtTJhNKHSPhoiSfllao4nuM02ADrfGg/rpen8pn1vkkm0kh/edupol-release.apk';
+      'https://download1475.mediafire.com/h4gzkl223wxgZPUmgBnHQAT7rn3o5T8nyjg_NILtOEWpl43suUPD8fKOxadNnW1_5j5Oa1QPnSiUlfbJHBmqoPyj0KIUz7HIEmgkr4Pqo3cf0k8pgiK3lN30UNzhFgdYsjfgAWmh5MjCJWGJ3ZO7EIqOVUNgtwQxPtDNU9aBgiEgiA/rpen8pn1vkkm0kh/edupol-release.apk';
 
-  /// URLs para instaladores de escritorio (Windows y macOS)
+  /// URL oficial de descarga directa para la versión de macOS (Apple Silicon & Intel).
+  static const String macDownloadUrl =
+      'https://download1655.mediafire.com/10kvb95b9v3gOoPNX7JrcGuUCYNVVEVwrPvAUqTdqNb6QkpKEHyTjcWR5Fa9MFa8C6UTtALf1j4rrKZqunaF6MZ1jtupJMy3FicfdKtErDgXlMbwWsly-gAUJP-qIMVfqvfQJJJQQ8l-nbsP3rVZHjAUAdHfF3lVLHMZmj01DNtKNQ/9qylzqiawc4bufz/Edupol_macOS.dmg';
+
+  /// URL para Windows (desactivada, sólo se ofrece Android y Mac)
   static const String? windowsDownloadUrl = null;
-  static const String? macDownloadUrl = null;
 }

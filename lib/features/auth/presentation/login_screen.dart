@@ -379,39 +379,19 @@ class _LoginScreenState extends State<LoginScreen>
     }
   }
 
-  Future<void> _downloadWindows() async {
-    const urlStr = AppConfig.windowsDownloadUrl;
-    if (urlStr != null && urlStr.isNotEmpty) {
-      final url = Uri.parse(urlStr);
-      if (await canLaunchUrl(url)) {
-        await launchUrl(url, mode: LaunchMode.externalApplication);
-        return;
-      }
-    }
-    _showPlatformInfoDialog(
-      platform: 'Windows (PC)',
-      icon: Icons.desktop_windows_rounded,
-      accentColor: const Color(0xFF0078D7),
-      message:
-          'El paquete instalador oficial para Windows (.exe) se encuentra en su fase final de compilación. Mientras tanto, puedes usar la versión Web completa en tu navegador o descargar el APK en tu celular Android.',
-    );
-  }
 
   Future<void> _downloadMac() async {
-    const urlStr = AppConfig.macDownloadUrl;
-    if (urlStr != null && urlStr.isNotEmpty) {
-      final url = Uri.parse(urlStr);
-      if (await canLaunchUrl(url)) {
-        await launchUrl(url, mode: LaunchMode.externalApplication);
-        return;
-      }
+    final url = Uri.parse(AppConfig.macDownloadUrl);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+      return;
     }
     _showPlatformInfoDialog(
       platform: 'macOS (Mac)',
       icon: Icons.laptop_mac_rounded,
       accentColor: const Color(0xFFA1A1AA),
       message:
-          'El instalador para Mac (.dmg universal para procesadores Apple Silicon M1/M2/M3/M4 e Intel) estará disponible muy pronto. Actualmente puedes usar EDUPOL Web directamente en tu Mac o el APK oficial para Android.',
+          'No se pudo iniciar la descarga del instalador de macOS automáticamente. Por favor, verifica los permisos del navegador o vuelve a intentar.',
     );
   }
 
@@ -548,31 +528,12 @@ class _LoginScreenState extends State<LoginScreen>
         onDownload: _downloadAndroidApk,
       ),
       ShaderGalleryItem(
-        id: 'win',
-        title: 'Windows PC',
-        format: '.EXE Instalador',
-        badge: '64-BIT DESKTOP',
-        badgeColor: const Color(0xFF38BDF8),
-        image: 'assets/images/promo_2.jpg',
-        accentColor: const Color(0xFF0078D7),
-        icon: Icons.desktop_windows_rounded,
-        description:
-            'Aceleración por GPU DirectX y modo examen a pantalla completa para máxima concentración.',
-        specs: const [
-          'Aceleración de gráficos DirectX nativa',
-          'Atajos de teclado tácticos para examen',
-          'Rendimiento ultra veloz y sin lag',
-        ],
-        buttonLabel: 'Descargar .EXE',
-        onDownload: _downloadWindows,
-      ),
-      ShaderGalleryItem(
         id: 'mac',
         title: 'macOS Mac',
         format: '.DMG Universal',
         badge: 'APPLE SILICON & INTEL',
         badgeColor: const Color(0xFFE4E4E7),
-        image: 'assets/images/promo_3.jpg',
+        image: 'assets/images/promo_2.jpg',
         accentColor: const Color(0xFFA1A1AA),
         icon: Icons.laptop_mac_rounded,
         description:

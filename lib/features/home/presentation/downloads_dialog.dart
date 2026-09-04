@@ -36,8 +36,7 @@ class DownloadsDialog extends StatefulWidget {
 
 class _DownloadsDialogState extends State<DownloadsDialog> {
   // URLs de descarga centralizadas en AppConfig
-  static const String? _windowsUrl = AppConfig.windowsDownloadUrl;
-  static const String? _macUrl = AppConfig.macDownloadUrl;
+  static const String _macUrl = AppConfig.macDownloadUrl;
   static const String _androidUrl = AppConfig.androidApkDownloadUrl;
 
   bool _showInstallGuide = false;
@@ -113,7 +112,7 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
       child: Material(
         color: Colors.transparent,
         child: Container(
-          width: 840,
+          width: 680,
           constraints: BoxConstraints(
             maxHeight: size.height * 0.9,
             maxWidth: size.width - 32,
@@ -254,8 +253,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(child: _buildWindowsCard()),
-                          const SizedBox(width: 14),
                           Expanded(child: _buildMacCard()),
                           const SizedBox(width: 14),
                           Expanded(child: _buildAndroidCard()),
@@ -264,8 +261,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
                     else
                       Column(
                         children: [
-                          _buildWindowsCard(),
-                          const SizedBox(height: 12),
                           _buildMacCard(),
                           const SizedBox(height: 12),
                           _buildAndroidCard(),
@@ -343,11 +338,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
                                 children: [
                                   const Divider(color: Colors.white10, height: 16),
                                   _buildTipRow(
-                                    platform: 'Windows:',
-                                    tip: 'Si SmartScreen bloquea la apertura, presiona "Más información" y "Ejecutar de todas formas".',
-                                  ),
-                                  const SizedBox(height: 6),
-                                  _buildTipRow(
                                     platform: 'macOS:',
                                     tip: 'Arrastra a Aplicaciones. Si macOS te avisa, abre Ajustes del Sistema > Privacidad y Seguridad > "Abrir igualmente".',
                                   ),
@@ -372,25 +362,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
     );
   }
 
-  // ── Tarjeta Windows ────────────────────────────────────────────────────────
-  Widget _buildWindowsCard() {
-    return _CompactPlatformCard(
-      accentColor: const Color(0xFF0078D7),
-      icon: Icons.window_rounded,
-      tag: 'PC DESKTOP',
-      title: 'Windows',
-      subtitle: 'Win 10 / 11 · 64-bit',
-      fileType: 'Instalador .EXE',
-      bullets: const [
-        'Aceleración nativa de GPU',
-        'Atajos tácticos de teclado',
-      ],
-      buttonLabel: 'Descargar .EXE',
-      buttonIcon: Icons.download_rounded,
-      onPressed: () => _handleDownload('Windows', _windowsUrl),
-    );
-  }
-
   // ── Tarjeta macOS ──────────────────────────────────────────────────────────
   Widget _buildMacCard() {
     return _CompactPlatformCard(
@@ -399,12 +370,12 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
       tag: 'MAC DESKTOP',
       title: 'macOS',
       subtitle: 'Apple Silicon & Intel',
-      fileType: 'Paquete .ZIP / .DMG',
+      fileType: 'Instalador .DMG nativo',
       bullets: const [
-        'Optimizado M1/M2/M3/M4',
-        'Gestos nativos de Mac',
+        'Optimizado M1/M2/M3/M4 e Intel',
+        'Gestos nativos y fluidez Retina',
       ],
-      buttonLabel: 'Descargar .ZIP',
+      buttonLabel: 'Descargar .DMG',
       buttonIcon: Icons.download_rounded,
       onPressed: () => _handleDownload('macOS', _macUrl),
     );
