@@ -130,6 +130,19 @@ class AuthService extends ChangeNotifier {
           final UserCredential userCredential =
               await _auth.signInWithPopup(googleProvider);
           return userCredential;
+        } on FirebaseAuthException catch (e) {
+          debugPrint('[AuthService] FirebaseAuthException Web: ${e.code} - ${e.message}');
+          if (e.code == 'unauthorized-domain') {
+            _setError(
+              'Dominio no autorizado en Firebase. Debes agregar este dominio en Firebase Console > Authentication > Ajustes > Dominios autorizados.',
+            );
+          } else if (e.code == 'popup-closed-by-user') {
+            _setError('Inicio de sesión cancelado.');
+          } else {
+            _setError(e.message ?? 'Error de autenticación (${e.code})');
+          }
+          _setLoading(false);
+          return null;
         } catch (webPopupError) {
           debugPrint(
             '[AuthService] signInWithPopup falló ($webPopupError), intentando fallback con GoogleSignIn...',
