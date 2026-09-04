@@ -52,9 +52,8 @@ class AuthService extends ChangeNotifier {
   }
 
   Future<void> _checkInitialAuth() async {
-    // Safety net: no matter what happens, force isInitializing=false after 10s
-    // This prevents the router from being stuck at /loading forever on web.
-    Future.delayed(const Duration(seconds: 10), () {
+    // Safety net: no matter what happens, force isInitializing=false after 3s on web (8s on mobile)
+    Future.delayed(const Duration(seconds: kIsWeb ? 3 : 8), () {
       if (_isInitializing && mounted) {
         debugPrint('[AuthService] Safety timeout: forcing isInitializing=false');
         _isInitializing = false;
@@ -68,18 +67,22 @@ class AuthService extends ChangeNotifier {
         await Future.delayed(const Duration(seconds: 3));
       }
 
-      // Wait for Firebase to restore the persisted session — max 4s on web, 2s on mobile
-      const timeoutDuration = Duration(seconds: 4);
-
-      final user = await _auth.userChanges().first.timeout(
-        timeoutDuration,
-        onTimeout: () => _auth.currentUser,
-      );
+      final currentUser = _auth.currentUser;
+      final User? user;
+      if (kIsWeb && currentUser != null) {
+        user = currentUser;
+      } else {
+        const timeoutDuration = Duration(seconds: kIsWeb ? 2 : 4);
+        user = await _auth.userChanges().first.timeout(
+          timeoutDuration,
+          onTimeout: () => _auth.currentUser,
+        );
+      }
 
       if (user != null) {
         // Safe timeout for Firestore verification
         _isAuthorized = await _verifyAuthorization().timeout(
-          const Duration(seconds: 8),
+          const Duration(seconds: 5),
           onTimeout: () {
             debugPrint('[AuthService] Firestore verification timeout');
             return true; // Let user in as free tier on timeout
