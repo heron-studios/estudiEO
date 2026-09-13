@@ -35,8 +35,7 @@ class DownloadsDialog extends StatefulWidget {
 }
 
 class _DownloadsDialogState extends State<DownloadsDialog> {
-  // URLs de descarga centralizadas en AppConfig
-  static const String _macUrl = AppConfig.macDownloadUrl;
+  // URL de descarga centralizada en AppConfig
   static const String _androidUrl = AppConfig.androidApkDownloadUrl;
 
   bool _showInstallGuide = false;
@@ -106,7 +105,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    final isDesktop = size.width >= 720;
 
     return Center(
       child: Material(
@@ -248,24 +246,8 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
 
                     const SizedBox(height: 20),
 
-                    // ── Tarjetas de Plataformas (Grid Compacto) ─────────────────
-                    if (isDesktop)
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(child: _buildMacCard()),
-                          const SizedBox(width: 14),
-                          Expanded(child: _buildAndroidCard()),
-                        ],
-                      )
-                    else
-                      Column(
-                        children: [
-                          _buildMacCard(),
-                          const SizedBox(height: 12),
-                          _buildAndroidCard(),
-                        ],
-                      ),
+                    // ── Tarjeta de Descarga Android APK ────────────────────────
+                    _buildAndroidCard(),
 
                     const SizedBox(height: 16),
 
@@ -338,13 +320,8 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
                                 children: [
                                   const Divider(color: Colors.white10, height: 16),
                                   _buildTipRow(
-                                    platform: 'macOS:',
-                                    tip: 'Arrastra a Aplicaciones. Si macOS te avisa, abre Ajustes del Sistema > Privacidad y Seguridad > "Abrir igualmente".',
-                                  ),
-                                  const SizedBox(height: 6),
-                                  _buildTipRow(
-                                    platform: 'Android:',
-                                    tip: 'Al descargar la APK, habilita "Instalar apps desconocidas" en tu navegador.',
+                                    platform: 'Android APK:',
+                                    tip: 'Al descargar el archivo APK, permite "Instalar aplicaciones desconocidas" en tu navegador para completar la instalación.',
                                   ),
                                 ],
                               ),
@@ -359,25 +336,6 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
           ),
         ),
       ),
-    );
-  }
-
-  // ── Tarjeta macOS ──────────────────────────────────────────────────────────
-  Widget _buildMacCard() {
-    return _CompactPlatformCard(
-      accentColor: const Color(0xFFA1A1AA),
-      icon: Icons.laptop_mac_rounded,
-      tag: 'MAC DESKTOP',
-      title: 'macOS',
-      subtitle: 'Apple Silicon & Intel',
-      fileType: 'Instalador .DMG nativo',
-      bullets: const [
-        'Optimizado M1/M2/M3/M4 e Intel',
-        'Gestos nativos y fluidez Retina',
-      ],
-      buttonLabel: 'Descargar .DMG',
-      buttonIcon: Icons.download_rounded,
-      onPressed: () => _handleDownload('macOS', _macUrl),
     );
   }
 

@@ -7,6 +7,7 @@ import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
 import 'package:learn/core/widgets/bento_card.dart';
+import 'package:learn/core/widgets/floating_promo_ad.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -197,6 +198,9 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
               ),
             ),
+
+            // Layer 4: Floating Promo Ad Overlay (z-index: 3)
+            const FloatingPromoAd(),
           ],
         ),
       ),
