@@ -35,7 +35,8 @@ class DownloadsDialog extends StatefulWidget {
 }
 
 class _DownloadsDialogState extends State<DownloadsDialog> {
-  // URL de descarga centralizada en AppConfig
+  // URLs oficiales centralizadas en AppConfig
+  static const String _playStoreUrl = AppConfig.playStoreUrl;
   static const String _androidUrl = AppConfig.androidApkDownloadUrl;
 
   bool _showInstallGuide = false;
@@ -105,6 +106,7 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
+    final isDesktop = size.width >= 620;
 
     return Center(
       child: Material(
@@ -246,8 +248,24 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
 
                     const SizedBox(height: 20),
 
-                    // ── Tarjeta de Descarga Android APK ────────────────────────
-                    _buildAndroidCard(),
+                    // ── Opciones Oficiales Android (Play Store & APK Directa) ──
+                    if (isDesktop)
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(child: _buildPlayStoreCard()),
+                          const SizedBox(width: 14),
+                          Expanded(child: _buildAndroidCard()),
+                        ],
+                      )
+                    else
+                      Column(
+                        children: [
+                          _buildPlayStoreCard(),
+                          const SizedBox(height: 12),
+                          _buildAndroidCard(),
+                        ],
+                      ),
 
                     const SizedBox(height: 16),
 
@@ -320,8 +338,13 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
                                 children: [
                                   const Divider(color: Colors.white10, height: 16),
                                   _buildTipRow(
+                                    platform: 'Google Play Store:',
+                                    tip: 'Instalación automática y directa en 1 toque verificada por Google Play Protect.',
+                                  ),
+                                  const SizedBox(height: 6),
+                                  _buildTipRow(
                                     platform: 'Android APK:',
-                                    tip: 'Al descargar el archivo APK, permite "Instalar aplicaciones desconocidas" en tu navegador para completar la instalación.',
+                                    tip: 'Al descargar el archivo APK directo, permite "Instalar aplicaciones desconocidas" en tu navegador.',
                                   ),
                                 ],
                               ),
@@ -339,22 +362,42 @@ class _DownloadsDialogState extends State<DownloadsDialog> {
     );
   }
 
-  // ── Tarjeta Android ────────────────────────────────────────────────────────
+  // ── Tarjeta Play Store ─────────────────────────────────────────────────────
+  Widget _buildPlayStoreCard() {
+    return _CompactPlatformCard(
+      accentColor: const Color(0xFF10B981),
+      icon: Icons.play_arrow_rounded,
+      tag: 'GOOGLE PLAY',
+      title: 'Play Store',
+      subtitle: 'Instalación 1-toque',
+      fileType: 'Verificado por Play Protect',
+      isPromoted: true,
+      bullets: const [
+        'Instalación automática y segura',
+        'Actualizaciones oficiales de tienda',
+      ],
+      buttonLabel: 'Instalar en Play Store',
+      buttonIcon: Icons.play_arrow_rounded,
+      onPressed: () => _handleDownload('Play Store', _playStoreUrl),
+    );
+  }
+
+  // ── Tarjeta Android APK ────────────────────────────────────────────────────
   Widget _buildAndroidCard() {
     return _CompactPlatformCard(
-      accentColor: const Color(0xFF22C55E),
+      accentColor: const Color(0xFF38BDF8),
       icon: Icons.android_rounded,
-      tag: 'MÓVIL & TABLET',
+      tag: 'APK DIRECTA',
       title: 'Android APK',
       subtitle: 'Android 8.0+',
       fileType: 'APK Universal directa',
-      isPromoted: true,
+      isPromoted: false,
       bullets: const [
         'Misión Diaria con alertas',
         'Práctica táctica offline',
       ],
       buttonLabel: 'Descargar APK',
-      buttonIcon: Icons.android_rounded,
+      buttonIcon: Icons.download_rounded,
       onPressed: () => _handleDownload('Android', _androidUrl),
     );
   }

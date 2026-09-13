@@ -71,6 +71,13 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
     super.dispose();
   }
 
+  Future<void> _openPlayStore() async {
+    final url = Uri.parse(AppConfig.playStoreUrl);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
   Future<void> _openApkDownload() async {
     final url = Uri.parse(AppConfig.androidApkDownloadUrl);
     if (await canLaunchUrl(url)) {
@@ -380,7 +387,7 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Botón Principal: Descargar APK Oficial
+                      // Botón Principal: Instalar desde Play Store
                       Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -403,17 +410,17 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: _openApkDownload,
+                            onTap: _openPlayStore,
                             borderRadius: BorderRadius.circular(16),
                             child: Padding(
                               padding: EdgeInsets.symmetric(
-                                vertical: isVerySmall ? 13 : 15,
+                                vertical: isVerySmall ? 12 : 14,
                                 horizontal: 16,
                               ),
                               child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.android_rounded, color: Colors.white, size: 24),
+                                  Icon(Icons.play_arrow_rounded, color: Colors.white, size: 26),
                                   SizedBox(width: 10),
                                   Flexible(
                                     child: Column(
@@ -421,7 +428,7 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Text(
-                                          'Descargar APK Oficial (Android)',
+                                          'Instalar desde Google Play',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 15,
@@ -430,7 +437,7 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                                           ),
                                         ),
                                         Text(
-                                          'Instalación directa · Última versión oficial',
+                                          'Verificado por Play Protect · Oficial',
                                           style: TextStyle(
                                             color: Colors.white70,
                                             fontSize: 11,
@@ -441,9 +448,37 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                                     ),
                                   ),
                                   SizedBox(width: 8),
-                                  Icon(Icons.download_rounded, color: Colors.white, size: 20),
+                                  Icon(Icons.open_in_new_rounded, color: Colors.white70, size: 18),
                                 ],
                               ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 8),
+
+                      // Botón Alternativo: Descargar APK Directa
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton.icon(
+                          onPressed: _openApkDownload,
+                          icon: const Icon(Icons.download_rounded, color: Color(0xFF38BDF8), size: 18),
+                          label: const Text(
+                            'Descargar instalador APK directo',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(
+                              color: Colors.white.withValues(alpha: 0.2),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 11),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
                             ),
                           ),
                         ),

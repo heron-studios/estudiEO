@@ -81,6 +81,26 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
     super.dispose();
   }
 
+  Future<void> _launchPlayStore() async {
+    final uri = Uri.parse(AppConfig.playStoreUrl);
+    try {
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        await launchUrl(uri);
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('No se pudo abrir Play Store: $e'),
+            backgroundColor: const Color(0xFFEF4444),
+          ),
+        );
+      }
+    }
+  }
+
   Future<void> _launchDownload() async {
     final uri = Uri.parse(AppConfig.androidApkDownloadUrl);
     try {
@@ -173,7 +193,7 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
               ),
               const SizedBox(width: 8),
               const Text(
-                'Descargar APK Android',
+                'Instalar App Android',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -427,19 +447,20 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                   ),
                 ),
 
-                // ── BOTÓN DE DESCARGA APK ──
+                // ── BOTONES DE INSTALACIÓN Y DESCARGA ──
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
                   child: Column(
                     children: [
+                      // Botón Play Store
                       FilledButton(
-                        onPressed: _launchDownload,
+                        onPressed: _launchPlayStore,
                         style: FilledButton.styleFrom(
                           backgroundColor: const Color(0xFF10B981),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 14,
-                            vertical: 10,
+                            vertical: 9,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -450,10 +471,10 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.download_rounded, size: 17),
+                            Icon(Icons.play_arrow_rounded, size: 19),
                             SizedBox(width: 6),
                             Text(
-                              'Descargar APK Android',
+                              'Instalar desde Play Store',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 12.5,
@@ -463,9 +484,47 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                           ],
                         ),
                       ),
+                      const SizedBox(height: 6),
+                      // Botón Descargar APK Directa
+                      OutlinedButton(
+                        onPressed: _launchDownload,
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          side: BorderSide(
+                            color: Colors.white.withValues(alpha: 0.22),
+                            width: 1.0,
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.download_rounded,
+                              size: 16,
+                              color: Color(0xFF34D399),
+                            ),
+                            SizedBox(width: 6),
+                            Text(
+                              'Descargar APK Directa',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 11.5,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       const SizedBox(height: 5),
                       const Text(
-                        'APK directa • Compatible Android 8.0+',
+                        'Google Play Store oficial • APK Android 8.0+',
                         style: TextStyle(
                           color: Colors.white54,
                           fontSize: 9.5,
