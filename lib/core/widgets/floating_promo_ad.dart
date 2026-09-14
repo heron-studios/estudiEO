@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
 
-/// Anuncio flotante ultra-moderno y persistente para la descarga de la App Oficial de Android.
-/// Se muestra en la pantalla de Login y en el Menú Principal (Home).
+/// Anuncio oficial ultra-moderno, centrado y ampliado para la App Oficial de Android.
+/// Se muestra centrado en pantalla al entrar al login y al menú principal, y puede minimizarse a una píldora flotante.
 class FloatingPromoAd extends StatefulWidget {
   final double? bottomOffset;
   final double? rightOffset;
@@ -33,20 +33,20 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
     {
       'image': 'assets/images/promo_1.jpg',
       'tag': 'PROSPECTO PNP 2026',
-      'title': '¿Quieres ser Policía?',
-      'subtitle': 'Simulacros reales cronometrados y evaluación táctica.',
+      'title': '¿Quieres ser Policía Nacional?',
+      'subtitle': 'Simulacros reales cronometrados, diagnóstico predictivo y retroalimentación inmediata.',
     },
     {
       'image': 'assets/images/promo_2.jpg',
-      'tag': 'ESTUDIO INTELIGENTE',
-      'title': 'Herramienta Definitiva',
-      'subtitle': 'Bancos 2026, Flashcards SRS y Bóveda de Errores.',
+      'tag': 'METODOLOGÍA INTELIGENTE',
+      'title': 'Tu Herramienta Clave de Estudio',
+      'subtitle': 'Temarios completos, Flashcards SRS y Bóveda de Errores para asegurar tu ingreso.',
     },
     {
       'image': 'assets/images/promo_3.jpg',
       'tag': 'APP OFICIAL ANDROID',
-      'title': 'Estudia Sin Conexión',
-      'subtitle': 'Mayor fluidez gráfica, sin lag y práctica offline.',
+      'title': 'Estudia en Cualquier Lugar',
+      'subtitle': 'Mayor fluidez gráfica nativa, sin lag y con modo de práctica táctica offline.',
     },
   ];
 
@@ -64,7 +64,7 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
       final nextIndex = (_currentIndex + 1) % _promoSlides.length;
       _pageController.animateToPage(
         nextIndex,
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 600),
         curve: Curves.easeInOutCubic,
       );
     });
@@ -123,27 +123,50 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    final isMobile = screenWidth < 600;
+    if (!_isExpanded) {
+      final screenWidth = MediaQuery.sizeOf(context).width;
+      final isMobile = screenWidth < 600;
+      final defaultBottom = isMobile ? 86.0 : 24.0;
+      final bottom = widget.bottomOffset ?? defaultBottom;
+      final right = widget.rightOffset ?? 16.0;
 
-    // Calcular posición responsiva para no chocar con elementos inferiores
-    final defaultBottom = isMobile ? 86.0 : 24.0;
-    final bottom = widget.bottomOffset ?? defaultBottom;
-    final right = widget.rightOffset ?? 16.0;
+      return Positioned(
+        bottom: bottom,
+        right: right,
+        left: widget.leftOffset,
+        child: _buildCollapsedPill(),
+      );
+    }
 
-    return Positioned(
-      bottom: bottom,
-      right: right,
-      left: widget.leftOffset,
-      child: AnimatedSize(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOutCubic,
-        child: _isExpanded ? _buildExpandedCard(isMobile) : _buildCollapsedPill(),
+    // Cuando está expandido, se muestra centrado en toda la pantalla con backdrop sutil
+    return Positioned.fill(
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Telón semitransparente con blur que permite cerrar al hacer clic afuera
+          GestureDetector(
+            onTap: () {
+              _pauseTimer();
+              setState(() => _isExpanded = false);
+            },
+            child: BackdropFilter(
+              filter: ui.ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+              child: Container(
+                color: Colors.black.withValues(alpha: 0.65),
+              ),
+            ),
+          ),
+
+          // Tarjeta Principal Centrada y Ampliada
+          Center(
+            child: _buildExpandedCard(context),
+          ),
+        ],
       ),
     );
   }
 
-  /// Vista colapsada: píldora flotante compacta y elegante
+  /// Vista colapsada: píldora flotante compacta en la esquina
   Widget _buildCollapsedPill() {
     return Material(
       color: Colors.transparent,
@@ -203,9 +226,9 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
               ),
               const SizedBox(width: 6),
               const Icon(
-                Icons.keyboard_arrow_up_rounded,
+                Icons.open_in_full_rounded,
                 color: Color(0xFF34D399),
-                size: 18,
+                size: 15,
               ),
             ],
           ),
@@ -214,105 +237,138 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
     );
   }
 
-  /// Vista expandida: tarjeta flotante con carrusel e instalación directa
-  Widget _buildExpandedCard(bool isMobile) {
-    final cardWidth = isMobile ? 290.0 : 310.0;
+  /// Vista expandida: anuncio centrado, amplio y de alto impacto visual
+  Widget _buildExpandedCard(BuildContext context) {
+    final media = MediaQuery.sizeOf(context);
+    final isDesktop = media.width >= 700;
+    final cardWidth = isDesktop ? 580.0 : (media.width - 32.0).clamp(300.0, 500.0);
+    final carouselHeight = isDesktop ? 220.0 : 175.0;
 
     return Material(
       color: Colors.transparent,
       child: Container(
         width: cardWidth,
+        constraints: BoxConstraints(
+          maxHeight: media.height * 0.90,
+        ),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
-          color: const Color(0xF20F172A),
-          borderRadius: BorderRadius.circular(22),
+          gradient: const LinearGradient(
+            colors: [Color(0xFF0F172A), Color(0xFF161E31)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(26),
           border: Border.all(
-            color: const Color(0xFF10B981).withValues(alpha: 0.4),
-            width: 1.3,
+            color: const Color(0xFF10B981).withValues(alpha: 0.45),
+            width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.55),
-              blurRadius: 25,
-              offset: const Offset(0, 10),
+              color: Colors.black.withValues(alpha: 0.7),
+              blurRadius: 35,
+              spreadRadius: 4,
+              offset: const Offset(0, 14),
             ),
             BoxShadow(
-              color: const Color(0xFF10B981).withValues(alpha: 0.15),
-              blurRadius: 20,
+              color: const Color(0xFF10B981).withValues(alpha: 0.20),
+              blurRadius: 30,
               spreadRadius: 1,
               offset: const Offset(0, 4),
             ),
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(22),
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+          borderRadius: BorderRadius.circular(26),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // ── HEADER SUPERIOR ──
+                // ── HEADER DEL ANUNCIO ──
                 Container(
-                  padding: const EdgeInsets.fromLTRB(14, 10, 8, 8),
+                  padding: const EdgeInsets.fromLTRB(18, 14, 12, 12),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.03),
                     border: Border(
                       bottom: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.06),
+                        color: Colors.white.withValues(alpha: 0.07),
                       ),
                     ),
                   ),
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(7),
                         decoration: BoxDecoration(
                           color: const Color(0xFF10B981).withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: const Color(0xFF10B981).withValues(alpha: 0.4),
+                          ),
                         ),
                         child: const Icon(
                           Icons.android_rounded,
                           color: Color(0xFF34D399),
-                          size: 15,
+                          size: 20,
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 12),
                       const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'APP OFICIAL ANDROID',
-                              style: TextStyle(
-                                color: Color(0xFF34D399),
-                                fontWeight: FontWeight.w900,
-                                fontSize: 10.5,
-                                letterSpacing: 0.6,
-                              ),
+                            Row(
+                              children: [
+                                Text(
+                                  'EDUPOL OFICIAL',
+                                  style: TextStyle(
+                                    color: Color(0xFF34D399),
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 12,
+                                    letterSpacing: 0.8,
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Badge(
+                                  backgroundColor: Color(0xFF10B981),
+                                  label: Text(
+                                    'ANDROID',
+                                    style: TextStyle(
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
+                            SizedBox(height: 2),
                             Text(
-                              'Disponible para descarga directa',
+                              'Disponible en Google Play y descarga directa',
                               style: TextStyle(
-                                color: Colors.white60,
-                                fontSize: 9.5,
+                                color: Colors.white70,
+                                fontSize: 11,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      // Botón para minimizar a píldora
+                      // Botón cerrar
                       IconButton(
-                        icon: const Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: Colors.white70,
-                          size: 20,
+                        icon: Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.08),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.close_rounded,
+                            color: Colors.white70,
+                            size: 18,
+                          ),
                         ),
-                        tooltip: 'Minimizar anuncio',
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 28,
-                          minHeight: 28,
-                        ),
+                        tooltip: 'Cerrar anuncio',
                         onPressed: () {
                           _pauseTimer();
                           setState(() => _isExpanded = false);
@@ -322,9 +378,9 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                   ),
                 ),
 
-                // ── CARRUSEL VISUAL ──
+                // ── CARRUSEL VISUAL AMPLIO ──
                 SizedBox(
-                  height: 130,
+                  height: carouselHeight,
                   child: Stack(
                     children: [
                       PageView.builder(
@@ -347,70 +403,69 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                                   child: const Icon(
                                     Icons.image_not_supported_rounded,
                                     color: Colors.white24,
-                                    size: 32,
+                                    size: 40,
                                   ),
                                 ),
                               ),
-                              // Gradiente oscuro para texto legible
+                              // Gradiente oscuro suave para legibilidad premium
                               Container(
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
-                                      Colors.black.withValues(alpha: 0.1),
-                                      Colors.black.withValues(alpha: 0.8),
+                                      Colors.transparent,
+                                      Colors.black.withValues(alpha: 0.85),
                                     ],
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                   ),
                                 ),
                               ),
-                              // Textos superpuestos
+                              // Textos destacados superpuestos
                               Positioned(
-                                bottom: 8,
-                                left: 12,
-                                right: 12,
+                                bottom: 14,
+                                left: 18,
+                                right: 18,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.symmetric(
-                                        horizontal: 6,
-                                        vertical: 2,
+                                        horizontal: 8,
+                                        vertical: 3,
                                       ),
                                       decoration: BoxDecoration(
                                         color: const Color(0xFF10B981),
-                                        borderRadius: BorderRadius.circular(4),
+                                        borderRadius: BorderRadius.circular(6),
                                       ),
                                       child: Text(
                                         slide['tag']!,
                                         style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 8,
+                                          fontSize: 9.5,
+                                          letterSpacing: 0.5,
                                         ),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Text(
+                                      slide['title']!,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: isDesktop ? 17 : 14.5,
+                                        fontFamily: 'Outfit',
                                       ),
                                     ),
                                     const SizedBox(height: 3),
                                     Text(
-                                      slide['title']!,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w800,
-                                        fontSize: 12.5,
-                                        fontFamily: 'Outfit',
-                                      ),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    Text(
                                       slide['subtitle']!,
-                                      style: const TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 10,
+                                      style: TextStyle(
+                                        color: Colors.white.withValues(alpha: 0.85),
+                                        fontSize: isDesktop ? 12 : 11,
+                                        height: 1.3,
                                       ),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ],
                                 ),
@@ -422,17 +477,17 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
 
                       // Indicadores de puntos (dots)
                       Positioned(
-                        top: 8,
-                        right: 10,
+                        top: 12,
+                        right: 14,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: List.generate(
                             _promoSlides.length,
                             (i) => AnimatedContainer(
                               duration: const Duration(milliseconds: 250),
-                              margin: const EdgeInsets.symmetric(horizontal: 2),
-                              width: _currentIndex == i ? 14 : 5,
-                              height: 5,
+                              margin: const EdgeInsets.symmetric(horizontal: 2.5),
+                              width: _currentIndex == i ? 18 : 6,
+                              height: 6,
                               decoration: BoxDecoration(
                                 color: _currentIndex == i
                                     ? const Color(0xFF10B981)
@@ -447,89 +502,146 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                   ),
                 ),
 
-                // ── BOTONES DE INSTALACIÓN Y DESCARGA ──
+                // ── SECCIÓN DE BOTONES DE ACCIÓN ──
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
+                  padding: const EdgeInsets.fromLTRB(18, 14, 18, 16),
                   child: Column(
                     children: [
-                      // Botón Play Store
-                      FilledButton(
-                        onPressed: _launchPlayStore,
-                        style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFF10B981),
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 14,
-                            vertical: 9,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          elevation: 3,
-                          shadowColor: const Color(0xFF10B981).withValues(alpha: 0.5),
-                        ),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                      if (isDesktop)
+                        Row(
                           children: [
-                            Icon(Icons.play_arrow_rounded, size: 19),
-                            SizedBox(width: 6),
-                            Text(
-                              'Instalar desde Play Store',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12.5,
-                                letterSpacing: 0.2,
+                            // Botón Google Play Store
+                            Expanded(
+                              flex: 6,
+                              child: FilledButton.icon(
+                                onPressed: _launchPlayStore,
+                                icon: const Icon(Icons.play_arrow_rounded, size: 22),
+                                label: const Text(
+                                  'Instalar desde Play Store',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.5,
+                                  ),
+                                ),
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: const Color(0xFF10B981),
+                                  foregroundColor: Colors.white,
+                                  padding: const EdgeInsets.symmetric(vertical: 13),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  elevation: 4,
+                                  shadowColor: const Color(0xFF10B981).withValues(alpha: 0.5),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            // Botón Descargar APK Directa
+                            Expanded(
+                              flex: 5,
+                              child: OutlinedButton.icon(
+                                onPressed: _launchDownload,
+                                icon: const Icon(
+                                  Icons.download_rounded,
+                                  size: 19,
+                                  color: Color(0xFF38BDF8),
+                                ),
+                                label: const Text(
+                                  'Descargar APK',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: BorderSide(
+                                    color: Colors.white.withValues(alpha: 0.25),
+                                    width: 1.2,
+                                  ),
+                                  padding: const EdgeInsets.symmetric(vertical: 13),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      else
+                        Column(
+                          children: [
+                            // Botón Google Play Store
+                            SizedBox(
+                              width: double.infinity,
+                              child: FilledButton.icon(
+                                onPressed: _launchPlayStore,
+                                icon: const Icon(Icons.play_arrow_rounded, size: 22),
+                                label: const Text(
+                                  'Instalar desde Play Store',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.5,
+                                  ),
+                                ),
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: const Color(0xFF10B981),
+                                  foregroundColor: Colors.white,
+                                  padding: const EdgeInsets.symmetric(vertical: 12),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  elevation: 4,
+                                  shadowColor: const Color(0xFF10B981).withValues(alpha: 0.5),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            // Botón Descargar APK Directa
+                            SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton.icon(
+                                onPressed: _launchDownload,
+                                icon: const Icon(
+                                  Icons.download_rounded,
+                                  size: 18,
+                                  color: Color(0xFF38BDF8),
+                                ),
+                                label: const Text(
+                                  'Descargar APK Directa',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.5,
+                                  ),
+                                ),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: BorderSide(
+                                    color: Colors.white.withValues(alpha: 0.25),
+                                    width: 1.2,
+                                  ),
+                                  padding: const EdgeInsets.symmetric(vertical: 10),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                      const SizedBox(height: 6),
-                      // Botón Descargar APK Directa
-                      OutlinedButton(
-                        onPressed: _launchDownload,
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          side: BorderSide(
-                            color: Colors.white.withValues(alpha: 0.22),
-                            width: 1.0,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.download_rounded,
-                              size: 16,
-                              color: Color(0xFF34D399),
-                            ),
-                            SizedBox(width: 6),
-                            Text(
-                              'Descargar APK Directa',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 11.5,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      const Text(
-                        'Google Play Store oficial • APK Android 8.0+',
-                        style: TextStyle(
-                          color: Colors.white54,
-                          fontSize: 9.5,
-                        ),
-                        textAlign: TextAlign.center,
+
+                      const SizedBox(height: 12),
+
+                      // Garantías / Mini pills
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        spacing: 12,
+                        runSpacing: 6,
+                        children: [
+                          _buildMiniBadge(Icons.verified_user_rounded, 'Play Protect'),
+                          _buildMiniBadge(Icons.bolt_rounded, 'Sin latencia'),
+                          _buildMiniBadge(Icons.wifi_off_rounded, 'Modo offline'),
+                        ],
                       ),
                     ],
                   ),
@@ -539,6 +651,24 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildMiniBadge(IconData icon, String text) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 13, color: const Color(0xFF10B981)),
+        const SizedBox(width: 4),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white60,
+            fontSize: 10.5,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
     );
   }
 }
