@@ -1,0 +1,1600 @@
+[
+  {
+    "id": 1,
+    "texto": "Premisa 1: Todos los mamíferos tienen sangre caliente.\nPremisa 2: El perro es un mamífero.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El perro tiene sangre caliente.",
+      "B": "El perro es un reptil.",
+      "C": "Algunos perros tienen sangre fría."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Si el perro pertenece al grupo de los mamíferos, hereda todas sus características universales.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 2,
+    "texto": "Premisa 1: Ningún reptil tiene pelo.\nPremisa 2: La serpiente es un reptil.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La serpiente tiene poco pelo.",
+      "B": "La serpiente no tiene pelo.",
+      "C": "Algunas serpientes tienen pelo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Si una característica está completamente excluida de un grupo, ningún miembro puede tenerla.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 3,
+    "texto": "Premisa 1: Si llueve, la calle se moja.\nPremisa 2: Está lloviendo.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "La calle está seca.",
+      "B": "Mañana lloverá.",
+      "C": "La calle se moja."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Aplica la regla de afirmación del antecedente (Modus Ponens).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 4,
+    "texto": "Premisa 1: Si hay fuego, entonces hay humo.\nPremisa 2: No hay humo.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "No hay fuego.",
+      "B": "Hay fuego invisible.",
+      "C": "El humo está oculto."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Aplica la regla de negación del consecuente (Modus Tollens).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 5,
+    "texto": "Premisa 1: O vamos al cine o vamos al teatro.\nPremisa 2: No vamos al cine.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Vamos al teatro.",
+      "B": "Nos quedamos en casa.",
+      "C": "Vamos a ambos lugares."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "En una disyunción exclusiva, si se niega una opción, la otra debe ser verdadera.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 6,
+    "texto": "Premisa 1: Todos los metales son conductores de electricidad.\nPremisa 2: El cobre es un metal.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El cobre no conduce electricidad.",
+      "B": "El cobre es un aislante.",
+      "C": "El cobre es conductor de electricidad."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "El elemento específico pertenece a la categoría general, por lo que adquiere su propiedad.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 7,
+    "texto": "Premisa 1: Ningún planeta emite luz propia.\nPremisa 2: Júpiter es un planeta.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Júpiter emite luz propia.",
+      "B": "Júpiter no emite luz propia.",
+      "C": "Algunos planetas brillan como estrellas."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Observa la exclusión total que plantea la primera premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 8,
+    "texto": "Premisa 1: Algunos estudiantes son deportistas.\nPremisa 2: Todos los deportistas tienen buena condición física.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Todos los estudiantes tienen buena condición física.",
+      "B": "Algunos estudiantes tienen buena condición física.",
+      "C": "Ningún estudiante es deportista."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "La conclusión de una premisa particular y una universal siempre es particular.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 9,
+    "texto": "Premisa 1: Si es de día, el sol brilla.\nPremisa 2: El sol no brilla.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "No es de día.",
+      "B": "El sol está tapado.",
+      "C": "Es de noche pero el sol brilla."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Negar la consecuencia implica necesariamente negar la causa inicial.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 10,
+    "texto": "Premisa 1: Todos los artistas son creativos.\nPremisa 2: Pablo es un artista.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Pablo es creativo.",
+      "B": "Pablo no es creativo.",
+      "C": "Todos los creativos son artistas."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Si perteneces al conjunto A, y todo A es B, entonces tú eres B.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 11,
+    "texto": "Premisa 1: Ningún número impar es divisible por 2.\nPremisa 2: El 7 es un número impar.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El 7 es divisible por 2.",
+      "B": "El 7 no es divisible por 2.",
+      "C": "Algunos números impares son divisibles por 2."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "El sujeto hereda la negación del grupo al que pertenece.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 12,
+    "texto": "Premisa 1: Todos los vehículos necesitan combustible.\nPremisa 2: La motocicleta es un vehículo.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La motocicleta necesita combustible.",
+      "B": "La motocicleta es un automóvil.",
+      "C": "Solo los vehículos grandes necesitan combustible."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Relación directa de pertenencia a un conjunto.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 13,
+    "texto": "Premisa 1: Si comes en exceso, engordarás.\nPremisa 2: Has comido en exceso.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Adelgazarás.",
+      "B": "Engordarás.",
+      "C": "No pasará nada."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Causa y efecto directo; la causa se ha cumplido.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 14,
+    "texto": "Premisa 1: Ningún ave respira bajo el agua.\nPremisa 2: El pingüino es un ave.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El pingüino respira bajo el agua.",
+      "B": "El pingüino no respira bajo el agua.",
+      "C": "El pingüino es un pez."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "No importa que el pingüino nade, sigue siendo un ave y comparte sus exclusiones biológicas.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 15,
+    "texto": "Premisa 1: Algunas frutas son cítricas.\nPremisa 2: Todas las frutas cítricas contienen vitamina C.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todas las frutas contienen vitamina C.",
+      "B": "Algunas frutas contienen vitamina C.",
+      "C": "Ninguna fruta contiene vitamina C."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "El conector 'algunas' limita la generalidad de la conclusión final.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 16,
+    "texto": "Premisa 1: Si un triángulo tiene un ángulo de 90 grados, es rectángulo.\nPremisa 2: Este triángulo tiene un ángulo de 90 grados.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Es un triángulo equilátero.",
+      "B": "Es un triángulo obtusángulo.",
+      "C": "Es un triángulo rectángulo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "La condición para ser rectángulo se ha cumplido exactamente.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 17,
+    "texto": "Premisa 1: Ningún héroe es cobarde.\nPremisa 2: Aquiles es un héroe.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Aquiles es cobarde.",
+      "B": "Aquiles no es cobarde.",
+      "C": "Algunos héroes son cobardes."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Una exclusión universal (ningún) se aplica a cada miembro individual.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 18,
+    "texto": "Premisa 1: O bebes agua o bebes jugo.\nPremisa 2: No bebes jugo.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Bebes leche.",
+      "B": "No bebes nada.",
+      "C": "Bebes agua."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Si se elimina una de las únicas dos alternativas, queda la otra.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 19,
+    "texto": "Premisa 1: Todos los perros ladran.\nPremisa 2: Firulais no ladra.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Firulais es un perro mudo.",
+      "B": "Firulais no es un perro.",
+      "C": "Firulais ladrará mañana."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Si carece de una característica esencial y universal del grupo, no puede pertenecer al grupo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 20,
+    "texto": "Premisa 1: Si no estudias, reprobarás el examen.\nPremisa 2: No reprobaste el examen.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Estudiaste.",
+      "B": "Hiciste trampa.",
+      "C": "El examen fue fácil."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Al no cumplirse la consecuencia negativa, se deduce que la condición negativa tampoco ocurrió.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 21,
+    "texto": "Premisa 1: Todos los ciudadanos tienen derechos.\nPremisa 2: María es ciudadana.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "María tiene derechos.",
+      "B": "María no tiene derechos.",
+      "C": "Sólo algunos ciudadanos tienen derechos."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Inclusión directa en un conjunto con una propiedad universal afirmativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 22,
+    "texto": "Premisa 1: Ningún mentiroso es de fiar.\nPremisa 2: Pedro es mentiroso.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Pedro es de fiar.",
+      "B": "Pedro no es de fiar.",
+      "C": "Pedro dice la verdad a veces."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Pedro toma las características (o la falta de ellas) de su grupo designado.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 23,
+    "texto": "Premisa 1: Todos los insectos tienen seis patas.\nPremisa 2: La hormiga es un insecto.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "La hormiga tiene ocho patas.",
+      "B": "La hormiga tiene seis patas.",
+      "C": "La hormiga no tiene patas."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Regla lógica básica de pertenencia a un conjunto definido biológicamente en la premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 24,
+    "texto": "Premisa 1: Si tocas el fuego, te quemas.\nPremisa 2: No te quemaste.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El fuego estaba frío.",
+      "B": "Tocaste el fuego.",
+      "C": "No tocaste el fuego."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "La ausencia de la consecuencia obligatoria significa que la acción inicial no ocurrió.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 25,
+    "texto": "Premisa 1: Algunos políticos son abogados.\nPremisa 2: Todos los abogados conocen las leyes.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los políticos conocen las leyes.",
+      "B": "Algunos políticos conocen las leyes.",
+      "C": "Ningún político conoce las leyes."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Una premisa particular y otra universal generan una conclusión particular.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 26,
+    "texto": "Premisa 1: Todos los cuadrados tienen cuatro lados.\nPremisa 2: Esta figura geométrica tiene tres lados.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Esta figura no es un cuadrado.",
+      "B": "Esta figura es un cuadrado defectuoso.",
+      "C": "Esta figura es un círculo."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Si un objeto carece de la cualidad definitoria de un grupo, queda excluido de él.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 27,
+    "texto": "Premisa 1: Ningún número primo mayor que 2 es par.\nPremisa 2: El 5 es un número primo mayor que 2.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El 5 es par.",
+      "B": "El 5 no es par.",
+      "C": "El 5 es un número compuesto."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Aplica la negación a partir del conjunto delimitado en la primera premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 28,
+    "texto": "Premisa 1: O la puerta está abierta o está cerrada.\nPremisa 2: La puerta no está cerrada.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La puerta está semiabierta.",
+      "B": "La puerta está cerrada.",
+      "C": "La puerta está abierta."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "En lógicas de dos estados mutuamente excluyentes, negar uno afirma el otro.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 29,
+    "texto": "Premisa 1: Si hace frío, usamos abrigo.\nPremisa 2: Hace frío.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "No usamos abrigo.",
+      "B": "Usamos abrigo.",
+      "C": "Usamos traje de baño."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "El antecedente se cumple, por lo tanto, el consecuente también.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 30,
+    "texto": "Premisa 1: Todos los árboles realizan fotosíntesis.\nPremisa 2: El roble es un árbol.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El roble realiza fotosíntesis.",
+      "B": "El roble no realiza fotosíntesis.",
+      "C": "Solo los robles realizan fotosíntesis."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Atributo universal que se transfiere a cada uno de sus miembros.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 31,
+    "texto": "Premisa 1: Ningún vegetariano come carne.\nPremisa 2: Luis es vegetariano.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Luis come pollo.",
+      "B": "Luis no come carne.",
+      "C": "Luis come solo pescado."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Sustituye el sujeto general de la primera premisa por el individuo de la segunda.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 32,
+    "texto": "Premisa 1: Algunas plantas son venenosas.\nPremisa 2: La hiedra es una planta.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La hiedra es venenosa.",
+      "B": "La hiedra no es venenosa.",
+      "C": "No hay información suficiente para concluir su toxicidad."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "El término 'algunas' no garantiza que el espécimen particular caiga en ese subgrupo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 33,
+    "texto": "Premisa 1: Si madrugas, llegarás a tiempo.\nPremisa 2: No llegaste a tiempo.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Madrugaste.",
+      "B": "No madrugaste.",
+      "C": "Había mucho tráfico."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Negar el efecto lógico de una premisa implica que la causa no ocurrió (Modus Tollens).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 34,
+    "texto": "Premisa 1: Todos los cirujanos son médicos.\nPremisa 2: Ana es cirujana.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Ana es médica.",
+      "B": "Todos los médicos son cirujanos.",
+      "C": "Ana no es médica."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Relación transitiva simple entre subcategoría y categoría mayor.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 35,
+    "texto": "Premisa 1: Ningún planeta del sistema solar es plano.\nPremisa 2: Marte es un planeta del sistema solar.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Marte es plano.",
+      "B": "Marte no es plano.",
+      "C": "Marte tiene forma de cubo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Aplicación de una regla universal negativa a un caso particular.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 36,
+    "texto": "Premisa 1: O es martes o es miércoles.\nPremisa 2: Hoy no es martes.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Hoy es lunes.",
+      "B": "Hoy es miércoles.",
+      "C": "Mañana será jueves."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Silogismo disyuntivo: se niega A, por lo tanto B es verdadero.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 37,
+    "texto": "Premisa 1: Todos los metales se dilatan con el calor.\nPremisa 2: El hierro es un metal.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El hierro se encoge con el calor.",
+      "B": "El hierro se dilata con el calor.",
+      "C": "El hierro se derrite con el frío."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "El objeto específico asume el comportamiento descrito para todo su grupo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 38,
+    "texto": "Premisa 1: Ningún soltero está casado.\nPremisa 2: Jorge es soltero.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Jorge está casado.",
+      "B": "Jorge no está casado.",
+      "C": "Jorge se casará pronto."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Definición excluyente aplicada a un individuo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 39,
+    "texto": "Premisa 1: Si un número es par y mayor que 2, no es primo.\nPremisa 2: El 8 es par y mayor que 2.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El 8 es primo.",
+      "B": "El 8 no es primo.",
+      "C": "El 8 es impar."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Ambas condiciones del antecedente se cumplen, por lo que el consecuente también.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 40,
+    "texto": "Premisa 1: Todos los aves tienen alas.\nPremisa 2: El avestruz es un ave.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El avestruz vuela.",
+      "B": "El avestruz no tiene alas.",
+      "C": "El avestruz tiene alas."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "No confundir el tener alas con la capacidad de volar; limítate a lo dicho en las premisas.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 41,
+    "texto": "Premisa 1: Algunos vehículos son eléctricos.\nPremisa 2: Todos los vehículos eléctricos usan baterías.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los vehículos usan baterías.",
+      "B": "Algunos vehículos usan baterías.",
+      "C": "Ningún vehículo usa baterías."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "La deducción entre una premisa parcial y una total siempre es parcial.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 42,
+    "texto": "Premisa 1: Ningún pez respira con pulmones (generalmente).\nPremisa 2: La ballena respira con pulmones.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La ballena no es un pez.",
+      "B": "La ballena es un pez especial.",
+      "C": "Los pulmones de la ballena son branquias."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Si un individuo tiene una característica que excluye a un grupo, no puede ser de ese grupo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 43,
+    "texto": "Premisa 1: Si apagas la luz, la habitación quedará a oscuras.\nPremisa 2: Apagaste la luz.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "La habitación está iluminada.",
+      "B": "La habitación quedará a oscuras.",
+      "C": "La bombilla se rompió."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Resultado lógico de una acción condicionante cumplida.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 44,
+    "texto": "Premisa 1: Todos los rombos tienen las diagonales perpendiculares.\nPremisa 2: Esta figura geométrica es un rombo.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Esta figura tiene las diagonales perpendiculares.",
+      "B": "Esta figura no tiene diagonales.",
+      "C": "Esta figura es un triángulo."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Aplicación de una regla geométrica universal al sujeto.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 45,
+    "texto": "Premisa 1: O está vivo o está muerto.\nPremisa 2: No está muerto.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Es un fantasma.",
+      "B": "Está vivo.",
+      "C": "Está dormido."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Al descartarse un lado de la dicotomía total, solo resta el opuesto.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 46,
+    "texto": "Premisa 1: Ningún mes del año tiene 32 días.\nPremisa 2: Enero es un mes del año.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Enero tiene 32 días.",
+      "B": "Enero tiene 31 días.",
+      "C": "Enero no tiene 32 días."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "La conclusión no debe asumir hechos externos (como que tiene 31), solo aplicar la negación estricta de la premisa 1.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 47,
+    "texto": "Premisa 1: Todos los felinos son carnívoros.\nPremisa 2: El león es un felino.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El león es herbívoro.",
+      "B": "El león es carnívoro.",
+      "C": "El león come insectos."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Transmisión de una cualidad categórica alimenticia.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 48,
+    "texto": "Premisa 1: Si gritas, te escucharán.\nPremisa 2: No te escucharon.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Gritaste fuerte.",
+      "B": "No gritaste.",
+      "C": "Estaban sordos."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "La falta de la consecuencia obligada anula la acción inicial (Modus Tollens).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 49,
+    "texto": "Premisa 1: Algunas rocas son volcánicas.\nPremisa 2: El basalto es una roca volcánica.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El basalto es una roca.",
+      "B": "Todas las rocas son basaltos.",
+      "C": "Ningún basalto es una roca."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Piensa en el camino inverso de pertenencia de conjuntos presentado en las premisas.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 50,
+    "texto": "Premisa 1: Ningún objeto sólido puede atravesar las paredes.\nPremisa 2: Esta pelota es un objeto sólido.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Esta pelota puede atravesar las paredes.",
+      "B": "Esta pelota rebotará en la pared.",
+      "C": "Esta pelota no puede atravesar las paredes."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Aplica la negación condicional de la primera premisa al objeto sujeto de la segunda.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 51,
+    "texto": "Premisa 1: Ningún sofista es amante de la verdad absoluta.\nPremisa 2: Algunos legisladores antiguos eran sofistas.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunos legisladores antiguos no son amantes de la verdad absoluta.",
+      "B": "Ningún legislador antiguo es amante de la verdad absoluta.",
+      "C": "Todos los legisladores antiguos son sofistas."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Silogismo de forma Ferio (EIO-1). La conclusión de una premisa universal negativa y una particular afirmativa debe ser particular negativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 52,
+    "texto": "Premisa 1: Todos los sistemas autoritarios restringen la libertad de prensa.\nPremisa 2: El gobierno de X no restringe la libertad de prensa.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El gobierno de X es una democracia perfecta.",
+      "B": "El gobierno de X no es un sistema autoritario.",
+      "C": "Algunos sistemas autoritarios son tolerantes."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Estructura formal Camestres (AOO-2) o Modus Tollens: negar el consecuente requiere negar el antecedente.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 53,
+    "texto": "Premisa 1: Quien actúe con dolo es penalmente imputable.\nPremisa 2: Algunos menores de edad no son penalmente imputables.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunos menores de edad no actuaron con dolo.",
+      "B": "Ningún menor de edad actúa con dolo.",
+      "C": "Todos los imputables son menores de edad."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Baroco (AOO-2). Si todo el conjunto A está dentro de B, y una parte de C está fuera de B, esa parte de C está fuera de A.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 54,
+    "texto": "Premisa 1: Si la teoría de la relatividad es falsa, entonces el espacio-tiempo es absoluto.\nPremisa 2: El espacio-tiempo no es absoluto.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La teoría de la relatividad es falsa.",
+      "B": "La teoría de la relatividad es verdadera.",
+      "C": "El espacio-tiempo es una ilusión métrica."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Modus Tollens aplicado a una premisa condicional con antecedente negativo ($\\neg P \\rightarrow Q$ y $\\neg Q$ concluye $\\neg\\neg P$).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 55,
+    "texto": "Premisa 1: Todos los neurotransmisores inhibitorios hiperpolarizan la membrana postsináptica.\nPremisa 2: La sustancia X hiperpolariza la membrana postsináptica.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "La sustancia X es un neurotransmisor inhibitorio.",
+      "B": "La sustancia X podría ser un neurotransmisor inhibitorio, pero no se concluye deductivamente.",
+      "C": "Ninguna de las anteriores es una conclusión válida."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Cuidado con la falacia formal de afirmación del consecuente. No hay conclusión deductiva válida posible.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 56,
+    "texto": "Premisa 1: Ningún silogismo con premisas particulares es válido.\nPremisa 2: Este argumento es un silogismo válido.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Este argumento no tiene premisas particulares.",
+      "B": "Este argumento tiene al menos una premisa particular.",
+      "C": "Este argumento es universal afirmativo."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Aplicación inversa de la exclusión: si un subgrupo carece de una condición necesaria, el que la posee no pertenece al subgrupo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 57,
+    "texto": "Premisa 1: Todos los metales alcalinos reaccionan violentamente con el agua.\nPremisa 2: Todos los metales alcalinos son elementos del grupo 1.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los elementos del grupo 1 reaccionan violentamente con el agua.",
+      "B": "Algunos elementos del grupo 1 reaccionan violentamente con el agua.",
+      "C": "Ningún elemento del grupo 1 reacciona violentamente con el agua."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Darapti (AAI-3). Al cruzar dos universales afirmativas con el mismo sujeto, la conclusión lógica válida es particular afirmativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 58,
+    "texto": "Premisa 1: Ningún polígono regular tiene ángulos internos desiguales.\nPremisa 2: Algunos polígonos regulares son hexágonos.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Algunos hexágonos no tienen ángulos internos desiguales.",
+      "B": "Ningún hexágono tiene ángulos internos desiguales.",
+      "C": "Todos los hexágonos tienen ángulos internos desiguales."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Felapton (EAO-3). De una negativa universal y una afirmativa universal sobre el mismo sujeto medio se deriva una conclusión particular negativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 59,
+    "texto": "Premisa 1: Si aumenta la base monetaria sin respaldo, ocurre inflación o devaluación cambiaria.\nPremisa 2: No ocurrió inflación ni devaluación cambiaria.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "No aumentó la base monetaria sin respaldo.",
+      "B": "Aumentó la base monetaria pero bajo control estatal.",
+      "C": "Ocurrirá inflación a largo plazo."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Modus Tollens extendido. Se niega una disyunción completa (Leyes de De Morgan), por ende se niega el antecedente.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 60,
+    "texto": "Premisa 1: Algunos contratos comerciales no son rescindibles unilateralmente.\nPremisa 2: Todos los contratos comerciales son acuerdos bilaterales de voluntades.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Algunos acuerdos bilaterales de voluntades no son rescindibles unilateralmente.",
+      "B": "Ningún acuerdo bilateral de voluntades es rescindible unilateralmente.",
+      "C": "Todos los acuerdos bilaterales de voluntades son rescindibles."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Bocardo (OAO-3). El término medio es el sujeto de ambas premisas. La conclusión debe ser particular negativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 61,
+    "texto": "Premisa 1: Todos los mamíferos cetáceos son animales acuáticos.\nPremisa 2: Algunos mamíferos cetáceos son carnívoros hiperdepredadores.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los carnívoros hiperdepredadores son animales acuáticos.",
+      "B": "Algunos carnívoros hiperdepredadores son animales acuáticos.",
+      "C": "Ningún animal acuático es carnívoro hiperdepredadores."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Datisi (AII-3). El conector particular limita la extensión del predicado en la conclusión.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 62,
+    "texto": "Premisa 1: Ningún axioma matemático requiere demostración formal.\nPremisa 2: El teorema de Pitágoras requiere demostración formal.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El teorema de Pitágoras es un axioma matemático.",
+      "B": "El teorema de Pitágoras no es un axioma matemático.",
+      "C": "Algunos axiomas matemáticos se demuestran formalmente."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Cesare (EAE-2). Exclusión directa de un elemento particular basándose en un atributo obligatorio.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 63,
+    "texto": "Premisa 1: Si un software posee arquitectura monolítica, entonces es difícil de escalar horizontalmente.\nPremisa 2: Este software es fácil de escalar horizontalmente.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Este software no posee arquitectura monolítica.",
+      "B": "Este software posee arquitectura microservicios.",
+      "C": "El sistema está mal diseñado."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Aplicación estricta de Modus Tollens. No puedes presuponer qué arquitectura alternativa tiene, solo negar la primera.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 64,
+    "texto": "Premisa 1: O bien el universo es finito y curvo, o bien es infinito y plano.\nPremisa 2: Se ha determinado experimentalmente que el universo no es infinito y plano.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El universo es finito y curvo.",
+      "B": "El universo es infinito pero curvo.",
+      "C": "El universo carece de geometría medible."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Silogismo disyuntivo estricto (Dilema excluyente). Descartada una proposición compuesta, la otra emerge como verdadera.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 65,
+    "texto": "Premisa 1: Todos los compuestos orgánicos contienen átomos de carbono.\nPremisa 2: El agua pura no contiene átomos de carbono.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El agua pura es un compuesto inorgánico.",
+      "B": "El agua pura no es un compuesto orgánico.",
+      "C": "Algunos compuestos orgánicos carecen de carbono."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "La conclusión formal debe limitarse a negar los términos de la premisa, no introducir términos externos como 'inorgánico'.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 66,
+    "texto": "Premisa 1: Ningún funcionario público honesto acepta sobornos.\nPremisa 2: Algunos inspectores municipales aceptan sobornos.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Algunos inspectores municipales no son funcionarios públicos honestos.",
+      "B": "Ningún inspector municipal es funcionario público honesto.",
+      "C": "Todos los inspectores municipales son deshonestos."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Festino (EIO-2). Cruce entre exclusión universal y particularidad afirmativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 69,
+    "texto": "Premisa 1: Algunos virus informáticos mutan su código fuente.\nPremisa 2: Todos los programas que mutan su código fuente evaden los antivirus tradicionales.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los virus informáticos evaden los antivirus tradicionales.",
+      "B": "Algunos virus informáticos evaden los antivirus tradicionales.",
+      "C": "Ningún antivirus tradicional detecta código mutado."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Disamis (IAI-3). El término medio enlaza la particularidad a la característica universal de la segunda premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 70,
+    "texto": "Premisa 1: Ningún vertebrado posee un sistema nervioso completamente descentralizado.\nPremisa 2: El pulpo posee un sistema nervioso completamente descentralizado.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El pulpo es un molusco inteligente.",
+      "B": "El pulpo no es un vertebrado.",
+      "C": "Algunos vertebrados se asemejan al pulpo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Camestres (AOO-2/EAE-2). La incompatibilidad de rasgos niega categóricamente la pertenencia al taxón.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 71,
+    "texto": "Premisa 1: Todos los delitos de acción pública requieren persecución de oficio.\nPremisa 2: El hecho denunciado no es un delito de acción pública.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El hecho denunciado no requiere persecución de oficio.",
+      "B": "El hecho denunciado podría requerir persecución de oficio por otra vía legal.",
+      "C": "Ninguna de las anteriores es una conclusión válida deductivamente."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Cuidado con la falacia de negación del antecedente. Que no sea delito de acción pública no impide formalmente que requiera persecución de oficio por otra causa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 73,
+    "texto": "Premisa 1: Ningún argumento inválido es lógicamente vinculante.\nPremisa 2: Todos los argumentos inválidos contienen errores estructurales.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunos argumentos que contienen errores estructurales no son lógicamente vinculante.",
+      "B": "Ningún argumento con errores estructurales es lógicamente vinculante.",
+      "C": "Todos los argumentos lógicamente vinculantes carecen de errores."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Felapton (EAO-3). La conclusión debe extraerse con cuantificador particular sobre el predicado de la segunda premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 74,
+    "texto": "Premisa 1: Algunos fármacos betabloqueantes causan bradicardia.\nPremisa 2: Todo lo que causa bradicardia reduce el gasto cardíaco del paciente.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Todos los fármacos betabloqueantes reducen el gasto cardíaco del paciente.",
+      "B": "Algunos fármacos betabloqueantes reducen el gasto cardíaco del paciente.",
+      "C": "Ningún fármaco betabloqueante reduce el gasto cardíaco."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Encadenamiento lógico particular-universal (Forma Darii modificado en lógica de clases).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 75,
+    "texto": "Premisa 1: Quien carezca de capacidad jurídica no puede suscribir un contrato válido.\nPremisa 2: Carlos puede suscribir un contrato válido.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Carlos posee capacidad jurídica.",
+      "B": "Carlos es mayor de edad.",
+      "C": "Carlos no firmó ningún documento."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Negación de un antecedente negativo por Modus Tollens ($\\neg A \\rightarrow \\neg B$; se afirma $B$, luego se deduce $\\neg\\neg A$).",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 77,
+    "texto": "Premisa 1: Ningún mamífero terrestre posee respiración branquial.\nPremisa 2: Todos los mamíferos terrestres tienen circulación doble y completa.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunos animales con circulación doble y completa no poseen respiración branquial.",
+      "B": "Ningún animal con respiración branquial tiene circulación doble y completa.",
+      "C": "Todos los animales con circulación doble poseen respiración branquial."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Felapton (EAO-3). Exige inferir de manera particular limitando el universo a la intersección del término medio.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 78,
+    "texto": "Premisa 1: Si un mineral ralla al cuarzo, su dureza en la escala de Mohs es superior a 7.\nPremisa 2: El topacio ralla al cuarzo.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La dureza del topacio es inferior a 7.",
+      "B": "La dureza del topacio es superior a 7.",
+      "C": "El cuarzo es más blando que el yeso."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Modus Ponens clásico en contexto de mineralogía.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 79,
+    "texto": "Premisa 1: Algunos poetas del siglo XIX no eran románticos.\nPremisa 2: Todos los poetas del siglo XIX eran críticos culturales.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunos críticos culturales no eran románticos.",
+      "B": "Ningún crítico cultural era romántico.",
+      "C": "Todos los románticos eran críticos culturales."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Bocardo (OAO-3). La premisa particular negativa determina que la conclusión comparta dicha cualidad negativa y particular.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 81,
+    "texto": "Premisa 1: Ningún ciudadano extranjero no residente tiene derecho al voto en elecciones generales.\nPremisa 2: Jean es un ciudadano extranjero no residente.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Jean tiene derecho al voto en elecciones locales.",
+      "B": "Jean no tiene derecho al voto en elecciones generales.",
+      "C": "Jean obtendrá la residencia próximamente."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Doble negación en el enunciado de la premisa que se simplifica al aplicar la identidad del sujeto en la premisa 2.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 82,
+    "texto": "Premisa 1: Si se produce un eclipse solar total, la corona del Sol se vuelve visible a simple vista.\nPremisa 2: La corona del Sol se volvió visible a simple vista.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Se produjo un eclipse solar total de forma inequívoca.",
+      "B": "No se produjo un eclipse solar total.",
+      "C": "No se puede concluir deductivamente la causa exacta a partir de la observación del efecto."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 0,
+      "C": 10
+    },
+    "pista": "Evita caer en la afirmación del consecuente. La visibilidad de la corona podría deberse a instrumental óptico especializado no mencionado o filtros astronómicos.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 83,
+    "texto": "Premisa 1: Todos los polímeros sintéticos son macromoléculas.\nPremisa 2: Algunos polímeros sintéticos son biodegradables.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todas las macromoléculas son biodegradables.",
+      "B": "Algunas macromoléculas son biodegradables.",
+      "C": "Ninguna macromolécula es biodegradable."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Datisi (AII-3). El término medio actúa como puente para fijar una coexistencia particular de propiedades.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 84,
+    "texto": "Premisa 1: Ningún número real negativo tiene una raíz cuadrada real.\nPremisa 2: El número operacional x tiene una raíz cuadrada real.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El número x es un imaginario puro.",
+      "B": "El número x no es un número real negativo.",
+      "C": "El número x es un entero positivo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Cesare (EAE-2). La negación de la condición de exclusión determina la exclusión de la categoría negativa inicial.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 85,
+    "texto": "Premisa 1: Si una matriz es invertible, su determinante es estrictamente diferente de cero.\nPremisa 2: El determinante de la matriz M es igual a cero.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "La matriz M no es invertible.",
+      "B": "La matriz M es invertible pero singular.",
+      "C": "La matriz M es una matriz identidad de rango cero."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Modus Tollens puro. Si $P \\rightarrow Q$ y se observa $\\neg Q$ (ser igual a cero es negar ser diferente de cero), se concluye $\\neg P$.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 87,
+    "texto": "Premisa 1: Ningún hongo fotosintetiza.\nPremisa 2: El espécimen Z fotosintetiza de manera activa.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El espécimen Z es una planta mutante.",
+      "B": "El espécimen Z no es un hongo.",
+      "C": "El espécimen Z pertenece al reino Fungi."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Silogismo formal clásico de exclusión biológica por propiedad funcional contradictoria.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 89,
+    "texto": "Premisa 1: Todos los planetas gaseosos poseen un sistema de anillos periféricos.\nPremisa 2: El cuerpo celeste W no posee un sistema de anillos periféricos.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El cuerpo celeste W es un planeta rocoso.",
+      "B": "El cuerpo celeste W no es un planeta gaseoso.",
+      "C": "El cuerpo celeste W es un cometa de órbita elíptica."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Modus Tollens aplicado a categorías lógicas. No se puede predecir qué tipo de cuerpo es (rocoso, cometa), solo descartar que sea gaseoso.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 93,
+    "texto": "Premisa 1: Todos los mamíferos monotremas son ovíparos.\nPremisa 2: Todos los mamíferos monotremas son endotermos.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los animales endotermos son ovíparos.",
+      "B": "Algunos animales endotermos son ovíparos.",
+      "C": "Ningún animal ovíparo es endotermo."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Darapti (AAI-3). Dos premisas universales afirmativas con el mismo término medio producen una particular afirmativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 94,
+    "texto": "Premisa 1: Ningún compuesto hidrofóbico se disuelve de forma homogénea en agua pura.\nPremisa 2: Algunos lípidos complejos son compuestos hidrofóbicos.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Algunos lípidos complejos no se disuelven de forma homogénea en agua pura.",
+      "B": "Ningún lípido complejo se disuelve de forma homogénea en agua pura.",
+      "C": "Todos los lípidos complejos se disuelven de forma homogénea en agua pura."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Festino (EIO-2/EIO-1 modificado). Conclusión particular negativa obligatoria.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 96,
+    "texto": "Premisa 1: Todos los representantes diplomáticos gozan de inmunidad de jurisdicción penal.\nPremisa 2: El ciudadano K no goza de inmunidad de jurisdicción penal.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El ciudadano K es un espía internacional.",
+      "B": "El ciudadano K no es un representante diplomático.",
+      "C": "El ciudadano K perdió sus credenciales diplomáticas ayer."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Camestres / Modus Tollens. Deducción tajante de no pertenencia por exclusión de derechos universales asignados por la ley de la premisa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 101,
+    "texto": "Premisa 1: Ningún enunciado analítico es empíricamente verificable.\nPremisa 2: Algunas proposiciones de las ciencias fácticas son empíricamente verificables.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Algunas proposiciones de las ciencias fácticas no son enunciados analíticos.",
+      "B": "Ninguna proposición de las ciencias fácticas es un enunciado analítico.",
+      "C": "Todos los enunciados analíticos pertenecen a las ciencias fácticas."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Festino (EIO-2). Si un conjunto excluye totalmente a un atributo, cualquier elemento parcial que posea ese atributo queda fuera del primer conjunto.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 103,
+    "texto": "Premisa 1: Todas las partículas elementales que poseen espín semientero son fermiones.\nPremisa 2: El electrón es una partícula elemental que posee espín semientero.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El electrón es un fermión.",
+      "B": "El electrón puede comportarse como bosón bajo ciertas condiciones.",
+      "C": "Todos los fermiones son electrones."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Barbara (AAA-1). Inclusión directa y universal de una propiedad cuántica en un elemento específico.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 104,
+    "texto": "Premisa 1: Ningún espacio topológico compacto es necesariamente no Hausdorff.\nPremisa 2: Algunos espacios topológicos compactos son difíciles de visualizar.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "Algunos espacios difíciles de visualizar no son necesariamente no Hausdorff.",
+      "B": "Todos los espacios difíciles de visualizar son Hausdorff.",
+      "C": "Ningún espacio difícil de visualizar es compacto."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Felapton (EAO-3). La conclusión hereda la particularidad del término medio y la negación de la premisa mayor.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 107,
+    "texto": "Premisa 1: Ningún imperativo categórico kantiano se basa en inclinaciones empíricas o deseos egoístas.\nPremisa 2: El principio de acción X se basa en un deseo egoísta.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El principio de acción X es un imperativo hipotético pragmático.",
+      "B": "El principio de acción X no es un imperativo categórico kantiano.",
+      "C": "Algunos imperativos categóricos toleran deseos egoístas."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Cesare (EAE-2). La contradicción directa con una exclusión universal descarta al objeto del grupo principal.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 111,
+    "texto": "Premisa 1: Ningún compuesto químico con enlaces puramente covalentes es un electrolito fuerte.\nPremisa 2: El compuesto químico delta es un electrolito fuerte.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "El compuesto químico delta posee enlaces iónicos dominantes.",
+      "B": "El compuesto químico delta no es un compuesto con enlaces puramente covalentes.",
+      "C": "Algunos compuestos covalentes son electrolitos fuertes."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Cesare. Limítate a los términos lógicos provistos; no asumas conceptos químicos externos como 'iónicos dominantes'.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 113,
+    "texto": "Premisa 1: Algunos paradigmas epistemológicos son constructivistas radicales.\nPremisa 2: Todos los paradigmas epistemológicos son marcos de referencia conceptual.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "Todos los marcos de referencia conceptual son constructivistas radicales.",
+      "B": "Algunos marcos de referencia conceptual son constructivistas radicales.",
+      "C": "Ningún marco de referencia conceptual es constructivista."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Forma Darapti/Datisi (AI-3). Al enlazar una premisa particular con una universal sobre el mismo sujeto, la conclusión es particular afirmativa.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 124,
+    "texto": "Premisa 1: Ningún mamífero del orden Monotremata posee placenta funcional para la gestación.\nPremisa 2: El ornitorrinco es un mamífero del orden Monotremata.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "El ornitorrinco no posee placenta funcional para la gestación.",
+      "B": "El ornitorrinco pone huevos porque carece de útero.",
+      "C": "Algunos ornitorrincos desarrollan placenta rudimentaria."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Celarent (EAE-1). Aplicación directa de una exclusión universal a un espécimen taxonómico definitivo.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 126,
+    "texto": "Premisa 1: Todas las falacias de ambigüedad dependen de la imprecisión del lenguaje natural.\nPremisa 2: La falacia del equívoco es una falacia de ambigüedad.\n¿Qué se concluye necesariamente?",
+    "opciones": {
+      "A": "La falacia del equívoco depende de la imprecisión del lenguaje natural.",
+      "B": "El lenguaje natural está libre de falacias estructurales.",
+      "C": "Todas las imprecisiones del lenguaje natural generan falacias del equívoco."
+    },
+    "puntos_opciones": {
+      "A": 10,
+      "B": 0,
+      "C": 0
+    },
+    "pista": "Forma Barbara (AAA-1). Relación clásica de inclusión conceptual deductiva descendente.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  },
+  {
+    "id": 127,
+    "texto": "Premisa 1: Ningún filósofo empirista estricto acepta la existencia de ideas innatas en el entendimiento humano.\nPremisa 2: John Locke fue un filósofo empirista estricto.\n¿Cuál es la conclusión válida?",
+    "opciones": {
+      "A": "John Locke defendía la tabula rasa racionalista.",
+      "B": "John Locke no acepta la existencia de ideas innatas en el entendimiento humano.",
+      "C": "Algunos filósofos empiristas aceptan ideas innatas de forma intuitiva."
+    },
+    "puntos_opciones": {
+      "A": 0,
+      "B": 10,
+      "C": 0
+    },
+    "pista": "Silogismo categórico clásico de exclusión absoluta. Respeta la terminología literal de la premisa sin añadir nociones externas.",
+    "dimension": "Razonamiento Lógico",
+    "sub_dimension": "Silogismos"
+  }
+]
