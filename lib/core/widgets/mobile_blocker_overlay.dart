@@ -266,71 +266,16 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                               child: Stack(
                                 fit: StackFit.expand,
                                 children: [
-                                  // Imagen completa con proporción cuidada
+                                  // Imagen completa con proporción cuidada y sin capas obstructivas
                                   Image.asset(
                                     slide['image']!,
                                     fit: BoxFit.contain,
                                     alignment: Alignment.center,
-                                  ),
-                                  // Overlay degradado inferior con info
-                                  Positioned(
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    child: Container(
-                                      padding: const EdgeInsets.fromLTRB(16, 36, 16, 12),
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Colors.transparent,
-                                            Colors.black.withValues(alpha: 0.85),
-                                            Colors.black.withValues(alpha: 0.95),
-                                          ],
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                        ),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xFF10B981).withValues(alpha: 0.25),
-                                              borderRadius: BorderRadius.circular(6),
-                                            ),
-                                            child: Text(
-                                              slide['tag']!,
-                                              style: const TextStyle(
-                                                color: Color(0xFF34D399),
-                                                fontSize: 9.5,
-                                                fontWeight: FontWeight.w800,
-                                                letterSpacing: 0.5,
-                                              ),
-                                            ),
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Text(
-                                            slide['title']!,
-                                            style: const TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 2),
-                                          Text(
-                                            slide['subtitle']!,
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              color: Colors.white.withValues(alpha: 0.8),
-                                              fontSize: 11.5,
-                                              height: 1.25,
-                                            ),
-                                          ),
-                                        ],
+                                    errorBuilder: (_, __, ___) => const Center(
+                                      child: Icon(
+                                        Icons.image_not_supported_rounded,
+                                        color: Colors.white24,
+                                        size: 40,
                                       ),
                                     ),
                                   ),

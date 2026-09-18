@@ -18,7 +18,7 @@ class AppConfig {
 
   /// URL oficial de descarga directa para la última versión del APK de Android.
   static const String androidApkDownloadUrl =
-      'https://www.mediafire.com/file/llp1wxsqrs6pl9y/edupol-release-36.apk/file';
+      'https://www.mediafire.com/file/zvsyh4o6wl08yn8/edupol.apk/file';
 
   /// URL oficial de descarga e instalación desde Google Play Store.
   static const String playStoreUrl =
