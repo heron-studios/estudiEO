@@ -25,7 +25,7 @@ import 'package:learn/features/srs/presentation/srs_review_screen.dart';
 import 'package:learn/features/srs/presentation/srs_mini_quiz_screen.dart';
 import 'package:learn/features/srs/presentation/flashcard_generator_screen.dart';
 import 'package:learn/features/profile/presentation/profile_screen.dart';
-// Payment routes removed
+import 'package:learn/features/payment/presentation/payment_screen.dart';
 import 'package:learn/features/learning/presentation/learning_theory_screen.dart';
 import 'package:learn/features/learning/presentation/learning_quiz_screen.dart';
 import 'package:learn/features/learning/presentation/learning_levelup_screen.dart';
@@ -72,6 +72,13 @@ class AppRouter {
         final isLoggingIn = state.matchedLocation == '/login';
         final isLoading = state.matchedLocation == '/loading';
         final isOnboarding = state.matchedLocation == '/onboarding';
+        final isPayment = state.matchedLocation == '/pago' ||
+            state.matchedLocation == '/compra' ||
+            state.matchedLocation == '/premium';
+
+        if (isPayment) {
+          return null;
+        }
 
         if (isInitializing) {
           return isLoading ? null : '/loading';
@@ -205,6 +212,18 @@ class AppRouter {
             final questionIds = state.extra as List<String>;
             return SrsMiniQuizScreen(questionIds: questionIds);
           },
+        ),
+        GoRoute(
+          path: '/pago',
+          builder: (context, state) => const PaymentScreen(),
+        ),
+        GoRoute(
+          path: '/compra',
+          builder: (context, state) => const PaymentScreen(),
+        ),
+        GoRoute(
+          path: '/premium',
+          builder: (context, state) => const PaymentScreen(),
         ),
 
         GoRoute(
