@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cargar Puter.js -->
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        // Manejar mensajes desde Flutter
+        function handleFlutterMessage(message) {
+            try {
+                const data = JSON.parse(message);
+                
+                if (data.action === 'chat') {
+                    const prompt = data.prompt;
+                    // Llamar a puter.js usando el modelo recomendado
+                    puter.ai.chat(prompt, { model: 'gpt-5.4-nano' })
+                        .then(response => {
+                            // Enviar respuesta exitosa de vuelta a Flutter
+                            PuterChannel.postMessage(JSON.stringify({
+                                status: 'success',
+                                type: 'chat_response',
+                                response: response?.message?.content || response.toString()
+                            }));
+                        })
+                        .catch(error => {
+                            // Enviar error de vuelta a Flutter
+                            PuterChannel.postMessage(JSON.stringify({
+                                status: 'error',
+                                type: 'chat_response',
+                                error: error.toString()
+                            }));
+                        });
+                }
+            } catch (e) {
+                PuterChannel.postMessage(JSON.stringify({
+                    status: 'error',
+                    type: 'system',
+                    error: e.toString()
+                }));
+            }
+        }
+
+        // Informar a Flutter que el script está listo
+        window.onload = function() {
+            if (window.PuterChannel) {
+                PuterChannel.postMessage(JSON.stringify({
+                    status: 'ready'
+                }));
+            }
+        };
+    </script>
+</head>
+<body style="background-color: transparent;">
+    <!-- El WebView estará oculto, por lo que no es necesario UI aquí -->
+</body>
+</html>
