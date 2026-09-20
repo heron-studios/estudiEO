@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -34,10 +35,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   Future<void> _copyNumber() async {
     HapticFeedback.mediumImpact();
-    await Clipboard.setData(const ClipboardData(text: _yapeNumber));
+    try {
+      await Clipboard.setData(const ClipboardData(text: _yapeNumber));
+    } catch (_) {}
     if (!mounted) return;
     setState(() => _copied = true);
 
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: const Row(
@@ -86,17 +90,44 @@ class _PaymentScreenState extends State<PaymentScreen> {
       'https://wa.me/$waNumber?text=${Uri.encodeComponent(message)}',
     );
     try {
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (kIsWeb) {
+        // En Web, lanzar inmediatamente con target _blank sin await previo para no perder la activación del usuario
+        final launched = await launchUrl(
+          uri,
+          mode: LaunchMode.platformDefault,
+          webOnlyWindowName: '_blank',
+        );
+        if (!launched) {
+          final fallbackUri = Uri.parse(
+            'https://api.whatsapp.com/send?phone=$waNumber&text=${Uri.encodeComponent(message)}',
+          );
+          await launchUrl(
+            fallbackUri,
+            mode: LaunchMode.platformDefault,
+            webOnlyWindowName: '_blank',
+          );
+        }
       } else {
-        await launchUrl(uri);
+        final launched = await launchUrl(
+          uri,
+          mode: LaunchMode.externalApplication,
+        );
+        if (!launched) {
+          await launchUrl(uri, mode: LaunchMode.platformDefault);
+        }
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('No se pudo abrir WhatsApp: $e'),
+            content: Text('No se pudo abrir WhatsApp: $e. Puedes escribir directamente al $waNumber'),
             backgroundColor: const Color(0xFFFF453A),
+            duration: const Duration(seconds: 4),
+            action: SnackBarAction(
+              label: 'Copiar número',
+              textColor: Colors.white,
+              onPressed: _copyNumber,
+            ),
           ),
         );
       }
@@ -207,19 +238,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
 
-          // Contenedor principal sin scroll (con soporte defensivo si pantalla < 500dp)
+          // Contenedor principal centrado perfectamente en desktop/web y móvil
           SafeArea(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                return SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: constraints.maxHeight - 16,
-                      maxWidth: 520,
-                    ),
-                    child: Center(
+                return Center(
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        maxWidth: 480,
+                      ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -551,36 +581,42 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                   const SizedBox(height: 10),
 
-                  // QR Image Compacto (170x170 dp)
-                  Container(
-                    width: 172,
-                    height: 172,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.9),
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.4),
-                          blurRadius: 14,
-                          offset: const Offset(0, 4),
+                  // QR Image Compacto (172x172 dp) interactivo
+                  Tooltip(
+                    message: 'Toca para copiar el número de Yape (955 285 763)',
+                    child: _ApplePressable(
+                      onTap: _copyNumber,
+                      child: Container(
+                        width: 172,
+                        height: 172,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.9),
+                            width: 2,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.4),
+                              blurRadius: 14,
+                              offset: const Offset(0, 4),
+                            ),
+                            BoxShadow(
+                              color: const Color(0xFF742284).withValues(alpha: 0.25),
+                              blurRadius: 20,
+                            ),
+                          ],
                         ),
-                        BoxShadow(
-                          color: const Color(0xFF742284).withValues(alpha: 0.25),
-                          blurRadius: 20,
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(14),
-                      child: Image.asset(
-                        'assets/images/yape_qr.jpg',
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) => const Center(
-                          child: Icon(Icons.qr_code_rounded, size: 50, color: Colors.grey),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(14),
+                          child: Image.asset(
+                            'assets/images/yape_qr.jpg',
+                            fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) => const Center(
+                              child: Icon(Icons.qr_code_rounded, size: 50, color: Colors.grey),
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -1009,17 +1045,22 @@ class _ApplePressableState extends State<_ApplePressable> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown: _onTapDown,
-      onTapUp: _onTapUp,
-      onTapCancel: _onTapCancel,
-      onTap: widget.onTap,
-      child: AnimatedScale(
-        scale: _pressed ? 0.96 : 1.0,
-        duration: const Duration(milliseconds: 120),
-        curve: Curves.easeOutCubic,
-        child: widget.child,
+    return MouseRegion(
+      cursor: widget.onTap != null
+          ? SystemMouseCursors.click
+          : SystemMouseCursors.basic,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: _onTapDown,
+        onTapUp: _onTapUp,
+        onTapCancel: _onTapCancel,
+        onTap: widget.onTap,
+        child: AnimatedScale(
+          scale: _pressed ? 0.96 : 1.0,
+          duration: const Duration(milliseconds: 120),
+          curve: Curves.easeOutCubic,
+          child: widget.child,
+        ),
       ),
     );
   }
