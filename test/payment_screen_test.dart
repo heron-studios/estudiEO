@@ -21,10 +21,10 @@ void main() {
 
       await tester.pump();
 
-      // Check title and badges
+      // Check title and segmented control tabs
       expect(find.text('EDUPOL PRO • Activación'), findsOneWidget);
-      expect(find.text('PLAN VITALICIO OFICIAL • EDUPOL PRO'), findsOneWidget);
-      expect(find.text('Desbloquea tu Vacante en la PNP'), findsOneWidget);
+      expect(find.text('Pago & QR'), findsOneWidget);
+      expect(find.text('Beneficios PRO'), findsOneWidget);
 
       // Check price
       expect(find.text('S/ 30.00'), findsOneWidget);
@@ -36,11 +36,24 @@ void main() {
       expect(find.text('Copiar'), findsOneWidget);
 
       // Check WhatsApp CTA button
-      expect(find.text('Enviar mensaje para mi acceso PRO'), findsOneWidget);
+      expect(find.text('Solicitar acceso PRO'), findsOneWidget);
 
-      // Check benefits
+      // Switch to Beneficios PRO tab
+      await tester.tap(find.text('Beneficios PRO'));
+      await tester.pumpAndSettle();
+
+      // Check benefits in Tab 1
       expect(find.text('¿Qué incluye tu Acceso PRO de por vida?'), findsOneWidget);
       expect(find.text('Temarios Oficiales PNP 2026 Completos'), findsOneWidget);
+      expect(find.text('Simulacros Oficiales Cronometrados'), findsOneWidget);
+      expect(find.text('Radar Predictivo de Riesgo'), findsOneWidget);
+      expect(find.text('Ver QR de Pago (S/ 30.00)'), findsOneWidget);
+
+      // Switch back to Pago & QR via button
+      await tester.tap(find.text('Ver QR de Pago (S/ 30.00)'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Solicitar acceso PRO'), findsOneWidget);
     });
 
     testWidgets('Renders all core elements in mobile layout without overflow',
@@ -57,11 +70,11 @@ void main() {
 
       await tester.pump();
 
-      // Verify essential mobile components
+      // Verify essential mobile components in Tab 0
       expect(find.text('S/ 30.00'), findsOneWidget);
       expect(find.text('YAPE OFICIAL'), findsOneWidget);
       expect(find.text('955 285 763'), findsOneWidget);
-      expect(find.text('Enviar mensaje para mi acceso PRO'), findsOneWidget);
+      expect(find.text('Solicitar acceso PRO'), findsOneWidget);
     });
 
     testWidgets('Tap Copiar number copies to clipboard and displays feedback',

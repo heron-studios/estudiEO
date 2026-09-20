@@ -6,13 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
 
-/// Pantalla exclusiva de pago y activación para EDUPOL PRO Vitalicio.
-/// Diseñada bajo los principios de Apple Design (WWDC):
-/// - Materials & Depth: Superficies traslúcidas (frosted glass) y bordes hairline.
-/// - Response: Interacción táctil inmediata en pointer-down (scale 0.96) y haptics.
-/// - Typography: Tracking óptico negativo en titulares grandes e interlineado compacto.
-/// - Apple Wallet Pass: Tarjeta de Yape con acabados de pase digital y QR de alta resolución.
-/// - Inset Grouped Lists: Lista de beneficios estilo iOS Settings / Apple Store specs.
+/// Pantalla compacta de pago y activación para EDUPOL PRO Vitalicio bajo Apple Design.
+/// Diseño de 2 pestañas (Segmented Control) sin scroll ("Zero-Scroll"):
+/// - Tab 0: Pago & QR (Precio S/ 30, QR Yape, número copiable y botón "Solicitar acceso PRO" a WhatsApp).
+/// - Tab 1: Beneficios PRO (Temarios, simulacros, radar, SRS, offline, soporte, garantías).
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
 
@@ -24,6 +21,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
   static const String _yapeNumber = '955285763';
   static const String _formattedNumber = '955 285 763';
   static const String _price = 'S/ 30.00';
+
+  int _selectedTab = 0; // 0 = Pago & QR, 1 = Beneficios PRO
   bool _copied = false;
   Timer? _copyTimer;
 
@@ -43,15 +42,15 @@ class _PaymentScreenState extends State<PaymentScreen> {
       SnackBar(
         content: const Row(
           children: [
-            Icon(Icons.check_circle_rounded, color: Color(0xFF30D158)),
-            SizedBox(width: 10),
+            Icon(Icons.check_circle_rounded, color: Color(0xFF30D158), size: 18),
+            SizedBox(width: 8),
             Expanded(
               child: Text(
-                'Número de Yape copiado al portapapeles (955 285 763)',
+                'Número de Yape copiado (955 285 763)',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 13,
+                  fontSize: 12.5,
                 ),
               ),
             ),
@@ -60,7 +59,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         backgroundColor: const Color(0xFF1C1C1E),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(12),
           side: BorderSide(
             color: Colors.white.withValues(alpha: 0.12),
             width: 0.8,
@@ -106,14 +105,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.sizeOf(context);
-    final isDesktop = media.width >= 860;
-
     return Scaffold(
       backgroundColor: const Color(0xFF000000), // OLED True Black
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(48),
         child: ClipRect(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
@@ -133,7 +129,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   child: Icon(
                     Icons.arrow_back_ios_new_rounded,
                     color: Colors.white,
-                    size: 18,
+                    size: 17,
                   ),
                 ),
               ),
@@ -145,17 +141,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     Icon(
                       Icons.verified_rounded,
                       color: Color(0xFF30D158),
-                      size: 18,
+                      size: 16,
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     Text(
                       'EDUPOL PRO • Activación',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
-                        fontSize: 16,
+                        fontSize: 15,
                         fontFamily: 'Outfit',
-                        letterSpacing: -0.3,
+                        letterSpacing: -0.2,
                       ),
                     ),
                   ],
@@ -166,7 +162,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 preferredSize: const Size.fromHeight(0.8),
                 child: Container(
                   height: 0.8,
-                  color: Colors.white.withValues(alpha: 0.1),
+                  color: Colors.white.withValues(alpha: 0.08),
                 ),
               ),
             ),
@@ -175,52 +171,35 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       body: Stack(
         children: [
-          // ── FONDO AMBIENTAL APPLE (LUCES DIFUSAS SUTILES) ──
+          // Luces ambientales tenues de fondo (Apple Ambient Glow)
           Positioned(
-            top: -120,
-            right: -100,
-            child: Container(
-              width: 380,
-              height: 380,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    const Color(0xFF30D158).withValues(alpha: 0.15),
-                    Colors.transparent,
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 250,
-            left: -140,
-            child: Container(
-              width: 420,
-              height: 420,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    const Color(0xFF742284).withValues(alpha: 0.18),
-                    Colors.transparent,
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: -60,
+            top: -60,
             right: -60,
             child: Container(
-              width: 340,
-              height: 340,
+              width: 260,
+              height: 260,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    const Color(0xFF0A84FF).withValues(alpha: 0.12),
+                    const Color(0xFF30D158).withValues(alpha: 0.12),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 40,
+            left: -80,
+            child: Container(
+              width: 280,
+              height: 280,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFF742284).withValues(alpha: 0.16),
                     Colors.transparent,
                   ],
                 ),
@@ -228,20 +207,168 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
 
-          // ── CONTENIDO PRINCIPAL SCROLLABLE ──
+          // Contenedor principal sin scroll (con soporte defensivo si pantalla < 500dp)
           SafeArea(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(
-                horizontal: isDesktop ? 48 : 18,
-                vertical: 24,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight - 16,
+                      maxWidth: 520,
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          // 1. Selector de Pestañas iOS Segmented Control
+                          _buildSegmentedControl(),
+
+                          const SizedBox(height: 10),
+
+                          // 2. Contenido del Tab seleccionado
+                          AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 220),
+                            switchInCurve: Curves.easeOutCubic,
+                            switchOutCurve: Curves.easeInCubic,
+                            child: _selectedTab == 0
+                                ? _buildTabPayment()
+                                : _buildTabBenefits(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ── 1. IOS SEGMENTED CONTROL ───────────────────────────────────────────────
+
+  Widget _buildSegmentedControl() {
+    return Container(
+      height: 40,
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.12),
+          width: 0.8,
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: _ApplePressable(
+              onTap: () {
+                if (_selectedTab != 0) {
+                  HapticFeedback.selectionClick();
+                  setState(() => _selectedTab = 0);
+                }
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: _selectedTab == 0
+                      ? const Color(0xFF742284)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(17),
+                  boxShadow: _selectedTab == 0
+                      ? [
+                          BoxShadow(
+                            color: const Color(0xFF742284).withValues(alpha: 0.45),
+                            blurRadius: 10,
+                            offset: const Offset(0, 2),
+                          ),
+                        ]
+                      : null,
+                ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.qr_code_2_rounded,
+                        size: 15,
+                        color: _selectedTab == 0 ? Colors.white : Colors.white60,
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        'Pago & QR',
+                        style: TextStyle(
+                          color: _selectedTab == 0 ? Colors.white : Colors.white60,
+                          fontSize: 12.5,
+                          fontWeight: _selectedTab == 0 ? FontWeight.w800 : FontWeight.w500,
+                          letterSpacing: -0.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1020),
-                  child: isDesktop
-                      ? _buildDesktopLayout(context)
-                      : _buildMobileLayout(context),
+            ),
+          ),
+          Expanded(
+            child: _ApplePressable(
+              onTap: () {
+                if (_selectedTab != 1) {
+                  HapticFeedback.selectionClick();
+                  setState(() => _selectedTab = 1);
+                }
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeOutCubic,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: _selectedTab == 1
+                      ? const Color(0xFF30D158)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(17),
+                  boxShadow: _selectedTab == 1
+                      ? [
+                          BoxShadow(
+                            color: const Color(0xFF30D158).withValues(alpha: 0.4),
+                            blurRadius: 10,
+                            offset: const Offset(0, 2),
+                          ),
+                        ]
+                      : null,
+                ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.stars_rounded,
+                        size: 15,
+                        color: _selectedTab == 1 ? Colors.white : Colors.white60,
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        'Beneficios PRO',
+                        style: TextStyle(
+                          color: _selectedTab == 1 ? Colors.white : Colors.white60,
+                          fontSize: 12.5,
+                          fontWeight: _selectedTab == 1 ? FontWeight.w800 : FontWeight.w500,
+                          letterSpacing: -0.2,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -251,158 +378,32 @@ class _PaymentScreenState extends State<PaymentScreen> {
     );
   }
 
-  /// ── LAYOUT ESCRITORIO (2 COLUMNAS) ──
-  Widget _buildDesktopLayout(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Columna Izquierda: Hero, Precio, Beneficios Inset Grouped
-        Expanded(
-          flex: 5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildHeaderBadge(),
-              const SizedBox(height: 16),
-              _buildHeadline(),
-              const SizedBox(height: 18),
-              _buildPriceBox(),
-              const SizedBox(height: 24),
-              _buildBenefitsCard(),
-              const SizedBox(height: 22),
-              _buildGuaranteesRow(),
-            ],
-          ),
-        ),
-        const SizedBox(width: 36),
-        // Columna Derecha: Tarjeta Estilo Apple Wallet Pass para Yape & WhatsApp CTA
-        Expanded(
-          flex: 5,
-          child: _buildYapePaymentCard(),
-        ),
-      ],
-    );
-  }
+  // ── 2. TAB 0: PAGO & QR (PRECIO, QR, NÚMERO Y SOLICITAR ACCESO) ───────────
 
-  /// ── LAYOUT MÓVIL (VERTICAL) ──
-  Widget _buildMobileLayout(BuildContext context) {
+  Widget _buildTabPayment() {
     return Column(
+      key: const ValueKey('tab_payment'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _buildHeaderBadge(),
-        const SizedBox(height: 14),
-        _buildHeadline(),
-        const SizedBox(height: 16),
-        _buildPriceBox(),
-        const SizedBox(height: 24),
-        _buildYapePaymentCard(),
-        const SizedBox(height: 26),
-        _buildBenefitsCard(),
-        const SizedBox(height: 22),
-        _buildGuaranteesRow(),
-        const SizedBox(height: 32),
-      ],
-    );
-  }
-
-  // ── COMPONENTES APPLE DESIGN ──────────────────────────────────────────────
-
-  /// Píldora de Categoría / Status Superior
-  Widget _buildHeaderBadge() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: const Color(0xFFBF5AF2).withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: const Color(0xFFBF5AF2).withValues(alpha: 0.35),
-          width: 0.8,
-        ),
-      ),
-      child: const FittedBox(
-        fit: BoxFit.scaleDown,
-        alignment: Alignment.centerLeft,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.stars_rounded, color: Color(0xFFD087FA), size: 15),
-            SizedBox(width: 6),
-            Text(
-              'PLAN VITALICIO OFICIAL • EDUPOL PRO',
-              style: TextStyle(
-                color: Color(0xFFD087FA),
-                fontWeight: FontWeight.w700,
-                fontSize: 11.5,
-                letterSpacing: 0.5,
+        // A. Caja de Precio Ultra Compacta
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(18),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.12),
+                  width: 0.8,
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Titular con Tracking Óptico Negativo e Interlineado Apple
-  Widget _buildHeadline() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Desbloquea tu Vacante en la PNP',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 27,
-            fontWeight: FontWeight.w800,
-            fontFamily: 'Outfit',
-            letterSpacing: -0.8,
-            height: 1.15,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          'Acceso completo e ilimitado a todo el banco de preguntas oficial 2026, simulacros cronometrados, diagnóstico de radar predictivo y repaso inteligente.',
-          style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.72),
-            fontSize: 13.5,
-            height: 1.45,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ],
-    );
-  }
-
-  /// Tarjeta de Precio Estilo Apple Glass
-  Widget _buildPriceBox() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(22),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(22),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.14),
-              width: 0.8,
-            ),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.white.withValues(alpha: 0.08),
-                Colors.white.withValues(alpha: 0.02),
-              ],
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FittedBox(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: FittedBox(
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.centerLeft,
                       child: Row(
@@ -411,493 +412,326 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             'S/ 89.00',
                             style: TextStyle(
                               color: Colors.white38,
-                              fontSize: 13,
+                              fontSize: 12,
                               decoration: TextDecoration.lineThrough,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          const SizedBox(width: 6),
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 7,
-                              vertical: 2,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFFF453A).withValues(alpha: 0.18),
-                              borderRadius: BorderRadius.circular(6),
+                              color: const Color(0xFFFF453A).withValues(alpha: 0.2),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: const Text(
                               '66% DCTO',
                               style: TextStyle(
                                 color: Color(0xFFFF453A),
-                                fontSize: 10,
+                                fontSize: 9.5,
                                 fontWeight: FontWeight.w800,
-                                letterSpacing: 0.4,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 3),
-                    const FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.baseline,
-                        textBaseline: TextBaseline.alphabetic,
-                        children: [
-                          Text(
+                          const SizedBox(width: 8),
+                          const Text(
                             _price,
                             style: TextStyle(
                               color: Color(0xFF30D158),
-                              fontSize: 34,
+                              fontSize: 24,
                               fontWeight: FontWeight.w900,
                               fontFamily: 'Outfit',
-                              letterSpacing: -1.0,
+                              letterSpacing: -0.5,
                             ),
                           ),
-                          SizedBox(width: 8),
-                          Text(
+                          const SizedBox(width: 4),
+                          const Text(
                             'PEN',
                             style: TextStyle(
                               color: Colors.white54,
-                              fontSize: 13,
+                              fontSize: 11,
                               fontWeight: FontWeight.w600,
-                              letterSpacing: 0.2,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 2),
-                    const FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        '⚡ Un solo pago de por vida • Sin mensualidades',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 11.5,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF30D158).withValues(alpha: 0.12),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: const Color(0xFF30D158).withValues(alpha: 0.3),
-                    width: 0.8,
-                  ),
-                ),
-                child: const Icon(
-                  Icons.all_inclusive_rounded,
-                  color: Color(0xFF30D158),
-                  size: 26,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  /// Tarjeta Estilo Apple Wallet Pass con QR de Yape y Acción WhatsApp
-  Widget _buildYapePaymentCard() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(28),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-        child: Container(
-          padding: const EdgeInsets.all(22),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.045),
-            borderRadius: BorderRadius.circular(28),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.14),
-              width: 0.9,
-            ),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                const Color(0xFF261033).withValues(alpha: 0.85),
-                const Color(0xFF100B17).withValues(alpha: 0.95),
-              ],
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF742284).withValues(alpha: 0.22),
-                blurRadius: 36,
-                spreadRadius: 1,
-                offset: const Offset(0, 10),
-              ),
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.8),
-                blurRadius: 24,
-                offset: const Offset(0, 6),
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Encabezado tipo Pass
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Wrap(
-                      spacing: 8,
-                      runSpacing: 6,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4.5),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF742284),
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.18),
-                              width: 0.8,
-                            ),
-                          ),
-                          child: const FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 15),
-                                SizedBox(width: 5),
-                                Text(
-                                  'YAPE OFICIAL',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w800,
-                                    letterSpacing: 0.4,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF30D158).withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: const Color(0xFF30D158).withValues(alpha: 0.3),
-                              width: 0.8,
-                            ),
-                          ),
-                          child: const Text(
-                            'PAGO SEGURO',
-                            style: TextStyle(
-                              color: Color(0xFF30D158),
-                              fontSize: 9.5,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 0.3,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                   const SizedBox(width: 8),
-                  const Text(
-                    'Monto: S/ 30',
-                    style: TextStyle(
-                      color: Color(0xFF30D158),
-                      fontWeight: FontWeight.w800,
-                      fontSize: 13,
-                      letterSpacing: -0.2,
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF30D158).withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: const Color(0xFF30D158).withValues(alpha: 0.3),
+                        width: 0.8,
+                      ),
+                    ),
+                    child: const Text(
+                      'Un solo pago de por vida',
+                      style: TextStyle(
+                        color: Color(0xFF30D158),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ],
               ),
-
-              const SizedBox(height: 18),
-
-              // Contenedor del QR con acabado Inset de Apple
-              Center(
-                child: Container(
-                  width: 250,
-                  height: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(22),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.85),
-                      width: 2.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.35),
-                        blurRadius: 18,
-                        offset: const Offset(0, 8),
-                      ),
-                      BoxShadow(
-                        color: const Color(0xFF742284).withValues(alpha: 0.2),
-                        blurRadius: 28,
-                        spreadRadius: 2,
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(19),
-                    child: Image.asset(
-                      'assets/images/yape_qr.jpg',
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.broken_image_rounded, color: Colors.grey, size: 40),
-                              SizedBox(height: 8),
-                              Text(
-                                'QR no disponible',
-                                style: TextStyle(color: Colors.black54, fontSize: 11),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 14),
-
-              // Micro-instrucción
-              Center(
-                child: Text(
-                  'Escanea este código desde la app de Yape',
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.65),
-                    fontSize: 11.5,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 14),
-
-              // Cápsula interactiva para copiar el número de Yape (ApplePressable)
-              _ApplePressable(
-                onTap: _copyNumber,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.07),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.16),
-                      width: 0.8,
-                    ),
-                  ),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.phone_iphone_rounded,
-                          color: Color(0xFF30D158),
-                          size: 17,
-                        ),
-                        const SizedBox(width: 8),
-                        const Text(
-                          _formattedNumber,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.2,
-                          ),
-                        ),
-                        const SizedBox(width: 14),
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          curve: Curves.easeOutCubic,
-                          padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
-                          decoration: BoxDecoration(
-                            color: _copied
-                                ? const Color(0xFF30D158)
-                                : const Color(0xFF742284),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                _copied ? Icons.check_rounded : Icons.copy_rounded,
-                                color: Colors.white,
-                                size: 12,
-                              ),
-                              const SizedBox(width: 4),
-                              Text(
-                                _copied ? '¡Copiado!' : 'Copiar',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 18),
-
-              // Pasos de activación al estilo Apple Guide
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.08),
-                    width: 0.8,
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Instrucciones de activación rápida:',
-                      style: TextStyle(
-                        color: Color(0xFF30D158),
-                        fontSize: 11.5,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 0.2,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    _buildStepRow('1', 'Yapea S/ 30.00 escaneando el QR o al 955 285 763.'),
-                    const SizedBox(height: 5),
-                    _buildStepRow('2', 'Guarda la captura de pantalla de tu comprobante.'),
-                    const SizedBox(height: 5),
-                    _buildStepRow('3', 'Presiona el botón de abajo para enviárnoslo por WhatsApp y activamos tu cuenta PRO al instante.'),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // ── BOTÓN PRINCIPAL WHATSAPP CTA (Apple Pay / App Store Style) ──
-              _ApplePressable(
-                onTap: _sendWhatsAppMessage,
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFF30D158), // Apple System Green Vibrancy
-                        Color(0xFF24A845),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xFF30D158).withValues(alpha: 0.35),
-                        blurRadius: 18,
-                        offset: const Offset(0, 5),
-                      ),
-                    ],
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.chat_bubble_rounded, color: Colors.white, size: 20),
-                      SizedBox(width: 8),
-                      Flexible(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            'Enviar mensaje para mi acceso PRO',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 14.5,
-                              letterSpacing: -0.2,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              const Center(
-                child: Text(
-                  '⚡ Respuesta inmediata por WhatsApp • Activación en minutos',
-                  style: TextStyle(
-                    color: Colors.white54,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 0.1,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildStepRow(String number, String text) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 17,
-          height: 17,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.12),
-            shape: BoxShape.circle,
-          ),
-          child: Text(
-            number,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 9.5,
-              fontWeight: FontWeight.w800,
             ),
           ),
         ),
-        const SizedBox(width: 8),
-        Expanded(
+
+        const SizedBox(height: 10),
+
+        // B. Tarjeta Apple Pass con QR de Yape y Copia de Número
+        ClipRRect(
+          borderRadius: BorderRadius.circular(22),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.045),
+                borderRadius: BorderRadius.circular(22),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.12),
+                  width: 0.8,
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    const Color(0xFF241030).withValues(alpha: 0.8),
+                    const Color(0xFF110B18).withValues(alpha: 0.95),
+                  ],
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Header de la tarjeta Yape
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3.5),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF742284),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 14),
+                            SizedBox(width: 4),
+                            Text(
+                              'YAPE OFICIAL',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10.5,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.3,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Text(
+                        'Monto: S/ 30',
+                        style: TextStyle(
+                          color: Color(0xFF30D158),
+                          fontWeight: FontWeight.w800,
+                          fontSize: 12.5,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  // QR Image Compacto (170x170 dp)
+                  Container(
+                    width: 172,
+                    height: 172,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        width: 2,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.4),
+                          blurRadius: 14,
+                          offset: const Offset(0, 4),
+                        ),
+                        BoxShadow(
+                          color: const Color(0xFF742284).withValues(alpha: 0.25),
+                          blurRadius: 20,
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(14),
+                      child: Image.asset(
+                        'assets/images/yape_qr.jpg',
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) => const Center(
+                          child: Icon(Icons.qr_code_rounded, size: 50, color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  // Micro-instrucción
+                  Text(
+                    'Escanea el QR o copia el número de Yape:',
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.6),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  // Píldora de Número Interactivo con Copiado Rápido
+                  _ApplePressable(
+                    onTap: _copyNumber,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.15),
+                          width: 0.8,
+                        ),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.phone_iphone_rounded,
+                              color: Color(0xFF30D158),
+                              size: 15,
+                            ),
+                            const SizedBox(width: 6),
+                            const Text(
+                              _formattedNumber,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 180),
+                              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3.5),
+                              decoration: BoxDecoration(
+                                color: _copied
+                                    ? const Color(0xFF30D158)
+                                    : const Color(0xFF742284),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    _copied ? Icons.check_rounded : Icons.copy_rounded,
+                                    color: Colors.white,
+                                    size: 11,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    _copied ? '¡Copiado!' : 'Copiar',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 12),
+
+        // C. Botón Principal: Solicitar Acceso PRO (WhatsApp)
+        _ApplePressable(
+          onTap: _sendWhatsAppMessage,
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF30D158), // Apple System Green Vibrancy
+                  Color(0xFF24A845),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF30D158).withValues(alpha: 0.35),
+                  blurRadius: 16,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.chat_bubble_rounded, color: Colors.white, size: 20),
+                SizedBox(width: 8),
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Solicitar acceso PRO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15,
+                        letterSpacing: -0.2,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 6),
+
+        const Center(
           child: Text(
-            text,
+            '⚡ Respuesta inmediata por WhatsApp • Activación en minutos',
             style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.72),
-              fontSize: 11,
-              height: 1.35,
+              color: Colors.white54,
+              fontSize: 10.5,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -906,113 +740,171 @@ class _PaymentScreenState extends State<PaymentScreen> {
     );
   }
 
-  /// Lista Inset Grouped de Beneficios estilo iOS Settings / Apple Specs
-  Widget _buildBenefitsCard() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(24),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: const EdgeInsets.all(22),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.045),
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.12),
-              width: 0.8,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                '¿Qué incluye tu Acceso PRO de por vida?',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.5,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: 'Outfit',
-                  letterSpacing: -0.4,
+  // ── 3. TAB 1: BENEFICIOS PRO COMPACTOS (SIN TANTA COSA) ────────────────────
+
+  Widget _buildTabBenefits() {
+    return Column(
+      key: const ValueKey('tab_benefits'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Tarjeta Inset Grouped con 6 Beneficios Clave
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.12),
+                  width: 0.8,
                 ),
               ),
-              const SizedBox(height: 16),
-              _buildBenefitItem(
-                Icons.menu_book_rounded,
-                const Color(0xFF30D158), // Apple Green
-                'Temarios Oficiales PNP 2026 Completos',
-                'Acceso a todos los cursos y balotarios para Oficiales y Suboficiales.',
-                showDivider: true,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    '¿Qué incluye tu Acceso PRO de por vida?',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: 'Outfit',
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _buildCompactBenefitRow(
+                    Icons.menu_book_rounded,
+                    const Color(0xFF30D158),
+                    'Temarios Oficiales PNP 2026 Completos',
+                    'Cursos y balotarios Oficiales y Suboficiales.',
+                  ),
+                  _buildCompactBenefitRow(
+                    Icons.timer_rounded,
+                    const Color(0xFF0A84FF),
+                    'Simulacros Oficiales Cronometrados',
+                    'Tiempo real de examen y baremo PNP.',
+                  ),
+                  _buildCompactBenefitRow(
+                    Icons.radar_rounded,
+                    const Color(0xFFBF5AF2),
+                    'Radar Predictivo de Riesgo',
+                    'Localiza tus temas débiles antes de rendir.',
+                  ),
+                  _buildCompactBenefitRow(
+                    Icons.security_update_good_rounded,
+                    const Color(0xFFFF9F0A),
+                    'Bóveda de Errores con Algoritmo SRS',
+                    'Repetición espaciada para memorización sólida.',
+                  ),
+                  _buildCompactBenefitRow(
+                    Icons.wifi_off_rounded,
+                    const Color(0xFF64D2FF),
+                    'Modo Offline en la App Android',
+                    'Estudia sin internet ni gastar datos móviles.',
+                  ),
+                  _buildCompactBenefitRow(
+                    Icons.support_agent_rounded,
+                    const Color(0xFFFF375F),
+                    'Soporte Prioritario y Nuevas Preguntas',
+                    'Todas las actualizaciones futuras sin costo.',
+                    isLast: true,
+                  ),
+                ],
               ),
-              _buildBenefitItem(
-                Icons.timer_rounded,
-                const Color(0xFF0A84FF), // Apple Blue
-                'Simulacros Oficiales Cronometrados',
-                'Pruebas con tiempo real de examen y puntuación según baremo PNP.',
-                showDivider: true,
-              ),
-              _buildBenefitItem(
-                Icons.radar_rounded,
-                const Color(0xFFBF5AF2), // Apple Purple
-                'Radar Predictivo de Riesgo y Rendimiento',
-                'Algoritmo que localiza tus fallas y temas débiles antes del examen.',
-                showDivider: true,
-              ),
-              _buildBenefitItem(
-                Icons.security_update_good_rounded,
-                const Color(0xFFFF9F0A), // Apple Orange
-                'Bóveda de Errores con Algoritmo SRS',
-                'Repetición espaciada para memorizar las respuestas difíciles sin olvidar.',
-                showDivider: true,
-              ),
-              _buildBenefitItem(
-                Icons.wifi_off_rounded,
-                const Color(0xFF64D2FF), // Apple Teal
-                'Modo Offline en la App Android',
-                'Estudia en tu celular sin consumir tus datos móviles ni requerir internet.',
-                showDivider: true,
-              ),
-              _buildBenefitItem(
-                Icons.support_agent_rounded,
-                const Color(0xFFFF375F), // Apple Pink
-                'Soporte Prioritario y Nuevas Preguntas',
-                'Todas las futuras actualizaciones y balotarios agregados sin costo extra.',
-                showDivider: false,
-              ),
-            ],
+            ),
           ),
         ),
-      ),
+
+        const SizedBox(height: 10),
+
+        // Píldoras de Garantías
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 10,
+          runSpacing: 6,
+          children: [
+            _buildMiniPill(Icons.verified_rounded, 'Pago 100% Seguro'),
+            _buildMiniPill(Icons.lock_rounded, 'Sin cobros ocultos'),
+            _buildMiniPill(Icons.all_inclusive_rounded, 'Acceso Vitalicio'),
+            _buildMiniPill(Icons.phone_android_rounded, 'Para App Android'),
+          ],
+        ),
+
+        const SizedBox(height: 12),
+
+        // Botón para ir al pago directo
+        _ApplePressable(
+          onTap: () {
+            HapticFeedback.selectionClick();
+            setState(() => _selectedTab = 0);
+          },
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 13),
+            decoration: BoxDecoration(
+              color: const Color(0xFF742284),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF742284).withValues(alpha: 0.35),
+                  blurRadius: 12,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 18),
+                SizedBox(width: 8),
+                Text(
+                  'Ver QR de Pago (S/ 30.00)',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 
-  Widget _buildBenefitItem(
+  Widget _buildCompactBenefitRow(
     IconData icon,
     Color color,
     String title,
     String desc, {
-    required bool showDivider,
+    bool isLast = false,
   }) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 34,
-                height: 34,
+                width: 28,
+                height: 28,
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: color.withValues(alpha: 0.3),
                     width: 0.8,
                   ),
                 ),
-                child: Icon(icon, color: color, size: 18),
+                child: Icon(icon, color: color, size: 15),
               ),
-              const SizedBox(width: 14),
+              const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1022,18 +914,16 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
-                        fontSize: 13,
+                        fontSize: 12,
                         letterSpacing: -0.2,
                       ),
                     ),
-                    const SizedBox(height: 2),
                     Text(
                       desc,
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.65),
-                        fontSize: 11.5,
-                        height: 1.35,
-                        fontWeight: FontWeight.w400,
+                        color: Colors.white.withValues(alpha: 0.6),
+                        fontSize: 10.5,
+                        height: 1.25,
                       ),
                     ),
                   ],
@@ -1042,54 +932,40 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ],
           ),
         ),
-        if (showDivider)
+        if (!isLast)
           Padding(
-            padding: const EdgeInsets.only(left: 48, top: 4, bottom: 4),
+            padding: const EdgeInsets.only(left: 38),
             child: Divider(
-              color: Colors.white.withValues(alpha: 0.08),
+              color: Colors.white.withValues(alpha: 0.06),
               height: 1,
-              thickness: 0.7,
+              thickness: 0.6,
             ),
           ),
       ],
     );
   }
 
-  Widget _buildGuaranteesRow() {
-    return Wrap(
-      alignment: WrapAlignment.center,
-      spacing: 14,
-      runSpacing: 8,
-      children: [
-        _buildMiniPill(Icons.verified_rounded, 'Pago 100% Seguro'),
-        _buildMiniPill(Icons.lock_rounded, 'Sin cobros ocultos'),
-        _buildMiniPill(Icons.all_inclusive_rounded, 'Acceso Vitalicio'),
-        _buildMiniPill(Icons.phone_android_rounded, 'Para App Android'),
-      ],
-    );
-  }
-
   Widget _buildMiniPill(IconData icon, String text) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.04),
-        borderRadius: BorderRadius.circular(12),
+        color: Colors.white.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: Colors.white.withValues(alpha: 0.09),
+          color: Colors.white.withValues(alpha: 0.08),
           width: 0.7,
         ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 12, color: const Color(0xFF30D158)),
-          const SizedBox(width: 5),
+          Icon(icon, size: 11, color: const Color(0xFF30D158)),
+          const SizedBox(width: 4),
           Text(
             text,
             style: const TextStyle(
               color: Colors.white60,
-              fontSize: 10.5,
+              fontSize: 10,
               fontWeight: FontWeight.w500,
             ),
           ),
