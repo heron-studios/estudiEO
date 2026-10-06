@@ -94,16 +94,16 @@ void main() {
 
         // Verify presence of all 3 plans
         expect(find.textContaining('Plan 1 Mes'), findsAtLeastNWidgets(1));
-        expect(find.textContaining('Plan 3 Meses'), findsAtLeastNWidgets(1));
-        expect(find.textContaining('Plan Hasta el Examen'), findsAtLeastNWidgets(1));
+        expect(find.textContaining('Plan 6 Meses'), findsAtLeastNWidgets(1));
+        expect(find.textContaining('Plan 1 Año'), findsAtLeastNWidgets(1));
 
         // Badges / distinguishing subtitles for each plan
         expect(
           find.byWidgetPredicate(
             (w) =>
                 w is Text &&
-                (w.data?.contains('INICIAL') == true ||
-                    w.data?.contains('Para probar') == true),
+                (w.data?.contains('1 MES') == true ||
+                    w.data?.contains('S/ 30/mes') == true),
           ),
           findsAtLeastNWidgets(1),
           reason: 'Plan 1 Mes badge should indicate entry/trial tier',
@@ -114,20 +114,20 @@ void main() {
                 w is Text &&
                 (w.data?.contains('MÁS ELEGIDO') == true ||
                     w.data?.contains('Recomendado') == true ||
-                    w.data?.contains('Ahorras 33%') == true),
+                    w.data?.contains('S/ 10/mes') == true),
           ),
           findsAtLeastNWidgets(1),
-          reason: 'Plan 3 Meses badge should indicate hero/recommended tier',
+          reason: 'Plan 6 Meses badge should indicate hero/recommended tier',
         );
         expect(
           find.byWidgetPredicate(
             (w) =>
                 w is Text &&
                 (w.data?.contains('TOTAL') == true ||
-                    w.data?.contains('Pago único') == true),
+                    w.data?.contains('S/ 8.3/mes') == true),
           ),
           findsAtLeastNWidgets(1),
-          reason: 'Plan Hasta el Examen badge should indicate total/unlimited tier',
+          reason: 'Plan 1 Año badge should indicate total/unlimited tier',
         );
 
         expect(tester.takeException(), isNull);
@@ -135,7 +135,7 @@ void main() {
     );
 
     testWidgets(
-      '1.2 Default selected plan is Plan 3 Meses (S/ 30.00) with Monto: S/ 30',
+      '1.2 Default selected plan is Plan 6 Meses (S/ 60.00) with Monto: S/ 60',
       (WidgetTester tester) async {
         tester.view.physicalSize = const Size(390, 844);
         tester.view.devicePixelRatio = 1.0;
@@ -148,16 +148,16 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        // Price indicator shows S/ 30 or S/ 30.00
+        // Price indicator shows S/ 60 or S/ 60.00
         expect(
           find.byWidgetPredicate(
-            (w) => w is Text && (w.data == 'S/ 30.00' || w.data == 'S/ 30'),
+            (w) => w is Text && (w.data == 'S/ 60.00' || w.data == 'S/ 60'),
           ),
           findsAtLeastNWidgets(1),
         );
 
-        // Yape card header displays Monto: S/ 30
-        expect(find.text('Monto: S/ 30'), findsOneWidget);
+        // Yape card header displays Monto: S/ 60
+        expect(find.text('Monto: S/ 60'), findsOneWidget);
 
         // WhatsApp CTA button present
         expect(find.text('Solicitar acceso PRO'), findsOneWidget);
@@ -170,7 +170,7 @@ void main() {
   // ───────────────────────────────────────────────────────────────────────────
   group('Group 2: Plan Selection Interactivity & Dynamic UI Updates (R1, R2, AC4)', () {
     testWidgets(
-      '2.1 Tapping Plan 1 Mes dynamically updates price and Yape amount badge to S/ 15',
+      '2.1 Tapping Plan 1 Mes dynamically updates price and Yape amount badge to S/ 30',
       (WidgetTester tester) async {
         tester.view.physicalSize = const Size(390, 844);
         tester.view.devicePixelRatio = 1.0;
@@ -189,12 +189,12 @@ void main() {
         await tester.pumpAndSettle();
 
         // Yape header updates dynamically
-        expect(find.text('Monto: S/ 15'), findsOneWidget);
+        expect(find.text('Monto: S/ 30'), findsOneWidget);
 
-        // Price display reflects S/ 15
+        // Price display reflects S/ 30
         expect(
           find.byWidgetPredicate(
-            (w) => w is Text && (w.data == 'S/ 15.00' || w.data == 'S/ 15'),
+            (w) => w is Text && (w.data == 'S/ 30.00' || w.data == 'S/ 30'),
           ),
           findsAtLeastNWidgets(1),
         );
@@ -204,7 +204,7 @@ void main() {
     );
 
     testWidgets(
-      '2.2 Tapping Plan Hasta el Examen dynamically updates price and Yape amount badge to S/ 50',
+      '2.2 Tapping Plan 1 Año dynamically updates price and Yape amount badge to S/ 100',
       (WidgetTester tester) async {
         tester.view.physicalSize = const Size(390, 844);
         tester.view.devicePixelRatio = 1.0;
@@ -217,18 +217,18 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        final untilExamFinder = find.textContaining('Plan Hasta el Examen');
-        expect(untilExamFinder, findsAtLeastNWidgets(1));
-        await tester.tap(untilExamFinder.first);
+        final annualFinder = find.textContaining('Plan 1 Año');
+        expect(annualFinder, findsAtLeastNWidgets(1));
+        await tester.tap(annualFinder.first);
         await tester.pumpAndSettle();
 
         // Yape header updates dynamically
-        expect(find.text('Monto: S/ 50'), findsOneWidget);
+        expect(find.text('Monto: S/ 100'), findsOneWidget);
 
-        // Price display reflects S/ 50
+        // Price display reflects S/ 100
         expect(
           find.byWidgetPredicate(
-            (w) => w is Text && (w.data == 'S/ 50.00' || w.data == 'S/ 50'),
+            (w) => w is Text && (w.data == 'S/ 100.00' || w.data == 'S/ 100'),
           ),
           findsAtLeastNWidgets(1),
         );
@@ -251,25 +251,25 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        // Default state: S/ 30
-        expect(find.text('Monto: S/ 30'), findsOneWidget);
+        // Default state: S/ 60
+        expect(find.text('Monto: S/ 60'), findsOneWidget);
 
         // 1. Switch to Plan 1 Mes
         await tester.tap(find.textContaining('Plan 1 Mes').first);
         await tester.pumpAndSettle();
-        expect(find.text('Monto: S/ 15'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-
-        // 2. Switch to Plan Hasta el Examen
-        await tester.tap(find.textContaining('Plan Hasta el Examen').first);
-        await tester.pumpAndSettle();
-        expect(find.text('Monto: S/ 50'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-
-        // 3. Switch back to Plan 3 Meses
-        await tester.tap(find.textContaining('Plan 3 Meses').first);
-        await tester.pumpAndSettle();
         expect(find.text('Monto: S/ 30'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // 2. Switch to Plan 1 Año
+        await tester.tap(find.textContaining('Plan 1 Año').first);
+        await tester.pumpAndSettle();
+        expect(find.text('Monto: S/ 100'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        // 3. Switch back to Plan 6 Meses
+        await tester.tap(find.textContaining('Plan 6 Meses').first);
+        await tester.pumpAndSettle();
+        expect(find.text('Monto: S/ 60'), findsOneWidget);
         expect(tester.takeException(), isNull);
       },
     );
@@ -378,7 +378,7 @@ void main() {
   // ───────────────────────────────────────────────────────────────────────────
   group('Group 4: WhatsApp Launching & Dynamic Message Construction (R3, AC5)', () {
     testWidgets(
-      '4.1 Tapping WhatsApp button with default Plan 3 Meses launches wa.me with correct encoded message',
+      '4.1 Tapping WhatsApp button with default Plan 6 Meses launches wa.me with correct encoded message',
       (WidgetTester tester) async {
         tester.view.physicalSize = const Size(390, 844);
         tester.view.devicePixelRatio = 1.0;
@@ -402,8 +402,8 @@ void main() {
         expect(mockUrlLauncher.lastLaunchedUrl, contains('51955285763'));
 
         final text = uri.queryParameters['text'] ?? '';
-        expect(text, contains('Plan 3 Meses'));
-        expect(text, anyOf(contains('S/ 30.00'), contains('S/ 30')));
+        expect(text, contains('Plan 6 Meses'));
+        expect(text, anyOf(contains('S/ 60.00'), contains('S/ 60')));
         expect(text, contains('comprobante de pago'));
       },
     );
@@ -433,13 +433,13 @@ void main() {
         final uri = Uri.parse(mockUrlLauncher.lastLaunchedUrl!);
         final text = uri.queryParameters['text'] ?? '';
         expect(text, contains('Plan 1 Mes'));
-        expect(text, anyOf(contains('S/ 15.00'), contains('S/ 15')));
+        expect(text, anyOf(contains('S/ 30.00'), contains('S/ 30')));
         expect(text, contains('comprobante de pago'));
       },
     );
 
     testWidgets(
-      '4.3 Tapping WhatsApp button after selecting Plan Hasta el Examen launches wa.me with Plan Hasta el Examen message',
+      '4.3 Tapping WhatsApp button after selecting Plan 1 Año launches wa.me with Plan 1 Año message',
       (WidgetTester tester) async {
         tester.view.physicalSize = const Size(390, 844);
         tester.view.devicePixelRatio = 1.0;
@@ -452,8 +452,8 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        // Select Plan Hasta el Examen
-        await tester.tap(find.textContaining('Plan Hasta el Examen').first);
+        // Select Plan 1 Año
+        await tester.tap(find.textContaining('Plan 1 Año').first);
         await tester.pumpAndSettle();
 
         await tester.tap(find.text('Solicitar acceso PRO'));
@@ -462,8 +462,8 @@ void main() {
         expect(mockUrlLauncher.lastLaunchedUrl, isNotNull);
         final uri = Uri.parse(mockUrlLauncher.lastLaunchedUrl!);
         final text = uri.queryParameters['text'] ?? '';
-        expect(text, contains('Plan Hasta el Examen'));
-        expect(text, anyOf(contains('S/ 50.00'), contains('S/ 50')));
+        expect(text, contains('Plan 1 Año'));
+        expect(text, anyOf(contains('S/ 100.00'), contains('S/ 100')));
         expect(text, contains('comprobante de pago'));
       },
     );
@@ -530,7 +530,7 @@ void main() {
         // All 4 guarantee pills
         expect(find.text('Pago 100% Seguro'), findsOneWidget);
         expect(find.text('Sin cobros ocultos'), findsOneWidget);
-        expect(find.text('Acceso Vitalicio'), findsOneWidget);
+        expect(find.text('Activación inmediata'), findsOneWidget);
         expect(find.text('Para App Android'), findsOneWidget);
       },
     );
@@ -549,12 +549,12 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        // Select Plan 1 Mes (S/ 15)
+        // Select Plan 1 Mes (S/ 30)
         final plan1Finder = find.textContaining('Plan 1 Mes');
         expect(plan1Finder, findsAtLeastNWidgets(1));
         await tester.tap(plan1Finder.first);
         await tester.pumpAndSettle();
-        expect(find.text('Monto: S/ 15'), findsOneWidget);
+        expect(find.text('Monto: S/ 30'), findsOneWidget);
 
         // Switch to Tab 1
         await tester.tap(find.text('Beneficios PRO'));
@@ -570,7 +570,7 @@ void main() {
         expect(find.text('Solicitar acceso PRO'), findsOneWidget);
 
         // Selected plan retained
-        expect(find.text('Monto: S/ 15'), findsOneWidget);
+        expect(find.text('Monto: S/ 30'), findsOneWidget);
       },
     );
   });

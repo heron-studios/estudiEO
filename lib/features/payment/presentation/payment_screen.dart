@@ -12,33 +12,36 @@ enum PaymentPlan {
   monthly(
     id: '1_mes',
     name: 'Plan 1 Mes',
-    price: 15.0,
-    formattedPrice: 'S/ 15.00',
-    displayAmount: 'S/ 15',
-    badge: 'INICIAL',
-    tagline: 'Para probar',
-    isRecommended: false,
-  ),
-  quarterly(
-    id: '3_meses',
-    name: 'Plan 3 Meses',
     price: 30.0,
     formattedPrice: 'S/ 30.00',
     displayAmount: 'S/ 30',
+    badge: '1 MES',
+    tagline: 'S/ 30/mes',
+    isRecommended: false,
+  ),
+  semiannual(
+    id: '6_meses',
+    name: 'Plan 6 Meses',
+    price: 60.0,
+    formattedPrice: 'S/ 60.00',
+    displayAmount: 'S/ 60',
     badge: 'MÁS ELEGIDO',
-    tagline: 'Ahorras 33%',
+    tagline: 'S/ 10/mes • -66%',
     isRecommended: true,
   ),
-  untilExam(
-    id: 'hasta_examen',
-    name: 'Plan Hasta el Examen',
-    price: 50.0,
-    formattedPrice: 'S/ 50.00',
-    displayAmount: 'S/ 50',
+  annual(
+    id: '1_ano',
+    name: 'Plan 1 Año',
+    price: 100.0,
+    formattedPrice: 'S/ 100.00',
+    displayAmount: 'S/ 100',
     badge: 'TOTAL',
-    tagline: 'Pago único',
+    tagline: 'S/ 8.3/mes • -72%',
     isRecommended: false,
   );
+
+  static PaymentPlan get quarterly => semiannual;
+  static PaymentPlan get untilExam => annual;
 
   const PaymentPlan({
     required this.id,
@@ -85,7 +88,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   static const String _yapeNumber = '955285763';
   static const String _formattedNumber = '955 285 763';
 
-  PaymentPlan _selectedPlan = PaymentPlan.quarterly; // S/ 30.00 Plan 3 Meses default pre-selected
+  PaymentPlan _selectedPlan = PaymentPlan.semiannual; // S/ 60.00 Plan 6 Meses default pre-selected
   int _selectedTab = 0; // 0 = Pago & QR, 1 = Beneficios PRO
   int _tabChangeCount = 0;
   bool _copied = false;
@@ -565,7 +568,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         decoration: BoxDecoration(
                           color: plan.isRecommended
                               ? const Color(0xFF30D158)
-                              : (plan == PaymentPlan.untilExam
+                              : (plan == PaymentPlan.annual || plan == PaymentPlan.untilExam
                                   ? const Color(0xFF0A84FF).withValues(alpha: 0.3)
                                   : Colors.white.withValues(alpha: 0.15)),
                           borderRadius: BorderRadius.circular(5),
@@ -577,7 +580,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             style: TextStyle(
                               color: plan.isRecommended
                                   ? Colors.black
-                                  : (plan == PaymentPlan.untilExam
+                                  : (plan == PaymentPlan.annual || plan == PaymentPlan.untilExam
                                       ? const Color(0xFF64D2FF)
                                       : Colors.white70),
                               fontSize: 8.5,
@@ -1024,7 +1027,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           children: [
             _buildMiniPill(Icons.verified_rounded, 'Pago 100% Seguro'),
             _buildMiniPill(Icons.lock_rounded, 'Sin cobros ocultos'),
-            _buildMiniPill(Icons.all_inclusive_rounded, 'Acceso Vitalicio'),
+            _buildMiniPill(Icons.flash_on_rounded, 'Activación inmediata'),
             _buildMiniPill(Icons.phone_android_rounded, 'Para App Android'),
           ],
         ),
