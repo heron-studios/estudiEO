@@ -7,9 +7,72 @@ import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
 
-/// Pantalla compacta de pago y activación para EDUPOL PRO Vitalicio bajo Apple Design.
+/// Enumeración de planes de activación para EDUPOL PRO con estrategia psicológica (Decoy Effect).
+enum PaymentPlan {
+  monthly(
+    id: '1_mes',
+    name: 'Plan 1 Mes',
+    price: 15.0,
+    formattedPrice: 'S/ 15.00',
+    displayAmount: 'S/ 15',
+    badge: 'INICIAL',
+    tagline: 'Para probar',
+    isRecommended: false,
+  ),
+  quarterly(
+    id: '3_meses',
+    name: 'Plan 3 Meses',
+    price: 30.0,
+    formattedPrice: 'S/ 30.00',
+    displayAmount: 'S/ 30',
+    badge: 'MÁS ELEGIDO',
+    tagline: 'Ahorras 33%',
+    isRecommended: true,
+  ),
+  untilExam(
+    id: 'hasta_examen',
+    name: 'Plan Hasta el Examen',
+    price: 50.0,
+    formattedPrice: 'S/ 50.00',
+    displayAmount: 'S/ 50',
+    badge: 'TOTAL',
+    tagline: 'Pago único',
+    isRecommended: false,
+  );
+
+  const PaymentPlan({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.formattedPrice,
+    required this.displayAmount,
+    required this.badge,
+    required this.tagline,
+    required this.isRecommended,
+  });
+
+  final String id;
+  final String name;
+  final double price;
+  final String formattedPrice;
+  final String displayAmount;
+  final String badge;
+  final String tagline;
+  final bool isRecommended;
+
+  String get priceFormatted => formattedPrice;
+  String get priceShort => displayAmount;
+  String get subtitle => tagline;
+  String get savings => tagline;
+  String get whatsappPlanName => name;
+
+  String get whatsappMessage =>
+      '¡Hola! Quiero activar el $name ($formattedPrice) para mi examen. Adjunto mi comprobante de pago de Yape para la activación manual de mi cuenta.';
+}
+
+/// Pantalla compacta de pago y activación para EDUPOL PRO bajo Apple Design.
 /// Diseño de 2 pestañas (Segmented Control) sin scroll ("Zero-Scroll"):
-/// - Tab 0: Pago & QR (Precio S/ 30, QR Yape, número copiable y botón "Solicitar acceso PRO" a WhatsApp).
+/// - Tab 0: Pago & QR (Selector 3 Planes, QR Yape, número copiable y botón "Solicitar acceso PRO" a WhatsApp).
 /// - Tab 1: Beneficios PRO (Temarios, simulacros, radar, SRS, offline, soporte, garantías).
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -21,9 +84,10 @@ class PaymentScreen extends StatefulWidget {
 class _PaymentScreenState extends State<PaymentScreen> {
   static const String _yapeNumber = '955285763';
   static const String _formattedNumber = '955 285 763';
-  static const String _price = 'S/ 30.00';
 
+  PaymentPlan _selectedPlan = PaymentPlan.quarterly; // S/ 30.00 Plan 3 Meses default pre-selected
   int _selectedTab = 0; // 0 = Pago & QR, 1 = Beneficios PRO
+  int _tabChangeCount = 0;
   bool _copied = false;
   Timer? _copyTimer;
 
@@ -50,7 +114,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             SizedBox(width: 8),
             Expanded(
               child: Text(
-                'Número de Yape copiado (955 285 763)',
+                'Número de Yape copiado al portapapeles',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -81,39 +145,53 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   Future<void> _sendWhatsAppMessage() async {
     HapticFeedback.mediumImpact();
-    const message =
-        '¡Hola! Acabo de transferir S/ 30 por Yape para mi Acceso EDUPOL PRO de por vida. Adjunto mi comprobante para que activen mi cuenta de inmediato.';
+    final message = _selectedPlan.whatsappMessage;
     final waNumber = AppConfig.whatsappNumber.isNotEmpty
         ? AppConfig.whatsappNumber
         : '51$_yapeNumber';
-    final uri = Uri.parse(
+    final primaryUri = Uri.parse(
       'https://wa.me/$waNumber?text=${Uri.encodeComponent(message)}',
+    );
+    final fallbackUri = Uri.parse(
+      'https://api.whatsapp.com/send?phone=$waNumber&text=${Uri.encodeComponent(message)}',
     );
     try {
       if (kIsWeb) {
         // En Web, lanzar inmediatamente con target _blank sin await previo para no perder la activación del usuario
         final launched = await launchUrl(
-          uri,
+          primaryUri,
           mode: LaunchMode.platformDefault,
           webOnlyWindowName: '_blank',
         );
         if (!launched) {
-          final fallbackUri = Uri.parse(
-            'https://api.whatsapp.com/send?phone=$waNumber&text=${Uri.encodeComponent(message)}',
-          );
-          await launchUrl(
+          final fallbackLaunched = await launchUrl(
             fallbackUri,
             mode: LaunchMode.platformDefault,
             webOnlyWindowName: '_blank',
           );
+          if (!fallbackLaunched) {
+            throw Exception('No se pudo abrir WhatsApp');
+          }
         }
       } else {
         final launched = await launchUrl(
-          uri,
+          primaryUri,
           mode: LaunchMode.externalApplication,
         );
         if (!launched) {
-          await launchUrl(uri, mode: LaunchMode.platformDefault);
+          final fallbackLaunched = await launchUrl(
+            primaryUri,
+            mode: LaunchMode.platformDefault,
+          );
+          if (!fallbackLaunched) {
+            final fallbackWebLaunched = await launchUrl(
+              fallbackUri,
+              mode: LaunchMode.platformDefault,
+            );
+            if (!fallbackWebLaunched) {
+              throw Exception('No se pudo abrir WhatsApp');
+            }
+          }
         }
       }
     } catch (e) {
@@ -245,7 +323,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 return Center(
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(
                         maxWidth: 480,
@@ -257,16 +335,19 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           // 1. Selector de Pestañas iOS Segmented Control
                           _buildSegmentedControl(),
 
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 8),
 
                           // 2. Contenido del Tab seleccionado
                           AnimatedSwitcher(
                             duration: const Duration(milliseconds: 220),
                             switchInCurve: Curves.easeOutCubic,
                             switchOutCurve: Curves.easeInCubic,
-                            child: _selectedTab == 0
-                                ? _buildTabPayment()
-                                : _buildTabBenefits(),
+                            child: KeyedSubtree(
+                              key: ValueKey('tab_${_selectedTab}_$_tabChangeCount'),
+                              child: _selectedTab == 0
+                                  ? _buildTabPayment()
+                                  : _buildTabBenefits(),
+                            ),
                           ),
                         ],
                       ),
@@ -302,7 +383,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
               onTap: () {
                 if (_selectedTab != 0) {
                   HapticFeedback.selectionClick();
-                  setState(() => _selectedTab = 0);
+                  setState(() {
+                    _selectedTab = 0;
+                    _tabChangeCount++;
+                  });
                 }
               },
               child: AnimatedContainer(
@@ -355,7 +439,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
               onTap: () {
                 if (_selectedTab != 1) {
                   HapticFeedback.selectionClick();
-                  setState(() => _selectedTab = 1);
+                  setState(() {
+                    _selectedTab = 1;
+                    _tabChangeCount++;
+                  });
                 }
               },
               child: AnimatedContainer(
@@ -408,112 +495,169 @@ class _PaymentScreenState extends State<PaymentScreen> {
     );
   }
 
-  // ── 2. TAB 0: PAGO & QR (PRECIO, QR, NÚMERO Y SOLICITAR ACCESO) ───────────
+  // ── 2. PLAN SELECTOR (3 PLANES HORIZONTAL MOBILE-FIRST) ───────────────────
+
+  Widget _buildPlanSelector() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.08),
+          width: 0.8,
+        ),
+      ),
+      padding: const EdgeInsets.all(5),
+      child: Row(
+        children: PaymentPlan.values.map((plan) {
+          final isSelected = _selectedPlan == plan;
+          return Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2.5),
+              child: _ApplePressable(
+                onTap: () {
+                  if (_selectedPlan != plan) {
+                    HapticFeedback.selectionClick();
+                    setState(() => _selectedPlan = plan);
+                  }
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeOutCubic,
+                  padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: isSelected
+                        ? (plan.isRecommended
+                            ? const Color(0xFF30D158).withValues(alpha: 0.14)
+                            : const Color(0xFF742284).withValues(alpha: 0.25))
+                        : (plan.isRecommended
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : Colors.white.withValues(alpha: 0.03)),
+                    border: Border.all(
+                      color: isSelected
+                          ? (plan.isRecommended
+                              ? const Color(0xFF30D158)
+                              : const Color(0xFFBF5AF2))
+                          : (plan.isRecommended
+                              ? const Color(0xFF30D158).withValues(alpha: 0.35)
+                              : Colors.white.withValues(alpha: 0.10)),
+                      width: isSelected ? 1.5 : 0.8,
+                    ),
+                    boxShadow: isSelected
+                        ? [
+                            BoxShadow(
+                              color: plan.isRecommended
+                                  ? const Color(0xFF30D158).withValues(alpha: 0.25)
+                                  : const Color(0xFF742284).withValues(alpha: 0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                        : null,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Badge
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: plan.isRecommended
+                              ? const Color(0xFF30D158)
+                              : (plan == PaymentPlan.untilExam
+                                  ? const Color(0xFF0A84FF).withValues(alpha: 0.3)
+                                  : Colors.white.withValues(alpha: 0.15)),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            plan.badge,
+                            style: TextStyle(
+                              color: plan.isRecommended
+                                  ? Colors.black
+                                  : (plan == PaymentPlan.untilExam
+                                      ? const Color(0xFF64D2FF)
+                                      : Colors.white70),
+                              fontSize: 8.5,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 0.3,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      // Plan Name
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          plan.name,
+                          style: TextStyle(
+                            color: isSelected ? Colors.white : Colors.white70,
+                            fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                            fontSize: 11,
+                            letterSpacing: -0.2,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      // Price
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          plan.formattedPrice,
+                          style: TextStyle(
+                            color: isSelected
+                                ? (plan.isRecommended
+                                    ? const Color(0xFF30D158)
+                                    : Colors.white)
+                                : Colors.white60,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w900,
+                            fontFamily: 'Outfit',
+                            letterSpacing: -0.4,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      // Tagline / Subtitle
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          plan.tagline,
+                          style: TextStyle(
+                            color: isSelected
+                                ? (plan.isRecommended
+                                    ? const Color(0xFF30D158)
+                                    : Colors.white70)
+                                : Colors.white38,
+                            fontSize: 9.5,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  // ── 3. TAB 0: PAGO & QR (SELECTOR, QR, NÚMERO Y SOLICITAR ACCESO) ──────────
 
   Widget _buildTabPayment() {
     return Column(
-      key: const ValueKey('tab_payment'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // A. Caja de Precio Ultra Compacta
-        ClipRRect(
-          borderRadius: BorderRadius.circular(18),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(18),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.12),
-                  width: 0.8,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        children: [
-                          const Text(
-                            'S/ 89.00',
-                            style: TextStyle(
-                              color: Colors.white38,
-                              fontSize: 12,
-                              decoration: TextDecoration.lineThrough,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          const SizedBox(width: 6),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFFF453A).withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: const Text(
-                              '66% DCTO',
-                              style: TextStyle(
-                                color: Color(0xFFFF453A),
-                                fontSize: 9.5,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          const Text(
-                            _price,
-                            style: TextStyle(
-                              color: Color(0xFF30D158),
-                              fontSize: 24,
-                              fontWeight: FontWeight.w900,
-                              fontFamily: 'Outfit',
-                              letterSpacing: -0.5,
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          const Text(
-                            'PEN',
-                            style: TextStyle(
-                              color: Colors.white54,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF30D158).withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: const Color(0xFF30D158).withValues(alpha: 0.3),
-                        width: 0.8,
-                      ),
-                    ),
-                    child: const Text(
-                      'Un solo pago de por vida',
-                      style: TextStyle(
-                        color: Color(0xFF30D158),
-                        fontSize: 10,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        // A. Selector Compacto de 3 Planes
+        _buildPlanSelector(),
 
-        const SizedBox(height: 10),
+        const SizedBox(height: 8),
 
         // B. Tarjeta Apple Pass con QR de Yape y Copia de Número
         ClipRRect(
@@ -521,7 +665,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.045),
                 borderRadius: BorderRadius.circular(22),
@@ -541,54 +685,67 @@ class _PaymentScreenState extends State<PaymentScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Header de la tarjeta Yape
+                  // Header dinámico de la tarjeta Yape
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3.5),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF742284),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 14),
-                            SizedBox(width: 4),
-                            Text(
-                              'YAPE OFICIAL',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10.5,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: 0.3,
-                              ),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3.5),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF742284),
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                          ],
+                            child: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 14),
+                                SizedBox(width: 4),
+                                Text(
+                                  'YAPE OFICIAL',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10.5,
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 0.3,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                      const Text(
-                        'Monto: S/ 30',
-                        style: TextStyle(
-                          color: Color(0xFF30D158),
-                          fontWeight: FontWeight.w800,
-                          fontSize: 12.5,
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            'Monto: ${_selectedPlan.displayAmount}',
+                            style: const TextStyle(
+                              color: Color(0xFF30D158),
+                              fontWeight: FontWeight.w800,
+                              fontSize: 12.5,
+                            ),
+                          ),
                         ),
                       ),
                     ],
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
 
-                  // QR Image Compacto (172x172 dp) interactivo
+                  // QR Image Compacto (154x154 dp) interactivo
                   Tooltip(
                     message: 'Toca para copiar el número de Yape (955 285 763)',
                     child: _ApplePressable(
                       onTap: _copyNumber,
                       child: Container(
-                        width: 172,
-                        height: 172,
+                        width: 154,
+                        height: 154,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
@@ -599,12 +756,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.4),
-                              blurRadius: 14,
+                              blurRadius: 12,
                               offset: const Offset(0, 4),
                             ),
                             BoxShadow(
                               color: const Color(0xFF742284).withValues(alpha: 0.25),
-                              blurRadius: 20,
+                              blurRadius: 18,
                             ),
                           ],
                         ),
@@ -622,7 +779,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 6),
 
                   // Micro-instrucción
                   Text(
@@ -634,7 +791,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 6),
 
                   // Píldora de Número Interactivo con Copiado Rápido
                   _ApplePressable(
@@ -710,14 +867,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
           ),
         ),
 
-        const SizedBox(height: 12),
+        const SizedBox(height: 10),
 
         // C. Botón Principal: Solicitar Acceso PRO (WhatsApp)
         _ApplePressable(
           onTap: _sendWhatsAppMessage,
           child: Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+            padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 16),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 begin: Alignment.topCenter,
@@ -760,15 +917,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
           ),
         ),
 
-        const SizedBox(height: 6),
+        const SizedBox(height: 5),
 
         const Center(
-          child: Text(
-            '⚡ Respuesta inmediata por WhatsApp • Activación en minutos',
-            style: TextStyle(
-              color: Colors.white54,
-              fontSize: 10.5,
-              fontWeight: FontWeight.w400,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              '⚡ Activación en 1 minuto • Sin suscripciones • Un solo pago de por vida',
+              style: TextStyle(
+                color: Colors.white54,
+                fontSize: 10,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
         ),
@@ -780,7 +940,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   Widget _buildTabBenefits() {
     return Column(
-      key: const ValueKey('tab_benefits'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         // Tarjeta Inset Grouped con 6 Beneficios Clave
@@ -876,7 +1035,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
         _ApplePressable(
           onTap: () {
             HapticFeedback.selectionClick();
-            setState(() => _selectedTab = 0);
+            setState(() {
+              _selectedTab = 0;
+              _tabChangeCount++;
+            });
           },
           child: Container(
             width: double.infinity,
@@ -892,17 +1054,22 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 ),
               ],
             ),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 18),
-                SizedBox(width: 8),
-                Text(
-                  'Ver QR de Pago (S/ 30.00)',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 14,
+                const Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 18),
+                const SizedBox(width: 8),
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Ver QR de Pago (${_selectedPlan.priceFormatted})',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 ),
               ],

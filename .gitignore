@@ -68,3 +68,8 @@ xcuserdata/
 /EDUPOL.apk
 /EDUPOL-Windows/
 
+# Multi-agent artifacts
+.agents/
+PROJECT.md
+TEST_INFRA.md
+TEST_READY.md
