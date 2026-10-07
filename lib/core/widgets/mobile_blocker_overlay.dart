@@ -5,9 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
 import 'package:learn/core/config/app_config.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 /// Pantalla móvil oficial de alta conversión para usuarios que ingresan desde smartphones.
-/// Presenta las 3 imágenes promocionales oficiales en un carrusel dinámico y ofrece la descarga directa del APK.
+/// Presenta las 3 imágenes promocionales oficiales en un carrusel dinámico y ofrece la descarga oficial desde Google Play.
 class MobileBlockerOverlay extends StatefulWidget {
   const MobileBlockerOverlay({super.key});
 
@@ -71,19 +72,7 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
     super.dispose();
   }
 
-  Future<void> _openPlayStore() async {
-    final url = Uri.parse(AppConfig.playStoreUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    }
-  }
 
-  Future<void> _openApkDownload() async {
-    final url = Uri.parse(AppConfig.androidApkDownloadUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    }
-  }
 
   Future<void> _openWhatsApp(BuildContext context) async {
     final auth = context.read<AuthService>();
@@ -332,101 +321,13 @@ class _MobileBlockerOverlayState extends State<MobileBlockerOverlay> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Botón Principal: Instalar desde Play Store
-                      Container(
+                      // Botón Único de Alta Conversión: Google Play Store
+                      GooglePlayButton(
+                        height: isVerySmall ? 52 : 56,
+                        isHero: true,
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xFF059669),
-                              Color(0xFF10B981),
-                              Color(0xFF22C55E),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(16),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF10B981).withValues(alpha: 0.45),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: _openPlayStore,
-                            borderRadius: BorderRadius.circular(16),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: isVerySmall ? 12 : 14,
-                                horizontal: 16,
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.play_arrow_rounded, color: Colors.white, size: 26),
-                                  SizedBox(width: 10),
-                                  Flexible(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text(
-                                          'Instalar desde Google Play',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w900,
-                                            letterSpacing: 0.3,
-                                          ),
-                                        ),
-                                        Text(
-                                          'Verificado por Play Protect · Oficial',
-                                          style: TextStyle(
-                                            color: Colors.white70,
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Icon(Icons.open_in_new_rounded, color: Colors.white70, size: 18),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(height: 8),
-
-                      // Botón Alternativo: Descargar APK Directa
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton.icon(
-                          onPressed: _openApkDownload,
-                          icon: const Icon(Icons.download_rounded, color: Color(0xFF38BDF8), size: 18),
-                          label: const Text(
-                            'Descargar instalador APK directo',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12.5,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          style: OutlinedButton.styleFrom(
-                            side: BorderSide(
-                              color: Colors.white.withValues(alpha: 0.2),
-                            ),
-                            padding: const EdgeInsets.symmetric(vertical: 11),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                          ),
-                        ),
+                        topLabel: 'DISPONIBLE EN',
+                        mainLabel: 'Google Play',
                       ),
 
                       const SizedBox(height: 10),

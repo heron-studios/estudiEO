@@ -4,10 +4,10 @@ import 'package:learn/core/config/app_config.dart';
 import 'package:learn/core/widgets/floating_promo_ad.dart';
 
 void main() {
-  test('AppConfig has correct updated APK download URL', () {
+  test('AppConfig has correct Google Play Store URL', () {
     expect(
-      AppConfig.androidApkDownloadUrl,
-      'https://www.mediafire.com/file/zvsyh4o6wl08yn8/edupol.apk/file',
+      AppConfig.playStoreUrl,
+      'https://play.google.com/store/apps/details?id=com.edupol.radar',
     );
   });
 
@@ -36,9 +36,10 @@ void main() {
       expect(find.text('EDUPOL ANDROID OFICIAL'), findsOneWidget);
       expect(find.text('¡Asegura tu Ingreso a la Policía Nacional!'), findsOneWidget);
 
-      // Verify CTA buttons
-      expect(find.text('Instalar desde Play Store'), findsOneWidget);
-      expect(find.text('Descargar APK'), findsOneWidget);
+      // Verify Google Play button and no APK button
+      expect(find.text('Google Play'), findsOneWidget);
+      expect(find.text('DISPONIBLE AHORA EN'), findsOneWidget);
+      expect(find.text('Descargar APK'), findsNothing);
 
       // Verify pillars of value
       expect(find.text('Modo Práctica 100% Offline'), findsOneWidget);
@@ -68,8 +69,8 @@ void main() {
       // In mobile, verify header
       expect(find.text('EDUPOL OFICIAL ANDROID'), findsOneWidget);
       expect(find.text('¡Estudia como un verdadero Oficial!'), findsOneWidget);
-      expect(find.text('Instalar desde Play Store'), findsOneWidget);
-      expect(find.text('Descargar APK Directa'), findsOneWidget);
+      expect(find.text('Google Play'), findsOneWidget);
+      expect(find.text('Descargar APK Directa'), findsNothing);
 
       // Tap close button
       final closeButton = find.byIcon(Icons.close_rounded);
@@ -78,11 +79,11 @@ void main() {
       await tester.pumpAndSettle();
 
       // Now it should be in collapsed pill state
-      expect(find.text('Instalar App Android'), findsOneWidget);
+      expect(find.text('Descargar en Google Play'), findsOneWidget);
       expect(find.text('¡Estudia como un verdadero Oficial!'), findsNothing);
 
       // Tap pill to re-expand
-      await tester.tap(find.text('Instalar App Android'));
+      await tester.tap(find.text('Descargar en Google Play'));
       await tester.pumpAndSettle();
 
       // Expanded again

@@ -1,8 +1,7 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:learn/core/config/app_config.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 /// Anuncio oficial de alta conversión para la App Oficial de Android de EDUPOL.
 /// Muestra un modal centrado con posters completos en proporción vertical nativa (1:2)
@@ -104,46 +103,6 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
     super.dispose();
   }
 
-  Future<void> _launchPlayStore() async {
-    final uri = Uri.parse(AppConfig.playStoreUrl);
-    try {
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
-      } else {
-        await launchUrl(uri);
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('No se pudo abrir Google Play Store: $e'),
-            backgroundColor: const Color(0xFFEF4444),
-          ),
-        );
-      }
-    }
-  }
-
-  Future<void> _launchDownload() async {
-    final uri = Uri.parse(AppConfig.androidApkDownloadUrl);
-    try {
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
-      } else {
-        await launchUrl(uri);
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('No se pudo abrir el enlace de descarga: $e'),
-            backgroundColor: const Color(0xFFEF4444),
-          ),
-        );
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     if (!_isExpanded) {
@@ -228,18 +187,14 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
               Container(
                 padding: const EdgeInsets.all(4),
                 decoration: const BoxDecoration(
-                  color: Color(0xFF10B981),
+                  color: Color(0xFF0F172A),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
-                  Icons.android_rounded,
-                  color: Colors.white,
-                  size: 15,
-                ),
+                child: const GooglePlayLogo(size: 14),
               ),
               const SizedBox(width: 8),
               const Text(
-                'Instalar App Android',
+                'Descargar en Google Play',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -663,66 +618,13 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
             ],
           ),
 
-          // Botones de Acción (CTAs)
-          Row(
-            children: [
-              // Botón Principal: Play Store
-              Expanded(
-                flex: 6,
-                child: FilledButton.icon(
-                  onPressed: _launchPlayStore,
-                  icon: const Icon(Icons.play_arrow_rounded, size: 23),
-                  label: const Text(
-                    'Instalar desde Play Store',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13.5,
-                    ),
-                  ),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF10B981),
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    elevation: 4,
-                    shadowColor: const Color(0xFF10B981).withValues(alpha: 0.5),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 12),
-              // Botón Secundario: Descarga APK
-              Expanded(
-                flex: 4,
-                child: OutlinedButton.icon(
-                  onPressed: _launchDownload,
-                  icon: const Icon(
-                    Icons.download_rounded,
-                    size: 19,
-                    color: Color(0xFF38BDF8),
-                  ),
-                  label: const Text(
-                    'Descargar APK',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13,
-                    ),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    side: BorderSide(
-                      color: Colors.white.withValues(alpha: 0.25),
-                      width: 1.2,
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          // Botón Único de Alta Conversión: Google Play Store
+          const GooglePlayButton(
+            height: 52,
+            isHero: true,
+            width: double.infinity,
+            topLabel: 'DISPONIBLE AHORA EN',
+            mainLabel: 'Google Play',
           ),
 
           // Sellos de Confianza
@@ -818,7 +720,7 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                               ),
                             ),
                             Text(
-                              '⭐ 4.9 • En Google Play y APK Directa',
+                              '⭐ 4.9 • Ya disponible en Google Play',
                               style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 10.5,
@@ -883,55 +785,13 @@ class _FloatingPromoAdState extends State<FloatingPromoAd>
                       ),
                       const SizedBox(height: 14),
 
-                      // Botón Play Store
-                      FilledButton.icon(
-                        onPressed: _launchPlayStore,
-                        icon: const Icon(Icons.play_arrow_rounded, size: 22),
-                        label: const Text(
-                          'Instalar desde Play Store',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13.5,
-                          ),
-                        ),
-                        style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFF10B981),
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(13),
-                          ),
-                          elevation: 3,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-
-                      // Botón Descargar APK
-                      OutlinedButton.icon(
-                        onPressed: _launchDownload,
-                        icon: const Icon(
-                          Icons.download_rounded,
-                          size: 18,
-                          color: Color(0xFF38BDF8),
-                        ),
-                        label: const Text(
-                          'Descargar APK Directa',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12.5,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          side: BorderSide(
-                            color: Colors.white.withValues(alpha: 0.25),
-                            width: 1.2,
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(13),
-                          ),
-                        ),
+                      // Botón Único de Alta Conversión: Google Play Store
+                      const GooglePlayButton(
+                        height: 52,
+                        isHero: true,
+                        width: double.infinity,
+                        topLabel: 'DISPONIBLE EN',
+                        mainLabel: 'Google Play',
                       ),
                       const SizedBox(height: 10),
                       const Text(

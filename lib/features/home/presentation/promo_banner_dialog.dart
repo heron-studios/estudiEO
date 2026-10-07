@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 import 'downloads_dialog.dart';
 
 /// Diálogo modal con banner publicitario interactivo para las 3 imágenes promocionales oficiales de Edupol.
@@ -650,10 +651,10 @@ class _PromoBannerDialogState extends State<PromoBannerDialog> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.download_rounded, color: Colors.white, size: 18),
+                      GooglePlayLogo(size: 16),
                       SizedBox(width: 8),
                       Text(
-                        'Instalar App Oficial',
+                        'Descargar en Google Play',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 13.5,
