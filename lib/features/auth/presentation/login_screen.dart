@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/features/auth/domain/auth_service.dart';
@@ -8,6 +9,7 @@ import 'package:learn/core/widgets/particles_canvas.dart';
 import 'package:learn/core/widgets/floating_orbs.dart';
 import 'package:learn/core/widgets/bento_card.dart';
 import 'package:learn/core/widgets/floating_promo_ad.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -256,7 +258,14 @@ class _LoginScreenState extends State<LoginScreen>
               ),
             ],
           ),
-          _SupportButton(onTap: _contactSupport),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const _GooglePlayNavButton(),
+              const SizedBox(width: 14),
+              _SupportButton(onTap: _contactSupport),
+            ],
+          ),
         ],
       ),
     );
@@ -386,6 +395,8 @@ class _LoginScreenState extends State<LoginScreen>
                   ),
           ),
         ),
+        const SizedBox(height: 14),
+        const _GooglePlayBadgePrompt(),
         const SizedBox(height: 16),
         // Demo Button removed for freemium model.
       ],
@@ -517,6 +528,189 @@ class _SupportButtonState extends State<_SupportButton> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── GOOGLE PLAY NAV BUTTON ──
+class _GooglePlayNavButton extends StatefulWidget {
+  const _GooglePlayNavButton();
+
+  @override
+  State<_GooglePlayNavButton> createState() => _GooglePlayNavButtonState();
+}
+
+class _GooglePlayNavButtonState extends State<_GooglePlayNavButton> {
+  bool _isHovered = false;
+  bool _isPressed = false;
+
+  Future<void> _launchPlayStore() async {
+    HapticFeedback.lightImpact();
+    final uri = Uri.parse(AppConfig.playStoreUrl);
+    try {
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        await launchUrl(uri);
+      }
+    } catch (_) {}
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'Disponible en Google Play',
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: GestureDetector(
+          onTapDown: (_) => setState(() => _isPressed = true),
+          onTapUp: (_) {
+            setState(() => _isPressed = false);
+            _launchPlayStore();
+          },
+          onTapCancel: () => setState(() => _isPressed = false),
+          child: AnimatedScale(
+            scale: _isPressed ? 0.95 : (_isHovered ? 1.03 : 1.0),
+            duration: const Duration(milliseconds: 120),
+            curve: Curves.easeOutCubic,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: _isHovered
+                    ? const Color(0xFF10B981).withValues(alpha: 0.15)
+                    : const Color(0xFF8AB4F8).withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: _isHovered
+                      ? const Color(0xFF34D399).withValues(alpha: 0.6)
+                      : const Color(0xFF10B981).withValues(alpha: 0.35),
+                  width: 1,
+                ),
+              ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GooglePlayLogo(size: 13),
+                  SizedBox(width: 6),
+                  Text(
+                    'App en Play Store',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFFE8EAED),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ── GOOGLE PLAY BADGE PROMPT ──
+class _GooglePlayBadgePrompt extends StatefulWidget {
+  const _GooglePlayBadgePrompt();
+
+  @override
+  State<_GooglePlayBadgePrompt> createState() => _GooglePlayBadgePromptState();
+}
+
+class _GooglePlayBadgePromptState extends State<_GooglePlayBadgePrompt> {
+  bool _isHovered = false;
+  bool _isPressed = false;
+
+  Future<void> _launchPlayStore() async {
+    HapticFeedback.lightImpact();
+    final uri = Uri.parse(AppConfig.playStoreUrl);
+    try {
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        await launchUrl(uri);
+      }
+    } catch (_) {}
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'También disponible en Google Play Store',
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: GestureDetector(
+          onTapDown: (_) => setState(() => _isPressed = true),
+          onTapUp: (_) {
+            setState(() => _isPressed = false);
+            _launchPlayStore();
+          },
+          onTapCancel: () => setState(() => _isPressed = false),
+          child: AnimatedScale(
+            scale: _isPressed ? 0.96 : (_isHovered ? 1.02 : 1.0),
+            duration: const Duration(milliseconds: 120),
+            curve: Curves.easeOutCubic,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF0F172A),
+                    _isHovered ? const Color(0xFF064E3B) : const Color(0xFF062E25),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: _isHovered
+                      ? const Color(0xFF34D399)
+                      : const Color(0xFF10B981).withValues(alpha: 0.4),
+                  width: 1,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF10B981).withValues(
+                      alpha: _isHovered ? 0.25 : 0.12,
+                    ),
+                    blurRadius: 10,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const GooglePlayLogo(size: 15),
+                  const SizedBox(width: 8),
+                  Text(
+                    'También disponible en Google Play Store',
+                    style: TextStyle(
+                      color: _isHovered ? Colors.white : const Color(0xFFCBD5E1),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    size: 13,
+                    color: _isHovered ? const Color(0xFF34D399) : const Color(0xFF10B981),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

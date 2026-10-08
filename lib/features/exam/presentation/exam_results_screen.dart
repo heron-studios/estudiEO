@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:learn/core/services/export_service.dart';
 import 'package:learn/models/question.dart';
 import 'package:learn/data/repository/subjects_repository.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 class _SubjectStats {
   final String name;
@@ -597,6 +598,8 @@ class _ExamResultsScreenState extends State<ExamResultsScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 16),
+                      const _PlayStoreExamBanner(),
                     ],
                   ),
                 ),
@@ -625,3 +628,104 @@ class _ExamResultsScreenState extends State<ExamResultsScreen> {
     );
   }
 }
+
+class _PlayStoreExamBanner extends StatelessWidget {
+  const _PlayStoreExamBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xFF0F172A),
+            Color(0xFF064E3B),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: const Color(0xFF10B981).withValues(alpha: 0.5),
+          width: 1.2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF10B981).withValues(alpha: 0.16),
+            blurRadius: 16,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF10B981).withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: const Color(0xFF34D399).withValues(alpha: 0.4),
+                  ),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.phone_android_rounded,
+                      color: Color(0xFF34D399),
+                      size: 13,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      'APP OFICIAL DISPONIBLE',
+                      style: TextStyle(
+                        color: Color(0xFF34D399),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              const GooglePlayLogo(size: 20),
+            ],
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            'Lleva tus simulacros a cualquier lugar',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Outfit',
+              letterSpacing: -0.2,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'Descarga EDUPOL en Google Play Store con modo sin conexión, sincronización instantánea y repasos activos.',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.82),
+              fontSize: 12.5,
+              height: 1.45,
+            ),
+          ),
+          const SizedBox(height: 14),
+          const GooglePlayButton(
+            isHero: true,
+            height: 48,
+          ),
+        ],
+      ),
+    );
+  }
+}
+

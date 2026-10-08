@@ -6,6 +6,7 @@ import 'package:learn/core/config/neural_design_system.dart';
 import 'package:learn/core/services/export_service.dart';
 import 'package:learn/providers/subject_provider.dart';
 import 'package:learn/models/question.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 class QuizResultsScreen extends StatelessWidget {
   const QuizResultsScreen({super.key});
@@ -55,8 +56,10 @@ class QuizResultsScreen extends StatelessWidget {
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 500),
-              child: Column(
-                children: [
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
                   // Top header
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 32, 20, 0),
@@ -188,7 +191,12 @@ class QuizResultsScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const Spacer(),
+                  const SizedBox(height: 18),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: _PlayStoreQuizBanner(),
+                  ),
+                  const SizedBox(height: 18),
 
                   // Action buttons
                   Padding(
@@ -374,7 +382,8 @@ class QuizResultsScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 }
 
@@ -430,3 +439,93 @@ class _StatBox extends StatelessWidget {
     );
   }
 }
+
+class _PlayStoreQuizBanner extends StatelessWidget {
+  const _PlayStoreQuizBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF0F172A),
+            const Color(0xFF064E3B).withValues(alpha: 0.9),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: const Color(0xFF10B981).withValues(alpha: 0.45),
+          width: 1.1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF10B981).withValues(alpha: 0.14),
+            blurRadius: 14,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GooglePlayLogo(size: 16),
+                  SizedBox(width: 8),
+                  Text(
+                    'EDUPOL EN GOOGLE PLAY',
+                    style: TextStyle(
+                      color: Color(0xFF34D399),
+                      fontSize: 10.5,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 0.7,
+                    ),
+                  ),
+                ],
+              ),
+              Icon(
+                Icons.verified_rounded,
+                color: Color(0xFF34D399),
+                size: 16,
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            '¡Entrena sin conexión a internet!',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14.5,
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Outfit',
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Descarga la App oficial para resolver trivias y simulacros sin consumir tus datos móviles.',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.8),
+              fontSize: 12,
+              height: 1.4,
+            ),
+          ),
+          const SizedBox(height: 12),
+          const GooglePlayButton(
+            isHero: true,
+            height: 44,
+          ),
+        ],
+      ),
+    );
+  }
+}
+

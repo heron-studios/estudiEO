@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:learn/core/config/app_config.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
 
 /// Enumeración de planes de activación para EDUPOL PRO con estrategia psicológica (Decoy Effect).
 enum PaymentPlan {
@@ -935,6 +936,29 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
         ),
+
+        const SizedBox(height: 4),
+
+        Center(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const GooglePlayLogo(size: 11),
+                const SizedBox(width: 5),
+                Text(
+                  '✓ Tu membresía PRO se activa automáticamente en la App de Google Play Store',
+                  style: TextStyle(
+                    color: const Color(0xFF34D399).withValues(alpha: 0.9),
+                    fontSize: 9.5,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -1002,7 +1026,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     Icons.wifi_off_rounded,
                     const Color(0xFF64D2FF),
                     'Modo Offline en la App Android',
-                    'Estudia sin internet ni gastar datos móviles.',
+                    'Estudia sin internet ni gastar datos móviles desde Google Play.',
                   ),
                   _buildCompactBenefitRow(
                     Icons.support_agent_rounded,

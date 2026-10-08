@@ -18,6 +18,8 @@ import 'package:learn/core/config/neural_theme.dart';
 import 'package:learn/core/services/local_storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:learn/core/widgets/google_play_button.dart';
+import 'downloads_dialog.dart';
 import 'package:learn/core/widgets/floating_promo_ad.dart';
 import 'package:learn/core/services/bible_service.dart';
 import 'package:learn/core/services/limits_service.dart';
@@ -88,6 +90,94 @@ class _PremiumFabButton extends StatelessWidget {
                     color: glowColor,
                     size: 26,
                   ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _GooglePlayHeaderPill extends StatefulWidget {
+  const _GooglePlayHeaderPill();
+
+  @override
+  State<_GooglePlayHeaderPill> createState() => _GooglePlayHeaderPillState();
+}
+
+class _GooglePlayHeaderPillState extends State<_GooglePlayHeaderPill> {
+  bool _isPressed = false;
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'Descargar App Oficial en Google Play',
+      child: Tooltip(
+        message: '¡Descarga EDUPOL en Google Play Store!',
+        child: MouseRegion(
+          onEnter: (_) => setState(() => _isHovered = true),
+          onExit: (_) => setState(() => _isHovered = false),
+          child: GestureDetector(
+            onTapDown: (_) => setState(() => _isPressed = true),
+            onTapUp: (_) {
+              setState(() => _isPressed = false);
+              HapticFeedback.lightImpact();
+              DownloadsDialog.show(context);
+            },
+            onTapCancel: () => setState(() => _isPressed = false),
+            child: AnimatedScale(
+              scale: _isPressed ? 0.95 : (_isHovered ? 1.03 : 1.0),
+              duration: const Duration(milliseconds: 140),
+              curve: Curves.easeOutCubic,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 180),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4.5),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(0xFF0F172A),
+                      _isHovered ? const Color(0xFF064E3B) : const Color(0xFF062E25),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: _isHovered
+                        ? const Color(0xFF34D399)
+                        : const Color(0xFF10B981).withValues(alpha: 0.45),
+                    width: 1.1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF10B981).withValues(
+                        alpha: _isHovered ? 0.35 : 0.18,
+                      ),
+                      blurRadius: _isHovered ? 12 : 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    GooglePlayLogo(size: 13),
+                    SizedBox(width: 6),
+                    Text(
+                      'Google Play',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.4,
+                        fontFamily: 'Outfit',
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -943,6 +1033,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           children: [
             _PremiumFabButton(
+              tooltip: 'App en Google Play',
+              icon: Icons.shop_rounded,
+              glowColor: const Color(0xFF10B981),
+              onPressed: () => DownloadsDialog.show(context),
+            ),
+            _PremiumFabButton(
               tooltip: 'Ayuda',
               icon: Icons.help_outline_rounded,
               glowColor: Colors.white,
@@ -1101,6 +1197,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 );
                               },
                             ),
+                            const SizedBox(width: 8),
+                            const _GooglePlayHeaderPill(),
                             if (isLargeScreen && _dailyVerse != null) ...[
                               const SizedBox(width: 16),
                               Container(
