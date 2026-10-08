@@ -1,0 +1,20 @@
+<USER_REQUEST>
+agrega esto [
+  { "id": 151, "texto": "Siento que hago mejor las cosas solo, que con la ayuda de los demás.", "opciones": { "A": "Falso.", "B": "Indeciso.", "C": "Cierto." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "El trabajo policial es fundamentalmente en equipo; la autosuficiencia extrema puede ser un riesgo.", "dimension": "Personalidad", "sub_dimension": "Trabajo en Equipo" },
+  { "id": 152, "texto": "¿Se siente a menudo preocupado por algo, pues tiende a preocuparse por todo?", "opciones": { "A": "Nunca.", "B": "A veces.", "C": "Siempre." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La ansiedad generalizada afecta la toma de decisiones bajo presión.", "dimension": "Personalidad", "sub_dimension": "Estabilidad Emocional" },
+  { "id": 153, "texto": "Algunos de mis amigos han consumido drogas, pero yo no tengo por qué entrometerme en vida de terceros.", "opciones": { "A": "Falso.", "B": "Indeciso.", "C": "Cierto." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "Un futuro oficial debe mostrar rechazo activo hacia el entorno vinculado al consumo de drogas.", "dimension": "Valores", "sub_dimension": "Integridad Ética" },
+  { "id": 154, "texto": "En el pasado he consumido alguna vez droga, pero solo por diversión con mis amigos.", "opciones": { "A": "Falso.", "B": "Indeciso.", "C": "Cierto." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "El consumo previo de drogas es un criterio de descalificación en la PNP.", "dimension": "Valores", "sub_dimension": "Conducta Ética" },
+  { "id": 155, "texto": "Normalmente me han gustado las situaciones difíciles e incluso de alta tensión.", "opciones": { "A": "De acuerdo.", "B": "Indeciso.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La tolerancia al estrés es esencial para el servicio operativo.", "dimension": "Personalidad", "sub_dimension": "Resiliencia" },
+  { "id": 156, "texto": "No puedo dormir de día, pero sí de noche.", "opciones": { "A":
+<truncated 30036 bytes>
+an resistencia al dolor físico.", "opciones": { "A": "De acuerdo.", "B": "Indeciso.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide el umbral de tolerancia física.", "dimension": "Personalidad", "sub_dimension": "Resistencia" },
+  { "id": 246, "texto": "¿Alguna vez ha deseado romper algo solo por el placer de hacerlo?", "opciones": { "A": "Nunca.", "B": "A veces.", "C": "Siempre." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "Indicador de impulsividad destructiva.", "dimension": "Personalidad", "sub_dimension": "Control de Impulsos" },
+  { "id": 247, "texto": "Me gusta planificar mis viajes con mucho detalle.", "opciones": { "A": "Cierto.", "B": "A veces.", "C": "Falso." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Indica previsión y orden.", "dimension": "Personalidad", "sub_dimension": "Organización" },
+  { "id": 248, "texto": "¿Se siente a gusto cuando tiene que cuidar a niños o personas vulnerables?", "opciones": { "A": "De acuerdo.", "B": "A veces.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide la empatía y capacidad de cuidado social.", "dimension": "Personalidad", "sub_dimension": "Empatía" },
+  { "id": 249, "texto": "Creo que cada persona tiene lo que se merece en la vida.", "opciones": { "A": "De acuerdo.", "B": "Indeciso.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide la creencia en un mundo justo frente a la empatía social.", "dimension": "Personalidad", "sub_dimension": "Sentido de Justicia" },
+  { "id": 250, "texto": "Estoy totalmente seguro de querer ser oficial de la PNP por el resto de mi vida.", "opciones": { "A": "Siempre.", "B": "Indeciso.", "C": "Nunca." }, "puntos_opciones": { "A": 10, "B": 0, "C": 0 }, "pista": "Mide la convicción vocacional final.", "dimension": "Valores", "sub_dimension": "Vocación" }
+]
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T00:23:04-05:00.
+</ADDITIONAL_METADATA>

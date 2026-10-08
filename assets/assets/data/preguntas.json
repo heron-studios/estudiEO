@@ -1,0 +1,1430 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "Durante una intervención de patrullaje, un ciudadano comienza a insultarlo y a cuestionar su capacidad profesional frente a transeúntes, yo...",
+      "opciones": {
+        "A": "Le respondo con sarcasmo para demostrar que sus insultos no me afectan y mantener mi estatus.",
+        "B": "Mantengo la comunicación asertiva, ignoro las ofensas personales y me enfoco estrictamente en el procedimiento legal.",
+        "C": "Procedo a detenerlo inmediatamente por desacato a la autoridad sin mediar palabra.",
+        "D": "Le pido que se calle de forma agresiva para evitar que la situación se salga de control."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 2
+      },
+      "contexto_correcto": "¡Excelente! La asertividad y el enfoque en el procedimiento demuestran madurez emocional y respeto por los protocolos institucionales.",
+      "contexto_incorrecto": "Un oficial debe evitar escalar conflictos innecesariamente; el sarcasmo o la agresividad vulneran la imagen institucional y el respeto a los derechos humanos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "pista": ""
+    },
+    {
+      "id": 2,
+      "texto": "Si al finalizar una jornada de servicio agotadora mi superior me asigna una tarea adicional imprevista que retrasará mi salida, yo...",
+      "opciones": {
+        "A": "Muestro mi disgusto abiertamente para que sepa que no es justo, pero realizo la tarea.",
+        "B": "Acepto la orden con disposición, organizo mis prioridades and cumplo con el deber asignado.",
+        "C": "Busco a un compañero para que me ayude a terminar rápido y poder irme cuanto antes.",
+        "D": "Realizo la tarea de forma descuidada para terminar pronto, ya que mi turno ya terminó."
+      },
+      "puntos_opciones": {
+        "A": 3,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "¡Correcto! El sentido del deber y la disciplina son pilares fundamentales en la formación policial, demostrando compromiso con la misión institucional.",
+      "contexto_incorrecto": "La resistencia a las órdenes o el descuido en las funciones reflejan falta de disciplina y compromiso, rasgos esenciales en un futuro oficial.",
+      "dimension": "Actitud Laboral",
+      "sub_dimension": "Disciplina y Sentido del Deber",
+      "pista": ""
+    },
+    {
+      "id": 3,
+      "texto": "Cuando observo que un compañero de mi unidad comete una falta ética menor por beneficio propio, yo...",
+      "opciones": {
+        "A": "Guardo silencio para mantener la lealtad y la unión del grupo.",
+        "B": "Hablo con él en privado para aconsejarle y, si persiste, lo informo por los canales regulares.",
+        "C": "Lo ignoro por completo, ya que cada quien es responsable de sus propios actos.",
+        "D": "Me quejo con otros compañeros sobre su actitud sin reportarlo oficialmente."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 3,
+        "D": 2
+      },
+      "contexto_correcto": "¡Muy bien! La integridad y la rectitud implican no ser cómplice de actos que afecten la ética profesional y la confianza pública.",
+      "contexto_incorrecto": "La malentendida 'lealtad' ante faltas éticas daña la integridad de la institución; la honestidad debe prevalecer sobre el compañerismo mal encaminado.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad",
+      "pista": ""
+    },
+    {
+      "texto": "Durante una persecución, el sospechoso arroja un fajo de billetes al suelo para distraerlo. Usted nota que nadie más lo ha visto y el sujeto logra escapar. Al regresar al lugar, yo...",
+      "opciones": {
+        "A": "Recojo el dinero y lo entrego a la unidad para fondos de bienestar común, ya que el sospechoso huyó.",
+        "B": "Aseguro el área, procedo al recojo del dinero mediante acta oficial y lo pongo a disposición de la autoridad competente como evidencia.",
+        "C": "Dejo el dinero ahí para evitar problemas legales, ya que no tengo testigos de que el sospechoso lo arrojó.",
+        "D": "Recojo una parte para gastos operativos de la patrulla y reporto el resto como hallazgo."
+      },
+      "puntos_opciones": {
+        "A": 2,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "¡Excelente! La integridad es innegociable. Todo elemento hallado en una intervención debe ser procesado bajo estricta cadena de custodia y legalidad.",
+      "contexto_incorrecto": "La apropiación o el mal manejo de evidencia constituye una falta grave contra la probidad. El oficial debe ser el primer guardián de la ley, no un aprovechador de las circunstancias.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad y Probidad",
+      "id": 4,
+      "pista": ""
+    },
+    {
+      "texto": "Se le ordena ejecutar un desalojo en una zona de extrema pobreza. Al llegar, observa que hay niños y ancianos en situación de vulnerabilidad y la turba comienza a rodearlo de forma hostil. Ante esto, yo...",
+      "opciones": {
+        "A": "Hago uso de la fuerza de forma inmediata para dispersar a la multitud y cumplir la orden sin demoras.",
+        "B": "Evalúo el nivel de riesgo, solicito apoyo especializado y trato de mediar con los líderes del grupo para evitar un costo social alto.",
+        "C": "Cancelo la operación por mi cuenta al considerar que se están vulnerando derechos humanos, asumiendo la responsabilidad.",
+        "D": "Me mantengo estático esperando que la turba se calme por sí sola antes de proceder."
+      },
+      "puntos_opciones": {
+        "A": 4,
+        "B": 10,
+        "C": 2,
+        "D": 3
+      },
+      "contexto_correcto": "¡Muy bien! El oficial debe equilibrar el cumplimiento de la ley con el respeto a los derechos fundamentales y la gestión del orden público mediante la proporcionalidad.",
+      "contexto_incorrecto": "La impulsividad en el uso de la fuerza o el abandono de funciones son extremos peligrosos. Se requiere criterio táctico y capacidad de mediación en crisis.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Toma de Decisiones bajo Presión",
+      "id": 5,
+      "pista": ""
+    },
+    {
+      "texto": "Usted descubre que un oficial de mayor rango está omitiendo información crucial en un atestado para favorecer a un detenido a cambio de una dádiva. Usted...",
+      "opciones": {
+        "A": "Informo de inmediato a Inspectoría o al superior jerárquico del involucrado, adjuntando las pruebas correspondientes.",
+        "B": "Confronto al oficial superior y le exijo que corrija el documento para no tener que denunciarlo.",
+        "C": "Ignoro la situación para no romper la cadena de mando ni ganarme enemigos poderosos dentro de la institución.",
+        "D": "Comento el hecho de forma anónima con mis compañeros para generar presión grupal sobre él."
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 4,
+        "C": 0,
+        "D": 2
+      },
+      "contexto_correcto": "¡Correcto! El valor civil y la lealtad a la Constitución superan cualquier lealtad malentendida hacia un superior corrupto.",
+      "contexto_incorrecto": "El encubrimiento es complicidad. La corrupción dentro de la PNP solo se erradica mediante la denuncia firme y el cumplimiento de los reglamentos éticos.",
+      "dimension": "Actitud Laboral",
+      "sub_dimension": "Lealtad Institucional y Valor Civil",
+      "id": 6,
+      "pista": ""
+    },
+    {
+      "texto": "Usted se encuentra en una fiesta y observa que un grupo de cadetes de años superiores están consumiendo bebidas alcohólicas, lo cual está prohibido por el reglamento. Uno de ellos lo invita a unirse para demostrar su 'lealtad' al grupo. Yo...",
+      "opciones": {
+        "A": "Acepto una copa para no generar conflictos con mis superiores y demostrar que soy parte del equipo.",
+        "B": "Rechazo la invitación cortésmente, me retiro del lugar de inmediato y mantengo mi postura ética.",
+        "C": "Los ignoro y me quedo en la fiesta, pero decido no beber para no meterse en problemas.",
+        "D": "Acepto, pero solo finjo beber para mantener las apariencias y no ser tildado de 'soplón'."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 2
+      },
+      "contexto_correcto": "¡Excelente! La integridad y el respeto irrestricto a los reglamentos institucionales son la base de la carrera de un oficial. La lealtad nunca debe estar por encima de la ley.",
+      "contexto_incorrecto": "Ceder ante la presión de grupo en actos que vulneran la disciplina es una falta grave. Un oficial debe mantener su temple y valores incluso frente a sus superiores jerárquicos.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Integridad y Disciplina",
+      "id": 7,
+      "pista": ""
+    },
+    {
+      "texto": "Durante una intervención de control de identidad, un ciudadano lo insulta verbalmente de forma soez y lo graba con su celular buscando provocar una reacción violenta de su parte. Ante esto, yo...",
+      "opciones": {
+        "A": "Le quito el celular para evitar que siga grabando y lo detengo por desacato.",
+        "B": "Mantengo la calma, ignoro las ofensas y continúo con el procedimiento técnico-policial de forma impecable.",
+        "C": "Le respondo con la misma energía para que entienda que debe respetar a la autoridad.",
+        "D": "Solicito apoyo y me quedo callado mostrando una actitud de desprecio hacia el ciudadano."
+      },
+      "puntos_opciones": {
+        "A": 2,
+        "B": 10,
+        "C": 0,
+        "D": 4
+      },
+      "contexto_correcto": "¡Muy bien! El control de impulsos y la inteligencia emocional son vitales. Un oficial profesional no se deja dominar por la provocación y protege la imagen institucional.",
+      "contexto_incorrecto": "La impulsividad ante la provocación escala el conflicto y puede derivar en denuncias por abuso de autoridad. El temple es la mejor herramienta del policía.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 8,
+      "pista": ""
+    },
+    {
+      "texto": "En un operativo antidrogas, usted encuentra una mochila con una cantidad menor de dinero que no ha sido registrada por el equipo de intervención. Usted se percata de que su compañero intenta guardársela. Yo...",
+      "opciones": {
+        "A": "Le digo que la repartamos a medias para que ambos guardemos el secreto.",
+        "B": "Le exijo que coloque el dinero en la mesa de evidencias de inmediato y lo reporto oficialmente en el acta.",
+        "C": "Me hago el desentendido para no tener problemas con mi compañero de patrulla.",
+        "D": "Le pido que lo deje ahí y nos vayamos, para no ser cómplice pero tampoco delatarlo."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 2,
+        "D": 4
+      },
+      "contexto_correcto": "¡Correcto! El valor civil es fundamental. La omisión ante un acto de corrupción lo convierte en cómplice. La honestidad debe prevalecer sobre el compañerismo malentendido.",
+      "contexto_incorrecto": "La apropiación de bienes o el encubrimiento de delitos dentro de la institución es una conducta que conlleva la expulsión inmediata y responsabilidad penal.",
+      "dimension": "Ética y Valores",
+      "sub_dimension": "Probidad y Valor Civil",
+      "id": 9,
+      "pista": ""
+    },
+    {
+      "texto": "Se le asigna una misión de patrullaje en una zona de alto riesgo donde recientemente hubo bajas policiales. Siente un miedo intenso antes de salir. Ante esto, yo...",
+      "opciones": {
+        "A": "Pido permiso para quedarme en la comisaría alegando un malestar físico repentino.",
+        "B": "Reconozco mi miedo, reviso minuciosamente mi equipo de seguridad y salgo a cumplir mi deber con máxima alerta.",
+        "C": "Salgo al patrullaje pero trato de mantenerme dentro de la unidad sin bajarme en los puntos críticos.",
+        "D": "Cumplo la orden de forma mecánica, esperando que el turno pase lo más rápido posible sin intervenir mucho."
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 4,
+        "D": 5
+      },
+      "contexto_correcto": "¡Excelente! La valentía no es la ausencia de miedo, sino el control del mismo para cumplir con el deber. La preparación y la cautela son signos de un oficial resiliente.",
+      "contexto_incorrecto": "La evitación del peligro o el abandono de funciones por temor son incompatibles con la vocación policial. Se requiere compromiso con la seguridad pública.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resiliencia y Valor",
+      "id": 10,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes culpable, cuando descansas?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Es saludable reconocer la necesidad de descanso sin sentimientos de culpa para mantener el bienestar.",
+      "contexto_incorrecto": "Sentir culpa por descansar puede ser un indicador de altos niveles de estrés o autoexigencia desmedida.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Equilibrio Vida-Trabajo",
+      "id": 11,
+      "pista": ""
+    },
+    {
+      "texto": "¿Intentas siempre programar más y más cosas en menos tiempo para sentirte seguro?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "La gestión realista del tiempo evita la saturación y el agotamiento innecesario.",
+      "contexto_incorrecto": "Sobrecargar la agenda constantemente para buscar seguridad puede reflejar ansiedad o falta de organización.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Gestión del Tiempo",
+      "id": 12,
+      "pista": ""
+    },
+    {
+      "texto": "Al conversar de algún tema incómodo, ¿das puñetazos o palmadas en la mesa?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Mantener la compostura física durante temas difíciles es clave para una comunicación profesional.",
+      "contexto_incorrecto": "Las reacciones físicas agresivas ante la incomodidad dificultan la resolución de conflictos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 13,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te comprometes a realizar trabajos que son difíciles de cumplir, aun sabiendo que no podrás hacerlo?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "La honestidad sobre las propias capacidades asegura el cumplimiento de las responsabilidades.",
+      "contexto_incorrecto": "Aceptar compromisos imposibles de cumplir afecta la credibilidad y la eficiencia laboral.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Responsabilidad",
+      "id": 14,
+      "pista": ""
+    },
+    {
+      "texto": "¿Una manera muy común de expresar tu malestar es rechinando los dientes?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Identificar y canalizar el malestar de forma saludable es fundamental para el manejo del estrés.",
+      "contexto_incorrecto": "Las manifestaciones físicas de tensión, como el bruxismo, indican una gestión inadecuada de la presión.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Manejo de Estrés",
+      "id": 15,
+      "pista": ""
+    },
+    {
+      "texto": "¿Con mucha frecuencia llevas material relacionado con tu trabajo a tu casa?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Establecer límites claros entre el trabajo y el hogar previene el agotamiento laboral.",
+      "contexto_incorrecto": "Llevar trabajo a casa constantemente puede interferir con el tiempo de recuperación necesario.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Equilibrio Vida-Trabajo",
+      "id": 16,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes insatisfecho con tu vida?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Una visión positiva y satisfecha de la vida contribuye a una mejor disposición laboral.",
+      "contexto_incorrecto": "La insatisfacción constante puede afectar el desempeño y la motivación personal.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Estabilidad Emocional",
+      "id": 17,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta conocer gente nueva?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "La apertura a nuevas relaciones sociales facilita el trabajo comunitario y la adaptabilidad.",
+      "contexto_incorrecto": "La falta de interés en conocer personas nuevas puede limitar las habilidades de interacción social.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad",
+      "id": 18,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta ayudar a la gente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "La vocación de servicio es un pilar fundamental para la labor policial.",
+      "contexto_incorrecto": "Un oficial debe poseer una disposición natural para asistir y proteger a la ciudadanía.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Altruismo",
+      "id": 19,
+      "pista": ""
+    },
+    {
+      "texto": "¿Si te han culpado injustamente, reaccionas violentamente para hacer valer tus derechos?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Resolver injusticias mediante canales apropiados y calmados refleja madurez y control.",
+      "contexto_incorrecto": "La reacción violenta, incluso ante injusticias, es inaceptable y escala los conflictos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 20,
+      "pista": ""
+    },
+    {
+      "texto": "¿Haces que la gente se sientan bienvenida, cuando están enojados?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 0,
+        "C": 3,
+        "D": 0
+      },
+      "contexto_correcto": "La empatía y la capacidad de acogida incluso en momentos de tensión facilitan la resolución pacífica de conflictos.",
+      "contexto_incorrecto": "Ignorar o rechazar a las personas enojadas puede escalar la hostilidad y dificultar la labor de proximidad policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía / Relaciones Interpersonales",
+      "id": 21,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te toma mucho tiempo calmarte cuando has estado enojado?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 7,
+        "D": 0
+      },
+      "contexto_correcto": "Recuperar la calma rápidamente tras un evento estresante permite mantener la operatividad y el buen juicio.",
+      "contexto_incorrecto": "Mantener el enojo por tiempo prolongado afecta la toma de decisiones y el bienestar emocional del oficial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autorregulación Emocional",
+      "id": 22,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te decepcionas fácilmente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "La resiliencia ante las expectativas no cumplidas es fundamental para mantener la motivación en el servicio.",
+      "contexto_incorrecto": "Decepcionarse con facilidad puede llevar al desánimo y a una baja tolerancia a la frustración.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Tolerancia a la Frustración",
+      "id": 23,
+      "pista": ""
+    },
+    {
+      "texto": "¿Ayudas a la gente sólo si sabes que recibirás algo a cambio?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 3,
+        "D": 0
+      },
+      "contexto_correcto": "El servicio desinteresado es la base del compromiso ético de un integrante de la fuerza pública.",
+      "contexto_incorrecto": "Actuar bajo un interés puramente transaccional contradice los valores de entrega y sacrificio de la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Altruismo",
+      "id": 24,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te fijas metas a largo plazo?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 10
+      },
+      "contexto_correcto": "Tener metas a largo plazo demuestra planificación, visión de futuro y estabilidad en el proyecto de vida.",
+      "contexto_incorrecto": "La falta de objetivos a largo plazo puede indicar impulsividad o falta de compromiso con el desarrollo personal.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Planificación y Carrera",
+      "id": 25,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te confundes fácilmente?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "La claridad mental y la capacidad de análisis son críticas para actuar correctamente en situaciones complejas.",
+      "contexto_incorrecto": "Confundirse con facilidad bajo presión puede poner en riesgo la seguridad propia y la de terceros.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Claridad Cognitiva",
+      "id": 26,
+      "pista": ""
+    },
+    {
+      "texto": "¿Tu reacción a un problema es engañar para salirte con la tuya?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 7,
+        "D": 0
+      },
+      "contexto_correcto": "La honestidad y la transparencia en la resolución de problemas son valores innegociables para un oficial.",
+      "contexto_incorrecto": "El uso del engaño para evadir responsabilidades es una falta grave a la ética profesional.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Honestidad / Ética",
+      "id": 27,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te sientes abrumado con frecuencia?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces / Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "Un buen manejo de la carga emocional y laboral evita que el oficial se sienta sobrepasado.",
+      "contexto_incorrecto": "Sentirse abrumado frecuentemente puede ser un síntoma de estrés crónico o falta de herramientas de afrontamiento.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resistencia al Estrés",
+      "id": 28,
+      "pista": ""
+    },
+    {
+      "texto": "¿Con mucha frecuencia sales a un ambiente social?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La participación activa en ambientes sociales favorece las habilidades de comunicación y la integración comunitaria.",
+      "contexto_incorrecto": "Un aislamiento social excesivo puede dificultar el desarrollo de competencias interpersonales necesarias para el servicio policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad",
+      "id": 29,
+      "pista": ""
+    },
+    {
+      "texto": "¿Eres considerado con los sentimientos de los demás?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La consideración hacia los demás es un rasgo clave de la empatía, fundamental para el trato digno al ciudadano.",
+      "contexto_incorrecto": "La falta de consideración hacia los sentimientos ajenos puede derivar en un trato autoritario o poco humano.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía",
+      "id": 30,
+      "pista": ""
+    },
+    {
+      "texto": "¿Siempre estás ocupado?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 4,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "Mantenerse activo y productivo refleja una buena disposición al trabajo y diligencia.",
+      "contexto_incorrecto": "La inactividad constante puede ser señal de falta de iniciativa o desmotivación laboral.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia",
+      "id": 31,
+      "pista": ""
+    },
+    {
+      "texto": "¿Te gusta resolver problemas complejos?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 9,
+        "E": 10
+      },
+      "contexto_correcto": "La disposición para enfrentar desafíos intelectuales indica capacidad analítica y resolución de problemas.",
+      "contexto_incorrecto": "Evitar problemas complejos puede limitar la capacidad de respuesta ante situaciones críticas en el servicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Resolución de Problemas",
+      "id": 32,
+      "pista": ""
+    },
+    {
+      "texto": "En la mayoría de las ocasiones trabajo lo justo y lo necesario",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Mostrar disposición para ir más allá de lo básico demuestra compromiso institucional y vocación.",
+      "contexto_incorrecto": "Limitarse estrictamente al mínimo esfuerzo puede afectar la calidad del servicio policial y el espíritu de equipo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Compromiso Laboral",
+      "id": 33,
+      "pista": ""
+    },
+    {
+      "texto": "Bajo presión no mantengo la calma",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Mantener el control bajo presión es una habilidad crítica para garantizar la seguridad en intervenciones policiales.",
+      "contexto_incorrecto": "Perder la calma en situaciones de estrés puede llevar a decisiones precipitadas y riesgosas.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Tolerancia al Estrés",
+      "id": 34,
+      "pista": ""
+    },
+    {
+      "texto": "Me gusta la acción y el peligro",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "La inclinación hacia la acción es compatible con el perfil operativo, siempre que se maneje con prudencia.",
+      "contexto_incorrecto": "Un oficial que teme excesivamente a la acción podría tener dificultades en el cumplimiento de su deber de protección.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Búsqueda de Sensaciones",
+      "id": 35,
+      "pista": ""
+    },
+    {
+      "texto": "¿Sueles decir las últimas palabras más rápido que las iniciales?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "Mantener un ritmo de habla constante y pausado facilita la claridad del mensaje y proyecta serenidad.",
+      "contexto_incorrecto": "Acelerar el habla al final de las frases puede ser un signo de ansiedad, impaciencia o falta de control comunicativo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos / Comunicación",
+      "id": 36,
+      "pista": ""
+    },
+    {
+      "texto": "¿Encuentras difícil mantener cualquier conversación que no sea de tu interés?",
+      "opciones": {
+        "A": "Siempre",
+        "B": "Nunca es mi caso",
+        "C": "En desacuerdo",
+        "D": "No especificado"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 10,
+        "C": 5,
+        "D": 0
+      },
+      "contexto_correcto": "La capacidad de escuchar y dialogar sobre diversos temas es fundamental para la proximidad ciudadana y la recolección de información.",
+      "contexto_incorrecto": "La dificultad para mantener conversaciones ajenas al interés propio limita la empatía y la eficacia en el servicio público.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Habilidades Sociales",
+      "id": 37,
+      "pista": ""
+    },
+    {
+      "texto": "Raramente resisto las tentaciones",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "Un oficial debe poseer un alto nivel de autodisciplina y resistencia ante situaciones que comprometan su integridad.",
+      "contexto_incorrecto": "Ceder ante las tentaciones compromete la ética profesional y la confianza en la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autocontrol",
+      "id": 38,
+      "pista": ""
+    },
+    {
+      "texto": "En la mayoría de las ocasiones rompo las reglas por hacer lo que creo correcto",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 3,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "El respeto irrestricto a los reglamentos y la legalidad asegura el actuar justo y uniforme de la fuerza pública.",
+      "contexto_incorrecto": "Actuar por encima de las reglas basándose solo en juicios personales puede derivar en arbitrariedades y faltas disciplinarias.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apego a Normas",
+      "id": 39,
+      "pista": ""
+    },
+    {
+      "texto": "Creo que la ley no se debe cumplir estrictamente, si la puedo evadir lo hago",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 2,
+        "D": 0,
+        "E": 0
+      },
+      "contexto_correcto": "La integridad de un oficial se manifiesta en el cumplimiento de la ley incluso cuando no hay supervisión.",
+      "contexto_incorrecto": "Intentar evadir la ley es una conducta incompatible con la función de un servidor encargado de hacerla cumplir.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Ética",
+      "id": 40,
+      "pista": ""
+    },
+    {
+      "texto": "En many ocasiones suelo precipitarme",
+      "texto_original": "En muchas ocasiones suelo precipitarme",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "La toma de decisiones debe ser ágil pero analizada para evitar errores fatales en el campo.",
+      "contexto_incorrecto": "La precipitación en el actuar policial aumenta el riesgo de incidentes negativos y falta de profesionalismo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos",
+      "id": 41,
+      "pista": ""
+    },
+    {
+      "texto": "Espero que los demás tomen el liderazgo",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Un oficial debe estar preparado para asumir el liderazgo y tomar la iniciativa cuando la situación lo requiera.",
+      "contexto_incorrecto": "Una actitud pasiva de esperar siempre instrucciones limita la capacidad de respuesta ante emergencias.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Liderazgo",
+      "id": 42,
+      "pista": ""
+    },
+    {
+      "texto": "¿Acostumbras a evaluar en términos numéricos a los demás?",
+      "opciones": {
+        "A": "Rara vez o nunca",
+        "B": "Pocas veces",
+        "C": "Algunas veces",
+        "D": "Muchas veces",
+        "E": "Muy frecuentemente"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Evitar reducir a las personas a simples números permite un trato más humano y una comprensión integral del ciudadano.",
+      "contexto_incorrecto": "Evaluar constantemente a los demás solo por métricas frías puede derivar en una falta de empatía y en un trato despersonalizado.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía / Relaciones Interpersonales",
+      "id": 43,
+      "pista": ""
+    },
+    {
+      "texto": "Raramente evito a las multitudes",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "Sentirse cómodo en entornos concurridos es una característica necesaria para el patrullaje y la gestión de eventos masivos.",
+      "contexto_incorrecto": "Evitar las multitudes puede limitar la capacidad de un oficial para intervenir en situaciones que requieran presencia en áreas de alta densidad poblacional.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Sociabilidad / Ajuste al entorno",
+      "id": 44,
+      "pista": ""
+    },
+    {
+      "texto": "Me cueste empezar las tareas",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "La proactividad y la diligencia al iniciar deberes reflejan un alto compromiso con la función policial.",
+      "contexto_incorrecto": "La procrastinación o dificultad para iniciar tareas afecta la eficiencia operativa y el cumplimiento de los objetivos institucionales.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Proactividad",
+      "id": 45,
+      "pista": ""
+    },
+    {
+      "texto": "Con mucha frecuencia pienso en los necesitados",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 6,
+        "D": 9,
+        "E": 10
+      },
+      "contexto_correcto": "La sensibilidad social y el altruismo fortalecen el vínculo de confianza entre el policía y los sectores más vulnerables.",
+      "contexto_incorrecto": "La falta de interés por las necesidades ajenas puede distanciar al oficial de su rol protector y de servicio a la comunidad.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Altruismo / Responsabilidad Social",
+      "id": 46,
+      "pista": ""
+    },
+    {
+      "texto": "Deberíamos ser implacables con la delincuencia y mostrar nuestro poder",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 3,
+        "E": 0
+      },
+      "contexto_correcto": "El uso de la fuerza debe ser siempre legal, necesario y proporcional, evitando el despliegue de poder como fin en sí mismo.",
+      "contexto_incorrecto": "Una actitud de rigidez extrema o exhibicionismo de poder puede derivar en abusos de autoridad y pérdida de legitimidad ante la sociedad.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apego a Normas / Ética",
+      "id": 47,
+      "pista": ""
+    },
+    {
+      "texto": "Siempre miro el lado bueno de la vida",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "Mantener una actitud optimista contribuye a la resiliencia y al bienestar emocional en entornos laborales exigentes.",
+      "contexto_incorrecto": "Una visión constantemente negativa puede afectar la motivación y la capacidad para enfrentar desafíos de manera constructiva.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Optimismo / Estabilidad Emocional",
+      "id": 48,
+      "pista": ""
+    },
+    {
+      "texto": "Rompo mis promesas con regularidad",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "El cumplimiento de la palabra empeñada es fundamental para construir confianza y credibilidad institucional.",
+      "contexto_incorrecto": "Incumplir promesas de forma regular denota falta de integridad y compromiso ético.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Responsabilidad",
+      "id": 49,
+      "pista": ""
+    },
+    {
+      "texto": "Siempre desconfío de la gente",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Aunque la cautela es necesaria, la capacidad de confiar permite establecer vínculos efectivos con la comunidad.",
+      "contexto_incorrecto": "Una desconfianza paranoica o excesiva dificulta la cooperación y el trabajo en equipo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Relaciones Interpersonales",
+      "id": 50,
+      "pista": ""
+    },
+    {
+      "texto": "Suelo perder el tiempo",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "El aprovechamiento eficiente del tiempo es un indicador de autodisciplina y productividad.",
+      "contexto_incorrecto": "Perder el tiempo con frecuencia afecta el rendimiento operativo y el cumplimiento de metas.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Gestión del Tiempo",
+      "id": 51,
+      "pista": ""
+    },
+    {
+      "texto": "Me importa no hacer cosas ilegales",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "El respeto absoluto a la legalidad es la base de la ética de cualquier servidor encargado de hacer cumplir la ley.",
+      "contexto_incorrecto": "Cualquier falta de interés por la legalidad es incompatible con la función policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Ética / Apego a Normas",
+      "id": 52,
+      "pista": ""
+    },
+    {
+      "texto": "Me encanta experimentar de manera frecuente sensaciones fuertes",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 3,
+        "C": 7,
+        "D": 10,
+        "E": 8
+      },
+      "contexto_correcto": "La disposición hacia experiencias dinámicas es útil en unidades operativas, siempre bajo control.",
+      "contexto_incorrecto": "La búsqueda desmedida de sensaciones puede llevar a conductas de riesgo innecesarias.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Búsqueda de Sensaciones",
+      "id": 53,
+      "pista": ""
+    },
+    {
+      "texto": "Completo mis tareas con éxito",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La orientación a resultados y la eficacia son competencias clave para el desarrollo profesional.",
+      "contexto_incorrecto": "No finalizar las tareas iniciadas refleja falta de perseverancia o mala organización.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Responsabilidad / Eficacia",
+      "id": 54,
+      "pista": ""
+    },
+    {
+      "texto": "¿Siempre prefiero limitarme a las cosas que conozco?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "La apertura a nuevas experiencias y el aprendizaje continuo son vitales para adaptarse a un entorno policial cambiante.",
+      "contexto_incorrecto": "Limitarse solo a lo conocido puede dificultar la adaptación y el crecimiento profesional ante nuevos desafíos operativos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apertura a la Experiencia",
+      "id": 55,
+      "pista": ""
+    },
+    {
+      "texto": "¿Siento compasión por los demás, solo si son allegados a mi?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "La empatía universal, sin distinciones, es fundamental para garantizar un trato justo y humano a toda la ciudadanía.",
+      "contexto_incorrecto": "Restringir la compasión solo al círculo cercano puede sesgar el juicio y la calidad del servicio público.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Empatía / Altruismo",
+      "id": 56,
+      "pista": ""
+    },
+    {
+      "texto": "¿Hago más cosas de las que se espera de mí?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 0,
+        "B": 2,
+        "C": 5,
+        "D": 8,
+        "E": 10
+      },
+      "contexto_correcto": "La proactividad y el esfuerzo extra demuestran un alto compromiso con los objetivos institucionales.",
+      "contexto_incorrecto": "Hacer solo lo mínimo indispensable puede reflejar una falta de vocación o desinterés en el desarrollo del servicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Diligencia / Proactividad",
+      "id": 57,
+      "pista": ""
+    },
+    {
+      "texto": "¿Tengo miedo que me llamen la atención?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Aceptar la retroalimentación y la corrección con madurez es clave para el aprendizaje y la disciplina militar/policial.",
+      "contexto_incorrecto": "El miedo excesivo a la corrección puede generar ansiedad e impedir que el oficial reconozca y corrija sus errores.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Estabilidad Emocional / Disciplina",
+      "id": 58,
+      "pista": ""
+    },
+    {
+      "texto": "¿Suelo dejar mis decisiones en manos del grupo?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 5,
+        "D": 2,
+        "E": 0
+      },
+      "contexto_correcto": "Un oficial debe poseer autonomía y criterio propio para tomar decisiones firmes, incluso bajo presión social.",
+      "contexto_incorrecto": "Delegar siempre la responsabilidad de decidir en otros puede indicar falta de liderazgo y de confianza en el propio juicio.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Autonomía / Liderazgo",
+      "id": 59,
+      "pista": ""
+    },
+    {
+      "texto": "¿Dedico poco tiempo y esfuerzo a mi trabajo?",
+      "opciones": {
+        "A": "Nunca",
+        "B": "Casi nunca",
+        "C": "A veces",
+        "D": "Casi siempre",
+        "E": "Siempre"
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 8,
+        "C": 4,
+        "D": 1,
+        "E": 0
+      },
+      "contexto_correcto": "La dedicación y el esmero en las funciones asignadas son pilares de la eficiencia y el profesionalismo policial.",
+      "contexto_incorrecto": "La falta de esfuerzo compromete no solo los resultados individuales, sino la seguridad y efectividad de todo el equipo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Responsabilidad / Diligencia",
+      "id": 60,
+      "pista": ""
+    },
+    {
+      "texto": "Si observo que un compañero de rango superior comete una falta ética leve para agilizar un procedimiento, yo...",
+      "opciones": {
+        "A": "Lo ignoro, ya que cuestionar a un superior afecta la jerarquía y cohesión del grupo.",
+        "B": "Reporto el hecho de inmediato a mis superiores, sin importar las consecuencias sociales.",
+        "C": "Busco un momento privado para hacérselo notar y, si persiste, sigo los canales regulares.",
+        "D": "Actúo de la misma manera si eso ayuda a que el trabajo se termine más rápido."
+      },
+      "puntos_opciones": {
+        "A": 3,
+        "B": 8,
+        "C": 10,
+        "D": 0
+      },
+      "contexto_correcto": "La integridad policial exige valentía moral para corregir acciones incorrectas, priorizando siempre la legalidad sobre la lealtad mal entendida.",
+      "contexto_incorrecto": "La obediencia ciega o la imitación de conductas poco éticas degrada la confianza ciudadana y la profesionalidad de la institución.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Integridad / Ética Profesional",
+      "id": 61,
+      "pista": ""
+    },
+    {
+      "texto": "Cuando me encuentro en una situación de peligro inminente donde debo decidir en segundos, mi tendencia es:",
+      "opciones": {
+        "A": "Actuar por instinto puro, confiando en que mi fuerza física resolverá el problema.",
+        "B": "Paralizarme momentáneamente mientras intento analizar todas las variables posibles.",
+        "C": "Aplicar el protocolo entrenado, manteniendo la conciencia situacional y el uso proporcional de la fuerza.",
+        "D": "Esperar a que alguien con más experiencia tome la iniciativa para no equivocarme."
+      },
+      "puntos_opciones": {
+        "A": 4,
+        "B": 2,
+        "C": 10,
+        "D": 0
+      },
+      "contexto_correcto": "El entrenamiento y el apego al protocolo en situaciones de crisis garantizan la efectividad y minimizan riesgos innecesarios.",
+      "contexto_incorrecto": "La impulsividad o la falta de iniciativa en momentos críticos pueden tener consecuencias fatales en el servicio policial.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Toma de Decisiones bajo Presión",
+      "id": 62,
+      "pista": ""
+    },
+    {
+      "texto": "Frente a un ciudadano que utiliza un lenguaje altamente sofisticado para cuestionar mi autoridad de forma sarcástica, yo:",
+      "opciones": {
+        "A": "Me siento inferior y trato de terminar la intervención lo antes posible.",
+        "B": "Respondo con ironía similar para demostrar que no me intimida su intelecto.",
+        "C": "Mantengo el lenguaje profesional, me enfoco en los hechos de la intervención y no me tomo el sarcasmo como algo personal.",
+        "D": "Le advierto que su lenguaje es una falta de respeto y procedo a sancionarlo por ello."
+      },
+      "puntos_opciones": {
+        "A": 3,
+        "B": 0,
+        "C": 10,
+        "D": 4
+      },
+      "contexto_correcto": "La madurez emocional permite separar los ataques al ego de la función pública, manteniendo siempre la objetividad.",
+      "contexto_incorrecto": "Reaccionar ante provocaciones intelectuales o verbales demuestra falta de seguridad personal y poco control de impulsos.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Control de Impulsos / Autoconfianza",
+      "id": 63,
+      "pista": ""
+    },
+    {
+      "texto": "¿Considero que el fin justifica los medios cuando se trata de capturar a un criminal peligroso?",
+      "opciones": {
+        "A": "Nunca, los procedimientos legales son el límite infranqueable de mi actuación.",
+        "B": "A veces, si es la única forma de evitar que alguien más salga herido.",
+        "C": "Casi siempre, la seguridad de la sociedad es más importante que los derechos de un delincuente.",
+        "D": "Siempre que no existan testigos que puedan denunciar el exceso."
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 5,
+        "C": 2,
+        "D": 0
+      },
+      "contexto_correcto": "El respeto a los Derechos Humanos y al Debido Proceso es lo que diferencia a un oficial de policía de un delincuente.",
+      "contexto_incorrecto": "Creer que se puede violar la ley para defender la ley es una contradicción ética que genera arbitrariedad.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Apego a Normas / Valores",
+      "id": 64,
+      "pista": ""
+    },
+    {
+      "texto": "¿Qué tan frecuente siente que sus problemas personales nublan su juicio durante el cumplimiento de su deber?",
+      "opciones": {
+        "A": "Rara vez o nunca, tengo la capacidad de compartimentar mis emociones.",
+        "B": "Pocas veces, aunque me cuesta concentrarme si el problema es grave.",
+        "C": "Algunas veces, especialmente cuando hay mucha presión en el trabajo.",
+        "D": "Frecuentemente, me es imposible separar mi vida privada de la laboral."
+      },
+      "puntos_opciones": {
+        "A": 10,
+        "B": 7,
+        "C": 4,
+        "D": 0
+      },
+      "contexto_correcto": "La capacidad de separar la esfera personal de la profesional es vital para mantener la operatividad y objetividad policial.",
+      "contexto_incorrecto": "Permitir que las emociones personales influyan en el servicio puede llevar a errores de juicio y falta de profesionalismo.",
+      "dimension": "Personalidad",
+      "sub_dimension": "Estabilidad Emocional",
+      "id": 65,
+      "pista": ""
+    }
+  ]
+}

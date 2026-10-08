@@ -1,0 +1,20 @@
+<USER_REQUEST>
+[
+  { "id": 1, "texto": "¿Mantiene la calma durante situaciones de emergencia o sabe controlar sus emociones?", "opciones": { "A": "De acuerdo.", "B": "Algunas veces.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "El control emocional es vital en situaciones críticas policiales.", "dimension": "Personalidad", "sub_dimension": "Control Emocional" },
+  { "id": 2, "texto": "Frente al peligro, yo:", "opciones": { "A": "Actúo con firmeza y serenidad.", "B": "Me tomo un tiempo para pensar.", "C": "Siento mucho temor y me paralizo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La capacidad de respuesta ante el peligro es un rasgo de estabilidad.", "dimension": "Personalidad", "sub_dimension": "Resiliencia" },
+  { "id": 3, "texto": "Suelo ser una persona reflexiva que piensa antes de actuar.", "opciones": { "A": "De acuerdo.", "B": "Algunas veces.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La reflexión previa evita conductas impulsivas riesgosas.", "dimension": "Personalidad", "sub_dimension": "Control de Impulsos" },
+  { "id": 4, "texto": "¿Le gusta la abundancia de excitación y bullicio a su alrededor?", "opciones": { "A": "Sí.", "B": "Término medio.", "C": "No." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Mide la tendencia a la extraversión y búsqueda de sensaciones.", "dimension": "Personalidad", "sub_dimension": "Extraversión" },
+  { "id": 5, "texto": "¿Tiene casi siempre una contestación lista cuando se le habla?", "opciones": { "A": "Sí.", "B": "A veces.", "C": "No." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Evalúa la rapidez de respuesta y seguridad personal.", "dimension": "Personalidad", "sub_dimension": "Seguridad" },
+  { "id": 6, "texto": "Cuando me critican duramente por algo que no he hecho:", "opciones": { "A": "No me siento culpable.", "B": "Término medio.", "C": "Me siento un poco culpable." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0
+<truncated 13352 bytes>
+", "C": "De acuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "La determinación es vital para el mando y la ejecución policial.", "dimension": "Personalidad", "sub_dimension": "Determinación" },
+  { "id": 46, "texto": "¿Le gusta más quedarse en casa que ir a una fiesta aburrida?", "opciones": { "A": "Sí.", "B": "A veces.", "C": "No." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Ayuda a definir el rasgo de introversión o extraversión.", "dimension": "Personalidad", "sub_dimension": "Sociabilidad" },
+  { "id": 47, "texto": "Siempre miro el lado bueno de las cosas en la vida.", "opciones": { "A": "Sí.", "B": "A veces.", "C": "No." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "El optimismo realista es un factor protector de la salud mental.", "dimension": "Personalidad", "sub_dimension": "Resiliencia" },
+  { "id": 48, "texto": "Si veo a niños peleándose, trato de razonar con ellos una solución.", "opciones": { "A": "Sí.", "B": "Indeciso.", "C": "No." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Evalúa la inclinación hacia la resolución pacífica de conflictos.", "dimension": "Valores", "sub_dimension": "Cultura de Paz" },
+  { "id": 49, "texto": "No me afectan fácilmente los sucesos porque tengo fuerza interior.", "opciones": { "A": "De acuerdo.", "B": "Algunas veces.", "C": "En desacuerdo." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Refuerza el perfil de estabilidad ante la presión externa.", "dimension": "Personalidad", "sub_dimension": "Resiliencia" },
+  { "id": 50, "texto": "Estoy dispuesto a contestar todas las cuestiones con total sinceridad.", "opciones": { "A": "Verdadero.", "B": "No estoy seguro.", "C": "Falso." }, "puntos_opciones": { "A": 10, "B": 5, "C": 0 }, "pista": "Garantiza el compromiso con la veracidad de la evaluación.", "dimension": "Control", "sub_dimension": "Sinceridad" }
+]
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T00:15:33-05:00.
+</ADDITIONAL_METADATA>
